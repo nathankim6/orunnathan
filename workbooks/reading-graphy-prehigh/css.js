@@ -78,6 +78,7 @@ b,strong{font-weight:700}
 .read{display:grid;grid-template-columns:1fr 56mm;gap:6mm;align-items:stretch}
 .psg{font-family:var(--serif);font-size:var(--t5);line-height:1.85;text-align:left;color:var(--ink)}
 .psg.dense{line-height:1.7}
+.psg.denser{line-height:1.6}   /* 넘침 방지 마지막 단계 — build.js 의 guard 가 dense·snug 로도 하단 한계(279mm)를 못 지킬 때만 */
 .psg sup{font-family:var(--sans);font-size:var(--t1);font-weight:700;color:var(--ac);vertical-align:super;line-height:0;margin-right:.3mm}
 .side{display:flex;flex-direction:column;gap:5mm}
 .card{padding:0}
@@ -94,6 +95,10 @@ table.bank .k{color:var(--ink);padding-left:1.5mm;word-break:keep-all;letter-spa
 .tip .bulb{display:inline-block;width:2.6mm;height:2.6mm;border-radius:50%;background:var(--yel);margin-right:1.5mm;vertical-align:-.2mm}
 /* ── 삽화 ── */
 .gap{flex:0 1 8mm;min-height:4mm}   /* 지문–배너 띠: 8mm, 지문이 길어 넘칠 때만 4mm 까지 줄어든다 */
+/* p1 넘침 방지 2단계(.snug — guard 가 붙인다): 띠 2mm 까지, 레슨 헤더·캡션 여백 1mm 남짓 — 제목이 두 줄인 레슨(L49·L54)용 */
+.page.snug .gap{min-height:2mm}
+.page.snug .lh{margin-bottom:5mm;padding-bottom:3.5mm}
+.page.snug figcaption{margin-top:1.5mm}
 figure{margin-top:0;flex:0 0 auto}
 figure .art{height:72mm;border:0;background:transparent;display:flex;align-items:center;justify-content:center;padding:0 0 1mm}
 figure .art svg{height:100%;width:100%}
@@ -254,20 +259,22 @@ table.cu td.evc i.ev{display:inline-block;width:10mm;border-bottom:0.75pt solid 
 .kb .ask span{color:var(--ac);white-space:nowrap}
 /* ── 해설 ── */
 h2.sechd{font-size:var(--t7);font-weight:700;margin-bottom:1mm;letter-spacing:-.02em;line-height:var(--lhh)}
-h2.sechd + p{font-size:var(--t3);color:var(--sub);margin-bottom:4mm}
-.akey{border-top:var(--rule) solid var(--ac);margin-bottom:4mm}
+h2.sechd + p{font-size:var(--t3);color:var(--sub);margin-bottom:3.5mm}
+/* 정답 면 5장(p26–30)은 같은 규격 — 긴 레슨(정답표 + 전문 해석이 첫 면의 제목 블록과 함께 한 면)이 하단 한계 안에 들도록
+   행 패딩·행간에서 덜어 낸다(글자 크기는 그대로). 그래도 넘치는 면은 build.js 의 guard 가 .tight 를 붙인다 */
+.akey{border-top:var(--rule) solid var(--ac);margin-bottom:3.5mm}
 .akey .hd{padding:2mm 0 1.5mm;font-size:var(--t5);font-weight:700;color:var(--deep);display:flex;gap:2.5mm;align-items:baseline;border-bottom:var(--ln) solid var(--ink)}
 .akey .hd .dot{display:inline-block;width:2.5mm;height:2.5mm;border-radius:50%;align-self:center}
 .akey .hd em{font-style:normal;font-size:var(--t3);color:var(--sub);font-weight:400}
 .akey table{width:100%;border-collapse:collapse;font-size:var(--t3)}
-.akey td{padding:1.6mm 0;border-bottom:var(--hl);vertical-align:top;line-height:1.55}
+.akey td{padding:1.25mm 0;border-bottom:var(--hl);vertical-align:top;line-height:1.5}
 .akey tr:last-child td{border-bottom:0}
-.akey td.k{width:22mm;white-space:nowrap;padding-top:2.2mm}
+.akey td.k{width:22mm;white-space:nowrap;padding-top:1.85mm}
 .akey td.k span{display:block;text-transform:none;letter-spacing:0;font-size:var(--t1);color:var(--faint);margin-top:.3mm}
 .akey .hl{color:var(--deep);font-weight:700}
 .akey .dim{color:var(--sub)}
 .akey .hint{font-size:var(--t2);color:var(--sub);line-height:1.5;letter-spacing:.01em}
-.trans{border-top:var(--hl);border-bottom:var(--hl);padding:2.5mm 0 3mm;font-size:var(--t3);line-height:1.75;text-align:left}
+.trans{border-top:var(--hl);border-bottom:var(--hl);padding:2.2mm 0 2.5mm;font-size:var(--t3);line-height:var(--lh);text-align:left}
 .trans .eb{display:block;margin-bottom:1.5mm;color:var(--sub)}
 .rh+.akey{border-top:0}
 .trans sup{font-size:var(--t1);font-weight:700;color:var(--ac);vertical-align:super;line-height:0;margin-right:.3mm}
@@ -301,6 +308,7 @@ ul.chk li::before{content:"";display:inline-block;width:3.2mm;height:3.2mm;borde
 .rrq .mkans .ans{color:var(--sub);font-weight:500}
 .match .blank .ans{font-size:var(--t3);font-weight:700}
 table.para td.dst u .ans{font-size:var(--t3);color:var(--red)}
+table.para .ans{white-space:nowrap}   /* 붉은 정답은 하이픈(self-check)에서도 줄을 바꾸지 않는다 — 다섯 행 한 줄(wrap.py) */
 table.flow .body u .ans{font-size:var(--t3);color:var(--red)}
 table.flow .body u+.ans{margin-left:1mm}
 table.cu td.ty i.o.ok{border:1pt solid var(--red);width:4mm;height:4mm}
@@ -314,29 +322,32 @@ table.cu td.evc i.ev{text-align:center;line-height:1.1}
 .page.te .rrq .aline.filled{min-height:4.6mm;padding-bottom:.3mm;line-height:1.3}
 .page.te .model{padding:2mm 4mm 1.5mm}
 .page.te .rrh{margin:4mm 0 2mm}
-/* ── 합본 차례 ── */
-.page.toc{padding-top:14mm}
-.page.toc .rh{margin-bottom:6mm}
-.tocsub{font-size:var(--t3);color:var(--sub);margin-bottom:3mm}
-.steps{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 2.5mm;margin-bottom:4mm;border-top:var(--hl);border-bottom:var(--hl);padding:2mm 0}
+/* ── 합본 차례: 12유닛 × (5강 + 정답과 해설) 을 두 단으로 한 면에 — 헤어라인 행 · 쪽 번호 오른끝 정렬 · 유닛 태그 줄 없음.
+   푸터가 없는 면이라 아래 여백 18mm 까지 쓴다(본문 하한 279mm 는 다른 면과 같다). 긴 분야명(Unit 9·11)은 두 줄이 되어도 된다 */
+.page.toc{padding-top:12mm;padding-bottom:18mm}
+.page.toc .rh{margin-bottom:4mm}
+.tochd{display:flex;align-items:baseline;gap:4mm;margin-bottom:2.5mm}
+.tochd h2.sechd{margin:0}
+.tocsub{font-size:var(--t3);color:var(--sub)}
+.steps{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 2.5mm;margin-bottom:3.5mm;border-top:var(--hl);border-bottom:var(--hl);padding:1.5mm 0}
 .steps b{font-size:var(--t2);font-weight:500;letter-spacing:.14em;color:var(--ac);margin-right:2mm;text-transform:uppercase}
 .steps span{font-size:var(--t3);color:var(--sub)}
 .steps span+span::before{content:"·";margin-right:2.5mm;color:var(--n400)}
-.toc2{column-count:2;column-gap:8mm}
-.ub{break-inside:avoid;margin-bottom:2mm}
-.uh{display:flex;align-items:baseline;gap:2mm;border-bottom:var(--ln) solid var(--ink);padding-bottom:1mm;margin-bottom:.5mm}
-.uh .f{font-size:var(--t1);font-weight:500;letter-spacing:.14em;color:var(--sub);text-transform:uppercase}
+.toc2{display:grid;grid-template-columns:1fr 1fr;column-gap:7mm;align-items:start}
+.ub{break-inside:avoid;margin-bottom:1.6mm}
+.uh{display:flex;align-items:baseline;gap:2mm;border-bottom:var(--ln) solid var(--ink);padding-bottom:.8mm;margin-bottom:.4mm;line-height:var(--lhh)}
+.uh .f{font-size:var(--t1);font-weight:500;letter-spacing:.14em;color:var(--sub);text-transform:uppercase;white-space:nowrap}
 .uh b{font-size:var(--t3);font-weight:700;color:var(--deep)}
-.uh em{font-style:normal;font-size:var(--t1);color:var(--sub)}
+.uh em{font-style:normal;font-size:var(--t1);color:var(--sub);white-space:nowrap}
 .uh .pg{margin-left:auto;font-size:var(--t3);font-weight:700;color:var(--ink)}
 .ub .tag{display:none}
-table.ul{width:100%;border-collapse:collapse;font-size:var(--t2)}
-table.ul td{padding:.4mm 0;border-bottom:var(--hl);vertical-align:baseline}
-table.ul td.n{width:6mm;font-size:var(--t1);font-weight:500;color:var(--sub)}
-table.ul td.t{line-height:1.25}
-table.ul td.t em{font-style:normal;font-size:var(--t1);color:var(--sub);margin-left:1.5mm}
-table.ul td.p{width:7mm;text-align:right;font-size:var(--t2);font-weight:500;color:var(--sub)}
-table.ul tr.ans td{border-bottom:0;padding-top:.6mm}
+table.ul{width:100%;border-collapse:collapse;font-size:var(--t2);line-height:1.2}
+table.ul td{padding:.3mm 0;border-bottom:var(--hl);vertical-align:baseline}
+table.ul td.n{width:5mm;font-size:var(--t1);font-weight:500;color:var(--sub)}
+table.ul td.t{line-height:1.2}
+table.ul td.t em{font-style:normal;font-size:var(--t1);color:var(--sub);margin-left:1.2mm}
+table.ul td.p{width:6.5mm;text-align:right;font-size:var(--t2);font-weight:500;color:var(--sub)}
+table.ul tr.ans td{border-bottom:0;padding-top:.5mm}
 table.ul tr.ans td.n{color:var(--ac)}
 table.ul tr.ans td.t{font-weight:700;color:var(--deep)}
 

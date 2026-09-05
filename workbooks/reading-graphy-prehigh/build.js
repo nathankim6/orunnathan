@@ -79,7 +79,7 @@ const PGC=()=>`page ${pn%2===0?"r":"v"}${TE?" te":""}`;
 /* ═══ 합본 차례 (쪽 번호 없는 앞장) ═══ */
 if (BOOK) {
  const AC={accent:"#13345C",tint:"#E8EDF3",deep:"#0E2542",no:""};
- const colr = UNITS.map((uu,ui)=>{
+ const ub = (uu,ui)=>{
   const base = ui*30;
   const rows = uu.U.lessons.map((t,li)=>
    `<tr><td class="n" style="color:${col(t).accent}">${t.no}</td><td class="t">${esc(t.en)}
@@ -90,12 +90,16 @@ if (BOOK) {
    <table class="ul">${rows}
     <tr class="ans"><td class="n">A</td><td class="t">정답과 해설<em>지문 전문 해석 포함</em></td>
      <td class="p">${base+26}</td></tr></table></div>`;
- }).join("");
+ };
+ /* 두 단은 앞 반·뒤 반으로 못 박는다(12유닛이면 1–6 · 7–12) — column-count 의 균형 잡기에 맡기지 않는다 */
+ const half = Math.ceil(UNITS.length/2);
+ const colr = [UNITS.slice(0,half), UNITS.slice(half)]
+  .map((grp,gi)=>`<div class="col">${grp.map((uu,i)=>ub(uu,gi*half+i)).join("")}</div>`).join("");
  P.push(`<div class="page toc r${TE?" te":""}" style="${vars(AC)}">
   ${head(AC,"Contents")}
-  <h2 class="sechd">차례</h2>
-  <p class="tocsub">옳은영어 READING GRAPHY · 예비고등 &nbsp;|&nbsp;
-   ${UNITS.length}개 분야 · 지문 ${UNITS.reduce((a,u)=>a+u.U.lessons.length,0)}편 · ${UNITS.length*30}면${TE?" · 교사용":""}</p>
+  <div class="tochd"><h2 class="sechd">차례</h2>
+   <p class="tocsub">옳은영어 READING GRAPHY · 예비고등 &nbsp;|&nbsp;
+   ${UNITS.length}개 분야 · 지문 ${UNITS.reduce((a,u)=>a+u.U.lessons.length,0)}편 · ${UNITS.length*30}면${TE?" · 교사용":""}</p></div>
   <div class="steps">
    <b>여섯 걸음</b>
    <span>1 영영풀이 매칭</span><span>2 구문분석</span><span>3 READ RIGHT</span>
@@ -298,8 +302,26 @@ T.forEach((t,ti)=>{
 
 }); /* ═══ 유닛 루프 끝 ═══ */
 
+/* ── 넘침 방지(guard): 인쇄 직전에 면마다 본문 하단(탭·푸터 제외)을 재서, 아래 여백 18mm 선(279mm = clip.py 의 본문 하한)을
+   넘는 면에만 조임 클래스를 한 단계씩 붙인다. 넘치지 않는 면은 손대지 않으므로 규격 면의 모양은 그대로다.
+   p1(.psg): dense(행간 1.7) → snug(띠 2mm·헤더 여백) → denser(1.6) — 지문 글자 수(1030자)만으로는 두 줄 제목(L49·L54)이나
+   21줄 지문(L48)을 미리 알 수 없다.   정답 면(.akey): tight(p30 과 같은 규격).   잰 값은 data-low(mm) 로 남긴다 */
+const GUARD=`<script>
+addEventListener("load",()=>{
+ const LIM=279/25.4*96;
+ const low=pg=>{const t=pg.getBoundingClientRect().top;let b=0;
+  for(const c of pg.children){if(c.classList.contains("tab")||c.classList.contains("rf"))continue;
+   b=Math.max(b,c.getBoundingClientRect().bottom-t);}return b;};
+ for(const pg of document.querySelectorAll(".page")){
+  const psg=pg.querySelector(".psg");
+  const steps=psg?[[psg,"dense"],[pg,"snug"],[psg,"denser"]]:pg.querySelector(".akey")?[[pg,"tight"]]:[];
+  for(const [el,cls] of steps){if(low(pg)<=LIM)break;el.classList.add(cls);}
+  pg.dataset.low=(low(pg)/96*25.4).toFixed(1);
+ }
+});
+</script>`;
 const html=`<!doctype html><html lang="ko"><head><meta charset="utf-8">
-<title>${BOOK?`READING GRAPHY · PRE-HIGH · 전 ${UNITS.length}유닛`:`READING GRAPHY · PRE-HIGH · Unit ${U.no} · ${U.field}`}</title><style>${CSS}\n.rh .lg .mk{background-image:url(${LOGO})}</style></head>
+<title>${BOOK?`READING GRAPHY · PRE-HIGH · 전 ${UNITS.length}유닛`:`READING GRAPHY · PRE-HIGH · Unit ${U.no} · ${U.field}`}</title><style>${CSS}\n.rh .lg .mk{background-image:url(${LOGO})}</style>${GUARD}</head>
 <body>${P.join("\n")}</body></html>`;
 const OUT = process.env.OUTDIR || ".";
 fs.mkdirSync(OUT,{recursive:true});
