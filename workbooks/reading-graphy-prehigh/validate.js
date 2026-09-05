@@ -29,9 +29,32 @@ for (const nn of nos) {
     if (strip.length !== 5) err(U.no, L, `픽토그램 ${strip.length}개 (5개여야 함)`);
     strip.forEach(p => { if (!S[p]) err(U.no, L, `픽토그램 없음: ${p}`); });
 
+    /* 삽화 규격: 인물 축척 ≥ .6 · 머리 꼭대기 ≥ 8 · 패널 칩 0 또는 전체 · y>240 라벨 1개 이하 */
+    const c = t.accent, sv = A.scenes[t.key] ? A.scenes[t.key](c, t.tint, t.deep) : "";
+    for (const m of sv.matchAll(/<g data-fig="1" transform="translate\((-?[\d.]+) (-?[\d.]+)\) scale\((-?[\d.]+) (-?[\d.]+)\)/g)) {
+      const y = +m[2], s = Math.abs(+m[4]);
+      if (s < 0.6) err(U.no, L, `배너 인물 축척 ${s} (0.6 이상)`);
+      if (y - 156 * s < 8) err(U.no, L, `배너 인물 머리가 viewBox 위로 잘림 (y ${y}, s ${s})`);
+    }
+    const panels = (sv.match(/<rect [^>]*rx="10"[^>]*stroke-width="1.5"/g) || []).length;
+    const chips = (sv.match(/<circle [^>]*r="11"/g) || []).length - (sv.match(/<circle [^>]*r="11"[^>]*\/><text [^>]*y="[\d.]+"[^>]*font-size="12"/g) || []).length;
+    const chipN = (sv.match(/<circle cx="[\d.]+" cy="[\d.]+" r="11"/g) || []).length;
+    if (panels >= 2 && chipN !== 0 && chipN < panels) err(U.no, L, `배너 패널 칩이 일부에만 있음 (${chipN}/${panels})`);
+    /* 라벨은 viewBox 안(기준선 y ≤ 276). SVG 안 캡션(x 320, y ≥ 262 — 구 규격)이 있으면 그 줄과 겹치는 y>240 라벨은 없어야 한다.
+       새 규격(Unit 1)은 SVG 캡션 없이 SCENECAP → figcaption 이라 패널 라벨(y 264)이 자유롭다 */
+    const ys = [...sv.matchAll(/<text x="([\d.]+)" y="([\d.]+)"/g)].map(m => ({ x: +m[1], y: +m[2] }));
+    if (ys.some(p => p.y > 276)) err(U.no, L, `배너 라벨이 아래로 넘침 (y>276)`);
+    /* 캡션 = x 320, y ≥ 262 에 혼자 놓인 글줄 (3패널 가운데 라벨도 x 320 이지만 양옆 라벨과 같은 y 를 공유한다) */
+    const isCap = p => p.x === 320 && p.y >= 262 && !ys.some(q => q !== p && Math.abs(q.y - p.y) < 4);
+    const cap = ys.some(isCap);
+    const low = ys.filter(p => p.y > 240 && !isCap(p)).length;
+    if (cap && low > 0) err(U.no, L, `배너 캡션 줄과 겹치는 라벨 ${low}개`);
+
     /* 어휘 */
     if (t.bank.length !== 6) err(U.no, L, `bank ${t.bank.length}개`);
     if (t.defs.length !== 6) err(U.no, L, `defs ${t.defs.length}개`);
+    /* 영영풀이 정의문은 DEFINITION 열(≈95mm, t3) 한 줄 한도 60자 — 넘으면 행이 두 줄이 되어 두 열의 헤어라인이 어긋난다 */
+    t.defs.forEach(d => { if (d[1].length > 60) err(U.no, L, `영영풀이 정의문 60자 초과 (${d[1].length}자): ${d[1].slice(0, 30)}…`); });
     const ord = [...t.defOrder].sort((a, b) => a - b).join();
     if (ord !== "0,1,2,3,4,5") err(U.no, L, `defOrder 가 0–5 순열이 아님: ${t.defOrder}`);
     t.bank.forEach(b => { if (CIR.indexOf(b[1]) >= n) err(U.no, L, `bank 문장번호 ${b[1]} 가 범위 밖`); });

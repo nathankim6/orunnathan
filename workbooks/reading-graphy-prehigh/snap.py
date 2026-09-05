@@ -9,6 +9,6 @@ os.makedirs(out, exist_ok=True)
 d = pymupdf.open(pdf); base = os.path.splitext(os.path.basename(pdf))[0]
 for p in pages.split(","):
     i = int(p) - 1
-    clip = pymupdf.Rect(40, 650, 560, 835) if mode == "fig" else None
+    clip = pymupdf.Rect(40, 455, 560, 700) if mode == "fig" else None
     fn = f"{out}/{base}_p{int(p):02d}{'_fig' if mode=='fig' else ''}.png"
     d[i].get_pixmap(dpi=dpi, clip=clip).save(fn); print(fn)

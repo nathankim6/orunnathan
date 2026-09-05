@@ -84,7 +84,7 @@ node build.js --units=1,2,3,4,5,6,7,8,9,10,11,12 --teacher  # → book_t.html (�
 
 python3 clip.py book                     # 잘림 검사 — "잘린 면 없음" 이어야 한다
 python3 wrap.py book.pdf                 # 패러프레이즈 칸이 한 줄인지
-python3 legend.py book.pdf               # Check Up 유형 범례가 한 줄인지
+python3 legend.py book.pdf               # Check Up 유형 범례가 지시 1줄 + 범례 1줄인지
 ```
 
 유닛 하나만 뽑을 때는 `node build.js --unit=7` (→ `u07.html`).
@@ -99,9 +99,9 @@ python3 legend.py book.pdf               # Check Up 유형 범례가 한 줄인�
 - `validate.js` — 지문·해석 줄 수, 지문 길이(165–210 단어), 삽화·픽토그램 연결, `defOrder` 순열,
   drill 문장이 지문과 **글자까지** 같은지, 플로차트·패러프레이즈 정답이 보기 안에 있는지,
   패러프레이즈 문장이 **정답을 채운 뒤에도 52자 이하**인지, `wtype`/`stype` 이 Check Up 정답 번호와 맞는지.
-- `clip.py` — HTML 면별 텍스트와 PDF 추출 텍스트를 대조해 사라진 토큰을 잡는다.
+- `clip.py` — HTML 면별 텍스트와 PDF 추출 텍스트를 대조해 사라진 토큰을 잡고, 본문이 푸터 여백(18mm)으로 흘러내린 면도 잡는다.
 - `wrap.py` — 패러프레이즈 칸이 두 줄로 넘어가지 않는지(베이스라인 군집, 6pt 허용).
-- `legend.py` — Check Up 유형 범례가 한 줄이고 본문 폭(552pt) 안에 있는지.
+- `legend.py` — Check Up 유형 범례가 [지시 1줄]+[범례 1줄]이고 본문 폭(552pt) 안에 있는지.
 
 해설 면은 마지막 면만 `유닛 마무리 체크` / `NEXT UNIT` 박스를 더 얹으므로 그 면에만 `.page.tight`
 로 여백을 좁힌다. 교사용 READ RIGHT 면은 `.page.te` 로 따로 압축한다.

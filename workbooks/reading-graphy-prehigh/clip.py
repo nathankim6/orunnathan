@@ -27,5 +27,15 @@ for i, p in enumerate(parts):
         bad += 1
         print(f"p{i+1:>2}  잘림 {len(miss)}/{len(toks)} 토큰 누락")
         print("      " + " ".join(miss[:14]) + (" …" if len(miss) > 14 else ""))
+    # 본문이 아래 여백(18mm)으로 흘러 푸터와 겹치는지 — 본문 하한 790.9pt, 푸터 글줄은 y0 ≥ 806
+    intr = []
+    for b in doc[i].get_text("dict")["blocks"]:
+        for ln in b.get("lines", []):
+            for sp in ln["spans"]:
+                y0, y1 = sp["bbox"][1], sp["bbox"][3]
+                if sp["text"].strip() and y1 > 793 and y0 < 806: intr.append(sp["text"].strip())
+    if intr:
+        bad += 1
+        print(f"p{i+1:>2}  푸터 침범 {len(intr)}개 스팬: " + " ".join(intr[:6])[:80])
 print("── 잘린 면 없음" if not bad else f"── 잘린 면 {bad}개")
 sys.exit(1 if bad else 0)
