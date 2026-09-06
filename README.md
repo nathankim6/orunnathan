@@ -7,7 +7,7 @@ Lovable에서 만든 프로젝트들을 GitHub으로 옮겨 Claude Code에서 �
 | 위치 | 내용 |
 |---|---|
 | `projects/` | Lovable에서 코드 그대로 옮겨 온 프로젝트들. 목록과 상태는 [`projects/README.md`](./projects/README.md) |
-| `materials/` | 학생 배포용 교재. 지금은 [옳은 VOCA 3000](./materials/orun-voca-3000/) (정시반 단어장, docx·pdf와 생성 스크립트) |
+| `materials/` | 학생 배포용 교재. 지금은 [옳은 VOCA 3000](./materials/orun-voca-3000/) (정시반 단어장 + 별책 단어시험지, docx·pdf와 생성 스크립트) |
 | 루트(`src/`, `public/` 등) | **orunquiz 프로젝트의 2025년 1월 옛 사본**입니다. 최신 코드는 [nathankim6/orunquiz](https://github.com/nathankim6/orunquiz)에 있으니 참고용으로만 두세요. |
 
 ## 프로젝트 하나 실행해 보기
