@@ -19,9 +19,9 @@ const icons = {
  wait:(c)=>`<svg viewBox="0 0 64 64">
   <circle cx="17" cy="33" r="9" fill="${c}" opacity=".3"/>
   <circle cx="17" cy="33" r="9" ${IC(c)}/>
-  <path d="M28 33h7M32 30l3 3-3 3" ${IC(c)}/>
-  <circle cx="47" cy="25" r="8" ${IC(c)}/>
-  <circle cx="47" cy="41" r="8" ${IC(c)}/>
+  <path d="M27 33h9M33 30l3 3-3 3" ${IC(c)}/>
+  <circle cx="47" cy="23" r="7.5" ${IC(c)}/>
+  <circle cx="47" cy="42" r="7.5" ${IC(c)}/>
   <path d="M12 54h40" ${IC(c)}/></svg>`,
  /* 42 — 혈액 팩 안의 한 방울 */
  blood:(c)=>`<svg viewBox="0 0 64 64">
