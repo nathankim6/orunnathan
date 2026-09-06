@@ -394,18 +394,19 @@ const VIG = {
   const crown = (x, y, s, col, fill) => `<g transform="translate(${x} ${y}) scale(${s})">
     <path d="M-13 8L-10-9L-4-1L0-12L4-1L10-9L13 8z" fill="${fill}" stroke="${col}" stroke-width="2.4" stroke-linejoin="round"/>
     <path d="M-13 12h26" ${LN(col, 2.6)}/></g>`;
-  const table38 = (x, y, col) => `<circle cx="${x}" cy="${y}" r="9" fill="none" stroke="${col}" stroke-width="2.4"/>`
-   + [0, 60, 120, 180, 240, 300].map(a => { const r = a * Math.PI / 180;
-     return `<circle cx="${(x + 13.5 * Math.cos(r)).toFixed(1)}" cy="${(y + 13.5 * Math.sin(r)).toFixed(1)}" r="2.6" fill="${col}"/>`; }).join("");
+  const table38 = (x, y, col) => `<g transform="translate(${x} ${y})">
+    <ellipse cx="0" cy="0" rx="11" ry="7.5" fill="none" stroke="${col}" stroke-width="2.6"/>
+    <rect x="-16" y="-2.5" width="4.5" height="5.5" rx="1.2" fill="${col}"/><rect x="11.5" y="-2.5" width="4.5" height="5.5" rx="1.2" fill="${col}"/>
+    <rect x="-2.8" y="-13.5" width="5.5" height="4.5" rx="1.2" fill="${col}"/><rect x="-2.8" y="9" width="5.5" height="4.5" rx="1.2" fill="${col}"/></g>`;
   const grail = (x, y, col) => `<g transform="translate(${x} ${y})">
-    <path d="M-9-12h18l-2 9q-7 6-14 0zM0-1v9M-8 8h16" ${LN(col, 2.4)}/></g>`;
-  const book = (x, fill, ln) => `<rect x="${x - 31}" y="45" width="62" height="74" rx="4" ${OP(fill)}/>
-    <path d="M${x - 20} 50V114" ${LN(ln, 1.8)} opacity=".8"/>`;
+    <path d="M-8-11h16l-2 8q-6 5-12 0zM0-3v9M-7 6h14" ${LN(col, 2.5)}/></g>`;
+  const book = (x, fill, ln) => `<rect x="${x - 34}" y="44" width="68" height="76" rx="4" ${OP(fill)}/>
+    <path d="M${x - 25} 49V115" ${LN(ln, 1.8)} opacity=".8"/>`;
   return `<svg viewBox="0 0 240 150" fill="none">
-  ${book(62, PAPER, d)}${crown(66, 80, 1.5, d, PAPER)}
-  ${book(178, d, "#fff")}${crown(178, 64, 1.05, "#fff", d)}
-  ${table38(165, 96, "#fff")}${grail(197, 99, "#fff")}
-  ${arrow({ x1:97, y1:82, x2:141, y2:82, c:d })}
+  ${book(62, PAPER, d)}${crown(68, 82, 1.6, d, PAPER)}
+  ${book(178, d, "#fff")}${crown(184, 64, 1.1, "#fff", d)}
+  ${table38(174, 98, "#fff")}${grail(203, 98, "#fff")}
+  ${arrow({ x1:100, y1:82, x2:140, y2:82, c:d })}
   ${tag({ x:62, y:22, text:"1136", c:d, fill:"#fff", lvl:"v" })}
   ${tag({ x:178, y:22, text:"12–15세기", c:d, lvl:"v" })}
   ${text(62, 140, "왕 한 사람", "vs", MID)}
