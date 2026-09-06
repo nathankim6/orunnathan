@@ -687,7 +687,7 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
     <span class="step" data-step="2"></span><span class="step-rule"></span>
     <span class="step" data-step="3"></span>
   </div>
-  <div class="state"><span class="build" id="buildTag">2026-09-06 12:43</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
+  <div class="state"><span class="build" id="buildTag">2026-09-06 18:23</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
 </div>
 
 <!-- 화면 0 · 시작 -->
@@ -2288,7 +2288,10 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
         return await fetch(API_URL, { method: "POST", headers: h, body: JSON.stringify(b), signal: opts.signal });
       } catch (e) {
         if (e && e.name === "AbortError") throw apiError("cancelled", "중단됨");
-        throw apiError("network", "api.anthropic.com 에 연결하지 못했습니다. 인터넷 연결과 브라우저 확장(광고 차단 등)을 확인해 주세요.");
+        // file:// 로 연 페이지는 브라우저가 외부 요청을 막는 경우가 있다. 원인을 정확히 짚어준다.
+        throw apiError("network", "api.anthropic.com 에 연결하지 못했습니다. " + (location.protocol === "file:"
+          ? "파일을 그대로 연 상태(file://)라 브라우저가 요청을 막았을 수 있어요. 이 파일을 웹 주소(https://…)에 올려서 열면 해결됩니다."
+          : "인터넷 연결과 브라우저 확장(광고 차단 등)을 확인해 주세요."));
       }
     };
     res = apiFallbackOk ? await send(fbHeaders, withFallback) : await send(headers, body);
@@ -2415,7 +2418,7 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
     const c = window.claude;
     return [
       "ORUN 동형 모의고사 진단",
-      "build: 2026-09-06 12:43",
+      "build: 2026-09-06 18:23",
       "url: " + location.href,
       "runtime: " + RUNTIME + (c ? "" : " (window.claude 없음)"),
       "claude.use: " + (c && typeof c.use === "function" ? "있음" : "없음"),
