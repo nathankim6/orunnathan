@@ -1,0 +1,7 @@
+{
+  "name": "orun-voca-3000",
+  "private": true,
+  "description": "옳은영어 정시반 VOCA 3000 단어장 생성기",
+  "scripts": { "build": "python3 prep.py && node gen.js" },
+  "dependencies": { "docx": "^9.7.1" }
+}
