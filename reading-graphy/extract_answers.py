@@ -57,3 +57,47 @@ if __name__ == '__main__':
         print(os.path.basename(f), '축약' if r and r['short'] else '풀')
         for pg in sorted(r['pages']):
             print(f'  면{pg}:', ' | '.join(r['pages'][pg])[:150])
+
+
+# ── 정답 패널에 없는 문항은 해설 본문에서 보완한다 ──
+BODY = re.compile(r'B\("((?:[^"\\]|\\.)*)"')
+EXTRA_PAGE_FULL = {'1-3': 4, '3-1': 6, '3-2': 6, 'R6': 10}
+EXTRA_PAGE_SHORT = {'1-3': 4}
+
+def extras(path):
+    """해설 본문에서 1-3 · 3-1 · 3-2 · R6를 뽑는다(패널에 없는 항목)."""
+    src = open(path).read()
+    ex = src[src.index('renderExplain'):]
+    is_short = re.search(r'^\s*pages:\s*5', src, re.M) is not None
+    table = EXTRA_PAGE_SHORT if is_short else EXTRA_PAGE_FULL
+    found = {}
+    for m in BODY.finditer(ex):
+        t = ' '.join(unesc(m.group(1)).split())
+        for key in table:
+            if key in found: continue
+            if key == 'R6':
+                if re.match(r'\(1\)\s', t) and ' — ' in t and re.search(r'[가-힣]', t):
+                    prev = None
+                continue
+            if t.startswith(key):
+                found[key] = t
+    # R6는 'R6   해석 쓰기' 제목 뒤 두 문단이라 따로 모은다
+    if 'R6' in table:
+        seq, grab = [], False
+        for m in BODY.finditer(ex):
+            t = ' '.join(unesc(m.group(1)).split())
+            if grab and re.match(r'\(\d\)\s', t):
+                seq.append(t)
+                if len(seq) == 2: break
+            if 'R6' in t and '해석 쓰기' in t:
+                grab = True
+        if not seq:
+            hs = re.findall(r'Hs\("R6[^"]*"\);\s*\n((?:B\("(?:[^"\\]|\\.)*"[^\n]*\n){1,3})', ex)
+            if hs:
+                seq = [' '.join(unesc(x).split()) for x in BODY.findall(hs[0])]
+        if seq:
+            found['R6'] = ' '.join(s.split(' — ')[0] for s in seq[:2])
+    out = {}
+    for key, t in found.items():
+        out.setdefault(table[key], []).append(f'{key} {t}')
+    return out
