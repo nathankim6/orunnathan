@@ -270,22 +270,49 @@ def mark_r6(pg, label, val):
         pg.text_fit(h[0] + 4, h[3] + 15, sent.strip(), width=450, size=7.0); n += 1
     return n
 
+def _segments(text):
+    """해설을 '문장 N — …' 단위로 쪼갠다. 행마다 자기 문장만 보고 정답을 찾게 한다."""
+    parts = re.split(r'문장\s*(\d+)\s*[—\-–]', text)
+    segs = {}
+    for i in range(1, len(parts) - 1, 2):
+        segs[parts[i]] = parts[i + 1]
+    return segs
+
+def _nospace(s):
+    return re.sub(r'\s+', '', s)
+
 def _mark_chip_pairs(pg, text, ylo, yhi, xmin=0):
-    """칩 쌍마다 해설에서 '<칩 문구>에 ○'로 지목된 것 하나에만 타원을 친다.
+    """칩 쌍마다 해설이 지목한 것 하나에만 타원을 친다.
 
     해설 산문에서 정답을 뽑아내는 대신, 지면의 칩 문구를 해설에 대조한다.
+    행의 문장 번호로 해설을 좁혀 보므로, 다른 행의 정답에 끌려가지 않는다.
     한 쌍에서 정답이 하나로 확정될 때만 표시하므로 오표시가 나지 않는다.
     """
+    segs = _segments(text)
     rows = {}
     for x0, y0, x1, y1, t in pg.lines:
-        if not (ylo < y0 < yhi) or x0 < xmin: continue
+        if not (ylo < y0 < yhi): continue
         rows.setdefault(round(y0, 0), []).append((x0, y0, x1, y1, t.strip()))
+    # 한 줄이 2px 차이로 갈라져 담기는 일이 있다 — 붙여야 번호와 칩이 한 행이 된다
+    merged, prev = {}, None
+    for y in sorted(rows):
+        if prev is not None and y - prev <= 3.0: merged[prev].extend(rows[y])
+        else: merged[y] = list(rows[y]); prev = y
+    rows = merged
     n = 0
     for y in sorted(rows):
-        cells = sorted(rows[y])
+        line = sorted(rows[y])
+        num = next((c[4] for c in line if re.fullmatch(r'\d{1,2}', c[4])), None)
+        scope = _nospace(segs.get(num, text)) if num else _nospace(text)
+        # 안내문·구두점은 칩이 아니다 — 두 글자 이상의 실제 보기만 후보로 둔다
+        cells = [c for c in line if c[0] >= xmin and len(_nospace(c[4])) >= 2
+                 and not re.fullmatch(r'[·.,○□→\s]+', c[4])
+                 and '하세요' not in c[4] and '가리키는가' not in c[4]]
         if len(cells) < 2: continue
         hit = [c for c in cells
-               if c[4] and re.search(re.escape(c[4]) + r'\s*에\s*○', text)]
+               if re.search(re.escape(_nospace(c[4])) + r'(?:\([^)]*\))?에○', scope)]
+        if len(hit) != 1:                      # 지목이 없으면 그 문장에 한 번만 나오는 칩
+            hit = [c for c in cells if _nospace(c[4]) in scope]
         if len(hit) == 1:
             pg.ellipse(hit[0][:4], pad=3.2); n += 1
     return n
