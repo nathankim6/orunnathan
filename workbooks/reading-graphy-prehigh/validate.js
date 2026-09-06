@@ -116,6 +116,16 @@ for (const nn of nos) {
     });
     if (t.why[t.check[0].ans - 1][0] !== "정답") err(U.no, L, `why 의 정답 위치가 어긋남`);
 
+    /* 비네트 캡션은 50mm 상자 한 줄 — 넘으면 말줄임으로 조용히 잘린다 (한도 118pt) */
+    if (A.VIGCAP && A.VIGCAP[t.no]) {
+      const cap = A.VIGCAP[t.no];
+      const w = [...cap].reduce((a, ch) =>
+        a + (/[\u3131-\uD79D\u4E00-\u9FFF]/.test(ch) ? 7.5
+          : /[0-9A-Za-z]/.test(ch) ? 4.2
+          : /\s/.test(ch) ? 1.1 : 3.0), 0);
+      if (w > 118) err(U.no, L, `비네트 캡션이 상자를 넘음 (${w.toFixed(0)}pt / 118pt): ${cap}`);
+    }
+
     /* Knowledge Bank */
     if (t.kb.items.length !== 3) err(U.no, L, `kb 항목 ${t.kb.items.length}개`);
     if (!t.kb.ask) err(U.no, L, `kb 에 '생각해 볼 것'이 없음`);
