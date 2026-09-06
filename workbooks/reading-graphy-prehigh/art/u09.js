@@ -258,13 +258,13 @@ const STRIP = {
 const VIG = {
  /* 41 — 대기 시간 막대 둘: 끝에 놓인 사탕까지 얼마나 견뎠나 (약속이 지켜진 방이 네 배) */
  "41":(c,t,d)=>`<svg viewBox="0 0 240 150" fill="none">
-  ${text(62, 36, "약속이 깨진 방", "vs", MID, "start")}
-  <rect x="62" y="42" width="34" height="20" rx="4" fill="#fff" stroke="${d}" stroke-width="${SW.hair}"/>
-  ${sweet(112, 62, 1.15, c)}
-  ${text(62, 84, "약속이 지켜진 방", "vs", MID, "start")}
-  <rect x="62" y="90" width="136" height="20" rx="4" fill="${c}"/>
-  ${sweet(214, 110, 1.15, c)}
-  ${tag({ x:120, y:134, text:"네 배 넘게 기다렸다", c:d, lvl:"v" })}</svg>`,
+  ${text(62, 32, "약속이 깨진 방", "vs", MID, "start")}
+  <rect x="62" y="38" width="34" height="20" rx="4" fill="#fff" stroke="${d}" stroke-width="${SW.hair}"/>
+  ${sweet(112, 58, 1.15, c)}
+  ${text(62, 80, "약속이 지켜진 방", "vs", MID, "start")}
+  <rect x="62" y="86" width="136" height="20" rx="4" fill="${c}"/>
+  ${sweet(214, 106, 1.15, c)}
+  ${tag({ x:120, y:130, text:"네 배 넘게 기다렸다", c:d, lvl:"v" })}</svg>`,
  /* 42 — 어린이집 지각: 벌금이 끼어들자 막대가 더 높아졌다 */
  "42":(c,t,d)=>`<svg viewBox="0 0 240 150" fill="none">
   ${tag({ x:120, y:22, text:"지각이 늘었다", c:d, lvl:"v" })}
@@ -290,8 +290,8 @@ const VIG = {
  "44":(c,t,d)=>`<svg viewBox="0 0 240 150" fill="none">
   ${text(120, 13, "등록 100명", "vs", MID)}
   ${[...Array(100)].map((_, i) => { const r = Math.floor(i / 10), q = i % 10, on = i < 6;
-    return `<circle cx="${77 + q * 9.5}" cy="${25 + r * 9.5}" r="3.3" fill="${on ? c : "#fff"}" stroke="${on ? c : LIGHT}" stroke-width="${SW.hair}"/>`; }).join("")}
-  ${tag({ x:120, y:131, text:"수료는 한 자릿수", c:d, lvl:"v" })}</svg>`,
+    return `<circle cx="${77 + q * 9.5}" cy="${22 + r * 9.5}" r="3.3" fill="${on ? c : "#fff"}" stroke="${on ? c : LIGHT}" stroke-width="${SW.hair}"/>`; }).join("")}
+  ${tag({ x:120, y:133, text:"수료는 한 자릿수", c:d, lvl:"v" })}</svg>`,
  /* 45 — 같은 노래를 거듭 들을수록 호감이 오른다 (단순 노출) */
  "45":(c,t,d)=>`<svg viewBox="0 0 240 150" fill="none">
   ${tag({ x:120, y:20, text:"익숙해질수록 좋아진다", c:d, lvl:"v" })}
