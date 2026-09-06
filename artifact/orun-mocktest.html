@@ -538,11 +538,12 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
 .paper-scale.editing .rv { display: none; }
 /* 검수 도장 — 문항 오른쪽 위에 세 사람이 차례로 찍힌다 */
 .page .rv { display: inline-flex; gap: 1.6pt; align-items: center; vertical-align: middle; margin-left: 2mm; white-space: nowrap; pointer-events: none; line-height: 1; }
-.page .rv i { --c: #333; width: 4.8mm; height: 4.8mm; border-radius: 50%; background: var(--c); color: #fff; font: 700 5.5pt/1 var(--sans); display: grid; place-items: center; position: relative; opacity: 0; transform: scale(.4); transition: transform .35s cubic-bezier(.2,.9,.3,1.4), opacity .2s; box-shadow: 0 0 0 .6pt #fff; }
+.page .rv i { --c: #333; width: 5mm; height: 5mm; border-radius: 50%; background: #fff; display: block; position: relative; opacity: 0; transform: scale(.4); transition: transform .35s cubic-bezier(.2,.9,.3,1.4), opacity .2s; box-shadow: 0 0 0 .5pt #fff, 0 0 0 1pt var(--c); }
+.page .rv i > svg { width: 100%; height: 100%; border-radius: 50%; display: block; }
 .page .rv i.think { opacity: 1; transform: scale(1); animation: rvThink .5s ease-in-out infinite alternate; }
 .page .rv i.done { opacity: 1; transform: scale(1); }
-@keyframes rvThink { from { transform: scale(.9); box-shadow: 0 0 0 .6pt #fff, 0 0 0 0 rgba(0,0,0,.0); } to { transform: scale(1.08); box-shadow: 0 0 0 .6pt #fff, 0 0 0 2pt rgba(255,212,0,.55); } }
-.page .rv i b { position: absolute; right: -1.7mm; bottom: -1.5mm; min-width: 3.4mm; height: 3.4mm; border-radius: 2mm; background: #fff; color: #000; border: .5pt solid #000; font: 700 5.5pt/1 var(--sans); display: grid; place-items: center; padding: 0 .5mm; animation: rvPop .3s cubic-bezier(.2,.9,.3,1.5); }
+@keyframes rvThink { from { transform: scale(.9); box-shadow: 0 0 0 .5pt #fff, 0 0 0 1pt var(--c); } to { transform: scale(1.12); box-shadow: 0 0 0 .5pt #fff, 0 0 0 1pt var(--c), 0 0 0 2.6pt rgba(255,212,0,.6); } }
+.page .rv i b { position: absolute; right: -1.8mm; bottom: -1.6mm; min-width: 3.4mm; height: 3.4mm; border-radius: 2mm; background: #fff; color: #000; border: .5pt solid #000; font: 700 5.5pt/1 var(--sans); display: grid; place-items: center; padding: 0 .5mm; animation: rvPop .3s cubic-bezier(.2,.9,.3,1.5); }
 .page .rv i b:empty { display: none; }
 .page .rv i.miss b { background: #f04452; color: #fff; border-color: #f04452; }
 @keyframes rvPop { from { transform: scale(.2); } }
@@ -582,7 +583,9 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
 .rr-card { --c: #333; background: var(--bg-2); border-radius: 14px; padding: 12px 14px 10px; min-height: 120px; display: flex; flex-direction: column; gap: 8px; position: relative; overflow: hidden; }
 .rr-card::after { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--c); opacity: .9; }
 .rr-top { display: flex; align-items: center; gap: 10px; }
-.rr-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--c); color: #fff; font-weight: 800; font-size: 16px; display: grid; place-items: center; flex: none; position: relative; }
+.rv-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.rr-avatar { width: 46px; height: 46px; border-radius: 50%; background: var(--c); flex: none; position: relative; overflow: visible; }
+.rr-avatar svg { width: 100%; height: 100%; border-radius: 50%; display: block; }
 .rr-card.think .rr-avatar::after { content: ""; position: absolute; inset: -4px; border-radius: 50%; border: 2px solid var(--c); opacity: .5; animation: ring 1s ease-out infinite; }
 @keyframes ring { to { inset: -10px; opacity: 0; } }
 .rr-name { display: block; font-size: 14.5px; color: var(--ink); }
@@ -612,6 +615,49 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
 
 
 </style>
+<!-- 검수위원 캐릭터 초상 (스프라이트) -->
+<svg class="rv-sprite" width="0" height="0" aria-hidden="true" focusable="false"><symbol id="rvface-A" viewBox="0 0 120 120">
+<circle cx="60" cy="60" r="60" fill="#dbe9f6"/>
+<path d="M6 120c0-16 16-24 36-27l18 12 18-12c20 3 36 11 36 27z" fill="#17191e"/><path d="M42 93l18 12 18-12 6 5-24 22-24-22z" fill="#ffffff"/><path d="M39 94l5-1 16 27h-3z" fill="#0e1014"/><path d="M81 94l-5-1-16 27h3z" fill="#0e1014"/><path d="M60 105l5.6 6-3 9h-5.2l-3-9z" fill="#15171c"/>
+<ellipse cx="60" cy="48" rx="31" ry="33" fill="#15171c"/>
+<path d="M51 72h18v24c0 6-18 6-18 0z" fill="#dfa982"/><path d="M60 23c15.5 0 27 11 27 28 0 20-11.5 37-27 37s-27-17-27-37c0-17 11.5-28 27-28z" fill="#f3caa9"/><ellipse cx="32.6" cy="63" rx="3.8" ry="6" fill="#f3caa9"/><ellipse cx="87.4" cy="63" rx="3.8" ry="6" fill="#f3caa9"/>
+<path d="M29.2 44C29.5 26 42 15 60 15s30.5 11 30.8 29c-8.8 3-18.8 8-30.8 8s-22-5-30.8-8z" fill="#15171c"/>
+<path d="M44 57.5c3.4-2.4 8.8-2.4 12 .2" stroke="#15171c" stroke-width="2.8" fill="none" stroke-linecap="round"/><path d="M64 57.7c3.2-2.6 8.6-2.6 12-.2" stroke="#15171c" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+<ellipse cx="50" cy="64.5" rx="3.5" ry="3.2" fill="#1c1e23"/><ellipse cx="70" cy="64.5" rx="3.5" ry="3.2" fill="#1c1e23"/>
+<path d="M60 68v7.5l-3 2" stroke="#dca57c" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M53.5 81.5c3.6 2.4 9.4 2.4 13 0" stroke="#b8705c" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+</symbol><symbol id="rvface-B" viewBox="0 0 120 120">
+<circle cx="60" cy="60" r="60" fill="#dcefe3"/>
+<path d="M6 120c0-16 16-24 36-27l18 12 18-12c20 3 36 11 36 27z" fill="#1c202a"/><path d="M42 93l18 12 18-12 6 5-24 22-24-22z" fill="#ffffff"/><path d="M39 94l5-1 16 27h-3z" fill="#11141b"/><path d="M81 94l-5-1-16 27h3z" fill="#11141b"/><path d="M60 105l5.6 6-3 9h-5.2l-3-9z" fill="#15171c"/>
+<ellipse cx="60" cy="46" rx="31" ry="35" fill="#5a3d2a"/>
+<path d="M51 72h18v24c0 6-18 6-18 0z" fill="#dfa982"/><path d="M60 23c15.5 0 27 11 27 28 0 20-11.5 37-27 37s-27-17-27-37c0-17 11.5-28 27-28z" fill="#f3caa9"/><ellipse cx="32.6" cy="63" rx="3.8" ry="6" fill="#f3caa9"/><ellipse cx="87.4" cy="63" rx="3.8" ry="6" fill="#f3caa9"/>
+<path d="M29.2 44C29.5 26 42 15 60 15s30.5 11 30.8 29c-6.4-2.6-18.4-4.4-30.8-4.4s-24.4 1.8-30.8 4.4z" fill="#5a3d2a"/>
+<path d="M46 18.6c10-3.4 20.4-1.6 27 4.8-7.6-2.4-16-2.6-23.6-.8-4.4 1-8 2.4-11 4.2 2-3.4 4.6-6.2 7.6-8.2z" fill="#7a5537"/>
+<path d="M44 56c3.4-2.4 8.8-2.4 12 .2" stroke="#4a3122" stroke-width="2.8" fill="none" stroke-linecap="round"/><path d="M64 56.2c3.2-2.6 8.6-2.6 12-.2" stroke="#4a3122" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+<ellipse cx="50" cy="64" rx="3.4" ry="3.1" fill="#1c1e23"/><ellipse cx="70" cy="64" rx="3.4" ry="3.1" fill="#1c1e23"/>
+<path d="M60 68v7.5l-3 2" stroke="#dca57c" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M53 81.5c4 3 10 3 14 0" stroke="#b8705c" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+<g fill="#ffffff" opacity=".2"><rect x="37.5" y="56" width="21.5" height="17.5" rx="6"/><rect x="61" y="56" width="21.5" height="17.5" rx="6"/></g>
+<g stroke="#21242a" stroke-width="2.7" fill="none" stroke-linecap="round">
+<rect x="37.5" y="56" width="21.5" height="17.5" rx="6"/><rect x="61" y="56" width="21.5" height="17.5" rx="6"/>
+<path d="M59 63.5h2"/><path d="M37.5 61.5l-5 1.6M82.5 61.5l5 1.6"/></g>
+</symbol><symbol id="rvface-C" viewBox="0 0 120 120">
+<circle cx="60" cy="60" r="60" fill="#f8e1db"/>
+<path d="M6 120c0-16 16-24 36-27l18 12 18-12c20 3 36 11 36 27z" fill="#101217"/><path d="M42 93l18 12 18-12 6 5-24 22-24-22z" fill="#ffffff"/><g stroke="#39404a" stroke-width="1.05" opacity=".8" fill="none"><path d="M50 97l10 25"/><path d="M55 94l5 28"/><path d="M65 94l-5 28"/><path d="M70 97l-10 25"/></g><path d="M39 94l5-1 16 27h-3z" fill="#272d37"/><path d="M81 94l-5-1-16 27h3z" fill="#272d37"/><path d="M60 105l5.6 6-3 9h-5.2l-3-9z" fill="#1a1d24"/>
+<ellipse cx="60" cy="48" rx="31" ry="33" fill="#15171c"/>
+<path d="M51 72h18v24c0 6-18 6-18 0z" fill="#dfa982"/><path d="M60 23c15.5 0 27 11 27 28 0 20-11.5 37-27 37s-27-17-27-37c0-17 11.5-28 27-28z" fill="#f3caa9"/><ellipse cx="32.6" cy="63" rx="3.8" ry="6" fill="#f3caa9"/><ellipse cx="87.4" cy="63" rx="3.8" ry="6" fill="#f3caa9"/>
+<path d="M29.2 44C29.5 26 42 15 60 15s30.5 11 30.8 29c-6.8-3.6-16.8-3.2-28.8-.6C48.2 45.6 36 47.8 29.2 44z" fill="#15171c"/>
+<path d="M40.5 42.6c5.4-4.8 13.4-8.4 22.4-9.8 7.6-1.4 14-.6 18.8 2-8.8-.8-17.6.6-25.4 3.2-6.4 2.2-11.6 3.6-15.8 4.6z" fill="#272d36"/>
+<path d="M44 57c3.4-2.4 8.8-2.4 12 .2" stroke="#15171c" stroke-width="2.8" fill="none" stroke-linecap="round"/><path d="M64 57.2c3.2-2.6 8.6-2.6 12-.2" stroke="#15171c" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+<path d="M45.4 65.6c2.4-4 8.8-4 11.2 0" stroke="#1c1e23" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+<path d="M63.4 65.6c2.4-4 8.8-4 11.2 0" stroke="#1c1e23" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+<ellipse cx="41.5" cy="73" rx="5" ry="3.2" fill="#eca58d" opacity=".6"/>
+<ellipse cx="78.5" cy="73" rx="5" ry="3.2" fill="#eca58d" opacity=".6"/>
+<path d="M60 68v7.5l-3 2" stroke="#dca57c" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M48.8 78c7 2 15.4 2 22.4 0-1.6 8.2-6.7 12.3-11.2 12.3S50.4 86.2 48.8 78z" fill="#7c3a2e"/>
+<path d="M50.8 79.6c6 1.4 12.4 1.4 18.4 0-.5 2-1.3 3.2-2 3.8-4.7 1.2-9.7 1.2-14.4 0-.7-.6-1.5-1.8-2-3.8z" fill="#ffffff"/>
+</symbol></svg>
+
 <!-- 상단 바: 뒤로 · 진행선 · 상태 -->
 <div class="console">
   <button type="button" class="back" id="backBtn" aria-label="이전 화면" hidden>
@@ -641,7 +687,7 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
     <span class="step" data-step="2"></span><span class="step-rule"></span>
     <span class="step" data-step="3"></span>
   </div>
-  <div class="state"><span class="build" id="buildTag">2026-09-06 01:08</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
+  <div class="state"><span class="build" id="buildTag">2026-09-06 11:04</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
 </div>
 
 <!-- 화면 0 · 시작 -->
@@ -2369,7 +2415,7 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
     const c = window.claude;
     return [
       "ORUN 동형 모의고사 진단",
-      "build: 2026-09-06 01:08",
+      "build: 2026-09-06 11:04",
       "url: " + location.href,
       "runtime: " + RUNTIME + (c ? "" : " (window.claude 없음)"),
       "claude.use: " + (c && typeof c.use === "function" ? "있음" : "없음"),
@@ -3291,10 +3337,21 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
   //  검수실 — 세 검수위원이 완성된 문항을 각자 풀어보고 정답표와 대조한다
   // ==================================================================
   const REVIEWERS = [
-    { id: "A", name: "강민서", role: "어법·구문 검수", years: "15년차", color: "#1a7fbf", style: "정답 근거 문장을 먼저 찾고, 어법·구문 오류와 선지 표현의 정확성을 본다" },
-    { id: "B", name: "윤재호", role: "수능 독해 출제", years: "12년차", color: "#2e9e5b", style: "글의 논리 흐름과 선지 변별력을 보고, 복수 정답 가능성을 의심한다" },
-    { id: "C", name: "서지우", role: "내신 지도·학생 관점", years: "9년차", color: "#d0452c", style: "학생이 헷갈릴 함정과 난이도 적정성을 보고, 시간 안에 풀 수 있는지를 본다" },
+    { id: "A", name: "이명악", role: "어법·구문 검수", years: "15년차", color: "#1a7fbf", style: "정답 근거 문장을 먼저 찾고, 어법·구문 오류와 선지 표현의 정확성을 본다" },
+    { id: "B", name: "조정석", role: "수능 독해 출제", years: "12년차", color: "#2e9e5b", style: "글의 논리 흐름과 선지 변별력을 보고, 복수 정답 가능성을 의심한다" },
+    { id: "C", name: "싼티", role: "내신 지도·학생 관점", years: "9년차", color: "#d0452c", style: "학생이 헷갈릴 함정과 난이도 적정성을 보고, 시간 안에 풀 수 있는지를 본다" },
   ];
+  // 검수위원 초상 — 스프라이트의 심벌을 가져다 쓴다
+  const SVGNS = "http://www.w3.org/2000/svg";
+  function faceEl(id) {
+    const svg = document.createElementNS(SVGNS, "svg");
+    svg.setAttribute("viewBox", "0 0 120 120");
+    svg.setAttribute("aria-hidden", "true");
+    const u = document.createElementNS(SVGNS, "use");
+    u.setAttribute("href", "#rvface-" + id);
+    svg.appendChild(u);
+    return svg;
+  }
   let rv = { on: false, total: 0, agree: 0, check: 0, byNo: {}, tally: {}, queue: Promise.resolve() };
   let meterRef = null;
   function reviewReset(on) {
@@ -3305,7 +3362,7 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
     REVIEWERS.forEach(r => {
       const c = document.createElement("div"); c.className = "rr-card"; c.id = "rr-" + r.id; c.style.setProperty("--c", r.color);
       const top = document.createElement("div"); top.className = "rr-top";
-      const av = document.createElement("span"); av.className = "rr-avatar"; av.textContent = r.name[0];
+      const av = document.createElement("span"); av.className = "rr-avatar"; av.appendChild(faceEl(r.id));
       const who = document.createElement("div");
       const nm = document.createElement("b"); nm.className = "rr-name"; nm.textContent = r.name;
       const role = document.createElement("span"); role.className = "rr-role"; role.textContent = r.role + " · " + r.years;
@@ -3381,7 +3438,9 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
       q.classList.add("reviewing"); q.classList.remove("rv-warn");
       if (!editing) queueLayout();
       const stamps = REVIEWERS.map(r => {
-        const i = document.createElement("i"); i.style.setProperty("--c", r.color); i.textContent = r.name[0];
+        const i = document.createElement("i"); i.style.setProperty("--c", r.color);
+        i.title = r.name + " · " + r.role;
+        i.appendChild(faceEl(r.id));
         i.appendChild(document.createElement("b")); strip.appendChild(i); return i;
       });
       let ok = 0;
