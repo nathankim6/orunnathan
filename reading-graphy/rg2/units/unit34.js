@@ -579,14 +579,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Steve went for a morning walk in a park in Singapore.",
-    "It was bright and sunny when Steve walked.",
-    "Steve saw about 20 furry animals near the water.",
-    "A jogger stepped on an otter on purpose.",
-    "The otters thought Steve was a danger too.",
-    "Steve easily stopped the angry otters.",
-    "Steve climbed a tree to get away from the otters.",
-    "The otters never went back to the water.",
+    "People in Portugal eat more than 100,000 tons of cod every year.",
+    "The cod that Portuguese people eat is 50% of all the cod in the world.",
+    "Portugal traded salt for codfish with England in the 1300s.",
+    "In the 1930s, Portuguese fishermen traveled to Canada and Norway.",
+    "Nowadays, most of the cod in Portugal comes from Norway.",
+    "The only reason people in Portugal love cod is its great taste.",
+    "Portuguese people have enjoyed cod dishes for a long time.",
+    "They especially love having cod on New Year\u2019s Day.",
   ].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
@@ -599,13 +599,13 @@ K.push(T(tfw, [
 K.push(spF(8, 240, 0.34));
 
 /* ── R2 사건 순서 잡기 ── */
-K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "스티브에게 일어난 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
+K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "포르투갈과 대구에 얽힌 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["\u24D0 Steve climbed a tree to get away.",
-      "\u24D1 Steve saw furry animals near the water.",
-      "\u24D2 A jogger stepped on an otter by accident.",
-      "\u24D3 The otters started biting Steve."]
+  ...["\u24D0 Portuguese fishermen traveled to Canada and Greenland.",
+      "\u24D1 Portugal traded salt for codfish with England.",
+      "\u24D2 Most of the cod in Portugal comes from Norway.",
+      "\u24D3 People enjoy cod on Christmas Eve every year."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -626,12 +626,12 @@ const m3b = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(mw3, [
   thead(["어휘", "답", "영영풀이"], mw3, TEAL),
   ...[
-    ["1  furry", "\u24D0 by mistake, not on purpose"],
-    ["2  suddenly", "\u24D1 to go up something"],
-    ["3  accidentally", "\u24D2 quickly, without warning"],
-    ["4  danger", "\u24D3 to become quiet and relaxed"],
-    ["5  climb", "\u24D4 covered with soft hair"],
-    ["6  calm down", "\u24D5 something that can hurt you"],
+    ["1  trade", "\u24D0 at the present time, not in the past"],
+    ["2  catch", "\u24D1 the way of life shared by a group"],
+    ["3  nowadays", "\u24D2 to give one thing and get another back"],
+    ["4  taste", "\u24D3 more than usual, more than others"],
+    ["5  culture", "\u24D4 the feeling a food gives in your mouth"],
+    ["6  especially", "\u24D5 to take and hold an animal you hunt"],
   ].map(([wd, df]) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(wd, { size: 18, bold: true, color: NAVY })], spacing: { after: 0 } }),
       { w: mw3[0], shade: GREY, b: m3b, va: VerticalAlign.CENTER, m: { top: 158 + RX9, bottom: 158 + RX9, left: 150, right: 80 } }),
@@ -645,10 +645,10 @@ K.push(spF(9, 380, 0.12));
 
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
-[["문장 3", [t("While he ", { size: 19 }), t("( was walking  /  walking )", { size: 19, bold: true, color: NAVY }), t(", he saw about 20 furry animals.", { size: 19 })], "진행형은 be+~ing — 한 덩어리의 동사예요."],
- ["문장 8", [t("The otters thought Steve ", { size: 19 }), t("( was  /  is )", { size: 19, bold: true, color: NAVY }), t(" a danger too.", { size: 19 })], "thought(과거)와 어울리는 시제를 고르세요."],
- ["문장 10", [t("Steve climbed a tree ", { size: 19 }), t("( to get  /  got )", { size: 19, bold: true, color: NAVY }), t(" away from the otters.", { size: 19 })], "'~하기 위해'는 to+동사원형!"],
- ["문장 12", [t("Be careful, even if they ", { size: 19 }), t("( look  /  looks )", { size: 19, bold: true, color: NAVY }), t(" cute.", { size: 19 })], "주어 they(복수)에 맞는 동사 형태는?"],
+[["문장 2", [t("They ", { size: 19 }), t("( eat  /  eats )", { size: 19, bold: true, color: NAVY }), t(" more than 100,000 tons of cod every year.", { size: 19 })], "주어 They(복수)에 맞는 동사 형태는?"],
+ ["문장 6", [t("Portuguese fishermen traveled to Canada just ", { size: 19 }), t("( to catch  /  caught )", { size: 19, bold: true, color: NAVY }), t(" cod.", { size: 19 })], "'~하기 위해'는 to+동사원형!"],
+ ["문장 11", [t("", { size: 19 }), t("( Eating  /  Eat )", { size: 19, bold: true, color: NAVY }), t(" codfish is a big part of Portuguese culture.", { size: 19 })], "주어 자리에 오는 동사는 ~ing 형태예요."],
+ ["문장 12", [t("Portuguese people ", { size: 19 }), t("( have  /  has )", { size: 19, bold: true, color: NAVY }), t(" enjoyed cod dishes for a long time.", { size: 19 })], "주어가 복수일 때 have+p.p입니다."],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
     cel(new Paragraph({ children: [t("(" + (i + 1) + ")", { size: 16, bold: true, color: "FFFFFF" })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 210 } }),
@@ -666,30 +666,32 @@ K.push(brk());
 K.push(wbAsk("R5", "빈칸 클로즈 · 재구성 훈련", "지문을 다시 만났습니다. <보기>의 단어를 알맞은 빈칸에 넣어 글을 완성하세요."));
 K.push(sp(90));
 K.push(T([W], [new TableRow({ children: [cel(
-  p([t("보기   ", { size: 16, bold: true, color: NAVY2 }), t("walk  /  otters  /  stepped  /  angry  /  biting  /  tree  /  water  /  careful", { size: 19 })], { after: 0, align: AlignmentType.CENTER }),
+  p([t("보기   ", { size: 16, bold: true, color: NAVY2 }), t("Norway  /  culture  /  cod  /  Christmas  /  salt  /  taste  /  fishermen  /  enjoyed", { size: 19 })], { after: 0, align: AlignmentType.CENTER }),
   { w: W, shade: COOL, b: { top: bd(4, CLINE), bottom: bd(4, CLINE), left: NOB, right: NOB }, m: { top: 75, bottom: 75, left: 180, right: 180 } })] })]));
 K.push(sp(95));
 const BL = (n) => [t(" (" + n + ") ", { size: 16, bold: true, color: GOLD }), t("__________", { size: 19, color: NAVY2 }), t(" ", { size: 19 })];
 K.push(box([p([
-  num(1), t(" In a park in Singapore, a man named Steve went for a morning", { size: 19 }), ...BL(1), t(".  ", { size: 19 }),
-  num(2), t(" It was still dark and quiet.  ", { size: 19 }),
-  num(3), t(" While he was walking, he saw about 20 furry animals near the water.  ", { size: 19 }),
-  num(4), t(" They were", { size: 19 }), ...BL(2), t("!  ", { size: 19 }),
-  num(5), t(" He stopped for a moment and got close to look at the cute animals.  ", { size: 19 }),
-  num(6), t(" Suddenly, a jogger ran by, and he accidentally", { size: 19 }), ...BL(3), t("on an otter.  ", { size: 19 }),
-  num(7), t(" The other otters got", { size: 19 }), ...BL(4), t("and scared.  ", { size: 19 }),
-  num(8), t(" The otters thought Steve was a danger too, so they ran toward him and started", { size: 19 }), ...BL(5), t("his ankles and legs.  ", { size: 19 }),
-  num(9), t(" Steve tried to stop them, but he couldn\u2019t.  ", { size: 19 }),
-  num(10), t(" At last, Steve climbed a", { size: 19 }), ...BL(6), t("to get away from the angry otters.  ", { size: 19 }),
-  num(11), t(" He stayed there until the otters calmed down and went back to the", { size: 19 }), ...BL(7), t(".  ", { size: 19 }),
-  num(12), t(" Steve learned a lesson: always be", { size: 19 }), ...BL(8), t("around wild animals, even if they look cute.", { size: 19 }),
+  num(1), t(" In Portugal, people really love to eat", { size: 19 }), ...BL(1), t(".  ", { size: 19 }),
+  num(2), t(" They eat more than 100,000 tons of salted dried cod every year.  ", { size: 19 }),
+  num(3), t(" Can you believe that?  ", { size: 19 }),
+  num(4), t(" It\u2019s 20% of all the cod in the whole world!  ", { size: 19 }),
+  num(5), t(" Portuguese people started eating cod in the 1300s when Portugal traded", { size: 19 }), ...BL(2), t("for codfish with England.  ", { size: 19 }),
+  num(6), t(" In the 1930s, Portuguese", { size: 19 }), ...BL(3), t("traveled to Canada and Greenland just to catch cod.  ", { size: 19 }),
+  num(7), t(" Nowadays, most of the cod that people in Portugal eat actually comes from", { size: 19 }), ...BL(4), t(".  ", { size: 19 }),
+  num(8), t(" Why do people in Portugal love cod so much?  ", { size: 19 }),
+  num(9), t(" Well, one reason is that it tastes great.  ", { size: 19 }),
+  num(10), t(" But it\u2019s not just about the", { size: 19 }), ...BL(5), t(".  ", { size: 19 }),
+  num(11), t(" Eating codfish is a big part of Portuguese", { size: 19 }), ...BL(6), t(".  ", { size: 19 }),
+  num(12), t(" Portuguese people have", { size: 19 }), ...BL(7), t("cod dishes for a long time.  ", { size: 19 }),
+  num(13), t(" They especially love having cod on", { size: 19 }), ...BL(8), t("Eve with cabbage, eggs, and potatoes.  ", { size: 19 }),
+  num(14), t(" It\u2019s a special meal that they always get excited about!", { size: 19 }),
 ], { line: 465, after: 0, align: AlignmentType.JUSTIFIED })]));
 K.push(spF(10, 210, 0.24));
 
 K.push(wbAsk("R6", "우리말 해석 쓰기 · 서술형 기초", "다음 문장을 우리말로 해석해 보세요."));
 K.push(sp(90));
-[[10, "At last, Steve climbed a tree to get away from the angry otters."],
- [12, "Always be careful around wild animals, even if they look cute."]].forEach(([n, s], i) => {
+[[6, "In the 1930s, Portuguese fishermen traveled to Canada and Greenland just to catch cod."],
+ [11, "Eating codfish is a big part of Portuguese culture."]].forEach(([n, s], i) => {
   K.push(p([t("(" + (i + 1) + ")  ", { size: 18, bold: true, color: TEAL }), t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + s, { size: 19 })], { after: 45 }));
   K.push(writeField(1, 400));
   K.push(spF(10, 150, 0.11));
@@ -709,12 +711,12 @@ function w7block(no, ko, cond, bogi) {
   K.push(writeField(1, 400));
   K.push(spF(10, 230, 0.05));
 }
-w7block("1", "다른 수달들은 화가 나고 겁을 먹었다.",
-  "단어를 추가하거나 빼지 말 것 · 대소문자에 주의할 것  (총 7단어)",
-  "other / angry / got / the / otters / and / scared");
-w7block("2", "스티브는 그들을 멈추려고 했지만, 그럴 수 없었다.",
+w7block("1", "포르투갈 사람들은 오랫동안 대구 요리를 즐겨 왔다.",
+  "단어를 추가하거나 빼지 말 것 · 대소문자에 주의할 것  (총 10단어)",
+  "cod / people / have / a / Portuguese / dishes / long / for / enjoyed / time");
+w7block("2", "음, 한 가지 이유는 그것이 맛이 훌륭하다는 것이다.",
   "단어를 추가하거나 빼지 말 것 · 대소문자와 콤마에 주의할 것  (총 8단어)",
-  "Steve / tried / to / stop / them / but / he / couldn\u2019t");
+  "reason / that / one / is / great / Well, / it / tastes");
 
 /* ═══════════ 12~14면 [DATA] 해설 ═══════════ */
   },
@@ -725,107 +727,109 @@ const H = (s) => K.push(T([W], [new TableRow({ children: [
   cel(new Paragraph({ children: [t(s, { size: 18, bold: true, color: NAVY })], spacing: { after: 0, line: 250 } }),
     { w: W, m: { top: 25, bottom: 25, left: 150, right: 0 }, b: { top: NOB, bottom: NOB, right: NOB, left: bd(12, YEL) } }),
 ] })]));
-const B = (s, last) => K.push(p([t(s, { size: 17, color: SUB })], { after: last ? 200 : 38, line: 258, indent: { left: 0 } }));
-const Hs = (s) => { K.push(sp(82)); H(s); K.push(sp(46)); };
+const B = (s, last) => K.push(p([t(s, { size: 17, color: SUB })], { after: last ? 150 : 26, line: 244, indent: { left: 0 } }));
+const Hs = (s) => { K.push(sp(56)); H(s); K.push(sp(30)); };
 
 K.push(...tab("정답 및 해설", "UNIT 34  매년 10만 톤 이상을 먹는 음식", CHAR, "✓"));
 K.push(sp(150));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("독해", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("\u2460      ", { size: 19, bold: true }),
-     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("\u2461      ", { size: 19, bold: true }),
-     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("\u2460", { size: 19, bold: true })], { after: 25 }),
-  p([t("04 ", { size: 19, bold: true, color: NAVY2 }), t("It was still dark and quiet.", { size: 19, bold: true })], { after: 75 }),
+  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("①      ", { size: 19, bold: true }),
+     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("④      ", { size: 19, bold: true }),
+     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("①", { size: 19, bold: true })], { after: 25 }),
+  p([t("04 ", { size: 19, bold: true, color: NAVY2 }), t("In Portugal, people really love to eat cod.", { size: 19, bold: true })], { after: 75 }),
   p([t("구문분석", { size: 16, bold: true, color: NAVY })], { after: 60 }),
-  p([t("문6 ", { size: 17, bold: true, color: NAVY2 }), t("jogger(S)\u00b7ran(\u25b3V)\u00b7and[네모]\u00b7he(S)\u00b7stepped(\u25b3V)   ", { size: 17, bold: true }),
-     t("문10 ", { size: 17, bold: true, color: NAVY2 }), t("Steve(S)\u00b7climbed(\u25b3V)\u00b7to get away~(M)", { size: 17, bold: true })], { after: 22 }),
-  p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("He(S)\u00b7stayed(\u25b3V)\u00b7until[네모]\u00b7otters(S\u2032)\u00b7calmed down\u00b7went back(\u25b3V\u2032)", { size: 17, bold: true })], { after: 45 }),
-  p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 '미나'라는 이름의 소녀를 만났다  (2) 그는 버스를 잡기 위해 빨리 달렸다  (3) 우리는 사진을 찍기 위해 '불국사'라는 절을 방문했다", { size: 17, bold: true })], { after: 72 }),
+  p([t("문6 ", { size: 17, bold: true, color: NAVY2 }), t("In the 1930s(M)·Portuguese fishermen(S)·traveled(△V)·to Canada and Greenland(M)·just to catch cod(M)   ", { size: 17, bold: true }),
+     t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("Eating codfish(S)·is(△V)·a big part of Portuguese culture", { size: 17, bold: true })], { after: 22 }),
+  p([t("문12 ", { size: 17, bold: true, color: NAVY2 }), t("Portuguese people(S)·have enjoyed(△V)·cod dishes·for a long time(M)", { size: 17, bold: true })], { after: 45 }),
+  p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 책을 읽기 위해 도서관에 갔다  (2) 축구를 하는 것은 아주 재미있다  (3) 열심히 공부하는 것은 시험에 통과하기 위해 중요하다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 \u2461   1-2 otters · angry · careful        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 결과 · 반전 · ~까지   2-2 [B] 사고 · [E] 교훈   2-3 \u2460", { size: 19, bold: true })], { after: 25 }),
-  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (c) \u2192 (a) \u2192 (b) \u2192 (d)  ·  Always be careful around wild animals, even if they look cute.", { size: 19, bold: true })], { after: 25 }),
-  p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) cute  (2) angry  (3) tree  (4) careful        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 \u2461  문장 5 \u2460  문장 9 \u2461  문장 12 \u2460", { size: 19, bold: true })], { after: 150 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 cod · love · culture        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 현재 · 이유 묻기 · 반전   2-2 [B] 유래 · [D] 문화   2-3 ①", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (c) → (b) → (a) → (d)  ·  People in Portugal love cod because it is a big part of Portuguese culture.", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) love  (2) Norway  (3) taste  (4) culture        ", { size: 19, bold: true }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ②  문장 6 ①  문장 9 ②  문장 14 ①", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (d) → (a)", { size: 19, bold: true })], { after: 25 }),
-  p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(e) · 2(c) · 3(a) · 4(f) · 5(b) · 6(d)        ", { size: 19, bold: true }),
-     t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) was walking  (2) was  (3) to get  (4) look", { size: 19, bold: true })], { after: 25 }),
-  p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) walk (2) otters (3) stepped (4) angry (5) biting (6) tree (7) water (8) careful", { size: 19, bold: true })], { after: 25 }),
-  p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) The other otters got angry and scared.  (2) Steve tried to stop them, but he couldn\u2019t.", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (c) → (d)", { size: 19, bold: true })], { after: 25 }),
+  p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(c) · 2(f) · 3(a) · 4(e) · 5(b) · 6(d)        ", { size: 19, bold: true }),
+     t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) eat  (2) to catch  (3) Eating  (4) have", { size: 19, bold: true })], { after: 25 }),
+  p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) cod (2) salt (3) fishermen (4) Norway (5) taste (6) culture (7) enjoyed (8) Christmas", { size: 19, bold: true })], { after: 25 }),
+  p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) Portuguese people have enjoyed cod dishes for a long time.  (2) Well, one reason is that it tastes great.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 \u2460");
-B("이 글은 수달에게 물린 남자(문장 6\u20139)와 그가 배운 교훈(문장 12)을 들려주는 이야기다. 소재(otters)와 교훈(cute but dangerous)을 모두 담은 \u2460이 제목으로 적절하다. \u2461·\u2463은 본문의 배경(산책·조깅)만 건드린 지엽적 오답, \u2462·\u2464는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 \u2461");
-B("문장 2에서 '아직 어둡고 조용했다(still dark and quiet)'고 했으므로, 밝았다는 \u2461은 본문과 반대된다. \u2460은 문장 3, \u2462는 문장 6, \u2463은 문장 10, \u2464는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 \u2460");
-B("(A) them은 바로 앞 문장 8에서 스티브를 물기 시작한 화난 수달들을 가리킨다. 스티브가 멈추려던 대상이 무엇인지 생각하면 된다 \u2014 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
-Hs("독해 04   배열 영작   ·   It was still dark and quiet.");
-B("문장 2를 그대로 복원하는 문제다. \u2460 날씨·시간을 나타내는 문장의 주어는 It \u2014 첫 글자는 대문자.   \u2461 still(아직)의 위치는 was 뒤.   \u2462 dark and quiet \u2014 두 형용사를 and로 잇는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 \u2461     1-2 otters · angry · careful     1-3 아래 참조");
-B("1-1   정답 \u2461. 이 글은 산책하던 스티브가 화난 수달들에게 물린 사건과 그 교훈을 들려준다. \u2460 산책은 사건의 배경일 뿐이고, \u2462 수달의 먹이 이야기는 나오지 않는다.");
-B("1-2   \u25cb표 할 세 단어: otters(힌트\u2460 주인공) · angry(힌트\u2461 수달들의 감정) · careful(힌트\u2462 글쓴이의 교훈). 나머지 셋(park · jogger · water)은 본문에 등장하지만 주제문에 들어가지 않는다 \u2014 배경과 계기일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
-B("1-3   문장 9 \u2014 them은 수달들에 \u25cb (스티브가 멈추려던 대상).   문장 11 \u2014 there는 나무 위에 \u25cb (문장 10에서 올라간 곳).   문장 12 \u2014 they는 wild animals에 \u25cb (귀여워 보여도 조심해야 할 대상).");
-B("[학습 포인트]   문장 11의 there가 이 지문의 백미다. 지시어는 사람·사물만이 아니라 장소도 대신한다(there = 문장 10의 나무 위). 지시어를 만날 때마다 '이게 뭘 가리키지?'를 확인해 화살표로 연결해 두자. 이 습관이 고등 독해의 지칭 추론 문항으로 그대로 이어진다.", true);
+Hs("독해 01   제목   ·   정답 ①");
+B("이 글은 포르투갈 사람들이 대구를 얼마나 많이 먹는지(문장 2·4), 그리고 그 사랑이 맛을 넘어 문화가 된 이유(문장 10–13)를 알려 준다. 소재(cod)와 특징(문화)을 함께 담은 ①이 제목으로 적절하다. ②·③는 지엽적이고 ④·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 7에서 오늘날 포르투갈 사람들이 먹는 대구는 대부분 노르웨이(Norway)에서 온다고 했으므로, England라고 한 ④이 본문과 다르다. ①은 문장 2, ②은 문장 5, ③는 문장 6, ⑤는 문장 13에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ①");
+B("(A) it은 문장 8의 물음 ‘왜 그렇게 대구를 좋아할까?’에 대한 답의 주어다. 맛이 훌륭한 것은 대구이므로 ① the cod가 정답이다. 지시어는 바로 앞 문장에서 찾는 것이 원칙이다.", true);
+Hs("독해 04   배열 영작   ·   In Portugal, people really love to eat cod.");
+B("문장 1을 그대로 복원하는 문제다. ① 장소를 나타내는 In Portugal,이 맨 앞 — 첫 글자는 대문자이고 뒤에 콤마.   ② really는 love 바로 앞.   ③ ‘먹는 것을 좋아하다’는 love to eat.", true);
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 cod · love · culture     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 포르투갈 사람들이 대구를 얼마나 사랑하는지, 그 사랑이 어디서 왔는지를 다룬다. ① 한국의 도시 대구는 말장난일 뿐이고, ③ 어부들은 문장 6의 배경일 뿐이다.");
+B("1-2   ○표 할 세 단어: cod(힌트① 이 글의 주인공) · love(힌트② 사람들의 마음) · culture(힌트③ 사랑의 진짜 이유). salt · fishermen · Norway는 본문에 나오지만 유래와 경로를 설명하는 곁가지다.");
+B("1-3   문장 4 — It은 ‘먹는 대구의 양’에 ○ (문장 2의 10만 톤).   문장 9 — it은 cod (대구)에 ○.   문장 14 — It은 ‘이브의 대구 식사’에 ○ (문장 13의 그 식사).");
+B("[학습 포인트]   같은 It이라도 가리키는 것이 다르다. 문장 4의 It은 ‘양’, 문장 14의 It은 ‘식사’다. 지시어를 만나면 앞으로 화살표를 그어 대상을 확인하는 습관이 고등 지칭 추론 문항으로 그대로 이어진다.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 때 / 결과 / 반전 / ~까지     2-2 [B] 사고 · [E] 교훈     2-3 \u2460");
-B("2-1   문장 3 While \u2014 걷고 있던 '때'에 수달들을 보았다.   문장 8 so \u2014 위험하다고 생각한 원인의 '결과'로 달려들었다.   문장 9 but \u2014 멈추려 했지만 못 했다는 '반전'.   문장 11 until \u2014 수달들이 진정할 '때까지' 나무 위에 있었다.");
-B("2-2   [B] 사고(문장 5\u20136: 다가갔다가 조거가 수달을 밟는 사고가 난다), [E] 교훈(문장 12: 야생 동물을 조심하라). 보기의 '광고'는 이 글에 없는 역할이다. [A] 만남 \u2192 [B] 사고 \u2192 [C] 위기 \u2192 [D] 탈출 \u2192 [E] 교훈 \u2014 사건이 있는 이야기 글의 전형적인 흐름이다.");
-B("2-3   정답 \u2460. 스티브가 실제로 겪은 사건을 시간 순서대로 들려주고 마지막에 교훈을 남기는 이야기(경험담)다. \u2461 광고의 신호(사라는 말·가격)가 없고, \u2462 요리법·\u2463 시·\u2464 초대장의 형식도 아니다.");
-B("[학습 포인트]   연결어만 표시해도 글의 지도가 그려진다. While(때), so(결과), but(반전), until(끝나는 지점). 특히 이야기 글의 마지막 문장은 글쓴이가 진짜 하고 싶은 말 \u2014 교훈의 신호다.", true);
-Hs("STEP 3   주제문 만들기   ·   3-1 careful · cute     3-3 (c) \u2192 (a) \u2192 (b) \u2192 (d)");
-B("3-1  재료 찾기 \u2014 (2) 문장 12에서 careful에 \u25cb: 교훈의 핵심 태도다. scared는 수달들의 감정이지 교훈이 아니다. (3) 문장 12에서 cute에 \u25cb: even if 뒤에 놓일 겉모습이다. dark는 문장 2의 배경일 뿐. 주제문의 재료는 언제나 본문 안에 있다.");
-B("3-2  뼈대 채우기 \u2014 (1) wild animals  (2) careful  (3) cute.  넣으면 Always be careful around wild animals, even if they look cute.가 완성된다.");
-B("3-3  정답 순서 \u2014 \u24D2 always be careful \u2192 \u24D0 around wild animals \u2192 \u24D1 even if \u2192 \u24D3 they look cute.  완성 문장: Always be careful around wild animals, even if they look cute.");
-B("[채점 포인트]  명령문이므로 동사 덩어리(\u24D2)가 맨 앞, 마침표가 붙은 덩어리(\u24D3)가 맨 뒤 \u2014 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
-Hs("STEP 4   요약문   ·   (1) cute  (2) angry  (3) tree  (4) careful");
-B("(1)은 문장 5의 cute, (2)는 문장 7의 angry, (3)은 문장 10의 tree, (4)는 문장 12의 careful에서 가져온다. 요약문이 곧 이 글의 흐름이다: 만남(1) \u2192 위기(2) \u2192 탈출(3) \u2192 교훈(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 2 \u2461   문장 5 \u2460   문장 9 \u2461   문장 12 \u2460  (정답 선지는 무표시)");
-B("문장 2 still dark and quiet   \u2460 ✕ [반대] 밝고 시끄럽다 \u2014 정반대.   \u2461 ○ 아직 해가 안 떠서 어둡고 소리가 없다.   \u2462 ✕ [무관] 사람이 많다는 말은 지문에 없다.");
-B("문장 5 got close   \u2460 ○ moved near = 가까이 다가갔다.   \u2461 ✕ [반대] 멀리 달아났다 \u2014 정반대.   \u2462 ✕ [무관] 사진을 찍었다는 말은 지문에 없다.");
-B("문장 9 tried to stop them, but couldn\u2019t   \u2460 ✕ [반대] 쉽게 멈추게 했다 \u2014 정반대.   \u2461 ○ failed to stop them = 멈추게 하지 못했다.   \u2462 ✕ [무관] 먹이를 주고 싶었다는 말은 지문에 없다.");
-B("문장 12 be careful around wild animals   \u2460 ○ watch out near wild animals = 야생 동물 근처에서 조심하다.   \u2461 ✕ [반대] 자유롭게 논다 \u2014 정반대.   \u2462 ✕ [무관] 반려동물로 기른다는 말은 지문에 없다.");
-B("[학습 포인트]  시험은 본문 표현을 그대로 쓰지 않고 반드시 바꿔서 묻는다. 지문을 읽을 때마다 '이 표현을 다른 말로 하면?'을 스스로 물어보자. 지금은 반대/무관 두 갈래를 정확히 가르는 것이 먼저다.", true);
+Hs("STEP 2   글의 흐름   ·   2-1 때 / 현재 / 이유 묻기 / 반전     2-2 [B] 유래 · [D] 문화     2-3 ①");
+B("2-1   문장 5 when — 소금과 대구를 맞바꾸던 ‘때’.   문장 7 Nowadays — 옛날과 대비되는 ‘현재’.   문장 8 Why — ‘이유’를 묻는 말.   문장 10 But — 맛이 전부가 아니라는 ‘반전’.");
+B("2-2   [B] 유래(문장 5–7: 1300년대 교환에서 오늘날 노르웨이산까지), [D] 문화(문장 10–12: 맛을 넘어선 문화). 보기의 ‘문제점’은 이 글에 없는 역할이다. 소개 → 유래 → 맛 → 문화 → 마무리의 흐름이다.");
+B("2-3   정답 ①. 대구라는 대상을 소개하고 수치·역사·이유를 사실대로 알려 주는 설명문이다. ② 일기의 날짜, ③ 광고의 가격, ④ 편지의 인사말, ⑤ 동화의 상상 인물이 모두 없다.");
+B("[학습 포인트]   Why로 묻고 one reason ... But ...으로 답하는 구조는 설명문의 단골이다. 물음표가 나오면 그 뒤에서 답을 찾고, But 뒤가 글쓴이의 진짜 하고 싶은 말임을 기억하자.", true);
+Hs("STEP 3   주제문 만들기   ·   3-1 love · culture     3-3 (c) → (b) → (a) → (d)");
+B("3-1  재료 찾기 — (2) 문장 1에서 love에 ○: 사람들의 마음이다. catch는 문장 6의 행동일 뿐이다. (3) 문장 11에서 culture에 ○: 대구 먹기가 큰 부분을 차지하는 것이다. taste는 여러 이유 중 하나다.");
+B("3-2  뼈대 채우기 — (1) cod  (2) love  (3) culture.  넣으면 People in Portugal love cod because it is a big part of Portuguese culture.가 완성된다.");
+B("3-3  정답 순서 — ⓒ People in Portugal → ⓑ love cod → ⓐ because it is a big part → ⓓ of Portuguese culture.");
+B("[채점 포인트]  주인공(ⓒ)이 주어로 맨 앞, 마침표가 붙은 덩어리(ⓓ)가 맨 뒤. because를 경계로 앞은 사실, 뒤는 이유라는 것만 잡으면 순서가 보인다.", true);
+Hs("STEP 4   요약문   ·   (1) love  (2) Norway  (3) taste  (4) culture");
+B("(1)은 문장 1의 love, (2)는 문장 7의 Norway, (3)은 문장 9의 taste, (4)는 문장 11의 culture에서 가져온다. 요약문이 곧 이 글의 흐름이다: 사랑(1) → 유래와 경로(2) → 맛(3) → 문화(4).", true);
+Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ②   문장 6 ①   문장 9 ②   문장 14 ①  (정답 선지는 무표시)");
+B("문장 2 more than 100,000 tons   ① ✕ [반대] 아주 적은 양 — 정반대.   ② ○ 아주 많은 양.   ③ ✕ [무관] 생선의 ‘종류’ 수는 지문에 없다.");
+B("문장 6 just to catch cod   ① ○ only to get cod = 오직 대구를 얻기 위해.   ② ✕ [무관] 배를 팔았다는 말은 없다.   ③ ✕ [반대] 대구잡이를 그만두려고 — 정반대.");
+B("문장 9 it tastes great   ① ✕ [무관] 겉모습이 예쁘다는 말은 없다.   ② ○ it is delicious = 맛있다.   ③ ✕ [반대] 맛이 형편없다 — 정반대.");
+B("문장 14 get excited about   ① ○ feel very happy about = 몹시 기대되고 신난다.   ② ✕ [반대] 지겨워한다 — 정반대.   ③ ✕ [무관] 돈을 많이 낸다는 말은 없다.");
+B("[학습 포인트]  시험은 본문 표현을 그대로 쓰지 않고 반드시 바꿔서 묻는다. 지문을 읽을 때마다 ‘이 표현을 다른 말로 하면?’을 스스로 물어보자. 지금은 반대와 무관 두 갈래를 정확히 가르는 것이 먼저다.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
 Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T \u2014 문장 1.   2 F \u2014 문장 2: 밝은 게 아니라 아직 어둡고 조용했다.   3 T \u2014 문장 3.   4 F \u2014 문장 6: 일부러(on purpose)가 아니라 실수로(accidentally) 밟았다.   5 T \u2014 문장 8.   6 F \u2014 문장 9: 멈추려 했지만 그럴 수 없었다.   7 T \u2014 문장 10.   8 F \u2014 문장 11: 진정한 뒤 물로 돌아갔다.  거짓 문장은 모두 본문에서 딱 한 단어(bright, on purpose, easily, never)를 비튼 것이다 \u2014 그 한 단어를 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (b) \u2192 (c) \u2192 (d) \u2192 (a)");
-B("\u24D1 물가에서 털북숭이 동물들을 본다(문장 3) \u2192 \u24D2 조거가 실수로 수달을 밟는다(문장 6) \u2192 \u24D3 수달들이 스티브를 물기 시작한다(문장 8) \u2192 \u24D0 스티브가 나무에 올라가 피한다(문장 10). 이 글은 사건이 일어난 순서 그대로 서술된 이야기이므로, 문장 번호를 따라가면 순서가 보인다.", true);
-Hs("R3   영영풀이   ·   1 (e) · 2 (c) · 3 (a) · 4 (f) · 5 (b) · 6 (d)");
-B("furry = covered with soft hair(부드러운 털로 덮인) · suddenly = 갑자기, 예고 없이 · accidentally = 실수로, 고의가 아니게 · danger = 다치게 할 수 있는 것 · climb = 위로 올라가다 · calm down = 조용하고 편안해지다.", true);
-Hs("R4   어법 기초   ·   (1) was walking  (2) was  (3) to get  (4) look");
-B("(1) 진행형은 be+~ing가 한 덩어리의 동사다 \u2014 was walking. 2면 분석 Tip의 그 원칙이다.   (2) thought(과거)와 시제를 맞춘다 \u2014 was.   (3) '~하기 위해'는 to+동사원형 \u2014 to get. 2면 구문에서 배운 그 문장이다.   (4) 주어 they는 복수 \u2014 look.", true);
-Hs("R5   빈칸 클로즈   ·   (1) walk (2) otters (3) stepped (4) angry (5) biting (6) tree (7) water (8) careful");
-B("빈칸 8개는 모두 이 유닛의 핵심어와 어휘다. 빈칸 앞뒤가 단서다: morning ___ \u2190 아침 산책, They were ___! \u2190 정체가 밝혀지는 문장, climbed a ___ \u2190 올라간 곳, always be ___ \u2190 교훈. 채우고 나면 지문 한 편을 처음부터 끝까지 다시 읽은 셈이 된다.", true);
+B("1 T — 문장 2.   2 F — 문장 4: 50%가 아니라 20%다.   3 T — 문장 5.   4 F — 문장 6: Norway가 아니라 Greenland로 갔다.   5 T — 문장 7.   6 F — 문장 10: 맛이 유일한 이유는 아니다.   7 T — 문장 12.   8 F — 문장 13: 새해 첫날이 아니라 크리스마스이브다.  거짓 문장은 모두 딱 한 요소(50%, Norway, only, New Year’s Day)만 비튼 것이다.", true);
+Hs("R2   사건 순서   ·   (b) → (a) → (c) → (d)");
+B("ⓑ 1300년대 영국과 소금–대구를 맞바꾼다(문장 5) → ⓐ 1930년대 어부들이 캐나다·그린란드로 떠난다(문장 6) → ⓒ 오늘날 노르웨이에서 들여온다(문장 7) → ⓓ 매년 크리스마스이브에 대구를 먹는다(문장 13). 연도 표현이 순서의 열쇠다.", true);
+Hs("R3   영영풀이   ·   1 (c) · 2 (f) · 3 (a) · 4 (e) · 5 (b) · 6 (d)");
+B("trade = 하나를 주고 다른 것을 받다 · catch = 사냥하는 동물을 붙잡다 · nowadays = 옛날이 아니라 지금 · taste = 음식이 입에서 주는 느낌 · culture = 한 무리가 함께 나누는 생활 방식 · especially = 특히, 다른 것보다 더.", true);
+Hs("R4   어법 기초   ·   (1) eat  (2) to catch  (3) Eating  (4) have");
+B("(1) 주어 They는 복수 — eat.   (2) ‘~하기 위해’는 to+동사원형 — to catch. 2면 구문 카드 1의 그 문장이다.   (3) 주어 자리에는 동명사 — Eating. 카드 2의 원칙이다.   (4) 주어가 복수이므로 have+p.p — have enjoyed.", true);
+Hs("R5   빈칸 클로즈   ·   (1) cod (2) salt (3) fishermen (4) Norway (5) taste (6) culture (7) enjoyed (8) Christmas");
+B("빈칸 8개는 모두 이 유닛의 핵심어와 어휘다. 빈칸 앞뒤가 단서다: traded ___ for codfish ← 맞바꾼 물건, comes from ___ ← 오늘날의 산지, a big part of Portuguese ___ ← 진짜 이유. 채우고 나면 지문 한 편을 처음부터 다시 읽은 셈이 된다.", true);
 Hs("R6   해석 쓰기   ·   모범 답안");
-B("(1) 마침내 스티브는 화난 수달들에게서 벗어나기 위해 나무에 올라갔다.  \u2014 to get away(to부정사)를 '~하기 위해'로 옮기는 것이 핵심이다.");
-B("(2) 야생 동물이 귀여워 보여도 언제나 조심해라.  \u2014 even if를 '~일지라도/~해 보여도'로 자연스럽게 옮긴다.", true);
-Hs("R7   조건 영작   ·   (1) The other otters got angry and scared.  (2) Steve tried to stop them, but he couldn\u2019t.");
-B("(1) 문장 7의 복원. \u3131 첫 글자 대문자 The  \u3134 got angry and scared \u2014 두 형용사를 and로 잇는다.");
-B("(2) 문장 9의 복원. \u3131 첫 글자 대문자 Steve  \u3134 stop them 뒤의 콤마를 빠뜨리지 않는다  \u3137 but he couldn\u2019t로 문장이 끝난다. R4-(3)의 to부정사와 짝을 이루는 'try to+동사원형'이 여기서 다시 나온다 \u2014 워크북은 서로 연결되어 있다.", true);
+B("(1) 1930년대에, 포르투갈 어부들은 오직 대구를 잡기 위해 캐나다와 그린란드까지 갔다.  — just to catch를 ‘오직 ~하기 위해’로 옮기는 것이 핵심이다.");
+B("(2) 대구를 먹는 것은 포르투갈 문화의 큰 부분이다.  — 동명사 주어 Eating codfish를 ‘~하는 것은’으로 옮기고, 단수 취급이라 is가 쓰였다.", true);
+Hs("R7   조건 영작   ·   (1) Portuguese people have enjoyed cod dishes for a long time.  (2) Well, one reason is that it tastes great.");
+B("(1) 문장 12의 복원. ㄱ 첫 글자 대문자 Portuguese  ㄴ have enjoyed를 한 덩어리로 붙여 쓴다  ㄷ for a long time이 맨 뒤.");
+B("(2) 문장 9의 복원. ㄱ Well 뒤의 콤마를 빠뜨리지 않는다  ㄴ that절의 주어는 it  ㄷ 3인칭 단수라서 tastes. 2면 ‘먼저 보기’에서 분석한 바로 그 문장이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),
-  p([t("1 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("싱가포르의 한 공원에서, 스티브라는 이름의 남자가 아침 산책에 나섰다.  ", { size: 17, color: SUB }),
-     t("2 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("아직 어둡고 조용했다.  ", { size: 17, color: SUB }),
-     t("3 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("걷고 있던 중에, 그는 물가에서 약 20마리의 털북숭이 동물들을 보았다.  ", { size: 17, color: SUB }),
-     t("4 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("그것들은 수달이었다!  ", { size: 17, color: SUB }),
-     t("5 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("그는 잠시 멈춰 서서 그 귀여운 동물들을 보려고 가까이 다가갔다.  ", { size: 17, color: SUB }),
-     t("6 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("갑자기 한 조거가 옆으로 달려 지나가다가, 실수로 수달 한 마리를 밟았다.  ", { size: 17, color: SUB }),
-     t("7 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("다른 수달들은 화가 나고 겁을 먹었다.  ", { size: 17, color: SUB }),
-     t("8 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("수달들은 스티브도 위험한 존재라고 생각해서, 그를 향해 달려들어 발목과 다리를 물기 시작했다.  ", { size: 17, color: SUB }),
-     t("9 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("스티브는 그들을 멈추려고 했지만, 그럴 수 없었다.  ", { size: 17, color: SUB }),
-     t("10 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("마침내 스티브는 화난 수달들에게서 벗어나기 위해 나무에 올라갔다.  ", { size: 17, color: SUB }),
-     t("11 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("그는 수달들이 진정하고 물로 돌아갈 때까지 그곳에 머물렀다.  ", { size: 17, color: SUB }),
-     t("12 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("스티브는 그날 교훈을 배웠다: 야생 동물이 귀여워 보여도, 언제나 조심하라.", { size: 17, color: SUB })], { line: 290, after: 0, align: AlignmentType.JUSTIFIED }),
+  p([t("1 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("포르투갈에서, 사람들은 대구 먹는 것을 정말 좋아한다.  ", { size: 17, color: SUB }),
+     t("2 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("그들은 매년 소금에 절여 말린 대구를 10만 톤 넘게 먹는다.  ", { size: 17, color: SUB }),
+     t("3 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("믿어지는가?  ", { size: 17, color: SUB }),
+     t("4 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("그것은 전 세계 대구 전체의 20%다!  ", { size: 17, color: SUB }),
+     t("5 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("포르투갈 사람들은 포르투갈이 영국과 소금을 대구와 맞바꾸던 1300년대에 대구를 먹기 시작했다.  ", { size: 17, color: SUB }),
+     t("6 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("1930년대에, 포르투갈 어부들은 오직 대구를 잡기 위해 캐나다와 그린란드까지 갔다.  ", { size: 17, color: SUB }),
+     t("7 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("오늘날, 포르투갈 사람들이 먹는 대구의 대부분은 사실 노르웨이에서 온다.  ", { size: 17, color: SUB }),
+     t("8 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("포르투갈 사람들은 왜 그렇게 대구를 좋아할까?  ", { size: 17, color: SUB }),
+     t("9 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("음, 한 가지 이유는 그것이 맛이 훌륭하다는 것이다.  ", { size: 17, color: SUB }),
+     t("10 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("하지만 그것은 단지 맛에 관한 것만은 아니다.  ", { size: 17, color: SUB }),
+     t("11 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("대구를 먹는 것은 포르투갈 문화의 큰 부분이다.  ", { size: 17, color: SUB }),
+     t("12 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("포르투갈 사람들은 오랫동안 대구 요리를 즐겨 왔다.  ", { size: 17, color: SUB }),
+     t("13 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("그들은 특히 크리스마스이브에 양배추, 달걀, 감자와 함께 대구를 먹는 것을 좋아한다.  ", { size: 17, color: SUB }),
+     t("14 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("그것은 그들이 언제나 기대에 부푸는 특별한 식사다!", { size: 17, color: SUB })], { line: 290, after: 0, align: AlignmentType.JUSTIFIED }),
 ], { w: W, shade: PAPER, b: { top: bd(10, NAVY), bottom: bd(4, HAIR), left: NOB, right: NOB }, m: { top: 150, bottom: 150, left: 250, right: 250 } })] })]));
 
 /* ═══════════ 판면 ═══════════ */

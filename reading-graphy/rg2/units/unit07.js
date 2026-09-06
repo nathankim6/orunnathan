@@ -724,107 +724,108 @@ const H = (s) => K.push(T([W], [new TableRow({ children: [
   cel(new Paragraph({ children: [t(s, { size: 18, bold: true, color: NAVY })], spacing: { after: 0, line: 250 } }),
     { w: W, m: { top: 25, bottom: 25, left: 150, right: 0 }, b: { top: NOB, bottom: NOB, right: NOB, left: bd(12, YEL) } }),
 ] })]));
-const B = (s, last) => K.push(p([t(s, { size: 17, color: SUB })], { after: last ? 200 : 38, line: 258, indent: { left: 0 } }));
-const Hs = (s) => { K.push(sp(82)); H(s); K.push(sp(46)); };
+const B = (s, last) => K.push(p([t(s, { size: 17, color: SUB })], { after: last ? 150 : 26, line: 244, indent: { left: 0 } }));
+const Hs = (s) => { K.push(sp(56)); H(s); K.push(sp(30)); };
 
 K.push(...tab("정답 및 해설", "UNIT 07  이집트 조각상에 없는 것", CHAR, "✓"));
 K.push(sp(150));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("독해", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("①      ", { size: 19, bold: true }),
-     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("②      ", { size: 19, bold: true }),
+  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("②      ", { size: 19, bold: true }),
+     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("④      ", { size: 19, bold: true }),
      t("03 ", { size: 19, bold: true, color: NAVY2 }), t("①", { size: 19, bold: true })], { after: 25 }),
-  p([t("04 ", { size: 19, bold: true, color: NAVY2 }), t("It was still dark and quiet.", { size: 19, bold: true })], { after: 75 }),
+  p([t("04 ", { size: 19, bold: true, color: NAVY2 }), t("In ancient Egypt, people made statues for the dead.", { size: 19, bold: true })], { after: 75 }),
   p([t("구문분석", { size: 16, bold: true, color: NAVY })], { after: 60 }),
-  p([t("문6 ", { size: 17, bold: true, color: NAVY2 }), t("jogger(S)·ran(△V)·and[네모]·he(S)·stepped(△V)   ", { size: 17, bold: true }),
-     t("문10 ", { size: 17, bold: true, color: NAVY2 }), t("Steve(S)·climbed(△V)·to get away~(M)", { size: 17, bold: true })], { after: 22 }),
-  p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("He(S)·stayed(△V)·until[네모]·otters(S′)·calmed down·went back(△V′)", { size: 17, bold: true })], { after: 45 }),
-  p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 '미나'라는 이름의 소녀를 만났다  (2) 그는 버스를 잡기 위해 빨리 달렸다  (3) 우리는 사진을 찍기 위해 '불국사'라는 절을 방문했다", { size: 17, bold: true })], { after: 72 }),
+  p([t("문7 ", { size: 17, bold: true, color: NAVY2 }), t("In ancient Egypt(M)·people(S)·made(△V)·statues·for the dead(M)   ", { size: 17, bold: true }),
+     t("문9 ", { size: 17, bold: true, color: NAVY2 }), t("If[네모]·someone(S′)·wanted(△V′)·they(S)·needed(△V)·to destroy the statue", { size: 17, bold: true })], { after: 22 }),
+  p([t("문13 ", { size: 17, bold: true, color: NAVY2 }), t("They(S)·broke(△V)·the statue’s nose·to destroy the soul forever(M)", { size: 17, bold: true })], { after: 45 }),
+  p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 너는 제주도를 방문해 본 적 있니?  (2) 그녀는 새 자전거를 사기 위해 돈을 모았다  (3) 너는 일출을 보기 위해 산에 올라 본 적 있니?", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 otters · angry · careful        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 결과 · 반전 · ~까지   2-2 [B] 사고 · [E] 교훈   2-3 ①", { size: 19, bold: true })], { after: 25 }),
-  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (c) → (a) → (b) → (d)  ·  Always be careful around wild animals, even if they look cute.", { size: 19, bold: true })], { after: 25 }),
-  p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) cute  (2) angry  (3) tree  (4) careful        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ②  문장 5 ①  문장 9 ②  문장 12 ①", { size: 19, bold: true })], { after: 150 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 nose · soul · life        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 · 만약 · 그렇다면 · 결과   2-2 [B] 의문 · [E] 해답   2-3 ①", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 ⓑ → ⓓ → ⓐ → ⓒ  ·  Egyptians broke the statue’s nose to destroy the soul, the source of life.", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) noses  (2) soul  (3) life  (4) treasure        ", { size: 19, bold: true }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ②  문장 9 ①  문장 12 ①  문장 13 ①", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (d) → (a)", { size: 19, bold: true })], { after: 25 }),
-  p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(e) · 2(c) · 3(a) · 4(f) · 5(b) · 6(d)        ", { size: 19, bold: true }),
-     t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) was walking  (2) was  (3) to get  (4) look", { size: 19, bold: true })], { after: 25 }),
-  p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) walk (2) otters (3) stepped (4) angry (5) biting (6) tree (7) water (8) careful", { size: 19, bold: true })], { after: 25 }),
-  p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) The other otters got angry and scared.  (2) Steve tried to stop them, but he couldn’t.", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3F · 4T · 5F · 6T · 7T · 8F        ", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("ⓑ → ⓓ → ⓒ → ⓐ", { size: 19, bold: true })], { after: 25 }),
+  p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1ⓓ · 2ⓐ · 3ⓔ · 4ⓑ · 5ⓕ · 6ⓒ        ", { size: 19, bold: true }),
+     t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) seen  (2) have  (3) made  (4) to destroy", { size: 19, bold: true })], { after: 25 }),
+  p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) statues (2) noses (3) corrosion (4) soul (5) destroy (6) life (7) treasure (8) broke", { size: 19, bold: true })], { after: 25 }),
+  p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) Even statues inside buildings have broken noses.  (2) Egyptians believed the nose was the source of life.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 수달에게 물린 남자(문장 6–9)와 그가 배운 교훈(문장 12)을 들려주는 이야기다. 소재(otters)와 교훈(cute but dangerous)을 모두 담은 ①이 제목으로 적절하다. ②·④은 본문의 배경(산책·조깅)만 건드린 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 2에서 '아직 어둡고 조용했다(still dark and quiet)'고 했으므로, 밝았다는 ②은 본문과 반대된다. ①은 문장 3, ③는 문장 6, ④은 문장 10, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ②");
+B("코가 없는 이집트 조각상의 까닭을 밝히는 글이다. 부식설을 반박하고(문장 3–5), 영혼과 코에 대한 믿음으로 답한다(문장 7–13). ①·③·④·⑤는 소재만 스친 오답이다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 11에서 이집트인들은 ‘코’가 생명의 원천이라고 믿었다고 했으므로 eyes로 바꾼 ④가 불일치다. ①은 문장 2, ②는 5, ③은 7, ⑤는 12·13에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ①");
-B("(A) them은 바로 앞 문장 8에서 스티브를 물기 시작한 화난 수달들을 가리킨다. 스티브가 멈추려던 대상이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
-Hs("독해 04   배열 영작   ·   It was still dark and quiet.");
-B("문장 2를 그대로 복원하는 문제다. ① 날씨·시간을 나타내는 문장의 주어는 It — 첫 글자는 대문자.   ② still(아직)의 위치는 was 뒤.   ③ dark and quiet — 두 형용사를 and로 잇는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 otters · angry · careful     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 산책하던 스티브가 화난 수달들에게 물린 사건과 그 교훈을 들려준다. ① 산책은 사건의 배경일 뿐이고, ③ 수달의 먹이 이야기는 나오지 않는다.");
-B("1-2   ○표 할 세 단어: otters(힌트① 주인공) · angry(힌트② 수달들의 감정) · careful(힌트③ 글쓴이의 교훈). 나머지 셋(park · jogger · water)은 본문에 등장하지만 주제문에 들어가지 않는다 — 배경과 계기일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
-B("1-3   문장 9 — them은 수달들에 ○ (스티브가 멈추려던 대상).   문장 11 — there는 나무 위에 ○ (문장 10에서 올라간 곳).   문장 12 — they는 wild animals에 ○ (귀여워 보여도 조심해야 할 대상).");
-B("[학습 포인트]   문장 11의 there가 이 지문의 백미다. 지시어는 사람·사물만이 아니라 장소도 대신한다(there = 문장 10의 나무 위). 지시어를 만날 때마다 '이게 뭘 가리키지?'를 확인해 화살표로 연결해 두자. 이 습관이 고등 독해의 지칭 추론 문항으로 그대로 이어진다.", true);
+B("(A) They는 앞 문장 12의 ‘보물을 훔치려던 사람들’을 그대로 받는다. 문장 12의 they와 같은 대상 — 지시어는 바로 앞 문장에서 찾는 것이 원칙이다.", true);
+Hs("독해 04   배열 영작   ·   In ancient Egypt, people made statues for the dead.");
+B("문장 7의 복원이다. ① In ancient Egypt,가 맨 앞 — 콤마까지 한 덩어리.   ② 옛일이므로 과거형 made.   ③ ‘죽은 이들’은 the dead — for the dead 순서에 주의.", true);
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 nose · soul · life     1-3 아래 참조");
+B("1-1   정답 ②. 코가 부서진 이집트 조각상의 까닭을 밝히는 글이다. ①은 본문에 없고, ③ 파라오의 보물은 마지막 장면의 배경일 뿐이다.");
+B("1-2   ○표: nose(힌트① 사라진 부분) · soul(힌트② 조각상에 깃든다고 믿은 것) · life(힌트③ 코가 그 원천). museums · treasure · corrosion은 배경·계기일 뿐이다.");
+B("1-3   문장 4 this — ‘부식이라는 설명’에 ○.   문장 9 they — someone에 ○.   문장 13 They — ‘보물 도둑들’에 ○ (문장 12의 people).");
+B("[학습 포인트]   같은 they라도 가리키는 대상이 다르다(문장 9는 영혼을 없애려는 사람, 문장 13은 보물 도둑). 지시어를 만나면 앞으로 화살표를 그어 확인하는 습관을 들이자.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 때 / 결과 / 반전 / ~까지     2-2 [B] 사고 · [E] 교훈     2-3 ①");
-B("2-1   문장 3 While — 걷고 있던 '때'에 수달들을 보았다.   문장 8 so — 위험하다고 생각한 원인의 '결과'로 달려들었다.   문장 9 but — 멈추려 했지만 못 했다는 '반전'.   문장 11 until — 수달들이 진정할 '때까지' 나무 위에 있었다.");
-B("2-2   [B] 사고(문장 5–6: 다가갔다가 조거가 수달을 밟는 사고가 난다), [E] 교훈(문장 12: 야생 동물을 조심하라). 보기의 '광고'는 이 글에 없는 역할이다. [A] 만남 → [B] 사고 → [C] 위기 → [D] 탈출 → [E] 교훈 — 사건이 있는 이야기 글의 전형적인 흐름이다.");
-B("2-3   정답 ①. 스티브가 실제로 겪은 사건을 시간 순서대로 들려주고 마지막에 교훈을 남기는 이야기(경험담)다. ② 광고의 신호(사라는 말·가격)가 없고, ③ 요리법·④ 시·⑤ 초대장의 형식도 아니다.");
-B("[학습 포인트]   연결어만 표시해도 글의 지도가 그려진다. While(때), so(결과), but(반전), until(끝나는 지점). 특히 이야기 글의 마지막 문장은 글쓴이가 진짜 하고 싶은 말 — 교훈의 신호다.", true);
-Hs("STEP 3   주제문 만들기   ·   3-1 careful · cute     3-3 (c) → (a) → (b) → (d)");
-B("3-1  재료 찾기 — (2) 문장 12에서 careful에 ○: 교훈의 핵심 태도다. scared는 수달들의 감정이지 교훈이 아니다. (3) 문장 12에서 cute에 ○: even if 뒤에 놓일 겉모습이다. dark는 문장 2의 배경일 뿐. 주제문의 재료는 언제나 본문 안에 있다.");
-B("3-2  뼈대 채우기 — (1) wild animals  (2) careful  (3) cute.  넣으면 Always be careful around wild animals, even if they look cute.가 완성된다.");
-B("3-3  정답 순서 — ⓒ always be careful → ⓐ around wild animals → ⓑ even if → ⓓ they look cute.  완성 문장: Always be careful around wild animals, even if they look cute.");
-B("[채점 포인트]  명령문이므로 동사 덩어리(ⓒ)가 맨 앞, 마침표가 붙은 덩어리(ⓓ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
-Hs("STEP 4   요약문   ·   (1) cute  (2) angry  (3) tree  (4) careful");
-B("(1)은 문장 5의 cute, (2)는 문장 7의 angry, (3)은 문장 10의 tree, (4)는 문장 12의 careful에서 가져온다. 요약문이 곧 이 글의 흐름이다: 만남(1) → 위기(2) → 탈출(3) → 교훈(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ②   문장 5 ①   문장 9 ②   문장 12 ①  (정답 선지는 무표시)");
-B("문장 2 still dark and quiet   ① ✕ [반대] 밝고 시끄럽다 — 정반대.   ② ○ 아직 해가 안 떠서 어둡고 소리가 없다.   ③ ✕ [무관] 사람이 많다는 말은 지문에 없다.");
-B("문장 5 got close   ① ○ moved near = 가까이 다가갔다.   ② ✕ [반대] 멀리 달아났다 — 정반대.   ③ ✕ [무관] 사진을 찍었다는 말은 지문에 없다.");
-B("문장 9 tried to stop them, but couldn’t   ① ✕ [반대] 쉽게 멈추게 했다 — 정반대.   ② ○ failed to stop them = 멈추게 하지 못했다.   ③ ✕ [무관] 먹이를 주고 싶었다는 말은 지문에 없다.");
-B("문장 12 be careful around wild animals   ① ○ watch out near wild animals = 야생 동물 근처에서 조심하다.   ② ✕ [반대] 자유롭게 논다 — 정반대.   ③ ✕ [무관] 반려동물로 기른다는 말은 지문에 없다.");
-B("[학습 포인트]  시험은 본문 표현을 그대로 쓰지 않고 반드시 바꿔서 묻는다. 지문을 읽을 때마다 '이 표현을 다른 말로 하면?'을 스스로 물어보자. 지금은 반대/무관 두 갈래를 정확히 가르는 것이 먼저다.", true);
+Hs("STEP 2   글의 흐름   ·   2-1 반전 / 만약 / 그렇다면 / 결과     2-2 [B] 의문 · [E] 해답     2-3 ①");
+B("2-1   문장 4 However — 부식설을 뒤집는 ‘반전’.   문장 9 If — ‘만약 ~라면’의 조건.   문장 10 Then — ‘그렇다면’으로 새 질문을 연다.   문장 12 So — 믿음의 ‘결과’.");
+B("2-2   [B] 의문(문장 3–6: 부식으로는 설명이 안 되니 다른 이유가 있다), [E] 해답(문장 12–13: 코를 부순 진짜 까닭). 보기의 ‘광고’는 이 글에 없는 역할이다.");
+B("2-3   정답 ①. 고대 이집트의 관습과 믿음이라는 대상을 소개하고 사실을 알려 준다(문장 7·11). 일기·광고·편지·동화의 형식 신호는 어디에도 없다.");
+B("[학습 포인트]   ‘현상 → 의문 → 믿음 → 이유 → 해답’은 수수께끼를 푸는 설명문의 전형적 흐름이다. However와 Then이 그 접점을 표시해 준다.", true);
+Hs("STEP 3   주제문 만들기   ·   3-1 soul · life     3-3 ⓑ → ⓓ → ⓐ → ⓒ");
+B("3-1   (2) 문장 13에서 soul에 ○ — 코를 부수며 없애려 한 것. treasure는 훔치려던 대상이다.   (3) 문장 11에서 life에 ○ — 코는 생명의 원천이다.");
+B("3-2   (1) the statue’s nose  (2) soul  (3) life. 넣으면 Egyptians broke the statue’s nose to destroy the soul, the source of life.가 완성된다.");
+B("3-3   정답 순서 — ⓑ Egyptians broke → ⓓ the statue’s nose → ⓐ to destroy the soul, → ⓒ the source of life.");
+B("[채점 포인트]   주어 덩어리(ⓑ)가 맨 앞, 마침표가 붙은 덩어리(ⓒ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
+Hs("STEP 4   요약문   ·   (1) noses  (2) soul  (3) life  (4) treasure");
+B("(1)은 문장 2, (2)는 문장 8, (3)은 문장 11, (4)는 문장 12에서 가져온다. 요약문이 곧 이 글의 흐름이다: 현상(1) → 믿음(2) → 이유(3) → 목적(4).", true);
+Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ②   문장 9 ①   문장 12 ①   문장 13 ①  (정답 선지는 무표시)");
+B("문장 2 are missing their noses   ① ✕ [반대] 코가 아직 있다.   ② ○ have lost their noses = 코를 잃었다.   ③ ✕ [무관] 비싸게 팔린다는 말은 없다.");
+B("문장 9 destroy the statue   ① ○ break the statue completely = 완전히 부수다.   ② ✕ [반대] 안전하게 지킨다.   ③ ✕ [무관] 파랗게 칠한다는 말은 없다.");
+B("문장 12 steal treasure   ① ○ take treasure that is not theirs = 남의 보물을 가져가다.   ② ✕ [반대] 남에게 준다.   ③ ✕ [무관] 지도에서 찾는다는 말은 없다.");
+B("문장 13 forever   ① ○ for all time = 영원히.   ② ✕ [반대] 잠깐 동안만.   ③ ✕ [무관] 매일 아침이라는 말은 없다.");
+B("[학습 포인트]   시험은 본문 표현을 반드시 바꿔서 묻는다. ‘반대’인지 ‘근거 없음’인지 두 갈래를 정확히 가르는 연습이 오답 제거의 힘이 된다.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 1.   2 F — 문장 2: 밝은 게 아니라 아직 어둡고 조용했다.   3 T — 문장 3.   4 F — 문장 6: 일부러(on purpose)가 아니라 실수로(accidentally) 밟았다.   5 T — 문장 8.   6 F — 문장 9: 멈추려 했지만 그럴 수 없었다.   7 T — 문장 10.   8 F — 문장 11: 진정한 뒤 물로 돌아갔다.  거짓 문장은 모두 본문에서 딱 한 단어(bright, on purpose, easily, never)를 비튼 것이다 — 그 한 단어를 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (b) → (c) → (d) → (a)");
-B("ⓑ 물가에서 털북숭이 동물들을 본다(문장 3) → ⓒ 조거가 실수로 수달을 밟는다(문장 6) → ⓓ 수달들이 스티브를 물기 시작한다(문장 8) → ⓐ 스티브가 나무에 올라가 피한다(문장 10). 이 글은 사건이 일어난 순서 그대로 서술된 이야기이므로, 문장 번호를 따라가면 순서가 보인다.", true);
-Hs("R3   영영풀이   ·   1 (e) · 2 (c) · 3 (a) · 4 (f) · 5 (b) · 6 (d)");
-B("furry = covered with soft hair(부드러운 털로 덮인) · suddenly = 갑자기, 예고 없이 · accidentally = 실수로, 고의가 아니게 · danger = 다치게 할 수 있는 것 · climb = 위로 올라가다 · calm down = 조용하고 편안해지다.", true);
-Hs("R4   어법 기초   ·   (1) was walking  (2) was  (3) to get  (4) look");
-B("(1) 진행형은 be+~ing가 한 덩어리의 동사다 — was walking. 2면 분석 Tip의 그 원칙이다.   (2) thought(과거)와 시제를 맞춘다 — was.   (3) '~하기 위해'는 to+동사원형 — to get. 2면 구문에서 배운 그 문장이다.   (4) 주어 they는 복수 — look.", true);
-Hs("R5   빈칸 클로즈   ·   (1) walk (2) otters (3) stepped (4) angry (5) biting (6) tree (7) water (8) careful");
-B("빈칸 8개는 모두 이 유닛의 핵심어와 어휘다. 빈칸 앞뒤가 단서다: morning ___ ← 아침 산책, They were ___! ← 정체가 밝혀지는 문장, climbed a ___ ← 올라간 곳, always be ___ ← 교훈. 채우고 나면 지문 한 편을 처음부터 끝까지 다시 읽은 셈이 된다.", true);
+Hs("R1   True / False   ·   1 T · 2 F · 3 F · 4 T · 5 F · 6 T · 7 T · 8 F");
+B("1 T — 문장 2.   2 F — 문장 3: 불이 아니라 부식(corrosion).   3 F — 문장 5: 건물 안 조각상도 코가 부서져 있다.   4 T — 문장 7.   5 F — 문장 8: before가 아니라 after death.   6 T — 문장 11.   7 T — 문장 12.   8 F — 문장 13: 팔이 아니라 코를 부쉈다.", true);
+Hs("R2   사건 순서   ·   ⓑ → ⓓ → ⓒ → ⓐ");
+B("ⓑ 죽은 이를 위해 조각상을 만든다(문장 7) → ⓓ 도둑들이 무덤의 보물을 노린다(문장 12) → ⓒ 먼저 코를 부순다(문장 13) → ⓐ 코 없는 조각상이 박물관에 남는다(문장 1–2).", true);
+Hs("R3   영영풀이   ·   1 ⓓ · 2 ⓐ · 3 ⓔ · 4 ⓑ · 5 ⓕ · 6 ⓒ");
+B("statue = 돌이나 금속으로 만든 사람의 상 · ancient = 아주 오래된 · soul = 몸이 아닌 사람 속의 영 · destroy = 완전히 부수다 · treasure = 금·보석 등 값진 것 · tomb = 죽은 이를 두는 곳.", true);
+Hs("R4   어법 기초   ·   (1) seen  (2) have  (3) made  (4) to destroy");
+B("(1) have+과거분사가 한 덩어리의 동사 — seen. 2면 분석 Tip의 그 원칙이다.   (2) 주어 statues는 복수 — have.   (3) 옛일이므로 과거 — made.   (4) ‘~하기 위해’는 to+동사원형 — to destroy.", true);
+Hs("R5   빈칸 클로즈   ·   (1) statues (2) noses (3) corrosion (4) soul (5) destroy (6) life (7) treasure (8) broke");
+B("빈칸 앞뒤가 단서다: seen ___ from ancient Egypt ← 조각상, because of ___ ← 부식설, needed to ___ ← 없애다, the source of ___ ← 생명. 채우면 지문을 다시 한 번 읽은 셈이다.", true);
 Hs("R6   해석 쓰기   ·   모범 답안");
-B("(1) 마침내 스티브는 화난 수달들에게서 벗어나기 위해 나무에 올라갔다.  — to get away(to부정사)를 '~하기 위해'로 옮기는 것이 핵심이다.");
-B("(2) 야생 동물이 귀여워 보여도 언제나 조심해라.  — even if를 '~일지라도/~해 보여도'로 자연스럽게 옮긴다.", true);
-Hs("R7   조건 영작   ·   (1) The other otters got angry and scared.  (2) Steve tried to stop them, but he couldn’t.");
-B("(1) 문장 7의 복원. ㄱ 첫 글자 대문자 The  ㄴ got angry and scared — 두 형용사를 and로 잇는다.");
-B("(2) 문장 9의 복원. ㄱ 첫 글자 대문자 Steve  ㄴ stop them 뒤의 콤마를 빠뜨리지 않는다  ㄷ but he couldn’t로 문장이 끝난다. R4-(3)의 to부정사와 짝을 이루는 'try to+동사원형'이 여기서 다시 나온다 — 워크북은 서로 연결되어 있다.", true);
+B("(1) 너는 박물관에서 고대 이집트의 조각상을 본 적이 있니?  — Have you ever+과거분사는 ‘~해 본 적 있니?’로 옮긴다.");
+B("(2) 그들은 영혼을 영원히 없애기 위해 조각상의 코를 부쉈다!  — to destroy를 ‘~하기 위해’라는 목적으로 옮기는 것이 핵심이다.", true);
+Hs("R7   조건 영작   ·   (1) Even statues inside buildings have broken noses.  (2) Egyptians believed the nose was the source of life.");
+B("(1) 문장 5의 복원. ㄱ Even이 맨 앞  ㄴ inside buildings가 statues를 뒤에서 꾸민다  ㄷ 주어가 복수이므로 have.");
+B("(2) 문장 11의 복원. ㄱ 첫 글자 대문자 Egyptians  ㄴ believed 뒤에 that이 생략된 형태  ㄷ the source of life — the의 자리에 주의한다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),
-  p([t("1 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("싱가포르의 한 공원에서, 스티브라는 이름의 남자가 아침 산책에 나섰다.  ", { size: 17, color: SUB }),
-     t("2 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("아직 어둡고 조용했다.  ", { size: 17, color: SUB }),
-     t("3 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("걷고 있던 중에, 그는 물가에서 약 20마리의 털북숭이 동물들을 보았다.  ", { size: 17, color: SUB }),
-     t("4 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("그것들은 수달이었다!  ", { size: 17, color: SUB }),
-     t("5 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("그는 잠시 멈춰 서서 그 귀여운 동물들을 보려고 가까이 다가갔다.  ", { size: 17, color: SUB }),
-     t("6 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("갑자기 한 조거가 옆으로 달려 지나가다가, 실수로 수달 한 마리를 밟았다.  ", { size: 17, color: SUB }),
-     t("7 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("다른 수달들은 화가 나고 겁을 먹었다.  ", { size: 17, color: SUB }),
-     t("8 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("수달들은 스티브도 위험한 존재라고 생각해서, 그를 향해 달려들어 발목과 다리를 물기 시작했다.  ", { size: 17, color: SUB }),
-     t("9 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("스티브는 그들을 멈추려고 했지만, 그럴 수 없었다.  ", { size: 17, color: SUB }),
-     t("10 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("마침내 스티브는 화난 수달들에게서 벗어나기 위해 나무에 올라갔다.  ", { size: 17, color: SUB }),
-     t("11 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("그는 수달들이 진정하고 물로 돌아갈 때까지 그곳에 머물렀다.  ", { size: 17, color: SUB }),
-     t("12 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("스티브는 그날 교훈을 배웠다: 야생 동물이 귀여워 보여도, 언제나 조심하라.", { size: 17, color: SUB })], { line: 290, after: 0, align: AlignmentType.JUSTIFIED }),
+  p([t("1 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("박물관에서 고대 이집트의 조각상을 본 적이 있는가?  ", { size: 17, color: SUB }),
+     t("2 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("흥미롭게도, 그중 많은 것들이 코가 없다.  ", { size: 17, color: SUB }),
+     t("3 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("어떤 사람들은 부서진 코가 그저 부식 때문이라고 생각했다.  ", { size: 17, color: SUB }),
+     t("4 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("하지만 이것으로는 모든 것이 설명되지 않는다.  ", { size: 17, color: SUB }),
+     t("5 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("건물 안에 있는 조각상들조차 코가 부서져 있다.  ", { size: 17, color: SUB }),
+     t("6 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("이 수수께끼에는 또 다른 이유가 있을지도 모른다.  ", { size: 17, color: SUB }),
+     t("7 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("고대 이집트에서, 사람들은 죽은 이들을 위해 조각상을 만들었다.  ", { size: 17, color: SUB }),
+     t("8 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("그들은 사람의 영혼이 죽은 뒤에 조각상 속으로 옮겨 간다고 믿었다.  ", { size: 17, color: SUB }),
+     t("9 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("만약 누군가 그 영혼을 없애고 싶다면, 그들은 조각상을 부수어야 했다.  ", { size: 17, color: SUB }),
+     t("10 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("그렇다면, 왜 그들은 코만 부수었을까?  ", { size: 17, color: SUB }),
+     t("11 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("이집트인들은 코가 생명의 원천이라고 믿었다.  ", { size: 17, color: SUB }),
+     t("12 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("그래서 사람들은 파라오의 무덤에서 보물을 훔치려 할 때, 언제나 한 가지 일을 먼저 했다.  ", { size: 17, color: SUB }),
+     t("13 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("그들은 영혼을 영원히 없애기 위해 조각상의 코를 부쉈다!", { size: 17, color: SUB })], { line: 290, after: 0, align: AlignmentType.JUSTIFIED }),
 ], { w: W, shade: PAPER, b: { top: bd(10, NAVY), bottom: bd(4, HAIR), left: NOB, right: NOB }, m: { top: 150, bottom: 150, left: 250, right: 250 } })] })]));
 
 /* ═══════════ 판면 ═══════════ */

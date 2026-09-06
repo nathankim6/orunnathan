@@ -594,7 +594,7 @@ K.push(T(tfw, [
 K.push(spF(8, 240, 0.34));
 
 /* ── R2 사건 순서 잡기 ── */
-K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "스티브에게 일어난 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
+K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "이메일과 데이터 센터에 일어나는 일 ⓐ~ⓓ를 일어나는 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
   ...["ⓐ The information is stored in data centers.",

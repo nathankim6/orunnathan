@@ -359,7 +359,7 @@ K.push(T(tfw, [
 K.push(spF(5, 240, 0.34));
 
 /* ── [DATA] R2 사건 순서 잡기 ── */
-K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "이야기 속 사건과 축제의 모습 ⓐ~ⓓ를 일어난 순서대로 배열하세요."));
+K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "옷에서 나온 섬유가 우리 몸에 이르는 과정 ⓐ~ⓓ를 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
   ...["ⓐ The little fibers travel very far.",
