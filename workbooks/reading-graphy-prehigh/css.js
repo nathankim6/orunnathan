@@ -100,7 +100,7 @@ table.bank .k{color:var(--ink);padding-left:1.5mm;word-break:keep-all;letter-spa
 .page.snug .lh{margin-bottom:5mm;padding-bottom:3.5mm}
 .page.snug figcaption{margin-top:1.5mm}
 figure{margin-top:0;flex:0 0 auto}
-figure .art{height:72mm;border:0;background:transparent;display:flex;align-items:center;justify-content:center;padding:0 0 1mm}
+figure .art{height:60mm;border-radius:var(--rk);background:var(--tint);display:flex;align-items:center;justify-content:center;padding:3mm 4mm}
 figure .art svg{height:100%;width:100%}
 figcaption{font-size:var(--t2);color:var(--sub);margin-top:2mm;line-height:var(--lhl)}
 figcaption b{color:var(--ac);font-weight:700;letter-spacing:.02em}

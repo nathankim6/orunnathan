@@ -66,7 +66,7 @@ Check Up 정답 선지 번호에는 붉은 동그라미를 두른다.
 |---|---|
 | `units/uNN.js` | 유닛 데이터 — 지문·해석·어휘·구문·플로차트·패러프레이즈·Check Up·Knowledge Bank |
 | `art/uNN.js` | 유닛 삽화 — 레슨 아이콘 5 · 배너 5 · 픽토그램 스트립 · 비네트 5 |
-| `figure.js` | 인물 작화 시스템 — 잉크 외곽선 + 2톤 셀 셰이딩, 3관절 팔다리, 상의 5종·머리 10종, `anchors()`·`holding()` |
+| `figure.js` | 인물 작화 시스템 — 발밑 원점, 키 150, 팔·머리·표정 조합 (만화 + 인포그래픽 규격) |
 | `rr/uNN.js` | 교사용 READ RIGHT 전 문장 ORUN FLOW 표기 데이터 (900문장) |
 | `DESIGN_RULES.md` | 삽화·부품 사용 규칙 — 새 유닛을 그릴 때 따르는 기준 |
 | `RR_GUIDE.md` · `rrcheck.js` | 표기 데이터 작성 규칙과 검사 |

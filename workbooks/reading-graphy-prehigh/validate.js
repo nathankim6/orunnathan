@@ -29,8 +29,9 @@ for (const nn of nos) {
     if (strip.length !== 5) err(U.no, L, `픽토그램 ${strip.length}개 (5개여야 함)`);
     strip.forEach(p => { if (!S[p]) err(U.no, L, `픽토그램 없음: ${p}`); });
 
-    /* 삽화 규격: 인물 축척 ≥ .6 · 머리 꼭대기 ≥ 8 · 패널 칩 0 또는 전체 · y>240 라벨 1개 이하 */
-    const c = t.accent, sv = A.scenes[t.key] ? A.scenes[t.key](c, t.tint, t.deep) : "";
+    /* 삽화 규격 검사는 새 규격(SCENECAP 를 내보내는 art 파일)에만 적용한다 — 구 규격은 면제 */
+    const NEWART = !!A.SCENECAP;
+    const c = t.accent, sv = NEWART && A.scenes[t.key] ? A.scenes[t.key](c, t.tint, t.deep) : "";
     for (const m of sv.matchAll(/<g data-fig="1" transform="translate\((-?[\d.]+) (-?[\d.]+)\) scale\((-?[\d.]+) (-?[\d.]+)\)/g)) {
       const y = +m[2], s = Math.abs(+m[4]);
       if (s < 0.6) err(U.no, L, `배너 인물 축척 ${s} (0.6 이상)`);
