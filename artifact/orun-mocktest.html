@@ -687,7 +687,7 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
     <span class="step" data-step="2"></span><span class="step-rule"></span>
     <span class="step" data-step="3"></span>
   </div>
-  <div class="state"><span class="build" id="buildTag">2026-09-06 11:04</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
+  <div class="state"><span class="build" id="buildTag">2026-09-06 12:43</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
 </div>
 
 <!-- 화면 0 · 시작 -->
@@ -2415,7 +2415,7 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
     const c = window.claude;
     return [
       "ORUN 동형 모의고사 진단",
-      "build: 2026-09-06 11:04",
+      "build: 2026-09-06 12:43",
       "url: " + location.href,
       "runtime: " + RUNTIME + (c ? "" : " (window.claude 없음)"),
       "claude.use: " + (c && typeof c.use === "function" ? "있음" : "없음"),
@@ -3337,9 +3337,9 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
   //  검수실 — 세 검수위원이 완성된 문항을 각자 풀어보고 정답표와 대조한다
   // ==================================================================
   const REVIEWERS = [
-    { id: "A", name: "이명악", role: "어법·구문 검수", years: "15년차", color: "#1a7fbf", style: "정답 근거 문장을 먼저 찾고, 어법·구문 오류와 선지 표현의 정확성을 본다" },
-    { id: "B", name: "조정석", role: "수능 독해 출제", years: "12년차", color: "#2e9e5b", style: "글의 논리 흐름과 선지 변별력을 보고, 복수 정답 가능성을 의심한다" },
-    { id: "C", name: "싼티", role: "내신 지도·학생 관점", years: "9년차", color: "#d0452c", style: "학생이 헷갈릴 함정과 난이도 적정성을 보고, 시간 안에 풀 수 있는지를 본다" },
+    { id: "A", name: "이명악", face: "B", role: "어법·구문 검수", years: "15년차", color: "#2e9e5b", style: "정답 근거 문장을 먼저 찾고, 어법·구문 오류와 선지 표현의 정확성을 본다" },
+    { id: "B", name: "조정석", face: "A", role: "수능 독해 출제", years: "12년차", color: "#1a7fbf", style: "글의 논리 흐름과 선지 변별력을 보고, 복수 정답 가능성을 의심한다" },
+    { id: "C", name: "싼티", face: "C", role: "내신 지도·학생 관점", years: "9년차", color: "#d0452c", style: "학생이 헷갈릴 함정과 난이도 적정성을 보고, 시간 안에 풀 수 있는지를 본다" },
   ];
   // 검수위원 초상 — 스프라이트의 심벌을 가져다 쓴다
   const SVGNS = "http://www.w3.org/2000/svg";
@@ -3362,7 +3362,7 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
     REVIEWERS.forEach(r => {
       const c = document.createElement("div"); c.className = "rr-card"; c.id = "rr-" + r.id; c.style.setProperty("--c", r.color);
       const top = document.createElement("div"); top.className = "rr-top";
-      const av = document.createElement("span"); av.className = "rr-avatar"; av.appendChild(faceEl(r.id));
+      const av = document.createElement("span"); av.className = "rr-avatar"; av.appendChild(faceEl(r.face));
       const who = document.createElement("div");
       const nm = document.createElement("b"); nm.className = "rr-name"; nm.textContent = r.name;
       const role = document.createElement("span"); role.className = "rr-role"; role.textContent = r.role + " · " + r.years;
@@ -3440,7 +3440,7 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
       const stamps = REVIEWERS.map(r => {
         const i = document.createElement("i"); i.style.setProperty("--c", r.color);
         i.title = r.name + " · " + r.role;
-        i.appendChild(faceEl(r.id));
+        i.appendChild(faceEl(r.face));
         i.appendChild(document.createElement("b")); strip.appendChild(i); return i;
       });
       let ok = 0;
