@@ -551,6 +551,87 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
 .page .rv .rv-badge.warn { border-color: #f04452; color: #f04452; }
 @keyframes stamp { from { opacity: 0; transform: scale(2.4) rotate(-5deg); } 70% { transform: scale(.92) rotate(-5deg); } to { opacity: 1; transform: scale(1) rotate(-5deg); } }
 
+/* ══════════ 분석 작업대 — 스트리밍되는 실제 데이터를 그대로 보여준다 ══════════ */
+.stage { display: none; margin: 0 0 14px; border-radius: var(--r); overflow: hidden; background: var(--ink); color: #fff; position: relative; }
+.stage.show { display: block; animation: screenIn .3s cubic-bezier(.2,.8,.3,1); }
+.stage::after { content: ""; position: absolute; left: 0; top: 0; width: 34%; height: 2px; background: linear-gradient(90deg, transparent, var(--yellow), transparent); opacity: 0; }
+.stage.live::after { opacity: 1; animation: railSweep 2.4s cubic-bezier(.5,0,.5,1) infinite; }
+@keyframes railSweep { 0% { transform: translateX(-100%); } 100% { transform: translateX(394%); } }
+
+.st-meter { display: flex; flex-wrap: wrap; gap: 0; border-bottom: 1px solid rgba(255,255,255,.10); }
+.st-meter .m { flex: 1 1 120px; padding: 14px 18px; border-right: 1px solid rgba(255,255,255,.08); }
+.st-meter .m:last-child { border-right: 0; }
+.st-meter .v { font-family: var(--mono); font-size: 24px; font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.st-meter .v.tick { animation: tickPop .35s cubic-bezier(.2,.9,.3,1.6); }
+@keyframes tickPop { 40% { transform: scale(1.18); color: var(--yellow); } }
+.st-meter .k { font-size: 11.5px; color: rgba(255,255,255,.5); margin-top: 3px; }
+.st-meter .m.now .v { color: var(--yellow); }
+
+.st-body { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); }
+.st-board { padding: 16px 18px; min-height: 232px; max-height: 320px; overflow: auto; position: relative; }
+.st-board .head { display: flex; align-items: center; gap: 8px; font-size: 12px; color: rgba(255,255,255,.55); margin-bottom: 12px; }
+.st-board .head b { color: #fff; font-weight: 600; font-size: 13px; }
+.st-board .head .sp { flex: 1; }
+
+/* 문항 카드 — 스트림에서 하나 읽힐 때마다 날아든다 */
+.qgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(146px, 1fr)); gap: 8px; }
+.qcard { background: rgba(255,255,255,.07); border-radius: 10px; padding: 9px 11px; border-left: 3px solid var(--yellow); animation: cardIn .45s cubic-bezier(.2,.8,.3,1) backwards; }
+@keyframes cardIn { from { opacity: 0; transform: translateY(10px) scale(.96); } }
+.qcard .n { font-family: var(--mono); font-size: 15px; font-weight: 700; }
+.qcard .t { font-size: 12px; margin-top: 2px; color: rgba(255,255,255,.9); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.qcard .m { font-size: 10.5px; color: rgba(255,255,255,.45); margin-top: 3px; font-family: var(--mono); }
+.qcard.lv상 { border-left-color: #ff6b6b; }
+.qcard.lv중 { border-left-color: var(--yellow); }
+.qcard.lv하 { border-left-color: #3ddc97; }
+
+/* 지문 칩 — 색인되는 대로 채워진다 */
+.pgrid { display: flex; flex-wrap: wrap; gap: 6px; }
+.pchip { background: rgba(255,255,255,.08); border-radius: 8px; padding: 6px 9px; font-size: 11.5px; font-family: var(--mono); color: rgba(255,255,255,.85); animation: chipIn .35s cubic-bezier(.2,.9,.3,1.5) backwards; white-space: nowrap; }
+@keyframes chipIn { from { opacity: 0; transform: scale(.6); } }
+.pchip.kind { background: rgba(255,255,255,.04); color: rgba(255,255,255,.42); }
+.pchip.hot { background: var(--yellow); color: var(--ink); font-weight: 700; }
+
+/* 아직 아무것도 오지 않은 구간 */
+.waiting { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,.42); font-size: 12.5px; padding: 10px 0; }
+.waiting .dots { display: flex; gap: 4px; }
+.waiting .dots i { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.3); animation: wDot 1.1s ease-in-out infinite; }
+.waiting .dots i:nth-child(2) { animation-delay: .16s; }
+.waiting .dots i:nth-child(3) { animation-delay: .32s; }
+@keyframes wDot { 40% { background: var(--yellow); transform: translateY(-3px); } }
+
+/* 원문 스트림 — Claude 가 지금 흘려보내는 글자 그대로 */
+.st-tail { display: flex; align-items: center; gap: 12px; padding: 9px 18px; border-top: 1px solid rgba(255,255,255,.10); background: rgba(0,0,0,.22); font-family: var(--mono); font-size: 11px; min-height: 34px; }
+.st-tail .lbl { color: rgba(255,255,255,.35); letter-spacing: .08em; flex: none; }
+.st-tail .tx { color: rgba(255,255,255,.62); white-space: nowrap; overflow: hidden; min-width: 0; flex: 1; }
+.st-tail .cur { display: inline-block; width: 6px; height: 11px; background: var(--yellow); vertical-align: -1px; flex: none; animation: caretBlink 1s steps(1) infinite; }
+
+/* 매칭 — 왼쪽 문항, 오른쪽 지문, 사이를 선이 잇는다 */
+.wire { position: relative; display: grid; grid-template-columns: 64px 1fr 64px; gap: 0; align-items: start; }
+.wire .col { display: flex; flex-direction: column; gap: 5px; }
+.wire .col.r { align-items: flex-end; }
+.wire .node { font-family: var(--mono); font-size: 11px; padding: 4px 8px; border-radius: 7px; background: rgba(255,255,255,.08); color: rgba(255,255,255,.6); white-space: nowrap; transition: background .3s, color .3s; }
+.wire .node.on { background: var(--yellow); color: var(--ink); font-weight: 700; }
+.wire svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.wire svg path { fill: none; stroke: var(--yellow); stroke-width: 1.4; opacity: .85; stroke-dasharray: var(--len); stroke-dashoffset: var(--len); animation: draw .5s cubic-bezier(.3,.8,.4,1) forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+
+/* 콘솔 로그 — 무슨 일이 일어나는지 한 줄씩 */
+.st-log { border-left: 1px solid rgba(255,255,255,.10); padding: 16px 16px 16px 18px; font-family: var(--mono); font-size: 11.5px; line-height: 1.75; overflow: auto; max-height: 320px; min-height: 232px; }
+.st-log .ln { display: flex; gap: 9px; color: rgba(255,255,255,.55); animation: lnIn .25s ease backwards; }
+@keyframes lnIn { from { opacity: 0; transform: translateX(-5px); } }
+.st-log .ln .tc { color: rgba(255,255,255,.28); flex: none; }
+.st-log .ln .tx { min-width: 0; word-break: break-all; }
+.st-log .ln.step .tx { color: #fff; font-weight: 700; }
+.st-log .ln.ok .tx { color: #3ddc97; }
+.st-log .ln.warn .tx { color: #ffd166; }
+.st-log .caret { display: inline-block; width: 7px; height: 12px; background: var(--yellow); vertical-align: -2px; animation: caretBlink 1s steps(1) infinite; }
+@keyframes caretBlink { 50% { opacity: 0; } }
+@media (max-width: 860px) {
+  .st-body { grid-template-columns: 1fr; }
+  .st-log { border-left: 0; border-top: 1px solid rgba(255,255,255,.10); min-height: 0; max-height: 190px; }
+  .st-board { max-height: 260px; }
+}
+
 /* ══════════ 제작 콘솔 — 실시간 계기판 ══════════ */
 .meter { background: var(--ink); color: #fff; border-radius: var(--r); padding: 18px 22px 16px; margin: 0 0 12px; display: grid; grid-template-columns: auto 1fr; gap: 8px 26px; align-items: end; position: relative; overflow: hidden; }
 .meter::before { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,.05) 45%, transparent 60%); transform: translateX(-100%); }
@@ -687,7 +768,7 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
     <span class="step" data-step="2"></span><span class="step-rule"></span>
     <span class="step" data-step="3"></span>
   </div>
-  <div class="state"><span class="build" id="buildTag">2026-09-06 18:23</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
+  <div class="state"><span class="build" id="buildTag">2026-09-07 00:19</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
 </div>
 
 <!-- 화면 0 · 시작 -->
@@ -844,7 +925,23 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
 <!-- 화면 4 · 분석 중 -->
 <section class="screen wide" data-s="analyzing">
   <h1 class="h-title">시험지를 읽고 있어요</h1>
-  <p class="h-sub">문항 하나하나 뜯어보고, 범위에서 지문을 고르는 중이에요.</p>
+  <p class="h-sub" id="analyzeSub">문항 하나하나 뜯어보고, 범위에서 지문을 고르는 중이에요.</p>
+
+  <div class="stage" id="analyzeStage">
+    <div class="st-meter">
+      <div class="m" id="stChars"><div class="v">0</div><div class="k">읽어들인 글자</div></div>
+      <div class="m" id="stQ"><div class="v">0</div><div class="k">찾은 문항</div></div>
+      <div class="m" id="stP"><div class="v">0</div><div class="k">색인한 지문</div></div>
+      <div class="m" id="stM"><div class="v">0</div><div class="k">매칭 완료</div></div>
+      <div class="m" id="stCalls"><div class="v">0</div><div class="k">Claude 호출</div></div>
+    </div>
+    <div class="st-body">
+      <div class="st-board" id="stBoard"></div>
+      <div class="st-log" id="stLog"></div>
+    </div>
+    <div class="st-tail"><span class="lbl">STREAM</span><span class="tx" id="stTail"></span><span class="cur"></span></div>
+  </div>
+
   <div class="seq" id="analyzeProgress"></div>
   <div class="cta-bar"><div class="in">
     <div class="cta-links"><button type="button" id="backFromAnalyze">이전으로</button></div>
@@ -2418,7 +2515,7 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
     const c = window.claude;
     return [
       "ORUN 동형 모의고사 진단",
-      "build: 2026-09-06 18:23",
+      "build: 2026-09-07 00:19",
       "url: " + location.href,
       "runtime: " + RUNTIME + (c ? "" : " (window.claude 없음)"),
       "claude.use: " + (c && typeof c.use === "function" ? "있음" : "없음"),
@@ -2618,6 +2715,7 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
         blobs.push(img);
       }
       if (onStep) onStep(nos[0], nos[nos.length - 1], total, "Claude 가 읽는 중");
+      try { stage.log("스캔본 " + nos[0] + (nos.length > 1 ? "~" + nos[nos.length - 1] : "") + "쪽을 그림으로 읽는 중"); } catch (e) {}
       const label = nos.length === 1
         ? nos[0] + "쪽"
         : nos[0] + "~" + nos[nos.length - 1] + "쪽";
@@ -2805,6 +2903,226 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
     return chunkText.slice(from, to).trim().slice(0, PASSAGE_CAP);
   }
 
+
+  // ==================================================================
+  //  분석 작업대 — 스트리밍으로 들어오는 JSON에서 '닫힌' 객체만 골라
+  //  들어오는 즉시 화면에 올린다. 애니메이션이 아니라 실제 진행 상황이다.
+  // ==================================================================
+  // 스트림 텍스트의 from 위치부터 훑어 완결된 최상위 { … } 를 순서대로 돌려준다.
+  function closedObjects(text, from) {
+    const out = [];
+    let depth = 0, start = -1, inStr = false, esc = false;
+    for (let i = from; i < text.length; i++) {
+      const ch = text[i];
+      if (inStr) {
+        if (esc) esc = false;
+        else if (ch === "\\") esc = true;
+        else if (ch === '"') inStr = false;
+        continue;
+      }
+      if (ch === '"') { inStr = true; continue; }
+      if (ch === "{") { if (depth === 0) start = i; depth++; }
+      else if (ch === "}") {
+        depth--;
+        if (depth <= 0) {
+          if (start >= 0) { try { out.push(JSON.parse(text.slice(start, i + 1))); } catch (e) {} }
+          depth = 0; start = -1;
+        }
+      }
+    }
+    return out;
+  }
+  // 배열이 시작되는 위치 (key 뒤의 '[') — 없으면 -1
+  function arrayStart(text, key) {
+    const k = text.indexOf('"' + key + '"');
+    if (k < 0) return -1;
+    const b = text.indexOf("[", k);
+    return b < 0 ? -1 : b + 1;
+  }
+  // 스트림을 반복 호출해도 이미 본 항목은 건너뛰는 리더
+  function streamReader(key) {
+    let seen = 0;
+    return (text) => {
+      const from = key ? arrayStart(text, key) : 0;
+      if (from < 0) return [];
+      const all = closedObjects(text, from);
+      const fresh = all.slice(seen);
+      seen = all.length;
+      return fresh;
+    };
+  }
+
+  const stage = (() => {
+    const root = $("analyzeStage"), board = $("stBoard"), log = $("stLog");
+    const nums = { chars: 0, q: 0, p: 0, m: 0, calls: 0 };
+    const cell = { chars: $("stChars"), q: $("stQ"), p: $("stP"), m: $("stM"), calls: $("stCalls") };
+    const tailEl = $("stTail");
+    let t0 = 0, mode = "", qNodes = {}, pNodes = {}, svg = null;
+
+    const clock = () => {
+      const sec = (Date.now() - t0) / 1000;
+      return Math.floor(sec / 60) + ":" + String(Math.floor(sec % 60)).padStart(2, "0");
+    };
+    function setNum(k, v) {
+      if (nums[k] === v) return;
+      nums[k] = v;
+      const el = cell[k] && cell[k].querySelector(".v");
+      if (!el) return;
+      el.textContent = v.toLocaleString();
+      el.classList.remove("tick"); void el.offsetWidth; el.classList.add("tick");
+    }
+    function focus(k) {
+      Object.keys(cell).forEach(x => cell[x] && cell[x].classList.toggle("now", x === k));
+    }
+    function line(text, kind) {
+      const ln = document.createElement("div");
+      ln.className = "ln" + (kind ? " " + kind : "");
+      const tc = document.createElement("span"); tc.className = "tc"; tc.textContent = clock();
+      const tx = document.createElement("span"); tx.className = "tx"; tx.textContent = text;
+      ln.append(tc, tx);
+      log.appendChild(ln);
+      while (log.children.length > 120) log.removeChild(log.firstChild);
+      log.scrollTop = log.scrollHeight;
+    }
+    // 첫 항목이 오기 전까지 자리를 지키는 표시
+    function waitBox(text) {
+      const w = document.createElement("div");
+      w.className = "waiting";
+      const d = document.createElement("span"); d.className = "dots";
+      d.innerHTML = "<i></i><i></i><i></i>";
+      const t = document.createElement("span"); t.textContent = text;
+      w.append(d, t);
+      return w;
+    }
+    function dropWait() { board.querySelectorAll(".waiting").forEach(n => n.remove()); }
+    function head(title, note) {
+      const h = document.createElement("div");
+      h.className = "head";
+      const b = document.createElement("b"); b.textContent = title;
+      const sp = document.createElement("span"); sp.className = "sp";
+      const n = document.createElement("span"); n.className = "note"; n.textContent = note || "";
+      h.append(b, sp, n);
+      return h;
+    }
+    return {
+      start(note) {
+        t0 = Date.now();
+        root.classList.add("show", "live");
+        log.innerHTML = ""; board.innerHTML = ""; tailEl.textContent = "";
+        qNodes = {}; pNodes = {}; svg = null; mode = "";
+        Object.keys(nums).forEach(k => { nums[k] = -1; setNum(k, 0); });
+        line(note, "step");
+      },
+      log: line,
+      chars(n) { setNum("chars", n); },
+      // Claude 가 지금 흘려보내는 원문의 꼬리를 그대로 보여준다
+      tail(text) {
+        const t = String(text || "").replace(/\s+/g, " ").trim();
+        tailEl.textContent = t.length > 150 ? "…" + t.slice(-150) : t;
+      },
+      calls(n) { setNum("calls", n); },
+      // ── 문항 분석 모드
+      scan(total) {
+        mode = "scan"; focus("q");
+        board.innerHTML = "";
+        board.appendChild(head("문항 판독", total ? total + "부분" : ""));
+        const g = document.createElement("div"); g.className = "qgrid"; g.id = "stQGrid";
+        board.append(g, waitBox("시험지를 읽는 중 — 문항이 확인되는 대로 하나씩 올라옵니다"));
+      },
+      question(q) {
+        if (mode !== "scan") this.scan(0);
+        const g = $("stQGrid"); if (!g) return;
+        const c = document.createElement("div");
+        c.className = "qcard" + (q.difficulty ? " lv" + q.difficulty : "");
+        const n = document.createElement("div"); n.className = "n"; n.textContent = q.number + "번";
+        const t = document.createElement("div"); t.className = "t"; t.textContent = q.type || "유형 미상";
+        const m = document.createElement("div"); m.className = "m";
+        m.textContent = [q.format, q.points != null ? q.points + "점" : "", q.difficulty].filter(Boolean).join(" · ");
+        dropWait();
+        c.append(n, t, m);
+        g.appendChild(c);
+        board.scrollTop = board.scrollHeight;
+        setNum("q", nums.q + 1);
+        line(q.number + "번 · " + (q.type || "?") + " · " + (q.difficulty || "?") + " · " + (q.points != null ? q.points + "점" : "-"));
+      },
+      // ── 범위 색인 모드
+      index(name) {
+        mode = "index"; focus("p");
+        board.innerHTML = "";
+        board.appendChild(head("범위 색인", name || ""));
+        const g = document.createElement("div"); g.className = "pgrid"; g.id = "stPGrid";
+        board.append(g, waitBox("범위 자료에서 지문 단위를 찾는 중"));
+      },
+      passage(pp, id) {
+        if (mode !== "index") this.index("");
+        const g = $("stPGrid"); if (!g) return;
+        const c = document.createElement("div");
+        const isText = (pp.kind || "지문") === "지문";
+        c.className = "pchip" + (isText ? "" : " kind");
+        c.textContent = (id || pp.id || "P") + (pp.words ? " · " + pp.words + "w" : "") + (isText ? "" : " · " + pp.kind);
+        dropWait();
+        c.title = pp.gist || "";
+        g.appendChild(c);
+        board.scrollTop = board.scrollHeight;
+        if (isText) setNum("p", nums.p + 1);
+        const first = String(pp.first || "").split(/\s+/).slice(0, 7).join(" ");
+        line((id || "") + " " + (pp.kind || "지문") + (first ? ' "' + first + '…"' : ""));
+      },
+      // ── 매칭 모드
+      wire(questions, catalog) {
+        mode = "match"; focus("m");
+        board.innerHTML = "";
+        board.appendChild(head("지문 매칭", questions.length + " ↔ " + catalog.length));
+        const w = document.createElement("div"); w.className = "wire";
+        const L = document.createElement("div"); L.className = "col l";
+        const C = document.createElement("div"); C.className = "col c";
+        const R = document.createElement("div"); R.className = "col r";
+        qNodes = {}; pNodes = {};
+        questions.forEach(q => {
+          const n = document.createElement("div"); n.className = "node"; n.textContent = q.number + "번";
+          L.appendChild(n); qNodes[String(q.number)] = n;
+        });
+        catalog.slice(0, questions.length * 3).forEach(c => {
+          const n = document.createElement("div"); n.className = "node"; n.textContent = c.id;
+          R.appendChild(n); pNodes[c.id] = n;
+        });
+        svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        w.append(L, C, R, svg);
+        board.append(w, waitBox("문항마다 어울리는 지문을 고르는 중"));
+      },
+      match(m) {
+        if (mode !== "match") return;
+        dropWait();
+        const a = qNodes[String(m.number)], b = pNodes[m.passage_id];
+        setNum("m", nums.m + 1);
+        line(m.number + "번 ← " + (m.passage_id || "(지문 없이)") + (m.direction ? " · " + String(m.direction).slice(0, 40) : ""), "ok");
+        if (!a) return;
+        a.classList.add("on");
+        try { a.scrollIntoView({ block: "nearest", behavior: "smooth" }); } catch (e) {}
+        if (!b || !svg) return;
+        b.classList.add("on");
+        const box = svg.getBoundingClientRect();
+        const ra = a.getBoundingClientRect(), rb = b.getBoundingClientRect();
+        const x1 = ra.right - box.left, y1 = ra.top + ra.height / 2 - box.top;
+        const x2 = rb.left - box.left, y2 = rb.top + rb.height / 2 - box.top;
+        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        const dx = Math.max(24, (x2 - x1) / 2);
+        path.setAttribute("d", "M" + x1 + " " + y1 + "C" + (x1 + dx) + " " + y1 + " " + (x2 - dx) + " " + y2 + " " + x2 + " " + y2);
+        svg.appendChild(path);
+        try { path.style.setProperty("--len", Math.ceil(path.getTotalLength()) + ""); } catch (e) {}
+      },
+      done(msg) {
+        root.classList.remove("live");
+        dropWait();
+        tailEl.textContent = "";
+        focus("");
+        line(msg || "분석 완료", "ok");
+      },
+      stop() { root.classList.remove("live"); },
+      hide() { root.classList.remove("show", "live"); },
+    };
+  })();
+
   // ---------- 1단계: 분석 파이프라인 ----------
   async function analyze() {
     clearError("analyzeError");
@@ -2853,12 +3171,25 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
     sessionId = String(Date.now());
     showScreen("analyzing");
     analyzeProg.start("시험지 " + examChunks.length + "부분 · 범위 자료 " + scopeChunks.length + "부분 준비 (총 " + totalCalls + "회 호출 예정)");
+    stage.start("시험지 " + examBody.length.toLocaleString() + "자 · 범위 자료 " + sources.length + "개 · 호출 " + totalCalls + "회 예정");
+    stage.log("시험지를 " + examChunks.length + "부분, 범위 자료를 " + scopeChunks.length + "부분으로 나눴습니다");
+    let streamed = 0;   // 이번 분석에서 Claude 가 흘려보낸 글자 수
+    const flow = (fn) => ({ text }) => { stage.chars(streamed + text.length); stage.tail(text); if (fn) fn(text); };
     try {
       // (1) 시험지 분석
       let info = null, questions = [];
+      stage.scan(examChunks.length);
       for (let i = 0; i < examChunks.length; i++) {
         analyzeProg.set(pct(), 1, "시험지 문항 분석 " + (i + 1) + "/" + examChunks.length + (questions.length ? " · " + questions.length + "문항 확인" : ""));
-        const r = parseJsonLoose(await ask(promptExam(examChunks[i], i + 1, examChunks.length), "complex"), false);
+        stage.log("시험지 " + (i + 1) + "/" + examChunks.length + "부분 판독 시작 · " + Math.round(bytesOf(examChunks[i]) / 1024) + "KB 전송", "step");
+        const readQ = streamReader("questions");
+        const raw = await callClaude(promptExam(examChunks[i], i + 1, examChunks.length), {
+          tier: "complex",
+          onText: flow((text) => readQ(text).forEach(q => { if (q && q.number != null) stage.question(q); })),
+        });
+        streamed += raw.length;
+        stage.calls(calls);
+        const r = parseJsonLoose(raw, false);
         if (!info && r.exam_info) info = r.exam_info;
         questions = questions.concat(r.questions || []);
         analyzeProg.plan(questions.length);
@@ -2866,20 +3197,34 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
         done++;
       }
       if (!questions.length) {
+        stage.log("문항을 하나도 찾지 못했습니다", "warn");
         throw new Error("시험지에서 문항을 찾지 못했습니다. 글자가 깨져 읽혔을 수 있습니다 — "
           + "업로드 칸 아래 '스캔본으로 다시 읽기'를 눌러 그림으로 읽어보세요.");
       }
       info = info || {};
       if (!info.total_questions) info.total_questions = questions.length;
+      stage.log("문항 판독 완료 — 총 " + questions.length + "문항" + (info.title ? " · " + info.title : ""), "ok");
 
       // (2) 범위 자료 색인
       const catalog = [], passages = {};
       for (let i = 0; i < scopeChunks.length; i++) {
         const ch = scopeChunks[i];
         analyzeProg.set(pct(), 2, "범위 자료 색인 " + (i + 1) + "/" + scopeChunks.length + " · " + ch.name.slice(0, 28) + (catalog.length ? " · 지문 " + catalog.length + "개 확보" : ""));
+        stage.index(ch.name.slice(0, 30) + " (" + (i + 1) + "/" + scopeChunks.length + ")");
+        stage.log("범위 자료 색인 " + (i + 1) + "/" + scopeChunks.length + " · " + ch.name.slice(0, 30), "step");
         let arr = [];
-        try { arr = parseJsonLoose(await ask(promptIndex(ch.name, ch.text, i + 1, scopeChunks.length), "default"), true); }
-        catch (e) { if (e.message === "__aborted__") throw e; arr = []; }
+        try {
+          const readP = streamReader("");
+          let seenHere = 0;
+          const raw = await callClaude(promptIndex(ch.name, ch.text, i + 1, scopeChunks.length), {
+            tier: "default",
+            onText: flow((text) => readP(text).forEach(pp => { if (pp && pp.first != null) stage.passage(pp, ch.key + "-" + (++seenHere)); })),
+          });
+          streamed += raw.length;
+          stage.calls(calls);
+          arr = parseJsonLoose(raw, true);
+        }
+        catch (e) { if (e.message === "__aborted__") throw e; stage.log(ch.name.slice(0, 24) + " 색인을 건너뜁니다", "warn"); arr = []; }
         arr.forEach((p, k) => {
           const id = ch.key + "-" + (k + 1);
           const text = locatePassage(ch.text, p);
@@ -2888,12 +3233,22 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
         });
         done++;
       }
-      if (!catalog.length) throw new Error("시험범위 자료에서 지문을 찾지 못했습니다. 영어 본문이 포함된 자료인지 확인해 주세요.");
+      if (!catalog.length) { stage.log("범위 자료에서 지문을 찾지 못했습니다", "warn"); throw new Error("시험범위 자료에서 지문을 찾지 못했습니다. 영어 본문이 포함된 자료인지 확인해 주세요."); }
+      stage.log("색인 완료 — 지문 " + catalog.filter(c => c.kind === "지문").length + "개 · 그 밖 " + catalog.filter(c => c.kind !== "지문").length + "개", "ok");
 
       // (3) 매칭
       analyzeProg.set(pct(), 3, questions.length + "문항 ↔ 지문 " + catalog.length + "개 매칭 중");
       analyzeProg.plan(questions.length);
-      const m = parseJsonLoose(await ask(promptMatch({ exam_info: info, questions }, catalog, extra), "complex"), false);
+      stage.wire(questions, catalog);
+      stage.log("문항 " + questions.length + "개에 지문을 배정하는 중", "step");
+      const readM = streamReader("matching_plan");
+      const rawM = await callClaude(promptMatch({ exam_info: info, questions }, catalog, extra), {
+        tier: "complex",
+        onText: flow((text) => readM(text).forEach(x => { if (x && x.number != null) stage.match(x); })),
+      });
+      streamed += rawM.length;
+      stage.calls(calls);
+      const m = parseJsonLoose(rawM, false);
       done++;
       const byId = Object.fromEntries(catalog.map(c => [c.id, c]));
       const plan = (m.matching_plan || []).map(x => {
@@ -2906,6 +3261,7 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
       });
 
       analyzeProg.set(98, 4, "결과 정리 중");
+      stage.done("매칭 완료 — " + plan.length + "문항 배정 · Claude 호출 " + calls + "회 · " + streamed.toLocaleString() + "자 수신");
       analysis = { exam_info: info, questions, matching_plan: plan };
       pipe = { examText: examBody, catalog, passages };
       analyzeProg.finish("분석 완료");
@@ -2918,6 +3274,8 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
       toast("분석이 끝났습니다 — 매칭 계획을 확인해 주세요 (Claude " + calls + "회 호출)");
     } catch (e) {
       analyzeProg.stop();
+      stage.stop();
+      stage.log(e.message === "__aborted__" ? "사용자가 중단했습니다" : "중단됨: " + e.message, "warn");
       showScreen("options", { replace: true });
       if (e.message === "__aborted__") toast("분석을 중단했습니다");
       else showError("analyzeError", e.message);
