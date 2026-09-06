@@ -55,6 +55,8 @@ const col = t => { const n = NORM[t.no]; return n ? {accent:n[0],tint:n[1],deep:
 /* ── 교사용(정답 오버프린트) ──
    node build.js --teacher  →  uNN_t.html : 모든 빈칸을 붉은 글씨로 채운다 */
 const TE = process.argv.includes("--teacher");
+/* 학생용은 해설을 유닛마다 끼우지 않고 책 맨 뒤에 몰아 싣는다 (교사용은 유닛 뒤에 그대로) */
+const ANSBACK = !TE;
 const A  = x => TE ? `<span class="ans">${x}</span>` : "";
 const Aline = x => TE ? `<div class="aline filled"><span class="ans">${x}</span></div>`
                       : `<div class="aline"></div>`;
@@ -79,8 +81,10 @@ const PGC=()=>`page ${pn%2===0?"r":"v"}${TE?" te":""}`;
 /* ═══ 합본 차례 (쪽 번호 없는 앞장) ═══ */
 if (BOOK) {
  const AC={accent:"#13345C",tint:"#E8EDF3",deep:"#0E2542",no:""};
+ const UP = ANSBACK ? 25 : 30;              // 유닛당 본문 면수
+ const LP = ANSBACK ? UNITS.length*25 : 0;  // 해설이 시작되는 면
  const ub = (uu,ui)=>{
-  const base = ui*30;
+  const base = ui*UP;
   const rows = uu.U.lessons.map((t,li)=>
    `<tr><td class="n" style="color:${col(t).accent}">${t.no}</td><td class="t">${esc(t.en)}
      <em>${t.ko}</em></td><td class="p">${base+li*5+1}</td></tr>`).join("");
@@ -89,7 +93,7 @@ if (BOOK) {
     <b>${esc(uu.U.field)}</b><em>${uu.U.ko}</em><span class="pg">${base+1}</span></div>
    <table class="ul">${rows}
     <tr class="ans"><td class="n">A</td><td class="t">정답과 해설<em>지문 전문 해석 포함</em></td>
-     <td class="p">${base+26}</td></tr></table></div>`;
+     <td class="p">${ANSBACK ? LP+ui*5+1 : base+26}</td></tr></table></div>`;
  };
  /* 두 단은 앞 반·뒤 반으로 못 박는다(12유닛이면 1–6 · 7–12) — column-count 의 균형 잡기에 맡기지 않는다 */
  const half = Math.ceil(UNITS.length/2);
@@ -108,6 +112,54 @@ if (BOOK) {
   <div class="toc2">${colr}</div>
  </div>`);
 }
+
+/* ═══ ANSWERS ═══ */
+const pushAnswers = () => {
+const AC={accent:"#13345C",tint:"#E8EDF3",deep:"#0E2542",no:""};
+T.forEach((t,ti)=>{
+ const C=col(t);
+ P.push(`<div class="${PGC()}${ti===4?" tight":""}" style="${vars(AC)}">
+  ${head(AC,"Answers & Full Translation")}
+  ${ti===0?`<h2 class="sechd">정답과 해설</h2><p>Unit ${U.no} &nbsp;|&nbsp; Lesson ${T[0].no}–${T[T.length-1].no} &nbsp;|&nbsp; 지문 전문 해석 포함</p>`:""}
+  <div class="akey">
+   <div class="hd"><i class="dot" style="background:${C.accent}"></i>Lesson ${t.no} &nbsp;${esc(t.en)}<em>${t.ko}</em></div>
+   <table>
+    <tr><td class="k">TASK 1</td><td>${t.defOrder.map((oi,i)=>`${i+1}–${AL[oi]}`).join(" &nbsp; ")}
+       &nbsp;<span class="dim">(${t.defs.map((d,i)=>`${AL[i]} ${d[0]}`).join(" · ")})</span></td></tr>
+    <tr><td class="k">TASK 2</td><td>
+      ${t.syn.map((x,i)=>`<b class="hl">구문 ${i+1} · ${x.n} ${x.name}</b><br>${x.k}`).join("<br>")}
+      <br>${t.synd.map((d,i)=>`<b class="hl">훈련 ${i+1}</b> <span class="dim">(${d.u})</span> ${d.k}`).join("<br>")}</td></tr>
+    <tr><td class="k">TASK 3</td><td>
+      <b class="hl">먼저 보기 ${t.fl.model.n}</b> ${t.fl.model.ko}<br>
+      ${t.fl.drill.map(d=>`<span class="hint"><b class="hl">${d.n}</b> ${esc(d.ans)}</span>`).join("<br>")}<br>
+      <span class="dim">그 밖의 문장 해석은 아래 전문 해석 참조</span></td></tr>
+    <tr><td class="k">TASK 4</td><td>${t.flow.filter(r=>r[2]).map((r,i)=>`${CIR[i]} ${r[2]}`).join(" &nbsp; ")}</td></tr>
+    <tr><td class="k">TASK 5</td><td>${t.para.map((p,i)=>`(${i+1}) ${p[2]}`).join(" &nbsp; ")}</td></tr>
+    <tr><td class="k">TASK 6-1</td><td><b class="hl">정답 ${CIR[t.check[0].ans-1]}</b><br>
+      ${t.why.map((w,i)=>`${CIR[i]} <b class="hl">${t.wtype[i]}</b> ${w[0]==="정답"?"글 전체를 아우르는 제목이다":w[0]}`).join("<br>")}</td></tr>
+    <tr><td class="k">TASK 6-2</td><td><b class="hl">정답 ${CIR[t.check[1].ans-1]}</b><br>
+      ${t.src.map((w,i)=>`${CIR[i]} <b class="hl">${t.stype[i]}</b> ${w[0]}`).join("<br>")}</td></tr>
+    <tr><td class="k">TASK 6-3</td><td>${t.check[2].ans}</td></tr>
+   </table>
+  </div>
+  <div class="trans"><span class="eb">전문 해석 · Full Translation</span>${t.kor.map((k,i)=>`<sup>${CIR[i]}</sup>${k}`).join(" ")}</div>
+  ${ti===4?`
+  <div class="how" style="grid-template-columns:1fr 1fr">
+   <div class="box"><div class="n">Self Check</div><h4>스스로 점검하기</h4>
+    <ul class="chk"><li>다섯 지문을 소리 내어 끝까지 읽었다</li><li>WORD BANK 30개를 영영풀이로 설명할 수 있다</li>
+     <li>ORUN FLOW 5단계를 보지 않고 표시할 수 있다</li><li>각 지문의 흐름을 표 없이 말로 설명할 수 있다</li>
+     <li>Check Up의 오답 유형을 모두 골랐다</li></ul></div>
+   ${U.next?`<div class="box"><div class="n">Next Unit</div>
+    <h4>Unit ${U.no+1} · ${U.next.en}</h4>
+    <p>같은 여섯 걸음으로 진행합니다. Unit ${U.no}이 ‘${U.tagline.split(" — ")[0]}’를 다루었다면,
+       Unit ${U.no+1}는 ${U.next.ko}. 지문 5편 · ${U.next.words}.</p></div>`
+    :`<div class="box"><div class="n">The End</div><h4>12 유닛 완주</h4>
+    <p>열두 분야 예순 편을 모두 읽었습니다. 이제 같은 여섯 걸음으로 어떤 비문학 지문이든 스스로 읽어 낼 수 있습니다.</p></div>`}
+  </div>`:""}
+  ${tab(null)}${foot(AC,"Answers")}
+ </div>`);
+});
+};
 
 UNITS.forEach(UU=>{ useUnit(UU);
 
@@ -254,53 +306,12 @@ T.forEach(t=>{
  </div>`);
 });
 
-/* ═══ ANSWERS ═══ */
-const AC={accent:"#13345C",tint:"#E8EDF3",deep:"#0E2542",no:""};
-T.forEach((t,ti)=>{
- const C=col(t);
- P.push(`<div class="${PGC()}${ti===4?" tight":""}" style="${vars(AC)}">
-  ${head(AC,"Answers & Full Translation")}
-  ${ti===0?`<h2 class="sechd">정답과 해설</h2><p>Unit ${U.no} &nbsp;|&nbsp; Lesson ${T[0].no}–${T[T.length-1].no} &nbsp;|&nbsp; 지문 전문 해석 포함</p>`:""}
-  <div class="akey">
-   <div class="hd"><i class="dot" style="background:${C.accent}"></i>Lesson ${t.no} &nbsp;${esc(t.en)}<em>${t.ko}</em></div>
-   <table>
-    <tr><td class="k">TASK 1</td><td>${t.defOrder.map((oi,i)=>`${i+1}–${AL[oi]}`).join(" &nbsp; ")}
-       &nbsp;<span class="dim">(${t.defs.map((d,i)=>`${AL[i]} ${d[0]}`).join(" · ")})</span></td></tr>
-    <tr><td class="k">TASK 2</td><td>
-      ${t.syn.map((x,i)=>`<b class="hl">구문 ${i+1} · ${x.n} ${x.name}</b><br>${x.k}`).join("<br>")}
-      <br>${t.synd.map((d,i)=>`<b class="hl">훈련 ${i+1}</b> <span class="dim">(${d.u})</span> ${d.k}`).join("<br>")}</td></tr>
-    <tr><td class="k">TASK 3</td><td>
-      <b class="hl">먼저 보기 ${t.fl.model.n}</b> ${t.fl.model.ko}<br>
-      ${t.fl.drill.map(d=>`<span class="hint"><b class="hl">${d.n}</b> ${esc(d.ans)}</span>`).join("<br>")}<br>
-      <span class="dim">그 밖의 문장 해석은 아래 전문 해석 참조</span></td></tr>
-    <tr><td class="k">TASK 4</td><td>${t.flow.filter(r=>r[2]).map((r,i)=>`${CIR[i]} ${r[2]}`).join(" &nbsp; ")}</td></tr>
-    <tr><td class="k">TASK 5</td><td>${t.para.map((p,i)=>`(${i+1}) ${p[2]}`).join(" &nbsp; ")}</td></tr>
-    <tr><td class="k">TASK 6-1</td><td><b class="hl">정답 ${CIR[t.check[0].ans-1]}</b><br>
-      ${t.why.map((w,i)=>`${CIR[i]} <b class="hl">${t.wtype[i]}</b> ${w[0]==="정답"?"글 전체를 아우르는 제목이다":w[0]}`).join("<br>")}</td></tr>
-    <tr><td class="k">TASK 6-2</td><td><b class="hl">정답 ${CIR[t.check[1].ans-1]}</b><br>
-      ${t.src.map((w,i)=>`${CIR[i]} <b class="hl">${t.stype[i]}</b> ${w[0]}`).join("<br>")}</td></tr>
-    <tr><td class="k">TASK 6-3</td><td>${t.check[2].ans}</td></tr>
-   </table>
-  </div>
-  <div class="trans"><span class="eb">전문 해석 · Full Translation</span>${t.kor.map((k,i)=>`<sup>${CIR[i]}</sup>${k}`).join(" ")}</div>
-  ${ti===4?`
-  <div class="how" style="grid-template-columns:1fr 1fr">
-   <div class="box"><div class="n">Self Check</div><h4>스스로 점검하기</h4>
-    <ul class="chk"><li>다섯 지문을 소리 내어 끝까지 읽었다</li><li>WORD BANK 30개를 영영풀이로 설명할 수 있다</li>
-     <li>ORUN FLOW 5단계를 보지 않고 표시할 수 있다</li><li>각 지문의 흐름을 표 없이 말로 설명할 수 있다</li>
-     <li>Check Up의 오답 유형을 모두 골랐다</li></ul></div>
-   ${U.next?`<div class="box"><div class="n">Next Unit</div>
-    <h4>Unit ${U.no+1} · ${U.next.en}</h4>
-    <p>같은 여섯 걸음으로 진행합니다. Unit ${U.no}이 ‘${U.tagline.split(" — ")[0]}’를 다루었다면,
-       Unit ${U.no+1}는 ${U.next.ko}. 지문 5편 · ${U.next.words}.</p></div>`
-    :`<div class="box"><div class="n">The End</div><h4>12 유닛 완주</h4>
-    <p>열두 분야 예순 편을 모두 읽었습니다. 이제 같은 여섯 걸음으로 어떤 비문학 지문이든 스스로 읽어 낼 수 있습니다.</p></div>`}
-  </div>`:""}
-  ${tab(null)}${foot(AC,"Answers")}
- </div>`);
-});
+if (!ANSBACK) pushAnswers();
 
 }); /* ═══ 유닛 루프 끝 ═══ */
+
+/* 학생용: 열두 유닛의 해설을 책 맨 뒤에 이어 붙인다 */
+if (ANSBACK) UNITS.forEach(UU=>{ useUnit(UU); pushAnswers(); });
 
 /* ── 넘침 방지(guard): 인쇄 직전에 면마다 본문 하단(탭·푸터 제외)을 재서, 아래 여백 18mm 선(279mm = clip.py 의 본문 하한)을
    넘는 면에만 조임 클래스를 한 단계씩 붙인다. 넘치지 않는 면은 손대지 않으므로 규격 면의 모양은 그대로다.

@@ -1,7 +1,7 @@
 # READING GRAPHY 예비고등 — 삽화·부품 사용 규칙 (디자인 시스템 A + 접목판)
 
 Unit 1(`art/u01.js`)이 기준 구현이다. 다른 11개 유닛의 `art/uNN.js` 를 손질할 때 이 문서를 따른다.
-콘텐츠(`units/*.js`)·면수(유닛 30면)·머리글·ORUN FLOW 범례색·TASK 번호·교사용 붉은 정답은 건드리지 않는다.
+콘텐츠(`units/*.js`)·면수(유닛 30면 — 학생용은 본문 25면 + 맨 뒤 해설 5면으로 나뉜다)·머리글·ORUN FLOW 범례색·TASK 번호·교사용 붉은 정답은 건드리지 않는다.
 검사 4종(`node validate.js N` · `python3 clip.py uNN` / `uNN_t` · `python3 wrap.py uNN.pdf` · `python3 legend.py uNN.pdf`)을 전부 통과해야 완료다.
 
 ---
