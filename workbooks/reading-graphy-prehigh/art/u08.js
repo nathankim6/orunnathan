@@ -77,7 +77,6 @@ const P3 = [{ x:20, y:18, w:186, h:228 }, { x:227, y:18, w:186, h:228 }, { x:434
 const PA = { x:20, y:18, w:270, h:228 }, PB = { x:350, y:18, w:270, h:228 };   // 패널 사이 60 (노트 40 + 여백 10·10)
 const FLOOR = 236;                                   // 인물 발밑 바닥선 (패널 바닥 246 − 10)
 const BAND = 204;                                    // 벽/바닥 경계
-const DESK = 192;                                    // 상판 윗선
 
 /* 방(패널 + 바닥 띠 + 바닥선) 한 벌 */
 const room = (P, c, t, d, n, label) => `${panel(Object.assign({ c:d, t, n, label }, P))}
