@@ -49,12 +49,12 @@ const icons = {
   <path d="M10 56h44" ${IC(c)}/></svg>`,
  /* 편지 한 통과 뻗어 나간 세 갈래 */
  letters:(c)=>`<svg viewBox="0 0 64 64">
-  <rect x="10" y="27" width="28" height="20" rx="3" fill="${c}" opacity=".3"/>
-  <rect x="10" y="27" width="28" height="20" rx="3" ${IC(c)}/>
-  <path d="M10 30l14 10 14-10" ${IC(c)}/>
-  <path d="M38 32l9-9M38 37h10M38 42l8 8" ${IC(c)}/>
-  <circle cx="50" cy="19" r="4" ${IC(c)}/><circle cx="52" cy="37" r="4" ${IC(c)}/><circle cx="49" cy="53" r="4" ${IC(c)}/>
-  <path d="M10 56h34" ${IC(c)}/></svg>`,
+  <rect x="10" y="30" width="28" height="20" rx="3" fill="${c}" opacity=".3"/>
+  <rect x="10" y="30" width="28" height="20" rx="3" ${IC(c)}/>
+  <path d="M10 33l14 10 14-10" ${IC(c)}/>
+  <path d="M38 34l7-11M38 37h9M38 42l5 3" ${IC(c)}/>
+  <circle cx="48" cy="18" r="3.5" ${IC(c)}/><circle cx="50" cy="34" r="3.5" ${IC(c)}/><circle cx="46" cy="47" r="3.5" ${IC(c)}/>
+  <path d="M10 56h44" ${IC(c)}/></svg>`,
 };
 
 /* ── 유닛 캐스팅: 한 배너 안에서 top·hair·skin 이 겹치지 않게 ── */
