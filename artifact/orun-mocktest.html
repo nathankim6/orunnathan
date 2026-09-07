@@ -1102,7 +1102,9 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   border: 1px solid var(--n8); border-radius: 0; padding: 12px 16px; margin: 10px 0; background: none; font-size: 13.5px;
 }
 .exam-output ol, .exam-output ul { list-style: none; padding-left: 6px; margin: 6px 0; }
-.exam-output .choices-inline { margin: 7px 0 0; padding-left: 6px; letter-spacing: .02em; }
+.exam-output .given { border: 1px solid var(--n8); padding: 12px 16px; margin: 10px 0; font-size: 13.5px; }
+.exam-output .choices-inline { margin: 7px 0 0; padding: 0 6px; display: flex; justify-content: space-between; gap: 4px; }
+.exam-output .question > p, .exam-output .passage p, .exam-output .given p, .exam-output .ak { text-align: justify; }
 .exam-output table { border-collapse: collapse; width: 100%; }
 .exam-output table td, .exam-output table th { border: 1px solid var(--line-2); padding: 6px 10px; }
 .exam-output .question, .exam-output .q { margin-bottom: 26px; }
@@ -1159,6 +1161,17 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 .page h2 { font-size: 10pt; font-weight: bold; border-bottom: 0.8pt solid #000; padding-bottom: 2pt; margin: 6pt 0 5pt; color: #000; }
 .page .question { margin: 0 0 8pt; position: relative; }
 .page .passage, .page blockquote { border: 0.5pt solid #000; padding: 4pt 6pt; margin: 3pt 0; background: none; font-size: 8pt; border-radius: 0; }
+/* 〈보기〉·주어진 문장 — 지문과 같은 상자에 넣지 않는다. 원본 시험지는 늘 따로 친다. */
+.page .given { border: 0.5pt solid #000; padding: 4pt 6pt; margin: 3pt 0; font-size: 8pt; }
+.page .given + .passage { margin-top: 4pt; }
+/* 기호만 있는 선지(①~⑤)는 단 너비에 고르게 펼친다 */
+.page .choices-inline {
+  margin: 3pt 0 0; padding: 0 2pt;
+  display: flex; justify-content: space-between; gap: 2pt; letter-spacing: 0;
+}
+.page .choices-inline > span { white-space: nowrap; }
+/* 본문 문단은 양쪽정렬 — 시험지는 오른쪽 끝이 맞아야 한다 */
+.page .question > p, .page .passage p, .page .given p, .page .ak, .page li { text-align: justify; }
 .page p { margin: 0 0 3pt; }
 .page ol, .page ul { list-style: none; margin: 2pt 0; padding-left: 2pt; }
 .page li { margin: 0 0 1pt; }
@@ -1690,7 +1703,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     <span class="step" data-step="2"></span><span class="step-rule"></span>
     <span class="step" data-step="3"></span>
   </div>
-  <div class="state"><span class="build" id="buildTag">2026-09-07 20:25</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
+  <div class="state"><span class="build" id="buildTag">2026-09-07 21:58</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
 </div>
 
 <!-- 화면 0 · 시작 -->
@@ -3195,7 +3208,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
           if (line) blocks.push({ kind: ctx.box ? "boxp" : "p", runs: [{ t: line, b: false, u: false }] });
         });
       }
-      else if (tag === "BLOCKQUOTE" || /passage/.test(cls)) walkBlocks(ch, blocks, { box: true, center: false });
+      else if (tag === "BLOCKQUOTE" || /passage|given/.test(cls)) walkBlocks(ch, blocks, { box: true, center: false });
       else if (/exam-header/.test(cls) || tag === "HEADER") walkBlocks(ch, blocks, { box: false, center: true });
       else if (tag === "OL" || tag === "UL") walkBlocks(ch, blocks, ctx);
       else if (tag === "LI" || tag === "P") {
@@ -3251,8 +3264,8 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     if (b.kind === "title") { ppr += '<w:keepNext/><w:jc w:val="center"/><w:spacing w:after="60"/>'; extra = '<w:b/><w:sz w:val="26"/><w:szCs w:val="26"/>'; }
     else if (b.kind === "center") { ppr += '<w:jc w:val="center"/><w:spacing w:after="60"/>'; }
     else if (b.kind === "h2") { ppr += '<w:keepNext/><w:spacing w:before="160" w:after="60"/><w:pBdr><w:bottom w:val="single" w:sz="8" w:space="2" w:color="000000"/></w:pBdr>'; extra = '<w:b/><w:sz w:val="20"/><w:szCs w:val="20"/>'; }
-    else if (b.kind === "boxp") { ppr += "<w:keepLines/>" + BOX; }
-    else { ppr += '<w:spacing w:after="40"/>'; }
+    else if (b.kind === "boxp") { ppr += '<w:keepLines/><w:jc w:val="both"/>' + BOX; }
+    else { ppr += '<w:jc w:val="both"/><w:spacing w:after="40"/>'; }
     ppr += "</w:pPr>";
     return "<w:p>" + ppr + b.runs.map(r => docxRun(r, extra)).join("") + "</w:p>";
   }
@@ -3278,8 +3291,8 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
       if (b.kind === "title") return new D.Paragraph({ alignment: D.AlignmentType.CENTER, keepNext: true, spacing: { after: 60 }, children: runs(b, { bold: true, size: 26 }) });
       if (b.kind === "center") return new D.Paragraph({ alignment: D.AlignmentType.CENTER, spacing: { after: 60 }, children: runs(b, {}) });
       if (b.kind === "h2") return new D.Paragraph({ keepNext: true, spacing: { before: 160, after: 60 }, border: { bottom: LINE(8, 2) }, children: runs(b, { bold: true, size: 20 }) });
-      if (b.kind === "boxp") return new D.Paragraph({ keepLines: true, border: { top: LINE(6, 3), left: LINE(6, 6), bottom: LINE(6, 3), right: LINE(6, 6) }, children: runs(b, {}) });
-      return new D.Paragraph({ spacing: { after: 40 }, children: runs(b, {}) });
+      if (b.kind === "boxp") return new D.Paragraph({ keepLines: true, alignment: D.AlignmentType.JUSTIFIED, border: { top: LINE(6, 3), left: LINE(6, 6), bottom: LINE(6, 3), right: LINE(6, 6) }, children: runs(b, {}) });
+      return new D.Paragraph({ alignment: D.AlignmentType.JUSTIFIED, spacing: { after: 40 }, children: runs(b, {}) });
     });
     const doc = new D.Document({
       creator: "ORUN ENGLISH", title: "동형모의고사",
@@ -3379,7 +3392,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   const API_MODEL_STORE = "orun_api_model";
   function apiModelKey() { let m = "opus"; try { m = localStorage.getItem(API_MODEL_STORE) || "opus"; } catch (e) {} return API_MODELS[m] ? m : "opus"; }
   function apiModelId() { return API_MODELS[apiModelKey()]; }
-  const API_MAX_TOKENS = { complex: 16000, default: 8000 };
+  const API_MAX_TOKENS = { complex: 32000, default: 8000 };   // 모델 한도는 128K — 넉넉히 잡아도 값은 실제 출력분만 든다
   let apiFallbackOk = true;   // 서버가 폴백 베타를 거절하면 이후로는 빼고 보낸다
 
   // 키 보관 — 여럿이 쓰는 컴퓨터를 위해 '창을 닫으면 지움'(sessionStorage) 을 고를 수 있다.
@@ -3658,7 +3671,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   function diagnostics() {
     return [
       "ORUN 동형 모의고사 진단",
-      "build: 2026-09-07 20:25",
+      "build: 2026-09-07 21:58",
       "url: " + location.href,
       "runtime: API 키 전용 빌드",
       "sample 확보: " + (SAMPLE ? "예" : "아니오"),
@@ -3756,7 +3769,12 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     if (opts.cache === false) options.cache = false;
     let out;
     try {
-      out = opts.json ? await SAMPLE.json(input, options) : (await SAMPLE(input, options)).text;
+      if (opts.json) out = await SAMPLE.json(input, options);
+      else {
+        const r = await SAMPLE(input, options);
+        out = r.text;
+        if (opts.onTruncated && r.truncated) opts.onTruncated();
+      }
     } catch (e) {
       if (e && e.code === "cancelled") throw new Error("__aborted__");
       if (e && e.code === "invalid_json") throw new Error("응답을 해석하지 못했습니다. 다시 시도해 주세요.");
@@ -3974,15 +3992,22 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 "[제작 규칙]\n" +
 "1. 각 문항의 유형·답 형식·배점·난이도를 원본과 동일하게 유지하고, 발문은 원본 발문(stem)의 표현 방식을 그대로 따릅니다.\n" +
 "2. 지문은 반드시 함께 제공된 [지문 원문]에서 가져와 유형에 맞게 가공합니다(빈칸/밑줄/순서 분할/문장 삽입 등). 범위 밖 지문을 창작하지 않습니다.\n" +
-"3. 객관식 선지는 ①②③④⑤ 다섯 개, 매력적인 오답을 포함해 원본과 같은 변별력을 갖춥니다.\n" +
-"4. 허용 태그: div(class=\"question\"|\"passage\"|\"answer-key\"), p, b, u, br, ol, li, span 만. <table>·<h1>·<h2>·기타 태그 금지. 밑줄은 <u>, 빈칸은 ____ 또는 (A)(B), 굵게는 <b>.\n" +
-"5. 출력은 순수 HTML 조각만. 형식:\n" +
+"3. 객관식 선지는 ①②③④⑤ 다섯 개, 매력적인 오답을 포함해 원본과 같은 변별력을 갖춥니다. 같은 선지를 두 번 쓰지 않습니다.\n" +
+"4. 허용 태그: div(class=\"question\"|\"given\"|\"passage\"|\"answer-key\"), p, b, u, br, ol, li, span 만. <table>·<h1>·<h2>·기타 태그 금지. 밑줄은 <u>, 빈칸은 ____ 또는 (A)(B), 굵게는 <b>.\n" +
+"5. 출력은 순수 HTML 조각만. 기본 형식:\n" +
 '<div class="question" data-no="번호"><p><b>번호.</b> 발문 [배점]</p><div class="passage"><p>지문…</p></div><ol><li>① …</li>…</ol></div>\n' +
 "(문항 수만큼 반복) 그리고 마지막에\n" +
 '<div class="answer-key"><p data-no="번호"><b>번호.</b> 정답 ③ — 해설(정답 근거 + 주요 오답이 틀린 이유) · 출처: 지문 위치</p>…</div>\n' +
-(extra ? "6. 사용자 요청사항(반드시 반영): " + extra + "\n" : "") +
+"6. [유형별 배치 — 원본 시험지 그대로]\n" +
+'   · 문장 삽입: 주어진 문장을 지문과 <b>다른 상자</b>에 넣습니다. <div class="given"><p>주어진 문장</p></div> 를 먼저 쓰고, 그 아래 <div class="passage"> 안에 ( ① ) ~ ( ⑤ ) 자리 표시가 들어간 지문을 씁니다. 두 상자를 하나로 합치지 않습니다.\n' +
+'   · 글의 순서: 주어진 글을 <div class="given"> 에, (A)(B)(C) 단락을 <div class="passage"> 에 나눠 씁니다.\n' +
+'   · 요약문 완성: 지문을 <div class="passage"> 에, 요약문(빈칸 (A)(B) 포함)을 <div class="given"> 에 씁니다.\n' +
+'   · 〈보기〉가 필요한 그 밖의 유형도 같은 방식으로 <div class="given"> 을 따로 씁니다.\n' +
+"   · 문장 삽입·순서처럼 선지가 기호뿐인 문항은 <li>①</li><li>②</li><li>③</li><li>④</li><li>⑤</li> 다섯 개만 씁니다. 기호를 겹쳐 쓰거나 되풀이하지 않습니다.\n" +
+"7. 지문·발문·선지는 원본 시험지의 문장 길이와 어투를 따릅니다. 지문 단락을 임의로 줄이거나 늘이지 않습니다.\n" +
+(extra ? "8. 사용자 요청사항(반드시 반영): " + extra + "\n" : "") +
 "\n[시험 정보] " + (info.title || "") + "\n" +
-"[원본 시험지 표현 방식 참고 — 발췌]\n" + styleSample + "\n\n[출제할 문항]\n";
+"[원본 시험지 발췌 — 발문·지문·선지의 배치와 어투를 이대로 따르세요]\n" + styleSample + "\n\n[출제할 문항]\n";
     items.forEach(it => {
       p += "\n■ " + it.number + "번 · " + it.type + " · " + it.format + " · " + it.points + "점 · 난이도 " + it.difficulty +
         (it.features ? " · 특징: " + it.features : "") +
@@ -4522,13 +4547,14 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     if (OPT.subj === "none") itemsFinal = itemsFinal.map(it => /서술형/.test(it.format + it.type) ? { ...it, format: "5지선다", type: it.type.replace(/^서술형-?/, "") || "주제" } : it);
 
     // 묶음 만들기 (예산 안에서 최대 6문항)
-    const styleSample = pipe.examText.slice(0, 2200);
+    const styleSample = pipe.examText.slice(0, 5000);   // 원본 포맷을 따르라면 원본을 넉넉히 보여줘야 한다
     const base = bytesOf(promptGen(analysis.exam_info || {}, [], styleSample, extra));
+    const GEN_PER_CALL = 4;          // 한 번에 너무 많이 시키면 응답이 잘린다
     const batches = [];
     let cur = [], curBytes = base;
     itemsFinal.forEach(it => {
       const sz = bytesOf(promptGen({}, [it], "", "")) - bytesOf(promptGen({}, [], "", ""));
-      if (cur.length && (curBytes + sz > BUDGET || cur.length >= 6)) { batches.push(cur); cur = []; curBytes = base; }
+      if (cur.length && (curBytes + sz > BUDGET || cur.length >= GEN_PER_CALL)) { batches.push(cur); cur = []; curBytes = base; }
       cur.push(it); curBytes += sz;
     });
     if (cur.length) batches.push(cur);
@@ -4558,6 +4584,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     let doneCount = 0, streamed = 0;
     const reviewJobs = [];
 
+    const missingAll = [], failedAll = [];
     const runBatch = async (b) => {
       const nums = batches[b].map(x => x.number);
       const label = nums[0] + (nums.length > 1 ? "~" + nums[nums.length - 1] : "") + "번";
@@ -4588,8 +4615,33 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
         },
       });
       const doc = new DOMParser().parseFromString("<div>" + sanitizeAndFold(stripFences(html)) + "</div>", "text/html");
-      const qs = [...doc.querySelectorAll(".question")];
-      const as = [...doc.querySelectorAll(".answer-key p")];
+      let qs = [...doc.querySelectorAll(".question")];
+      let as = [...doc.querySelectorAll(".answer-key p")];
+
+      // 응답이 잘리면 뒷 문항이 통째로 사라진다 — 조용히 넘기지 않고 빠진 것만 다시 청구한다.
+      let missing = batches[b].filter(it => !qs.some(q => String(q.dataset.no) === String(it.number)));
+      for (let round = 0; round < 2 && missing.length && !cancelRequested; round++) {
+        genProg.set(8 + 68 * doneCount / batches.length, 2,
+          missing.map(x => x.number).join("·") + "번을 다시 받는 중 (" + (round + 1) + "차)");
+        try { stage.log(missing.map(x => x.number).join("·") + "번이 응답에서 잘려 다시 청구합니다", "warn"); } catch (e) {}
+        const chunks = [];
+        for (let i = 0; i < missing.length; i += 2) chunks.push(missing.slice(i, i + 2));   // 더 잘게 나눠 다시
+        for (const ch of chunks) {
+          if (cancelRequested) break;
+          let more = "";
+          try { more = await callClaude(promptGen(analysis.exam_info || {}, ch, styleSample, extra), { tier: "complex" }); }
+          catch (e) { if (e.message === "__aborted__") throw e; continue; }
+          const d2 = new DOMParser().parseFromString("<div>" + sanitizeAndFold(stripFences(more)) + "</div>", "text/html");
+          [...d2.querySelectorAll(".question")].forEach(q => { if (!qs.some(x => String(x.dataset.no) === String(q.dataset.no))) qs.push(q); });
+          [...d2.querySelectorAll(".answer-key p")].forEach(a => { if (!as.some(x => String(x.dataset.no) === String(a.dataset.no))) as.push(a); });
+        }
+        missing = batches[b].filter(it => !qs.some(q => String(q.dataset.no) === String(it.number)));
+      }
+      if (missing.length) missingAll.push(...missing.map(x => x.number));
+
+      const order = batches[b].map(x => String(x.number));
+      qs.sort((x, y) => order.indexOf(String(x.dataset.no)) - order.indexOf(String(y.dataset.no)));
+      as.sort((x, y) => order.indexOf(String(x.dataset.no)) - order.indexOf(String(y.dataset.no)));
       as.forEach(p => p.classList.add("ak"));
       batchQ[b] = qs; batchA[b] = as;
       liveUnits[b].hidden = true;
@@ -4601,8 +4653,19 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     };
 
     try {
-      await runPool(batches.map((_, b) => () => runBatch(b)), 2);
-      const qAll = batchQ.flat(), aAll = batchA.flat();
+      // 한 묶음이 실패해도 나머지는 끝까지 간다 — 어느 문항이 빠졌는지는 끝나고 알려준다
+      await runPool(batches.map((_, b) => () => runBatch(b).catch(e => {
+        if (e && e.message === "__aborted__") throw e;
+        failedAll.push(...batches[b].map(x => x.number));
+        liveUnits[b].hidden = true;
+        try { stage.log(batches[b].map(x => x.number).join("·") + "번 묶음 실패: " + e.message, "warn"); } catch (_) {}
+      })), 2);
+      // 묶음마다 자기 번호만 검사했으므로, 다른 묶음이 같은 번호를 또 써 보내면 둘 다 남는다.
+      // 종이에 올리기 전에 번호로 한 번 걸러 낸다 — 먼저 온 것을 남긴다.
+      const dedupe = (list) => { const seen = new Set(); return list.filter(el => {
+        const no = String(el.dataset.no || ""); if (!no) return true;
+        if (seen.has(no)) return false; seen.add(no); return true; }); };
+      const qAll = dedupe(batchQ.flat()), aAll = dedupe(batchA.flat());
       const h2 = document.createElement("h2"); h2.textContent = "정답 및 해설";
       docUnits = [headerUnit, ...qAll, h2, ...aAll];
       clearTimeout(layoutTimer); layoutTimer = null;
@@ -4626,8 +4689,21 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
                     : rv.fixed ? "합의 완료 · " + rv.fixed + "문항" : "검수 완료 · 3인 정답 일치")
         : "출제 완료");
       genProg.finish("출제 완료");
-      $("resultTitle").textContent = "시험지가 완성됐어요";
-      $("resultSub").textContent = rv.on && rv.check
+      // 묶음별 장부가 아니라 '종이에 실제로 올라간 것'으로 센다.
+      // 다시 청구해서 채운 문항까지 빠졌다고 말하면 안 된다.
+      const have = new Set(docUnits.filter(u => u.classList && u.classList.contains("question"))
+                                   .map(u => String(u.dataset.no)));
+      const lost = itemsFinal.map(x => String(x.number)).filter(n => !have.has(n));
+      const made = have.size;
+      $("resultTitle").textContent = lost.length ? "일부 문항을 만들지 못했어요" : "시험지가 완성됐어요";
+      if (lost.length) {
+        showError("genError", "계획한 " + itemsFinal.length + "문항 중 " + made + "문항이 만들어졌어요. "
+          + "받지 못한 문항: " + lost.join(", ") + "번. "
+          + "‘이 계획으로 출제’를 다시 누르면 처음부터 다시 만들고, 자료가 길면 범위 자료를 나눠 올리면 잘 나옵니다.");
+      }
+      $("resultSub").textContent = lost.length
+        ? "받지 못한 문항이 있어요 — 위 안내를 확인해 주세요."
+        : rv.on && rv.check
         ? "빨간 도장이 찍힌 문항은 합의에 이르지 못했어요. 다시 출제하거나 직접 고쳐 주세요."
         : rv.on && rv.fixed
         ? "검수위원 답이 갈린 " + rv.fixed + "문항은 위원장이 합의를 끌어내 정답·문항을 정리했어요."
@@ -4684,9 +4760,19 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
       if (items.length < 3) return;
       const texts = items.map(li => li.textContent.replace(/\s+/g, " ").trim());
       if (!texts.every(t => t.length <= 4 && /^[①-⑳(A-E)\d.\s]+$/.test(t))) return;
+      // 한 선지 안에 같은 기호가 겹쳐 오거나(①  ①) 선지가 통째로 되풀이되는 응답이 있다.
+      // 기호만 있는 선지는 '기호 하나'가 전부이므로 여기서 정리한다.
+      const seen = new Set(), out = [];
+      texts.forEach(t => {
+        const m = t.match(/[①-⑳]|\([A-E]\)|[A-E]|\d+/);
+        const one = m ? m[0] : t;
+        if (seen.has(one)) return;
+        seen.add(one); out.push(one);
+      });
+      if (out.length < 3) return;
       const p = document.createElement("p");
       p.className = "choices-inline";
-      p.textContent = texts.join("   ");
+      out.forEach(t => { const sp = document.createElement("span"); sp.textContent = t; p.appendChild(sp); });
       list.replaceWith(p);
     });
     return root;
@@ -5285,7 +5371,7 @@ list.map(disputeBlock).join("\n");
   function enterEditMode() {
     editing = true;
     $("examOutput").classList.add("editing");
-    $("examOutput").querySelectorAll(".question > p, .passage p, .question li, .choices-inline, .ak").forEach(n => n.setAttribute("contenteditable", "true"));
+    $("examOutput").querySelectorAll(".question > p, .passage p, .given p, .question li, .choices-inline, .ak").forEach(n => n.setAttribute("contenteditable", "true"));
     $("editToggle").textContent = "수정 끝내기";
     $("editToggle").classList.remove("ghost");
     toast("문항 본문을 클릭해 바로 고칠 수 있습니다");
@@ -5372,7 +5458,10 @@ list.map(disputeBlock).join("\n");
       "h1{font-size:13pt;margin:0 0 2pt;font-weight:bold}.exam-header p{margin:0 0 6pt}" +
       "h2{font-size:10pt;font-weight:bold;border-bottom:0.8pt solid #000;padding-bottom:2pt;margin:10pt 0 5pt}" +
       ".question,.q{break-inside:avoid;page-break-inside:avoid;margin:0 0 8pt}" +
-      ".passage,blockquote{border:0.5pt solid #000;padding:4pt 6pt;margin:3pt 0;break-inside:avoid;page-break-inside:avoid}" +
+      ".passage,blockquote,.given{border:0.5pt solid #000;padding:4pt 6pt;margin:3pt 0;break-inside:avoid;page-break-inside:avoid}" +
+      ".given+.passage{margin-top:4pt}" +
+      ".choices-inline{display:flex;justify-content:space-between;gap:2pt;margin:3pt 0 0;padding:0 2pt}" +
+      ".question p,.passage p,.given p,.answer-key p{text-align:justify}" +
       "p{margin:0 0 3pt}ol,ul{list-style:none;margin:2pt 0;padding-left:2pt}li{margin:0 0 1pt}u{text-underline-offset:2pt}" +
       "@media screen{body{max-width:210mm;margin:12mm auto;padding:0 8mm}}";
     return "<!DOCTYPE html><html lang='ko'><head><meta charset='UTF-8'><title>동형모의고사</title>" +
