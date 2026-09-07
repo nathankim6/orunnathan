@@ -7,7 +7,7 @@ import levelTestResultLogo from "@/assets/level-test-result-logo.png";
 import { formatDate } from '@/utils/resultsUtils';
 import { toast } from '@/hooks/use-toast';
 import { hsAnalysisCategories, hsSectionNames } from '@/data/highSchoolLevelTestQuestions';
-import html2canvas from 'html2canvas';
+import { captureReportBlob } from '@/utils/reportCapture';
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, ResponsiveContainer } from 'recharts';
 import HighSchoolQuestionDetailDialog from './HighSchoolQuestionDetailDialog';
@@ -244,25 +244,8 @@ const HighSchoolLevelTestResultGroup = ({
       }));
       await new Promise(resolve => setTimeout(resolve, 500));
 
-      const canvas = await html2canvas(element, {
-        scale: 4,
-        useCORS: true,
-        allowTaint: true,
-        logging: false,
-        backgroundColor: '#ffffff',
-        width: element.scrollWidth,
-        height: element.scrollHeight
-      });
-
-      const blob = await new Promise<Blob>((resolve, reject) => {
-        canvas.toBlob(blob => {
-          if (blob) {
-            resolve(blob);
-          } else {
-            reject(new Error('Failed to create blob'));
-          }
-        }, 'image/jpeg', 1.0);
-      });
+      // 화면에 보이는 그대로 캡처 (html2canvas 는 한글 받침이 잘렸다)
+      const blob = await captureReportBlob(element, { pixelRatio: 3 });
 
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');

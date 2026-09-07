@@ -11,7 +11,7 @@ import PageHeader from '@/components/PageHeader';
 import { motion, AnimatePresence } from 'framer-motion';
 import orunLogo from '@/assets/orun-academy-logo.jpg';
 import JSZip from 'jszip';
-import { toJpeg } from 'html-to-image';
+import { captureReportBlob, saveBlobAsFile } from '@/utils/reportCapture';
 import { useToast } from "@/hooks/use-toast";
 import { format } from 'date-fns';
 import DownloadProgressOverlay from '@/components/DownloadProgressOverlay';
@@ -274,29 +274,11 @@ const StudentHistory = () => {
             throw new Error('리포트 요소를 찾을 수 없습니다.');
           }
 
-          const dataUrl = await toJpeg(reportElement, {
-            quality: 1.0,
-            backgroundColor: '#ffffff',
-            cacheBust: true,
-            pixelRatio: 4,
-            filter: (node: HTMLElement | SVGElement) => {
-              try {
-                if (node instanceof Element) {
-                  const rect = node.getBoundingClientRect();
-                  return rect.width > 0 && rect.height > 0 && isFinite(rect.width) && isFinite(rect.height);
-                }
-              } catch (_) {}
-              return true;
-            }
-          } as any);
-
-          const base64Data = dataUrl.split(',')[1];
-          const binaryData = atob(base64Data);
-          const arrayBuffer = new ArrayBuffer(binaryData.length);
-          const uint8Array = new Uint8Array(arrayBuffer);
-          for (let j = 0; j < binaryData.length; j++) {
-            uint8Array[j] = binaryData.charCodeAt(j);
-          }
+          // 화면에 보이는 그대로 캡처. 예전에는 크기가 0인 요소를 걸러냈는데,
+          // 차트의 <defs>·그라디언트처럼 크기가 0이지만 꼭 필요한 요소까지
+          // 빠져 색이 사라졌다. 배율도 캔버스 한계에 맞춰 자동 조정된다.
+          const blob = await captureReportBlob(reportElement, { pixelRatio: 3 });
+          const uint8Array = new Uint8Array(await blob.arrayBuffer());
 
           const nameParts = student.student_name.split(' ');
           const className = nameParts.length > 1 ? nameParts[0] : '미분류';
@@ -538,31 +520,16 @@ const StudentHistory = () => {
         description: "잠시만 기다려주세요."
       });
 
-      const dataUrl = await toJpeg(reportElement, {
-        quality: 1.0,
-        backgroundColor: '#ffffff',
-        cacheBust: true,
-        pixelRatio: 4,
-        filter: (node: HTMLElement | SVGElement) => {
-          try {
-            if (node instanceof Element) {
-              const rect = node.getBoundingClientRect();
-              return rect.width > 0 && rect.height > 0 && isFinite(rect.width) && isFinite(rect.height);
-            }
-          } catch (_) {}
-          return true;
-        }
-      } as any);
+      // 화면에 보이는 그대로 캡처 (크기 0 요소를 걸러내던 필터 때문에 차트
+      // 그라디언트가 사라지던 문제와, 배율 4 로 캔버스 한계를 넘던 문제를 함께 해결)
+      const blob = await captureReportBlob(reportElement, { pixelRatio: 3 });
 
       const nameParts = student.student_name.split(' ');
       const className = nameParts.length > 1 ? nameParts[0] : '미분류';
       const studentName = nameParts.length > 1 ? nameParts.slice(1).join('_') : student.student_name;
       const filename = `${className}_${studentName}_누적성적리포트.jpg`;
 
-      const link = document.createElement('a');
-      link.href = dataUrl;
-      link.download = filename;
-      link.click();
+      saveBlobAsFile(blob, filename);
 
       toast({
         title: "다운로드 완료",

@@ -3,8 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Download, Loader2, TrendingUp, Award, Target, Calendar, TrendingDown, Minus, CheckCircle2, AlertTriangle, Activity, Trash2 } from 'lucide-react';
 import { motion } from 'framer-motion';
-import html2canvas from 'html2canvas';
-import { toJpeg } from 'html-to-image';
+import { captureReportBlob, saveBlobAsFile } from '@/utils/reportCapture';
 import { supabase } from "@/integrations/supabase/client";
 import { Badge } from "@/components/ui/badge";
 import { format } from 'date-fns';
@@ -84,110 +83,26 @@ const StudentHistoryView = ({
         });
       }
 
-      // 이미지 CORS 설정 및 로드 보장
-      const imgs = Array.from(element.querySelectorAll('img')) as HTMLImageElement[];
-      await Promise.all(imgs.map(async img => {
-        try {
-          img.setAttribute('crossOrigin', 'anonymous');
-          if ('decode' in img && typeof (img as any).decode === 'function') {
-            await (img as any).decode().catch(() => {});
-          }
-        } catch (e) {}
-      }));
-      const canvas = await html2canvas(element, {
-        scale: 4,
-        useCORS: true,
-        allowTaint: false,
-        logging: false,
-        backgroundColor: '#ffffff',
-        imageTimeout: 0,
-        removeContainer: true,
-        foreignObjectRendering: true,
-        ignoreElements: (el) => {
-          const rect = el.getBoundingClientRect();
-          return rect.width === 0 || rect.height === 0 || !isFinite(rect.width) || !isFinite(rect.height);
-        },
-        onclone: (clonedDoc) => {
-          const style = clonedDoc.createElement('style');
-          style.textContent = `
-            * { animation: none !important; transition: none !important; filter: none !important; mix-blend-mode: normal !important; }
-            .sticky { position: static !important; top: auto !important; }
-            html, body { background: #ffffff !important; }
-          `;
-          clonedDoc.head.appendChild(style);
-        }
-      });
-
-      // Canvas가 생성되었는지 확인
-      if (!canvas) {
-        throw new Error('Canvas 생성 실패');
-      }
-      console.log('Canvas created:', canvas.width, 'x', canvas.height);
-
-      // JPEG Blob 생성 후 다운로드 (메모리/보안 안정) - 최고 화질
+      // 화면에 보이는 그대로 캡처한다.
+      // html2canvas 는 한글의 줄 높이를 브라우저와 다르게 잡아 글자가 아래로
+      // 밀리고 카드 안에서 받침이 잘렸다. reportCapture 는 브라우저가 직접
+      // 그리게 하므로 위치가 화면과 같고, 배율도 캔버스 한계에 맞춰 조정된다.
       const filename = `${studentName || '학생'}_성적리포트_${format(new Date(), 'yyyy-MM-dd')}.jpg`;
-      await new Promise<void>((resolve, reject) => {
-        canvas.toBlob(blob => {
-          if (!blob) return reject(new Error('이미지 Blob 생성 실패'));
-          const url = URL.createObjectURL(blob);
-          const link = document.createElement('a');
-          link.href = url;
-          link.download = filename;
-          link.style.display = 'none';
-          link.click();
-          setTimeout(() => URL.revokeObjectURL(url), 100);
-          resolve();
-        }, 'image/jpeg', 1.0);
-      });
-
-      // 메모리 정리
-      canvas.remove();
+      const blob = await captureReportBlob(element, { pixelRatio: 3 });
+      saveBlobAsFile(blob, filename);
       toast({
         title: "다운로드 완료",
         description: "리포트가 이미지로 저장되었습니다."
       });
     } catch (error) {
       console.error('Image download error:', error);
-      try {
-        const element = reportRef.current!;
-        const filename = `${studentName || '학생'}_성적리포트_${format(new Date(), 'yyyy-MM-dd')}.jpg`;
-        const dataUrl = await toJpeg(element, {
-          quality: 1.0,
-          backgroundColor: '#ffffff',
-          cacheBust: true,
-          pixelRatio: 4,
-          style: {
-            animation: 'none',
-            transition: 'none',
-            filter: 'none'
-          },
-          filter: (node: HTMLElement | SVGElement) => {
-            try {
-              if (node instanceof Element) {
-                const rect = node.getBoundingClientRect();
-                return rect.width > 0 && rect.height > 0 && isFinite(rect.width) && isFinite(rect.height);
-              }
-            } catch (_) {}
-            return true;
-          }
-        } as any);
-        const link = document.createElement('a');
-        link.download = filename;
-        link.href = dataUrl;
-        link.style.display = 'none';
-        link.click();
-        toast({
-          title: "다운로드 완료 (호환 모드)",
-          description: "호환 모드로 이미지를 저장했습니다."
-        });
-      } catch (fallbackError) {
-        const errorMessage = fallbackError instanceof Error ? fallbackError.message : '알 수 없는 오류';
-        toast({
-          title: "다운로드 실패",
-          description: `이미지 저장 중 오류가 발생했습니다: ${errorMessage}`,
-          variant: "destructive"
-        });
-      }
+      const errorMessage = error instanceof Error ? error.message : '알 수 없는 오류';
+      toast({
+        title: "다운로드 실패",
+        description: `이미지 저장 중 오류가 발생했습니다: ${errorMessage}`,
+        variant: "destructive"
+      });
+    
     } finally {
       setDownloading(false);
     }
@@ -311,18 +226,9 @@ const StudentHistoryView = ({
   const downloadReportAsImage = async () => {
     if (!reportRef.current) return;
     try {
-      const canvas = await html2canvas(reportRef.current, {
-        scale: 4,
-        useCORS: true,
-        allowTaint: false,
-        logging: false,
-        backgroundColor: '#ffffff',
-        foreignObjectRendering: true
-      });
-      const link = document.createElement('a');
-      link.download = `${studentName}_성적표.png`;
-      link.href = canvas.toDataURL();
-      link.click();
+      // 화면에 보이는 그대로 캡처 (html2canvas 는 한글 받침이 잘렸다)
+      const blob = await captureReportBlob(reportRef.current, { pixelRatio: 3 });
+      saveBlobAsFile(blob, `${studentName}_성적표.jpg`);
     } catch (error) {
       console.error('Error generating image:', error);
     }

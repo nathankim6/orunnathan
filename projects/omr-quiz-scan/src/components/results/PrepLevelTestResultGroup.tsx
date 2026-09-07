@@ -12,8 +12,7 @@ import { getPrepSet, detectPrepVersion } from '@/data/prepVersions';
 
 // 결과에 저장된 답안으로 시험지 버전(뉴베리타스 186문항 / 흑석관 145문항)을 판별
 const prepSetFor = (answers: Record<string, any> | null | undefined) => getPrepSet(detectPrepVersion(answers || {}));
-import html2canvas from 'html2canvas';
-import { toJpeg } from 'html-to-image';
+import { captureReportBlob } from '@/utils/reportCapture';
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, ResponsiveContainer } from 'recharts';
 import PrepQuestionDetailDialog from './PrepQuestionDetailDialog';
@@ -554,41 +553,8 @@ const PrepLevelTestResultGroup = ({
 
       let blob: Blob;
       try {
-        const exportHeight = Math.ceil(exportElement.scrollHeight);
-        const canvas = await html2canvas(exportElement, {
-          scale: 4,
-          useCORS: true,
-          allowTaint: true,
-          logging: false,
-          backgroundColor: '#ffffff',
-          width: exportWidth,
-          height: exportHeight,
-          windowWidth: Math.max(1200, exportWidth),
-          windowHeight: exportHeight,
-          scrollX: 0,
-          scrollY: 0,
-          ignoreElements: (el) => el instanceof HTMLElement && el.hasAttribute('data-export-ignore'),
-        });
-
-        blob = await new Promise<Blob>((resolve, reject) => {
-          canvas.toBlob(b => {
-            if (b) resolve(b);
-            else reject(new Error('Failed to create blob'));
-          }, 'image/jpeg', 1.0);
-        });
-      } catch (err) {
-        console.warn('html2canvas failed, falling back to html-to-image:', err);
-        const dataUrl = await toJpeg(exportElement, {
-          quality: 1.0,
-          pixelRatio: 4,
-          backgroundColor: '#ffffff',
-          cacheBust: true,
-          width: exportWidth,
-          height: Math.ceil(exportElement.scrollHeight),
-          filter: (node) => !(node instanceof HTMLElement && node.hasAttribute('data-export-ignore')),
-        });
-        const res = await fetch(dataUrl);
-        blob = await res.blob();
+        // 화면에 보이는 그대로 캡처 (html2canvas 는 한글 받침이 잘렸다)
+        blob = await captureReportBlob(exportElement, { pixelRatio: 3 });
       } finally {
         exportHost.remove();
       }

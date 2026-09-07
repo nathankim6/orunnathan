@@ -1,7 +1,7 @@
 import JSZip from 'jszip';
 import { acquireWakeLock, releaseWakeLock, emitDownloadProgress, showBrowserNotification, ensureNotificationPermission, enablePiPKeepAlive, disablePiPKeepAlive, enableSilentAudioKeepAlive, disableSilentAudioKeepAlive } from './backgroundTask';
 import * as XLSX from 'xlsx';
-import html2canvas from 'html2canvas';
+import { captureReportBlob } from './reportCapture';
 import { Test, TestResult } from '@/types/results';
 import { toast } from '@/hooks/use-toast';
 import { supabase } from "@/integrations/supabase/client";
@@ -416,79 +416,12 @@ export const downloadAsJPG = async (elementRef: HTMLDivElement | null, fileName:
     console.log('Generating image for:', fileName);
     console.log('Target element dimensions:', { width: rect.width, height: rect.height });
     
-    // Wait for fonts to load
-    await document.fonts.ready;
-    
-    // Wait for images to load
-    const images = targetElement.querySelectorAll('img');
-    await Promise.all(Array.from(images).map(img => {
-      if (img.complete) return Promise.resolve();
-      return new Promise(resolve => {
-        img.onload = resolve;
-        img.onerror = resolve;
-      });
-    }));
-    
-    // Scroll to element and wait
-    targetElement.scrollIntoView({ behavior: 'instant', block: 'start' });
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    const canvas = await html2canvas(targetElement, {
-      scale: 4,
-      useCORS: true,
-      allowTaint: true,
-      logging: false,
-      backgroundColor: '#ffffff',
-      width: targetElement.scrollWidth,
-      height: targetElement.scrollHeight,
-      x: 0,
-      y: 0,
-      scrollX: 0,
-      scrollY: 0,
-      ignoreElements: (el: Element) => el instanceof HTMLElement && el.hasAttribute('data-export-ignore'),
-      onclone: (clonedDoc, element) => {
-        console.log('Processing cloned element for image generation');
-        
-        // Add basic CSS reset
-        const style = clonedDoc.createElement('style');
-        style.textContent = `
-          * {
-            background-attachment: scroll !important;
-            filter: none !important;
-            backdrop-filter: none !important;
-            -webkit-backdrop-filter: none !important;
-          }
-          *::before, *::after {
-            display: none !important;
-          }
-        `;
-        clonedDoc.head.appendChild(style);
-        
-        // Force re-computation of styles to match current DOM
-        const observer = new MutationObserver(() => {});
-        observer.disconnect();
-        
-        // Wait for style computation
-        setTimeout(() => {
-          console.log('Styles applied to cloned document');
-        }, 100);
-      }
-    });
-    
-    if (canvas.width === 0 || canvas.height === 0) {
-      throw new Error('Generated canvas has zero dimensions');
-    }
-    
-    const blob = await new Promise<Blob>((resolve, reject) => {
-      canvas.toBlob(blob => {
-        if (blob) {
-          resolve(blob);
-        } else {
-          reject(new Error('Failed to create blob'));
-        }
-      }, 'image/jpeg', 1.0); // Maximum quality for ultra HD
-    });
-    
+    // 화면에 보이는 그대로 캡처한다. (폰트·이미지 대기, 캔버스 한계 보정 포함)
+    // html2canvas 는 한글의 줄 높이를 브라우저와 다르게 계산해 글자가 아래로
+    // 밀리고 카드 안에서 받침이 잘렸다. reportCapture 는 브라우저가 직접
+    // 그리게 하므로 위치가 화면과 같다.
+    const blob = await captureReportBlob(targetElement, { pixelRatio: 3 });
+
     if (zip) {
       console.log('Adding to ZIP:', fileName);
       zip.file(`${fileName}.jpg`, blob);
