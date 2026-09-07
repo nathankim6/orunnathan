@@ -1,679 +1,729 @@
-/* Unit 4 · Field 4 — Medicine & Health 의학·건강
-   원서 Theme 16–20 의 주제를 예비고1 수준으로 다시 쓴 것. */
+/* Unit 4 · Medicine & Health — 원문 Theme 16–20 */
+const R = require("../src/orig/all.json");
+const T = n => R[n - 1];
+
 module.exports = {
  no: 4,
  field: "Medicine & Health",
  ko: "의학·건강",
  tagline: "몸을 다루는 지식 — 시계, 칼, 경계",
- next: { en: "Philosophy & Religion", ko: "믿음과 의심이 어떻게 답을 세워 왔는지 읽습니다", words: "175–205 words" },
+ next: { en: "Philosophy & Religion", ko: "믿음과 의심이 어떻게 답을 세워 왔는지 읽습니다", words: "238–265 words" },
  lessons: [
+
+/* ───────────────────────────── 16 ───────────────────────────── */
 {
- no: "16", key: "clock",
- accent: "#3D6FA0", tint: "#E5EDF6", deep: "#254768",
- en: "The Clock You Cannot Move",
- ko: "옮길 수 없는 시계",
- goal: "몸속 시계가 왜 빨리 조정되지 않는지, 시차를 줄이는 방법의 근거가 무엇인지 설명할 수 있다.",
+ no: "16", key: "clock", accent: "#3D6FA0", tint: "#E5EDF6", deep: "#254768",
+ en: "Managing Sleep Across Time Zones",
+ ko: "시계는 한 번에, 몸은 천천히",
+ goal: "시차증이 생기는 이유와 그 영향을 줄이는 방법을 순서대로 설명할 수 있다.",
  fig: "Figure 1  손목시계는 한 번에, 몸속 시계는 하루에 한 시간씩.",
  tip: "먼저 생각해 보자. 비행기에서 내리자마자 시계는 맞출 수 있는데, 왜 몸은 그러지 못할까?",
- sent: [
-  "When a plane lands, you change your watch in one second.",
-  "Your body needs about a week to do the same thing.",
-  "Deep in the brain sits a group of cells that keeps its own time.",
-  "This clock runs on a cycle of roughly twenty-four hours even in total darkness.",
-  "Light is the main signal that keeps it matched to the world outside.",
-  "Morning light pushes the clock earlier; evening light pushes it later.",
-  "Flying east asks the body to fall asleep before it is ready.",
-  "Flying west only asks it to stay up longer, which is far easier.",
-  "This is why the same distance can feel very different in the two directions.",
-  "The body shifts by about one hour a day, and it cannot be hurried much.",
-  "Still, the shift can be helped instead of fought.",
-  "Travellers who seek morning light in the east recover faster than those who hide indoors.",
-  "Eating and sleeping on the new clock also give the body a clearer signal.",
-  "None of this removes jet lag, and no habit makes the cells move faster.",
-  "It only lines up the signals so the clock is not pulled two ways at once."
+ sent: T(16).sent, kor: T(16).kor,
+ bank: [
+  ["line up with", "①", "~와 일치하다"],
+  ["overwhelmingly", "②", "압도적으로"],
+  ["disruption", "③", "교란"],
+  ["readjust", "④", "재조정하다"],
+  ["circadian", "⑥", "24시간 주기의"],
+  ["appropriate", "⑪", "적절한"]
  ],
- kor: [
-  "비행기가 착륙하면 당신은 손목시계를 1초 만에 바꿔 맞춘다.",
-  "몸이 같은 일을 하는 데는 일주일쯤 걸린다.",
-  "뇌 깊은 곳에는 자기만의 시간을 지키는 세포 무리가 자리 잡고 있다.",
-  "이 시계는 완전한 어둠 속에서도 대략 스물네 시간 주기로 돌아간다.",
-  "빛은 그 시계를 바깥 세상에 맞춰 두는 주된 신호다.",
-  "아침 빛은 시계를 앞으로 당기고, 저녁 빛은 뒤로 민다.",
-  "동쪽으로 날아가면 몸은 준비되기도 전에 잠들라는 요구를 받는다.",
-  "서쪽으로 가면 더 오래 깨어 있으라는 요구뿐이라, 훨씬 쉽다.",
-  "같은 거리인데도 두 방향이 아주 다르게 느껴지는 이유가 이것이다.",
-  "몸은 하루에 한 시간쯤 옮겨 가고, 그 속도를 크게 앞당길 수는 없다.",
-  "그렇지만 그 이동은 맞서 싸우는 대신 도와줄 수 있다.",
-  "동쪽에서 아침 빛을 찾아 나선 여행자는 실내에 숨어 있는 사람보다 빨리 회복한다.",
-  "새 시각에 맞춰 먹고 자는 것도 몸에 더 분명한 신호를 준다.",
-  "이 가운데 무엇도 시차를 없애 주지는 않으며, 어떤 습관도 세포를 더 빨리 움직이게 하지 못한다.",
-  "다만 신호들을 나란히 맞춰, 시계가 양쪽으로 동시에 끌려가지 않게 할 뿐이다."
+ defs: [
+  ["line up with", "to match or agree with something else"],
+  ["overwhelmingly", "in a way too strong to resist"],
+  ["disruption", "a break in the normal flow of things"],
+  ["readjust", "to set something to a new value again"],
+  ["circadian", "following a cycle of about one day"],
+  ["appropriate", "right for a particular time or purpose"]
  ],
- bank: [["cell","③","세포"],["cycle","④","주기"],["signal","⑤","신호"],
-        ["shift","⑩","옮겨 가다"],["hurry","⑩","서두르게 하다"],["recover","⑫","회복하다"]],
- defs: [["cell","the smallest living unit of a body"],
-        ["cycle","a set of events that repeat in the same order"],
-        ["signal","something that carries information to a receiver"],
-        ["shift","to move from one position to another"],
-        ["hurry","to make something happen sooner than usual"],
-        ["recover","to return to a normal state after trouble"]],
- defOrder: [2,0,4,5,1,3],
+ defOrder: [1, 3, 5, 0, 4, 2],
  flow: [
-  ["Contrast","A watch changes in a second; the body needs about a week",null],
-  ["Cause","A group of brain cells keeps a (  ①  ) of about 24 hours","cycle"],
-  ["The signal","(  ②  ) is what keeps that clock matched to the world","light"],
-  ["Direction","Flying (  ③  ) is harder, since sleep is asked for too early","east"],
-  ["What helps","Aligning light and meals stops the clock being pulled two (  ④  )","ways"]
+  ["The mismatch", "Your body clock does not match the local time", null],
+  ["Before you fly", "Shift eating and sleeping times toward your (  ①  )", "destination"],
+  ["On the way", "Change your watch and try (  ②  ) before and during travel", "fasting"],
+  ["Going east", "Time zones run (  ③  ) of your body clock", "ahead"],
+  ["On arrival", "Get plenty of (  ④  ) and sleep at the local hour", "daylight"]
  ],
- flowBogi: "cycle · light · east · ways · watch · darkness",
+ flowBogi: "destination · fasting · ahead · daylight · behind · darkness",
  para: [
-  ["④ runs on a cycle of roughly twenty-four hours","The rhythm continues even without ______.","daylight"],
-  ["⑧ which is far easier","Staying up late is ______ than sleeping early.","simpler"],
-  ["⑩ it cannot be hurried much","The pace of the shift is nearly ______.","fixed"],
-  ["⑫ recover faster than those who hide indoors","Morning light ______ the adjustment.","speeds"],
-  ["⑮ the clock is not pulled two ways","Aligned signals remove the ______.","conflict"]
+  ["① doesn't line up with the time at your destination", "Your clock does not ______ the local time.", "match"],
+  ["③ the more disruption to your body clock", "More zones crossed means more ______ inside.", "upset"],
+  ["⑥ eating is a key zeitgeber", "Meals act as a strong time ______.", "signal"],
+  ["⑦ at bedtime you are wide awake", "At night you feel completely ______.", "alert"],
+  ["⑪ will help your body clock adapt", "Light and timing help the clock ______.", "adjust"]
  ],
- paraBogi: "daylight · simpler · fixed · speeds · conflict · harder · delays · silence",
+ paraBogi: "match · upset · signal · alert · adjust · miss · calm · resist",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How to Sleep Well on a Plane","A Body Clock That Moves One Hour a Day",
-       "Jet Lag Can Be Cured in a Night","The Best Cities to Visit by Air",
-       "Why Darkness Is Bad for Health"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["몸속 시계는 어둠 속에서도 주기를 이어 간다.","아침 빛과 저녁 빛은 시계를 서로 반대 방향으로 민다.",
-       "습관을 잘 지키면 세포가 더 빨리 움직인다.","서쪽으로 가는 편이 몸에는 더 수월하다.",
-       "새 시각에 맞춰 먹는 것도 신호가 된다."], ans:3},
-  {t:"write", q:"필자가 말하는 시차 적응 방법의 실제 효과를 우리말 한 문장으로 써 보세요.",
-   ans:"적응 속도를 높이는 것이 아니라 신호들을 한 방향으로 맞춰 주는 것이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "Why Watches Are Easy to Reset",
+    "Helping a Slow Clock Catch Up",
+    "Flying West Is Always Harder",
+    "How to Book a Cheap Flight",
+    "A History of Time Zones"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "두 개 이상의 시간대를 넘어 여행하면 시차증을 겪을 수 있다.",
+    "여행 일주일쯤 전부터 식사·수면 시간을 목적지 시간에 가깝게 옮기면 좋다.",
+    "여행 직전과 여행 중의 단식이 생체 시계 재설정에 도움이 될 수 있다.",
+    "서쪽으로 가는 여행이 동쪽으로 가는 여행보다 대개 적응하기 더 어렵다.",
+    "목적지에서 햇빛을 충분히 쬐면 생체 시계가 적응하는 데 도움이 된다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "필자가 여행 전에 생체 시계를 미리 옮겨 두라고 권하는 이유를 우리말 한 문장으로 써 보세요.",
+   ans: "생체 시계가 목적지의 시간과 어긋나 있으면 잠들기 어렵고 낮에 졸리는 등 문제가 생기므로, 미리 조금씩 옮겨 두면 그 영향을 줄일 수 있기 때문이다."
+  }
  ],
  fl: {
-  model: { n:"⑫",
-   toks: [["Travellers","s"],["who seek morning light in the east","m"],["recover","v"],
-          ["faster","m"],["than those who hide indoors","m"]],
-   ko:"동쪽에서 아침 빛을 찾아 나선 여행자는 실내에 숨어 있는 사람보다 빨리 회복한다." },
+  model: {
+   n: "③",
+   toks: [
+    ["You", "s"], ["may suffer", "v"], ["jet lag", null], ["if", "c"], ["you", "s2"], ["travel", "v2"],
+    ["across two or more time zones", "m"],
+    ["— the more you cross, the more disruption to your body clock —", "m"], ["but", "c"],
+    ["there", null], ["are", "v"], ["steps you can take to minimize the effects.", null]
+   ],
+   ko: "두 개 이상의 시간대를 넘어 여행하면 시차증을 겪을 수 있는데, 더 많이 넘을수록 생체 시계가 더 흐트러진다. 하지만 그 영향을 줄일 방법이 있다."
+  },
   drill: [
-   { n:"③", en:"Deep in the brain sits a group of cells that keeps its own time.",
-     ans:"M Deep in the brain · △V sits · S a group of cells · M that keeps its own time",
-     ko:"뇌 깊은 곳에는 자기만의 시간을 지키는 세포 무리가 자리 잡고 있다." },
-   { n:"⑦", en:"Flying east asks the body to fall asleep before it is ready.",
-     ans:"S Flying east · △V asks · O the body · M to fall asleep · [before] S′ it · △V′ is · C ready",
-     ko:"동쪽으로 날아가면 몸은 준비되기도 전에 잠들라는 요구를 받는다." },
-   { n:"⑮", en:"It only lines up the signals so the clock is not pulled two ways at once.",
-     ans:"S It · M only · △V lines up · O the signals · [so] S′ the clock · △V′ is not pulled · M two ways at once",
-     ko:"다만 신호들을 나란히 맞춰, 시계가 양쪽으로 동시에 끌려가지 않게 할 뿐이다." }
+   {
+    n: "④",
+    en: "If possible in the week or so before traveling, start to readjust your body clock by gradually moving your times for eating and sleeping nearer to those at your destination.",
+    ans: "M If possible in the week or so before traveling · △V start · O to readjust your body clock · M by gradually moving your times for eating and sleeping nearer to those at your destination",
+    ko: "가능하다면 여행 일주일쯤 전부터, 식사와 수면 시간을 목적지 시간에 조금씩 가깝게 옮겨 생체 시계를 재조정하기 시작하라."
+   },
+   {
+    n: "⑥",
+    en: "Research has also shown that fasting just before and during travel can help to reset your clock, likely because eating is a key zeitgeber — an event that cues the timing of circadian rhythms such as sleeping and waking.",
+    ans: "S Research · △V has also shown · [that] S′ fasting just before and during travel · △V′ can help · O to reset your clock · [because] S′ eating · △V′ is · C a key zeitgeber",
+    ko: "연구는 여행 직전과 여행 중의 단식이 생체 시계를 재설정하는 데 도움이 될 수 있음을 보여 주었는데, 식사가 핵심 차이트게버이기 때문일 것이다."
+   },
+   {
+    n: "⑨",
+    en: "Traveling west, time zones are behind your body clock, so bedtime is later than your body expects.",
+    ans: "M Traveling west · S time zones · △V are · C behind your body clock · [so] S bedtime · △V is · C later than your body expects",
+    ko: "서쪽으로 여행하면 시간대가 생체 시계보다 뒤처져서, 취침 시간이 몸이 예상하는 것보다 늦어진다."
+   }
   ]
  },
  syn: [
-  { n:"③", name:"장소 부사구 도치",
-    q:"«Deep in the brain sits a group of cells» that keeps its own time.",
-    d:"장소를 나타내는 말이 앞에 나오면 <b>동사 + 주어</b> 순서로 뒤집힌다. 진짜 주어는 sits 뒤에 있다.",
-    k:"뇌 깊은 곳에 자기만의 시간을 지키는 세포 무리가 있다." },
-  { n:"⑫", name:"비교급 + than + 대명사절",
-    q:"Travellers who seek morning light «recover faster than those who hide» indoors.",
-    d:"<b>than those who ~</b>는 '~하는 사람들보다'. those 는 people 을 대신하는 대명사다.",
-    k:"아침 빛을 찾는 여행자는 실내에 숨는 사람들보다 빨리 회복한다." }
+  {
+   n: "③",
+   name: "the 비교급 ~, the 비교급 …",
+   q: "— «the more you cross, the more disruption» to your body clock —",
+   d: "‘~할수록 더 …하다’를 나타낸다. 두 부분 앞에 각각 <b>the + 비교급</b>을 놓아 두 변화를 나란히 묶는다.",
+   k: "더 많이 넘을수록 생체 시계가 더 흐트러진다"
+  },
+  {
+   n: "⑥",
+   name: "동격  명사 — 명사",
+   q: "…likely because eating is «a key zeitgeber — an event that cues the timing» of circadian rhythms…",
+   d: "대시(—) 뒤의 명사구가 앞 명사를 다시 풀어 설명한다. ‘즉, ~’로 읽으면 자연스럽다.",
+   k: "핵심 차이트게버, 즉 시점을 알려 주는 사건"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"Under the old hospital stood a room no one had opened.",
-    k:"그 오래된 병원 아래에는 아무도 열어 보지 않은 방이 하나 있었다." },
-  { u:"구문 2", en:"Patients who walk each morning sleep better than those who do not.",
-    k:"아침마다 걷는 환자들은 그렇지 않은 사람들보다 잠을 더 잘 잔다." },
-  { u:"구문 1 + 2", en:"Beside the window sat travellers who slept longer than those in the aisle.",
-    k:"창가에는 통로 쪽 사람들보다 더 오래 잔 여행자들이 앉아 있었다." }
+  { u: "구문 1", en: "The later you eat, the harder it is to fall asleep.", k: "늦게 먹을수록 잠들기가 더 어렵다." },
+  { u: "구문 2", en: "She kept a diary — a record of every hour she slept.", k: "그녀는 일기, 즉 잠든 시간을 모두 적은 기록을 썼다." },
+  { u: "구문 1 + 2", en: "The brighter the morning light — the body's strongest cue — the faster the clock shifts.", k: "몸의 가장 강한 신호인 아침 빛이 밝을수록 시계는 더 빨리 옮겨 간다." }
  ],
- wtype: ["무관","정답","반대","무관","지엽"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["기내 수면 요령은 글의 관심사가 아니다"],["정답"],
-       ["글은 하룻밤에 낫지 않는다고 말한다 — 정반대다"],
-       ["여행지 추천은 글에 나오지 않는다"],["어둠은 주기를 설명하는 조건일 뿐이다"]],
- src: [["④"],["⑥"],["⑭과 어긋남 — 어떤 습관도 세포를 더 빨리 움직이게 하지 못한다"],["⑧"],["⑬"]],
+ why: [
+  ["시계를 맞추는 대목만 붙든 지엽적인 제목이다"],
+  ["정답"],
+  ["글은 동쪽으로 갈 때가 대개 더 심하다고 말한다 — 정반대다"],
+  ["항공권을 싸게 사는 방법은 글에 나오지 않는다"],
+  ["시간대 제도의 역사는 글에서 다루지 않는다"]
+ ],
+ src: [["③"], ["④"], ["⑥"], ["⑦과 어긋남 — 동쪽으로 갈 때가 대개 더 심하다"], ["⑪"]],
  kb: {
-  title:"몸속 시계 이야기",
-  lead:"시간은 손목에만 있는 것이 아니다.",
+  title: "몸속 시계는 어디에 있나",
+  lead: "하루를 재는 기관이 따로 있다",
   items: [
-   ["시계가 있는 자리",
-    "포유류의 주 시계는 시상하부의 시교차상핵(SCN)에 있다. 눈에서 온 빛 정보가 이곳으로 직접 이어져, 하루 주기를 바깥 낮밤에 맞춘다."],
-   ["동굴에서 보낸 여러 달",
-    "1962년 미셸 시프르는 빛과 시계 없이 동굴에서 지내며 자기 리듬을 기록했다. 이후 여러 격리 실험에서 사람의 주기는 24시간에서 조금 벗어난 채로도 계속 돌아간다는 것이 확인되었다."],
-   ["2017년 노벨 생리의학상",
-    "홀·로스배시·영은 초파리에서 하루 주기를 만드는 유전자와 단백질의 되먹임 고리를 밝혀 상을 받았다. 시계가 비유가 아니라 실제 분자 장치라는 것을 보인 연구다."]
+   ["시교차상핵", "생체 시계의 중심은 뇌 시상하부의 시교차상핵(SCN)이다. 눈에서 오는 빛 신호를 직접 받아 하루의 위상을 맞춘다. 세포 하나하나도 시계를 갖지만, SCN이 이들을 한 박자로 묶는다."],
+   ["차이트게버", "독일어로 ‘시간을 주는 것’이라는 뜻이다. 빛이 가장 강력하고 식사·운동·사회적 일정도 신호가 된다. 신호가 전혀 없으면 인간의 하루 주기는 24시간보다 조금 길어진다."],
+   ["2017년 노벨 생리·의학상", "Jeffrey C. Hall, Michael Rosbash, Michael W. Young은 초파리에서 하루 주기를 만드는 유전자와, 그 단백질이 하루 동안 늘었다 줄었다 하는 되먹임 고리를 밝혀 2017년 노벨 생리·의학상을 받았다."]
   ],
-  ask:"주말에 늦게 자고 늦게 일어나면 월요일이 힘든 이유를, 이 글의 말로 설명해 보자."
- }
+  ask: "여러분의 하루에서 몸에 시간을 알려 주는 신호는 무엇인가?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 17 ───────────────────────────── */
 {
- no: "17", key: "surgery",
- accent: "#B04A4A", tint: "#F9E7E7", deep: "#7C2727",
- en: "The Surgeon Who Changed the Room",
- ko: "수술실을 바꾼 외과의사",
- goal: "핼스테드가 바꾼 것이 기술만이 아니라 절차와 훈련이었음을 설명할 수 있다.",
- fig: "Figure 1  속도를 버리고 얻은 것.",
- tip: "먼저 생각해 보자. 옛 수술실에서 가장 자랑스러운 기술은 '빠른 손'이었다. 왜 그랬을까?",
- sent: [
-  "Before anaesthesia, speed was the greatest surgical skill.",
-  "A leg could be removed in under a minute, and the patient screamed throughout.",
-  "Once patients could be put to sleep, that reason for hurry disappeared.",
-  "Many surgeons kept hurrying anyway, because habit is slower to change than knowledge.",
-  "William Halsted worked in the other direction.",
-  "He handled tissue gently, closed wounds in layers, and took as long as the work needed.",
-  "His operations were slow, and his patients survived more often.",
-  "He also changed the room itself.",
-  "When a nurse's hands were harmed by the cleaning fluid, he had thin rubber gloves made for her.",
-  "The gloves were meant for her skin, not for the patient.",
-  "Only later did the profession see that they kept the wound cleaner too.",
-  "Halsted's largest change was in training rather than technique.",
-  "He built a long residency in which young doctors treated patients under watch for years.",
-  "The idea that a surgeon is made slowly, not born, came from that programme.",
-  "Modern hospitals still run on the shape he gave them."
+ no: "17", key: "surgery", accent: "#B04A4A", tint: "#F9E7E7", deep: "#7C2727",
+ en: "William Halsted and Modern Surgery",
+ ko: "빠른 손 대신 조심스러운 손",
+ goal: "Halsted의 이력과 그가 남긴 수술 원칙을 순서대로 정리해 설명할 수 있다.",
+ fig: "Figure 1  속도를 버리고 얻은 것 — 그리고 오래 가르치는 제도.",
+ tip: "먼저 생각해 보자. 옛 수술실에서 가장 자랑스러운 기술은 ‘빠른 손’이었다. 왜 그랬을까?",
+ sent: T(17).sent, kor: T(17).kor,
+ bank: [
+  ["noninvasive", "①", "비침습적인"],
+  ["absorb", "④", "받아들이다"],
+  ["proponent", "⑥", "지지자, 제안자"],
+  ["addicted", "⑦", "중독된"],
+  ["pathology", "⑧", "병리학"],
+  ["hygienic", "⑪", "위생적인"]
  ],
- kor: [
-  "마취가 있기 전, 속도는 가장 뛰어난 외과 기술이었다.",
-  "다리 하나를 1분 안에 잘라 낼 수 있었고, 환자는 그 내내 비명을 질렀다.",
-  "환자를 재울 수 있게 되자 서둘러야 할 그 이유는 사라졌다.",
-  "그런데도 많은 외과의는 계속 서둘렀다. 습관은 지식보다 늦게 바뀌기 때문이다.",
-  "윌리엄 핼스테드는 반대 방향으로 움직였다.",
-  "그는 조직을 부드럽게 다루고, 상처를 층층이 닫았으며, 일에 필요한 만큼 시간을 썼다.",
-  "그의 수술은 느렸고, 그의 환자들은 더 자주 살아남았다.",
-  "그는 수술실 자체도 바꾸었다.",
-  "한 간호사의 손이 소독액에 상하자, 그는 그녀를 위해 얇은 고무장갑을 만들게 했다.",
-  "그 장갑은 환자가 아니라 그녀의 피부를 위한 것이었다.",
-  "그것이 상처도 더 깨끗하게 지켜 준다는 사실은 나중에야 의료계가 알아보았다.",
-  "핼스테드의 가장 큰 변화는 기술보다 훈련에 있었다.",
-  "그는 젊은 의사들이 여러 해 동안 감독을 받으며 환자를 보는 긴 수련 과정을 세웠다.",
-  "외과의는 타고나는 것이 아니라 천천히 만들어진다는 생각이 그 과정에서 나왔다.",
-  "오늘날의 병원도 여전히 그가 만들어 준 틀 위에서 돌아간다."
+ defs: [
+  ["noninvasive", "not cutting into the body very much"],
+  ["absorb", "to take in ideas and make them yours"],
+  ["proponent", "a person who argues for an idea"],
+  ["addicted", "unable to stop using a drug"],
+  ["pathology", "the study of the causes of disease"],
+  ["hygienic", "clean enough to keep disease away"]
  ],
- bank: [["anaesthesia","①","마취"],["tissue","⑥","조직"],["wound","⑥","상처"],
-        ["survive","⑦","살아남다"],["profession","⑪","(전문) 직업, 의료계"],["residency","⑬","수련 과정"]],
- defs: [["anaesthesia","a state in which a patient feels no pain"],
-        ["tissue","the material that living body parts are made of"],
-        ["wound","an injury where the skin is broken"],
-        ["survive","to stay alive after a danger"],
-        ["profession","all the people who do one skilled job"],
-        ["residency","a long period of supervised training"]],
- defOrder: [1,4,0,5,3,2],
+ defOrder: [4, 0, 3, 5, 2, 1],
  flow: [
-  ["Old rule","Before anaesthesia, speed was the greatest surgical skill",null],
-  ["Why it lasted","(  ①  ) changes more slowly than knowledge","habit"],
-  ["Halsted's method","He worked slowly, and more patients (  ②  )","survived"],
-  ["A side discovery","Gloves made for a nurse also kept the wound (  ③  )","cleaner"],
-  ["The biggest change","A long (  ④  ) made surgeons slowly rather than quickly","residency"]
+  ["Who", "Halsted shaped the surgery we know today", null],
+  ["Rise", "He toured (  ①  ) and returned to Bellevue Hospital", "Europe"],
+  ["Fall", "Self-testing left him (  ②  ) to cocaine for two years", "addicted"],
+  ["Recovery", "At Johns Hopkins he became (  ③  ) surgeon in 1890", "chief"],
+  ["Legacy", "He taught hygiene, small stitches, and (  ④  ) hands", "gentle"]
  ],
- flowBogi: "habit · survived · cleaner · residency · speed · tissue",
+ flowBogi: "Europe · addicted · chief · gentle · Asia · rough",
  para: [
-  ["③ that reason for hurry disappeared","Anaesthesia removed the need for ______.","speed"],
-  ["④ habit is slower to change than knowledge","Practice lags behind new ______.","learning"],
-  ["⑦ his patients survived more often","Slower work raised the ______ rate.","survival"],
-  ["⑩ meant for her skin, not for the patient","The gloves had a different first ______.","purpose"],
-  ["⑭ a surgeon is made slowly, not born","Skill is ______ rather than inherited.","built"]
+  ["① as noninvasive as possible", "Surgery now cuts as ______ as it can.", "little"],
+  ["④ absorbing new ideas about surgical practices", "He took in new ways of ______.", "operating"],
+  ["⑦ several of his colleagues died", "Some of the doctors with him ______.", "died"],
+  ["⑧ where he could work without having contact", "There he worked away from ______.", "patients"],
+  ["⑫ influenced a generation of American doctors", "A whole ______ of doctors learned from him.", "generation"]
  ],
- paraBogi: "speed · learning · survival · purpose · built · silence · falling · natural",
+ paraBogi: "little · operating · died · patients · generation · much · resting · few",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["The Invention of Anaesthesia","How to Remove a Leg Quickly",
-       "Slow Hands and a Long Apprenticeship","Rubber Gloves and Modern Fashion",
-       "The Life Story of a Famous Nurse"], ans:3},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["마취 이전에는 속도가 중요한 기술이었다.","마취가 생긴 뒤에도 많은 외과의가 계속 서둘렀다.",
-       "고무장갑은 처음부터 환자의 상처를 위해 만들어졌다.","핼스테드의 수술은 느렸지만 생존율이 높았다.",
-       "그가 만든 수련 과정은 여러 해에 걸쳐 있었다."], ans:3},
-  {t:"write", q:"필자가 핼스테드의 가장 큰 변화로 꼽은 것을 우리말 한 문장으로 써 보세요.",
-   ans:"기술 자체보다, 외과의를 오래 감독하며 길러 내는 수련 제도를 세운 것이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How Cocaine Was Used as a Painkiller",
+    "The Surgeon Who Slowed Surgery Down",
+    "Why Halsted Left Medicine for Good",
+    "A Guide to Choosing a Medical School",
+    "The Founding of Columbia University"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "Halsted는 뉴욕의 부유한 가정에서 태어나 컬럼비아 의과대학에서 학위를 받았다.",
+    "그는 코카인을 진통제로 쓰자고 앞장선 사람 가운데 하나였다.",
+    "그 약물 실험 중 다수는 자신과 다른 의사들을 대상으로 이루어졌다.",
+    "그는 1886년 뉴욕을 떠난 뒤 다시는 수술을 맡지 못했다.",
+    "그는 위생적인 수술 환경과 조직을 부드럽게 다루는 것을 강조했다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "Halsted의 권고가 한 세대의 미국 의사들에게 퍼질 수 있었던 경로를 우리말 한 문장으로 써 보세요.",
+   ans: "존스 홉킨스에서 그에게 훈련받은 의사들이 그의 발상을 의학 공동체 전반으로 퍼뜨렸다."
+  }
  ],
  fl: {
-  model: { n:"⑪",
-   toks: [["Only later","m"],["did","v"],["the profession","s"],["see","v"],
-          ["that","c"],["they","s2"],["kept","v2"],["the wound cleaner too","m"]],
-   ko:"그것이 상처도 더 깨끗하게 지켜 준다는 사실은 나중에야 의료계가 알아보았다." },
+  model: {
+   n: "⑨",
+   toks: [
+    ["Settling in Baltimore,", "m"], ["Halsted", "s"], ["beat", "v"], ["his cocaine addiction", null],
+    ["and", "c"], ["revived", "v"], ["his career", null],
+    ["at the newly formed Johns Hopkins University,", "m"], ["where", "c"], ["he", "s2"], ["became", "v2"],
+    ["chief surgeon in 1890.", null]
+   ],
+   ko: "볼티모어에 정착한 Halsted는 코카인 중독을 이겨 내고 새로 만들어진 존스 홉킨스 대학에서 경력을 되살렸으며, 그곳에서 1890년 수석 외과 의사가 되었다."
+  },
   drill: [
-   { n:"④", en:"Many surgeons kept hurrying anyway, because habit is slower to change than knowledge.",
-     ans:"S Many surgeons · △V kept hurrying · [because] S′ habit · △V′ is · C slower to change than knowledge",
-     ko:"그런데도 많은 외과의는 계속 서둘렀다. 습관은 지식보다 늦게 바뀌기 때문이다." },
-   { n:"⑨", en:"When a nurse's hands were harmed by the cleaning fluid, he had thin rubber gloves made for her.",
-     ans:"[When] S′ a nurse's hands · △V′ were harmed · M by the cleaning fluid · S he · △V had · O thin rubber gloves made for her",
-     ko:"한 간호사의 손이 소독액에 상하자, 그는 그녀를 위해 얇은 고무장갑을 만들게 했다." },
-   { n:"⑬", en:"He built a long residency in which young doctors treated patients under watch for years.",
-     ans:"S He · △V built · O a long residency · M in which young doctors treated patients under watch for years",
-     ko:"그는 젊은 의사들이 여러 해 감독을 받으며 환자를 보는 긴 수련 과정을 세웠다." }
+   {
+    n: "③",
+    en: "A giant in the history of American science, Halsted was born in New York City to a wealthy family and earned a medical degree from Columbia University College of Physicians and Surgeons.",
+    ans: "M A giant in the history of American science · S Halsted · △V was born · M in New York City to a wealthy family · and △V earned · O a medical degree from Columbia University College of Physicians and Surgeons",
+    ko: "미국 과학사의 거장인 Halsted는 뉴욕시의 부유한 가정에서 태어나 컬럼비아 의과대학에서 의학 학위를 받았다."
+   },
+   {
+    n: "⑦",
+    en: "Many of his experiments with the drug were conducted on himself and other doctors; as a result, Halsted became addicted to the drug for 2 years, and several of his colleagues died.",
+    ans: "S Many of his experiments with the drug · △V were conducted · M on himself and other doctors · M as a result · S Halsted · △V became · C addicted to the drug for 2 years · and S several of his colleagues · △V died",
+    ko: "그 약물 실험 중 다수가 자신과 다른 의사들을 대상으로 이루어졌고, 그 결과 Halsted는 2년간 중독되었으며 동료 몇 명은 사망했다."
+   },
+   {
+    n: "⑪",
+    en: "Halsted emphasized keeping a hygienic operating environment, using small stitches and high-quality sutures, and handling body tissues as gently as possible.",
+    ans: "S Halsted · △V emphasized · O keeping a hygienic operating environment, using small stitches and high-quality sutures, and handling body tissues as gently as possible",
+    ko: "Halsted는 위생적인 수술 환경을 유지하고, 작은 봉합과 좋은 봉합사를 쓰며, 조직을 최대한 부드럽게 다룰 것을 강조했다."
+   }
   ]
  },
  syn: [
-  { n:"⑪", name:"부정어 도치 — Only + 부사구",
-    q:"«Only later did the profession see» that they kept the wound cleaner too.",
-    d:"Only 로 시작하는 부사구가 앞에 오면 <b>did + 주어 + 동사원형</b> 으로 도치된다.",
-    k:"나중에야 의료계는 그것이 상처도 깨끗하게 지켜 준다는 것을 알아보았다." },
-  { n:"⑨", name:"사역동사 have + 목적어 + p.p.",
-    q:"He «had thin rubber gloves made» for her.",
-    d:"<b>have + 목적어 + 과거분사</b>는 '~을 …되게 하다'. 남을 시켜 하게 한 일에 쓴다.",
-    k:"그는 얇은 고무장갑을 만들게 했다." }
+  {
+   n: "③",
+   name: "문두의 동격 명사구",
+   q: "«A giant in the history of American science,» Halsted was born in New York City to a wealthy family…",
+   d: "주어 앞에 놓인 명사구가 주어를 다시 설명한다. 콤마로 본체와 나뉘며 ‘~인 그는’으로 읽는다.",
+   k: "미국 과학사의 거장인 Halsted는"
+  },
+  {
+   n: "⑧",
+   name: "계속적 용법의 관계부사 where",
+   q: "…the recently opened Johns Hopkins Hospital in Baltimore, «where he could work without having contact with patients».",
+   d: "장소를 받아 뒤에서 설명을 덧붙인다. ‘그리고 그곳에서 ~’로 이어 읽는다.",
+   k: "그리고 그곳에서 그는 환자와 접촉하지 않고 일할 수 있었다"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"Only after the war did hospitals adopt the new rule.",
-    k:"전쟁이 끝난 뒤에야 병원들은 그 새 규칙을 받아들였다." },
-  { u:"구문 2", en:"She had the instruments cleaned before every operation.",
-    k:"그녀는 수술마다 기구를 깨끗이 닦아 두게 했다." },
-  { u:"구문 1 + 2", en:"Only then did he have the report rewritten.",
-    k:"그제서야 그는 그 보고서를 다시 쓰게 했다." }
+  { u: "구문 1", en: "A careful teacher, she checked every stitch twice.", k: "꼼꼼한 교사인 그녀는 모든 봉합을 두 번씩 확인했다." },
+  { u: "구문 2", en: "He moved to a small clinic, where no one knew his past.", k: "그는 작은 병원으로 옮겼고, 그곳에서는 아무도 그의 과거를 몰랐다." },
+  { u: "구문 1 + 2", en: "A quiet man, he settled in Baltimore, where he began again.", k: "조용한 사람이었던 그는 볼티모어에 정착했고, 그곳에서 다시 시작했다." }
  ],
- wtype: ["지엽","무관","정답","무관","무관"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["마취는 배경으로 언급될 뿐 주제가 아니다"],["빠른 절단술을 가르치는 글이 아니다"],["정답"],
-       ["장갑과 패션은 글에 나오지 않는다"],["간호사의 생애는 글의 소재가 아니다"]],
- src: [["①"],["④"],["⑩과 어긋남 — 환자가 아니라 간호사의 피부를 위한 것이었다"],["⑦"],["⑬"]],
+ why: [
+  ["문장 ⑥의 한 대목만 붙든 지엽적인 제목이다"],
+  ["정답"],
+  ["글은 그가 볼티모어에서 경력을 되살렸다고 말한다 — 정반대다"],
+  ["의대를 고르는 방법은 글에 나오지 않는다"],
+  ["대학 설립의 역사는 글에서 다루지 않는다"]
+ ],
+ src: [["③"], ["⑥"], ["⑦"], ["⑨와 어긋남 — 1890년 존스 홉킨스의 수석 외과 의사가 되었다"], ["⑪"]],
  kb: {
-  title:"수술실이 조용해지기까지",
-  lead:"장비보다 절차가 사람을 살렸다.",
+  title: "수술실이 조용해지기까지",
+  lead: "빠른 손이 최고이던 시절은 왜 끝났나",
   items: [
-   ["1846년, 통증이 사라진 날",
-    "매사추세츠 종합병원에서 에테르 마취 수술이 공개 시연되었다. 이후 수술은 '얼마나 빠른가'가 아니라 '얼마나 정확한가'의 문제가 되었다."],
-   ["장갑은 사랑에서 나왔다는 이야기",
-    "핼스테드가 장갑을 주문한 간호사 캐럴라인 햄프턴은 뒷날 그의 아내가 되었다. 감염 예방을 위해 만든 것이 아니라, 소독액에 상한 손을 지키려던 것이 시작이었다."],
-   ["손 씻기를 먼저 말한 사람",
-    "1847년 제멜바이스는 의사들이 손을 씻자 산욕열 사망률이 크게 떨어진다는 것을 보였지만, 당대 의료계는 오래 받아들이지 않았다. 습관이 지식보다 늦게 바뀐다는 말의 다른 사례다."]
+   ["마취 이전의 속도", "1846년 에테르 마취가 공개되기 전에는 통증 때문에 수술이 몇 분 안에 끝나야 했다. 절단을 몇십 초에 해내는 외과의가 이름을 날렸다. 마취가 들어오면서 비로소 천천히 정확하게 하는 수술이 가능해졌다."],
+   ["고무장갑의 시작", "Halsted는 1890년 무렵 수술실 소독약에 손이 상하던 간호사 Caroline Hampton을 위해 고무장갑을 주문했다. 감염을 막으려 만든 것이 아니었지만, 곧 무균 수술의 표준 장비가 되었다."],
+   ["레지던트 제도", "존스 홉킨스에서 Halsted가 세운 것은 기술만이 아니었다. 여러 해에 걸쳐 단계적으로 책임을 늘려 가며 가르치는 수련 제도를 만들었고, 이것이 오늘날 전공의 제도의 뿌리가 되었다."]
   ],
-  ask:"우리 반에서 '원래 그렇게 해 왔으니까' 유지되는 규칙이 있는가? 그 이유는 지금도 유효한가?"
- }
+  ask: "빨리 해내는 것과 정확히 해내는 것 사이에서, 여러분은 무엇을 기준으로 고르는가?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 18 ───────────────────────────── */
 {
- no: "18", key: "virus",
- accent: "#4A7C46", tint: "#E7F1E5", deep: "#2E5429",
- en: "Alive Enough to Matter",
- ko: "살아 있다고 하기엔 모자란 것",
- goal: "바이러스가 생물의 정의를 어떻게 흔드는지, 그 물음이 왜 실용적인지 설명할 수 있다.",
+ no: "18", key: "virus", accent: "#4A7C46", tint: "#E7F1E5", deep: "#2E5429",
+ en: "Viruses",
+ ko: "설계도만 들고 오는 손님",
+ goal: "바이러스의 구조와 증식 과정을 순서대로 설명하고, 세균과 다른 점을 말할 수 있다.",
  fig: "Figure 1  껍질과 설명서, 그리고 빌려 쓰는 공장.",
- tip: "먼저 생각해 보자. '살아 있다'는 말의 조건을 세 가지만 적어 본다면 무엇을 쓰겠는가?",
- sent: [
-  "A virus is a set of instructions wrapped in a coat of protein.",
-  "On its own it does nothing at all.",
-  "It does not eat, it does not grow, and it cannot copy itself even once.",
-  "Left on a doorknob, it simply waits, sometimes for hours.",
-  "Everything changes the moment it meets a suitable cell.",
-  "It enters, hands over its instructions, and the cell obediently begins building new viruses.",
-  "The machinery is borrowed; only the plan belongs to the virus.",
-  "This is why biologists have argued for a century about whether viruses are alive.",
-  "By most definitions they fail, because they cannot reproduce without help.",
-  "Yet they evolve, they carry genes, and they shape every living thing around them.",
-  "The argument is not merely a matter of words.",
-  "How we classify something decides which tools we reach for.",
-  "A medicine that attacks living cells will not touch a set of instructions.",
-  "Vaccines work differently: they teach the body to recognise the coat.",
-  "The border of life turns out to be a place where useful questions live."
+ tip: "먼저 생각해 보자. ‘살아 있다’는 말의 조건을 세 가지만 적어 본다면 무엇을 쓰겠는가?",
+ sent: T(18).sent, kor: T(18).kor,
+ bank: [
+  ["infectious", "②", "감염성의"],
+  ["metabolic", "③", "대사의"],
+  ["multiply", "⑥", "증식하다"],
+  ["inactive", "⑥", "비활성의"],
+  ["synthesis", "⑩", "합성"],
+  ["stimulate", "⑯", "자극하다"]
  ],
- kor: [
-  "바이러스는 단백질 껍질에 싸인 한 벌의 설명서다.",
-  "혼자 있을 때 그것은 아무것도 하지 않는다.",
-  "먹지도 않고, 자라지도 않으며, 단 한 번도 스스로를 복제하지 못한다.",
-  "문손잡이 위에 놓이면 그저 기다린다. 때로는 몇 시간씩.",
-  "알맞은 세포를 만나는 순간 모든 것이 달라진다.",
-  "그것은 들어가 설명서를 건네고, 세포는 고분고분 새 바이러스를 만들기 시작한다.",
-  "기계 장치는 빌린 것이고, 바이러스의 것은 설계도뿐이다.",
-  "생물학자들이 한 세기 동안 바이러스가 살아 있는지를 두고 다퉈 온 이유가 이것이다.",
-  "대부분의 정의로는 자격 미달인데, 도움 없이는 번식하지 못하기 때문이다.",
-  "그런데도 그것들은 진화하고, 유전자를 지니며, 주위의 모든 생물을 빚어낸다.",
-  "이 논쟁은 단순히 말의 문제만은 아니다.",
-  "무언가를 어떻게 분류하느냐가 우리가 어떤 도구를 집어 들지를 정한다.",
-  "살아 있는 세포를 공격하는 약은 한 벌의 설명서에는 닿지 못한다.",
-  "백신은 다르게 작동한다. 몸에게 그 껍질을 알아보도록 가르친다.",
-  "생명의 경계는 알고 보면 쓸모 있는 질문들이 사는 자리다."
+ defs: [
+  ["infectious", "able to pass disease from one to another"],
+  ["metabolic", "about the chemical work inside a body"],
+  ["multiply", "to grow in number very quickly"],
+  ["inactive", "not doing anything for the time being"],
+  ["synthesis", "the making of a substance from parts"],
+  ["stimulate", "to make a system start working harder"]
  ],
- bank: [["protein","①","단백질"],["suitable","⑤","알맞은"],["borrow","⑦","빌리다"],
-        ["reproduce","⑨","번식하다"],["evolve","⑩","진화하다"],["classify","⑫","분류하다"]],
- defs: [["protein","a substance that builds and runs living cells"],
-        ["suitable","right for a particular purpose"],
-        ["borrow","to use something that belongs to another"],
-        ["reproduce","to produce new individuals of the same kind"],
-        ["evolve","to change gradually over generations"],
-        ["classify","to put things into groups by kind"]],
- defOrder: [3,0,5,2,4,1],
+ defOrder: [5, 1, 4, 0, 3, 2],
  flow: [
-  ["What it is","A virus is instructions wrapped in a protein coat",null],
-  ["Alone","By itself it cannot eat, grow, or (  ①  )","reproduce"],
-  ["Inside a cell","It hands over its plan and (  ②  ) the cell's machinery","borrows"],
-  ["The dispute","Biologists argue whether such a thing is (  ③  )","alive"],
-  ["Why it matters","How we (  ④  ) it decides which medicines can work","classify"]
+  ["What they are", "Viruses cannot live on their own", null],
+  ["What they do", "They take over other cells to (  ①  )", "reproduce"],
+  ["What they carry", "Nucleic acid inside a (  ②  ) shell", "protein"],
+  ["How they enter", "Like a needle they inject their (  ③  ) material", "genetic"],
+  ["Why they are hard", "Stuck in cells, they resist (  ④  ) more than bacteria", "killing"]
  ],
- flowBogi: "reproduce · borrows · alive · classify · protein · vaccine",
+ flowBogi: "reproduce · protein · genetic · killing · sleep · sugar",
  para: [
-  ["② On its own it does nothing at all.","Alone, a virus stays completely ______.","inactive"],
-  ["⑦ The machinery is borrowed","The cell supplies the ______, not the virus.","equipment"],
-  ["⑨ they cannot reproduce without help","They depend on a host to ______.","multiply"],
-  ["⑪ not merely a matter of words","The debate has ______ consequences.","practical"],
-  ["⑭ teach the body to recognise the coat","Vaccines train the body to ______ it.","identify"]
+  ["② unable to live on their own", "They cannot survive ______ a host.", "without"],
+  ["⑥ can remain inactive in the body for years", "Some stay ______ inside us for years.", "asleep"],
+  ["⑩ they lack enzymes for energy production", "They have ______ way to make energy.", "no"],
+  ["⑫ takes over the cellular machinery", "It seizes the cell's own ______.", "tools"],
+  ["⑯ stimulating the immune system", "Vaccines wake up the body's ______.", "defences"]
  ],
- paraBogi: "inactive · equipment · multiply · practical · identify · busy · verbal · ignore",
+ paraBogi: "without · asleep · no · tools · defences · with · awake · every",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How to Clean a Doorknob Properly","A Question at the Border of Life",
-       "Viruses Are Clearly Living Things","The Discovery of the First Vaccine",
-       "Why Proteins Are the Basis of Food"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["바이러스는 혼자서는 스스로를 복제하지 못한다.","세포 안에서 쓰이는 기계 장치는 세포의 것이다.",
-       "대부분의 정의에서 바이러스는 생물로 분류된다.","바이러스도 진화하고 유전자를 지닌다.",
-       "백신은 몸이 껍질을 알아보게 가르친다."], ans:3},
-  {t:"write", q:"필자가 이 논쟁을 '말의 문제만은 아니다'라고 한 이유를 우리말 한 문장으로 써 보세요.",
-   ans:"어떻게 분류하느냐에 따라 어떤 치료 도구를 쓸 수 있는지가 달라지기 때문이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "Where the Word 'Virus' Comes From",
+    "A Borrowed Factory and a Set of Plans",
+    "Why Viruses Are Easier to Kill Than Bacteria",
+    "How to Wash Your Hands Properly",
+    "The Discovery of Penicillin"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "바이러스는 식물도 동물도 세균도 아니며 스스로 살 수 없다.",
+    "바이러스라는 이름은 ‘독’과 ‘점액’을 뜻하는 라틴어에서 왔다.",
+    "AIDS를 일으키는 것처럼 세포 안에서 수년에 걸쳐 천천히 번식하는 것도 있다.",
+    "바이러스는 에너지 생산을 위한 효소를 갖추고 있어 숙주 없이 증식한다.",
+    "백신은 특정 바이러스를 겨냥하는 백혈구를 만들도록 면역 체계를 자극한다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "바이러스가 세균보다 죽이기 어려운 까닭을 우리말 한 문장으로 써 보세요.",
+   ans: "바이러스가 숙주 세포 안에 갇혀 있어서, 세포를 건드리지 않고 바이러스만 없애기가 어렵기 때문이다."
+  }
  ],
  fl: {
-  model: { n:"⑫",
-   toks: [["How we classify something","s"],["decides","v"],["which tools","c"],
-          ["we","s2"],["reach for","v2"]],
-   ko:"무언가를 어떻게 분류하느냐가 우리가 어떤 도구를 집어 들지를 정한다." },
+  model: {
+   n: "⑥",
+   toks: [
+    ["Some of them,", "s"], ["such as those that cause the common cold and flu,", "m"],
+    ["multiply", "v"], ["rapidly", "m"], ["and", "c"], ["kill", "v"], ["the host cell,", null],
+    ["while", "c"], ["others,", "s2"], ["such as the genital herpes virus,", "m"],
+    ["can remain", "v2"], ["inactive in the body for years.", null]
+   ],
+   ko: "감기와 독감을 일으키는 것들처럼 어떤 바이러스는 빠르게 증식해 숙주 세포를 죽이는 반면, 생식기 헤르페스 바이러스 같은 다른 것들은 몸속에서 수년간 비활성 상태로 남을 수 있다."
+  },
   drill: [
-   { n:"④", en:"Left on a doorknob, it simply waits, sometimes for hours.",
-     ans:"M Left on a doorknob · S it · M simply · △V waits · M sometimes for hours",
-     ko:"문손잡이 위에 놓이면 그저 기다린다. 때로는 몇 시간씩." },
-   { n:"⑤", en:"Everything changes the moment it meets a suitable cell.",
-     ans:"S Everything · △V changes · [the moment] S′ it · △V′ meets · O a suitable cell",
-     ko:"알맞은 세포를 만나는 순간 모든 것이 달라진다." },
-   { n:"⑩", en:"Yet they evolve, they carry genes, and they shape every living thing around them.",
-     ans:"S they · △V evolve · S they · △V carry · O genes · [and] S they · △V shape · O every living thing around them",
-     ko:"그런데도 그것들은 진화하고, 유전자를 지니며, 주위의 모든 생물을 빚어낸다." }
+   {
+    n: "③",
+    en: "Instead, they take over other cells to help them reproduce and carry out metabolic activities.",
+    ans: "M Instead · S they · △V take over · O other cells · M to help them reproduce and carry out metabolic activities",
+    ko: "대신 그것들은 다른 세포를 장악해 자신이 번식하고 대사 활동을 하도록 돕게 만든다."
+   },
+   {
+    n: "⑩",
+    en: "Because they lack enzymes for energy production and ribosomes for protein synthesis and reproduction, viruses attach to a host cell.",
+    ans: "[Because] S′ they · △V′ lack · O enzymes for energy production and ribosomes for protein synthesis and reproduction · S viruses · △V attach · M to a host cell",
+    ko: "에너지 생산을 위한 효소와 단백질 합성·번식을 위한 리보솜이 없기 때문에, 바이러스는 숙주 세포에 달라붙는다."
+   },
+   {
+    n: "⑯",
+    en: "Some antiviral medications attack viruses, while vaccines are also effective in stimulating the immune system to produce white blood cells that target specific viruses.",
+    ans: "S Some antiviral medications · △V attack · O viruses · [while] S′ vaccines · △V′ are · C also effective in stimulating the immune system to produce white blood cells that target specific viruses",
+    ko: "일부 항바이러스제는 바이러스를 공격하고, 백신은 특정 바이러스를 겨냥하는 백혈구를 만들도록 면역 체계를 자극하는 데도 효과가 있다."
+   }
   ]
  },
  syn: [
-  { n:"④", name:"분사구문 (수동)",
-    q:"«Left on a doorknob», it simply waits, sometimes for hours.",
-    d:"과거분사로 시작하는 분사구문은 <b>수동</b>의 뜻이다. 'When it is left ~' 로 풀어 읽는다.",
-    k:"문손잡이 위에 놓이면 그것은 그저 기다린다." },
-  { n:"⑤", name:"the moment + 절 (접속사)",
-    q:"Everything changes «the moment it meets» a suitable cell.",
-    d:"<b>the moment</b>는 '~하는 순간'이라는 접속사로 쓰인다. as soon as 와 같은 뜻이다.",
-    k:"알맞은 세포를 만나는 순간 모든 것이 달라진다." }
+  {
+   n: "②",
+   name: "Being 이 생략된 분사구문",
+   q: "«Not a plant, animal, or bacterium,» these infectious agents are unable to live on their own.",
+   d: "앞에 <b>Being</b>이 생략된 분사구문이다. Being 을 넣어 읽으면 뜻이 분명해진다. ‘~이 아니어서’로 옮긴다.",
+   k: "식물도 동물도 세균도 아니어서"
+  },
+  {
+   n: "⑦",
+   name: "분사구문  meaning that ~",
+   q: "Still others … are slow viruses, «meaning that they remain in the cells» and reproduce slowly over years.",
+   d: "앞의 내용을 받아 ‘즉 ~라는 뜻이다’를 덧붙인다. <b>which means that</b>과 같은 구실을 한다.",
+   k: "즉 그것들이 세포 안에 남는다는 뜻이다"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"Kept in the cold, the sample stayed usable for weeks.",
-    k:"차게 보관되자 그 표본은 몇 주 동안 쓸 수 있는 상태로 남았다." },
-  { u:"구문 2", en:"The alarm rang the moment the door opened.",
-    k:"문이 열리는 순간 경보가 울렸다." },
-  { u:"구문 1 + 2", en:"Left alone, the cell divides the moment it has enough food.",
-    k:"그냥 두면 그 세포는 먹이가 충분해지는 순간 분열한다." }
+  { u: "구문 1", en: "Not fully alive, a virus waits for a cell to open.", k: "완전히 살아 있지는 않아서, 바이러스는 세포가 열리기를 기다린다." },
+  { u: "구문 2", en: "The test was negative, meaning that no virus was found.", k: "검사는 음성이었는데, 즉 바이러스가 발견되지 않았다는 뜻이다." },
+  { u: "구문 1 + 2", en: "Not a cell itself, the particle carries only a plan, meaning that it must borrow a factory.", k: "그 입자는 세포 자체가 아니어서 설계도만 지니는데, 즉 공장을 빌려야 한다는 뜻이다." }
  ],
- wtype: ["무관","정답","반대","무관","무관"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["문손잡이는 상황을 보여 주는 예일 뿐이다"],["정답"],
-       ["글은 대부분의 정의에서 자격 미달이라고 말한다 — 정반대다"],
-       ["백신의 발견사는 글에 나오지 않는다"],["영양으로서의 단백질은 글의 소재가 아니다"]],
- src: [["③"],["⑦"],["⑨과 어긋남 — 대부분의 정의로는 자격 미달이다"],["⑩"],["⑭"]],
+ why: [
+  ["문장 ④의 어원 대목만 붙든 지엽적인 제목이다"],
+  ["정답"],
+  ["글은 바이러스가 세균보다 죽이기 훨씬 어렵다고 말한다 — 정반대다"],
+  ["손 씻는 방법은 글에 나오지 않는다"],
+  ["페니실린의 발견은 글에서 다루지 않는다"]
+ ],
+ src: [["②"], ["④"], ["⑦"], ["⑩과 어긋남 — 효소와 리보솜이 없어 숙주 세포에 달라붙는다"], ["⑯"]],
  kb: {
-  title:"경계에 선 것들",
-  lead:"분류가 흔들리면 도구도 흔들린다.",
+  title: "살아 있다고 해야 할까",
+  lead: "생물과 무생물 사이에 놓인 것",
   items: [
-   ["항생제는 바이러스에 듣지 않는다",
-    "항생제는 세균의 세포벽이나 단백질 합성을 노린다. 바이러스에는 그런 구조가 없어 효과가 없다. 감기에 항생제를 쓰지 않는 이유이며, 불필요한 사용은 내성만 키운다."],
-   ["세균만큼 큰 바이러스",
-    "2003년 발견된 미미바이러스는 지름이 약 0.75마이크로미터로 일부 세균보다 크고, 유전자도 수백 개를 지닌다. '단순한 껍질'이라는 그림이 흔들린 계기였다."],
-   ["우리 유전체 안의 흔적",
-    "사람 유전체의 약 8%는 과거 바이러스에서 온 서열로 추정된다. 그중 일부는 태반 형성에 관여하는 단백질을 만드는 데 쓰인다."]
+   ["담배모자이크바이러스", "1892년 러시아의 Dmitry Ivanovsky는 담배 잎의 병원체가 세균을 걸러 내는 필터를 통과한다는 것을 확인했다. 1898년 네덜란드의 Martinus Beijerinck는 이것을 세균이 아닌 새로운 것으로 보고 ‘바이러스’라 불렀다."],
+   ["스무 면의 껍질", "많은 바이러스의 껍질은 정이십면체 모양이다. 같은 단백질 조각을 반복해 쌓아 올리는 방식이라, 유전 정보를 적게 쓰고도 튼튼한 상자를 만들 수 있다."],
+   ["항생제가 듣지 않는 이유", "항생제는 세포벽이나 리보솜처럼 세균에만 있는 표적을 공격한다. 바이러스는 그런 구조를 갖지 않고 숙주 세포의 기계를 빌려 쓰므로, 항생제는 감기와 독감에 듣지 않는다."]
   ],
-  ask:"'살아 있다'의 조건을 세 가지 적어 보고, 바이러스가 그중 몇 개를 만족하는지 따져 보자."
- }
+  ask: "여러분이라면 바이러스를 생물이라고 부르겠는가? 그 판단의 근거는 무엇인가?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 19 ───────────────────────────── */
 {
- no: "19", key: "wall",
- accent: "#8B5AA6", tint: "#F1EAF6", deep: "#59326F",
- en: "The Fence Around the Well",
- ko: "우물을 두른 울타리",
- goal: "예방이 왜 치료보다 눈에 덜 띄는지, 그럼에도 왜 우선하는지 설명할 수 있다.",
+ no: "19", key: "wall", accent: "#8B5AA6", tint: "#F1EAF6", deep: "#59326F",
+ en: "Preventing Infectious Diseases",
+ ko: "막아 낸 일은 기록에 남지 않는다",
+ goal: "필자가 감염병을 피하는 전략으로 무엇을 제시하는지 근거와 함께 설명할 수 있다.",
  fig: "Figure 1  일어나지 않은 일은 그래프에 남지 않는다.",
  tip: "먼저 생각해 보자. 아무 일도 일어나지 않은 하루를 어떻게 성과라고 부를 수 있을까?",
- sent: [
-  "In 1854 cholera was killing people in a London street, and nobody knew why.",
-  "John Snow marked each death on a map and watched a pattern appear.",
-  "The deaths gathered tightly around a single water pump on Broad Street.",
-  "He asked the council to remove the pump handle, and the outbreak faded.",
-  "Snow could not see the bacterium; the microscope work came later.",
-  "He only needed to see where the sick people had been drinking their water.",
-  "Prevention often works like this, without a full explanation.",
-  "It also works invisibly, which is its lasting political problem.",
-  "A cure produces a grateful patient who can be photographed and thanked in public.",
-  "Prevention produces a person who never became a patient at all.",
-  "No one thanks a clean pipe, and no one remembers the illness they did not get.",
-  "So budgets for prevention are cut first and restored last.",
-  "The pattern repeats in every century, under every kind of government.",
-  "Public health is the strange field where success looks like nothing happening.",
-  "Learning to value that emptiness is harder than learning the science."
+ sent: T(19).sent, kor: T(19).kor,
+ bank: [
+  ["pathogenic", "①", "병원성의"],
+  ["redeeming", "②", "결점을 상쇄하는"],
+  ["intervention", "③", "개입, 중재"],
+  ["repel", "④", "물리치다"],
+  ["penetrate", "⑤", "침투하다"],
+  ["vulnerable", "⑦", "취약한"]
  ],
- kor: [
-  "1854년 런던의 한 거리에서 콜레라가 사람들을 죽이고 있었지만, 아무도 이유를 몰랐다.",
-  "존 스노는 죽음 하나하나를 지도에 표시했고, 하나의 무늬가 떠오르는 것을 보았다.",
-  "죽음은 브로드가의 물 펌프 하나 주위에 빽빽하게 모여 있었다.",
-  "그는 시 당국에 펌프 손잡이를 떼어 달라고 요청했고, 유행은 잦아들었다.",
-  "스노는 세균을 볼 수 없었다. 현미경 연구는 나중 일이었다.",
-  "그는 아픈 사람들이 어디서 물을 길어 마셔 왔는지만 보면 되었다.",
-  "예방은 흔히 이렇게, 완전한 설명 없이도 작동한다.",
-  "예방은 또한 눈에 띄지 않게 작동하는데, 그것이 오래 이어지는 정치적 문제다.",
-  "치료는 사진을 찍고 사람들 앞에서 고마움을 표할 수 있는 환자를 만들어 낸다.",
-  "예방은 애초에 환자가 되지 않은 사람을 만들어 낸다.",
-  "깨끗한 수도관에 고마워하는 사람은 없고, 걸리지 않은 병을 기억하는 사람도 없다.",
-  "그래서 예방 예산은 가장 먼저 깎이고 가장 늦게 되살아난다.",
-  "이 무늬는 어느 세기에나, 어떤 정부 아래에서나 되풀이된다.",
-  "공중보건은 성공이 아무 일도 없는 것처럼 보이는 이상한 분야다.",
-  "그 텅 빔을 값지게 여기는 법을 배우는 일이 과학을 배우는 일보다 어렵다."
+ defs: [
+  ["pathogenic", "able to cause disease in a living body"],
+  ["redeeming", "making up for something bad"],
+  ["intervention", "a step taken to change what happens"],
+  ["repel", "to drive something back or away"],
+  ["penetrate", "to get inside something by force"],
+  ["vulnerable", "easily hurt or attacked"]
  ],
- bank: [["outbreak","④","(질병의) 유행, 발생"],["bacterium","⑤","세균"],["prevention","⑦","예방"],
-        ["grateful","⑨","고마워하는"],["budget","⑫","예산"],["restore","⑫","되살리다"]],
- defs: [["outbreak","a sudden start of a disease in an area"],
-        ["bacterium","a tiny living thing that can cause disease"],
-        ["prevention","the act of stopping something before it starts"],
-        ["grateful","feeling thanks for what someone has done"],
-        ["budget","the money set aside for a purpose"],
-        ["restore","to bring something back to an earlier state"]],
- defOrder: [2,0,4,1,5,3],
+ defOrder: [3, 0, 5, 2, 4, 1],
  flow: [
-  ["Case","In 1854 Snow mapped cholera deaths around one water pump",null],
-  ["What was enough","He acted without seeing the (  ①  )","bacterium"],
-  ["Nature of prevention","It works (  ②  ), leaving nothing to point at","invisibly"],
-  ["Political result","Prevention budgets are cut (  ③  ) and restored last","first"],
-  ["Conclusion","Success in public health looks like (  ④  ) happening","nothing"]
+  ["The danger", "Some bacteria can cause disease in a host", null],
+  ["The rescue", "Science treats emergencies such as a (  ①  ) nail", "rusty"],
+  ["The condition", "Germs harm us only when they can (  ②  ) our cells", "penetrate"],
+  ["What lowers it", "Accidents, poor food, fatigue, and (  ③  )", "stress"],
+  ["The strategy", "Not killing all bacteria, but keeping cells (  ④  )", "healthy"]
  ],
- flowBogi: "bacterium · invisibly · first · nothing · pump · patient",
+ flowBogi: "rusty · penetrate · stress · healthy · clean · sleep",
  para: [
-  ["④ the outbreak faded","Removing the handle ______ the spread.","stopped"],
-  ["⑦ without a full explanation","Action can come before complete ______.","understanding"],
-  ["⑩ a person who never became a patient","Prevention leaves no visible ______.","result"],
-  ["⑫ cut first and restored last","Prevention has the weakest ______.","protection"],
-  ["⑮ harder than learning the science","Valuing emptiness is the greater ______.","difficulty"]
+  ["② difficult to see any redeeming qualities", "It is hard to find anything ______ in them.", "good"],
+  ["④ if we inadvertently tangle with them", "Even if we meet them by ______.", "accident"],
+  ["⑥ unless vitality and resistance are weakened", "Germs win only when the body grows ______.", "weak"],
+  ["⑨ disrupts the normal function of the body", "It breaks how the body normally ______.", "works"],
+  ["⑪ keep your vitality at its peak", "Hold your energy at its ______ point.", "highest"]
  ],
- paraBogi: "stopped · understanding · result · protection · difficulty · spread · proof · comfort",
+ paraBogi: "good · accident · weak · works · highest · bad · purpose · lowest",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["The Discovery of Bacteria","When Success Looks Like Nothing",
-       "How to Draw a City Map","Why London Needed New Streets",
-       "The Best Way to Treat Cholera"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["스노는 죽음의 위치를 지도에 표시했다.","그는 세균을 확인한 뒤에 펌프 손잡이를 떼게 했다.",
-       "예방은 눈에 띄지 않게 작동한다.","예방 예산은 가장 먼저 깎이는 경향이 있다.",
-       "필자는 이 무늬가 어느 시대에나 되풀이된다고 본다."], ans:2},
-  {t:"write", q:"필자가 예방을 '정치적으로 불리하다'고 본 이유를 우리말 한 문장으로 써 보세요.",
-   ans:"성과가 일어나지 않은 일이라 아무도 보거나 기억하지 못하기 때문이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "What a Rusty Nail Can Do to You",
+    "Guard the Cell, Not the World",
+    "Kill Every Germ to Stay Healthy",
+    "How Vaccines Are Manufactured",
+    "A History of Food Preservation"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "파상풍균과 보툴리누스균은 숙주에게 질병을 일으킬 수 있는 병원성 세균이다.",
+    "세균은 유기체의 세포에 침투하지 못하면 건강에 영향을 미치지 않는다.",
+    "사고, 영양 부족, 극도의 피로, 강한 스트레스는 모두 저항력을 떨어뜨린다.",
+    "감염병을 피하는 전략은 모든 세균을 없애 버리는 것이다.",
+    "건강과 활력, 질병에 대한 저항력은 세포의 건강에 의해 결정된다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "필자가 감염병을 피하는 ‘가장 좋은 방법’으로 제시한 것을 우리말 한 문장으로 써 보세요.",
+   ans: "세포가 충분히 건강해서 활력을 최고 수준으로 유지하도록 하는 것이다."
+  }
  ],
  fl: {
-  model: { n:"⑪",
-   toks: [["No one","s"],["thanks","v"],["a clean pipe","m"],["and","c"],["no one","s"],
-          ["remembers","v"],["the illness they did not get","m"]],
-   ko:"깨끗한 수도관에 고마워하는 사람은 없고, 걸리지 않은 병을 기억하는 사람도 없다." },
+  model: {
+   n: "④",
+   toks: [
+    ["Our best bet", "s"], ["is", "v"],
+    ["to avoid being exposed to such mischief makers and to make sure", null],
+    ["we", "s2"], ["eat", "v2"], ["correctly", "m"], ["so that", "c"],
+    ["our vitality and resistance", "s2"], ["are", "v2"], ["high enough to repel their effects", null],
+    ["if", "c"], ["we", "s2"], ["inadvertently tangle", "v2"], ["with them.", "m"]
+   ],
+   ko: "가장 좋은 방책은 그런 해악을 끼치는 것들에 노출되지 않고, 부주의하게 얽히더라도 그 영향을 물리칠 만큼 활력과 저항력이 높도록 바르게 먹는 것이다."
+  },
   drill: [
-   { n:"②", en:"John Snow marked each death on a map and watched a pattern appear.",
-     ans:"S John Snow · △V marked · O each death · M on a map · [and] △V watched · O a pattern appear",
-     ko:"존 스노는 죽음 하나하나를 지도에 표시했고, 하나의 무늬가 떠오르는 것을 보았다." },
-   { n:"⑤", en:"Snow could not see the bacterium; the microscope work came later.",
-     ans:"S Snow · △V could not see · O the bacterium · S the microscope work · △V came · M later",
-     ko:"스노는 세균을 볼 수 없었다. 현미경 연구는 나중 일이었다." },
-   { n:"⑭", en:"Public health is the strange field where success looks like nothing happening.",
-     ans:"S Public health · △V is · C the strange field · M where success looks like nothing happening",
-     ko:"공중보건은 성공이 아무 일도 없는 것처럼 보이는 이상한 분야다." }
+   {
+    n: "⑤",
+    en: "Germs don't affect health unless they are able to penetrate the cells of an organism — to really get into the working parts.",
+    ans: "S Germs · △V don't affect · O health · [unless] S′ they · △V′ are · C able to penetrate the cells of an organism",
+    ko: "세균은 유기체의 세포에 침투해 실제로 작동하는 부분까지 들어갈 수 없다면 건강에 영향을 주지 않는다."
+   },
+   {
+    n: "⑨",
+    en: "Short-term, high-intensity events of an accident, or longer-term, non-stop abuse of a destructive lifestyle disrupts the normal function of the body as a whole, as well as the cells that make up that whole.",
+    ans: "S Short-term, high-intensity events of an accident, or longer-term, non-stop abuse of a destructive lifestyle · △V disrupts · O the normal function of the body as a whole, as well as the cells that make up that whole",
+    ko: "사고라는 단기·고강도 사건이나, 파괴적인 생활 방식의 장기적이고 끊임없는 남용은 몸 전체의 정상 기능은 물론 그 전체를 이루는 세포의 기능까지 무너뜨린다."
+   },
+   {
+    n: "⑪",
+    en: "The best course is to make sure your cells are healthy enough to keep your vitality at its peak.",
+    ans: "S The best course · △V is · C to make sure · [that] S′ your cells · △V′ are · C healthy enough to keep your vitality at its peak",
+    ko: "가장 좋은 방법은 세포가 활력을 최고로 유지할 만큼 건강하도록 확실히 하는 것이다."
+   }
   ]
  },
  syn: [
-  { n:"②", name:"지각동사 watch + 목적어 + 동사원형",
-    q:"John Snow marked each death on a map and «watched a pattern appear».",
-    d:"<b>watch·see·hear + 목적어 + 동사원형</b>은 '~가 …하는 것을 보다/듣다'. to 를 붙이지 않는다.",
-    k:"그는 하나의 무늬가 떠오르는 것을 보았다." },
-  { n:"⑭", name:"관계부사 where",
-    q:"Public health is the strange field «where success looks like» nothing happening.",
-    d:"<b>where</b>는 장소·분야를 가리키는 명사를 꾸미며, 뒤에 완전한 문장이 온다.",
-    k:"공중보건은 성공이 아무 일도 없는 것처럼 보이는 분야다." }
+  {
+   n: "⑤",
+   name: "접속사 unless",
+   q: "Germs don't affect health «unless they are able to penetrate» the cells of an organism.",
+   d: "<b>unless</b>는 ‘~하지 않는 한’이라는 뜻으로 <b>if ~ not</b>과 같다. 뒤에 부정을 다시 붙이지 않는다.",
+   k: "그것들이 침투할 수 없다면"
+  },
+  {
+   n: "④",
+   name: "형용사 + enough to ~",
+   q: "…so that our vitality and resistance «are high enough to repel their effects»…",
+   d: "<b>enough</b>는 형용사·부사 <b>뒤</b>에 온다. ‘~할 만큼 충분히 …한’으로 읽는다.",
+   k: "그 영향을 물리칠 만큼 충분히 높은"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"The nurse heard the machine stop in the next room.",
-    k:"간호사는 옆방에서 기계가 멈추는 소리를 들었다." },
-  { u:"구문 2", en:"This is the street where the pump once stood.",
-    k:"여기가 예전에 그 펌프가 서 있던 거리다." },
-  { u:"구문 1 + 2", en:"That is the ward where visitors watched the fever fall.",
-    k:"저기가 방문객들이 열이 내리는 것을 지켜본 병동이다." }
+  { u: "구문 1", en: "The wound will not heal unless you keep it clean.", k: "상처는 깨끗하게 두지 않는 한 낫지 않을 것이다." },
+  { u: "구문 2", en: "Her cells were strong enough to fight the infection.", k: "그녀의 세포는 그 감염과 싸울 만큼 충분히 강했다." },
+  { u: "구문 1 + 2", en: "You will not fall ill unless your body is weak enough to let germs in.", k: "몸이 세균을 들일 만큼 약해지지 않는 한 여러분은 병들지 않을 것이다." }
  ],
- wtype: ["무관","정답","무관","지엽","무관"],
- stype: ["일치","반대","일치","일치","일치"],
- why: [["세균의 발견은 이 글보다 나중 일이라고 밝히고 있다"],["정답"],
-       ["지도 그리는 법은 글의 관심사가 아니다"],
-       ["런던은 사례의 무대일 뿐 주제가 아니다"],["콜레라 치료법은 글에 나오지 않는다"]],
- src: [["②"],["⑤과 어긋남 — 세균을 보지 못한 채로 조치했다"],["⑧"],["⑫"],["⑬"]],
+ why: [
+  ["문장 ③의 예시만 붙든 지엽적인 제목이다"],
+  ["정답"],
+  ["글은 모든 세균을 없애는 것이 전략이 아니라고 말한다 — 정반대다"],
+  ["백신 제조 과정은 글에 나오지 않는다"],
+  ["식품 보존의 역사는 글에서 다루지 않는다"]
+ ],
+ src: [["①"], ["⑤"], ["⑧"], ["⑩과 어긋남 — 모든 세균을 없애는 것이 전략이 아니다"], ["⑭"]],
  kb: {
-  title:"보이지 않는 성과",
-  lead:"막아 낸 일은 기록에 남지 않는다.",
+  title: "일어나지 않은 일의 값",
+  lead: "예방은 왜 늘 과소평가되는가",
   items: [
-   ["브로드가의 펌프",
-    "1854년 존 스노는 사망자 위치를 지도에 찍어 브로드가 펌프를 지목했고, 손잡이 제거 뒤 유행이 잦아들었다. 세균설이 자리 잡기 전이었지만 자료의 무늬만으로 충분했다. 역학(疫學)의 출발점으로 꼽힌다."],
-   ["Y2K 역설",
-    "1999년 대비 작업에 큰 비용이 들었고, 2000년에 큰 사고는 없었다. 그러자 '괜한 돈을 썼다'는 말이 나왔다. 잘 막아 낼수록 그 필요를 증명하기 어려워지는 구조를 보여 준다."],
-   ["가장 값싼 개입",
-    "세계보건기구는 안전한 식수와 위생, 예방접종을 비용 대비 효과가 가장 큰 보건 개입으로 꼽는다. 눈에 띄지 않는 쪽이 대개 더 싸고 더 많은 사람을 살린다."]
+   ["브로드가의 손잡이", "1854년 런던 소호에서 콜레라가 번지자 John Snow는 사망자를 지도에 찍어 브로드가 펌프 주변에 몰려 있음을 보였다. 펌프 손잡이를 떼어 낸 뒤 유행이 잦아들었지만, 막아 낸 사망자 수는 어디에도 남지 않았다."],
+   ["예방의 역설", "Geoffrey Rose는 인구 전체에 큰 이익을 주는 예방 조치가 개인에게는 거의 아무 이익도 주지 않는 것처럼 보인다고 지적했다. 개인은 자신이 무엇을 피했는지 알 수 없다."],
+   ["파상풍이라는 이름", "tetanus 는 ‘팽팽하게 당기다’라는 그리스어에서 왔다. 근육이 굳어 턱이 벌어지지 않는 증상 때문에 lockjaw 라고도 불린다. 흙 속에 흔한 균이어서 녹슨 못을 밟는 상황이 예로 자주 나온다."]
   ],
-  ask:"'아무 일도 없었다'가 성과인 일이 내 생활에도 있는가? 무엇이 그것을 가능하게 했을까?"
- }
+  ask: "여러분이 지난달에 ‘아무 일도 없이’ 지나간 것 가운데, 사실은 무언가를 막아 낸 것이 있을까?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 20 ───────────────────────────── */
 {
- no: "20", key: "burnout",
- accent: "#C0803A", tint: "#FAF0E1", deep: "#8A551A",
- en: "The Doctor Who Cannot Rest",
- ko: "쉴 수 없는 의사",
- goal: "의료 인력의 소진이 개인 문제가 아니라 제도 설계의 문제임을 설명할 수 있다.",
+ no: "20", key: "burnout", accent: "#C0803A", tint: "#FAF0E1", deep: "#8A551A",
+ en: "Medical Education and Practitioner Well-Being",
+ ko: "가르치는 쪽도 지치고 있다",
+ goal: "의학 교육과 진료 현장에서 스트레스가 커진 배경과, 아직 확인하지 못한 것을 구분해 설명할 수 있다.",
  fig: "Figure 1  당직표 위에 겹쳐 놓은 실수 곡선.",
  tip: "먼저 생각해 보자. 30시간을 깨어 있은 사람에게 중요한 결정을 맡겨도 될까?",
- sent: [
-  "Medical training long treated exhaustion as a badge rather than a risk.",
-  "Young doctors worked thirty hours at a stretch and were openly praised for it.",
-  "The reasoning sounded noble: patients need someone who never leaves.",
-  "Sleep research, gathered over several decades, told a different story.",
-  "After about seventeen hours awake, performance falls to the level of mild drunkenness.",
-  "Attention narrows, and errors of the careless kind become far more likely.",
-  "A tired doctor is not lazy; a tired brain simply works worse.",
-  "When hospitals shortened shifts, serious mistakes dropped in several studies.",
-  "But shorter shifts create a new danger at every handover.",
-  "Each time one doctor passes a patient to another, information can be lost.",
-  "So the answer to the problem was never simply fewer hours on the ward.",
-  "It was fewer hours plus a written, spoken, checked handover.",
-  "Naming exhaustion a personal weakness had hidden a design problem for a century.",
-  "Systems that depend on nobody ever being tired are badly built.",
-  "Good design assumes the human being it actually has."
+ sent: T(20).sent, kor: T(20).kor,
+ bank: [
+  ["evolve", "②", "진화하다"],
+  ["practitioner", "②", "실무자, 의료인"],
+  ["burnout", "④", "소진"],
+  ["distress", "④", "고통"],
+  ["mirror", "⑤", "반영하다"],
+  ["extrapolate", "⑩", "미루어 추정하다"]
  ],
- kor: [
-  "의학 수련은 오랫동안 탈진을 위험이 아니라 훈장처럼 다루었다.",
-  "젊은 의사들은 서른 시간을 내리 일했고, 그 일로 드러내 놓고 칭찬을 받았다.",
-  "그 논리는 고결하게 들렸다. 환자에게는 자리를 뜨지 않는 사람이 필요하다는 것이다.",
-  "수십 년에 걸쳐 쌓인 수면 연구는 다른 이야기를 들려주었다.",
-  "약 열일곱 시간을 깨어 있으면 수행 능력이 가벼운 취기 수준으로 떨어진다.",
-  "주의는 좁아지고, 부주의한 종류의 실수가 훨씬 더 잘 일어난다.",
-  "지친 의사가 게으른 것이 아니다. 지친 뇌가 그저 더 나쁘게 작동할 뿐이다.",
-  "병원들이 근무 시간을 줄이자, 여러 연구에서 중대한 실수가 줄었다.",
-  "그러나 짧아진 근무는 인계마다 새로운 위험을 만든다.",
-  "한 의사가 환자를 다른 의사에게 넘길 때마다 정보가 사라질 수 있다.",
-  "그래서 이 문제의 답은 결코 병동에서 보내는 시간을 줄이는 것만이 아니었다.",
-  "시간을 줄이는 동시에, 적고 말하고 확인하는 인계를 갖추는 것이었다.",
-  "탈진을 개인의 나약함이라 이름 붙인 일이 한 세기 동안 설계의 문제를 가려 왔다.",
-  "아무도 지치지 않는다는 것을 전제로 돌아가는 체계는 잘못 지어진 것이다.",
-  "좋은 설계는 실제로 자기 앞에 있는 사람을 전제한다."
+ defs: [
+  ["evolve", "to change slowly into a better form"],
+  ["practitioner", "a person who works in a profession"],
+  ["burnout", "the state of being worn out by work"],
+  ["distress", "great pain or worry of the mind"],
+  ["mirror", "to show the same pattern as something"],
+  ["extrapolate", "to guess beyond what is known"]
  ],
- bank: [["exhaustion","①","탈진"],["stretch","②","(시간의) 연속"],["performance","⑤","수행 능력"],
-        ["shift","⑧","근무 시간, 교대"],["handover","⑨","인계"],["assume","⑮","전제하다"]],
- defs: [["exhaustion","the state of being completely worn out"],
-        ["stretch","a continuous period of time"],
-        ["performance","how well a person does a task"],
-        ["shift","a set period of work in a workplace"],
-        ["handover","the act of passing responsibility to another"],
-        ["assume","to take something as a starting condition"]],
- defOrder: [4,1,5,0,3,2],
+ defOrder: [2, 5, 0, 4, 1, 3],
  flow: [
-  ["Old belief","Long hours were treated as a badge, not a risk",null],
-  ["Evidence","After 17 hours awake, performance falls to (  ①  ) levels","drunken"],
-  ["First fix","Shorter shifts lowered serious (  ②  ) in several studies","mistakes"],
-  ["New risk","Every (  ③  ) is a chance to lose information","handover"],
-  ["Real answer","Fewer hours plus a checked handover — a (  ④  ) problem","design"]
+  ["The belief", "Medical education has changed in two or three decades", null],
+  ["Why it must", "Education has to (  ①  ) with the healthcare it serves", "evolve"],
+  ["What we know", "Burnout and distress run high among (  ②  ) everywhere", "students"],
+  ["What drives it", "Complexity, social change, and higher patient (  ③  )", "expectations"],
+  ["What we don't know", "Whether it is (  ④  ) — old data are missing", "worsening"]
  ],
- flowBogi: "drunken · mistakes · handover · design · badge · attention",
+ flowBogi: "evolve · students · expectations · worsening · shrinking · money",
  para: [
-  ["① treated exhaustion as a badge","Tiredness was worn as a mark of ______.","honour"],
-  ["⑦ A tired doctor is not lazy","Fatigue is not a failure of ______.","character"],
-  ["⑨ shorter shifts create a new danger","Each fix brings its own ______.","cost"],
-  ["⑬ had hidden a design problem","Blaming people ______ the real cause.","masked"],
-  ["⑮ assumes the human being it actually has","Good systems plan for ______ people.","real"]
+  ["① has fundamentally changed", "Its nature has changed at the ______.", "root"],
+  ["② to function safely and effectively", "So that they can work safely and ______.", "well"],
+  ["④ substance misuse are very high", "Drug misuse runs ______ among students.", "high"],
+  ["⑧ historical comparisons are generally not possible", "We cannot compare it with the ______.", "past"],
+  ["⑩ It seems reasonable to extrapolate", "It is fair to ______ the same for students.", "expect"]
  ],
- paraBogi: "honour · character · cost · masked · real · shame · benefit · perfect",
+ paraBogi: "root · well · high · past · expect · surface · badly · future",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How Much Sleep a Teenager Needs","Tiredness Is a Design Problem",
-       "Doctors Should Simply Work Less","The History of Medical Schools",
-       "Why Alcohol Slows the Brain"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["과거에는 긴 근무가 칭찬받는 일이었다.","열일곱 시간쯤 깨어 있으면 수행 능력이 크게 떨어진다.",
-       "근무를 줄이자 인계의 위험도 함께 사라졌다.","인계 때 정보가 사라질 수 있다.",
-       "필자는 탈진을 개인의 나약함으로 보지 않는다."], ans:3},
-  {t:"write", q:"필자가 제시한 해답을 우리말 한 문장으로 써 보세요.",
-   ans:"근무 시간을 줄이는 동시에 적고 말하고 확인하는 인계 절차를 함께 갖추는 것이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How Patient Expectations Have Risen",
+    "A Changed Training for a Changed Job",
+    "Medical Students Are Under Less Strain Than Before",
+    "How to Apply to Medical School",
+    "The History of the Hospital"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "필자는 지난 20~30년 사이 의학 교육의 성격이 근본적으로 바뀌었다고 본다.",
+    "의대생의 소진·정서적 고통·약물 남용 수준은 세계 어디서나 매우 높다.",
+    "이 상황은 여러 의료 체계에서 일하는 여러 직급 의사들의 상황을 반영한다.",
+    "의대생의 고통과 소진을 재려는 시도는 오래전부터 충분히 이루어져 왔다.",
+    "현직 의사를 대상으로 한 연구는 시간이 지나며 상황이 나빠지고 있음을 시사한다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "필자가 ‘크게 알 수 없는 것’이라고 말한 부분이 무엇인지 우리말 한 문장으로 써 보세요.",
+   ans: "지금의 소진과 고통이 어느 정도까지 점점 커지고 있는 현상인지를 알 수 없다는 것이다."
+  }
  ],
  fl: {
-  model: { n:"⑭",
-   toks: [["Systems","s"],["that depend on nobody ever being tired","m"],
-          ["are","v"],["badly built","c"]],
-   ko:"아무도 지치지 않는다는 것을 전제로 돌아가는 체계는 잘못 지어진 것이다." },
+  model: {
+   n: "②",
+   toks: [
+    ["It", "s"], ["would be", "v"], ["odd", null], ["if", "c"], ["that", "s2"], ["were not", "v2"],
+    ["the case,", null], ["as", "c"], ["education", "s2"], ["needs", "v2"], ["to evolve", null],
+    ["to provide the skills needed by practitioners to function safely and effectively in a changing healthcare environment.", "m"]
+   ],
+   ko: "그렇지 않다면 이상할 텐데, 교육은 변화하는 의료 환경에서 의료인이 안전하고 효과적으로 일하는 데 필요한 기술을 제공하도록 진화해야 하기 때문이다."
+  },
   drill: [
-   { n:"⑤", en:"After about seventeen hours awake, performance falls to the level of mild drunkenness.",
-     ans:"M After about seventeen hours awake · S performance · △V falls · M to the level of mild drunkenness",
-     ko:"약 열일곱 시간을 깨어 있으면 수행 능력이 가벼운 취기 수준으로 떨어진다." },
-   { n:"⑩", en:"Each time one doctor passes a patient to another, information can be lost.",
-     ans:"[Each time] S′ one doctor · △V′ passes · O a patient · M to another · S information · △V can be lost",
-     ko:"한 의사가 환자를 다른 의사에게 넘길 때마다 정보가 사라질 수 있다." },
-   { n:"⑬", en:"Naming exhaustion a personal weakness had hidden a design problem for a century.",
-     ans:"S Naming exhaustion a personal weakness · △V had hidden · O a design problem · M for a century",
-     ko:"탈진을 개인의 나약함이라 이름 붙인 일이 한 세기 동안 설계의 문제를 가려 왔다." }
+   {
+    n: "④",
+    en: "What we do know unfortunately is that levels of burnout, emotional distress, and substance misuse are very high amongst medical students wherever one goes in the world.",
+    ans: "S What we do know · M unfortunately · △V is · [that] S′ levels of burnout, emotional distress, and substance misuse · △V′ are · C very high · M amongst medical students wherever one goes in the world",
+    ko: "안타깝게도 우리가 분명히 아는 것은, 세계 어디를 가든 의대생 사이에서 소진·정서적 고통·약물 남용 수준이 매우 높다는 사실이다."
+   },
+   {
+    n: "⑥",
+    en: "Training for and practising medicine have always been stressful, but increased complexity in investigations, interventions, and management, along with societal changes and higher patient expectations has contributed to increasing levels of stress and distress.",
+    ans: "S Training for and practising medicine · △V have always been · C stressful · [but] S increased complexity in investigations, interventions, and management · M along with societal changes and higher patient expectations · △V has contributed · M to increasing levels of stress and distress",
+    ko: "의학을 배우고 진료하는 일은 늘 스트레스가 컸지만, 검사·시술·관리의 복잡성 증가가 사회적 변화와 높아진 환자 기대와 함께 스트레스와 고통을 더 키워 왔다."
+   },
+   {
+    n: "⑧",
+    en: "Attempts to measure and identify distress and burnout in medical students have been fairly limited until recent years, so historical comparisons are generally not possible.",
+    ans: "S Attempts to measure and identify distress and burnout in medical students · △V have been · C fairly limited · M until recent years · [so] S historical comparisons · △V are · C generally not possible",
+    ko: "의대생의 고통과 소진을 재고 밝히려는 시도는 최근 몇 년 전까지 상당히 제한적이어서, 과거와의 비교는 대체로 불가능하다."
+   }
   ]
  },
  syn: [
-  { n:"⑩", name:"each time + 절 (접속사)",
-    q:"«Each time one doctor passes» a patient to another, information can be lost.",
-    d:"<b>each time</b>은 '~할 때마다'라는 접속사로 쓰인다. every time 도 같은 방식이다.",
-    k:"한 의사가 환자를 다른 의사에게 넘길 때마다 정보가 사라질 수 있다." },
-  { n:"⑬", name:"동명사 주어 + 과거완료",
-    q:"«Naming exhaustion a personal weakness had hidden» a design problem for a century.",
-    d:"동명사구가 주어이므로 단수. <b>had p.p.</b>는 지금 밝혀지기 전까지 이어져 온 사정을 나타낸다.",
-    k:"탈진을 개인의 나약함이라 부른 일이 설계 문제를 가려 왔었다." }
+  {
+   n: "②",
+   name: "가정법 과거  if + 과거형 / would + 동사원형",
+   q: "«It would be odd if that were not the case», as education needs to evolve…",
+   d: "현재 사실과 다른 상황을 상상한다. if절에 <b>과거형</b>(be동사는 were), 주절에 <b>would + 동사원형</b>을 쓴다.",
+   k: "그렇지 않다면 이상할 것이다"
+  },
+  {
+   n: "⑦",
+   name: "간접의문문  to what extent ~",
+   q: "The big unknown is «to what extent this is a developing phenomenon».",
+   d: "의문사 덩어리가 이끄는 절이 통째로 보어가 된다. 절 안에서는 <b>주어 + 동사</b> 어순을 지킨다.",
+   k: "이것이 어느 정도까지 커지고 있는 현상인지"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"Each time the alarm sounded, two nurses checked the chart.",
-    k:"경보가 울릴 때마다 간호사 두 명이 차트를 확인했다." },
-  { u:"구문 2", en:"Calling the error bad luck had delayed the repair for years.",
-    k:"그 오류를 불운이라 부른 일이 수리를 여러 해 미뤄 왔었다." },
-  { u:"구문 1 + 2", en:"Each time they blamed a person, ignoring the system had cost them more.",
-    k:"사람을 탓할 때마다, 체계를 무시한 일이 그들에게 더 큰 대가를 치르게 했었다." }
+  { u: "구문 1", en: "It would be strange if no one asked about the hours.", k: "아무도 근무 시간을 묻지 않는다면 이상할 것이다." },
+  { u: "구문 2", en: "The question is to what extent the training has changed.", k: "문제는 그 수련이 어느 정도까지 바뀌었는가이다." },
+  { u: "구문 1 + 2", en: "It would help if we knew to what extent students are struggling.", k: "학생들이 어느 정도까지 힘들어하는지 안다면 도움이 될 것이다." }
  ],
- wtype: ["무관","정답","지엽","무관","무관"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["청소년 수면 시간은 글에 나오지 않는다"],["정답"],
-       ["근무 축소만으로는 부족하다는 것이 글의 논지다"],
-       ["의과대학의 역사는 글의 소재가 아니다"],["음주의 뇌 영향은 비교로만 언급된다"]],
- src: [["①②"],["⑤"],["⑨과 어긋남 — 인계라는 새 위험이 생긴다"],["⑩"],["⑦"]],
+ why: [
+  ["문장 ⑥의 한 요인만 붙든 지엽적인 제목이다"],
+  ["정답"],
+  ["글은 의대생의 소진 수준이 매우 높다고 말한다 — 정반대다"],
+  ["의대에 지원하는 방법은 글에 나오지 않는다"],
+  ["병원의 역사는 글에서 다루지 않는다"]
+ ],
+ src: [["①"], ["④"], ["⑤"], ["⑧과 어긋남 — 최근 몇 년 전까지 상당히 제한적이었다"], ["⑨"]],
  kb: {
-  title:"지치는 것을 전제로 짓기",
-  lead:"사람은 규정대로 버티지 않는다.",
+  title: "지친 의사를 만드는 구조",
+  lead: "개인의 문제로만 볼 수 없는 이유",
   items: [
-   ["17시간과 혈중알코올농도",
-    "1997년 도슨과 리드는 17~19시간 각성 상태의 수행 저하가 혈중알코올농도 0.05% 수준에 해당한다고 보고했다. 이후 근무시간 규제 논의의 근거로 자주 인용된다."],
-   ["리비 지언 사건과 근무시간 규제",
-    "1984년 뉴욕에서 한 환자가 사망한 사건을 계기로, 수련의 근무시간을 제한하는 규정이 도입되었다. 미국은 2003년 주당 80시간 상한을 전국 기준으로 삼았다."],
-   ["I-PASS 라는 인계 양식",
-    "환자 상태와 할 일을 정해진 순서로 적고 말한 뒤 되읽어 확인하는 방식이다. 여러 소아과 병원에서 도입 후 인계로 인한 유해사건이 유의하게 줄었다는 보고가 있다."]
+   ["번아웃이라는 이름", "세계보건기구는 2019년 국제질병분류 11판에서 번아웃을 ‘질병’이 아니라 건강 상태에 영향을 주는 직업적 현상으로 규정했다. 개인의 병이 아니라 일터에서 비롯되는 상태로 본 것이다."],
+   ["당직 시간의 상한", "미국은 2003년부터 전공의 근무를 주 80시간으로 제한했다. 유럽 근로시간지침은 주 48시간을 상한으로 둔다. 제도마다 상한이 크게 다르다."],
+   ["비교할 자료가 없다는 것", "어떤 현상이 나빠지고 있다고 말하려면 예전에 잰 값이 있어야 한다. 의대생의 소진을 재기 시작한 것은 비교적 최근이라, 지금 수치가 높다는 것은 알아도 예전보다 높아졌는지는 말하기 어렵다."]
   ],
-  ask:"우리 학교에서 '정신력으로 버티라'고 말하는 상황이 있는가? 그것을 설계 문제로 바꾸어 말해 보자."
- }
+  ask: "여러분이 속한 곳에서 ‘원래 힘든 일’이라고 넘겨 온 것 가운데, 사실은 구조를 고쳐야 하는 것은 무엇인가?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 }
-]};
+
+ ]
+};
