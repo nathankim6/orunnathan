@@ -1,1798 +1,1802 @@
 /* Unit 1 · Field 1 — Art & Literature 예술·문학
-   레슨 5편. 원서 Field 1 의 다섯 주제를 예비고1 수준으로 다시 쓴 것. */
+   원서 Field 1 Theme 01–05 의 지문을 원문 그대로 싣는다. */
 module.exports = {
- no: 1,
- field: "Art & Literature",
- ko: "예술·문학",
- tagline: "표현과 실재 — 옮겨진 말, 만들어진 이미지",
- next: { en: "Seeing Numbers", ko: "자료와 해석 사이의 거리를 읽습니다", words: "180–210 words" },
- lessons: [
- {
-  "no": "01",
-  "key": "translation",
-  "accent": "#5B57A6",
-  "tint": "#EEEDF8",
-  "deep": "#3C3878",
-  "en": "Can a Poem Cross a Border?",
-  "ko": "시 한 편은 국경을 넘을 수 있을까",
-  "goal": "번역이 원작에서 무엇을 옮기고 무엇을 잃는지 설명할 수 있다.",
-  "fig": "Figure 1  원작에서 번역본으로 건너가는 동안 옅어지는 것들.",
-  "tip": "먼저 생각해 보자. 좋아하는 노래 가사를 다른 나라 말로 옮긴다면, 가장 먼저 사라지는 것은 무엇일까?",
-  "sent": [
-   "Literature carries feelings that people everywhere can share.",
-   "Yet there is no single language that everyone in the world reads or speaks.",
-   "Each country writes its literature in its own tongue, so no reader can reach all of it.",
-   "Translation seems to solve the problem.",
-   "But how faithful is a translation to the original?",
-   "A work is born at a moment of strong feeling, when the words flow under the writer's hand.",
-   "That moment never comes back.",
-   "If the writer cannot repeat it, a translator in another country certainly cannot reproduce it.",
-   "Literature also has a local colour.",
-   "A word may sound bright and alive to people who grew up with it, and mean almost nothing to everyone else.",
-   "A careful translator knows this and chooses the safest words instead.",
-   "The result reads smoothly, but something has quietly been given up.",
-   "Moods, images, and even thoughts are tied to words; once the words change, the rest changes as well.",
-   "A translation, then, is not a copy of a book.",
-   "It is a concession."
-  ],
-  "kor": [
-   "문학은 어디에 사는 사람이든 함께 나눌 수 있는 감정을 담고 있다.",
-   "그러나 세상 모든 사람이 읽거나 말하는 단 하나의 언어는 없다.",
-   "나라마다 자기 언어로 문학을 쓰기 때문에, 어떤 독자도 그것을 전부 읽을 수는 없다.",
-   "번역이 그 문제를 풀어 줄 것처럼 보인다.",
-   "하지만 번역본은 원작에 얼마나 충실한가?",
-   "작품은 강렬한 감정의 순간에 태어나며, 그때 말은 작가의 손 아래로 흘러간다.",
-   "그 순간은 다시 오지 않는다.",
-   "작가조차 그 순간을 되풀이할 수 없다면, 다른 나라의 번역자는 더더욱 그것을 재현할 수 없다.",
-   "문학에는 또한 그 지역만의 색채가 있다.",
-   "어떤 낱말은 그것과 함께 자란 사람들에게는 환하고 생생하게 들리지만, 그 밖의 사람들에게는 거의 아무 의미가 없다.",
-   "신중한 번역자는 이 사실을 알기에 대신 가장 안전한 낱말을 고른다.",
-   "그 결과는 매끄럽게 읽히지만, 무엇인가가 조용히 포기된 것이다.",
-   "분위기와 이미지, 심지어 생각까지도 말에 묶여 있어서, 말이 바뀌면 나머지도 함께 바뀐다.",
-   "그러므로 번역은 책의 복사본이 아니다.",
-   "그것은 양보다."
-  ],
-  "bank": [
-   [
-    "tongue",
-    "③",
-    "(한 민족이 쓰는) 언어"
+ "no": 1,
+ "field": "Art & Literature",
+ "ko": "예술·문학",
+ "tagline": "표현과 실재 — 옮겨진 말, 만들어진 이미지",
+ "next": {
+  "en": "Seeing Numbers",
+  "ko": "자료와 해석 사이의 거리를 읽습니다",
+  "words": "180–210 words"
+ },
+ "lessons": [
+  {
+   "no": "01",
+   "key": "translation",
+   "accent": "#5B57A6",
+   "tint": "#EEEDF8",
+   "deep": "#3C3878",
+   "en": "A Universalized Study of Literature",
+   "ko": "보편화된 문학 연구는 가능할까",
+   "goal": "보편화된 문학 연구가 번역이라는 한계에 부딪히는 까닭을 설명할 수 있다.",
+   "fig": "Figure 1  원작에서 번역본으로 건너가는 동안 옅어지는 것들.",
+   "tip": "먼저 생각해 보자. 번역본으로 읽은 소설을 두고 ‘나는 그 작품을 읽었다’고 말해도 될까?",
+   "sent": [
+    "There is special difficulty in a universalized study of literature.",
+    "Although literature contains universal human spirits and sentiments, a universal language — written or spoken — is still lacking.",
+    "Each country creates its literature with its own language.",
+    "In such circumstances, how could a universalized study of literature be possible?",
+    "No one knows everything; no one can learn every language, and be able to read and study literatures from all over the world.",
+    "Needless to say, it is absolutely impossible for laymen to understand all the world's literatures.",
+    "They can understand nothing other than their own language.",
+    "How, then, could a universalized study of literature be possible?",
+    "It is true that scholars and even common readers can use translations, but how faithful is a translation to the original?",
+    "The value and enjoyment of the original may be lost through translation.",
+    "In the end, how can literature be translated?",
+    "Literature is the manifestation of the author's emotions and inspirations.",
+    "At the moment of emotional intensity or epiphany, the work naturally flows under the author's hand.",
+    "Once the moment passes, the natural flowing of writing can never be repeated, let alone reproduced through translation in someone else's hand.",
+    "What is more, literature almost always has a universal color.",
+    "Such color is most vivid and lively in the eyes of the local people, but means nothing to others.",
+    "A deliberate representation is a concession after all.",
+    "Also, moods, imaginations, and even thoughts in literature are so closely related to words that once the latter change, the former change as well."
    ],
-   [
-    "faithful",
-    "⑤",
-    "충실한"
+   "kor": [
+    "보편화된 문학 연구에는 특별한 어려움이 있다.",
+    "문학이 보편적인 인간 정신과 정서를 담고 있긴 하지만, 문어든지 구어든지 보편적인 언어는 아직 없다.",
+    "국가마다 자국의 고유한 언어로 자기 문학을 창작한다.",
+    "그런 상황에서 보편화된 문학 연구가 어떻게 가능할 수 있겠는가?",
+    "아무도 모든 것을 알 수는 없고, 아무도 모든 언어를 배우고 전 세계의 문학을 읽고 연구할 수는 없다.",
+    "말할 필요도 없이, 비전문가가 세계의 모든 문학을 이해하는 것은 절대로 불가능하다.",
+    "그들은 자기 자신의 언어 외에는 아무것도 이해할 수 없다.",
+    "그렇다면 보편화된 문학 연구가 어떻게 가능할 수 있는가?",
+    "학자와 심지어 일반 독자도 번역본을 사용할 수 있는 것이 사실이지만, 번역본은 원작에 얼마나 충실한가?",
+    "원작의 가치와 즐거움은 번역을 거치면서 사라질 수도 있다.",
+    "결국, 문학은 어떻게 번역될 수 있는가?",
+    "문학은 작가의 감정과 영감의 표현이다.",
+    "강렬한 감정이나 통찰의 순간에, 작품이 자연스럽게 작가의 손길 아래로 흘러간다.",
+    "그 순간이 지나면 자연스러운 글의 흐름은 결코 반복될 수 없는데, 다른 사람의 손으로 한 번역을 통해 재현되는 것은 말할 것도 없다.",
+    "게다가, 문학에는 거의 항상 보편적인(→ 지역적인) 색채가 있다.",
+    "그런 색채는 현지인의 눈에는 대단히 선명하고 생생하지만, 다른 사람에게는 아무 의미가 없다.",
+    "신중한 표현은 결국은 양보이다.",
+    "또한 문학에서의 분위기, 상상력, 심지어 생각은 말과 매우 밀접한 관련이 있기 때문에 후자가 바뀌면 전자도 또한 바뀐다."
    ],
-   [
-    "flow",
-    "⑥",
-    "흘러가다"
-   ],
-   [
-    "reproduce",
-    "⑧",
-    "재현하다"
-   ],
-   [
-    "local",
-    "⑨",
-    "그 지역의"
-   ],
-   [
-    "concession",
-    "⑮",
-    "양보"
-   ]
-  ],
-  "defs": [
-   [
-    "tongue",
-    "the language spoken by a group of people"
-   ],
-   [
-    "faithful",
-    "keeping closely to the original"
-   ],
-   [
-    "flow",
-    "to move along easily and without stopping"
-   ],
-   [
-    "reproduce",
-    "to make something again in exactly the same form"
-   ],
-   [
-    "local",
-    "belonging to one particular place and its people"
-   ],
-   [
-    "concession",
-    "something you give up so that an agreement can be reached"
-   ]
-  ],
-  "defOrder": [
-   3,
-   5,
-   0,
-   4,
-   1,
-   2
-  ],
-  "flow": [
-   [
-    "Problem",
-    "There is no single language, so no one can read all literature",
-    null
-   ],
-   [
-    "A possible answer",
-    "(  ①  ) seems to solve the problem",
-    "translation"
-   ],
-   [
-    "Limit 1",
-    "The (  ②  ) when a work is born never comes back",
-    "moment"
-   ],
-   [
-    "Limit 2",
-    "Local colour means (  ③  ) to readers elsewhere",
-    "nothing"
-   ],
-   [
-    "Conclusion",
-    "A translation is not a copy but a (  ④  )",
-    "concession"
-   ]
-  ],
-  "flowBogi": "translation · moment · nothing · concession · copy · grammar",
-  "para": [
-   [
-    "⑤ how faithful is a translation to the original?",
-    "Does the new version stay ______ to the first one?",
-    "true"
-   ],
-   [
-    "⑫ something has quietly been given up",
-    "The translator ______ something quietly.",
-    "sacrificed"
-   ],
-   [
-    "⑮ It is a concession.",
-    "Translation always ______ something to stay readable.",
-    "loses"
-   ],
-   [
-    "② no single language that everyone in the world reads",
-    "No language is ______ by all the world’s readers.",
-    "shared"
-   ],
-   [
-    "⑦ That moment never comes back.",
-    "The moment of writing cannot be ______.",
-    "repeated"
-   ]
-  ],
-  "paraBogi": "true · sacrificed · loses · shared · repeated · copies · adds · counted",
-  "check": [
-   {
-    "t": "title",
-    "q": "이 글의 제목으로 가장 알맞은 것은?",
-    "ch": [
-     "Why Every Country Needs Its Own Language",
-     "Translation: A Smooth Copy of the Original",
-     "What a Translation Must Give Up",
-     "How to Become a Careful Translator",
-     "The Best Way to Learn a Foreign Language"
-    ],
-    "ans": 3
-   },
-   {
-    "t": "fact",
-    "q": "이 글의 내용과 일치하지 <b>않는</b> 것은?",
-    "ch": [
-     "세상 모든 사람이 읽는 단 하나의 언어는 없다.",
-     "작품이 태어난 순간은 다시 오지 않는다.",
-     "지역의 색채가 담긴 낱말은 누구에게나 똑같이 생생하다.",
-     "신중한 번역자는 가장 안전한 낱말을 고른다.",
-     "말이 바뀌면 분위기와 생각도 함께 바뀐다."
-    ],
-    "ans": 3
-   },
-   {
-    "t": "write",
-    "q": "필자가 번역을 <i>a concession</i>(양보)이라고 부른 이유를 우리말 한 문장으로 써 보세요.",
-    "ans": "매끄럽게 읽히도록 만드는 대신 원작의 순간과 지역색을 포기하기 때문이다."
-   }
-  ],
-  "fl": {
-   "model": {
-    "n": "⑧",
-    "toks": [
-     [
-      "If",
-      "c"
-     ],
-     [
-      "the writer",
-      "s2"
-     ],
-     [
-      "cannot repeat",
-      "v2"
-     ],
-     [
-      "it,",
-      null
-     ],
-     [
-      "a translator",
-      "s"
-     ],
-     [
-      "in another country",
-      "m"
-     ],
-     [
-      "certainly",
-      null
-     ],
-     [
-      "cannot reproduce",
-      "v"
-     ],
-     [
-      "it.",
-      null
-     ]
-    ],
-    "ko": "작가조차 그 순간을 되풀이할 수 없다면, 다른 나라의 번역자는 더더욱 그것을 재현할 수 없다."
-   },
-   "drill": [
-    {
-     "n": "③",
-     "en": "Each country writes its literature in its own tongue, so no reader can reach all of it.",
-     "ans": "S Each country · △V writes · M in its own tongue · [so] S′ no reader · △V′ can reach",
-     "ko": "나라마다 자기 언어로 문학을 쓰기 때문에, 어떤 독자도 그것을 전부 읽을 수는 없다."
-    },
-    {
-     "n": "⑩",
-     "en": "A word may sound bright and alive to people who grew up with it, and mean almost nothing to everyone else.",
-     "ans": "S A word · △V may sound / (may) mean · M to people who grew up with it, to everyone else",
-     "ko": "어떤 낱말은 함께 자란 사람들에게는 생생하게 들리지만, 다른 사람에게는 거의 아무 의미가 없다."
-    },
-    {
-     "n": "⑬",
-     "en": "Moods, images, and even thoughts are tied to words; once the words change, the rest changes as well.",
-     "ans": "S Moods, images, and even thoughts · △V are tied · [once] S′ the words · △V′ change · S the rest · △V changes",
-     "ko": "분위기와 이미지, 생각까지도 말에 묶여 있어서, 말이 바뀌면 나머지도 바뀐다."
-    }
-   ]
-  },
-  "syn": [
-   {
-    "n": "⑩",
-    "name": "감각동사 + 형용사",
-    "q": "A word may «sound bright and alive» to people who grew up with it.",
-    "d": "sound · look · feel · taste · smell 뒤에는 부사가 아니라 <b>형용사</b>가 와서 주어의 상태를 설명한다.",
-    "k": "어떤 낱말은 그것과 함께 자란 사람들에게는 환하고 생생하게 들릴 수 있다."
-   },
-   {
-    "n": "⑫",
-    "name": "현재완료 수동태  have been p.p.",
-    "q": "The result reads smoothly, but something «has quietly been given up».",
-    "d": "have/has + been + 과거분사 → ‘~되어 버렸다’. 부사(quietly)는 has와 been 사이에 들어갈 수 있다.",
-    "k": "그 결과는 매끄럽게 읽히지만, 무엇인가가 조용히 포기된 것이다."
-   }
-  ],
-  "synd": [
-   {
-    "u": "구문 1",
-    "en": "The old poem still sounds fresh to readers in his village.",
-    "k": "그 오래된 시는 그의 마을 독자들에게 여전히 신선하게 들린다."
-   },
-   {
-    "u": "구문 2",
-    "en": "Many of these songs have been translated into ten languages.",
-    "k": "이 노래들 가운데 다수는 열 개 언어로 번역되어 왔다."
-   },
-   {
-    "u": "구문 1 + 2",
-    "en": "The story has been retold so often that it now feels strange to its first readers.",
-    "k": "그 이야기는 너무 자주 다시 이야기되어서, 이제 그 첫 독자들에게는 낯설게 느껴진다."
-   }
-  ],
-  "why": [
-   [
-    "글의 배경일 뿐, 필자가 내리는 결론이 아니다"
-   ],
-   [
-    "글은 번역이 매끄러운 ‘복사본’이 아니라고 말한다 — 정반대다"
-   ],
-   [
-    "정답"
-   ],
-   [
-    "번역자가 되는 방법은 이 글에서 다루지 않는다"
-   ],
-   [
-    "외국어 학습법은 글에 나오지 않는다"
-   ]
-  ],
-  "src": [
-   [
-    "②"
-   ],
-   [
-    "⑦"
-   ],
-   [
-    "⑩과 어긋남 — 지역색은 함께 자란 사람에게만 생생하다"
-   ],
-   [
-    "⑪"
-   ],
-   [
-    "⑬"
-   ]
-  ],
-  "kb": {
-   "title": "번역이 바꿔 놓은 것들",
-   "lead": "한 낱말을 잘못 옮기면 무슨 일이 벌어질까?",
-   "items": [
+   "bank": [
     [
-     "화성에 운하가 있다고 믿은 100년",
-     "1877년 이탈리아 천문학자 스키아파렐리는 화성 표면의 줄무늬를 ‘canali’(자연 수로)라고 적었다. 영어로 옮기는 과정에서 이 말이 ‘canals’(사람이 판 운하)가 되었고, 사람들은 화성인이 운하를 만들었다고 믿기 시작했다. 낱말 하나가 만든 오해였다."
+     "sentiment",
+     "②",
+     "정서, 감정"
     ],
     [
-     "옮길 말이 없는 낱말들",
-     "일본어 tsundoku는 사서 읽지 않고 쌓아 둔 책을, 포르투갈어 saudade는 없는 것을 향한 그리움을, 독일어 Waldeinsamkeit는 숲속에 혼자 있는 느낌을 가리킨다. 영어에는 대응하는 한 낱말이 없어 설명으로 풀거나 그대로 들여온다."
+     "circumstance",
+     "④",
+     "상황, 사정"
     ],
     [
-     "가장 여러 언어로 건너간 이야기",
-     "생텍쥐페리의 『어린 왕자』는 500개가 넘는 언어와 방언으로 번역되었다. 그만큼 여러 번 ‘양보’를 거친 셈이기도 하다."
+     "faithful",
+     "⑨",
+     "(원본에) 충실한"
+    ],
+    [
+     "manifestation",
+     "⑫",
+     "표현, 표명"
+    ],
+    [
+     "vivid",
+     "⑯",
+     "선명한, 생생한"
+    ],
+    [
+     "concession",
+     "⑰",
+     "양보"
     ]
    ],
-   "ask": "우리말에도 영어로 한 낱말로는 옮기기 어려운 말이 있다. 어떤 말이 떠오르는가?"
-  },
-  "wtype": [
-   "배경",
-   "반대",
-   "정답",
-   "무관",
-   "무관"
-  ],
-  "stype": [
-   "일치",
-   "일치",
-   "과장",
-   "일치",
-   "일치"
-  ]
- },
- {
-  "no": "02",
-  "key": "image",
-  "accent": "#E07A3E",
-  "tint": "#FDEEE3",
-  "deep": "#A8501E",
-  "en": "This Is Not a Pipe",
-  "ko": "이것은 파이프가 아니다",
-  "goal": "이미지가 왜 사물 그 자체가 아닌지 근거를 들어 설명할 수 있다.",
-  "fig": "Figure 2  액자 안의 파이프와 액자 밖의 파이프는 같은 것이 아니다.",
-  "tip": "먼저 생각해 보자. 우리가 뉴스 사진을 ‘사실’이라고 믿는 이유는 무엇일까?",
-  "sent": [
-   "People often say that seeing is believing.",
-   "A photograph, we feel, cannot lie the way words can.",
-   "Words are clearly made by people.",
-   "They are invented sounds, written with invented letters, and joined by a grammar that a culture has agreed on.",
-   "Everyone who speaks English understands the word “food,” even though each person pictures a different dish.",
-   "Looser words such as “cool” change their meaning again and again.",
-   "An image feels different.",
-   "When we see a thing, nothing seems to stand between us and it.",
-   "The picture appears to arrive directly, so we treat it as reality itself.",
-   "But an image is made too.",
-   "Someone chose the angle, the light, and the moment.",
-   "Whether it is painted, photographed, or built on a screen, it is still a version of the thing, not the thing.",
-   "The Belgian painter René Magritte turned this into a joke.",
-   "He painted a pipe and wrote underneath, “This is not a pipe.”",
-   "He was right: it is a picture of a pipe."
-  ],
-  "kor": [
-   "사람들은 흔히 보는 것이 믿는 것이라고 말한다.",
-   "사진은 말과 달리 거짓말을 할 수 없다고 우리는 느낀다.",
-   "말은 분명히 사람이 만든 것이다.",
-   "말은 만들어진 소리이고, 만들어진 문자로 적히며, 한 문화가 합의한 문법으로 이어진다.",
-   "각자 떠올리는 음식은 다르더라도, 영어를 쓰는 사람은 누구나 ‘food’라는 말을 이해한다.",
-   "‘cool’ 같은 느슨한 말은 그 뜻이 계속해서 달라진다.",
-   "이미지는 느낌이 다르다.",
-   "어떤 것을 볼 때, 우리와 그것 사이에는 아무것도 없는 것처럼 보인다.",
-   "그림은 곧바로 도착하는 것처럼 보여서, 우리는 그것을 현실 그 자체로 여긴다.",
-   "그러나 이미지 역시 만들어진 것이다.",
-   "누군가가 각도와 빛과 순간을 골랐다.",
-   "그림이든 사진이든 화면 위에 만든 것이든, 그것은 여전히 그 사물의 한 판본일 뿐 그 사물 자체는 아니다.",
-   "벨기에 화가 르네 마그리트는 이것을 하나의 농담으로 만들었다.",
-   "그는 파이프를 그리고 그 아래에 ‘이것은 파이프가 아니다’라고 썼다.",
-   "그의 말이 옳다. 그것은 파이프의 그림이다."
-  ],
-  "bank": [
-   [
-    "invented",
-    "④",
-    "(사람이) 만들어 낸"
-   ],
-   [
-    "agree on",
-    "④",
-    "합의하다"
-   ],
-   [
-    "picture",
-    "⑤",
-    "머릿속에 그리다"
-   ],
-   [
-    "stand between",
-    "⑧",
-    "사이를 가로막다"
-   ],
-   [
-    "version",
-    "⑫",
-    "(여러 형태 중) 한 판본"
-   ],
-   [
-    "underneath",
-    "⑭",
-    "그 아래에"
-   ]
-  ],
-  "defs": [
-   [
-    "invented",
-    "made up by people rather than found in nature"
-   ],
-   [
-    "agree on",
-    "to decide something together"
-   ],
-   [
-    "picture",
-    "to form an image of something in your mind"
-   ],
-   [
-    "stand between",
-    "to come in the way of two things"
-   ],
-   [
-    "version",
-    "one form of something that exists in several forms"
-   ],
-   [
-    "underneath",
-    "in or to a lower place than something"
-   ]
-  ],
-  "defOrder": [
-   2,
-   4,
-   0,
-   5,
-   3,
-   1
-  ],
-  "flow": [
-   [
-    "Common belief",
-    "Seeing is believing — a photograph cannot lie",
-    null
-   ],
-   [
-    "Why we believe it",
-    "Words are (  ①  ) by people, so they are not the thing",
-    "made"
-   ],
-   [
-    "Belief grows",
-    "An image seems to arrive (  ②  ), with nothing in the way",
-    "directly"
-   ],
-   [
-    "The turn",
-    "But someone (  ③  ) the angle, the light, and the moment",
-    "chose"
-   ],
-   [
-    "Conclusion",
-    "An image is a version of the thing, not the (  ④  )",
-    "thing"
-   ]
-  ],
-  "flowBogi": "made · directly · chose · thing · lie · grammar",
-  "para": [
-   [
-    "⑧ nothing seems to stand between us and it",
-    "The image feels ______, as if unfiltered.",
-    "direct"
-   ],
-   [
-    "⑫ it is still a version of the thing, not the thing",
-    "A picture ______ an object; it is not one.",
-    "represents"
-   ],
-   [
-    "⑭ “This is not a pipe.”",
-    "The painting is a ______ of a pipe, not a pipe.",
-    "picture"
-   ],
-   [
-    "③ Words are clearly made by people.",
-    "Language is ______, not natural.",
-    "artificial"
-   ],
-   [
-    "⑪ Someone chose the angle, the light, the moment.",
-    "Every image carries the ______ of its maker.",
-    "choices"
-   ]
-  ],
-  "paraBogi": "direct · represents · picture · artificial · choices · reality · hides · copies",
-  "check": [
-   {
-    "t": "title",
-    "q": "이 글의 제목으로 가장 알맞은 것은?",
-    "ch": [
-     "Why Photographs Never Lie",
-     "How Words Lost Their Meaning",
-     "An Image Is Always Someone's Version",
-     "Magritte: The Painter Who Loved Pipes",
-     "Learning English Through Pictures"
+   "defs": [
+    [
+     "sentiment",
+     "a feeling or opinion that a person holds"
     ],
-    "ans": 3
-   },
-   {
-    "t": "fact",
-    "q": "이 글의 내용과 일치하지 <b>않는</b> 것은?",
-    "ch": [
-     "말은 한 문화가 합의한 문법으로 이어진다.",
-     "영어를 쓰는 사람은 누구나 ‘food’를 이해한다.",
-     "‘cool’ 같은 말의 뜻은 계속 달라진다.",
-     "사진은 만들어지지 않고 있는 그대로 전달된다.",
-     "마그리트는 파이프 그림 아래에 한 문장을 적었다."
+    [
+     "circumstance",
+     "a fact or condition that shapes a situation"
     ],
-    "ans": 4
+    [
+     "faithful",
+     "staying true to the original in every detail"
+    ],
+    [
+     "manifestation",
+     "a clear sign that something exists or is felt"
+    ],
+    [
+     "vivid",
+     "producing bright and clear pictures in the mind"
+    ],
+    [
+     "concession",
+     "something you give up so that a deal is possible"
+    ]
+   ],
+   "defOrder": [
+    4,
+    1,
+    5,
+    0,
+    3,
+    2
+   ],
+   "flow": [
+    [
+     "Problem",
+     "Literature is universal, but a universal language is still lacking",
+     null
+    ],
+    [
+     "Why it hurts",
+     "Each country creates its literature with its own (  ①  )",
+     "language"
+    ],
+    [
+     "A way out",
+     "Scholars and even common readers can use (  ②  )",
+     "translations"
+    ],
+    [
+     "What is lost",
+     "The value, the natural (  ③  ), and the local color of the original",
+     "flowing"
+    ],
+    [
+     "Conclusion",
+     "A deliberate representation is a (  ④  ) after all",
+     "concession"
+    ]
+   ],
+   "flowBogi": "language · translations · flowing · concession · dictionary · agreement",
+   "para": [
+    [
+     "③ Each country creates its literature with its own",
+     "Each nation writes literature in its ______ tongue.",
+     "native"
+    ],
+    [
+     "⑥ it is absolutely impossible for laymen to understand",
+     "Ordinary people ______ read every literature.",
+     "cannot"
+    ],
+    [
+     "⑩ The value and enjoyment of the original may be lost",
+     "Translation may ______ the joy of the original.",
+     "remove"
+    ],
+    [
+     "⑭ the natural flowing of writing can never be repeated",
+     "The first flow of writing cannot be ______ again.",
+     "created"
+    ],
+    [
+     "⑯ Such color is most vivid and lively in the eyes",
+     "The color feels ______ only to local readers.",
+     "alive"
+    ]
+   ],
+   "paraBogi": "native · cannot · remove · created · alive · foreign · must · dull",
+   "check": [
+    {
+     "t": "title",
+     "q": "이 글의 제목으로 가장 알맞은 것은?",
+     "ch": [
+      "Why Every Nation Needs Its Own Language",
+      "Translation: A Perfect Bridge Between Literatures",
+      "Why World Literature Cannot Be Fully Shared",
+      "How to Learn All the Languages of the World",
+      "Local Color: The Secret of a Great Novel"
+     ],
+     "ans": 3
+    },
+    {
+     "t": "fact",
+     "q": "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+     "ch": [
+      "문학이 보편적인 정신과 정서를 담고 있어도, 보편적인 언어는 아직 없다.",
+      "비전문가는 자기 자신의 언어 외에는 아무것도 이해하지 못한다.",
+      "번역을 거치면서 원작의 가치와 즐거움이 사라질 수도 있다.",
+      "작품이 태어난 순간의 자연스러운 흐름은 번역자의 손으로 되살릴 수 있다.",
+      "문학의 색채는 현지인의 눈에 가장 선명하고 생생하게 보인다."
+     ],
+     "ans": 4
+    },
+    {
+     "t": "write",
+     "q": "필자가 번역을 <i>a concession</i>(양보)이라고 부른 까닭을 우리말 한 문장으로 써 보세요.",
+     "ans": "원작의 지역색은 현지인에게만 생생하기에, 다른 독자에게 통하도록 신중히 옮기는 순간 그 생생함을 어느 정도 포기하게 되기 때문이다."
+    }
+   ],
+   "fl": {
+    "model": {
+     "n": "②",
+     "toks": [
+      [
+       "Although",
+       "c"
+      ],
+      [
+       "literature",
+       "s2"
+      ],
+      [
+       "contains",
+       "v2"
+      ],
+      [
+       "universal human spirits and sentiments,",
+       null
+      ],
+      [
+       "a universal language",
+       "s"
+      ],
+      [
+       "— written or spoken —",
+       "m"
+      ],
+      [
+       "is",
+       "v"
+      ],
+      [
+       "still lacking.",
+       null
+      ]
+     ],
+     "ko": "문학이 보편적인 인간 정신과 정서를 담고 있긴 하지만, 문어든지 구어든지 보편적인 언어는 아직 없다."
+    },
+    "drill": [
+     {
+      "n": "⑤",
+      "en": "No one knows everything; no one can learn every language, and be able to read and study literatures from all over the world.",
+      "ans": "S No one · △V knows · [;] S′ no one · △V′ can learn / (can) be able to read and study · M from all over the world",
+      "ko": "아무도 모든 것을 알 수는 없고, 아무도 모든 언어를 배우고 전 세계의 문학을 읽고 연구할 수는 없다."
+     },
+     {
+      "n": "⑨",
+      "en": "It is true that scholars and even common readers can use translations, but how faithful is a translation to the original?",
+      "ans": "S It(가주어) · △V is · C true · [that] S′ scholars and even common readers · △V′ can use · [but] C′ how faithful · △V′ is · S′ a translation",
+      "ko": "학자와 심지어 일반 독자도 번역본을 쓸 수 있는 것은 사실이지만, 번역본은 원작에 얼마나 충실한가?"
+     },
+     {
+      "n": "⑱",
+      "en": "Also, moods, imaginations, and even thoughts in literature are so closely related to words that once the latter change, the former change as well.",
+      "ans": "S moods, imaginations, and even thoughts · M in literature · △V are (so closely) related · [that] S′ the former · △V′ change · [once] S′ the latter · △V′ change",
+      "ko": "문학에서의 분위기, 상상력, 생각은 말과 매우 밀접해서, 후자가 바뀌면 전자도 바뀐다."
+     }
+    ]
    },
-   {
-    "t": "write",
-    "q": "마그리트가 파이프 그림 아래에 “This is not a pipe.”라고 쓴 이유를 우리말 한 문장으로 써 보세요.",
-    "ans": "그림은 파이프를 그린 것일 뿐 파이프 그 자체는 아니기 때문이다."
-   }
-  ],
-  "fl": {
-   "model": {
-    "n": "⑤",
-    "toks": [
+   "syn": [
+    {
+     "n": "⑥",
+     "name": "가주어 it ~ for A to B",
+     "q": "Needless to say, «it is absolutely impossible for laymen to understand» all the world's literatures.",
+     "d": "<b>it</b>은 자리만 지키는 가주어이고, 진짜 주어는 뒤의 <b>to understand …</b>이다. to부정사의 행위자는 <b>for + 목적격</b>으로 그 앞에 밝힌다.",
+     "k": "말할 필요도 없이, 비전문가가 세계의 모든 문학을 이해하는 것은 절대로 불가능하다."
+    },
+    {
+     "n": "⑭",
+     "name": "let alone  ~은 말할 것도 없이",
+     "q": "Once the moment passes, the natural flowing of writing can never be repeated, «let alone reproduced through translation» …",
+     "d": "<b>let alone</b>은 부정문 뒤에 붙어 ‘하물며 ~은 더더욱 아니다’라는 뜻이 된다. 앞뒤에는 <b>같은 형태</b>(여기서는 과거분사 repeated–reproduced)가 온다.",
+     "k": "자연스러운 글의 흐름은 결코 반복될 수 없는데, 번역을 통해 재현되는 것은 말할 것도 없다."
+    }
+   ],
+   "synd": [
+    {
+     "u": "구문 1",
+     "en": "It is not easy for a young reader to enjoy an old poem in translation.",
+     "k": "어린 독자가 옛 시를 번역으로 즐기기는 쉽지 않다."
+    },
+    {
+     "u": "구문 2",
+     "en": "He has never read the novel in Korean, let alone in the original French.",
+     "k": "그는 그 소설을 한국어로도 읽어 본 적이 없는데, 프랑스어 원작으로는 말할 것도 없다."
+    },
+    {
+     "u": "구문 1 + 2",
+     "en": "It is impossible for me to keep the rhythm of the poem, let alone its local color.",
+     "k": "내가 그 시의 운율을 살리는 것은 불가능한데, 그 지역색은 말할 것도 없다."
+    }
+   ],
+   "wtype": [
+    "배경",
+    "반대",
+    "정답",
+    "무관",
+    "지엽"
+   ],
+   "stype": [
+    "일치",
+    "일치",
+    "일치",
+    "반대",
+    "일치"
+   ],
+   "why": [
+    [
+     "나라마다 자기 언어로 쓴다는 것은 문제의 배경일 뿐, 글이 내리는 결론이 아니다"
+    ],
+    [
+     "글은 번역이 원작에 얼마나 충실한지 되묻는다 — 정반대다"
+    ],
+    [
+     "정답"
+    ],
+    [
+     "아무도 모든 언어를 배울 수 없다고 했을 뿐, 학습 방법은 다루지 않는다"
+    ],
+    [
+     "지역색은 번역의 한계를 보여 주는 한 예일 뿐, 글 전체를 아우르지 못한다"
+    ]
+   ],
+   "src": [
+    [
+     "②"
+    ],
+    [
+     "⑦"
+    ],
+    [
+     "⑩"
+    ],
+    [
+     "⑭와 어긋남 — 그 흐름은 결코 반복될 수 없고, 다른 사람의 손으로 재현되는 것은 더더욱 불가능하다"
+    ],
+    [
+     "⑯"
+    ]
+   ],
+   "kb": {
+    "title": "옮긴 사람의 이름",
+    "lead": "누구의 모어도 아닌 언어를 만들 수는 없을까? 그리고 옮긴 사람의 이름은 어디에 적힐까?",
+    "items": [
      [
-      "Everyone",
-      "s"
+      "누구의 모어도 아닌 언어",
+      "1887년 바르샤바의 안과 의사 자멘호프가 『제1서(Unua Libro)』를 펴내며 에스페란토를 내놓았다. 어느 나라의 모어도 아닌 중립적 공통어를 만들려는 시도였고, 1908년에는 만국에스페란토협회가 세워졌다. 이 언어는 지금도 쓰이지만, 세계의 문학이 그 하나로 모이지는 않았다."
      ],
      [
-      "who speaks English",
-      "m"
+      "상금을 절반으로 나누는 상",
+      "인터내셔널 부커상은 영어로 번역되어 영국에서 출간된 소설에 주는 상이다. 상금 5만 파운드를 작가와 번역가가 똑같이 절반씩 나눈다. 2016년에는 한강의 『채식주의자』가 데버라 스미스의 번역으로 이 상을 받았다."
      ],
      [
-      "understands",
-      "v"
-     ],
-     [
-      "the word “food,”",
-      null
-     ],
-     [
-      "even though",
-      "c"
-     ],
-     [
-      "each person",
-      "s2"
-     ],
-     [
-      "pictures",
-      "v2"
-     ],
-     [
-      "a different dish.",
-      null
+      "가장 여러 언어로 건너간 책",
+      "성경은 지금까지 가장 여러 언어로 옮겨진 책이다. 세계성서공회연합회 집계로 전체가 번역된 언어가 700개를 넘고, 일부라도 옮겨진 언어는 3,000개를 넘는다. 그만큼 여러 번 다른 말로 갈아입은 셈이다."
      ]
     ],
-    "ko": "각자 떠올리는 음식은 다르더라도, 영어를 쓰는 사람은 누구나 ‘food’라는 말을 이해한다."
-   },
-   "drill": [
+    "ask": "번역가의 이름을 표지에 작가와 나란히 싣자는 움직임이 있다. 여러분은 어떻게 생각하는가?"
+   }
+  },
+  {
+   "no": "02",
+   "key": "image",
+   "accent": "#E07A3E",
+   "tint": "#FDEEE3",
+   "deep": "#A8501E",
+   "en": "Is Seeing Believing?",
+   "ko": "보는 것은 정말 믿는 것일까",
+   "goal": "이미지가 사물 그 자체처럼 느껴지는 까닭과 그것이 착각인 이유를 설명할 수 있다.",
+   "fig": "Figure 1  파이프 그림 아래 적힌 한 줄 — ‘이것은 파이프가 아니다’.",
+   "tip": "먼저 생각해 보자. 같은 내용을 담은 사진 한 장과 문장 한 줄 가운데, 우리는 왜 사진 쪽을 더 쉽게 믿을까?",
+   "sent": [
+    "There is a curious cliché that says pictures don't lie.",
+    "This is part of that greater cliché that says seeing is believing.",
+    "Somehow a thing seen directly — or through a visual representation like a painting, a photograph, or a film — makes us feel closer to some actual reality.",
+    "Words are too obviously not things themselves; words are made-up sounds, developed throughout the life of a culture, represented by made-up letters, put together in a contrived grammar that everyone in a culture uses to communicate through a decision that particular words in a particular order will refer to particular things.",
+    "Language is clearly cultural and not natural: it is human-made and accepted with some variations throughout a particular culture.",
+    "Every English speaker understands what the word “food” refers to, even though the particular kind of food that comes to mind to each individual will vary.",
+    "More abstract words, like “cool” or “sick,” may have a range of meanings that keep changing.",
+    "But seeing the image of a thing seems to bring us very close to the thing itself — to “reality.”",
+    "Things that are seen appear to be and even feel as if they are mediated; that is, they seem to be conveyed directly to us, not conveyed indirectly.",
+    "Nothing stands in their way.",
+    "They are true.",
+    "But, in fact, an image, whether photographed, painted, or digitized, is not the thing itself.",
+    "This is something humorously recognized by the Belgian surrealist painter, Rene Magritte, in his painting of a pipe.",
+    "The painting is called The Treachery of Images and bears the words (in French), “Ceci n'est pas une pipe,” “This Is Not a Pipe.”"
+   ],
+   "kor": [
+    "사진은 거짓말을 하지 않는다고 하는 호기심을 끄는 상투적인 문구가 있다.",
+    "이것은 보는 것이 믿는 것이라고 하는 더 상투적인 그 문구의 일부이다.",
+    "왠지 직접, 혹은 그림, 사진, 또는 영화와 같은 시각적 표현을 통해 본 사물은 우리를 어떤 실제 현실에 더 가깝게 느끼게 만든다.",
+    "말은 너무도 명백하게 사물 그 자체가 아닌데, 말은, 한 문화가 살아 있는 동안 내내 발전되고, 만들어진 문자로 표현되고, 한 문화에 속한 모든 이가 특정한 순서의 특정한 단어들이 특정한 것을 가리킬 것이라는 결정을 통해 의사소통하기 위해 사용하는 인위적인 문법에 따라 조립된 만들어진 소리이기 때문이다.",
+    "언어는 분명히 자연적인 것이 아니라 문화적인 것인데, 그것은 인간이 만들었고 특정한 문화 전체에서 약간 변형되어 받아들여진다.",
+    "각 개인의 마음에 떠오르는 특정 종류의 음식은 다를 것이긴 하지만, 모든 영어 사용자는 ‘음식’이라는 말이 무엇을 가리키는지 이해한다.",
+    "‘시원하다’ 또는 ‘아프다’와 같은 더 추상적인 단어는 계속 변화하는 다양한 의미를 가질 수도 있다.",
+    "하지만 어떤 사물의 이미지를 보는 것은 우리를 그 사물 그 자체, 즉 ‘현실’로 매우 가깝게 다가가게 하는 것 같다.",
+    "보이는 사물은 매개된(→ 매개되지 않은) 것처럼 보이고 심지어 그런 것처럼 느껴지기까지 하는데, 즉 그것들은 우리에게 간접적으로 전달되는 게 아니라 직접 전달되는 것 같다.",
+    "아무것도 그것들을 방해하지 않는다.",
+    "그것들은 사실이다.",
+    "하지만 사실 사진으로 찍은 것이든, 그림으로 그린 것이든, 혹은 디지털화된 것이든 이미지는 사물 그 자체가 아니다.",
+    "이것은 벨기에의 초현실주의 화가 Rene Magritte가 파이프를 그린 자신의 그림에서 유머러스하게 인정한 것이다.",
+    "그 그림의 제목은 The Treachery of Images이고 ‘이것은 파이프가 아니다’라는 ‘Ceci n'est pas une pipe’(프랑스어) 문구를 담고 있다."
+   ],
+   "bank": [
+    [
+     "cliché",
+     "①",
+     "상투적인 문구[생각]"
+    ],
+    [
+     "representation",
+     "③",
+     "표현, 재현(한 것)"
+    ],
+    [
+     "contrived",
+     "④",
+     "인위적으로 꾸며 낸"
+    ],
+    [
+     "abstract",
+     "⑦",
+     "추상적인"
+    ],
+    [
+     "convey",
+     "⑨",
+     "전달하다"
+    ],
+    [
+     "surrealist",
+     "⑬",
+     "초현실주의의"
+    ]
+   ],
+   "defs": [
+    [
+     "cliché",
+     "a phrase used so often that it has lost its force"
+    ],
+    [
+     "representation",
+     "an image or sign that stands for something else"
+    ],
+    [
+     "contrived",
+     "planned in an artificial way rather than natural"
+    ],
+    [
+     "abstract",
+     "about ideas rather than things you can touch"
+    ],
+    [
+     "convey",
+     "to carry a message or feeling to another person"
+    ],
+    [
+     "surrealist",
+     "belonging to art that shows strange, dreamlike scenes"
+    ]
+   ],
+   "defOrder": [
+    4,
+    1,
+    5,
+    0,
+    3,
+    2
+   ],
+   "flow": [
+    [
+     "Cliché",
+     "Pictures don't lie, and seeing is believing",
+     null
+    ],
+    [
+     "Side 1 · Words",
+     "Language is (  ①  ), not natural — a culture made it up",
+     "cultural"
+    ],
+    [
+     "Side 2 · Images",
+     "Seeing the (  ②  ) of a thing feels close to reality itself",
+     "image"
+    ],
+    [
+     "Why it feels true",
+     "Seen things seem to reach us (  ③  ), with nothing in the way",
+     "directly"
+    ],
+    [
+     "The turn",
+     "But an image is not the thing — Magritte painted a (  ④  )",
+     "pipe"
+    ]
+   ],
+   "flowBogi": "cultural · image · directly · pipe · natural · indirectly",
+   "para": [
+    [
+     "① a curious cliché that says pictures don't lie",
+     "People often repeat that a photo never ______ us.",
+     "deceives"
+    ],
+    [
+     "④ Words are too obviously not things themselves",
+     "A word is clearly ______ from the thing itself.",
+     "different"
+    ],
+    [
+     "⑤ Language is clearly cultural and not natural",
+     "Human beings ______ language; nature did not.",
+     "built"
+    ],
+    [
+     "⑨ they seem to be conveyed directly to us",
+     "Images look as if ______ came between us and them.",
+     "nothing"
+    ],
+    [
+     "⑫ image, whether photographed, painted, or digitized",
+     "A picture ______ the thing but never becomes it.",
+     "resembles"
+    ]
+   ],
+   "paraBogi": "deceives · different · built · nothing · resembles · replaces · everything · hides",
+   "check": [
     {
-     "n": "④",
-     "en": "They are invented sounds, written with invented letters, and joined by a grammar that a culture has agreed on.",
-     "ans": "S They · △V are · M written with invented letters, joined by a grammar …",
-     "ko": "그것들은 만들어진 소리이고, 만들어진 문자로 적히며, 한 문화가 합의한 문법으로 이어진다."
+     "t": "title",
+     "q": "이 글의 제목으로 가장 알맞은 것은?",
+     "ch": [
+      "How Culture Invented Human Language",
+      "Why an Image Is Never the Thing Itself",
+      "Photographs: The Most Honest Kind of Proof",
+      "Rene Magritte: The Life of a Surrealist",
+      "Five Rules for Reading Abstract Words"
+     ],
+     "ans": 2
+    },
+    {
+     "t": "fact",
+     "q": "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+     "ch": [
+      "‘사진은 거짓말을 하지 않는다’고 하는 상투적인 문구가 있다.",
+      "말은 한 문화가 만들어 낸 소리와 인위적인 문법으로 이루어져 있다.",
+      "‘음식’이라는 말을 들을 때 떠오르는 음식의 종류는 누구에게나 같다.",
+      "‘cool’이나 ‘sick’ 같은 추상적인 말은 뜻이 계속 변하기도 한다.",
+      "Magritte의 그림에는 ‘이것은 파이프가 아니다’라는 문구가 적혀 있다."
+     ],
+     "ans": 3
+    },
+    {
+     "t": "write",
+     "q": "필자가 Magritte의 파이프 그림을 마지막에 끌어들인 까닭을 우리말 한 문장으로 써 보세요.",
+     "ans": "그림 속 파이프가 실제 파이프가 아니듯, 이미지는 아무리 생생해도 사물 그 자체는 아님을 보여 주기 위해서이다."
+    }
+   ],
+   "fl": {
+    "model": {
+     "n": "⑥",
+     "toks": [
+      [
+       "Every English speaker",
+       "s"
+      ],
+      [
+       "understands",
+       "v"
+      ],
+      [
+       "what the word “food” refers to,",
+       null
+      ],
+      [
+       "even though",
+       "c"
+      ],
+      [
+       "the particular kind of food",
+       "s2"
+      ],
+      [
+       "that comes to mind to each individual",
+       "m"
+      ],
+      [
+       "will vary.",
+       "v2"
+      ]
+     ],
+     "ko": "모든 영어 사용자는 ‘음식’이라는 말이 무엇을 가리키는지 이해하지만, 떠오르는 음식의 종류는 사람마다 다르다."
+    },
+    "drill": [
+     {
+      "n": "②",
+      "en": "This is part of that greater cliché that says seeing is believing.",
+      "ans": "S This · △V is · C part of that greater cliché · [that] △V′ says · O′ seeing is believing",
+      "ko": "이것은 보는 것이 믿는 것이라고 하는 더 상투적인 그 문구의 일부이다."
+     },
+     {
+      "n": "⑧",
+      "en": "But seeing the image of a thing seems to bring us very close to the thing itself — to “reality.”",
+      "ans": "S seeing the image of a thing · △V seems · C to bring us very close to the thing itself",
+      "ko": "하지만 어떤 사물의 이미지를 보는 것은 우리를 그 사물 그 자체에 매우 가깝게 다가가게 하는 것 같다."
+     },
+     {
+      "n": "⑫",
+      "en": "But, in fact, an image, whether photographed, painted, or digitized, is not the thing itself.",
+      "ans": "S an image · M whether photographed, painted, or digitized · △V is not · C the thing itself",
+      "ko": "하지만 사실 사진으로 찍은 것이든, 그림으로 그린 것이든, 디지털화된 것이든 이미지는 사물 그 자체가 아니다."
+     }
+    ]
+   },
+   "syn": [
+    {
+     "n": "③",
+     "name": "사역동사 make + 목적어 + 원형부정사",
+     "q": "Somehow a thing seen directly «makes us feel» closer to some actual reality.",
+     "d": "<b>make + 목적어 + 동사원형</b> → ‘~가 …하게 만들다’. 사역동사 make·have·let 뒤에는 to를 붙이지 않는다.",
+     "k": "왠지 직접 본 사물은 우리를 어떤 실제 현실에 더 가깝게 느끼게 만든다."
+    },
+    {
+     "n": "⑧",
+     "name": "seem + to부정사",
+     "q": "But seeing the image of a thing «seems to bring» us very close to the thing itself.",
+     "d": "<b>seem[appear] + to부정사</b> → ‘~하는 것 같다’. It seems that + 주어 + 동사 로 바꿔 쓸 수 있다.",
+     "k": "하지만 어떤 사물의 이미지를 보는 것은 우리를 그 사물 그 자체에 매우 가깝게 다가가게 하는 것 같다."
+    }
+   ],
+   "synd": [
+    {
+     "u": "구문 1",
+     "en": "The sudden flash made everyone close their eyes.",
+     "k": "갑작스러운 섬광이 모두가 눈을 감게 만들었다."
+    },
+    {
+     "u": "구문 2",
+     "en": "The copy seems to hold every detail of the original.",
+     "k": "그 복제본은 원본의 모든 세부를 담고 있는 것 같다."
+    },
+    {
+     "u": "구문 1 + 2",
+     "en": "A good photograph seems to make us forget that it is only paper.",
+     "k": "좋은 사진은 그것이 종이일 뿐임을 우리가 잊게 만드는 것 같다."
+    }
+   ],
+   "wtype": [
+    "지엽",
+    "정답",
+    "반대",
+    "무관",
+    "무관"
+   ],
+   "why": [
+    [
+     "④~⑦의 한 대목일 뿐이어서, ⑧ 뒤의 이미지 이야기를 담지 못한다"
+    ],
+    [
+     "정답"
+    ],
+    [
+     "⑫에서 글은 이미지가 사물이 아니라고 뒤집는다 — 정반대다"
+    ],
+    [
+     "Magritte는 ⑬~⑭의 예시일 뿐, 화가의 생애는 다루지 않는다"
+    ],
+    [
+     "추상적인 단어를 읽는 방법은 글에 나오지 않는다"
+    ]
+   ],
+   "stype": [
+    "일치",
+    "일치",
+    "반대",
+    "일치",
+    "일치"
+   ],
+   "src": [
+    [
+     "①"
+    ],
+    [
+     "④"
+    ],
+    [
+     "⑥과 어긋남 — 떠오르는 음식의 종류는 사람마다 다르다고 했다"
+    ],
+    [
+     "⑦"
+    ],
+    [
+     "⑭"
+    ]
+   ],
+   "kb": {
+    "title": "이미지가 사물이 아닐 때",
+    "lead": "그림도 사진도 사물 그 자체는 아니다.",
+    "items": [
+     [
+      "파이프가 아닌 파이프",
+      "René Magritte가 1929년에 그린 「이미지의 배반(La Trahison des images)」은 파이프 그림 아래에 프랑스어로 ‘Ceci n'est pas une pipe’(이것은 파이프가 아니다)라고 적어 넣은 작품이다. 마그리트는 “이 파이프에 담배를 채워 보라”며, 채울 수 없으니 그것은 파이프가 아니라 파이프의 그림일 뿐이라고 설명했다. 이 그림은 현재 미국 로스앤젤레스 카운티 미술관(LACMA)에 있다."
+     ],
+     [
+      "지도는 영토가 아니다",
+      "1931년 알프레드 코집스키(Alfred Korzybski)는 ‘지도는 영토가 아니다(The map is not the territory)’라는 말을 내놓았다. 지도가 아무리 정확해도 땅 자체는 아니라는 뜻으로, 재현을 실물로 착각하지 말라는 경고다. 마그리트의 파이프와 정확히 같은 이야기를 다른 말로 한 셈이다."
+     ],
+     [
+      "사진에서 지워진 사람",
+      "이미지를 손대는 일은 디지털 시대에만 있던 것이 아니다. 소련은 1937년 스탈린과 함께 운하 곁에 서 있는 비밀경찰 총수 니콜라이 예조프를 그가 처형된 뒤 사진에서 지우고 다시 인쇄했다. 같은 장면의 원본과 수정본이 나란히 남아 있어 손댄 사실을 확인할 수 있다."
+     ]
+    ],
+    "ask": "오늘 여러분이 본 사진 가운데, 실제와 다르게 보이도록 손댄 것은 없었을까?"
+   }
+  },
+  {
+   "no": "03",
+   "key": "practice",
+   "accent": "#2E8B7F",
+   "tint": "#E3F1EE",
+   "deep": "#1E6157",
+   "en": "What Do We Practise For?",
+   "ko": "우리는 무엇을 위해 연습하는가",
+   "goal": "연습과 공연이 서로 어떤 관계인지 필자의 두 비유를 근거로 설명할 수 있다.",
+   "fig": "Figure 3  너트와 볼트가 제자리에 있어야 비로소 날아오를 수 있다.",
+   "tip": "먼저 생각해 보자. 시험 전날의 나와 시험장 안의 나는 어떻게 달라야 할까?",
+   "sent": [
+    "Concert pianists spend much more of their lifetimes practising than they do playing concerts.",
+    "It's not just that pieces need to be kept in the memory — muscle and mind — but the very act of playing the piano is physical and athletic.",
+    "It involves reflex and endurance.",
+    "It might be true that you never forget how to ride a bicycle, but if you and it are rusty, there's not much hope of winning or even completing the Tour de France.",
+    "So we need to practise.",
+    "The key is how we make our time offstage best serve our briefer time onstage.",
+    "A pianist who has concerts has little time to spare, so it's important that those spare hours, even minutes, be used well.",
+    "My teacher, Gordon Green, used to say, ‘In practice a perfectionist, in performance a realist.’",
+    "In other words, prepare assiduously, tirelessly, at home, but when onstage accept the situation at hand without wishing the piano were more in tune, the audience were more appreciative (or larger), you hadn't made a mess of that octave passage, and so on.",
+    "Being a ‘realist’ sounds rather prosaic when faced with being brought to poetic, passionate life the masterworks of master composers.",
+    "I might put it differently from Gordon: in practice an engineer, in performance a pilot.",
+    "Nuts and bolts in a plane are incomparably important, but when you sit at the cockpit of a Steinway concert grand, your eyes need to look ahead not underneath.",
+    "The purpose of practising is so that we (offstage as engineers) make sure that we (onstage as pilots) are completely free to fly to the destination of our choice.",
+    "That destination is one involving imagination, creativity, and spirituality, not merely the A to B of playing the notes — but without the nuts and bolts in place, we shall never be airborne."
+   ],
+   "kor": [
+    "콘서트 피아니스트들은 연주회에서 연주하는 것보다 연습하는 데 일생의 훨씬 더 많은 시간을 보낸다.",
+    "그것은 단지 악곡이 기억 ─ 근육 및 정신 ─ 속에 유지되어야 한다는 것이 아니라, 피아노를 연주하는 바로 그 행위가 육체적이고 기력이 든다는 것이다.",
+    "그것은 반사 운동과 지구력을 필요로 한다.",
+    "여러분이 자전거를 타는 법을 결코 잊지 않는다는 것이 사실일지도 모르지만, 여러분과 그것(자전거 타는 실력)이 예전 같지 않다면, Tour de France에서 우승하거나 심지어 완주할 희망이 별로 없다.",
+    "그러니 연습이 필요하다.",
+    "핵심은 어떻게 무대 밖에서의 시간을 더 짧은 무대 위에서의 시간에 가장 큰 도움이 되게 보내느냐이다.",
+    "콘서트가 있는 피아니스트는 낼 시간이 거의 없어서, 심지어 몇 분이라도 그 남는 시간을 잘 활용하는 것이 중요하다.",
+    "나의 스승인 Gordon Green은 ‘연습할 때는 완벽주의자, 공연할 때는 현실주의자’라고 말하곤 했다.",
+    "다시 말하자면, 집에서는 근면하게 꾸준히 준비하되, 무대에서는 피아노의 음이 더 잘 맞았으면, 관객이 감상을 더 즐겼으면(혹은 더 많았으면), 그 옥타브 악절을 망치지 않았으면 하는 등을 바라지 말고 당면한 상황을 받아들이라는 것이다.",
+    "거장 작곡가들의 걸작에 시적이고 열정적인 생명력을 불어넣는 일에 맞닥뜨리는 상황에서, ‘현실주의자’가 된다는 것은 다소 무미건조하게 들린다.",
+    "내가 그것을 Gordon과 달리 표현하자면, 연습할 때는 엔지니어, 공연할 때는 조종사다.",
+    "비행기의 너트와 볼트는 비교할 수 없을 정도로 중요하지만, Steinway의 콘서트 그랜드 피아노의 조종석에 앉으면 눈은 아래가 아니라 앞을 봐야 한다.",
+    "연습의 목적은 (무대 위에서는 조종사인) 우리가 선택한 목적지까지 완전히 마음 놓고 비행할 수 있도록 (무대 밖에서는 엔지니어인) 우리가 확실히 하기 위함이다.",
+    "그 목적지는 그저 음을 연주하는 A에서 B로의 이동이 아니라 상상력, 창의성, 영성을 수반하는 곳이지만, 너트와 볼트가 제자리에 있지 않다면 우리는 결코 비행하지 못할 것이다."
+   ],
+   "bank": [
+    [
+     "endurance",
+     "③",
+     "지구력, 인내(심)"
+    ],
+    [
+     "rusty",
+     "④",
+     "예전 같지 않은, 녹슨"
+    ],
+    [
+     "assiduously",
+     "⑨",
+     "근면하게, 꾸준히"
+    ],
+    [
+     "prosaic",
+     "⑩",
+     "무미건조한"
+    ],
+    [
+     "incomparably",
+     "⑫",
+     "비교할 수 없을 정도로"
+    ],
+    [
+     "airborne",
+     "⑭",
+     "비행 중인, 하늘에 떠 있는"
+    ]
+   ],
+   "defs": [
+    [
+     "endurance",
+     "the power to keep going for a long time"
+    ],
+    [
+     "rusty",
+     "no longer good at something after a long break"
+    ],
+    [
+     "assiduously",
+     "with steady and careful effort, again and again"
+    ],
+    [
+     "prosaic",
+     "ordinary and dull, with no imagination in it"
+    ],
+    [
+     "incomparably",
+     "far beyond anything else of the same kind"
+    ],
+    [
+     "airborne",
+     "flying, no longer touching the ground"
+    ]
+   ],
+   "defOrder": [
+    2,
+    5,
+    0,
+    4,
+    1,
+    3
+   ],
+   "flow": [
+    [
+     "Fact",
+     "Pianists spend much more of their lifetimes practising than playing concerts",
+     null
+    ],
+    [
+     "Why",
+     "Playing the piano is physical and athletic: it needs reflex and (  ①  )",
+     "endurance"
+    ],
+    [
+     "The key",
+     "How our time offstage can best serve our (  ②  ) time onstage",
+     "briefer"
+    ],
+    [
+     "Two versions",
+     "A perfectionist / an engineer offstage, a realist / a (  ③  ) onstage",
+     "pilot"
+    ],
+    [
+     "Conclusion",
+     "Without the nuts and bolts in place we shall never be (  ④  )",
+     "airborne"
+    ]
+   ],
+   "flowBogi": "endurance · briefer · pilot · airborne · memory · longer",
+   "para": [
+    [
+     "① spend much more of their lifetimes practising",
+     "Pianists practise ______ than they perform.",
+     "more"
+    ],
+    [
+     "④ if you and it are rusty, there's not much hope",
+     "Skill fades unless you keep it ______.",
+     "fresh"
+    ],
+    [
+     "⑦ those spare hours, even minutes, be used well",
+     "Every ______ moment must be spent wisely.",
+     "free"
+    ],
+    [
+     "⑨ accept the situation at hand without wishing",
+     "On stage, stop ______ for better conditions.",
+     "hoping"
+    ],
+    [
+     "⑭ without the nuts and bolts in place",
+     "Freedom is impossible without solid ______.",
+     "basics"
+    ]
+   ],
+   "paraBogi": "more · fresh · free · hoping · basics · less · busy · notes",
+   "check": [
+    {
+     "t": "title",
+     "q": "이 글의 제목으로 가장 알맞은 것은?",
+     "ch": [
+      "How a Steinway Concert Grand Is Built",
+      "Winning the Tour de France on Two Wheels",
+      "Perfect Offstage So You Can Fly Onstage",
+      "Why Performers Should Never Settle for Less",
+      "The Long Hours That Pianists Spend Practising"
+     ],
+     "ans": 3
+    },
+    {
+     "t": "fact",
+     "q": "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+     "ch": [
+      "피아니스트는 연주회에서 연주하는 것보다 연습에 훨씬 더 많은 시간을 쓴다.",
+      "피아노를 연주하는 행위는 반사 운동과 지구력을 필요로 한다.",
+      "필자의 스승 Gordon Green은 ‘연습할 때는 엔지니어, 공연할 때는 조종사’라고 말했다.",
+      "무대에서는 피아노 음이 더 맞기를 바라지 말고 당면한 상황을 받아들여야 한다.",
+      "너트와 볼트가 제자리에 있지 않으면 결코 비행하지 못한다."
+     ],
+     "ans": 3
+    },
+    {
+     "t": "write",
+     "q": "필자가 말하는 <i>the nuts and bolts</i>(너트와 볼트)가 무엇을 뜻하며 왜 필요한지 우리말 한 문장으로 써 보세요.",
+     "ans": "무대 밖에서 갖춰 두어야 할 정확한 기본기를 뜻하며, 그것이 제자리에 있어야만 무대 위에서 상상력과 창의성이 있는 목적지까지 자유롭게 날아갈 수 있기 때문이다."
+    }
+   ],
+   "fl": {
+    "model": {
+     "n": "⑥",
+     "toks": [
+      [
+       "The key",
+       "s"
+      ],
+      [
+       "is",
+       "v"
+      ],
+      [
+       "how",
+       "c"
+      ],
+      [
+       "we",
+       "s2"
+      ],
+      [
+       "make",
+       "v2"
+      ],
+      [
+       "our time offstage",
+       null
+      ],
+      [
+       "best serve our briefer time onstage.",
+       null
+      ]
+     ],
+     "ko": "핵심은 우리가 무대 밖의 시간을 더 짧은 무대 위의 시간에 가장 도움이 되게 만드는 방법이다."
+    },
+    "drill": [
+     {
+      "n": "④",
+      "en": "It might be true that you never forget how to ride a bicycle, but if you and it are rusty, there's not much hope of winning or even completing the Tour de France.",
+      "ans": "S It(가주어) · △V might be · C true · [that] S′ you · △V′ never forget · [but] [if] S′ you and it · △V′ are rusty · S there · △V ’s · C not much hope",
+      "ko": "자전거 타는 법을 결코 잊지 않는다는 것은 사실일지 몰라도, 실력이 녹슬었다면 Tour de France를 완주할 희망조차 별로 없다."
+     },
+     {
+      "n": "⑫",
+      "en": "Nuts and bolts in a plane are incomparably important, but when you sit at the cockpit of a Steinway concert grand, your eyes need to look ahead not underneath.",
+      "ans": "S Nuts and bolts in a plane · △V are · C incomparably important · [but] [when] S′ you · △V′ sit · S your eyes · △V need to look · M ahead not underneath",
+      "ko": "비행기의 너트와 볼트는 대단히 중요하지만, 콘서트 그랜드의 조종석에 앉으면 눈은 아래가 아니라 앞을 봐야 한다."
+     },
+     {
+      "n": "⑬",
+      "en": "The purpose of practising is so that we (offstage as engineers) make sure that we (onstage as pilots) are completely free to fly to the destination of our choice.",
+      "ans": "S The purpose of practising · △V is · [so that] S′ we · △V′ make sure · [that] S′ we · △V′ are · C completely free to fly",
+      "ko": "연습의 목적은, 무대 위의 우리가 원하는 목적지까지 자유롭게 날 수 있도록 무대 밖의 우리가 확실히 해 두는 데 있다."
+     }
+    ]
+   },
+   "syn": [
+    {
+     "n": "⑦",
+     "name": "당위의 that절  형용사 + that + (should) 동사원형",
+     "q": "…so it's important that those spare hours, even minutes, «be used» well.",
+     "d": "important · necessary · essential 처럼 <b>당위</b>를 나타내는 형용사 뒤 that절에서는 should를 생략하고 <b>동사원형</b>을 쓴다. 주어가 hours인데도 are가 아니라 be가 온 이유다.",
+     "k": "그래서 그 남는 시간을, 심지어 몇 분이라도 잘 쓰는 것이 중요하다."
     },
     {
      "n": "⑨",
-     "en": "The picture appears to arrive directly, so we treat it as reality itself.",
-     "ans": "S The picture · △V appears · M directly · [so] S′ we · △V′ treat · O it",
-     "ko": "그림은 곧바로 도착하는 것처럼 보여서, 우리는 그것을 현실 그 자체로 여긴다."
+     "name": "가정법 과거  wish + 과거형",
+     "q": "…accept the situation at hand without wishing the piano «were» more in tune.",
+     "d": "현재 사실과 반대되는 바람은 wish 뒤 that절에 <b>과거형</b>을 쓴다. be동사는 주어와 상관없이 were를 쓰고, 접속사 that은 흔히 생략한다.",
+     "k": "피아노 음이 더 잘 맞았으면 하고 바라지 말고 당면한 상황을 받아들여라."
+    }
+   ],
+   "synd": [
+    {
+     "u": "구문 1",
+     "en": "It is essential that every spare minute be used before the concert.",
+     "k": "연주회 전에는 남는 1분까지도 쓰이는 것이 필수적이다."
     },
     {
-     "n": "⑫",
-     "en": "Whether it is painted, photographed, or built on a screen, it is still a version of the thing, not the thing.",
-     "ans": "[Whether] S′ it · △V′ is painted / photographed / built · S it · △V is · C a version of the thing",
-     "ko": "그려졌든 사진이든 화면 위의 것이든, 그것은 사물의 한 판본일 뿐 사물 자체가 아니다."
+     "u": "구문 2",
+     "en": "Many players wish the hall were quieter on the night of a concert.",
+     "k": "많은 연주자가 연주회 날 밤에 객석이 더 조용했으면 하고 바란다."
+    },
+    {
+     "u": "구문 1 + 2",
+     "en": "It is important that a performer stop wishing the audience were larger.",
+     "k": "연주자가 관객이 더 많았으면 하고 바라기를 그만두는 것이 중요하다."
     }
-   ]
-  },
-  "syn": [
-   {
-    "n": "①",
-    "name": "동명사 주어 · 보어",
-    "q": "People often say that «seeing is believing».",
-    "d": "동사에 -ing를 붙이면 명사처럼 <b>주어·보어</b> 자리에 올 수 있고, 단수 취급해 동사도 단수형을 쓴다.",
-    "k": "사람들은 흔히 보는 것이 믿는 것이라고 말한다."
-   },
-   {
-    "n": "⑫",
-    "name": "whether A, B, or C  양보 부사절",
-    "q": "«Whether it is painted, photographed, or built on a screen», it is still a version of the thing.",
-    "d": "‘~이든 …이든 상관없이’. 뒤에 주절이 이어지고, 나열되는 말은 <b>형태를 맞춘다</b>(과거분사 병렬).",
-    "k": "그림이든 사진이든 화면 위에 만든 것이든, 그것은 여전히 그 사물의 한 판본이다."
-   }
-  ],
-  "synd": [
-   {
-    "u": "구문 1",
-    "en": "Choosing the angle is already telling a story.",
-    "k": "각도를 고르는 것은 이미 하나의 이야기를 하고 있는 것이다."
-   },
-   {
-    "u": "구문 2",
-    "en": "Whether the picture is old, new, or edited, people still trust it.",
-    "k": "그 사진이 오래된 것이든 새것이든 편집된 것이든, 사람들은 여전히 그것을 믿는다."
-   },
-   {
-    "u": "구문 1 + 2",
-    "en": "Whether we look at a painting, a photo, or a screen, seeing is not always knowing.",
-    "k": "그림을 보든 사진을 보든 화면을 보든, 보는 것이 늘 아는 것은 아니다."
-   }
-  ],
-  "why": [
-   [
-    "글은 사진도 만들어진 것이라고 말한다 — 정반대다"
    ],
-   [
-    "말의 뜻이 사라졌다는 이야기는 나오지 않는다"
-   ],
-   [
-    "정답"
-   ],
-   [
-    "마그리트의 취향이나 생애는 글의 주제가 아니다"
-   ],
-   [
-    "영어 학습 방법은 글에 없다"
-   ]
-  ],
-  "src": [
-   [
-    "④"
-   ],
-   [
-    "⑤"
-   ],
-   [
-    "⑦"
-   ],
-   [
-    "⑩⑪과 어긋남 — 이미지도 누군가 만든 것이다"
-   ],
-   [
-    "⑭"
-   ]
-  ],
-  "kb": {
-   "title": "사진은 언제부터 거짓말했을까",
-   "lead": "‘있는 그대로’처럼 보이는 이미지의 뒷면.",
-   "items": [
+   "why": [
     [
-     "링컨의 유명한 초상은 합성 사진이다",
-     "널리 알려진 링컨의 당당한 전신 초상은 링컨의 머리에 정치가 존 C. 칼훈의 몸을 붙여 만든 것이다. 사진이 발명된 지 20여 년 만에 이미 합성이 시작되었다."
+     "스타인웨이를 만드는 과정은 글에 없다 — 조종석 비유로 이름만 나온다"
     ],
     [
-     "화성의 ‘얼굴’",
-     "1976년 바이킹 1호가 찍은 화성 사진에는 사람 얼굴을 닮은 바위가 있었다. 20년 뒤 고해상도로 다시 찍자 평범한 언덕이었다. 빛과 그림자, 그리고 얼굴을 찾으려는 우리 뇌가 만든 얼굴이었다."
+     "자전거와 Tour de France는 연습이 왜 필요한지 보여 주는 비유일 뿐이다"
     ],
     [
-     "《이미지의 배반》",
-     "마그리트가 파이프를 그리고 ‘이것은 파이프가 아니다’라고 쓴 작품은 1929년작이다. 그는 “내 그림에 담배를 채워 넣을 수 있겠는가?”라고 되물었다."
+     "정답"
+    ],
+    [
+     "글은 무대에서는 완벽주의를 내려놓고 현실주의자가 되라고 말한다 — 정반대다"
+    ],
+    [
+     "연습 시간이 길다는 것은 글의 출발점일 뿐, 필자가 이르는 결론이 아니다"
     ]
    ],
-   "ask": "오늘 본 사진 중 ‘사실’이라고 믿은 것이 있는가? 그 사진을 찍은 사람은 무엇을 골랐을까?"
-  },
-  "wtype": [
-   "반대",
-   "무관",
-   "정답",
-   "지엽",
-   "무관"
-  ],
-  "stype": [
-   "일치",
-   "일치",
-   "일치",
-   "반대",
-   "일치"
-  ]
- },
- {
-  "no": "03",
-  "key": "practice",
-  "accent": "#2E8B7F",
-  "tint": "#E3F1EE",
-  "deep": "#1E6157",
-  "en": "In Practice an Engineer",
-  "ko": "연습할 때는 엔지니어처럼",
-  "goal": "연습과 공연이 서로 어떤 관계인지 비유를 근거로 설명할 수 있다.",
-  "fig": "Figure 3  볼트가 제자리에 있어야 비로소 날 수 있다.",
-  "tip": "먼저 생각해 보자. 시험 전날의 나와 시험장 안의 나는 어떻게 달라야 할까?",
-  "sent": [
-   "Concert pianists spend far more of their lives practising than performing.",
-   "Playing the piano is not only remembering notes; it is physical work that needs reflex and endurance.",
-   "You may never forget how to ride a bicycle, but if your legs are out of shape you will not finish a race.",
-   "So the question is not whether to practise, but how to make the long hours offstage serve the short hours onstage.",
-   "My teacher used to say, “In practice a perfectionist, in performance a realist.”",
-   "At home, prepare endlessly.",
-   "On stage, accept what is in front of you.",
-   "Do not wish that the piano were better tuned, or the hall fuller, or that you had not missed that one passage.",
-   "Being a realist sounds dull when the job is to bring a great work to life.",
-   "I would put it another way: in practice an engineer, in performance a pilot.",
-   "The bolts of an aircraft matter enormously, but once you sit in the cockpit your eyes look ahead, not down.",
-   "We practise so that we are free to fly wherever the music asks.",
-   "That destination is made of imagination, not of correct notes alone.",
-   "Yet without the bolts in place, we never leave the ground."
-  ],
-  "kor": [
-   "콘서트 피아니스트는 연주하는 시간보다 연습하는 시간에 인생의 훨씬 더 많은 부분을 쓴다.",
-   "피아노 연주는 음을 외우는 일만이 아니다. 그것은 반사 신경과 지구력이 필요한 육체노동이다.",
-   "자전거 타는 법은 잊지 않을지 몰라도, 다리가 예전 같지 않다면 경주를 완주하지 못할 것이다.",
-   "그러니 문제는 연습을 할지 말지가 아니라, 무대 밖의 긴 시간이 무대 위의 짧은 시간에 도움이 되게 하는 방법이다.",
-   "나의 스승은 “연습할 때는 완벽주의자, 공연할 때는 현실주의자”라고 말하곤 했다.",
-   "집에서는 끝없이 준비하라.",
-   "무대에서는 눈앞에 있는 것을 받아들이라.",
-   "피아노 조율이 더 좋았더라면, 객석이 더 찼더라면, 그 한 악절을 놓치지 않았더라면 하고 바라지 마라.",
-   "위대한 작품에 생명을 불어넣는 일 앞에서 현실주의자가 된다는 말은 따분하게 들린다.",
-   "나라면 이렇게 바꿔 말하겠다. 연습할 때는 엔지니어, 공연할 때는 조종사라고.",
-   "비행기의 볼트는 대단히 중요하지만, 일단 조종석에 앉으면 눈은 아래가 아니라 앞을 본다.",
-   "우리는 음악이 요구하는 곳 어디로든 자유롭게 날아가기 위해 연습한다.",
-   "그 목적지는 정확한 음만으로 이루어지지 않고 상상력으로 이루어진다.",
-   "그러나 볼트가 제자리에 있지 않으면 우리는 결코 땅을 떠나지 못한다."
-  ],
-  "bank": [
-   [
-    "endurance",
-    "②",
-    "지구력"
-   ],
-   [
-    "out of shape",
-    "③",
-    "몸이 예전 같지 않은"
-   ],
-   [
-    "offstage",
-    "④",
-    "무대 밖의"
-   ],
-   [
-    "tuned",
-    "⑧",
-    "조율된"
-   ],
-   [
-    "dull",
-    "⑨",
-    "따분한"
-   ],
-   [
-    "destination",
-    "⑬",
-    "목적지"
-   ]
-  ],
-  "defs": [
-   [
-    "endurance",
-    "the ability to keep going for a long time"
-   ],
-   [
-    "out of shape",
-    "no longer fit or in good condition"
-   ],
-   [
-    "offstage",
-    "away from the place where a performance happens"
-   ],
-   [
-    "tuned",
-    "adjusted so that the sound is correct"
-   ],
-   [
-    "dull",
-    "not interesting or exciting"
-   ],
-   [
-    "destination",
-    "the place someone is travelling to"
-   ]
-  ],
-  "defOrder": [
-   4,
-   0,
-   5,
-   1,
-   3,
-   2
-  ],
-  "flow": [
-   [
-    "Fact",
-    "Playing is physical work that needs reflex and (  ①  )",
-    "endurance"
-   ],
-   [
-    "Question",
-    "How can the long hours offstage serve the (  ②  ) hours onstage?",
-    "short"
-   ],
-   [
-    "The teacher's rule",
-    "In practice a perfectionist, in performance a (  ③  )",
-    "realist"
-   ],
-   [
-    "The writer's version",
-    "In practice an engineer, in performance a (  ④  )",
-    "pilot"
-   ],
-   [
-    "Conclusion",
-    "Without the bolts in place, we never leave the ground",
-    null
-   ]
-  ],
-  "flowBogi": "endurance · short · realist · pilot · perfectionist · long",
-  "para": [
-   [
-    "④ make the long hours offstage serve the short hours",
-    "Practice should ______ the real thing.",
-    "support"
-   ],
-   [
-    "⑨ Being a realist sounds dull",
-    "Accepting things as they are can seem ______.",
-    "boring"
-   ],
-   [
-    "⑭ without the bolts, we never leave the ground",
-    "Without solid ______, freedom is impossible.",
-    "basics"
-   ],
-   [
-    "① Pianists practise far more than they perform.",
-    "A pianist performs ______ often than he practises.",
-    "less"
-   ],
-   [
-    "③ … if your legs are out of shape you will not finish",
-    "Knowing how is not enough; the body must stay ______.",
-    "fit"
-   ]
-  ],
-  "paraBogi": "support · boring · basics · less · fit · exciting · notes · speed",
-  "check": [
-   {
-    "t": "title",
-    "q": "이 글의 제목으로 가장 알맞은 것은?",
-    "ch": [
-     "The Hardest Piece for a Pianist",
-     "Why Bicycles and Pianos Are Alike",
-     "How to Tune a Concert Piano",
-     "Perfectionists Make the Best Performers",
-     "Practice Builds the Freedom to Play"
+   "src": [
+    [
+     "①"
     ],
-    "ans": 5
-   },
-   {
-    "t": "fact",
-    "q": "이 글의 내용과 일치하지 <b>않는</b> 것은?",
-    "ch": [
-     "피아노 연주에는 반사 신경과 지구력이 필요하다.",
-     "무대에서는 눈앞의 상황을 받아들여야 한다.",
-     "필자의 스승은 ‘연습할 때는 엔지니어’라고 말했다.",
-     "조종석에 앉으면 눈은 앞을 본다.",
-     "볼트가 제자리에 없으면 땅을 떠날 수 없다."
+    [
+     "③"
     ],
-    "ans": 3
-   },
-   {
-    "t": "write",
-    "q": "필자가 말한 ‘볼트(the bolts)’가 피아노 연주에서 무엇을 뜻하는지 우리말 한 문장으로 써 보세요.",
-    "ans": "무대에서 자유롭게 연주하기 위해 무대 밖에서 갖춰 두어야 할 기본기와 준비를 뜻한다."
-   }
-  ],
-  "fl": {
-   "model": {
-    "n": "⑫",
-    "toks": [
+    [
+     "⑧⑪과 어긋남 — 스승의 말은 ‘완벽주의자·현실주의자’였고, 엔지니어·조종사는 필자가 새로 든 표현이다"
+    ],
+    [
+     "⑨"
+    ],
+    [
+     "⑭"
+    ]
+   ],
+   "kb": {
+    "title": "무대 뒤에서 벌어지는 일",
+    "lead": "관객이 보지 못하는 시간에 관하여.",
+    "items": [
      [
-      "We",
-      "s"
+      "피아노 한 대에 부품 1만 2천 개",
+      "스타인웨이는 콘서트 그랜드(모델 D) 한 대가 1만 2천 개가 넘는 부품으로 이루어지며 제작에 약 1년이 걸린다고 밝히고 있다. 글에 나오는 ‘너트와 볼트’는 결코 과장이 아니다."
      ],
      [
-      "practise",
-      "v"
+      "‘1만 시간’이라는 말의 원래 뜻",
+      "이 말의 출발점인 에릭손(K. A. Ericsson) 연구진의 1993년 논문은 시간의 양이 아니라 ‘의도적 연습(deliberate practice)’, 곧 못하는 지점을 골라 고치는 연습의 질을 강조했다. 에릭손 자신도 ‘1만 시간 법칙’이 자기 연구를 단순화한 표현이라고 여러 차례 밝혔다."
      ],
      [
-      "so that",
-      "c"
-     ],
-     [
-      "we",
-      "s2"
-     ],
-     [
-      "are",
-      "v2"
-     ],
-     [
-      "free to fly",
-      null
-     ],
-     [
-      "wherever the music asks.",
-      "m"
+      "조종사 체크리스트가 생긴 이유",
+      "1935년 미국 라이트 비행장의 시험 비행에서 최신 폭격기 보잉 299가 추락했다. 원인은 기계 결함이 아니라 조종면을 고정해 두는 장치를 푸는 절차를 빠뜨린 것이었다. 그 뒤 조종사 체크리스트가 표준이 되었다."
      ]
     ],
-    "ko": "우리는 음악이 요구하는 곳 어디로든 자유롭게 날아가기 위해 연습한다."
+    "ask": "내 공부에서 ‘너트와 볼트’에 해당하는 것은 무엇이고, 시험장에서는 무엇을 내려놓아야 할까?"
    },
-   "drill": [
+   "wtype": [
+    "무관",
+    "지엽",
+    "정답",
+    "반대",
+    "배경"
+   ],
+   "stype": [
+    "일치",
+    "일치",
+    "혼동",
+    "일치",
+    "일치"
+   ]
+  },
+  {
+   "no": "04",
+   "key": "shelter",
+   "accent": "#C2557A",
+   "tint": "#FAE9EF",
+   "deep": "#8E3454",
+   "en": "Overprotection in Sleeping Beauty and How It Is Overcome",
+   "ko": "위험을 다 치운 세상에서 자란 공주",
+   "goal": "부정적인 것을 모두 치워 준 보호가 왜 아이를 오히려 약하게 만드는지 설명할 수 있다.",
+   "fig": "Figure 1  모든 위험을 치운 성 안에서 자라는 동안 조용히 약해진 것들.",
+   "tip": "먼저 생각해 보자. 넘어질 일이 하나도 없는 길만 걸어 온 사람은, 진짜 길 위에 서면 어떻게 될까?",
+   "sent": [
+    "In the Disney movie Sleeping Beauty, the King and Queen have a daughter, the princess Aurora, after a long wait.",
+    "They plan a great christening to introduce her to the world.",
+    "They welcome everyone who loves and honours their new daughter.",
+    "But they fail to invite Maleficent, who appears in her negative guise as the Queen of the Underworld.",
+    "This means, symbolically, that the two monarchs are overprotecting their beloved daughter by setting up a world around her that has nothing negative in it.",
+    "It makes her weak.",
+    "Maleficent curses the princess, sentencing her to death at the age of sixteen, caused by the prick of a spinning wheel's needle.",
+    "Fortunately, a good fairy reduces the punishment to unconsciousness, which can be undone with love's first kiss.",
+    "The panicked King and Queen get rid of all the spinning wheels in the land, and turn their daughter over to the three good fairies.",
+    "They continue with their strategy of removing all dangerous things, but in doing so they leave their daughter naive, immature and weak.",
+    "One day, just before Aurora's sixteenth birthday, she meets a prince in the forest and falls in love.",
+    "This could be considered excessive by most reasonable standards.",
+    "Then she loudly bemoans the fact that she is to be wed to Prince Philip, whom she was promised to as a child, and collapses emotionally when she is brought back to her parents' castle for her birthday.",
+    "It is at that moment that Maleficent's curse manifests itself.",
+    "A portal opens up in the castle, a spinning wheel appears, and Aurora pricks her finger and falls unconscious.",
+    "She becomes Sleeping Beauty.",
+    "Ultimately, through true love's kiss, Aurora awakens from the curse and begins to grow into a mature princess, no longer just a sheltered figure but someone ready to take charge of her own life."
+   ],
+   "kor": [
+    "디즈니 영화 ‘잠자는 숲속의 공주’에서, 왕과 왕비는 오랜 기다림 후에 딸인 공주 오로라(Aurora)를 얻게 된다.",
+    "그들은 그녀를 세상에 소개하기 위해 성대한 세례식을 계획한다.",
+    "그들은 새로 태어난 딸을 사랑하고 존경하는 모든 이들을 환영한다.",
+    "하지만 그들은 말레피센트(Maleficent)를 초대하지는 않는데, 그녀는 지하 세계의 여왕으로서 자신의 부정적인 모습으로 등장한다.",
+    "이것은, 상징적으로, 두 군주가 그녀 주변에 부정적인 요소가 전혀 없는 세상을 세움으로써 자신들의 사랑하는 딸을 과잉보호하고 있다는 것을 의미한다.",
+    "그것은 그녀를 약하게 만든다.",
+    "말레피센트는 공주에게 저주를 내려, 그녀가 16살에 물레 바늘에 찔려 죽게 될 것이라고 선고한다.",
+    "다행히, 착한 요정이 처벌을 (죽음 대신) 무의식 상태로 감면해 주는데, 이것은 사랑의 첫 키스로 되돌려질 수 있다.",
+    "놀란 왕과 왕비는 왕국의 모든 물레를 없애 버리고, 딸을 세 명의 착한 요정들에게 맡긴다.",
+    "그들은 계속해서 모든 위험한 것을 제거하는 전략을 고수하지만, 그렇게 하는 과정에서 자신들의 딸을 순진하고 미성숙하며 나약한 존재로 만들어 버리게 된다.",
+    "어느 날, 오로라가 16번째 생일을 맞기 직전에, 그녀는 숲에서 한 왕자를 만나 사랑에 빠진다.",
+    "이것은 가장 합리적인 기준으로도 과도하게 간주될 수 있다.",
+    "이후 그녀는 자신이 어릴 적부터 약속된 필립 왕자와 결혼해야 한다는 사실에 크게 한탄하며, 생일을 맞아 부모님의 성으로 돌아왔을 때 감정적으로 무너진다.",
+    "바로 그 순간, 말레피센트의 저주가 실현된다.",
+    "성 안에 문이 열리고, 물레가 나타나며, 오로라는 손가락이 바늘에 찔려 의식을 잃는다.",
+    "그녀는 ‘잠자는 숲속의 공주’가 된 것이다.",
+    "결국, 진정한 사랑의 키스를 통해 오로라는 저주에서 깨어나게 되고, 더 이상 보호받기만 하는 존재가 아니라 스스로 삶을 책임질 준비가 된 성숙한 공주로 성장하기 시작한다."
+   ],
+   "bank": [
+    [
+     "guise",
+     "④",
+     "모습, 외관"
+    ],
+    [
+     "overprotect",
+     "⑤",
+     "과잉보호하다"
+    ],
+    [
+     "unconsciousness",
+     "⑧",
+     "무의식 (상태)"
+    ],
+    [
+     "immature",
+     "⑩",
+     "미성숙한"
+    ],
+    [
+     "excessive",
+     "⑫",
+     "과도한"
+    ],
+    [
+     "sheltered",
+     "⑰",
+     "보호받기만 하는"
+    ]
+   ],
+   "defs": [
+    [
+     "guise",
+     "an outward look that hides what is really there"
+    ],
+    [
+     "overprotect",
+     "to guard someone far more than is needed"
+    ],
+    [
+     "unconsciousness",
+     "the state of not being awake or aware"
+    ],
+    [
+     "immature",
+     "not yet fully grown up in mind or behaviour"
+    ],
+    [
+     "excessive",
+     "much greater than is right or necessary"
+    ],
+    [
+     "sheltered",
+     "kept away from anything hard or unpleasant"
+    ]
+   ],
+   "defOrder": [
+    4,
+    1,
+    5,
+    0,
+    3,
+    2
+   ],
+   "flow": [
+    [
+     "Setup",
+     "The King and Queen welcome everyone but Maleficent",
+     null
+    ],
+    [
+     "Their aim",
+     "They build a world with (  ①  ) negative in it",
+     "nothing"
+    ],
+    [
+     "Their strategy",
+     "They (  ②  ) every spinning wheel and every danger",
+     "remove"
+    ],
+    [
+     "The cost",
+     "Aurora is left naive, (  ③  ) and weak",
+     "immature"
+    ],
+    [
+     "The turn",
+     "She wakes and grows into a (  ④  ) princess",
+     "mature"
+    ]
+   ],
+   "flowBogi": "nothing · remove · immature · mature · welcome · safer",
+   "para": [
+    [
+     "⑤ overprotecting their beloved daughter",
+     "They guard their daughter far ______ than is needed.",
+     "more"
+    ],
+    [
+     "⑨ get rid of all the spinning wheels in the land",
+     "Every spinning wheel in the land is ______.",
+     "destroyed"
+    ],
+    [
+     "⑩ they leave their daughter naive, immature and weak",
+     "Their care leaves Aurora ______ for real life.",
+     "unready"
+    ],
+    [
+     "⑫ This could be considered excessive",
+     "Most people would call this reaction ______.",
+     "extreme"
+    ],
+    [
+     "⑰ someone ready to take charge of her own life",
+     "She is now ready to be ______ for her life.",
+     "responsible"
+    ]
+   ],
+   "paraBogi": "more · destroyed · unready · extreme · responsible · fewer · eager · admired",
+   "check": [
     {
-     "n": "②",
-     "en": "Playing the piano is not only remembering notes; it is physical work that needs reflex and endurance.",
-     "ans": "S Playing the piano · △V is · C remembering notes · S it · △V is · C physical work · M that needs reflex and endurance",
-     "ko": "피아노 연주는 음을 외우는 일만이 아니라, 반사 신경과 지구력이 필요한 육체노동이다."
+     "t": "title",
+     "q": "이 글의 제목으로 가장 알맞은 것은?",
+     "ch": [
+      "The Long Wait for a Royal Daughter",
+      "Curses Are Stronger Than a Parent's Love",
+      "Shielded from Every Danger, Left Weak by It",
+      "The Spinning Wheel in European Folk Tales",
+      "How Three Good Fairies Raised a Princess"
+     ],
+     "ans": 3
     },
+    {
+     "t": "fact",
+     "q": "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+     "ch": [
+      "왕과 왕비는 딸을 사랑하고 존경하는 이들을 모두 환영했다.",
+      "착한 요정은 죽음이라는 벌을 무의식 상태로 감면해 주었다.",
+      "왕과 왕비는 나라의 물레를 모두 없애고 딸을 세 요정에게 맡겼다.",
+      "오로라는 열여섯 번째 생일이 지난 뒤에 숲에서 왕자를 만났다.",
+      "오로라는 저주에서 깨어나 성숙한 공주로 자라기 시작한다."
+     ],
+     "ans": 4
+    },
+    {
+     "t": "write",
+     "q": "필자가 왕과 왕비의 보호를 <i>overprotecting</i>이라고 부른 이유를 우리말 한 문장으로 써 보세요.",
+     "ans": "부정적인 것이 하나도 없는 세상을 세워 준 결과, 딸이 안전해진 것이 아니라 순진하고 미성숙하며 나약해졌기 때문이다."
+    }
+   ],
+   "fl": {
+    "model": {
+     "n": "⑩",
+     "toks": [
+      [
+       "They",
+       "s"
+      ],
+      [
+       "continue",
+       "v"
+      ],
+      [
+       "with their strategy of removing all dangerous things,",
+       "m"
+      ],
+      [
+       "but",
+       "c"
+      ],
+      [
+       "in doing so",
+       "m"
+      ],
+      [
+       "they",
+       "s2"
+      ],
+      [
+       "leave",
+       "v2"
+      ],
+      [
+       "their daughter",
+       null
+      ],
+      [
+       "naive, immature and weak.",
+       null
+      ]
+     ],
+     "ko": "그들은 계속해서 모든 위험한 것을 제거하는 전략을 고수하지만, 그렇게 하는 과정에서 자신들의 딸을 순진하고 미성숙하며 나약한 존재로 만들어 버리게 된다."
+    },
+    "drill": [
+     {
+      "n": "⑧",
+      "en": "Fortunately, a good fairy reduces the punishment to unconsciousness, which can be undone with love's first kiss.",
+      "ans": "S a good fairy · △V reduces · M Fortunately, to unconsciousness · [which] S′ which(= unconsciousness) · △V′ can be undone",
+      "ko": "다행히 착한 요정이 벌을 무의식 상태로 감면해 주는데, 이것은 사랑의 첫 키스로 되돌려질 수 있다."
+     },
+     {
+      "n": "⑨",
+      "en": "The panicked King and Queen get rid of all the spinning wheels in the land, and turn their daughter over to the three good fairies.",
+      "ans": "S The panicked King and Queen · △V get rid of / (and) turn ... over · M in the land, to the three good fairies",
+      "ko": "놀란 왕과 왕비는 나라의 모든 물레를 없애 버리고, 딸을 세 착한 요정에게 맡긴다."
+     },
+     {
+      "n": "⑰",
+      "en": "Ultimately, through true love's kiss, Aurora awakens from the curse and begins to grow into a mature princess, no longer just a sheltered figure but someone ready to take charge of her own life.",
+      "ans": "S Aurora · △V awakens / (and) begins · M Ultimately, through true love's kiss · [not A but B] no longer just a sheltered figure ↔ someone ready to take charge",
+      "ko": "결국 진정한 사랑의 키스로 오로라는 저주에서 깨어나, 더 이상 보호받기만 하는 존재가 아니라 스스로 삶을 책임질 준비가 된 성숙한 공주로 자라기 시작한다."
+     }
+    ]
+   },
+   "syn": [
+    {
+     "n": "⑤",
+     "name": "by + 동명사  ~함으로써",
+     "q": "the two monarchs are overprotecting their beloved daughter «by setting up a world around her»",
+     "d": "<b>by + -ing</b> 는 ‘~함으로써’, 곧 <b>수단·방법</b>을 나타낸다. 여기서 setting up 의 목적어는 뒤의 관계절까지 딸린 <i>a world … that has nothing negative in it</i> 이다.",
+     "k": "두 군주는 그녀 주변에 부정적인 요소가 전혀 없는 세상을 세움으로써 사랑하는 딸을 과잉보호하고 있다."
+    },
+    {
+     "n": "⑭",
+     "name": "It is ~ that … 강조구문",
+     "q": "«It is» at that moment «that» Maleficent's curse manifests itself.",
+     "d": "<b>It is</b> 와 <b>that</b> 사이에 강조할 말을 끼워 넣는다. It is 와 that 을 지워도 <i>Maleficent's curse manifests itself at that moment.</i> 라는 온전한 문장이 남으면 강조구문이다.",
+     "k": "말레피센트의 저주가 실현되는 것은 바로 그 순간이다."
+    }
+   ],
+   "synd": [
+    {
+     "u": "구문 1",
+     "en": "She kept her fear hidden by smiling at everyone in the room.",
+     "k": "그녀는 방 안의 모두에게 미소를 지음으로써 자신의 두려움을 감추었다."
+    },
+    {
+     "u": "구문 2",
+     "en": "It was her own choice that finally changed the ending of the story.",
+     "k": "그 이야기의 결말을 마침내 바꾼 것은 바로 그녀 자신의 선택이었다."
+    },
+    {
+     "u": "구문 1 + 2",
+     "en": "It was by facing the danger himself that the boy grew stronger.",
+     "k": "그 소년이 더 강해진 것은 바로 그가 스스로 위험과 마주함으로써였다."
+    }
+   ],
+   "wtype": [
+    "배경",
+    "반대",
+    "정답",
+    "무관",
+    "지엽"
+   ],
+   "stype": [
+    "일치",
+    "일치",
+    "일치",
+    "시점",
+    "일치"
+   ],
+   "why": [
+    [
+     "오랜 기다림 끝의 출생은 첫 장면일 뿐, 필자가 말하려는 바가 아니다"
+    ],
+    [
+     "저주는 결국 진정한 사랑의 키스로 풀린다 — 정반대로 말하고 있다"
+    ],
+    [
+     "정답"
+    ],
+    [
+     "유럽 민담 속 물레의 유래는 이 글에서 다루지 않는다"
+    ],
+    [
+     "세 요정에게 딸을 맡긴 것은 한 장면일 뿐, 글의 중심이 아니다"
+    ]
+   ],
+   "src": [
+    [
+     "③"
+    ],
+    [
+     "⑧"
+    ],
+    [
+     "⑨"
+    ],
+    [
+     "⑪과 어긋남 — 열여섯 번째 생일을 맞기 ‘직전에’ 왕자를 만난다"
+    ],
+    [
+     "⑰"
+    ]
+   ],
+   "kb": {
+    "title": "위험을 치워 준다는 것",
+    "lead": "이야기 바깥에서도 같은 질문이 있었다.",
+    "items": [
+     [
+      "‘헬리콥터 부모’라는 말이 태어난 곳",
+      "1969년 정신과 의사 하임 기너트가 펴낸 『부모와 십 대 사이(Between Parent & Teenager)』에는 “엄마는 헬리콥터처럼 내 위를 맴돈다”는 한 청소년의 말이 실려 있다. 이 비유가 자녀 곁을 떠나지 못하는 부모를 가리키는 말로 굳어졌고, 1990년대 이후 널리 쓰이게 되었다."
+     ],
+     [
+      "안전 규제 기관이 한 말",
+      "영국 보건안전청(HSE)은 2012년 「아동의 놀이와 여가」 성명에서, 놀이는 아이가 위험을 만나고 스스로 다루어 볼 기회를 주어야 한다고 밝혔다. 위험을 완전히 없애는 것이 목표가 아니라, 이익과 위험을 함께 저울에 올리는 것이 목표라는 뜻이다."
+     ],
+     [
+      "‘오로라’는 원래 공주의 이름이 아니었다",
+      "페로의 1697년 원작에서 오로르(Aurore, 새벽)는 잠든 공주가 아니라 그녀의 딸 이름이다. 공주를 오로라라고 부른 것은 차이콥스키의 발레 『잠자는 숲속의 미녀』(1890)이고, 1959년 디즈니 영화가 그 이름과 발레 음악을 함께 가져왔다."
+     ]
+    ],
+    "ask": "여러분이 최근에 ‘위험하다’는 이유로 하지 못한 일이 있다면, 그 판단은 누가 내린 것일까?"
+   }
+  },
+  {
+   "no": "05",
+   "key": "talk",
+   "accent": "#2F7CB8",
+   "tint": "#E4EFF8",
+   "deep": "#1D5686",
+   "en": "Importance of Studying and Discussing Literature",
+   "ko": "혼자 읽은 책, 함께 말할 때 깊어진다",
+   "goal": "문학의 이해가 혼자 읽기가 아니라 쓰고 토론하는 과정에서 자란다는 것을 근거를 들어 설명할 수 있다.",
+   "fig": "Figure 5  한 권의 책을 사이에 두고 오가는 말들이 이해를 넓히는 자리.",
+   "tip": "먼저 생각해 보자. 같은 책을 읽고도 친구의 한마디에 생각이 뒤집힌 적이 있는가?",
+   "sent": [
+    "Literary study, like all disciplines, has developed its own terminology and its own techniques.",
+    "Some knowledge and understanding of both can greatly enhance our personal appreciation of literature and our conversations with others about it.",
+    "Literature also has a context and a history, and learning something about them can make all the difference in the amount and kind of pleasure and insight you derive from literature.",
+    "By reading and discussing different genres of literature, as well as works from varied times and places, you may well come to appreciate and even love works that you might never have discovered or chosen to read on your own or that you might have disliked or misunderstood if you had read them alone.",
+    "Most important, writing about works of literature and discussing them with teachers and other students will give you practice in analyzing literature in greater depth and in considering alternative views of both the works themselves and the situations and problems the works explore.",
+    "A clear understanding of the aims and designs of a story, poem, or play never falls like a bolt from the blue.",
+    "Instead, it emerges from a process that involves trying to put into words how and why this work had such an effect on you and, just as important, responding to what others say or write about it.",
+    "Literature itself is a vast, ongoing, ever-evolving conversation which we most fully participate when we enter into actual conversation with others."
+   ],
+   "kor": [
+    "문학 연구는 모든 학문 분야와 마찬가지로 고유한 용어와 기법을 발전시켜 왔다.",
+    "이 두 가지에 대한 어느 정도의 지식과 이해는 문학에 대한 개인적인 감상과 그것에 대한 다른 사람들과의 대화를 크게 향상시킬 수 있다.",
+    "또한, 문학에도 맥락과 역사가 있으며, 그것에 대한 무엇인가를 학습하는 것은 문학으로부터 여러분이 이끌어 내는 즐거움과 통찰의 양과 종류에 큰 차이를 만들 수 있다.",
+    "다양한 시대와 장소의 작품뿐만 아니라, 다양한 장르의 문학 작품을 읽고 토론함으로써, 스스로는 결코 발견하지 못했거나 읽으려고 선택하지 않았을, 또는 그것을 혼자 읽었더라면 싫어하거나 오해했을 수도 있는 작품을 감상하고 심지어 사랑하게 되는 것은 당연하다.",
+    "가장 중요한 것은, 문학 작품에 대해 글을 쓰고 그것을 선생님, 그리고 다른 학생들과 함께 토론하는 것은 문학을 더 심층적으로 분석하고 작품 자체와 작품이 탐구하는 상황 및 문제 둘 다에 대한 대안의 관점을 고려하는 연습을 하게 할 것이다.",
+    "이야기, 시, 또는 희곡의 목적과 디자인에 대한 명확한 이해는 결코 맑은 하늘에 번개처럼 떨어지는 것이 아니다.",
+    "그 대신, 이 작품이 여러분에게 어떻게 그리고 왜 그런 영향을 미쳤는지를 말로 표현하려고 노력하는 것과, 그에 못지않게 중요하게 다른 사람들의 말이나 글에 반응하는 것을 포함하는 과정에서 그것은 나타난다.",
+    "문학 그 자체는 우리가 다른 사람들과 실제 대화를 나눌 때 가장 온전히 참여하는, 방대하고 진행 중이며 끊임없이 진화하는 대화이다."
+   ],
+   "bank": [
+    [
+     "terminology",
+     "①",
+     "용어"
+    ],
+    [
+     "enhance",
+     "②",
+     "향상시키다"
+    ],
+    [
+     "derive",
+     "③",
+     "이끌어 내다"
+    ],
+    [
+     "alternative",
+     "⑤",
+     "대안의"
+    ],
+    [
+     "emerge",
+     "⑦",
+     "나타나다"
+    ],
+    [
+     "ever-evolving",
+     "⑧",
+     "끊임없이 진화하는"
+    ]
+   ],
+   "defs": [
+    [
+     "terminology",
+     "the special words used in a particular field of study"
+    ],
+    [
+     "enhance",
+     "to make something better or stronger"
+    ],
+    [
+     "derive",
+     "to get something from a particular source"
+    ],
+    [
+     "alternative",
+     "different from the one you already know or use"
+    ],
+    [
+     "emerge",
+     "to appear or come out little by little"
+    ],
+    [
+     "ever-evolving",
+     "always changing and developing"
+    ]
+   ],
+   "defOrder": [
+    4,
+    0,
+    5,
+    2,
+    1,
+    3
+   ],
+   "flow": [
+    [
+     "Its own tools",
+     "Literary study has developed its own terminology and techniques",
+     null
+    ],
+    [
+     "Gain 1",
+     "Some knowledge of both can (  ①  ) our appreciation and our talk",
+     "enhance"
+    ],
+    [
+     "Gain 2",
+     "Reading and discussing different (  ②  ) opens up new works",
+     "genres"
+    ],
+    [
+     "Most important",
+     "Writing and discussion give you (  ③  ) in deeper analysis",
+     "practice"
+    ],
+    [
+     "Conclusion",
+     "Literature is a talk we join fully through actual (  ④  )",
+     "conversation"
+    ]
+   ],
+   "flowBogi": "enhance · genres · practice · conversation · silence · summary",
+   "para": [
+    [
+     "② can greatly enhance our personal appreciation",
+     "Knowing them can ______ how much we enjoy books.",
+     "increase"
+    ],
+    [
+     "④ you might never have discovered or chosen to read",
+     "Such works would stay ______ if you read alone.",
+     "unknown"
+    ],
+    [
+     "⑤ practice in analyzing literature in greater depth",
+     "Talking about works trains you to read more ______.",
+     "deeply"
+    ],
+    [
+     "⑥ never falls like a bolt from the blue",
+     "Clear understanding never comes ______.",
+     "suddenly"
+    ],
+    [
+     "⑦ trying to put into words how and why this work",
+     "You must ______ the effect of the work in words.",
+     "explain"
+    ]
+   ],
+   "paraBogi": "increase · unknown · deeply · suddenly · explain · shrink · rarely · silent",
+   "check": [
+    {
+     "t": "title",
+     "q": "이 글의 제목으로 가장 알맞은 것은?",
+     "ch": [
+      "Why Every Discipline Invents Its Own Terms",
+      "Read Alone: The Purest Path to Insight",
+      "Understanding Grows in Conversation with Others",
+      "A Short History of Literary Genres",
+      "How Teachers Should Grade Literary Essays"
+     ],
+     "ans": 3
+    },
+    {
+     "t": "fact",
+     "q": "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+     "ch": [
+      "문학 연구도 다른 학문처럼 고유한 용어와 기법을 발전시켜 왔다.",
+      "문학의 맥락과 역사를 배우면 문학에서 얻는 즐거움과 통찰이 달라질 수 있다.",
+      "작품에 대해 글을 쓰고 토론하는 일은 더 깊이 분석하는 연습이 된다.",
+      "작품의 목적과 구성에 대한 명확한 이해는 어느 순간 갑자기 찾아온다.",
+      "문학은 다른 사람들과 실제로 대화할 때 가장 온전히 참여하게 되는 대화이다."
+     ],
+     "ans": 4
+    },
+    {
+     "t": "write",
+     "q": "필자가 문학을 <i>an ever-evolving conversation</i>이라고 부른 이유를 우리말 한 문장으로 써 보세요.",
+     "ans": "작품에 대한 이해가 그 작품이 나에게 미친 영향을 말로 옮기고 다른 사람의 말과 글에 반응하는 주고받음 속에서 계속 자라나기 때문이다."
+    }
+   ],
+   "fl": {
+    "model": {
+     "n": "③",
+     "toks": [
+      [
+       "Literature",
+       "s"
+      ],
+      [
+       "also has",
+       "v"
+      ],
+      [
+       "a context and a history,",
+       null
+      ],
+      [
+       "and",
+       "c"
+      ],
+      [
+       "learning something about them",
+       "s2"
+      ],
+      [
+       "can make",
+       "v2"
+      ],
+      [
+       "all the difference",
+       null
+      ],
+      [
+       "in the amount and kind of pleasure and insight",
+       "m"
+      ],
+      [
+       "you derive from literature.",
+       null
+      ]
+     ],
+     "ko": "문학에도 맥락과 역사가 있고, 그것을 학습하는 일이 문학에서 얻는 즐거움과 통찰에 큰 차이를 만든다."
+    },
+    "drill": [
+     {
+      "n": "①",
+      "en": "Literary study, like all disciplines, has developed its own terminology and its own techniques.",
+      "ans": "S Literary study · M like all disciplines · △V has developed · O its own terminology and its own techniques",
+      "ko": "문학 연구는 모든 학문 분야와 마찬가지로 고유한 용어와 기법을 발전시켜 왔다."
+     },
+     {
+      "n": "⑤",
+      "en": "Most important, writing about works of literature and discussing them with teachers and other students will give you practice in analyzing literature in greater depth and in considering alternative views of both the works themselves and the situations and problems the works explore.",
+      "ans": "S writing about works … and discussing them … · △V will give · O you practice · M in analyzing …, in considering alternative views …",
+      "ko": "문학 작품에 대해 글을 쓰고 토론하는 일은 더 깊이 분석하고 대안의 관점을 고려하는 연습을 하게 해 준다."
+     },
+     {
+      "n": "⑧",
+      "en": "Literature itself is a vast, ongoing, ever-evolving conversation which we most fully participate when we enter into actual conversation with others.",
+      "ans": "S Literature itself · △V is · C a vast, ongoing, ever-evolving conversation · [which] S′ we · △V′ participate · [when] S′ we · △V′ enter",
+      "ko": "문학 자체가 방대하고 끊임없이 진화하는 대화이며, 다른 사람들과 실제로 대화할 때 가장 온전히 참여한다."
+     }
+    ]
+   },
+   "syn": [
     {
      "n": "④",
-     "en": "So the question is not whether to practise, but how to make the long hours offstage serve the short hours onstage.",
-     "ans": "S the question · △V is · C not whether to practise, but how to make …",
-     "ko": "문제는 연습을 할지 말지가 아니라, 무대 밖의 긴 시간을 무대 위에 쓰는 방법이다."
-    },
-    {
-     "n": "⑪",
-     "en": "The bolts of an aircraft matter enormously, but once you sit in the cockpit your eyes look ahead, not down.",
-     "ans": "S The bolts · M of an aircraft · △V matter · [but / once] S′ you · △V′ sit · S your eyes · △V look",
-     "ko": "비행기의 볼트는 대단히 중요하지만, 조종석에 앉으면 눈은 앞을 본다."
-    }
-   ]
-  },
-  "syn": [
-   {
-    "n": "④",
-    "name": "사역동사 make + 목적어 + 동사원형",
-    "q": "…but how to «make the long hours offstage serve» the short hours onstage.",
-    "d": "make · let · have + 목적어 + <b>동사원형</b> → ‘(목적어)가 ~하게 하다’. to를 쓰지 않는다.",
-    "k": "무대 밖의 긴 시간이 무대 위의 짧은 시간에 도움이 되게 하는 방법"
-   },
-   {
-    "n": "⑧",
-    "name": "가정법 과거  wish + 과거형",
-    "q": "Do not wish that the piano «were» better tuned, or the hall fuller.",
-    "d": "현재 사실과 반대되는 바람은 wish 뒤에 <b>과거형</b>을 쓴다. be동사는 인칭과 관계없이 were를 쓴다.",
-    "k": "피아노 조율이 더 좋았더라면, 객석이 더 찼더라면 하고 바라지 마라."
-   }
-  ],
-  "synd": [
-   {
-    "u": "구문 1",
-    "en": "Good teachers make their students practise every day.",
-    "k": "좋은 선생님은 학생들이 매일 연습하게 만든다."
-   },
-   {
-    "u": "구문 2",
-    "en": "I wish the hall were quieter during the concert.",
-    "k": "연주회 동안 객석이 더 조용했으면 좋겠다."
-   },
-   {
-    "u": "구문 1 + 2",
-    "en": "Do not wish that the room were bigger; make the small stage serve your music.",
-    "k": "방이 더 컸으면 하고 바라지 마라. 그 작은 무대가 네 음악에 도움이 되게 만들어라."
-   }
-  ],
-  "why": [
-   [
-    "가장 어려운 곡이 무엇인지는 글에 나오지 않는다"
-   ],
-   [
-    "자전거는 연습의 필요성을 보이는 비유일 뿐 주제가 아니다"
-   ],
-   [
-    "피아노 조율법은 글의 소재가 아니다"
-   ],
-   [
-    "글은 무대에서는 완벽주의를 내려놓으라고 말한다 — 정반대다"
-   ],
-   [
-    "정답"
-   ]
-  ],
-  "src": [
-   [
-    "②③"
-   ],
-   [
-    "⑦"
-   ],
-   [
-    "⑩과 어긋남 — 엔지니어 비유는 필자가 새로 든 것이다"
-   ],
-   [
-    "⑪"
-   ],
-   [
-    "⑭"
-   ]
-  ],
-  "kb": {
-   "title": "무대 뒤에서 벌어지는 일",
-   "lead": "우리가 보지 못하는 시간에 관하여.",
-   "items": [
-    [
-     "피아노 한 대에 부품 1만 2천 개",
-     "스타인웨이 콘서트 그랜드 한 대는 1만 2천 개가 넘는 부품으로 이루어지고, 만드는 데 대략 1년이 걸린다. 글에 나오는 ‘너트와 볼트’는 과장이 아니다."
-    ],
-    [
-     "‘1만 시간’이라는 말의 원래 뜻",
-     "이 말의 출발점인 에릭손의 1993년 연구는 시간의 양보다 ‘의도적 연습(deliberate practice)’, 곧 못하는 부분을 골라 고치는 연습의 질을 강조했다. 시간만 채우는 연습은 그가 말한 연습이 아니다."
-    ],
-    [
-     "조종사의 체크리스트가 생긴 이유",
-     "1935년 시험 비행에서 최신 폭격기가 추락했다. 원인은 기계 결함이 아니라 잠금장치 하나를 푸는 절차를 빠뜨린 것이었다. 그 뒤 조종사 체크리스트가 표준이 되었다."
-    ]
-   ],
-   "ask": "내 공부에서 ‘너트와 볼트’에 해당하는 것은 무엇일까? 시험장에서 내려놓아야 할 것은?"
-  },
-  "wtype": [
-   "무관",
-   "지엽",
-   "무관",
-   "반대",
-   "정답"
-  ],
-  "stype": [
-   "일치",
-   "일치",
-   "혼동",
-   "일치",
-   "일치"
-  ]
- },
- {
-  "no": "04",
-  "key": "shelter",
-  "accent": "#C2557A",
-  "tint": "#FAE9EF",
-  "deep": "#8E3454",
-  "en": "The Safest Room in the Castle",
-  "ko": "성에서 가장 안전한 방",
-  "goal": "위험을 없앤 보호가 왜 보호가 아닌지 이야기의 근거로 설명할 수 있다.",
-  "fig": "Figure 4  유리 돔 안의 성 — 위험이 하나도 없는 세계.",
-  "tip": "먼저 생각해 보자. 누군가가 나를 위해 모든 위험을 미리 치워 준다면, 나는 무엇을 배우지 못하게 될까?",
-  "sent": [
-   "In the film Sleeping Beauty, a king and queen finally have a daughter, Aurora.",
-   "They plan a great celebration and welcome everyone who loves her — everyone except Maleficent.",
-   "She comes anyway and curses the child: on her sixteenth birthday Aurora will prick her finger on a spinning wheel and die.",
-   "A good fairy softens the curse into sleep, which love can undo.",
-   "The frightened parents burn every spinning wheel in the kingdom and hide their daughter deep in a forest.",
-   "Notice what the story is really describing.",
-   "The two rulers are building a world around Aurora with nothing dangerous in it.",
-   "It looks like protection, but it is not.",
-   "Sixteen years without risk leave her innocent, untested, and weak.",
-   "When she is finally brought back to the castle, she has no way to face what is waiting there.",
-   "A door opens, a spinning wheel appears, and she falls asleep.",
-   "Only after the curse is broken does she begin to grow.",
-   "At the end she is no longer a girl kept safe by others.",
-   "She is someone ready to take charge of her own life."
-  ],
-  "kor": [
-   "영화 ‘잠자는 숲속의 공주’에서 왕과 왕비는 마침내 딸 오로라를 얻는다.",
-   "그들은 성대한 잔치를 계획하고 그녀를 사랑하는 모든 사람을 맞이한다 — 말레피센트만 빼고.",
-   "그녀는 그래도 찾아와 아이에게 저주를 내린다. 열여섯 번째 생일에 오로라가 물레에 손가락을 찔려 죽으리라는 것이다.",
-   "착한 요정이 그 저주를 잠으로 누그러뜨리고, 그 잠은 사랑으로 풀 수 있다.",
-   "겁에 질린 부모는 왕국의 물레를 모두 태우고 딸을 숲 깊은 곳에 숨긴다.",
-   "이 이야기가 실제로 무엇을 그리고 있는지 눈여겨보라.",
-   "두 통치자는 오로라 주위에 위험한 것이 하나도 없는 세계를 세우고 있다.",
-   "그것은 보호처럼 보이지만 보호가 아니다.",
-   "위험이 없는 열여섯 해는 그녀를 순진하고, 시험받지 못하고, 나약한 사람으로 남겨 둔다.",
-   "마침내 성으로 돌아왔을 때, 그녀에게는 그곳에서 기다리는 것을 감당할 방법이 없다.",
-   "문이 열리고, 물레가 나타나고, 그녀는 잠든다.",
-   "저주가 풀린 뒤에야 그녀는 비로소 성장하기 시작한다.",
-   "마지막에 그녀는 더 이상 남이 안전하게 지켜 주는 소녀가 아니다.",
-   "그녀는 자기 삶을 스스로 책임질 준비가 된 사람이다."
-  ],
-  "bank": [
-   [
-    "curse",
-    "③",
-    "저주를 내리다"
-   ],
-   [
-    "undo",
-    "④",
-    "(효력을) 되돌리다"
-   ],
-   [
-    "frightened",
-    "⑤",
-    "겁에 질린"
-   ],
-   [
-    "untested",
-    "⑨",
-    "시험받아 본 적 없는"
-   ],
-   [
-    "face",
-    "⑩",
-    "감당하다, 맞서다"
-   ],
-   [
-    "take charge of",
-    "⑭",
-    "~을 책임지다"
-   ]
-  ],
-  "defs": [
-   [
-    "curse",
-    "to use magic words to bring bad luck to someone"
-   ],
-   [
-    "undo",
-    "to cancel the effect of something"
-   ],
-   [
-    "frightened",
-    "feeling afraid"
-   ],
-   [
-    "untested",
-    "never having been put in a difficult situation"
-   ],
-   [
-    "face",
-    "to deal with something difficult"
-   ],
-   [
-    "take charge of",
-    "to take control and responsibility for something"
-   ]
-  ],
-  "defOrder": [
-   5,
-   2,
-   0,
-   4,
-   1,
-   3
-  ],
-  "flow": [
-   [
-    "Beginning",
-    "Aurora is born and Maleficent lays a (  ①  ) on her",
-    "curse"
-   ],
-   [
-    "The parents act",
-    "They burn every spinning wheel and (  ②  ) her in a forest",
-    "hide"
-   ],
-   [
-    "What it means",
-    "A world with no danger looks like protection, but (  ③  )",
-    "it is not"
-   ],
-   [
-    "Result",
-    "Sixteen years without risk leave her (  ④  )",
-    "weak"
-   ],
-   [
-    "Ending",
-    "After the curse is broken she grows into someone ready to take charge",
-    null
-   ]
-  ],
-  "flowBogi": "curse · hide · it is not · weak · celebration · strong",
-  "para": [
-   [
-    "⑧ It looks like protection, but it is not.",
-    "Removing every danger only ______ to keep her safe.",
-    "seems"
-   ],
-   [
-    "⑨ leave her innocent, untested, and weak",
-    "She grows up without ever being ______.",
-    "challenged"
-   ],
-   [
-    "⑭ someone ready to take charge of her own life",
-    "She can now ______ her own decisions.",
-    "make"
-   ],
-   [
-    "⑤ The parents burn every spinning wheel they find.",
-    "Out of ______, the parents removed every risk.",
-    "fear"
-   ],
-   [
-    "⑬ she is no longer a girl kept safe by others",
-    "She stops being someone ______ by other people.",
-    "guarded"
-   ]
-  ],
-  "paraBogi": "seems · challenged · make · fear · guarded · protected · avoid · follow",
-  "check": [
-   {
-    "t": "title",
-    "q": "이 글의 제목으로 가장 알맞은 것은?",
-    "ch": [
-     "The Magic That Saved a Princess",
-     "A World Without Risk Makes Us Weak",
-     "How to Break a Fairy's Curse",
-     "Why Parents Should Plan Big Celebrations",
-     "The History of Spinning Wheels"
-    ],
-    "ans": 2
-   },
-   {
-    "t": "fact",
-    "q": "이 글의 내용과 일치하지 <b>않는</b> 것은?",
-    "ch": [
-     "말레피센트는 초대받지 못했지만 찾아왔다.",
-     "착한 요정은 저주를 잠으로 누그러뜨렸다.",
-     "부모는 왕국의 물레를 모두 태웠다.",
-     "오로라는 성으로 돌아온 뒤에도 아무 일도 겪지 않았다.",
-     "오로라는 저주가 풀린 뒤에 성장하기 시작한다."
-    ],
-    "ans": 4
-   },
-   {
-    "t": "write",
-    "q": "필자가 왕과 왕비의 행동을 ‘보호가 아니다’라고 말한 이유를 우리말 한 문장으로 써 보세요.",
-    "ans": "위험을 모두 없앤 세계에서 자란 오로라가 순진하고 나약해져 실제 위험을 감당할 수 없게 되었기 때문이다."
-   }
-  ],
-  "fl": {
-   "model": {
-    "n": "⑩",
-    "toks": [
-     [
-      "When",
-      "c"
-     ],
-     [
-      "she",
-      "s2"
-     ],
-     [
-      "is finally brought back",
-      "v2"
-     ],
-     [
-      "to the castle,",
-      "m"
-     ],
-     [
-      "she",
-      "s"
-     ],
-     [
-      "has",
-      "v"
-     ],
-     [
-      "no way to face what is waiting there.",
-      null
-     ]
-    ],
-    "ko": "마침내 성으로 돌아왔을 때, 그녀에게는 그곳에서 기다리는 것을 감당할 방법이 없다."
-   },
-   "drill": [
-    {
-     "n": "②",
-     "en": "They plan a great celebration and welcome everyone who loves her — everyone except Maleficent.",
-     "ans": "S They · △V plan / welcome · O a great celebration / everyone · M who loves her, except Maleficent",
-     "ko": "그들은 성대한 잔치를 계획하고 그녀를 사랑하는 모든 사람을 맞이한다 — 말레피센트만 빼고."
+     "name": "가정법 과거완료  if + had p.p. / might have p.p.",
+     "q": "works that you «might have disliked or misunderstood if you had read» them alone.",
+     "d": "과거에 실제로는 하지 않은 일을 상상한다. if절에 <b>had + 과거분사</b>, 주절에 <b>might/would have + 과거분사</b>를 써서 ‘~했더라면 …했을 것이다’를 나타낸다.",
+     "k": "혼자 읽었더라면 싫어하거나 오해했을 수도 있는 작품들"
     },
     {
      "n": "⑦",
-     "en": "The two rulers are building a world around Aurora with nothing dangerous in it.",
-     "ans": "S The two rulers · △V are building · O a world · M around Aurora, with nothing dangerous in it",
-     "ko": "두 통치자는 오로라 주위에 위험한 것이 하나도 없는 세계를 세우고 있다."
+     "name": "선행사를 품은 관계대명사 what",
+     "q": "…, just as important, «responding to what others say or write about it».",
+     "d": "<b>what</b> = the thing(s) which. 앞에 선행사를 두지 않고 그 자체가 명사절이 되어, 여기서는 전치사 <b>to</b>의 목적어 노릇을 한다.",
+     "k": "그에 못지않게 중요하게, 다른 사람들이 그것에 대해 말하거나 쓰는 것에 반응하는 것"
+    }
+   ],
+   "synd": [
+    {
+     "u": "구문 1",
+     "en": "If I had skipped the discussion, I might have missed the point of the poem.",
+     "k": "내가 그 토론을 건너뛰었더라면, 나는 그 시의 요점을 놓쳤을지도 모른다."
     },
     {
-     "n": "⑨",
-     "en": "Sixteen years without risk leave her innocent, untested, and weak.",
-     "ans": "S Sixteen years · M without risk · △V leave · O her · C innocent, untested, and weak",
-     "ko": "위험이 없는 열여섯 해는 그녀를 순진하고 시험받지 못하고 나약하게 남겨 둔다."
+     "u": "구문 2",
+     "en": "She wrote down what the other students said about the ending.",
+     "k": "그녀는 다른 학생들이 결말에 대해 한 말을 받아 적었다."
+    },
+    {
+     "u": "구문 1 + 2",
+     "en": "If I had ignored what others said about the play, I might have kept my first, narrow reading.",
+     "k": "다른 사람들이 그 희곡에 대해 한 말을 무시했더라면, 나는 처음의 좁은 해석에 머물렀을지도 모른다."
     }
-   ]
-  },
-  "syn": [
-   {
-    "n": "⑨",
-    "name": "leave + 목적어 + 형용사 (5형식)",
-    "q": "Sixteen years without risk «leave her innocent, untested, and weak».",
-    "d": "leave · make · keep + 목적어 + <b>형용사</b> → ‘(목적어)를 ~한 상태로 두다’. 형용사가 목적어의 상태를 설명한다.",
-    "k": "위험이 없는 열여섯 해는 그녀를 순진하고 시험받지 못하고 나약한 채로 남겨 둔다."
-   },
-   {
-    "n": "⑫",
-    "name": "Only + 부사구 문두 도치",
-    "q": "«Only after the curse is broken does she begin» to grow.",
-    "d": "Only로 시작하는 부사(구·절)가 문장 앞에 오면 주어와 (조)동사가 <b>뒤바뀐다</b>. 일반동사는 do/does/did를 앞세운다.",
-    "k": "저주가 풀린 뒤에야 비로소 그녀는 성장하기 시작한다."
-   }
-  ],
-  "synd": [
-   {
-    "u": "구문 1",
-    "en": "Too much help leaves a child helpless.",
-    "k": "지나친 도움은 아이를 무력한 상태로 남겨 둔다."
-   },
-   {
-    "u": "구문 2",
-    "en": "Only after the door opened did she understand the danger.",
-    "k": "문이 열린 뒤에야 비로소 그녀는 그 위험을 이해했다."
-   },
-   {
-    "u": "구문 1 + 2",
-    "en": "Only after the curse was broken did those sixteen years leave her wiser.",
-    "k": "저주가 풀린 뒤에야 비로소 그 열여섯 해가 그녀를 더 지혜롭게 만들었다."
-   }
-  ],
-  "why": [
-   [
-    "마법은 사건일 뿐, 글이 말하려는 바가 아니다"
    ],
-   [
-    "정답"
-   ],
-   [
-    "저주를 푸는 방법은 글의 관심사가 아니다"
-   ],
-   [
-    "잔치는 이야기의 도입일 뿐이다"
-   ],
-   [
-    "물레의 역사는 글에 나오지 않는다"
-   ]
-  ],
-  "src": [
-   [
-    "②③"
-   ],
-   [
-    "④"
-   ],
-   [
-    "⑤"
-   ],
-   [
-    "⑨⑩과 어긋남 — 성으로 돌아온 뒤 저주가 실현된다"
-   ],
-   [
-    "⑫⑬⑭"
-   ]
-  ],
-  "kb": {
-   "title": "‘잠자는 공주’의 뒷이야기",
-   "lead": "이야기는 시대마다 다시 쓰인다.",
-   "items": [
+   "why": [
     [
-     "원래는 100년을 잤다",
-     "1697년 샤를 페로가 정리한 판본에서 공주는 100년 동안 잠들고, 1812년 그림 형제 판본에서는 가시나무 울타리가 성을 뒤덮는다. 디즈니가 영화로 만든 것은 1959년이다."
+     "문장 ①~②의 용어 이야기만 다루는 지엽적인 제목이다"
     ],
     [
-     "‘헬리콥터 부모’라는 말의 출발",
-     "1969년에 나온 하임 기너트의 책에서 한 십 대가 “엄마는 헬리콥터처럼 내 위를 맴돈다”고 말한 대목이 이 표현의 출발점으로 꼽힌다. 50년이 지나도 여전히 쓰이는 말이다."
+     "글은 혼자 읽기만으로는 이해가 자라지 않는다고 말한다 — 정반대다"
     ],
     [
-     "위험이 없는 놀이터의 역설",
-     "모든 위험 요소를 없앤 놀이터보다 적당한 도전이 있는 놀이터에서 아이들이 스스로 위험을 가늠하는 법을 배운다는 연구가 이어지고 있다. 안전과 성장은 늘 같은 방향이 아니다."
+     "정답"
+    ],
+    [
+     "장르의 역사는 글에 나오지 않는다"
+    ],
+    [
+     "글을 평가하는 방법은 글에서 다루지 않는다"
     ]
    ],
-   "ask": "나를 위해 누군가가 미리 치워 준 ‘물레’가 있었다면, 그것은 무엇이었을까?"
-  },
-  "wtype": [
-   "지엽",
-   "정답",
-   "무관",
-   "배경",
-   "무관"
-  ],
-  "stype": [
-   "일치",
-   "일치",
-   "일치",
-   "반대",
-   "일치"
-  ]
- },
- {
-  "no": "05",
-  "key": "talk",
-  "accent": "#2F7CB8",
-  "tint": "#E4EFF8",
-  "deep": "#1D5686",
-  "en": "Reading Is a Conversation",
-  "ko": "읽기는 대화다",
-  "goal": "이해가 어떻게 ‘과정’에서 자라나는지 근거를 들어 설명할 수 있다.",
-  "fig": "Figure 5  한 권의 책을 사이에 두고 오가는 말들.",
-  "tip": "먼저 생각해 보자. 같은 책을 읽고도 친구와 이야기한 뒤에 생각이 달라진 적이 있는가?",
-  "sent": [
-   "Every field of study builds its own words and its own methods, and literature is no exception.",
-   "Knowing a few of them changes what you get from a book.",
-   "Literature also has a context and a history.",
-   "Learning a little about them can change how much pleasure and insight you take from a story.",
-   "Reading widely helps too.",
-   "When you read different kinds of writing, from different times and places, you often come to love books you would never have chosen alone.",
-   "You may even enjoy books you would have misunderstood if you had read them by yourself.",
-   "But the most important step comes after the reading.",
-   "Writing about a work, and talking about it with a teacher and with other students, forces you to look more closely and to consider views that are not your own.",
-   "A clear understanding of what a story is doing does not arrive like lightning from a blue sky.",
-   "It grows out of a process.",
-   "You try to put into words why the book affected you, and then you answer what others say about it.",
-   "Literature itself is one long conversation, and you join it fully only when you start talking."
-  ],
-  "kor": [
-   "모든 학문 분야는 저마다의 용어와 방법을 만들어 내며, 문학도 예외가 아니다.",
-   "그중 몇 가지를 아는 것만으로도 책에서 얻는 것이 달라진다.",
-   "문학에는 또한 맥락과 역사가 있다.",
-   "그것에 대해 조금 배우는 일은 한 편의 이야기에서 얻는 즐거움과 통찰의 크기를 바꿔 놓을 수 있다.",
-   "널리 읽는 것도 도움이 된다.",
-   "서로 다른 시대와 장소의, 서로 다른 종류의 글을 읽다 보면, 혼자서는 결코 고르지 않았을 책을 사랑하게 되는 일이 자주 있다.",
-   "혼자 읽었더라면 오해했을 책을 즐기게 될 수도 있다.",
-   "그러나 가장 중요한 단계는 읽기가 끝난 뒤에 온다.",
-   "작품에 대해 글을 쓰고 선생님이나 다른 학생들과 그것에 대해 이야기하는 일은, 더 가까이 들여다보게 하고 자기 것이 아닌 관점을 고려하게 만든다.",
-   "한 편의 이야기가 무엇을 하고 있는지에 대한 분명한 이해는 맑은 하늘의 번개처럼 오지 않는다.",
-   "그것은 하나의 과정에서 자라난다.",
-   "그 책이 왜 나를 움직였는지 말로 옮겨 보고, 그다음 다른 사람들이 그것에 대해 하는 말에 답한다.",
-   "문학 그 자체가 하나의 긴 대화이며, 우리는 말을 하기 시작할 때에야 비로소 그 대화에 온전히 참여한다."
-  ],
-  "bank": [
-   [
-    "field",
-    "①",
-    "(학문) 분야"
-   ],
-   [
-    "exception",
-    "①",
-    "예외"
-   ],
-   [
-    "insight",
-    "④",
-    "통찰"
-   ],
-   [
-    "consider",
-    "⑨",
-    "고려하다"
-   ],
-   [
-    "process",
-    "⑪",
-    "과정"
-   ],
-   [
-    "affect",
-    "⑫",
-    "영향을 미치다"
-   ]
-  ],
-  "defs": [
-   [
-    "field",
-    "an area of study or work"
-   ],
-   [
-    "exception",
-    "a case that does not follow the usual rule"
-   ],
-   [
-    "insight",
-    "a clear and deep understanding of something"
-   ],
-   [
-    "consider",
-    "to think about something carefully"
-   ],
-   [
-    "process",
-    "a series of steps that lead to a result"
-   ],
-   [
-    "affect",
-    "to make a change in someone or something"
-   ]
-  ],
-  "defOrder": [
-   1,
-   3,
-   5,
-   0,
-   4,
-   2
-  ],
-  "flow": [
-   [
-    "Opening",
-    "Every field builds its own words and methods; literature is no exception",
-    null
-   ],
-   [
-    "Help 1",
-    "Learning the (  ①  ) and history of literature changes what you get",
-    "context"
-   ],
-   [
-    "Help 2",
-    "Reading widely brings you books you would never have (  ②  ) alone",
-    "chosen"
-   ],
-   [
-    "The key step",
-    "After reading, you write about a work and (  ③  ) about it",
-    "talk"
-   ],
-   [
-    "Conclusion",
-    "Understanding grows in a process — literature is one long (  ④  )",
-    "conversation"
-   ]
-  ],
-  "flowBogi": "context · chosen · talk · conversation · lightning · method",
-  "para": [
-   [
-    "⑩ does not arrive like lightning from a blue sky",
-    "Understanding is never ______; it takes time.",
-    "sudden"
-   ],
-   [
-    "⑨ forces you to look more closely",
-    "Writing and talking make you read more ______.",
-    "carefully"
-   ],
-   [
-    "⑬ you join it fully only when you start talking",
-    "You become a full ______ only by speaking.",
-    "participant"
-   ],
-   [
-    "⑥ you come to love books you would not have chosen",
-    "Reading together widens the ______ of books.",
-    "range"
-   ],
-   [
-    "⑪ It grows out of a process.",
-    "Understanding is built ______, not given.",
-    "gradually"
-   ]
-  ],
-  "paraBogi": "sudden · carefully · participant · range · gradually · silent · quickly · reader",
-  "check": [
-   {
-    "t": "title",
-    "q": "이 글의 제목으로 가장 알맞은 것은?",
-    "ch": [
-     "Books You Should Read Before You Graduate",
-     "Why Literature Needs Difficult Words",
-     "Reading Alone Is Always Best",
-     "Understanding Grows When You Talk",
-     "How to Write a Perfect Book Report"
+   "src": [
+    [
+     "①"
     ],
-    "ans": 4
-   },
-   {
-    "t": "fact",
-    "q": "이 글의 내용과 일치하지 <b>않는</b> 것은?",
-    "ch": [
-     "학문 분야마다 고유한 용어와 방법이 있다.",
-     "널리 읽으면 혼자서는 고르지 않았을 책을 좋아하게 되기도 한다.",
-     "가장 중요한 단계는 읽기가 시작되기 전에 온다.",
-     "분명한 이해는 번개처럼 갑자기 오지 않는다.",
-     "말을 하기 시작할 때 대화에 온전히 참여하게 된다."
+    [
+     "③"
     ],
-    "ans": 3
-   },
-   {
-    "t": "write",
-    "q": "필자가 문학을 ‘하나의 긴 대화’라고 부른 이유를 우리말 한 문장으로 써 보세요.",
-    "ans": "이해가 글을 쓰고 다른 사람의 말에 답하는 주고받음의 과정에서 자라나기 때문이다."
-   }
-  ],
-  "fl": {
-   "model": {
-    "n": "⑬",
-    "toks": [
+    [
+     "⑤"
+    ],
+    [
+     "⑥과 어긋남 — 명확한 이해는 맑은 하늘의 번개처럼 갑자기 떨어지지 않는다"
+    ],
+    [
+     "⑧"
+    ]
+   ],
+   "kb": {
+    "title": "함께 말하며 자란 이해",
+    "lead": "문학은 어떻게 대화가 되었을까?",
+    "items": [
      [
-      "Literature itself",
-      "s"
+      "대화로 쓰인 철학",
+      "플라톤이 남긴 저작은 거의 모두 ‘대화편(dialogue)’ 형식이다. 소크라테스와 상대가 묻고 답하는 동안 논의가 앞으로 나아가고, 결론이 한 사람의 선언으로 주어지지 않는다. 이해가 주고받음에서 자란다는 생각의 가장 오래된 본보기다."
      ],
      [
-      "is",
-      "v"
+      "용어 하나가 2,300년을 건너오다",
+      "비극이 불러일으키는 감정의 정화를 뜻하는 ‘카타르시스(catharsis)’는 아리스토텔레스가 『시학(Poetics)』에서 비극을 정의하며 쓴 말이다. 기원전 4세기의 용어가 오늘날 문학 수업에서 그대로 쓰인다."
      ],
      [
-      "one long conversation,",
-      null
-     ],
-     [
-      "and",
-      "c"
-     ],
-     [
-      "you",
-      "s2"
-     ],
-     [
-      "join",
-      "v2"
-     ],
-     [
-      "it",
-      null
-     ],
-     [
-      "fully",
-      null
-     ],
-     [
-      "only when you start talking.",
-      "m"
+      "방송으로 옮겨 간 독서 모임",
+      "1996년 미국에서 시작된 오프라 윈프리의 북클럽은 한 권을 골라 방송에서 함께 읽고 이야기했다. 선정된 책들이 잇따라 베스트셀러 목록에 오르면서, 함께 읽고 말하는 일이 판매 기록까지 바꾼 사례로 남았다."
      ]
     ],
-    "ko": "문학 그 자체가 하나의 긴 대화이며, 우리는 말을 하기 시작할 때에야 비로소 온전히 참여한다."
+    "ask": "여러분이 읽은 책 가운데, 다른 사람의 한마디 덕분에 다르게 보이기 시작한 장면이 있는가?"
    },
-   "drill": [
-    {
-     "n": "⑥",
-     "en": "When you read different kinds of writing, from different times and places, you often come to love books you would never have chosen alone.",
-     "ans": "[When] S′ you · △V′ read · S you · △V come to love · O books · M you would never have chosen alone",
-     "ko": "서로 다른 시대와 장소의 글을 읽다 보면, 혼자서는 고르지 않았을 책을 사랑하게 된다."
-    },
-    {
-     "n": "⑨",
-     "en": "Writing about a work, and talking about it with a teacher and with other students, forces you to look more closely and to consider views that are not your own.",
-     "ans": "S Writing … and talking … · △V forces · O you · M to look more closely, to consider views that are not your own",
-     "ko": "작품에 대해 쓰고 다른 학생들과 이야기하는 일은 더 가까이 보고 다른 관점을 고려하게 만든다."
-    },
-    {
-     "n": "⑩",
-     "en": "A clear understanding of what a story is doing does not arrive like lightning from a blue sky.",
-     "ans": "S A clear understanding · M of what a story is doing · △V does not arrive · M like lightning from a blue sky",
-     "ko": "이야기가 무엇을 하는지에 대한 분명한 이해는 맑은 하늘의 번개처럼 오지 않는다."
-    }
+   "wtype": [
+    "지엽",
+    "반대",
+    "정답",
+    "무관",
+    "무관"
+   ],
+   "stype": [
+    "일치",
+    "일치",
+    "일치",
+    "반대",
+    "일치"
    ]
-  },
-  "syn": [
-   {
-    "n": "⑦",
-    "name": "가정법 과거완료  if + had p.p. / would have p.p.",
-    "q": "You may even enjoy books you «would have misunderstood if you had read» them by yourself.",
-    "d": "과거 사실과 반대되는 상상. if절에 <b>had + 과거분사</b>, 주절에 <b>would/might have + 과거분사</b>를 쓴다.",
-    "k": "혼자 읽었더라면 오해했을 책을 즐기게 될 수도 있다."
-   },
-   {
-    "n": "⑨",
-    "name": "force + 목적어 + to부정사",
-    "q": "Writing about a work … «forces you to look» more closely and «to consider» views that are not your own.",
-    "d": "force · ask · tell · allow + 목적어 + <b>to부정사</b> → ‘(목적어)가 ~하도록 만들다’. to부정사가 둘 이상이면 and로 잇는다.",
-    "k": "작품에 대해 글을 쓰는 일은 더 가까이 들여다보고 자기 것이 아닌 관점을 고려하게 만든다."
-   }
-  ],
-  "synd": [
-   {
-    "u": "구문 1",
-    "en": "If I had read that novel alone, I would have missed the joke.",
-    "k": "내가 그 소설을 혼자 읽었더라면, 나는 그 농담을 놓쳤을 것이다."
-   },
-   {
-    "u": "구문 2",
-    "en": "A good question forces us to read the page again.",
-    "k": "좋은 질문은 우리가 그 쪽을 다시 읽도록 만든다."
-   },
-   {
-    "u": "구문 1 + 2",
-    "en": "The class forced me to explain my view, and I would have kept it to myself if no one had asked.",
-    "k": "그 수업은 내가 내 관점을 설명하도록 만들었고, 아무도 묻지 않았더라면 나는 그것을 혼자 간직했을 것이다."
-   }
-  ],
-  "why": [
-   [
-    "읽어야 할 책 목록은 글에 나오지 않는다"
-   ],
-   [
-    "어려운 용어가 필요하다는 주장은 하지 않는다"
-   ],
-   [
-    "글은 혼자 읽기만으로는 부족하다고 말한다 — 정반대다"
-   ],
-   [
-    "정답"
-   ],
-   [
-    "독후감 쓰는 요령은 글의 주제가 아니다"
-   ]
-  ],
-  "src": [
-   [
-    "①"
-   ],
-   [
-    "⑥"
-   ],
-   [
-    "⑧과 어긋남 — 가장 중요한 단계는 읽기가 끝난 뒤에 온다"
-   ],
-   [
-    "⑩"
-   ],
-   [
-    "⑬"
-   ]
-  ],
-  "kb": {
-   "title": "함께 읽으면 달라지는 것",
-   "lead": "읽기는 언제부터 ‘대화’였을까.",
-   "items": [
-    [
-     "살롱에서 시작된 문학 토론",
-     "17~18세기 파리의 살롱에서는 작품을 소리 내어 읽고 그 자리에서 토론했다. 모임을 열고 이끈 사람은 대개 여성이었고, 이 자리에서 오간 말들이 그대로 다음 작품이 되기도 했다."
-    ],
-    [
-     "책 한 권을 베스트셀러로 만든 북클럽",
-     "1996년 시작된 한 방송 북클럽이 책을 고르면 판매량이 수십 배로 뛰었다. 사람들은 책이 좋아서가 아니라 ‘함께 이야기할 사람이 생겨서’ 그 책을 샀다."
-    ],
-    [
-     "소리 내어 생각하며 읽기",
-     "읽으면서 머릿속 생각을 말로 꺼내는 방법(think-aloud)은 독해 연구에서 오래 검증된 훈련이다. 혼자 읽을 때도 스스로에게 설명해 보면 이해가 달라진다."
-    ]
-   ],
-   "ask": "최근에 누군가와 이야기한 뒤 생각이 바뀐 책이나 영화가 있는가?"
-  },
-  "wtype": [
-   "무관",
-   "무관",
-   "반대",
-   "정답",
-   "지엽"
-  ],
-  "stype": [
-   "일치",
-   "일치",
-   "시점",
-   "일치",
-   "일치"
-  ]
- }
-]
+  }
+ ]
 };
