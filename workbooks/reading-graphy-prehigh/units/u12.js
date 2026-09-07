@@ -1,684 +1,725 @@
-/* Unit 12 · Field 12 — Current Affairs 시사·현안 */
+/* Unit 12 · Current Affairs — 원문 Theme 56–60 */
+const R = require("../src/orig/all.json");
+const T = n => R[n - 1];
+
 module.exports = {
  no: 12,
  field: "Current Affairs",
- ko: "시사·현안",
- tagline: "지금 벌어지는 일 — 날씨·치유·소속·일·필요",
- next: { en: "다시 처음으로", ko: "열두 분야를 한 바퀴 돌았습니다", words: "복습 · 재도전" },
+ ko: "시사",
+ tagline: "지금 벌어지는 일 — 날씨·의료·소속·일·필요",
  lessons: [
+
+/* ───────────────────────────── 56 ───────────────────────────── */
 {
- no: "56", key: "blizzard",
- accent: "#3F6491", tint: "#E7EDF5", deep: "#274A72",
+ no: "56", key: "blizzard", accent: "#3F6491", tint: "#E7EDF5", deep: "#274A72",
  en: "How Can Climate Change Affect Blizzards?",
- ko: "더워지는데 왜 눈이 많아질까",
- goal: "온난화와 폭설이 함께 나타나는 이유를 설명할 수 있다.",
- fig: "Figure 1  줄어드는 것과 세지는 것.",
- tip: "먼저 생각해 보자. 눈이 많이 온 겨울은 지구가 식고 있다는 뜻일까?",
- sent: [
-  "A heavy snowstorm is often used as evidence against a warming world.",
-  "The argument sounds reasonable and is wrong for an interesting reason.",
-  "Warm air holds more water vapour than cold air does.",
-  "Every degree of warming raises that capacity by about seven percent.",
-  "Snow requires two conditions: moisture in the air and a temperature below freezing.",
-  "Warming removes the second condition slowly and adds to the first immediately.",
-  "The result is fewer snowy days but heavier snow on the days that remain.",
-  "A town may lose two weeks of winter and still break its record for one storm.",
-  "Coastal storms have loaded more water into the same cold air over recent decades.",
-  "A second argument concerns the ring of wind circling the Arctic.",
-  "Some researchers link a warming Arctic to a weaker, wavier polar vortex.",
-  "A wavy vortex lets cold air spill much farther south than usual.",
-  "This second claim is debated and the evidence is not settled.",
-  "The first one is simple physics and requires no debate at all.",
-  "A cold week is weather, and the capacity of air is climate."
+ ko: "북극이 데워지면 겨울이 매서워진다",
+ goal: "북극 해빙 감소가 제트 기류를 거쳐 한파로 이어지는 사슬을 설명할 수 있다.",
+ fig: "Figure 1  기온 차가 줄면 제트 기류가 굽이친다.",
+ tip: "먼저 생각해 보자. 지구가 더워지는데 왜 더 매서운 겨울이 올까?",
+ sent: T(56).sent, kor: T(56).kor,
+ bank: [
+  ["extent", "①", "범위"],
+  ["feedback loop", "②", "되먹임 고리"],
+  ["amplification", "⑤", "증폭"],
+  ["jet stream", "⑧", "제트 기류"],
+  ["troposphere", "⑨", "대류권"],
+  ["persistent", "⑫", "오래 이어지는"]
  ],
- kor: [
-  "폭설은 지구가 더워지고 있다는 주장에 반하는 증거로 자주 쓰인다.",
-  "그 논리는 그럴듯하게 들리지만, 흥미로운 이유로 틀렸다.",
-  "따뜻한 공기는 찬 공기보다 더 많은 수증기를 머금는다.",
-  "기온이 1도 오를 때마다 그 용량은 약 7퍼센트씩 늘어난다.",
-  "눈에는 두 조건이 필요하다. 공기 중의 수분과 어는점 아래의 기온이다.",
-  "온난화는 두 번째 조건을 천천히 없애고, 첫 번째 조건은 곧바로 키운다.",
-  "그 결과 눈 오는 날은 줄지만, 남은 날에는 더 많은 눈이 내린다.",
-  "어떤 도시는 겨울을 2주 잃고도 한 번의 폭설로 기록을 깰 수 있다.",
-  "해안의 폭풍은 최근 수십 년 동안 같은 찬 공기에 더 많은 물을 실어 왔다.",
-  "두 번째 논점은 북극을 둘러싸고 도는 바람의 고리에 관한 것이다.",
-  "일부 연구자들은 북극의 온난화를 약하고 굽이진 극 소용돌이와 연결한다.",
-  "굽이진 소용돌이는 찬 공기가 평소보다 훨씬 남쪽까지 흘러내리게 한다.",
-  "이 두 번째 주장은 논쟁 중이고 증거는 아직 확정되지 않았다.",
-  "첫 번째 것은 단순한 물리학이고 논쟁할 여지가 전혀 없다.",
-  "추운 한 주는 날씨이고, 공기의 용량은 기후다."
+ defs: [
+  ["extent", "how far something reaches or spreads"],
+  ["feedback loop", "a chain in which a result feeds its own cause"],
+  ["amplification", "the making of something larger or stronger"],
+  ["jet stream", "a fast river of air high in the sky"],
+  ["troposphere", "the lowest layer of the atmosphere"],
+  ["persistent", "going on for a long time without stopping"]
  ],
- bank: [["evidence","①","증거"],["vapour","③","수증기"],["capacity","④","용량"],
-        ["freezing","⑤","어는점"],["vortex","⑪","소용돌이"],["debated","⑬","논쟁 중인"]],
- defs: [["evidence","facts used to support a claim"],
-        ["vapour","a gas formed from a liquid"],
-        ["capacity","the amount something can hold"],
-        ["freezing","the point at which water turns to ice"],
-        ["vortex","a mass of spinning air or water"],
-        ["debated","argued about by different sides"]],
- defOrder: [3,0,5,2,4,1],
+ defOrder: [3, 5, 1, 0, 4, 2],
  flow: [
-  ["The claim","A big snowstorm disproves a warming world",null],
-  ["Physics 1","Warm air holds more (  ①  )","vapour"],
-  ["Physics 2","Snow still needs a temperature below (  ②  )","freezing"],
-  ["The result","Fewer snowy days, but (  ③  ) snow on them","heavier"],
-  ["The caution","The polar vortex link is still (  ④  )","debated"]
+  ["The start", "Arctic sea ice has been declining since the 1970s", null],
+  ["The loop", "Dark water absorbs the sunlight the (  ①  ) would have reflected", "ice"],
+  ["The result", "The Arctic warms about (  ②  ) as fast as the rest of the world", "twice"],
+  ["The jet stream", "A smaller temperature difference (  ③  ) the jet stream", "slows"],
+  ["The winter", "Its dips pull (  ④  ) air down from the north", "Arctic"]
  ],
- flowBogi: "vapour · freezing · heavier · debated · settled · lighter",
+ flowBogi: "ice · twice · slows · Arctic · speeds · half",
  para: [
-  ["② sounds reasonable and is wrong","The claim is ______ but false.","plausible"],
-  ["④ raises that capacity by about seven percent","Warming ______ the air's limit.","lifts"],
-  ["⑦ fewer snowy days but heavier snow","Frequency and ______ move apart.","intensity"],
-  ["⑨ loaded more water into the same cold air","Storms now carry a bigger ______.","load"],
-  ["⑮ A cold week is weather","One week ______ nothing about climate.","settles"]
+  ["① has been steadily declining since record-keeping", "The ice has ______ year after year.", "shrunk"],
+  ["③ gets absorbed by the newly exposed, dark ocean", "Dark water ______ the light in.", "takes"],
+  ["⑤ warming about twice as fast as the rest", "The Arctic heats ______ as fast as elsewhere.", "twice"],
+  ["⑪ which slows the jet stream", "The current ______ down.", "slows"],
+  ["⑫ it pulls Arctic air down from the north", "It ______ cold air southward.", "drags"]
  ],
- paraBogi: "plausible · lifts · intensity · load · settles · proves · lowers · rarity",
+ paraBogi: "shrunk · takes · twice · slows · drags · grown · gives · half",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["Snow Proves the World Is Cooling","Why More Heat Can Mean More Snow",
-       "How to Measure a Snowstorm","The History of the Polar Vortex",
-       "Why Winter Will Soon Disappear"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["따뜻한 공기는 수증기를 더 많이 머금는다.","눈에는 어는점 아래의 기온이 여전히 필요하다.",
-       "눈 오는 날은 줄어도 눈의 양은 늘 수 있다.","필자는 극 소용돌이 주장이 확정되었다고 본다.",
-       "기온 1도당 용량은 약 7퍼센트 늘어난다."], ans:4},
-  {t:"write", q:"필자가 '날씨'와 '기후'를 나눈 뜻을 우리말 한 문장으로 써 보세요.",
-   ans:"추운 한 주는 한 번의 사건일 뿐이고, 공기가 머금는 수분의 양이 달라지는 것은 오랜 흐름이라는 뜻이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How Snowplows Are Built",
+    "Warmer Poles, Harsher Winters",
+    "Why the Arctic Is Cooling Fast",
+    "A Guide to Reading Weather Maps",
+    "The History of Record-Keeping"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "북극 해빙의 범위는 1970년대 관측이 시작된 이래 꾸준히 줄어 왔다.",
+    "얼음이 반사했을 햇빛을 새로 드러난 바닷물이 대신 흡수한다.",
+    "북극은 세계의 나머지 지역보다 절반쯤 느리게 더워지고 있다.",
+    "제트 기류는 대류권을 도는 빠른 공기의 흐름이다.",
+    "제트 기류의 교란은 눈보라를 포함한 극한 한파의 증가와 연결되어 왔다."
+   ], ans: 3
+  },
+  {
+   t: "write", q: "북극이 더워질 때 제트 기류에 일어나는 변화를 우리말 한 문장으로 써 보세요.",
+   ans: "극지와 열대의 기온 차가 줄어 제트 기류가 느려지고 남북으로 더 크게 굽이친다."
+  }
  ],
  fl: {
-  model: { n:"⑥",
-   toks: [["Warming","s"],["removes","v"],["the second condition",null],["slowly","m"],
-          ["and adds","v"],["to the first immediately","m"]],
-   ko:"온난화는 두 번째 조건을 천천히 없애고, 첫 번째 조건은 곧바로 키운다." },
+  model: {
+   n: "⑩",
+   toks: [
+    ["It", "s"], ["is driven", "v"],
+    ["by the difference between air temperatures to the north and south of its path:", "m"],
+    ["The bigger the temperature difference, the faster the jet stream.", null]
+   ],
+   ko: "제트 기류는 그 경로의 북쪽과 남쪽 기온 차로 움직인다. 기온 차가 클수록 제트 기류는 더 빨라진다."
+  },
   drill: [
-   { n:"⑦", en:"The result is fewer snowy days but heavier snow on the days that remain.",
-     ans:"S The result · △V is · C fewer snowy days but heavier snow · M on the days · [that] △V′ remain",
-     ko:"그 결과 눈 오는 날은 줄지만, 남은 날에는 더 많은 눈이 내린다." },
-   { n:"⑪", en:"Some researchers link a warming Arctic to a weaker, wavier polar vortex.",
-     ans:"S Some researchers · △V link · O a warming Arctic · M to a weaker, wavier polar vortex",
-     ko:"일부 연구자들은 북극의 온난화를 약하고 굽이진 극 소용돌이와 연결한다." },
-   { n:"⑮", en:"A cold week is weather, and the capacity of air is climate.",
-     ans:"S A cold week · △V is · C weather · [and] S the capacity of air · △V is · C climate",
-     ko:"추운 한 주는 날씨이고, 공기의 용량은 기후다." }
+   {
+    n: "③",
+    en: "The loop begins when sunlight, which would have been reflected by the ice, gets absorbed by the newly exposed, dark ocean water instead.",
+    ans: "S The loop · △V begins · [when] S′ sunlight · [which] △V′ would have been reflected · M by the ice · △V′ gets absorbed · M by the newly exposed, dark ocean water instead",
+    ko: "그 고리는 얼음이 반사했을 햇빛이 대신 새로 드러난 어두운 바닷물에 흡수될 때 시작된다."
+   },
+   {
+    n: "⑪",
+    en: "As the Arctic warms, the temperature difference between the polar regions and the tropical regions decreases, which slows the jet stream and causes its path to weave farther north and south.",
+    ans: "[As] S′ the Arctic · △V′ warms · S the temperature difference between the polar regions and the tropical regions · △V decreases · [which] △V′ slows · O the jet stream · [and] △V′ causes · O its path to weave farther north and south",
+    ko: "북극이 더워지면 극지와 열대의 기온 차가 줄어들고, 그것이 제트 기류를 느리게 하며 그 경로가 남북으로 더 크게 굽이치게 만든다."
+   },
+   {
+    n: "⑫",
+    en: "As it dips farther south than usual, it pulls Arctic air down from the north, causing a persistent spell of unusually cold weather in that region.",
+    ans: "[As] S′ it · △V′ dips · M farther south than usual · S it · △V pulls · O Arctic air · M down from the north · M causing a persistent spell of unusually cold weather in that region",
+    ko: "제트 기류가 평소보다 더 남쪽으로 처지면 북쪽에서 북극 공기를 끌어내려, 그 지역에 이례적으로 추운 날씨가 오래 이어지게 만든다."
+   }
   ]
  },
  syn: [
-  { n:"③", name:"비교급 than + 대동사 does",
-    q:"Warm air holds «more water vapour than» cold air «does».",
-    d:"<b>does</b>는 앞의 holds 를 대신하는 대동사다. 반복을 피하려고 쓴다.",
-    k:"따뜻한 공기는 찬 공기가 머금는 것보다 더 많은 수증기를 머금는다." },
-  { n:"⑧", name:"may + 동사원형 / still 의 대조",
-    q:"A town «may lose» two weeks of winter and «still break» its record for one storm.",
-    d:"<b>may</b>는 가능성을 나타내고, still 은 '그런데도'라는 대조를 만든다.",
-    k:"어떤 도시는 겨울을 2주 잃고도 폭설 기록을 깰 수 있다." }
+  {
+   n: "⑩",
+   name: "The 비교급 ~, the 비교급 ~",
+   q: "«The bigger the temperature difference, the faster the jet stream.»",
+   d: "<b>the + 비교급</b>이 두 번 나오면 ‘~할수록 더 …하다’로 읽는다. 앞이 조건, 뒤가 결과다.",
+   k: "기온 차가 클수록 제트 기류는 더 빠르다"
+  },
+  {
+   n: "⑪",
+   name: "앞 절을 받는 which (그리고 그것이 ~한다)",
+   q: "…the temperature difference … decreases, «which slows the jet stream and causes its path to weave farther north and south».",
+   d: "<b>which</b>가 앞 절 전체를 받아 결과를 잇는다. 뒤에 동사가 둘 붙을 수도 있다.",
+   k: "그리고 그것이 제트 기류를 느리게 한다"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"A wet road takes longer to dry than a dry one does.",
-    k:"젖은 길은 마른 길보다 마르는 데 더 오래 걸린다." },
-  { u:"구문 2", en:"He may forget the date and still arrive on time.",
-    k:"그는 날짜를 잊고도 제시간에 올 수 있다." },
-  { u:"구문 1 + 2", en:"A small city may grow faster than a large one does and still feel empty.",
-    k:"작은 도시가 큰 도시보다 빨리 커지고도 여전히 텅 빈 느낌일 수 있다." }
+  { u: "구문 1", en: "The colder the north, the stronger the wind.", k: "북쪽이 추울수록 바람은 더 강해진다." },
+  { u: "구문 2", en: "The ice melted early, which changed the whole season.", k: "얼음이 일찍 녹았고, 그것이 계절 전체를 바꾸었다." },
+  { u: "구문 1 + 2", en: "The warmer the pole, the weaker the current, which brings cold south.", k: "극지가 따뜻할수록 그 흐름은 약해지고, 그것이 추위를 남쪽으로 데려온다." }
  ],
- wtype: ["반대","정답","무관","지엽","반대"],
- stype: ["일치","일치","일치","반대","일치"],
- why: [["글은 그 주장이 틀렸다고 설명한다"],["정답"],
-       ["폭설을 재는 방법은 다루지 않는다"],
-       ["극 소용돌이는 두 번째 논점의 세부다"],
-       ["겨울이 사라진다는 말은 하지 않았다"]],
- src: [["③"],["⑤"],["⑦"],["⑬과 어긋남 — 아직 논쟁 중이라고 했다"],["④"]],
+ why: [
+  ["제설차 제작은 글에 나오지 않는다"],
+  ["정답"],
+  ["글은 북극이 빠르게 더워진다고 말한다 — 정반대다"],
+  ["일기도 읽는 법은 글의 관심사가 아니다"],
+  ["기록 관측의 역사는 글의 초점이 아니다"]
+ ],
+ src: [["①"], ["③"], ["⑤와 어긋남 — 나머지 지역보다 약 두 배 빠르게 더워진다"], ["⑨"], ["⑬"]],
  kb: {
-  title:"눈이 많아지는 이유",
-  lead:"따뜻해진다고 눈이 곧장 줄지는 않는다.",
+  title: "북극 증폭",
+  lead: "얼음이 줄면 생기는 일",
   items: [
-   ["공기와 수증기",
-    "기온이 1도 오르면 공기가 머금을 수 있는 수증기의 양이 약 7퍼센트 늘어난다. 강수 강도가 세지는 물리적 근거로 자주 인용된다."],
-   ["눈 오는 날과 눈의 양",
-    "여러 관측에서 눈 오는 날 수는 줄어드는 반면, 한 번에 내리는 최대 적설량 기록은 갱신되는 경향이 함께 보고된다."],
-   ["극 소용돌이 논쟁",
-    "북극 온난화가 제트기류를 굽이지게 해 한파를 남쪽으로 내려보낸다는 가설이 있다. 관측 기간이 짧고 모형 결과가 엇갈려 아직 합의에 이르지 못했다."]
+   ["알베도", "밝은 얼음은 햇빛을 되쏘고 어두운 바다는 흡수한다. 이 반사율 차이를 알베도(albedo)라 하며, 되먹임 고리의 출발점이다."],
+   ["북극 증폭", "북극이 지구 평균보다 빠르게 더워지는 현상을 북극 증폭(Arctic amplification)이라 한다. 본문은 그 속도를 약 두 배로 적고 있다."],
+   ["제트 기류", "제트 기류는 남북의 기온 차로 움직인다. 그 차이가 줄면 흐름이 느려지고 물결처럼 크게 굽이쳐, 굽이 안쪽에 한파가 오래 머문다."]
   ],
-  ask:"이번 겨울의 날씨 하나로 기후를 판단할 수 있을까? 무엇을 더 봐야 할까?"
- }
+  ask: "더워진 세계에서 더 추운 겨울이 온다는 말은 모순일까?"
+ },
+ wtype: ["무관", "정답", "반대", "무관", "지엽"],
+ stype: ["일치", "일치", "반대", "일치", "일치"]
 },
+
+/* ───────────────────────────── 57 ───────────────────────────── */
 {
- no: "57", key: "healing",
- accent: "#2E7A70", tint: "#E2F1EE", deep: "#1A554D",
+ no: "57", key: "healing", accent: "#2E7A70", tint: "#E2F1EE", deep: "#1A554D",
  en: "Healing Humans",
- ko: "낫는다는 말의 두 뜻",
- goal: "완치와 치유가 어떻게 다른 목표인지 설명할 수 있다.",
- fig: "Figure 1  몸이 하는 일과 의학이 하는 일.",
- tip: "먼저 생각해 보자. 상처를 실제로 붙이는 것은 누구일까?",
- sent: [
-  "A cut on your hand closes without any instruction from you.",
-  "Cells at the edge divide, move inward, and stop when they meet.",
-  "Medicine, for most of its history, has worked alongside this process rather than replacing it.",
-  "A surgeon holds the edges together, and the body does the joining.",
-  "Antibiotics remove a competitor; they do not build new tissue.",
-  "This division of labour is easy to forget in a hospital full of machines.",
-  "It matters because it changes what counts as success.",
-  "Some conditions cannot be closed the way a cut can.",
-  "Diabetes and arthritis are managed for decades rather than cured.",
-  "A vocabulary built around cure leaves those patients sounding like failures.",
-  "Researchers now separate healing from curing more carefully.",
-  "Curing removes a disease, and healing restores a life around it.",
-  "The distinction is not decoration; it decides which treatments are funded.",
-  "A drug that adds two months may matter less than one that returns sleep.",
-  "Both questions are medical, and only one has an easy number."
+ ko: "대신할 것인가, 곁에 설 것인가",
+ goal: "의료 기술의 미래를 둘러싼 현실주의자들의 주장과 필자가 덧붙이는 요구를 설명할 수 있다.",
+ fig: "Figure 1  대신하는 쪽과 곁에서 돕는 쪽.",
+ tip: "먼저 생각해 보자. 진료에서 사람만이 할 수 있는 일은 무엇일까?",
+ sent: T(57).sent, kor: T(57).kor,
+ bank: [
+  ["futurist", "①", "미래학자"],
+  ["empathy", "②", "공감"],
+  ["deregulation", "⑦", "규제 완화"],
+  ["ingenious", "⑨", "기발한"],
+  ["lodestar", "⑪", "길잡이"],
+  ["automation", "⑫", "자동화"]
  ],
- kor: [
-  "손의 베인 상처는 당신의 어떤 지시도 없이 아문다.",
-  "가장자리의 세포들이 분열하고, 안쪽으로 이동하고, 서로 만나면 멈춘다.",
-  "의학은 그 역사의 대부분 동안 이 과정을 대신하기보다 곁에서 함께 일해 왔다.",
-  "외과 의사는 가장자리를 맞대어 잡아 주고, 붙이는 일은 몸이 한다.",
-  "항생제는 경쟁자를 없앨 뿐, 새 조직을 만들지는 않는다.",
-  "이 분업은 기계로 가득한 병원에서 잊기 쉽다.",
-  "이것이 중요한 이유는 무엇을 성공으로 볼지를 바꾸기 때문이다.",
-  "어떤 병들은 베인 상처처럼 닫힐 수가 없다.",
-  "당뇨병과 관절염은 완치되기보다 수십 년 동안 관리된다.",
-  "완치를 중심으로 짜인 어휘는 그런 환자들을 실패자처럼 들리게 만든다.",
-  "연구자들은 이제 치유와 완치를 더 조심스럽게 구분한다.",
-  "완치는 병을 없애는 일이고, 치유는 그 병을 둘러싼 삶을 되돌리는 일이다.",
-  "이 구분은 장식이 아니라, 어떤 치료에 돈을 댈지를 결정한다.",
-  "두 달을 더해 주는 약이 잠을 되돌려 주는 약보다 덜 중요할 수 있다.",
-  "둘 다 의학의 질문이지만, 쉬운 숫자를 가진 것은 하나뿐이다."
+ defs: [
+  ["futurist", "a person who studies what may come next"],
+  ["empathy", "sharing in what another person feels"],
+  ["deregulation", "the removal of rules on an industry"],
+  ["ingenious", "clever in a new and skilful way"],
+  ["lodestar", "a guiding point that one steers by"],
+  ["automation", "letting machines do what people did"]
  ],
- bank: [["divide","②","분열하다"],["surgeon","④","외과 의사"],["tissue","⑤","조직"],
-        ["managed","⑨","관리되는"],["restores","⑫","되돌리다"],["distinction","⑬","구분"]],
- defs: [["divide","to split into two or more parts"],
-        ["surgeon","a doctor who operates on the body"],
-        ["tissue","a group of similar cells in the body"],
-        ["managed","kept under control over time"],
-        ["restores","brings something back to what it was"],
-        ["distinction","a difference between two things"]],
- defOrder: [2,4,0,5,1,3],
+ defOrder: [4, 0, 5, 2, 1, 3],
  flow: [
-  ["The base","A cut closes without instruction from you",null],
-  ["The division","Medicine works (  ①  ) the body, not instead of it","alongside"],
-  ["The limit","Some conditions are (  ②  ) rather than cured","managed"],
-  ["The words","A vocabulary of cure makes patients sound like (  ③  )","failures"],
-  ["The fix","Separate curing from (  ④  )","healing"]
+  ["The realists", "They picture AI aiding rather than replacing doctors", null],
+  ["What is human", "Empathy, insight, and (  ①  ) still belong to people", "skill"],
+  ["Where they slip", "They read health care through an (  ②  ) lens", "economic"],
+  ["Their remedy", "They ask for deregulation and (  ③  ) limits", "budget"],
+  ["The counter", "We need more responsibility for better (  ④  ), not less", "data"]
  ],
- flowBogi: "alongside · managed · failures · healing · machines · sleep",
+ flowBogi: "skill · economic · budget · data · money · fewer",
  para: [
-  ["② divide, move inward, and stop when they meet","Repair is ______ regulated.","internally"],
-  ["⑤ they do not build new tissue","Drugs ______ rather than rebuild.","clear"],
-  ["⑦ it changes what counts as success","The goal itself is ______.","redefined"],
-  ["⑩ leaves those patients sounding like failures","Language can ______ the sick.","blame"],
-  ["⑭ may matter less than one that returns sleep","Value is not only about ______.","time"]
+  ["② human empathy plays in care", "Care still needs a human ______.", "heart"],
+  ["③ AI is primarily aiding rather than replacing", "AI should help, not ______, the doctor.", "replace"],
+  ["⑥ complaining about their expense and inefficiencies", "They see only the ______ of the system.", "cost"],
+  ["⑨ we need to invest in the cutting edge", "We should put money into the ______.", "frontier"],
+  ["⑫ in favor of a lasting human presence", "A person should ______ in the room.", "stay"]
  ],
- paraBogi: "internally · clear · redefined · blame · time · outside · build · money",
+ paraBogi: "heart · replace · cost · frontier · stay · head · help · leave",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["The Machine That Replaces the Body","Curing Is Not the Same as Healing",
-       "How to Close a Deep Cut","Why Antibiotics Always Work",
-       "A Short History of Hospitals"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["상처를 붙이는 일은 몸이 한다.","항생제는 새 조직을 만들지 않는다.",
-       "당뇨병과 관절염은 대개 관리된다.","필자는 완치만이 의학의 목표라고 본다.",
-       "이 구분은 어떤 치료에 돈을 댈지에 영향을 준다."], ans:4},
-  {t:"write", q:"'쉬운 숫자를 가진 하나'가 무엇인지 우리말 한 문장으로 써 보세요.",
-   ans:"수명을 얼마나 늘렸는지처럼 숫자로 셀 수 있는 완치 쪽의 질문을 말한다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How Hospitals Are Funded",
+    "Let the Machine Help, Not Replace",
+    "Why Doctors Will Soon Be Gone",
+    "A Guide to Writing Science Fiction",
+    "The History of Nursing Uniforms"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "현실적인 의료 미래학자들은 공감·통찰·손기술이 하는 역할을 인정한다.",
+    "그들은 대체로 AI 가 의사와 간호사를 대체하기보다 돕는 미래를 지지한다.",
+    "그들은 혁신을 북돋우려 규제 완화를, 비용 절감을 위해 예산 제한을 주장한다.",
+    "필자는 의료 기술 정책에서 자료를 모으고 쓰는 책임을 줄여야 한다고 본다.",
+    "필자는 자동화를 적용할 때에도 사람이 오래 함께 있어야 한다고 본다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "필자가 현실주의자들에게 아쉬워하는 점을 우리말 한 문장으로 써 보세요.",
+   ans: "의료 제도를 주로 경제의 눈으로만 보아 정책과 법에서 헤맨다는 점이다."
+  }
  ],
  fl: {
-  model: { n:"③",
-   toks: [["Medicine","s"],["for most of its history","m"],["has worked","v"],
-          ["alongside this process","m"],["rather than replacing it","m"]],
-   ko:"의학은 그 역사의 대부분 동안 이 과정을 대신하기보다 곁에서 함께 일해 왔다." },
+  model: {
+   n: "③",
+   toks: [
+    ["They", "s"], ["by and large embrace", "v"], ["the first new law of robotics,", null],
+    ["promoting a future", "m"], ["where", "c"], ["AI", "s2"], ["is primarily aiding", "v2"],
+    ["rather than replacing doctors and nurses.", "m"]
+   ],
+   ko: "그들은 대체로 로봇공학의 첫 번째 새 법칙을 받아들여, AI 가 의사와 간호사를 대체하기보다 주로 돕는 미래를 밀어준다."
+  },
   drill: [
-   { n:"②", en:"Cells at the edge divide, move inward, and stop when they meet.",
-     ans:"S Cells at the edge · △V divide · △V move · M inward · △V stop · [when] S′ they · △V′ meet",
-     ko:"가장자리의 세포들이 분열하고, 안쪽으로 이동하고, 서로 만나면 멈춘다." },
-   { n:"⑩", en:"A vocabulary built around cure leaves those patients sounding like failures.",
-     ans:"S A vocabulary · M built around cure · △V leaves · O those patients · C sounding like failures",
-     ko:"완치를 중심으로 짜인 어휘는 그런 환자들을 실패자처럼 들리게 만든다." },
-   { n:"⑭", en:"A drug that adds two months may matter less than one that returns sleep.",
-     ans:"S A drug · [that] △V′ adds · O two months · △V may matter · M less than one that returns sleep",
-     ko:"두 달을 더해 주는 약이 잠을 되돌려 주는 약보다 덜 중요할 수 있다." }
+   {
+    n: "②",
+    en: "They recognize the critical role that human empathy plays in care, that human insight contributes to diagnoses, and that human skill adds to surgery.",
+    ans: "S They · △V recognize · O the critical role · [that] S′ human empathy · △V′ plays · M in care · [that] S′ human insight · △V′ contributes · M to diagnoses · [and that] S′ human skill · △V′ adds · M to surgery",
+    ko: "그들은 사람의 공감이 돌봄에서 하는 결정적 역할을, 사람의 통찰이 진단에 보태는 바를, 사람의 손기술이 수술에 더하는 바를 인정한다."
+   },
+   {
+    n: "⑨",
+    en: "And we need to invest in the cutting edge of medical practice, rather than simply assuming that hospitals and doctors will come up with ever more ingenious ways of doing more with less.",
+    ans: "[And] S we · △V need · O to invest in the cutting edge of medical practice · M rather than simply assuming that hospitals and doctors will come up with ever more ingenious ways of doing more with less",
+    ko: "그리고 우리는 병원과 의사가 더 적은 것으로 더 많은 일을 하는 더 기발한 방법을 내놓으리라고 그저 가정하기보다, 의료 현장의 최전선에 투자해야 한다."
+   },
+   {
+    n: "⑬",
+    en: "While economic demands will pressure hospitals and insurers to substitute software for therapists and bots for nurses' attention, professional associations should ensure that cost considerations are balanced against the many benefits of direct human involvement in care.",
+    ans: "[While] S′ economic demands · △V′ will pressure · O hospitals and insurers to substitute software for therapists and bots for nurses' attention · S professional associations · △V should ensure · [that] S′ cost considerations · △V′ are balanced · M against the many benefits of direct human involvement in care",
+    ko: "경제적 요구가 병원과 보험사에 치료사 대신 소프트웨어를, 간호사의 돌봄 대신 봇을 넣으라고 압박하겠지만, 전문가 협회는 비용 고려가 돌봄에 사람이 직접 참여해 얻는 여러 이점과 균형을 이루게 해야 한다."
+   }
   ]
  },
  syn: [
-  { n:"③", name:"rather than + 동명사",
-    q:"has worked alongside this process «rather than replacing» it.",
-    d:"<b>rather than</b> 뒤에는 앞의 형태에 맞춰 쓴다. 여기서는 worked 에 맞춰 replacing 이 왔다.",
-    k:"이 과정을 대신하기보다 곁에서 함께 일해 왔다." },
-  { n:"⑩", name:"leave + 목적어 + 분사",
-    q:"A vocabulary built around cure «leaves those patients sounding» like failures.",
-    d:"<b>leave + 목적어 + ~ing</b>는 '~를 …한 상태로 두다'라는 뜻이다.",
-    k:"그 어휘는 환자들을 실패자처럼 들리는 상태로 둔다." }
+  {
+   n: "③",
+   name: "A rather than B (B가 아니라 A)",
+   q: "…a future where AI is primarily «aiding rather than replacing» doctors and nurses.",
+   d: "<b>rather than</b> 앞이 실제로 하는 쪽이다. 두 동사가 같은 모양으로 짝을 이룬다.",
+   k: "대체하기보다 돕는"
+  },
+  {
+   n: "⑬",
+   name: "양보의 while (~하겠지만)",
+   q: "«While economic demands will pressure hospitals and insurers to substitute software for therapists», professional associations should ensure…",
+   d: "<b>while</b>이 문장 앞에 오면 ‘~하겠지만’으로 읽는다. 뒤의 주절이 필자의 요구다.",
+   k: "압박하겠지만"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"She listened rather than answering at once.",
-    k:"그녀는 곧바로 답하기보다 귀를 기울였다." },
-  { u:"구문 2", en:"The delay left the whole class waiting outside.",
-    k:"그 지연이 반 전체를 밖에서 기다리게 두었다." },
-  { u:"구문 1 + 2", en:"The rule left students guessing rather than asking for help.",
-    k:"그 규칙은 학생들이 도움을 청하기보다 짐작하게 만들었다." }
+  { u: "구문 1", en: "The tool guides the nurse rather than taking her place.", k: "그 도구는 간호사를 대신하기보다 안내한다." },
+  { u: "구문 2", en: "While costs will rise, the care must not fall.", k: "비용은 오르겠지만 돌봄이 떨어져서는 안 된다." },
+  { u: "구문 1 + 2", en: "While budgets tighten, hospitals should add staff rather than software.", k: "예산은 죄어들겠지만, 병원은 소프트웨어보다 사람을 늘려야 한다." }
  ],
- wtype: ["반대","정답","지엽","반대","무관"],
- stype: ["일치","일치","일치","반대","일치"],
- why: [["기계가 몸을 대신한다는 것은 글이 부정하는 쪽이다"],["정답"],
-       ["상처가 아무는 과정은 예시일 뿐이다"],
-       ["항생제가 늘 통한다는 말은 어디에도 없다"],
-       ["병원의 역사는 다루지 않는다"]],
- src: [["④"],["⑤"],["⑨"],["⑫~⑮와 어긋남 — 치유도 의학의 질문이라고 했다"],["⑬"]],
+ why: [
+  ["병원 재정 구조는 글의 초점이 아니다"],
+  ["정답"],
+  ["글은 사람의 자리가 남아야 한다고 말한다 — 정반대다"],
+  ["공상과학 작법은 글의 관심사가 아니다"],
+  ["간호복의 역사는 글에서 다루지 않는다"]
+ ],
+ src: [["②"], ["③"], ["⑦"], ["⑧과 어긋남 — 책임을 더 늘려야 한다고 말한다"], ["⑫"]],
  kb: {
-  title:"낫는다는 말의 두 뜻",
-  lead:"병을 없애는 일과 삶을 되돌리는 일은 다르다.",
+  title: "돕는 자동화",
+  lead: "대체가 아니라 보조",
   items: [
-   ["상처 치유의 단계",
-    "지혈, 염증, 증식, 재형성의 네 단계로 설명된다. 가장자리의 세포가 서로 닿으면 분열을 멈추는 접촉 억제 현상이 관찰된다."],
-   ["완치와 치유",
-    "영어권 의학 문헌에서 curing 과 healing 을 구분해 쓰는 논의가 이어져 왔다. 만성질환에서는 후자가 더 현실적인 목표로 제시된다."],
-   ["환자가 보고하는 결과",
-    "통증, 수면, 일상 수행 능력처럼 환자가 직접 보고하는 지표를 치료 효과 평가에 넣으려는 흐름이 있다. 생존 기간만으로는 잡히지 않는 부분을 보기 위해서다."]
+   ["로봇공학의 새 법칙", "법학자 프랭크 파스콸레(Frank Pasquale)는 ‘로봇공학의 새 법칙’을 제안하며, 첫 번째로 로봇이 전문가를 대체하지 말고 보완해야 한다고 썼다."],
+   ["보조 진단", "영상 판독을 돕는 인공지능은 의사의 판단을 대신하지 않고 후보를 좁혀 준다. 최종 판단과 설명의 책임은 사람에게 남는다."],
+   ["자료의 책임", "본문이 요구하는 것은 규제 완화가 아니라, 좋은 자료를 모으고 쓰는 책임을 더 무겁게 지우는 쪽이다."]
   ],
-  ask:"아팠던 경험을 떠올려 보자. 나에게 '나았다'는 느낌을 준 것은 무엇이었나?"
- }
+  ask: "여러분이 환자라면 기계가 맡아도 좋은 일과 사람이 맡아야 하는 일을 어떻게 나누겠는가?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 58 ───────────────────────────── */
 {
- no: "58", key: "nation",
- accent: "#9A3E3E", tint: "#F6E7E7", deep: "#6C2222",
+ no: "58", key: "nation", accent: "#9A3E3E", tint: "#F6E7E7", deep: "#6C2222",
  en: "Ethnic Nationalism",
- ko: "누가 '우리'인가",
- goal: "국가의 두 관념이 어떻게 다르고 왜 중요한지 설명할 수 있다.",
- fig: "Figure 1  소속을 정하는 두 가지 방식.",
- tip: "먼저 생각해 보자. '우리나라 사람'은 무엇으로 정해질까?",
- sent: [
-  "Every nation tells itself a story about who belongs inside it and who does not.",
-  "One version says that anyone who accepts the laws belongs.",
-  "The other says that belonging is inherited, like a language or a face.",
-  "Historians call these two pictures the civic and the ethnic idea of a nation.",
-  "The civic version is easier to defend and harder to feel.",
-  "The ethnic version offers something the other cannot: ancestors.",
-  "It answers the question of why strangers should sacrifice for one another.",
-  "That answer has held armies together and emptied villages.",
-  "The trouble begins where populations do not match the map.",
-  "No border in Europe has ever separated one people cleanly from another.",
-  "A nation defined by descent therefore always contains the wrong people.",
-  "The twentieth century recorded, in some detail, what states did about that arithmetic.",
-  "Civic nationalism is not innocent either, since laws can exclude quietly.",
-  "But it can admit a newcomer without rewriting anyone's grandparents.",
-  "That difference is small on paper and enormous in practice."
+ ko: "누가 ‘우리’인가",
+ goal: "인구 변화와 종족적 민족주의의 부상이 어떻게 이어지는지 설명할 수 있다.",
+ fig: "Figure 1  시민적 소속과 종족적 소속.",
+ tip: "먼저 생각해 보자. 한 나라의 ‘우리’는 무엇으로 정해질까?",
+ sent: T(58).sent, kor: T(58).kor,
+ bank: [
+  ["birthrate", "①", "출생률"],
+  ["demographic", "②", "인구의"],
+  ["multiracial", "②", "다인종의"],
+  ["mandate", "⑤", "위임 권한"],
+  ["referendum", "⑥", "국민 투표"],
+  ["undermine", "⑦", "약화시키다"]
  ],
- kor: [
-  "모든 국가는 누가 그 안에 속하고 누가 속하지 않는지에 대한 이야기를 스스로에게 한다.",
-  "한 판본은 법을 받아들이는 사람이면 누구나 속한다고 말한다.",
-  "다른 판본은 소속이 언어나 얼굴처럼 물려받는 것이라고 말한다.",
-  "역사가들은 이 두 그림을 국가에 대한 시민적 관념과 종족적 관념이라 부른다.",
-  "시민적 판본은 옹호하기는 더 쉽고 느끼기는 더 어렵다.",
-  "종족적 판본은 다른 쪽이 줄 수 없는 것을 준다. 바로 조상이다.",
-  "그것은 낯선 사람들이 왜 서로를 위해 희생해야 하는가라는 물음에 답한다.",
-  "그 답은 군대를 하나로 묶어 왔고 마을을 비워 놓기도 했다.",
-  "문제는 인구가 지도와 맞아떨어지지 않는 곳에서 시작된다.",
-  "유럽의 어떤 국경도 한 민족을 다른 민족과 깔끔하게 갈라놓은 적이 없다.",
-  "그래서 혈통으로 정의된 국가에는 언제나 '잘못된 사람들'이 들어 있다.",
-  "20세기는 국가들이 그 산수를 어떻게 처리했는지를 꽤 상세히 기록했다.",
-  "시민적 민족주의도 무죄는 아닌데, 법도 조용히 배제할 수 있기 때문이다.",
-  "그러나 그것은 누군가의 조부모를 다시 쓰지 않고도 새 사람을 받아들일 수 있다.",
-  "그 차이는 종이 위에서는 작고 현실에서는 거대하다."
+ defs: [
+  ["birthrate", "how many babies are born per year"],
+  ["demographic", "about the make-up of a population"],
+  ["multiracial", "made up of people of many races"],
+  ["mandate", "the authority given to act on something"],
+  ["referendum", "a direct public vote on one question"],
+  ["undermine", "to weaken something from below"]
  ],
- bank: [["belongs","②","속하다"],["inherited","③","물려받은"],["civic","④","시민의"],
-        ["ancestors","⑥","조상"],["descent","⑪","혈통"],["exclude","⑬","배제하다"]],
- defs: [["belongs","is a proper part of a group"],
-        ["inherited","received from those who came before"],
-        ["civic","having to do with citizens"],
-        ["ancestors","family members from long ago"],
-        ["descent","the family line one comes from"],
-        ["exclude","to keep someone out"]],
- defOrder: [4,0,5,1,3,2],
+ defOrder: [2, 5, 0, 3, 1, 4],
  flow: [
-  ["Two stories","Every nation says who belongs inside it",null],
-  ["Version A","Anyone who accepts the (  ①  ) belongs","laws"],
-  ["Version B","Belonging is (  ②  ), like a language","inherited"],
-  ["Why B is strong","It supplies (  ③  ) and a reason to sacrifice","ancestors"],
-  ["Why B is risky","No (  ④  ) matches a population cleanly","border"]
+  ["The trend", "The US and Europe may be minority-white by 2050", null],
+  ["Two changes", "Relative power falls and the (  ①  ) mix shifts", "demographic"],
+  ["The reaction", "White (  ②  ) movements promise greatness again", "nationalist"],
+  ["The target", "The EU runs (  ③  ) to the interests of nationalism", "counter"],
+  ["Brexit", "Fears of Turkish inclusion shaped the (  ④  ) vote", "2016"]
  ],
- flowBogi: "laws · inherited · ancestors · border · face · village",
+ flowBogi: "demographic · nationalist · counter · 2016 · economic · 1990",
  para: [
-  ["③ belonging is inherited, like a language","Membership is passed ______.","down"],
-  ["⑤ easier to defend and harder to feel","Reason and ______ pull apart.","feeling"],
-  ["⑧ held armies together and emptied villages","The same idea can ______ or destroy.","unite"],
-  ["⑪ always contains the wrong people","Such a nation is never ______.","pure"],
-  ["⑭ without rewriting anyone's grandparents","Entry needs no change of ______.","ancestry"]
+  ["① As native birthrates decline", "Fewer babies are ______ at home.", "born"],
+  ["② a decline in their countries' relative power", "Their countries feel less ______ now.", "powerful"],
+  ["③ while simultaneously preserving their majority-white", "They also want the old ______ kept.", "majority"],
+  ["⑤ runs counter to the interests of nationalism", "The EU cuts ______ the nationalist aim.", "against"],
+  ["⑦ the movement appears to be growing", "The movement is ______, not shrinking.", "growing"]
  ],
- paraBogi: "down · feeling · unite · pure · ancestry · outward · logic · language",
+ paraBogi: "born · powerful · majority · against · growing · lost · weaker · minority",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["Two Answers to One Question","Why Borders Are Always Correct",
-       "How to Learn a New Language","The Best Kind of Government",
-       "Why All Nations Are the Same"], ans:1},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["시민적 관념은 법의 수용을 기준으로 삼는다.","종족적 관념은 조상을 근거로 제시한다.",
-       "유럽의 국경은 민족을 깔끔히 나눈 적이 없다.","필자는 시민적 민족주의에 문제가 없다고 본다.",
-       "혈통으로 정의된 국가에는 늘 '잘못된 사람들'이 있다."], ans:4},
-  {t:"write", q:"두 관념의 결정적 차이를 우리말 한 문장으로 써 보세요.",
-   ans:"시민적 관념은 조상을 바꾸지 않고도 새 구성원을 받아들일 수 있지만, 종족적 관념은 그럴 수 없다는 점이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How the EU Was Founded",
+    "Who Counts as ‘Us’",
+    "Why Nationalism Is Fading Away",
+    "A Guide to Voting Systems",
+    "The Geography of Turkey"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "미국과 유럽은 2050년 무렵 백인이 다수가 아닌 사회가 될 가능성이 크다.",
+    "많은 백인들에게 이 변화는 정체성의 두 갈래 변화로 다가온다.",
+    "‘세계주의’ 비판자들과 종족적 민족주의 지지자들은 최근 상당한 영향력을 얻었다.",
+    "2016년 6월 브렉시트 국민 투표는 튀르키예 편입에 대한 두려움에 크게 영향을 받았다.",
+    "필자는 이 운동이 경제·인구 현실 때문에 줄어들고 있다고 본다."
+   ], ans: 5
+  },
+  {
+   t: "write", q: "종족적 민족주의 운동이 EU 를 주요 표적으로 삼은 까닭을 우리말 한 문장으로 써 보세요.",
+   ans: "세계주의 위임 권한과 인권 장치, 비백인 다수 국가의 가입 수용이 민족주의의 이해와 어긋나기 때문이다."
+  }
  ],
  fl: {
-  model: { n:"⑨",
-   toks: [["The trouble","s"],["begins","v"],["where","c"],["populations","s2"],
-          ["do not match","v2"],["the map",null]],
-   ko:"문제는 인구가 지도와 맞아떨어지지 않는 곳에서 시작된다." },
+  model: {
+   n: "①",
+   toks: [
+    ["As", "c"], ["native birthrates", "s2"], ["decline", "v2"], ["and", "c"],
+    ["immigration", "s2"], ["continues,", "v2"],
+    ["the United States and Europe", "s"], ["are", "v"],
+    ["likely to become minority-white by 2050.", null]
+   ],
+   ko: "자국 출생률이 줄고 이민이 이어지면서, 미국과 유럽은 2050년 무렵 백인이 다수가 아닌 사회가 될 가능성이 크다."
+  },
   drill: [
-   { n:"③", en:"The other says that belonging is inherited, like a language or a face.",
-     ans:"S The other · △V says · [that] S′ belonging · △V′ is inherited · M like a language or a face",
-     ko:"다른 판본은 소속이 언어나 얼굴처럼 물려받는 것이라고 말한다." },
-   { n:"⑩", en:"No border in Europe has ever separated one people cleanly from another.",
-     ans:"S No border in Europe · △V has ever separated · O one people · M cleanly from another",
-     ko:"유럽의 어떤 국경도 한 민족을 다른 민족과 깔끔하게 갈라놓은 적이 없다." },
-   { n:"⑬", en:"Civic nationalism is not innocent either, since laws can exclude quietly.",
-     ans:"S Civic nationalism · △V is not · C innocent · M either · [since] S′ laws · △V′ can exclude · M quietly",
-     ko:"시민적 민족주의도 무죄는 아닌데, 법도 조용히 배제할 수 있기 때문이다." }
+   {
+    n: "③",
+    en: "In reaction to these long-term trends, white nationalist movements that promise to make their home countries “great” again by re-establishing their place in the world, while simultaneously preserving their majority-white demographics, have become more popular.",
+    ans: "M In reaction to these long-term trends · S white nationalist movements · [that] △V′ promise · O to make their home countries “great” again by re-establishing their place in the world, while simultaneously preserving their majority-white demographics · △V have become · C more popular",
+    ko: "이런 장기적 흐름에 대한 반작용으로, 세계 속 자리를 되찾아 모국을 다시 ‘위대하게’ 만들면서 동시에 백인 다수 인구 구성을 지키겠다고 약속하는 백인 민족주의 운동이 더 인기를 얻었다."
+   },
+   {
+    n: "⑥",
+    en: "The June 2016 Brexit referendum, in which a slim majority of UK voters elected to leave the EU as a reassertion of traditional British identity, was profoundly affected by fears of Turkish inclusion and large-scale nonwhite immigration.",
+    ans: "S The June 2016 Brexit referendum · [in which] S′ a slim majority of UK voters · △V′ elected · O to leave the EU as a reassertion of traditional British identity · △V was profoundly affected · M by fears of Turkish inclusion and large-scale nonwhite immigration",
+    ko: "영국 유권자의 근소한 다수가 전통적 영국 정체성을 다시 내세우며 EU 탈퇴를 택한 2016년 6월 브렉시트 국민 투표는, 튀르키예 편입과 대규모 비백인 이민에 대한 두려움에 깊이 영향을 받았다."
+   },
+   {
+    n: "⑧",
+    en: "It has already profoundly disrupted the global economy, and its capacity to disrupt economic and military alliances in the future is enormous.",
+    ans: "S It · △V has already profoundly disrupted · O the global economy · [and] S its capacity to disrupt economic and military alliances in the future · △V is · C enormous",
+    ko: "그것은 이미 세계 경제를 깊이 흔들었고, 앞으로 경제적·군사적 동맹을 흔들 힘도 엄청나다."
+   }
   ]
  },
  syn: [
-  { n:"⑥", name:"목적격 관계대명사 생략",
-    q:"The ethnic version offers «something the other cannot»: ancestors.",
-    d:"something 뒤에 목적격 관계대명사가 생략됐다. cannot 뒤에는 offer 가 생략되어 있다.",
-    k:"종족적 판본은 다른 쪽이 줄 수 없는 것을 준다. 바로 조상이다." },
-  { n:"⑨", name:"where 접속사 (장소·경우)",
-    q:"The trouble begins «where populations do not» match the map.",
-    d:"<b>where</b>가 '~하는 곳에서, ~하는 경우에'라는 뜻의 접속사로 쓰였다.",
-    k:"문제는 인구가 지도와 맞지 않는 곳에서 시작된다." }
+  {
+   n: "⑥",
+   name: "전치사 + 관계대명사 (in which)",
+   q: "The June 2016 Brexit referendum, «in which a slim majority of UK voters elected to leave the EU»…",
+   d: "<b>in which</b>는 ‘그 안에서 ~한’이다. 앞의 명사를 그 자리에 넣어 읽으면 뜻이 잡힌다.",
+   k: "그 투표에서 근소한 다수가 ~을 택한"
+  },
+  {
+   n: "⑦",
+   name: "양보의 Although + would appear to",
+   q: "«Although economic and demographic realities would appear to undermine the antiglobalist mission», the movement appears to be growing…",
+   d: "<b>Although</b>가 앞세운 사실을 주절이 뒤집는다. ‘~처럼 보이지만 실제로는 …’로 읽는다.",
+   k: "약화시킬 것처럼 보이지만"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"He said something the others had not noticed.",
-    k:"그는 다른 사람들이 알아채지 못한 것을 말했다." },
-  { u:"구문 2", en:"Trouble starts where two rules meet.",
-    k:"두 규칙이 만나는 곳에서 문제가 시작된다." },
-  { u:"구문 1 + 2", en:"Arguments start where a map shows something the people do not accept.",
-    k:"지도가 사람들이 받아들이지 않는 것을 보여 주는 곳에서 다툼이 시작된다." }
+  { u: "구문 1", en: "The vote in which they chose to leave changed everything.", k: "그들이 떠나기로 택한 그 투표가 모든 것을 바꾸었다." },
+  { u: "구문 2", en: "Although the numbers looked clear, the mood did not follow.", k: "숫자는 분명해 보였지만, 분위기는 그것을 따르지 않았다." },
+  { u: "구문 1 + 2", en: "Although the poll in which they trusted said no, the result said yes.", k: "그들이 믿은 그 여론조사는 아니라고 했지만, 결과는 그렇다고 했다." }
  ],
- wtype: ["정답","반대","지엽","무관","반대"],
- stype: ["일치","일치","일치","반대","일치"],
- why: [["정답"],["글은 국경이 인구와 맞지 않는다고 말한다"],
-       ["언어는 비유로만 나오는 세부다"],
-       ["어떤 정부가 최선인지를 정하는 글이 아니다"],
-       ["두 관념이 다르다는 것이 글의 출발점이다"]],
- src: [["②"],["⑥"],["⑩"],["⑬과 어긋남 — 무죄는 아니라고 했다"],["⑪"]],
+ why: [
+  ["EU 의 설립 과정은 글의 초점이 아니다"],
+  ["정답"],
+  ["글은 그 운동이 커지고 있다고 말한다 — 정반대다"],
+  ["선거 제도 안내는 글의 관심사가 아니다"],
+  ["튀르키예의 지리는 글에서 다루지 않는다"]
+ ],
+ src: [["①"], ["②"], ["④"], ["⑥"], ["⑦과 어긋남 — 줄기는커녕 커지는 것으로 보인다고 말한다"]],
  kb: {
-  title:"누가 우리인가",
-  lead:"소속을 정하는 두 가지 방식.",
+  title: "시민적 민족주의와 종족적 민족주의",
+  lead: "‘우리’를 정하는 두 방식",
   items: [
-   ["시민적 · 종족적 민족주의",
-    "한스 콘이 1944년에 제시한 구분으로, 법과 시민권을 기준으로 삼는 쪽과 혈통·언어·문화를 기준으로 삼는 쪽을 나눈다. 실제 국가들은 대개 두 요소를 섞어 갖는다."],
-   ["국경과 인구",
-    "1919년 이후 유럽에서 민족 자결 원칙에 따라 국경을 다시 그렸지만, 어느 선도 인구 분포와 맞아떨어지지 않아 소수 집단 문제가 남았다."],
-   ["국적을 정하는 두 원칙",
-    "혈통주의와 출생지주의가 있다. 어느 쪽에 무게를 두느냐가 새 구성원을 받아들이는 방식을 좌우한다."]
+   ["두 갈래", "법과 제도를 받아들이면 구성원이 되는 쪽을 시민적(civic) 민족주의, 혈통과 문화로 구성원을 정하는 쪽을 종족적(ethnic) 민족주의라 부른다."],
+   ["브렉시트", "2016년 6월 23일 영국 국민 투표에서 탈퇴 51.9%, 잔류 48.1%로 근소한 차이가 났다. 이민 문제가 주요 쟁점 가운데 하나였다."],
+   ["인구 전망", "본문이 인용한 2050년 전망은 출생률과 이민 추세를 바탕으로 한 추정치다. 추정치는 전제가 바뀌면 함께 바뀐다."]
   ],
-  ask:"'우리'라는 말을 쓸 때, 나는 어떤 기준으로 그 경계를 긋고 있을까?"
- }
+  ask: "‘우리나라 사람’을 정하는 기준을 여러분은 무엇으로 삼겠는가?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "일치", "반대"]
 },
+
+/* ───────────────────────────── 59 ───────────────────────────── */
 {
- no: "59", key: "cobot",
- accent: "#4C4E8C", tint: "#E9E9F5", deep: "#31336A",
+ no: "59", key: "cobot", accent: "#4C4E8C", tint: "#E9E9F5", deep: "#31336A",
  en: "Collaborative Automation Technologies",
  ko: "기계와 나란히 서는 일",
- goal: "협동 자동화가 일을 어떻게 나누는지와 그 위험을 설명할 수 있다.",
- fig: "Figure 1  일을 나누는 선.",
- tip: "먼저 생각해 보자. 기계가 어려운 절반을 맡으면 사람에게는 무엇이 남을까?",
- sent: [
-  "The old story about automation had two characters and one ending.",
-  "A machine arrived one morning, and a worker left for good.",
-  "That version still happens, but it is no longer the only one.",
-  "Collaborative robots are built to share a bench rather than clear it.",
-  "They are slow enough to work beside a person without a cage.",
-  "The machine holds the heavy part while the human decides where it goes.",
-  "Each side keeps the task it is unreasonably good at.",
-  "Force and repetition belong to the arm, and judgement stays with the person.",
-  "Factories report fewer injuries and faster changeovers between products.",
-  "Critics point at a quieter risk than unemployment.",
-  "When a machine handles the difficult half, the human half becomes routine.",
-  "Skill that is never practised disappears within a few years.",
-  "The split between the two halves is a design decision, not a law of physics.",
-  "Someone always chooses which part of the work stays interesting.",
-  "That someone is rarely the person standing at the bench."
+ goal: "협업 자동화가 생산성을 높이는 조건과, 그것을 가로막거나 앞당기는 태도를 설명할 수 있다.",
+ fig: "Figure 1  절반을 맡기고 남은 절반.",
+ tip: "먼저 생각해 보자. 기계와 함께 일하려면 무엇이 필요할까?",
+ sent: T(59).sent, kor: T(59).kor,
+ bank: [
+  ["collaborative", "①", "협업의"],
+  ["administrative", "①", "관리의"],
+  ["enhancement", "③", "향상"],
+  ["sabotage", "⑤", "방해하다"],
+  ["implement", "⑤", "도입하다"],
+  ["materialise", "⑧", "실현되다"]
  ],
- kor: [
-  "자동화에 관한 옛 이야기에는 등장인물이 둘이고 결말이 하나였다.",
-  "어느 아침 기계가 도착했고, 노동자는 영영 떠났다.",
-  "그 판본은 지금도 일어나지만, 더는 유일한 판본이 아니다.",
-  "협동 로봇은 작업대를 치우기보다 함께 쓰도록 만들어진다.",
-  "그것들은 안전 우리 없이 사람 곁에서 일할 만큼 느리다.",
-  "기계가 무거운 부품을 붙잡고, 그것이 어디로 갈지는 사람이 정한다.",
-  "각자는 자기가 터무니없이 잘하는 일을 맡는다.",
-  "힘과 반복은 팔의 몫이고, 판단은 사람에게 남는다.",
-  "공장들은 부상이 줄고 제품 전환이 빨라졌다고 보고한다.",
-  "비판하는 쪽은 실업보다 조용한 위험을 가리킨다.",
-  "기계가 어려운 절반을 맡으면, 사람의 절반은 단순 작업이 된다.",
-  "연습하지 않는 기술은 몇 년 안에 사라진다.",
-  "두 절반을 가르는 선은 물리 법칙이 아니라 설계상의 결정이다.",
-  "누군가가 언제나 그 일의 어느 쪽을 흥미롭게 남길지 고른다.",
-  "그 누군가는 작업대 앞에 선 사람인 경우가 드물다."
+ defs: [
+  ["collaborative", "done by people working together"],
+  ["administrative", "to do with running an organisation"],
+  ["enhancement", "a rise in quality or amount"],
+  ["sabotage", "to spoil a plan on purpose"],
+  ["implement", "to put a plan into real use"],
+  ["materialise", "to actually happen as expected"]
  ],
- bank: [["automation","①","자동화"],["collaborative","④","협동의"],["cage","⑤","안전 우리"],
-        ["repetition","⑧","반복"],["changeovers","⑨","전환"],["routine","⑪","단순 반복의"]],
- defs: [["automation","the use of machines to do work"],
-        ["collaborative","done by working together"],
-        ["cage","a barrier of bars around something"],
-        ["repetition","doing the same thing again and again"],
-        ["changeovers","switches from one product to another"],
-        ["routine","done the same way every time"]],
- defOrder: [3,5,0,4,2,1],
+ defOrder: [5, 1, 3, 0, 4, 2],
  flow: [
-  ["Old story","A machine arrives and a worker leaves",null],
-  ["New design","Robots slow enough to work without a (  ①  )","cage"],
-  ["The split","Force to the arm, (  ②  ) to the person","judgement"],
-  ["Reported gains","Fewer injuries and faster (  ③  )","changeovers"],
-  ["The quiet risk","Unpractised (  ④  ) disappears","skill"]
+  ["The stage", "People and machines deliver the work together", null],
+  ["The gain", "Workers serve more customers with the (  ①  ) of technology", "help"],
+  ["The condition", "The effect appears only if employees actually (  ②  ) with it", "work"],
+  ["The range", "Workers may embrace, resist, or even (  ③  ) the effort", "sabotage"],
+  ["The managers", "(  ④  ) percent would keep automation without the money", "65"]
  ],
- flowBogi: "cage · judgement · changeovers · skill · bench · unemployment",
+ flowBogi: "help · work · sabotage · 65 · fight · 33",
  para: [
-  ["④ share a bench rather than clear it","The aim is company, not ______.","replacement"],
-  ["⑦ the task it is unreasonably good at","Each takes its ______ job.","strongest"],
-  ["⑪ the human half becomes routine","What is left grows ______.","dull"],
-  ["⑫ Skill that is never practised disappears","Ability fades without ______.","use"],
-  ["⑬ a design decision, not a law of physics","The split could be ______.","otherwise"]
+  ["① human employees and automation technologies work", "People and machines do the job ______.", "together"],
+  ["② makes employees more productive", "Workers get more ______ with the tools.", "done"],
+  ["③ it will only happen if employees actually work", "It works only when staff really ______ in.", "join"],
+  ["⑤ actively sabotage an organisation's efforts", "Some quietly ______ the whole effort.", "wreck"],
+  ["⑧ robots deliver higher quality work than humans", "They judge the robot's work ______.", "better"]
  ],
- paraBogi: "replacement · strongest · dull · use · otherwise · fixed · safety · louder",
+ paraBogi: "together · done · join · wreck · better · apart · lost · worse",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["Machines That Take Every Job","Who Decides Which Half Is Yours",
-       "How to Build a Robot Arm","Why Factories Should Close",
-       "A Guide to Workplace Safety"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["협동 로봇은 사람 곁에서 일하도록 느리게 만들어진다.","힘과 반복은 기계가, 판단은 사람이 맡는다.",
-       "공장들은 부상이 줄었다고 보고한다.","필자는 절반을 나누는 선이 물리 법칙이라고 본다.",
-       "연습하지 않는 기술은 사라진다."], ans:4},
-  {t:"write", q:"마지막 두 문장이 던지는 문제를 우리말 한 문장으로 써 보세요.",
-   ans:"일의 어느 쪽을 사람에게 남길지 정하는 사람이, 정작 그 자리에서 일하는 사람이 아니라는 점이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How Robots Are Assembled",
+    "The Half We Hand Over",
+    "Why Automation Always Fails",
+    "A Guide to Online Courses",
+    "The History of Factory Whistles"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "협업 자동화 단계에서는 사람과 기술이 함께 일해 서비스와 제품을 낸다.",
+    "자동화 기술을 쓰면 직원은 전보다 더 많은 제품을 만들고 더 많은 손님을 응대할 수 있다.",
+    "향상 효과는 직원의 태도와 상관없이 언제나 나타난다.",
+    "직원들은 소극적으로 저항하거나 적극적으로 방해하기도 한다.",
+    "조사에 응한 관리자의 65퍼센트는 재정적 이득이 없어도 지금의 자동화 수준을 유지하겠다고 했다."
+   ], ans: 3
+  },
+  {
+   t: "write", q: "관리자들이 재정적 이득 없이도 자동화를 유지하겠다고 답한 까닭을 우리말 한 문장으로 써 보세요.",
+   ans: "로봇이 사람보다 더 나은 품질의 일을 한다고 여기기 때문이다."
+  }
  ],
  fl: {
-  model: { n:"⑪",
-   toks: [["When","c"],["a machine","s2"],["handles","v2"],["the difficult half",null],
-          ["the human half","s"],["becomes routine","v"]],
-   ko:"기계가 어려운 절반을 맡으면, 사람의 절반은 단순 작업이 된다." },
+  model: {
+   n: "③",
+   toks: [
+    ["This", "s"], ["is", "v"], ["the enhancement effect of automation,", null],
+    ["but", "c"], ["it", "s"], ["will only happen", "v"], ["if", "c"],
+    ["employees", "s2"], ["actually work", "v2"],
+    ["with the respective automation technology.", "m"]
+   ],
+   ko: "이것이 자동화의 향상 효과인데, 그것은 직원들이 해당 자동화 기술과 실제로 함께 일할 때에만 일어난다."
+  },
   drill: [
-   { n:"⑤", en:"They are slow enough to work beside a person without a cage.",
-     ans:"S They · △V are · C slow enough to work · M beside a person without a cage",
-     ko:"그것들은 안전 우리 없이 사람 곁에서 일할 만큼 느리다." },
-   { n:"⑧", en:"Force and repetition belong to the arm, and judgement stays with the person.",
-     ans:"S Force and repetition · △V belong to · O the arm · [and] S judgement · △V stays · M with the person",
-     ko:"힘과 반복은 팔의 몫이고, 판단은 사람에게 남는다." },
-   { n:"⑬", en:"The split between the two halves is a design decision, not a law of physics.",
-     ans:"S The split between the two halves · △V is · C a design decision, not a law of physics",
-     ko:"두 절반을 가르는 선은 물리 법칙이 아니라 설계상의 결정이다." }
+   {
+    n: "②",
+    en: "In economic terms, the use of automation technologies makes employees more productive because they can produce more products and serve more customers with the help of technology than before automation.",
+    ans: "M In economic terms · S the use of automation technologies · △V makes · O employees more productive · [because] S′ they · △V′ can produce · O more products · [and] △V′ serve · O more customers with the help of technology than before automation",
+    ko: "경제적으로 보면, 자동화 기술을 쓰는 일은 직원을 더 생산적으로 만든다. 기술의 도움으로 자동화 이전보다 더 많은 제품을 만들고 더 많은 손님을 응대할 수 있기 때문이다."
+   },
+   {
+    n: "⑤",
+    en: "They may passively support or actively embrace collaborative service robots, but they may also passively resist or actively sabotage an organisation's efforts to implement service robots.",
+    ans: "S They · △V may passively support · [or] △V actively embrace · O collaborative service robots · [but] S they · △V may also passively resist · [or] △V actively sabotage · O an organisation's efforts to implement service robots",
+    ko: "그들은 협업 서비스 로봇을 소극적으로 지지하거나 적극적으로 받아들일 수도 있지만, 서비스 로봇을 들이려는 조직의 노력에 소극적으로 저항하거나 적극적으로 훼방을 놓을 수도 있다."
+   },
+   {
+    n: "⑥",
+    en: "Hence, when employees have a high willingness to collaborate with automation technologies, it will be easier for companies and organisations to automate various processes in their operations.",
+    ans: "M Hence · [when] S′ employees · △V′ have · O a high willingness to collaborate with automation technologies · S it · △V will be · C easier for companies and organisations to automate various processes in their operations",
+    ko: "따라서 직원들이 자동화 기술과 협업할 뜻이 클 때, 기업과 조직이 운영의 여러 과정을 자동화하기가 더 쉬워진다."
+   }
   ]
  },
  syn: [
-  { n:"⑥", name:"while 접속사 + 간접의문문",
-    q:"The machine holds the heavy part «while the human decides where» it goes.",
-    d:"<b>while</b>은 '~하는 동안·~인 반면'. decides 의 목적어로 where 절이 왔다.",
-    k:"기계가 무거운 부품을 붙잡는 동안 사람은 그것이 어디로 갈지 정한다." },
-  { n:"⑫", name:"주격 관계대명사 that + 수동",
-    q:"«Skill that is never» practised disappears within a few years.",
-    d:"<b>that</b> 절이 Skill 을 꾸민다. 문장의 본동사는 뒤의 disappears 다.",
-    k:"연습되지 않는 기술은 몇 년 안에 사라진다." }
+  {
+   n: "③",
+   name: "only if (~할 때에만)",
+   q: "…but it «will only happen if employees actually work with the respective automation technology».",
+   d: "<b>only if</b>는 조건을 하나로 좁힌다. ‘그때에만’이라는 뜻이 되도록 only 의 자리를 살펴 읽는다.",
+   k: "직원이 실제로 함께 일할 때에만"
+  },
+  {
+   n: "⑧",
+   name: "양보의 even if (설령 ~하더라도)",
+   q: "…would keep the current level of automation «even if the financial benefits do not materialise»…",
+   d: "<b>even if</b>는 아직 일어나지 않은 일을 앞세운 양보다. ‘설령 ~하더라도’로 읽는다.",
+   k: "설령 재정적 이득이 실현되지 않더라도"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"He drives while she decides where they stop.",
-    k:"그가 운전하는 동안 그녀가 어디서 멈출지 정한다." },
-  { u:"구문 2", en:"A rule that is never explained loses its force.",
-    k:"설명되지 않는 규칙은 힘을 잃는다." },
-  { u:"구문 1 + 2", en:"A skill that is never used fades while the machine decides what matters.",
-    k:"기계가 무엇이 중요한지 정하는 동안 쓰이지 않는 기술은 사라진다." }
+  { u: "구문 1", en: "The gain appears only if the team uses the tool.", k: "그 이득은 팀이 그 도구를 쓸 때에만 나타난다." },
+  { u: "구문 2", en: "They kept the robots even if the savings never came.", k: "절감이 끝내 오지 않더라도 그들은 로봇을 유지했다." },
+  { u: "구문 1 + 2", en: "Even if the cost falls, the gain comes only if workers agree.", k: "설령 비용이 내려가더라도, 그 이득은 노동자가 동의할 때에만 온다." }
  ],
- wtype: ["반대","정답","무관","무관","지엽"],
- stype: ["일치","일치","일치","반대","일치"],
- why: [["글은 모든 일자리를 빼앗는다고 말하지 않는다"],["정답"],
-       ["로봇을 만드는 방법은 다루지 않는다"],
-       ["공장을 닫자는 주장은 글에 없다"],
-       ["부상 감소는 한 문장에 나오는 세부다"]],
- src: [["⑤"],["⑧"],["⑨"],["⑬과 어긋남 — 설계상의 결정이라고 했다"],["⑫"]],
+ why: [
+  ["로봇 조립 과정은 글에 나오지 않는다"],
+  ["정답"],
+  ["글은 자동화가 생산성을 높인다고 말한다 — 정반대다"],
+  ["온라인 학습 플랫폼은 조사 주체로 한 번 나올 뿐이다"],
+  ["공장 사이렌의 역사는 글에서 다루지 않는다"]
+ ],
+ src: [["①"], ["②"], ["③과 어긋남 — 직원이 실제로 함께 일할 때만 나타난다"], ["⑤"], ["⑧"]],
  kb: {
-  title:"일을 나누는 선",
-  lead:"그 선을 누가 긋는가가 진짜 문제다.",
+  title: "코봇",
+  lead: "사람 곁에서 일하는 기계",
   items: [
-   ["협동 로봇",
-    "속도와 힘을 제한해 사람과 같은 공간에서 작업하도록 만든 로봇이다. 안전 울타리 없이 배치할 수 있어 소규모 공장에서도 쓰인다."],
-   ["탈숙련 논의",
-    "브레이버만 이후, 자동화가 일자리를 없애기보다 남은 일의 숙련도를 낮춘다는 지적이 이어져 왔다. 항공기 조종의 자동화 연구에서도 비슷한 문제가 보고된다."],
-   ["누가 설계하는가",
-    "무엇을 기계에 맡길지는 기술적 한계가 아니라 설계자의 선택인 경우가 많다. 현장 작업자가 그 결정에 참여하는지가 결과를 크게 바꾼다."]
+   ["코봇", "사람과 같은 공간에서 함께 일하도록 만든 로봇을 협동 로봇(collaborative robot), 줄여서 코봇(cobot)이라 한다. 안전 울타리 없이 나란히 서는 것이 특징이다."],
+   ["향상 효과", "본문의 enhancement effect 는 도구가 사람의 산출을 키우는 효과다. 도구를 쓰지 않으면 그 효과는 계산에만 남고 현장에는 나타나지 않는다."],
+   ["받아들임의 폭", "같은 기술을 두고도 적극적 수용부터 적극적 훼방까지 태도의 폭이 넓다. 도입의 성패가 기술만이 아니라 사람에게 달린 까닭이다."]
   ],
-  ask:"내가 자주 하는 일 가운데 기계에 맡기고 싶은 절반은 무엇인가? 남기고 싶은 절반은?"
- }
+  ask: "여러분이 기계와 함께 일한다면 어떤 몫을 기계에 넘기고 어떤 몫을 쥐고 있겠는가?"
+ },
+ wtype: ["무관", "정답", "반대", "지엽", "무관"],
+ stype: ["일치", "일치", "반대", "일치", "일치"]
 },
+
+/* ───────────────────────────── 60 ───────────────────────────── */
 {
- no: "60", key: "needs",
- accent: "#9A6A2E", tint: "#F6EEE0", deep: "#6B4614",
+ no: "60", key: "needs", accent: "#9A6A2E", tint: "#F6EEE0", deep: "#6B4614",
  en: "Invented Consumer Needs in Capitalism",
  ko: "이 필요는 언제 생겼을까",
- goal: "필요와 욕구의 경계가 어떻게 만들어지는지 설명할 수 있다.",
- fig: "Figure 1  필요에도 생일이 있다.",
- tip: "먼저 생각해 보자. 지금 '꼭 있어야 한다'고 느끼는 물건은 언제부터 그랬을까?",
- sent: [
-  "A need feels like a fact, and a want feels like a choice.",
-  "The line between them moves more than either word suggests.",
-  "Nobody in 1900 believed that mouth odour was a medical problem.",
-  "A company selling floor cleaner renamed it a mouthwash and named the condition.",
-  "Halitosis was a real word, but it had lived quietly in medical dictionaries.",
-  "Advertising moved it into ordinary conversation and into ordinary anxiety.",
-  "Sales rose from a hundred thousand dollars to eight million in seven years.",
-  "The same method has been used for deodorant, for orange juice, and for bottled water.",
-  "Critics conclude that capitalism manufactures needs as efficiently as it manufactures goods.",
-  "Defenders answer that all needs above survival are social anyway.",
-  "Nobody needs a chair, and few of us would give one up.",
-  "Both sides are partly right, which is why the argument never ends.",
-  "The useful move is smaller than choosing a side.",
-  "It is asking, before a purchase, when this particular need first appeared.",
-  "Sometimes the answer is a childhood, and sometimes it is a campaign."
+ goal: "마케팅이 어떻게 ‘필요’를 만들어 내는지, 필자가 그것을 왜 문제로 보는지 설명할 수 있다.",
+ fig: "Figure 1  어떤 필요에는 생일이 있다.",
+ tip: "먼저 생각해 보자. 지금 꼭 필요하다고 느끼는 물건은 언제부터 필요했을까?",
+ sent: T(60).sent, kor: T(60).kor,
+ bank: [
+  ["umpteenth", "①", "몇 번째인지 모를"],
+  ["quantitative", "③", "양적인"],
+  ["superfluous", "⑤", "남아도는"],
+  ["commons", "⑥", "공유재"],
+  ["induce", "⑨", "유도하다"],
+  ["narcissistic", "⑨", "자기도취적인"]
  ],
- kor: [
-  "필요는 사실처럼 느껴지고, 욕구는 선택처럼 느껴진다.",
-  "그 둘 사이의 선은 두 단어가 암시하는 것보다 훨씬 많이 움직인다.",
-  "1900년에는 입 냄새가 의학적 문제라고 믿는 사람이 없었다.",
-  "바닥 세정제를 팔던 회사가 그것을 구강 청결제로 바꿔 부르고, 그 증상에 이름을 붙였다.",
-  "'구취'는 실재하는 단어였지만, 의학 사전 안에서 조용히 살고 있었다.",
-  "광고가 그것을 일상의 대화 속으로, 그리고 일상의 불안 속으로 옮겨 놓았다.",
-  "매출은 7년 만에 10만 달러에서 800만 달러로 뛰었다.",
-  "같은 방법이 데오도런트에도, 오렌지 주스에도, 생수에도 쓰였다.",
-  "비판하는 쪽은 자본주의가 상품을 만들듯 효율적으로 필요를 만든다고 결론짓는다.",
-  "옹호하는 쪽은 생존을 넘어선 모든 필요는 어차피 사회적이라고 답한다.",
-  "의자가 꼭 필요한 사람은 없지만, 그것을 포기할 사람도 거의 없다.",
-  "양쪽 다 부분적으로 옳고, 그래서 이 논쟁은 끝나지 않는다.",
-  "쓸 만한 수는 한쪽 편을 드는 것보다 작다.",
-  "사기 전에, 이 특정한 필요가 언제 처음 생겼는지 물어보는 것이다.",
-  "어떤 때는 그 답이 어린 시절이고, 어떤 때는 광고 캠페인이다."
+ defs: [
+  ["umpteenth", "one more in a long, tiresome series"],
+  ["quantitative", "counted in amounts, not in quality"],
+  ["superfluous", "more than is needed or useful"],
+  ["commons", "what a community shares and holds"],
+  ["induce", "to bring about a certain behaviour"],
+  ["narcissistic", "taken up with one's own image"]
  ],
- bank: [["odour","③","냄새"],["condition","④","증상"],["anxiety","⑥","불안"],
-        ["manufactures","⑨","만들어 내다"],["survival","⑩","생존"],["campaign","⑮","광고 캠페인"]],
- defs: [["odour","a smell, often an unpleasant one"],
-        ["condition","a medical problem someone has"],
-        ["anxiety","a feeling of worry about something"],
-        ["manufactures","makes goods in large numbers"],
-        ["survival","the state of staying alive"],
-        ["campaign","a planned set of actions to persuade"]],
- defOrder: [4,1,5,0,3,2],
+ defOrder: [3, 0, 5, 1, 4, 2],
  flow: [
-  ["The feeling","A need feels like a fact, a want like a choice",null],
-  ["The case","A floor cleaner became a (  ①  )","mouthwash"],
-  ["The method","An old word moved into daily (  ②  )","anxiety"],
-  ["The result","Sales rose to eight (  ③  ) in seven years","million"],
-  ["The move","Ask when this need first (  ④  )","appeared"]
+  ["The claim", "Most goods answer no real private or public need", null],
+  ["The state's view", "They are needed because production boosts (  ①  )", "growth"],
+  ["The method", "Demand is created by massive investments called (  ②  )", "marketing"],
+  ["The damage", "Bottled water ads harm the (  ③  )", "commons"],
+  ["The person", "The isolated buyer meets the “(  ④  ) crowd”", "lonely"]
  ],
- flowBogi: "mouthwash · anxiety · million · appeared · chair · survival",
+ flowBogi: "growth · marketing · commons · lonely · quality · public",
  para: [
-  ["② The line between them moves","The boundary is not ______.","fixed"],
-  ["⑤ it had lived quietly in medical dictionaries","The word was already ______.","available"],
-  ["⑦ from a hundred thousand to eight million","Growth was ______.","enormous"],
-  ["⑩ all needs above survival are social anyway","Culture ______ most of our needs.","shapes"],
-  ["⑭ when this particular need first appeared","Trace the ______ of the want.","origin"]
+  ["① do not represent a need, either private or public", "Most of these goods answer no real ______.", "need"],
+  ["③ conceived of as a merely quantitative function", "Growth is counted only as an ______.", "amount"],
+  ["⑤ persuade consumers to think that they need", "Ads teach buyers to ______ they need it.", "believe"],
+  ["⑧ invent new private wants and needs", "Marketing was built to ______ new wants.", "invent"],
+  ["⑩ finds in products, in goods, in objects", "He looks for ties in ______, not people.", "things"]
  ],
- paraBogi: "fixed · available · enormous · shapes · origin · hidden · limits · price",
+ paraBogi: "need · amount · believe · invent · things · price · doubt · people",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How to Cure Bad Breath","Where Did This Need Come From",
-       "Why Advertising Should Be Banned","A History of Floor Cleaners",
-       "All Needs Are Purely Biological"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["1900년에는 입 냄새를 의학 문제로 보지 않았다.","'구취'는 원래 있던 단어였다.",
-       "같은 방법이 여러 상품에 쓰였다.","필자는 한쪽 편을 확실히 들어야 한다고 본다.",
-       "매출은 7년 만에 크게 뛰었다."], ans:4},
-  {t:"write", q:"필자가 권한 '더 작은 수'가 무엇인지 우리말 한 문장으로 써 보세요.",
-   ans:"무언가를 사기 전에 그 필요가 언제 처음 생겼는지 스스로 물어보는 것이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How Bottled Water Is Made",
+    "The Needs That Were Invented",
+    "Why Marketing Rarely Works",
+    "A Guide to Saving Money",
+    "The History of Shoe Design"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "필자는 오늘의 생산 방식이 내놓는 대부분의 재화가 실제 필요를 나타내지 않는다고 본다.",
+    "국가의 관점에서도 이 재화들은 필요하지 않은 것으로 여겨진다.",
+    "사적 재화에 대한 필요는 마케팅이라 불리는 투자로 수요를 조작해 만들어진다.",
+    "생수 광고는 공유재를 해치는 사례로 제시된다.",
+    "마케팅 전략은 새로운 사적 욕구와 필요를 만들어 내려고 개발되었다."
+   ], ans: 2
+  },
+  {
+   t: "write", q: "필자가 ‘성장’이라는 말을 무책임한 이념이라고 부르는 까닭을 우리말 한 문장으로 써 보세요.",
+   ans: "성장을 오로지 양적인 함수로만 생각하기 때문이다."
+  }
  ],
  fl: {
-  model: { n:"⑫",
-   toks: [["Both sides","s"],["are","v"],["partly right","m"],["which","s2"],
-          ["is","v2"],["why the argument never ends","m"]],
-   ko:"양쪽 다 부분적으로 옳고, 그래서 이 논쟁은 끝나지 않는다." },
+  model: {
+   n: "④",
+   toks: [
+    ["The need for private goods", "s"], ["is created", "v"],
+    ["by manipulating demand", "m"],
+    ["by means of specific and massive investments called marketing.", "m"]
+   ],
+   ko: "사적 재화에 대한 필요는 마케팅이라 불리는 구체적이고 대규모의 투자로 수요를 조작해 만들어진다."
+  },
   drill: [
-   { n:"④", en:"A company selling floor cleaner renamed it a mouthwash and named the condition.",
-     ans:"S A company · M selling floor cleaner · △V renamed · O it · C a mouthwash · △V named · O the condition",
-     ko:"바닥 세정제를 팔던 회사가 그것을 구강 청결제로 바꿔 부르고, 그 증상에 이름을 붙였다." },
-   { n:"⑨", en:"Critics conclude that capitalism manufactures needs as efficiently as it manufactures goods.",
-     ans:"S Critics · △V conclude · [that] S′ capitalism · △V′ manufactures · O needs · M as efficiently as it manufactures goods",
-     ko:"비판하는 쪽은 자본주의가 상품을 만들듯 효율적으로 필요를 만든다고 결론짓는다." },
-   { n:"⑭", en:"It is asking, before a purchase, when this particular need first appeared.",
-     ans:"S It · △V is · C asking · M before a purchase · O when this particular need first appeared",
-     ko:"사기 전에 이 필요가 언제 처음 생겼는지 물어보는 것이다." }
+   {
+    n: "②",
+    en: "From the state's perspective, nonetheless, these goods are needed in so far as their production boosts growth and development of the national economy.",
+    ans: "M From the state's perspective, nonetheless · S these goods · △V are needed · [in so far as] S′ their production · △V′ boosts · O growth and development of the national economy",
+    ko: "그렇지만 국가의 관점에서 이 재화들은 그 생산이 국민 경제의 성장과 발전을 밀어 올리는 한에서는 필요한 것이다."
+   },
+   {
+    n: "⑥",
+    en: "In some cases, marketing activities increase the consumption and accumulation of private goods as if there were a need for them, thus damaging the commons, such as in the case of commercial ads for bottled drinking water.",
+    ans: "M In some cases · S marketing activities · △V increase · O the consumption and accumulation of private goods · [as if] △V′ there were · C a need for them · M thus damaging the commons, such as in the case of commercial ads for bottled drinking water",
+    ko: "어떤 경우에 마케팅 활동은 마치 그것들이 필요한 것처럼 사적 재화의 소비와 축적을 늘려, 생수 광고의 사례처럼 공유재를 해친다."
+   },
+   {
+    n: "⑨",
+    en: "Marketing induces consumer behaviour that has devastating ecological effects, by creating false images and materialistic myths of an egocentric and narcissistic character.",
+    ans: "S Marketing · △V induces · O consumer behaviour · [that] △V′ has · O devastating ecological effects · M by creating false images and materialistic myths of an egocentric and narcissistic character",
+    ko: "마케팅은 자기중심적이고 자기도취적인 성격의 거짓 이미지와 물질주의 신화를 만들어 냄으로써, 생태에 파괴적인 영향을 미치는 소비 행동을 유도한다."
+   }
   ]
  },
  syn: [
-  { n:"⑨", name:"as + 부사 + as 원급 비교",
-    q:"capitalism manufactures needs «as efficiently as» it manufactures goods.",
-    d:"<b>as + 부사 + as</b>는 '~만큼 …하게'라는 원급 비교다.",
-    k:"자본주의는 상품을 만드는 것만큼 효율적으로 필요를 만든다." },
-  { n:"⑫", name:"which is why (앞 문장 전체를 받음)",
-    q:"Both sides are partly right, «which is why» the argument never ends.",
-    d:"콤마 뒤 <b>which</b>가 앞 문장 전체를 받는다. which is why 는 '그래서 ~한 것이다'.",
-    k:"양쪽 다 부분적으로 옳고, 그래서 논쟁이 끝나지 않는다." }
+  {
+   n: "②",
+   name: "in so far as (~하는 한에서는)",
+   q: "…these goods are needed «in so far as their production boosts growth and development»…",
+   d: "<b>in so far as</b>는 조건의 범위를 긋는다. ‘~하는 한에서만 그렇다’로 읽는다.",
+   k: "성장을 밀어 올리는 한에서는"
+  },
+  {
+   n: "⑥",
+   name: "as if there were (마치 ~인 것처럼)",
+   q: "…increase the consumption and accumulation of private goods «as if there were a need for them»…",
+   d: "실제로는 아닌 일을 빗대는 자리라 <b>were</b>가 쓰인다. ‘마치 ~이라도 되는 것처럼’으로 읽는다.",
+   k: "마치 그것들이 필요하기라도 한 것처럼"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"He writes as carefully as he reads.",
-    k:"그는 읽는 것만큼 신중하게 쓴다." },
-  { u:"구문 2", en:"The bus was late, which is why we walked.",
-    k:"버스가 늦었고, 그래서 우리는 걸었다." },
-  { u:"구문 1 + 2", en:"She listens as closely as she speaks, which is why people trust her.",
-    k:"그녀는 말하는 만큼 가까이 듣고, 그래서 사람들이 그녀를 믿는다." }
+  { u: "구문 1", en: "The rule holds in so far as the market stays open.", k: "그 규칙은 시장이 열려 있는 한에서 성립한다." },
+  { u: "구문 2", en: "They stocked the shelves as if there were a shortage.", k: "그들은 마치 품귀가 있기라도 한 것처럼 선반을 채웠다." },
+  { u: "구문 1 + 2", en: "The ad works in so far as it makes us act as if there were a need.", k: "그 광고는 마치 필요가 있는 것처럼 행동하게 만드는 한에서 통한다." }
  ],
- wtype: ["무관","정답","반대","지엽","반대"],
- stype: ["일치","일치","일치","반대","일치"],
- why: [["입 냄새를 고치는 법은 글의 관심사가 아니다"],["정답"],
-       ["광고를 금지하자는 주장은 글에 없다"],
-       ["바닥 세정제는 한 사례의 출발점일 뿐이다"],
-       ["생존을 넘어선 필요는 사회적이라고 했다"]],
- src: [["③"],["⑤"],["⑧"],["⑬과 어긋남 — 쓸 만한 수는 더 작다고 했다"],["⑦"]],
+ why: [
+  ["생수 제조 공정은 글에 나오지 않는다"],
+  ["정답"],
+  ["글은 마케팅이 강하게 작동한다고 말한다 — 정반대다"],
+  ["절약 방법은 글의 관심사가 아니다"],
+  ["신발 디자인의 역사는 글의 초점이 아니다"]
+ ],
+ src: [["①"], ["②와 어긋남 — 국가의 관점에서는 성장을 밀어 올려 필요하다고 본다"], ["④"], ["⑥"], ["⑧"]],
  kb: {
-  title:"필요는 어디서 오는가",
-  lead:"어떤 필요에는 생일이 있다.",
+  title: "만들어진 필요",
+  lead: "필요와 욕구 사이",
   items: [
-   ["구취 광고",
-    "1920년대 리스테린 광고는 halitosis 라는 의학 용어를 일상어로 끌어와 불안을 자극했다. 매출이 수십 배로 늘어난 사례로 광고사에서 자주 인용된다."],
-   ["필요와 욕구",
-    "생존에 필요한 것과 사회적으로 형성된 것을 구분하려는 시도가 이어져 왔다. 그 경계는 시대와 사회에 따라 달라진다."],
-   ["부끄럽지 않게 나타나기",
-    "센은 사람들이 '부끄럽지 않게 사회에 나설 수 있는 것'을 기본적 필요에 포함해야 한다고 보았다. 그 기준은 그 사회의 관습이 정한다."]
+   ["필요와 욕구", "경제학과 사회학에서는 need(필요)와 want(욕구)를 나눈다. 본문은 마케팅이 욕구를 필요처럼 보이게 만든다고 본다."],
+   ["‘고독한 군중’", "본문이 인용한 ‘the lonely crowd’는 사회학자 데이비드 리스먼(David Riesman)이 1950년에 낸 책의 제목에서 온 표현이다."],
+   ["생수와 공유재", "수돗물이 안전한 곳에서도 생수 광고는 병에 든 물을 필요처럼 만든다. 그사이 공동의 자산인 상수도에 대한 신뢰와 투자는 줄어든다."]
   ],
-  ask:"내가 '꼭 필요하다'고 느끼는 물건 하나를 골라 보자. 그 필요는 언제 생겼을까?"
- }
+  ask: "여러분이 ‘꼭 필요하다’고 느끼는 물건 가운데 십 년 전에는 없던 것은 무엇인가?"
+ },
+ wtype: ["무관", "정답", "반대", "무관", "지엽"],
+ stype: ["일치", "반대", "일치", "일치", "일치"]
 }
-]};
+
+ ]
+};
