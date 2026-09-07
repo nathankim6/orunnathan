@@ -583,6 +583,10 @@ textarea:focus, input:focus { border-color: var(--line-4); outline: 2px solid va
 .api-card .api-model { margin-top: var(--s3); max-width: 360px; }
 .api-card .api-engine { margin: var(--s3) 0 var(--s3); max-width: 360px; }
 .api-card .api-keep { margin-top: var(--s3); max-width: 360px; }
+.api-card .api-fx { margin: var(--s3) 0 0; font-size: var(--fs-micro); line-height: 1.7; color: var(--n9); }
+.api-card .api-fx label { display: inline; font-size: inherit; font-weight: var(--w-reg); color: inherit; margin: 0; }
+.api-card .api-fx input { width: 84px; padding: 4px 8px; font-size: var(--fs-micro); text-align: right; }
+.api-card .api-fx .fx-note { display: block; color: var(--n8); margin-top: 2px; }
 .lib-warn {
   margin: var(--s5) 0 0; padding: var(--s3) var(--s4);
   background: var(--neg-surface); border: 1px solid var(--neg-line); border-radius: var(--r3);
@@ -1703,7 +1707,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     <span class="step" data-step="2"></span><span class="step-rule"></span>
     <span class="step" data-step="3"></span>
   </div>
-  <div class="state"><span class="build" id="buildTag">2026-09-07 21:58</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
+  <div class="state"><span class="build" id="buildTag">2026-09-07 22:33</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
 </div>
 
 <!-- 화면 0 · 시작 -->
@@ -1746,6 +1750,8 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
         <button type="button" data-v="session">창을 닫으면 지움</button>
       </div>
       <div class="seg api-model" id="apiModelSeg"><button type="button" class="on" data-v="opus">Opus 5 · 정밀</button><button type="button" data-v="sonnet">Sonnet 5 · 빠르고 저렴</button></div>
+      <p class="api-fx"><label for="usdKrw">원화 환산 기준</label> 1$ = <input type="number" id="usdKrw" min="100" max="5000" step="10"> 원
+        <span class="fx-note">청구는 달러로 됩니다 · Opus 5 백만 토큰당 입력 $5 / 출력 $25, Sonnet 5 는 $2 / $10</span></p>
       <p class="api-safe">
         키는 이 브라우저에만 남고 <b>api.anthropic.com</b> 한 곳으로만 보내요. 저장한 작업 내용·이력에는 들어가지 않아요.
         여럿이 쓰는 컴퓨터라면 ‘창을 닫으면 지움’을 고르세요.
@@ -3393,6 +3399,34 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   function apiModelKey() { let m = "opus"; try { m = localStorage.getItem(API_MODEL_STORE) || "opus"; } catch (e) {} return API_MODELS[m] ? m : "opus"; }
   function apiModelId() { return API_MODELS[apiModelKey()]; }
   const API_MAX_TOKENS = { complex: 32000, default: 8000 };   // 모델 한도는 128K — 넉넉히 잡아도 값은 실제 출력분만 든다
+
+  // ── 비용 — 청구는 Anthropic 이 달러로 한다. 원화는 참고용 환산이다. ──
+  // 백만 토큰당 달러 (입력 / 출력)
+  const PRICE = { opus: { in: 5, out: 25 }, sonnet: { in: 2, out: 10 } };
+  const USD_KRW_STORE = "orun_usdkrw";
+  const USD_KRW_DEFAULT = 1350;                 // 2026-09 기준 대략치. 아래 칸에서 바꿀 수 있다.
+  function usdKrw() {
+    let v = 0; try { v = Number(localStorage.getItem(USD_KRW_STORE)) || 0; } catch (e) {}
+    return v > 0 ? v : USD_KRW_DEFAULT;
+  }
+  let spend = { calls: 0, in: 0, out: 0, cw: 0, cr: 0, usd: 0 };
+  function resetSpend() { spend = { calls: 0, in: 0, out: 0, cw: 0, cr: 0, usd: 0 }; }
+  function addSpend(modelKey, u) {
+    if (!u) return;
+    const pr = PRICE[modelKey] || PRICE.opus;
+    spend.calls++;
+    spend.in += u.in || 0; spend.out += u.out || 0;
+    spend.cw += u.cw || 0; spend.cr += u.cr || 0;
+    // 캐시 쓰기 1.25배, 캐시 읽기 0.1배 (이 앱은 캐시를 쓰지 않지만 들어오면 반영한다)
+    spend.usd += ((u.in || 0) * pr.in + (u.cw || 0) * pr.in * 1.25 + (u.cr || 0) * pr.in * 0.1
+                  + (u.out || 0) * pr.out) / 1e6;
+  }
+  function spendText() {
+    if (!spend.calls || !(spend.in + spend.out)) return "";
+    const won = Math.round(spend.usd * usdKrw());
+    return "입력 " + spend.in.toLocaleString() + " · 출력 " + spend.out.toLocaleString() + " 토큰 · 약 "
+      + won.toLocaleString() + "원 ($" + spend.usd.toFixed(2) + " · 1$=" + usdKrw().toLocaleString() + "원 기준)";
+  }
   let apiFallbackOk = true;   // 서버가 폴백 베타를 거절하면 이후로는 빼고 보낸다
 
   // 키 보관 — 여럿이 쓰는 컴퓨터를 위해 '창을 닫으면 지움'(sessionStorage) 을 고를 수 있다.
@@ -3466,6 +3500,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     const reader = res.body.getReader();
     const dec = new TextDecoder();
     let buf = "", text = "", stop = null, evName = "";
+    const used = { in: 0, out: 0, cw: 0, cr: 0 };
     const handle = (line) => {
       if (line.startsWith("event:")) { evName = line.slice(6).trim(); return; }
       if (!line.startsWith("data:")) return;
@@ -3474,8 +3509,15 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
       if (t === "content_block_delta" && ev.delta && ev.delta.type === "text_delta") {
         text += ev.delta.text || "";
         if (onText) onText({ text, delta: ev.delta.text || "" });
-      } else if (t === "message_delta" && ev.delta && ev.delta.stop_reason) {
-        stop = ev.delta.stop_reason;
+      } else if (t === "message_start" && ev.message && ev.message.usage) {
+        Object.assign(used, {
+          in: (used.in || 0) + (ev.message.usage.input_tokens || 0),
+          cw: (used.cw || 0) + (ev.message.usage.cache_creation_input_tokens || 0),
+          cr: (used.cr || 0) + (ev.message.usage.cache_read_input_tokens || 0),
+        });
+      } else if (t === "message_delta") {
+        if (ev.delta && ev.delta.stop_reason) stop = ev.delta.stop_reason;
+        if (ev.usage) used.out = (used.out || 0) + (ev.usage.output_tokens || 0);
       } else if (t === "error") {
         const er = ev.error || {};
         throw apiError(er.type || "stream_error", er.message || "스트림 오류");
@@ -3494,7 +3536,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
       }
     }
     if (buf.trim()) handle(buf.trim());
-    return { text, stop };
+    return { text, stop, used };
   }
   function apiHttpError(status, body) {
     let msg = "";
@@ -3555,6 +3597,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     }
     if (!res.ok) throw apiHttpError(res.status, await res.text());
     const r = await readApiStream(res, opts.onText, opts.signal);
+    addSpend(apiModelKey(), r.used);              // 쓴 만큼을 그때그때 적어 둔다
     if (r.stop === "refusal") throw apiError("refused", "거절");
     if (!r.text.trim()) throw apiError("empty_completion", "빈 응답");
     return { text: r.text, truncated: r.stop === "max_tokens", modelTierApplied: tier };
@@ -3647,6 +3690,18 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
       probeOut.textContent = r.msg;
       btnT.disabled = false;
     });
+    const fx = $("usdKrw");
+    if (fx) {
+      fx.value = usdKrw();
+      const save = () => {
+        const v = Math.round(Number(fx.value) || 0);
+        if (v >= 100 && v <= 5000) { try { localStorage.setItem(USD_KRW_STORE, String(v)); } catch (e) {} }
+        else fx.value = usdKrw();
+        renderUsage();
+      };
+      fx.addEventListener("change", save);
+      fx.addEventListener("blur", save);
+    }
     const seg = $("apiModelSeg");
     if (seg) {
       const paint = () => { const k = apiModelKey(); seg.querySelectorAll("button").forEach(b => b.classList.toggle("on", b.dataset.v === k)); };
@@ -3671,7 +3726,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   function diagnostics() {
     return [
       "ORUN 동형 모의고사 진단",
-      "build: 2026-09-07 21:58",
+      "build: 2026-09-07 22:33",
       "url: " + location.href,
       "runtime: API 키 전용 빌드",
       "sample 확보: " + (SAMPLE ? "예" : "아니오"),
@@ -3789,7 +3844,10 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   const askJson = (prompt, tier) => callClaude(prompt, { tier, json: true });
 
   function renderUsage() {
-    $("usageInfo").textContent = calls ? "이번 작업 Claude 호출 " + calls + "회 · API 키 사용량으로 처리됨" : "";
+    const t = spendText();
+    $("usageInfo").textContent = calls
+      ? "이번 시험지 · Claude 호출 " + calls + "회" + (t ? " · " + t : " · API 키 사용량으로 처리됨")
+      : "";
   }
 
   // ---------- 스캔본 PDF: 쪽을 그림으로 만들어 Claude 가 읽게 한다 ----------
@@ -4341,6 +4399,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     newAbort();
     running = { abort() { cancelRequested = true; if (abortCtl) abortCtl.abort(); } };
     calls = 0;
+    resetSpend();
     const extra = $("extraReq").value.trim();
 
     // 자료 → 청크
@@ -4446,7 +4505,8 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
       });
 
       analyzeProg.set(98, 4, "결과 정리 중");
-      stage.done("매칭 완료 — " + plan.length + "문항 배정 · Claude 호출 " + calls + "회 · " + streamed.toLocaleString() + "자 수신");
+      stage.done("매칭 완료 — " + plan.length + "문항 배정 · Claude 호출 " + calls + "회 · " + streamed.toLocaleString() + "자 수신"
+        + (spendText() ? " · " + spendText() : ""));
       analysis = { exam_info: info, questions, matching_plan: plan };
       pipe = { examText: examBody, catalog, passages };
       analyzeProg.finish("분석 완료");
@@ -4688,7 +4748,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
         ? (rv.check ? "검수 완료 · 미합의 " + rv.check + "문항"
                     : rv.fixed ? "합의 완료 · " + rv.fixed + "문항" : "검수 완료 · 3인 정답 일치")
         : "출제 완료");
-      genProg.finish("출제 완료");
+      genProg.finish("출제 완료" + (spendText() ? " · " + spendText().split(" · 약 ")[1].split(" ($")[0] + " 사용" : ""));
       // 묶음별 장부가 아니라 '종이에 실제로 올라간 것'으로 센다.
       // 다시 청구해서 채운 문항까지 빠졌다고 말하면 안 된다.
       const have = new Set(docUnits.filter(u => u.classList && u.classList.contains("question"))
