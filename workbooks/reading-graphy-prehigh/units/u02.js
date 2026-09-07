@@ -1,681 +1,726 @@
-/* Unit 2 · Field 2 — Science & Technology 과학·기술
-   원서 Theme 06–10 의 주제를 예비고1 수준으로 다시 쓴 것. */
+/* Unit 2 · Science & Technology — 원문 Theme 06–10 */
+const R = require("../src/orig/all.json");
+const T = n => R[n - 1];
+
 module.exports = {
  no: 2,
  field: "Science & Technology",
  ko: "과학·기술",
  tagline: "묻는 법 — 무엇을 증거로 삼을 것인가",
- next: { en: "Social Matters", ko: "사람들이 모여 만든 규칙과 그 값을 읽습니다", words: "175–205 words" },
+ next: { en: "Social Matters", ko: "사람들이 모여 만든 규칙과 그 값을 읽습니다", words: "226–294 words" },
  lessons: [
+
+/* ───────────────────────────── 06 ───────────────────────────── */
 {
- no: "06", key: "twowhys",
- accent: "#2C6E8F", tint: "#E3EFF5", deep: "#1B4A61",
- en: "Two Ways to Ask Why",
- ko: "'왜'라는 말의 두 가지 뜻",
- goal: "같은 현상에 대해 기제를 묻는 질문과 의미를 묻는 질문을 구분할 수 있다.",
+ no: "06", key: "twowhys", accent: "#2C6E8F", tint: "#E3EFF5", deep: "#1B4A61",
+ en: "The Difference in Scientific Approaches Between Biologists and Psychologists",
+ ko: "이상한 지점을 그냥 지나치지 않기",
+ goal: "생물학자와 심리학자의 접근 방식이 어디에서 갈리는지 Monod의 사례를 근거로 설명할 수 있다.",
  fig: "Figure 1  같은 장면 앞에 선 두 과학자, 서로 다른 질문.",
- tip: "먼저 생각해 보자. 친구가 갑자기 화를 냈다. '왜?'라고 물을 때 나는 몸의 작동을 묻는 걸까, 마음의 이유를 묻는 걸까?",
- sent: [
-  "A cat runs to the kitchen the moment it hears a can open.",
-  "A biologist and a psychologist both watch this, and both ask why.",
-  "But they are not asking the same question.",
-  "The biologist looks for a mechanism.",
-  "She asks which nerves carry the sound and how the muscles move.",
-  "Her answer is a chain of causes that anyone could measure with instruments.",
-  "The psychologist looks for a meaning.",
-  "He asks what the cat expects and how a past meal shaped today's run.",
-  "His answer is a story about experience rather than parts.",
-  "Neither answer is wrong, and neither is complete on its own.",
-  "A pure chain of chemicals cannot explain why the cat ignores the same sound in a strange house.",
-  "A pure story about expectation cannot explain why the cat still runs when it is not hungry.",
-  "Science makes progress when the two questions are allowed to meet.",
-  "The best explanations describe both the machinery and the experience.",
-  "To ask why well, you must first know which why you mean."
+ tip: "먼저 생각해 보자. 실험 결과가 예상과 어긋났다. 나는 그 어긋남을 파고드는 쪽인가, 원래 생각을 지키는 쪽인가?",
+ sent: T(6).sent, kor: T(6).kor,
+ bank: [
+  ["linear", "②", "선형의"],
+  ["pursuit", "④", "추구, 탐구"],
+  ["validity", "⑤", "타당성"],
+  ["probe", "⑤", "파고들어 조사하다"],
+  ["vary", "⑥", "제각기 다르다"],
+  ["susceptible", "⑩", "걸리기 쉬운"]
  ],
- kor: [
-  "고양이는 캔이 열리는 소리를 듣는 순간 부엌으로 달려간다.",
-  "생물학자와 심리학자가 함께 이 장면을 보고, 둘 다 '왜'냐고 묻는다.",
-  "그러나 두 사람이 던지는 질문은 같은 질문이 아니다.",
-  "생물학자는 작동 원리를 찾는다.",
-  "그녀는 어떤 신경이 그 소리를 나르는지, 근육이 어떻게 움직이는지를 묻는다.",
-  "그녀의 답은 누구나 기구로 측정할 수 있는 원인의 사슬이다.",
-  "심리학자는 의미를 찾는다.",
-  "그는 고양이가 무엇을 기대하는지, 지난 식사가 오늘의 달리기를 어떻게 만들었는지를 묻는다.",
-  "그의 답은 부품이라기보다 경험에 관한 이야기다.",
-  "어느 답도 틀리지 않았고, 어느 답도 그것만으로는 완전하지 않다.",
-  "화학 물질의 사슬만으로는 그 고양이가 낯선 집에서는 같은 소리를 무시하는 이유를 설명할 수 없다.",
-  "기대에 관한 이야기만으로는 배가 고프지 않은데도 고양이가 달려가는 이유를 설명할 수 없다.",
-  "과학은 두 질문이 서로 만나도록 허용될 때 진전한다.",
-  "가장 좋은 설명은 기계 장치와 경험을 함께 그려 낸다.",
-  "'왜'를 잘 물으려면, 내가 어느 '왜'를 뜻하는지부터 알아야 한다."
+ defs: [
+  ["linear", "going in a straight line at a steady rate"],
+  ["pursuit", "the act of chasing something you want to find"],
+  ["validity", "the quality of being true or well founded"],
+  ["probe", "to look into something closely to find the truth"],
+  ["vary", "to be different from one another"],
+  ["susceptible", "easily harmed or affected by something"]
  ],
- bank: [["mechanism","④","작동 원리, 기제"],["nerve","⑤","신경"],["instrument","⑥","(측정) 기구"],
-        ["expectation","⑫","기대"],["machinery","⑭","기계 장치, 구조"],["progress","⑬","진전"]],
- defs: [["mechanism","the way the parts of something work together"],
-        ["nerve","a thin fibre that carries signals through the body"],
-        ["instrument","a tool used to measure or observe something"],
-        ["expectation","a belief that something will happen"],
-        ["machinery","the working parts that make something run"],
-        ["progress","movement toward a better or fuller state"]],
- defOrder: [2,4,0,5,1,3],
+ defOrder: [3, 0, 5, 1, 4, 2],
  flow: [
-  ["Scene","A cat runs when a can opens; two scientists both ask why",null],
-  ["Question 1","The biologist looks for a (  ①  )","mechanism"],
-  ["Question 2","The psychologist looks for a (  ②  )","meaning"],
-  ["Limit","Each answer alone leaves something (  ③  )","unexplained"],
-  ["Conclusion","Good science lets the two questions (  ④  )","meet"]
+  ["Puzzle", "Monod saw a brief pause he could not understand", null],
+  ["Biologist's way", "He chased the (  ①  ) for the puzzling pause", "reason"],
+  ["Payoff", "The chase led to a discovery that won a (  ②  ) Prize", "Nobel"],
+  ["Psychologist's way", "Many prefer proving a favorite idea to (  ③  ) a puzzle", "probing"],
+  ["The cost", "One chosen cause hides the (  ④  ) that came first", "biology"]
  ],
- flowBogi: "mechanism · meaning · unexplained · meet · measure · instrument",
+ flowBogi: "reason · Nobel · probing · biology · sugar · silence",
  para: [
-  ["③ But they are not asking the same question.","The two scientists ask ______ questions.","different"],
-  ["⑥ a chain of causes that anyone could measure","The biologist's answer can be ______.","measured"],
-  ["⑨ a story about experience rather than parts","The psychologist explains ______, not parts.","experience"],
-  ["⑩ neither is complete on its own","Alone, each answer stays ______.","incomplete"],
-  ["⑭ describe both the machinery and the experience","The best answers ______ two views.","combine"]
+  ["③ a brief pause in the growth rate", "The growth stopped for a short ______ before rising.", "while"],
+  ["④ led to a discovery that won him a Nobel Prize", "Following the puzzle ______ him a Nobel Prize.", "earned"],
+  ["⑤ proving the validity of a favorite idea", "They try to show a pet idea is ______.", "true"],
+  ["⑨ a biology and life history that predate", "The cause may come ______ the loneliness.", "before"],
+  ["⑪ this feeling may not be the major cause", "Loneliness may not be the ______ reason.", "main"]
  ],
- paraBogi: "different · measured · experience · incomplete · combine · identical · ignore · simple",
+ paraBogi: "while · earned · true · before · main · lost · after · minor",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How Cats Learn to Wait for Food","Two Different Ways to Ask Why",
-       "Why Biology Explains Everything","The Tools Scientists Use in a Lab",
-       "A Short History of Psychology"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["생물학자는 어떤 신경이 소리를 나르는지 묻는다.","심리학자는 고양이가 무엇을 기대하는지 묻는다.",
-       "두 답 가운데 하나만 옳고 나머지는 틀리다.","배가 고프지 않을 때도 고양이가 달려가는 일이 있다.",
-       "가장 좋은 설명은 기계 장치와 경험을 함께 다룬다."], ans:3},
-  {t:"write", q:"필자가 과학이 진전한다고 본 조건을 우리말 한 문장으로 써 보세요.",
-   ans:"기제를 묻는 질문과 의미를 묻는 질문이 서로 만나도록 허용될 때이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How Bacteria Choose Between Two Sugars",
+    "Chasing the Puzzle, or Defending the Idea",
+    "Loneliness: The Single Cause of Depression",
+    "Why Nobel Prizes Go to Biologists",
+    "A Short History of Metabolic Illness"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "Monod는 먹이가 한 종류일 때 박테리아 군집의 성장률이 선형적임을 알고 있었다.",
+    "두 종류의 당분을 주었을 때 예상되는 증가 전에 성장률이 잠시 멈췄다.",
+    "생물학자는 개인차에 주목해 원인이 되는 조건을 모두 찾아내려는 경향이 있다.",
+    "심리학자들은 대개 여러 원인을 함께 검토한 뒤에 결론을 내린다.",
+    "우울한 사람은 외로움과 우울보다 앞서는 생명 작용과 삶의 이력을 지닐 수 있다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "Monod를 노벨상으로 이끈 출발점이 무엇이었는지 우리말 한 문장으로 써 보세요.",
+   ans: "먹이를 두 가지로 주었을 때 성장률에 나타난 짧은 멈춤이 이해되지 않아, 그 이유를 끝까지 파고든 것이 출발점이었다."
+  }
  ],
  fl: {
-  model: { n:"⑪",
-   toks: [["A pure chain of chemicals","s"],["cannot explain","v"],["why","c"],
-          ["the cat","s2"],["ignores","v2"],["the same sound",null],["in a strange house","m"]],
-   ko:"화학 물질의 사슬만으로는 그 고양이가 낯선 집에서는 같은 소리를 무시하는 이유를 설명할 수 없다." },
+  model: {
+   n: "⑨",
+   toks: [
+    ["This strategy", "s"], ["ignores", "v"], ["the possibility", null], ["that", "c"],
+    ["those who are depressed", "s2"], ["possess", "v2"], ["a biology and life history", null],
+    ["that predate both the loneliness and the depression.", "m"]
+   ],
+   ko: "이 전략은 우울한 사람들이 외로움과 우울보다 앞서는 생명 작용과 삶의 이력을 지닐 가능성을 무시한다."
+  },
   drill: [
-   { n:"②", en:"A biologist and a psychologist both watch this, and both ask why.",
-     ans:"S A biologist and a psychologist · △V watch · O this · [and] S both · △V ask",
-     ko:"생물학자와 심리학자가 함께 이 장면을 보고, 둘 다 '왜'냐고 묻는다." },
-   { n:"⑥", en:"Her answer is a chain of causes that anyone could measure with instruments.",
-     ans:"S Her answer · △V is · C a chain of causes · M that anyone could measure with instruments",
-     ko:"그녀의 답은 누구나 기구로 측정할 수 있는 원인의 사슬이다." },
-   { n:"⑬", en:"Science makes progress when the two questions are allowed to meet.",
-     ans:"S Science · △V makes · O progress · [when] S′ the two questions · △V′ are allowed to meet",
-     ko:"과학은 두 질문이 서로 만나도록 허용될 때 진전한다." }
+   {
+    n: "②",
+    en: "He knew that when the food supply contained only one kind of sugar, the growth rate of the colony of bacteria was linear.",
+    ans: "S He · △V knew · [that] S′ the growth rate of the colony · △V′ was · C linear · [when] S′ the food supply · △V′ contained one kind of sugar",
+    ko: "그는 먹이가 한 종류의 당분만 포함할 때 박테리아 군집의 성장률이 선형적이라는 것을 알고 있었다."
+   },
+   {
+    n: "⑦",
+    en: "A biologist is likely to focus on this variation and try to discover all the responsible conditions.",
+    ans: "S A biologist · △V is likely to focus · M on this variation · and △V try to discover · O all the responsible conditions",
+    ko: "생물학자는 이 변이에 주목하고 원인이 되는 모든 조건을 찾아내려 하는 경향이 있다."
+   },
+   {
+    n: "⑪",
+    en: "Although she might tell a psychologist that she feels lonely, this feeling may not be the major cause of her melancholic mood.",
+    ans: "[Although] S′ she · △V′ might tell · O a psychologist · [that] S′ she · △V′ feels lonely · S this feeling · △V may not be · C the major cause",
+    ko: "그녀가 심리학자에게 외롭다고 말할지라도, 그 감정이 우울한 기분의 주된 원인이 아닐 수 있다."
+   }
   ]
  },
  syn: [
-  { n:"⑤", name:"간접의문문 — 의문사 + 주어 + 동사",
-    q:"She asks «which nerves carry the sound» and how the muscles move.",
-    d:"의문사절이 동사의 목적어로 올 때는 <b>의문사 + 주어 + 동사</b> 어순이다. 의문문처럼 도치하지 않는다.",
-    k:"그녀는 어떤 신경이 그 소리를 나르는지를 묻는다." },
-  { n:"⑬", name:"be allowed to + 동사원형 (수동태)",
-    q:"Science makes progress when the two questions «are allowed to meet».",
-    d:"allow A to B 의 수동형. <b>be allowed to + 동사원형</b>은 '~하도록 허용되다'라는 뜻이다.",
-    k:"두 질문이 서로 만나도록 허용될 때 과학은 진전한다." }
+  {
+   n: "④",
+   name: "관계대명사 주격 that",
+   q: "Monod's pursuit … led to a discovery «that won him a Nobel Prize».",
+   d: "<b>that</b>이 앞의 <b>a discovery</b>를 받아 뒤 절의 주어 노릇을 한다. ‘~한 발견’처럼 뒤에서 앞 명사를 꾸민다.",
+   k: "그에게 노벨상을 안겨 준 발견"
+  },
+  {
+   n: "⑤",
+   name: "비교 구문  more A rather than B",
+   q: "A fair proportion of psychologists are «more interested in proving … rather than probing» a puzzling observation.",
+   d: "<b>rather than</b> 앞뒤에는 같은 모양이 온다. 여기서는 <b>proving</b>과 <b>probing</b>이 짝을 이루어 ‘B하기보다 A하기를 더’를 나타낸다.",
+   k: "수수께끼 같은 관찰을 파고들기보다 좋아하는 생각의 타당성을 증명하는 데 더 관심이 있는"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"No one knows which road the car took last night.",
-    k:"아무도 그 차가 어젯밤 어느 길로 갔는지 알지 못한다." },
-  { u:"구문 2", en:"Students are allowed to ask questions during the talk.",
-    k:"학생들은 강연 중에 질문하도록 허용된다." },
-  { u:"구문 1 + 2", en:"She explained which students are allowed to enter the lab.",
-    k:"그녀는 어떤 학생들이 실험실에 들어가도 되는지 설명했다." }
+  { u: "구문 1", en: "He asked a question that no one had thought to ask.", k: "그는 아무도 물어볼 생각을 하지 못한 질문을 던졌다." },
+  { u: "구문 2", en: "She was more interested in testing the idea rather than defending it.", k: "그녀는 그 생각을 옹호하기보다 검증하는 데 더 관심이 있었다." },
+  { u: "구문 1 + 2", en: "He chose a puzzle that bothered him rather than a topic that looked easy.", k: "그는 쉬워 보이는 주제보다 자신을 괴롭히던 수수께끼를 골랐다." }
  ],
- wtype: ["지엽","정답","반대","무관","무관"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["고양이는 예로 든 장면일 뿐 주제가 아니다"],["정답"],
-       ["글은 생물학만으로는 부족하다고 말한다 — 정반대다"],
-       ["실험 도구 목록은 글에 나오지 않는다"],["심리학의 역사는 글의 소재가 아니다"]],
- src: [["⑤"],["⑧"],["⑩과 어긋남 — 어느 답도 틀리지 않았다"],["⑫"],["⑭"]],
+ why: [
+  ["문장 ②~③의 실험 장면만 붙든 지엽적인 제목이다"],
+  ["정답"],
+  ["글은 외로움이 주된 원인이 아닐 수 있다고 말한다 — 정반대다"],
+  ["노벨상 수상자의 분포는 글에 나오지 않는다"],
+  ["신진대사 질환의 역사는 글에서 다루지 않는다"]
+ ],
+ src: [["②"], ["③"], ["⑦"], ["⑧과 어긋남 — 하나의 특정 원인을 골라 증명하려 한다"], ["⑨"]],
  kb: {
-  title:"같은 장면, 다른 질문",
-  lead:"한 가지 행동을 두고 학문마다 다른 것을 묻는다.",
+  title: "걸린 자리에서 시작된 발견",
+  lead: "이해되지 않는 자리는 왜 중요할까?",
   items: [
-   ["틴베르헌의 네 가지 질문",
-    "1963년 동물행동학자 니코 틴베르헌은 동물 행동을 설명하려면 네 질문이 모두 필요하다고 했다. 어떻게 작동하는가(기제), 어떻게 발달했는가, 어떤 쓸모가 있는가(기능), 어떻게 진화했는가. 앞의 둘은 '가까운 원인', 뒤의 둘은 '먼 원인'이라 부른다."],
-   ["소리에 침을 흘린 개",
-    "1900년대 초 이반 파블로프는 먹이를 주기 전에 신호를 들려주는 일을 반복했다. 나중에는 신호만 들려도 개가 침을 흘렸다. 몸의 반응과 학습된 기대가 한 장면에서 겹친다는 것을 보여 준 실험이다."],
-   ["노벨상에 심리학상은 없다",
-    "노벨상 분야에 심리학은 없지만, 심리학자 대니얼 카너먼은 2002년 노벨 경제학상을 받았다. 질문이 학문의 경계를 넘어갈 때 생기는 일이다."]
+   ["잠시 멈춘 성장 곡선", "Monod가 본 멈춤은 박테리아가 두 당분 가운데 하나를 먼저 다 쓰고 나서야 다른 하나로 옮겨 가느라 생긴 것이었다. 이 현상은 diauxie(이중 성장)라 불리며, 그가 유전자 발현 조절을 밝히는 출발점이 되었다."],
+   ["1965년 노벨 생리·의학상", "Monod는 André Lwoff, François Jacob과 함께 ‘효소와 바이러스 합성의 유전적 조절에 관한 연구’로 1965년 노벨 생리·의학상을 받았다. 파스퇴르 연구소에서 대장균을 다루며 얻은 결과였다."],
+   ["한 가지 원인이라는 함정", "하나의 결과에 원인을 하나만 짝지으려는 습관을 단일 원인 오류(single cause fallacy)라 한다. 여러 조건이 함께 작용하는 현상에서는 남은 조건들이 통째로 시야에서 사라진다."]
   ],
-  ask:"오늘 내가 한 행동 하나를 골라 '어떻게 일어났나'와 '왜 그러고 싶었나'로 각각 답해 보자."
- }
+  ask: "여러분이 최근에 ‘그냥 그런가 보다’ 하고 넘긴 이상한 일이 있는가? 그 자리에서 무엇을 더 물어볼 수 있을까?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 07 ───────────────────────────── */
 {
- no: "07", key: "hunger",
- accent: "#B0542C", tint: "#FBEBE2", deep: "#7C3514",
- en: "Why Being Alone Feels Like Hunger",
- ko: "외로움이 배고픔처럼 느껴지는 이유",
- goal: "뇌 영상 실험이 무엇을 보여 주고 무엇을 보여 주지 못하는지 설명할 수 있다.",
- fig: "Figure 1  하루를 굶은 뇌와 하루를 혼자 보낸 뇌, 겹쳐 밝아지는 자리.",
+ no: "07", key: "hunger", accent: "#B0542C", tint: "#FBEBE2", deep: "#7C3514",
+ en: "The Brain's Similar Response to Longing for Company and Food",
+ ko: "혼자인 배고픔, 굶주린 외로움",
+ goal: "고립 실험과 금식 실험의 결과를 정리하고, 연구진이 내린 결론의 근거를 설명할 수 있다.",
+ fig: "Figure 1  열 시간을 굶은 뇌와 열 시간을 혼자 보낸 뇌, 같은 자리가 밝아진다.",
  tip: "먼저 생각해 보자. 하루 종일 아무와도 말하지 않은 날, 몸에서는 어떤 느낌이 들었는가?",
- sent: [
-  "In 2020 a team at MIT asked forty adults to spend ten hours completely alone.",
-  "No phone, no message, no other person entered the room.",
-  "On a different day the same people spent ten hours without food.",
-  "After each day the researchers scanned their brains.",
-  "The hungry brain and the lonely brain lit up in almost the same place.",
-  "A small region deep in the middle of the brain became active in both cases.",
-  "That region also becomes active when people want a drug or a reward.",
-  "The researchers called the feeling a craving for company.",
-  "The result suggests that being with others is not a luxury but a need.",
-  "Still, a bright spot on a scan is not a feeling.",
-  "The picture shows where blood is moving, not what the person is thinking.",
-  "Forty people is also a small number for such a large claim.",
-  "The study is a good beginning rather than a final answer.",
-  "It tells us where to look next, which is what a careful experiment should do.",
-  "Science often starts with a picture and then asks what the picture leaves out."
+ sent: T(7).sent, kor: T(7).kor,
+ bank: [
+  ["isolation", "①", "고립"],
+  ["ensure", "③", "확실히 하다"],
+  ["activate", "⑤", "활성화하다"],
+  ["fast", "⑦", "금식하다"],
+  ["vary", "⑪", "달라지다"],
+  ["fundamental", "⑫", "근본적인"]
  ],
- kor: [
-  "2020년 MIT의 한 연구진은 성인 마흔 명에게 열 시간을 완전히 혼자 보내게 했다.",
-  "휴대전화도, 메시지도, 다른 사람도 그 방에 들어오지 않았다.",
-  "다른 날에는 같은 사람들이 열 시간을 음식 없이 보냈다.",
-  "각각의 하루가 끝난 뒤 연구자들은 그들의 뇌를 촬영했다.",
-  "배고픈 뇌와 외로운 뇌는 거의 같은 자리에서 밝아졌다.",
-  "뇌 한가운데 깊숙이 있는 작은 영역이 두 경우 모두에서 활성화되었다.",
-  "그 영역은 사람이 약물이나 보상을 원할 때도 활성화된다.",
-  "연구자들은 그 느낌을 '사람에 대한 갈망'이라고 불렀다.",
-  "이 결과는 다른 사람과 함께 있는 일이 사치가 아니라 필요라는 것을 시사한다.",
-  "그렇지만 촬영 사진 위의 밝은 점이 곧 감정인 것은 아니다.",
-  "그 사진은 피가 어디로 움직이는지를 보여 줄 뿐, 그 사람이 무엇을 생각하는지를 보여 주지는 않는다.",
-  "마흔 명이라는 수도 그만큼 큰 주장을 하기에는 적은 편이다.",
-  "이 연구는 최종 답이라기보다 좋은 출발점이다.",
-  "그것은 다음에 어디를 보아야 할지 알려 주며, 신중한 실험이라면 마땅히 해야 할 일이 그것이다.",
-  "과학은 흔히 한 장의 사진에서 시작해, 그 사진이 무엇을 빼놓았는지를 묻는다."
+ defs: [
+  ["isolation", "the state of being kept apart from other people"],
+  ["ensure", "to make certain that something happens"],
+  ["activate", "to make something start working"],
+  ["fast", "to go without food for a period of time"],
+  ["vary", "to change or differ from case to case"],
+  ["fundamental", "forming the base that everything rests on"]
  ],
- bank: [["scan","④","(영상으로) 촬영하다"],["region","⑥","영역, 부위"],["reward","⑦","보상"],
-        ["craving","⑧","갈망"],["luxury","⑨","사치"],["claim","⑫","주장"]],
- defs: [["scan","to make a detailed picture of the inside of a body"],
-        ["region","one particular area of a larger whole"],
-        ["reward","something good given in return for an action"],
-        ["craving","a very strong wish for something"],
-        ["luxury","something pleasant that you do not really need"],
-        ["claim","a statement that something is true"]],
- defOrder: [1,3,0,5,2,4],
+ defOrder: [2, 5, 0, 4, 1, 3],
  flow: [
-  ["Setup","The same adults spent ten hours alone, and ten hours without food",null],
-  ["Finding","Both days lit up almost the same (  ①  ) of the brain","region"],
-  ["Reading","The researchers named the feeling a (  ②  ) for company","craving"],
-  ["Caution","A bright spot shows blood, not a (  ③  )","feeling"],
-  ["Conclusion","The study is a (  ④  ), not a final answer","beginning"]
+  ["Setup", "Volunteers spent ten hours in total isolation", null],
+  ["First scan", "Pictures of people together (  ①  ) the substantia nigra", "activated"],
+  ["Second round", "The same people were asked to (  ②  ) for ten hours", "fast"],
+  ["Same pattern", "Food pictures lit the (  ③  ) region in a similar way", "same"],
+  ["Conclusion", "The brain sends one general signal of (  ④  )", "longing"]
  ],
- flowBogi: "region · craving · feeling · beginning · reward · picture",
+ flowBogi: "activated · fast · same · longing · silenced · memory",
  para: [
-  ["⑤ lit up in almost the same place","Both states used nearly the same brain ______.","area"],
-  ["⑨ being with others is not a luxury but a need","Company is a ______, not an extra.","need"],
-  ["⑩ a bright spot on a scan is not a feeling","An image cannot ______ an emotion by itself.","show"],
-  ["⑫ a small number for such a large claim","The sample was too ______ for the claim.","small"],
-  ["⑬ a good beginning rather than a final answer","The study ______ the question, not closes it.","opens"]
+  ["① ten hours stuck in total isolation", "They were kept ______ from everyone for ten hours.", "apart"],
+  ["③ didn't see a single soul during the experiment", "They met ______ during the whole experiment.", "nobody"],
+  ["⑥ the greater the activation", "Stronger longing meant a ______ brain response.", "bigger"],
+  ["⑨ based on whether it was food or company", "Other areas ______ between food and company.", "distinguished"],
+  ["⑫ just as fundamental to us as eating", "Making bonds matters as much as ______.", "eating"]
  ],
- paraBogi: "area · need · show · small · opens · luxury · closes · wide",
+ paraBogi: "apart · nobody · bigger · distinguished · eating · louder · ignored · sleeping",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How to Live Ten Hours Without Food","A Brain Picture Is a Start, Not a Proof",
-       "Loneliness Has Been Fully Explained","Why MIT Is the Best Research Centre",
-       "The Safest Way to Use a Brain Scanner"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["같은 사람들이 굶은 날과 혼자 지낸 날을 모두 겪었다.","약물이나 보상을 원할 때도 같은 영역이 활성화된다.",
-       "연구자들은 이 결과로 외로움의 정체가 밝혀졌다고 보았다.","촬영 사진은 피가 어디로 움직이는지를 보여 준다.",
-       "참가자는 마흔 명이었다."], ans:3},
-  {t:"write", q:"필자가 이 실험을 '최종 답이 아니라 출발점'이라고 본 이유를 우리말 한 문장으로 써 보세요.",
-   ans:"밝은 점은 감정이 아니라 혈류를 보여 줄 뿐이고, 참가자 수도 큰 주장을 하기에는 적기 때문이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "Why MRI Scanners Need Windowless Rooms",
+    "One Signal for Two Hungers",
+    "Food Beats Company in the Human Brain",
+    "How to Survive Ten Hours Alone",
+    "A Guide to Reading Brain Scans"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "참가자들은 창문 없는 방에서 열 시간 동안 휴대 전화도 쓰지 못한 채 지냈다.",
+    "참가자들은 MRI 스캐너에서 스스로 자세를 잡는 방법을 교육받았다.",
+    "사람을 보고 싶다고 더 많이 말한 참가자일수록 활성화가 더 강했다.",
+    "음식 사진을 보았을 때 흑질의 활동 패턴은 사람 사진 때와 크게 달랐다.",
+    "보상 시스템 같은 부위에서는 원하던 대상에 따라 활동 패턴이 달랐다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "연구진이 흑질을 ‘갈망의 일반적인 신호’를 보내는 곳이라고 본 근거를 우리말 한 문장으로 써 보세요.",
+   ans: "굶은 뒤 음식 사진을 보았을 때의 흑질 활동 패턴이 고립된 뒤 사람 사진을 보았을 때 관찰된 것과 비슷했기 때문이다."
+  }
  ],
  fl: {
-  model: { n:"⑪",
-   toks: [["The picture","s"],["shows","v"],["where","c"],["blood","s2"],["is moving","v2"],
-          [",",null],["not what the person is thinking","m"]],
-   ko:"그 사진은 피가 어디로 움직이는지를 보여 줄 뿐, 그 사람이 무엇을 생각하는지를 보여 주지는 않는다." },
+  model: {
+   n: "⑥",
+   toks: [
+    ["The more", "m"], ["participants", "s"], ["stated", "v"],
+    ["that they longed to see people,", null], ["and", "c"],
+    ["the richer the social life", "m"], ["they", "s2"], ["had,", "v2"],
+    ["the greater the activation.", null]
+   ],
+   ko: "참가자가 사람을 보고 싶다고 더 많이 말할수록, 그리고 사회생활이 더 풍부할수록 활성화가 더 강했다."
+  },
   drill: [
-   { n:"①", en:"In 2020 a team at MIT asked forty adults to spend ten hours completely alone.",
-     ans:"M In 2020 · S a team at MIT · △V asked · O forty adults · M to spend ten hours completely alone",
-     ko:"2020년 MIT의 한 연구진은 성인 마흔 명에게 열 시간을 완전히 혼자 보내게 했다." },
-   { n:"⑨", en:"The result suggests that being with others is not a luxury but a need.",
-     ans:"S The result · △V suggests · [that] S′ being with others · △V′ is · C not a luxury but a need",
-     ko:"이 결과는 다른 사람과 함께 있는 일이 사치가 아니라 필요라는 것을 시사한다." },
-   { n:"⑭", en:"It tells us where to look next, which is what a careful experiment should do.",
-     ans:"S It · △V tells · O us · O where to look next · M which is what a careful experiment should do",
-     ko:"그것은 다음에 어디를 보아야 할지 알려 주며, 신중한 실험이라면 마땅히 해야 할 일이 그것이다." }
+   {
+    n: "①",
+    en: "Researchers at the Massachusetts Institute of Technology had volunteers spend ten hours stuck in total isolation in windowless rooms with no access to mobile phones.",
+    ans: "S Researchers at MIT · △V had · O volunteers · C spend ten hours stuck in total isolation · M in windowless rooms with no access to mobile phones",
+    ko: "MIT의 연구진은 지원자들에게 휴대 전화도 쓸 수 없는 창문 없는 방에서 열 시간을 완전한 고립 상태로 보내게 했다."
+   },
+   {
+    n: "⑧",
+    en: "Interestingly enough, the pattern of activity in the substantia nigra was similar to that observed when they were shown images of people together.",
+    ans: "M Interestingly enough · S the pattern of activity · △V was · C similar to that observed · [when] S′ they · △V′ were shown · O images of people together",
+    ko: "흥미롭게도 흑질의 활동 패턴은 함께 있는 사람들의 이미지를 보여 주었을 때 관찰된 것과 비슷했다."
+   },
+   {
+    n: "⑫",
+    en: "That the brain employs similar neuronal machinery for both hunger and a desire for social interaction suggests that, from the brain's perspective, the instinct to create and nurture social relationships is just as fundamental to us as eating.",
+    ans: "S [That] S′ the brain △V′ employs similar neuronal machinery · △V suggests · [that] S′ the instinct to create and nurture social relationships · △V′ is · C just as fundamental to us as eating",
+    ko: "뇌가 배고픔과 사회적 상호작용 욕구 모두에 비슷한 신경 장치를 쓴다는 사실은, 관계를 맺고 가꾸려는 본능이 먹는 것만큼 근본적임을 시사한다."
+   }
   ]
  },
  syn: [
-  { n:"⑨", name:"not A but B",
-    q:"The result suggests that being with others is «not a luxury but a need».",
-    d:"<b>not A but B</b>는 'A가 아니라 B'. A와 B 자리에는 같은 성격의 말이 온다.",
-    k:"이 결과는 함께 있는 일이 사치가 아니라 필요임을 시사한다." },
-  { n:"⑭", name:"의문사 + to부정사",
-    q:"It tells us «where to look next», which is what a careful experiment should do.",
-    d:"<b>의문사 + to부정사</b>는 '무엇을/어디를 ~할지'라는 뜻의 명사 덩어리로, 목적어 자리에 온다.",
-    k:"그것은 다음에 어디를 보아야 할지 알려 준다." }
+  {
+   n: "③",
+   name: "의문사 + to부정사  how to ~",
+   q: "…, «they were instructed on how to position themselves» in the MRI scanner on their own.",
+   d: "<b>how to + 동사원형</b>은 ‘~하는 방법’이라는 뜻의 명사 덩어리다. 여기서는 전치사 <b>on</b>의 목적어로 쓰였다.",
+   k: "그들은 스스로 자세를 잡는 방법을 교육받았다"
+  },
+  {
+   n: "⑨",
+   name: "It ~ that 강조 구문",
+   q: "…, based on «whether it was food or company that the participants were desiring».",
+   d: "<b>It was … that ~</b> 사이에 강조하고 싶은 말을 넣는다. 여기서는 참가자가 원하던 것이 <b>food</b>인지 <b>company</b>인지를 강조한다.",
+   k: "참가자들이 원하던 것이 음식인지 교제인지"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"The problem was not the machine but the question behind it.",
-    k:"문제는 기계가 아니라 그 뒤에 있는 질문이었다." },
-  { u:"구문 2", en:"Nobody told the students when to stop the experiment.",
-    k:"아무도 학생들에게 언제 실험을 멈춰야 할지 말해 주지 않았다." },
-  { u:"구문 1 + 2", en:"She learned not what to measure but how to read the result.",
-    k:"그녀는 무엇을 측정할지가 아니라 결과를 어떻게 읽을지를 배웠다." }
+  { u: "구문 1", en: "The nurse showed him how to hold the sensor still.", k: "간호사는 그에게 센서를 가만히 잡는 방법을 보여 주었다." },
+  { u: "구문 2", en: "It was the silence that made the ten hours feel long.", k: "열 시간을 길게 느끼게 만든 것은 바로 그 침묵이었다." },
+  { u: "구문 1 + 2", en: "It was the manual that taught us how to read the scan.", k: "우리에게 그 영상을 읽는 방법을 가르쳐 준 것은 바로 그 설명서였다." }
  ],
- wtype: ["무관","정답","반대","무관","무관"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["단식하는 방법은 글의 관심사가 아니다"],["정답"],
-       ["글은 아직 최종 답이 아니라고 말한다 — 정반대다"],
-       ["연구 기관을 비교하는 글이 아니다"],["장비 사용법은 글에 나오지 않는다"]],
- src: [["①③"],["⑦"],["⑬과 어긋남 — 최종 답이 아니라 출발점이라고 했다"],["⑪"],["①"]],
+ why: [
+  ["실험 절차의 한 부분만 붙든 지엽적인 제목이다"],
+  ["정답"],
+  ["글은 두 갈망이 같은 자리를 밝혔다고 말한다 — 우열을 가리지 않는다"],
+  ["고립을 견디는 방법은 글에 나오지 않는다"],
+  ["뇌 영상을 읽는 방법은 글에서 다루지 않는다"]
+ ],
+ src: [["①"], ["③"], ["⑥"], ["⑧과 어긋남 — 흑질의 패턴은 사람 사진 때와 비슷했다"], ["⑨"]],
  kb: {
-  title:"뇌 사진으로 알 수 있는 것",
-  lead:"밝은 점 하나가 마음을 다 설명해 주지는 않는다.",
+  title: "흑질, 갈망이 켜지는 자리",
+  lead: "뇌의 한 점이 배고픔과 외로움을 함께 맡는다?",
   items: [
-   ["fMRI는 피를 본다",
-    "기능적 자기공명영상은 신경세포가 아니라 혈류의 산소량 변화를 잰다. 활동이 늘어난 자리에 피가 더 가는 것을 이용한 간접 측정이라, 밝은 점과 생각 사이에는 늘 한 단계가 남는다."],
-   ["죽은 연어의 뇌가 반응했다",
-    "2009년 크레이그 베넷 연구진은 죽은 연어를 스캐너에 넣고 사람 사진을 보여 준 뒤, 통계 보정을 하지 않으면 '반응'이 나타난다는 것을 보였다. 이 연구는 이그노벨상을 받았고, 이후 뇌 영상 연구의 통계 기준을 바꾸는 계기가 되었다."],
-   ["외로움은 몸에도 남는다",
-    "여러 장기 추적 연구에서 사회적 고립은 흡연·비만에 견줄 만한 건강 위험 요인으로 보고되어 왔다. 외로움이 '기분 문제'로만 다뤄지지 않게 된 배경이다."]
+   ["흑질(substantia nigra)", "중뇌에 있는 작은 구조로, 이름은 ‘검은 물질’이라는 뜻이다. 신경멜라닌 색소 때문에 어둡게 보인다. 도파민을 만드는 신경세포가 모여 있어 운동과 보상에 함께 관여한다."],
+   ["파킨슨병과의 관계", "흑질의 도파민 신경세포가 크게 줄면 파킨슨병 증상이 나타난다. 갈망이 켜지는 자리와 움직임을 만드는 자리가 겹쳐 있는 셈이다."],
+   ["fMRI가 보는 것", "기능적 자기공명영상은 신경세포의 발화를 직접 보지 않는다. 활동이 늘어난 부위로 몰리는 혈류의 산소 변화를 잰다. ‘밝아졌다’는 말은 피가 더 갔다는 뜻에 가깝다."]
   ],
-  ask:"뇌 사진 한 장으로 '이 사람은 지금 무엇을 느낀다'고 말할 수 있을까? 왜 그렇게 생각하는가?"
- }
+  ask: "배고플 때와 외로울 때 여러분의 몸에는 어떤 공통된 신호가 오는가?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 08 ───────────────────────────── */
 {
- no: "08", key: "spheres",
- accent: "#4A7C46", tint: "#E7F1E5", deep: "#2E5429",
- en: "The Sky That Never Changed",
- ko: "변하지 않는다고 믿었던 하늘",
- goal: "아리스토텔레스의 두 세계 구분이 왜 오래 유지되었고 어떻게 무너졌는지 설명할 수 있다.",
+ no: "08", key: "spheres", accent: "#4A7C46", tint: "#E7F1E5", deep: "#2E5429",
+ en: "Aristotle's Concept of the Terrestrial and Celestial Regions",
+ ko: "달 아래는 변하고, 달 위는 변하지 않는다",
+ goal: "아리스토텔레스가 세계를 두 영역으로 나눈 기준과 두 영역이 이어지는 방식을 설명할 수 있다.",
  fig: "Figure 1  달을 경계로 나뉜 두 세계 — 아래는 변하고, 위는 변하지 않는다.",
  tip: "먼저 생각해 보자. 밤하늘은 어제와 오늘이 똑같아 보인다. 이 인상만으로 무엇을 결론지을 수 있을까?",
- sent: [
-  "Aristotle divided the world into two regions, and the line between them was the moon.",
-  "Below the moon everything was made of earth, water, air, and fire.",
-  "Things down here were born, changed, and died.",
-  "Above the moon he placed a fifth material that could not change at all.",
-  "The stars were made of it, so they could only turn in perfect circles for ever.",
-  "This picture matched what people saw every night.",
-  "Fire rose, stones fell, and the stars kept the same shapes year after year.",
-  "For almost two thousand years the two regions were treated as settled fact.",
-  "Then in 1572 a new star appeared in the sky and stayed for months.",
-  "Tycho Brahe measured it carefully and found that it stood far beyond the moon.",
-  "Something in the changeless region had changed.",
-  "Later Galileo turned a telescope on the moon and saw mountains and shadows.",
-  "The perfect sphere had a rough surface, like the ground under his feet.",
-  "The old picture had not been foolish, because it explained what the eye could reach.",
-  "It fell only when the eye was given a better instrument."
+ sent: T(8).sent, kor: T(8).kor,
+ bank: [
+  ["distinct", "①", "뚜렷이 다른"],
+  ["characterize", "②", "특징짓다"],
+  ["contrary", "③", "상반되는"],
+  ["compound", "⑤", "화합물"],
+  ["purity", "⑧", "순도"],
+  ["subsequent", "⑫", "그에 뒤따르는"]
  ],
- kor: [
-  "아리스토텔레스는 세계를 두 영역으로 나누었고, 그 경계선은 달이었다.",
-  "달 아래에서는 모든 것이 흙과 물과 공기와 불로 이루어져 있었다.",
-  "이 아래의 것들은 태어나고, 변하고, 죽었다.",
-  "달 위에는 전혀 변할 수 없는 다섯 번째 물질을 두었다.",
-  "별들은 그것으로 만들어졌기에, 영원히 완전한 원을 그리며 돌 수밖에 없었다.",
-  "이 그림은 사람들이 밤마다 보던 것과 들어맞았다.",
-  "불은 올라갔고, 돌은 떨어졌으며, 별들은 해마다 같은 모양을 지켰다.",
-  "거의 이천 년 동안 이 두 영역은 정해진 사실처럼 다루어졌다.",
-  "그러다 1572년, 새로운 별 하나가 하늘에 나타나 몇 달 동안 머물렀다.",
-  "튀코 브라헤는 그것을 정밀하게 측정했고, 그 별이 달보다 훨씬 멀리 있다는 것을 알아냈다.",
-  "변하지 않는다던 영역에서 무언가가 변한 것이다.",
-  "뒤에 갈릴레오는 망원경을 달에 겨누었고, 산과 그림자를 보았다.",
-  "완전한 구는 발밑의 땅처럼 거친 표면을 지니고 있었다.",
-  "옛 그림이 어리석었던 것은 아니다. 눈이 닿는 범위를 설명해 냈기 때문이다.",
-  "그것은 눈에 더 좋은 도구가 주어졌을 때에야 무너졌다."
+ defs: [
+  ["distinct", "clearly different from something else"],
+  ["characterize", "to be a typical mark of something"],
+  ["contrary", "completely opposite in nature"],
+  ["compound", "a thing made by mixing two or more parts"],
+  ["purity", "the state of being free from other things"],
+  ["subsequent", "coming after something else in time"]
  ],
- bank: [["divide","①","나누다"],["material","④","물질"],["settled","⑧","정해진, 확정된"],
-        ["measure","⑩","측정하다"],["sphere","⑬","구(球)"],["surface","⑬","표면"]],
- defs: [["divide","to separate something into parts"],
-        ["material","the substance that a thing is made of"],
-        ["settled","fixed and no longer open to argument"],
-        ["measure","to find the exact size or amount of something"],
-        ["sphere","a perfectly round solid shape"],
-        ["surface","the outside layer of an object"]],
- defOrder: [4,0,5,2,3,1],
+ defOrder: [4, 1, 5, 0, 3, 2],
  flow: [
-  ["The picture","Aristotle split the world at the moon: changing below, perfect above",null],
-  ["Why it held","It matched what the (  ①  ) could see every night","eye"],
-  ["First crack","In 1572 a new star appeared beyond the (  ②  )","moon"],
-  ["Second crack","Galileo's telescope showed a rough (  ③  ) on the moon","surface"],
-  ["Conclusion","The old picture fell when the eye got a better (  ④  )","instrument"]
+  ["Two regions", "Aristotle split the world into terrestrial and celestial", null],
+  ["Below", "Four elements move in (  ①  ) lines, out or in", "straight"],
+  ["Above", "A fifth element, aither, moves in a (  ②  )", "circle"],
+  ["Not separate", "The celestial can (  ③  ) the terrestrial", "affect"],
+  ["An example", "Rain follows heating, evaporation and (  ④  )", "condensation"]
  ],
- flowBogi: "eye · moon · surface · instrument · circle · fire",
+ flowBogi: "straight · circle · affect · condensation · silence · gravity",
  para: [
-  ["③ Things down here were born, changed, and died.","Below the moon nothing stayed ______.","fixed"],
-  ["⑧ the two regions were treated as settled fact","For centuries nobody ______ the division.","questioned"],
-  ["⑪ Something in the changeless region had changed.","The 1572 star ______ the old rule.","broke"],
-  ["⑬ The perfect sphere had a rough surface","The moon looked less ______ than believed.","perfect"],
-  ["⑮ when the eye was given a better instrument","Better ______ ended the old picture.","tools"]
+  ["① two distinct regions", "The world falls into two ______ parts.", "separate"],
+  ["④ move away from or towards the center", "They travel out from or ______ the middle.", "toward"],
+  ["⑤ are each a sort of compound", "Everyday bodies are ______ of elements.", "mixtures"],
+  ["⑧ less pure in closer proximity to them", "Aither grows less pure as it comes ______.", "nearer"],
+  ["⑩ the celestial region can affect the terrestrial", "What happens above can ______ what is below.", "change"]
  ],
- paraBogi: "fixed · questioned · broke · perfect · tools · proved · rough · faith",
+ paraBogi: "separate · toward · mixtures · nearer · change · equal · farther · single",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["The Life of Aristotle","How Telescopes Are Built",
-       "A Picture That Held Until Better Tools Came","Why the Stars Move in Circles",
-       "The Five Materials of the Ancient World"], ans:3},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["아리스토텔레스는 달을 두 영역의 경계로 삼았다.","달 위의 물질은 변할 수 없다고 여겨졌다.",
-       "튀코 브라헤는 새 별이 달보다 가까이 있다고 밝혔다.","갈릴레오는 달에서 산과 그림자를 보았다.",
-       "필자는 옛 그림이 어리석었던 것은 아니라고 본다."], ans:3},
-  {t:"write", q:"필자가 옛 그림을 '어리석지 않았다'고 본 이유를 우리말 한 문장으로 써 보세요.",
-   ans:"당시 눈이 닿는 범위 안의 관찰을 잘 설명해 냈기 때문이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "The Four Qualities: Hot, Cold, Dry, Moist",
+    "Two Regions, One Connected Cosmos",
+    "Why the Heavens Never Touch the Earth",
+    "How Aristotle Measured the Distance to the Sun",
+    "The Latin Origins of Scientific Words"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "지상 영역의 네 원소는 뜨겁고 차갑고 건조하고 습한 성질로 구분된다.",
+    "불과 공기는 우주의 중심에서 멀어지고 흙과 물은 중심을 향해 움직인다.",
+    "일상에서 마주치는 물체는 원소 그 자체가 아니라 일종의 화합물이다.",
+    "아이테르는 지상 원소에 더 가까울수록 더 순수해진다.",
+    "비가 내리는 것은 태양의 운동과 그에 뒤따르는 증발·응결 과정 때문이다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "두 영역이 서로 무관하지 않다는 것을 보여 주는 예를 우리말 한 문장으로 써 보세요.",
+   ans: "아이테르의 운동이 지상의 물질을 데우고, 태양이 가까워지고 멀어지는 운동과 그에 뒤따르는 증발·응결이 비를 만든다는 설명이 그 예이다."
+  }
  ],
  fl: {
-  model: { n:"⑤",
-   toks: [["The stars","s"],["were made","v"],["of it","m"],["so","c"],["they","s2"],
-          ["could only turn","v2"],["in perfect circles for ever","m"]],
-   ko:"별들은 그것으로 만들어졌기에, 영원히 완전한 원을 그리며 돌 수밖에 없었다." },
+  model: {
+   n: "⑨",
+   toks: [
+    ["The four terrestrial elements", "s"], ["are", "v"], ["themselves material causes,", null],
+    ["while", "c"], ["the motion of the continually moving bodies in the celestial sphere", "s2"],
+    ["is", "v2"], ["the efficient cause of some terrestrial events.", null]
+   ],
+   ko: "네 가지 지상 원소는 그 자체로 물질인이고, 천상의 구에서 끊임없이 움직이는 천체의 운동은 일부 지상 사건의 동력인이다."
+  },
   drill: [
-   { n:"①", en:"Aristotle divided the world into two regions, and the line between them was the moon.",
-     ans:"S Aristotle · △V divided · O the world · M into two regions · [and] S the line between them · △V was · C the moon",
-     ko:"아리스토텔레스는 세계를 두 영역으로 나누었고, 그 경계선은 달이었다." },
-   { n:"⑩", en:"Tycho Brahe measured it carefully and found that it stood far beyond the moon.",
-     ans:"S Tycho Brahe · △V measured · O it · M carefully · [and] △V found · [that] S′ it · △V′ stood · M far beyond the moon",
-     ko:"튀코 브라헤는 그것을 정밀하게 측정했고, 그 별이 달보다 훨씬 멀리 있다는 것을 알아냈다." },
-   { n:"⑭", en:"The old picture had not been foolish, because it explained what the eye could reach.",
-     ans:"S The old picture · △V had not been · C foolish · [because] S′ it · △V′ explained · O what the eye could reach",
-     ko:"옛 그림이 어리석었던 것은 아니다. 눈이 닿는 범위를 설명해 냈기 때문이다." }
+   {
+    n: "②",
+    en: "Each region is characterized by specific material elements and motions.",
+    ans: "S Each region · △V is characterized · M by specific material elements and motions",
+    ko: "각 영역은 특정한 물질적 요소와 운동 방식으로 특징지어진다."
+   },
+   {
+    n: "⑥",
+    en: "What we know as everyday, ordinary ‘earth’ is a compound composed of the elements Earth, Water, Fire, and Air.",
+    ans: "S [What] S′ we △V′ know as everyday, ordinary ‘earth’ · △V is · C a compound · M composed of the elements Earth, Water, Fire, and Air",
+    ko: "우리가 일상의 평범한 ‘땅’으로 알고 있는 것은 흙·물·불·공기로 이루어진 화합물이다."
+   },
+   {
+    n: "⑪",
+    en: "The motion of the aither causes material in the terrestrial realm to be heated.",
+    ans: "S The motion of the aither · △V causes · O material in the terrestrial realm · C to be heated",
+    ko: "아이테르의 운동은 지상 영역의 물질이 데워지도록 만든다."
+   }
   ]
  },
  syn: [
-  { n:"⑭", name:"과거완료 had p.p.",
-    q:"The old picture «had not been» foolish, because it explained what the eye could reach.",
-    d:"<b>had + p.p.</b>는 과거의 어느 시점보다 <b>더 앞선 때</b>를 가리킨다. 무너진 때보다 앞선 사정을 말한다.",
-    k:"그 옛 그림이 (그때까지) 어리석었던 것은 아니었다." },
-  { n:"⑮", name:"수여동사의 수동태 — be given",
-    q:"It fell only when the eye «was given» a better instrument.",
-    d:"give A B 에서 A를 주어로 올리면 <b>be given + B</b> 가 된다. 뒤에 목적어 하나가 그대로 남는다.",
-    k:"그것은 눈에 더 좋은 도구가 주어졌을 때에야 무너졌다." }
+  {
+   n: "⑦",
+   name: "소유격 관계대명사 whose",
+   q: "There is a fifth element that is the stuff of the celestial bodies «whose natural motion is circular».",
+   d: "<b>whose</b>는 앞 명사와 뒤 명사를 ‘~의’로 잇는다. 여기서는 <b>the celestial bodies</b>의 <b>natural motion</b>을 가리킨다.",
+   k: "자연스러운 운동이 원형인 천체들"
+  },
+  {
+   n: "⑧",
+   name: "분사구문  being ~",
+   q: "The aither varies in purity, «being more pure where it is more distant» from the terrestrial elements.",
+   d: "접속사와 주어를 지우고 <b>being</b>으로 시작하는 덩어리를 만들어 앞 문장에 설명을 덧붙인다. ‘~하면서, ~한 상태로’로 읽는다.",
+   k: "지상 원소에서 더 멀리 떨어진 곳에서는 더 순수하면서"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"By 1600 the old model had already lost most of its defenders.",
-    k:"1600년 무렵 그 옛 모형은 이미 지지자 대부분을 잃은 상태였다." },
-  { u:"구문 2", en:"Each student was given a small telescope for the night.",
-    k:"학생들은 저마다 그날 밤에 쓸 작은 망원경을 받았다." },
-  { u:"구문 1 + 2", en:"He had been given the data long before he understood it.",
-    k:"그는 그 자료를 이해하기 훨씬 전에 이미 받아 두었었다." }
+  { u: "구문 1", en: "We studied a star whose light took years to reach us.", k: "우리는 빛이 우리에게 닿는 데 몇 년이 걸린 별을 연구했다." },
+  { u: "구문 2", en: "The metal changes colour, being softer near the flame.", k: "그 금속은 불꽃 가까이에서 더 무르면서 색이 변한다." },
+  { u: "구문 1 + 2", en: "He drew a sphere whose surface was smooth, being polished for hours.", k: "그는 몇 시간 동안 닦여 표면이 매끄러운 구를 그렸다." }
  ],
- wtype: ["무관","무관","정답","지엽","배경"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["아리스토텔레스의 생애는 글의 주제가 아니다"],["망원경 제작법은 글에 나오지 않는다"],["정답"],
-       ["별의 원운동은 옛 그림의 한 부분일 뿐이다"],["네 원소는 설명의 배경이지 결론이 아니다"]],
- src: [["①"],["④"],["⑩과 어긋남 — 달보다 훨씬 멀리 있었다"],["⑫"],["⑭"]],
+ why: [
+  ["문장 ③의 성질 목록만 붙든 지엽적인 제목이다"],
+  ["정답"],
+  ["글은 천상계가 지상계에 영향을 미친다고 말한다 — 정반대다"],
+  ["거리를 재는 이야기는 글에 나오지 않는다"],
+  ["용어의 어원은 글에서 다루지 않는다"]
+ ],
+ src: [["③"], ["④"], ["⑤"], ["⑧과 어긋남 — 지상 원소에서 멀수록 더 순수하다"], ["⑫"]],
  kb: {
-  title:"하늘이 바뀐 순간들",
-  lead:"관측 도구가 바뀌면 세계의 지도도 바뀐다.",
+  title: "달 위의 하늘이 흔들린 날",
+  lead: "변하지 않는다던 천상계는 어떻게 무너졌을까?",
   items: [
-   ["1572년의 새 별",
-    "튀코 브라헤가 관측한 이 별은 오늘날 초신성 SN 1572로 불린다. 그는 시차가 나타나지 않는 것을 근거로 이 별이 달보다 훨씬 멀리 있다고 결론지었다. 하늘도 변한다는 첫 정밀 증거였다."],
-   ["갈릴레오의 1610년 『별의 소식』",
-    "갈릴레오는 달의 산과 목성의 위성 네 개를 기록해 『Sidereus Nuncius』로 펴냈다. 목성을 도는 천체가 있다는 사실은 모든 것이 지구를 돈다는 전제를 흔들었다."],
-   ["에테르는 왜 오래 남았나",
-    "달 위를 채운다던 제5원소는 뒤에 '에테르'라는 이름으로 19세기까지 살아남았다. 1887년 마이컬슨·몰리 실험이 그 흔적을 찾지 못하면서 물리학은 다시 한 번 그림을 고쳐 그렸다."]
+   ["다섯 번째 원소", "아리스토텔레스는 흙·물·공기·불에 더해 천체를 이루는 제5원소를 두었다. 라틴어로 aether, 훗날 quinta essentia(다섯 번째 본질)라 불렸고, 여기에서 영어 quintessence(정수)가 나왔다."],
+   ["1572년의 새 별", "티코 브라헤는 카시오페이아자리에서 전에 없던 밝은 별을 관측하고 『De Nova Stella』(1573)를 냈다. 그 별의 위치가 밤새 움직이지 않는다는 사실은 그것이 달보다 먼 곳에 있다는 뜻이었고, 천상계는 변하지 않는다는 전제가 흔들렸다."],
+   ["망원경이 본 달", "갈릴레오는 1610년 『Sidereus Nuncius』에서 달 표면의 산과 구덩이를 그렸다. 완전한 구여야 할 천체가 지상처럼 울퉁불퉁하다는 관측이었다."]
   ],
-  ask:"지금 우리가 '당연하다'고 여기는 것 가운데, 더 좋은 도구가 나오면 흔들릴 만한 것은 무엇일까?"
- }
+  ask: "‘저것은 원래 그런 것이다’라고 배운 것 가운데, 관측 하나로 뒤집힐 수 있는 것은 무엇일까?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 09 ───────────────────────────── */
 {
- no: "09", key: "zipper",
- accent: "#7A4FA3", tint: "#F0EAF7", deep: "#4E2E70",
- en: "The Zipper You Cannot Explain",
- ko: "설명하지 못하는 지퍼",
- goal: "'안다는 느낌'과 '실제로 아는 것'의 차이를 예를 들어 설명할 수 있다.",
- fig: "Figure 1  머릿속의 자전거와 실제 자전거 사이의 거리.",
- tip: "먼저 생각해 보자. 지퍼가 어떻게 잠기는지 그림 없이 말로만 설명할 수 있는가?",
- sent: [
-  "Ask anyone whether they know how a zipper works.",
-  "Almost everyone says yes without pausing.",
-  "Then ask them to explain it step by step, out loud, without using their hands.",
-  "The confident voice slows down, searches for words, and often stops altogether.",
-  "Psychologists call this gap the illusion of explanatory depth.",
-  "We mistake being familiar with something for understanding it.",
-  "A zipper is close to us every day, so the feeling of knowing comes easily.",
-  "In one study people were asked to draw a bicycle from memory, with the frame and chain in place.",
-  "Many drew chains that could never turn the wheels.",
-  "The drawings were wrong in ways the artists had never noticed.",
-  "The illusion is not a sign of a lazy mind.",
-  "It is useful, because we cannot carry full explanations of every object we touch.",
-  "The danger appears when the same easy feeling reaches much larger questions about the world.",
-  "People who have never explained a policy still argue about it with certainty.",
-  "One cure is simple: try to explain the thing, and let the gap show itself."
+ no: "09", key: "zipper", accent: "#7A4FA3", tint: "#F0EAF7", deep: "#4E2E70",
+ en: "Illusion of Knowledge",
+ ko: "검색창을 닫고 나면 남는 것",
+ goal: "웹 검색이 지식의 착각을 만드는 과정을 실험 결과를 근거로 설명할 수 있다.",
+ fig: "Figure 1  익숙함을 앎으로 착각하는 자리 — 설명해 보라고 하면 드러난다.",
+ tip: "먼저 생각해 보자. 방금 검색해서 알게 된 것과 원래 알고 있던 것을, 하루 뒤에도 구별할 수 있을까?",
+ sent: T(9).sent, kor: T(9).kor,
+ bank: [
+  ["reveal", "①", "드러내다"],
+  ["exaggerated", "②", "과장된"],
+  ["delude", "⑤", "착각하게 하다"],
+  ["inflate", "⑨", "부풀리다"],
+  ["overconfidence", "⑩", "과신"],
+  ["unprecedented", "⑫", "전례 없는"]
  ],
- kor: [
-  "누구에게든 지퍼가 어떻게 작동하는지 아느냐고 물어보라.",
-  "거의 모두가 망설임 없이 안다고 답한다.",
-  "그런 다음 손을 쓰지 말고 소리 내어 단계별로 설명해 보라고 해 보라.",
-  "자신 있던 목소리가 느려지고, 말을 더듬다가, 흔히 아예 멈춘다.",
-  "심리학자들은 이 간극을 '설명 깊이의 착각'이라고 부른다.",
-  "우리는 무언가에 익숙한 것을 그것을 이해한 것으로 착각한다.",
-  "지퍼는 날마다 우리 곁에 있으므로, 안다는 느낌이 쉽게 생긴다.",
-  "한 연구에서는 사람들에게 기억만으로, 뼈대와 체인까지 제자리에 넣어 자전거를 그려 보게 했다.",
-  "많은 사람이 결코 바퀴를 돌릴 수 없는 체인을 그렸다.",
-  "그 그림들은 그린 사람이 한 번도 알아채지 못한 방식으로 틀려 있었다.",
-  "이 착각은 게으른 머리의 표시가 아니다.",
-  "그것은 쓸모가 있다. 우리가 만지는 모든 물건의 완전한 설명을 지니고 다닐 수는 없기 때문이다.",
-  "위험은 그 손쉬운 느낌이 세상에 관한 훨씬 큰 질문에까지 닿을 때 나타난다.",
-  "어떤 정책을 한 번도 설명해 본 적 없는 사람들이 그것을 두고 확신에 차서 다툰다.",
-  "한 가지 치료법은 간단하다. 그것을 설명해 보고, 간극이 스스로 드러나게 하는 것이다."
+ defs: [
+  ["reveal", "to make something known that was hidden"],
+  ["exaggerated", "made to seem larger than it really is"],
+  ["delude", "to make someone believe what is not true"],
+  ["inflate", "to make something bigger than it should be"],
+  ["overconfidence", "too strong a belief in your own ability"],
+  ["unprecedented", "never known or done before"]
  ],
- bank: [["pause","②","잠시 멈추다"],["gap","⑤","간극, 틈"],["illusion","⑤","착각"],
-        ["familiar","⑥","익숙한"],["certainty","⑭","확신"],["cure","⑮","치료법, 해결책"]],
- defs: [["pause","to stop for a short time before going on"],
-        ["gap","a space between two things that should meet"],
-        ["illusion","a belief that does not match what is real"],
-        ["familiar","well known because it is often seen"],
-        ["certainty","the state of having no doubt at all"],
-        ["cure","something that ends a problem or an illness"]],
- defOrder: [3,0,4,2,5,1],
+ defOrder: [3, 0, 4, 2, 5, 1],
  flow: [
-  ["Test","Ask people to explain a zipper, and the confident voice stops",null],
-  ["Name","Psychologists call this the illusion of explanatory (  ①  )","depth"],
-  ["Cause","We mistake being (  ②  ) with a thing for understanding it","familiar"],
-  ["Defence","The illusion is (  ③  ), since we cannot store every explanation","useful"],
-  ["Warning","It turns dangerous on (  ④  ) questions, and explaining is the cure","larger"]
+  ["Finding", "Searching the web gives an illusion of knowledge", null],
+  ["Design", "One group searched, the other stayed (  ①  )", "offline"],
+  ["Result", "Searchers believed they knew (  ②  ) than they did", "more"],
+  ["Spread", "The illusion reached other, (  ③  ) topics", "unrelated"],
+  ["Why the web", "It is accessible, fast, and gives immediate (  ④  )", "feedback"]
  ],
- flowBogi: "depth · familiar · useful · larger · lazy · drawing",
+ flowBogi: "offline · more · unrelated · feedback · fewer · slower",
  para: [
-  ["② Almost everyone says yes without pausing.","People answer with instant ______.","confidence"],
-  ["⑥ We mistake being familiar with something","Closeness gets ______ for knowledge.","mistaken"],
-  ["⑩ wrong in ways the artists had never noticed","The errors stayed ______ to the drawers.","invisible"],
-  ["⑪ The illusion is not a sign of a lazy mind.","The gap does not mean people are ______.","careless"],
-  ["⑮ let the gap show itself","Explaining ______ what we do not know.","reveals"]
+  ["② confuse what's online with what's in their head", "They mix up the screen with their own ______.", "memory"],
+  ["⑤ believing they know more than they really do", "They think their knowledge is ______ than it is.", "larger"],
+  ["⑦ isn't limited to the particular subjects", "The illusion spreads ______ the searched topic.", "beyond"],
+  ["⑩ a misperception of the depth of knowledge", "They misjudge how ______ their own knowing goes.", "deep"],
+  ["⑬ nearly always accessible", "The Internet is open to us almost ______.", "always"]
  ],
- paraBogi: "confidence · mistaken · invisible · careless · reveals · doubt · hides · lazy",
+ paraBogi: "memory · larger · beyond · deep · always · smaller · rarely · shallow",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["The History of the Zipper","Feeling You Know Is Not Knowing",
-       "How to Draw a Bicycle Correctly","Why Most People Have Lazy Minds",
-       "A Guide to Explaining Government Policy"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["대부분은 지퍼를 안다고 곧바로 답한다.","기억만으로 자전거를 그리게 한 연구가 있었다.",
-       "필자는 이 착각을 게으름의 증거로 본다.","익숙함은 안다는 느낌을 쉽게 만든다.",
-       "설명해 보는 것이 한 가지 해결책이다."], ans:3},
-  {t:"write", q:"필자가 이 착각을 '쓸모 있다'고 본 이유를 우리말 한 문장으로 써 보세요.",
-   ans:"우리가 만지는 모든 물건의 완전한 설명을 지니고 다닐 수는 없기 때문이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How Yale Divided Its Test Subjects into Groups",
+    "Why a Search Feels Like Knowing",
+    "The Internet Makes Us Honest About Our Limits",
+    "A Short History of Libraries",
+    "How to Search the Web Efficiently"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "연구진은 피실험자를 검색하는 집단과 인터넷을 쓰지 않는 집단으로 나누었다.",
+    "검색 과정의 시간·내용·특징을 통제한 뒤에도 그 효과는 유지되었다.",
+    "한 주제를 검색하면 관련 없는 다른 주제에 대한 이해 인식까지 부풀려졌다.",
+    "검색을 한 사람들은 자기 두뇌 활동을 대조군보다 낮게 평가했다.",
+    "인터넷은 책이나 도서관과 달리 즉각적인 피드백을 제공한다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "연구진이 피실험자에게 두뇌 활동을 추정하게 한 이유를 우리말 한 문장으로 써 보세요.",
+   ans: "과신이 Google이 정보를 잘 준다는 신뢰 때문이 아니라 자기 머릿속 지식의 깊이를 오해한 데서 비롯되었음을 확인하기 위해서였다."
+  }
  ],
  fl: {
-  model: { n:"⑫",
-   toks: [["It","s"],["is","v"],["useful","c"],["because","c"],["we","s2"],
-          ["cannot carry","v2"],["full explanations","m"],["of every object we touch","m"]],
-   ko:"그것은 쓸모가 있다. 우리가 만지는 모든 물건의 완전한 설명을 지니고 다닐 수는 없기 때문이다." },
+  model: {
+   n: "⑤",
+   toks: [
+    ["The experiments", "s"], ["consistently", "m"], ["showed", "v"], ["that", "c"],
+    ["searching the web", "s2"], ["deludes", "v2"], ["people", null],
+    ["into believing they know more than they really do.", "m"]
+   ],
+   ko: "실험들은 웹 검색이 사람들을 착각하게 만들어 실제보다 더 많이 안다고 믿게 한다는 것을 일관되게 보여 주었다."
+  },
   drill: [
-   { n:"⑥", en:"We mistake being familiar with something for understanding it.",
-     ans:"S We · △V mistake · O being familiar with something · M for understanding it",
-     ko:"우리는 무언가에 익숙한 것을 그것을 이해한 것으로 착각한다." },
-   { n:"⑩", en:"The drawings were wrong in ways the artists had never noticed.",
-     ans:"S The drawings · △V were · C wrong · M in ways the artists had never noticed",
-     ko:"그 그림들은 그린 사람이 한 번도 알아채지 못한 방식으로 틀려 있었다." },
-   { n:"⑭", en:"People who have never explained a policy still argue about it with certainty.",
-     ans:"S People · M who have never explained a policy · △V argue · M about it, with certainty",
-     ko:"어떤 정책을 한 번도 설명해 본 적 없는 사람들이 그것을 두고 확신에 차서 다툰다." }
+   {
+    n: "①",
+    en: "A new Yale study reveals that searching the web provides people with an “illusion of knowledge.”",
+    ans: "S A new Yale study · △V reveals · [that] S′ searching the web · △V′ provides · O people with an “illusion of knowledge”",
+    ko: "예일 대학의 새 연구는 웹 검색이 사람들에게 ‘지식의 착각’을 준다는 것을 밝힌다."
+   },
+   {
+    n: "⑨",
+    en: "Doing searches on one topic inflates people's sense of how well they understand other, unrelated topics.",
+    ans: "S Doing searches on one topic · △V inflates · O people's sense · M of how well they understand other, unrelated topics",
+    ko: "한 주제를 검색하는 일은 관련 없는 다른 주제를 얼마나 잘 이해하는지에 대한 인식을 부풀린다."
+   },
+   {
+    n: "⑪",
+    en: "Those who had been searching the net before the task rated their brain activity as being significantly stronger than did the control group that hadn't been looking up information online.",
+    ans: "S Those [who] △V′ had been searching the net · △V rated · O their brain activity · C as being significantly stronger · M than did the control group",
+    ko: "과제 전에 인터넷을 검색해 온 사람들은 자기 두뇌 활동을 온라인에서 정보를 찾지 않은 대조군보다 훨씬 더 강하다고 평가했다."
+   }
   ]
  },
  syn: [
-  { n:"⑥", name:"mistake A for B",
-    q:"We «mistake being familiar with something for understanding it».",
-    d:"<b>mistake A for B</b>는 'A를 B로 잘못 알다'. A·B 자리에 동명사가 오면 '~하는 것'으로 옮긴다.",
-    k:"우리는 익숙한 것을 이해한 것으로 착각한다." },
-  { n:"⑭", name:"주격 관계대명사절 + 현재완료",
-    q:"People «who have never explained a policy» still argue about it with certainty.",
-    d:"who 뒤의 절이 주어 People 을 꾸민다. <b>have never p.p.</b>는 '지금까지 한 번도 ~한 적 없다'.",
-    k:"어떤 정책을 한 번도 설명해 본 적 없는 사람들이 그것을 두고 확신에 차서 다툰다." }
+  {
+   n: "⑩",
+   name: "사역동사 have + 목적어 + 원형부정사",
+   q: "…, the psychologists, in one of the experiments, «had the test subjects make estimates» of their brain activity.",
+   d: "<b>have + 목적어 + 동사원형</b>은 ‘~에게 …하게 하다’이다. to를 붙이지 않는다는 점이 핵심이다.",
+   k: "심리학자들은 피실험자들에게 추정을 하게 했다"
+  },
+  {
+   n: "⑪",
+   name: "비교 구문의 도치  than + 동사 + 주어",
+   q: "…rated their brain activity as being significantly stronger «than did the control group».",
+   d: "than 뒤에서 <b>주어와 대동사가 자리를 바꾸는</b> 일이 있다. <b>did</b>는 앞의 <b>rated</b>를 대신한다.",
+   k: "대조군이 평가한 것보다"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"Do not mistake a loud voice for a good argument.",
-    k:"큰 목소리를 좋은 논증으로 착각하지 마라." },
-  { u:"구문 2", en:"The student who has never drawn a map still finished first.",
-    k:"지도를 한 번도 그려 본 적 없는 그 학생이 그래도 가장 먼저 끝냈다." },
-  { u:"구문 1 + 2", en:"Readers who have never built anything mistake plans for buildings.",
-    k:"무언가를 만들어 본 적 없는 독자들은 설계도를 건물로 착각한다." }
+  { u: "구문 1", en: "The teacher had us write down what we already knew.", k: "선생님은 우리에게 이미 알고 있는 것을 적게 했다." },
+  { u: "구문 2", en: "He answered the question faster than did his partner.", k: "그는 자기 짝이 답한 것보다 더 빨리 그 질문에 답했다." },
+  { u: "구문 1 + 2", en: "She had the class guess the answer sooner than did the other group.", k: "그녀는 다른 집단보다 더 일찍 학급에게 답을 추측하게 했다." }
  ],
- wtype: ["무관","정답","지엽","반대","무관"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["지퍼의 역사는 글에 나오지 않는다"],["정답"],
-       ["자전거 그림은 착각을 보여 주는 실험 하나일 뿐이다"],
-       ["글은 게으른 머리의 표시가 아니라고 말한다 — 정반대다"],
-       ["정책 설명 요령을 알려 주는 글이 아니다"]],
- src: [["②"],["⑧"],["⑪과 어긋남 — 게으름의 표시가 아니라고 했다"],["⑦"],["⑮"]],
+ why: [
+  ["실험 설계의 한 대목만 붙든 지엽적인 제목이다"],
+  ["정답"],
+  ["글은 검색이 자기 지식을 과대평가하게 만든다고 말한다 — 정반대다"],
+  ["도서관의 역사는 글에 나오지 않는다"],
+  ["검색을 잘하는 방법은 글에서 다루지 않는다"]
+ ],
+ src: [["④"], ["⑥"], ["⑨"], ["⑪과 어긋남 — 대조군보다 훨씬 더 강하다고 평가했다"], ["⑬"]],
  kb: {
-  title:"안다는 느낌의 정체",
-  lead:"머릿속 그림은 생각보다 훨씬 성기다.",
+  title: "안다는 느낌은 어디서 오는가",
+  lead: "설명해 보라고 하면 왜 말문이 막힐까?",
   items: [
-   ["'설명 깊이의 착각'이라는 이름",
-    "2002년 레오니드 로젠블릿과 프랭크 케일은 사람들에게 변기·자물쇠·헬리콥터의 작동을 설명하게 한 뒤, 설명 전후로 자기 이해도를 매기게 했다. 설명을 시도한 뒤 점수는 일관되게 떨어졌다."],
-   ["자전거를 그려 보라고 하면",
-    "심리학자 리베카 로슨의 연구에서 성인 대다수가 체인·페달·프레임의 위치를 틀리게 그렸다. 자전거를 매일 타는 사람도 예외가 아니었다."],
-   ["파인만이 남긴 기준",
-    "물리학자 리처드 파인만은 어떤 개념을 처음 배우는 사람에게 쉬운 말로 설명해 보는 것을 이해의 시험으로 삼았다. 막히는 지점이 곧 모르는 지점이다."]
+   ["설명 깊이의 착각", "Rozenblit와 Keil(2002)은 지퍼·자물쇠 같은 일상 물건의 작동을 얼마나 아는지 점수로 매기게 한 뒤, 실제로 설명해 보게 했다. 설명을 시도한 다음 다시 매긴 점수는 뚜렷이 낮아졌다. 이를 illusion of explanatory depth라 부른다."],
+   ["구글 효과", "Sparrow, Liu, Wegner(2011)는 나중에 찾아볼 수 있다고 생각한 정보를 사람들이 덜 기억하는 대신, 그것이 저장된 위치를 더 잘 기억한다고 보고했다. 기억을 몸 밖에 두는 셈이다."],
+   ["원래 논문", "이 글이 인용한 연구는 Fisher, Goddu, Keil(2015)의 「Searching for Explanations」이다. 검색이 자기 내부 지식에 대한 인식을 부풀린다는 결과를 담고 있다."]
   ],
-  ask:"내가 '안다'고 여기는 것 하나를 골라 3분 동안 소리 내어 설명해 보자. 어디에서 막히는가?"
- }
+  ask: "여러분이 ‘안다’고 여기는 것 하나를 골라, 그림 없이 종이 한 장에 설명해 볼 수 있는가?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 10 ───────────────────────────── */
 {
- no: "10", key: "doubt",
- accent: "#C2455E", tint: "#FAE7EB", deep: "#8C2740",
- en: "Doubt Is the Method",
- ko: "의심은 방법이다",
- goal: "과학적 회의가 '거부'가 아니라 '증거 요구'임을 구별해 설명할 수 있다.",
+ no: "10", key: "doubt", accent: "#C2455E", tint: "#FAE7EB", deep: "#8C2740",
+ en: "Skepticism in Scientific Inquiry",
+ ko: "‘~인 것 같다’로 시작한 과학",
+ goal: "Pyrrho의 언어 습관이 오늘날 과학의 표현 방식으로 이어진 과정을 설명할 수 있다.",
  fig: "Figure 1  주장의 크기만큼 무거워지는 증거의 저울.",
- tip: "먼저 생각해 보자. 친구가 '어제 유령을 봤다'고 한다. 믿거나 안 믿거나 말고, 세 번째 반응이 있을까?",
- sent: [
-  "People often use the word skeptic to mean someone who refuses to believe.",
-  "In science the word means almost the opposite.",
-  "A skeptic does not close the question; a skeptic asks what would settle it.",
-  "The rule behind this habit is simple to state, though it is harder to live by.",
-  "The stronger a claim is, the heavier the evidence it has to carry.",
-  "A report that a train was late needs little more than a timetable and a witness.",
-  "A report that a train travelled faster than light needs far more.",
-  "This is not unfairness; it is bookkeeping.",
-  "Ordinary claims fit neatly into the world we have already measured and written down.",
-  "Extraordinary ones ask us to pull down and rebuild part of that world.",
-  "In 2011 a laboratory announced particles that seemed to beat light.",
-  "Other teams did not shout, and they did not stay silent either.",
-  "They repeated the measurement and found a loose cable in the timing system.",
-  "The claim fell, and no one had to be called a liar.",
-  "Doubt had done its work quietly, the way it is supposed to."
+ tip: "먼저 생각해 보자. 친구가 ‘어제 유령을 봤다’고 한다. 믿거나 안 믿거나 말고, 세 번째 반응이 있을까?",
+ sent: T(10).sent, kor: T(10).kor,
+ bank: [
+  ["object", "②", "반대하다"],
+  ["dogmatic", "②", "독단적인"],
+  ["certainty", "③", "확실성"],
+  ["qualifying", "④", "한정하는"],
+  ["exempt", "⑦", "면제하다"],
+  ["plausibility", "⑩", "타당성"]
  ],
- kor: [
-  "사람들은 흔히 '회의론자'라는 말을 믿기를 거부하는 사람이라는 뜻으로 쓴다.",
-  "과학에서 그 말은 거의 반대를 뜻한다.",
-  "회의론자는 질문을 닫지 않는다. 무엇이 그 질문을 결판낼지를 묻는다.",
-  "이 태도의 밑에 있는 규칙은 말하기는 쉽지만, 지키기는 더 어렵다.",
-  "주장이 강할수록, 그것이 져야 할 증거도 무거워진다.",
-  "기차가 늦었다는 보고에는 시간표와 목격자 정도면 충분하다.",
-  "기차가 빛보다 빨리 갔다는 보고에는 훨씬 더 많은 것이 필요하다.",
-  "이것은 불공평이 아니라 장부 정리다.",
-  "평범한 주장은 우리가 이미 측정하고 적어 둔 세계에 무리 없이 들어맞는다.",
-  "비범한 주장은 그 세계의 일부를 헐고 다시 세우라고 요구한다.",
-  "2011년 한 실험실이 빛을 이긴 것처럼 보이는 입자를 발표했다.",
-  "다른 연구진들은 소리치지 않았고, 그렇다고 잠자코 있지도 않았다.",
-  "그들은 측정을 되풀이했고, 시간 측정 장치에서 헐거워진 케이블 하나를 찾아냈다.",
-  "주장은 무너졌고, 아무도 거짓말쟁이로 불릴 필요가 없었다.",
-  "의심은 제 일을 조용히 해냈다. 본래 그래야 하는 방식대로."
+ defs: [
+  ["object", "to say that you disagree with something"],
+  ["dogmatic", "sure you are right and refusing to doubt"],
+  ["certainty", "the state of being completely sure"],
+  ["qualifying", "making a statement less strong or general"],
+  ["exempt", "to free someone from a duty others have"],
+  ["plausibility", "how likely something is to be true"]
  ],
- bank: [["refuse","①","거부하다"],["settle","③","결판내다"],["claim","⑤","주장"],
-        ["evidence","⑤","증거"],["extraordinary","⑩","비범한, 이례적인"],["repeat","⑬","되풀이하다"]],
- defs: [["refuse","to say that you will not do something"],
-        ["settle","to end a question by deciding it"],
-        ["claim","a statement offered as true without proof yet"],
-        ["evidence","facts that support or test a statement"],
-        ["extraordinary","far beyond what is usual or expected"],
-        ["repeat","to do the same thing again"]],
- defOrder: [2,4,0,3,5,1],
+ defOrder: [5, 2, 0, 4, 1, 3],
  flow: [
-  ["Wrong sense","Everyday use makes a skeptic someone who refuses to believe",null],
-  ["Right sense","A skeptic asks what would (  ①  ) the question","settle"],
-  ["The rule","The stronger the claim, the heavier the (  ②  )","evidence"],
-  ["Case","In 2011 a faster-than-light result was (  ③  ) by other teams","repeated"],
-  ["Result","A loose (  ④  ) explained it, and no one was blamed","cable"]
+  ["Roots", "Skepticism goes back to Pyrrho of Elis", null],
+  ["His claim", "No knowledge is free of (  ①  )", "uncertainty"],
+  ["His habit", "He opened every claim with a (  ②  ) phrase", "qualifying"],
+  ["Today", "Scientists mark the degree of evidential (  ③  )", "warrant"],
+  ["The point", "Probability rises but never reaches absolute (  ④  )", "certainty"]
  ],
- flowBogi: "settle · evidence · repeated · cable · refuse · silence",
+ flowBogi: "uncertainty · qualifying · warrant · certainty · proof · silence",
  para: [
-  ["③ a skeptic asks what would settle it","A skeptic keeps the question ______.","open"],
-  ["⑤ the heavier the evidence it has to carry","Big claims need ______ support.","stronger"],
-  ["⑧ This is not unfairness; it is bookkeeping.","The rule is ______, not hostile.","fair"],
-  ["⑫ they did not stay silent either","The other teams neither shouted nor stayed ______.","quiet"],
-  ["⑭ no one had to be called a liar","The result fell without ______ anyone.","blaming"]
+  ["② each of which claimed to possess certain knowledge", "Each school said it held ______ knowledge.", "sure"],
+  ["③ knowledge always came with uncertainty", "We can never be fully ______ of what we know.", "certain"],
+  ["⑤ achieve a sense of inner peace", "Doubt could make the mind ______.", "calm"],
+  ["⑦ they exempted all philosophers from taxation", "Philosophers paid ______ tax at all.", "no"],
+  ["⑩ eventually eliminating weaker ones", "The weaker guesses are ______ one by one.", "dropped"]
  ],
- paraBogi: "open · stronger · fair · quiet · blaming · closed · weaker · trusting",
+ paraBogi: "sure · certain · calm · no · dropped · double · kept · loud",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["Why Trains Are Often Late","Doubt That Asks Instead of Refusing",
-       "How to Win a Scientific Argument","The 2011 Discovery That Changed Physics",
-       "A Beginner's Guide to Cable Repair"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["일상에서 '회의론자'는 믿기를 거부하는 사람을 뜻하곤 한다.","주장이 강할수록 필요한 증거도 무거워진다.",
-       "2011년의 발표는 다른 연구진의 침묵 속에 잊혔다.","문제의 원인은 헐거워진 케이블이었다.",
-       "필자는 이 규칙을 불공평이 아니라 장부 정리로 본다."], ans:3},
-  {t:"write", q:"필자가 말하는 과학적 회의가 일상의 '거부'와 어떻게 다른지 우리말 한 문장으로 써 보세요.",
-   ans:"질문을 닫아 버리는 대신 무엇이 그 질문을 결판낼지를 묻는다는 점에서 다르다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "Why Elis Made a Philosopher Its Head Priest",
+    "Doubt as a Working Method",
+    "Science Finally Reaches Absolute Certainty",
+    "Ancient Greek Tax Law Explained",
+    "How to Win a Philosophical Debate"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "Pyrrho는 확실한 지식을 가지고 있다고 주장하던 당시 철학들에 반대했다.",
+    "그는 자신의 주장을 ‘~인 것 같다’ 같은 한정 표현으로 시작하곤 했다.",
+    "Elis의 시민들은 그의 지혜를 존중해 그를 수석 성직자로 삼았다.",
+    "오늘날 과학자들은 증거의 강도와 상관없이 같은 표현으로 결론을 말한다.",
+    "결론은 점점 더 높은 개연성에 이르지만 절대적 확실성에는 닿지 못한다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "오늘날 과학자들이 Pyrrho의 언어 습관을 잇고 있다고 필자가 보는 이유를 우리말 한 문장으로 써 보세요.",
+   ans: "과학자들도 실험에 따른 주장을 할 때 증거의 타당성 정도에 맞추어 한정하는 표현을 덧붙여 말하기 때문이다."
+  }
  ],
  fl: {
-  model: { n:"⑤",
-   toks: [["The stronger","c"],["a claim","s2"],["is","v2"],[",",null],
-          ["the heavier","c"],["the evidence","s"],["it has to carry","m"]],
-   ko:"주장이 강할수록, 그것이 져야 할 증거도 무거워진다." },
+  model: {
+   n: "③",
+   toks: [
+    ["He", "s"], ["questioned", "v"], ["whether", "c"], ["it", "s2"], ["was", "v2"], ["possible", null],
+    ["for human beings to determine any knowledge with certainty", "m"], ["and", "c"], ["concluded", "v"],
+    ["that", "c"], ["we", "s2"], ["must accept", "v2"],
+    ["that knowledge always came with uncertainty.", null]
+   ],
+   ko: "그는 인간이 어떤 지식이든 확실하게 확정하는 것이 가능한지 물었고, 지식에는 늘 불확실성이 따른다는 것을 받아들여야 한다고 결론지었다."
+  },
   drill: [
-   { n:"③", en:"A skeptic does not close the question; a skeptic asks what would settle it.",
-     ans:"S A skeptic · △V does not close · O the question · S a skeptic · △V asks · O what would settle it",
-     ko:"회의론자는 질문을 닫지 않는다. 무엇이 그 질문을 결판낼지를 묻는다." },
-   { n:"⑪", en:"In 2011 a laboratory announced particles that seemed to beat light.",
-     ans:"M In 2011 · S a laboratory · △V announced · O particles · M that seemed to beat light",
-     ko:"2011년 한 실험실이 빛을 이긴 것처럼 보이는 입자를 발표했다." },
-   { n:"⑬", en:"They repeated the measurement and found a loose cable in the timing system.",
-     ans:"S They · △V repeated · O the measurement · [and] △V found · O a loose cable · M in the timing system",
-     ko:"그들은 측정을 되풀이했고, 시간 측정 장치에서 헐거워진 케이블 하나를 찾아냈다." }
+   {
+    n: "④",
+    en: "To express this consistently, Pyrrho would always preface any claims he made with qualifying phrases like “it seems,” “it appears to me,” or “perhaps.”",
+    ans: "M To express this consistently · S Pyrrho · △V would always preface · O any claims he made · M with qualifying phrases like “it seems,” “it appears to me,” or “perhaps”",
+    ko: "이를 일관되게 표현하려고 Pyrrho는 자기 주장을 늘 ‘~인 것 같다’ 같은 한정 표현으로 시작하곤 했다."
+   },
+   {
+    n: "⑧",
+    en: "Scientists today follow a version of Pyrrho's linguistic practice in the way they, too, use care when making empirical claims by couching them with qualifying phrases to mark their degree of evidential warrant.",
+    ans: "S Scientists today · △V follow · O a version of Pyrrho's linguistic practice · M in the way they use care · M by couching them with qualifying phrases",
+    ko: "오늘날 과학자들도 증거의 타당성 정도를 표시하는 한정 표현을 덧붙여 조심스럽게 말한다는 점에서 Pyrrho의 언어 관행을 따른다."
+   },
+   {
+    n: "⑪",
+    en: "The fact that conclusions may achieve higher and higher probability, but never quite reach absolute certainty, is a hallmark of inductive reasoning upon which science is based.",
+    ans: "S The fact · [that] S′ conclusions · △V′ may achieve … but never reach … · △V is · C a hallmark of inductive reasoning",
+    ko: "결론이 점점 더 높은 개연성에 이르지만 절대적 확실성에는 결코 닿지 못한다는 사실은 과학이 딛고 선 귀납 추론의 특징이다."
+   }
   ]
  },
  syn: [
-  { n:"⑤", name:"the 비교급 ~, the 비교급 …",
-    q:"«The stronger a claim is, the heavier the evidence» it has to carry.",
-    d:"<b>the + 비교급 ~, the + 비교급 …</b>는 '~할수록 더 …하다'. 앞뒤 절의 순서를 바꾸지 않는다.",
-    k:"주장이 강할수록 그것이 져야 할 증거도 무거워진다." },
-  { n:"⑪", name:"seem to + 동사원형",
-    q:"A laboratory announced particles that «seemed to beat» light.",
-    d:"<b>seem to + 동사원형</b>은 '~하는 것처럼 보이다'. 사실 단정이 아니라 관찰자의 인상을 나타낸다.",
-    k:"빛을 이긴 것처럼 보이는 입자들을 발표했다." }
+  {
+   n: "②",
+   name: "전치사 + 관계대명사  each of which",
+   q: "Pyrrho objected to the dogmatic philosophies of his day, «each of which claimed to possess certain knowledge».",
+   d: "<b>each of which</b>는 앞의 여러 대상을 하나씩 가리키며 뒤 절의 주어가 된다. <b>and each of them</b>으로 바꿔 읽으면 쉽다.",
+   k: "그것들은 저마다 확실한 지식을 가지고 있다고 주장했다"
+  },
+  {
+   n: "⑪",
+   name: "동격의 that절",
+   q: "«The fact that conclusions may achieve higher and higher probability» … is a hallmark of inductive reasoning.",
+   d: "<b>the fact that ~</b>에서 that절은 앞의 명사 <b>fact</b>와 같은 내용을 담는다. ‘~라는 사실’로 읽는다.",
+   k: "결론이 점점 더 높은 개연성에 이른다는 사실"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"The louder the room became, the harder the test felt.",
-    k:"방이 시끄러워질수록 시험은 더 어렵게 느껴졌다." },
-  { u:"구문 2", en:"The second team seemed to find the same error.",
-    k:"두 번째 연구진도 같은 오류를 찾아낸 것처럼 보였다." },
-  { u:"구문 1 + 2", en:"The stranger a result seems to be, the longer it should be checked.",
-    k:"결과가 이상해 보일수록 더 오래 검증해야 한다." }
+  { u: "구문 1", en: "He read three papers, each of which reported a different result.", k: "그는 논문 세 편을 읽었는데, 그것들은 저마다 다른 결과를 보고했다." },
+  { u: "구문 2", en: "The fact that the test can be repeated makes the claim stronger.", k: "그 실험을 반복할 수 있다는 사실이 그 주장을 더 강하게 만든다." },
+  { u: "구문 1 + 2", en: "The fact that he cited two studies, each of which used the same data, weakened his case.", k: "그가 같은 자료를 쓴 연구 두 편을 인용했다는 사실이 그의 주장을 약하게 만들었다." }
  ],
- wtype: ["지엽","정답","무관","지엽","무관"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["기차는 규칙을 설명하는 예시일 뿐이다"],["정답"],
-       ["논쟁에서 이기는 법은 글의 관심사가 아니다"],
-       ["2011년 사례는 주장을 뒷받침하는 한 예이고, 물리학이 바뀌지도 않았다"],
-       ["케이블 수리법은 글에 나오지 않는다"]],
- src: [["①"],["⑤"],["⑫과 어긋남 — 잠자코 있지 않고 측정을 되풀이했다"],["⑬"],["⑧"]],
+ why: [
+  ["문장 ⑥의 일화만 붙든 지엽적인 제목이다"],
+  ["정답"],
+  ["글은 결론이 절대적 확실성에 이르지 못한다고 말한다 — 정반대다"],
+  ["세법 자체는 글에서 다루지 않는다"],
+  ["논쟁에서 이기는 방법은 글에 나오지 않는다"]
+ ],
+ src: [["②"], ["④"], ["⑥"], ["⑨와 어긋남 — 증거의 강도에 따라 표현의 세기를 달리한다"], ["⑪"]],
  kb: {
-  title:"의심이 일한 방식",
-  lead:"무너뜨리는 일도 절차를 지켜야 한다.",
+  title: "‘아마도’라고 말하는 훈련",
+  lead: "확신을 줄이는 말이 왜 과학의 언어가 되었을까?",
   items: [
-   ["OPERA 실험, 2011",
-    "이탈리아 그란사소 연구소의 OPERA 팀은 중성미자가 빛보다 약 60나노초 빨리 도착한 것으로 보인다고 발표하면서, 확정이 아니라 검증 요청임을 분명히 했다. 2012년 광섬유 연결 불량과 발진기 문제가 원인으로 확인되었다."],
-   ["'비범한 주장에는 비범한 증거를'",
-    "이 표현은 1979년 칼 세이건이 널리 퍼뜨렸지만, 뿌리는 18세기 흄과 라플라스의 논의로 거슬러 올라간다. 증거의 무게를 주장의 크기에 맞추라는 원칙이다."],
-   ["재현이 곧 검증이다",
-    "2010년대 여러 분야에서 재현 실험이 실패하는 사례가 잇따르자, 학술지들은 자료와 분석 코드 공개, 사전등록 같은 절차를 도입했다. 의심을 개인의 태도가 아니라 제도로 옮긴 셈이다."]
+   ["에포케(epoché)", "판단을 잠시 멈추는 태도를 가리키는 그리스어다. 피론주의는 어느 한쪽으로 결론 내리기를 보류함으로써 마음의 동요가 가라앉는 상태(아타락시아)에 이른다고 보았다."],
+   ["기록을 남긴 제자", "Pyrrho 자신은 저술을 남기지 않았다. 그의 생각은 제자 Timon의 기록과, 훨씬 뒤인 2~3세기 Sextus Empiricus의 저작을 통해 전해진다."],
+   ["IPCC의 확신 어휘", "기후 보고서는 결론마다 확신의 정도를 정해진 낱말로 표시한다. virtually certain(99% 이상), very likely(90% 이상), likely(66% 이상)처럼 확률 구간을 낱말에 묶어 두는 방식이다."]
   ],
-  ask:"내가 최근에 믿은 이야기 하나를 골라 보자. 그것이 틀렸다면 무엇을 보고 알 수 있을까?"
- }
+  ask: "여러분이 쓴 글에서 ‘~이다’라고 단정한 문장 하나를 골라, 증거의 세기에 맞게 고쳐 쓴다면 어떤 말이 될까?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 }
-]};
+
+ ]
+};
