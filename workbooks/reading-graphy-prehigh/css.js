@@ -76,7 +76,7 @@ b,strong{font-weight:700}
 .rule{display:none}
 /* ── 읽기 2단 (8:4 → 본문 112mm · 여백 6mm · 측면 58mm) ── */
 .read{display:grid;grid-template-columns:1fr 56mm;gap:6mm;align-items:stretch;flex:1 0 auto}
-.psg{font-family:var(--serif);font-size:var(--t5);line-height:1.85;text-align:left;color:var(--ink)}
+.psg{font-family:var(--serif);font-size:var(--t5);line-height:1.85;text-align:justify;text-align-last:left;color:var(--ink)}
 .psg.dense{line-height:1.7}
 .psg.denser{line-height:1.6}   /* 넘침 방지 마지막 단계 — build.js 의 guard 가 dense·snug 로도 하단 한계(279mm)를 못 지킬 때만 */
 .psg sup{font-family:var(--sans);font-size:var(--t1);font-weight:700;color:var(--ac);vertical-align:super;line-height:0;margin-right:.3mm}
