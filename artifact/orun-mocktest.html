@@ -1158,8 +1158,9 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   /* 함초롬바탕·바탕에는 Bold 페이스가 없다. 합성을 막으면 굵은 글씨가 사라진다.
      조판 힌트도 인쇄 문서(printDocument)와 같아야 쪽 나눔이 어긋나지 않는다. */
   font-synthesis-weight: auto; text-rendering: auto;
-  animation: pageIn var(--d4) var(--e-emph);
 }
+/* 처음 종이가 나타날 때만. 재배치는 조용히 — JS 가 .intro 를 붙일 때만 움직인다. */
+.page.intro { animation: pageIn var(--d4) var(--e-emph); }
 @keyframes pageIn { from { opacity: 0; transform: translateY(10px); } }
 .page .span { flex: none; }
 .page .cols { flex: 1; display: grid; grid-template-columns: 1fr 1fr; column-gap: 6mm; min-height: 0; position: relative; }
@@ -1194,8 +1195,8 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 .page u { text-underline-offset: 2pt; }
 .page .ak { margin: 0 0 3pt; }
 /* 도착한 문항 — 전면 노랑 워시를 버리고 2pt 좌측 괘선이 1.8초에 걸쳐 사라진다 */
-.page .question.arrive { animation: qIn .55s var(--e-emph), qFlash 1.8s var(--e-out); }
-@keyframes qIn { from { opacity: 0; transform: translateY(6px); } }
+.page .question.arrive { animation: qIn .45s var(--e-out), qFlash 1.8s var(--e-out); }
+@keyframes qIn { from { opacity: 0; } }
 @keyframes qFlash {
   0%, 35% { box-shadow: inset 2pt 0 0 var(--y); }
   100%    { box-shadow: inset 2pt 0 0 transparent; }
@@ -1221,11 +1222,12 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   box-shadow: 0 0 0 .5pt #fff, 0 0 0 1pt var(--c);
 }
 .page .rv i > svg { width: 100%; height: 100%; border-radius: 50%; display: block; }
-.page .rv i.think { opacity: 1; transform: scale(1); animation: rvThink .5s ease-in-out infinite alternate; }
+/* 생각 중 표시 — 도장 크기를 흔들면 글줄이 같이 떨린다. 밝기만 바꾼다. */
+.page .rv i.think { opacity: 1; transform: scale(1); animation: rvThink 1.1s var(--e-inout) infinite alternate; }
 .page .rv i.done { opacity: 1; transform: scale(1); }
 @keyframes rvThink {
-  from { transform: scale(.94); box-shadow: 0 0 0 .5pt #fff, 0 0 0 1pt var(--c); }
-  to   { transform: scale(1.08); box-shadow: 0 0 0 .5pt #fff, 0 0 0 1pt var(--c), 0 0 0 2.6pt var(--y-halo); }
+  from { opacity: .45; }
+  to   { opacity: 1; }
 }
 .page .rv i b {
   position: absolute; right: -1.8mm; bottom: -1.6mm; min-width: 3.4mm; height: 3.4mm;
@@ -1245,8 +1247,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 }
 .page .rv .rv-badge.warn { border-color: var(--neg); color: var(--neg); }
 @keyframes stamp {
-  from { opacity: 0; transform: scale(2.2) rotate(-5deg); }
-  70%  { transform: scale(.94) rotate(-5deg); }
+  from { opacity: 0; transform: scale(1.28) rotate(-5deg); }
   to   { opacity: 1; transform: scale(1) rotate(-5deg); }
 }
 
@@ -1718,7 +1719,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     <span class="step" data-step="2"></span><span class="step-rule"></span>
     <span class="step" data-step="3"></span>
   </div>
-  <div class="state"><span class="build" id="buildTag">2026-09-08 01:29</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
+  <div class="state"><span class="build" id="buildTag">2026-09-08 01:52</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
 </div>
 
 <!-- 화면 0 · 시작 -->
@@ -3935,7 +3936,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   function diagnostics() {
     return [
       "ORUN 동형 모의고사 진단",
-      "build: 2026-09-08 01:29",
+      "build: 2026-09-08 01:52",
       "url: " + location.href,
       "runtime: API 키 전용 빌드",
       "sample 확보: " + (SAMPLE ? "예" : "아니오"),
@@ -4845,6 +4846,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
       queueLayout();
     };
     docUnits = [headerUnit];
+    paperShown = false;
     layoutPaper();
     const meter = startMeter(itemsFinal.length);
     meterRef = meter;
@@ -5074,10 +5076,11 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   let revealNext = null;        // 배치 직후 화면에 보여줄 단위
   function queueLayout() {
     if (layoutTimer) return;
-    layoutTimer = setTimeout(() => { layoutTimer = null; layoutPaper(); }, 160);
+    layoutTimer = setTimeout(() => { layoutTimer = null; layoutPaper(); }, 320);
   }
+  let paperShown = false;                 // 첫 배치인가 (등장 애니메이션은 그때 한 번만)
   function newPage(n) {
-    const pg = document.createElement("div"); pg.className = "page";
+    const pg = document.createElement("div"); pg.className = "page" + (paperShown ? "" : " intro");
     const span = document.createElement("div"); span.className = "span";
     const cols = document.createElement("div"); cols.className = "cols";
     const c1 = document.createElement("div"); c1.className = "col";
@@ -5109,12 +5112,18 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
         cols[ci].appendChild(u);
       }
     });
+    paperShown = true;
     $("pageCount").textContent = pageNo + "쪽 · " + docUnits.filter(u => u.classList.contains("question")).length + "문항";
     applyZoom();
+    // 새 문항을 따라가되, 이미 눈에 보이는 것까지 끌어당기지 않는다 — 매번 스크롤하면 종이가 요동친다.
     if (revealNext && revealNext.isConnected) {
       const view = $("paperView");
-      const top = revealNext.getBoundingClientRect().top - view.getBoundingClientRect().top + view.scrollTop;
-      view.scrollTo({ top: Math.max(0, top - view.clientHeight * 0.45), behavior: "smooth" });
+      const vr = view.getBoundingClientRect(), r = revealNext.getBoundingClientRect();
+      const visible = r.top >= vr.top + vr.height * 0.05 && r.top <= vr.top + vr.height * 0.88;
+      if (!visible) {
+        const top = r.top - vr.top + view.scrollTop;
+        view.scrollTo({ top: Math.max(0, top - view.clientHeight * 0.35), behavior: "smooth" });
+      }
     }
     revealNext = null;
     paperDirty = false;
