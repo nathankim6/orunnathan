@@ -5,3 +5,7 @@ book*.pdf
 pv/
 out/
 __pycache__/
+_orig.js
+_orig_clean.json
+_t0*.json
+units/_ref.js

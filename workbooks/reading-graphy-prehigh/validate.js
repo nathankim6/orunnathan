@@ -19,7 +19,7 @@ for (const nn of nos) {
     const L = t.no, n = t.sent.length;
     if (t.kor.length !== n) err(L, L, `지문 ${n}문장 ≠ 해석 ${t.kor.length}줄`);
     const words = t.sent.join(" ").split(/\s+/).length;
-    if (words < 165 || words > 210) err(U.no, L, `지문 ${words} 단어 (165–210 권장)`);
+    if (words < 165 || words > 340) err(U.no, L, `지문 ${words} 단어 (165–340)`);   // 원문 지문은 246–326 단어
 
     /* 삽화 연결 */
     if (!A.icons[t.key]) err(U.no, L, `아이콘 없음: ${t.key}`);
