@@ -30,7 +30,8 @@
 7. 부사구·전치사구·분사구는 m: `"for most of the twentieth century,"`, `"in the amounts they need."`, `"built around cure"`, `"Unbundled,"`, `"To learn how pain works,"`.
    문장 끝 마침표는 마지막 토큰에 붙는다 (역할이 m 이든 null 이든).
 8. 명령문의 동사는 v (주어 없음).  `There is/are` 구문은 `["There",null],["is","v"],…`.
-9. 문장당 v 가 최소 하나. s2 가 있으면 v2 도 있어야 한다.
+9. **축약형 `It's` · `there's` · `he's` 처럼 주어와 동사가 한 낱말로 붙은 것**은 쪼갤 수 없으므로 `"v"` 하나로 둔다 (S 는 따로 표시하지 않는다). 축약이 아닌 `It is` · `There is` 는 `s` + `v` 로 나눈다.
+10. 문장당 v 가 최소 하나. s2 가 있으면 v2 도 있어야 한다.
 
 ## 예시 (units 파일의 `fl.model.toks` 와 같은 방식)
 - `The cost is that the risk has quietly moved from the firm to the individual.`
