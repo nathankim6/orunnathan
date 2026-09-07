@@ -1,4 +1,8 @@
-module.exports = {
+/* Unit 1 · Art & Literature — 원문 Theme 01–05 */
+const R = require("../src/orig/all.json");
+const T = n => R[n - 1];
+
+const U = {
  "no": 1,
  "field": "Art & Literature",
  "ko": "예술·문학",
@@ -20,46 +24,6 @@ module.exports = {
    "goal": "보편화된 문학 연구가 번역이라는 한계에 부딪히는 까닭을 설명할 수 있다.",
    "fig": "Figure 1  원작에서 번역본으로 건너가는 동안 옅어지는 것들.",
    "tip": "먼저 생각해 보자. 번역본으로 읽은 소설을 두고 ‘나는 그 작품을 읽었다’고 말해도 될까?",
-   "sent": [
-    "There is special difficulty in a universalized study of literature.",
-    "Although literature contains universal human spirits and sentiments, a universal language — written or spoken — is still lacking.",
-    "Each country creates its literature with its own language.",
-    "In such circumstances, how could a universalized study of literature be possible?",
-    "No one knows everything; no one can learn every language, and be able to read and study literatures from all over the world.",
-    "Needless to say, it is absolutely impossible for laymen to understand all the world's literatures.",
-    "They can understand nothing other than their own language.",
-    "How, then, could a universalized study of literature be possible?",
-    "It is true that scholars and even common readers can use translations, but how faithful is a translation to the original?",
-    "The value and enjoyment of the original may be lost through translation.",
-    "In the end, how can literature be translated?",
-    "Literature is the manifestation of the author's emotions and inspirations.",
-    "At the moment of emotional intensity or epiphany, the work naturally flows under the author's hand.",
-    "Once the moment passes, the natural flowing of writing can never be repeated, let alone reproduced through translation in someone else's hand.",
-    "What is more, literature almost always has a local color.",
-    "Such color is most vivid and lively in the eyes of the local people, but means nothing to others.",
-    "A deliberate representation is a concession after all.",
-    "Also, moods, imaginations, and even thoughts in literature are so closely related to words that once the latter change, the former change as well."
-   ],
-   "kor": [
-    "보편화된 문학 연구에는 특별한 어려움이 있다.",
-    "문학이 보편적인 인간 정신과 정서를 담고 있긴 하지만, 문어든지 구어든지 보편적인 언어는 아직 없다.",
-    "국가마다 자국의 고유한 언어로 자기 문학을 창작한다.",
-    "그런 상황에서 보편화된 문학 연구가 어떻게 가능할 수 있겠는가?",
-    "아무도 모든 것을 알 수는 없고, 아무도 모든 언어를 배우고 전 세계의 문학을 읽고 연구할 수는 없다.",
-    "말할 필요도 없이, 비전문가가 세계의 모든 문학을 이해하는 것은 절대로 불가능하다.",
-    "그들은 자기 자신의 언어 외에는 아무것도 이해할 수 없다.",
-    "그렇다면 보편화된 문학 연구가 어떻게 가능할 수 있는가?",
-    "학자와 심지어 일반 독자도 번역본을 사용할 수 있는 것이 사실이지만, 번역본은 원작에 얼마나 충실한가?",
-    "원작의 가치와 즐거움은 번역을 거치면서 사라질 수도 있다.",
-    "결국, 문학은 어떻게 번역될 수 있는가?",
-    "문학은 작가의 감정과 영감의 표현이다.",
-    "강렬한 감정이나 통찰의 순간에, 작품이 자연스럽게 작가의 손길 아래로 흘러간다.",
-    "그 순간이 지나면 자연스러운 글의 흐름은 결코 반복될 수 없는데, 다른 사람의 손으로 한 번역을 통해 재현되는 것은 말할 것도 없다.",
-    "게다가, 문학에는 거의 항상 지역적인 색채가 있다.",
-    "그런 색채는 현지인의 눈에는 대단히 선명하고 생생하지만, 다른 사람에게는 아무 의미가 없다.",
-    "신중한 표현은 결국은 양보이다.",
-    "또한 문학에서의 분위기, 상상력, 심지어 생각은 말과 매우 밀접한 관련이 있기 때문에 후자가 바뀌면 전자도 또한 바뀐다."
-   ],
    "bank": [
     [
      "sentiment",
@@ -385,38 +349,6 @@ module.exports = {
    "goal": "이미지가 사물 그 자체처럼 느껴지는 까닭과 그것이 착각인 이유를 설명할 수 있다.",
    "fig": "Figure 2  파이프 그림 아래 적힌 한 줄 — ‘이것은 파이프가 아니다’.",
    "tip": "먼저 생각해 보자. 같은 내용을 담은 사진 한 장과 문장 한 줄 가운데, 우리는 왜 사진 쪽을 더 쉽게 믿을까?",
-   "sent": [
-    "There is a curious cliché that says pictures don't lie.",
-    "This is part of that greater cliché that says seeing is believing.",
-    "Somehow a thing seen directly — or through a visual representation like a painting, a photograph, or a film — makes us feel closer to some actual reality.",
-    "Words are too obviously not things themselves; words are made-up sounds, developed throughout the life of a culture, represented by made-up letters, put together in a contrived grammar that everyone in a culture uses to communicate through a decision that particular words in a particular order will refer to particular things.",
-    "Language is clearly cultural and not natural: it is human-made and accepted with some variations throughout a particular culture.",
-    "Every English speaker understands what the word “food” refers to, even though the particular kind of food that comes to mind to each individual will vary.",
-    "More abstract words, like “cool” or “sick,” may have a range of meanings that keep changing.",
-    "But seeing the image of a thing seems to bring us very close to the thing itself — to “reality.”",
-    "Things that are seen appear to be and even feel as if they are unmediated; that is, they seem to be conveyed directly to us, not conveyed indirectly.",
-    "Nothing stands in their way.",
-    "They are true.",
-    "But, in fact, an image, whether photographed, painted, or digitized, is not the thing itself.",
-    "This is something humorously recognized by the Belgian surrealist painter, Rene Magritte, in his painting of a pipe.",
-    "The painting is called The Treachery of Images and bears the words (in French), “Ceci n'est pas une pipe,” “This Is Not a Pipe.”"
-   ],
-   "kor": [
-    "사진은 거짓말을 하지 않는다고 하는 호기심을 끄는 상투적인 문구가 있다.",
-    "이것은 보는 것이 믿는 것이라고 하는 더 상투적인 그 문구의 일부이다.",
-    "왠지 직접, 혹은 그림, 사진, 또는 영화와 같은 시각적 표현을 통해 본 사물은 우리를 어떤 실제 현실에 더 가깝게 느끼게 만든다.",
-    "말은 너무도 명백하게 사물 그 자체가 아닌데, 말은, 한 문화가 살아 있는 동안 내내 발전되고, 만들어진 문자로 표현되고, 한 문화에 속한 모든 이가 특정한 순서의 특정한 단어들이 특정한 것을 가리킬 것이라는 결정을 통해 의사소통하기 위해 사용하는 인위적인 문법에 따라 조립된 만들어진 소리이기 때문이다.",
-    "언어는 분명히 자연적인 것이 아니라 문화적인 것인데, 그것은 인간이 만들었고 특정한 문화 전체에서 약간 변형되어 받아들여진다.",
-    "각 개인의 마음에 떠오르는 특정 종류의 음식은 다를 것이긴 하지만, 모든 영어 사용자는 ‘음식'이라는 말이 무엇을 가리키는지 이해한다.",
-    "‘시원하다’ 또는 ‘아프다'와 같은 더 추상적인 단어는 계속 변화하는 다양한 의미를 가질 수도 있다.",
-    "하지만 어떤 사물의 이미지를 보는 것은 우리를 그 사물 그 자체, 즉 ‘현실'로 매우 가깝게 다가가게 하는 것 같다.",
-    "보이는 사물은 매개되지 않은 것처럼 보이고 심지어 그런 것처럼 느껴지기까지 하는데, 즉 그것들은 우리에게 간접적으로 전달되는 게 아니라 직접 전달되는 것 같다.",
-    "아무것도 그것들을 방해하지 않는다.",
-    "그것들은 사실이다.",
-    "하지만 사실 사진으로 찍은 것이든, 그림으로 그린 것이든, 혹은 디지털화된 것이든 이미지는 사물 그 자체가 아니다.",
-    "이것은 벨기에의 초현실주의 화가 Rene Magritte가 파이프를 그린 자신의 그림에서 유머러스하게 인정한 것이다.",
-    "그 그림의 제목은 The Treachery of Images이고 ‘이것은 파이프가 아니다'라는 ’Ceci n'est pas une pipe' (프랑스어) 문구를 담고 있다."
-   ],
    "bank": [
     [
      "cliché",
@@ -738,38 +670,6 @@ module.exports = {
    "goal": "연습과 공연이 서로 어떤 관계인지 필자의 두 비유를 근거로 설명할 수 있다.",
    "fig": "Figure 3  너트와 볼트가 제자리에 있어야 비로소 날아오를 수 있다.",
    "tip": "먼저 생각해 보자. 시험 전날의 나와 시험장 안의 나는 어떻게 달라야 할까?",
-   "sent": [
-    "Concert pianists spend much more of their lifetimes practising than they do playing concerts.",
-    "It's not just that pieces need to be kept in the memory — muscle and mind — but the very act of playing the piano is physical and athletic.",
-    "It involves reflex and endurance.",
-    "It might be true that you never forget how to ride a bicycle, but if you and it are rusty, there's not much hope of winning or even completing the Tour de France.",
-    "So we need to practise.",
-    "The key is how we make our time offstage best serve our briefer time onstage.",
-    "A pianist who has concerts has little time to spare, so it's important that those spare hours, even minutes, be used well.",
-    "My teacher, Gordon Green, used to say, ‘In practice a perfectionist, in performance a realist.’",
-    "In other words, prepare assiduously, tirelessly, at home, but when onstage accept the situation at hand without wishing the piano were more in tune, the audience were more appreciative (or larger), you hadn't made a mess of that octave passage, and so on.",
-    "Being a ‘realist’ sounds rather prosaic when faced with bringing to poetic, passionate life the masterworks of master composers.",
-    "I might put it differently from Gordon: in practice an engineer, in performance a pilot.",
-    "Nuts and bolts in a plane are incomparably important, but when you sit at the cockpit of a Steinway concert grand, your eyes need to look ahead not underneath.",
-    "The purpose of practising is so that we (offstage as engineers) make sure that we (onstage as pilots) are completely free to fly to the destination of our choice.",
-    "That destination is one involving imagination, creativity, and spirituality, not merely the A to B of playing the notes — but without the nuts and bolts in place, we shall never be airborne."
-   ],
-   "kor": [
-    "콘서트 피아니스트들은 연주회에서 연주하는 것보다 연습하는 데 일생의 훨씬 더 많은 시간을 보낸다.",
-    "그것은 단지 악곡이 기억 — 근육 및 정신 — 속에 유지되어야 한다는 것이 아니라, 피아노를 연주하는 바로 그 행위가 육체적이고 기력이 든다는 것이다.",
-    "그것은 반사 운동과 지구력을 필요로 한다.",
-    "여러분이 자전거를 타는 법을 결코 잊지 않는다는 것이 사실일지도 모르지만, 여러분과 그것(자전거 타는 실력)이 예전 같지 않다면, Tour de France에서 우승하거나 심지어 완주할 희망이 별로 없다.",
-    "그러니 연습이 필요하다.",
-    "핵심은 어떻게 무대 밖에서의 시간을 더 짧은 무대 위에서의 시간에 가장 큰 도움이 되게 보내느냐이다.",
-    "콘서트가 있는 피아니스트는 낼 시간이 거의 없어서, 심지어 몇 분이라도 그 남는 시간을 잘 활용하는 것이 중요하다.",
-    "나의 스승인 Gordon Green은 ‘연습할 때는 완벽주의자, 공연할 때는 현실주의자'라고 말하곤 했다.",
-    "다시 말하자면, 집에서는 근면하게 꾸준히 준비하되, 무대에서는 피아노의 음이 더 잘 맞았으면, 관객이 감상을 더 즐겼으면(혹은 더 많았으면), 그 옥타브 악절을 망치지 않았으면 하는 등을 바라지 말고 당면한 상황을 받아들이라는 것이다.",
-    "거장 작곡가들의 걸작에 시적이고 열정적인 생명력을 불어넣는 일에 맞닥뜨리는 상황에서, ‘현실주의자'가 된다는 것은 다소 무미건조하게 들린다.",
-    "내가 그것을 Gordon과 달리 표현하자면, 연습할 때는 엔지니어, 공연할 때는 조종사다.",
-    "비행기의 너트와 볼트는 비교할 수 없을 정도로 중요하지만, Steinway의 콘서트 그랜드 피아노의 조종석에 앉으면 눈은 아래가 아니라 앞을 봐야 한다.",
-    "연습의 목적은 (무대 위에서는 조종사인) 우리가 선택한 목적지까지 완전히 마음 놓고 비행할 수 있도록 (무대 밖에서는 엔지니어인) 우리가 확실히 하기 위함이다.",
-    "그 목적지는 그저 음을 연주하는 A에서 B로의 이동이 아니라 상상력, 창의성, 영성을 수반하는 곳이지만, 너트와 볼트가 제자리에 있지 않다면 우리는 결코 비행하지 못할 것이다."
-   ],
    "bank": [
     [
      "endurance",
@@ -1091,44 +991,6 @@ module.exports = {
    "goal": "부정적인 것을 모두 치워 준 보호가 왜 아이를 오히려 약하게 만드는지 설명할 수 있다.",
    "fig": "Figure 4  모든 위험을 치운 성 안에서 자라는 동안 조용히 약해진 것들.",
    "tip": "먼저 생각해 보자. 넘어질 일이 하나도 없는 길만 걸어 온 사람은, 진짜 길 위에 서면 어떻게 될까?",
-   "sent": [
-    "In the Disney movie Sleeping Beauty, the King and Queen have a daughter, the princess Aurora, after a long wait.",
-    "They plan a great christening to introduce her to the world.",
-    "They welcome everyone who loves and honours their new daughter.",
-    "But they fail to invite Maleficent, who appears in her negative guise as the Queen of the Underworld.",
-    "This means, symbolically, that the two monarchs are overprotecting their beloved daughter by setting up a world around her that has nothing negative in it.",
-    "But this does not protect her.",
-    "It makes her weak.",
-    "Maleficent curses the princess, sentencing her to death at the age of sixteen, caused by the prick of a spinning wheel's needle.",
-    "Fortunately, a good fairy reduces the punishment to unconsciousness, which can be undone with love's first kiss.",
-    "The panicked King and Queen get rid of all the spinning wheels in the land, and turn their daughter over to the three good fairies.",
-    "They continue with their strategy of removing all dangerous things, but in doing so they leave their daughter naive, immature and weak.",
-    "One day, just before Aurora's sixteenth birthday, she meets a prince in the forest and falls in love.",
-    "Then she loudly bemoans the fact that she is to be wed to Prince Philip, whom she was promised to as a child, and collapses emotionally when she is brought back to her parents' castle for her birthday.",
-    "It is at that moment that Maleficent's curse manifests itself.",
-    "A portal opens up in the castle, a spinning wheel appears, and Aurora pricks her finger and falls unconscious.",
-    "She becomes Sleeping Beauty.",
-    "Ultimately, through true love's kiss, Aurora awakens from the curse and begins to grow into a mature princess, no longer just a sheltered figure but someone ready to take charge of her own life."
-   ],
-   "kor": [
-    "디즈니 영화 ‘잠자는 숲속의 공주'에서, 왕과 왕비는 오랜 기다림 후에 딸인 공주 오로라(Aurora)를 얻게 된다.",
-    "그들은 그녀를 세상에 소개하기 위해 성대한 세례식을 계획한다.",
-    "그들은 새로 태어난 딸을 사랑하고 존경하는 모든 이들을 환영한다.",
-    "하지만 그들은 말레피센트(Maleficent)를 초대하지는 않는데, 그녀는 지하 세계의 여왕으로서 자신의 부정적인 모습으로 등장한다.",
-    "이것은, 상징적으로, 두 군주가 그녀 주변에 부정적인 요소가 전혀 없는 세상을 세움으로써 자신들의 사랑하는 딸을 과잉보호하고 있다는 것을 의미한다.",
-    "그러나 이러한 방식은 그녀를 보호하지 못한다.",
-    "그것은 그녀를 약하게 만든다.",
-    "말레피센트는 공주에게 저주를 내려, 그녀가 16살에 물레 바늘에 찔려 죽게 될 것이라고 선고한다.",
-    "다행히, 착한 요정이 처벌을 (죽음 대신) 무의식 상태로 감면해 주는데, 이것은 사랑의 첫 키스로 되돌려질 수 있다.",
-    "놀란 왕과 왕비는 왕국의 모든 물레를 없애 버리고, 딸을 세 명의 착한 요정들에게 맡긴다.",
-    "그들은 계속해서 모든 위험한 것을 제거하는 전략을 고수하지만, 그렇게 하는 과정에서 자신들의 딸을 순진하고 미성숙하며 나약한 존재로 만들어 버리게 된다.",
-    "어느 날, 오로라가 16번째 생일을 맞기 직전에, 그녀는 숲에서 한 왕자를 만나 사랑에 빠진다.",
-    "이후 그녀는 자신이 어릴 적부터 약속된 필립 왕자와 결혼해야 한다는 사실에 크게 한탄하며, 생일을 맞아 부모님의 성으로 돌아왔을 때 감정적으로 무너진다.",
-    "바로 그 순간, 말레피센트의 저주가 실현된다.",
-    "성 안에 문이 열리고, 물레가 나타나며, 오로라는 손가락이 바늘에 찔려 의식을 잃는다.",
-    "그녀는 ‘잠자는 숲속의 공주'가 된 것이다.",
-    "결국, 진정한 사랑의 키스를 통해 오로라는 저주에서 깨어나게 되고, 더 이상 보호받기만 하는 존재가 아니라 스스로 삶을 책임질 준비가 된 성숙한 공주로 성장하기 시작한다."
-   ],
    "bank": [
     [
      "guise",
@@ -1458,26 +1320,6 @@ module.exports = {
    "goal": "문학의 이해가 혼자 읽기가 아니라 쓰고 토론하는 과정에서 자란다는 것을 근거를 들어 설명할 수 있다.",
    "fig": "Figure 5  한 권의 책을 사이에 두고 오가는 말들이 이해를 넓히는 자리.",
    "tip": "먼저 생각해 보자. 같은 책을 읽고도 친구의 한마디에 생각이 뒤집힌 적이 있는가?",
-   "sent": [
-    "Literary study, like all disciplines, has developed its own terminology and its own techniques.",
-    "Some knowledge and understanding of both can greatly enhance our personal appreciation of literature and our conversations with others about it.",
-    "Literature also has a context and a history, and learning something about them can make all the difference in the amount and kind of pleasure and insight you derive from literature.",
-    "By reading and discussing different genres of literature, as well as works from varied times and places, you may well come to appreciate and even love works that you might never have discovered or chosen to read on your own or that you might have disliked or misunderstood if you had read them alone.",
-    "Most important, writing about works of literature and discussing them with teachers and other students will give you practice in analyzing literature in greater depth and in considering alternative views of both the works themselves and the situations and problems the works explore.",
-    "A clear understanding of the aims and designs of a story, poem, or play never falls like a bolt from the blue.",
-    "Instead, it emerges from a process that involves trying to put into words how and why this work had such an effect on you and, just as important, responding to what others say or write about it.",
-    "Literature itself is a vast, ongoing, ever-evolving conversation in which we most fully participate when we enter into actual conversation with others."
-   ],
-   "kor": [
-    "문학 연구는 모든 학문 분야와 마찬가지로 고유한 용어와 기법을 발전시켜 왔다.",
-    "이 두 가지에 대한 어느 정도의 지식과 이해는 문학에 대한 개인적인 감상과 그것에 대한 다른 사람들과의 대화를 크게 향상시킬 수 있다.",
-    "또한, 문학에도 맥락과 역사가 있으며, 그것에 대한 무엇인가를 학습하는 것은 문학으로부터 여러분이 이끌어 내는 즐거움과 통찰의 양과 종류에 큰 차이를 만들 수 있다.",
-    "다양한 시대와 장소의 작품뿐만 아니라, 다양한 장르의 문학 작품을 읽고 토론함으로써, 스스로는 결코 발견하지 못했거나 읽으려고 선택하지 않았을, 또는 그것을 혼자 읽었더라면 싫어하거나 오해했을 수도 있는 작품을 감상하고 심지어 사랑하게 되는 것은 당연하다.",
-    "가장 중요한 것은, 문학 작품에 대해 글을 쓰고 그것을 선생님, 그리고 다른 학생들과 함께 토론하는 것은 문학을 더 심층적으로 분석하고 작품 자체와 작품이 탐구하는 상황 및 문제 둘 다에 대한 대안의 관점을 고려하는 연습을 하게 할 것이다.",
-    "이야기, 시, 또는 희곡의 목적과 디자인에 대한 명확한 이해는 결코 맑은 하늘에 번개처럼 떨어지는 것이 아니다.",
-    "그 대신, 이 작품이 여러분에게 어떻게 그리고 왜 그런 영향을 미쳤는지 말로 표현하려고 노력하는 것과, 그에 못지않게 중요하게 다른 사람들의 말이나 글에 반응하는 것을 포함하는 과정에서 그것은 나타난다.",
-    "문학 그 자체는 우리가 다른 사람들과 실제 대화를 나눌 때 가장 온전히 참여하는, 방대하고 진행 중이며 끊임없이 진화하는 대화이다."
-   ],
    "bank": [
     [
      "terminology",
@@ -1798,3 +1640,5 @@ module.exports = {
   }
  ]
 };
+U.lessons.forEach((L, i) => { L.sent = T(i + 1).sent; L.kor = T(i + 1).kor; });
+module.exports = U;
