@@ -1,683 +1,722 @@
-/* Unit 10 · Field 10 — Economy & Business 경제·경영 */
+/* Unit 10 · Economy & Business — 원문 Theme 46–50 */
+const R = require("../src/orig/all.json");
+const T = n => R[n - 1];
+
 module.exports = {
  no: 10,
  field: "Economy & Business",
  ko: "경제·경영",
- tagline: "값이 붙는 자리 — 나눔·이야기·불안·욕구",
- next: { en: "Environment, Resources & Ecology", ko: "함께 쓰는 것을 어떻게 지킬지 읽습니다", words: "175–205 words" },
+ tagline: "값이 붙는 자리 — 격차·동기·불안·값표·수요",
+ next: { en: "Environment, Resources & Ecology", ko: "함께 쓰는 것을 어떻게 지킬지 읽습니다", words: "235–301 words" },
  lessons: [
+
+/* ───────────────────────────── 46 ───────────────────────────── */
 {
- no: "46", key: "gini",
- accent: "#39628C", tint: "#E6EDF4", deep: "#204261",
- en: "One Number, Many Countries",
- ko: "숫자 하나, 여러 나라",
- goal: "지니계수가 무엇을 요약하고 무엇을 감추는지 설명할 수 있다.",
- fig: "Figure 1  같은 계수, 다른 사회.",
- tip: "먼저 생각해 보자. '평균 소득'만 알면 그 나라를 안다고 할 수 있을까?",
- sent: [
-  "Comparing how equally two countries share their income sounds simple.",
-  "It stops sounding simple the moment you try to write it as one number.",
-  "The Gini coefficient does exactly that, on a scale from zero to one.",
-  "Zero would mean everyone receives the same amount.",
-  "One would mean a single household receives everything.",
-  "Real countries sit between about 0.25 and 0.6, and the figure travels well.",
-  "Journalists like it because two nations can be placed side by side in a sentence.",
-  "The trouble is that very different shapes can produce the same score.",
-  "A country where the top earns hugely can match one where the bottom earns almost nothing.",
-  "The number cannot tell you which of those two it is describing.",
-  "It also says nothing about who makes the rules.",
-  "Studies of legislative influence find that policy tracks the preferences of higher earners more closely.",
-  "That is a claim about power, and no distribution figure captures it.",
-  "The coefficient remains useful, and abandoning it would lose real information.",
-  "It is a headline, and headlines are read before articles, not instead of them."
+ no: "46", key: "gini", accent: "#39628C", tint: "#E6EDF4", deep: "#204261",
+ en: "The Gini Coefficient Reflecting Income Inequality and Legislative Influence",
+ ko: "숫자 하나로 재는 격차",
+ goal: "지니 계수가 무엇을 재는지와, 높은 불평등이 입법에서 어떻게 드러나는지 설명할 수 있다.",
+ fig: "Figure 1  0 과 1.0 사이 어디쯤.",
+ tip: "먼저 생각해 보자. 한 사회의 격차를 숫자 하나로 나타낼 수 있을까?",
+ sent: T(46).sent, kor: T(46).kor,
+ bank: [
+  ["magnitude", "①", "크기"],
+  ["coefficient", "①", "계수"],
+  ["contemporary", "④", "현대의"],
+  ["moderately", "⑥", "어느 정도로"],
+  ["accumulate", "⑦", "축적하다"],
+  ["legislation", "⑧", "입법"]
  ],
- kor: [
-  "두 나라가 소득을 얼마나 고르게 나누는지 견주는 일은 간단해 보인다.",
-  "그것을 하나의 숫자로 적으려는 순간부터 간단하지 않게 된다.",
-  "지니계수는 바로 그 일을 0에서 1까지의 척도로 해낸다.",
-  "0은 모두가 같은 양을 받는다는 뜻이 될 것이다.",
-  "1은 한 가구가 전부를 받는다는 뜻이 될 것이다.",
-  "실제 나라들은 대략 0.25에서 0.6 사이에 있고, 이 수치는 여기저기 잘 옮겨 다닌다.",
-  "기자들이 이것을 좋아하는 이유는 두 나라를 한 문장 안에 나란히 놓을 수 있기 때문이다.",
-  "문제는 아주 다른 모양이 같은 점수를 낼 수 있다는 것이다.",
-  "위쪽이 어마어마하게 버는 나라와 아래쪽이 거의 못 버는 나라가 같은 값이 될 수 있다.",
-  "그 숫자는 자기가 둘 중 어느 쪽을 서술하고 있는지 말해 주지 못한다.",
-  "그것은 또 누가 규칙을 만드는지에 대해서는 아무 말도 하지 않는다.",
-  "입법 영향력을 다룬 연구들은 정책이 고소득층의 선호를 더 가깝게 따라간다는 것을 밝혀 왔다.",
-  "그것은 권력에 관한 주장이고, 어떤 분배 수치도 그것을 담아내지 못한다.",
-  "이 계수는 여전히 쓸모가 있으며, 버린다면 실제 정보를 잃게 된다.",
-  "그것은 표제이고, 표제는 기사보다 먼저 읽히는 것이지 기사 대신 읽히는 것이 아니다."
+ defs: [
+  ["magnitude", "how large something is"],
+  ["coefficient", "a number that stands for a measured ratio"],
+  ["contemporary", "belonging to the present time"],
+  ["moderately", "to a middling degree, not extremely"],
+  ["accumulate", "to build up a store of something"],
+  ["legislation", "the laws that a parliament passes"]
  ],
- bank: [["income","①","소득"],["coefficient","③","계수"],["scale","③","척도"],
-        ["household","⑤","가구"],["legislative","⑫","입법의"],["distribution","⑬","분배"]],
- defs: [["income","money received over a period of time"],
-        ["coefficient","a number that summarises a measurement"],
-        ["scale","a range used for measuring"],
-        ["household","all the people living in one home"],
-        ["legislative","having to do with making laws"],
-        ["distribution","the way something is shared out"]],
- defOrder: [2,0,5,1,4,3],
+ defOrder: [2, 4, 0, 5, 1, 3],
  flow: [
-  ["What it does","One number summarises how income is shared",null],
-  ["Why it spreads","Two nations fit side by side in a single (  ①  )","sentence"],
-  ["Limit 1","Very different (  ②  ) can produce the same score","shapes"],
-  ["Limit 2","It says nothing about who makes the (  ③  )","rules"],
-  ["Fair verdict","It is a (  ④  ), read before the article, not instead of it","headline"]
+  ["The problem", "Average income did not predict what inequality did", null],
+  ["The tool", "A (  ①  ) of 0 means everyone earns the same", "coefficient"],
+  ["The range", "Most societies today fall between 0.3 and (  ②  )", "0.6"],
+  ["The change", "The US moved from 0.38 in 1950 to 0.45 in (  ③  )", "2013"],
+  ["The other side", "Bills the wealthy favored became (  ④  ) far more often", "law"]
  ],
- flowBogi: "sentence · shapes · rules · headline · scale · power",
+ flowBogi: "coefficient · 0.6 · 2013 · law · 0.3 · income",
  para: [
-  ["② the moment you try to write it as one number","Summarising removes ______.","detail"],
-  ["⑧ different shapes can produce the same score","One value fits many ______.","patterns"],
-  ["⑩ cannot tell you which of those two","The figure is ______ about the cause.","silent"],
-  ["⑫ policy tracks the preferences of higher earners","Influence is unevenly ______.","distributed"],
-  ["⑭ abandoning it would lose real information","Dropping it costs genuine ______.","knowledge"]
+  ["① economists invented an index of income inequality", "They built a ______ for measuring the gap.", "tool"],
+  ["② one family earns all the income", "A score of 1.0 means one home takes ______.", "all"],
+  ["④ range from 0.3 to 0.6", "Most countries ______ between those two marks.", "sit"],
+  ["⑦ a college education was a less important requirement", "Back then a degree ______ less for wealth.", "mattered"],
+  ["⑩ only 18 percent of the proposals", "Most bills the public wanted ______ passed.", "never"]
  ],
- paraBogi: "detail · patterns · silent · distributed · knowledge · noise · single · loud",
+ paraBogi: "tool · all · sit · mattered · never · half · rose · always",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How to Calculate a Coefficient","A Headline, Not the Whole Article",
-       "The Gini Coefficient Is Useless","Which Country Is the Fairest",
-       "Why Journalists Cannot Do Maths"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["지니계수는 0에서 1 사이의 척도다.","다른 모양이 같은 점수를 낼 수 있다.",
-       "필자는 이 계수를 버려야 한다고 본다.","이 수치는 누가 규칙을 만드는지 말하지 않는다.",
-       "실제 나라들은 대략 0.25~0.6 사이에 있다."], ans:3},
-  {t:"write", q:"필자가 이 계수를 '표제'에 비유한 뜻을 우리말 한 문장으로 써 보세요.",
-   ans:"먼저 읽고 방향을 잡는 데 쓸 뿐, 기사 자체를 대신할 수는 없다는 뜻이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "A Short History of Canada",
+    "One Number for a Country's Gap",
+    "Why Inequality Has Vanished",
+    "How to Start a Small Business",
+    "The Rules of Congressional Debate"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "지니 계수 0 은 사회의 모두가 같은 소득을 가진다는 뜻이다.",
+    "지니 계수는 전체 부의 불평등을 나타내는 데에도 쓸 수 있다.",
+    "2013년 미국의 지니 계수는 1950년보다 낮았다.",
+    "이백 년 전 미국의 지니 계수는 훨씬 낮았다.",
+    "1981년부터 2002년까지 의회가 통과시킨 법의 절반 가까이는 아주 부유한 소수가 선호한 것이었다."
+   ], ans: 3
+  },
+  {
+   t: "write", q: "이백 년 전 미국의 지니 계수가 훨씬 낮았던 까닭을 우리말 한 문장으로 써 보세요.",
+   ans: "대부분의 가정이 집과 가축을 가졌고, 부를 쌓는 데 대학 교육이 덜 중요했기 때문이다."
+  }
  ],
  fl: {
-  model: { n:"⑧",
-   toks: [["The trouble","s"],["is","v"],["that","c"],["very different shapes","s2"],
-          ["can produce","v2"],["the same score","m"]],
-   ko:"문제는 아주 다른 모양이 같은 점수를 낼 수 있다는 것이다." },
+  model: {
+   n: "②",
+   toks: [
+    ["A Gini coefficient of 0", "s"], ["means", "v"], ["that", "c"],
+    ["everyone in the society", "s2"], ["has", "v2"], ["the same income;", null],
+    ["a coefficient of 1.0", "s"], ["means", "v"], ["that", "c"],
+    ["one family", "s2"], ["earns", "v2"], ["all the income.", null]
+   ],
+   ko: "지니 계수 0 은 사회의 모두가 같은 소득을 가진다는 뜻이고, 계수 1.0 은 한 가정이 모든 소득을 번다는 뜻이다."
+  },
   drill: [
-   { n:"②", en:"It stops sounding simple the moment you try to write it as one number.",
-     ans:"S It · △V stops · O sounding simple · [the moment] S′ you · △V′ try · M to write it as one number",
-     ko:"그것을 하나의 숫자로 적으려는 순간부터 간단하지 않게 된다." },
-   { n:"⑫", en:"Studies of legislative influence find that policy tracks the preferences of higher earners more closely.",
-     ans:"S Studies of legislative influence · △V find · [that] S′ policy · △V′ tracks · O the preferences of higher earners · M more closely",
-     ko:"입법 영향력 연구들은 정책이 고소득층의 선호를 더 가깝게 따라간다는 것을 밝혀 왔다." },
-   { n:"⑮", en:"It is a headline, and headlines are read before articles, not instead of them.",
-     ans:"S It · △V is · C a headline · [and] S headlines · △V are read · M before articles, not instead of them",
-     ko:"그것은 표제이고, 표제는 기사보다 먼저 읽히는 것이지 기사 대신 읽히는 것이 아니다." }
+   {
+    n: "①",
+    en: "When social scientists discovered that the magnitude of income inequality in a country or region predicted some outcomes that a family's average income did not, economists invented an index of income inequality called the Gini coefficient.",
+    ans: "[When] S′ social scientists · △V′ discovered · [that] S′ the magnitude of income inequality in a country or region · △V′ predicted · O some outcomes that a family's average income did not · S economists · △V invented · O an index of income inequality called the Gini coefficient",
+    ko: "한 나라나 지역의 소득 불평등 크기가 가정의 평균 소득으로는 예측되지 않던 결과들을 예측한다는 것을 사회과학자들이 알아내자, 경제학자들은 지니 계수라는 소득 불평등 지수를 만들었다."
+   },
+   {
+    n: "⑥",
+    en: "The Gini coefficient for the United States in 2013 was a moderately high 0.45, compared with 0.38 in 1950, which implies that 10 percent of Americans in 2013 owned more than two-thirds of the country's wealth.",
+    ans: "S The Gini coefficient for the United States in 2013 · △V was · C a moderately high 0.45 · M compared with 0.38 in 1950 · [which] △V′ implies · [that] S′ 10 percent of Americans in 2013 · △V′ owned · O more than two-thirds of the country's wealth",
+    ko: "2013년 미국의 지니 계수는 1950년의 0.38 과 견주어 다소 높은 0.45 였는데, 이는 2013년 미국인의 10퍼센트가 나라 부의 3분의 2 넘게 가졌음을 뜻한다."
+   },
+   {
+    n: "⑩",
+    en: "By contrast, only 18 percent of the proposals a majority of the public favored, but the wealthy opposed, became law.",
+    ans: "M By contrast · S only 18 percent of the proposals · S′ a majority of the public · △V′ favored · [but] S′ the wealthy · △V′ opposed · △V became · C law",
+    ko: "그와 달리, 다수 대중이 선호했지만 부유층이 반대한 법안 가운데 18퍼센트만이 법이 되었다."
+   }
   ]
  },
  syn: [
-  { n:"②", name:"stop + 동명사 / the moment 접속사",
-    q:"It «stops sounding» simple «the moment you try» to write it as one number.",
-    d:"<b>stop + ~ing</b>는 '~하기를 멈추다'. <b>the moment</b>는 '~하는 순간'이라는 접속사다.",
-    k:"하나의 숫자로 적으려는 순간 간단하게 들리기를 멈춘다." },
-  { n:"⑨", name:"where 관계부사 + 비교",
-    q:"A country «where the top earns hugely» can match one where the bottom earns almost nothing.",
-    d:"<b>where</b>가 country 를 꾸미고, one 은 a country 를 대신하는 대명사다.",
-    k:"위쪽이 크게 버는 나라가 아래쪽이 거의 못 버는 나라와 같아질 수 있다." }
+  {
+   n: "⑥",
+   name: "앞 내용을 받는 which (그리고 그것은 ~을 뜻한다)",
+   q: "…compared with 0.38 in 1950, «which implies that 10 percent of Americans in 2013 owned more than two-thirds»…",
+   d: "<b>which</b>가 앞 문장 전체를 받아 ‘그리고 그것은 ~을 뜻한다’로 이어진다.",
+   k: "그리고 그것은 ~임을 뜻한다"
+  },
+  {
+   n: "⑩",
+   name: "목적격 관계대명사 생략",
+   q: "…only 18 percent of «the proposals a majority of the public favored, but the wealthy opposed,» became law.",
+   d: "<b>the proposals</b> 뒤에 목적격 관계대명사가 빠져 있다. ‘명사 + 주어 + 동사’가 붙으면 그 명사를 꾸미는 절이다.",
+   k: "대중이 선호했지만 부유층이 반대한 법안"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"He stopped arguing the moment the data appeared.",
-    k:"자료가 나온 순간 그는 논쟁하기를 멈췄다." },
-  { u:"구문 2", en:"A city where rents are high loses the workers it needs.",
-    k:"임대료가 높은 도시는 필요한 노동자를 잃는다." },
-  { u:"구문 1 + 2", en:"A town where jobs vanish stops growing the moment the young leave.",
-    k:"일자리가 사라지는 마을은 젊은이들이 떠나는 순간 성장하기를 멈춘다." }
+  { u: "구문 1", en: "Prices rose again, which implies that demand stayed strong.", k: "값이 또 올랐고, 이는 수요가 여전히 강했음을 뜻한다." },
+  { u: "구문 2", en: "The report the committee ignored named the same cause.", k: "위원회가 무시한 그 보고서는 같은 원인을 지목했다." },
+  { u: "구문 1 + 2", en: "The bill the public wanted failed, which implies that money mattered more.", k: "대중이 원한 그 법안은 통과되지 못했고, 이는 돈이 더 중요했음을 뜻한다." }
  ],
- wtype: ["무관","정답","반대","무관","무관"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["계산 방법은 글의 관심사가 아니다"],["정답"],
-       ["글은 버리면 정보를 잃는다고 말한다 — 정반대다"],
-       ["나라 순위를 매기는 글이 아니다"],["기자를 깎아내리는 내용은 글에 없다"]],
- src: [["③"],["⑧"],["⑭과 어긋남 — 여전히 쓸모가 있다고 했다"],["⑪"],["⑥"]],
+ why: [
+  ["캐나다의 역사는 글에 나오지 않는다"],
+  ["정답"],
+  ["글은 불평등이 지금 높은 수준이라고 말한다 — 정반대다"],
+  ["창업 방법은 글의 관심사가 아니다"],
+  ["의회 토론 규칙은 글의 초점이 아니다"]
+ ],
+ src: [["②"], ["③"], ["⑥과 어긋남 — 0.38 에서 0.45 로 올랐다"], ["⑦"], ["⑨"]],
  kb: {
-  title:"요약이 놓치는 것",
-  lead:"한 줄로 줄이면 무언가는 빠진다.",
+  title: "지니 계수",
+  lead: "0 과 1.0 사이의 한 점",
   items: [
-   ["로렌츠 곡선과 지니",
-    "1905년 로렌츠가 그린 누적 분포 곡선의 면적 비율이 지니계수다. 곡선의 모양이 달라도 면적이 같으면 계수는 같아진다."],
-   ["같은 값, 다른 사회",
-    "상위가 크게 버는 경우와 하위가 거의 못 버는 경우가 같은 계수로 나올 수 있다. 그래서 상위 10% 점유율 같은 지표를 함께 보는 것이 관례가 되었다."],
-   ["정책과 선호의 거리",
-    "길런스와 페이지의 2014년 연구를 비롯한 여러 분석에서, 미국 정책이 중위 소득층보다 고소득층 선호와 더 높은 상관을 보인다고 보고되었다. 분배 지표만으로는 잡히지 않는 차원이다."]
+   ["로렌츠 곡선", "지니 계수는 소득 분포를 그린 로렌츠 곡선과 완전 평등선 사이의 면적으로 구한다. 이탈리아 통계학자 코라도 지니(Corrado Gini)가 1912년에 제안했다."],
+   ["같은 숫자, 다른 모양", "계수가 같아도 분포의 모양은 다를 수 있다. 위쪽이 크게 버는 사회와 아래쪽이 거의 못 버는 사회가 같은 값을 가질 수 있다."],
+   ["소득과 부", "소득(income)은 한 해 동안 버는 돈이고, 부(wealth)는 지금까지 쌓인 자산이다. 대체로 부의 불평등이 소득 불평등보다 크게 나타난다."]
   ],
-  ask:"우리 반을 숫자 하나로 요약한다면 무엇이 좋을까? 그 숫자가 놓치는 것은 무엇일까?"
- }
+  ask: "숫자 하나로 사회를 견주는 일에는 어떤 이점과 한계가 있을까?"
+ },
+ wtype: ["무관", "정답", "반대", "무관", "지엽"],
+ stype: ["일치", "일치", "반대", "일치", "일치"]
 },
+
+/* ───────────────────────────── 47 ───────────────────────────── */
 {
- no: "47", key: "conflict",
- accent: "#A85440", tint: "#F8EBE7", deep: "#763322",
- en: "The Trouble Inside",
- ko: "안쪽의 갈등",
- goal: "이야기의 내적 갈등이 왜 광고에도 쓰이는지, 그 한계가 무엇인지 설명할 수 있다.",
- fig: "Figure 1  바깥의 적과 안쪽의 갈등.",
- tip: "먼저 생각해 보자. 기억에 남는 이야기의 주인공은 대개 무엇과 싸우는가?",
- sent: [
-  "A story where the hero simply defeats a monster is easy to follow and easy to forget.",
-  "The ones that stay involve a character who wants two things that cannot both be had.",
-  "Safety and honesty. Loyalty and truth. Staying and leaving.",
-  "The outer events then become a way of forcing that choice into the open.",
-  "Writers have known this for a very long time.",
-  "Marketing discovered it more recently and uses it constantly.",
-  "The strongest advertisements rarely claim that a product is good.",
-  "They stage a small internal conflict and place the product at the resolution.",
-  "A parent who wants to work and to be present. A student who wants rest and results.",
-  "Nothing is asserted, so nothing has to be proved.",
-  "This is more effective than a list of features, and also harder to argue with.",
-  "You cannot fact-check a feeling of recognition.",
-  "That is exactly why the technique deserves attention rather than alarm.",
-  "The same device that makes a novel worth rereading can sell a thing you do not need.",
-  "Learning to notice the shape is not the same as refusing to enjoy it."
+ no: "47", key: "conflict", accent: "#A85440", tint: "#F8EBE7", deep: "#763322",
+ en: "The Power of Internal Struggles in Storytelling and Marketing",
+ ko: "사람은 안쪽 문제를 산다",
+ goal: "이야기 속 안쪽 문제가 무엇이며 그것이 마케팅에서 왜 중요한지 설명할 수 있다.",
+ fig: "Figure 1  이야기와 마케팅이 함께 쓰는 뼈대.",
+ tip: "먼저 생각해 보자. 우리가 물건을 살 때 정말로 풀고 싶은 것은 무엇일까?",
+ sent: T(47).sent, kor: T(47).kor,
+ bank: [
+  ["neglect", "①", "소홀히 하다"],
+  ["manifest", "③", "드러내다"],
+  ["backstory", "⑤", "사연"],
+  ["self-doubt", "⑥", "자기 의심"],
+  ["incompetent", "⑨", "무능한"],
+  ["relatable", "⑩", "공감할 만한"]
  ],
- kor: [
-  "주인공이 그저 괴물을 물리치는 이야기는 따라가기 쉽고 잊기도 쉽다.",
-  "남는 이야기는 둘 다 가질 수 없는 두 가지를 원하는 인물을 담고 있다.",
-  "안전과 정직. 의리와 진실. 머무는 것과 떠나는 것.",
-  "그러면 바깥의 사건들은 그 선택을 드러내 놓게 만드는 방편이 된다.",
-  "작가들은 아주 오래전부터 이것을 알고 있었다.",
-  "마케팅은 더 나중에 이를 발견했고, 끊임없이 쓴다.",
-  "가장 강한 광고는 제품이 좋다고 주장하는 일이 드물다.",
-  "그것들은 작은 내적 갈등을 무대에 올리고, 그 해소 지점에 제품을 놓는다.",
-  "일하고 싶으면서 곁에 있고 싶은 부모. 쉬고 싶으면서 성적도 원하는 학생.",
-  "아무것도 주장하지 않으므로, 아무것도 증명할 필요가 없다.",
-  "이것은 기능 목록보다 효과적이고, 반박하기도 더 어렵다.",
-  "알아봄의 느낌은 사실 확인을 할 수가 없다.",
-  "바로 그렇기 때문에 이 기법은 경계보다 주의를 기울일 가치가 있다.",
-  "소설을 다시 읽게 만드는 그 장치가 필요 없는 물건을 팔 수도 있다.",
-  "그 모양을 알아보는 법을 배우는 일이 그것을 즐기기를 거부하는 일은 아니다."
+ defs: [
+  ["neglect", "to fail to give attention to something"],
+  ["manifest", "to show something hidden in a clear form"],
+  ["backstory", "the earlier events behind a character's life"],
+  ["self-doubt", "a lack of belief in your own ability"],
+  ["incompetent", "not able to do a job well enough"],
+  ["relatable", "easy for people to see themselves in"]
  ],
- bank: [["defeat","①","물리치다"],["loyalty","③","의리"],["resolution","⑧","해소"],
-        ["assert","⑩","주장하다"],["feature","⑪","기능"],["recognition","⑫","알아봄"]],
- defs: [["defeat","to win against someone in a fight"],
-        ["loyalty","firm support for a person or group"],
-        ["resolution","the point at which a difficulty is settled"],
-        ["assert","to state something firmly as true"],
-        ["feature","a part or quality of a product"],
-        ["recognition","the sense of knowing something already"]],
- defOrder: [1,4,0,5,3,2],
+ defOrder: [3, 1, 5, 0, 4, 2],
  flow: [
-  ["Weak story","A hero simply defeats a monster",null],
-  ["Strong story","A character wants two things that cannot both be (  ①  )","had"],
-  ["The borrowing","Advertising stages the conflict and places the product at the (  ②  )","resolution"],
-  ["Why it works","Nothing is asserted, so nothing must be (  ③  )","proved"],
-  ["The response","Notice the shape rather than sound the (  ④  )","alarm"]
+  ["The mistake", "Brands speak only to problems on the outside", null],
+  ["The principle", "People buy solutions to (  ①  ) problems", "internal"],
+  ["In stories", "Writers give the hero a backstory of (  ②  )", "frustration"],
+  ["The question", "Almost every hero asks: Do I have what it (  ③  )?", "takes"],
+  ["The lesson", "That doubt is what makes a story (  ④  ) to anyone", "relatable"]
  ],
- flowBogi: "had · resolution · proved · alarm · monster · feature",
+ flowBogi: "internal · frustration · takes · relatable · external · costs",
  para: [
-  ["① easy to follow and easy to forget","Simple plots leave no ______.","trace"],
-  ["④ forcing that choice into the open","Events make the conflict ______.","visible"],
-  ["⑩ Nothing is asserted","No claim means no ______.","burden"],
-  ["⑫ cannot fact-check a feeling","Recognition resists ______.","testing"],
-  ["⑮ not the same as refusing to enjoy it","Awareness need not end ______.","pleasure"]
+  ["① we neglect a principle that is costing us", "We overlook a rule that costs us ______.", "money"],
+  ["③ to manifest an internal problem", "The outer trouble ______ the inner one.", "shows"],
+  ["⑤ create a backstory of frustration", "Writers build a past full of ______.", "frustration"],
+  ["⑩ relatable to a soccer mom", "Anyone can ______ themselves in the hero.", "see"],
+  ["⑬ we fail to engage the deeper frustration", "We never ______ the trouble underneath.", "touch"]
  ],
- paraBogi: "trace · visible · burden · testing · pleasure · memory · hidden · proof",
+ paraBogi: "money · shows · frustration · see · touch · hides · sell · time",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How to Write a Monster Story","A Device That Sells and a Device That Lasts",
-       "Advertising Should Be Banned","The Best Novels of the Century",
-       "Why Feature Lists Always Work"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["남는 이야기는 인물의 내적 갈등을 담는다.","강한 광고는 제품이 좋다고 주장하지 않는 편이다.",
-       "필자는 이 기법을 금지해야 한다고 본다.","알아봄의 느낌은 사실 확인이 어렵다.",
-       "같은 장치가 소설과 광고에 함께 쓰인다."], ans:3},
-  {t:"write", q:"필자가 이 기법이 '반박하기 어렵다'고 한 이유를 우리말 한 문장으로 써 보세요.",
-   ans:"주장을 하지 않으므로 사실 확인할 대상 자체가 없기 때문이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How to Direct a Baseball Movie",
+    "Sell to the Trouble Inside",
+    "Why Backstories Waste Time",
+    "A Guide to Writing Sci-Fi Names",
+    "The Business Model of Cinemas"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "기업은 대개 바깥 문제의 해결책을 판다.",
+    "이야기에서 바깥 문제는 안쪽 문제를 드러내기 위한 것이다.",
+    "Star Wars 에서 Luke 는 삼촌에게서 반란군에 들기에는 너무 어리다는 말을 들었다.",
+    "필자는 사람들이 안쪽 좌절보다 바깥 문제의 해결을 더 강하게 원한다고 말한다.",
+    "대부분의 브랜드가 바로 이 지점에서 결정적인 실수를 한다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "영화 Moneyball 에서 Billy Beane 의 안쪽 문제가 무엇인지 우리말 한 문장으로 써 보세요.",
+   ans: "선수 시절 실패해서 단장으로 자신을 증명할 수 있을지 스스로를 의심한 것이다."
+  }
  ],
  fl: {
-  model: { n:"②",
-   toks: [["The ones that stay","s"],["involve","v"],["a character","m"],
-          ["who wants two things that cannot both be had","m"]],
-   ko:"남는 이야기는 둘 다 가질 수 없는 두 가지를 원하는 인물을 담고 있다." },
+  model: {
+   n: "③",
+   toks: [
+    ["The purpose of an external problem in a story", "s"], ["is", "v"],
+    ["to manifest an internal problem.", null]
+   ],
+   ko: "이야기에서 바깥 문제가 있는 목적은 안쪽 문제를 드러내는 것이다."
+  },
   drill: [
-   { n:"⑧", en:"They stage a small internal conflict and place the product at the resolution.",
-     ans:"S They · △V stage · O a small internal conflict · [and] △V place · O the product · M at the resolution",
-     ko:"그것들은 작은 내적 갈등을 무대에 올리고, 그 해소 지점에 제품을 놓는다." },
-   { n:"⑩", en:"Nothing is asserted, so nothing has to be proved.",
-     ans:"S Nothing · △V is asserted · [so] S′ nothing · △V′ has to be proved",
-     ko:"아무것도 주장하지 않으므로, 아무것도 증명할 필요가 없다." },
-   { n:"⑮", en:"Learning to notice the shape is not the same as refusing to enjoy it.",
-     ans:"S Learning to notice the shape · △V is not · C the same as refusing to enjoy it",
-     ko:"그 모양을 알아보는 법을 배우는 일이 그것을 즐기기를 거부하는 일은 아니다." }
+   {
+    n: "②",
+    en: "That principle is this: companies tend to sell solutions to external problems, but people buy solutions to internal problems.",
+    ans: "S That principle · △V is · C this · S companies · △V tend · O to sell solutions to external problems · [but] S people · △V buy · O solutions to internal problems",
+    ko: "그 원리는 이렇다. 기업은 바깥 문제의 해결책을 팔려 하지만, 사람들은 안쪽 문제의 해결책을 산다."
+   },
+   {
+    n: "⑦",
+    en: "In Star Wars, Luke Skywalker was told by his uncle that he was too young to join the Rebellion, so he doubted his ability until the very end.",
+    ans: "M In Star Wars · S Luke Skywalker · △V was told · M by his uncle · [that] S′ he · △V′ was · C too young to join the Rebellion · [so] S he · △V doubted · O his ability · M until the very end",
+    ko: "Star Wars 에서 Luke Skywalker 는 삼촌에게서 반란군에 들기에는 너무 어리다는 말을 들었고, 그래서 끝까지 자신의 능력을 의심했다."
+   },
+   {
+    n: "⑪",
+    en: "Stories teach us that people's internal desire to resolve a frustration is a greater motivator than their desire to solve an external problem.",
+    ans: "S Stories · △V teach · O us · [that] S′ people's internal desire to resolve a frustration · △V′ is · C a greater motivator than their desire to solve an external problem",
+    ko: "이야기는 좌절을 풀려는 사람들의 안쪽 욕구가 바깥 문제를 해결하려는 욕구보다 더 큰 동기임을 가르쳐 준다."
+   }
   ]
  },
  syn: [
-  { n:"②", name:"관계대명사절 이중 수식",
-    q:"The ones that stay involve «a character who wants two things that cannot both be had».",
-    d:"who 절이 character 를, that 절이 two things 를 각각 꾸민다. 꾸미는 말이 겹칠 때 <b>본동사</b>를 먼저 찾는다.",
-    k:"둘 다 가질 수 없는 두 가지를 원하는 인물을 담고 있다." },
-  { n:"⑮", name:"the same as + 동명사",
-    q:"Learning to notice the shape is «not the same as refusing» to enjoy it.",
-    d:"<b>A is the same as B</b>에서 B 자리에 동명사가 왔다. 'A는 B와 같지 않다'로 옮긴다.",
-    k:"알아보는 일이 거부하는 일과 같지는 않다." }
+  {
+   n: "⑩",
+   name: "관계대명사 what 이 이끄는 보어 자리 명사절",
+   q: "«The sense of self-doubt is what makes a movie about baseball relatable to a soccer mom»…",
+   d: "<b>what</b>절이 통째로 보어가 된다. ‘~하게 만드는 것’으로 읽는다.",
+   k: "~을 공감할 만하게 만드는 것"
+  },
+  {
+   n: "⑬",
+   name: "By ~ing (그렇게 함으로써)",
+   q: "«By assuming our customers only want to resolve external problems», we fail to engage…",
+   d: "<b>by + ~ing</b>는 ‘~함으로써’다. 뒤에 오는 결과와 이어 읽는다.",
+   k: "~라고 가정함으로써"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"The books that last describe people who choose between two goods.",
-    k:"오래 남는 책들은 두 가지 좋은 것 사이에서 고르는 사람을 그린다." },
-  { u:"구문 2", en:"Reading fast is not the same as reading well.",
-    k:"빨리 읽는 일이 잘 읽는 일과 같지는 않다." },
-  { u:"구문 1 + 2", en:"Noticing the trick that works is not the same as escaping it.",
-    k:"통하는 수법을 알아보는 일이 거기서 벗어나는 일과 같지는 않다." }
+  { u: "구문 1", en: "Her calm voice was what kept the room steady.", k: "그 방을 안정시킨 것은 그녀의 차분한 목소리였다." },
+  { u: "구문 2", en: "By naming the fear, he made the ad work.", k: "두려움에 이름을 붙임으로써 그는 그 광고를 통하게 만들었다." },
+  { u: "구문 1 + 2", en: "By asking one question, she found what makes buyers hesitate.", k: "질문 하나를 던짐으로써 그녀는 구매자를 망설이게 만드는 것을 찾아냈다." }
  ],
- wtype: ["무관","정답","반대","무관","반대"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["괴물 이야기 쓰는 법은 글의 관심사가 아니다"],["정답"],
-       ["글은 경계보다 주의를 기울이자고 말한다 — 정반대다"],
-       ["명작 목록은 글에 나오지 않는다"],
-       ["글은 기능 목록이 덜 효과적이라고 말한다 — 정반대다"]],
- src: [["②"],["⑦"],["⑬과 어긋남 — 금지가 아니라 주의를 말했다"],["⑫"],["⑭"]],
+ why: [
+  ["야구 영화의 연출법은 글에 나오지 않는다"],
+  ["정답"],
+  ["글은 사연이 이야기를 살린다고 말한다 — 정반대다"],
+  ["공상과학 작명법은 글의 관심사가 아니다"],
+  ["영화관의 수익 구조는 글에서 다루지 않는다"]
+ ],
+ src: [["②"], ["③"], ["⑦"], ["⑪과 어긋남 — 안쪽 좌절을 풀려는 욕구가 더 큰 동기다"], ["⑫"]],
  kb: {
-  title:"이야기의 뼈대",
-  lead:"같은 틀이 소설과 광고에 함께 쓰인다.",
+  title: "이야기의 뼈대",
+  lead: "바깥 문제와 안쪽 문제",
   items: [
-   ["내적 갈등과 외적 갈등",
-    "창작론에서는 인물이 세계와 맞서는 외적 갈등과, 인물 안의 두 욕구가 맞서는 내적 갈등을 나눈다. 오래 기억되는 이야기는 대개 후자를 축으로 삼는다."],
-   ["광고가 빌려 온 것",
-    "1960년대 이후 광고는 제품 설명에서 정체성과 상황을 다루는 쪽으로 옮겨 갔다. 주장 대신 장면을 제시하면 반박 지점이 사라진다는 점이 자주 지적된다."],
-   ["'보여 주고 말하지 말라'",
-    "글쓰기에서 오래된 조언이지만, 설득에서는 다른 함의를 갖는다. 말하지 않은 주장은 검증하기도 어렵다."]
+   ["세 겹의 문제", "이야기 이론에서는 인물이 겪는 문제를 바깥(external)·안쪽(internal)·철학적(philosophical) 층으로 나눈다. 관객을 붙드는 것은 대개 안쪽 층이다."],
+   ["Moneyball", "2011년 영화 『머니볼』은 마이클 루이스의 논픽션을 바탕으로, 오클랜드 애슬레틱스 단장 빌리 빈이 통계로 팀을 꾸리는 과정을 그린다."],
+   ["영웅의 질문", "‘내가 해낼 수 있을까?’라는 물음은 장르를 가리지 않는다. 야구 영화가 야구를 모르는 관객에게도 통하는 까닭이 여기에 있다."]
   ],
-  ask:"기억에 남는 광고 하나를 떠올려 보자. 거기서 인물은 무엇과 무엇 사이에 있었는가?"
- }
+  ask: "여러분이 최근에 산 물건은 어떤 바깥 문제와 어떤 안쪽 문제를 풀어 주었을까?"
+ },
+ wtype: ["무관", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 48 ───────────────────────────── */
 {
- no: "48", key: "gig",
- accent: "#4A6B52", tint: "#E9F1EA", deep: "#2F4A36",
- en: "The Decline of Stable Jobs",
- ko: "안정된 일자리가 줄어들 때",
- goal: "고용 형태의 변화가 위험을 누구에게 옮기는지 설명할 수 있다.",
- fig: "Figure 1  위험이 옮겨 가는 자리.",
- tip: "먼저 생각해 보자. '내가 시간을 정한다'는 말은 언제나 좋은 소식일까?",
- sent: [
-  "For most of the twentieth century, a job meant one employer and a long relationship.",
-  "You were hired, you stayed, and the firm carried the risk of a slow quarter.",
-  "That arrangement is no longer the only shape work takes.",
-  "Companies now buy labour the way they buy electricity, in the amounts they need.",
-  "Platforms match a driver, a translator, or a cleaner to a task within minutes.",
-  "For the worker the appeal is real: you choose the hours and answer to no manager.",
-  "The cost is that the risk has quietly moved from the firm to the individual.",
-  "An empty afternoon used to be the company's problem, and now it is yours.",
-  "Pensions, sick pay, and training were bundled into the old contract without anyone noticing.",
-  "Unbundled, they become purchases that a variable income struggles to make.",
-  "Defenders argue that flexibility suits students, carers, and anyone leaving a rigid office.",
-  "Critics reply that a choice made under pressure is not much of a choice.",
-  "Several countries have begun writing a third category between employee and contractor.",
-  "Whether that solves the problem or simply names it remains an open question.",
-  "The real issue is not that work has changed, but who absorbs the shock."
+ no: "48", key: "gig", accent: "#4A6B52", tint: "#E9F1EA", deep: "#2F4A36",
+ en: "The Decline of Stable Jobs, Followed by Insecurity in the Job Market",
+ ko: "안정이 사라진 자리",
+ goal: "안정된 일자리가 줄어든 과정을 소득의 문제와 목적의 문제로 나누어 설명할 수 있다.",
+ fig: "Figure 1  위험이 옮겨 간 자리.",
+ tip: "먼저 생각해 보자. 일자리가 주는 것은 소득뿐일까?",
+ sent: T(48).sent, kor: T(48).kor,
+ bank: [
+  ["productivity", "①", "생산성"],
+  ["automate", "②", "자동화하다"],
+  ["underemployment", "③", "불완전 고용"],
+  ["retirement", "⑤", "은퇴"],
+  ["juggle", "⑥", "병행하다"],
+  ["existentially", "⑪", "실존적으로"]
  ],
- kor: [
-  "20세기의 대부분 동안 직업이란 한 고용주와 맺는 긴 관계를 뜻했다.",
-  "채용되면 계속 머물렀고, 실적이 나쁜 분기의 위험은 회사가 떠안았다.",
-  "그런 방식은 이제 일이 취하는 유일한 모양이 아니다.",
-  "기업들은 이제 필요한 만큼만, 전기를 사듯 노동을 산다.",
-  "플랫폼은 기사나 번역가나 청소 노동자를 몇 분 안에 일감과 연결한다.",
-  "노동자에게 그 매력은 진짜다. 시간을 직접 고르고 어떤 관리자에게도 답하지 않는다.",
-  "대가는 위험이 회사에서 개인에게로 조용히 옮겨 갔다는 점이다.",
-  "비어 있는 오후는 예전에는 회사의 문제였지만 이제는 당신의 문제다.",
-  "연금과 병가 수당과 교육은 아무도 눈치채지 못한 채 옛 계약 안에 묶여 있었다.",
-  "묶음이 풀리면 그것들은 들쭉날쭉한 소득으로는 감당하기 힘든 구매가 된다.",
-  "옹호하는 쪽은 유연성이 학생과 돌봄을 맡은 사람, 경직된 사무실을 떠나는 이들에게 맞는다고 말한다.",
-  "비판하는 쪽은 압박 속에서 한 선택은 선택이라 하기 어렵다고 답한다.",
-  "여러 나라가 피고용인과 도급업자 사이의 제3의 범주를 쓰기 시작했다.",
-  "그것이 문제를 푸는 것인지 그저 이름을 붙이는 것인지는 아직 열린 물음이다.",
-  "진짜 문제는 일이 변했느냐가 아니라, 이제 누가 그 충격을 흡수하느냐다."
+ defs: [
+  ["productivity", "how much is made for each hour of work"],
+  ["automate", "to make a machine do a human's job"],
+  ["underemployment", "having less work than one needs or can do"],
+  ["retirement", "the time of life after one stops working"],
+  ["juggle", "to keep several duties going at once"],
+  ["existentially", "in the sense of what a life is for"]
  ],
- bank: [["employer","①","고용주"],["arrangement","③","방식"],["appeal","⑥","매력"],
-        ["pensions","⑨","연금"],["flexibility","⑪","유연성"],["shock","⑮","충격"]],
- defs: [["employer","a person or firm that pays people to work"],
-        ["arrangement","a way that things are organised"],
-        ["appeal","the quality that makes something attractive"],
-        ["pensions","money paid regularly after a working life"],
-        ["flexibility","the freedom to change to fit a situation"],
-        ["shock","a sudden blow that must be taken by someone"]],
- defOrder: [4,1,5,0,3,2],
+ defOrder: [4, 0, 5, 2, 1, 3],
  flow: [
-  ["The old shape","One employer carried the risk of a slow quarter",null],
-  ["What changed","Firms now buy labour in the (  ①  ) they need","amounts"],
-  ["The trade","Free hours, minus the (  ②  ) once bundled in","benefits"],
-  ["Who pays now","The empty afternoon belongs to the (  ③  )","worker"],
-  ["Open question","A third legal (  ④  ) may name it or fix it","category"]
+  ["The model", "Ever-rising productivity narrowed meaningful work", null],
+  ["The method", "Firms (  ①  ) production and move jobs abroad", "automate"],
+  ["Two crises", "It is a crisis of income and a crisis of (  ②  )", "purpose"],
+  ["The old shape", "People once stayed at one company until (  ③  )", "retirement"],
+  ["The new shape", "The US gig economy grew by (  ④  ) percent in 2020", "33"]
  ],
- flowBogi: "amounts · benefits · worker · category · manager · pressure",
+ flowBogi: "automate · purpose · retirement · 33 · export · 8",
  para: [
-  ["② the firm carried the risk of a slow quarter","The employer used to ______ the loss.","absorb"],
-  ["⑦ the risk has quietly moved from the firm","The burden has been ______ downward.","shifted"],
-  ["⑨ bundled into the old contract","Protections came ______ with the job.","automatically"],
-  ["⑩ a variable income struggles to make","Unsteady pay makes them hard to ______.","afford"],
-  ["⑫ a choice made under pressure","Constraint ______ the meaning of choice.","weakens"]
+  ["① has reduced the scope of meaningful employment", "Work that feels meaningful has ______.", "shrunk"],
+  ["③ often primarily characterized as an income crisis", "People call it a crisis of ______ first.", "income"],
+  ["④ But it is also a crisis of purpose.", "It is a crisis of ______ as well.", "purpose"],
+  ["⑥ juggling multiple jobs and short-term work", "They hold several ______ at the same time.", "jobs"],
+  ["⑨ jobs that aren't there and may never return", "They look for work that has ______.", "gone"]
  ],
- paraBogi: "absorb · shifted · automatically · afford · weakens · widens · random · refuse",
+ paraBogi: "shrunk · income · purpose · jobs · gone · grown · rest · stayed",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["Why Platforms Match Jobs So Fast","Who Carries the Risk Now",
-       "The End of All Employment Contracts","How to Earn More by Working Less",
-       "A Guide to Choosing Your Own Hours"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["기업은 필요한 만큼 노동을 사들인다.","위험은 회사에서 개인 쪽으로 옮겨 갔다.",
-       "연금과 병가 수당은 옛 계약에 묶여 있었다.","필자는 제3의 범주가 문제를 해결했다고 본다.",
-       "비판하는 쪽은 압박 속의 선택을 문제 삼는다."], ans:4},
-  {t:"write", q:"'충격을 흡수하는 쪽'이 어떻게 달라졌는지 우리말 한 문장으로 써 보세요.",
-   ans:"예전에는 한산한 시기의 손실을 회사가 떠안았지만, 이제는 그 위험을 개인이 직접 지게 되었다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How Robots Are Built",
+    "When Steady Work Disappears",
+    "Why the Gig Economy Is Shrinking",
+    "A Guide to Writing a Résumé",
+    "The History of English Trade Unions"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "많은 기업이 생산 과정을 자동화하고 일자리를 신흥 노동 시장으로 옮겼다.",
+    "이 상황은 흔히 무엇보다 소득 위기로 규정된다.",
+    "수십 년 전에는 훈련 때부터 은퇴 때까지 같은 회사에서 일하는 일이 흔했다.",
+    "2021년 기사는 잉글랜드와 웨일스의 약 440만 성인이 긱 경제 기업 일을 한다고 전했다.",
+    "미국의 긱 경제는 2020년에 미국 경제 전체보다 느리게 성장했다."
+   ], ans: 5
+  },
+  {
+   t: "write", q: "필자가 이 상황을 소득 위기만으로 보지 않는 까닭을 우리말 한 문장으로 써 보세요.",
+   ans: "오래 일해도 예전 같은 안정과 목적을 주지 못해 목적의 위기이기도 하기 때문이다."
+  }
  ],
  fl: {
-  model: { n:"⑦",
-   toks: [["The cost","s"],["is","v"],["that","c"],["the risk","s2"],
-          ["has quietly moved","v2"],["from the firm to the individual","m"]],
-   ko:"대가는 위험이 회사에서 개인에게로 조용히 옮겨 갔다는 점이다." },
+  model: {
+   n: "③",
+   toks: [
+    ["This situation, and the resultant waves of mass unemployment and underemployment,", "s"],
+    ["is often primarily characterized", "v"], ["as an income crisis.", "m"]
+   ],
+   ko: "이 상황과 그로 인한 대량 실업·불완전 고용의 물결은 흔히 무엇보다 소득 위기로 규정된다."
+  },
   drill: [
-   { n:"②", en:"You were hired, you stayed, and the firm carried the risk of a slow quarter.",
-     ans:"S You · △V were hired · S you · △V stayed · [and] S the firm · △V carried · O the risk of a slow quarter",
-     ko:"채용되면 계속 머물렀고, 실적이 나쁜 분기의 위험은 회사가 떠안았다." },
-   { n:"⑫", en:"Critics reply that a choice made under pressure is not much of a choice.",
-     ans:"S Critics · △V reply · [that] S′ a choice · M made under pressure · △V′ is · C not much of a choice",
-     ko:"비판하는 쪽은 압박 속에서 한 선택은 선택이라 하기 어렵다고 답한다." },
-   { n:"⑮", en:"The real issue is not that work has changed, but who absorbs the shock.",
-     ans:"S The real issue · △V is · C not that work has changed, but who absorbs the shock",
-     ko:"진짜 문제는 일이 변했느냐가 아니라, 이제 누가 그 충격을 흡수하느냐다." }
+   {
+    n: "②",
+    en: "Many companies have found that they can produce more goods and services for less money if they automate the production process and transfer jobs to emerging labor markets.",
+    ans: "S Many companies · △V have found · [that] S′ they · △V′ can produce · O more goods and services · M for less money · [if] S′ they · △V′ automate · O the production process · [and] △V′ transfer · O jobs to emerging labor markets",
+    ko: "많은 기업은 생산 과정을 자동화하고 일자리를 신흥 노동 시장으로 옮기면 더 적은 돈으로 더 많은 재화와 서비스를 만들 수 있다는 것을 알게 되었다."
+   },
+   {
+    n: "⑤",
+    en: "Whereas decades ago it was common for people to work at the same company from training until retirement, modern business management practices have reduced the kind of long-term, stable employment opportunities that were once enjoyed by blue- and white-collar workers alike.",
+    ans: "[Whereas] M decades ago · △V′ it was · C common for people to work at the same company from training until retirement · S modern business management practices · △V have reduced · O the kind of long-term, stable employment opportunities · [that] △V′ were once enjoyed · M by blue- and white-collar workers alike",
+    ko: "수십 년 전에는 훈련 때부터 은퇴 때까지 같은 회사에서 일하는 것이 흔했던 반면, 오늘날의 경영 관행은 육체노동자와 사무직이 함께 누리던 장기적이고 안정된 고용 기회를 줄여 놓았다."
+   },
+   {
+    n: "⑨",
+    en: "Plenty of other people have no work at all, and spend their days looking for jobs that aren't there and may never return.",
+    ans: "S Plenty of other people · △V have · O no work at all · [and] △V spend · O their days · M looking for jobs that aren't there and may never return",
+    ko: "또 다른 많은 사람은 아예 일이 없어서, 있지도 않고 다시 돌아오지 않을지도 모르는 일자리를 찾으며 하루하루를 보낸다."
+   }
   ]
  },
  syn: [
-  { n:"④", name:"the way + 절 / in the amounts",
-    q:"Companies now buy labour «the way they buy» electricity, in the amounts they need.",
-    d:"<b>the way + 절</b>은 '~하는 방식대로'라는 뜻으로 접속사처럼 쓰인다.",
-    k:"기업은 전기를 사는 방식대로 노동을 산다." },
-  { n:"⑩", name:"분사구문 + 관계대명사 that",
-    q:"«Unbundled», they become purchases «that a variable income struggles to» make.",
-    d:"앞의 <b>Unbundled</b>는 '묶음이 풀리면'이라는 분사구문이고, that 절이 purchases 를 꾸민다.",
-    k:"묶음이 풀리면 그것들은 들쭉날쭉한 소득으로 감당하기 힘든 구매가 된다." }
+  {
+   n: "⑤",
+   name: "대조의 whereas (~인 반면에)",
+   q: "«Whereas decades ago it was common for people to work at the same company»…, modern business management practices have reduced…",
+   d: "<b>whereas</b>가 두 시대를 맞세운다. ‘~인 반면에’로 읽고, 뒤의 주절과 견주어 본다.",
+   k: "~이었던 반면에"
+  },
+  {
+   n: "⑥",
+   name: "none of which (계속적 용법의 관계대명사)",
+   q: "…multiple jobs and short-term work, «none of which offer the same sort of steady income»…",
+   d: "<b>none of which</b>는 앞의 명사를 받아 ‘그 가운데 어느 것도 ~아니다’로 읽는다.",
+   k: "그 가운데 어느 것도 ~을 주지 않는다"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"She solves problems the way her teacher did.",
-    k:"그녀는 선생님이 하던 방식대로 문제를 푼다." },
-  { u:"구문 2", en:"Rebuilt, the bridge became a road that everyone uses.",
-    k:"다시 지어지자 그 다리는 모두가 쓰는 길이 되었다." },
-  { u:"구문 1 + 2", en:"Unpaid, the work becomes a duty that nobody counts the way a job is counted.",
-    k:"보수가 없으면 그 일은 직업을 세는 방식대로는 아무도 세어 주지 않는 의무가 된다." }
+  { u: "구문 1", en: "Whereas the old plant hired for life, the new one hires by the week.", k: "옛 공장은 평생을 두고 사람을 뽑은 반면, 새 공장은 주 단위로 뽑는다." },
+  { u: "구문 2", en: "He took three jobs, none of which paid enough.", k: "그는 일을 셋 맡았는데, 그 가운데 어느 것도 충분한 보수를 주지 않았다." },
+  { u: "구문 1 + 2", en: "Whereas she had one contract, he had five, none of which lasted a year.", k: "그녀는 계약이 하나였던 반면, 그는 다섯이었고 그 가운데 어느 것도 한 해를 넘기지 못했다." }
  ],
- wtype: ["지엽","정답","반대","무관","배경"],
- stype: ["일치","일치","일치","반대","일치"],
- why: [["플랫폼의 속도는 한 문장에 나오는 세부일 뿐이다"],["정답"],
-       ["옛 계약이 사라졌다고 하지 않았다 — 유일한 모양이 아닐 뿐이다"],
-       ["소득을 늘리는 방법은 글의 관심사가 아니다"],
-       ["시간 선택은 매력을 설명하는 배경으로만 언급된다"]],
- src: [["④"],["⑦"],["⑨"],["⑭과 어긋남 — 아직 열린 물음이라고 했다"],["⑫"]],
+ why: [
+  ["로봇 제작 과정은 글에 나오지 않는다"],
+  ["정답"],
+  ["글은 긱 경제가 빠르게 커졌다고 말한다 — 정반대다"],
+  ["이력서 작성법은 글의 관심사가 아니다"],
+  ["노동조합의 역사는 글의 초점이 아니다"]
+ ],
+ src: [["②"], ["③"], ["⑤"], ["⑦"], ["⑧과 어긋남 — 경제 전체보다 8.25배 빠르게 커졌다"]],
  kb: {
-  title:"위험은 어디로 가는가",
-  lead:"고용의 모양이 바뀌면 위험의 자리도 바뀐다.",
+  title: "긱 경제",
+  lead: "짧은 일이 이어 붙는 노동",
   items: [
-   ["표준 고용 관계",
-    "20세기 중반의 '표준 고용'은 기간의 정함이 없고 전일제이며 사회보험이 붙는 형태를 가리킨다. 이 묶음이 당연해 보였던 것은 계약 안에 함께 들어 있었기 때문이다."],
-   ["플랫폼 노동과 분류",
-    "플랫폼 종사자를 피고용인으로 볼지 자영업자로 볼지를 두고 각국에서 다툼이 이어졌다. 영국 대법원의 2021년 우버 판결처럼 중간적 지위를 인정한 사례가 대표적이다."],
-   ["위험의 개인화",
-    "실업·질병·노후처럼 집단이 나누어 지던 위험이 개인의 선택 문제로 옮겨 가는 흐름을 사회학에서는 '위험의 개인화'라고 부른다."]
+   ["말의 유래", "gig 은 본래 음악가가 하룻밤 무대에 서는 일을 가리키는 말이다. 짧은 계약으로 일을 이어 가는 노동 형태를 부르는 이름이 되었다."],
+   ["숫자", "본문이 인용한 2021년 기사에 따르면 잉글랜드와 웨일스에서 긱 경제 기업 일을 하는 성인은 약 440만 명으로, 2016년의 두 배가 넘는다."],
+   ["소득과 목적", "필자는 이 변화를 소득의 문제로만 보지 않는다. 오래 이어지는 일이 주던 소속감과 목적이 함께 사라졌다고 본다."]
   ],
-  ask:"내가 아는 일자리 하나를 떠올려 보자. 일이 없는 날의 손해는 누구의 몫인가?"
- }
+  ask: "여러분이 바라는 일자리는 어떤 안정을 주어야 할까?"
+ },
+ wtype: ["무관", "정답", "반대", "무관", "지엽"],
+ stype: ["일치", "일치", "일치", "일치", "반대"]
 },
+
+/* ───────────────────────────── 49 ───────────────────────────── */
 {
- no: "49", key: "store",
- accent: "#6B4E8C", tint: "#EFE9F6", deep: "#493165",
+ no: "49", key: "store", accent: "#6B4E8C", tint: "#EFE9F6", deep: "#493165",
  en: "The Hidden Psychological Game for Shoppers",
- ko: "매장이 거는 조용한 게임",
- goal: "매장 설계가 구매 결정에 어떻게 개입하는지 설명할 수 있다.",
- fig: "Figure 1  매장은 길을 설계한다.",
- tip: "먼저 생각해 보자. 계획에 없던 물건을 사 본 적이 있는가? 그때 무엇이 달랐을까?",
- sent: [
-  "A supermarket looks like a plain warehouse, but it is closer to a designed path.",
-  "Milk and bread sit at the back, so the most common errand walks you past everything else.",
-  "The route is no accident, and neither is the light above the fruit.",
-  "Slower music has been found to lengthen the time customers spend in the aisles.",
-  "Longer visits tend to produce fuller baskets, which is the only measure that matters here.",
-  "Prices ending in nine survive because the eye reads the first digit and moves on.",
-  "A shelf at eye level earns more than the same shelf near the floor.",
-  "Suppliers know this, and they pay for the height.",
-  "None of these tricks forces anyone to buy a thing.",
-  "They simply tilt a hundred small decisions in one direction.",
-  "Defenders call this good service, since a pleasant shop is not a crime.",
-  "Critics answer that the shopper is playing a game whose rules were never explained.",
-  "The asymmetry is the point: one side has data, and the other has a list.",
-  "Knowing the design does not switch it off, but it does change what you notice.",
-  "You can still enjoy the shop while seeing the shape of the floor."
+ ko: "값표가 거는 조용한 게임",
+ goal: "매장의 값 붙이기가 어떤 방식으로 작동하는지, 그것을 어떻게 알아챌 수 있는지 설명할 수 있다.",
+ fig: "Figure 1  가까운 자리, 다른 값표.",
+ tip: "먼저 생각해 보자. 우리는 장을 볼 때 값을 얼마나 견주어 볼까?",
+ sent: T(49).sent, kor: T(49).kor,
+ bank: [
+  ["mix-up", "①", "뒤섞임"],
+  ["loose", "②", "낱개의"],
+  ["markup", "④", "인상분"],
+  ["near-identical", "⑦", "거의 같은"],
+  ["substitute", "⑫", "대체재"],
+  ["bargain", "⑬", "싸게 산 물건"]
  ],
- kor: [
-  "슈퍼마켓은 평범한 창고처럼 보이지만, 사실은 설계된 길에 더 가깝다.",
-  "우유와 빵은 안쪽에 있어서, 가장 흔한 심부름이 나머지 전부를 지나가게 만든다.",
-  "그 동선은 우연이 아니고, 과일 위의 조명도 마찬가지다.",
-  "느린 음악이 손님이 통로에서 보내는 시간을 늘린다는 것이 밝혀져 왔다.",
-  "머무는 시간이 길수록 장바구니는 더 차고, 여기서 중요한 척도는 그것뿐이다.",
-  "9로 끝나는 가격이 살아남는 이유는 눈이 첫 자리를 읽고 넘어가기 때문이다.",
-  "눈높이의 선반은 바닥 가까운 같은 선반보다 더 많이 번다.",
-  "공급업체들은 이것을 알고, 그 높이에 값을 치른다.",
-  "이 수법들 가운데 무엇도 누군가에게 사라고 강요하지는 않는다.",
-  "그것들은 그저 백 개의 작은 결정을 한쪽으로 기울일 뿐이다.",
-  "기분 좋은 가게가 죄는 아니므로, 옹호하는 쪽은 이것을 좋은 서비스라고 부른다.",
-  "비판하는 쪽은 손님이 규칙을 들어 본 적 없는 게임을 하고 있다고 답한다.",
-  "요점은 비대칭이다. 한쪽에는 자료가 있고, 다른 쪽에는 장 볼 목록이 있다.",
-  "설계를 안다고 그것이 꺼지지는 않지만, 무엇이 보이는지는 달라진다.",
-  "바닥의 모양을 보면서도 그 가게를 여전히 즐길 수 있다."
+ defs: [
+  ["mix-up", "a confusing difference that seems out of place"],
+  ["loose", "sold one by one, not in a package"],
+  ["markup", "the amount added on top of the old price"],
+  ["near-identical", "almost exactly the same as another"],
+  ["substitute", "a good that can take another's place"],
+  ["bargain", "something bought for less than it is worth"]
  ],
- bank: [["warehouse","①","창고"],["aisles","④","통로"],["digit","⑥","자릿수"],
-        ["suppliers","⑧","공급업체"],["tilt","⑩","기울이다"],["asymmetry","⑬","비대칭"]],
- defs: [["warehouse","a large building for storing goods"],
-        ["aisles","the passages between rows of shelves"],
-        ["digit","any of the numbers from 0 to 9"],
-        ["suppliers","firms that provide goods to a shop"],
-        ["tilt","to lean or push in one direction"],
-        ["asymmetry","a lack of balance between two sides"]],
- defOrder: [3,5,0,2,1,4],
+ defOrder: [1, 3, 0, 5, 2, 4],
  flow: [
-  ["The look","A shop that seems like an ordinary warehouse",null],
-  ["The design","Staples at the back make the errand cross the (  ①  )","aisles"],
-  ["The tools","Light, music and shelf (  ②  ) all do quiet work","height"],
-  ["The claim","Nobody is forced; a hundred choices merely (  ③  )","tilt"],
-  ["The verdict","Seeing the (  ④  ) changes what you notice","design"]
+  ["The habit", "Look for odd price mix-ups on your next shop", null],
+  ["Chilies", "Packaged chilies can cost ten times as much as (  ①  ) ones", "loose"],
+  ["Why it works", "Buyers of small amounts never (  ②  ) the price", "check"],
+  ["Chips", "The same brand cost 25 percent more on the (  ③  ) shelf", "top"],
+  ["The defence", "Simple (  ④  ) is the shopper's best weapon", "observation"]
  ],
- flowBogi: "aisles · height · tilt · design · price · crime",
+ flowBogi: "loose · check · top · observation · bottom · package",
  para: [
-  ["② the most common errand walks you past everything","Layout ______ the shopper's route.","directs"],
-  ["④ Slower music has been found to lengthen the time","Tempo affects how long people ______.","stay"],
-  ["⑥ the eye reads the first digit and moves on","Attention stops at the ______ number.","leading"],
-  ["⑩ tilt a hundred small decisions in one direction","Many tiny choices are gently ______.","nudged"],
-  ["⑬ one side has data, and the other has a list","The two sides are unequally ______.","informed"]
+  ["① Try to spot odd mix-ups next time", "Watch for prices that look ______.", "wrong"],
+  ["③ he doesn't think to check whether they cost", "The buyer never ______ to compare.", "stops"],
+  ["④ customers who notice the markup just buy", "Those who ______ the rise pick something else.", "spot"],
+  ["⑦ they hadn't made a price-comparison", "They never ______ the two price tags.", "compared"],
+  ["⑬ only shoppers who are careful to notice", "Only ______ shoppers get the best deals.", "careful"]
  ],
- paraBogi: "directs · stay · leading · nudged · informed · blocked · leave · final",
+ paraBogi: "wrong · stops · spot · compared · careful · right · hurries · lucky",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["The Cheapest Way to Fill a Basket","A Floor Plan That Argues With You",
-       "Why Supermarkets Should Be Banned","How Suppliers Choose Their Prices",
-       "The History of the Modern Warehouse"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["우유와 빵은 매장 안쪽에 놓인다.","느린 음악은 머무는 시간을 늘린다.",
-       "눈높이 선반은 바닥 쪽보다 더 많이 번다.","필자는 이런 설계가 구매를 강요한다고 본다.",
-       "설계를 알아도 그것이 사라지지는 않는다."], ans:4},
-  {t:"write", q:"필자가 말한 '비대칭'이 무엇 사이의 것인지 우리말 한 문장으로 써 보세요.",
-   ans:"자료를 쌓아 두고 설계하는 매장과, 장 볼 목록 하나만 들고 오는 손님 사이의 정보 차이를 말한다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How Chili Peppers Are Grown",
+    "The Quiet Game at the Price Tag",
+    "Why Supermarkets Never Change Prices",
+    "A Recipe for Salt and Pepper Chips",
+    "How to Design a Store Entrance"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "슈퍼마켓은 봉지에 든 고추에 낱개 고추의 열 배를 매기기도 한다.",
+    "적은 양을 사는 손님은 값을 확인해 볼 생각을 하지 않는다.",
+    "위 선반의 감자칩은 아래 선반의 것보다 25퍼센트 쌌다.",
+    "슈퍼마켓에는 값이 싼 것과 비싼 것이 뒤섞인 비슷한 대체재가 가득하다.",
+    "값을 알아채고 기억하고 견주는 손님만이 가장 싼 값을 얻는다."
+   ], ans: 3
+  },
+  {
+   t: "write", q: "값을 제멋대로 매기는 방식이 매장에 이득이 되는 까닭을 우리말 한 문장으로 써 보세요.",
+   ans: "값을 알아챈 손님은 다른 물건을 고르고, 알아채지 못한 손님은 큰 인상분을 스스로 떠안기 때문이다."
+  }
  ],
  fl: {
-  model: { n:"⑤",
-   toks: [["Longer visits","s"],["tend to produce","v"],["fuller baskets",null],
-          ["which","s2"],["is","v2"],["the only measure that matters here","m"]],
-   ko:"머무는 시간이 길수록 장바구니는 더 차고, 그것이 여기서 유일하게 중요한 척도다." },
+  model: {
+   n: "③",
+   toks: [
+    ["That's", "v"], ["because", "c"], ["the typical customer", "s2"], ["buys", "v2"],
+    ["such small quantities", null], ["that", "c"], ["he", "s2"], ["doesn't think", "v2"],
+    ["to check whether they cost four cents or forty.", null]
+   ],
+   ko: "전형적인 손님은 아주 적은 양을 사기 때문에 그것이 4센트인지 40센트인지 확인해 볼 생각을 하지 않는다."
+  },
   drill: [
-   { n:"②", en:"Milk and bread sit at the back, so the most common errand walks you past everything else.",
-     ans:"S Milk and bread · △V sit · M at the back · [so] S the most common errand · △V walks · O you · M past everything else",
-     ko:"우유와 빵은 안쪽에 있어서, 가장 흔한 심부름이 나머지 전부를 지나가게 만든다." },
-   { n:"⑥", en:"Prices ending in nine survive because the eye reads the first digit and moves on.",
-     ans:"S Prices · M ending in nine · △V survive · [because] S′ the eye · △V′ reads · O the first digit · △V′ moves on",
-     ko:"9로 끝나는 가격이 살아남는 이유는 눈이 첫 자리를 읽고 넘어가기 때문이다." },
-   { n:"⑫", en:"Critics answer that the shopper is playing a game whose rules were never explained.",
-     ans:"S Critics · △V answer · [that] S′ the shopper · △V′ is playing · O a game · M whose rules were never explained",
-     ko:"비판하는 쪽은 손님이 규칙을 들어 본 적 없는 게임을 하고 있다고 답한다." }
+   {
+    n: "②",
+    en: "Have you noticed that supermarkets often charge ten times as much for fresh chili peppers in a package as for loose fresh chilies?",
+    ans: "△V Have you noticed · [that] S′ supermarkets · △V′ often charge · O ten times as much for fresh chili peppers in a package as for loose fresh chilies",
+    ko: "슈퍼마켓이 봉지에 든 신선한 고추에 낱개 고추의 열 배를 매기는 일이 흔하다는 것을 알아챈 적이 있는가?"
+   },
+   {
+    n: "⑦",
+    en: "The top-shelf potato chips cost 25 percent more, and customers who reached for the top shelf demonstrated that they hadn't made a price-comparison between two near-identical products in near-identical locations.",
+    ans: "S The top-shelf potato chips · △V cost · O 25 percent more · [and] S customers · [who] △V′ reached · M for the top shelf · △V demonstrated · [that] S′ they · △V′ hadn't made · O a price-comparison between two near-identical products in near-identical locations",
+    ko: "위 선반의 감자칩은 25퍼센트 더 비쌌고, 위 선반으로 손을 뻗은 손님들은 거의 같은 자리에 놓인 거의 같은 두 제품의 값을 견주지 않았음을 보여 주었다."
+   },
+   {
+    n: "⑬",
+    en: "The random element is there so that only shoppers who are careful to notice, remember, and compare prices will get the best bargains.",
+    ans: "S The random element · △V is · M there · [so that] S′ only shoppers who are careful to notice, remember, and compare prices · △V′ will get · O the best bargains",
+    ko: "값을 알아채고 기억하고 견주는 데 신경 쓰는 손님만이 가장 싼값을 얻도록, 그 무작위성이 거기에 있다."
+   }
   ]
  },
  syn: [
-  { n:"④", name:"have been found to + 동사원형",
-    q:"Slower music «has been found to lengthen» the time customers spend in the aisles.",
-    d:"<b>be found to+동사원형</b>은 '~하는 것으로 밝혀지다'. 현재완료 수동으로 연구 결과를 전한다.",
-    k:"느린 음악이 통로에서 보내는 시간을 늘린다는 것이 밝혀졌다." },
-  { n:"⑫", name:"소유격 관계대명사 whose",
-    q:"the shopper is playing a game «whose rules» were never explained.",
-    d:"<b>whose</b>는 앞의 명사(game)가 가진 것을 이어 준다. '그 게임의 규칙'으로 읽는다.",
-    k:"손님은 규칙이 설명된 적 없는 게임을 하고 있다." }
+  {
+   n: "③",
+   name: "such + 명사 + that (너무 ~해서 …하다)",
+   q: "…buys «such small quantities that he doesn't think to check»…",
+   d: "<b>such A that B</b>는 ‘너무 A라서 B하다’로 읽는다. 원인과 결과가 한 문장에 담긴다.",
+   k: "너무 적은 양을 사서 확인할 생각을 못 한다"
+  },
+  {
+   n: "②",
+   name: "배수 + as ~ as (몇 배만큼 ~한)",
+   q: "…charge «ten times as much for fresh chili peppers in a package as for loose fresh chilies»?",
+   d: "<b>배수 + as … as</b>는 ‘~의 몇 배만큼’이다. 견주는 두 대상을 as 앞뒤에서 찾는다.",
+   k: "낱개 고추의 열 배만큼"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"Short breaks have been found to improve memory.",
-    k:"짧은 휴식이 기억을 좋게 한다는 것이 밝혀졌다." },
-  { u:"구문 2", en:"We entered a building whose doors opened by themselves.",
-    k:"우리는 문이 저절로 열리는 건물에 들어갔다." },
-  { u:"구문 1 + 2", en:"A shop whose lights are warm has been found to hold visitors longer.",
-    k:"조명이 따뜻한 가게가 손님을 더 오래 붙든다는 것이 밝혀졌다." }
+  { u: "구문 1", en: "It was such a small change that no one noticed.", k: "너무 작은 변화라서 아무도 알아채지 못했다." },
+  { u: "구문 2", en: "The packet costs three times as much as the loose fruit.", k: "그 봉지는 낱개 과일의 세 배만큼 값이 든다." },
+  { u: "구문 1 + 2", en: "He paid such a high price that it was twice as much as last week's.", k: "그는 너무 높은 값을 치러서, 그것은 지난주의 두 배만큼이었다." }
  ],
- wtype: ["무관","정답","반대","지엽","배경"],
- stype: ["일치","일치","일치","반대","일치"],
- why: [["가장 싸게 사는 법은 글이 다루지 않는다"],["정답"],
-       ["금지하자는 주장이 아니다 — 알아차리라고 한다"],
-       ["공급업체 이야기는 두 문장에 그치는 세부다"],
-       ["창고는 첫 문장의 비유로만 나온다"]],
- src: [["②"],["④"],["⑦"],["⑨와 어긋남 — 강요하지는 않는다고 했다"],["⑭"]],
+ why: [
+  ["고추 재배법은 글에 나오지 않는다"],
+  ["정답"],
+  ["글은 값이 제멋대로 바뀐다고 말한다 — 정반대다"],
+  ["감자칩 조리법은 글의 관심사가 아니다"],
+  ["매장 입구 설계는 글의 초점이 아니다"]
+ ],
+ src: [["②"], ["③"], ["⑦과 어긋남 — 위 선반이 25퍼센트 더 비쌌다"], ["⑫"], ["⑬"]],
  kb: {
-  title:"매장은 어떻게 말을 거는가",
-  lead:"설계는 말없이 권한다.",
+  title: "값을 견주는 힘",
+  lead: "무작위한 값표가 노리는 것",
   items: [
-   ["동선과 필수품 배치",
-    "우유·달걀 같은 필수품을 입구에서 먼 곳에 두는 배치는 유통업의 오래된 관행이다. 목적지까지 가는 동안 다른 진열대를 지나게 하려는 설계다."],
-   ["매장 음악 연구",
-    "1982년 밀리먼의 연구는 느린 배경음악이 매장 체류 시간과 매출을 늘렸다고 보고했다. 이후 조명·향기·혼잡도에 대한 후속 연구가 이어졌다."],
-   ["9로 끝나는 가격",
-    "왼쪽 자리 효과로 설명된다. 2.99를 3보다 2에 가까운 값으로 인식한다는 것이다."]
+   ["가격 차별", "같은 물건에 손님마다 다른 값을 받아 내는 일을 가격 차별(price discrimination)이라 한다. 값을 견주지 않는 손님이 더 많이 내는 구조다."],
+   ["단위 가격", "많은 나라의 매장은 100g 이나 1L 당 값을 함께 적도록 정해 두었다. 봉지와 낱개를 견줄 때 이 단위 가격이 가장 빠른 잣대다."],
+   ["선반 높이", "손이 가장 먼저 닿는 자리일수록 진열 값이 비싸다. 위나 아래 선반에 같은 물건이 다른 값으로 놓이는 일이 잦은 까닭이다."]
   ],
-  ask:"자주 가는 가게의 배치를 떠올려 보자. 내가 늘 지나치게 되는 진열대는 어디인가?"
- }
+  ask: "장을 볼 때 값을 견주어 본 물건과 그러지 않은 물건은 어떻게 나뉘는가?"
+ },
+ wtype: ["무관", "정답", "반대", "무관", "지엽"],
+ stype: ["일치", "일치", "반대", "일치", "일치"]
 },
+
+/* ───────────────────────────── 50 ───────────────────────────── */
 {
- no: "50", key: "veblen",
- accent: "#B0782A", tint: "#F8EFDC", deep: "#7C5312",
+ no: "50", key: "giffen", accent: "#B0782A", tint: "#F8EFDC", deep: "#7C5312",
  en: "When Higher Prices Increase Demand",
- ko: "값이 오르면 더 팔리는 물건",
- goal: "가격이 신호로 작동하는 예외적 경우를 설명할 수 있다.",
- fig: "Figure 1  가격표가 하는 말.",
- tip: "먼저 생각해 보자. 값이 두 배가 되면 사람들은 늘 덜 살까?",
- sent: [
-  "The first rule anyone learns in economics is that demand falls as price rises.",
-  "The rule holds for rice, for petrol, and for almost everything on a shelf.",
-  "It fails for a small family of goods, and the failure is instructive.",
-  "A handbag that doubles in price can sell more units than before.",
-  "Nothing inside the bag has changed, and the stitching is the same.",
-  "What changed is the message the price sends to everyone who sees it.",
-  "Thorstein Veblen described this in 1899 as consumption meant to be observed.",
-  "The good is bought partly for the buyer and partly for the audience.",
-  "This only works while the price stays out of most people's reach.",
-  "A luxury that everyone can afford stops performing the job it was bought for.",
-  "Brands therefore protect scarcity as carefully as they protect quality.",
-  "The pattern is easy to mock and harder to escape.",
-  "School uniforms, wedding rules, and gifts all carry similar signals.",
-  "Reading a price as information about goods misses half of what it does.",
-  "It is also information about the person who is willing to pay it."
+ ko: "값이 오르면 더 사는 물건",
+ goal: "기펜재가 성립하는 세 조건과, 소득 효과가 대체 효과를 넘어서는 과정을 설명할 수 있다.",
+ fig: "Figure 1  뒤집힌 수요 곡선과 그 이유.",
+ tip: "먼저 생각해 보자. 값이 오르는데도 오히려 더 사게 되는 물건이 있을까?",
+ sent: T(50).sent, kor: T(50).kor,
+ bank: [
+  ["commodity", "①", "상품"],
+  ["assumption", "②", "가정"],
+  ["inferior good", "③", "열등재"],
+  ["staple", "⑥", "주식"],
+  ["substitution effect", "⑨", "대체 효과"],
+  ["outweigh", "⑪", "능가하다"]
  ],
- kor: [
-  "경제학에서 누구나 처음 배우는 규칙은 값이 오르면 수요가 줄어든다는 것이다.",
-  "그 규칙은 쌀에도, 휘발유에도, 진열대의 거의 모든 것에도 들어맞는다.",
-  "그것은 작은 무리의 상품에서 어긋나는데, 그 어긋남이 많은 것을 알려 준다.",
-  "값이 두 배가 된 손가방이 예전보다 더 많이 팔릴 수 있다.",
-  "가방 안의 무엇도 달라지지 않았고, 바느질도 그대로다.",
-  "달라진 것은 그 가격이 그것을 보는 모든 사람에게 보내는 메시지다.",
-  "소스타인 베블런은 1899년에 이것을 남에게 보이기 위한 소비라고 설명했다.",
-  "그 물건은 얼마간은 구매자를 위해, 얼마간은 관객을 위해 사는 것이다.",
-  "이것은 값이 대다수의 손이 닿지 않는 곳에 머무는 동안에만 작동한다.",
-  "누구나 살 수 있는 사치품은 그것이 사들여진 목적을 더는 수행하지 못한다.",
-  "그래서 브랜드들은 품질을 지키는 만큼이나 조심스럽게 희소성을 지킨다.",
-  "이 패턴은 비웃기는 쉽고 빠져나오기는 더 어렵다.",
-  "교복도, 결혼식의 관례도, 선물도 모두 비슷한 신호를 지닌다.",
-  "가격을 상품에 대한 정보로만 읽으면 그것이 하는 일의 절반을 놓친다.",
-  "그것은 그 값을 기꺼이 치르려는 사람에 대한 정보이기도 하다."
+ defs: [
+  ["commodity", "a good that is bought and sold"],
+  ["assumption", "something taken to be true without proof"],
+  ["inferior good", "a good people buy less of as they earn more"],
+  ["staple", "the basic food a diet is built on"],
+  ["substitution effect", "the shift to a good that now costs less"],
+  ["outweigh", "to be greater than something else"]
  ],
- bank: [["demand","①","수요"],["instructive","③","시사하는 바가 큰"],["stitching","⑤","바느질"],
-        ["consumption","⑦","소비"],["audience","⑧","관객"],["scarcity","⑪","희소성"]],
- defs: [["demand","the amount buyers want at a price"],
-        ["instructive","useful for teaching something"],
-        ["stitching","the line of thread joining pieces"],
-        ["consumption","the buying and using of goods"],
-        ["audience","the people who are watching"],
-        ["scarcity","the state of being hard to obtain"]],
- defOrder: [2,4,1,5,0,3],
+ defOrder: [5, 0, 3, 1, 4, 2],
  flow: [
-  ["The usual rule","When price rises, demand normally falls",null],
-  ["The exception","A bag that doubles in price can sell (  ①  )","more"],
-  ["Why","The price itself carries a (  ②  ) to onlookers","message"],
-  ["The condition","It works only while the price stays out of (  ③  )","reach"],
-  ["The lesson","A price is information about the (  ④  ) too","buyer"]
+  ["The name", "Goods whose demand rises with price are Giffen goods", null],
+  ["First", "It must be an (  ①  ) good, like bread beside meat", "inferior"],
+  ["Second", "It must take a large part of the buyer's (  ②  )", "income"],
+  ["Third", "There must be no cheaper (  ③  ) to it", "alternative"],
+  ["The result", "The income effect (  ④  ) the substitution effect", "outweighs"]
  ],
- flowBogi: "more · message · reach · buyer · quality · stitching",
+ flowBogi: "inferior · income · alternative · outweighs · superior · follows",
  para: [
-  ["③ It fails for a small family of goods","The law has known ______.","exceptions"],
-  ["⑥ the message the price sends to everyone","The tag itself ______ something.","signals"],
-  ["⑧ partly for the buyer and partly for the audience","Buying serves a ______ purpose too.","social"],
-  ["⑩ stops performing the job it was bought for","Wide access ______ the signal.","destroys"],
-  ["⑫ easy to mock and harder to escape","Recognising it does not ______ us.","free"]
+  ["① demand rises as their prices rise", "People buy more when the price goes ______.", "up"],
+  ["③ a good that people choose to buy less of", "They want less of it as they get ______.", "richer"],
+  ["⑤ there must be no alternatives to the product", "Nothing else can ______ its place.", "take"],
+  ["⑩ it also reduces the power to spend", "A higher price leaves less to ______.", "spend"],
+  ["⑫ rising prices allegedly caused an increase", "In the famine, higher prices ______ demand.", "raised"]
  ],
- paraBogi: "exceptions · signals · social · destroys · free · hides · rare · repair",
+ paraBogi: "up · richer · take · spend · raised · down · poorer · cut",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["Why Rice and Petrol Obey the Rule","A Price Is a Message, Not Just a Cost",
-       "Luxury Brands Should Lower Their Prices","How to Judge the Quality of a Handbag",
-       "The Life and Work of Thorstein Veblen"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["대부분의 상품은 값이 오르면 수요가 준다.","값이 오른 가방이 더 많이 팔릴 수 있다.",
-       "브랜드는 희소성을 조심스럽게 지킨다.","필자는 이 패턴에서 벗어나기 쉽다고 본다.",
-       "가격은 사는 사람에 대한 정보이기도 하다."], ans:4},
-  {t:"write", q:"가격을 상품 정보로만 읽으면 '절반을 놓친다'고 한 이유를 우리말로 써 보세요.",
-   ans:"가격은 그 값을 기꺼이 치르려는 사람에 대한 정보이기도 한데, 그 절반을 보지 못하기 때문이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "A History of Irish Farming",
+    "The Good That Breaks the Rule",
+    "Why Bread Prices Never Change",
+    "How to Bake a Cheap Loaf",
+    "The Life of Robert Giffen"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "기펜재는 값이 오를수록 수요가 늘어나는 상품이다.",
+    "열등재는 소득이 늘면 사람들이 덜 사게 되는 재화다.",
+    "기펜재가 되려면 그 상품에 대체재가 없어야 한다.",
+    "대체 효과는 값이 오른 빵을 더 많이 사게 만든다.",
+    "아일랜드 대기근 때의 감자도 기펜재의 예로 이야기된다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "값이 올랐는데도 빵을 더 사게 되는 과정을 우리말 한 문장으로 써 보세요.",
+   ans: "빵값이 오르면 다른 데 쓸 돈이 줄고, 그 줄어든 소득이 열등재인 빵의 수요를 늘리기 때문이다."
+  }
  ],
  fl: {
-  model: { n:"⑩",
-   toks: [["A luxury","s"],["that","c"],["everyone","s2"],["can afford","v2"],
-          ["stops","v"],["performing the job it was bought for",null]],
-   ko:"누구나 살 수 있는 사치품은 그것이 사들여진 목적을 더는 수행하지 못한다." },
+  model: {
+   n: "⑨",
+   toks: [
+    ["This substitution effect", "s"], ["would cause", "v"],
+    ["bread to follow the general rule of higher price causing lower demand.", null]
+   ],
+   ko: "이 대체 효과는 빵이 ‘값이 오르면 수요가 준다’는 일반 규칙을 따르게 만들 것이다."
+  },
   drill: [
-   { n:"③", en:"It fails for a small family of goods, and the failure is instructive.",
-     ans:"S It · △V fails · M for a small family of goods · [and] S the failure · △V is · C instructive",
-     ko:"그것은 작은 무리의 상품에서 어긋나는데, 그 어긋남이 많은 것을 알려 준다." },
-   { n:"⑨", en:"This only works while the price stays out of most people's reach.",
-     ans:"S This · M only · △V works · [while] S′ the price · △V′ stays · M out of most people's reach",
-     ko:"이것은 값이 대다수의 손이 닿지 않는 동안에만 작동한다." },
-   { n:"⑮", en:"It is also information about the person who is willing to pay it.",
-     ans:"S It · △V is · C also information about the person · [who] △V′ is willing to pay it",
-     ko:"그것은 그 값을 기꺼이 치르려는 사람에 대한 정보이기도 하다." }
+   {
+    n: "⑥",
+    en: "In the case of bread, there is no cheaper alternative staple.",
+    ans: "M In the case of bread · △V there is · C no cheaper alternative staple",
+    ko: "빵의 경우에는 더 싼 대체 주식이 없다."
+   },
+   {
+    n: "⑧",
+    en: "It causes people to buy less bread because the satisfaction it creates per pound of spending falls compared to other goods.",
+    ans: "S It · △V causes · O people to buy less bread · [because] S′ the satisfaction it creates per pound of spending · △V′ falls · M compared to other goods",
+    ko: "그것은 지출 1파운드당 만들어 내는 만족이 다른 재화에 견주어 떨어지기 때문에 사람들이 빵을 덜 사게 만든다."
+   },
+   {
+    n: "⑩",
+    en: "However, as the price of bread rises, it also reduces the power to spend on other things, and because bread is an inferior good, this lower income will make the demand for bread rise.",
+    ans: "M However · [as] S′ the price of bread · △V′ rises · S it · △V also reduces · O the power to spend on other things · [and] [because] S′ bread · △V′ is · C an inferior good · S this lower income · △V will make · O the demand for bread rise",
+    ko: "그러나 빵값이 오르면 다른 것에 쓸 힘도 줄어들고, 빵이 열등재이기 때문에 이 낮아진 소득이 빵의 수요를 늘리게 된다."
+   }
   ]
  },
  syn: [
-  { n:"⑨", name:"while 접속사 + stay out of",
-    q:"This only works «while the price stays» out of most people's reach.",
-    d:"<b>while</b>은 '~하는 동안'이라는 조건을 만든다. stay out of ~ 는 '~ 밖에 머물다'.",
-    k:"값이 대다수의 손이 닿지 않는 동안에만 이것이 작동한다." },
-  { n:"⑭", name:"동명사 주어 + what 명사절",
-    q:"«Reading a price» as information about goods misses half of «what it does».",
-    d:"동명사구가 주어이고, <b>what it does</b>는 '그것이 하는 일'이라는 명사절이다.",
-    k:"가격을 상품 정보로만 읽으면 그것이 하는 일의 절반을 놓친다." }
+  {
+   n: "⑪",
+   name: "so + 형용사 + that (너무 ~해서 …하다)",
+   q: "…the income effect is «so large that it outweighs the substitution effect»…",
+   d: "<b>so A that B</b>는 ‘너무 A라서 B하다’다. A 자리에는 형용사·부사가 온다.",
+   k: "너무 커서 대체 효과를 넘어선다"
+  },
+  {
+   n: "⑩",
+   name: "make + 목적어 + 동사원형 (~하게 만들다)",
+   q: "…this lower income «will make the demand for bread rise».",
+   d: "<b>make + 목적어 + 동사원형</b>은 ‘~이 …하게 만들다’다. to 가 붙지 않는 데 주의한다.",
+   k: "빵 수요가 오르게 만든다"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"The trick works while nobody looks closely.",
-    k:"아무도 자세히 보지 않는 동안 그 수법은 통한다." },
-  { u:"구문 2", en:"Counting steps tells us little about what walking does.",
-    k:"걸음 수를 세는 일은 걷기가 하는 일을 거의 알려 주지 않는다." },
-  { u:"구문 1 + 2", en:"Naming a problem helps while people still remember what it cost.",
-    k:"문제에 이름을 붙이는 일은 사람들이 그 대가를 기억하는 동안에는 도움이 된다." }
+  { u: "구문 1", en: "The rise was so sharp that families cut everything else.", k: "그 인상은 너무 가팔라서 가정들은 다른 모든 것을 줄였다." },
+  { u: "구문 2", en: "A cheaper staple makes demand fall again.", k: "더 싼 주식은 수요를 다시 떨어지게 만든다." },
+  { u: "구문 1 + 2", en: "The price was so high that it made buyers change their whole basket.", k: "값이 너무 높아서 그것은 구매자들이 장바구니 전체를 바꾸게 만들었다." }
  ],
- wtype: ["배경","정답","반대","무관","지엽"],
- stype: ["일치","일치","일치","반대","일치"],
- why: [["일반 규칙은 예외를 소개하기 위한 배경이다"],["정답"],
-       ["값을 내리라는 주장은 없다 — 오히려 희소성을 지킨다고 했다"],
-       ["가방의 품질을 판정하는 글이 아니다"],
-       ["베블런은 한 문장에만 등장하는 세부다"]],
- src: [["①"],["④"],["⑪"],["⑫와 어긋남 — 빠져나오기는 더 어렵다고 했다"],["⑮"]],
+ why: [
+  ["아일랜드 농업의 역사는 글에 나오지 않는다"],
+  ["정답"],
+  ["글은 값이 오르는 상황을 다룬다 — 정반대다"],
+  ["빵 굽는 법은 글의 관심사가 아니다"],
+  ["Giffen 개인의 생애는 글의 초점이 아니다"]
+ ],
+ src: [["①"], ["③"], ["⑤"], ["⑧·⑨와 어긋남 — 대체 효과는 빵을 덜 사게 만든다"], ["⑫"]],
  kb: {
-  title:"가격이 보내는 신호",
-  lead:"값은 숫자이면서 동시에 말이다.",
+  title: "기펜재",
+  lead: "규칙을 깨는 재화",
   items: [
-   ["베블런재와 기펜재",
-    "값이 오를 때 수요가 느는 예외로 베블런재(과시 소비)와 기펜재(열등재의 소득효과)가 함께 거론된다. 두 경우의 이유는 서로 다르다."],
-   ["「유한계급론」",
-    "베블런은 1899년 저작에서 '과시적 소비'라는 말을 썼다. 소비의 목적 일부가 남에게 보이는 데 있다는 관찰이다."],
-   ["희소성 관리",
-    "한정판, 대기 명단, 유통 제한은 값을 지키기 위한 장치로 자주 설명된다. 접근이 쉬워질수록 신호의 값이 떨어지기 때문이다."]
+   ["이름의 유래", "스코틀랜드 통계학자 로버트 기펜(Robert Giffen)의 이름에서 왔다. 앨프리드 마셜이 자신의 경제학 교과서에서 이 사례를 소개하며 그의 이름을 붙였다."],
+   ["두 효과", "값이 오르면 대체 효과는 그 재화를 덜 사게 만들고, 소득 효과는 실질 소득을 줄인다. 열등재에서는 소득이 줄면 오히려 그 재화를 더 사게 된다."],
+   ["실제 관찰", "2007년 중국 후난성과 간쑤성의 쌀·밀 소비를 조사한 연구가 기펜 행동을 관찰했다고 보고했다. 사례가 드물어 오랫동안 이론상의 재화로 불렸다."]
   ],
-  ask:"값이 비싸서 더 갖고 싶었던 물건이 있는가? 그때 나는 무엇을 사고 있었던 걸까?"
- }
+  ask: "값이 올랐는데도 줄일 수 없는 물건이 여러분에게 있다면 무엇일까?"
+ },
+ wtype: ["무관", "정답", "반대", "무관", "지엽"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 }
-]};
+
+ ]
+};
