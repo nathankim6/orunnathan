@@ -583,6 +583,13 @@ textarea:focus, input:focus { border-color: var(--line-4); outline: 2px solid va
 .api-card .api-model { margin-top: var(--s3); max-width: 360px; }
 .api-card .api-engine { margin: var(--s3) 0 var(--s3); max-width: 360px; }
 .api-card .api-keep { margin-top: var(--s3); max-width: 360px; }
+.api-card .api-provider { margin: var(--s3) 0; max-width: 360px; }
+.api-card .oa-model { margin-top: var(--s3); display: flex; align-items: center; gap: var(--s2); flex-wrap: wrap; }
+.api-card .oa-model label { display: inline; margin: 0; font-size: var(--fs-meta); font-weight: var(--w-reg); color: var(--n9); }
+.api-card .oa-model input { width: 220px; padding: 9px var(--s3); font-size: var(--fs-meta); }
+.api-card .oa-model .btn { padding: 9px var(--s3); font-size: var(--fs-meta); white-space: nowrap; }
+.api-card .oa-model .oa-note { flex-basis: 100%; font-size: var(--fs-micro); line-height: var(--lh-micro); color: var(--n8); }
+.api-card .oa-model .oa-note.bad { color: var(--neg); }
 .lib-warn {
   margin: var(--s5) 0 0; padding: var(--s3) var(--s4);
   background: var(--neg-surface); border: 1px solid var(--neg-line); border-radius: var(--r3);
@@ -1711,7 +1718,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     <span class="step" data-step="2"></span><span class="step-rule"></span>
     <span class="step" data-step="3"></span>
   </div>
-  <div class="state"><span class="build" id="buildTag">2026-09-07 23:34</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
+  <div class="state"><span class="build" id="buildTag">2026-09-08 01:29</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
 </div>
 
 <!-- 화면 0 · 시작 -->
@@ -1740,7 +1747,11 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   </div>
 
   <div class="api-card" id="apiCard" hidden>
-    <div class="k" id="apiTitle">Anthropic API 키로 실행해요</div>
+    <div class="k" id="apiTitle">어느 API 로 실행할까요</div>
+    <div class="seg api-provider" id="apiProviderSeg">
+      <button type="button" data-v="anthropic">Anthropic</button>
+      <button type="button" data-v="openai">OpenAI</button>
+    </div>
     <div class="d" id="apiDesc"></div>
     <div id="apiKeyBody">
       <div class="row">
@@ -1754,6 +1765,13 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
         <button type="button" data-v="session">창을 닫으면 지움</button>
       </div>
       <div class="seg api-model" id="apiModelSeg"><button type="button" class="on" data-v="opus">Opus 5 · 정밀</button><button type="button" data-v="sonnet">Sonnet 5 · 빠르고 저렴</button></div>
+      <div class="oa-model" id="oaModelRow" hidden>
+        <label for="oaModel">모델</label>
+        <input type="text" id="oaModel" list="oaModelList" spellcheck="false" autocomplete="off" placeholder="gpt-5.6-terra">
+        <datalist id="oaModelList"></datalist>
+        <button type="button" class="btn ghost" id="oaListBtn">모델 목록 불러오기</button>
+        <span class="oa-note" id="oaModelNote"></span>
+      </div>
       <p class="api-safe">
         키는 이 브라우저에만 남고 <b>api.anthropic.com</b> 한 곳으로만 보내요. 저장한 작업 내용·이력에는 들어가지 않아요.
         여럿이 쓰는 컴퓨터라면 ‘창을 닫으면 지움’을 고르세요.
@@ -3404,49 +3422,91 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 
   let apiFallbackOk = true;   // 서버가 폴백 베타를 거절하면 이후로는 빼고 보낸다
 
+  // 어느 회사 API 로 돌릴지 — Anthropic 과 OpenAI 를 모두 쓸 수 있다. 키는 각각 따로 보관한다.
+  const PROVIDER_STORE = "orun_provider";
+  function provider() {
+    let v = ""; try { v = localStorage.getItem(PROVIDER_STORE) || ""; } catch (e) {}
+    return v === "openai" ? "openai" : "anthropic";
+  }
+  function setProvider(v) {
+    try { localStorage.setItem(PROVIDER_STORE, v === "openai" ? "openai" : "anthropic"); } catch (e) {}
+    applyProvider();
+  }
+  function providerName() { return provider() === "openai" ? "OpenAI" : "Anthropic"; }
+
   // 키 보관 — 여럿이 쓰는 컴퓨터를 위해 '창을 닫으면 지움'(sessionStorage) 을 고를 수 있다.
   const API_KEEP_STORE = "orun_api_keep";
   function keepMode() {
     let v = ""; try { v = localStorage.getItem(API_KEEP_STORE) || ""; } catch (e) {}
     return v === "session" ? "session" : "browser";
   }
-  function getApiKey() {
-    try { const v = (sessionStorage.getItem(API_KEY_STORE) || "").trim(); if (v) return v; } catch (e) {}
-    try { return (localStorage.getItem(API_KEY_STORE) || "").trim(); } catch (e) {}
+  function readKey(store) {
+    try { const v = (sessionStorage.getItem(store) || "").trim(); if (v) return v; } catch (e) {}
+    try { return (localStorage.getItem(store) || "").trim(); } catch (e) {}
     return "";
   }
-  function setApiKey(k) {
-    try { sessionStorage.removeItem(API_KEY_STORE); } catch (e) {}
-    try { localStorage.removeItem(API_KEY_STORE); } catch (e) {}
+  function writeKey(store, k) {
+    try { sessionStorage.removeItem(store); } catch (e) {}
+    try { localStorage.removeItem(store); } catch (e) {}
     if (!k) return;
-    try { (keepMode() === "session" ? sessionStorage : localStorage).setItem(API_KEY_STORE, k.trim()); } catch (e) {}
+    try { (keepMode() === "session" ? sessionStorage : localStorage).setItem(store, k.trim()); } catch (e) {}
   }
+  function getApiKey() { return readKey(API_KEY_STORE); }          // Anthropic
+  function setApiKey(k) { writeKey(API_KEY_STORE, k); }
+  function getOaKey() { return readKey(OA_KEY_STORE); }            // OpenAI
+  function setOaKey(k) { writeKey(OA_KEY_STORE, k); }
+  // 지금 고른 제공자의 키
+  function currentKey() { return provider() === "openai" ? getOaKey() : getApiKey(); }
+  function setCurrentKey(k) { return provider() === "openai" ? setOaKey(k) : setApiKey(k); }
+  function keyPrefix() { return provider() === "openai" ? "sk-" : "sk-ant-"; }
+  // sk-ant- 도 sk- 로 시작한다 — 접두어만 보면 Anthropic 키가 OpenAI 칸을 통과한다.
+  function keyLooksRight(v) {
+    if (provider() === "openai") return v.indexOf("sk-") === 0 && v.indexOf("sk-ant-") !== 0;
+    return v.indexOf("sk-ant-") === 0;
+  }
+  // 실행 준비가 됐는가 — OpenAI 는 모델까지 골라야 한다
+  function engineReady() { return provider() === "openai" ? !!(getOaKey() && oaModel()) : !!getApiKey(); }
   function setKeepMode(v) {
-    const k = getApiKey();                       // 이미 있는 키를 새 자리로 옮긴다
+    const a = getApiKey(), o = getOaKey();       // 이미 있는 키들을 새 자리로 옮긴다
     try { localStorage.setItem(API_KEEP_STORE, v === "session" ? "session" : "browser"); } catch (e) {}
-    setApiKey(k);
+    setApiKey(a); setOaKey(o);
   }
   // 키와 연결을 실제로 확인한다 — 가장 작은 요청 하나(출력 1토큰)로 끝난다.
   async function probeApi() {
-    const key = getApiKey();
+    const key = currentKey();
     if (!key) return { ok: false, msg: "키를 먼저 저장해 주세요." };
+    const oa = provider() === "openai";
+    if (oa && !oaModel()) return { ok: false, msg: "쓸 모델을 골라 주세요." };
     let res;
+    const netMsg = (host) => "" + host + " 에 연결하지 못했어요. " + (location.protocol === "file:"
+      ? "파일을 그대로 연 상태(file://)라 브라우저가 요청을 막았을 수 있어요. 웹 주소(https://…)에 올려서 열면 해결돼요."
+      : "인터넷 연결과 광고 차단 확장(또는 사내 보안 프로그램)을 확인해 주세요.");
     try {
-      res = await fetch(API_URL, {
-        method: "POST",
-        headers: {
-          "content-type": "application/json", "x-api-key": key,
-          "anthropic-version": "2023-06-01", "anthropic-dangerous-direct-browser-access": "true",
-        },
-        body: JSON.stringify({ model: apiModelId(), max_tokens: 1, messages: [{ role: "user", content: "hi" }] }),
-      });
+      res = oa
+        ? await fetch(OA_URL, {
+            method: "POST",
+            headers: { "content-type": "application/json", authorization: "Bearer " + key },
+            body: JSON.stringify({ model: oaModel(), messages: [{ role: "user", content: "hi" }], max_completion_tokens: 16 }),
+          })
+        : await fetch(API_URL, {
+            method: "POST",
+            headers: {
+              "content-type": "application/json", "x-api-key": key,
+              "anthropic-version": "2023-06-01", "anthropic-dangerous-direct-browser-access": "true",
+            },
+            body: JSON.stringify({ model: apiModelId(), max_tokens: 1, messages: [{ role: "user", content: "hi" }] }),
+          });
     } catch (e) {
-      return { ok: false, msg: "api.anthropic.com 에 연결하지 못했어요. " + (location.protocol === "file:"
-        ? "파일을 그대로 연 상태(file://)라 브라우저가 요청을 막았을 수 있어요. 웹 주소(https://…)에 올려서 열면 해결돼요."
-        : "인터넷 연결과 광고 차단 확장(또는 사내 보안 프로그램)을 확인해 주세요.") };
+      return { ok: false, msg: netMsg(oa ? "api.openai.com" : "api.anthropic.com") };
     }
-    if (res.ok) return { ok: true, msg: "연결됐어요 — 바로 쓸 수 있어요." };
-    return { ok: false, msg: friendlySampleError(apiHttpError(res.status, await res.text())) };
+    if (res.ok) return { ok: true, msg: "연결됐어요 — " + (oa ? oaModel() : (apiModelKey() === "opus" ? "Opus 5" : "Sonnet 5")) + " 로 바로 쓸 수 있어요." };
+    const body = await res.text();
+    if (oa && res.status === 400 && /max_tokens|max_completion_tokens/i.test(body)) {
+      // 이 모델은 다른 이름을 받는다 — 실제 호출에서도 자동으로 바꿔 단다
+      oaMaxTokensField = "max_tokens";
+      return { ok: true, msg: "연결됐어요 — " + oaModel() + " (출력 한도 이름을 max_tokens 로 맞췄어요)" };
+    }
+    return { ok: false, msg: friendlySampleError(oa ? oaHttpError(res.status, body) : apiHttpError(res.status, body)) };
   }
   function blobToBase64(blob) {
     return new Promise((res, rej) => {
@@ -3586,6 +3646,152 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     return fn;
   }
 
+  // ==================================================================
+  //  OpenAI 통로 — Anthropic 과 같은 모양의 어댑터를 만들어 나머지 코드는 그대로 쓴다.
+  //  브라우저에서 직접 부를 수 있다(api.openai.com 이 CORS 를 허용한다).
+  // ==================================================================
+  const OA_URL = "https://api.openai.com/v1/chat/completions";
+  const OA_MODELS_URL = "https://api.openai.com/v1/models";
+  const OA_KEY_STORE = "orun_openai_key";
+  const OA_MODEL_STORE = "orun_openai_model";
+  let oaMaxTokensField = "max_completion_tokens";   // 옛 모델은 max_tokens 만 받는다 — 거절되면 바꿔 단다
+
+  const OA_MODEL_DEFAULT = "gpt-5.6-terra";
+  function oaModel() {
+    let v = ""; try { v = (localStorage.getItem(OA_MODEL_STORE) || "").trim(); } catch (e) {}
+    return v || OA_MODEL_DEFAULT;
+  }
+  function setOaModel(v) { try { localStorage.setItem(OA_MODEL_STORE, (v || "").trim()); } catch (e) {} }
+
+  function oaHttpError(status, body) {
+    let msg = "";
+    try { const j = JSON.parse(body); msg = (j.error && j.error.message) || ""; } catch (e) { msg = String(body || "").slice(0, 200); }
+    const low = msg.toLowerCase();
+    if (status === 401 || status === 403) return apiError("bad_key", msg, status);
+    if (status === 429) return apiError(low.includes("quota") ? "no_credit" : "rate_limited", msg, status);
+    if (status === 413 || low.includes("context length") || low.includes("too long")) return apiError("prompt_too_large", msg, status);
+    if (status === 404 && low.includes("model")) return apiError("bad_model", msg, status);
+    if (status === 400 && low.includes("image")) return apiError("image_rejected", msg, status);
+    if (status === 500 || status === 502 || status === 503) return apiError("overloaded", msg, status);
+    return apiError("http_" + status, msg || ("HTTP " + status), status);
+  }
+  // OpenAI 의 SSE 는 choices[0].delta.content 로 오고 [DONE] 으로 끝난다.
+  async function readOaStream(res, onText, signal) {
+    const reader = res.body.getReader();
+    const dec = new TextDecoder();
+    let buf = "", text = "", stop = null;
+    const handle = (line) => {
+      if (!line.startsWith("data:")) return;
+      const raw = line.slice(5).trim();
+      if (raw === "[DONE]") return;
+      let ev; try { ev = JSON.parse(raw); } catch (e) { return; }
+      if (ev.error) throw apiError(ev.error.type || "stream_error", ev.error.message || "스트림 오류");
+      const ch = (ev.choices || [])[0];
+      if (!ch) return;
+      const piece = (ch.delta && (ch.delta.content || "")) || "";
+      if (piece) { text += piece; if (onText) onText({ text, delta: piece }); }
+      if (ch.finish_reason) stop = ch.finish_reason;
+    };
+    while (true) {
+      if (signal && signal.aborted) { try { reader.cancel(); } catch (e) {} throw apiError("cancelled", "중단됨"); }
+      const { value, done } = await reader.read();
+      if (done) break;
+      buf += dec.decode(value, { stream: true });
+      let i;
+      while ((i = buf.indexOf("\n")) !== -1) {
+        const line = buf.slice(0, i).replace(/\r$/, "");
+        buf = buf.slice(i + 1);
+        if (line) handle(line);
+      }
+    }
+    if (buf.trim()) handle(buf.trim());
+    return { text, stop };
+  }
+  async function oaImageParts(images) {
+    const out = [];
+    for (const im of images || []) {
+      if (im instanceof Blob) {
+        out.push({ type: "image_url", image_url: { url: "data:" + (im.type || "image/jpeg") + ";base64," + await blobToBase64(im) } });
+      } else if (im && im.data) {
+        out.push({ type: "image_url", image_url: { url: "data:" + (im.mediaType || im.media_type || "image/jpeg") + ";base64," + im.data } });
+      }
+    }
+    return out;
+  }
+  async function oaCall(input, opts) {
+    opts = opts || {};
+    const key = getOaKey();
+    if (!key) throw apiError("no_key", "OpenAI API 키가 없습니다.");
+    const model = oaModel();
+    if (!model) throw apiError("no_model", "쓸 모델을 골라 주세요.");
+    const tier = opts.modelTier === "default" ? "default" : "complex";
+    const parts = await oaImageParts(opts.images);
+    const messages = typeof input === "string"
+      ? [{ role: "user", content: parts.length ? parts.concat([{ type: "text", text: input }]) : input }]
+      : input.map((t, i) => ({
+          role: t.role === "assistant" ? "assistant" : "user",
+          content: i === 0 && parts.length ? parts.concat([{ type: "text", text: String(t.content || "") }]) : String(t.content || ""),
+        }));
+    const send = async (field) => {
+      const body = { model, messages, stream: true };
+      body[field] = API_MAX_TOKENS[tier];
+      try {
+        return await fetch(OA_URL, {
+          method: "POST",
+          headers: { "content-type": "application/json", authorization: "Bearer " + key },
+          body: JSON.stringify(body),
+          signal: opts.signal,
+        });
+      } catch (e) {
+        if (e && e.name === "AbortError") throw apiError("cancelled", "중단됨");
+        throw apiError("network", "api.openai.com 에 연결하지 못했습니다. " + (location.protocol === "file:"
+          ? "파일을 그대로 연 상태(file://)라 브라우저가 요청을 막았을 수 있어요. 웹 주소(https://…)에 올려서 열면 해결됩니다."
+          : "인터넷 연결과 광고 차단 확장(또는 사내 보안 프로그램)을 확인해 주세요."));
+      }
+    };
+    let res = await send(oaMaxTokensField);
+    if (res.status === 400) {
+      const txt = await res.text();
+      // 모델마다 받는 이름이 다르다 — 거절당하면 반대쪽 이름으로 한 번 더
+      if (/max_tokens|max_completion_tokens/i.test(txt)) {
+        oaMaxTokensField = oaMaxTokensField === "max_completion_tokens" ? "max_tokens" : "max_completion_tokens";
+        res = await send(oaMaxTokensField);
+      } else throw oaHttpError(400, txt);
+    }
+    if (!res.ok) throw oaHttpError(res.status, await res.text());
+    const r = await readOaStream(res, opts.onText, opts.signal);
+    if (!r.text.trim()) throw apiError("empty_completion", "빈 응답");
+    return { text: r.text, truncated: r.stop === "length", modelTierApplied: tier };
+  }
+  // 키로 쓸 수 있는 모델 목록을 받아 온다 — 모델 이름을 앱이 추측하지 않게.
+  async function oaListModels() {
+    const key = getOaKey();
+    if (!key) throw apiError("no_key", "키를 먼저 저장해 주세요.");
+    let res;
+    try { res = await fetch(OA_MODELS_URL, { headers: { authorization: "Bearer " + key } }); }
+    catch (e) { throw apiError("network", "api.openai.com 에 연결하지 못했습니다."); }
+    if (!res.ok) throw oaHttpError(res.status, await res.text());
+    const j = await res.json();
+    return (j.data || []).map(m => m.id).filter(Boolean).sort();
+  }
+  function makeOaSampler() {
+    const fn = (input, opts) => oaCall(input, opts);
+    fn.json = async (input, opts) => {
+      const r = await fn(input, opts);
+      const t = r.text.trim().replace(/^```(?:json)?/i, "").replace(/```$/, "").trim();
+      const a = t.search(/[\[{]/);
+      if (a === -1) throw apiError("invalid_json", "JSON 아님");
+      const close = t[a] === "[" ? "]" : "}";
+      const b = t.lastIndexOf(close);
+      try { return JSON.parse(t.slice(a, b + 1)); } catch (e) { throw apiError("invalid_json", "JSON 해석 실패"); }
+    };
+    fn.limits = async () => ({
+      maxPromptBytes: 800 * 1024,
+      images: { maxCount: 8, maxInputBytes: 20 * 1024 * 1024, mediaTypes: ["image/jpeg", "image/png", "image/webp"] },
+    });
+    return fn;
+  }
+
   // 시작 화면의 API 키 카드. 키가 있어야 분석 버튼이 열린다.
   let refreshEngineCard = () => {};
   function bindApiCard() {
@@ -3594,30 +3800,41 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     card.hidden = false;
     const desc = $("apiDesc");
     const keepSeg = $("apiKeepSeg"), probeOut = $("apiTestOut");
+    const provSeg = $("apiProviderSeg"), modelSeg = $("apiModelSeg"), oaRow = $("oaModelRow"), oaInp = $("oaModel");
 
     const refresh = () => {
-      const k = getApiKey(), btn = $("analyzeBtn");
+      const oa = provider() === "openai";
+      const k = currentKey(), btn = $("analyzeBtn");
+      provSeg.querySelectorAll("button").forEach(b => b.classList.toggle("on", b.dataset.v === provider()));
+      modelSeg.hidden = oa;                       // Opus/Sonnet 선택은 Anthropic 일 때만
+      oaRow.hidden = !oa;
+      if (oa && document.activeElement !== oaInp) oaInp.value = oaModel();
+
+      const host = oa ? "api.openai.com" : "api.anthropic.com";
       desc.textContent = "키를 한 번 저장하면 이 브라우저에서 바로 실행되고, 스캔한 사진 PDF도 읽어요. "
-        + "키는 이 브라우저에만 남고 api.anthropic.com 으로만 보내요. 사용량은 Anthropic 계정에 청구돼요.";
+        + "키는 이 브라우저에만 남고 " + host + " 으로만 보내요. 사용량은 " + providerName() + " 계정에 청구돼요.";
       // 저장된 키를 입력칸에 되채우지 않는다 — 화면·개발자도구에 원문이 남을 이유가 없다
       inp.value = "";
       if (k) {
         inp.placeholder = "저장됨 (…" + k.slice(-4) + ") — 바꾸려면 새 키를 붙여넣으세요";
         st.className = "st ok";
-        st.textContent = "키가 저장돼 있어요 · "
+        st.textContent = providerName() + " 키가 저장돼 있어요 · "
           + (keepMode() === "session" ? "창을 닫으면 지워져요" : "이 브라우저에 남아 있어요");
-        btn.disabled = false; btn.removeAttribute("title");
       } else {
-        inp.placeholder = "sk-ant-api03-…";
+        inp.placeholder = oa ? "sk-…" : "sk-ant-api03-…";
         st.className = "st";
-        st.textContent = "console.anthropic.com 에서 발급한 키를 넣고 저장을 누르세요.";
-        btn.disabled = true; btn.title = "API 키를 먼저 저장해 주세요";
+        st.textContent = (oa ? "platform.openai.com" : "console.anthropic.com") + " 에서 발급한 키를 넣고 저장을 누르세요.";
       }
+      const ready = engineReady();
+      btn.disabled = !ready;
+      if (ready) btn.removeAttribute("title");
+      else btn.title = k ? "쓸 모델을 골라 주세요" : "API 키를 먼저 저장해 주세요";
       keepSeg.querySelectorAll("button").forEach(b => b.classList.toggle("on", b.dataset.v === keepMode()));
       const note = document.querySelector('[data-s="options"] .cta-note');
       if (note) {
         note.className = "cta-note";
-        note.textContent = "시험지 전체를 문항 단위로 분석해요 · API 키로 실행되고 사용량은 Anthropic 계정에 청구돼요 · " + runtimeReport();
+        note.textContent = "시험지 전체를 문항 단위로 분석해요 · API 키로 실행되고 사용량은 "
+          + providerName() + " 계정에 청구돼요 · " + runtimeReport();
       }
     };
     refreshEngineCard = refresh;
@@ -3625,22 +3842,57 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     const save = () => {
       const v = inp.value.trim();
       if (!v) {                                  // 빈 칸으로 저장을 눌러 기존 키를 날리지 않는다
-        if (getApiKey()) { toast("이미 저장된 키를 그대로 씁니다"); refresh(); }
+        if (currentKey()) { toast("이미 저장된 키를 그대로 씁니다"); refresh(); }
         else { st.className = "st"; st.textContent = "console.anthropic.com 에서 발급한 키를 넣고 저장을 누르세요."; }
         return;
       }
-      if (!/^sk-ant-/.test(v)) { st.className = "st bad"; st.textContent = "Anthropic API 키는 sk-ant- 로 시작해요. 다시 확인해 주세요."; return; }
-      setApiKey(v);
+      if (!keyLooksRight(v)) {
+        st.className = "st bad";
+        st.textContent = v.indexOf("sk-ant-") === 0 && provider() === "openai"
+          ? "이건 Anthropic 키예요 (sk-ant-). OpenAI 키를 넣거나, 위에서 Anthropic 으로 바꿔 주세요."
+          : providerName() + " API 키는 " + keyPrefix() + " 로 시작해요. 다시 확인해 주세요.";
+        return;
+      }
+      setCurrentKey(v);
       probeOut.textContent = ""; probeOut.className = "probe-out";
       refresh();
-      toast("API 키를 저장했어요");
+      toast(providerName() + " 키를 저장했어요");
     };
     $("apiKeySave").addEventListener("click", save);
     inp.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); save(); } });
     $("apiKeyClear").addEventListener("click", () => {
-      inp.value = ""; setApiKey("");
+      inp.value = ""; setCurrentKey("");
       probeOut.textContent = ""; probeOut.className = "probe-out";
-      refresh(); toast("저장된 키를 지웠어요");
+      refresh(); toast(providerName() + " 키를 지웠어요");
+    });
+    provSeg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+      setProvider(b.dataset.v);                  // applyProvider 가 refresh 를 부른다
+      probeOut.textContent = ""; probeOut.className = "probe-out";
+      refresh();
+      toast(providerName() + " 로 실행해요");
+    }));
+    if (oaInp) {
+      const saveModel = () => { setOaModel(oaInp.value); refresh(); };
+      oaInp.addEventListener("change", saveModel);
+      oaInp.addEventListener("blur", saveModel);
+    }
+    const oaBtn = $("oaListBtn"), oaNote = $("oaModelNote");
+    if (oaBtn) oaBtn.addEventListener("click", async () => {
+      oaBtn.disabled = true;
+      oaNote.className = "oa-note"; oaNote.textContent = "불러오는 중…";
+      try {
+        const list = await oaListModels();
+        const dl = $("oaModelList");
+        dl.innerHTML = "";
+        list.forEach(id => { const o = document.createElement("option"); o.value = id; dl.appendChild(o); });
+        oaNote.textContent = "이 키로 쓸 수 있는 모델 " + list.length + "개를 불러왔어요 — 칸을 누르면 목록이 뜹니다"
+          + (list.includes(oaModel()) ? "" : " (지금 적힌 " + oaModel() + " 은 목록에 없어요)");
+        if (!list.includes(oaModel())) oaNote.className = "oa-note bad";
+      } catch (e) {
+        oaNote.className = "oa-note bad";
+        oaNote.textContent = friendlySampleError(e);
+      }
+      oaBtn.disabled = false;
     });
     keepSeg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
       setKeepMode(b.dataset.v);
@@ -3665,28 +3917,32 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     refresh();
   }
 
-  // 이 빌드는 Anthropic API 키로만 돈다. 구독(claude.ai 아티팩트) 실행 경로는 두지 않는다.
-  const API_FN = makeApiSampler();
-  function initRuntime() {
-    SAMPLE = API_FN;
+  // 이 빌드는 API 키로만 돈다. 구독(claude.ai 아티팩트) 실행 경로는 두지 않는다.
+  const API_FN = makeApiSampler();      // Anthropic
+  const OA_FN = makeOaSampler();        // OpenAI
+  function applyProvider() {
+    SAMPLE = provider() === "openai" ? OA_FN : API_FN;
     RUNTIME = "api";
     imagesState = "yes";
     LIMITS = { maxPromptBytes: 800 * 1024, images: { maxCount: 8, maxInputBytes: 20 * 1024 * 1024, mediaTypes: ["image/jpeg", "image/png", "image/webp"] } };
+    try { refreshEngineCard(); } catch (e) {}
     return SAMPLE;
   }
+  function initRuntime() { return applyProvider(); }
 
   let lastTrouble = "";   // 가장 최근에 막힌 지점
 
   function diagnostics() {
     return [
       "ORUN 동형 모의고사 진단",
-      "build: 2026-09-07 23:34",
+      "build: 2026-09-08 01:29",
       "url: " + location.href,
       "runtime: API 키 전용 빌드",
       "sample 확보: " + (SAMPLE ? "예" : "아니오"),
       "limits: " + (LIMITS ? JSON.stringify(LIMITS) : "없음"),
       "이미지: " + imagesState,
-      "API 키: " + (getApiKey() ? "저장됨 (" + keepMode() + ") · " + apiModelId() : "없음"),
+      "제공자: " + provider() + " · 모델 " + (provider() === "openai" ? oaModel() : apiModelId()),
+      "API 키: " + (currentKey() ? "저장됨 (" + keepMode() + ")" : "없음"),
       "docx-js: " + (typeof docx !== "undefined" ? "로드됨" : "없음(수제 OOXML 폴백)"),
       "pdf.js: " + (typeof pdfjsLib !== "undefined" ? "로드됨" : "없음") +
         " / worker: " + (pdfWorkerReady() ? "내장" : "미확인"),
@@ -3709,9 +3965,9 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   }
 
   function runtimeReport() {
-    return getApiKey()
-      ? "API 키 · " + (apiModelKey() === "opus" ? "Opus 5" : "Sonnet 5") + " · 스캔본 읽기 가능"
-      : "API 키를 저장해 주세요";
+    if (!currentKey()) return providerName() + " API 키를 저장해 주세요";
+    if (provider() === "openai") return oaModel() ? "OpenAI · " + oaModel() + " · 스캔본 읽기 가능" : "쓸 모델을 골라 주세요";
+    return "Anthropic · " + (apiModelKey() === "opus" ? "Opus 5" : "Sonnet 5") + " · 스캔본 읽기 가능";
   }
 
   // 런타임이 준비되기 전에는 실행 버튼을 잠가 두고, 준비되면 연다.
@@ -3744,9 +4000,11 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   function friendlySampleError(e) {
     switch (e && e.code) {
       case "no_key": return "API 키가 저장돼 있지 않습니다. 시작 화면에서 키를 넣고 저장한 뒤 다시 시도해 주세요.";
-      case "bad_key": return "API 키가 올바르지 않거나 권한이 없습니다. console.anthropic.com 에서 키를 다시 확인해 주세요.";
-      case "no_credit": return "Anthropic 계정에 크레딧이 없습니다. console.anthropic.com 에서 결제를 확인해 주세요.";
-      case "overloaded": return "Anthropic 서버가 혼잡합니다. 잠시 후 '다시 시도'를 눌러 이어서 진행하세요.";
+      case "no_model": return "쓸 모델을 고르지 않았습니다. 시작 화면에서 모델을 골라 주세요.";
+      case "bad_model": return "이 키로는 그 모델을 쓸 수 없습니다. 시작 화면에서 ‘모델 목록 불러오기’로 쓸 수 있는 모델을 확인해 주세요.";
+      case "bad_key": return "API 키가 올바르지 않거나 권한이 없습니다. 발급한 콘솔에서 키를 다시 확인해 주세요.";
+      case "no_credit": return "계정에 남은 크레딧이 없습니다. 결제·사용 한도를 확인해 주세요.";
+      case "overloaded": return "서버가 혼잡합니다. 잠시 후 '다시 시도'를 눌러 이어서 진행하세요.";
       case "network": return e.message;
       case "rate_limited": return "Claude 사용량 한도에 도달했거나 요청이 너무 잦습니다. 잠시 후 '다시 시도'를 눌러 이어서 진행하세요.";
       case "prompt_too_large": return "한 번에 보내는 자료가 너무 큽니다. 범위 자료를 나눠 올려주세요.";
@@ -3764,7 +4022,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   async function callClaude(input, opts) {
     opts = opts || {};
     if (cancelRequested) throw new Error("__aborted__");
-    if (!getApiKey()) throw new Error("API 키를 먼저 저장해 주세요. 시작 화면 아래 칸에 넣고 저장을 누르면 됩니다.");
+    if (!engineReady()) throw new Error("API 키와 모델을 먼저 정해 주세요. 시작 화면 아래 칸에서 설정할 수 있습니다.");
     if (typeof input === "string") {
       const size = bytesOf(input);
       if (size > 64 * 1024) throw new Error("요청 크기(" + Math.round(size / 1024) + "KB)가 한도를 넘었습니다. 자료를 나눠 올려주세요.");
@@ -3835,7 +4093,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 
   // 쪽 이미지를 한도 안에서 묶어 순서대로 읽는다. onStep 으로 진행 상황을 알린다.
   async function ocrPdf(buf, onStep) {
-    if (!getApiKey()) throw new Error("API 키를 저장해야 스캔본을 읽을 수 있습니다. 시작 화면 아래 칸에 키를 넣어 주세요.");
+    if (!engineReady()) throw new Error("API 키를 저장해야 스캔본을 읽을 수 있습니다. 시작 화면 아래 칸에 키를 넣어 주세요.");
     if (imagesState === "no") throw new Error("이 뷰어는 이미지를 보낼 수 없어 스캔본을 읽지 못합니다. 한글·워드 원본으로 올리거나 본문을 붙여넣어 주세요.");
     const doc = await withTimeout(
       pdfjsLib.getDocument({ data: new Uint8Array(buf) }).promise, 90000,
@@ -4321,7 +4579,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   async function analyze() {
     clearError("analyzeError");
     await runtimeReady;
-    if (!getApiKey()) return showError("analyzeError", "API 키를 먼저 저장해 주세요. 시작 화면 아래 칸에 넣고 저장을 누르면 됩니다.");
+    if (!engineReady()) return showError("analyzeError", "API 키와 모델을 먼저 정해 주세요. 시작 화면 아래 칸에서 설정할 수 있습니다.");
     if (examPdf && examPdf.status === "loading")
       return showError("analyzeError", "시험지에서 텍스트를 추출하는 중입니다. 잠시 후 다시 시도해 주세요.");
     const examBody = examText();
@@ -4524,7 +4782,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     clearError("genError");
     if (!analysis) return;
     await runtimeReady;
-    if (!getApiKey()) return showError("genError", "API 키를 먼저 저장해 주세요.");
+    if (!engineReady()) return showError("genError", "API 키와 모델을 먼저 정해 주세요.");
     if (!pipe || !pipe.examText)
       return showError("genError", "출제에 필요한 자료가 메모리에 없습니다. 1단계에서 파일을 다시 올리고 분석해 주세요.");
     if (resultsStale && !confirm("자료가 변경된 뒤 다시 분석하지 않았습니다. 이전 분석 계획으로 그대로 출제할까요?")) return;
@@ -5416,7 +5674,7 @@ list.map(disputeBlock).join("\n");
     const q = $("examOutput").querySelector('.question[data-no="' + no + '"]');
     if (!it || !q) return;
     await runtimeReady;
-    if (!getApiKey()) return toast("API 키를 먼저 저장해 주세요", "err");
+    if (!engineReady()) return toast("API 키와 모델을 먼저 정해 주세요", "err");
     const pid = $("redoPassage").value;
     const c = ((pipe && pipe.catalog) || []).find(x => x.id === pid);
     const note = $("redoNote").value.trim();
