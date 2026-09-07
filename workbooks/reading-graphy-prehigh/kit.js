@@ -33,7 +33,7 @@ function bubble(o = {}) {
   const y0 = y + h / 2 - ((n - 1) * lh) / 2 + size * 0.36;
   return `<g><path d="${tails[tail] || ""}" fill="${fill}" stroke="${c}" stroke-width="2.6" stroke-linejoin="round"/>
     <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${Math.min(16, h / 2)}" fill="${fill}" stroke="${c}" stroke-width="2.6"/>
-    ${lines.map((t, i) => `<text x="${x + w / 2 + tx}" y="${y0 + i * lh}" font-size="${size}" font-weight="${bold ? 800 : 500}" fill="${c}" text-anchor="middle">${esc(t)}</text>`).join("")}
+    ${lines.map((t, i) => `<text data-bg="1" x="${x + w / 2 + tx}" y="${y0 + i * lh}" font-size="${size}" font-weight="${bold ? 800 : 500}" fill="${c}" text-anchor="middle">${esc(t)}</text>`).join("")}
     </g>`;
 }
 function thought(o = {}) {
@@ -44,7 +44,7 @@ function thought(o = {}) {
   return `<g><ellipse cx="${cx + dir * 6}" cy="${y + h + 14}" rx="8" ry="6.5" fill="#fff" stroke="${c}" stroke-width="2.4"/>
     <circle cx="${cx + dir * 18}" cy="${y + h + 27}" r="4.5" fill="#fff" stroke="${c}" stroke-width="2.2"/>
     <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${h / 2}" fill="#fff" stroke="${c}" stroke-width="2.6" stroke-dasharray="9 5"/>
-    ${lines.map((t, i) => `<text x="${x + w / 2}" y="${y0 + i * lh}" font-size="${size}" font-weight="700" fill="${c}" text-anchor="middle">${esc(t)}</text>`).join("")}
+    ${lines.map((t, i) => `<text data-bg="1" x="${x + w / 2}" y="${y0 + i * lh}" font-size="${size}" font-weight="700" fill="${c}" text-anchor="middle">${esc(t)}</text>`).join("")}
     </g>`;
 }
 

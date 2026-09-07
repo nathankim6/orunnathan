@@ -84,12 +84,12 @@ const scenes = {
  /* 29 — 쉬워 보인 일과 어려웠던 일 */
  aiwinter:(c,t,d)=>`<svg viewBox="0 0 640 280" fill="none">
   ${panel({x:22,y:24,w:270,h:186,c:d,fill:"#fff",n:1,label:"기계에게 쉬웠던 것"})}
-  ${label({x:157,y:82,text:"체스 · 논리 · 대수",c:d,size:13})}
+  ${label({x:157,y:52,text:"체스 · 논리 · 대수",c:d,size:13})}
   <g transform="translate(157 140)">
    <rect x="-46" y="-24" width="92" height="48" rx="4" fill="#fff" stroke="${d}" stroke-width="2.6"/>
    ${[0,1,2,3].map(i=>[0,1].map(j=>`<rect x="${-46+i*23+(j%2)*0}" y="${-24+j*24}" width="23" height="24" fill="${(i+j)%2?c:"#fff"}" opacity=".55"/>`).join("")).join("")}</g>
   ${panel({x:348,y:24,w:270,h:186,c:d,fill:"#fff",n:2,label:"기계에게 어려웠던 것"})}
-  ${label({x:483,y:82,text:"얼굴 알아보기 · 방 건너기",c:d,size:12})}
+  ${label({x:483,y:52,text:"얼굴 알아보기 · 방 건너기",c:d,size:12})}
   ${person({x:440,y:186,s:.72,c,pose:"point",hair:"short",face:"smile"})}
   ${person({x:534,y:186,s:.72,c,pose:"down",hair:"bob",face:"smile",flip:1})}
   ${arrow({x1:298,y1:118,x2:342,y2:118,c:d,w:5})}
@@ -119,7 +119,7 @@ const VIG = {
  "26":(c,t,d)=>`<svg viewBox="0 0 240 150" fill="none">
   <rect x="14" y="40" width="212" height="24" rx="7" fill="${c}" opacity=".16"/>
   ${[[46,20],[86,16],[122,26],[168,18],[198,22]].map(([x,w])=>`<rect x="${x}" y="40" width="${w}" height="24" rx="7" fill="${c}" opacity=".5"/><path d="M${x} 34v36" stroke="${c}" stroke-width="3" stroke-linecap="round"/>`).join("")}
-  ${label({x:120,y:92,text:"꼬리가 남는 몫",c:d,size:11})}
+  ${label({x:120,y:26,text:"꼬리가 남는 몫",c:d,size:11})}
   ${person({x:120,y:146,s:.44,c,pose:"think",hair:"short",face:"worry",brow:"down"})}</svg>`,
  "27":(c,t,d)=>`<svg viewBox="0 0 240 150" fill="none">
   ${panel({x:14,y:22,w:96,h:80,c:d,fill:"#fff"})}

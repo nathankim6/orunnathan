@@ -27,18 +27,16 @@ const icons = {
 
 const scenes = {
  wait:(c,t,d)=>`<svg viewBox="0 0 640 280" fill="none">
-  ${panel({x:20,y:20,w:274,h:196,c:d,fill:"#fff",n:1,label:"약속이 깨졌던 방"})}
+  ${panel({x:20,y:20,w:274,h:196,c:d,fill:"#fff",n:1,label:"참지 못하면 먼저 집는다"})}
   ${person({x:106,y:204,s:.9,c,pose:"hold",hair:"curly",face:"worry",brow:"down"})}
   <circle cx="212" cy="150" r="18" fill="#fff" stroke="${d}" stroke-width="2.6"/>
   ${prop.clock(232,72,1,c)}
-  ${label({x:157,y:238,text:"먼저 집는다",c:d,size:11,op:.75})}
-  ${panel({x:346,y:20,w:274,h:196,c:d,fill:"#fff",n:2,label:"약속이 지켜졌던 방"})}
+  ${panel({x:346,y:20,w:274,h:196,c:d,fill:"#fff",n:2,label:"주의를 돌리면 더 오래 기다린다"})}
   ${person({x:432,y:204,s:.9,c,pose:"think",hair:"curly",face:"smile"})}
   <circle cx="538" cy="150" r="18" fill="#fff" stroke="${d}" stroke-width="2.6"/>
   <circle cx="576" cy="150" r="18" fill="${c}" opacity=".45" stroke="${d}" stroke-width="2.6"/>
-  ${thought({x:452,y:44,w:150,h:42,lines:["노래나 불러 볼까"],c:d,size:11,side:"r"})}
-  ${label({x:483,y:238,text:"상황을 바꾼다",c:d,size:11,op:.75})}
-  ${label({x:320,y:270,text:"기다림은 의지가 아니라 신뢰와 방법의 문제다",c,size:12.5})}</svg>`,
+  ${thought({x:452,y:44,w:150,h:42,lines:["장난감이나 가지고 놀까"],c:d,size:11,side:"r"})}
+  ${label({x:320,y:270,text:"기다림은 참기가 아니라 주의를 돌리는 방법이다",c,size:12.5})}</svg>`,
  blood:(c,t,d)=>`<svg viewBox="0 0 640 280" fill="none">
   ${panel({x:22,y:22,w:270,h:190,c:d,fill:"#fff",n:1,label:"대가 없이 줄 때"})}
   ${person({x:104,y:196,s:.86,c,pose:"open",hair:"short",face:"glad",brow:"up"})}
@@ -50,7 +48,7 @@ const scenes = {
   ${thought({x:452,y:40,w:158,h:44,lines:["이 값이 그만한가?"],c:d,size:11,side:"r"})}
   ${arrow({x1:300,y1:118,x2:340,y2:118,c:d,w:5})}
   ${label({x:320,y:244,text:"값이 붙으면 질문이 바뀐다",c:d,size:11.5})}
-  ${label({x:320,y:270,text:"이제는 돈이 아니라 시간과 편의를 두고 경쟁한다",c,size:12.5})}</svg>`,
+  ${label({x:320,y:270,text:"값이 붙는 순간 마음에서 나온 이유가 밀려난다",c,size:12.5})}</svg>`,
  thou:(c,t,d)=>`<svg viewBox="0 0 640 280" fill="none">
   ${person({x:130,y:230,s:1,c,pose:"open",hair:"short",face:"smile"})}
   ${person({x:510,y:230,s:1,c,pose:"open",hair:"cap",face:"flat",flip:1})}
@@ -62,20 +60,20 @@ const scenes = {
   ${callout({x:322,y:140,tx:322,ty:180,text:"둘 사이의 거리를 고르는 일",c:d})}
   ${arrow({x1:238,y1:214,x2:400,y2:214,c:d,w:4})}
   ${label({x:320,y:250,text:"격식 쪽이 모든 자리를 차지했다",c:d,size:11.5})}
-  ${label({x:320,y:272,text:"언어는 화자들이 여전히 해야 하는 구별만 지킨다",c,size:12.5})}</svg>`,
+  ${label({x:320,y:272,text:"낱말 하나의 소멸에 신분 사회의 변화가 담겨 있다",c,size:12.5})}</svg>`,
  screen:(c,t,d)=>`<svg viewBox="0 0 640 280" fill="none">
-  ${panel({x:20,y:24,w:270,h:184,c:d,fill:"#fff",n:1,label:"옮겨진 절반 — 전달"})}
+  ${panel({x:20,y:24,w:270,h:184,c:d,fill:"#fff",n:1,label:"화면으로 옮겨진 강의"})}
   ${prop.screen(155,104,2.4,c)}
   ${[[112,164],[155,164],[198,164]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="7" fill="${c}" opacity=".5"/>`).join("")}
   ${label({x:155,y:190,text:"멈추고 되감는다",c:d,size:11,op:.75})}
-  ${panel({x:350,y:24,w:270,h:184,c:d,fill:"#fff",n:2,label:"남은 절반 — 교실 읽기"})}
+  ${panel({x:350,y:24,w:270,h:184,c:d,fill:"#fff",n:2,label:"그 강의가 닿은 사람들"})}
   ${person({x:420,y:190,s:.82,c,pose:"point",hair:"bob",face:"smile"})}
-  ${person({x:512,y:190,s:.82,c,pose:"down",hair:"short",face:"worry",brow:"down"})}
+  ${person({x:512,y:190,s:.82,c,pose:"down",hair:"short",face:"smile"})}
   ${person({x:582,y:190,s:.82,c,pose:"down",hair:"curly",face:"smile"})}
-  ${callout({x:512,y:130,tx:520,ty:82,text:"저 학생이 막혔다",c:d})}
+  ${label({x:485,y:46,text:"학교 밖에서도, 일하면서도",c:d,size:11,op:.8})}
   ${arrow({x1:298,y1:116,x2:342,y2:116,c:d,w:5})}
-  ${label({x:320,y:240,text:"어려운 절반은 있던 자리에 남았다",c:d,size:11.5})}
-  ${label({x:320,y:268,text:"전달과 가르침은 같은 말이 아니다",c,size:12.5})}</svg>`,
+  ${label({x:320,y:240,text:"지리와 비용의 벽이 낮아졌다",c:d,size:11.5})}
+  ${label({x:320,y:268,text:"배움의 시간표가 사람마다 달라졌다",c,size:12.5})}</svg>`,
  nostalgia:(c,t,d)=>`<svg viewBox="0 0 640 280" fill="none">
   <path d="M70 206V44M70 206h520" stroke="${d}" stroke-width="3.4" stroke-linecap="round"/>
   <path d="M86 194c34 0 44-118 88-118s54 118 88 118 44-8 88-8 54 6 88 6 44 2 66 2" stroke="${c}" stroke-width="5" fill="none" stroke-linecap="round"/>
@@ -94,7 +92,7 @@ const STRIP = {
  "41":["hourglass","balance","shield","loop","sprout"],
  "42":["heartbeat","coin","pair","balance","nope"],
  "43":["quote","chat","pair","swap","tag"],
- "44":["frame","spark","eye","warn","pair"],
+ "44": ["frame", "openbook", "globe", "takeoff", "pair"],
  "45":["ruler","loop","palette","hourglass","heartbeat"]
 };
 
@@ -120,8 +118,8 @@ const VIG = {
   ${prop.screen(58,60,1.6,c)}
   ${arrow({x1:104,y1:60,x2:134,y2:60,c:d,w:4})}
   ${person({x:166,y:126,s:.56,c,pose:"point",hair:"bob",face:"smile"})}
-  ${person({x:214,y:126,s:.56,c,pose:"down",hair:"short",face:"worry",brow:"down"})}
-  ${label({x:120,y:144,text:"읽히지 않는 절반",c:d,size:10.5})}</svg>`,
+  ${person({x:214,y:126,s:.56,c,pose:"down",hair:"short",face:"smile"})}
+  ${label({x:120,y:144,text:"화면 너머의 학습자",c:d,size:10.5})}</svg>`,
  "45":(c,t,d)=>`<svg viewBox="0 0 240 150" fill="none">
   <path d="M20 116V22M20 116h206" stroke="${d}" stroke-width="3.2" stroke-linecap="round"/>
   <path d="M32 108c16 0 22-70 44-70s28 70 50 70 22-6 44-4 22 2 34 2" stroke="${c}" stroke-width="4" fill="none" stroke-linecap="round"/>

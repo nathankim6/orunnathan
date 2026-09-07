@@ -1,682 +1,724 @@
-/* Unit 9 · Field 9 — Education, Psychology & Language 교육·심리·언어
-   원서 Theme 41–45 의 주제를 예비고1 수준으로 다시 쓴 것. */
+/* Unit 9 · Education, Psychology & Language — 원문 Theme 41–45 */
+const R = require("../src/orig/all.json");
+const T = n => R[n - 1];
+
 module.exports = {
  no: 9,
  field: "Education, Psychology & Language",
  ko: "교육·심리·언어",
- tagline: "배우는 몸 — 기다림·베풂·말버릇이 만들어지는 자리",
- next: { en: "Economy & Business", ko: "값과 욕구가 어떻게 만들어지는지 읽습니다", words: "175–205 words" },
+ tagline: "기억이 만드는 것들 — 기다림·베풂·말·화면·취향",
+ next: { en: "Economy & Business", ko: "값과 욕구가 어떻게 만들어지는지 읽습니다", words: "244–275 words" },
  lessons: [
+
+/* ───────────────────────────── 41 ───────────────────────────── */
 {
- no: "41", key: "wait",
- accent: "#4A6FA5", tint: "#E8EDF6", deep: "#2C4870",
- en: "The Reason Waiting Is Possible",
- ko: "기다릴 수 있게 되는 조건",
- goal: "기다림이 의지가 아니라 신뢰와 방법의 문제임을 설명할 수 있다.",
- fig: "Figure 1  기다린 아이와 그 앞의 조건.",
- tip: "먼저 생각해 보자. 지금 하나와 나중에 둘 중에 무엇을 고를지는 무엇이 정할까?",
- sent: [
-  "A child is left with one marshmallow and told that waiting will bring a second.",
-  "Chimpanzees have been given versions of the same test in several laboratories.",
-  "Both can wait, and both find it hard, which is less surprising than it sounds.",
-  "The famous version of the study was long read as a test of willpower.",
-  "Later work showed that the picture is more crowded than that.",
-  "Children who had learned that promises are kept waited far longer.",
-  "Children in rooms where earlier promises had been broken took the first one quickly.",
-  "That is not weakness; it is a sensible reading of the evidence in front of them.",
-  "Method matters as much as trust does.",
-  "A child who covers the sweet, or sings, or turns the chair around, waits longer.",
-  "The successful ones rarely stare at the reward and resist.",
-  "They change the situation so that resisting is not required.",
-  "Chimps improve in the same way when a toy is placed within reach.",
-  "So the question is not simply who can wait.",
-  "It is who has reason to believe waiting pays, and who knows how to make it easier."
+ no: "41", key: "wait", accent: "#4A6FA5", tint: "#E8EDF6", deep: "#2C4870",
+ en: "Delayed Gratification: Humans vs. Chimps",
+ ko: "기다리는 법을 아는 쪽",
+ goal: "충동을 다루는 능력이 어떤 행동으로 나타나는지, 그것이 사람만의 것이 아님을 설명할 수 있다.",
+ fig: "Figure 1  곧바로 집는 쪽과 주의를 돌리는 쪽.",
+ tip: "먼저 생각해 보자. 지금 하나와 잠시 뒤의 둘 사이에서 무엇이 우리를 기다리게 할까?",
+ sent: T(41).sent, kor: T(41).kor,
+ bank: [
+  ["impulsivity", "①", "충동성"],
+  ["resist", "②", "참다"],
+  ["distract", "③", "주의를 딴 데로 돌리다"],
+  ["gratification", "③", "만족"],
+  ["accumulate", "⑤", "쌓이다"],
+  ["divert", "⑨", "돌리다"]
  ],
- kor: [
-  "아이 앞에 마시멜로 하나를 두고, 기다리면 두 번째를 주겠다고 말한다.",
-  "여러 실험실에서 침팬지에게도 같은 시험의 변형이 주어져 왔다.",
-  "둘 다 기다릴 수 있고 둘 다 어려워하는데, 이는 들리는 것만큼 놀라운 일이 아니다.",
-  "이 연구의 유명한 판본은 오랫동안 의지력 시험으로 읽혔다.",
-  "뒤의 연구들은 그림이 그보다 훨씬 복잡하다는 것을 보였다.",
-  "약속은 지켜진다는 것을 배운 아이들은 훨씬 오래 기다렸다.",
-  "앞선 약속이 깨진 방에 있던 아이들은 첫 번째 것을 재빨리 집었다.",
-  "그것은 나약함이 아니라, 눈앞의 증거를 분별 있게 읽은 것이다.",
-  "방법도 신뢰만큼 중요하다.",
-  "사탕을 덮거나, 노래를 부르거나, 의자를 돌려놓은 아이가 더 오래 기다린다.",
-  "성공한 아이들은 보상을 노려보며 참는 일이 드물다.",
-  "그들은 참을 필요가 없도록 상황 자체를 바꾼다.",
-  "침팬지도 손닿는 곳에 장난감을 놓아 주면 같은 방식으로 나아진다.",
-  "그러므로 질문은 단순히 누가 기다릴 수 있느냐가 아니다.",
-  "누가 기다림이 값을 한다고 믿을 이유가 있으며, 누가 그것을 쉽게 만드는 법을 아느냐다."
+ defs: [
+  ["impulsivity", "acting at once without stopping to think"],
+  ["resist", "to stop yourself from doing what you want"],
+  ["distract", "to turn attention away from something"],
+  ["gratification", "the pleasure of getting what you want"],
+  ["accumulate", "to grow larger as more is added over time"],
+  ["divert", "to send attention or things another way"]
  ],
- bank: [["laboratory","②","실험실"],["willpower","④","의지력"],["promise","⑥","약속"],
-        ["evidence","⑧","증거"],["resist","⑪","참다, 버티다"],["reward","⑪","보상"]],
- defs: [["laboratory","a room fitted out for scientific work"],
-        ["willpower","the strength to control one's own actions"],
-        ["promise","a statement that one will do something"],
-        ["evidence","facts that support a judgement"],
-        ["resist","to hold out against a desire"],
-        ["reward","something good given for an action"]],
- defOrder: [3,0,5,1,4,2],
+ defOrder: [3, 0, 5, 1, 4, 2],
  flow: [
-  ["The test","A child is left with one sweet and promised a second for waiting",null],
-  ["Old reading","The study was read as a test of (  ①  )","willpower"],
-  ["Factor 1","Children who had seen promises (  ②  ) waited far longer","kept"],
-  ["Factor 2","The successful ones change the (  ③  ) instead of resisting","situation"],
-  ["Better question","Who has reason to believe waiting (  ④  )","pays"]
+  ["The claim", "Coping with impulsivity looked like a human-only ability", null],
+  ["The candy test", "Children are told to (  ①  ) eating the candy for a bigger pile", "resist"],
+  ["What the kids do", "Some (  ②  ) themselves with toys or drawing", "distract"],
+  ["The chimp test", "A pile of candy keeps (  ③  ) but stays out of reach", "growing"],
+  ["The result", "Chimps turn to the toys to win a (  ④  ) reward later", "bigger"]
  ],
- flowBogi: "willpower · kept · situation · pays · weakness · reward",
+ flowBogi: "resist · distract · growing · bigger · grab · smaller",
  para: [
-  ["③ which is less surprising than it sounds","The similarity is fairly ______.","expected"],
-  ["⑦ took the first one quickly","Broken promises produced faster ______.","choices"],
-  ["⑧ a sensible reading of the evidence","Their behaviour was ______, not weak.","rational"],
-  ["⑫ so that resisting is not required","They remove the need to ______.","struggle"],
-  ["⑮ who knows how to make it easier","Skill lies in changing the ______.","setup"]
+  ["① Coping with impulsivity is more complicated", "Holding back an ______ is harder than it looks.", "impulse"],
+  ["② if they can resist eating it", "If they ______ eating it, more candy follows.", "delay"],
+  ["③ distract themselves by playing with toys or drawing", "They pull their ______ away from the candy.", "attention"],
+  ["⑤ the candy was inaccessible to them", "They could not ______ the candy at all.", "reach"],
+  ["⑧ the longer they waited, the more candy", "Waiting ______ the size of the reward.", "raised"]
  ],
- paraBogi: "expected · choices · rational · struggle · setup · shocking · delays · foolish",
+ paraBogi: "impulse · delay · attention · reach · raised · habit · rush · lowered",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How to Train Chimpanzees","Waiting Depends on Trust and Method",
-       "Willpower Explains Everything","A Recipe for Making Marshmallows",
-       "Why Children Should Never Be Tested"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["침팬지에게도 비슷한 시험이 주어졌다.","약속이 깨진 방의 아이들은 빨리 집었다.",
-       "필자는 그 행동을 의지가 약한 탓으로 본다.","성공한 아이들은 상황을 바꾼다.",
-       "장난감을 놓아 주면 침팬지도 나아진다."], ans:3},
-  {t:"write", q:"필자가 제안하는 더 나은 질문을 우리말 한 문장으로 써 보세요.",
-   ans:"누가 기다림이 값을 한다고 믿을 이유가 있고, 누가 그것을 쉽게 만드는 법을 아느냐이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "A Short History of Candy Making",
+    "Waiting Is Not a Human-Only Skill",
+    "Why Chimpanzees Cannot Be Trained",
+    "How Toys Are Designed for Children",
+    "The Best Diet for Young Chimps"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "충동을 다루는 일은 겉보기보다 복잡한 능력이다.",
+    "어떤 아이들은 장난감을 가지고 놀거나 그림을 그리며 스스로 주의를 돌린다.",
+    "연구진은 침팬지들에게 시간이 지날수록 늘어나는 사탕 더미를 보여 주었다.",
+    "사탕에 손이 닿게 되자 침팬지들은 사탕에서 눈을 떼지 못했다.",
+    "여러 침팬지가 오래 기다릴수록 사탕이 더 쌓인다는 것을 알아차렸다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "침팬지들이 장난감에 몰두한 까닭을 우리말 한 문장으로 써 보세요.",
+   ans: "오래 기다릴수록 사탕이 더 쌓이므로, 사탕을 집지 않으려고 주의를 딴 데로 돌린 것이다."
+  }
  ],
  fl: {
-  model: { n:"⑫",
-   toks: [["They","s"],["change","v"],["the situation","m"],["so that","c"],
-          ["resisting","s2"],["is not required","v2"]],
-   ko:"그들은 참을 필요가 없도록 상황 자체를 바꾼다." },
+  model: {
+   n: "④",
+   toks: [
+    ["This", "s"], ["is", "v"], ["quite advanced problem solving behavior,", null],
+    ["which", "c"], ["is", "v2"], ["why it was surprising to find out", null],
+    ["that", "c"], ["chimpanzees", "s2"], ["can do", "v2"], ["it, too.", null]
+   ],
+   ko: "이것은 상당히 고급한 문제 해결 행동이며, 그래서 침팬지도 그렇게 할 수 있다는 사실이 놀라웠던 것이다."
+  },
   drill: [
-   { n:"⑥", en:"Children who had learned that promises are kept waited far longer.",
-     ans:"S Children · M who had learned that promises are kept · △V waited · M far longer",
-     ko:"약속은 지켜진다는 것을 배운 아이들은 훨씬 오래 기다렸다." },
-   { n:"⑩", en:"A child who covers the sweet, or sings, or turns the chair around, waits longer.",
-     ans:"S A child · M who covers the sweet, or sings, or turns the chair around · △V waits · M longer",
-     ko:"사탕을 덮거나, 노래를 부르거나, 의자를 돌려놓은 아이가 더 오래 기다린다." },
-   { n:"⑭", en:"So the question is not simply who can wait.",
-     ans:"S the question · △V is · C not simply who can wait",
-     ko:"그러므로 질문은 단순히 누가 기다릴 수 있느냐가 아니다." }
+   {
+    n: "③",
+    en: "Some of the kids will try to distract themselves by playing with toys or drawing as a way to cope with the frustration of delaying gratification.",
+    ans: "S Some of the kids · △V will try · O to distract themselves · M by playing with toys or drawing · M as a way to cope with the frustration of delaying gratification",
+    ko: "일부 아이들은 만족을 미루는 좌절을 견디는 방법으로 장난감을 가지고 놀거나 그림을 그리며 스스로 주의를 돌리려 한다."
+   },
+   {
+    n: "⑦",
+    en: "Every so often they would allow the chimps to have access to the candy.",
+    ans: "M Every so often · S they · △V would allow · O the chimps to have access to the candy",
+    ko: "이따금 연구진은 침팬지들이 사탕에 접근할 수 있게 해 주었다."
+   },
+   {
+    n: "⑨",
+    en: "The chimps became intensely focused on the toys when the candy became accessible, showing that they really were diverting their attention so they could get a bigger reward later.",
+    ans: "S The chimps · △V became · C intensely focused on the toys · [when] S′ the candy · △V′ became accessible · M showing that they really were diverting their attention so they could get a bigger reward later",
+    ko: "사탕에 손이 닿게 되자 침팬지들은 장난감에 강하게 몰두했는데, 이는 나중에 더 큰 보상을 얻으려고 정말로 주의를 돌리고 있었음을 보여 준다."
+   }
   ]
  },
  syn: [
-  { n:"⑥", name:"관계대명사절 + 과거완료",
-    q:"Children «who had learned» that promises are kept waited far longer.",
-    d:"who 절이 주어를 꾸미고, <b>had p.p.</b>는 기다리기 이전에 이미 배운 일을 나타낸다.",
-    k:"약속이 지켜진다는 것을 이미 배운 아이들이 훨씬 오래 기다렸다." },
-  { n:"⑫", name:"so that + 절 (목적)",
-    q:"They change the situation «so that resisting is not required».",
-    d:"<b>so that + 절</b>은 '~하도록'. 여기서는 참을 필요를 없애려는 목적이다.",
-    k:"참을 필요가 없도록 상황을 바꾼다." }
+  {
+   n: "⑧",
+   name: "the 비교급 ~, the 비교급 ~",
+   q: "…caught on that «the longer they waited, the more candy would accumulate»…",
+   d: "<b>the + 비교급</b>이 두 번 나오면 ‘~할수록 더 …하다’로 읽는다. 앞이 조건, 뒤가 결과다.",
+   k: "오래 기다릴수록 사탕이 더 쌓인다"
+  },
+  {
+   n: "⑨",
+   name: "결과를 잇는 분사구문 showing that",
+   q: "…when the candy became accessible, «showing that they really were diverting their attention»…",
+   d: "<b>showing</b>이 앞 절의 결과를 이어 ‘그리고 그것은 ~을 보여 준다’로 읽는다.",
+   k: "그리고 그것은 ~임을 보여 준다"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"Students who had practised at home finished much sooner.",
-    k:"집에서 연습해 둔 학생들이 훨씬 빨리 끝냈다." },
-  { u:"구문 2", en:"She hid the phone so that she would not check it.",
-    k:"그녀는 확인하지 않으려고 전화를 감춰 두었다." },
-  { u:"구문 1 + 2", en:"A teacher who had tried it herself arranged the room so that nobody had to wait.",
-    k:"직접 해 본 적 있는 교사는 아무도 기다리지 않아도 되도록 교실을 배치했다." }
+  { u: "구문 1", en: "The longer he practised, the easier the piece became.", k: "그가 오래 연습할수록 그 곡은 더 쉬워졌다." },
+  { u: "구문 2", en: "She looked away, showing that she had already decided.", k: "그녀는 시선을 돌렸고, 그것은 이미 마음을 정했음을 보여 주었다." },
+  { u: "구문 1 + 2", en: "The longer they waited, the calmer they grew, showing that patience can be learned.", k: "그들은 오래 기다릴수록 더 차분해졌고, 그것은 인내를 배울 수 있음을 보여 주었다." }
  ],
- wtype: ["무관","정답","반대","무관","무관"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["침팬지 훈련법은 글의 관심사가 아니다"],["정답"],
-       ["글은 의지력만으로 설명되지 않는다고 말한다 — 정반대다"],
-       ["마시멜로 만드는 법은 글에 나오지 않는다"],["검사 자체를 반대하는 주장은 글에 없다"]],
- src: [["②"],["⑦"],["⑧과 어긋남 — 나약함이 아니라 분별 있는 판단이라고 했다"],["⑫"],["⑬"]],
+ why: [
+  ["사탕의 역사는 글에 나오지 않는다"],
+  ["정답"],
+  ["글은 침팬지도 해낸다고 말한다 — 정반대다"],
+  ["장난감 설계는 글의 관심사가 아니다"],
+  ["침팬지의 먹이 조절은 글에서 다루지 않는다"]
+ ],
+ src: [["①"], ["③"], ["⑤"], ["⑨와 어긋남 — 사탕에 손이 닿자 오히려 장난감에 몰두했다"], ["⑧"]],
  kb: {
-  title:"기다림을 만드는 조건",
-  lead:"참는 힘보다 상황이 먼저다.",
+  title: "기다림을 다시 본 실험들",
+  lead: "참는 힘인가, 돌리는 기술인가",
   items: [
-   ["약속이 지켜지는 방에서",
-    "2013년 키드 연구진은 아이에게 먼저 약속을 지키거나 어긴 뒤 마시멜로 과제를 하게 했다. 약속이 지켜진 집단의 대기 시간이 네 배 넘게 길었다."],
-   ["원 연구의 진짜 결론",
-    "미셸 자신도 참기보다 '주의를 돌리는 전략'이 결정적이라고 강조했다. 사탕을 그림이라고 상상하게 하면 대기 시간이 크게 늘었다."],
-   ["재현 연구가 말한 것",
-    "2018년 대규모 재현 연구에서는 가정 배경을 통제하자 대기 시간과 뒷날 성취의 연관이 크게 줄었다. 단순한 인과로 읽지 말자는 신호였다."]
+   ["1972년의 실험", "월터 미셸(Walter Mischel)의 실험은 아이 앞에 간식 하나를 두고, 기다리면 두 개를 준다고 했다. 아이들이 실제로 쓴 방법은 대개 ‘눈길을 돌리는 것’이었다."],
+   ["참기보다 바꾸기", "미셸은 간식을 ‘구름’처럼 다르게 떠올리게 하면 기다리는 시간이 늘어난다는 것을 확인했다. 의지를 쥐어짜기보다 생각을 바꾸는 쪽이 효과가 컸다."],
+   ["사람만의 것이 아니다", "침팬지와 앵무새 등 여러 동물에서도 보상을 미루는 행동이 보고되었다. 놀잇감으로 주의를 돌리는 모습은 사람 아이와 닮았다."]
   ],
-  ask:"내가 미루지 않고 해낸 일이 있다면, 그때 상황이 어떻게 되어 있었는가?"
- }
+  ask: "여러분이 무언가를 기다릴 때 쓰는 방법은 참는 쪽인가, 주의를 돌리는 쪽인가?"
+ },
+ wtype: ["무관", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 42 ───────────────────────────── */
 {
- no: "42", key: "blood",
- accent: "#B0475C", tint: "#FAE8EC", deep: "#7C2739",
- en: "What Payment Crowds Out",
- ko: "돈이 밀어내는 것",
- goal: "보상이 자발적 행동을 늘리지 못하거나 오히려 줄이는 이유를 설명할 수 있다.",
- fig: "Figure 1  같은 행동, 다른 이유.",
- tip: "먼저 생각해 보자. 착한 일에 돈을 주면 그 일이 더 많아질까?",
- sent: [
-  "Blood cannot be manufactured, so every unit comes from a person who chose to give.",
-  "The obvious way to get more seemed to be paying for it.",
-  "Several countries tried, and the results were stranger than expected.",
-  "In some studies the number of donors fell after payment was introduced.",
-  "Richard Titmuss argued in 1970 that money changes what the act means.",
-  "An unpaid donation says something about the giver and about the stranger.",
-  "A paid one is a transaction, and transactions are judged by their rate.",
-  "Once the act has a price, the question becomes whether the price is worth it.",
-  "For most people, a small fee is not worth an hour and a needle.",
-  "Later research found the effect is neither universal nor simple.",
-  "Some payment schemes do raise supply, especially with vouchers rather than cash.",
-  "The safest reading is that motives can be crowded out, not that they always are.",
-  "Blood services now compete for time and convenience instead of paying.",
-  "They shorten queues, send reminders, and thank donors by name.",
-  "The design assumes people already want to help, and removes what stops them."
+ no: "42", key: "blood", accent: "#B0475C", tint: "#FAE8EC", deep: "#7C2739",
+ en: "Why We Donate Blood",
+ ko: "값이 붙으면 사라지는 것",
+ goal: "보상이 오히려 선한 행동을 줄이는 ‘밀어내기’를 근거와 함께 설명할 수 있다.",
+ fig: "Figure 1  대가 없이 줄 때와 값을 치를 때.",
+ tip: "먼저 생각해 보자. 착한 일에 돈을 얹으면 그 일은 늘어날까?",
+ sent: T(42).sent, kor: T(42).kor,
+ bank: [
+  ["internalize", "①", "내면화하다"],
+  ["intrinsic", "①", "내재적인"],
+  ["ulterior", "②", "숨은"],
+  ["backfire", "③", "역효과를 낳다"],
+  ["altruism", "⑥", "이타심"],
+  ["crowding out", "⑨", "밀어내기"]
  ],
- kor: [
-  "혈액은 제조할 수 없어서, 한 단위 한 단위가 주기로 마음먹은 사람에게서 온다.",
-  "더 많이 모으는 뻔한 방법은 값을 치르는 것처럼 보였다.",
-  "여러 나라가 시도했고, 결과는 예상보다 이상했다.",
-  "몇몇 연구에서는 보상을 도입한 뒤 헌혈자 수가 오히려 줄었다.",
-  "리처드 티트머스는 1970년에 돈이 그 행위의 의미를 바꾼다고 주장했다.",
-  "대가 없는 헌혈은 주는 사람과 낯선 사람에 대해 무언가를 말한다.",
-  "값을 받은 헌혈은 거래이며, 거래는 그 값으로 평가된다.",
-  "일단 그 행위에 가격이 붙으면, 질문은 그 값이 그만한지로 바뀐다.",
-  "대부분의 사람에게 적은 사례비는 한 시간과 바늘값을 하지 못한다.",
-  "뒤의 연구들은 그 효과가 보편적이지도 단순하지도 않다는 것을 밝혔다.",
-  "어떤 보상 방식은 실제로 공급을 늘리는데, 현금보다 상품권일 때 특히 그렇다.",
-  "가장 안전한 독법은 동기가 밀려날 수 있다는 것이지, 언제나 그렇다는 것이 아니다.",
-  "혈액 기관들은 이제 돈을 치르는 대신 시간과 편의를 두고 경쟁한다.",
-  "줄을 줄이고, 알림을 보내고, 헌혈자를 이름으로 부르며 고마움을 표한다.",
-  "그 설계는 사람들이 이미 돕고 싶어 한다고 전제하고, 그것을 막는 것을 치운다."
+ defs: [
+  ["internalize", "to take an outside idea and make it your own"],
+  ["intrinsic", "coming from inside a person, not from a reward"],
+  ["ulterior", "kept hidden behind what is openly said"],
+  ["backfire", "to produce the opposite of the wanted result"],
+  ["altruism", "caring for others at a cost to yourself"],
+  ["crowding out", "when a payment pushes out a willing motive"]
  ],
- bank: [["manufacture","①","제조하다"],["donor","④","기증자, 헌혈자"],["transaction","⑦","거래"],
-        ["universal","⑩","보편적인"],["voucher","⑪","상품권"],["convenience","⑬","편의"]],
- defs: [["manufacture","to make goods in a factory"],
-        ["donor","a person who gives something freely"],
-        ["transaction","an exchange in which each side gains"],
-        ["universal","true in every case"],
-        ["voucher","a paper that can be exchanged for goods"],
-        ["convenience","the quality of being easy to do"]],
- defOrder: [1,4,0,5,3,2],
+ defOrder: [4, 1, 0, 5, 2, 3],
  flow: [
-  ["The obvious plan","Pay people, and more will donate",null],
-  ["What happened","In some studies the number of donors (  ①  )","fell"],
-  ["The reason offered","Money changes what the act (  ②  )","means"],
-  ["The honest limit","The effect is neither universal nor (  ③  )","simple"],
-  ["What works now","Compete for time and (  ④  ) instead of paying","convenience"]
+  ["The base", "We act because it feels right, not for a reward", null],
+  ["The case", "(  ①  ) donation is given without expectation of reward", "Blood"],
+  ["Titmuss", "Paying donors would remove intrinsic (  ②  ) to be altruistic", "motivation"],
+  ["The test", "Donations (  ③  ) when payment was offered", "dropped"],
+  ["The name", "The effect is called (  ④  ) out", "crowding"]
  ],
- flowBogi: "fell · means · simple · convenience · rose · price",
+ flowBogi: "Blood · motivation · dropped · crowding · rose · pushing",
  para: [
-  ["② seemed to be paying for it","The plan looked ______ at first.","obvious"],
-  ["⑦ transactions are judged by their rate","A paid act is measured by its ______.","price"],
-  ["⑨ not worth an hour and a needle","The fee is too ______ to matter.","small"],
-  ["⑫ motives can be crowded out","Rewards may ______ willing helpers.","discourage"],
-  ["⑮ removes what stops them","Good design clears the ______.","obstacles"]
+  ["① By internalizing the opinions of others", "We take other people's views ______ our own.", "as"],
+  ["③ paying people for their kindness backfires", "Paying for kindness ______ the wrong way.", "works"],
+  ["⑤ We do this without expectation of reward.", "We give with no ______ of getting anything.", "hope"],
+  ["⑧ blood donations dropped significantly", "Giving fell ______ once money was offered.", "sharply"],
+  ["⑩ for the sheer warm glow they experienced", "They gave for the good ______ it left.", "feeling"]
  ],
- paraBogi: "obvious · price · small · discourage · obstacles · strange · time · attract",
+ paraBogi: "as · works · hope · sharply · feeling · price · rose · proof",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How Blood Is Stored Safely","When Paying Makes People Give Less",
-       "Money Always Increases Supply","A History of Modern Medicine",
-       "Why Needles Frighten People"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["혈액은 제조할 수 없다.","몇몇 연구에서 보상 뒤 헌혈자가 줄었다.",
-       "필자는 보상이 언제나 공급을 줄인다고 본다.","상품권 방식은 공급을 늘리기도 한다.",
-       "혈액 기관은 이제 편의를 두고 경쟁한다."], ans:3},
-  {t:"write", q:"필자가 말하는 '가장 안전한 독법'을 우리말 한 문장으로 써 보세요.",
-   ans:"동기가 밀려날 수 있다는 것이지, 언제나 그렇게 된다는 것은 아니라는 것이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "Blood Banks Around the World",
+    "When a Payment Pushes Out a Motive",
+    "Why Money Always Buys More Kindness",
+    "How Sweden Reformed Its Hospitals",
+    "A Guide to Safe Blood Storage"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "우리는 옳게 느껴지기 때문에 어떤 일을 한다.",
+    "Titmuss 는 헌혈자에게 돈을 주는 일이 위험하다고 결론지었다.",
+    "스웨덴 연구에서 돈을 준다고 하자 헌혈이 오히려 늘었다.",
+    "그 돈을 자선 단체에 기부할 수 있을 때에는 헌혈이 줄지 않았다.",
+    "헌혈자들은 자선 게임에서 비헌혈자보다 더 많이 주었다."
+   ], ans: 3
+  },
+  {
+   t: "write", q: "‘밀어내기’가 왜 선의를 해치는지 우리말 한 문장으로 써 보세요.",
+   ans: "돈이 붙는 순간 남을 도우며 얻던 내재적 가치가 사라지기 때문이다."
+  }
  ],
  fl: {
-  model: { n:"⑧",
-   toks: [["Once","c"],["the act","s2"],["has","v2"],["a price","m"],[",",null],
-          ["the question","s"],["becomes","v"],["whether the price is worth it","c"]],
-   ko:"일단 그 행위에 가격이 붙으면, 질문은 그 값이 그만한지로 바뀐다." },
+  model: {
+   n: "②",
+   toks: [
+    ["We", "s"], ["do", "v"], ["things", null], ["because", "c"], ["it", "s2"], ["feels", "v2"],
+    ["right,", null], ["which", "c"], ["is", "v2"], ["why we are suspicious of others", null],
+    ["who", "c"], ["have", "v2"], ["ulterior motives", null], ["or", "c"], ["who", "c"],
+    ["are", "v2"], ["extrinsically motivated.", null]
+   ],
+   ko: "우리는 옳게 느껴지기 때문에 어떤 일을 하며, 그래서 숨은 동기를 지녔거나 외적으로 동기 부여된 사람들을 의심한다."
+  },
   drill: [
-   { n:"①", en:"Blood cannot be manufactured, so every unit comes from a person who chose to give.",
-     ans:"S Blood · △V cannot be manufactured · [so] S′ every unit · △V′ comes · M from a person who chose to give",
-     ko:"혈액은 제조할 수 없어서, 한 단위 한 단위가 주기로 마음먹은 사람에게서 온다." },
-   { n:"⑤", en:"Richard Titmuss argued in 1970 that money changes what the act means.",
-     ans:"S Richard Titmuss · △V argued · M in 1970 · [that] S′ money · △V′ changes · O what the act means",
-     ko:"리처드 티트머스는 1970년에 돈이 그 행위의 의미를 바꾼다고 주장했다." },
-   { n:"⑮", en:"The design assumes people already want to help, and removes what stops them.",
-     ans:"S The design · △V assumes · O people already want to help · [and] △V removes · O what stops them",
-     ko:"그 설계는 사람들이 이미 돕고 싶어 한다고 전제하고, 그것을 막는 것을 치운다." }
+   {
+    n: "⑤",
+    en: "We do this without expectation of reward.",
+    ans: "S We · △V do · O this · M without expectation of reward",
+    ko: "우리는 보상을 기대하지 않고 이 일을 한다."
+   },
+   {
+    n: "⑦",
+    en: "To test his claims, Swedish researchers carried out a study where adults were asked to donate blood voluntarily, or received the equivalent of seven dollars in payment, or could donate this payment to a charity.",
+    ans: "M To test his claims · S Swedish researchers · △V carried out · O a study · [where] S′ adults · △V′ were asked to donate blood voluntarily · △V′ received the equivalent of seven dollars in payment · △V′ could donate this payment to a charity",
+    ko: "그의 주장을 검증하려고 스웨덴 연구진은 성인들이 자발적으로 헌혈하거나, 7달러에 해당하는 보수를 받거나, 그 보수를 자선 단체에 기부할 수 있게 한 연구를 수행했다."
+   },
+   {
+    n: "⑧",
+    en: "In line with Titmuss's prediction, blood donations dropped significantly when donors were offered payment, but not if the money could be donated to a charity.",
+    ans: "M In line with Titmuss's prediction · S blood donations · △V dropped · M significantly · [when] S′ donors · △V′ were offered payment · [but not if] S′ the money · △V′ could be donated to a charity",
+    ko: "Titmuss 의 예측대로, 헌혈은 보수를 제안받았을 때 크게 줄었지만, 그 돈을 자선 단체에 기부할 수 있을 때에는 줄지 않았다."
+   }
   ]
  },
  syn: [
-  { n:"⑧", name:"Once + 절 / whether절 보어",
-    q:"«Once the act has a price», the question becomes «whether the price is worth it».",
-    d:"<b>Once</b>는 '일단 ~하면', <b>whether절</b>은 '~인지 아닌지'로 보어 자리에 온다.",
-    k:"일단 값이 붙으면, 질문은 그 값이 그만한지로 바뀐다." },
-  { n:"⑩", name:"neither A nor B",
-    q:"Later research found the effect is «neither universal nor simple».",
-    d:"<b>neither A nor B</b>는 'A도 B도 아니다'. 두 형용사를 함께 부정한다.",
-    k:"그 효과는 보편적이지도 단순하지도 않다." }
+  {
+   n: "⑥",
+   name: "not only A but B (상관접속사)",
+   q: "…concluded that paying blood donors was «not only dangerous, … but that … it would remove people's intrinsic motivation»…",
+   d: "<b>not only A but B</b>는 ‘A뿐 아니라 B도’로 읽는다. A와 B 자리에는 같은 모양이 온다.",
+   k: "위험할 뿐 아니라 ~하기까지 한다"
+  },
+  {
+   n: "⑨",
+   name: "앞 내용을 받는 which is why",
+   q: "…it removes the intrinsic value we get, «which is why rewarding people financially … is considered nasty»",
+   d: "<b>which</b>가 앞 내용을 통째로 받아 ‘그래서 ~인 것이다’로 이어진다.",
+   k: "그래서 ~은 고약하다고 여겨진다"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"Once the rule is written, the question becomes who enforces it.",
-    k:"일단 규칙이 적히고 나면, 질문은 누가 그것을 집행하느냐가 된다." },
-  { u:"구문 2", en:"The plan was neither cheap nor quick.",
-    k:"그 계획은 싸지도 빠르지도 않았다." },
-  { u:"구문 1 + 2", en:"Once money enters, the act is neither a gift nor a favour.",
-    k:"일단 돈이 들어오면 그 행위는 선물도 호의도 아니게 된다." }
+  { u: "구문 1", en: "The plan was not only costly but also unfair.", k: "그 계획은 비쌀 뿐 아니라 불공평하기도 했다." },
+  { u: "구문 2", en: "He paid for the favour, which is why she felt insulted.", k: "그는 그 호의에 값을 치렀고, 그래서 그녀는 모욕감을 느꼈다." },
+  { u: "구문 1 + 2", en: "The offer was not only small but late, which is why no one took it.", k: "그 제안은 적을 뿐 아니라 늦기까지 했고, 그래서 아무도 받아들이지 않았다." }
  ],
- wtype: ["무관","정답","반대","무관","무관"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["혈액 보관법은 글에 나오지 않는다"],["정답"],
-       ["글은 돈이 언제나 공급을 늘리지는 않는다고 말한다 — 정반대다"],
-       ["의학의 역사는 글의 소재가 아니다"],["바늘 공포는 글의 주제가 아니다"]],
- src: [["①"],["④"],["⑫과 어긋남 — 언제나 그런 것은 아니라고 했다"],["⑪"],["⑬"]],
+ why: [
+  ["혈액원의 분포는 글의 초점이 아니다"],
+  ["정답"],
+  ["글은 돈이 오히려 선의를 밀어낸다고 말한다 — 정반대다"],
+  ["스웨덴의 병원 개혁은 글에 나오지 않는다"],
+  ["혈액 보관법은 글에서 다루지 않는다"]
+ ],
+ src: [["②"], ["⑥"], ["⑧과 어긋남 — 보수를 제안하자 헌혈이 크게 줄었다"], ["⑧"], ["⑩"]],
  kb: {
-  title:"보상이 바꾸는 의미",
-  lead:"값을 붙이면 셈이 시작된다.",
+  title: "선물의 관계",
+  lead: "Titmuss 가 남긴 물음",
   items: [
-   ["티트머스의 『선물 관계』",
-    "1970년 리처드 티트머스는 영국의 무상 헌혈 제도와 미국의 유상 제도를 비교하며, 무상 제도가 공급과 안전성 모두에서 낫다고 주장했다. 이후 논쟁이 이어졌지만 '동기 구축' 논의의 출발점이 되었다."],
-   ["어린이집 지각 벌금",
-    "2000년 그니지와 루스티치니는 이스라엘 어린이집에서 늦게 데리러 오는 부모에게 벌금을 매기자 지각이 오히려 늘었다고 보고했다. 미안함이 요금으로 바뀐 사례로 인용된다."],
-   ["현금보다 상품권",
-    "여러 후속 연구에서 현금 보상은 효과가 없거나 부정적이었지만, 상품권·유급휴가·기부 연계 같은 방식은 헌혈을 늘리는 경우가 있었다. 형태가 의미를 바꾼다."]
+   ["1970년의 책", "리처드 티트머스(Richard Titmuss)의 『The Gift Relationship』(1970)은 영국의 무상 헌혈과 미국의 유상 혈액 공급을 견주어 본 사회정책 연구다."],
+   ["밀어내기", "경제학에서 crowding out 은 본래 정부 지출이 민간 투자를 밀어내는 현상을 가리킨다. 여기서는 금전 보상이 내재적 동기를 밀어내는 뜻으로 쓰였다."],
+   ["따뜻한 빛", "warm glow 는 남을 도울 때 느끼는 뿌듯함을 가리키는 말이다. 경제학자 제임스 안드레오니(James Andreoni)가 기부 행동을 설명하며 썼다."]
   ],
-  ask:"내가 대가 없이 하는 일이 있는가? 거기에 돈이 붙으면 느낌이 어떻게 달라질까?"
- }
+  ask: "여러분이 대가 없이 해 온 일에 돈이 붙는다면, 그 일을 계속하고 싶을까?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "반대", "일치", "일치"]
 },
+
+/* ───────────────────────────── 43 ───────────────────────────── */
 {
- no: "43", key: "thou",
- accent: "#3E7A6B", tint: "#E5F0ED", deep: "#245247",
- en: "The Pronoun That Disappeared",
- ko: "사라진 대명사",
- goal: "낱말 하나의 소멸이 사회 관계의 변화를 어떻게 담고 있는지 설명할 수 있다.",
- fig: "Figure 1  두 사람 사이에 놓였던 두 개의 '너'.",
- tip: "먼저 생각해 보자. 우리말의 '너'와 '당신'은 언제 갈라져 쓰이는가?",
- sent: [
-  "English once had two words where it now has one.",
-  "Thou was for one person you knew well; you was plural, and also formal.",
-  "Choosing between them was never only a matter of grammar.",
-  "To say thou to a stranger of higher rank was to make a claim about the distance between you.",
-  "Court records show insults built entirely on the wrong pronoun.",
-  "The same split still exists in French, German, and dozens of other languages.",
-  "In English the formal form slowly took over everything.",
-  "By the eighteenth century thou survived mainly in poetry and prayer.",
-  "The reasons were social rather than linguistic.",
-  "Cities grew, strangers met more often, and politeness became the safe default.",
-  "Some groups resisted, and their reasons are revealing.",
-  "Early Quakers insisted on thou for everyone, including judges and lords.",
-  "They were fined and imprisoned for it, which shows how much a pronoun carried.",
-  "Today the loss is invisible, and most speakers never notice the missing word.",
-  "A language keeps the distinctions its speakers still need to make."
+ no: "43", key: "thou", accent: "#3E7A6B", tint: "#E5F0ED", deep: "#245247",
+ en: "The History of the Pronouns ‘Thou’ and ‘You’",
+ ko: "사라진 ‘너’",
+ goal: "대명사 하나의 쓰임 변화가 신분 사회의 변화와 어떻게 맞물리는지 설명할 수 있다.",
+ fig: "Figure 1  두 사람 사이에 놓였던 두 개의 ‘너’.",
+ tip: "먼저 생각해 보자. 우리말의 ‘너’와 ‘당신’은 언제 갈라져 쓰이는가?",
+ sent: T(43).sent, kor: T(43).kor,
+ bank: [
+  ["distinction", "①", "구별"],
+  ["stratification", "④", "계층화"],
+  ["aristocratic", "⑤", "귀족의"],
+  ["deference", "⑥", "경의"],
+  ["mobility", "⑧", "이동성"],
+  ["levelling", "⑨", "평등하게 만들기"]
  ],
- kor: [
-  "영어에는 지금 하나뿐인 자리에 한때 두 낱말이 있었다.",
-  "thou 는 잘 아는 한 사람에게 쓰는 말이었고, you 는 복수이면서 격식을 갖춘 말이었다.",
-  "둘 사이에서 고르는 일은 결코 문법만의 문제가 아니었다.",
-  "신분이 높은 낯선 이에게 thou 라고 하는 것은 둘 사이의 거리에 대한 주장을 하는 일이었다.",
-  "법정 기록에는 대명사를 잘못 쓴 것만으로 성립한 모욕이 남아 있다.",
-  "같은 구분은 지금도 프랑스어와 독일어를 비롯한 수십 개 언어에 있다.",
-  "영어에서는 격식을 갖춘 쪽이 서서히 모든 자리를 차지했다.",
-  "18세기에 이르러 thou 는 주로 시와 기도문에서만 살아남았다.",
-  "그 이유는 언어적이라기보다 사회적인 것이었다.",
-  "도시가 커지고, 낯선 사람을 더 자주 만나게 되면서, 공손함이 안전한 기본값이 되었다.",
-  "일부 집단은 저항했는데, 그 이유가 많은 것을 알려 준다.",
-  "초기 퀘이커교도들은 판사와 귀족에게까지 모두에게 thou 를 쓰겠다고 고집했다.",
-  "그들은 그 일로 벌금을 물고 투옥되었는데, 대명사 하나가 얼마나 많은 것을 지고 있었는지를 보여 준다.",
-  "오늘날 그 상실은 눈에 띄지 않으며, 대부분의 화자는 빠진 낱말을 알아채지도 못한다.",
-  "언어는 그 화자들이 여전히 해야 하는 구별만을 지킨다."
+ defs: [
+  ["distinction", "a difference that people mark between two things"],
+  ["stratification", "the sorting of a society into fixed layers"],
+  ["aristocratic", "belonging to the highest social class"],
+  ["deference", "polite respect shown to someone above you"],
+  ["mobility", "the chance to move between social classes"],
+  ["levelling", "making everyone equal in rank"]
  ],
- bank: [["plural","②","복수의"],["formal","②","격식을 갖춘"],["rank","④","신분, 지위"],
-        ["insult","⑤","모욕"],["default","⑩","기본값"],["distinction","⑮","구별"]],
- defs: [["plural","referring to more than one"],
-        ["formal","following polite and official custom"],
-        ["rank","a person's position in a social order"],
-        ["insult","a remark meant to offend"],
-        ["default","what is used unless another is chosen"],
-        ["distinction","a difference that is marked in language"]],
- defOrder: [2,0,5,1,4,3],
+ defOrder: [5, 2, 4, 0, 3, 1],
  flow: [
-  ["The old pair","Thou for one familiar person; you for many, and for respect",null],
-  ["What choosing meant","It was a claim about the (  ①  ) between speakers","distance"],
-  ["What happened","The (  ②  ) form slowly took over everything","formal"],
-  ["Why","Cities grew and politeness became the safe (  ③  )","default"],
-  ["The rule","A language keeps the distinctions its speakers still (  ④  )","need"]
+  ["Old English", "Both forms were ordinary; the difference was grammatical", null],
+  ["Middle English", "‘You’ marked (  ①  ) to a superior; ‘thou’ went to an inferior", "respect"],
+  ["Why", "The split matched the strict (  ②  ) of medieval society", "stratification"],
+  ["Fifteenth century", "Rising (  ③  ) classes used ‘thou’ to the lower orders", "merchant"],
+  ["The end", "Confusion grew and only (  ④  ) survived", "‘you’"]
  ],
- flowBogi: "distance · formal · default · need · grammar · prayer",
+ flowBogi: "respect · stratification · merchant · ‘you’ · ‘thou’ · silence",
  para: [
-  ["③ never only a matter of grammar","The choice carried ______ meaning.","social"],
-  ["⑦ the formal form slowly took over","Politeness became the ______ option.","standard"],
-  ["⑨ social rather than linguistic","The cause lay outside the ______.","language"],
-  ["⑬ shows how much a pronoun carried","One word held real ______.","weight"],
-  ["⑭ most speakers never notice","The loss is now ______.","unnoticed"]
+  ["① a revealing example of how language change relates", "It shows how words follow ______ change.", "social"],
+  ["③ ‘you’ began to be used as a mark of respect", "‘You’ came to ______ respect for a superior.", "signal"],
+  ["⑥ required to address aristocrats as ‘you’", "Those below had to show ______ in address.", "deference"],
+  ["⑧ widespread confusion about who should use the term", "By then no one was ______ who said what.", "sure"],
+  ["⑪ as a marker of respect rather than of inferiority", "Now it marks respect, not ______ rank.", "lower"]
  ],
- paraBogi: "social · standard · language · weight · unnoticed · private · rare · obvious",
+ paraBogi: "social · signal · deference · sure · lower · louder · hide · higher",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How to Write Poetry in Old English","A Pronoun That Carried Social Distance",
-       "English Grammar Has Become Simpler","The Complete History of the Quakers",
-       "Why Cities Grew in the 1700s"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["thou 는 잘 아는 한 사람에게 쓰였다.","같은 구분이 지금도 여러 언어에 있다.",
-       "thou 가 사라진 이유는 문법 구조 때문이었다.","퀘이커교도는 모두에게 thou 를 썼다.",
-       "오늘날 화자들은 그 상실을 알아채지 못한다."], ans:3},
-  {t:"write", q:"필자가 마지막에 말한 언어의 성질을 우리말 한 문장으로 써 보세요.",
-   ans:"언어는 그 화자들이 여전히 해야 하는 구별만을 지킨다는 것이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How Old English Grammar Worked",
+    "A Pronoun That Followed the Class System",
+    "Why Poetry Should Return to ‘Thou’",
+    "The Life of William Shakespeare",
+    "The Rules of Quaker Worship"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "고대 영어에서 두 형태의 구별은 주로 문법적인 것이었다.",
+    "중세 영어에서 ‘thou’는 윗사람에게 쓰는 존대의 표시였다.",
+    "15세기에 상인 계층은 아래 신분에게 ‘thou’를 쓰기 시작했다.",
+    "17세기 퀘이커 운동은 모두에게 ‘thou’를 썼다.",
+    "오늘날 ‘thou’는 시와 종교의 옛말투에만 남아 있다."
+   ], ans: 2
+  },
+  {
+   t: "write", q: "오늘날 ‘thou’가 남아 있는 자리와 그 뜻을 우리말 한 문장으로 써 보세요.",
+   ans: "시와 종교의 옛말투에만 남아, 아랫사람이 아니라 오히려 존대의 표시로 쓰인다."
+  }
  ],
  fl: {
-  model: { n:"④",
-   toks: [["To say thou to a stranger of higher rank","s"],["was","v"],
-          ["to make a claim about the distance between you","c"]],
-   ko:"신분이 높은 낯선 이에게 thou 라고 하는 것은 둘 사이의 거리에 대한 주장을 하는 일이었다." },
+  model: {
+   n: "⑤",
+   toks: [
+    ["It", "s"], ["allowed", "v"], ["an aristocratic speaker to distinguish", null],
+    ["between an equal and someone inferior in social standing,", "m"],
+    ["or", "c"], ["to signal intimacy.", null]
+   ],
+   ko: "그것은 귀족 화자가 대등한 사람과 신분이 낮은 사람을 구별하거나 친밀함을 나타낼 수 있게 해 주었다."
+  },
   drill: [
-   { n:"⑤", en:"Court records show insults built entirely on the wrong pronoun.",
-     ans:"S Court records · △V show · O insults · M built entirely on the wrong pronoun",
-     ko:"법정 기록에는 대명사를 잘못 쓴 것만으로 성립한 모욕이 남아 있다." },
-   { n:"⑬", en:"They were fined and imprisoned for it, which shows how much a pronoun carried.",
-     ans:"S They · △V were fined and imprisoned · M for it · M which shows how much a pronoun carried",
-     ko:"그들은 그 일로 벌금을 물고 투옥되었는데, 대명사 하나가 얼마나 많은 것을 지고 있었는지를 보여 준다." },
-   { n:"⑮", en:"A language keeps the distinctions its speakers still need to make.",
-     ans:"S A language · △V keeps · O the distinctions · M its speakers still need to make",
-     ko:"언어는 그 화자들이 여전히 해야 하는 구별만을 지킨다." }
+   {
+    n: "③",
+    en: "In Middle English, ‘you’ began to be used as a mark of respect when addressing a superior and later an equal, while ‘thou’ was retained for addressing an inferior.",
+    ans: "M In Middle English · S ‘you’ · △V began · O to be used as a mark of respect · M when addressing a superior and later an equal · [while] S′ ‘thou’ · △V′ was retained · M for addressing an inferior",
+    ko: "중세 영어에서 ‘you’는 윗사람에게, 나중에는 대등한 사람에게 쓰는 존대의 표시가 되었고, 반면 ‘thou’는 아랫사람을 부르는 데 남았다."
+   },
+   {
+    n: "⑧",
+    en: "Increasing social mobility and competition between this merchant class and the aristocracy meant that by Shakespeare's time there was widespread confusion about who should use the term ‘thou’ to whom.",
+    ans: "S Increasing social mobility and competition between this merchant class and the aristocracy · △V meant · [that] M by Shakespeare's time · △V′ there was · C widespread confusion about who should use the term ‘thou’ to whom",
+    ko: "커지는 사회 이동성과 이 상인 계층과 귀족 사이의 경쟁은, 셰익스피어 시대에 이르러 누가 누구에게 ‘thou’를 써야 하는지에 대한 광범위한 혼란이 있었음을 뜻했다."
+   },
+   {
+    n: "⑪",
+    en: "‘Thou’ only appears now in archaizing registers, including those of poetry and religion, where it functions, curiously enough, as a marker of respect rather than of inferiority.",
+    ans: "S ‘Thou’ · △V only appears · M now in archaizing registers, including those of poetry and religion · [where] S′ it · △V′ functions · M as a marker of respect rather than of inferiority",
+    ko: "‘Thou’는 이제 시와 종교를 포함한 옛말투에만 나타나며, 흥미롭게도 거기서 낮춤이 아니라 존대의 표시로 기능한다."
+   }
   ]
  },
  syn: [
-  { n:"④", name:"to부정사 주어 + to부정사 보어",
-    q:"«To say thou to a stranger» was «to make a claim» about the distance.",
-    d:"주어와 보어가 모두 to부정사다. 'A하는 것은 B하는 것이었다'로 옮긴다.",
-    k:"낯선 이에게 thou 라고 하는 것은 거리에 대한 주장을 하는 일이었다." },
-  { n:"⑬", name:"계속적 용법의 which",
-    q:"They were fined and imprisoned for it, «which shows» how much a pronoun carried.",
-    d:"쉼표 뒤 <b>which</b>는 앞 문장 전체를 받는다. '그런데 그것은 ~을 보여 준다'.",
-    k:"그들은 그 일로 처벌받았는데, 그것은 대명사의 무게를 보여 준다." }
+  {
+   n: "③",
+   name: "대조의 while (반면에)",
+   q: "…as a mark of respect …, «while ‘thou’ was retained for addressing an inferior»",
+   d: "<b>while</b>이 ‘~인 반면에’로 두 사실을 맞세운다. 시간의 while 과 구별해 읽는다.",
+   k: "반면에 ‘thou’는 아랫사람에게 남았다"
+  },
+  {
+   n: "⑪",
+   name: "A rather than B (B가 아니라 A)",
+   q: "…as a marker of «respect rather than of inferiority»",
+   d: "<b>rather than</b> 앞이 실제이고 뒤가 부정되는 쪽이다. ‘B가 아니라 A’로 읽는다.",
+   k: "낮춤이 아니라 존대의 표시로"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"To keep the old word was to keep an old habit.",
-    k:"그 옛 낱말을 지키는 일은 옛 습관을 지키는 일이었다." },
-  { u:"구문 2", en:"The town changed its rule, which surprised the visitors.",
-    k:"그 마을은 규칙을 바꾸었는데, 그것이 방문객들을 놀라게 했다." },
-  { u:"구문 1 + 2", en:"To answer plainly was to refuse rank, which cost them dearly.",
-    k:"꾸밈없이 답하는 일은 신분을 거부하는 일이었고, 그것이 그들에게 큰 대가를 치르게 했다." }
+  { u: "구문 1", en: "He kept the old form, while others dropped it.", k: "그는 옛 형태를 지켰고, 반면에 다른 이들은 그것을 버렸다." },
+  { u: "구문 2", en: "The word marks distance rather than warmth.", k: "그 낱말은 따뜻함이 아니라 거리를 나타낸다." },
+  { u: "구문 1 + 2", en: "She used the polite form, while he chose closeness rather than rank.", k: "그녀는 격식 형태를 썼고, 반면에 그는 신분이 아니라 친밀함을 골랐다." }
  ],
- wtype: ["무관","정답","반대","지엽","무관"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["옛 영어로 시 쓰는 법은 글의 관심사가 아니다"],["정답"],
-       ["글은 이유가 사회적이라고 말한다 — 정반대다"],
-       ["퀘이커는 저항 사례로 든 한 부분일 뿐이다"],
-       ["도시 성장은 배경으로만 언급된다"]],
- src: [["②"],["⑥"],["⑨과 어긋남 — 언어적이 아니라 사회적 이유였다"],["⑫"],["⑭"]],
+ why: [
+  ["고대 영어 문법은 도입부의 한 줄일 뿐이다"],
+  ["정답"],
+  ["시에서 ‘thou’를 되살리자는 주장은 글에 없다"],
+  ["셰익스피어의 생애는 글에 나오지 않는다"],
+  ["퀘이커 예배의 규칙은 글의 초점이 아니다"]
+ ],
+ src: [["②"], ["③과 어긋남 — 존대의 표시는 ‘you’였다"], ["⑦"], ["⑨"], ["⑪"]],
  kb: {
-  title:"낱말 하나에 실린 것",
-  lead:"문법은 관계를 담는 그릇이기도 하다.",
+  title: "‘너’와 ‘당신’",
+  lead: "대명사가 신분을 나르던 시절",
   items: [
-   ["T–V 구분",
-    "라틴어 tu 와 vos 에서 이름을 딴 이 구분은 프랑스어 tu/vous, 독일어 du/Sie 등에 남아 있다. 1960년 브라운과 길먼의 연구가 이 형식을 권력과 유대의 표시로 정리했다."],
-   ["퀘이커의 '평등한 말'",
-    "17세기 퀘이커교도는 신분에 따라 말을 바꾸는 것을 거부하고 모두에게 thou 를 썼다. 모욕으로 받아들여져 처벌받는 일이 잦았다."],
-   ["빈자리를 메우는 말들",
-    "you 하나로 합쳐진 뒤에도 영어권은 복수를 나타낼 말이 필요해, y'all·you guys·youse 같은 표현을 지역마다 새로 만들어 냈다."]
+   ["T와 V", "언어학에서는 친근한 2인칭을 T(라틴어 tu), 격식 2인칭을 V(vos)라 부른다. 프랑스어 tu/vous, 독일어 du/Sie 가 그 예다."],
+   ["퀘이커의 thou", "17세기 퀘이커 교도들은 신분을 가리지 않고 모두에게 thou 를 썼다. 존대 표현을 거부하는 일이 그들에게는 평등을 드러내는 행동이었다."],
+   ["남은 흔적", "표준 영어에서 thou 는 사라졌지만, 잉글랜드 북부 방언과 성경·기도문·시에는 그 형태가 남아 있다."]
   ],
-  ask:"우리말에서 상대를 부르는 말을 고르며 망설였던 순간이 있는가? 무엇을 재고 있었을까?"
- }
+  ask: "우리말에서 상대를 부르는 말이 관계에 따라 달라지는 경우를 떠올려 보자."
+ },
+ wtype: ["지엽", "정답", "무관", "무관", "지엽"],
+ stype: ["일치", "반대", "일치", "일치", "일치"]
 },
+
+/* ───────────────────────────── 44 ───────────────────────────── */
 {
- no: "44", key: "screen",
- accent: "#8A5AA6", tint: "#F1EAF7", deep: "#573270",
- en: "The Lecture That Moved",
- ko: "자리를 옮긴 강의",
- goal: "수업의 디지털 전환이 무엇을 옮겼고 무엇을 옮기지 못했는지 설명할 수 있다.",
- fig: "Figure 1  옮겨진 것과 남은 것.",
- tip: "먼저 생각해 보자. 강의를 영상으로 바꾸면 교실에는 무엇이 남을까?",
- sent: [
-  "A recorded lecture can be paused, replayed, and watched at double speed.",
-  "For delivering information, that is plainly better than a fixed hour in a hall.",
-  "So a reasonable plan appeared: move the lecture out and keep the room for work.",
-  "The idea is usually called flipping, and where it is done well it works.",
-  "Students arrive having met the material and spend the hour using it.",
-  "But the plan asks something the old lecture never asked.",
-  "It assumes the watching actually happened.",
-  "A hall enforced attention crudely, by holding people in one place for an hour.",
-  "A video enforces nothing, and the least prepared students fall furthest behind.",
-  "Successful courses therefore build in a small check before the class.",
-  "Three questions, due the night before, change the pattern completely.",
-  "What could not be moved is the part that was never in the lecture.",
-  "Noticing that a student is lost before she says so is not information delivery.",
-  "It is reading a room, and no recording does it.",
-  "The technology moved the easy half and left the hard half where it was."
+ no: "44", key: "screen", accent: "#8A5AA6", tint: "#F1EAF7", deep: "#573270",
+ en: "From Traditional Educational Models to Digital Models",
+ ko: "교실 밖으로 나간 강의",
+ goal: "전통 교실에서 디지털 학습으로의 이동이 무엇을 넓혔는지 설명할 수 있다.",
+ fig: "Figure 1  화면으로 옮겨진 강의와 그 강의가 닿은 사람들.",
+ tip: "먼저 생각해 보자. 강의가 화면으로 옮겨지면 누가 새로 배울 수 있게 될까?",
+ sent: T(44).sent, kor: T(44).kor,
+ bank: [
+  ["dominant", "①", "지배적인"],
+  ["advent", "②", "도래"],
+  ["pivotal", "⑤", "중추적인"],
+  ["cater", "⑥", "충족하다"],
+  ["democratize", "⑨", "대중화하다"],
+  ["constraint", "⑨", "제약"]
  ],
- kor: [
-  "녹화된 강의는 멈추고, 되감고, 두 배속으로 볼 수 있다.",
-  "정보를 전달하는 일에 관해서라면, 그것은 강당에서 보내는 정해진 한 시간보다 분명히 낫다.",
-  "그래서 그럴듯한 계획이 나왔다. 강의를 밖으로 내보내고, 교실은 작업에 쓰자는 것이다.",
-  "이 생각은 흔히 '거꾸로 수업'이라 불리며, 잘 실행되는 곳에서는 효과가 있다.",
-  "학생들은 내용을 이미 만난 채로 와서, 그 시간을 그것을 쓰는 데 보낸다.",
-  "그러나 이 계획은 옛 강의가 한 번도 요구하지 않던 것을 요구한다.",
-  "그것은 시청이 실제로 일어났다고 전제한다.",
-  "강당은 사람을 한 시간 동안 한자리에 붙들어 두는 거친 방식으로 주의를 강제했다.",
-  "영상은 아무것도 강제하지 않으며, 가장 준비가 덜 된 학생이 가장 크게 뒤처진다.",
-  "그래서 성공한 수업들은 수업 전에 작은 확인 장치를 넣어 둔다.",
-  "전날 밤까지 내야 하는 질문 세 개가 그 무늬를 완전히 바꾼다.",
-  "옮길 수 없었던 것은 애초에 강의 안에 있지 않던 부분이다.",
-  "학생이 말하기 전에 그가 길을 잃었다는 것을 알아채는 일은 정보 전달이 아니다.",
-  "그것은 교실을 읽는 일이고, 어떤 녹화도 그것을 하지 못한다.",
-  "기술은 쉬운 절반을 옮겼고, 어려운 절반은 있던 자리에 남겨 두었다."
+ defs: [
+  ["dominant", "the strongest or most common of its kind"],
+  ["advent", "the arrival of something new and important"],
+  ["pivotal", "so important that things turn on it"],
+  ["cater", "to give people what they need or want"],
+  ["democratize", "to open something up to everyone"],
+  ["constraint", "something that limits what you can do"]
  ],
- bank: [["deliver","②","전달하다"],["flip","④","(순서를) 뒤집다"],["enforce","⑧","강제하다"],
-        ["crudely","⑧","거칠게"],["prepared","⑨","준비된"],["recording","⑭","녹화(물)"]],
- defs: [["deliver","to carry information to someone"],
-        ["flip","to turn the usual order the other way"],
-        ["enforce","to make something happen by force or rule"],
-        ["crudely","in a rough and simple way"],
-        ["prepared","ready because of earlier work"],
-        ["recording","a stored copy of sound or pictures"]],
- defOrder: [4,0,5,2,3,1],
+ defOrder: [1, 4, 0, 3, 5, 2],
  flow: [
-  ["The advantage","A recorded lecture can be paused and replayed",null],
-  ["The plan","Move the lecture out and keep the room for (  ①  )","work"],
-  ["The hidden demand","It assumes the (  ②  ) actually happened","watching"],
-  ["The fix","A small (  ③  ) before class changes the pattern","check"],
-  ["What stayed","Reading a (  ④  ) was never in the lecture to begin with","room"]
+  ["For centuries", "Students gathered in classrooms to be taught by a teacher", null],
+  ["The change", "The (  ①  ) of the internet made learning flexible", "advent"],
+  ["What opened", "Access widened for remote or (  ②  ) areas", "underserved"],
+  ["MOOCs", "Free or affordable courses (  ③  ) education", "democratized"],
+  ["The result", "Learning is no longer bound by (  ④  ) or money", "geography"]
  ],
- flowBogi: "work · watching · check · room · speed · hall",
+ flowBogi: "advent · underserved · democratized · geography · closed · fee",
  para: [
-  ["② that is plainly better than a fixed hour","Recording beats a fixed ______.","schedule"],
-  ["⑧ enforced attention crudely","The hall compelled focus by ______.","presence"],
-  ["⑨ the least prepared fall furthest behind","The gap grows ______.","wider"],
-  ["⑪ change the pattern completely","A small task ______ behaviour.","reshapes"],
-  ["⑮ left the hard half where it was","The difficult part remains ______.","unchanged"]
+  ["① has been dominant for centuries", "This way of teaching ______ for centuries.", "ruled"],
+  ["③ allow students to learn at their own pace", "Learners set their own ______ of study.", "speed"],
+  ["④ has expanded access to education", "It opened the ______ to more learners.", "door"],
+  ["⑨ without the constraints of geography", "Distance no longer ______ who can learn.", "limits"],
+  ["⑪ at their convenience", "They study ______ it suits them.", "when"]
  ],
- paraBogi: "schedule · presence · wider · reshapes · unchanged · freedom · absence · narrower",
+ paraBogi: "ruled · speed · door · limits · when · faded · fee · where",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How to Record a Good Video","The Easy Half Moved, the Hard Half Stayed",
-       "Flipped Classrooms Never Work","A Guide to Watching at Double Speed",
-       "Why Lecture Halls Should Be Larger"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["녹화 강의는 멈추고 되감을 수 있다.","거꾸로 수업은 잘 실행되면 효과가 있다.",
-       "필자는 거꾸로 수업이 결코 통하지 않는다고 본다.","영상은 주의를 강제하지 않는다.",
-       "수업 전 작은 확인 장치가 무늬를 바꾼다."], ans:3},
-  {t:"write", q:"필자가 '옮길 수 없었다'고 한 것이 무엇인지 우리말 한 문장으로 써 보세요.",
-   ans:"학생이 말하기 전에 길을 잃었음을 알아채는 일, 곧 교실을 읽는 일이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "A History of the First Universities",
+    "When the Classroom Left the Building",
+    "Why Online Courses Have Failed",
+    "How to Build a Video Camera",
+    "The Cost of Printing Textbooks"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "전통적인 교육 모델은 수백 년 동안 지배적이었다.",
+    "디지털 교실은 학습자가 자기 속도로 배우게 해 준다.",
+    "Coursera, edX, Khan Academy 는 양질의 교육 내용을 널리 퍼뜨리는 데 큰 역할을 했다.",
+    "MOOC 는 상위권 대학의 강좌를 높은 수강료로만 제공한다.",
+    "MOOC 는 학습자 사이의 상호작용과 자기 주도 학습을 강조한다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "MOOC 가 교육을 ‘대중화했다’고 말하는 까닭을 우리말 한 문장으로 써 보세요.",
+   ans: "지리적·경제적 제약 없이 개발도상국 학습자와 직장인까지 세계적 수준의 교육에 닿게 했기 때문이다."
+  }
  ],
  fl: {
-  model: { n:"⑬",
-   toks: [["Noticing that a student is lost before she says so","s"],
-          ["is not","v"],["information delivery","c"]],
-   ko:"학생이 말하기 전에 그가 길을 잃었다는 것을 알아채는 일은 정보 전달이 아니다." },
+  model: {
+   n: "③",
+   toks: [
+    ["Digital classrooms,", "s"], ["powered by online platforms,", "m"], ["allow", "v"],
+    ["students to learn", null],
+    ["at their own pace, from any location, and often on their own schedules.", "m"]
+   ],
+   ko: "온라인 플랫폼으로 구동되는 디지털 교실은 학생들이 자기 속도로, 어느 곳에서든, 흔히 자기 일정에 맞추어 배울 수 있게 해 준다."
+  },
   drill: [
-   { n:"⑤", en:"Students arrive having met the material and spend the hour using it.",
-     ans:"S Students · △V arrive · M having met the material · [and] △V spend · O the hour · M using it",
-     ko:"학생들은 내용을 이미 만난 채로 와서, 그 시간을 그것을 쓰는 데 보낸다." },
-   { n:"⑨", en:"A video enforces nothing, and the least prepared students fall furthest behind.",
-     ans:"S A video · △V enforces · O nothing · [and] S the least prepared students · △V fall · M furthest behind",
-     ko:"영상은 아무것도 강제하지 않으며, 가장 준비가 덜 된 학생이 가장 크게 뒤처진다." },
-   { n:"⑮", en:"The technology moved the easy half and left the hard half where it was.",
-     ans:"S The technology · △V moved · O the easy half · [and] △V left · O the hard half · M where it was",
-     ko:"기술은 쉬운 절반을 옮겼고, 어려운 절반은 있던 자리에 남겨 두었다." }
+   {
+    n: "②",
+    en: "However, the advent of the internet and digital tools has transformed education into a more dynamic and flexible experience.",
+    ans: "M However · S the advent of the internet and digital tools · △V has transformed · O education · M into a more dynamic and flexible experience",
+    ko: "그러나 인터넷과 디지털 도구의 등장은 교육을 더 역동적이고 유연한 경험으로 바꾸어 놓았다."
+   },
+   {
+    n: "⑧",
+    en: "The rise of MOOCs has revolutionized the education landscape by providing access to free or affordable courses from top universities and institutions around the world.",
+    ans: "S The rise of MOOCs · △V has revolutionized · O the education landscape · M by providing access to free or affordable courses from top universities and institutions around the world",
+    ko: "MOOC 의 부상은 세계 유수의 대학과 기관이 여는 무료 혹은 저렴한 강좌에 닿게 함으로써 교육의 지형을 완전히 바꾸어 놓았다."
+   },
+   {
+    n: "⑫",
+    en: "This model challenges the traditional time-bound structure of education and opens up new possibilities for continuous learning throughout one's life.",
+    ans: "S This model · △V challenges · O the traditional time-bound structure of education · [and] △V opens up · O new possibilities for continuous learning throughout one's life",
+    ko: "이 모델은 시간에 묶인 전통적 교육 구조에 도전하며, 평생에 걸친 지속적 학습의 새 가능성을 연다."
+   }
   ]
  },
  syn: [
-  { n:"⑤", name:"완료 분사구문 having p.p.",
-    q:"Students arrive «having met the material» and spend the hour using it.",
-    d:"<b>having + p.p.</b>는 주절보다 <b>앞선 때</b>를 나타내는 분사구문이다.",
-    k:"학생들은 이미 내용을 만난 채로 도착한다." },
-  { n:"⑬", name:"동명사 주어 + 부정",
-    q:"«Noticing that a student is lost ... is not» information delivery.",
-    d:"동명사구가 주어이므로 단수. 뒤에 that절을 목적어로 안고 있어 주어가 길어졌다.",
-    k:"~을 알아채는 일은 정보 전달이 아니다." }
+  {
+   n: "⑨",
+   name: "결과를 잇는 분사구문 allowing",
+   q: "MOOCs have democratized education, «allowing students … to access world-class education»…",
+   d: "<b>allowing</b>이 앞 절의 결과를 이어 ‘그래서 ~할 수 있게 한다’로 읽는다.",
+   k: "그래서 ~이 접근할 수 있게 되었다"
+  },
+  {
+   n: "⑪",
+   name: "결과를 잇는 분사구문 making + 목적격보어",
+   q: "…at their convenience, «making education more flexible and personalized»",
+   d: "<b>making</b> 뒤에는 ‘무엇을 + 어떠하게’가 온다. 앞 절의 결과를 이어 읽는다.",
+   k: "그래서 교육이 더 유연하고 개인화된다"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"Having read the notes, she asked a sharper question.",
-    k:"필기를 미리 읽고 온 그녀는 더 날카로운 질문을 했다." },
-  { u:"구문 2", en:"Marking every answer is not the same as teaching.",
-    k:"모든 답에 채점하는 일이 가르치는 일과 같지는 않다." },
-  { u:"구문 1 + 2", en:"Having watched the video is not the same as having understood it.",
-    k:"영상을 봤다는 것이 그것을 이해했다는 것과 같지는 않다." }
+  { u: "구문 1", en: "The library opened at night, allowing workers to study.", k: "그 도서관은 밤에 문을 열어, 노동자들이 공부할 수 있게 했다." },
+  { u: "구문 2", en: "They cut the fee, making the course easy to join.", k: "그들은 수강료를 낮추어, 그 강좌를 참여하기 쉽게 만들었다." },
+  { u: "구문 1 + 2", en: "The site posted videos, allowing anyone to watch, making the lecture public.", k: "그 사이트는 영상을 올려 누구나 볼 수 있게 했고, 그 강의를 공개된 것으로 만들었다." }
  ],
- wtype: ["무관","정답","반대","무관","무관"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["영상 제작법은 글의 관심사가 아니다"],["정답"],
-       ["글은 잘하면 효과가 있다고 말한다 — 정반대다"],
-       ["배속 시청 요령은 글에 나오지 않는다"],["강당 규모는 글의 소재가 아니다"]],
- src: [["①"],["④"],["⑨과 어긋남 — 영상은 아무것도 강제하지 않는다"],["⑩⑪"],["⑫⑬"]],
+ why: [
+  ["대학의 기원은 글에 나오지 않는다"],
+  ["정답"],
+  ["글은 온라인 강좌가 문을 넓혔다고 말한다 — 정반대다"],
+  ["카메라 제작은 글의 관심사가 아니다"],
+  ["교재 인쇄비는 글의 초점이 아니다"]
+ ],
+ src: [["①"], ["③"], ["⑤"], ["⑧과 어긋남 — 무료이거나 저렴한 강좌를 제공한다"], ["⑩"]],
  kb: {
-  title:"옮겨지지 않는 일",
-  lead:"전달과 가르침은 같은 말이 아니다.",
+  title: "MOOC",
+  lead: "누구에게나 열린 강의실",
   items: [
-   ["거꾸로 수업",
-    "강의는 집에서 영상으로 보고 교실에서는 문제를 푸는 방식이다. 2007년 무렵 미국 고등학교 교사들의 실험에서 널리 알려졌고, 사전 확인 과제가 있을 때 효과가 크다는 보고가 많다."],
-   ["MOOC 의 완주율",
-    "대규모 온라인 공개강좌는 등록자 대비 수료율이 대체로 한 자릿수로 보고되어 왔다. 접근이 열려도 완주는 다른 문제라는 사례로 자주 인용된다."],
-   ["'2 시그마' 문제",
-    "1984년 벤저민 블룸은 일대일 개별 지도를 받은 학생이 일반 수업 학생보다 훨씬 높은 성취를 보인다고 보고했다. 이를 대규모로 재현하는 방법을 찾는 일이 교육공학의 오랜 과제다."]
+   ["이름", "MOOC 는 Massive Open Online Course 의 머리글자다. 2008년에 처음 쓰인 말이고, 2012년에 대형 플랫폼이 잇달아 문을 열었다."],
+   ["세 플랫폼", "Coursera 와 edX 는 2012년에, Khan Academy 는 2008년에 시작했다. edX 는 MIT 와 하버드가 함께 세운 비영리 기관에서 출발했다."],
+   ["수료율", "MOOC 는 등록은 쉽지만 끝까지 마치는 비율은 낮다는 지적을 받아 왔다. 문을 여는 일과 끝까지 가는 일은 다른 문제라는 뜻이다."]
   ],
-  ask:"내가 영상으로 배운 것과 사람에게 배운 것 가운데, 어느 쪽이 더 오래 남았는가?"
- }
+  ask: "여러분이 화면으로 배운 것 가운데 교실에서 배운 것과 가장 달랐던 점은 무엇인가?"
+ },
+ wtype: ["무관", "정답", "반대", "무관", "지엽"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 45 ───────────────────────────── */
 {
- no: "45", key: "nostalgia",
- accent: "#B5763A", tint: "#F9F0E3", deep: "#805018",
- en: "Why the Old Songs Sound Better",
+ no: "45", key: "nostalgia", accent: "#B5763A", tint: "#F9F0E3", deep: "#805018",
+ en: "Nostalgia and Preference",
  ko: "옛 노래가 더 좋게 들리는 이유",
  goal: "취향이 언제 굳어지는지, 그것이 무엇을 뜻하는지 설명할 수 있다.",
  fig: "Figure 1  나이에 따라 좁아지는 취향의 창.",
  tip: "먼저 생각해 보자. 부모님이 좋아하는 음악은 대개 언제 나온 것들인가?",
- sent: [
-  "Ask people to name their favourite music and the answers cluster oddly.",
-  "Most of it was released when the listener was between fourteen and twenty-four.",
-  "The pattern is strong enough that researchers have given it a name: the reminiscence bump.",
-  "It appears for films, books, and public events as well as for songs.",
-  "One explanation is that those years contain an unusual number of firsts.",
-  "First independence, first friendships chosen rather than given, first serious feelings.",
-  "Memories formed alongside strong emotion are recalled more easily later.",
-  "A second explanation is simpler and slightly uncomfortable.",
-  "We hear far more new music at seventeen than at forty.",
-  "Familiarity itself increases liking, a finding replicated many times.",
-  "So the songs of that decade get more chances to become familiar.",
-  "Both explanations can be true at once, and probably are.",
-  "The uncomfortable part is what follows for judgement.",
-  "The feeling that music has got worse is exactly what the pattern predicts.",
-  "Knowing this does not remove the feeling, but it does change what the feeling proves."
+ sent: T(45).sent, kor: T(45).kor,
+ bank: [
+  ["mainstream", "①", "주류의"],
+  ["hypothesize", "④", "가설을 세우다"],
+  ["pertain", "④", "관련되다"],
+  ["bedrock", "⑤", "반석"],
+  ["idolize", "⑧", "우상화하다"],
+  ["cynical", "⑧", "냉소적인"]
  ],
- kor: [
-  "사람들에게 가장 좋아하는 음악을 대 보라고 하면 답이 이상하게 몰린다.",
-  "대부분은 그 사람이 열네 살에서 스물네 살 사이였을 때 나온 것이다.",
-  "이 무늬는 연구자들이 '회상 절정'이라는 이름을 붙일 만큼 뚜렷하다.",
-  "그것은 노래뿐 아니라 영화와 책, 공적 사건에서도 나타난다.",
-  "한 가지 설명은 그 시기에 '처음'이 유난히 많다는 것이다.",
-  "처음 누리는 독립, 주어진 것이 아니라 고른 첫 우정, 처음 겪는 진지한 감정.",
-  "강한 감정과 함께 만들어진 기억은 나중에 더 쉽게 떠오른다.",
-  "두 번째 설명은 더 단순하고 조금 불편하다.",
-  "우리는 마흔보다 열일곱에 훨씬 더 많은 새 음악을 듣는다.",
-  "익숙함 자체가 호감을 키운다는 것은 여러 번 재현된 결과다.",
-  "그래서 그 십 년의 노래들이 익숙해질 기회를 더 많이 얻는다.",
-  "두 설명은 동시에 참일 수 있고, 아마 그럴 것이다.",
-  "불편한 대목은 그것이 판단에 대해 함의하는 바다.",
-  "음악이 예전만 못해졌다는 느낌은 바로 이 무늬가 예측하는 것이다.",
-  "이것을 안다고 그 느낌이 사라지지는 않지만, 그 느낌이 무엇을 증명하는지는 달라진다."
+ defs: [
+  ["mainstream", "belonging to what most people accept"],
+  ["hypothesize", "to put forward an idea to be tested"],
+  ["pertain", "to have to do with a certain matter"],
+  ["bedrock", "the solid base that everything rests on"],
+  ["idolize", "to admire someone far too much"],
+  ["cynical", "quick to doubt that anything is good"]
  ],
- bank: [["cluster","①","한데 몰리다"],["release","②","(음반을) 내다"],["recall","⑦","떠올리다"],
-        ["familiarity","⑩","익숙함"],["replicate","⑩","재현하다"],["predict","⑭","예측하다"]],
- defs: [["cluster","to gather closely in one group"],
-        ["release","to make a work available to the public"],
-        ["recall","to bring back to mind"],
-        ["familiarity","the state of being well known to someone"],
-        ["replicate","to repeat a study and get the same result"],
-        ["predict","to say what will happen before it does"]],
- defOrder: [2,0,5,1,4,3],
+ defOrder: [2, 5, 3, 0, 1, 4],
  flow: [
-  ["The pattern","Favourite music clusters in the teens and early twenties",null],
-  ["Its name","Researchers call it the reminiscence (  ①  )","bump"],
-  ["Explanation 1","Those years hold an unusual number of (  ②  )","firsts"],
-  ["Explanation 2","(  ③  ) itself increases liking, and we hear more then","familiarity"],
-  ["What follows","The sense that music got (  ④  ) is what the pattern predicts","worse"]
+  ["The scene", "A ten-year-old prefers today's music to old recordings", null],
+  ["The turn", "Grown up, they may still (  ①  ) that old music", "prefer"],
+  ["The claim", "Tastes come from the (  ②  ) memories formed as children", "core"],
+  ["Why later waves fail", "New work meets more (  ③  ) and less forgiving eyes", "cynical"],
+  ["The verdict", "The only difference is (  ④  )", "timing"]
  ],
- flowBogi: "bump · firsts · familiarity · worse · better · emotion",
+ flowBogi: "prefer · core · cynical · timing · reject · price",
  para: [
-  ["③ strong enough that researchers gave it a name","The effect is clearly ______.","real"],
-  ["⑦ recalled more easily later","Emotion makes memory more ______.","accessible"],
-  ["⑧ simpler and slightly uncomfortable","The second reason is less ______.","flattering"],
-  ["⑫ can be true at once","The two accounts are not ______.","exclusive"],
-  ["⑮ changes what the feeling proves","Knowing alters its ______, not its force.","meaning"]
+  ["② might even prefer them to whatever newer", "The old thing may ______ the new one.", "beat"],
+  ["④ the core memories we form as children", "First strong memories ______ what we like.", "shape"],
+  ["⑤ the foundational bedrock for our understanding", "They are the ______ of how we see things.", "base"],
+  ["⑧ through our more experienced, more cynical", "Older eyes judge more ______.", "harshly"],
+  ["⑩ The only difference is timing.", "What changes is not the song but the ______.", "moment"]
  ],
- paraBogi: "real · accessible · flattering · exclusive · meaning · doubtful · faint · pleasant",
+ paraBogi: "beat · shape · base · harshly · moment · lose · price · kindly",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["The Best Albums Ever Made","What the Feeling Actually Proves",
-       "Music Really Has Become Worse","How to Discover New Bands",
-       "Why Teenagers Buy More Records"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["회상 절정은 영화와 책에서도 나타난다.","익숙함이 호감을 키운다는 결과는 여러 번 재현되었다.",
-       "필자는 두 설명 중 하나만 참이라고 본다.","우리는 마흔보다 열일곱에 새 음악을 더 듣는다.",
-       "안다고 해서 그 느낌이 사라지지는 않는다."], ans:3},
-  {t:"write", q:"필자가 '느낌이 증명하는 바가 달라진다'고 한 뜻을 우리말 한 문장으로 써 보세요.",
-   ans:"음악이 나빠졌다는 느낌은 음악의 수준이 아니라 내 기억과 노출의 무늬를 증명한다는 것이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How Rap Videos Were Made",
+    "Why the First Wonder Stays the Loudest",
+    "Old Music Is Objectively Better",
+    "A Guide to Collecting Records",
+    "How Memory Is Stored in the Brain"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "열 살 아이는 옛 음악보다 오늘의 음악을 고를 것이다.",
+    "그 아이가 자라면 그 옛 음악을 여전히 들을 수도 있다.",
+    "필자는 취향이 어린 시절 만들어진 핵심 기억과 관련된다고 본다.",
+    "필자는 이 생각이 자신만의 새로운 발견은 아니라고 밝힌다.",
+    "필자는 나이가 들수록 경이감이 더 커진다고 말한다."
+   ], ans: 5
+  },
+  {
+   t: "write", q: "옛 노래가 더 좋게 들리는 까닭을 필자가 어디에서 찾는지 우리말 한 문장으로 써 보세요.",
+   ans: "음악 자체가 아니라 어린 시절에 만들어진 핵심 기억과 그때의 경이감에서 찾는다."
+  }
  ],
  fl: {
-  model: { n:"⑭",
-   toks: [["The feeling","s"],["that music has got worse","m"],["is","v"],
-          ["exactly what the pattern predicts","c"]],
-   ko:"음악이 예전만 못해졌다는 느낌은 바로 이 무늬가 예측하는 것이다." },
+  model: {
+   n: "⑤",
+   toks: [
+    ["These memories", "s"], ["serve", "v"], ["as the foundational bedrock", "m"],
+    ["for our understanding of the world and our nostalgia for the ‘old days’.", "m"]
+   ],
+   ko: "이 기억들은 세계에 대한 우리의 이해와 ‘옛 시절’에 대한 향수의 밑바닥 반석 노릇을 한다."
+  },
   drill: [
-   { n:"③", en:"The pattern is strong enough that researchers have given it a name: the reminiscence bump.",
-     ans:"S The pattern · △V is · C strong enough · M that researchers have given it a name",
-     ko:"이 무늬는 연구자들이 이름을 붙일 만큼 뚜렷하다." },
-   { n:"⑦", en:"Memories formed alongside strong emotion are recalled more easily later.",
-     ans:"S Memories · M formed alongside strong emotion · △V are recalled · M more easily later",
-     ko:"강한 감정과 함께 만들어진 기억은 나중에 더 쉽게 떠오른다." },
-   { n:"⑮", en:"Knowing this does not remove the feeling, but it does change what the feeling proves.",
-     ans:"S Knowing this · △V does not remove · O the feeling · [but] S it · △V does change · O what the feeling proves",
-     ko:"이것을 안다고 그 느낌이 사라지지는 않지만, 그 느낌이 무엇을 증명하는지는 달라진다." }
+   {
+    n: "⑦",
+    en: "There's plenty of others who have said this first and backed it up.",
+    ans: "△V There's · S plenty of others · [who] △V′ have said · O this · M first · [and] △V′ backed · O it up",
+    ko: "이 말을 먼저 하고 근거를 댄 사람들이 많이 있다."
+   },
+   {
+    n: "⑨",
+    en: "The same sense of wonder that inspires us as children, when we are so full of hope and possibility, is the one we ignore and put down as we grow older and become more focused on routine and responsibilities.",
+    ans: "S The same sense of wonder · [that] △V′ inspires · O us · M as children · △V is · C the one we ignore and put down · M as we grow older and become more focused on routine and responsibilities",
+    ko: "어린 시절 우리를 북돋우던 바로 그 경이감이, 나이가 들어 일상과 책임에 매이면서 우리가 무시하고 밀어내는 바로 그것이다."
+   },
+   {
+    n: "⑩",
+    en: "The only difference is timing.",
+    ans: "S The only difference · △V is · C timing",
+    ko: "유일한 차이는 시기다."
+   }
   ]
  },
  syn: [
-  { n:"③", name:"형용사 + enough that + 절",
-    q:"The pattern is «strong enough that researchers have given» it a name.",
-    d:"<b>enough that + 절</b>은 '~할 만큼 충분히 …하다'. enough 는 형용사 뒤에 온다.",
-    k:"이 무늬는 이름이 붙을 만큼 뚜렷하다." },
-  { n:"⑮", name:"강조의 do/does",
-    q:"Knowing this does not remove the feeling, but it «does change» what it proves.",
-    d:"<b>do/does + 동사원형</b>은 동사를 강조한다. 앞의 부정과 대비될 때 자주 쓴다.",
-    k:"그 느낌이 무엇을 증명하는지는 분명히 달라진다." }
+  {
+   n: "④",
+   name: "같은 명사를 꾸미는 that 절 나열",
+   q: "…the stuff «that wows us, that we've never seen before, that takes our breath away»",
+   d: "같은 명사를 꾸미는 <b>that</b> 절 셋이 나란히 붙어 한 대상을 세 번 설명한다.",
+   k: "우리를 놀라게 하고, 처음 보는 것이고, 숨을 멎게 하는 것"
+  },
+  {
+   n: "⑨",
+   name: "긴 주어 + 삽입절, 본동사는 하나",
+   q: "«The same sense of wonder that inspires us as children, …, is the one we ignore»…",
+   d: "주어를 꾸미는 관계절과 삽입절이 길어도 본동사는 <b>is</b> 하나다. 주어의 머리를 찾아 동사와 이어 읽는다.",
+   k: "바로 그 경이감이 ~인 그것이다"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"The result was clear enough that nobody asked for a second test.",
-    k:"그 결과는 아무도 재검사를 요구하지 않을 만큼 분명했다." },
-  { u:"구문 2", en:"He did read the whole report before the meeting.",
-    k:"그는 회의 전에 그 보고서를 정말로 다 읽었다." },
-  { u:"구문 1 + 2", en:"The song is old enough that it does sound familiar to everyone.",
-    k:"그 노래는 누구에게나 정말 익숙하게 들릴 만큼 오래되었다." }
+  { u: "구문 1", en: "It was a sound that thrilled us, that we had never heard.", k: "그것은 우리를 설레게 한, 우리가 들어 본 적 없는 소리였다." },
+  { u: "구문 2", en: "The song that moved us then, long forgotten, is the one we hum now.", k: "그때 우리를 움직인, 오래 잊혔던 그 노래가 지금 우리가 흥얼거리는 그것이다." },
+  { u: "구문 1 + 2", en: "The film that shocked us, that we watched alone, is the one we defend today.", k: "우리를 놀라게 한, 우리가 혼자 보았던 그 영화가 오늘 우리가 옹호하는 그것이다." }
  ],
- wtype: ["무관","정답","반대","무관","지엽"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["명반 목록은 글에 나오지 않는다"],["정답"],
-       ["글은 그 느낌이 무늬의 결과라고 말한다 — 정반대다"],
-       ["새 음악을 찾는 법은 글의 관심사가 아니다"],
-       ["십대의 구매는 노출을 설명하는 한 부분일 뿐이다"]],
- src: [["④"],["⑩"],["⑫과 어긋남 — 두 설명이 동시에 참일 수 있다고 했다"],["⑨"],["⑮"]],
+ why: [
+  ["랩 영상의 제작 과정은 글에 나오지 않는다"],
+  ["정답"],
+  ["글은 음악이 아니라 시기의 문제라고 말한다 — 정반대다"],
+  ["음반 수집법은 글의 관심사가 아니다"],
+  ["기억의 저장 방식은 배경일 뿐 글의 초점이 아니다"]
+ ],
+ src: [["①"], ["②"], ["④"], ["⑦"], ["⑨와 어긋남 — 자라면서 그 경이감을 무시하고 밀어낸다"]],
  kb: {
-  title:"취향이 굳는 시기",
-  lead:"좋아하는 것에도 만들어진 날짜가 있다.",
+  title: "회상 절정",
+  lead: "왜 그 시절 노래만 남을까",
   items: [
-   ["회상 절정",
-    "자서전적 기억 연구에서 사람들은 10대 후반~20대 초반의 일을 유독 많이 떠올린다. 정체성이 형성되고 '처음'이 몰리는 시기여서라는 설명이 유력하다."],
-   ["단순 노출 효과",
-    "1968년 로버트 자이언스는 그저 여러 번 접하기만 해도 호감이 올라간다는 것을 보였다. 뜻을 모르는 글자에도 나타나, 익숙함 자체가 작용한다는 근거로 쓰인다."],
-   ["언제 새 음악을 그만 듣게 되나",
-    "스트리밍 이용 자료를 분석한 여러 보고에서, 새 음악 탐색이 20대 중후반부터 뚜렷이 줄어드는 경향이 관찰되었다."]
+   ["reminiscence bump", "심리학에서는 10대 후반에서 20대 초반의 기억이 유난히 또렷하게 남는 현상을 ‘회상 절정(reminiscence bump)’이라 부른다."],
+   ["취향의 창", "여러 조사에서 사람들이 가장 좋아하는 음악은 대체로 청소년기에 들었던 곡으로 나타난다. 새 음악을 찾는 일이 그 뒤로 크게 줄기 때문이다."],
+   ["nostalgia", "nostalgia 는 그리스어 nostos(귀향)와 algos(고통)를 합친 말이다. 17세기에는 고향을 그리는 병을 가리키는 의학 용어였다."]
   ],
-  ask:"내가 지금 좋아하는 노래들을 언제 처음 들었는지 적어 보자. 몰려 있는 시기가 있는가?"
- }
+  ask: "여러분이 ‘그때가 좋았다’고 느끼는 것은 그 대상 때문일까, 그때의 나 때문일까?"
+ },
+ wtype: ["무관", "정답", "반대", "무관", "배경"],
+ stype: ["일치", "일치", "일치", "일치", "반대"]
 }
-]};
+
+ ]
+};

@@ -26,8 +26,10 @@ for (const nn of nos) {
       }
       const joined = toks.map(x => x[0]).join(" ");
       if (joined !== t.sent[i]) return err(U.no, t.no, i, `토큰을 이으면 원문과 다름\n      rr : ${joined}\n      원문: ${t.sent[i]}`);
-      if (!roles.includes("v")) err(U.no, t.no, i, "본동사(v)가 없음");
-      if (!roles.includes("s")) console.log(`  U${U.no} L${t.no} 문장${i + 1}  (주의) 주어(s)가 없음 — 명령문이 아니면 확인`);
+      /* 동사가 생략된 한두 낱말짜리 감탄·의문문(Why? · Not quite.)은 S·V 검사에서 뺀다 */
+      const elliptic = t.sent[i].split(/\s+/).length <= 2;
+      if (!roles.includes("v") && !elliptic) err(U.no, t.no, i, "본동사(v)가 없음");
+      if (!roles.includes("s") && !elliptic) console.log(`  U${U.no} L${t.no} 문장${i + 1}  (주의) 주어(s)가 없음 — 명령문이 아니면 확인`);
       if (roles.includes("s2") && !roles.includes("v2")) err(U.no, t.no, i, "s2 가 있는데 v2 가 없음");
       if (roles.includes("v2") && !roles.includes("c") && !roles.includes("s2")) err(U.no, t.no, i, "v2 가 있는데 접속사(c)도 s2 도 없음");
     });

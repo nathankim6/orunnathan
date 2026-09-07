@@ -40,16 +40,14 @@ const icons = {
 const scenes = {
  /* 31 — 말하는 코치와 기다리는 코치 */
  coach:(c,t,d)=>`<svg viewBox="0 0 640 280" fill="none">
-  ${panel({x:20,y:20,w:274,h:196,c:d,fill:"#fff",n:1,label:"계속 알려 주는 코치"})}
+  ${panel({x:20,y:20,w:274,h:196,c:d,fill:"#fff",n:1,label:"계속 알려 주는 코치 · 판단은 바깥에"})}
   ${person({x:84,y:204,s:.88,c,pose:"point",hair:"cap",face:"oh",brow:"down"})}
   ${person({x:236,y:204,s:.88,c,pose:"down",hair:"short",face:"flat",flip:1})}
   ${[[136,44],[136,68],[136,92]].map(([x,y],i)=>`<rect x="${x}" y="${y}" width="${[120,96,132][i]}" height="18" rx="7" fill="${c}" opacity="${[.85,.65,.5][i]}"/>`).join("")}
-  ${label({x:157,y:238,text:"판단이 바깥에 머문다",c:d,size:11,op:.75})}
-  ${panel({x:346,y:20,w:274,h:196,c:d,fill:"#fff",n:2,label:"기다리는 코치"})}
+  ${panel({x:346,y:20,w:274,h:196,c:d,fill:"#fff",n:2,label:"기다리는 코치 · 판단이 안에서 자란다"})}
   ${person({x:410,y:204,s:.88,c,pose:"down",hair:"cap",face:"smile"})}
   ${person({x:562,y:204,s:.88,c,pose:"think",hair:"short",face:"oh",brow:"up",flip:1})}
   ${thought({x:452,y:44,w:150,h:44,lines:["방금 뭐가 달랐지?"],c:d,size:11,side:"r"})}
-  ${label({x:483,y:238,text:"판단이 안에서 자란다",c:d,size:11,op:.75})}
   ${label({x:320,y:270,text:"무엇을 말할지만이 아니라 언제 말할지를 고른다",c,size:12.5})}</svg>`,
  /* 32 — 경기장 하나, 화면 수백만 */
  esports:(c,t,d)=>`<svg viewBox="0 0 640 280" fill="none">
