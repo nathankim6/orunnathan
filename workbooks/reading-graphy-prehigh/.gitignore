@@ -12,3 +12,8 @@ units/_ref.js
 units/_l*.js
 rr/_*.bak
 LESSON_SPEC 사본*
+
+# 원본 스캔 렌더 이미지 (대용량, 재생성 가능)
+src/pg/
+src/*.png
+src/orig/t0*.json

@@ -1,5 +1,3 @@
-/* Unit 1 · Field 1 — Art & Literature 예술·문학
-   원서 Field 1 Theme 01–05 의 지문을 원문 그대로 싣는다. */
 module.exports = {
  "no": 1,
  "field": "Art & Literature",
@@ -37,7 +35,7 @@ module.exports = {
     "Literature is the manifestation of the author's emotions and inspirations.",
     "At the moment of emotional intensity or epiphany, the work naturally flows under the author's hand.",
     "Once the moment passes, the natural flowing of writing can never be repeated, let alone reproduced through translation in someone else's hand.",
-    "What is more, literature almost always has a universal color.",
+    "What is more, literature almost always has a local color.",
     "Such color is most vivid and lively in the eyes of the local people, but means nothing to others.",
     "A deliberate representation is a concession after all.",
     "Also, moods, imaginations, and even thoughts in literature are so closely related to words that once the latter change, the former change as well."
@@ -57,7 +55,7 @@ module.exports = {
     "문학은 작가의 감정과 영감의 표현이다.",
     "강렬한 감정이나 통찰의 순간에, 작품이 자연스럽게 작가의 손길 아래로 흘러간다.",
     "그 순간이 지나면 자연스러운 글의 흐름은 결코 반복될 수 없는데, 다른 사람의 손으로 한 번역을 통해 재현되는 것은 말할 것도 없다.",
-    "게다가, 문학에는 거의 항상 보편적인(→ 지역적인) 색채가 있다.",
+    "게다가, 문학에는 거의 항상 지역적인 색채가 있다.",
     "그런 색채는 현지인의 눈에는 대단히 선명하고 생생하지만, 다른 사람에게는 아무 의미가 없다.",
     "신중한 표현은 결국은 양보이다.",
     "또한 문학에서의 분위기, 상상력, 심지어 생각은 말과 매우 밀접한 관련이 있기 때문에 후자가 바뀌면 전자도 또한 바뀐다."
@@ -396,7 +394,7 @@ module.exports = {
     "Every English speaker understands what the word “food” refers to, even though the particular kind of food that comes to mind to each individual will vary.",
     "More abstract words, like “cool” or “sick,” may have a range of meanings that keep changing.",
     "But seeing the image of a thing seems to bring us very close to the thing itself — to “reality.”",
-    "Things that are seen appear to be and even feel as if they are mediated; that is, they seem to be conveyed directly to us, not conveyed indirectly.",
+    "Things that are seen appear to be and even feel as if they are unmediated; that is, they seem to be conveyed directly to us, not conveyed indirectly.",
     "Nothing stands in their way.",
     "They are true.",
     "But, in fact, an image, whether photographed, painted, or digitized, is not the thing itself.",
@@ -409,15 +407,15 @@ module.exports = {
     "왠지 직접, 혹은 그림, 사진, 또는 영화와 같은 시각적 표현을 통해 본 사물은 우리를 어떤 실제 현실에 더 가깝게 느끼게 만든다.",
     "말은 너무도 명백하게 사물 그 자체가 아닌데, 말은, 한 문화가 살아 있는 동안 내내 발전되고, 만들어진 문자로 표현되고, 한 문화에 속한 모든 이가 특정한 순서의 특정한 단어들이 특정한 것을 가리킬 것이라는 결정을 통해 의사소통하기 위해 사용하는 인위적인 문법에 따라 조립된 만들어진 소리이기 때문이다.",
     "언어는 분명히 자연적인 것이 아니라 문화적인 것인데, 그것은 인간이 만들었고 특정한 문화 전체에서 약간 변형되어 받아들여진다.",
-    "각 개인의 마음에 떠오르는 특정 종류의 음식은 다를 것이긴 하지만, 모든 영어 사용자는 ‘음식’이라는 말이 무엇을 가리키는지 이해한다.",
-    "‘시원하다’ 또는 ‘아프다’와 같은 더 추상적인 단어는 계속 변화하는 다양한 의미를 가질 수도 있다.",
-    "하지만 어떤 사물의 이미지를 보는 것은 우리를 그 사물 그 자체, 즉 ‘현실’로 매우 가깝게 다가가게 하는 것 같다.",
-    "보이는 사물은 매개된(→ 매개되지 않은) 것처럼 보이고 심지어 그런 것처럼 느껴지기까지 하는데, 즉 그것들은 우리에게 간접적으로 전달되는 게 아니라 직접 전달되는 것 같다.",
+    "각 개인의 마음에 떠오르는 특정 종류의 음식은 다를 것이긴 하지만, 모든 영어 사용자는 ‘음식'이라는 말이 무엇을 가리키는지 이해한다.",
+    "‘시원하다’ 또는 ‘아프다'와 같은 더 추상적인 단어는 계속 변화하는 다양한 의미를 가질 수도 있다.",
+    "하지만 어떤 사물의 이미지를 보는 것은 우리를 그 사물 그 자체, 즉 ‘현실'로 매우 가깝게 다가가게 하는 것 같다.",
+    "보이는 사물은 매개되지 않은 것처럼 보이고 심지어 그런 것처럼 느껴지기까지 하는데, 즉 그것들은 우리에게 간접적으로 전달되는 게 아니라 직접 전달되는 것 같다.",
     "아무것도 그것들을 방해하지 않는다.",
     "그것들은 사실이다.",
     "하지만 사실 사진으로 찍은 것이든, 그림으로 그린 것이든, 혹은 디지털화된 것이든 이미지는 사물 그 자체가 아니다.",
     "이것은 벨기에의 초현실주의 화가 Rene Magritte가 파이프를 그린 자신의 그림에서 유머러스하게 인정한 것이다.",
-    "그 그림의 제목은 The Treachery of Images이고 ‘이것은 파이프가 아니다’라는 ‘Ceci n'est pas une pipe’(프랑스어) 문구를 담고 있다."
+    "그 그림의 제목은 The Treachery of Images이고 ‘이것은 파이프가 아니다'라는 ’Ceci n'est pas une pipe' (프랑스어) 문구를 담고 있다."
    ],
    "bank": [
     [
@@ -750,7 +748,7 @@ module.exports = {
     "A pianist who has concerts has little time to spare, so it's important that those spare hours, even minutes, be used well.",
     "My teacher, Gordon Green, used to say, ‘In practice a perfectionist, in performance a realist.’",
     "In other words, prepare assiduously, tirelessly, at home, but when onstage accept the situation at hand without wishing the piano were more in tune, the audience were more appreciative (or larger), you hadn't made a mess of that octave passage, and so on.",
-    "Being a ‘realist’ sounds rather prosaic when faced with being brought to poetic, passionate life the masterworks of master composers.",
+    "Being a ‘realist’ sounds rather prosaic when faced with bringing to poetic, passionate life the masterworks of master composers.",
     "I might put it differently from Gordon: in practice an engineer, in performance a pilot.",
     "Nuts and bolts in a plane are incomparably important, but when you sit at the cockpit of a Steinway concert grand, your eyes need to look ahead not underneath.",
     "The purpose of practising is so that we (offstage as engineers) make sure that we (onstage as pilots) are completely free to fly to the destination of our choice.",
@@ -758,15 +756,15 @@ module.exports = {
    ],
    "kor": [
     "콘서트 피아니스트들은 연주회에서 연주하는 것보다 연습하는 데 일생의 훨씬 더 많은 시간을 보낸다.",
-    "그것은 단지 악곡이 기억 ─ 근육 및 정신 ─ 속에 유지되어야 한다는 것이 아니라, 피아노를 연주하는 바로 그 행위가 육체적이고 기력이 든다는 것이다.",
+    "그것은 단지 악곡이 기억 — 근육 및 정신 — 속에 유지되어야 한다는 것이 아니라, 피아노를 연주하는 바로 그 행위가 육체적이고 기력이 든다는 것이다.",
     "그것은 반사 운동과 지구력을 필요로 한다.",
     "여러분이 자전거를 타는 법을 결코 잊지 않는다는 것이 사실일지도 모르지만, 여러분과 그것(자전거 타는 실력)이 예전 같지 않다면, Tour de France에서 우승하거나 심지어 완주할 희망이 별로 없다.",
     "그러니 연습이 필요하다.",
     "핵심은 어떻게 무대 밖에서의 시간을 더 짧은 무대 위에서의 시간에 가장 큰 도움이 되게 보내느냐이다.",
     "콘서트가 있는 피아니스트는 낼 시간이 거의 없어서, 심지어 몇 분이라도 그 남는 시간을 잘 활용하는 것이 중요하다.",
-    "나의 스승인 Gordon Green은 ‘연습할 때는 완벽주의자, 공연할 때는 현실주의자’라고 말하곤 했다.",
+    "나의 스승인 Gordon Green은 ‘연습할 때는 완벽주의자, 공연할 때는 현실주의자'라고 말하곤 했다.",
     "다시 말하자면, 집에서는 근면하게 꾸준히 준비하되, 무대에서는 피아노의 음이 더 잘 맞았으면, 관객이 감상을 더 즐겼으면(혹은 더 많았으면), 그 옥타브 악절을 망치지 않았으면 하는 등을 바라지 말고 당면한 상황을 받아들이라는 것이다.",
-    "거장 작곡가들의 걸작에 시적이고 열정적인 생명력을 불어넣는 일에 맞닥뜨리는 상황에서, ‘현실주의자’가 된다는 것은 다소 무미건조하게 들린다.",
+    "거장 작곡가들의 걸작에 시적이고 열정적인 생명력을 불어넣는 일에 맞닥뜨리는 상황에서, ‘현실주의자'가 된다는 것은 다소 무미건조하게 들린다.",
     "내가 그것을 Gordon과 달리 표현하자면, 연습할 때는 엔지니어, 공연할 때는 조종사다.",
     "비행기의 너트와 볼트는 비교할 수 없을 정도로 중요하지만, Steinway의 콘서트 그랜드 피아노의 조종석에 앉으면 눈은 아래가 아니라 앞을 봐야 한다.",
     "연습의 목적은 (무대 위에서는 조종사인) 우리가 선택한 목적지까지 완전히 마음 놓고 비행할 수 있도록 (무대 밖에서는 엔지니어인) 우리가 확실히 하기 위함이다.",
@@ -1099,13 +1097,13 @@ module.exports = {
     "They welcome everyone who loves and honours their new daughter.",
     "But they fail to invite Maleficent, who appears in her negative guise as the Queen of the Underworld.",
     "This means, symbolically, that the two monarchs are overprotecting their beloved daughter by setting up a world around her that has nothing negative in it.",
+    "But this does not protect her.",
     "It makes her weak.",
     "Maleficent curses the princess, sentencing her to death at the age of sixteen, caused by the prick of a spinning wheel's needle.",
     "Fortunately, a good fairy reduces the punishment to unconsciousness, which can be undone with love's first kiss.",
     "The panicked King and Queen get rid of all the spinning wheels in the land, and turn their daughter over to the three good fairies.",
     "They continue with their strategy of removing all dangerous things, but in doing so they leave their daughter naive, immature and weak.",
     "One day, just before Aurora's sixteenth birthday, she meets a prince in the forest and falls in love.",
-    "This could be considered excessive by most reasonable standards.",
     "Then she loudly bemoans the fact that she is to be wed to Prince Philip, whom she was promised to as a child, and collapses emotionally when she is brought back to her parents' castle for her birthday.",
     "It is at that moment that Maleficent's curse manifests itself.",
     "A portal opens up in the castle, a spinning wheel appears, and Aurora pricks her finger and falls unconscious.",
@@ -1113,22 +1111,22 @@ module.exports = {
     "Ultimately, through true love's kiss, Aurora awakens from the curse and begins to grow into a mature princess, no longer just a sheltered figure but someone ready to take charge of her own life."
    ],
    "kor": [
-    "디즈니 영화 ‘잠자는 숲속의 공주’에서, 왕과 왕비는 오랜 기다림 후에 딸인 공주 오로라(Aurora)를 얻게 된다.",
+    "디즈니 영화 ‘잠자는 숲속의 공주'에서, 왕과 왕비는 오랜 기다림 후에 딸인 공주 오로라(Aurora)를 얻게 된다.",
     "그들은 그녀를 세상에 소개하기 위해 성대한 세례식을 계획한다.",
     "그들은 새로 태어난 딸을 사랑하고 존경하는 모든 이들을 환영한다.",
     "하지만 그들은 말레피센트(Maleficent)를 초대하지는 않는데, 그녀는 지하 세계의 여왕으로서 자신의 부정적인 모습으로 등장한다.",
     "이것은, 상징적으로, 두 군주가 그녀 주변에 부정적인 요소가 전혀 없는 세상을 세움으로써 자신들의 사랑하는 딸을 과잉보호하고 있다는 것을 의미한다.",
+    "그러나 이러한 방식은 그녀를 보호하지 못한다.",
     "그것은 그녀를 약하게 만든다.",
     "말레피센트는 공주에게 저주를 내려, 그녀가 16살에 물레 바늘에 찔려 죽게 될 것이라고 선고한다.",
     "다행히, 착한 요정이 처벌을 (죽음 대신) 무의식 상태로 감면해 주는데, 이것은 사랑의 첫 키스로 되돌려질 수 있다.",
     "놀란 왕과 왕비는 왕국의 모든 물레를 없애 버리고, 딸을 세 명의 착한 요정들에게 맡긴다.",
     "그들은 계속해서 모든 위험한 것을 제거하는 전략을 고수하지만, 그렇게 하는 과정에서 자신들의 딸을 순진하고 미성숙하며 나약한 존재로 만들어 버리게 된다.",
     "어느 날, 오로라가 16번째 생일을 맞기 직전에, 그녀는 숲에서 한 왕자를 만나 사랑에 빠진다.",
-    "이것은 가장 합리적인 기준으로도 과도하게 간주될 수 있다.",
     "이후 그녀는 자신이 어릴 적부터 약속된 필립 왕자와 결혼해야 한다는 사실에 크게 한탄하며, 생일을 맞아 부모님의 성으로 돌아왔을 때 감정적으로 무너진다.",
     "바로 그 순간, 말레피센트의 저주가 실현된다.",
     "성 안에 문이 열리고, 물레가 나타나며, 오로라는 손가락이 바늘에 찔려 의식을 잃는다.",
-    "그녀는 ‘잠자는 숲속의 공주’가 된 것이다.",
+    "그녀는 ‘잠자는 숲속의 공주'가 된 것이다.",
     "결국, 진정한 사랑의 키스를 통해 오로라는 저주에서 깨어나게 되고, 더 이상 보호받기만 하는 존재가 아니라 스스로 삶을 책임질 준비가 된 성숙한 공주로 성장하기 시작한다."
    ],
    "bank": [
@@ -1144,18 +1142,18 @@ module.exports = {
     ],
     [
      "unconsciousness",
-     "⑧",
+     "⑨",
      "무의식 (상태)"
     ],
     [
      "immature",
-     "⑩",
+     "⑪",
      "미성숙한"
     ],
     [
-     "excessive",
-     "⑫",
-     "과도한"
+     "bemoan",
+     "⑬",
+     "한탄하다"
     ],
     [
      "sheltered",
@@ -1181,8 +1179,8 @@ module.exports = {
      "not yet fully grown up in mind or behaviour"
     ],
     [
-     "excessive",
-     "much greater than is right or necessary"
+     "bemoan",
+     "to complain loudly and sadly about something"
     ],
     [
      "sheltered",
@@ -1232,19 +1230,19 @@ module.exports = {
      "more"
     ],
     [
-     "⑨ get rid of all the spinning wheels in the land",
+     "⑥ this does not protect her",
+     "Shutting out every danger fails to keep her ______.",
+     "safe"
+    ],
+    [
+     "⑩ get rid of all the spinning wheels in the land",
      "Every spinning wheel in the land is ______.",
      "destroyed"
     ],
     [
-     "⑩ they leave their daughter naive, immature and weak",
+     "⑪ they leave their daughter naive, immature and weak",
      "Their care leaves Aurora ______ for real life.",
      "unready"
-    ],
-    [
-     "⑫ This could be considered excessive",
-     "Most people would call this reaction ______.",
-     "extreme"
     ],
     [
      "⑰ someone ready to take charge of her own life",
@@ -1252,7 +1250,7 @@ module.exports = {
      "responsible"
     ]
    ],
-   "paraBogi": "more · destroyed · unready · extreme · responsible · fewer · eager · admired",
+   "paraBogi": "more · destroyed · unready · safe · responsible · fewer · eager · admired",
    "check": [
     {
      "t": "title",
@@ -1286,7 +1284,7 @@ module.exports = {
    ],
    "fl": {
     "model": {
-     "n": "⑩",
+     "n": "⑪",
      "toks": [
       [
        "They",
@@ -1329,13 +1327,13 @@ module.exports = {
     },
     "drill": [
      {
-      "n": "⑧",
+      "n": "⑨",
       "en": "Fortunately, a good fairy reduces the punishment to unconsciousness, which can be undone with love's first kiss.",
       "ans": "S a good fairy · △V reduces · M Fortunately, to unconsciousness · [which] S′ which(= unconsciousness) · △V′ can be undone",
       "ko": "다행히 착한 요정이 벌을 무의식 상태로 감면해 주는데, 이것은 사랑의 첫 키스로 되돌려질 수 있다."
      },
      {
-      "n": "⑨",
+      "n": "⑩",
       "en": "The panicked King and Queen get rid of all the spinning wheels in the land, and turn their daughter over to the three good fairies.",
       "ans": "S The panicked King and Queen · △V get rid of / (and) turn ... over · M in the land, to the three good fairies",
       "ko": "놀란 왕과 왕비는 나라의 모든 물레를 없애 버리고, 딸을 세 착한 요정에게 맡긴다."
@@ -1417,13 +1415,13 @@ module.exports = {
      "③"
     ],
     [
-     "⑧"
-    ],
-    [
      "⑨"
     ],
     [
-     "⑪과 어긋남 — 열여섯 번째 생일을 맞기 ‘직전에’ 왕자를 만난다"
+     "⑩"
+    ],
+    [
+     "⑫와 어긋남 — 열여섯 번째 생일을 맞기 ‘직전에’ 왕자를 만난다"
     ],
     [
      "⑰"
@@ -1468,7 +1466,7 @@ module.exports = {
     "Most important, writing about works of literature and discussing them with teachers and other students will give you practice in analyzing literature in greater depth and in considering alternative views of both the works themselves and the situations and problems the works explore.",
     "A clear understanding of the aims and designs of a story, poem, or play never falls like a bolt from the blue.",
     "Instead, it emerges from a process that involves trying to put into words how and why this work had such an effect on you and, just as important, responding to what others say or write about it.",
-    "Literature itself is a vast, ongoing, ever-evolving conversation which we most fully participate when we enter into actual conversation with others."
+    "Literature itself is a vast, ongoing, ever-evolving conversation in which we most fully participate when we enter into actual conversation with others."
    ],
    "kor": [
     "문학 연구는 모든 학문 분야와 마찬가지로 고유한 용어와 기법을 발전시켜 왔다.",
@@ -1477,7 +1475,7 @@ module.exports = {
     "다양한 시대와 장소의 작품뿐만 아니라, 다양한 장르의 문학 작품을 읽고 토론함으로써, 스스로는 결코 발견하지 못했거나 읽으려고 선택하지 않았을, 또는 그것을 혼자 읽었더라면 싫어하거나 오해했을 수도 있는 작품을 감상하고 심지어 사랑하게 되는 것은 당연하다.",
     "가장 중요한 것은, 문학 작품에 대해 글을 쓰고 그것을 선생님, 그리고 다른 학생들과 함께 토론하는 것은 문학을 더 심층적으로 분석하고 작품 자체와 작품이 탐구하는 상황 및 문제 둘 다에 대한 대안의 관점을 고려하는 연습을 하게 할 것이다.",
     "이야기, 시, 또는 희곡의 목적과 디자인에 대한 명확한 이해는 결코 맑은 하늘에 번개처럼 떨어지는 것이 아니다.",
-    "그 대신, 이 작품이 여러분에게 어떻게 그리고 왜 그런 영향을 미쳤는지를 말로 표현하려고 노력하는 것과, 그에 못지않게 중요하게 다른 사람들의 말이나 글에 반응하는 것을 포함하는 과정에서 그것은 나타난다.",
+    "그 대신, 이 작품이 여러분에게 어떻게 그리고 왜 그런 영향을 미쳤는지 말로 표현하려고 노력하는 것과, 그에 못지않게 중요하게 다른 사람들의 말이나 글에 반응하는 것을 포함하는 과정에서 그것은 나타난다.",
     "문학 그 자체는 우리가 다른 사람들과 실제 대화를 나눌 때 가장 온전히 참여하는, 방대하고 진행 중이며 끊임없이 진화하는 대화이다."
    ],
    "bank": [
@@ -1691,7 +1689,7 @@ module.exports = {
      },
      {
       "n": "⑧",
-      "en": "Literature itself is a vast, ongoing, ever-evolving conversation which we most fully participate when we enter into actual conversation with others.",
+      "en": "Literature itself is a vast, ongoing, ever-evolving conversation in which we most fully participate when we enter into actual conversation with others.",
       "ans": "S Literature itself · △V is · C a vast, ongoing, ever-evolving conversation · [which] S′ we · △V′ participate · [when] S′ we · △V′ enter",
       "ko": "문학 자체가 방대하고 끊임없이 진화하는 대화이며, 다른 사람들과 실제로 대화할 때 가장 온전히 참여한다."
      }
