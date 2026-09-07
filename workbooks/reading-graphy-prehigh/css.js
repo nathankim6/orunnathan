@@ -451,4 +451,16 @@ table.para th,table.cu th{color:var(--sub)}
 .page.tightest .how .box .n{margin-bottom:.5mm}
 .page.tightest .how .chk li{line-height:1.4;margin-bottom:.3mm}
 .page.tightest .how .box p{line-height:1.4}
+
+/* 차례 면 전용 조임 — 원문 제목이 길어 두 줄이 되는 행이 늘면 한 면을 넘길 수 있다.
+   guard 가 넘치는 경우에만 tocA → tocB 를 차례로 붙인다. 글자 크기는 건드리지 않는다 */
+.page.toc.tocA .ub{margin-bottom:1mm}
+.page.toc.tocA table.ul td{padding:.18mm 0}
+.page.toc.tocA .steps{margin-bottom:2.6mm;padding:1.1mm 0}
+.page.toc.tocB .ub{margin-bottom:.6mm}
+.page.toc.tocB table.ul td{padding:.1mm 0}
+.page.toc.tocB table.ul{line-height:1.16}
+.page.toc.tocB table.ul td.t{line-height:1.16}
+.page.toc.tocB .tochd{margin-bottom:1.8mm}
+.page.toc.tocB .steps{margin-bottom:2mm;padding:.8mm 0}
 `;

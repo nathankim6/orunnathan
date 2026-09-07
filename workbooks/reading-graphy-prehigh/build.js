@@ -358,6 +358,7 @@ addEventListener("load",()=>{
   const steps=[];
   if(psg) steps.push([psg,"dense"],[pg,"snug"],[psg,"denser"]);
   if(pg.querySelector(".akey")) steps.push([pg,"tight"],[pg,"tighta"],[pg,"tighter"],[pg,"tightest"]);
+  if(pg.classList.contains("toc")) steps.push([pg,"tocA"],[pg,"tocB"]);
   steps.push([pg,"t1"],[pg,"t2"],[pg,"t3"]);
   for(const [el,cls] of steps){if(low(pg)<=LIM)break;el.classList.add(cls);}
   pg.dataset.low=(low(pg)/96*25.4).toFixed(1);
