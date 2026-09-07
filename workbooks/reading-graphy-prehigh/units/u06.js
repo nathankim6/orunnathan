@@ -1,683 +1,726 @@
-/* Unit 6 · Field 6 — Media & IT 대중매체·정보통신
-   원서 Theme 26–30 의 주제를 예비고1 수준으로 다시 쓴 것. */
+/* Unit 6 · Media & IT — 원문 Theme 26–30 */
+const R = require("../src/orig/all.json");
+const T = n => R[n - 1];
+
 module.exports = {
  no: 6,
  field: "Media & IT",
  ko: "대중매체·정보통신",
  tagline: "연결의 값 — 이어져 있음이 가져가는 것들",
- next: { en: "Sports & Entertainment", ko: "보는 일과 하는 일 사이의 거리를 읽습니다", words: "175–205 words" },
+ next: { en: "Sports & Entertainment", ko: "보는 일과 하는 일 사이의 거리를 읽습니다", words: "238–293 words" },
  lessons: [
+
+/* ───────────────────────────── 26 ───────────────────────────── */
 {
- no: "26", key: "always",
- accent: "#A8563F", tint: "#F8EAE4", deep: "#75331F",
- en: "The Meeting That Never Ends",
- ko: "끝나지 않는 회의",
- goal: "상시 연결이 일의 질을 어떻게 떨어뜨리는지, 그것이 왜 개인의 의지 문제가 아닌지 설명할 수 있다.",
+ no: "26", key: "always", accent: "#A8563F", tint: "#F8EAE4", deep: "#75331F",
+ en: "The Negative Impact of Constant Connectivity on Workers",
+ ko: "끝나면 끝이던 시절",
+ goal: "상시 연결이 노동에 가져온 변화와 프랑스에서 나온 대응을 순서대로 설명할 수 있다.",
  fig: "Figure 1  쪼개진 시간과 남아 있는 잔여물.",
- tip: "먼저 생각해 보자. 공부하다 알림 하나를 확인한 뒤, 원래 하던 생각으로 돌아가는 데 얼마나 걸렸는가?",
- sent: [
-  "A message that takes ten seconds to read does not really cost you ten seconds.",
-  "Part of your attention stays with it after you have closed the window.",
-  "Researchers call this leftover portion attention residue.",
-  "The next task begins with a mind that is not entirely present.",
-  "Work that needs a long, quiet run suffers most from this.",
-  "Writing, planning, and debugging all require holding several pieces at once.",
-  "Each interruption drops the pieces, and picking them up again takes time.",
-  "The count of interruptions matters less than their unpredictability.",
-  "A worker who knows nothing will arrive before noon can build a real stretch.",
-  "A worker who might be pinged at any second never fully settles.",
-  "Framing this as a matter of self-control misses where the problem lives.",
-  "If a reply within minutes is expected, no amount of discipline creates quiet.",
-  "Several countries have written a right to disconnect into law.",
-  "Other workplaces simply agree on hours when nobody sends anything.",
-  "Both approaches treat attention as something a group protects, not a private virtue."
+ tip: "먼저 생각해 보자. 밤에 온 업무 메시지를 열지 않고 두었을 때, 나는 정말 쉬고 있었을까?",
+ sent: T(26).sent, kor: T(26).kor,
+ bank: [
+  ["demanding", "②", "힘든, 요구가 많은"],
+  ["permanent", "④", "상시의"],
+  ["dominate", "⑤", "지배하다"],
+  ["unplug", "⑥", "연결을 끊다"],
+  ["commission", "⑨", "의뢰하다"],
+  ["disastrous", "⑩", "파괴적인"]
  ],
- kor: [
-  "읽는 데 10초가 걸리는 메시지가 실제로 10초만 쓰게 하는 것은 아니다.",
-  "창을 닫은 뒤에도 주의의 일부는 그것에 남아 있다.",
-  "연구자들은 이 남은 것을 '주의 잔여물'이라고 부른다.",
-  "다음 일은 온전히 여기 있지 않은 정신으로 시작된다.",
-  "길고 조용한 흐름이 필요한 일이 여기서 가장 크게 손해를 본다.",
-  "글쓰기, 계획 세우기, 오류 잡기는 모두 여러 조각을 한꺼번에 붙들고 있어야 한다.",
-  "방해받을 때마다 그 조각들이 떨어지고, 다시 주워 담는 데는 시간이 든다.",
-  "방해의 횟수보다 그것을 예측할 수 없다는 점이 더 문제다.",
-  "정오 전에는 아무것도 오지 않는다는 것을 아는 사람은 진짜 흐름을 만들 수 있다.",
-  "언제든 호출될 수 있는 사람은 결코 온전히 자리 잡지 못한다.",
-  "이것을 자제력의 문제로 규정하면 문제가 어디에 있는지를 놓친다.",
-  "몇 분 안에 답장하는 것이 당연시된다면, 어떤 규율로도 고요는 만들어지지 않는다.",
-  "여러 나라가 '연결되지 않을 권리'를 법으로 써 넣었다.",
-  "다른 일터들은 아무도 무엇도 보내지 않는 시간대를 그저 합의로 정한다.",
-  "두 방식 모두 주의를 개인의 미덕이 아니라 집단이 지키는 것으로 다룬다."
+ defs: [
+  ["demanding", "needing much time and hard effort"],
+  ["permanent", "lasting without a break or an end"],
+  ["dominate", "to control or rule over something"],
+  ["unplug", "to cut yourself off from a network"],
+  ["commission", "to ask someone to do a piece of work"],
+  ["disastrous", "causing very great harm or loss"]
  ],
- bank: [["residue","③","잔여물"],["interruption","⑦","방해, 끊김"],["unpredictability","⑧","예측 불가능함"],
-        ["settle","⑩","자리 잡다"],["discipline","⑫","규율, 자제"],["virtue","⑮","미덕"]],
- defs: [["residue","what is left after most of it is gone"],
-        ["interruption","a break that stops an activity"],
-        ["unpredictability","the quality of not being foreseeable"],
-        ["settle","to become calm and steady in one place"],
-        ["discipline","control over one's own behaviour"],
-        ["virtue","a good quality in a person's character"]],
- defOrder: [2,4,0,5,1,3],
+ defOrder: [1, 4, 0, 5, 2, 3],
  flow: [
-  ["The hidden cost","A ten-second message costs far more than ten seconds",null],
-  ["The name","Researchers call the leftover attention (  ①  )","residue"],
-  ["Who suffers","Work needing a long, quiet (  ②  ) is hurt most","run"],
-  ["The real driver","Not the count of interruptions but their (  ③  )","unpredictability"],
-  ["The fix","Treat attention as something a (  ④  ) protects","group"]
+  ["Before", "A boss rarely called a worker who had gone home", null],
+  ["The shift", "Email brought the expectation of a reply at any (  ①  )", "hour"],
+  ["Study 1", "A third of French professionals could never (  ②  )", "unplug"],
+  ["Study 2", "Even the (  ③  ) of being on call causes anxiety", "expectation"],
+  ["The answer", "Mettling's reform: a right to (  ④  )", "disconnect"]
  ],
- flowBogi: "residue · run · unpredictability · group · discipline · reply",
+ flowBogi: "hour · unplug · expectation · disconnect · office · reward",
  para: [
-  ["② stays with it after you have closed the window","Attention lingers ______ the task ends.","after"],
-  ["⑦ picking them up again takes time","Recovery is never ______.","instant"],
-  ["⑩ never fully settles","Constant reachability prevents ______.","focus"],
-  ["⑪ misses where the problem lives","Blaming willpower ______ the real cause.","hides"],
-  ["⑮ not a private virtue","Attention is treated as a ______ matter.","shared"]
+  ["① once she had left the office and gone home", "After work she was ______ to reach.", "hard"],
+  ["③ when work was over, it was over", "The day ended when the ______ ended.", "work"],
+  ["⑥ for fear of missing out on an email", "They worried about ______ a message.", "missing"],
+  ["⑧ the idea of work hours has disappeared", "Fixed working hours have ______ away.", "fallen"],
+  ["⑩ disastrous for people's health", "It badly ______ their health.", "harmed"]
  ],
- paraBogi: "after · instant · focus · hides · shared · before · slow · private",
+ paraBogi: "hard · work · missing · fallen · harmed · easy · rest · helped",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How to Write Better Emails","Attention Is a Group's Problem, Not a Private One",
-       "Workers Should Try Harder to Focus","The History of the Office Telephone",
-       "Which Countries Work the Longest Hours"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["메시지를 닫은 뒤에도 주의의 일부가 남는다.","방해의 예측 불가능함이 횟수보다 문제가 된다.",
-       "필자는 이것을 개인 자제력의 문제로 본다.","연결되지 않을 권리를 법으로 만든 나라들이 있다.",
-       "합의로 조용한 시간대를 정하는 일터도 있다."], ans:3},
-  {t:"write", q:"필자가 자제력만으로는 부족하다고 본 이유를 우리말 한 문장으로 써 보세요.",
-   ans:"몇 분 안의 답장이 당연시되는 환경에서는 개인의 규율로 고요를 만들 수 없기 때문이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How a French Telecom Company Is Run",
+    "When the Working Day Stopped Ending",
+    "Email Has Given Workers More Free Time",
+    "How to Write a Clear Business Email",
+    "A History of the Telephone"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "1980년대에는 퇴근한 직원에게 상사가 연락하는 일이 드물었다.",
+    "상시 대기하며 살던 사람은 의사, 대통령, 총리뿐이었다.",
+    "프랑스 전문직 종사자의 3분의 1은 연결을 결코 끊을 수 없다고 느꼈다.",
+    "실제로 연락을 받지 않는 밤에는 근로자에게 불안이 생기지 않았다.",
+    "Mettling은 모든 사람이 ‘연결을 끊을 권리’를 가져야 한다고 제안했다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "프랑스 정부가 Bruno Mettling에게 조사를 맡긴 계기를 우리말 한 문장으로 써 보세요.",
+   ans: "‘번아웃’을 겪는 환자가 급증하고 있다는 의사들의 설명이 나오고 유권자들이 조치를 요구하기 시작했기 때문이다."
+  }
  ],
  fl: {
-  model: { n:"⑫",
-   toks: [["If","c"],["a reply within minutes","s2"],["is expected","v2"],[",",null],
-          ["no amount of discipline","s"],["creates","v"],["quiet","m"]],
-   ko:"몇 분 안에 답장하는 것이 당연시된다면, 어떤 규율로도 고요는 만들어지지 않는다." },
+  model: {
+   n: "⑤",
+   toks: [
+    ["But", "c"], ["since", "c"], ["our work lives", "s2"], ["came to be dominated", "v2"],
+    ["by email,", "m"], ["there's", "v"], ["a growing expectation", null], ["that", "c"],
+    ["workers", "s2"], ["will respond", "v2"], ["at any time, day or night.", "m"]
+   ],
+   ko: "그러나 우리의 직장 생활이 이메일에 지배받게 된 뒤로, 근로자가 밤낮 가리지 않고 언제든 답하리라는 기대가 커지고 있다."
+  },
   drill: [
-   { n:"①", en:"A message that takes ten seconds to read does not really cost you ten seconds.",
-     ans:"S A message · M that takes ten seconds to read · M really · △V does not cost · O you · O ten seconds",
-     ko:"읽는 데 10초가 걸리는 메시지가 실제로 10초만 쓰게 하는 것은 아니다." },
-   { n:"⑨", en:"A worker who knows nothing will arrive before noon can build a real stretch.",
-     ans:"S A worker · M who knows nothing will arrive before noon · △V can build · O a real stretch",
-     ko:"정오 전에는 아무것도 오지 않는다는 것을 아는 사람은 진짜 흐름을 만들 수 있다." },
-   { n:"⑮", en:"Both approaches treat attention as something a group protects, not a private virtue.",
-     ans:"S Both approaches · △V treat · O attention · M as something a group protects, not a private virtue",
-     ko:"두 방식 모두 주의를 개인의 미덕이 아니라 집단이 지키는 것으로 다룬다." }
+   {
+    n: "①",
+    en: "Before the rise of smartphones, it was unusual for a boss to contact her worker once she had left the office and gone home.",
+    ans: "M Before the rise of smartphones · S it · △V was · C unusual · S′ for a boss to contact her worker · [once] S′ she · △V′ had left the office and gone home",
+    ko: "스마트폰이 등장하기 전에는, 직원이 퇴근해 집에 간 뒤에 상사가 연락하는 일이 드물었다."
+   },
+   {
+    n: "⑦",
+    en: "Another study found that just the expectation that you should be on call causes workers anxiety, even if they don't actually get contacted on any given night.",
+    ans: "S Another study · △V found · [that] S′ just the expectation that you should be on call · △V′ causes · O workers anxiety · [even if] S′ they · △V′ don't actually get contacted",
+    ko: "또 다른 연구는 어떤 밤에 실제로 연락을 받지 않더라도, 대기해야 한다는 예상만으로도 근로자에게 불안이 생긴다는 것을 밝혔다."
+   },
+   {
+    n: "⑩",
+    en: "He concluded that this constantly-on-call way of working was disastrous for people's health and their ability to do their jobs.",
+    ans: "S He · △V concluded · [that] S′ this constantly-on-call way of working · △V′ was · C disastrous for people's health and their ability to do their jobs",
+    ko: "그는 이렇게 늘 대기 상태로 일하는 방식이 사람들의 건강과 업무 수행 능력에 파괴적이라고 결론지었다."
+   }
   ]
  },
  syn: [
-  { n:"⑫", name:"조건절 + no amount of ~",
-    q:"If a reply within minutes is expected, «no amount of discipline creates» quiet.",
-    d:"<b>no amount of + 명사</b>는 '아무리 많은 ~로도 …않다'. 주어 자리에서 부정을 만든다.",
-    k:"어떤 규율로도 고요는 만들어지지 않는다." },
-  { n:"⑮", name:"treat A as B",
-    q:"Both approaches «treat attention as something» a group protects.",
-    d:"<b>treat A as B</b>는 'A를 B로 다루다'. as 뒤에는 명사(구)나 형용사가 온다.",
-    k:"두 방식 모두 주의를 집단이 지키는 것으로 다룬다." }
+  {
+   n: "②",
+   name: "지각동사 see + 목적어 + 원형",
+   q: "…«but I almost never saw them get phoned by their employer» once they got home.",
+   d: "<b>see + 목적어 + 동사원형</b>은 ‘~가 …하는 것을 보다’이다. 여기서는 <b>get phoned</b>가 원형 자리에 왔다.",
+   k: "그들이 고용주에게서 전화를 받는 것을 거의 본 적이 없다"
+  },
+  {
+   n: "⑨",
+   name: "콤마 사이의 동격 명사구",
+   q: "…the French government commissioned Bruno Mettling, «the head of the telecom company Orange», to study the evidence…",
+   d: "콤마 사이에 놓인 명사구가 앞의 이름을 다시 설명한다. 빼도 문장은 그대로 성립한다.",
+   k: "통신 회사 Orange의 대표인 Bruno Mettling"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"No amount of practice removes the need for rest.",
-    k:"아무리 연습해도 휴식의 필요가 사라지지는 않는다." },
-  { u:"구문 2", en:"The school treats lateness as a shared problem.",
-    k:"그 학교는 지각을 함께 풀 문제로 다룬다." },
-  { u:"구문 1 + 2", en:"No amount of talking helps if we treat the rule as optional.",
-    k:"그 규칙을 선택 사항으로 다룬다면 아무리 말해도 소용이 없다." }
+  { u: "구문 1", en: "I never saw my father answer the phone at dinner.", k: "나는 아버지가 저녁 식사 중에 전화를 받는 것을 본 적이 없다." },
+  { u: "구문 2", en: "They asked Marie, the head of the team, to write the report.", k: "그들은 팀장인 Marie에게 그 보고서를 쓰라고 요청했다." },
+  { u: "구문 1 + 2", en: "We saw Paul, the night manager, leave his phone on the desk.", k: "우리는 야간 관리자인 Paul이 전화기를 책상에 두고 가는 것을 보았다." }
  ],
- wtype: ["무관","정답","반대","무관","무관"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["이메일 작성법은 글의 관심사가 아니다"],["정답"],
-       ["글은 더 노력하라는 조언을 반박한다 — 정반대다"],
-       ["사무실 전화의 역사는 글에 나오지 않는다"],["노동 시간 비교는 글의 소재가 아니다"]],
- src: [["②"],["⑧"],["⑪과 어긋남 — 자제력 문제로 보면 핵심을 놓친다고 했다"],["⑬"],["⑭"]],
+ why: [
+  ["Orange 라는 회사 자체는 글의 초점이 아니다"],
+  ["정답"],
+  ["글은 업무 시간이라는 개념이 사라졌다고 말한다 — 정반대다"],
+  ["이메일 작성법은 글에 나오지 않는다"],
+  ["전화기의 역사는 글에서 다루지 않는다"]
+ ],
+ src: [["③"], ["④"], ["⑥"], ["⑦과 어긋남 — 대기해야 한다는 예상만으로도 불안이 생긴다"], ["⑪"]],
  kb: {
-  title:"끊긴 자리에 남는 것",
-  lead:"돌아오는 데 드는 시간은 계산서에 없다.",
+  title: "연결을 끊을 권리",
+  lead: "법으로 정한 퇴근",
   items: [
-   ["'주의 잔여물'이라는 이름",
-    "2009년 소피 리로이는 다른 과제로 넘어간 뒤에도 앞 과제에 주의가 남아 성과가 떨어지는 현상을 보고하며 attention residue 라는 이름을 붙였다. 앞 일이 끝나지 않은 채 넘어갈수록 잔여물이 컸다."],
-   ["다시 자리 잡기까지",
-    "글로리아 마크 연구진의 사무실 관찰 연구에서, 방해받은 뒤 원래 과제로 돌아가는 데 평균 20분 이상이 걸린다는 결과가 보고되었다. 중간에 다른 일이 끼어들기 때문이다."],
-   ["연결되지 않을 권리",
-    "프랑스는 2017년 노동법 개정으로 50인 이상 사업장에 업무 시간 외 연결에 관한 협의를 의무화했다. 이후 여러 나라가 비슷한 규정을 도입했다."]
+   ["2017년 프랑스", "종업원 50명 이상 기업이 업무 시간 밖의 연결에 관한 규칙을 노사 협의로 정하도록 한 조항이 2017년 1월부터 시행되었다. ‘연결을 끊을 권리(droit à la déconnexion)’라 불린다."],
+   ["다른 나라들", "이탈리아는 2017년 원격근무법에 비슷한 조항을 두었고, 벨기에는 2022년 공무원부터 적용을 시작했다. 오스트레일리아는 2024년 관련 법을 통과시켰다."],
+   ["주의 잔여물", "Sophie Leroy 는 앞의 일에 대한 생각이 다음 일로 넘어와 성과를 떨어뜨리는 현상을 attention residue 라 이름 붙였다. 짧은 메시지 하나가 쓰는 시간은 짧아도, 그 뒤에 남는 꼬리는 짧지 않다."]
   ],
-  ask:"내가 공부에 몰입했던 가장 긴 시간은 언제였는가? 그때 무엇이 나를 방해하지 않았는가?"
- }
+  ask: "여러분에게 ‘일이 끝났다’는 신호는 무엇인가? 그 신호가 없다면 무엇이 달라질까?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 27 ───────────────────────────── */
 {
- no: "27", key: "virtual",
- accent: "#4C5FA8", tint: "#EAEDF8", deep: "#2E3C74",
- en: "More Than a Game",
- ko: "놀이 이상의 것",
- goal: "가상 세계가 훈련·치료 분야에서 하는 일과 그 한계를 설명할 수 있다.",
+ no: "27", key: "virtual", accent: "#4C5FA8", tint: "#EAEDF8", deep: "#2E3C74",
+ en: "The Potential of Virtual Worlds Beyond Entertainment",
+ ko: "옷장을 지나 돌아온 아이",
+ goal: "필자가 가상 세계의 가치를 오락 너머로 넓히는 논리를 근거를 들어 설명할 수 있다.",
  fig: "Figure 1  실패해도 아무도 다치지 않는 방.",
- tip: "먼저 생각해 보자. 한 번도 해 본 적 없는 일을 안전하게 연습할 방법이 있을까?",
- sent: [
-  "Most people meet virtual worlds through games, and stop there.",
-  "The interesting uses are quieter and older than the entertainment ones.",
-  "A surgeon can rehearse a rare operation on a copy of the real patient's scan.",
-  "The copy allows a mistake that costs nothing.",
-  "Pilots have trained this way since long before the headsets arrived.",
-  "Therapists use exactly the same property to treat severe fear.",
-  "A patient afraid of heights can stand on a virtual balcony and step back at will.",
-  "The fear is real, but the danger is not, and control stays with the patient.",
-  "Architects walk clients through buildings that have not been built.",
-  "Problems that a drawing hides become obvious when you turn your head.",
-  "None of this makes the technology neutral or free of cost.",
-  "Headsets are expensive, and long sessions still make many users ill.",
-  "A simulation also teaches only what its designers thought to include.",
-  "A pilot trained on clean weather has not been trained on everything.",
-  "The value lies in rehearsing what would otherwise be too costly to try."
+ tip: "먼저 생각해 보자. 게임에서 배운 것 가운데, 현실로 가지고 나온 것이 있는가?",
+ sent: T(27).sent, kor: T(27).kor,
+ bank: [
+  ["inaccessible", "①", "접근할 수 없는"],
+  ["instill", "②", "심어 주다"],
+  ["stereotypical", "③", "전형적인"],
+  ["fulfilled", "④", "충만한"],
+  ["juncture", "⑦", "시점, 국면"],
+  ["endeavor", "⑩", "노력, 활동"]
  ],
- kor: [
-  "대부분의 사람은 게임을 통해 가상 세계를 만나고, 거기서 멈춘다.",
-  "흥미로운 쓰임새는 오락 쪽보다 조용하고, 또 더 오래되었다.",
-  "외과의는 실제 환자의 촬영 자료를 복제한 것 위에서 드문 수술을 미리 연습할 수 있다.",
-  "그 복제본은 아무 대가도 치르지 않는 실수를 허용한다.",
-  "조종사들은 헤드셋이 나오기 훨씬 전부터 이런 방식으로 훈련해 왔다.",
-  "치료사들은 바로 그 같은 성질을 이용해 심한 공포를 다룬다.",
-  "높은 곳을 무서워하는 환자는 가상의 발코니에 서 있다가 원할 때 물러설 수 있다.",
-  "공포는 진짜지만 위험은 아니며, 통제권은 환자에게 남아 있다.",
-  "건축가들은 아직 지어지지 않은 건물 안으로 의뢰인을 데리고 걷는다.",
-  "도면이 감추는 문제들이 고개를 돌리는 순간 분명해진다.",
-  "이 가운데 무엇도 그 기술을 중립적이거나 비용 없는 것으로 만들지는 않는다.",
-  "헤드셋은 비싸고, 오래 쓰면 여전히 많은 사용자가 속이 나빠진다.",
-  "또한 시뮬레이션은 설계자가 넣을 생각을 한 것만 가르친다.",
-  "맑은 날씨로 훈련한 조종사는 모든 것을 훈련한 것이 아니다.",
-  "그 가치는 달리 해 보기에는 대가가 너무 큰 일을 미리 겪어 보게 하는 데 있다."
+ defs: [
+  ["inaccessible", "not able to be reached or entered"],
+  ["instill", "to put a feeling into someone slowly"],
+  ["stereotypical", "matching a fixed idea about a group"],
+  ["fulfilled", "feeling that your life has meaning"],
+  ["juncture", "a particular point in a course of events"],
+  ["endeavor", "an effort made toward a goal"]
  ],
- bank: [["rehearse","③","미리 연습하다"],["severe","⑥","심한"],["at will","⑦","마음대로"],
-        ["obvious","⑩","분명한"],["neutral","⑪","중립적인"],["simulation","⑬","모의 실험"]],
- defs: [["rehearse","to practise something before doing it for real"],
-        ["severe","very serious in degree"],
-        ["at will","whenever one chooses"],
-        ["obvious","easy to see or understand"],
-        ["neutral","not taking any side"],
-        ["simulation","a model that imitates a real situation"]],
- defOrder: [1,4,0,5,2,3],
+ defOrder: [3, 0, 5, 1, 4, 2],
  flow: [
-  ["Common view","Most people meet virtual worlds only through games",null],
-  ["Use 1","A surgeon can (  ①  ) a rare operation without cost","rehearse"],
-  ["Use 2","A patient faces fear while keeping (  ②  )","control"],
-  ["Use 3","Architects show buildings that are not yet (  ③  )","built"],
-  ["Limit","A simulation teaches only what its (  ④  ) included","designers"]
+  ["As a child", "Games let him reach what the real world could not", null],
+  ["Not withdrawal", "He wanted to go, to do more, to feel more (  ①  )", "fulfilled"],
+  ["The image", "Like the children of (  ②  ), he came back changed", "Narnia"],
+  ["Now", "He builds virtual worlds for a (  ③  )", "living"],
+  ["The claim", "Their value reaches far beyond (  ④  )", "entertainment"]
  ],
- flowBogi: "rehearse · control · built · designers · games · headset",
+ flowBogi: "fulfilled · Narnia · living · entertainment · money · escape",
  para: [
-  ["④ allows a mistake that costs nothing","Errors here carry no ______.","penalty"],
-  ["⑧ the fear is real, but the danger is not","The emotion is genuine; the threat is ______.","simulated"],
-  ["⑩ Problems that a drawing hides","A flat plan can ______ real faults.","conceal"],
-  ["⑬ only what its designers thought to include","Coverage is limited by human ______.","choices"],
-  ["⑮ too costly to try","It rehearses what is otherwise ______.","unaffordable"]
+  ["① things that were inaccessible in the real world", "Things he could not ______ in real life.", "reach"],
+  ["② instilled in me a sense of wonder", "They ______ wonder into him.", "planted"],
+  ["⑤ I would return from my gaming sessions", "He came back a ______ person.", "changed"],
+  ["⑦ at this crucial juncture", "Right at this ______ moment.", "key"],
+  ["⑩ immense value to countless other fields", "Its worth reaches ______ more fields.", "many"]
  ],
- paraBogi: "penalty · simulated · conceal · choices · unaffordable · reward · genuine · cheap",
+ paraBogi: "reach · planted · changed · key · many · leave · pulled · few",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["The Best Games of the Year","Practising What Is Too Costly to Try",
-       "Virtual Reality Has No Drawbacks","How Headsets Are Manufactured",
-       "Why Architects Should Stop Drawing"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["조종사 훈련은 헤드셋 이전부터 있었다.","공포 치료에서 통제권은 환자에게 있다.",
-       "필자는 이 기술에 비용이나 한계가 없다고 본다.","오래 쓰면 속이 나빠지는 사용자가 많다.",
-       "시뮬레이션은 설계자가 넣은 것만 가르친다."], ans:3},
-  {t:"write", q:"필자가 말하는 가상 세계의 핵심 가치를 우리말 한 문장으로 써 보세요.",
-   ans:"실제로 해 보기에는 대가가 너무 큰 일을 미리 겪어 보게 해 주는 것이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How to Build a Virtual Training Room",
+    "A Wardrobe Worth Walking Through",
+    "Games Pull Players Away from the World",
+    "The Life of C. S. Lewis",
+    "A Beginner's Guide to Game Design"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "디지털 게임은 필자가 현실에서 접할 수 없던 것을 배우고 경험하게 해 주었다.",
+    "필자의 경험은 세상에서 물러나려는 게이머의 전형적인 이미지와 정반대였다.",
+    "필자는 어릴 때 차원 간 입구를 찾아 수많은 옷장을 직접 조사했다.",
+    "필자는 가상 세계의 가치가 오락과 현실 도피에 한정된다고 본다.",
+    "실제 군대를 위한 가상 훈련 환경을 만든 경험이 그의 확신을 굳혔다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "필자가 가상 세계의 가치를 확신하면서도 조건을 다는 부분이 무엇인지 우리말 한 문장으로 써 보세요.",
+   ans: "이러한 세계가 개인과 사회에 만들어 낼 수 있는 가치를 분명히 이해한 위에 미래 계획의 근거를 세우는 시간을 지금 이 중요한 시점에 내야 한다는 조건이다."
+  }
  ],
  fl: {
-  model: { n:"⑦",
-   toks: [["A patient","s"],["afraid of heights","m"],["can stand","v"],
-          ["on a virtual balcony","m"],["and step back","v"],["at will","m"]],
-   ko:"높은 곳을 무서워하는 환자는 가상의 발코니에 서 있다가 원할 때 물러설 수 있다." },
+  model: {
+   n: "③",
+   toks: [
+    ["My experience with them", "s"], ["was,", "v"], ["in fact,", "m"],
+    ["the opposite of the stereotypical image of a gamer", null], ["who", "c"], ["wants", "v2"],
+    ["to withdraw from the world.", null]
+   ],
+   ko: "그것들에 대한 나의 경험은 사실 세상에서 물러나고 싶어 하는 게이머라는 전형적인 이미지와 정반대였다."
+  },
   drill: [
-   { n:"⑤", en:"Pilots have trained this way since long before the headsets arrived.",
-     ans:"S Pilots · △V have trained · M this way · M since long before the headsets arrived",
-     ko:"조종사들은 헤드셋이 나오기 훨씬 전부터 이런 방식으로 훈련해 왔다." },
-   { n:"⑩", en:"Problems that a drawing hides become obvious when you turn your head.",
-     ans:"S Problems · M that a drawing hides · △V become · C obvious · [when] S′ you · △V′ turn · O your head",
-     ko:"도면이 감추는 문제들이 고개를 돌리는 순간 분명해진다." },
-   { n:"⑮", en:"The value lies in rehearsing what would otherwise be too costly to try.",
-     ans:"S The value · △V lies · M in rehearsing what would otherwise be too costly to try",
-     ko:"그 가치는 달리 해 보기에는 대가가 너무 큰 일을 미리 겪어 보게 하는 데 있다." }
+   {
+    n: "②",
+    en: "These games instilled in me a sense of wonder and exploration.",
+    ans: "S These games · △V instilled · M in me · O a sense of wonder and exploration",
+    ko: "이 게임들은 내 안에 경이로움과 탐험의 감각을 심어 주었다."
+   },
+   {
+    n: "⑤",
+    en: "Often, I would return from my gaming sessions feeling transformed.",
+    ans: "M Often · S I · △V would return · M from my gaming sessions · M feeling transformed",
+    ko: "흔히 나는 게임을 마치고 변화된 느낌으로 돌아오곤 했다."
+   },
+   {
+    n: "⑨",
+    en: "One of the greatest surprises of my career has been the incredible importance of simulated virtual worlds to the future of military planning and strategy.",
+    ans: "S One of the greatest surprises of my career · △V has been · C the incredible importance of simulated virtual worlds to the future of military planning and strategy",
+    ko: "내 경력에서 가장 놀라웠던 일 가운데 하나는 모의 가상 세계가 군사 계획과 전략의 미래에 지니는 엄청난 중요성이었다."
+   }
   ]
  },
  syn: [
-  { n:"⑮", name:"too + 형용사 + to부정사",
-    q:"The value lies in rehearsing what would otherwise be «too costly to try».",
-    d:"<b>too ~ to …</b>는 '너무 ~해서 …할 수 없다'. 부정어 없이 부정의 뜻을 만든다.",
-    k:"달리 해 보기에는 대가가 너무 커서 시도할 수 없는 일." },
-  { n:"⑤", name:"현재완료 + since",
-    q:"Pilots «have trained» this way «since» long before the headsets arrived.",
-    d:"<b>have p.p. + since</b>는 과거 어느 때부터 지금까지 이어져 온 일을 나타낸다.",
-    k:"조종사들은 그때부터 지금까지 이런 방식으로 훈련해 왔다." }
+  {
+   n: "⑥",
+   name: "so much so that ~",
+   q: "…return with fresh understandings and new perspectives — «so much so that, as a kid, I personally investigated countless wardrobes»…",
+   d: "앞의 말이 얼마나 심했는지를 덧붙인다. ‘너무 그러해서 ~할 정도였다’로 읽는다.",
+   k: "너무 그러해서 어릴 적 나는 수많은 옷장을 직접 조사할 정도였다"
+  },
+  {
+   n: "⑦",
+   name: "접속사 now that ~",
+   q: "«Now that I am lucky enough to build virtual worlds for a living», I am more convinced than ever…",
+   d: "‘이제 ~하므로’라는 뜻으로 이유를 나타낸다. <b>that</b>은 생략하기도 한다.",
+   k: "이제 가상 세계를 만드는 일로 먹고살 만큼 운이 좋으므로"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"The room was too dark to read the small print.",
-    k:"그 방은 너무 어두워서 작은 글씨를 읽을 수 없었다." },
-  { u:"구문 2", en:"The hospital has used this model since the first trial.",
-    k:"그 병원은 첫 시험 이후로 이 모형을 써 왔다." },
-  { u:"구문 1 + 2", en:"They have kept the old machine since the new one proved too heavy to move.",
-    k:"새 기계가 너무 무거워 옮길 수 없다는 것이 드러난 뒤로 그들은 옛 기계를 계속 써 왔다." }
+  { u: "구문 1", en: "The room felt real, so much so that I forgot the door.", k: "그 방은 너무 실감이 나서 나는 문을 잊을 정도였다." },
+  { u: "구문 2", en: "Now that the tools are cheap, anyone can build a world.", k: "이제 도구가 저렴하므로 누구나 하나의 세계를 지을 수 있다." },
+  { u: "구문 1 + 2", en: "Now that training is simulated, mistakes cost nothing, so much so that trainees try more.", k: "이제 훈련이 모의로 이루어지므로 실수에 대가가 없고, 그래서 훈련생들이 더 많이 시도할 정도다." }
  ],
- wtype: ["무관","정답","반대","무관","반대"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["게임 소개는 글의 관심사가 아니다"],["정답"],
-       ["글은 비용과 한계를 분명히 적는다 — 정반대다"],
-       ["헤드셋 제조법은 글에 나오지 않는다"],
-       ["글은 도면을 버리라고 하지 않는다 — 정반대다"]],
- src: [["⑤"],["⑧"],["⑪⑫과 어긋남 — 비용과 한계가 있다고 했다"],["⑫"],["⑬"]],
+ why: [
+  ["훈련 환경을 만드는 방법은 글의 초점이 아니다"],
+  ["정답"],
+  ["글은 자신의 경험이 도피와 정반대였다고 말한다 — 정반대다"],
+  ["작가의 생애는 글에 나오지 않는다"],
+  ["게임 제작법은 글에서 다루지 않는다"]
+ ],
+ src: [["①"], ["③"], ["⑥"], ["⑧과 어긋남 — 그 가치는 오락이나 현실 도피에 국한되지 않는다"], ["⑩"]],
  kb: {
-  title:"안전하게 실패하는 방",
-  lead:"연습이 값싸지면 배우는 방식이 바뀐다.",
+  title: "안전하게 실패하는 방",
+  lead: "모의 훈련은 무엇을 대신하는가",
   items: [
-   ["링크 트레이너, 1929년",
-    "에드윈 링크가 만든 초기 비행 훈련 장치는 화면 없이 움직임만 흉내 냈다. 그럼에도 계기 비행 훈련에 널리 쓰였고, 오늘날 시뮬레이터의 조상으로 꼽힌다."],
-   ["고소공포 치료 실험",
-    "1995년 로스바움 연구진은 가상 환경 노출 치료로 고소공포가 유의하게 줄어든다는 결과를 발표했다. 이후 공황·외상후스트레스 등으로 적용이 넓어졌다."],
-   ["멀미는 왜 생기나",
-    "눈이 보고하는 움직임과 귀의 평형기관이 느끼는 움직임이 어긋나면 사이버 멀미가 난다. 화면 지연을 줄이고 시야각을 조절하는 것이 주요 대책이다."]
+   ["옷장 이야기", "C. S. 루이스의 『사자와 마녀와 옷장』(1950)에서 아이들은 옷장을 지나 나니아로 들어간다. 다녀온 뒤 달라져 돌아온다는 구조가 이 글의 비유로 쓰였다."],
+   ["비행 시뮬레이터", "1929년 Edwin Link 가 만든 Link Trainer 는 계기만 보고 비행하는 훈련을 지상에서 하게 했다. 추락해도 아무도 다치지 않는 훈련이 가능해진 첫 장치로 꼽힌다."],
+   ["의료 시뮬레이션", "환자 마네킹과 가상 수술 장비를 쓰는 훈련은 드문 응급 상황을 반복해 겪게 한다. 실제 환자에게 처음 시도하지 않아도 되는 것이 핵심이다."]
   ],
-  ask:"내가 '한 번만 미리 해 볼 수 있다면' 하고 바랐던 일이 있는가? 그것을 연습으로 만들 수 있을까?"
- }
+  ask: "여러분이 ‘실패해도 괜찮은 곳’에서 익힌 것 가운데, 실제 상황에서 도움이 된 것은 무엇인가?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 28 ───────────────────────────── */
 {
- no: "28", key: "wellbeing",
- accent: "#3E7F6B", tint: "#E6F2EE", deep: "#245448",
- en: "It Depends What You Do There",
- ko: "거기서 무엇을 하느냐에 달렸다",
- goal: "화면 사용과 웰빙의 관계를 다룬 연구가 왜 엇갈리는지 설명할 수 있다.",
+ no: "28", key: "wellbeing", accent: "#3E7F6B", tint: "#E6F2EE", deep: "#245448",
+ en: "The Relationship Between Digital Media Use and Well-Being",
+ ko: "얼마나가 아니라 무엇 대신에",
+ goal: "디지털 미디어 사용이 행복에 미치는 영향을 두 연구의 결과를 근거로 정리해 설명할 수 있다.",
  fig: "Figure 1  같은 두 시간, 다른 두 가지 일.",
- tip: "먼저 생각해 보자. '하루 두 시간'이라는 숫자만으로 알 수 없는 것은 무엇일까?",
- sent: [
-  "Headlines about screens and unhappiness appear every year.",
-  "The studies behind them are more careful, and much less certain.",
-  "Most report a correlation that is real but very small.",
-  "One well-known analysis found the link no larger than that for eating potatoes.",
-  "Small does not mean zero, and it does not mean the same for everyone.",
-  "What people do on a screen turns out to matter more than how long they stay.",
-  "Messaging a friend and scrolling past strangers are counted as the same hour.",
-  "Active use, where you speak and are spoken to, looks different from passive watching.",
-  "There is also a measurement problem that is rarely mentioned.",
-  "Most studies rely on people estimating their own hours, and those estimates are poor.",
-  "Direction is a further puzzle: unhappy teenagers may simply reach for a phone more.",
-  "Displacement may matter most of all.",
-  "An hour online costs little if it replaces television, and more if it replaces sleep.",
-  "The useful question is therefore not how long but instead of what.",
-  "A number without that context explains almost nothing."
+ tip: "먼저 생각해 보자. 화면을 본 두 시간이 늘 같은 두 시간일까?",
+ sent: T(28).sent, kor: T(28).kor,
+ bank: [
+  ["variable", "①", "변수"],
+  ["facilitator", "③", "촉진제"],
+  ["detrimental", "③", "해로운"],
+  ["ascribe", "④", "~의 탓으로 돌리다"],
+  ["skewed", "⑥", "왜곡된"],
+  ["operationalize", "⑦", "측정할 수 있게 정의하다"]
  ],
- kor: [
-  "화면과 불행에 관한 기사 제목은 해마다 등장한다.",
-  "그 뒤의 연구들은 더 조심스럽고, 훨씬 덜 단정적이다.",
-  "대부분은 실재하지만 아주 작은 상관관계를 보고한다.",
-  "잘 알려진 한 분석은 그 연관이 감자를 먹는 것과의 연관보다 크지 않다고 밝혔다.",
-  "작다는 것이 0이라는 뜻은 아니며, 모두에게 똑같다는 뜻도 아니다.",
-  "화면 앞에서 무엇을 하느냐가 얼마나 오래 머무느냐보다 더 중요한 것으로 드러난다.",
-  "친구에게 메시지를 보내는 일과 낯선 사람들을 지나쳐 넘기는 일이 같은 한 시간으로 계산된다.",
-  "말을 걸고 말을 듣는 능동적 사용은 수동적으로 보기만 하는 것과 다르게 보인다.",
-  "좀처럼 언급되지 않는 측정의 문제도 있다.",
-  "대부분의 연구는 사람들이 자기 시간을 어림잡는 것에 기대는데, 그 어림은 부정확하다.",
-  "방향도 또 하나의 수수께끼다. 불행한 청소년이 그저 휴대전화를 더 집어 드는 것일 수도 있다.",
-  "무엇보다 중요한 것은 '대체'일지도 모른다.",
-  "인터넷에서 보낸 한 시간은 그것이 텔레비전을 대신했다면 값이 작고, 잠을 대신했다면 더 크다.",
-  "그러므로 쓸모 있는 질문은 '얼마나 오래'가 아니라 '무엇 대신에'이다.",
-  "그 맥락이 없는 숫자는 거의 아무것도 설명하지 못한다."
+ defs: [
+  ["variable", "a thing that can change in a study"],
+  ["facilitator", "something that helps a process along"],
+  ["detrimental", "causing harm or damage to something"],
+  ["ascribe", "to say what caused something"],
+  ["skewed", "leaning to one side, not balanced"],
+  ["operationalize", "to define a term so it can be measured"]
  ],
- bank: [["correlation","③","상관관계"],["estimate","⑩","어림잡다"],["puzzle","⑪","수수께끼"],
-        ["displacement","⑫","대체, 밀어냄"],["replace","⑬","대신하다"],["context","⑮","맥락"]],
- defs: [["correlation","a link between two things that vary together"],
-        ["estimate","to judge an amount without measuring"],
-        ["puzzle","a question that is hard to settle"],
-        ["displacement","the pushing out of one thing by another"],
-        ["replace","to take the place of something"],
-        ["context","the surrounding facts that give meaning"]],
- defOrder: [2,0,5,1,4,3],
+ defOrder: [4, 1, 5, 0, 3, 2],
  flow: [
-  ["The headline","Screens are blamed for unhappiness every year",null],
-  ["What studies find","A real but very (  ①  ) correlation","small"],
-  ["Problem 1","The same hour counts (  ②  ) and passive use alike","active"],
-  ["Problem 2","Self-reported hours are (  ③  )","poor"],
-  ["Better question","Not how long, but instead of (  ④  )","what"]
+  ["The finding", "Results are mixed; the purpose of use matters", null],
+  ["When it helps", "Media used to support real (  ①  )", "relationships"],
+  ["When it hurts", "Networks only (  ②  ) consumed and browsed", "passively"],
+  ["Large data", "More time on media meant (  ③  ) well-being", "lower"],
+  ["The surprise", "Light users scored higher than (  ④  )", "nonusers"]
  ],
- flowBogi: "small · active · poor · what · large · sleep",
+ flowBogi: "relationships · passively · lower · nonusers · higher · actively",
  para: [
-  ["② more careful, and much less certain","Researchers are more ______ than headlines.","cautious"],
-  ["⑤ Small does not mean zero","A weak link is not an ______ one.","absent"],
-  ["⑦ counted as the same hour","Different activities are treated as ______.","identical"],
-  ["⑪ unhappy teenagers may reach for a phone","The cause may run the other ______.","way"],
-  ["⑮ explains almost nothing","A bare number is nearly ______.","useless"]
+  ["① depends on a variety of variables", "The effect ______ on many conditions.", "rests"],
+  ["③ had a detrimental effect on well-being", "Passive use ______ well-being.", "harmed"],
+  ["⑤ the time invested in browsing was lost", "Browsing time was ______ from real talk.", "taken"],
+  ["⑥ the positively skewed social media content", "Feeds show a life bent toward the ______.", "bright"],
+  ["⑨ a detrimental consequence of heavy digital", "Heavy use carries a ______ cost.", "real"]
  ],
- paraBogi: "cautious · absent · identical · way · useless · certain · present · vital",
+ paraBogi: "rests · harmed · taken · bright · real · stands · helped · dark",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["Teenagers Should Give Up Their Phones","Not How Long, but Instead of What",
-       "Screens Have No Effect at All","How to Measure Time Accurately",
-       "Why Potatoes Are Bad for You"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["대부분의 연구는 작은 상관관계를 보고한다.","같은 한 시간이 서로 다른 활동을 하나로 묶는다.",
-       "필자는 화면 사용이 아무 영향도 없다고 본다.","자기 보고 시간은 부정확한 편이다.",
-       "무엇을 대신했는지가 중요할 수 있다."], ans:3},
-  {t:"write", q:"필자가 제안하는 더 나은 질문을 우리말 한 문장으로 써 보세요.",
-   ans:"얼마나 오래 썼는지가 아니라 그 시간이 무엇을 대신했는지를 물어야 한다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How a Meta-Analysis Is Carried Out",
+    "Two Hours Are Not Always the Same Two Hours",
+    "Any Use of Digital Media Lowers Well-Being",
+    "How to Take a Better Photo for a Post",
+    "The History of Social Networks"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "디지털 미디어가 행복에 미치는 영향은 사용 목적 같은 여러 변수에 달려 있다.",
+    "중요한 관계를 위한 상호작용의 촉진제로 쓰일 때는 행복이 향상되었다.",
+    "긍정적 효과는 게시물에 좋은 반응을 받을 때의 행복감·자존감 증가로 설명되었다.",
+    "하루 다섯 시간이 넘는 사용은 가장 높은 행복 수준과 연관되었다.",
+    "하루 한 시간 미만의 가벼운 사용자가 비사용자보다도 높은 행복을 보고했다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "같은 시간을 써도 행복에 미치는 영향이 갈리는 까닭을 우리말 한 문장으로 써 보세요.",
+   ans: "중요한 관계를 위한 상호작용의 촉진제로 쓰였는지, 아니면 수동적으로 소비하고 훑어보는 데만 쓰였는지에 따라 효과가 갈리기 때문이다."
+  }
  ],
  fl: {
-  model: { n:"⑬",
-   toks: [["An hour online","s"],["costs","v"],["little","m"],["if","c"],["it","s2"],
-          ["replaces","v2"],["television, and more if it replaces sleep","m"]],
-   ko:"인터넷에서 보낸 한 시간은 텔레비전을 대신했다면 값이 작고, 잠을 대신했다면 더 크다." },
+  model: {
+   n: "③",
+   toks: [
+    ["Digital communication media", "s"], ["was found", "v"], ["to enhance well-being", null],
+    ["when used as a facilitator for social interactions regarding significant relationships", "m"],
+    ["but", "c"], ["had", "v"], ["a detrimental effect on well-being", null], ["when", "c"],
+    ["social media networks", "s2"], ["were only passively consumed and browsed through.", "v2"]
+   ],
+   ko: "디지털 소통 매체는 중요한 관계에 관한 사회적 상호작용의 촉진제로 쓰일 때는 행복을 높이는 것으로 나타났지만, 소셜 미디어 연결망이 수동적으로 소비되고 훑어보는 데만 쓰일 때는 행복에 해로운 영향을 미쳤다."
+  },
   drill: [
-   { n:"⑥", en:"What people do on a screen turns out to matter more than how long they stay.",
-     ans:"S What people do on a screen · △V turns out · M to matter more than how long they stay",
-     ko:"화면 앞에서 무엇을 하느냐가 얼마나 오래 머무느냐보다 더 중요한 것으로 드러난다." },
-   { n:"⑩", en:"Most studies rely on people estimating their own hours, and those estimates are poor.",
-     ans:"S Most studies · △V rely · M on people estimating their own hours · [and] S those estimates · △V are · C poor",
-     ko:"대부분의 연구는 사람들이 자기 시간을 어림잡는 것에 기대는데, 그 어림은 부정확하다." },
-   { n:"⑭", en:"The useful question is therefore not how long but instead of what.",
-     ans:"S The useful question · △V is · M therefore · C not how long but instead of what",
-     ko:"그러므로 쓸모 있는 질문은 '얼마나 오래'가 아니라 '무엇 대신에'이다." }
+   {
+    n: "⑤",
+    en: "The negative effects were interpreted through the fact that the time invested in browsing was lost to actually engage with important others.",
+    ans: "S The negative effects · △V were interpreted · M through the fact · [that] S′ the time invested in browsing · △V′ was lost · M to actually engage with important others",
+    ko: "부정적 효과는 훑어보는 데 들인 시간이 중요한 타인과 실제로 교류할 시간을 앗아 간다는 사실로 해석되었다."
+   },
+   {
+    n: "⑧",
+    en: "The overall result across the sample indicated that more time on digital media was associated with lower well-being.",
+    ans: "S The overall result across the sample · △V indicated · [that] S′ more time on digital media · △V′ was associated · M with lower well-being",
+    ko: "표본 전체의 결과는 디지털 미디어 사용 시간이 길수록 행복 수준이 낮은 것과 연관됨을 보여 주었다."
+   },
+   {
+    n: "⑩",
+    en: "Interestingly, the light users with less than one hour per day reported the highest levels of well-being, even higher than nonusers.",
+    ans: "M Interestingly · S the light users with less than one hour per day · △V reported · O the highest levels of well-being · M even higher than nonusers",
+    ko: "흥미롭게도 하루 한 시간 미만을 쓰는 가벼운 사용자가 가장 높은 행복 수준을 보고했고, 이는 비사용자보다도 높았다."
+   }
   ]
  },
  syn: [
-  { n:"⑥", name:"turn out to + 동사원형",
-    q:"What people do on a screen «turns out to matter» more than how long they stay.",
-    d:"<b>turn out to + 동사원형</b>은 '~인 것으로 드러나다'. 조사 결과 밝혀진 사실에 쓴다.",
-    k:"무엇을 하느냐가 더 중요한 것으로 드러난다." },
-  { n:"⑧", name:"관계부사 where (계속적 용법)",
-    q:"Active use, «where you speak and are spoken to», looks different from passive watching.",
-    d:"쉼표 뒤 <b>where</b>가 앞 명사를 보충한다. speak 와 are spoken to 가 and 로 묶여 있다.",
-    k:"말을 걸고 말을 듣게 되는 능동적 사용은 수동적 시청과 다르게 보인다." }
+  {
+   n: "③",
+   name: "접속사 뒤의 분사구문 (주어 + be 생략)",
+   q: "Digital communication media was found to enhance well-being «when used as a facilitator for social interactions»…",
+   d: "<b>when/while/if</b> 뒤에서 <b>주어와 be동사</b>가 생략되고 분사만 남는다. 생략된 주어는 주절의 주어와 같다.",
+   k: "촉진제로 쓰일 때는"
+  },
+  {
+   n: "⑨",
+   name: "분사구문  thereby -ing",
+   q: "…, «thereby indicating a detrimental consequence» of heavy digital media use.",
+   d: "앞 절의 결과를 이어 붙인다. ‘그리하여 ~하게 된다, 그럼으로써 ~을 보여 준다’로 읽는다.",
+   k: "그럼으로써 해로운 결과를 보여 준다"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"The first result turned out to be a measurement error.",
-    k:"첫 번째 결과는 측정 오류로 드러났다." },
-  { u:"구문 2", en:"He returned to the club, where new members were welcomed each week.",
-    k:"그는 그 동아리로 돌아갔는데, 거기서는 새 회원이 매주 환영을 받았다." },
-  { u:"구문 1 + 2", en:"The survey, where students reported their own hours, turned out to be unreliable.",
-    k:"학생들이 자기 시간을 스스로 보고한 그 설문은 믿을 수 없는 것으로 드러났다." }
+  { u: "구문 1", en: "When asked about screen time, most people guess too low.", k: "화면 사용 시간을 질문받으면 대부분은 너무 낮게 짐작한다." },
+  { u: "구문 2", en: "He cut his app use in half, thereby freeing two hours a day.", k: "그는 앱 사용을 절반으로 줄였고, 그럼으로써 하루 두 시간을 벌었다." },
+  { u: "구문 1 + 2", en: "When used with care, the app saves time, thereby lowering stress.", k: "주의해서 쓰면 그 앱은 시간을 아껴 주고, 그럼으로써 스트레스를 낮춘다." }
  ],
- wtype: ["반대","정답","반대","무관","지엽"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["글은 포기하라고 주장하지 않는다 — 정반대다"],["정답"],
-       ["글은 상관관계가 0은 아니라고 말한다 — 정반대다"],
-       ["시간 측정 요령은 글의 관심사가 아니다"],
-       ["감자는 크기를 견주려고 든 비유일 뿐이다"]],
- src: [["③"],["⑦"],["⑤과 어긋남 — 작다는 것이 0이라는 뜻은 아니라고 했다"],["⑩"],["⑬"]],
+ why: [
+  ["연구 방법 자체는 글의 초점이 아니다"],
+  ["정답"],
+  ["글은 능동적으로 쓰면 행복이 높아진다고 말한다 — 정반대다"],
+  ["사진 찍는 방법은 글에 나오지 않는다"],
+  ["소셜 네트워크의 역사는 글에서 다루지 않는다"]
+ ],
+ src: [["①"], ["③"], ["④"], ["⑨와 어긋남 — 가장 낮은 행복 수준과 연관되었다"], ["⑩"]],
  kb: {
-  title:"숫자 하나로는 모자란 이유",
-  lead:"같은 시간도 무엇을 대신했느냐에 따라 값이 다르다.",
+  title: "숫자 하나로는 모자란다",
+  lead: "‘몇 시간’이 놓치는 것",
   items: [
-   ["감자와 견준 연구",
-    "2019년 오벤·프리비블스키는 대규모 자료를 재분석해, 화면 사용과 청소년 웰빙의 연관이 감자 섭취나 안경 착용과의 연관과 비슷한 크기라고 보고했다. 크기를 감각적으로 보여 준 사례로 널리 인용된다."],
-   ["자기 보고는 얼마나 맞나",
-    "여러 연구에서 사람들이 보고한 사용 시간과 기기에 기록된 실제 시간의 일치도는 낮게 나타났다. 실제보다 과대·과소 보고가 모두 흔하다."],
-   ["능동과 수동을 나눠 보면",
-    "직접 대화하고 글을 쓰는 능동적 사용과, 남의 게시물을 훑기만 하는 수동적 사용을 나누어 분석하면 결과가 달라진다는 보고가 여러 차례 나왔다."]
+   ["능동과 수동", "같은 소셜 미디어라도 글을 쓰고 답글을 주고받는 능동적 사용과, 남의 게시물만 훑어보는 수동적 사용은 결과가 다르게 나타난다는 연구가 여럿이다. 시간의 길이보다 무엇을 했는지가 갈림길이 된다."],
+   ["메타 분석", "meta-analysis 는 같은 주제를 다룬 여러 연구의 결과를 모아 통계적으로 합치는 방법이다. 개별 연구의 표본이 작아 엇갈리던 결론을 한 단계 위에서 다시 보는 셈이다."],
+   ["상관과 인과", "‘오래 쓸수록 덜 행복하다’는 상관관계는 방향을 알려 주지 않는다. 오래 써서 덜 행복해진 것인지, 덜 행복해서 오래 쓴 것인지는 이 자료만으로 가릴 수 없다."]
   ],
-  ask:"어제 내가 화면 앞에서 보낸 시간은 무엇을 대신했는가? 잠인가, 다른 놀이인가?"
- }
+  ask: "여러분이 화면 앞에서 보낸 어제의 시간은, 무엇 대신에 쓴 시간이었는가?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 29 ───────────────────────────── */
 {
- no: "29", key: "aiwinter",
- accent: "#7E5AA0", tint: "#F0EAF7", deep: "#50326C",
- en: "The Summer They Named It",
- ko: "이름이 붙은 여름",
- goal: "초기 인공지능 연구의 낙관과 좌절이 무엇에서 비롯되었는지 설명할 수 있다.",
+ no: "29", key: "aiwinter", accent: "#7E5AA0", tint: "#F0EAF7", deep: "#50326C",
+ en: "The Early Years of AI Researches",
+ ko: "쉬운 줄 알았던 것이 가장 어려웠다",
+ goal: "초기 AI의 성과와 한계를 사례로 정리하고 ‘AI 겨울’에 이른 과정을 설명할 수 있다.",
  fig: "Figure 1  쉬워 보인 일과 어려웠던 일이 뒤바뀐 자리.",
- tip: "먼저 생각해 보자. 체스를 두는 일과 컵을 집어 드는 일 중 무엇이 기계에게 더 어려울까?",
- sent: [
-  "In the summer of 1956 a small group of researchers met at Dartmouth College for two months.",
-  "Their proposal used a new phrase: artificial intelligence.",
-  "They believed that a serious effort could make real progress in one summer.",
-  "The confidence was not foolish, given what they had already achieved.",
-  "Machines were proving theorems and playing respectable checkers.",
-  "The problems that looked hard to them were the ones that felt hard to people.",
-  "Chess, logic, and algebra sat firmly at the top of their list.",
-  "Those turned out to be comparatively easy to program.",
-  "The hard problems were the ones a child solves without noticing.",
-  "Recognising a face, crossing a room, or understanding a plain sentence in context.",
-  "This reversal is now called Moravec's paradox.",
-  "Funding collapsed twice when promises went unmet, and those years are called AI winters.",
-  "The lesson was not that the early researchers were wrong about everything.",
-  "It was that we are poor judges of which tasks are difficult.",
-  "Our own skills feel effortless precisely because they run beneath awareness."
+ tip: "먼저 생각해 보자. 사람에게 쉬운 일이 기계에게도 쉬울까?",
+ sent: T(29).sent, kor: T(29).kor,
+ bank: [
+  ["emulate", "②", "모방하다"],
+  ["breakthrough", "③", "돌파구"],
+  ["albeit", "④", "비록 ~이지만"],
+  ["autonomously", "⑧", "스스로"],
+  ["constrained", "⑩", "제한된"],
+  ["wane", "⑫", "약해지다"]
  ],
- kor: [
-  "1956년 여름, 한 무리의 연구자들이 다트머스 대학에 모여 두 달을 보냈다.",
-  "그들의 제안서는 새로운 표현을 썼다. '인공지능'이었다.",
-  "그들은 진지하게 매달리면 한 여름 만에 실질적인 진전을 낼 수 있다고 믿었다.",
-  "그 자신감은 그들이 이미 이룬 것을 생각하면 어리석은 것이 아니었다.",
-  "기계는 정리를 증명하고 있었고, 체커도 제법 두고 있었다.",
-  "그들에게 어려워 보인 문제는 사람에게 어렵게 느껴지는 문제였다.",
-  "체스와 논리학과 대수가 그들 목록의 맨 위에 굳건히 자리 잡고 있었다.",
-  "그것들은 프로그램으로 짜기에는 비교적 쉬운 것으로 드러났다.",
-  "어려운 문제는 아이가 알아채지도 못한 채 풀어내는 것들이었다.",
-  "얼굴을 알아보기, 방을 가로질러 걷기, 또는 맥락 속에서 평범한 문장을 이해하기.",
-  "이 뒤바뀜을 지금은 '모라벡의 역설'이라고 부른다.",
-  "약속이 지켜지지 않자 지원이 두 차례 무너졌고, 그 시기를 'AI 겨울'이라 부른다.",
-  "교훈은 초기 연구자들이 모든 것에 대해 틀렸다는 것이 아니었다.",
-  "우리가 어떤 일이 어려운지 판단하는 데 서투르다는 것이었다.",
-  "우리 자신의 능력이 힘들지 않게 느껴지는 것은 바로 그것이 의식 아래에서 돌아가기 때문이다."
+ defs: [
+  ["emulate", "to copy the way something works"],
+  ["breakthrough", "a sudden step forward in progress"],
+  ["albeit", "although it is only in this way"],
+  ["autonomously", "acting without outside control"],
+  ["constrained", "kept inside narrow limits"],
+  ["wane", "to grow smaller or weaker"]
  ],
- bank: [["proposal","②","제안서"],["theorem","⑤","정리(定理)"],["comparatively","⑧","비교적"],
-        ["reversal","⑪","뒤바뀜"],["collapse","⑫","무너지다"],["awareness","⑮","의식, 자각"]],
- defs: [["proposal","a written plan offered for approval"],
-        ["theorem","a statement proved by reasoning"],
-        ["comparatively","when measured against something else"],
-        ["reversal","a change to the opposite order"],
-        ["collapse","to fall down or fail suddenly"],
-        ["awareness","the state of noticing something"]],
- defOrder: [3,0,5,1,4,2],
+ defOrder: [5, 2, 0, 4, 1, 3],
  flow: [
-  ["The meeting","In 1956 a small group at Dartmouth named the field",null],
-  ["Their guess","Problems hard for (  ①  ) would be hard for machines","people"],
-  ["What happened","Chess and logic proved comparatively (  ②  )","easy"],
-  ["The surprise","Tasks a (  ③  ) does without noticing were the hard ones","child"],
-  ["The lesson","We are poor judges of what is (  ④  )","difficult"]
+  ["Early wins", "Logic Theorist proved theorems like a human", null],
+  ["ELIZA", "It answered user input and mimicked (  ①  )", "conversation"],
+  ["Checkers", "Samuel's program learned from its own (  ②  )", "experiences"],
+  ["The wall", "Common sense and real-world (  ③  ) defeated it", "complexity"],
+  ["The winter", "Funding dried up and optimism (  ④  )", "waned"]
  ],
- flowBogi: "people · easy · child · difficult · funding · summer",
+ flowBogi: "conversation · experiences · complexity · waned · grew · silence",
  para: [
-  ["④ was not foolish, given what they had achieved","Their hope was ______ at the time.","reasonable"],
-  ["⑧ comparatively easy to program","Formal tasks proved ______ than expected.","simpler"],
-  ["⑨ a child solves without noticing","Everyday skills feel ______.","automatic"],
-  ["⑫ Funding collapsed twice","Support was withdrawn ______.","repeatedly"],
-  ["⑮ they run beneath awareness","We cannot ______ our own processing.","observe"]
+  ["② by emulating human logical reasoning", "It ______ the way people reason.", "copied"],
+  ["④ albeit in a limited fashion", "Though only in a ______ way.", "narrow"],
+  ["⑧ improve their performance autonomously", "Machines could get better on their ______.", "own"],
+  ["⑩ effective in constrained environments", "They worked where the rules were ______.", "clear"],
+  ["⑫ funding for AI research dried up", "The money for AI research ______.", "stopped"]
  ],
- paraBogi: "reasonable · simpler · automatic · repeatedly · observe · reckless · harder · once",
+ paraBogi: "copied · narrow · own · clear · stopped · ignored · wide · grew",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How to Program a Chess Engine","We Are Poor Judges of What Is Hard",
-       "The Early Researchers Were Simply Wrong","A Complete History of Dartmouth College",
-       "Why Funding Should Never Be Cut"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["'인공지능'이라는 표현은 1956년 제안서에서 쓰였다.","당시 기계는 이미 정리를 증명하고 있었다.",
-       "필자는 초기 연구자들이 모든 것에 대해 틀렸다고 본다.","얼굴 알아보기는 어려운 문제로 드러났다.",
-       "지원이 두 차례 무너진 시기를 AI 겨울이라 부른다."], ans:3},
-  {t:"write", q:"필자가 말하는 '모라벡의 역설'의 내용을 우리말 한 문장으로 써 보세요.",
-   ans:"사람에게 어려운 일이 기계에는 쉽고, 아이도 하는 쉬운 일이 기계에는 어렵다는 것이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How ELIZA Answered Its Users",
+    "The Easy Problems That Turned Out Hard",
+    "Early AI Quickly Matched Human Intelligence",
+    "A Guide to Playing Checkers",
+    "How Research Grants Are Reviewed"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "Logic Theorist 는 인간의 논리적 추론을 모방해 수학 정리를 증명할 수 있었다.",
+    "ELIZA 는 1965년 Joseph Weizenbaum 이 개발한 초기 자연어 처리 프로그램이다.",
+    "1956년 Arthur Samuel 의 체커 프로그램은 경험에서 학습할 수 있었다.",
+    "초기 AI 시스템은 상식적 추론이 필요한 작업에서 특히 뛰어난 성과를 냈다.",
+    "‘AI 겨울’은 1970년대와 1980년대 초 연구비가 줄고 낙관론이 약해진 시기다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "필자가 ‘AI 겨울’에 이른 까닭으로 든 것을 우리말 한 문장으로 써 보세요.",
+   ans: "초기의 약속이 지켜지지 않았고 기존 기술의 한계가 드러나면서 인간 같은 지능이 아직 멀었다는 것이 분명해졌기 때문이다."
+  }
  ],
  fl: {
-  model: { n:"⑮",
-   toks: [["Our own skills","s"],["feel","v"],["effortless","c"],["precisely because","c"],
-          ["they","s2"],["run","v2"],["beneath awareness","m"]],
-   ko:"우리 자신의 능력이 힘들지 않게 느껴지는 것은 바로 그것이 의식 아래에서 돌아가기 때문이다." },
+  model: {
+   n: "⑧",
+   toks: [
+    ["This", "s"], ["was", "v"], ["a major advancement", null], ["at the time", "m"],
+    ["because", "c"], ["it", "s2"], ["showed", "v2"], ["that", "c"], ["machines", "s2"],
+    ["could be programmed", "v2"],
+    ["to improve their performance autonomously, without human intervention.", null]
+   ],
+   ko: "이것은 당시 큰 진전이었는데, 기계가 사람의 개입 없이 스스로 성능을 높이도록 프로그램될 수 있음을 보여 주었기 때문이다."
+  },
   drill: [
-   { n:"③", en:"They believed that a serious effort could make real progress in one summer.",
-     ans:"S They · △V believed · [that] S′ a serious effort · △V′ could make · O real progress · M in one summer",
-     ko:"그들은 진지하게 매달리면 한 여름 만에 실질적인 진전을 낼 수 있다고 믿었다." },
-   { n:"⑥", en:"The problems that looked hard to them were the ones that felt hard to people.",
-     ans:"S The problems · M that looked hard to them · △V were · C the ones that felt hard to people",
-     ko:"그들에게 어려워 보인 문제는 사람에게 어렵게 느껴지는 문제였다." },
-   { n:"⑫", en:"Funding collapsed twice when promises went unmet, and those years are called AI winters.",
-     ans:"S Funding · △V collapsed · M twice · [when] S′ promises · △V′ went · C unmet · [and] S those years · △V are called · C AI winters",
-     ko:"약속이 지켜지지 않자 지원이 두 차례 무너졌고, 그 시기를 'AI 겨울'이라 부른다." }
+   {
+    n: "②",
+    en: "Researchers developed programs like the Logic Theorist, created by Allen Newell and Herbert A. Simon, which could prove mathematical theorems by emulating human logical reasoning.",
+    ans: "S Researchers · △V developed · O programs like the Logic Theorist · M created by Allen Newell and Herbert A. Simon · [which] △V′ could prove · O mathematical theorems · M by emulating human logical reasoning",
+    ko: "연구자들은 Allen Newell 과 Herbert A. Simon 이 만든 Logic Theorist 같은 프로그램을 개발했는데, 그것은 인간의 논리적 추론을 모방해 수학 정리를 증명할 수 있었다."
+   },
+   {
+    n: "⑩",
+    en: "Early AI systems were effective in constrained environments with well-defined rules, like chess or theorem proving, but they struggled with tasks that required common sense reasoning or dealing with the complexities of the real world.",
+    ans: "S Early AI systems · △V were · C effective in constrained environments with well-defined rules · [but] S they · △V struggled · M with tasks that required common sense reasoning or dealing with the complexities of the real world",
+    ko: "초기 AI 시스템은 체스나 정리 증명처럼 규칙이 분명한 제한된 환경에서는 효과적이었지만, 상식적 추론이나 현실의 복잡함을 다루는 일에는 어려움을 겪었다."
+   },
+   {
+    n: "⑬",
+    en: "The early promises of AI had not been fulfilled, and the limitations of existing technologies made it clear that human-like intelligence was still far off.",
+    ans: "S The early promises of AI · △V had not been fulfilled · and S the limitations of existing technologies · △V made · O it clear · [that] S′ human-like intelligence · △V′ was · C still far off",
+    ko: "AI 의 초기 약속은 지켜지지 않았고, 기존 기술의 한계는 인간 같은 지능이 아직 멀었음을 분명히 했다."
+   }
   ]
  },
  syn: [
-  { n:"④", name:"분사구문 given ~",
-    q:"The confidence was not foolish, «given what they had already achieved».",
-    d:"<b>given + 명사(구)</b>는 '~을 고려하면'. 판단의 근거를 덧붙일 때 쓴다.",
-    k:"이미 이룬 것을 고려하면 그 자신감은 어리석은 것이 아니었다." },
-  { n:"⑮", name:"감각동사 feel + 형용사 / because절",
-    q:"Our own skills «feel effortless» precisely because they run beneath awareness.",
-    d:"<b>feel + 형용사</b>로 주어의 상태를 말한다. precisely 는 because 절을 강조한다.",
-    k:"우리 능력이 힘들지 않게 느껴지는 것은 바로 그 때문이다." }
+  {
+   n: "④",
+   name: "접속사 albeit",
+   q: "ELIZA simulated a conversation … in a way that mimicked human conversation, «albeit in a limited fashion».",
+   d: "<b>although</b>의 짧은 형태로, 뒤에 절 대신 <b>구</b>가 온다. ‘비록 ~이긴 하지만’으로 읽는다.",
+   k: "비록 제한된 방식이긴 했지만"
+  },
+  {
+   n: "⑫",
+   name: "선행사를 품은 관계대명사 what",
+   q: "These challenges led to «what is now known as the “AI winter,”» a period during the 1970s and early 1980s…",
+   d: "<b>what</b>은 그 자체로 명사절을 이끈다. 여기서는 전치사 <b>to</b>의 목적어가 된다.",
+   k: "오늘날 ‘AI 겨울’이라 불리는 것"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"Given the time we had, the result was good enough.",
-    k:"우리가 가진 시간을 고려하면 그 결과는 충분히 좋았다." },
-  { u:"구문 2", en:"The problem feels simple because you already know the answer.",
-    k:"그 문제가 쉽게 느껴지는 것은 네가 이미 답을 알기 때문이다." },
-  { u:"구문 1 + 2", en:"Given his training, the task felt easy to him but hard to us.",
-    k:"그의 훈련을 고려하면 그 일은 그에게는 쉽게, 우리에게는 어렵게 느껴졌다." }
+  { u: "구문 1", en: "The model answered every question, albeit slowly.", k: "그 모형은 비록 느리긴 했지만 모든 질문에 답했다." },
+  { u: "구문 2", en: "They wrote down what the machine could not do.", k: "그들은 그 기계가 할 수 없는 것을 적어 두었다." },
+  { u: "구문 1 + 2", en: "He listed what the program solved, albeit within narrow limits.", k: "그는 비록 좁은 한계 안에서이긴 했지만 그 프로그램이 푼 것을 나열했다." }
  ],
- wtype: ["무관","정답","반대","무관","무관"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["체스 엔진 제작법은 글에 나오지 않는다"],["정답"],
-       ["글은 모든 것에 대해 틀린 것은 아니라고 말한다 — 정반대다"],
-       ["대학의 역사는 글의 소재가 아니다"],["지원 정책에 대한 주장은 글에 없다"]],
- src: [["②"],["⑤"],["⑬과 어긋남 — 모든 것에 대해 틀린 것은 아니라고 했다"],["⑩"],["⑫"]],
+ why: [
+  ["ELIZA 한 사례만 붙든 지엽적인 제목이다"],
+  ["정답"],
+  ["글은 인간 지능 복제가 예상보다 훨씬 어려웠다고 말한다 — 정반대다"],
+  ["체커 두는 법은 글에 나오지 않는다"],
+  ["연구비 심사 절차는 글에서 다루지 않는다"]
+ ],
+ src: [["②"], ["③"], ["⑦"], ["⑩과 어긋남 — 상식적 추론이 필요한 작업에서는 어려움을 겪었다"], ["⑫"]],
  kb: {
-  title:"쉬운 일과 어려운 일",
-  lead:"우리가 잘하는 것일수록 설명하기 어렵다.",
+  title: "모라벡의 역설",
+  lead: "왜 쉬운 일이 더 어려웠나",
   items: [
-   ["1956년 다트머스 제안서",
-    "매카시·민스키·로체스터·섀넌이 함께 낸 이 제안서에서 artificial intelligence 라는 말이 처음 공식적으로 쓰였다. 여름 두 달 동안 열 명 남짓이 모여 진전을 내겠다는 계획이었다."],
-   ["모라벡의 역설",
-    "1988년 한스 모라벡은 \"추론은 계산량이 적게 들고, 지각과 운동은 엄청나게 든다\"고 정리했다. 진화가 오래 다듬은 능력일수록 의식에 덜 드러나고, 그래서 프로그램으로 옮기기 어렵다."],
-   ["두 번의 겨울",
-    "1974년 무렵과 1987년 무렵, 기대에 못 미친 성과로 연구비가 크게 줄었다. 이 시기를 AI 겨울이라 부르며, 지금도 과장된 약속을 경계할 때 인용된다."]
+   ["다트머스 회의", "1956년 여름 다트머스 대학에서 열린 워크숍에서 ‘인공지능(artificial intelligence)’이라는 말이 처음 쓰였다. John McCarthy 가 제안한 이름이었고, 이 회의가 분야의 출발점으로 꼽힌다."],
+   ["ELIZA 효과", "ELIZA 는 상대의 말을 되받아 질문으로 되돌리는 간단한 규칙으로 움직였다. 그런데도 사용자들이 이해받는다고 느낀 현상을 ELIZA 효과라 부른다. Weizenbaum 자신이 이 반응에 놀랐다."],
+   ["모라벡의 역설", "Hans Moravec 등은 1980년대에, 추론과 계산 같은 ‘높은’ 능력은 기계에 쉽고 지각과 운동 같은 ‘낮은’ 능력은 매우 어렵다고 지적했다. 오래 진화한 능력일수록 무의식적이어서 옮겨 적기 어렵다는 설명이다."]
   ],
-  ask:"내가 아주 잘해서 '어떻게 하는지' 설명하기 어려운 일이 있는가? 그것을 말로 풀어 보자."
- }
+  ask: "여러분이 아무 생각 없이 해내는 일 하나를 골라, 그 순서를 글로 적어 볼 수 있는가?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 30 ───────────────────────────── */
 {
- no: "30", key: "unsaid",
- accent: "#C05A80", tint: "#FAE9EF", deep: "#8A2F52",
- en: "The Words We Do Not Say",
- ko: "말하지 않는 말",
- goal: "말해지지 않은 것이 어떻게 의미를 만드는지 예를 들어 설명할 수 있다.",
- fig: "Figure 1  문장 하나와 그 아래 깔린 합의.",
- tip: "먼저 생각해 보자. '지금 몇 시야?'라는 질문에 '3시 정각'이라고만 답하면 왜 이상할 때가 있을까?",
- sent: [
-  "Ask a friend how the film was, and hear the answer: the seats were comfortable.",
-  "Nothing negative has been said, yet you know exactly what was meant.",
-  "You reached the meaning by assuming your friend was being cooperative.",
-  "A cooperative speaker gives as much information as the moment requires.",
-  "Since a comment about seats says far too little about a film, the gap itself speaks.",
-  "Paul Grice described this kind of unspoken reasoning in the 1960s.",
-  "He argued that conversation runs on shared expectations rather than on words alone.",
-  "Say enough, say what you believe true, stay relevant, be clear.",
-  "Breaking one of these on purpose is how irony and hints work.",
-  "This is also why literal translation so often fails.",
-  "The words cross the border, and the expectations behind them do not.",
-  "It is why written messages start arguments that speech would not.",
-  "A short reply carries a tone in one culture and coldness in another.",
-  "Machines meet the same wall when they process language without shared ground.",
-  "Meaning has never lived only in the sentence."
+ no: "30", key: "unsaid", accent: "#C05A80", tint: "#FAE9EF", deep: "#8A2F52",
+ en: "Language and Communication",
+ ko: "주고도 잃지 않는 나눔",
+ goal: "필자가 말하는 의사소통의 본질과 그것이 사회적인 일인 까닭을 설명할 수 있다.",
+ fig: "Figure 1  문장 하나와 그 아래 깔린 합의 — 함께 쓰기로 한 규칙.",
+ tip: "먼저 생각해 보자. 내가 아는 것을 남에게 말해 주면, 나에게서 그것이 줄어드는가?",
+ sent: T(30).sent, kor: T(30).kor,
+ bank: [
+  ["regulate", "②", "조절하다"],
+  ["prized", "④", "소중한"],
+  ["repository", "⑤", "저장소"],
+  ["exploit", "⑥", "활용하다"],
+  ["superstition", "⑧", "미신"],
+  ["necessitate", "⑯", "필요로 하다"]
  ],
- kor: [
-  "친구에게 영화가 어땠느냐고 물으면, 이런 답을 듣는다. \"좌석이 편하더라.\"",
-  "부정적인 말은 하나도 나오지 않았는데, 당신은 무슨 뜻인지 정확히 안다.",
-  "친구가 협조적으로 말하고 있다고 전제했기에 그 뜻에 닿은 것이다.",
-  "협조적인 화자는 그 순간이 요구하는 만큼의 정보를 준다.",
-  "좌석에 관한 말은 영화에 대해 너무 적게 말하므로, 그 빈자리 자체가 말을 한다.",
-  "폴 그라이스는 1960년대에 이런 종류의 말해지지 않은 추론을 서술했다.",
-  "그는 대화가 낱말만이 아니라 공유된 기대 위에서 돌아간다고 주장했다.",
-  "충분히 말하라, 참이라고 믿는 것을 말하라, 관련된 것을 말하라, 분명히 말하라.",
-  "이 가운데 하나를 일부러 어기는 것이 반어와 암시가 작동하는 방식이다.",
-  "직역이 그토록 자주 실패하는 이유도 이것이다.",
-  "낱말은 국경을 넘지만, 그 뒤의 기대는 넘지 않는다.",
-  "글로 쓴 메시지가 말이었다면 생기지 않았을 다툼을 일으키는 까닭도 그것이다.",
-  "짧은 답장이 어떤 문화에서는 어조를 담고, 다른 문화에서는 차가움을 담는다.",
-  "기계도 공유된 바탕 없이 언어를 처리할 때 같은 벽에 부딪힌다.",
-  "의미는 한 번도 문장 안에만 살았던 적이 없다."
+ defs: [
+  ["regulate", "to control the way something works"],
+  ["prized", "valued very highly by its owner"],
+  ["repository", "a place where things are kept safe"],
+  ["exploit", "to make full use of something"],
+  ["superstition", "a belief not based on reason or fact"],
+  ["necessitate", "to make something necessary"]
  ],
- bank: [["cooperative","③","협조적인"],["assume","③","전제하다"],["relevant","⑧","관련된"],
-        ["irony","⑨","반어"],["literal","⑩","글자 그대로의"],["tone","⑬","어조"]],
- defs: [["cooperative","willing to work together with others"],
-        ["assume","to take something as true without saying so"],
-        ["relevant","closely connected with the matter at hand"],
-        ["irony","saying one thing and meaning the opposite"],
-        ["literal","following the exact words"],
-        ["tone","the attitude carried by how something is said"]],
- defOrder: [1,4,0,5,3,2],
+ defOrder: [3, 5, 1, 0, 4, 2],
  flow: [
-  ["The example","\"The seats were comfortable\" says nothing bad, yet means it",null],
-  ["Why it works","You assume the speaker is being (  ①  )","cooperative"],
-  ["The rule","Say enough, say the true, stay (  ②  ), be clear","relevant"],
-  ["Deliberate breaking","Irony and (  ③  ) work by breaking one on purpose","hints"],
-  ["Consequence","Literal (  ④  ) fails because expectations do not cross","translation"]
+  ["The tool", "Language has served communication for centuries", null],
+  ["Its worth", "It is a repository of wisdom and a (  ①  ) on the future", "telescope"],
+  ["The limit", "Its use is still not free of ignorance and (  ②  )", "prejudice"],
+  ["Its root", "The Latin term behind it means to (  ③  )", "share"],
+  ["The point", "The receiver gains while the source loses (  ④  )", "nothing"]
  ],
- flowBogi: "cooperative · relevant · hints · translation · seats · silence",
+ flowBogi: "telescope · prejudice · share · nothing · everything · silence",
  para: [
-  ["② Nothing negative has been said","The criticism was never ______.","stated"],
-  ["⑤ the gap itself speaks","What is missing carries the ______.","message"],
-  ["⑦ rather than on words alone","Talk rests on more than ______.","vocabulary"],
-  ["⑪ the expectations behind them do not","Assumptions do not ______ languages.","travel"],
-  ["⑮ never lived only in the sentence","Meaning is partly ______ the words.","outside"]
+  ["② to regulate his social behavior", "It lets him ______ how he acts with others.", "control"],
+  ["④ one of the most prized possessions", "It is among our most ______ belongings.", "valued"],
+  ["⑧ not free from ignorance, prejudice", "It still carries ______ and old fears.", "bias"],
+  ["⑪ commonly owned, accepted, and recognized", "The system is ______ by the whole group.", "shared"],
+  ["⑮ the receiver gains, while the source does not lose", "One side gains and the other loses ______.", "nothing"]
  ],
- paraBogi: "stated · message · vocabulary · travel · outside · hidden · silence · inside",
+ paraBogi: "control · valued · bias · shared · nothing · ignore · cheap · alone",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How to Choose a Good Film","Meaning Lives Partly Outside the Sentence",
-       "Why Translation Should Always Be Literal","A Biography of Paul Grice",
-       "Text Messages Are Always Rude"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["부정적인 말 없이도 뜻이 전달될 수 있다.","그라이스는 대화가 공유된 기대 위에서 돈다고 보았다.",
-       "반어는 규칙을 실수로 어길 때 생긴다.","직역은 기대까지 옮기지 못한다.",
-       "기계도 공유된 바탕이 없으면 같은 벽에 부딪힌다."], ans:3},
-  {t:"write", q:"필자가 직역이 자주 실패한다고 본 이유를 우리말 한 문장으로 써 보세요.",
-   ans:"낱말은 옮겨 가지만 그 뒤에 깔린 기대는 함께 옮겨 가지 않기 때문이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "Where the Word 'Communication' Comes From",
+    "A Sharing in Which No One Loses",
+    "Language Has Freed Us from All Prejudice",
+    "How Latin Became a Dead Language",
+    "A Guide to Public Speaking"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "언어는 인간이 환경과 상호작용하고 사회적 행동을 조절할 수 있게 해 주었다.",
+    "의사소통 수단은 여러 가지가 있지만 언어가 가장 널리 쓰이는 도구이다.",
+    "‘communication’은 ‘공유하다’를 뜻하는 라틴어 낱말에서 유래했다.",
+    "의사소통은 상징을 통해 한 사람이 다른 사람에게 의미를 전달하는 것만을 뜻한다.",
+    "의사소통은 수신자가 얻지만 발신자는 잃지 않는 특별한 종류의 나눔이다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "필자가 의사소통을 본질적으로 사회적인 일이라고 본 근거를 우리말 한 문장으로 써 보세요.",
+   ans: "의사소통 체계가 공동체 구성원에게 공유되고 받아들여지고 인정된 것이어야 하며, 수신자가 얻어도 발신자는 잃지 않는 나눔이기 때문이다."
+  }
  ],
  fl: {
-  model: { n:"⑤",
-   toks: [["Since","c"],["a comment about seats","s2"],["says","v2"],
-          ["far too little about a film","m"],[",",null],["the gap itself","s"],["speaks","v"]],
-   ko:"좌석에 관한 말은 영화에 대해 너무 적게 말하므로, 그 빈자리 자체가 말을 한다." },
+  model: {
+   n: "⑮",
+   toks: [
+    ["But", "c"], ["it", "s"], ["is", "v"], ["a special kind of sharing,", null], ["where", "c"],
+    ["the receiver", "s2"], ["gains,", "v2"], ["while", "c"], ["the source", "s2"],
+    ["does not lose", "v2"], ["by giving.", "m"]
+   ],
+   ko: "그러나 그것은 특별한 종류의 나눔인데, 그 안에서 수신자는 얻지만 발신자는 준다고 해서 잃지 않는다."
+  },
   drill: [
-   { n:"③", en:"You reached the meaning by assuming your friend was being cooperative.",
-     ans:"S You · △V reached · O the meaning · M by assuming your friend was being cooperative",
-     ko:"친구가 협조적으로 말하고 있다고 전제했기에 그 뜻에 닿은 것이다." },
-   { n:"⑨", en:"Breaking one of these on purpose is how irony and hints work.",
-     ans:"S Breaking one of these on purpose · △V is · C how irony and hints work",
-     ko:"이 가운데 하나를 일부러 어기는 것이 반어와 암시가 작동하는 방식이다." },
-   { n:"⑪", en:"The words cross the border, and the expectations behind them do not.",
-     ans:"S The words · △V cross · O the border · [and] S the expectations behind them · △V do not",
-     ko:"낱말은 국경을 넘지만, 그 뒤의 기대는 넘지 않는다." }
+   {
+    n: "⑤",
+    en: "It acts as a repository of wisdom, a propeller for the advancement of knowledge, and a telescope to view the vision of the future.",
+    ans: "S It · △V acts · M as a repository of wisdom, a propeller for the advancement of knowledge, and a telescope to view the vision of the future",
+    ko: "그것은 지혜의 저장소이자 지식의 발전을 미는 추진기이며 미래의 상을 내다보는 망원경 노릇을 한다."
+   },
+   {
+    n: "⑨",
+    en: "The word “communication” is derived from the Latin term communicate or communion, both of which mean to share.",
+    ans: "S The word “communication” · △V is derived · M from the Latin term communicate or communion · [both of which] △V′ mean · O to share",
+    ko: "‘communication’이라는 낱말은 라틴어 communicate 나 communion 에서 왔는데, 둘 다 ‘나누다’를 뜻한다."
+   },
+   {
+    n: "⑬",
+    en: "The essence of communication is getting the receiver and the sender tuned together for a particular message.",
+    ans: "S The essence of communication · △V is · C getting the receiver and the sender tuned together for a particular message",
+    ko: "의사소통의 본질은 특정한 메시지를 위해 수신자와 발신자를 함께 맞추어 놓는 것이다."
+   }
   ]
  },
  syn: [
-  { n:"⑤", name:"Since + 절 (이유)",
-    q:"«Since a comment about seats says» far too little, the gap itself speaks.",
-    d:"<b>Since</b>는 '~이므로'라는 이유를 나타낸다. because 보다 이미 아는 사실에 가깝다.",
-    k:"좌석 이야기는 너무 적게 말하므로, 그 빈자리가 말을 한다." },
-  { n:"⑨", name:"동명사 주어 + how절 보어",
-    q:"«Breaking one of these on purpose is how» irony and hints work.",
-    d:"동명사구가 주어이고, <b>how + 절</b>이 보어다. '~하는 것이 …하는 방식이다'.",
-    k:"하나를 일부러 어기는 것이 반어가 작동하는 방식이다." }
+  {
+   n: "⑨",
+   name: "전치사 + 관계대명사  both of which",
+   q: "…the Latin term communicate or communion, «both of which mean to share».",
+   d: "앞의 두 낱말을 함께 받아 ‘그 둘 다는’이라는 뜻으로 뒤 절의 주어가 된다.",
+   k: "그 둘 다 ‘나누다’를 뜻한다"
+  },
+  {
+   n: "⑬",
+   name: "get + 목적어 + 과거분사",
+   q: "The essence of communication is «getting the receiver and the sender tuned together» for a particular message.",
+   d: "<b>get + 목적어 + p.p.</b>는 ‘~을 …된 상태로 만들다’이다. 목적어와 분사 사이가 수동 관계다.",
+   k: "수신자와 발신자를 함께 맞추어 놓는 것"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"Since everyone already knew the rule, no one explained it.",
-    k:"모두가 이미 그 규칙을 알고 있었으므로 아무도 설명하지 않았다." },
-  { u:"구문 2", en:"Leaving a pause is how a speaker asks for agreement.",
-    k:"잠깐 멈추는 것이 화자가 동의를 구하는 방식이다." },
-  { u:"구문 1 + 2", en:"Since the words were the same, choosing a tone was how they differed.",
-    k:"낱말이 같았으므로, 어조를 고르는 것이 그들이 달라지는 방식이었다." }
+  { u: "구문 1", en: "He read two letters, both of which came from the same town.", k: "그는 편지 두 통을 읽었는데, 둘 다 같은 마을에서 온 것이었다." },
+  { u: "구문 2", en: "She got the message understood before the meeting ended.", k: "그녀는 회의가 끝나기 전에 그 메시지가 이해되게 만들었다." },
+  { u: "구문 1 + 2", en: "They got two versions checked, both of which said the same thing.", k: "그들은 두 판본을 확인하게 했는데, 둘 다 같은 내용을 말하고 있었다." }
  ],
- wtype: ["무관","정답","반대","무관","반대"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["영화 고르는 법은 글의 관심사가 아니다"],["정답"],
-       ["글은 직역이 자주 실패한다고 말한다 — 정반대다"],
-       ["그라이스의 생애는 글의 소재가 아니다"],
-       ["글은 문자 메시지가 늘 무례하다고 하지 않는다 — 정반대다"]],
- src: [["①②"],["⑦"],["⑨과 어긋남 — 일부러 어기는 것이라고 했다"],["⑪"],["⑭"]],
+ why: [
+  ["문장 ⑨의 어원 대목만 붙든 지엽적인 제목이다"],
+  ["정답"],
+  ["글은 언어 사용이 아직 편견에서 자유롭지 않다고 말한다 — 정반대다"],
+  ["라틴어의 역사는 글에 나오지 않는다"],
+  ["연설하는 방법은 글에서 다루지 않는다"]
+ ],
+ src: [["②"], ["③"], ["⑨"], ["⑩과 어긋남 — 단순한 의미 전달만을 뜻하지 않는다"], ["⑮"]],
  kb: {
-  title:"말 사이의 규칙",
-  lead:"말하지 않은 쪽이 더 많은 것을 나른다.",
+  title: "나눠도 줄지 않는 것",
+  lead: "정보라는 이상한 재화",
   items: [
-   ["그라이스의 협력 원리",
-    "1967년 강연에서 폴 그라이스는 대화를 이끄는 네 가지 격률 — 양·질·관계·태도 — 을 제시했다. 이를 일부러 어길 때 생기는 숨은 뜻을 '함축'이라 부른다."],
-   ["추천서에 담긴 함축",
-    "그라이스가 든 유명한 예는 \"이 학생은 출석이 좋고 글씨가 단정합니다\"로만 채워진 추천서다. 말한 것에는 나쁜 말이 없지만, 말하지 않은 것이 판단을 전한다."],
-   ["기계 번역이 걸리는 자리",
-    "관용구와 반어, 생략된 주어처럼 맥락에 기대는 표현에서 오역이 잦다. 문장 밖 정보를 함께 넣어 주는 방향으로 연구가 이어지는 이유다."]
+   ["비경합재", "빵은 내가 먹으면 남에게 돌아갈 몫이 줄지만, 노래나 공식은 남이 알아도 내 몫이 줄지 않는다. 경제학에서는 이런 성질을 비경합성(non-rivalry)이라 부른다."],
+   ["제퍼슨의 촛불", "토머스 제퍼슨은 1813년 편지에서, 자기 초로 남의 초에 불을 붙여도 자기 빛이 줄지 않듯 생각도 그렇다고 썼다. 지식 공유를 설명하는 오래된 비유다."],
+   ["섀넌의 통신 모형", "Claude Shannon 은 1948년 논문에서 정보원·부호기·잡음·복호기·수신자로 통신을 그렸다. 뜻이 아니라 전달의 성공률을 다룬 모형이었지만, 오늘날 통신의 기본 틀이 되었다."]
   ],
-  ask:"친구의 짧은 답장을 오해했던 적이 있는가? 그때 빠져 있던 '공유된 기대'는 무엇이었을까?"
- }
+  ask: "여러분이 남에게 알려 주고도 잃지 않은 것은 무엇이었는가?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 }
-]};
+
+ ]
+};
