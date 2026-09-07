@@ -183,9 +183,9 @@ figcaption b{color:var(--ac);font-weight:700;letter-spacing:.02em}
 .rrh{font-size:var(--t4);font-weight:700;color:var(--deep);margin:1.6mm 0 1mm;display:flex;align-items:baseline;gap:3mm}
 .rrh span{font-size:var(--t3);font-weight:400;color:var(--sub)}
 .rrq{margin-bottom:.3mm}
-.page:not(.te) .rrq{flex:1 0 auto;display:flex;flex-direction:column}
+.page:not(.te) .rrq{flex:1 0 auto;display:flex;flex-direction:column;max-height:19mm}
 .page:not(.te) .rrq>*{flex:0 0 auto}
-.page:not(.te) .rrq .aline{flex:1 0 6.5mm;height:auto}
+.page:not(.te) .rrq .aline{flex:1 0 6.5mm;height:auto;max-height:12mm}
 .rrq .t{display:flex;gap:2.5mm;align-items:baseline;margin-bottom:.2mm}
 .rrq .t .n{font-size:var(--t3);font-weight:500;color:var(--ac);min-width:6mm;font-family:var(--sans);line-height:var(--lhh)}
 .rrq .t p{flex:1;font-family:var(--serif);font-size:var(--t4);line-height:1.2;color:var(--ink);letter-spacing:-.008em;word-spacing:-.04em;text-wrap:pretty}
@@ -378,4 +378,7 @@ td.op b.okc::after{content:"";position:absolute;left:50%;top:50%;width:1.55em;he
 /* ── 한글 소형 라벨: 영문 아이브로우 트래킹(.14em)을 쓰지 않는다 — .02em · 700 ── */
 table.para th,table.cu th,.model .cap b,.eb.ko,.bogi b{letter-spacing:.02em;font-weight:700;text-transform:none}
 table.para th,table.cu th{color:var(--sub)}
+
+/* READ RIGHT 뒷면(이어지는 면) */
+.rrh.cont{margin-top:0}
 `;

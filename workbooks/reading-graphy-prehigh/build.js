@@ -81,19 +81,19 @@ const PGC=()=>`page ${pn%2===0?"r":"v"}${TE?" te":""}`;
 /* ═══ 합본 차례 (쪽 번호 없는 앞장) ═══ */
 if (BOOK) {
  const AC={accent:"#13345C",tint:"#E8EDF3",deep:"#0E2542",no:""};
- const UP = ANSBACK ? 25 : 30;              // 유닛당 본문 면수
- const LP = ANSBACK ? UNITS.length*25 : 0;  // 해설이 시작되는 면
+ const UP = ANSBACK ? 30 : 35;              // 유닛당 본문 면수 (레슨 6면 × 5)
+ const LP = ANSBACK ? UNITS.length*30 : 0;  // 해설이 시작되는 면
  const ub = (uu,ui)=>{
   const base = ui*UP;
   const rows = uu.U.lessons.map((t,li)=>
    `<tr><td class="n" style="color:${col(t).accent}">${t.no}</td><td class="t">${esc(t.en)}
-     <em>${t.ko}</em></td><td class="p">${base+li*5+1}</td></tr>`).join("");
+     <em>${t.ko}</em></td><td class="p">${base+li*6+1}</td></tr>`).join("");
   return `<div class="ub">
    <div class="uh"><span class="f">Field ${uu.U.no}</span>
     <b>${esc(uu.U.field)}</b><em>${uu.U.ko}</em><span class="pg">${base+1}</span></div>
    <table class="ul">${rows}
     <tr class="ans"><td class="n">A</td><td class="t">정답과 해설<em>지문 전문 해석 포함</em></td>
-     <td class="p">${ANSBACK ? LP+ui*5+1 : base+26}</td></tr></table></div>`;
+     <td class="p">${ANSBACK ? LP+ui*5+1 : base+31}</td></tr></table></div>`;
  };
  /* 두 단은 앞 반·뒤 반으로 못 박는다(12유닛이면 1–6 · 7–12) — column-count 의 균형 잡기에 맡기지 않는다 */
  const half = Math.ceil(UNITS.length/2);
@@ -103,7 +103,7 @@ if (BOOK) {
   ${head(AC,"Contents")}
   <div class="tochd"><h2 class="sechd">차례</h2>
    <p class="tocsub">옳은영어 READING GRAPHY · 예비고등 &nbsp;|&nbsp;
-   ${UNITS.length}개 분야 · 지문 ${UNITS.reduce((a,u)=>a+u.U.lessons.length,0)}편 · ${UNITS.length*30}면${TE?" · 교사용":""}</p></div>
+   ${UNITS.length}개 분야 · 지문 ${UNITS.reduce((a,u)=>a+u.U.lessons.length,0)}편 · ${UNITS.length*35}면${TE?" · 교사용":""}</p></div>
   <div class="steps">
    <b>여섯 걸음</b>
    <span>1 영영풀이 매칭</span><span>2 구문분석</span><span>3 READ RIGHT</span>
@@ -222,8 +222,20 @@ T.forEach(t=>{
   ${tab(t)}${foot(t,L)}
  </div>`);
 
- /* 면 C — READ RIGHT */
- P.push(`<div class="${PGC()}" style="${V}">
+ /* 면 C·D — READ RIGHT (두 면에 문장을 반씩 나눈다: 앞면 ceil(n/2)) */
+ {
+  const n = t.sent.length, half = Math.ceil(n/2);
+  const row = (sIdx) => { const i = sIdx, s2 = t.sent[i];
+    const dr = t.fl.drill.find(d=>d.n===CIR[i]); const rrt = TE && RR[t.no] && RR[t.no][i];
+    return `<div class="rrq${rrt?" marked":""}">
+    <div class="t"><div class="n">${CIR[i]}</div>${rrt
+      ?`<div class="mk rrmk" lang="en">${rrt.map(x=>tok(x[0],x[1])).join("")}</div>`
+      :`<p lang="en">${esc(s2)}</p>`}</div>
+    ${TE&&dr&&!rrt?`<div class="mkans"><span class="ans">${esc(dr.ans)}</span></div>`:""}
+    ${Aline(t.kor[i])}</div>`; };
+
+  /* 앞면: 규칙 바 + 먼저 보기 + 앞쪽 절반 */
+  P.push(`<div class="${PGC()}" style="${V}">
   ${head(t,`Lesson ${t.no} · READ RIGHT`)}
   ${th("3","READ RIGHT","Line by Line","지문의 모든 문장을 ORUN FLOW 로 분석해 보세요.")}
   <div class="oflow"><b>ORUN FLOW</b><span>1 주어 밑줄+S &nbsp;→&nbsp; 2 본동사 △+V &nbsp;→&nbsp; 3 접속사 [네모]
@@ -237,15 +249,18 @@ T.forEach(t=>{
    <div class="ko"><b>뼈대 해석</b>${t.fl.model.ko}</div>
   </div>
   <div class="rrh">한 문장씩 분석하기<span>문장 위에 직접 기호를 표시하고, 아래 한 줄에 우리말로 옮겨 보세요.</span></div>
-  ${t.sent.map((s,i)=>{const dr=t.fl.drill.find(d=>d.n===CIR[i]); const rrt=TE&&RR[t.no]&&RR[t.no][i];
-    return `<div class="rrq${rrt?" marked":""}">
-    <div class="t"><div class="n">${CIR[i]}</div>${rrt
-      ?`<div class="mk rrmk" lang="en">${rrt.map(x=>tok(x[0],x[1])).join("")}</div>`
-      :`<p lang="en">${esc(s)}</p>`}</div>
-    ${TE&&dr&&!rrt?`<div class="mkans"><span class="ans">${esc(dr.ans)}</span></div>`:""}
-    ${Aline(t.kor[i])}</div>`;}).join("")}
+  ${Array.from({length:half},(_,i)=>row(i)).join("")}
   ${tab(t)}${foot(t,L)}
  </div>`);
+
+  /* 뒷면: 이어지는 절반 */
+  P.push(`<div class="${PGC()}" style="${V}">
+  ${head(t,`Lesson ${t.no} · READ RIGHT`)}
+  <div class="rrh cont">한 문장씩 분석하기<span>${CIR[half]}부터 이어집니다. 문장 위에 직접 기호를 표시하고, 아래 한 줄에 우리말로 옮겨 보세요.</span></div>
+  ${Array.from({length:n-half},(_,i)=>row(half+i)).join("")}
+  ${tab(t)}${foot(t,L)}
+ </div>`);
+ }
 
  /* 면 D — FLOW CHART + PARAPHRASE */
  P.push(`<div class="${PGC()}" style="${V}">
