@@ -71,6 +71,12 @@ const tyh=tags=>tags.map(x=>`<th class="ty">${x}</th>`).join("");
 const legend=(arr,how)=>`<div class="tkey"><i>${how}</i>${arr.map(([a,b])=>`<span><b>${a}</b>${b}</span>`).join("")}</div>`;
 const th=(no,kr,en,sub)=>`<div class="task"><div class="no">${no}</div><h3${/^[A-Za-z]/.test(kr)?' class="lat" lang="en"':""}>${kr}</h3><span class="en">${en}</span><p class="sub">${sub}</p></div>`;
 const vars=t=>{const c=col(t);return `--ac:${c.accent};--tint:${c.tint};--deep:${c.deep}`;};
+/* ── 배너 삽화 ──
+   원문 지문(243–321단어)이 면 A(READING)의 본문 칸을 다 채우므로, 배너는 레슨의 네 번째 면
+   — READ RIGHT 이어지는 면 — 맨 아래에 고정한다(css 의 figure{margin-top:auto}).
+   다섯 레슨 모두 같은 자리이고, 비어 있던 그 면의 아래쪽을 채운다. */
+const fig=(t,C)=>`<figure><div class="art">${scenes[t.key](C.accent,C.tint,C.deep)}</div>
+   <figcaption><b>${t.fig.split("  ")[0]}</b> &nbsp;${SCENECAP[t.key]?`${SCENECAP[t.key]} — `:""}${t.fig.split("  ").slice(1).join(" ")}</figcaption></figure>`;
 const head=(t,right)=>`<div class="rh"><span class="bk">올림포스 고급영어독해 <b>비문학</b>${TE?`<i class="te">교사용</i>`:""}</span><span class="mid">${right}</span><span class="lg"><i class="mk"></i><em>옳은영어</em></span></div>`;
 const tabTop=()=>`--tabtop:${28+((U.no||1)-1)*18}mm`;
 const tab=(t)=>`<div class="tab" style="${tabTop()}">${t&&t.no?`LESSON ${t.no}`:"ANSWERS"}</div>`;
@@ -184,9 +190,6 @@ T.forEach(t=>{
       return m?`<div class="tip"><b class="hl"><span class="bulb"></span>${m[1]}</b>${m[2]}</div>`:`<div class="tip"><span class="bulb"></span>${t.tip}</div>`;})()}
    </div>
   </div>
-  <div class="gap"></div>
-  <figure><div class="art">${scenes[t.key](C.accent,C.tint,C.deep)}</div>
-   <figcaption><b>${t.fig.split("  ")[0]}</b> &nbsp;${SCENECAP[t.key]?`${SCENECAP[t.key]} — `:""}${t.fig.split("  ").slice(1).join(" ")}</figcaption></figure>
   ${tab(t)}${foot(t,L)}
  </div>`);
 
@@ -258,6 +261,7 @@ T.forEach(t=>{
   ${head(t,`Lesson ${t.no} · READ RIGHT`)}
   <div class="rrh cont">한 문장씩 분석하기<span>${CIR[half]}부터 이어집니다. 문장 위에 직접 기호를 표시하고, 아래 한 줄에 우리말로 옮겨 보세요.</span></div>
   ${Array.from({length:n-half},(_,i)=>row(half+i)).join("")}
+  ${fig(t,C)}
   ${tab(t)}${foot(t,L)}
  </div>`);
  }

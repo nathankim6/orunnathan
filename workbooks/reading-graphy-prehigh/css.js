@@ -75,7 +75,7 @@ b,strong{font-weight:700}
 .lh .goal b{color:var(--ac);white-space:nowrap}
 .rule{display:none}
 /* ── 읽기 2단 (8:4 → 본문 112mm · 여백 6mm · 측면 58mm) ── */
-.read{display:grid;grid-template-columns:1fr 56mm;gap:6mm;align-items:stretch}
+.read{display:grid;grid-template-columns:1fr 56mm;gap:6mm;align-items:stretch;flex:1 0 auto}
 .psg{font-family:var(--serif);font-size:var(--t5);line-height:1.85;text-align:left;color:var(--ink)}
 .psg.dense{line-height:1.7}
 .psg.denser{line-height:1.6}   /* 넘침 방지 마지막 단계 — build.js 의 guard 가 dense·snug 로도 하단 한계(279mm)를 못 지킬 때만 */
@@ -93,13 +93,13 @@ table.bank .k{color:var(--ink);padding-left:1.5mm;word-break:keep-all;letter-spa
 .tip{border-top:var(--hl);padding-top:2.5mm;font-size:var(--t3);color:var(--ink);line-height:var(--lh);margin-top:auto}
 .tip .hl{color:var(--ac);font-weight:700;font-size:var(--t3);margin-right:2mm;white-space:nowrap}   /* 런인 라벨: p5 '생각해 볼 것' 과 같은 accent 700 + 본문 ink */
 .tip .bulb{display:inline-block;width:2.6mm;height:2.6mm;border-radius:50%;background:var(--yel);margin-right:1.5mm;vertical-align:-.2mm}
-/* ── 삽화 ── */
-.gap{flex:0 1 8mm;min-height:4mm}   /* 지문–배너 띠: 8mm, 지문이 길어 넘칠 때만 4mm 까지 줄어든다 */
-/* p1 넘침 방지 2단계(.snug — guard 가 붙인다): 띠 2mm 까지, 레슨 헤더·캡션 여백 1mm 남짓 — 제목이 두 줄인 레슨(L49·L54)용 */
-.page.snug .gap{min-height:2mm}
+/* ── 배너 삽화 ──
+   원문 지문(243–321단어)이 면 A(READING)의 본문 칸을 다 채우므로 배너는 레슨의 넷째 면
+   — READ RIGHT 이어지는 면 — 맨 아래에 고정한다(margin-top:auto). 문장 절반만 실려 비어 있던
+   자리를 채우고, 다섯 레슨 모두 면 하단이라는 같은 자리에 놓인다. */
+figure{margin-top:auto;flex:0 0 auto}
+/* p1 넘침 방지 2단계(.snug — guard 가 붙인다): 레슨 헤더 여백에서 덜어 낸다 */
 .page.snug .lh{margin-bottom:5mm;padding-bottom:3.5mm}
-.page.snug figcaption{margin-top:1.5mm}
-figure{margin-top:0;flex:0 0 auto}
 figure .art{height:60mm;border-radius:var(--rk);background:var(--tint);display:flex;align-items:center;justify-content:center;padding:3mm 4mm}
 figure .art svg{height:100%;width:100%}
 figcaption{font-size:var(--t2);color:var(--sub);margin-top:2mm;line-height:var(--lhl)}
@@ -183,9 +183,9 @@ figcaption b{color:var(--ac);font-weight:700;letter-spacing:.02em}
 .rrh{font-size:var(--t4);font-weight:700;color:var(--deep);margin:1.6mm 0 1mm;display:flex;align-items:baseline;gap:3mm}
 .rrh span{font-size:var(--t3);font-weight:400;color:var(--sub)}
 .rrq{margin-bottom:.3mm}
-.page:not(.te) .rrq{flex:1 0 auto;display:flex;flex-direction:column;max-height:19mm}
+.page:not(.te) .rrq{flex:1 0 auto;display:flex;flex-direction:column;max-height:23mm}
 .page:not(.te) .rrq>*{flex:0 0 auto}
-.page:not(.te) .rrq .aline{flex:1 0 6.5mm;height:auto;max-height:12mm}
+.page:not(.te) .rrq .aline{flex:1 0 6.5mm;height:auto;max-height:14mm}
 .rrq .t{display:flex;gap:2.5mm;align-items:baseline;margin-bottom:.2mm}
 .rrq .t .n{font-size:var(--t3);font-weight:500;color:var(--ac);min-width:6mm;font-family:var(--sans);line-height:var(--lhh)}
 .rrq .t p{flex:1;font-family:var(--serif);font-size:var(--t4);line-height:1.2;color:var(--ink);letter-spacing:-.008em;word-spacing:-.04em;text-wrap:pretty}
