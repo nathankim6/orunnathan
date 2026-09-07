@@ -385,7 +385,7 @@ module.exports = {
    "en": "Is Seeing Believing?",
    "ko": "보는 것은 정말 믿는 것일까",
    "goal": "이미지가 사물 그 자체처럼 느껴지는 까닭과 그것이 착각인 이유를 설명할 수 있다.",
-   "fig": "Figure 1  파이프 그림 아래 적힌 한 줄 — ‘이것은 파이프가 아니다’.",
+   "fig": "Figure 2  파이프 그림 아래 적힌 한 줄 — ‘이것은 파이프가 아니다’.",
    "tip": "먼저 생각해 보자. 같은 내용을 담은 사진 한 장과 문장 한 줄 가운데, 우리는 왜 사진 쪽을 더 쉽게 믿을까?",
    "sent": [
     "There is a curious cliché that says pictures don't lie.",
@@ -1091,7 +1091,7 @@ module.exports = {
    "en": "Overprotection in Sleeping Beauty and How It Is Overcome",
    "ko": "위험을 다 치운 세상에서 자란 공주",
    "goal": "부정적인 것을 모두 치워 준 보호가 왜 아이를 오히려 약하게 만드는지 설명할 수 있다.",
-   "fig": "Figure 1  모든 위험을 치운 성 안에서 자라는 동안 조용히 약해진 것들.",
+   "fig": "Figure 4  모든 위험을 치운 성 안에서 자라는 동안 조용히 약해진 것들.",
    "tip": "먼저 생각해 보자. 넘어질 일이 하나도 없는 길만 걸어 온 사람은, 진짜 길 위에 서면 어떻게 될까?",
    "sent": [
     "In the Disney movie Sleeping Beauty, the King and Queen have a daughter, the princess Aurora, after a long wait.",

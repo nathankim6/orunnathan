@@ -50,7 +50,7 @@ b,strong{font-weight:700}
 .rh .bk{display:flex;align-items:center;gap:2mm;font-size:8pt;font-weight:500;color:var(--navy);letter-spacing:-.01em;white-space:nowrap}
 .rh .bk::before{content:"";width:2pt;height:4mm;background:var(--ac,var(--navy))}
 .rh .bk b{font-weight:700;color:var(--navy)}
-.rh .mid{margin-left:auto;white-space:nowrap}
+.rh .mid{margin-left:auto;white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis}   /* 긴 레슨 제목이 로고를 면 밖으로 밀지 않도록 */
 .rh .lg{display:flex;align-items:center;gap:1.5mm;padding-left:3mm;border-left:var(--hl);white-space:nowrap}
 .rh .lg .mk{display:block;width:5mm;height:4.2mm;background-size:contain;background-repeat:no-repeat;background-position:center}
 .rh .lg em{font-style:normal;font-size:8pt;font-weight:700;color:var(--navy);letter-spacing:-.02em}
@@ -183,7 +183,7 @@ figcaption b{color:var(--ac);font-weight:700;letter-spacing:.02em}
 .rrh{font-size:var(--t4);font-weight:700;color:var(--deep);margin:1.6mm 0 1mm;display:flex;align-items:baseline;gap:3mm}
 .rrh span{font-size:var(--t3);font-weight:400;color:var(--sub)}
 .rrq{margin-bottom:.3mm}
-.page:not(.te) .rrq{flex:1 0 auto;display:flex;flex-direction:column;max-height:23mm}
+.page:not(.te) .rrq{flex:1 0 auto;display:flex;flex-direction:column}   /* 남는 자리는 문장 행이 고르게 나눠 갖는다 — 배너 위에 큰 구멍이 생기지 않도록 상한을 두지 않는다 */
 .page:not(.te) .rrq>*{flex:0 0 auto}
 .page:not(.te) .rrq .aline{flex:1 0 6.5mm;height:auto;max-height:14mm}
 .rrq .t{display:flex;gap:2.5mm;align-items:baseline;margin-bottom:.2mm}
@@ -240,9 +240,9 @@ table.cu td.evc i.ev{display:inline-block;width:10mm;border-bottom:0.75pt solid 
 /* ── Knowledge Bank ── */
 .kb{border-top:var(--rule) solid var(--ac);border-bottom:var(--hl);margin-top:auto}
 .kb .hd{padding:2mm 0 1.8mm;display:flex;gap:3mm;align-items:baseline;border-bottom:var(--hl)}
-.kb .hd b{font-size:var(--t6);font-weight:700;color:var(--deep);letter-spacing:-.02em}
+.kb .hd b{font-size:var(--t6);font-weight:700;color:var(--deep);letter-spacing:-.02em;white-space:nowrap;flex:0 0 auto}
 .kb .hd em{font-style:normal;font-size:var(--t3);color:var(--sub)}
-.kb .hd .tag{margin-left:auto;color:var(--ac)}
+.kb .hd .tag{margin-left:auto;color:var(--ac);white-space:nowrap;flex:0 0 auto}
 .kb .bd{padding:2mm 0 2mm}
 .kb .row{display:flow-root}
 .kb .bd .txt{flex:1;min-width:0}
@@ -315,7 +315,7 @@ table.cu td.ty i.o.ok{border:1pt solid var(--red);width:4mm;height:4mm}
 table.cu td.evc i.ev .ans{font-size:var(--t3)}
 table.cu td.evc i.ev{text-align:center;line-height:1.1}
 /* 교사용 READ RIGHT: 모든 문장에 해석이 붙으므로 조인다 */
-.page.te .rrq{margin-bottom:.4mm}
+.page.te .rrq{margin-bottom:.4mm;flex:1 0 auto}   /* 남는 자리는 학생용과 같이 문장 행이 고르게 나눠 갖는다 */
 .page.te .rrq .t{margin-bottom:0}
 .page.te .rrq .t p{line-height:1.25;font-size:var(--t3)}
 .page.te .rrq .mkans{line-height:1.3;margin-bottom:.2mm}
@@ -378,6 +378,63 @@ td.op b.okc::after{content:"";position:absolute;left:50%;top:50%;width:1.55em;he
 /* ── 한글 소형 라벨: 영문 아이브로우 트래킹(.14em)을 쓰지 않는다 — .02em · 700 ── */
 table.para th,table.cu th,.model .cap b,.eb.ko,.bogi b{letter-spacing:.02em;font-weight:700;text-transform:none}
 table.para th,table.cu th{color:var(--sub)}
+
+/* ═══ 넘침 방지 조임 단계 t1·t2·t3 (build.js 의 guard 가 아래 여백 18mm 선을 넘는 면에만 한 단계씩 붙인다) ═══
+   글자 크기는 타입 스케일(--t1~--t8) 그대로 두고 여백 → 표 행 패딩 → 부속 블록 행간 순으로 덜어 낸다.
+   조여야 하는 면만 조이므로 여유 있는 면의 모양은 규격 그대로다. */
+/* t1 — 블록 사이 여백에서만 (3~5mm) */
+.page.t1 .rh{margin-bottom:3.6mm}
+.page.t1 .task{padding-bottom:1.2mm}
+.page.t1 .bogi{margin-top:3.6mm}
+.page.t1 .q{margin-bottom:3.2mm}
+.page.t1 .syn{margin-bottom:1.8mm}
+.page.t1 .sline{margin-bottom:1.8mm}
+.page.t1 .kb .bd{padding:1.4mm 0}
+/* t2 — 소단 여백 + 표 행 패딩 (12~18mm) */
+.page.t2 .task{margin-bottom:2.2mm}
+.page.t2 .sect{margin-bottom:5mm}
+.page.t2 .sect.para{margin-top:3mm}
+.page.t2 .bogi{margin-top:2.8mm;padding:1.6mm 4mm}
+.page.t2 .q .stem{margin-bottom:1.4mm}
+.page.t2 .tkey{margin-bottom:1.4mm}
+.page.t2 table.cu td{padding:.85mm 0}
+.page.t2 table.flow td{padding:2.5mm 0}
+.page.t2 table.para td{padding:6.4mm 3mm 6.4mm 0}
+.page.t2 .mrow{min-height:7.8mm}
+.page.t2 .syn{padding:2.4mm 4mm}
+.page.t2 .syn .k{margin-top:1.8mm}
+.page.t2 .kb .hd{padding:1.4mm 0 1.2mm}
+.page.t2 .kb .it{margin-bottom:1.4mm}
+.page.t2 .kb .it h5{margin-bottom:.2mm}
+.page.t2 .kb .ask{padding-top:1.4mm;margin-top:1.4mm}
+.page.t2 .aline{height:7mm}
+/* t3 — 부속 블록의 행간·비네트 폭까지 (마지막 그물) */
+.page.t3 table.cu td{padding:.5mm 0}
+.page.t3 table.flow td{padding:2mm 0}
+.page.t3 table.para td{padding:4.6mm 3mm 4.6mm 0}
+.page.t3 .q{margin-bottom:2.4mm}
+.page.t3 .mrow{min-height:7.2mm}
+.page.t3 .mrow .d{line-height:1.25}
+.page.t3 .syn .q{margin-bottom:1mm}
+.page.t3 .syn .aline{height:6mm}
+.page.t3 .kb .it{margin-bottom:1mm}
+.page.t3 .kb .it p{line-height:1.35}
+.page.t3 .kb .vig{width:44mm}
+/* 해설 면 2단계(.tighta) — 행 패딩·상자 여백만 (행간은 그대로) */
+.page.tighta .akey{margin-bottom:1.5mm}
+.page.tighta .akey .hd{padding:1mm 0 .8mm}
+.page.tighta .akey td{padding:.5mm 0}
+.page.tighta .trans{padding:1mm 0}
+.page.tighta .how{margin-top:1.2mm;gap:3mm}
+.page.tighta .how .box{padding:1.4mm 3mm}
+.page.tighta .how .box::before{margin:-1.4mm -3mm 1.6mm}
+.page.tighta .how .box h4{margin-bottom:.6mm}
+.page.tighta .how .box .n{margin-bottom:.8mm}
+.page.tighta ul.chk li{padding:0;gap:1.6mm}
+/* 해설 면 3단계(.tighter) — 정답표·전문 해석의 행간까지 (마무리 상자를 함께 실은 마지막 면용) */
+.page.tighter .akey td{line-height:1.35}
+.page.tighter .akey .hint{line-height:1.35}
+.page.tighter .trans{line-height:1.35}
 
 /* READ RIGHT 뒷면(이어지는 면) */
 .rrh.cont{margin-top:0}
