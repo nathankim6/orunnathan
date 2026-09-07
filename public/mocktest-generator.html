@@ -191,7 +191,7 @@ table.plan [contenteditable]:focus-visible,
    이 선 하나가 화면을 '지면'으로 읽히게 만든다. 양수 자간은 여기에만 허용하고
    규칙에 uppercase 를 묶어 한글에 걸릴 수 없게 한다.
    실재하는 라틴 문자열로만 rig 를 짠다 — 'ORUN ENGLISH', 'STREAM',
-   'ANALYZING · LIVE'(JS 주입), 'SHEET', 'API MODE'. ── */
+   'ANALYZING · LIVE'(JS 주입), 'SHEET', 'RUN ENGINE'. ── */
 .console .who .en,
 .st-tail .lbl,
 .seq-eyebrow,
@@ -565,7 +565,7 @@ textarea:focus, input:focus { border-color: var(--line-4); outline: 2px solid va
 
 /* ═════════ API 키 카드 ═════════ */
 .api-card { margin: var(--s8) 0 0; padding: var(--s5); position: relative; }
-.api-card::before { content: "API MODE"; display: block; margin-bottom: var(--s3); }
+.api-card::before { content: "RUN ENGINE"; display: block; margin-bottom: var(--s3); }
 .api-card .k {
   font-size: var(--fs-ts); line-height: var(--lh-ts); letter-spacing: var(--ls-ts);
   font-weight: var(--w-semi); color: var(--ink); margin-bottom: var(--s1);
@@ -581,6 +581,8 @@ textarea:focus, input:focus { border-color: var(--line-4); outline: 2px solid va
 .api-card .st.ok { color: var(--pos); }
 .api-card .st.bad { color: var(--neg); }
 .api-card .api-model { margin-top: var(--s3); max-width: 360px; }
+.api-card .api-engine { margin: var(--s3) 0 var(--s3); max-width: 360px; }
+.api-card #apiKeyBody[hidden] { display: none; }
 
 /* ═════════ 하단 고정 바 — 유리 두 겹 중 둘 ═════════ */
 .cta-bar {
@@ -1067,7 +1069,7 @@ table.plan [contenteditable]:focus {
   margin-top: var(--s2); font-variant-numeric: tabular-nums;
 }
 .usage { font-size: var(--fs-micro); color: var(--n8); margin: var(--s3) 0 0; }
-body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45; }
+body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-events: none; opacity: .45; }
 
 /* ═════════ 레거시: .exam-output (현재 어떤 요소에도 붙지 않지만 계약상 남긴다) ═════════ */
 .exam-output {
@@ -1673,7 +1675,7 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
     <span class="step" data-step="2"></span><span class="step-rule"></span>
     <span class="step" data-step="3"></span>
   </div>
-  <div class="state"><span class="build" id="buildTag">2026-09-07 17:02</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
+  <div class="state"><span class="build" id="buildTag">2026-09-07 19:43</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
 </div>
 
 <!-- 화면 0 · 시작 -->
@@ -1702,15 +1704,21 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
   </div>
 
   <div class="api-card" id="apiCard" hidden>
-    <div class="k">Anthropic API 키로 실행해요</div>
-    <div class="d">지금은 claude.ai 밖에서 열려 있어요. API 키를 한 번 저장하면 이 브라우저에서 바로 실행되고, 스캔한 사진 PDF도 읽어요. 키는 이 브라우저에만 남고 api.anthropic.com 으로만 보내요.</div>
-    <div class="row">
-      <input type="password" id="apiKey" placeholder="sk-ant-api03-…" autocomplete="off" spellcheck="false">
-      <button type="button" class="btn ghost" id="apiKeySave">저장</button>
-      <button type="button" class="btn link" id="apiKeyClear">지우기</button>
+    <div class="k" id="apiTitle">무엇으로 실행할까요</div>
+    <div class="seg api-engine" id="apiEngineSeg" hidden>
+      <button type="button" data-v="use">내 Claude 구독</button>
+      <button type="button" data-v="api">Anthropic API 키</button>
+    </div>
+    <div class="d" id="apiDesc"></div>
+    <div id="apiKeyBody">
+      <div class="row">
+        <input type="password" id="apiKey" placeholder="sk-ant-api03-…" autocomplete="off" spellcheck="false">
+        <button type="button" class="btn ghost" id="apiKeySave">저장</button>
+        <button type="button" class="btn link" id="apiKeyClear">지우기</button>
+      </div>
+      <div class="seg api-model" id="apiModelSeg"><button type="button" class="on" data-v="opus">Opus 5 · 정밀</button><button type="button" data-v="sonnet">Sonnet 5 · 빠르고 저렴</button></div>
     </div>
     <p class="st" id="apiStatus"></p>
-    <div class="seg api-model" id="apiModelSeg"><button type="button" class="on" data-v="opus">Opus 5 · 정밀</button><button type="button" data-v="sonnet">Sonnet 5 · 빠르고 저렴</button></div>
   </div>
 
   <details class="history" id="history" hidden>
@@ -3515,27 +3523,52 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
     return fn;
   }
 
-  // 옵션 화면의 API 키 카드. 키가 있어야 분석 버튼이 열린다.
+  // 시작 화면의 실행 엔진 카드. 아티팩트 안에서는 구독/API 를 고를 수 있고, 밖에서는 API 뿐이다.
+  let refreshEngineCard = () => {};
   function bindApiCard() {
     const card = $("apiCard"), inp = $("apiKey"), st = $("apiStatus");
     if (!card) return;
     card.hidden = false;
+    const engSeg = $("apiEngineSeg"), body = $("apiKeyBody"), desc = $("apiDesc"), title = $("apiTitle");
+    engSeg.hidden = !SUB;                       // 고를 게 하나뿐이면 선택지를 보여주지 않는다
+
     const refresh = () => {
-      const k = getApiKey();
-      const btn = $("analyzeBtn");
-      if (k) {
-        inp.value = k;
+      const eng = engineKey(), k = getApiKey(), btn = $("analyzeBtn");
+      engSeg.querySelectorAll("button").forEach(b => b.classList.toggle("on", b.dataset.v === eng));
+      body.hidden = eng !== "api";
+      title.textContent = SUB ? "무엇으로 실행할까요" : "Anthropic API 키로 실행해요";
+
+      if (eng === "use") {
+        desc.textContent = "내 Claude 구독으로 실행돼요. 사용량은 Claude 계정에서 차감되고, 따로 요금이 붙지 않아요."
+          + (SUB_IMAGES === "no" ? " 다만 이 화면에서는 스캔한 사진 PDF를 읽지 못해요 — 그럴 땐 API 키로 바꿔 주세요." : "");
         st.className = "st ok";
-        st.textContent = "키가 저장돼 있어요 (…" + k.slice(-6) + "). 분석을 시작할 수 있어요.";
+        st.textContent = SUB_KIND === "legacy" ? "구버전 뷰어예요 — 글자 자료만 읽어요." : "바로 시작할 수 있어요.";
         btn.disabled = false; btn.removeAttribute("title");
       } else {
-        st.className = "st";
-        st.textContent = "console.anthropic.com 에서 발급한 키를 넣고 저장을 누르세요.";
-        btn.disabled = true; btn.title = "API 키를 먼저 저장해 주세요";
+        desc.textContent = (SUB ? "Anthropic API 키로 실행해요. " : "지금은 claude.ai 밖에서 열려 있어요. ")
+          + "키를 한 번 저장하면 이 브라우저에서 바로 실행되고, 스캔한 사진 PDF도 읽어요. "
+          + "키는 이 브라우저에만 남고 api.anthropic.com 으로만 보내요. 사용량은 Anthropic 계정에 청구돼요.";
+        if (k) {
+          inp.value = k;
+          st.className = "st ok";
+          st.textContent = "키가 저장돼 있어요 (…" + k.slice(-6) + "). 분석을 시작할 수 있어요.";
+          btn.disabled = false; btn.removeAttribute("title");
+        } else {
+          st.className = "st";
+          st.textContent = "console.anthropic.com 에서 발급한 키를 넣고 저장을 누르세요.";
+          btn.disabled = true; btn.title = "API 키를 먼저 저장해 주세요";
+        }
       }
       const note = document.querySelector('[data-s="options"] .cta-note');
-      if (note) note.textContent = "시험지 전체를 문항 단위로 분석해요 · API 키로 실행되고 사용량은 Anthropic 계정에 청구돼요 · " + runtimeReport();
+      if (note) {
+        note.className = "cta-note";
+        note.textContent = "시험지 전체를 문항 단위로 분석해요 · "
+          + (eng === "api" ? "API 키로 실행되고 사용량은 Anthropic 계정에 청구돼요" : "내 Claude 구독 사용량으로 실행돼요")
+          + " · " + runtimeReport();
+      }
     };
+    refreshEngineCard = refresh;
+
     const save = () => {
       const v = inp.value.trim();
       if (v && !/^sk-ant-/.test(v)) { st.className = "st bad"; st.textContent = "Anthropic API 키는 sk-ant- 로 시작해요. 다시 확인해 주세요."; return; }
@@ -3546,6 +3579,11 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
     $("apiKeySave").addEventListener("click", save);
     inp.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); save(); } });
     $("apiKeyClear").addEventListener("click", () => { inp.value = ""; setApiKey(""); refresh(); });
+    engSeg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+      setEngine(b.dataset.v);
+      refresh();
+      toast(b.dataset.v === "api" ? "API 키로 실행해요" : "내 Claude 구독으로 실행해요");
+    }));
     const seg = $("apiModelSeg");
     if (seg) {
       const paint = () => { const k = apiModelKey(); seg.querySelectorAll("button").forEach(b => b.classList.toggle("on", b.dataset.v === k)); };
@@ -3555,37 +3593,54 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
     refresh();
   }
 
+  // 두 엔진을 모두 살려 둔다 — 구독(아티팩트 안)과 API 키(어디서나).
+  // 아티팩트 안에서도 API 키로 돌리고 싶다는 요구가 있어, 어느 쪽으로 실행할지 고를 수 있게 한다.
+  const ENGINE_STORE = "orun_engine";
+  let SUB = null;                    // 구독 런타임 (use | legacy)
+  let SUB_KIND = "";                 // "use" | "legacy"
+  let SUB_LIMITS = null, SUB_IMAGES = "unknown";
+  const API_FN = makeApiSampler();
+
+  function engineKey() {
+    let v = ""; try { v = localStorage.getItem(ENGINE_STORE) || ""; } catch (e) {}
+    if (v === "api") return "api";
+    return SUB ? "use" : "api";      // 구독을 고를 수 없으면(아티팩트 밖) API 뿐이다
+  }
+  function setEngine(v) { try { localStorage.setItem(ENGINE_STORE, v); } catch (e) {} applyEngine(); }
+  function applyEngine() {
+    const want = engineKey();
+    if (want === "use" && SUB) {
+      SAMPLE = SUB; RUNTIME = SUB_KIND; LIMITS = SUB_LIMITS; imagesState = SUB_IMAGES;
+    } else {
+      SAMPLE = API_FN; RUNTIME = "api"; imagesState = "yes";
+      LIMITS = { maxPromptBytes: 800 * 1024, images: { maxCount: 8, maxInputBytes: 20 * 1024 * 1024, mediaTypes: ["image/jpeg", "image/png", "image/webp"] } };
+    }
+    try { applyScanCopy(); syncOcrBtn(); refreshEngineCard(); } catch (e) {}
+    return SAMPLE;
+  }
+
   async function initRuntime() {
     const c = window.claude;
-    if (!c) {
-      // claude.ai 밖 — 파일을 직접 열었거나 다른 서버에서 띄운 경우. API 키로 돈다.
-      SAMPLE = makeApiSampler();
-      RUNTIME = "api";
-      imagesState = "yes";
-      try { LIMITS = await SAMPLE.limits(); } catch (e) { LIMITS = null; }
-      return SAMPLE;
-    }
 
     // 최신 런타임: claude.use("sample") — 이미지·스트리밍·중단 지원
-    if (typeof c.use === "function") {
-      try { SAMPLE = await c.use("sample"); } catch (e) { SAMPLE = null; }
-      if (SAMPLE) {
-        RUNTIME = "use";
-        if (typeof SAMPLE.limits === "function") {
+    if (c && typeof c.use === "function") {
+      try { SUB = await c.use("sample"); } catch (e) { SUB = null; }
+      if (SUB) {
+        SUB_KIND = "use";
+        if (typeof SUB.limits === "function") {
           try {
-            LIMITS = await SAMPLE.limits();
-            if (LIMITS && LIMITS.images) imagesState = "yes";
-            else if (LIMITS) imagesState = "no";   // limits는 응답했는데 images 항목이 없으면 이 뷰어는 이미지 전송 불가
-          } catch (e) { LIMITS = null; }
+            SUB_LIMITS = await SUB.limits();
+            if (SUB_LIMITS && SUB_LIMITS.images) SUB_IMAGES = "yes";
+            else if (SUB_LIMITS) SUB_IMAGES = "no";   // limits는 응답했는데 images 항목이 없으면 이 뷰어는 이미지 전송 불가
+          } catch (e) { SUB_LIMITS = null; }
         }
-        return SAMPLE;
       }
     }
 
     // 구버전 런타임: window.claude.sample({prompt}) — 텍스트 전용.
     // 뷰어가 예전 세대를 띄우고 있어도 최소한 텍스트 PDF·한글·워드는 돌아가야 한다.
-    if (typeof c.sample === "function") {
-      const legacy = async (input, opts) => {
+    if (!SUB && c && typeof c.sample === "function") {
+      SUB = async (input, opts) => {
         opts = opts || {};
         const prompt = typeof input === "string"
           ? input
@@ -3595,12 +3650,11 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
         if (opts.onText) opts.onText({ text, delta: text });
         return { text, truncated: false, modelTierApplied: (r && r.modelTierApplied) || "default" };
       };
-      SAMPLE = legacy;
-      RUNTIME = "legacy";
-      imagesState = "no";           // 구버전은 이미지를 보낼 수 없다
-      return SAMPLE;
+      SUB_KIND = "legacy";
+      SUB_IMAGES = "no";              // 구버전은 이미지를 보낼 수 없다
     }
-    return null;
+
+    return applyEngine();
   }
 
   let lastTrouble = "";   // 가장 최근에 막힌 지점
@@ -3609,9 +3663,10 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
     const c = window.claude;
     return [
       "ORUN 동형 모의고사 진단",
-      "build: 2026-09-07 17:02",
+      "build: 2026-09-07 19:43",
       "url: " + location.href,
       "runtime: " + RUNTIME + (c ? "" : " (window.claude 없음)"),
+      "엔진 선택: " + engineKey() + " (구독 " + (SUB ? SUB_KIND : "없음") + ")",
       "claude.use: " + (c && typeof c.use === "function" ? "있음" : "없음"),
       "claude.sample: " + (c && typeof c.sample === "function" ? "있음" : "없음"),
       "sample 확보: " + (SAMPLE ? "예" : "아니오"),
@@ -3646,7 +3701,7 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
   }
 
   function runtimeReport() {
-    if (RUNTIME === "api") return getApiKey() ? "API 키 모드 · " + (apiModelKey() === "opus" ? "Opus 5" : "Sonnet 5") + " · 스캔본 읽기 가능" : "API 키 모드 · 키를 저장해 주세요";
+    if (RUNTIME === "api") return getApiKey() ? "API 키 · " + (apiModelKey() === "opus" ? "Opus 5" : "Sonnet 5") + " · 스캔본 읽기 가능" : "API 키 · 키를 저장해 주세요";
     if (!window.claude) return "이 화면은 claude.ai 아티팩트 밖입니다";
     if (!SAMPLE) return "이 아티팩트에 Claude 사용이 허용되지 않았습니다";
     if (RUNTIME === "legacy") return "구버전 뷰어 — 텍스트만 읽습니다(스캔본 불가)";
@@ -3658,36 +3713,9 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
   // 런타임이 준비되기 전에는 실행 버튼을 잠가 두고, 준비되면 연다.
   runtimeReady = (async () => {
     await initRuntime();
-    const btn = $("analyzeBtn");
-    const note = document.querySelector(".cta-note, .offline-note");
-    if (RUNTIME === "api") {
-      if (note) note.className = "cta-note";
-      bindApiCard();           // 키 유무에 따라 버튼을 열고 닫는다
-      syncOcrBtn();
-      applyScanCopy();
-      return;
-    }
-    if (samplingAvailable()) {
-      btn.disabled = false;
-      btn.removeAttribute("title");
-      if (note) {
-        note.className = "cta-note";
-        note.textContent = "시험지 전체를 문항 단위로 분석합니다 · 내 Claude 사용량으로 실행됩니다 · " + runtimeReport();
-      }
-      syncOcrBtn();
-      applyScanCopy();
-      return;
-    }
-    btn.disabled = true;
-    btn.title = "claude.ai 아티팩트 안에서만 AI 실행이 가능합니다";
-    if (note) {
-      note.className = "offline-note";
-      note.innerHTML =
-        '<strong>claude.ai 아티팩트로 열어야 실행됩니다</strong>' +
-        '지금은 파일을 그대로 연 상태라 AI 분석을 시작할 수 없습니다. ' +
-        'Claude 대화창에서 이 아티팩트를 열면 내 구독 사용량으로 바로 실행됩니다. ' +
-        '별도의 API 키는 필요하지 않습니다.';
-    }
+    bindApiCard();             // 카드는 항상 뜬다 — 아티팩트 안에서는 구독/API 를 고를 수 있다
+    syncOcrBtn();
+    applyScanCopy();
   })();
 
   // ---------- Claude 호출 래퍼 ----------
