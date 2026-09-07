@@ -1087,7 +1087,8 @@ table.plan [contenteditable]:focus {
   font-size: var(--fs-micro); line-height: var(--lh-micro); color: var(--n7);
   margin-top: var(--s2); font-variant-numeric: tabular-nums;
 }
-.usage { font-size: var(--fs-micro); color: var(--n8); margin: var(--s3) 0 0; }
+.usage { font-size: var(--fs-meta); line-height: var(--lh-meta); color: var(--n8); margin: var(--s3) 0 0; font-variant-numeric: tabular-nums; }
+.usage .won { color: var(--ink); font-weight: var(--w-med); }
 body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-events: none; opacity: .45; }
 
 /* ═════════ 레거시: .exam-output (현재 어떤 요소에도 붙지 않지만 계약상 남긴다) ═════════ */
@@ -1707,7 +1708,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     <span class="step" data-step="2"></span><span class="step-rule"></span>
     <span class="step" data-step="3"></span>
   </div>
-  <div class="state"><span class="build" id="buildTag">2026-09-07 22:33</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
+  <div class="state"><span class="build" id="buildTag">2026-09-07 23:01</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
 </div>
 
 <!-- 화면 0 · 시작 -->
@@ -3726,7 +3727,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   function diagnostics() {
     return [
       "ORUN 동형 모의고사 진단",
-      "build: 2026-09-07 22:33",
+      "build: 2026-09-07 23:01",
       "url: " + location.href,
       "runtime: API 키 전용 빌드",
       "sample 확보: " + (SAMPLE ? "예" : "아니오"),
@@ -3844,10 +3845,21 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   const askJson = (prompt, tier) => callClaude(prompt, { tier, json: true });
 
   function renderUsage() {
-    const t = spendText();
-    $("usageInfo").textContent = calls
-      ? "이번 시험지 · Claude 호출 " + calls + "회" + (t ? " · " + t : " · API 키 사용량으로 처리됨")
-      : "";
+    const el = $("usageInfo");
+    el.textContent = "";
+    if (!calls) return;
+    if (!spend.calls || !(spend.in + spend.out)) {
+      el.textContent = "이번 시험지 · Claude 호출 " + calls + "회 · API 키 사용량으로 처리됨";
+      return;
+    }
+    const won = Math.round(spend.usd * usdKrw());
+    el.append(document.createTextNode("이번 시험지 · Claude 호출 " + calls + "회 · 입력 "
+      + spend.in.toLocaleString() + " · 출력 " + spend.out.toLocaleString() + " 토큰 · "));
+    const b = document.createElement("b");
+    b.className = "won";
+    b.textContent = "약 " + won.toLocaleString() + "원";
+    el.appendChild(b);
+    el.append(document.createTextNode(" ($" + spend.usd.toFixed(2) + " · 1$=" + usdKrw().toLocaleString() + "원 기준)"));
   }
 
   // ---------- 스캔본 PDF: 쪽을 그림으로 만들어 Claude 가 읽게 한다 ----------
