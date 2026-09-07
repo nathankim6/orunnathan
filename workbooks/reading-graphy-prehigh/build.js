@@ -17,6 +17,16 @@ const useUnit = ({U:u,A:a}) => { U=u; icons=a.icons; scenes=a.scenes; STRIP=a.ST
   T=u.lessons; T.forEach(t=>t.para.sort((x,y)=>x[0].codePointAt(0)-y[0].codePointAt(0))); };
 useUnit(UNITS[0]);
 const CIR="①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳".split("");
+/* 한국어 조사 자동 선택 — 앞말의 받침 유무로 은/는 · 이/가 · 을/를 을 고른다.
+   숫자와 ①②③ 같은 동그라미 숫자는 읽는 소리(일·이·삼·사·오·육·칠·팔·구·십)로 판단한다. */
+const DIGJONG=[true,true,false,true,false,false,true,true,true,false];   /* 0(십)·1(일)·3(삼)·6(육)·7(칠)·8(팔) 에 받침 */
+const numJong=n=>{n=Math.abs(Math.round(+n));return n>=10&&n%10===0?true:DIGJONG[n%10];};
+const hasJong=w=>{const t=String(w).trim();const c=t.slice(-1);
+ const ci=CIR.indexOf(c); if(ci>=0) return numJong(ci+1);
+ if(/[0-9]/.test(c)) return numJong(+t.match(/\d+$/)[0]);
+ const k=c.charCodeAt(0)-0xAC00; return k>=0&&k<11172 ? k%28!==0 : false;};
+const jo=(w,a,b)=>`${w}${hasJong(w)?a:b}`;      /* jo(8,"이","가") → "8이" */
+const josa=(w,a,b)=>hasJong(w)?a:b;             /* 따옴표 뒤처럼 앞말과 떨어져 붙일 때 */
 const AL="abcdef".split("");
 const esc=s=>String(s).replace(/&(?![a-z#])/g,"&amp;");
 const ROLE={"s":"S","s2":"S′","v":"V","v2":"V′","m":"M"};
@@ -157,8 +167,8 @@ T.forEach((t,ti)=>{
      <li>Check Up의 오답 유형을 모두 골랐다</li></ul></div>
    ${U.next?`<div class="box"><div class="n">Next Unit</div>
     <h4>Unit ${U.no+1} · ${U.next.en}</h4>
-    <p>같은 여섯 걸음으로 진행합니다. Unit ${U.no}이 ‘${U.tagline.split(" — ")[0]}’를 다루었다면,
-       Unit ${U.no+1}는 ${U.next.ko}. 지문 5편 · ${U.next.words}.</p></div>`
+    <p>같은 여섯 걸음으로 진행합니다. Unit ${jo(U.no,"이","가")} ‘${U.tagline.split(" — ")[0]}’${josa(U.tagline.split(" — ")[0],"을","를")} 다루었다면,
+       Unit ${jo(U.no+1,"은","는")} ${U.next.ko}. 지문 5편 · ${U.next.words}.</p></div>`
     :`<div class="box"><div class="n">The End</div><h4>12 유닛 완주</h4>
     <p>열두 분야 예순 편을 모두 읽었습니다. 이제 같은 여섯 걸음으로 어떤 비문학 지문이든 스스로 읽어 낼 수 있습니다.</p></div>`}
   </div>`:""}
@@ -247,7 +257,7 @@ T.forEach(t=>{
    <span class="k">be+p.p</span>(수동태) · <span class="k">be+~ing</span>(진행형) &nbsp;→&nbsp; <span class="k">한 덩어리의 동사로 표시!</span> △</div>
   <div class="model">
    <div class="cap"><b>먼저 보기</b>
-    <span>다 표시된 문장 ${t.fl.model.n}을 먼저 구경하세요. 기호는 단어 바로 위·아래에!</span></div>
+    <span>다 표시된 문장 ${jo(t.fl.model.n,"을","를")} 먼저 구경하세요. 기호는 단어 바로 위·아래에!</span></div>
    <div class="mk" lang="en">${t.fl.model.toks.map(x=>tok(x[0],x[1])).join("")}</div>
    <div class="ko"><b>뼈대 해석</b>${t.fl.model.ko}</div>
   </div>
