@@ -1,6 +1,7 @@
 # 레슨 데이터 작성 규격 (units/uNN.js 의 lessons[] 한 항목)
 
-원문 지문은 `_orig_clean.json` 에 있다 (`sent`·`kor` 는 **한 글자도 고치지 않고 그대로 쓴다**).
+원문 지문은 `src/orig/all.json` 에 있다 (`src/orig/raw.tsv` → `src/split.py` → `src/typo.py` 로 만든다).
+유닛 파일에서는 `sent: T(n).sent, kor: T(n).kor` 로 그대로 가져다 쓴다 — **한 글자도 고치지 않는다**.
 
 ```js
 {
@@ -37,7 +38,7 @@
 ```
 
 ## 지켜야 할 것
-- `sent`·`kor` 는 `_orig_clean.json` 그대로. 문장 수가 8~18로 제각각이므로 **원문자 번호가 범위를 넘지 않게** 한다.
+- `sent`·`kor` 는 `src/orig/all.json` 그대로. 문장 수가 8~18로 제각각이므로 **원문자 번호가 범위를 넘지 않게** 한다.
 - `fl.model.n` 과 `fl.drill[].n` 은 서로 겹치지 않는다. drill 의 `en` 은 지문 문장과 **글자까지 같아야** 한다.
 - `flow` 정답 4개는 모두 `flowBogi` 안에, `para` 정답 5개는 모두 `paraBogi` 안에 있어야 한다.
 - `wtype` 은 `정답·무관·반대·지엽·배경`, `stype` 은 `일치·반대·과장·혼동·시점` 중에서 고른다.
@@ -48,3 +49,5 @@
 
 ## 검사
 `node validate.js 1` 이 통과해야 한다 (지문 165–340 단어, defOrder 순열, drill 문장 일치, 보기 포함 여부, 패러프레이즈 길이, wtype/stype 정합).
+`node src/origcheck.js` 는 유닛의 `sent`·`kor`·제목이 원문과 같은지 대조한다.
+`node labcheck.js` 는 삽화 SVG 를 실제로 그려 글자끼리 겹치는 곳과 글자가 인물 얼굴을 덮는 곳을 잡는다.
