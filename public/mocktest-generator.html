@@ -15,8 +15,8 @@
    램프는 hue 216 하나. 1~6 = 선과 면, 7~12 = 글자. 6→7 사이 명도 20 점프가 규율.
 
    ── 깨면 안 되는 계약 (JS·워드·인쇄가 이 값을 직접 읽는다) ──────────────
-   · .page  = 210mm × 297mm / padding 7mm / column-gap 6mm / 8pt / 1.5 /
-              box-sizing:border-box / word-break:normal  → DOCX 11906·16838·397·340·sz16
+   · .page  = 210mm × 297mm / padding 10mm / column-gap 6mm / 8pt / 1.5 /
+              box-sizing:border-box / word-break:normal  → DOCX 11906·16838·567·340·sz16
    · .page .cols{flex:1;min-height:0;column-count:2;column-fill:auto} — 단 사이로 글이 이어진다
               → layoutPaper 의 유일한 판정식 col.scrollHeight > clientHeight+0.5
    · .page .rv i 5mm · .rv-badge 6pt — 크기 불변(줄 높이 → 쪽 나눔에 직접 들어감)
@@ -1152,7 +1152,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 .page {
   width: 210mm; height: 297mm; background: #fff;
   box-shadow: var(--sh-paper);
-  margin: 0 auto 22px; padding: 7mm; box-sizing: border-box;
+  margin: 0 auto 22px; padding: 10mm; box-sizing: border-box;
   position: relative; display: flex; flex-direction: column;
   font-family: var(--paper-serif); font-size: 8pt; line-height: 1.5; color: #000; word-break: normal;
   /* 함초롬바탕·바탕에는 Bold 페이스가 없다. 합성을 막으면 굵은 글씨가 사라진다.
@@ -1726,7 +1726,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     <span class="step" data-step="2"></span><span class="step-rule"></span>
     <span class="step" data-step="3"></span>
   </div>
-  <div class="state"><span class="build" id="buildTag">2026-09-08 02:14</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
+  <div class="state"><span class="build" id="buildTag">2026-09-08 02:31</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
 </div>
 
 <!-- 화면 0 · 시작 -->
@@ -1749,7 +1749,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   </ul>
 
   <div class="spec" aria-label="출력 규격">
-    <div class="row"><span class="k">편집 규격</span><span class="v">2단 · 함초롬바탕 8pt · 여백 7mm</span></div>
+    <div class="row"><span class="k">편집 규격</span><span class="v">2단 · 함초롬바탕 8pt · 여백 10mm</span></div>
     <div class="row"><span class="k">저장 형식</span><span class="v" id="specFormats">워드(DOCX) · HTML(인쇄용)</span></div>
     <div class="row"><span class="k">올릴 수 있는 파일</span><span class="v">PDF · 한글 · 워드 · 엑셀 · 최대 15개</span></div>
   </div>
@@ -2004,7 +2004,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     <div class="zoom"><button type="button" id="zoomOut" aria-label="축소">−</button><span class="zv" id="zoomVal">100%</span><button type="button" id="zoomIn" aria-label="확대">+</button><button type="button" class="fit" id="zoomFit">맞춤</button></div>
     <span class="pages" id="pageCount"></span>
     <span class="gap"></span>
-    <span class="pages">A4 · 2단 · 함초롬바탕 8pt · 여백 7mm — 워드·인쇄와 같은 판형</span>
+    <span class="pages">A4 · 2단 · 함초롬바탕 8pt · 여백 10mm — 워드·인쇄와 같은 판형</span>
   </div>
   <div class="paper-view" id="paperView"><div class="paper-box" id="paperBox"><div class="paper-scale" id="examOutput"></div></div></div>
 
@@ -3250,8 +3250,11 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
         else pushRuns(blocks, ctx.box ? "boxp" : (ctx.center ? "center" : "p"), ch);
       }
       else if (BLOCK_TAGS.includes(tag)) {
+        const at = blocks.length;
         if (hasBlockChild(ch)) walkBlocks(ch, blocks, ctx);
         else pushRuns(blocks, ctx.box ? "boxp" : (ctx.center ? "center" : "p"), ch);
+        // 미리보기가 여기서 쪽을 넘겼다면 워드도 같은 자리에서 넘긴다
+        if (ch.dataset && ch.dataset.pagestart && blocks.length > at) blocks[at].pageBreak = true;
       }
       else {                                            // 인라인 요소가 최상위에 온 경우
         pushRuns(blocks, ctx.box ? "boxp" : "p", ch);
@@ -3299,7 +3302,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     else if (b.kind === "center") { ppr += '<w:jc w:val="center"/><w:spacing w:after="60"/>'; }
     else if (b.kind === "h2") { ppr += '<w:keepNext/><w:pageBreakBefore/><w:spacing w:before="160" w:after="60"/><w:pBdr><w:bottom w:val="single" w:sz="8" w:space="2" w:color="000000"/></w:pBdr>'; extra = '<w:b/><w:sz w:val="20"/><w:szCs w:val="20"/>'; }
     else if (b.kind === "boxp") { ppr += '<w:keepLines/><w:jc w:val="both"/>' + BOX; }
-    else { ppr += '<w:jc w:val="both"/><w:spacing w:after="40"/>'; }
+    else { ppr += '<w:jc w:val="both"/>' + (b.pageBreak ? "<w:pageBreakBefore/>" : "") + '<w:spacing w:after="40"/>'; }
     ppr += "</w:pPr>";
     return "<w:p>" + ppr + b.runs.map(r => docxRun(r, extra)).join("") + "</w:p>";
   }
@@ -3314,7 +3317,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     }
     return await saveFile(blob, "동형모의고사.docx");
   }
-  // docx-js (npm 'docx') — A4 · 여백 7mm · 2단(간격 6mm, 구분선) · 함초롬바탕 8pt
+  // docx-js (npm 'docx') — A4 · 여백 10mm · 2단(간격 6mm, 구분선) · 함초롬바탕 8pt
   async function buildDocxJs(blocks) {
     const D = docx, FONT = "함초롬바탕";
     const runs = (b, o) => b.runs.map(r => new D.TextRun({
@@ -3326,14 +3329,14 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
       if (b.kind === "center") return new D.Paragraph({ alignment: D.AlignmentType.CENTER, spacing: { after: 60 }, children: runs(b, {}) });
       if (b.kind === "h2") return new D.Paragraph({ keepNext: true, pageBreakBefore: true, spacing: { before: 160, after: 60 }, border: { bottom: LINE(8, 2) }, children: runs(b, { bold: true, size: 20 }) });
       if (b.kind === "boxp") return new D.Paragraph({ keepLines: true, alignment: D.AlignmentType.JUSTIFIED, border: { top: LINE(6, 3), left: LINE(6, 6), bottom: LINE(6, 3), right: LINE(6, 6) }, children: runs(b, {}) });
-      return new D.Paragraph({ alignment: D.AlignmentType.JUSTIFIED, spacing: { after: 40 }, children: runs(b, {}) });
+      return new D.Paragraph({ alignment: D.AlignmentType.JUSTIFIED, pageBreakBefore: !!b.pageBreak, spacing: { after: 40 }, children: runs(b, {}) });
     });
     const doc = new D.Document({
       creator: "ORUN ENGLISH", title: "동형모의고사",
       styles: { default: { document: { run: { font: FONT, size: 16 }, paragraph: { spacing: { line: 276 } } } } },
       sections: [{
         properties: {
-          page: { size: { width: 11906, height: 16838 }, margin: { top: 397, right: 397, bottom: 397, left: 397, header: 0, footer: 0, gutter: 0 } },
+          page: { size: { width: 11906, height: 16838 }, margin: { top: 567, right: 567, bottom: 567, left: 567, header: 0, footer: 0, gutter: 0 } },
           column: { count: 2, space: 340, separate: true },
         },
         children: paras,
@@ -3359,9 +3362,9 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   async function buildDocxRaw(blocks) {
     const W = 'xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"';
     const bodyXml = blocks.map(docxPara).join("");
-    // A4(11906x16838 twip), 여백 7mm=397twip, 2단(간격 6mm=340twip)
+    // A4(11906x16838 twip), 여백 10mm=567twip, 2단(간격 6mm=340twip)
     const sectPr = '<w:sectPr><w:pgSz w:w="11906" w:h="16838"/>' +
-      '<w:pgMar w:top="397" w:right="397" w:bottom="397" w:left="397" w:header="0" w:footer="0" w:gutter="0"/>' +
+      '<w:pgMar w:top="567" w:right="567" w:bottom="567" w:left="567" w:header="0" w:footer="0" w:gutter="0"/>' +
       '<w:cols w:num="2" w:space="340"/></w:sectPr>';
     const documentXml = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>' +
       "<w:document " + W + "><w:body>" + bodyXml + sectPr + "</w:body></w:document>";
@@ -3943,7 +3946,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   function diagnostics() {
     return [
       "ORUN 동형 모의고사 진단",
-      "build: 2026-09-08 02:14",
+      "build: 2026-09-08 02:31",
       "url: " + location.href,
       "runtime: API 키 전용 빌드",
       "sample 확보: " + (SAMPLE ? "예" : "아니오"),
@@ -5076,6 +5079,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   //  요소 자체를 옮기므로 편집·핸들러·도장이 그대로 보존된다.
   // ==================================================================
   const MM = 96 / 25.4;
+  const MAX_Q_PER_PAGE = 4;     // 한 쪽에 문항 넷까지 — 길면 저절로 셋 이하가 된다
   let docUnits = [];
   let paperDirty = false;
   let paperZoom = 0;            // 0 = 너비 맞춤
@@ -5102,22 +5106,29 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     docUnits.forEach(u => u.remove());
     root.innerHTML = "";
     if (!docUnits.length) { $("pageCount").textContent = ""; applyZoom(); paperDirty = false; return; }
-    let pageNo = 0, page = null, cols = null;
-    const fresh = () => { pageNo++; page = newPage(pageNo); root.appendChild(page); cols = page.querySelector(".cols"); };
+    let pageNo = 0, page = null, cols = null, qOnPage = 0;
+    const fresh = () => { pageNo++; page = newPage(pageNo); root.appendChild(page); cols = page.querySelector(".cols"); qOnPage = 0; };
     // 두 단을 넘치면 세 번째 단이 오른쪽에 생긴다 — 그걸 '쪽이 찼다'는 신호로 쓴다
     const overflowed = () => cols.scrollWidth > cols.clientWidth + 1;
     fresh();
     docUnits.forEach(u => {
       if (u.hidden) return;
       if (u.classList.contains("exam-header")) { page.querySelector(".span").appendChild(u); return; }
+      const isQ = u.classList.contains("question");
       // 해설은 시험지가 끝난 뒤 새 쪽에서 시작한다
       if (u.dataset && u.dataset.break === "page" && cols.children.length) fresh();
+      // 한 쪽에 너무 많이 몰아넣지 않는다 — 문항은 쪽당 MAX_Q_PER_PAGE 개까지
+      else if (isQ && qOnPage >= MAX_Q_PER_PAGE) fresh();
       cols.appendChild(u);
       if (overflowed() && cols.children.length > 1) {
         u.remove();
         fresh();
         cols.appendChild(u);
       }
+      // 이 단위가 쪽의 첫 내용이면 표시해 둔다 (첫 쪽은 넘길 곳이 없으니 뺀다)
+      if (cols.children.length === 1 && pageNo > 1) u.dataset.pagestart = "1";
+      else if (u.dataset) delete u.dataset.pagestart;
+      if (isQ) qOnPage++;
     });
     paperShown = true;
     $("pageCount").textContent = pageNo + "쪽 · " + docUnits.filter(u => u.classList.contains("question")).length + "문항";
@@ -5742,7 +5753,7 @@ list.map(disputeBlock).join("\n");
   }
   function printDocument() {
     const printCss =
-      "@page{size:A4;margin:7mm}" +
+      "@page{size:A4;margin:10mm}" +
       'body{font-family:"함초롬바탕","HCR Batang","Batang","바탕",serif;font-size:8pt;line-height:1.5;margin:0;' +
       "column-count:2;column-gap:6mm;column-rule:0.5pt solid #999}" +
       ".exam-header,header,h1{column-span:all;text-align:center}" +
@@ -5753,6 +5764,7 @@ list.map(disputeBlock).join("\n");
       "h2{break-before:page;page-break-before:always}" +
       ".passage,blockquote,.given{border:0.5pt solid #000;padding:4pt 6pt;margin:3pt 0;break-inside:avoid;page-break-inside:avoid}" +
       ".answer-key{break-before:page;page-break-before:always}" +
+      "[data-pagestart]{break-before:page;page-break-before:always}" +
       ".given+.passage{margin-top:4pt}" +
       ".choices-inline{display:flex;justify-content:space-between;gap:2pt;margin:3pt 0 0;padding:0 2pt}" +
       ".question p,.passage p,.given p,.answer-key p{text-align:justify}" +
