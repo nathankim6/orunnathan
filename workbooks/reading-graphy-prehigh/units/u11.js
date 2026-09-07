@@ -1,683 +1,728 @@
-/* Unit 11 · Field 11 — Environment, Resources & Ecology 환경·자원·생태 */
+/* Unit 11 · Environment, Resources & Ecology — 원문 Theme 51–55 */
+const R = require("../src/orig/all.json");
+const T = n => R[n - 1];
+
 module.exports = {
  no: 11,
  field: "Environment, Resources & Ecology",
  ko: "환경·자원·생태",
- tagline: "함께 쓰는 것 — 규칙·유역·대기·고통·공감",
- next: { en: "Current Affairs", ko: "지금 벌어지고 있는 일들을 읽습니다", words: "175–205 words" },
+ tagline: "함께 쓰는 것 — 권리·유역·대기·고통·공감",
+ next: { en: "Current Affairs", ko: "지금 벌어지고 있는 일들을 읽습니다", words: "240–282 words" },
  lessons: [
+
+/* ───────────────────────────── 51 ───────────────────────────── */
 {
- no: "51", key: "commons",
- accent: "#2F7268", tint: "#E3F0EE", deep: "#1C4E46",
+ no: "51", key: "commons", accent: "#2F7268", tint: "#E3F0EE", deep: "#1C4E46",
  en: "Property Rights to Natural Resources",
- ko: "자연 자원에는 주인이 있는가",
- goal: "공유 자원이 망가지는 구조와 그 해법의 조건을 설명할 수 있다.",
- fig: "Figure 1  울타리가 없는 자리.",
- tip: "먼저 생각해 보자. 주인이 없는 것을 잘 지키려면 무엇이 필요할까?",
- sent: [
-  "Nobody owns the sea, and that is exactly where the trouble starts.",
-  "A field has a fence, a name on a document, and someone who loses money if it is ruined.",
-  "A fishery has none of these, so every boat has a reason to take one more.",
-  "Each captain knows the stock is falling and knows that restraint alone will not save it.",
-  "Economists call this pattern the tragedy of the commons.",
-  "The usual remedy is to hand the resource to an owner who will care about next year.",
-  "Private quotas have rebuilt some fisheries that free access had emptied.",
-  "Yet ownership travels badly across water, air, and moving animals.",
-  "A river crosses borders, and a cloud refuses to stay above one farm.",
-  "Elinor Ostrom studied villages that solved this without markets or governments.",
-  "Their rules were local, written by the users, and enforced by neighbours.",
-  "Monitoring was cheap because everyone could see everyone else's boat.",
-  "Her work suggests that the question is not private or public.",
-  "It is whether the people who bear the cost also make the rules.",
-  "Where those two come apart, the resource usually loses."
+ ko: "권리가 생겨나는 자리",
+ goal: "자원이 귀해질 때 재산권이 어떻게 바뀌기 시작하는지 수요·공급의 틀로 설명할 수 있다.",
+ fig: "Figure 1  권리가 정해진 자원과 정해지지 않은 자원.",
+ tip: "먼저 생각해 보자. 아무나 쓸 수 있던 것이 귀해지면 무슨 일이 생길까?",
+ sent: T(51).sent, kor: T(51).kor,
+ bank: [
+  ["determinant", "①", "결정 요인"],
+  ["scarce", "②", "희소한"],
+  ["demographics", "③", "인구 구성"],
+  ["welfare", "⑤", "후생"],
+  ["exogenous", "⑦", "외생적인"],
+  ["externality", "⑩", "외부 효과"]
  ],
- kor: [
-  "바다는 누구의 것도 아닌데, 문제가 시작되는 지점이 바로 거기다.",
-  "밭에는 울타리가 있고, 문서에 이름이 있고, 망가지면 손해를 보는 사람이 있다.",
-  "어장에는 그 가운데 무엇도 없어서, 모든 배가 한 마리 더 잡을 이유를 갖는다.",
-  "선장마다 어족이 줄고 있음을 알고, 자기만 참아서는 그것을 구할 수 없음도 안다.",
-  "경제학자들은 이 패턴을 공유지의 비극이라고 부른다.",
-  "흔한 처방은 내년을 걱정할 주인에게 그 자원을 넘기는 것이다.",
-  "개인별 어획 할당은 자유로운 접근이 비워 놓았던 어장 몇 곳을 되살렸다.",
-  "그러나 소유권은 물과 공기와 움직이는 동물을 잘 건너가지 못한다.",
-  "강은 국경을 넘고, 구름은 한 농장 위에만 머물기를 거부한다.",
-  "엘리너 오스트롬은 시장도 정부도 없이 이를 풀어낸 마을들을 연구했다.",
-  "그들의 규칙은 지역적이었고, 쓰는 사람들이 만들었으며, 이웃이 지키게 했다.",
-  "모두가 서로의 배를 볼 수 있었기 때문에 감시 비용이 쌌다.",
-  "그의 연구는 문제가 사유냐 공유냐가 아님을 시사한다.",
-  "문제는 비용을 지는 사람들이 규칙도 만드는가이다.",
-  "그 둘이 갈라지는 곳에서는 대개 자원이 진다."
+ defs: [
+  ["determinant", "a factor that settles how something turns out"],
+  ["scarce", "too little to meet what people want"],
+  ["demographics", "the make-up of a population by age and sort"],
+  ["welfare", "how well off a person or group is"],
+  ["exogenous", "coming from outside the system itself"],
+  ["externality", "a cost or gain that falls on an outsider"]
  ],
- bank: [["fishery","③","어장"],["restraint","④","자제"],["commons","⑤","공유지"],
-        ["quotas","⑦","할당량"],["borders","⑨","국경"],["monitoring","⑫","감시"]],
- defs: [["fishery","an area where fish are caught"],
-        ["restraint","the act of holding oneself back"],
-        ["commons","land or water shared by all"],
-        ["quotas","fixed shares that each may take"],
-        ["borders","the lines between countries"],
-        ["monitoring","the act of watching to check"]],
- defOrder: [5,2,0,4,1,3],
+ defOrder: [4, 0, 5, 2, 1, 3],
  flow: [
-  ["The setting","Water that belongs to nobody in particular",null],
-  ["The pull","Every boat gains by taking (  ①  ) more","one"],
-  ["Remedy 1","Give it an (  ②  ) who thinks about next year","owner"],
-  ["The limit","Rivers and clouds cross every (  ③  )","border"],
-  ["Remedy 2","Local (  ④  ) written and watched by the users","rules"]
+  ["When it does not matter", "Rights are irrelevant while the resource is plentiful", null],
+  ["The turn", "Rights start to matter once the resource becomes (  ①  )", "scarce"],
+  ["The frame", "Think of rights in terms of supply and (  ②  )", "demand"],
+  ["The village", "An outside change suddenly (  ③  ) demand for the resource", "raises"],
+  ["The demand", "Users now want a system that avoids these (  ④  )", "losses"]
  ],
- flowBogi: "one · owner · border · rules · market · profit",
+ flowBogi: "scarce · demand · raises · losses · plentiful · gains",
  para: [
-  ["① Nobody owns the sea","The resource has no single ______.","claimant"],
-  ["③ every boat has a reason to take one more","Individual gain ______ the group.","outruns"],
-  ["⑦ some fisheries that free access had emptied","Open entry had ______ the stock.","drained"],
-  ["⑫ everyone could see everyone else's boat","Watching cost almost ______.","nothing"],
-  ["⑭ the people who bear the cost also make the rules","Deciders should be the ______ ones.","affected"]
+  ["① Property rights are key determinants", "Rights largely ______ how a resource is used.", "decide"],
+  ["② the rights to use it are generally irrelevant", "When there is plenty, rights hardly ______.", "matter"],
+  ["⑤ their welfare would be enhanced", "They would be better ______ under new rules.", "off"],
+  ["⑧ would now adversely affect use by others", "One person's use now ______ everyone else.", "hurts"],
+  ["⑨ an incentive to “demand” a change", "They now have a ______ to ask for change.", "reason"]
  ],
- paraBogi: "claimant · outruns · drained · nothing · affected · owner · fills · distant",
+ paraBogi: "decide · matter · off · hurts · reason · hide · worse · rule",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How to Catch More Fish Each Year","Who Should Write the Rules",
-       "Private Property Solves Everything","A Short History of the Fishing Boat",
-       "Why Rivers Cross Borders"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["밭에는 망가지면 손해를 보는 주인이 있다.","할당제가 어장을 되살린 사례가 있다.",
-       "오스트롬은 시장 없이 문제를 푼 마을을 연구했다.","필자는 사유화가 모든 자원에 통한다고 본다.",
-       "감시 비용이 싼 것이 규칙 유지에 도움이 되었다."], ans:4},
-  {t:"write", q:"마지막 문장의 '갈라지는 둘'이 무엇인지 우리말 한 문장으로 써 보세요.",
-   ans:"비용을 실제로 지는 사람들과 규칙을 만드는 사람들이 서로 다른 경우를 말한다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "A Guide to Village Farming",
+    "When a Resource Starts to Need an Owner",
+    "Why Property Rights Never Change",
+    "How Fishing Boats Are Built",
+    "The History of Trade Agreements"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "자원이 수요에 견주어 귀하지 않으면 사용 권리는 대개 문제가 되지 않는다.",
+    "필자는 권리 제도를 수요와 공급의 틀로 보는 것이 쓸모없다고 말한다.",
+    "선호·기술·인구 구성의 변화는 자원을 경제적으로 귀하게 만들 수 있다.",
+    "개방 접근이 이어지면 각자의 사용 증가가 다른 사람의 사용에 나쁜 영향을 준다.",
+    "외부 효과나 공공재 같은 시장 실패도 권리 변화로 효율을 높일 여지를 준다."
+   ], ans: 2
+  },
+  {
+   t: "write", q: "재산권에 대한 ‘수요’가 생기는 때를 우리말 한 문장으로 써 보세요.",
+   ans: "지금의 재산권 제도가 바뀌면 자기 후생이 나아지리라는 것을 사람들이 깨달을 때다."
+  }
  ],
  fl: {
-  model: { n:"⑭",
-   toks: [["It","s"],["is","v"],["whether","c"],["the people who bear the cost","s2"],
-          ["also make","v2"],["the rules",null]],
-   ko:"문제는 비용을 지는 사람들이 규칙도 만드는가이다." },
+  model: {
+   n: "⑤",
+   toks: [
+    ["The demand for property rights", "s"], ["arises", "v"], ["when", "c"],
+    ["groups or individuals", "s2"], ["realize", "v2"], ["that", "c"],
+    ["their welfare", "s2"], ["would be enhanced", "v2"], ["if", "c"],
+    ["the current property rights system", "s2"], ["were changed.", "v2"]
+   ],
+   ko: "재산권에 대한 수요는, 지금의 재산권 제도가 바뀌면 자기 후생이 나아지리라는 것을 집단이나 개인이 깨달을 때 생긴다."
+  },
   drill: [
-   { n:"③", en:"A fishery has none of these, so every boat has a reason to take one more.",
-     ans:"S A fishery · △V has · O none of these · [so] S every boat · △V has · O a reason to take one more",
-     ko:"어장에는 그 가운데 무엇도 없어서, 모든 배가 한 마리 더 잡을 이유를 갖는다." },
-   { n:"⑩", en:"Elinor Ostrom studied villages that solved this without markets or governments.",
-     ans:"S Elinor Ostrom · △V studied · O villages · [that] △V′ solved · O this · M without markets or governments",
-     ko:"엘리너 오스트롬은 시장도 정부도 없이 이를 풀어낸 마을들을 연구했다." },
-   { n:"⑫", en:"Monitoring was cheap because everyone could see everyone else's boat.",
-     ans:"S Monitoring · △V was · C cheap · [because] S′ everyone · △V′ could see · O everyone else's boat",
-     ko:"모두가 서로의 배를 볼 수 있었기 때문에 감시 비용이 쌌다." }
+   {
+    n: "②",
+    en: "When a natural resource is not scarce relative to the existing demand, the rights to use it are generally irrelevant.",
+    ans: "[When] S′ a natural resource · △V′ is not · C scarce relative to the existing demand · S the rights to use it · △V are · C generally irrelevant",
+    ko: "천연자원이 지금의 수요에 견주어 귀하지 않을 때, 그것을 쓸 권리는 대개 문제가 되지 않는다."
+   },
+   {
+    n: "⑧",
+    en: "If open access persists, each individual's increased use of the resource would now adversely affect use by others, causing welfare losses.",
+    ans: "[If] S′ open access · △V′ persists · S each individual's increased use of the resource · △V would now adversely affect · O use by others · M causing welfare losses",
+    ko: "개방 접근이 이어지면, 각자가 자원을 더 많이 쓰는 일이 이제 다른 사람의 사용에 나쁜 영향을 주어 후생 손실을 낳게 된다."
+   },
+   {
+    n: "⑩",
+    en: "This observation applies more generally: most market failures, such as externalities, public goods, and asymmetric information, afford the possibility to increase efficiency through changes in property rights.",
+    ans: "S This observation · △V applies · M more generally · S most market failures, such as externalities, public goods, and asymmetric information · △V afford · O the possibility to increase efficiency through changes in property rights",
+    ko: "이 관찰은 더 널리 적용된다. 외부 효과·공공재·정보 비대칭 같은 대부분의 시장 실패는 재산권을 바꾸어 효율을 높일 가능성을 준다."
+   }
   ]
  },
  syn: [
-  { n:"⑥", name:"be + to부정사 보어 / 관계대명사 who",
-    q:"The usual remedy is «to hand» the resource to an owner «who will care» about next year.",
-    d:"<b>be + to부정사</b>가 보어로 쓰여 '~하는 것이다'가 된다. who 절이 owner 를 꾸민다.",
-    k:"흔한 처방은 내년을 걱정할 주인에게 자원을 넘기는 것이다." },
-  { n:"⑭", name:"whether 명사절",
-    q:"It is «whether the people» who bear the cost also make the rules.",
-    d:"<b>whether</b> 절이 보어 자리에 와서 '~인지 아닌지'라는 명사절이 된다.",
-    k:"문제는 비용을 지는 사람들이 규칙도 만드는가이다." }
+  {
+   n: "③",
+   name: "삽입된 예시 such as ~",
+   q: "…changes occur that render the resource economically scarce, however, «such as shifts in preferences, technology, or demographics», rights…",
+   d: "<b>such as</b> 뒤의 예시는 앞말을 설명하려고 끼어든 부분이다. 괄호로 묶어 건너뛰고 뼈대를 먼저 잡는다.",
+   k: "선호·기술·인구 구성의 변화 같은"
+  },
+  {
+   n: "⑤",
+   name: "가정법 과거 (if + 과거형, would + 동사원형)",
+   q: "…their welfare «would be enhanced if the current property rights system were changed».",
+   d: "지금 사실과 다른 일을 그려 볼 때 쓴다. if 절에 과거형, 주절에 <b>would</b>가 온다.",
+   k: "제도가 바뀐다면 후생이 나아질 것이다"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"The plan is to give the land to a family who will farm it.",
-    k:"그 계획은 농사지을 가족에게 그 땅을 주는 것이다." },
-  { u:"구문 2", en:"The real test is whether the promise survives a bad year.",
-    k:"진짜 시험은 그 약속이 나쁜 해를 견디는가이다." },
-  { u:"구문 1 + 2", en:"The question is whether the plan is to trust people who live there.",
-    k:"문제는 그 계획이 거기 사는 사람들을 믿는 것인가 하는 점이다." }
+  { u: "구문 1", en: "Many goods, such as air and water, once had no owner.", k: "공기와 물 같은 많은 것들에는 한때 주인이 없었다." },
+  { u: "구문 2", en: "If the rule were clearer, fewer boats would come.", k: "규칙이 더 분명하다면 배가 덜 올 것이다." },
+  { u: "구문 1 + 2", en: "If the catch, such as cod or tuna, were limited, stocks would recover.", k: "대구나 참치 같은 어획이 제한된다면 자원량은 회복될 것이다." }
  ],
- wtype: ["무관","정답","반대","배경","지엽"],
- stype: ["일치","일치","일치","반대","일치"],
- why: [["더 많이 잡는 법은 글의 관심사가 아니다"],["정답"],
-       ["사유화가 만능이라고 하지 않았다 — 한계를 함께 짚는다"],
-       ["배는 상황을 설명하는 배경으로만 나온다"],
-       ["강이 국경을 넘는다는 것은 한 문장의 세부다"]],
- src: [["②"],["⑦"],["⑩"],["⑧과 어긋남 — 물·공기·동물에는 잘 통하지 않는다고 했다"],["⑫"]],
+ why: [
+  ["마을 농사법은 글에 나오지 않는다"],
+  ["정답"],
+  ["글은 권리 제도가 바뀌어 간다고 말한다 — 정반대다"],
+  ["어선 제작은 글의 관심사가 아니다"],
+  ["무역 협정의 역사는 글의 초점이 아니다"]
+ ],
+ src: [["②"], ["④와 어긋남 — 수요·공급의 틀로 보는 것이 쓸모 있다고 말한다"], ["③"], ["⑧"], ["⑩"]],
  kb: {
-  title:"주인 없는 것을 지키는 법",
-  lead:"규칙은 울타리를 대신할 수 있다.",
+  title: "공유 자원과 권리",
+  lead: "누구의 것도 아닌 것",
   items: [
-   ["공유지의 비극",
-    "1968년 하딘의 논문으로 널리 알려진 개념이다. 각자에게 합리적인 선택이 모이면 전체가 손해를 보는 구조를 가리킨다."],
-   ["개별 어획 할당",
-    "어획량을 배마다 나눠 주고 사고팔 수 있게 한 제도다. 일부 어장에서 자원 회복 효과가 보고되었지만, 할당이 소수에게 몰리는 문제도 지적된다."],
-   ["오스트롬의 여덟 가지 원칙",
-    "1990년 오스트롬은 스위스 목초지, 일본 입회지, 필리핀 관개 조합 등을 비교해 공동 관리가 성공하는 조건을 정리했다. 경계의 명확성, 이용자의 규칙 제정 참여, 값싼 감시가 그중에 있다."]
+   ["공유지의 비극", "1968년 개릿 하딘(Garrett Hardin)이 쓴 표현이다. 누구나 쓸 수 있는 목초지에서 각자가 한 마리씩 더 놓아 결국 모두가 손해를 본다는 이야기다."],
+   ["오스트롬의 반론", "엘리너 오스트롬(Elinor Ostrom)은 실제 어촌·관개 공동체가 스스로 규칙을 만들어 자원을 지켜 온 사례를 모았다. 2009년 노벨 경제학상을 받았다."],
+   ["시장 실패", "외부 효과·공공재·정보 비대칭은 시장이 스스로 효율에 이르지 못하는 대표적인 경우다. 본문은 이때 권리를 손보는 길이 있다고 말한다."]
   ],
-  ask:"우리 학교에서 '누구의 것도 아니라서' 잘 관리되지 않는 곳이 있는가?"
- }
+  ask: "여러분 주변에서 ‘아무도 주인이 아닌 것’이 상한 사례를 떠올려 보자."
+ },
+ wtype: ["무관", "정답", "반대", "무관", "지엽"],
+ stype: ["일치", "반대", "일치", "일치", "일치"]
 },
+
+/* ───────────────────────────── 52 ───────────────────────────── */
 {
- no: "52", key: "lake",
- accent: "#2E6E8E", tint: "#E4EFF4", deep: "#194C64",
+ no: "52", key: "lake", accent: "#2E6E8E", tint: "#E4EFF4", deep: "#194C64",
  en: "Urban Lake Restoration",
- ko: "도시 호수를 되살리는 일",
- goal: "호수의 상태가 유역 전체의 결과임을 설명할 수 있다.",
- fig: "Figure 1  물은 마지막에 도착한다.",
- tip: "먼저 생각해 보자. 물이 더러워졌다면 물부터 고쳐야 할까?",
- sent: [
-  "The lake in the middle of the city turned green one summer and stayed that way.",
-  "Residents blamed the ducks, then the boats, then a factory that had closed.",
-  "The actual cause was arriving invisibly with every rainfall.",
-  "Lawn fertiliser, road dust, and dog waste all ran off the streets into one basin.",
-  "Nutrients feed algae, algae block the light, and the plants below the surface die.",
-  "When those plants die, the sediment loosens and releases still more nutrients.",
-  "A lake in this state keeps feeding itself long after the inflow is reduced.",
-  "The city first tried the visible remedy and dredged the bottom at great expense.",
-  "The water cleared for two seasons and then turned green again.",
-  "The second attempt worked on the streets instead of the water.",
-  "Rain gardens, swept gutters, and planted verges intercepted the runoff before it arrived.",
-  "Nothing about this looked like restoration, and no photograph showed a difference.",
-  "Four years later the lake held plants, insects, and a returning heron.",
-  "The lesson is that a lake is the last page of its catchment.",
-  "Reading only the last page explains very little."
+ ko: "파이프 끝에 놓인 호수",
+ goal: "도시 호수가 나빠지는 과정과 그 관리가 실패해 온 이유를 설명할 수 있다.",
+ fig: "Figure 1  도시가 흘려보낸 것을 마지막에 받는 곳.",
+ tip: "먼저 생각해 보자. 도시의 물은 마지막에 어디로 갈까?",
+ sent: T(52).sent, kor: T(52).kor,
+ bank: [
+  ["degraded", "①", "훼손된"],
+  ["run-off", "②", "유출수"],
+  ["decomposition", "④", "분해"],
+  ["flammable", "⑤", "인화성의"],
+  ["interconnectedness", "⑦", "상호 연결성"],
+  ["catchment", "⑦", "유역"]
  ],
- kor: [
-  "도시 한가운데의 호수가 어느 여름 초록으로 변하더니 그대로 있었다.",
-  "주민들은 오리를 탓하고, 배를 탓하고, 문 닫은 공장을 탓했다.",
-  "실제 원인은 비가 올 때마다 눈에 보이지 않게 도착하고 있었다.",
-  "잔디 비료와 도로 먼지와 개의 배설물이 모두 거리에서 한 웅덩이로 흘러들었다.",
-  "영양분은 조류를 키우고, 조류는 빛을 막고, 수면 아래 식물은 죽는다.",
-  "그 식물이 죽으면 바닥 퇴적물이 헐거워지면서 영양분을 더 많이 내놓는다.",
-  "이 상태의 호수는 유입이 줄어든 뒤에도 오랫동안 스스로를 계속 먹인다.",
-  "시는 먼저 눈에 보이는 처방을 택해 큰돈을 들여 바닥을 준설했다.",
-  "물은 두 계절 동안 맑아졌다가 다시 초록으로 변했다.",
-  "두 번째 시도는 물이 아니라 거리에서 이루어졌다.",
-  "빗물 정원과 청소한 배수구와 심어 놓은 가장자리가 유출수를 도착 전에 붙잡았다.",
-  "이 가운데 무엇도 복원처럼 보이지 않았고, 어떤 사진도 차이를 보여 주지 못했다.",
-  "4년 뒤 그 호수에는 식물과 곤충과 돌아온 왜가리가 있었다.",
-  "교훈은 호수가 그 유역의 마지막 쪽이라는 것이다.",
-  "마지막 쪽만 읽어서는 설명되는 것이 거의 없다."
+ defs: [
+  ["degraded", "made much worse in quality"],
+  ["run-off", "water that flows off land into a stream"],
+  ["decomposition", "the breaking down of dead matter"],
+  ["flammable", "easily set on fire"],
+  ["interconnectedness", "the way parts are tied to one another"],
+  ["catchment", "the land whose water drains to one place"]
  ],
- bank: [["residents","②","주민"],["fertiliser","④","비료"],["nutrients","⑤","영양분"],
-        ["sediment","⑥","퇴적물"],["runoff","⑪","유출수"],["catchment","⑭","유역"]],
- defs: [["residents","the people who live in a place"],
-        ["fertiliser","material added to help plants grow"],
-        ["nutrients","substances that living things need"],
-        ["sediment","material that settles at the bottom"],
-        ["runoff","water that flows off the land"],
-        ["catchment","the area that drains into one place"]],
- defOrder: [4,0,5,1,3,2],
+ defOrder: [1, 5, 0, 4, 2, 3],
  flow: [
-  ["The symptom","A city lake that turned green and stayed green",null],
-  ["First guess","Residents blamed ducks, boats and an old (  ①  )","factory"],
-  ["Real cause","Nutrients arriving with every (  ②  )","rainfall"],
-  ["Failed fix","Dredging cleared the water for two (  ③  )","seasons"],
-  ["Real fix","Work on the streets that feed the (  ④  )","catchment"]
+  ["The place", "Urban lakes sit at the end of the pipe", null],
+  ["Bengaluru", "Bellandur Lake caught (  ①  ) and produced foam", "fire"],
+  ["The chain", "Decomposition took the (  ②  ) out of the water", "oxygen"],
+  ["The gas", "It also produced huge amounts of (  ③  )", "methane"],
+  ["The failure", "Treatment lags behind fast-growing (  ④  )", "populations"]
  ],
- flowBogi: "factory · rainfall · seasons · catchment · heron · algae",
+ flowBogi: "fire · oxygen · methane · populations · foam · rainfall",
  para: [
-  ["③ arriving invisibly with every rainfall","The cause was ______ but constant.","unseen"],
-  ["⑦ keeps feeding itself long after the inflow","The problem became ______.","self-feeding"],
-  ["⑧ tried the visible remedy and dredged the bottom","The city chose the ______ answer.","obvious"],
-  ["⑫ no photograph showed a difference","Real progress was hardly ______.","visible"],
-  ["⑭ a lake is the last page of its catchment","The water only ______ the land.","records"]
+  ["① urban lakes are often poorly managed", "City lakes are ______ looked after.", "badly"],
+  ["② receiving large volumes of wastewater", "They take in what the city ______ away.", "sends"],
+  ["④ led to a loss of oxygen from the water", "The water ______ its oxygen.", "lost"],
+  ["⑥ current approaches to managing water quality", "Today's way of managing water has ______.", "failed"],
+  ["⑦ lagging behind rapidly growing populations", "Treatment cannot ______ up with the city.", "keep"]
  ],
- paraBogi: "unseen · self-feeding · obvious · visible · records · loud · erases · brief",
+ paraBogi: "badly · sends · lost · failed · keep · well · holds · gained",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How to Dredge a Lake Properly","The Lake Is the Last Page",
-       "Why Ducks Should Be Removed","A Guide to Growing Algae",
-       "The Cost of Building City Parks"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["영양분이 늘면 조류가 빛을 막는다.","준설 뒤 물은 두 계절만 맑았다.",
-       "두 번째 시도는 거리에서 이루어졌다.","필자는 눈에 보이는 처방이 더 낫다고 본다.",
-       "4년 뒤 호수에 식물과 곤충이 돌아왔다."], ans:4},
-  {t:"write", q:"호수를 '유역의 마지막 쪽'이라 부른 이유를 우리말 한 문장으로 써 보세요.",
-   ans:"호수의 상태는 유역에서 일어난 일들이 쌓인 결과라서, 물만 봐서는 원인을 알 수 없기 때문이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How to Swim Safely in a City Lake",
+    "The Lake at the End of the Pipe",
+    "Why Urban Lakes Clean Themselves",
+    "A Guide to Indian Monsoons",
+    "How Methane Is Used as Fuel"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "도시 호수는 도시에서 나온 하수와 빗물 유출수를 대량으로 받는 자리에 있다.",
+    "벨란두르 호수는 상류에 사는 수백만 명의 처리되지 않은 하수를 받았다.",
+    "유기물의 분해로 물속 산소가 줄고 어류와 대부분의 동물이 줄었다.",
+    "인도의 호수 수질 평가 계획은 관리자에게 쓸모 있는 기간 안에 호수의 여러 이용 가치를 평가하도록 설계되어 있다.",
+    "도시 호수 관리는 여러 기관에 나뉘어 있다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "벨란두르 호수 수면에서 불이 난 원인으로 필자가 꼽는 것을 우리말 한 문장으로 써 보세요.",
+   ans: "분해가 심하고 산소가 없어 대량으로 만들어진 인화성 기체 메탄이다."
+  }
  ],
  fl: {
-  model: { n:"⑦",
-   toks: [["A lake in this state","s"],["keeps","v"],["feeding itself",null],
-          ["long after","c"],["the inflow","s2"],["is reduced","v2"]],
-   ko:"이 상태의 호수는 유입이 줄어든 뒤에도 오랫동안 스스로를 계속 먹인다." },
+  model: {
+   n: "②",
+   toks: [
+    ["This", "s"], ["is", "v"], ["because", "c"], ["they", "s2"], ["are,", "v2"],
+    ["by their very nature,", "m"], ["at the “end-of-the-pipe,”", null],
+    ["often receiving large volumes of wastewater and stormwater run-off produced in cities.", "m"]
+   ],
+   ko: "그것은 도시 호수가 본디 ‘파이프의 끝’에 있어서, 도시에서 나온 하수와 빗물 유출수를 대량으로 받는 일이 잦기 때문이다."
+  },
   drill: [
-   { n:"⑥", en:"When those plants die, the sediment loosens and releases still more nutrients.",
-     ans:"[When] S′ those plants · △V′ die · S the sediment · △V loosens · △V releases · O still more nutrients",
-     ko:"그 식물이 죽으면 퇴적물이 헐거워지면서 영양분을 더 많이 내놓는다." },
-   { n:"⑪", en:"Rain gardens, swept gutters, and planted verges intercepted the runoff before it arrived.",
-     ans:"S Rain gardens, swept gutters, and planted verges · △V intercepted · O the runoff · [before] S′ it · △V′ arrived",
-     ko:"빗물 정원과 청소한 배수구와 심어 놓은 가장자리가 유출수를 도착 전에 붙잡았다." },
-   { n:"⑭", en:"The lesson is that a lake is the last page of its catchment.",
-     ans:"S The lesson · △V is · [that] S′ a lake · △V′ is · C the last page of its catchment",
-     ko:"교훈은 호수가 그 유역의 마지막 쪽이라는 것이다." }
+   {
+    n: "③",
+    en: "One particularly severe example is Bellandur Lake in Bengaluru, which often caught fire and produced foam in the past because it received large amounts of untreated wastewater from millions of people living upstream.",
+    ans: "S One particularly severe example · △V is · C Bellandur Lake in Bengaluru · [which] △V′ often caught · O fire · [and] △V′ produced · O foam · M in the past · [because] S′ it · △V′ received · O large amounts of untreated wastewater from millions of people living upstream",
+    ko: "특히 심한 사례는 벵갈루루의 벨란두르 호수인데, 상류에 사는 수백만 명의 처리되지 않은 하수를 대량으로 받았기 때문에 과거에 자주 불이 붙고 거품을 만들어 냈다."
+   },
+   {
+    n: "⑤",
+    en: "The high levels of decomposition and absence of oxygen also resulted in a huge production of the greenhouse gas methane, a flammable gas that was the likely cause of the fires on the lake surface.",
+    ans: "S The high levels of decomposition and absence of oxygen · △V also resulted · M in a huge production of the greenhouse gas methane · M a flammable gas · [that] △V′ was · C the likely cause of the fires on the lake surface",
+    ko: "높은 분해 수준과 산소의 부재는 온실가스 메탄을 대량으로 만들어 냈는데, 이는 호수 표면의 화재를 일으켰을 법한 인화성 기체다."
+   },
+   {
+    n: "⑨",
+    en: "The management of city lakes is divided among different groups, including water supply and sewage services, city departments that handle rainwater, and pollution regulators who mostly focus on industrial waste rather than household wastewater.",
+    ans: "S The management of city lakes · △V is divided · M among different groups, including water supply and sewage services, city departments that handle rainwater, and pollution regulators · [who] △V′ mostly focus · M on industrial waste rather than household wastewater",
+    ko: "도시 호수 관리는 상하수도 서비스, 빗물을 다루는 시 부서, 그리고 생활 하수보다 산업 폐기물에 주로 집중하는 오염 규제 기관 등 여러 집단에 나뉘어 있다."
+   }
   ]
  },
  syn: [
-  { n:"⑦", name:"keep + ~ing / long after 접속사",
-    q:"A lake in this state «keeps feeding» itself «long after the inflow» is reduced.",
-    d:"<b>keep + ~ing</b>는 '계속 ~하다'. long after 는 '~한 뒤로도 한참'이라는 접속사다.",
-    k:"이 상태의 호수는 유입이 줄어든 뒤로도 한참 스스로를 먹인다." },
-  { n:"⑪", name:"세 겹 주어 + before 접속사",
-    q:"Rain gardens, swept gutters, and planted verges intercepted the runoff «before it arrived».",
-    d:"세 개의 명사구가 하나의 주어를 이룬다. <b>before</b> 절이 시점을 정한다.",
-    k:"세 가지 장치가 유출수를 도착하기 전에 붙잡았다." }
+  {
+   n: "⑦",
+   name: "Not only + 도치 (~일 뿐 아니라)",
+   q: "«Not only have city authorities failed to recognise the interconnectedness», but also the centralised … infrastructure is often highly inadequate…",
+   d: "<b>Not only</b>가 문장 앞에 오면 뒤가 의문문처럼 뒤집힌다. ‘~하지 못했을 뿐 아니라’로 읽는다.",
+   k: "~하지 못했을 뿐 아니라"
+  },
+  {
+   n: "⑨",
+   name: "A rather than B (B가 아니라 A)",
+   q: "…pollution regulators who mostly focus on «industrial waste rather than household wastewater».",
+   d: "<b>rather than</b> 앞이 실제로 하는 쪽이다. 두 대상을 나란히 놓고 견준다.",
+   k: "생활 하수가 아니라 산업 폐기물에"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"The engine keeps running long after the driver leaves.",
-    k:"운전자가 떠난 뒤로도 한참 엔진이 계속 돈다." },
-  { u:"구문 2", en:"Nets, walls, and lights kept the birds out before dawn.",
-    k:"그물과 벽과 조명이 새벽 전에 새들을 막았다." },
-  { u:"구문 1 + 2", en:"Roots, gravel, and grass keep holding water long after the rain stops.",
-    k:"뿌리와 자갈과 풀이 비가 그친 뒤로도 한참 물을 계속 붙든다." }
+  { u: "구문 1", en: "Not only did the plan fail, but the cost also rose.", k: "그 계획이 실패했을 뿐 아니라 비용도 올랐다." },
+  { u: "구문 2", en: "They watched the inflow rather than the lake itself.", k: "그들은 호수 자체가 아니라 흘러드는 물을 지켜보았다." },
+  { u: "구문 1 + 2", en: "Not only did they test the water, but they also traced the streets rather than the shore.", k: "그들은 물을 검사했을 뿐 아니라, 호숫가가 아니라 거리를 따라 추적하기도 했다." }
  ],
- wtype: ["지엽","정답","반대","무관","무관"],
- stype: ["일치","일치","일치","반대","일치"],
- why: [["준설은 실패한 첫 시도로만 나오는 세부다"],["정답"],
-       ["오리를 탓한 것은 틀린 짐작이었다고 했다"],
-       ["조류를 기르는 법과는 무관하다"],["공원 예산 이야기는 글에 없다"]],
- src: [["⑤"],["⑨"],["⑩"],["⑧~⑬과 어긋남 — 보이지 않는 쪽이 효과가 있었다"],["⑬"]],
+ why: [
+  ["호수에서 안전하게 헤엄치는 법은 글에 나오지 않는다"],
+  ["정답"],
+  ["글은 도시 호수가 심하게 훼손된다고 말한다 — 정반대다"],
+  ["몬순은 배경으로 한 번 나올 뿐이다"],
+  ["메탄을 연료로 쓰는 법은 글에서 다루지 않는다"]
+ ],
+ src: [["②"], ["③"], ["④"], ["⑧과 어긋남 — 그렇게 설계되어 있지 않다"], ["⑨"]],
  kb: {
-  title:"물은 마지막에 온다",
-  lead:"호수의 색은 유역의 성적표다.",
+  title: "도시 호수",
+  lead: "파이프의 끝에서 벌어지는 일",
   items: [
-   ["부영양화",
-    "질소와 인이 늘면 조류가 급격히 번성하고, 죽은 조류가 분해되며 산소를 소모해 물속 생물이 죽는다. 도시 하천과 호수에서 흔히 관찰된다."],
-   ["내부 부하",
-    "퇴적물에 쌓인 인이 산소가 없는 상태에서 다시 물로 녹아 나오는 현상이다. 외부 유입을 줄여도 회복이 늦어지는 주된 이유로 꼽힌다."],
-   ["비점오염과 저영향개발",
-    "특정 배출구가 없는 오염을 비점오염이라 한다. 빗물 정원·투수 포장·식생 수로처럼 물이 땅에 스미게 하는 설계를 저영향개발이라 부른다."]
+   ["벨란두르 호수", "인도 벵갈루루의 벨란두르 호수는 거품과 화재로 널리 알려졌다. 처리되지 않은 생활 하수가 대량으로 흘러들면서 생긴 일이다."],
+   ["부영양화", "영양분이 지나치게 들어오면 미생물이 늘고 분해가 활발해져 물속 산소가 바닥난다. 이를 부영양화(eutrophication)라 한다."],
+   ["유역이라는 단위", "호수를 고치려면 호수만 볼 수 없다. 물이 모여드는 땅 전체, 곧 유역(catchment)을 하나의 단위로 다루어야 한다는 것이 본문의 지적이다."]
   ],
-  ask:"우리 동네에 비가 오면 물이 어디로 모이는지 따라가 본 적이 있는가?"
- }
+  ask: "여러분이 사는 곳의 빗물은 어디로 흘러가 어디에 모일까?"
+ },
+ wtype: ["무관", "정답", "반대", "지엽", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 53 ───────────────────────────── */
 {
- no: "53", key: "mars",
- accent: "#A65A3C", tint: "#F7EAE4", deep: "#77361D",
+ no: "53", key: "mars", accent: "#A65A3C", tint: "#F7EAE4", deep: "#77361D",
  en: "Modifying Mars' Atmosphere",
- ko: "화성의 대기를 바꾼다면",
- goal: "화성 대기를 두껍게 만드는 계획의 논리와 한계를 설명할 수 있다.",
- fig: "Figure 1  얼마나 두꺼워질 수 있는가.",
- tip: "먼저 생각해 보자. 공기를 '더 두껍게' 만들면 숨을 쉴 수 있게 될까?",
- sent: [
-  "Mars has an atmosphere, but it is thin enough to be almost useless.",
-  "The pressure at the surface is less than one percent of ours.",
-  "Water cannot stay liquid there, and an unprotected body would not last long.",
-  "The obvious fix is to make the atmosphere thicker.",
-  "Frozen carbon dioxide sits at the poles and inside the soil.",
-  "Warm the planet slightly and some of it should return to the air.",
-  "That gas would trap heat, which would release more gas, which would trap more heat.",
-  "The idea depends on there being enough carbon dioxide to start with.",
-  "A recent survey of the known reserves suggests there is not.",
-  "Even releasing everything available would raise the pressure to about seven percent.",
-  "That is thicker air, but it is still not air anyone could breathe.",
-  "Importing gas from elsewhere in the solar system is discussed seriously.",
-  "The timescales involved are measured in centuries rather than decades.",
-  "Meanwhile the same physics explains what our own thin blanket does here.",
-  "A planet is easier to change by accident than on purpose."
+ ko: "화성의 공기를 두껍게",
+ goal: "화성의 대기압을 높이려는 방안들과 그 한계를 수치와 함께 설명할 수 있다.",
+ fig: "Figure 1  다 모아도 못 미치는 기압.",
+ tip: "먼저 생각해 보자. 공기를 두껍게 만들면 사람이 살 수 있을까?",
+ sent: T(53).sent, kor: T(53).kor,
+ bank: [
+  ["concentration", "②", "농도"],
+  ["detonate", "④", "폭발시키다"],
+  ["radiation", "⑤", "복사"],
+  ["liquefy", "⑥", "액화하다"],
+  ["vaporise", "⑦", "기화시키다"],
+  ["intermingle", "⑫", "뒤섞이다"]
  ],
- kor: [
-  "화성에도 대기가 있지만, 거의 쓸모없을 만큼 얇다.",
-  "지표면의 기압은 우리 기압의 1퍼센트에도 못 미친다.",
-  "그곳에서 물은 액체로 남을 수 없고, 보호받지 못한 몸은 오래 버티지 못한다.",
-  "분명해 보이는 해법은 대기를 더 두껍게 만드는 것이다.",
-  "얼어붙은 이산화탄소가 극지방과 토양 속에 있다.",
-  "행성을 조금 데우면 그 일부가 공기로 돌아올 것이다.",
-  "그 기체가 열을 가두고, 그것이 기체를 더 내놓고, 그것이 열을 더 가둘 것이다.",
-  "이 발상은 애초에 충분한 이산화탄소가 있느냐에 달려 있다.",
-  "알려진 저장량을 조사한 최근 연구는 그렇지 않다고 말한다.",
-  "구할 수 있는 것을 전부 방출해도 기압은 7퍼센트 정도까지 오를 뿐이다.",
-  "그것은 더 두꺼운 공기이긴 하지만, 누군가 숨 쉴 수 있는 공기는 아니다.",
-  "태양계의 다른 곳에서 기체를 실어 오는 방안이 진지하게 논의된다.",
-  "여기 관련된 시간 규모는 수십 년이 아니라 수백 년 단위로 잰다.",
-  "한편 같은 물리학이 우리 자신의 얇은 담요가 여기서 하는 일을 설명한다.",
-  "행성은 일부러 바꾸기보다 실수로 바꾸기가 더 쉽다."
+ defs: [
+  ["concentration", "how much of a substance sits in a space"],
+  ["detonate", "to set off an explosion"],
+  ["radiation", "energy that travels out as rays or waves"],
+  ["liquefy", "to turn a solid or gas into liquid"],
+  ["vaporise", "to turn something into gas or vapour"],
+  ["intermingle", "to be mixed in among other things"]
  ],
- bank: [["atmosphere","①","대기"],["pressure","②","기압"],["poles","⑤","극지방"],
-        ["trap","⑦","가두다"],["reserves","⑨","저장량"],["timescales","⑬","시간 규모"]],
- defs: [["atmosphere","the layer of gases around a planet"],
-        ["pressure","the force pushing on a surface"],
-        ["poles","the top and bottom of a planet"],
-        ["trap","to hold something so it cannot escape"],
-        ["reserves","a supply kept for later use"],
-        ["timescales","the lengths of time involved"]],
- defOrder: [3,0,5,2,4,1],
+ defOrder: [2, 0, 4, 1, 5, 3],
  flow: [
-  ["The problem","Air too thin for water or for people",null],
-  ["The plan","Warm the planet so frozen (  ①  ) returns","gas"],
-  ["The loop","Trapped heat frees more gas, which traps more (  ②  )","heat"],
-  ["The check","Known reserves are not (  ③  )","enough"],
-  ["The lesson","A planet changes more easily by (  ④  )","accident"]
+  ["The problem", "Mars has too little pressure for human activity", null],
+  ["The idea", "Warm the (  ①  ) carbon dioxide so it returns to the air", "frozen"],
+  ["One method", "Set off explosives at the (  ②  ) to melt the ice fast", "poles"],
+  ["The check", "Polar ice would only (  ③  ) the pressure, to 1.2%", "double"],
+  ["Other sources", "Soil and clathrates would add under (  ④  ) percent more", "5"]
  ],
- flowBogi: "gas · heat · enough · accident · water · purpose",
+ flowBogi: "frozen · poles · double · 5 · liquid · 40",
  para: [
-  ["② less than one percent of ours","Martian air is extremely ______.","thin"],
-  ["⑦ trap heat, which would release more gas","The process would ______ itself.","reinforce"],
-  ["⑨ recent survey of the known reserves","Evidence ______ the plan.","undermines"],
-  ["⑪ still not air anyone could breathe","Thicker is not the same as ______.","breathable"],
-  ["⑮ easier to change by accident than on purpose","Unplanned change is ______.","easier"]
+  ["① does not produce enough atmospheric pressure", "The air is far too ______ for people.", "thin"],
+  ["③ warm up the carbon dioxide that exists", "Heat would send the gas ______ into the air.", "back"],
+  ["⑤ darkening the zone around the detonation", "Dust would make the ground ______.", "darker"],
+  ["⑦ the amount of carbon dioxide at the poles", "The poles hold too ______ of the gas.", "little"],
+  ["⑪ heating the soil could provide up to 4%", "Warming the dust would ______ a little more.", "give"]
  ],
- paraBogi: "thin · reinforce · undermines · breathable · easier · dense · proves · harder",
+ paraBogi: "thin · back · darker · little · give · thick · out · much",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["A Plan That Runs Out of Gas","How to Live on Mars Today",
-       "The Coldest Place in the Solar System","Why Carbon Dioxide Is Harmless",
-       "Building Rockets for Long Journeys"], ans:1},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["화성 지표 기압은 지구의 1퍼센트에 못 미친다.","극지방과 토양에 언 이산화탄소가 있다.",
-       "전부 방출해도 기압은 7퍼센트 정도다.","필자는 곧 화성 공기를 마실 수 있다고 본다.",
-       "관련된 시간 규모는 수백 년 단위다."], ans:4},
-  {t:"write", q:"마지막 문장이 지구에 대해 무엇을 말하는지 우리말 한 문장으로 써 보세요.",
-   ans:"행성의 대기는 일부러 바꾸기는 어려워도 의도치 않게는 쉽게 바뀐다는 뜻이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How Explosives Are Made",
+    "Not Enough Gas to Make an Air",
+    "Why Mars Already Has Thick Air",
+    "A History of Mars Probes",
+    "How to Grow Plants in Sand"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "이산화탄소는 화성 대기의 주성분이다.",
+    "극지의 폭발은 빠른 융해와 함께 먼지구름을 만들어 낼 것이다.",
+    "극관을 모두 기화시키면 지구와 비슷한 기압에 이를 수 있다.",
+    "화성 토양의 먼지 입자에는 이산화탄소가 들어 있다.",
+    "클라스레이트 화합물이 녹으면 기체가 대기로 방출될 것이다."
+   ], ans: 3
+  },
+  {
+   t: "write", q: "극지에 폭약을 터뜨리자는 방안이 노리는 두 가지 효과를 우리말 한 문장으로 써 보세요.",
+   ans: "빠르게 얼음을 녹이고, 먼지구름으로 주변을 어둡게 해 태양 복사를 더 잘 흡수하게 하는 것이다."
+  }
  ],
  fl: {
-  model: { n:"⑧",
-   toks: [["The idea","s"],["depends on","v"],
-          ["there being enough carbon dioxide",null],["to start with","m"]],
-   ko:"이 발상은 애초에 충분한 이산화탄소가 있느냐에 달려 있다." },
+  model: {
+   n: "③",
+   toks: [
+    ["One common idea", "s"], ["is", "v"], ["to warm up the carbon dioxide", null],
+    ["that", "c"], ["exists", "v2"],
+    ["in a frozen state both at the poles and beneath the surface", "m"],
+    ["so that", "c"], ["it", "s2"], ["can return", "v2"], ["to the atmosphere.", "m"]
+   ],
+   ko: "흔한 생각 하나는 극지와 지표 아래에 언 상태로 있는 이산화탄소를 데워 대기로 되돌아갈 수 있게 하는 것이다."
+  },
   drill: [
-   { n:"③", en:"Water cannot stay liquid there, and an unprotected body would not last long.",
-     ans:"S Water · △V cannot stay · C liquid · M there · [and] S an unprotected body · △V would not last · M long",
-     ko:"그곳에서 물은 액체로 남을 수 없고, 보호받지 못한 몸은 오래 버티지 못한다." },
-   { n:"⑦", en:"That gas would trap heat, which would release more gas, which would trap more heat.",
-     ans:"S That gas · △V would trap · O heat · [which] △V′ would release · O more gas · [which] △V′ would trap · O more heat",
-     ko:"그 기체가 열을 가두고, 그것이 기체를 더 내놓고, 그것이 열을 더 가둘 것이다." },
-   { n:"⑭", en:"Meanwhile the same physics explains what our own thin blanket does here.",
-     ans:"M Meanwhile · S the same physics · △V explains · O what our own thin blanket does here",
-     ko:"한편 같은 물리학이 우리 자신의 얇은 담요가 여기서 하는 일을 설명한다." }
+   {
+    n: "⑤",
+    en: "This would cause a quick melt and would also generate a cloud of dust, darkening the zone around the detonation, thus making solar radiation absorption more efficient.",
+    ans: "S This · △V would cause · O a quick melt · [and] △V would also generate · O a cloud of dust · M darkening the zone around the detonation · M thus making solar radiation absorption more efficient",
+    ko: "이는 빠른 융해를 일으키고 먼지구름도 만들어 폭발 주변을 어둡게 함으로써 태양 복사 흡수를 더 효율적으로 만들 것이다."
+   },
+   {
+    n: "⑧",
+    en: "If we want to have liquid water at a suitable temperature in a stable way on Mars, an atmospheric pressure similar to the one we have on Earth is required.",
+    ans: "[If] S′ we · △V′ want · O to have liquid water at a suitable temperature in a stable way on Mars · S an atmospheric pressure similar to the one we have on Earth · △V is required",
+    ko: "화성에서 알맞은 온도의 액체 물을 안정적으로 두고 싶다면, 지구에서 우리가 가진 것과 비슷한 대기압이 필요하다."
+   },
+   {
+    n: "⑫",
+    en: "Carbon dioxide molecules which are intermingled with ice molecules called “clathrate compounds” have also been observed, which upon melting would release the gas to the atmosphere.",
+    ans: "S Carbon dioxide molecules · [which] △V′ are intermingled · M with ice molecules called “clathrate compounds” · △V have also been observed · [which] M upon melting · △V′ would release · O the gas to the atmosphere",
+    ko: "‘클라스레이트 화합물’이라 불리는 얼음 분자와 뒤섞인 이산화탄소 분자도 관측되었는데, 그것은 녹으면 기체를 대기로 내놓을 것이다."
+   }
   ]
  },
  syn: [
-  { n:"⑦", name:"계속적 용법 which 의 연쇄",
-    q:"That gas would trap heat, «which would release» more gas, «which would trap» more heat.",
-    d:"콤마 뒤의 <b>which</b>는 앞 내용을 받아 이어 간다. 두 번 이어지며 되먹임을 보여 준다.",
-    k:"그 기체가 열을 가두고, 그것이 기체를 더 내놓고, 그것이 열을 더 가둔다." },
-  { n:"⑧", name:"depend on + there being",
-    q:"The idea «depends on there being» enough carbon dioxide to start with.",
-    d:"전치사 뒤라서 there is 가 <b>there being</b>이라는 동명사 형태로 온다.",
-    k:"그 발상은 충분한 이산화탄소가 있느냐에 달려 있다." }
+  {
+   n: "③",
+   name: "so that + 주어 + can (~할 수 있도록)",
+   q: "…warm up the carbon dioxide … «so that it can return to the atmosphere».",
+   d: "<b>so that</b>은 목적을 나타낸다. ‘~할 수 있도록’으로 읽고, 앞의 행동과 이어 본다.",
+   k: "대기로 돌아갈 수 있도록"
+  },
+  {
+   n: "⑤",
+   name: "결과를 잇는 분사구문 두 개",
+   q: "…a cloud of dust, «darkening the zone around the detonation, thus making solar radiation absorption more efficient».",
+   d: "분사구문이 잇달아 붙어 결과가 사슬처럼 이어진다. ‘그래서 ~하고, 그래서 ~한다’로 읽는다.",
+   k: "주변을 어둡게 해서 흡수를 더 효율적으로 만든다"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"The road flooded, which closed the school, which upset the town.",
-    k:"길이 잠겼고, 그 때문에 학교가 문을 닫았고, 그것이 마을을 뒤흔들었다." },
-  { u:"구문 2", en:"Everything depends on there being a second chance.",
-    k:"모든 것은 두 번째 기회가 있느냐에 달려 있다." },
-  { u:"구문 1 + 2", en:"The plan depends on there being rain, which fills the wells, which feed the fields.",
-    k:"그 계획은 비가 오느냐에 달려 있는데, 비는 우물을 채우고 우물은 밭을 먹인다." }
+  { u: "구문 1", en: "They warmed the soil so that the gas could escape.", k: "그들은 기체가 빠져나올 수 있도록 토양을 데웠다." },
+  { u: "구문 2", en: "The blast raised dust, darkening the ice and speeding the melt.", k: "그 폭발은 먼지를 일으켜 얼음을 어둡게 하고 융해를 빠르게 했다." },
+  { u: "구문 1 + 2", en: "They darkened the cap so that it could absorb more light, warming the ground.", k: "그들은 극관이 빛을 더 흡수할 수 있도록 어둡게 만들어 지면을 데웠다." }
  ],
- wtype: ["정답","반대","지엽","반대","무관"],
- stype: ["일치","일치","일치","반대","일치"],
- why: [["정답"],["오늘 화성에 사는 법이 아니라 대기를 바꾸는 계획을 다룬다"],
-       ["극지방은 이산화탄소가 있는 장소로만 나온다"],
-       ["이산화탄소가 해롭지 않다는 말은 어디에도 없다"],
-       ["로켓 제작은 다루지 않는다"]],
- src: [["②"],["⑤"],["⑩"],["⑪과 어긋남 — 숨 쉴 수 있는 공기는 아니라고 했다"],["⑬"]],
+ why: [
+  ["폭약 제조법은 글에 나오지 않는다"],
+  ["정답"],
+  ["글은 화성의 기압이 너무 낮다고 말한다 — 정반대다"],
+  ["탐사선 자체의 역사는 글의 초점이 아니다"],
+  ["모래에서 식물을 기르는 법은 글에서 다루지 않는다"]
+ ],
+ src: [["①"], ["⑤"], ["⑦과 어긋남 — 지구 값의 1.2%에 이를 뿐이다"], ["⑩"], ["⑫"]],
  kb: {
-  title:"대기를 바꾼다는 것",
-  lead:"두껍게 만드는 일과 숨 쉴 수 있게 만드는 일은 다르다.",
+  title: "화성의 공기",
+  lead: "두껍게 만들 수 있을까",
   items: [
-   ["화성의 대기",
-    "주성분은 이산화탄소이고 지표 기압은 약 6밀리바로 지구의 1퍼센트에 못 미친다. 이 압력에서는 물이 액체로 오래 머물기 어렵다."],
-   ["2018년의 계산",
-    "자코스키와 에드워즈는 극관·토양·암석에 남은 이산화탄소를 모두 합해도 현재 기술로 도달 가능한 기압이 크게 부족하다고 보고했다."],
-   ["양의 되먹임",
-    "기온이 오르면 얼음이 녹고, 드러난 표면이 열을 더 흡수해 다시 기온이 오르는 구조를 양의 되먹임이라 한다. 지구 기후 논의에서도 같은 개념이 쓰인다."]
+   ["지금의 기압", "화성의 평균 대기압은 지구의 1퍼센트에도 못 미친다. 그래서 액체 물이 표면에 오래 머물지 못하고 곧 기화한다."],
+   ["극관", "화성의 극관에는 물 얼음과 함께 언 이산화탄소(드라이아이스)가 쌓여 있다. 계절에 따라 그 크기가 눈에 띄게 달라진다."],
+   ["클라스레이트", "기체 분자가 얼음 격자 안에 갇힌 구조를 클라스레이트라 한다. 지구에서는 해저의 메탄 하이드레이트가 잘 알려진 예다."]
   ],
-  ask:"지구의 대기를 우리가 '실수로' 바꾼 사례에는 무엇이 있을까?"
- }
+  ask: "공기를 두껍게 만드는 일과 숨 쉴 수 있게 만드는 일은 어떻게 다를까?"
+ },
+ wtype: ["무관", "정답", "반대", "지엽", "무관"],
+ stype: ["일치", "일치", "반대", "일치", "일치"]
 },
+
+/* ───────────────────────────── 54 ───────────────────────────── */
 {
- no: "54", key: "painres",
- accent: "#7A4A6B", tint: "#F4E9F1", deep: "#542F49",
- en: "Ethical Dilemmas of Pain Research in Animals",
- ko: "통증 연구가 안고 있는 문제",
- goal: "동물 통증 연구에서 유용성과 도덕적 부담이 맞물리는 구조를 설명할 수 있다.",
- fig: "Figure 1  같은 사실에서 나오는 두 가지.",
- tip: "먼저 생각해 보자. 아픔을 연구하려면 무엇이 필요할까?",
- sent: [
-  "Pain research has an uncomfortable requirement built into its own question.",
-  "To learn how pain works, someone has to be in pain.",
-  "For most of the last century that someone has been an animal.",
-  "The results have been useful, and modern surgery would be unthinkable without them.",
-  "The difficulty appears when you ask why a mouse is chosen at all.",
-  "It is chosen because its nervous system is close enough to ours to be informative.",
-  "That closeness is also the reason the mouse can suffer.",
-  "The more useful an animal is as a model, the stronger its claim on us becomes.",
-  "The usefulness and the moral problem come from the same fact.",
-  "Regulations respond with limits rather than answers.",
-  "Researchers must replace animals where possible, reduce numbers, and refine procedures.",
-  "These three words are printed in every ethics application in the field.",
-  "Critics say the rules manage discomfort without ever confronting it.",
-  "Defenders reply that a system with rules is better than one without.",
-  "Neither side claims the question has been settled."
+ no: "54", key: "painres", accent: "#7A4A6B", tint: "#F4E9F1", deep: "#542F49",
+ en: "The Ethical Dilemmas of Pain Research in Animals",
+ ko: "아프게 해야 알 수 있는 것",
+ goal: "통증 연구가 안고 있는 윤리적 딜레마와, 물고기 실험이 보여 준 것을 설명할 수 있다.",
+ fig: "Figure 1  쓸모와 책임이 같은 사실에서 나온다.",
+ tip: "먼저 생각해 보자. 동물이 아픔을 느끼는지 우리는 어떻게 알 수 있을까?",
+ sent: T(54).sent, kor: T(54).kor,
+ bank: [
+  ["welfare", "②", "복지"],
+  ["statistically", "③", "통계적으로"],
+  ["agnostic", "⑥", "판단을 유보하는"],
+  ["exemplify", "⑦", "전형적으로 보여 주다"],
+  ["venom", "⑧", "독"],
+  ["nociception", "⑭", "통각 수용"]
  ],
- kor: [
-  "통증 연구에는 그 질문 자체에 불편한 요구가 들어 있다.",
-  "통증이 어떻게 작동하는지 알려면 누군가는 아파야 한다.",
-  "지난 세기의 대부분 동안 그 누군가는 동물이었다.",
-  "그 결과들은 유용했고, 현대 외과 수술은 그것들 없이는 생각할 수 없을 것이다.",
-  "어려움은 애초에 왜 생쥐가 선택되는지 물을 때 나타난다.",
-  "생쥐가 선택되는 이유는 그 신경계가 우리와 충분히 가까워 정보를 주기 때문이다.",
-  "그 가까움은 동시에 생쥐가 고통을 느낄 수 있는 이유이기도 하다.",
-  "동물이 모델로서 유용할수록, 그 동물이 우리에게 갖는 권리 주장도 강해진다.",
-  "유용함과 도덕적 문제가 같은 사실에서 나온다.",
-  "규정은 답 대신 한계를 내놓는 방식으로 대응한다.",
-  "연구자는 가능한 곳에서 동물을 대체하고, 수를 줄이고, 절차를 개선해야 한다.",
-  "이 세 단어는 이 분야의 모든 윤리 심의 신청서에 인쇄되어 있다.",
-  "비판하는 쪽은 그 규칙이 불편함을 직면하지 않은 채 관리만 한다고 말한다.",
-  "옹호하는 쪽은 규칙이 있는 체계가 없는 체계보다 낫다고 답한다.",
-  "어느 쪽도 이 문제가 해결되었다고 주장하지는 않는다."
+ defs: [
+  ["welfare", "how well an animal or person is doing"],
+  ["statistically", "in terms of what the numbers can prove"],
+  ["agnostic", "holding no firm view either way"],
+  ["exemplify", "to be a clear example of something"],
+  ["venom", "poison that an animal injects by a sting"],
+  ["nociception", "sensing harm without feeling it as pain"]
  ],
- bank: [["requirement","①","요구"],["informative","⑥","정보를 주는"],["suffer","⑦","고통을 느끼다"],
-        ["claim","⑧","권리 주장"],["regulations","⑩","규정"],["refine","⑪","개선하다"]],
- defs: [["requirement","something that must be done"],
-        ["informative","giving useful knowledge"],
-        ["suffer","to feel pain or distress"],
-        ["claim","a demand for what one is owed"],
-        ["regulations","official rules that control something"],
-        ["refine","to improve by small changes"]],
- defOrder: [2,5,0,4,1,3],
+ defOrder: [5, 2, 0, 4, 1, 3],
  flow: [
-  ["The requirement","To study pain, something must be in pain",null],
-  ["The choice","A mouse is used because it is (  ①  )","informative"],
-  ["The paradox","The same closeness lets the mouse (  ②  )","suffer"],
-  ["The response","Rules set limits: replace, reduce, (  ③  )","refine"],
-  ["The verdict","The question stays (  ④  )","open"]
+  ["The bind", "Pain researchers must harm the animals they hope to help", null],
+  ["The count", "Use as few animals as possible, yet enough to be (  ①  ) sound", "statistically"],
+  ["The debate", "Few people are (  ②  ) about whether animals feel pain", "agnostic"],
+  ["The trout", "Injected fish breathed heavily and stopped (  ③  )", "eating"],
+  ["The reading", "The behaviour faded after a shot of (  ④  )", "morphine"]
  ],
- flowBogi: "informative · suffer · refine · open · cheap · settled",
+ flowBogi: "statistically · agnostic · eating · morphine · swimming · saline",
  para: [
-  ["② someone has to be in pain","Knowledge here has a ______.","cost"],
-  ["⑥ close enough to ours to be informative","Similarity makes it ______.","useful"],
-  ["⑧ the stronger its claim on us becomes","Value and duty rise ______.","together"],
-  ["⑩ respond with limits rather than answers","Rules ______ the problem, not solve it.","manage"],
-  ["⑮ Neither side claims the question is settled","The debate remains ______.","unresolved"]
+  ["② have to harm the creatures they work with", "They must hurt the animals they hope to ______.", "help"],
+  ["③ use as few animals as possible", "They keep the number of animals ______.", "low"],
+  ["⑨ these unfortunate individuals began breathing", "The injected fish ______ hard for a while.", "breathed"],
+  ["⑬ this went away when they got a shot of morphine", "Morphine made the change ______.", "stop"],
+  ["⑮ They saw animals in pain.", "They read it as real ______.", "pain"]
  ],
- paraBogi: "cost · useful · together · manage · unresolved · free · apart · closed",
+ paraBogi: "help · low · breathed · stop · pain · harm · high · calm",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["Why Mice Cannot Feel Anything","The Same Fact Cuts Both Ways",
-       "How to Perform Modern Surgery","Rules That Solved an Old Problem",
-       "A History of Laboratory Buildings"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["통증을 연구하려면 누군가는 아파야 한다.","생쥐는 신경계가 우리와 가까워 선택된다.",
-       "규정은 대체·감소·개선을 요구한다.","필자는 이 문제가 이미 해결되었다고 본다.",
-       "비판하는 쪽은 규칙이 관리만 한다고 본다."], ans:4},
-  {t:"write", q:"필자가 말한 '같은 사실'이 무엇인지 우리말 한 문장으로 써 보세요.",
-   ans:"동물의 신경계가 우리와 닮았다는 사실이 연구에 유용한 이유이자 그 동물이 고통을 느끼는 이유라는 것이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How to Keep Trout in a Tank",
+    "Harming the Animals You Hope to Help",
+    "Why Fish Cannot Feel Anything",
+    "A Guide to Making Vinegar",
+    "The History of Morphine"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "시각이나 청각을 연구하는 과학자들은 동물에게 영상과 소리를 들려줄 수 있다.",
+    "통증 연구자들은 되도록 적은 수의 동물을 쓰려 하지만 통계적으로 타당할 만큼은 써야 한다.",
+    "Robyn Crook 은 판단을 유보하는 중간 지대가 넓지 않다고 말한다.",
+    "식염수를 주입한 물고기와 달리, 벌 독을 주입한 물고기는 거칠게 호흡하기 시작했다.",
+    "주입 뒤에 나타난 행동은 모르핀을 맞아도 그대로였다."
+   ], ans: 5
+  },
+  {
+   t: "write", q: "Sneddon 연구진이 관찰한 행동을 단순한 통각 수용으로 볼 수 없다고 본 까닭을 우리말 한 문장으로 써 보세요.",
+   ans: "그 행동이 주입한 지 한참 뒤까지 이어졌기 때문이다."
+  }
  ],
  fl: {
-  model: { n:"⑥",
-   toks: [["It","s"],["is chosen","v"],["because","c"],["its nervous system","s2"],
-          ["is","v2"],["close enough to ours to be informative","m"]],
-   ko:"생쥐가 선택되는 이유는 그 신경계가 우리와 충분히 가까워 정보를 주기 때문이다." },
+  model: {
+   n: "②",
+   toks: [
+    ["But", "c"], ["those", "s"], ["who", "c"], ["study", "v2"], ["pain", null],
+    ["have to harm", "v"], ["the creatures they work with", null],
+    ["in the pursuit of knowledge", "m"], ["that", "c"], ["might improve", "v2"],
+    ["the welfare of those same creatures.", null]
+   ],
+   ko: "그러나 통증을 연구하는 사람들은 바로 그 동물들의 복지를 나아지게 할 지식을 얻으려고 함께 일하는 그 동물들을 해쳐야 한다."
+  },
   drill: [
-   { n:"②", en:"To learn how pain works, someone has to be in pain.",
-     ans:"M To learn how pain works · S someone · △V has to be · M in pain",
-     ko:"통증이 어떻게 작동하는지 알려면 누군가는 아파야 한다." },
-   { n:"⑪", en:"Researchers must replace animals where possible, reduce numbers, and refine procedures.",
-     ans:"S Researchers · △V must replace · O animals · M where possible · △V reduce · O numbers · △V refine · O procedures",
-     ko:"연구자는 가능한 곳에서 동물을 대체하고, 수를 줄이고, 절차를 개선해야 한다." },
-   { n:"⑭", en:"Defenders reply that a system with rules is better than one without.",
-     ans:"S Defenders · △V reply · [that] S′ a system with rules · △V′ is · C better than one without",
-     ko:"옹호하는 쪽은 규칙이 있는 체계가 없는 체계보다 낫다고 답한다." }
+   {
+    n: "⑧",
+    en: "In the early 2000s, Lynne Sneddon, Mike Gentle, and Victoria Braithwaite injected trout in the lips with bee venom or acetic acid, the substance that gives vinegar its kick.",
+    ans: "M In the early 2000s · S Lynne Sneddon, Mike Gentle, and Victoria Braithwaite · △V injected · O trout in the lips · M with bee venom or acetic acid, the substance · [that] △V′ gives · O vinegar its kick",
+    ko: "2000년대 초에 Lynne Sneddon, Mike Gentle, Victoria Braithwaite 는 송어의 입술에 벌 독이나, 식초의 톡 쏘는 맛을 내는 물질인 아세트산을 주입했다."
+   },
+   {
+    n: "⑬",
+    en: "They no longer kept their distance from unfamiliar objects, as if something was distracting them, but this went away when they got a shot of morphine.",
+    ans: "S They · △V no longer kept · O their distance from unfamiliar objects · [as if] S′ something · △V′ was distracting · O them · [but] S this · △V went away · [when] S′ they · △V′ got · O a shot of morphine",
+    ko: "그들은 더 이상 낯선 물체와 거리를 두지 않았는데, 마치 무언가가 주의를 흩뜨리는 듯했다. 그러나 모르핀을 한 대 맞자 이런 모습은 사라졌다."
+   },
+   {
+    n: "⑭",
+    en: "Sneddon and her colleagues couldn't see how these actions, which persisted well after the injections, could be attributed to mere nociception.",
+    ans: "S Sneddon and her colleagues · △V couldn't see · O how these actions could be attributed to mere nociception · [which] △V′ persisted · M well after the injections",
+    ko: "Sneddon 과 동료들은 주입한 지 한참 뒤까지 이어진 이런 행동이 어떻게 단순한 통각 수용 탓으로 돌려질 수 있는지 알 수 없었다."
+   }
   ]
  },
  syn: [
-  { n:"⑥", name:"형용사 + enough to 부정사",
-    q:"its nervous system is «close enough to ours to be» informative.",
-    d:"<b>형용사 + enough + to부정사</b>는 '~할 만큼 충분히 …한'이라는 뜻이다.",
-    k:"그 신경계는 정보를 줄 만큼 우리와 충분히 가깝다." },
-  { n:"⑧", name:"the 비교급 ~, the 비교급 …",
-    q:"«The more useful» an animal is as a model, «the stronger» its claim on us becomes.",
-    d:"<b>the+비교급 ~, the+비교급 …</b>은 '~할수록 더 …하다'라는 뜻이다.",
-    k:"동물이 모델로 유용할수록 우리에게 갖는 권리 주장도 강해진다." }
+  {
+   n: "⑬",
+   name: "as if + 절 (마치 ~인 것처럼)",
+   q: "They no longer kept their distance from unfamiliar objects, «as if something was distracting them»…",
+   d: "<b>as if</b>는 눈에 보이는 모습을 빗대어 말한다. ‘마치 ~인 것처럼’으로 읽는다.",
+   k: "마치 무언가가 주의를 흩뜨리는 것처럼"
+  },
+  {
+   n: "⑭",
+   name: "주어와 동사 사이에 끼어든 관계절",
+   q: "…how these actions, «which persisted well after the injections», could be attributed…",
+   d: "콤마 사이에 낀 <b>which</b>절을 건너뛰면 ‘these actions … could be attributed’가 남는다.",
+   k: "주입한 지 한참 뒤까지 이어진 이 행동"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"The room was quiet enough for us to hear the clock.",
-    k:"그 방은 우리가 시계 소리를 들을 만큼 조용했다." },
-  { u:"구문 2", en:"The longer he waited, the harder the choice became.",
-    k:"오래 기다릴수록 그 선택은 더 어려워졌다." },
-  { u:"구문 1 + 2", en:"The closer a copy is to the original, the harder it is to spot.",
-    k:"복제가 원본에 가까울수록 알아채기가 더 어렵다." }
+  { u: "구문 1", en: "The fish rocked from side to side, as if something hurt.", k: "그 물고기는 마치 어딘가 아픈 것처럼 몸을 좌우로 흔들었다." },
+  { u: "구문 2", en: "The signs, which lasted for hours, puzzled the team.", k: "몇 시간 이어진 그 징후는 연구진을 당황하게 했다." },
+  { u: "구문 1 + 2", en: "The trout, which had eaten well before, now refused food as if in pain.", k: "전에는 잘 먹던 그 송어는 이제 마치 아픈 것처럼 먹이를 거부했다." }
  ],
- wtype: ["반대","정답","지엽","반대","무관"],
- stype: ["일치","일치","일치","반대","일치"],
- why: [["생쥐가 고통을 느낄 수 있다는 것이 글의 전제다"],["정답"],
-       ["현대 외과 수술은 유용성의 예로만 나온다"],
-       ["규칙이 문제를 해결했다고 하지 않았다"],
-       ["실험실 건물의 역사와는 무관하다"]],
- src: [["②"],["⑥"],["⑪"],["⑮와 어긋남 — 어느 쪽도 해결되었다고 하지 않는다"],["⑬"]],
+ why: [
+  ["송어 사육법은 글에 나오지 않는다"],
+  ["정답"],
+  ["글은 물고기가 통증을 느낀다고 본 연구를 전한다 — 정반대다"],
+  ["식초 만드는 법은 글의 관심사가 아니다"],
+  ["모르핀의 역사는 글의 초점이 아니다"]
+ ],
+ src: [["①"], ["③"], ["⑥"], ["⑨"], ["⑬과 어긋남 — 모르핀을 맞자 그 행동이 사라졌다"]],
  kb: {
-  title:"닮았기 때문에 생기는 문제",
-  lead:"쓸모와 책임이 같은 자리에서 나온다.",
+  title: "통증과 통각 수용",
+  lead: "느끼는 것과 감지하는 것",
   items: [
-   ["3R 원칙",
-    "1959년 러셀과 버치가 제안한 대체(replacement)·감소(reduction)·개선(refinement)의 세 원칙이다. 오늘날 대부분의 나라에서 동물실험 심의 기준으로 쓰인다."],
-   ["동물 통증의 판정",
-    "동물이 통증을 느끼는지 판단할 때 회피 학습, 스스로 진통제를 택하는 행동, 평소와 다른 행동 변화 등이 지표로 쓰인다. 논의는 어류와 두족류까지 넓어져 왔다."],
-   ["윤리 심의 위원회",
-    "연구 계획은 미리 위원회 심사를 거친다. 예상되는 이익과 동물이 겪을 고통을 견주는 절차이지만, 그 비교 자체가 논쟁의 대상이기도 하다."]
+   ["두 낱말", "nociception(통각 수용)은 해로운 자극을 감지해 반응하는 일이고, pain(통증)은 그것을 괴로움으로 느끼는 일이다. 둘을 가르는 일이 이 분야의 어려움이다."],
+   ["송어 실험", "2003년 Lynne Sneddon 연구진의 무지개송어 실험은 물고기의 통증 논쟁에 불을 붙였다. 진통제로 행동이 되돌아온 점이 핵심 근거로 꼽힌다."],
+   ["3R 원칙", "동물 실험에는 대체(Replacement)·감소(Reduction)·개선(Refinement)의 3R 원칙이 있다. 되도록 적은 수를, 되도록 덜 아프게 쓰자는 기준이다."]
   ],
-  ask:"어떤 이익이 있으면 다른 존재의 고통을 정당화할 수 있을까? 그 기준은 누가 정해야 할까?"
- }
+  ask: "동물이 아픔을 느낀다고 판단하려면 어떤 증거가 있어야 할까?"
+ },
+ wtype: ["무관", "정답", "반대", "무관", "지엽"],
+ stype: ["일치", "일치", "일치", "일치", "반대"]
 },
+
+/* ───────────────────────────── 55 ───────────────────────────── */
 {
- no: "55", key: "empathy",
- accent: "#6C7A3A", tint: "#EFF2E2", deep: "#48541F",
- en: "Darwin's View on Empathy in Animals",
+ no: "55", key: "empathy", accent: "#6C7A3A", tint: "#EFF2E2", deep: "#48541F",
+ en: "Darwin's View on Empathy Found in Animals",
  ko: "다윈이 본 동물의 공감",
- goal: "다윈의 논의에서 공감이 어떤 자리를 차지하는지 설명할 수 있다.",
- fig: "Figure 1  기억되는 절반과 잊힌 절반.",
- tip: "먼저 생각해 보자. '적자생존'이라는 말은 정말 다윈의 것일까?",
- sent: [
-  "Darwin is remembered for competition, which is only half of what he wrote.",
-  "The Descent of Man spends many pages on sympathy rather than struggle.",
-  "He collected reports of animals that helped one another at some cost.",
-  "A blind pelican fed by its companions appears in his notes.",
-  "Monkeys were described rescuing a keeper from an angry baboon.",
-  "Darwin did not treat these stories as decoration.",
-  "He argued that social instincts were themselves shaped by selection.",
-  "A group whose members warn and defend each other survives longer than one that does not.",
-  "Sympathy, in this reading, is not the opposite of fitness but a source of it.",
-  "Later writers narrowed the theory into a slogan about the strongest.",
-  "The phrase survival of the fittest was not even his own.",
-  "Modern work on rats freeing trapped companions has revived his older question.",
-  "Whether such acts show feeling or reflex is still argued.",
-  "What is no longer argued is that they exist.",
-  "Darwin would have found the second point more interesting than the first."
+ goal: "다윈이 도덕성과 공감을 어떻게 보았는지, 그 견해의 핵심을 설명할 수 있다.",
+ fig: "Figure 1  함께 쓰였지만 절반만 기억된 이야기.",
+ tip: "먼저 생각해 보자. 동물에게 남을 돕는 마음이 있을까?",
+ sent: T(55).sent, kor: T(55).kor,
+ bank: [
+  ["morality", "①", "도덕성"],
+  ["instinct", "①", "본능"],
+  ["sympathy", "②", "공감"],
+  ["filial", "⑥", "자식의"],
+  ["conscience", "⑥", "양심"],
+  ["dormant", "⑨", "잠들어 있는"]
  ],
- kor: [
-  "다윈은 경쟁으로 기억되지만, 그것은 그가 쓴 것의 절반일 뿐이다.",
-  "『인간의 유래』는 투쟁보다 공감에 여러 쪽을 쓴다.",
-  "그는 어떤 대가를 치르면서 서로를 도운 동물들의 보고를 모았다.",
-  "동료들이 먹여 준 눈먼 펠리컨이 그의 기록에 나온다.",
-  "성난 개코원숭이에게서 사육사를 구해 낸 원숭이들이 서술되었다.",
-  "다윈은 이 이야기들을 장식으로 다루지 않았다.",
-  "그는 사회적 본능 자체가 선택에 의해 다듬어졌다고 주장했다.",
-  "구성원들이 서로 경고하고 지켜 주는 무리는 그렇지 않은 무리보다 오래 살아남는다.",
-  "이렇게 읽으면 공감은 적합도의 반대가 아니라 그 원천이다.",
-  "후대의 저술가들은 그 이론을 가장 강한 자에 관한 구호로 좁혀 놓았다.",
-  "'적자생존'이라는 표현은 심지어 그의 것도 아니었다.",
-  "갇힌 동료를 풀어 주는 쥐에 대한 최근 연구가 그의 오래된 질문을 되살렸다.",
-  "그런 행동이 감정을 보여 주는지 반사인지는 여전히 논쟁 중이다.",
-  "더는 논쟁되지 않는 것은 그런 행동이 존재한다는 사실이다.",
-  "다윈이라면 첫 번째보다 두 번째 쪽을 더 흥미로워했을 것이다."
+ defs: [
+  ["morality", "the sense of what is right and wrong"],
+  ["instinct", "a way of acting that is inborn, not learned"],
+  ["sympathy", "feeling for what another creature feels"],
+  ["filial", "of a child towards its parent"],
+  ["conscience", "the inner sense that judges one's acts"],
+  ["dormant", "resting and not active for a long time"]
  ],
- bank: [["competition","①","경쟁"],["sympathy","②","공감"],["companions","④","동료"],
-        ["instincts","⑦","본능"],["fitness","⑨","적합도"],["reflex","⑬","반사"]],
- defs: [["competition","the act of trying to win against others"],
-        ["sympathy","the sharing of another's feeling"],
-        ["companions","others that live or travel together"],
-        ["instincts","behaviour that is not learned"],
-        ["fitness","the ability to survive and reproduce"],
-        ["reflex","an automatic reaction to something"]],
- defOrder: [4,1,5,0,3,2],
+ defOrder: [3, 1, 5, 0, 4, 2],
  flow: [
-  ["The half we know","Darwin remembered only for competition",null],
-  ["The other half","Many pages of The Descent of Man on (  ①  )","sympathy"],
-  ["The evidence","Reports of animals helping at some (  ②  )","cost"],
-  ["The argument","Social instincts were shaped by (  ③  )","selection"],
-  ["Today","Rats freeing companions revive the (  ④  )","question"]
+  ["The claim", "Human morality grows out of social instincts", null],
+  ["The focus", "Darwin gave special attention to (  ①  )", "sympathy"],
+  ["The birds", "A blind pelican stayed fat, fed by its (  ②  )", "companions"],
+  ["The base", "Sympathy is the foundation stone for other social (  ③  )", "instincts"],
+  ["The verdict", "The difference from animals is one of (  ④  ), not kind", "degree"]
  ],
- flowBogi: "sympathy · cost · selection · question · slogan · struggle",
+ flowBogi: "sympathy · companions · instincts · degree · kind · silence",
  para: [
-  ["① which is only half of what he wrote","His view is often ______.","simplified"],
-  ["③ animals that helped one another at some cost","Helping was not ______.","free"],
-  ["⑧ survives longer than one that does not","Cooperation ______ a group.","strengthens"],
-  ["⑩ narrowed the theory into a slogan","The idea was ______ by others.","flattened"],
-  ["⑭ no longer argued is that they exist","Their existence is now ______.","accepted"]
+  ["① human morality is an extension of social instincts", "Morality grows out of instincts we ______.", "share"],
+  ["② evidenced in a large number of animals", "He saw the sign in ______ animals.", "many"],
+  ["③ must have been well fed for a long time", "Others must have ______ it for months.", "fed"],
+  ["⑤ the foundation stone for other social instincts", "Sympathy is the ______ the rest stands on.", "base"],
+  ["⑨ his ideas lay mostly dormant", "The idea ______ still for a century.", "lay"]
  ],
- paraBogi: "simplified · free · strengthens · flattened · accepted · costly · denied · widened",
+ paraBogi: "share · many · fed · base · lay · hide · few · rose",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["The Half of Darwin We Forgot","Why Animals Never Help Each Other",
-       "A Short Biography of Charles Darwin","How Baboons Attack Their Keepers",
-       "The Origin of a Famous Slogan"], ans:1},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["『인간의 유래』는 공감에 여러 쪽을 쓴다.","눈먼 펠리컨의 사례가 그의 기록에 있다.",
-       "다윈은 사회적 본능도 선택의 산물로 보았다.","필자는 '적자생존'이 다윈의 표현이라고 본다.",
-       "쥐에 대한 최근 연구가 오래된 질문을 되살렸다."], ans:4},
-  {t:"write", q:"다윈이 더 흥미로워했을 '두 번째'가 무엇인지 우리말 한 문장으로 써 보세요.",
-   ans:"동물이 대가를 치르며 서로 돕는 행동이 실제로 존재한다는 사실 자체를 말한다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How Pelicans Catch Fish",
+    "Morality as a Matter of Degree",
+    "Why Darwin Rejected Sympathy",
+    "A Guide to Bird Watching",
+    "The Publishing History of On the Origin of Species"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "다윈은 인간의 도덕성이 사회적 본능의 연장이라고 보았다.",
+    "다윈은 인간과 동물의 차이가 정도가 아니라 종류의 차이라고 강조했다.",
+    "Stansbury 는 유타의 소금 호수에서 눈먼 늙은 펠리컨을 발견했다.",
+    "다윈은 공감을 다른 사회적 본능의 주춧돌이라고 불렀다.",
+    "다윈의 생각은 한 세기 넘게 대체로 잠들어 있었다."
+   ], ans: 2
+  },
+  {
+   t: "write", q: "다윈이 눈먼 펠리컨 이야기에서 읽어 낸 것을 우리말 한 문장으로 써 보세요.",
+   ans: "동료들이 오랫동안 먹여 주었다는 점에서 동물에게도 공감의 능력이 있다는 것이다."
+  }
  ],
  fl: {
-  model: { n:"⑦",
-   toks: [["He","s"],["argued","v"],["that","c"],["social instincts","s2"],
-          ["were themselves shaped","v2"],["by selection","m"]],
-   ko:"그는 사회적 본능 자체가 선택에 의해 다듬어졌다고 주장했다." },
+  model: {
+   n: "⑦",
+   toks: [
+    ["Darwin", "s"], ["emphasized", "v"], ["that", "c"],
+    ["the differences between humans and other animals", "s2"],
+    ["— in all realms, including the moral sentiments —", "m"],
+    ["were", "v2"], ["of degree, not of kind.", null]
+   ],
+   ko: "다윈은 인간과 다른 동물의 차이가 — 도덕 감정을 포함해 모든 영역에서 — 종류가 아니라 정도의 차이라고 강조했다."
+  },
   drill: [
-   { n:"①", en:"Darwin is remembered for competition, which is only half of what he wrote.",
-     ans:"S Darwin · △V is remembered · M for competition · [which] △V′ is · C only half of what he wrote",
-     ko:"다윈은 경쟁으로 기억되지만, 그것은 그가 쓴 것의 절반일 뿐이다." },
-   { n:"⑨", en:"Sympathy, in this reading, is not the opposite of fitness but a source of it.",
-     ans:"S Sympathy · M in this reading · △V is · C not the opposite of fitness but a source of it",
-     ko:"이렇게 읽으면 공감은 적합도의 반대가 아니라 그 원천이다." },
-   { n:"⑫", en:"Modern work on rats freeing trapped companions has revived his older question.",
-     ans:"S Modern work on rats · M freeing trapped companions · △V has revived · O his older question",
-     ko:"갇힌 동료를 풀어 주는 쥐에 대한 최근 연구가 그의 오래된 질문을 되살렸다." }
+   {
+    n: "①",
+    en: "Charles Darwin suggested that human morality is an extension of social instincts, and that human morality is continuous with similar social behavior in other animals.",
+    ans: "S Charles Darwin · △V suggested · [that] S′ human morality · △V′ is · C an extension of social instincts · [and that] S′ human morality · △V′ is · C continuous with similar social behavior in other animals",
+    ko: "찰스 다윈은 인간의 도덕성이 사회적 본능의 연장이며, 다른 동물의 비슷한 사회적 행동과 이어져 있다고 보았다."
+   },
+   {
+    n: "②",
+    en: "He paid special attention to the capacity for sympathy, which he believed was evidenced in a large number of animals.",
+    ans: "S He · △V paid · O special attention to the capacity for sympathy · [which] S′ he · △V′ believed · △V′ was evidenced · M in a large number of animals",
+    ko: "그는 공감의 능력에 특별히 주목했는데, 그가 믿기로 그것은 아주 많은 동물에게서 확인되는 것이었다."
+   },
+   {
+    n: "⑧",
+    en: "Darwin, it turns out, was quite right about the importance of the sentiments, about the role of sympathy, and about the evolutionary continuity between humans and other social animals.",
+    ans: "S Darwin · M it turns out · △V was · C quite right about the importance of the sentiments, about the role of sympathy, and about the evolutionary continuity between humans and other social animals",
+    ko: "알고 보니 다윈은 감정의 중요성에 대해서도, 공감의 역할에 대해서도, 인간과 다른 사회적 동물 사이의 진화적 연속성에 대해서도 상당히 옳았다."
+   }
   ]
  },
  syn: [
-  { n:"⑨", name:"not A but B",
-    q:"Sympathy, in this reading, is «not the opposite» of fitness «but a source» of it.",
-    d:"<b>not A but B</b>는 'A가 아니라 B'라는 뜻으로 두 자리를 짝지어 읽는다.",
-    k:"공감은 적합도의 반대가 아니라 그 원천이다." },
-  { n:"⑫", name:"현재분사 수식 + 현재완료",
-    q:"Modern work on rats «freeing trapped» companions «has revived» his older question.",
-    d:"<b>freeing</b> 이하가 rats 를 뒤에서 꾸민다. has revived 는 지금까지 이어진 결과를 말한다.",
-    k:"갇힌 동료를 풀어 주는 쥐 연구가 오래된 질문을 되살렸다." }
+  {
+   n: "②",
+   name: "관계절 안에 끼어든 he believed",
+   q: "…the capacity for sympathy, «which he believed was evidenced in a large number of animals».",
+   d: "<b>he believed</b>는 끼어든 부분이다. 빼고 읽으면 ‘which was evidenced …’가 남는다.",
+   k: "그가 믿기로 아주 많은 동물에게서 확인된"
+  },
+  {
+   n: "③",
+   name: "must have + p.p. (~했음이 틀림없다)",
+   q: "…an old and completely blind pelican, which was very fat, and «must have been well fed for a long time by his companions».",
+   d: "<b>must have + p.p.</b>는 지난 일에 대한 강한 추측이다. ‘~했음이 틀림없다’로 읽는다.",
+   k: "오랫동안 잘 먹여졌음이 틀림없다"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"The problem is not the rule but the way it is used.",
-    k:"문제는 규칙이 아니라 그것이 쓰이는 방식이다." },
-  { u:"구문 2", en:"A study on birds building nests has changed our view.",
-    k:"둥지를 짓는 새에 대한 연구가 우리 시각을 바꾸어 놓았다." },
-  { u:"구문 1 + 2", en:"Work on people helping strangers has shown not weakness but strength.",
-    k:"낯선 이를 돕는 사람들에 대한 연구는 약함이 아니라 강함을 보여 주었다." }
+  { u: "구문 1", en: "The bird, which he thought was blind, still found food.", k: "그가 눈이 멀었다고 여긴 그 새는 그래도 먹이를 찾아냈다." },
+  { u: "구문 2", en: "The crow must have shared its food for weeks.", k: "그 까마귀는 몇 주 동안 먹이를 나누었음이 틀림없다." },
+  { u: "구문 1 + 2", en: "The pelican, which he saw daily, must have been fed by others.", k: "그가 날마다 본 그 펠리컨은 다른 새들이 먹여 주었음이 틀림없다." }
  ],
- wtype: ["정답","반대","무관","지엽","배경"],
- stype: ["일치","일치","일치","반대","일치"],
- why: [["정답"],["동물이 서로 돕는다는 것이 글의 핵심 자료다"],
-       ["다윈의 생애를 다루는 글이 아니다"],
-       ["개코원숭이 일화는 한 문장의 예시다"],
-       ["'적자생존'은 논지를 받치는 배경으로만 나온다"]],
- src: [["②"],["④"],["⑦"],["⑪과 어긋남 — 그의 표현이 아니었다고 했다"],["⑫"]],
+ why: [
+  ["펠리컨의 사냥법은 글에 나오지 않는다"],
+  ["정답"],
+  ["글은 다윈이 공감을 중히 여겼다고 말한다 — 정반대다"],
+  ["탐조 안내는 글의 관심사가 아니다"],
+  ["『종의 기원』의 출판 이력은 글의 초점이 아니다"]
+ ],
+ src: [["①"], ["⑦과 어긋남 — 종류가 아니라 정도의 차이라고 했다"], ["③"], ["⑤"], ["⑨"]],
  kb: {
-  title:"다윈이 쓴 나머지 절반",
-  lead:"경쟁만 읽으면 절반을 놓친다.",
+  title: "다윈과 도덕",
+  lead: "정도의 차이라는 생각",
   items: [
-   ["『인간의 유래』",
-    "1871년 저작에서 다윈은 도덕 감정의 기원을 다루며 사회적 본능과 공감을 길게 논의했다. 동물의 협력 사례도 여럿 인용했다."],
-   ["'적자생존'이라는 말",
-    "이 표현은 허버트 스펜서가 만들었고, 다윈은 1869년 『종의 기원』 5판에서야 받아들여 썼다. 흔히 다윈이 처음 쓴 말로 알려져 있다."],
-   ["쥐의 구조 행동",
-    "2011년 바르탈 등의 실험에서 쥐는 갇힌 동료를 풀어 주었고, 초콜릿이 함께 놓여 있어도 나누어 먹는 경우가 관찰되었다. 감정인지 학습된 반응인지는 계속 논의 중이다."]
+   ["『인간의 유래』", "다윈은 1871년 『인간의 유래(The Descent of Man)』에서 도덕 감각을 사회적 본능에서 자라난 것으로 설명했다. 본문의 인용도 이 책에서 왔다."],
+   ["절반만 읽힌 다윈", "‘적자생존’이라는 말로 경쟁만 기억되었지만, 다윈 자신은 공감과 협력에도 많은 지면을 썼다."],
+   ["다시 열린 논의", "1990년대 이후 프란스 드 발(Frans de Waal) 등이 영장류의 위로 행동과 협력을 보고하면서, 잠들어 있던 다윈의 논의가 다시 다루어지기 시작했다."]
   ],
-  ask:"내가 누군가를 도운 일 가운데 나에게 손해였던 것이 있는가? 왜 그랬을까?"
- }
+  ask: "동물이 서로를 돕는 모습을 본 적이 있다면 그것을 무엇이라 부르겠는가?"
+ },
+ wtype: ["무관", "정답", "반대", "무관", "지엽"],
+ stype: ["일치", "반대", "일치", "일치", "일치"]
 }
-]};
+
+ ]
+};

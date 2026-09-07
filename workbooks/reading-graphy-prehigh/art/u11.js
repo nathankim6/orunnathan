@@ -52,45 +52,45 @@ const icons = {
 
 const scenes = {
  commons:(c,t,d)=>`<svg viewBox="0 0 640 280" fill="none">
-  ${panel({x:20,y:18,w:190,h:190,c:d,fill:"#fff",n:1,label:"울타리가 있는 밭"})}
+  ${panel({x:20,y:18,w:190,h:190,c:d,fill:"#fff",n:1,label:"권리가 정해진 자원"})}
   <rect x="38" y="94" width="108" height="52" rx="4" fill="${t}" stroke="${d}" stroke-width="2.6"/>
   <path d="M50 106h84M50 118h84M50 130h84" stroke="${d}" stroke-width="2" stroke-linecap="round" opacity=".38"/>
   <path d="M34 142v28M62 142v28M90 142v28M118 142v28M146 142v28" stroke="${d}" stroke-width="2.8" stroke-linecap="round"/>
   <path d="M28 150h124M28 162h124" stroke="${d}" stroke-width="2.8" stroke-linecap="round"/>
   ${person({x:182,y:184,s:.56,c,pose:"down",hair:"short",face:"smile"})}
   ${tag({x:104,y:64,text:"주인 있음",c})}
-  ${label({x:90,y:192,text:"손해 보는 사람이 있다",c:d,size:9.5,op:.8})}
-  ${panel({x:225,y:18,w:190,h:190,c:d,fill:"#fff",n:2,label:"울타리가 없는 바다"})}
+  ${label({x:90,y:192,text:"쓸 사람이 정해져 있다",c:d,size:9.5,op:.8})}
+  ${panel({x:225,y:18,w:190,h:190,c:d,fill:"#fff",n:2,label:"권리가 없는 자원"})}
   <path d="M243 138q22-10 44 0t44 0t44 0" stroke="${c}" stroke-width="3.4" fill="none" stroke-linecap="round"/>
   <path d="M243 158q22-10 44 0t44 0t44 0" stroke="${c}" stroke-width="3" fill="none" stroke-linecap="round" opacity=".5"/>
   ${boat(280,132,.8,c,d)}${boat(322,132,.8,c,d)}${boat(364,132,.8,c,d)}
   ${tag({x:320,y:66,text:"주인 없음",c})}
   ${label({x:320,y:186,text:"모두가 한 마리 더",c:d,size:10,op:.8})}
-  ${panel({x:430,y:18,w:190,h:190,c:d,fill:"#fff",n:3,label:"쓰는 사람이 만든 규칙"})}
+  ${panel({x:430,y:18,w:190,h:190,c:d,fill:"#fff",n:3,label:"규칙을 요구하는 사람들"})}
   ${prop.paper(525,74,1.15,c)}
   ${person({x:474,y:184,s:.6,c,pose:"open",hair:"short",face:"smile"})}
   ${person({x:525,y:184,s:.6,c,pose:"point",hair:"bob",face:"glad"})}
   ${person({x:576,y:184,s:.6,c,pose:"open",hair:"curly",face:"smile",flip:1})}
-  ${label({x:525,y:198,text:"서로가 서로를 본다",c:d,size:10,op:.8})}
-  ${label({x:320,y:270,text:"울타리가 없을 때, 규칙이 그 자리를 대신할 수 있다",c,size:12.5})}</svg>`,
+  ${label({x:525,y:198,text:"권리를 바꾸자고 나선다",c:d,size:10,op:.8})}
+  ${label({x:320,y:270,text:"자원이 귀해지면 권리를 바꾸자는 요구가 생긴다",c,size:12.5})}</svg>`,
  lake:(c,t,d)=>`<svg viewBox="0 0 640 280" fill="none">
-  ${panel({x:22,y:18,w:322,h:190,c:d,fill:"#fff",n:1,label:"원인은 거리에서 온다"})}
+  ${panel({x:22,y:18,w:322,h:190,c:d,fill:"#fff",n:1,label:"도시가 흘려보낸 물"})}
   <path d="M46 74h274" stroke="${d}" stroke-width="3.2" stroke-linecap="round"/>
-  ${label({x:100,y:64,text:"잔디 비료",c:d,size:10,op:.85})}
-  ${label({x:183,y:64,text:"도로 먼지",c:d,size:10,op:.85})}
-  ${label({x:266,y:64,text:"개 배설물",c:d,size:10,op:.85})}
+  ${label({x:100,y:64,text:"생활 하수",c:d,size:10,op:.85})}
+  ${label({x:183,y:64,text:"빗물 유출",c:d,size:10,op:.85})}
+  ${label({x:266,y:64,text:"처리 안 된 오수",c:d,size:10,op:.85})}
   ${arrow({x1:100,y1:82,x2:146,y2:118,c:d,w:3.2})}
   ${arrow({x1:183,y1:82,x2:183,y2:118,c:d,w:3.2})}
   ${arrow({x1:266,y1:82,x2:220,y2:118,c:d,w:3.2})}
   <path d="M64 132q119-14 238 0q8 40-119 44q-127-4-119-44z" fill="${c}" opacity=".34" stroke="${d}" stroke-width="2.8"/>
   <path d="M112 152q14-7 28 0t28 0t28 0t28 0" stroke="${d}" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".55"/>
   ${label({x:183,y:194,text:"호수는 마지막에 받는다",c:d,size:10.5})}
-  ${panel({x:364,y:18,w:254,h:190,c:d,fill:"#fff",n:2,label:"맑은 상태가 이어진 기간"})}
-  ${bar({x:434,base:172,h:34,c,op:.45,cap:"준설",capc:d,w:34})}
-  ${bar({x:534,base:172,h:112,c,cap:"거리 처방",capc:d,w:34})}
+  ${panel({x:364,y:18,w:254,h:190,c:d,fill:"#fff",n:2,label:"벨란두르 호수 안에서"})}
+  ${bar({x:434,base:172,h:34,c,op:.45,cap:"산소",capc:d,w:34})}
+  ${bar({x:534,base:172,h:112,c,cap:"메탄",capc:d,w:34})}
   ${ground({x1:396,x2:592,y:172,c:d,w:3})}
-  ${label({x:492,y:60,text:"보이지 않는 쪽이 오래갔다",c:d,size:11})}
-  ${label({x:320,y:270,text:"물을 고치는 대신 물이 오는 길을 고쳤다",c,size:12.5})}</svg>`,
+  ${label({x:492,y:60,text:"분해가 산소를 먹고 메탄을 남겼다",c:d,size:11})}
+  ${label({x:320,y:270,text:"호수는 도시가 흘려보낸 것을 마지막에 받는다",c,size:12.5})}</svg>`,
  mars:(c,t,d)=>`<svg viewBox="0 0 640 280" fill="none">
   ${panel({x:22,y:18,w:270,h:190,c:d,fill:"#fff",n:1,label:"언 이산화탄소를 되돌린다"})}
   <circle cx="157" cy="118" r="72" stroke="${d}" stroke-width="2.4" stroke-dasharray="6 6"/>
@@ -102,7 +102,7 @@ const scenes = {
   ${tag({x:157,y:118,text:"CO₂",c})}
   ${panel({x:348,y:18,w:270,h:190,c:d,fill:"#fff",n:2,label:"기압은 어디까지 오르나"})}
   ${bar({x:400,base:176,h:4,c,op:.45,cap:"지금 0.6%",capc:d,w:32})}
-  ${bar({x:483,base:176,h:13,c,op:.7,cap:"최대 7%",capc:d,w:32})}
+  ${bar({x:483,base:176,h:13,c,op:.7,cap:"약 10%",capc:d,w:32})}
   ${bar({x:566,base:176,h:116,c,cap:"숨쉬기 100%",capc:d,w:32})}
   ${ground({x1:372,x2:596,y:176,c:d,w:3})}
   ${label({x:483,y:56,text:"모두 방출해도 이만큼",c:d,size:11})}
@@ -151,7 +151,7 @@ const VIG = {
   ${label({x:176,y:136,text:"없음",c:d,size:10.5})}</svg>`,
  "52":(c,t,d)=>`<svg viewBox="0 0 240 150" fill="none">
   <path d="M24 36h192" stroke="${d}" stroke-width="3" stroke-linecap="round"/>
-  ${label({x:120,y:26,text:"거리",c:d,size:10.5,op:.85})}
+  ${label({x:120,y:26,text:"도시",c:d,size:10.5,op:.85})}
   ${arrow({x1:70,y1:44,x2:98,y2:72,c:d,w:3.2})}
   ${arrow({x1:120,y1:44,x2:120,y2:72,c:d,w:3.2})}
   ${arrow({x1:170,y1:44,x2:142,y2:72,c:d,w:3.2})}
@@ -160,7 +160,7 @@ const VIG = {
   ${label({x:120,y:142,text:"호수는 마지막에 받는다",c:d,size:10.5})}</svg>`,
  "53":(c,t,d)=>`<svg viewBox="0 0 240 150" fill="none">
   ${bar({x:52,base:110,h:4,c,op:.45,cap:"0.6%",capc:d,w:26})}
-  ${bar({x:120,base:110,h:12,c,op:.7,cap:"7%",capc:d,w:26})}
+  ${bar({x:120,base:110,h:12,c,op:.7,cap:"10%",capc:d,w:26})}
   ${bar({x:188,base:110,h:84,c,cap:"100%",capc:d,w:26})}
   <path d="M28 110h188" stroke="${d}" stroke-width="3" stroke-linecap="round"/>
   ${label({x:120,y:142,text:"두꺼워져도 모자란다",c:d,size:10.5})}</svg>`,
