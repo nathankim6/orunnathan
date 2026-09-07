@@ -1,681 +1,723 @@
-/* Unit 3 · Field 3 — Social Matters 사회 문제
-   원서 Theme 11–15 의 주제를 예비고1 수준으로 다시 쓴 것. */
+/* Unit 3 · Social Matters — 원문 Theme 11–15 */
+const R = require("../src/orig/all.json");
+const T = n => R[n - 1];
+
 module.exports = {
  no: 3,
  field: "Social Matters",
  ko: "사회 문제",
- tagline: "단순화의 값 — 모형·농담·숫자가 덜어 낸 것들",
- next: { en: "Medicine & Health", ko: "몸을 다루는 지식이 어떻게 쌓였는지 읽습니다", words: "175–205 words" },
+ tagline: "단순화의 값 — 모형·농담·자료가 덜어 낸 것들",
+ next: { en: "Medicine & Health", ko: "몸을 다루는 지식이 어떻게 쌓였는지 읽습니다", words: "213–265 words" },
  lessons: [
+
+/* ───────────────────────────── 11 ───────────────────────────── */
 {
- no: "11", key: "model",
- accent: "#3E6FA8", tint: "#E5EDF7", deep: "#25476E",
- en: "The Map Is Not the City",
- ko: "지도는 도시가 아니다",
- goal: "경제 모형이 무엇을 일부러 버리고 그 대가로 무엇을 얻는지 설명할 수 있다.",
- fig: "Figure 1  지하철 노선도와 실제 거리 — 버린 것과 남긴 것.",
+ no: "11", key: "model", accent: "#3E6FA8", tint: "#E5EDF7", deep: "#25476E",
+ en: "Understanding Economic Models",
+ ko: "틀린 지도가 더 쓸모 있을 때",
+ goal: "경제학자가 모형을 세우는 이유와 모형이 지니는 한계를 근거를 들어 설명할 수 있다.",
+ fig: "Figure 1  노선도와 실제 거리 — 단순화한 모형이 남긴 것과 버린 것.",
  tip: "먼저 생각해 보자. 지하철 노선도는 실제 거리와 다르다. 그런데도 왜 더 쓸모가 있을까?",
- sent: [
-  "A subway map shows straight lines and even spaces between stations.",
-  "The real tunnels curve, and the distances are never equal.",
-  "The map lies about the ground, and that is exactly why it works.",
-  "It answers one question well: which train takes you where.",
-  "Economic models are built in the same spirit.",
-  "A model of a market may assume that every buyer knows every price.",
-  "No real shopper knows that, and the modeller knows it too.",
-  "The assumption is not a mistake but a tool for holding one thing still.",
-  "By freezing information, the model can show what supply and demand alone would do.",
-  "Trouble begins when people forget which parts were frozen on purpose.",
-  "A map drawn for trains cannot tell you where to find a quiet street.",
-  "In 2008 several models assumed that house prices could not fall everywhere at once.",
-  "The assumption had been useful for years, and then it was not.",
-  "A good reader of models asks what was left out before asking what was proved.",
-  "Every model is a map, and no map is the city."
+ sent: T(11).sent, kor: T(11).kor,
+ bank: [
+  ["observable", "①", "관찰할 수 있는"],
+  ["tractable", "②", "다루기 쉬운"],
+  ["approximation", "④", "근사치"],
+  ["misleading", "⑧", "오해를 일으키는"],
+  ["employ", "⑨", "사용하다"],
+  ["discipline", "⑩", "학문 분야"]
  ],
- kor: [
-  "지하철 노선도는 곧은 선과 역 사이의 고른 간격을 보여 준다.",
-  "실제 터널은 굽어 있고, 거리도 결코 똑같지 않다.",
-  "그 지도는 땅에 대해 거짓말을 하는데, 바로 그 때문에 쓸모가 있다.",
-  "그것은 한 가지 질문에 잘 답한다. 어느 열차가 나를 어디로 데려다주는가.",
-  "경제 모형도 같은 정신으로 만들어진다.",
-  "어떤 시장 모형은 모든 구매자가 모든 가격을 안다고 가정할 수 있다.",
-  "실제로 그런 것을 아는 손님은 없고, 모형을 만든 사람도 그것을 안다.",
-  "그 가정은 실수가 아니라 한 가지를 고정해 두기 위한 도구다.",
-  "정보를 얼려 둠으로써, 그 모형은 공급과 수요만으로 무슨 일이 일어날지를 보여 줄 수 있다.",
-  "문제는 어느 부분이 일부러 얼려진 것인지 사람들이 잊을 때 시작된다.",
-  "열차를 위해 그린 지도는 조용한 거리가 어디인지 알려 줄 수 없다.",
-  "2008년, 여러 모형은 집값이 모든 곳에서 동시에 떨어질 수는 없다고 가정하고 있었다.",
-  "그 가정은 여러 해 동안 쓸모가 있었고, 그러다 아니게 되었다.",
-  "모형을 잘 읽는 사람은 무엇이 증명되었는지 묻기 전에 무엇이 빠졌는지를 묻는다.",
-  "모든 모형은 지도이며, 어떤 지도도 도시 그 자체는 아니다."
+ defs: [
+  ["observable", "able to be seen or measured"],
+  ["tractable", "easy to handle or work with"],
+  ["approximation", "a value close to but not exactly right"],
+  ["misleading", "giving a wrong idea without saying a lie"],
+  ["employ", "to make use of something for a purpose"],
+  ["discipline", "a branch of study with its own methods"]
  ],
- bank: [["curve","②","굽다"],["assume","⑥","가정하다"],["assumption","⑧","가정"],
-        ["supply","⑨","공급"],["demand","⑨","수요"],["prove","⑭","증명하다"]],
- defs: [["curve","to bend in a smooth line"],
-        ["assume","to accept something as true before checking"],
-        ["assumption","a thing taken as true so that work can start"],
-        ["supply","the amount of a good that is offered for sale"],
-        ["demand","the amount of a good that buyers want"],
-        ["prove","to show beyond doubt that something is true"]],
- defOrder: [1,4,0,5,2,3],
+ defOrder: [1, 4, 0, 5, 2, 3],
  flow: [
-  ["Image","A subway map straightens the tunnels, and that is why it works",null],
-  ["Parallel","A market model may (  ①  ) that buyers know every price","assume"],
-  ["Purpose","The assumption is a tool for holding one thing (  ②  )","still"],
-  ["Risk","Trouble starts when people forget what was frozen on (  ③  )","purpose"],
-  ["Rule","Ask what was left (  ④  ) before asking what was proved","out"]
+  ["The problem", "Real economic relationships are complex and hard to see", null],
+  ["The move", "Economists build a (  ①  ) version of reality", "simplified"],
+  ["The hope", "They hope the model is a good (  ②  ) of the truth", "approximation"],
+  ["The warning", "Often a poor model gives (  ③  ) conclusions", "misleading"],
+  ["The field", "Finding good models is called (  ④  )", "econometrics"]
  ],
- flowBogi: "assume · still · purpose · out · prove · curve",
+ flowBogi: "simplified · approximation · misleading · econometrics · exact · poetry",
  para: [
-  ["③ The map lies about the ground","The map is not ______ to the real city.","faithful"],
-  ["⑦ No real shopper knows that","The assumption never matches ______ life.","real"],
-  ["⑧ not a mistake but a tool","The gap is ______, not an error.","deliberate"],
-  ["⑩ forget which parts were frozen on purpose","Danger comes from ______ the assumptions.","forgetting"],
-  ["⑮ no map is the city","A model never ______ the world itself.","becomes"]
+  ["① may not even be fully observable", "Some of it cannot be ______ at all.", "seen"],
+  ["② simple enough to be mathematically tractable", "The model must stay easy to ______.", "handle"],
+  ["⑤ all models are wrong, but some are useful", "Every model is ______, yet some still help.", "false"],
+  ["⑧ may provide misleading conclusions", "A poor model can point us the ______ way.", "wrong"],
+  ["⑪ make important predictions and policy decisions", "A good model guides ______ and choices.", "forecasts"]
  ],
- paraBogi: "faithful · real · deliberate · forgetting · becomes · careless · listing · leaves",
+ paraBogi: "seen · handle · false · wrong · forecasts · hidden · right · memories",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How to Read a Subway Map","Why Models Simplify, and What That Costs",
-       "Economic Models Are Always Wrong","The Housing Crash of 2008",
-       "A Short History of Supply and Demand"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["지하철 노선도의 간격은 실제 거리와 다르다.","모형을 만든 사람도 가정이 현실과 다름을 안다.",
-       "필자는 가정을 모형의 실수로 본다.","2008년의 가정은 여러 해 동안 쓸모가 있었다.",
-       "모형을 잘 읽으려면 빠진 것을 먼저 물어야 한다."], ans:3},
-  {t:"write", q:"필자가 모형의 가정을 '실수가 아니다'라고 본 이유를 우리말 한 문장으로 써 보세요.",
-   ans:"한 가지를 고정해 두어야 나머지가 어떻게 움직이는지 볼 수 있기 때문이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "George Box and the Year 1976",
+    "A Simple Map for a Complex World",
+    "Why Economic Models Match Reality Exactly",
+    "How to Collect Economic Data",
+    "The History of Statistics"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "경제 관계의 현실은 관찰된 자료로 추정하는 것조차 불가능할 수 있다.",
+    "모형은 수학적·통계적으로 다룰 수 있을 만큼 단순해야 한다.",
+    "George Box는 모든 모형이 틀렸지만 일부는 유용하다고 말했다.",
+    "모형이 부정확한 근사치를 나타내는 일은 좀처럼 일어나지 않는다.",
+    "계량 경제학은 경제 관계를 모형화하는 통계적·수학적 접근을 포함한다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "경제학자들이 현실을 그대로 다루지 않고 모형을 세우는 이유를 우리말 한 문장으로 써 보세요.",
+   ans: "경제 관계의 현실이 매우 복잡하고 완전히 관찰되지도 않아서, 수학적·통계적으로 다룰 수 있을 만큼 단순한 형태로 줄여야 추정이 가능하기 때문이다."
+  }
  ],
  fl: {
-  model: { n:"⑨",
-   toks: [["By freezing information","m"],[",",null],["the model","s"],["can show","v"],
-          ["what","c"],["supply and demand alone","s2"],["would do","v2"]],
-   ko:"정보를 얼려 둠으로써, 그 모형은 공급과 수요만으로 무슨 일이 일어날지를 보여 줄 수 있다." },
+  model: {
+   n: "④",
+   toks: [
+    ["The model", "s"], ["can be regarded", "v"], ["as an approximation of reality,", "m"], ["and", "c"],
+    ["it", "s"], ["is", "v"], ["the hope of the economists", null], ["that", "c"],
+    ["their model", "s2"], ["is", "v2"], ["a good approximation of the true relationship.", null]
+   ],
+   ko: "그 모형은 현실의 근사치로 여겨질 수 있으며, 자기 모형이 참된 관계의 좋은 근사치이기를 바라는 것은 바로 경제학자들이다."
+  },
   drill: [
-   { n:"③", en:"The map lies about the ground, and that is exactly why it works.",
-     ans:"S The map · △V lies · M about the ground · [and] S that · △V is · C exactly why it works",
-     ko:"그 지도는 땅에 대해 거짓말을 하는데, 바로 그 때문에 쓸모가 있다." },
-   { n:"⑩", en:"Trouble begins when people forget which parts were frozen on purpose.",
-     ans:"S Trouble · △V begins · [when] S′ people · △V′ forget · O which parts were frozen on purpose",
-     ko:"문제는 어느 부분이 일부러 얼려진 것인지 사람들이 잊을 때 시작된다." },
-   { n:"⑭", en:"A good reader of models asks what was left out before asking what was proved.",
-     ans:"S A good reader of models · △V asks · O what was left out · M before asking what was proved",
-     ko:"모형을 잘 읽는 사람은 무엇이 증명되었는지 묻기 전에 무엇이 빠졌는지를 묻는다." }
+   {
+    n: "②",
+    en: "Hence, economists build a model — a simplified version of reality — that is simple enough to be mathematically and statistically tractable.",
+    ans: "M Hence · S economists · △V build · O a model — a simplified version of reality — · [that] △V′ is · C simple enough to be mathematically and statistically tractable",
+    ko: "그러므로 경제학자들은 수학적·통계적으로 다룰 수 있을 만큼 단순한, 현실을 단순화한 모형을 만든다."
+   },
+   {
+    n: "⑨",
+    en: "In their training, economists learn how to employ various statistical methods to find a model that is a good approximation of reality.",
+    ans: "M In their training · S economists · △V learn · O how to employ various statistical methods · M to find a model that is a good approximation of reality",
+    ko: "경제학자들은 훈련 과정에서 현실의 좋은 근사치인 모형을 찾기 위해 다양한 통계 기법을 쓰는 법을 배운다."
+   },
+   {
+    n: "⑪",
+    en: "A useful model is hard to get, but it provides interesting information from data and can be used by economists to make important predictions and policy decisions.",
+    ans: "S A useful model · △V is · C hard to get · [but] S it · △V provides · O interesting information from data · and △V can be used · M to make important predictions and policy decisions",
+    ko: "쓸모 있는 모형은 얻기 어렵지만, 자료에서 흥미로운 정보를 주고 중요한 예측과 정책 결정에 쓰일 수 있다."
+   }
   ]
  },
  syn: [
-  { n:"⑨", name:"by + 동명사 (수단)",
-    q:"«By freezing information», the model can show what supply and demand alone would do.",
-    d:"<b>by + 동명사</b>는 '~함으로써'라는 수단·방법을 나타낸다. 문장 앞에 오면 쉼표로 끊는다.",
-    k:"정보를 얼려 둠으로써 그 모형은 무슨 일이 일어날지를 보여 줄 수 있다." },
-  { n:"⑧", name:"not A but B",
-    q:"The assumption is «not a mistake but a tool» for holding one thing still.",
-    d:"<b>not A but B</b>는 'A가 아니라 B'. 필자가 오해를 바로잡을 때 즐겨 쓰는 형태다.",
-    k:"그 가정은 실수가 아니라 한 가지를 고정해 두기 위한 도구다." }
+  {
+   n: "③",
+   name: "계속적 용법의 관계대명사 which",
+   q: "The model enables economists to estimate the simplified relationship using the data, «which sheds light on the reality of the relationship».",
+   d: "앞의 절 전체를 <b>which</b>가 받아 뒤에서 설명을 덧붙인다. ‘그리고 그것은 ~’으로 이어 읽는다.",
+   k: "그리고 그것이 그 관계의 실제 모습을 밝혀 준다"
+  },
+  {
+   n: "④",
+   name: "가주어 it — 진주어 that절",
+   q: "…, and «it is the hope of the economists that their model is a good approximation» of the true relationship.",
+   d: "<b>it</b>은 자리만 채우는 가주어이고, 진짜 주어는 뒤의 <b>that절</b>이다. ‘~라는 것이 …이다’로 읽는다.",
+   k: "자기 모형이 좋은 근사치라는 것이 경제학자들의 바람이다"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"By leaving out the hills, the designer made the map easier to read.",
-    k:"언덕을 빼 버림으로써 설계자는 그 지도를 읽기 쉽게 만들었다." },
-  { u:"구문 2", en:"The line on the chart is not a promise but a guess.",
-    k:"도표 위의 그 선은 약속이 아니라 추측이다." },
-  { u:"구문 1 + 2", en:"By fixing one number, the team built not a forecast but a test.",
-    k:"한 수치를 고정함으로써 그 팀은 예측이 아니라 시험을 만들었다." }
+  { u: "구문 1", en: "He redrew the graph, which made the trend easier to see.", k: "그는 그래프를 다시 그렸고, 그것이 추세를 더 잘 보이게 했다." },
+  { u: "구문 2", en: "It is a common belief that simple models explain more.", k: "단순한 모형이 더 많이 설명한다는 것은 흔한 믿음이다." },
+  { u: "구문 1 + 2", en: "It is clear that the model dropped many details, which made it usable.", k: "그 모형이 많은 세부를 버렸다는 것은 분명하고, 그것이 그 모형을 쓸 만하게 만들었다." }
  ],
- wtype: ["지엽","정답","반대","지엽","무관"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["노선도는 비유로 든 예일 뿐이다"],["정답"],
-       ["글은 모형이 일부러 단순화한다고 말한다 — 정반대다"],
-       ["2008년은 근거로 든 사례 하나일 뿐이다"],["수요·공급의 역사는 글에 나오지 않는다"]],
- src: [["①②"],["⑦"],["⑧과 어긋남 — 실수가 아니라 도구라고 했다"],["⑬"],["⑭"]],
+ why: [
+  ["문장 ⑤의 인용 배경만 붙든 지엽적인 제목이다"],
+  ["정답"],
+  ["글은 모형이 근사치일 뿐이라고 말한다 — 정반대다"],
+  ["자료를 모으는 방법은 글에 나오지 않는다"],
+  ["통계학의 역사는 글에서 다루지 않는다"]
+ ],
+ src: [["①"], ["②"], ["⑤"], ["⑧과 어긋남 — 모형이 부정확한 근사치를 나타내는 일이 흔하다"], ["⑩"]],
  kb: {
-  title:"단순하게 그려서 얻은 것",
-  lead:"버릴 것을 정하는 일이 곧 설계다.",
+  title: "지도는 왜 틀려야 쓸모 있나",
+  lead: "덜어 낸 만큼 보이는 것이 있다",
   items: [
-   ["1933년, 거리를 버린 지도",
-    "런던 지하철 노선도를 새로 그린 해리 벡은 실제 거리와 지형을 버리고 선을 수직·수평·45도로만 그었다. 승객이 알아야 할 것은 '어디서 갈아타는가'뿐이라는 판단이었고, 이 형식은 지금 세계 대부분의 도시가 쓴다."],
-   ["구형 소를 가정하시오",
-    "물리학자들 사이에는 문제를 풀기 쉽게 만들려고 소를 완전한 구로 가정한다는 오래된 농담이 있다. 웃기려는 말이지만, 모든 모형이 무엇을 버릴지부터 정한다는 점을 정확히 짚는다."],
-   ["'모든 모형은 틀렸다'",
-    "통계학자 조지 박스는 1976년 논문에서 \"모든 모형은 틀렸지만 일부는 쓸모가 있다\"고 썼다. 모형을 옳고 그름이 아니라 쓸모로 평가하자는 제안이었다."]
+   ["1933년의 노선도", "런던 지하철 노선도는 Harry Beck이 1933년에 만든 도안이 바탕이다. 실제 거리와 방향을 버리고 선을 수평·수직·45도로만 그렸다. 땅 위의 정확함을 포기하자 갈아타는 순서가 한눈에 들어왔다."],
+   ["‘모든 모형은 틀렸다’", "통계학자 George Box가 1976년 논문에서 쓴 문장이다. 그는 여기에 그러니 얼마나 틀려야 쓸모없어지는지를 물어야 한다는 취지의 말을 덧붙였다."],
+   ["계량 경제학", "econometrics는 경제 이론을 자료로 검증하는 분야다. 1930년 계량경제학회가 세워졌고, 1969년 첫 노벨 경제학상은 이 분야를 개척한 Ragnar Frisch와 Jan Tinbergen에게 돌아갔다."]
   ],
-  ask:"내가 무언가를 설명할 때 늘 빼고 말하는 것이 있는가? 그것을 빼면 무엇이 쉬워지고 무엇이 가려지는가?"
- }
+  ask: "여러분이 매일 쓰는 것 가운데, 일부러 덜어 냈기 때문에 더 쓸모 있어진 것은 무엇인가?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 12 ───────────────────────────── */
 {
- no: "12", key: "joke",
- accent: "#C9743A", tint: "#FBEDE1", deep: "#8F4A1B",
+ no: "12", key: "joke", accent: "#C9743A", tint: "#FBEDE1", deep: "#8F4A1B",
  en: "The Language of Jokes",
- ko: "농담이라는 언어",
- goal: "농담이 웃음을 만드는 구조와, 그 구조가 사회적으로 하는 일을 설명할 수 있다.",
- fig: "Figure 1  한 줄에서 두 갈래로 갈라지는 뜻.",
- tip: "먼저 생각해 보자. 어떤 농담은 설명하는 순간 재미가 사라진다. 왜 그럴까?",
- sent: [
-  "Most jokes work by building one meaning and then swapping it for another.",
-  "The listener follows a path, and the last word moves the ground under it.",
-  "Nothing is funny about the words themselves, taken one at a time.",
-  "The laugh comes from the sudden repair the mind has to make.",
-  "This is why a joke dies when you explain it.",
-  "Explanation does the repair for the listener, and the work is what was enjoyable.",
-  "Timing matters for the same reason, and every comedian learns it early.",
-  "A pause holds the first meaning in place until it is heavy enough to drop.",
-  "Jokes also carry a quiet social test that nobody announces.",
-  "To laugh, you must share the knowledge the joke assumes.",
-  "A joke about a school rule means nothing to someone outside that school.",
-  "So laughing together is partly a way of saying we know the same things.",
-  "That is why humour can bind a group and shut others out in the same breath.",
-  "Comedians know both effects and choose which one they want.",
-  "A joke is never only a joke."
+ ko: "혼자 웃던 것이 함께 웃는 것이 되기까지",
+ goal: "웹 2.0 이후 유머가 만들어지고 퍼지는 과정을 단계로 정리해 설명할 수 있다.",
+ fig: "Figure 1  농담이 웃음이 되는 순간 — 어긋난 뜻을 머리가 재빨리 고친다.",
+ tip: "먼저 생각해 보자. 웃긴 것을 발견하면 왜 곧바로 남에게 보내고 싶어질까?",
+ sent: T(12).sent, kor: T(12).kor,
+ bank: [
+  ["engage with", "①", "~에 참여하다"],
+  ["extract", "④", "추출하다"],
+  ["compilation", "④", "편집본"],
+  ["divorced from", "⑦", "~에서 분리된"],
+  ["undoubtedly", "⑧", "의심할 여지 없이"],
+  ["collective", "⑪", "집단적인"]
  ],
- kor: [
-  "대부분의 농담은 한 가지 뜻을 세워 놓았다가 다른 뜻으로 바꿔치기하는 방식으로 작동한다.",
-  "듣는 사람은 하나의 길을 따라가고, 마지막 낱말이 그 발밑의 땅을 옮겨 놓는다.",
-  "낱말을 하나씩 떼어 놓고 보면 그 안에 웃긴 것은 없다.",
-  "웃음은 머리가 급히 해야 하는 수선에서 나온다.",
-  "농담을 설명하면 죽어 버리는 이유가 여기에 있다.",
-  "설명은 그 수선을 듣는 사람 대신 해 주는데, 즐거웠던 것은 바로 그 수고였다.",
-  "타이밍이 중요한 것도 같은 이유이며, 코미디언이라면 누구나 일찍 배운다.",
-  "잠깐의 멈춤은 첫 번째 뜻을 떨어뜨릴 만큼 무거워질 때까지 붙들어 둔다.",
-  "농담은 아무도 말하지 않는 조용한 사회적 시험도 함께 지닌다.",
-  "웃으려면 그 농담이 전제하는 지식을 나눠 가지고 있어야 한다.",
-  "어떤 학교의 규칙에 관한 농담은 그 학교 밖의 사람에게는 아무 뜻도 없다.",
-  "그래서 함께 웃는 일은 우리가 같은 것을 안다고 말하는 한 방식이기도 하다.",
-  "유머가 한 집단을 묶으면서 동시에 다른 사람을 밀어낼 수 있는 까닭이 그것이다.",
-  "코미디언들은 두 효과를 다 알고, 어느 쪽을 원하는지 고른다.",
-  "농담은 결코 농담이기만 한 것이 아니다."
+ defs: [
+  ["engage with", "to take an active part in something"],
+  ["extract", "to take a part out of a larger whole"],
+  ["compilation", "a set of pieces gathered into one work"],
+  ["divorced from", "cut off from something it belonged to"],
+  ["undoubtedly", "in a way that leaves no room for doubt"],
+  ["collective", "shared by all the members of a group"]
  ],
- bank: [["swap","①","바꿔치기하다"],["repair","④","수선, 고침"],["timing","⑦","때 맞추기"],
-        ["assume","⑩","전제하다"],["bind","⑬","묶다"],["effect","⑭","효과"]],
- defs: [["swap","to put one thing in place of another"],
-        ["repair","the act of fixing something that has broken"],
-        ["timing","the choice of the exact moment to act"],
-        ["assume","to take something as already known"],
-        ["bind","to hold people or things together"],
-        ["effect","a change produced by an action"]],
- defOrder: [3,0,5,2,4,1],
+ defOrder: [2, 0, 5, 1, 4, 3],
  flow: [
-  ["Mechanism","A joke builds one meaning and then swaps it for another",null],
-  ["Source of the laugh","The listener enjoys doing the (  ①  ) himself","repair"],
-  ["Consequence 1","Explaining the joke (  ②  ) it, because the work is taken away","kills"],
-  ["Consequence 2","Laughing proves you (  ③  ) the assumed knowledge","share"],
-  ["Conclusion","Humour can (  ④  ) a group and shut others out at once","bind"]
+  ["What changed", "Web 2.0 let people take an active part", null],
+  ["What we make", "Anyone can post clips, gifs, or a (  ①  ) of scenes", "compilation"],
+  ["The catch", "Such clips are (  ②  ) from where they first appeared", "divorced"],
+  ["Step one", "Alone, I find something (  ③  ) online", "funny"],
+  ["Step two", "I share it, others like it and (  ④  ) it on", "forward"]
  ],
- flowBogi: "repair · kills · share · bind · pause · explain",
+ flowBogi: "compilation · divorced · funny · forward · script · delete",
  para: [
-  ["④ the sudden repair the mind has to make","The laugh rewards a quick mental ______.","fix"],
-  ["⑥ the work is what was enjoyable","The listener enjoys the ______, not the answer.","effort"],
-  ["⑧ until it is heavy enough to drop","The pause lets the first meaning ______.","settle"],
-  ["⑪ means nothing to someone outside","Outsiders are ______ from the joke.","excluded"],
-  ["⑮ A joke is never only a joke.","Humour always does ______ work too.","social"]
+  ["② make do with witty PowerPoint attachments", "At first we had to ______ with what we had.", "manage"],
+  ["③ countless videos uploaded by members of the public", "Ordinary people upload ______ videos.", "numberless"],
+  ["⑤ humorous in intent", "Most of it is meant to be ______.", "funny"],
+  ["⑦ consumed in a different era", "They are watched in another ______.", "time"],
+  ["⑪ create a new form of collective online laughter", "Laughing together online is something ______.", "new"]
  ],
- paraBogi: "fix · effort · settle · excluded · social · answer · vanish · private",
+ paraBogi: "manage · numberless · funny · time · new · refuse · few · old",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How to Write a Funny Story","Why Comedians Earn So Much",
-       "A Joke Tests What We Share","Jokes Should Never Be Explained",
-       "The History of Stand-Up Comedy"], ans:3},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["웃음은 뜻이 갑자기 바뀔 때 생기는 수선에서 나온다.","설명은 듣는 사람이 할 일을 대신해 버린다.",
-       "낱말 자체에 웃긴 성질이 들어 있다.","농담은 전제된 지식을 나눠 가진 사람에게만 통한다.",
-       "유머는 묶는 일과 밀어내는 일을 함께 한다."], ans:3},
-  {t:"write", q:"필자가 '농담은 농담이기만 한 것이 아니다'라고 말한 이유를 우리말 한 문장으로 써 보세요.",
-   ans:"함께 웃는 일이 같은 지식을 나눠 가졌는지 확인하며 집단을 묶고 다른 사람을 밀어내기 때문이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How to Extract a Scene from a TV Series",
+    "From One Smile to a Shared Laugh",
+    "Why Online Humour Stays Private",
+    "A Short History of PowerPoint",
+    "The Rules of Copyright Online"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "웹 2.0의 기술 덕분에 사람들이 인터넷 콘텐츠에 적극적으로 참여할 수 있게 되었다.",
+    "누구나 직접 만든 동영상을 제작해 YouTube에 올릴 수 있다.",
+    "편집본은 처음 등장했던 맥락에서 분리되어 다른 시대에 소비된다.",
+    "Facebook에서 만들어지고 공유되는 것 가운데 유머러스한 것은 드물다.",
+    "‘좋아요’를 누른 사람들이 다시 다른 사람에게 메시지를 전달하기도 한다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "필자가 말하는 ‘집단적 온라인 웃음’이 만들어지는 두 단계를 우리말 한 문장으로 써 보세요.",
+   ans: "먼저 개인이 혼자 웃긴 것을 발견하고, 그다음 그것을 남과 공유해 ‘좋아요’와 재전달이 이어지면서 함께 웃는 형태가 만들어진다."
+  }
  ],
  fl: {
-  model: { n:"⑬",
-   toks: [["That","s"],["is","v"],["why","c"],["humour","s2"],["can bind","v2"],
-          ["a group","m"],["and shut others out in the same breath","m"]],
-   ko:"유머가 한 집단을 묶으면서 동시에 다른 사람을 밀어낼 수 있는 까닭이 그것이다." },
+  model: {
+   n: "①",
+   toks: [
+    ["It", "s"], ["is", "v"], ["thanks to the technology involved in Web 2.0", null], ["that", "c"],
+    ["people", "s2"], ["may now actively engage", "v2"], ["with internet content.", "m"]
+   ],
+   ko: "사람들이 이제 인터넷 콘텐츠에 적극적으로 참여할 수 있는 것은 바로 웹 2.0에 담긴 기술 덕분이다."
+  },
   drill: [
-   { n:"①", en:"Most jokes work by building one meaning and then swapping it for another.",
-     ans:"S Most jokes · △V work · M by building one meaning and then swapping it for another",
-     ko:"대부분의 농담은 한 뜻을 세웠다가 다른 뜻으로 바꿔치기하는 방식으로 작동한다." },
-   { n:"⑥", en:"Explanation does the repair for the listener, and the work is what was enjoyable.",
-     ans:"S Explanation · △V does · O the repair · M for the listener · [and] S the work · △V is · C what was enjoyable",
-     ko:"설명은 그 수선을 듣는 사람 대신 해 주는데, 즐거웠던 것은 바로 그 수고였다." },
-   { n:"⑩", en:"To laugh, you must share the knowledge the joke assumes.",
-     ans:"M To laugh · S you · △V must share · O the knowledge · M the joke assumes",
-     ko:"웃으려면 그 농담이 전제하는 지식을 나눠 가지고 있어야 한다." }
+   {
+    n: "③",
+    en: "For example, YouTube hosts countless videos uploaded by members of the public.",
+    ans: "M For example · S YouTube · △V hosts · O countless videos · M uploaded by members of the public",
+    ko: "예를 들어 YouTube에는 일반인들이 올린 수많은 동영상이 있다."
+   },
+   {
+    n: "⑥",
+    en: "Of course, these compilations beg a number of questions.",
+    ans: "M Of course · S these compilations · △V beg · O a number of questions",
+    ko: "물론 이러한 편집본들은 여러 가지 질문을 불러일으킨다."
+   },
+   {
+    n: "⑨",
+    en: "The pattern seems to be that first I, as an individual, find something funny online that may make me laugh or smile.",
+    ans: "S The pattern · △V seems to be · [that] M first · S′ I, as an individual, · △V′ find · O something funny online · [that] △V′ may make · O me laugh or smile",
+    ko: "그 양상은 이런 것 같다. 먼저 개인으로서 내가 나를 웃거나 미소 짓게 만들 재미있는 것을 온라인에서 발견한다."
+   }
   ]
  },
  syn: [
-  { n:"⑧", name:"형용사 + enough to + 동사원형",
-    q:"A pause holds the first meaning in place until it is «heavy enough to drop».",
-    d:"<b>형용사 + enough + to부정사</b>는 '~할 만큼 충분히 …한'. enough 가 형용사 <b>뒤</b>에 온다.",
-    k:"잠깐의 멈춤은 첫 번째 뜻이 떨어질 만큼 무거워질 때까지 그것을 붙들어 둔다." },
-  { n:"⑬", name:"That is why + 절",
-    q:"«That is why» humour can bind a group and shut others out in the same breath.",
-    d:"<b>That is why ~</b>는 '그것이 ~한 이유다'. 앞 내용이 <b>원인</b>, why 뒤가 <b>결과</b>다.",
-    k:"유머가 집단을 묶으면서 동시에 남을 밀어낼 수 있는 까닭이 그것이다." }
+  {
+   n: "⑦",
+   name: "상관접속사  not only A but B",
+   q: "They are «not only divorced from the contexts in which they first appeared, but they are consumed» in a different era.",
+   d: "<b>not only A but B</b>는 ‘A뿐 아니라 B도’이다. A와 B 자리에는 같은 모양이 온다.",
+   k: "처음 등장했던 맥락에서 분리되어 있을 뿐 아니라 다른 시대에 소비되기도 한다"
+  },
+  {
+   n: "⑩",
+   name: "전치사 + 관계대명사  many of whom",
+   q: "…share that same object of amusement with others, «many of whom will display a “like”»…",
+   d: "<b>many of whom</b>은 앞의 <b>others</b>를 받아 ‘그들 중 다수는’이라는 뜻으로 뒤 절의 주어가 된다.",
+   k: "그들 중 다수는 ‘좋아요’를 누를 것이다"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"The pause was long enough to make everyone lean forward.",
-    k:"그 멈춤은 모두를 앞으로 기울이게 만들 만큼 길었다." },
-  { u:"구문 2", en:"That is why the same joke fails in another country.",
-    k:"같은 농담이 다른 나라에서 통하지 않는 까닭이 그것이다." },
-  { u:"구문 1 + 2", en:"That is why a hint must be small enough to leave the work undone.",
-    k:"힌트가 할 일을 남겨 둘 만큼 작아야 하는 까닭이 그것이다." }
+  { u: "구문 1", en: "The clip is not only short but also easy to share.", k: "그 영상은 짧을 뿐 아니라 공유하기도 쉽다." },
+  { u: "구문 2", en: "She sent it to ten friends, many of whom sent it on again.", k: "그녀는 그것을 친구 열 명에게 보냈고, 그들 중 다수가 다시 전달했다." },
+  { u: "구문 1 + 2", en: "The post reached readers, many of whom not only laughed but also replied.", k: "그 게시물은 독자들에게 닿았고, 그들 중 다수는 웃었을 뿐 아니라 답글도 달았다." }
  ],
- wtype: ["무관","무관","정답","지엽","무관"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["웃기는 글 쓰는 법을 알려 주는 글이 아니다"],["코미디언의 수입은 글에 나오지 않는다"],["정답"],
-       ["설명하면 죽는다는 것은 논지의 한 부분일 뿐이다"],["스탠드업의 역사는 글의 소재가 아니다"]],
- src: [["①④"],["⑥"],["③과 어긋남 — 낱말 자체에는 웃긴 것이 없다"],["⑩⑪"],["⑬"]],
+ why: [
+  ["문장 ④의 한 가지 방법만 붙든 지엽적인 제목이다"],
+  ["정답"],
+  ["글은 웃음이 퍼져 집단적인 것이 된다고 말한다 — 정반대다"],
+  ["파워포인트의 역사는 글에 나오지 않는다"],
+  ["저작권 규칙은 글에서 다루지 않는다"]
+ ],
+ src: [["①"], ["④"], ["⑦"], ["⑧과 어긋남 — 만들어지고 공유되는 것 중 상당수가 유머러스하다"], ["⑩"]],
  kb: {
-  title:"웃음이 하는 일",
-  lead:"웃음은 감정이자 신호다.",
+  title: "웃음이 옮겨 다니는 길",
+  lead: "혼자 웃던 것은 어떻게 함께 웃는 것이 되었나",
   items: [
-   ["'부조화 해소' 이론",
-    "18세기 칸트와 쇼펜하우어에서 시작해 20세기 심리학이 다듬은 설명이다. 기대한 것과 실제가 어긋나고, 그 어긋남이 순간적으로 해소될 때 웃음이 난다고 본다. 이 글의 '수선'이 바로 그 해소다."],
-   ["혼자 있을 때는 잘 웃지 않는다",
-    "심리학자 로버트 프로바인은 일상 대화 1,200건을 기록해, 웃음의 대부분이 농담이 아니라 평범한 말 뒤에 나오며 혼자 있을 때보다 함께 있을 때 훨씬 자주 나온다는 것을 보고했다. 웃음은 내용보다 관계에 붙어 있다."],
-   ["번역하기 가장 어려운 것",
-    "말장난은 소리와 뜻이 한 언어 안에서 겹칠 때 생기므로, 번역하면 대개 무너진다. 그래서 자막 번역자는 원문을 옮기는 대신 그 자리에서 통하는 다른 농담을 새로 만들곤 한다."]
+   ["웹 2.0이라는 말", "읽기만 하던 웹에서 누구나 올리고 고치는 웹으로의 전환을 가리킨다. Tim O'Reilly가 2004년 같은 이름의 콘퍼런스를 열면서 널리 쓰이기 시작했다."],
+   ["밈(meme)이라는 낱말", "리처드 도킨스가 1976년 『The Selfish Gene』에서 문화가 복제되며 퍼지는 단위를 가리켜 만든 말이다. 유전자(gene)를 본떠 지었는데, 오늘날 인터넷에서 퍼지는 이미지·영상을 부르는 이름이 되었다."],
+   ["맥락이 사라진 인용", "잘라 낸 장면은 원래 놓여 있던 앞뒤 상황을 잃는다. 같은 대사도 어느 장면 다음에 오느냐에 따라 다르게 읽히므로, 편집본은 새로운 뜻을 얻기도 하고 원래 뜻을 잃기도 한다."]
   ],
-  ask:"우리 반에서만 통하는 농담이 있는가? 그것이 통하려면 무엇을 알고 있어야 하는가?"
- }
+  ask: "여러분이 마지막으로 친구에게 보낸 웃긴 영상은, 원래 어디에서 온 것이었는가?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 13 ───────────────────────────── */
 {
- no: "13", key: "data",
- accent: "#2F8074", tint: "#E2F0ED", deep: "#1B564D",
- en: "Numbers Do Not Speak",
- ko: "숫자는 스스로 말하지 않는다",
- goal: "같은 자료가 어떻게 서로 다른 결론에 쓰이는지 예를 들어 설명할 수 있다.",
- fig: "Figure 1  같은 점들, 다르게 그은 선.",
- tip: "먼저 생각해 보자. '10명 중 9명이 만족'이라는 문장에서 우리가 모르는 것은 무엇일까?",
- sent: [
-  "People often say that numbers speak for themselves and settle an argument.",
-  "They do not; someone always chooses which numbers to show.",
-  "Imagine a school that proudly reports higher test scores this year than last.",
-  "The figure is true, and it still hides several decisions.",
-  "Which students were counted, and which had already left?",
-  "Was the test the same one, and was it marked the same way?",
-  "None of these questions accuse anyone of lying.",
-  "They only remind us that a number arrives with a history.",
-  "The same problem appears in charts, where the shape of a line does the arguing.",
-  "A line that starts at ninety instead of zero makes a small rise look steep.",
-  "Nothing in the data has changed, but the reader's eye has been steered.",
-  "Careful writers therefore report how the data was gathered, not only what it shows.",
-  "Careful readers ask what a number would look like from the other side.",
-  "Honesty with data is less about the figures than about the choices behind them.",
-  "A number is an answer, and every answer had a question first."
+ no: "13", key: "data", accent: "#2F8074", tint: "#E2F0ED", deep: "#1B564D",
+ en: "Ethical Data Interpretation",
+ ko: "자료를 읽는 손에 붙는 책임",
+ goal: "소셜 미디어의 데이터 해석에서 제기되는 윤리 문제를 세 갈래로 나누어 설명할 수 있다.",
+ fig: "Figure 1  같은 자료, 다르게 그은 선 — 해석에는 언제나 선택이 들어간다.",
+ tip: "먼저 생각해 보자. 내가 공짜로 쓰는 앱은 무엇을 대가로 받아 가고 있을까?",
+ sent: T(13).sent, kor: T(13).kor,
+ bank: [
+  ["fraught with", "①", "~로 가득한"],
+  ["harvest", "④", "거둬들이다"],
+  ["consensual", "⑤", "동의에 기반한"],
+  ["perpetuate", "⑧", "지속시키다"],
+  ["autonomy", "⑩", "자율성"],
+  ["safeguard", "⑬", "보호하다"]
  ],
- kor: [
-  "사람들은 흔히 숫자가 스스로 말하며 논쟁을 끝내 준다고 한다.",
-  "그렇지 않다. 어떤 숫자를 보여 줄지는 언제나 누군가가 고른다.",
-  "지난해보다 올해 시험 점수가 올랐다고 자랑스럽게 발표한 학교를 떠올려 보라.",
-  "그 수치는 사실이지만, 그래도 여러 결정을 감추고 있다.",
-  "어떤 학생들이 셈에 들어갔고, 어떤 학생들은 이미 떠났는가?",
-  "시험은 같은 시험이었고, 채점 방식도 같았는가?",
-  "이 질문들 가운데 누구를 거짓말쟁이로 모는 것은 하나도 없다.",
-  "그저 하나의 숫자가 내력을 지니고 도착한다는 사실을 일깨울 뿐이다.",
-  "같은 문제가 도표에서도 나타나는데, 거기서는 선의 모양이 대신 주장을 한다.",
-  "0이 아니라 90에서 시작하는 선은 작은 상승을 가파르게 보이게 만든다.",
-  "자료에서 바뀐 것은 없지만, 읽는 사람의 눈이 이끌린 것이다.",
-  "그래서 신중한 필자는 자료가 무엇을 보여 주는지만이 아니라 어떻게 모였는지를 함께 밝힌다.",
-  "신중한 독자는 그 숫자가 반대편에서 보면 어떻게 보일지를 묻는다.",
-  "자료를 정직하게 다루는 일은 수치보다 그 뒤의 선택에 달려 있다.",
-  "숫자는 하나의 답이고, 모든 답에는 먼저 질문이 있었다."
+ defs: [
+  ["fraught with", "full of something unwanted or risky"],
+  ["harvest", "to gather something in large amounts"],
+  ["consensual", "agreed to by everyone taking part"],
+  ["perpetuate", "to make something continue for long"],
+  ["autonomy", "the right to decide things for yourself"],
+  ["safeguard", "to keep something from being harmed"]
  ],
- bank: [["figure","④","수치"],["count","⑤","셈에 넣다"],["mark","⑥","채점하다"],
-        ["accuse","⑦","(~라고) 몰아붙이다"],["steer","⑪","이끌다, 몰다"],["gather","⑫","모으다"]],
- defs: [["figure","a number that stands for an amount"],
-        ["count","to include something in a total"],
-        ["mark","to give a score to a piece of work"],
-        ["accuse","to say that someone has done wrong"],
-        ["steer","to guide something in a chosen direction"],
-        ["gather","to collect things from many places"]],
- defOrder: [4,1,0,5,3,2],
+ defOrder: [3, 5, 1, 0, 4, 2],
  flow: [
-  ["Claim to reject","People say numbers speak for themselves",null],
-  ["Case 1","A school's higher score still hides several (  ①  )","decisions"],
-  ["Case 2","A chart starting at ninety makes a small rise look (  ②  )","steep"],
-  ["Advice to writers","Report how the data was (  ③  ), not only what it shows","gathered"],
-  ["Advice to readers","Ask what the number looks like from the other (  ④  )","side"]
+  ["The field", "Reading social media data raises ethical questions", null],
+  ["Issue 1", "Users give personal data without (  ①  ) it", "knowing"],
+  ["Issue 2", "Algorithms can amplify the (  ②  ) already in the data", "bias"],
+  ["Issue 3", "Targeted content raises questions about (  ③  )", "manipulation"],
+  ["The balance", "Use data for insight, yet (  ④  ) users' rights", "protect"]
  ],
- flowBogi: "decisions · steep · gathered · side · figure · lying",
+ flowBogi: "knowing · bias · manipulation · protect · profit · delete",
  para: [
-  ["② someone always chooses which numbers to show","Every figure has been ______ by someone.","selected"],
-  ["⑦ None of these questions accuse anyone","Asking is not the same as ______ someone.","blaming"],
-  ["⑧ a number arrives with a history","Each figure carries its own ______.","background"],
-  ["⑪ the reader's eye has been steered","The picture ______ the reader, not the data.","guides"],
-  ["⑭ less about the figures than about the choices","Honesty lies in the ______ behind numbers.","choices"]
+  ["① fraught with ethical considerations", "The field is ______ of ethical problems.", "full"],
+  ["④ unknowingly provide personal information", "People hand over data without ______ it.", "noticing"],
+  ["⑧ amplify biases present in the data", "The system makes an existing bias ______.", "louder"],
+  ["⑩ raises questions about manipulation and autonomy", "Steering users puts their ______ at risk.", "freedom"],
+  ["⑬ safeguarding the rights and interests of users", "Users' rights must be ______ at the same time.", "protected"]
  ],
- paraBogi: "selected · blaming · background · guides · choices · random · trusting · totals",
+ paraBogi: "full · noticing · louder · freedom · protected · empty · ignoring · quieter",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How to Raise a School's Test Scores","Every Number Comes with a Question",
-       "Charts Are Always Dishonest","The Best Way to Mark an Exam",
-       "Why Schools Should Publish Less Data"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["점수가 올랐다는 수치 자체는 사실일 수 있다.","축의 시작점을 바꾸면 같은 자료가 달리 보인다.",
-       "필자는 이런 질문이 누군가를 거짓말쟁이로 몬다고 본다.","신중한 필자는 자료를 모은 방법도 함께 밝힌다.",
-       "정직함은 수치보다 그 뒤의 선택에 달려 있다."], ans:3},
-  {t:"write", q:"필자가 '숫자는 스스로 말하지 않는다'고 한 이유를 우리말 한 문장으로 써 보세요.",
-   ans:"어떤 숫자를 어떻게 모아 보여 줄지를 언제나 사람이 고르기 때문이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How Targeted Advertising Chooses a Product",
+    "Reading Data Without Wronging People",
+    "Why Algorithms Are Free of Bias",
+    "A Guide to Building a Social Network",
+    "The Legal History of Privacy Law"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "사용자들은 자주 자신도 모르게 개인 정보를 제공한다.",
+    "윤리적인 데이터 해석은 수집이 투명하고 동의에 기반할 것을 요구한다.",
+    "알고리즘은 고정 관념을 강화하거나 특정 집단을 배제하는 결과를 낳을 수 있다.",
+    "타깃 광고나 콘텐츠 큐레이션은 사용자의 자율성과는 무관한 문제이다.",
+    "윤리적인 데이터 관행은 이익을 위해 사용자 데이터를 악용하지 않는 것을 포함한다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "필자가 말하는 윤리적인 데이터 해석이 지켜야 할 균형이 무엇인지 우리말 한 문장으로 써 보세요.",
+   ans: "통찰과 혁신을 위해 데이터를 활용하는 일과 사용자의 권리·이익을 보호하는 일 사이의 균형을 지켜야 한다."
+  }
  ],
  fl: {
-  model: { n:"⑩",
-   toks: [["A line","s"],["that starts at ninety instead of zero","m"],["makes","v"],
-          ["a small rise","m"],["look steep","m"]],
-   ko:"0이 아니라 90에서 시작하는 선은 작은 상승을 가파르게 보이게 만든다." },
+  model: {
+   n: "②",
+   toks: [
+    ["In an age", "m"], ["where", "c"], ["vast amounts of user data", "s2"],
+    ["are constantly being generated and collected,", "v2"], ["the ways", "s"], ["in which", "c"],
+    ["this data", "s2"], ["is analyzed and used", "v2"], ["raise", "v"], ["important ethical questions.", null]
+   ],
+   ko: "방대한 사용자 데이터가 끊임없이 생성되고 수집되는 시대에, 이 데이터를 분석하고 사용하는 방식은 중요한 윤리적 질문을 던진다."
+  },
   drill: [
-   { n:"②", en:"They do not; someone always chooses which numbers to show.",
-     ans:"S They · △V do not · S someone · M always · △V chooses · O which numbers to show",
-     ko:"그렇지 않다. 어떤 숫자를 보여 줄지는 언제나 누군가가 고른다." },
-   { n:"⑫", en:"Careful writers therefore report how the data was gathered, not only what it shows.",
-     ans:"S Careful writers · M therefore · △V report · O how the data was gathered · M not only what it shows",
-     ko:"그래서 신중한 필자는 자료가 어떻게 모였는지를 함께 밝힌다." },
-   { n:"⑮", en:"A number is an answer, and every answer had a question first.",
-     ans:"S A number · △V is · C an answer · [and] S every answer · △V had · O a question · M first",
-     ko:"숫자는 하나의 답이고, 모든 답에는 먼저 질문이 있었다." }
+   {
+    n: "⑤",
+    en: "Ethical data interpretation in this context requires a commitment to respecting user privacy and ensuring that data collection is transparent and consensual.",
+    ans: "S Ethical data interpretation in this context · △V requires · O a commitment to respecting user privacy and ensuring · [that] S′ data collection · △V′ is · C transparent and consensual",
+    ko: "이 맥락에서 윤리적인 데이터 해석은 사용자의 사적 자유를 존중하고 수집이 투명하고 동의에 기반하도록 보장하겠다는 약속을 요구한다."
+   },
+   {
+    n: "⑨",
+    en: "Ensuring fairness and avoiding bias in data interpretation is crucial for ethical social media practices.",
+    ans: "S Ensuring fairness and avoiding bias in data interpretation · △V is · C crucial · M for ethical social media practices",
+    ko: "데이터 해석에서 공정성을 확보하고 편향을 피하는 일은 윤리적인 소셜 미디어 관행에 결정적이다."
+   },
+   {
+    n: "⑬",
+    en: "It requires a balance between leveraging data for insights and innovation, while also safeguarding the rights and interests of users.",
+    ans: "S It · △V requires · O a balance between leveraging data for insights and innovation · M while also safeguarding the rights and interests of users",
+    ko: "그것은 통찰과 혁신을 위해 데이터를 활용하는 일과 사용자의 권리·이익을 보호하는 일 사이의 균형을 요구한다."
+   }
   ]
  },
  syn: [
-  { n:"⑩", name:"make + 목적어 + 동사원형 (사역)",
-    q:"A line that starts at ninety «makes a small rise look» steep.",
-    d:"<b>make + 목적어 + 동사원형</b>은 '~가 …하게 만들다'. to 를 붙이지 않는 것이 핵심이다.",
-    k:"90에서 시작하는 선은 작은 상승을 가파르게 보이게 만든다." },
-  { n:"⑭", name:"less A than B",
-    q:"Honesty with data is «less about the figures than about the choices» behind them.",
-    d:"<b>less A than B</b>는 'A라기보다 B다'. 무게를 B 쪽에 싣는 표현이다.",
-    k:"자료의 정직함은 수치보다 그 뒤의 선택에 달려 있다." }
+  {
+   n: "②",
+   name: "전치사 + 관계대명사  in which",
+   q: "…, the ways «in which this data is analyzed and used» raise important ethical questions.",
+   d: "<b>in which</b>는 <b>the ways</b>를 받아 ‘그런 방식으로 ~하는’을 뜻한다. <b>how</b>로 바꿔 쓸 수 있다.",
+   k: "이 데이터가 분석되고 사용되는 방식"
+  },
+  {
+   n: "⑧",
+   name: "분사구문  leading to ~",
+   q: "These algorithms can perpetuate and amplify biases present in the data, «leading to unfair outcomes»…",
+   d: "앞 절의 결과를 <b>-ing</b> 덩어리로 이어 붙인다. ‘그리하여 ~하게 된다’로 읽으면 자연스럽다.",
+   k: "그리하여 불공정한 결과로 이어진다"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"A wide axis makes the same change seem small.",
-    k:"넓은 축은 같은 변화를 작아 보이게 만든다." },
-  { u:"구문 2", en:"The report was less a summary than an argument.",
-    k:"그 보고서는 요약이라기보다 하나의 주장이었다." },
-  { u:"구문 1 + 2", en:"A good chart makes the reader think less about colour than about the data.",
-    k:"좋은 도표는 독자가 색보다 자료를 더 생각하게 만든다." }
+  { u: "구문 1", en: "We studied the way in which the feed ranks new posts.", k: "우리는 그 피드가 새 게시물의 순위를 매기는 방식을 연구했다." },
+  { u: "구문 2", en: "The app collected every click, leading to a detailed profile.", k: "그 앱은 모든 클릭을 모았고, 그리하여 상세한 프로필이 만들어졌다." },
+  { u: "구문 1 + 2", en: "The rule changed the way in which data is stored, leading to fewer leaks.", k: "그 규정은 데이터가 저장되는 방식을 바꾸었고, 그리하여 유출이 줄었다." }
  ],
- wtype: ["무관","정답","반대","무관","지엽"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["점수를 올리는 방법은 글의 관심사가 아니다"],["정답"],
-       ["글은 도표가 늘 부정직하지는 않다고 전제한다 — 정반대다"],
-       ["채점 방법은 예로 든 질문 하나일 뿐 주제가 아니다"],
-       ["자료 공개를 줄이자는 주장은 글에 없다"]],
- src: [["④"],["⑩"],["⑦과 어긋남 — 누구도 거짓말쟁이로 몰지 않는다"],["⑫"],["⑭"]],
+ why: [
+  ["문장 ⑩의 한 사례만 붙든 지엽적인 제목이다"],
+  ["정답"],
+  ["글은 알고리즘이 편향을 증폭할 수 있다고 말한다 — 정반대다"],
+  ["소셜 네트워크를 만드는 방법은 글에 나오지 않는다"],
+  ["사적 자유 관련 법의 역사는 글에서 다루지 않는다"]
+ ],
+ src: [["④"], ["⑤"], ["⑧"], ["⑩과 어긋남 — 조작과 자율성에 대한 의문을 제기한다"], ["⑪"]],
  kb: {
-  title:"같은 자료, 다른 그림",
-  lead:"고르는 순간 이미 해석이 시작된다.",
+  title: "동의라는 얇은 종이",
+  lead: "우리는 무엇에 동의했다고 말할 수 있을까",
   items: [
-   ["애스컴의 네 자료",
-    "1973년 통계학자 프랜시스 애스컴은 평균·분산·상관계수가 모두 같은데 그림은 전혀 다른 네 개의 자료 묶음을 만들었다. 숫자 요약만 보고 판단하면 안 된다는 것을 한눈에 보여 준 사례로 지금도 인용된다."],
-   ["생존자만 보고 세운 계획",
-    "2차 대전 중 통계학자 에이브러햄 발드는 총알 자국이 몰린 자리가 아니라 자국이 없는 자리를 보강해야 한다고 조언했다. 돌아오지 못한 비행기는 자료에 없었기 때문이다. 오늘날 '생존 편향'이라 부른다."],
-   ["y축을 어디서 시작할 것인가",
-    "막대그래프는 0에서 시작하는 것이 원칙이고, 꺾은선그래프는 변화를 보이기 위해 잘라 쓰기도 한다. 어느 쪽이든 잘랐다면 밝히는 것이 규범이다."]
+   ["읽히지 않는 약관", "이용 약관은 대개 길고 어렵다. York 대학과 코네티컷 대학 연구진의 가짜 SNS 가입 실험에서, 참가자 대부분은 약관을 읽지 않고 동의했다. 그 안에는 개인 정보를 고용주에게 넘긴다는 조항까지 들어 있었다."],
+   ["GDPR", "유럽연합의 일반 개인정보 보호법은 2018년 5월부터 시행되었다. 수집 목적을 분명히 밝히고, 필요한 최소한만 모으며, 이용자가 자기 데이터의 열람·삭제를 요구할 수 있게 한 것이 핵심이다."],
+   ["편향은 자료에서 온다", "얼굴 인식 정확도를 검사한 Gender Shades 연구(Buolamwini·Gebru, 2018)는 밝은 피부 남성에서 가장 낮은 오류율을, 어두운 피부 여성에서 가장 높은 오류율을 보고했다. 학습 자료에 어떤 얼굴이 많았는지가 성능으로 되돌아온 셈이다."]
   ],
-  ask:"최근에 본 통계 하나를 떠올려 보자. 그 숫자를 만들려면 누가 무엇을 골라야 했을까?"
- }
+  ask: "여러분이 마지막으로 ‘동의합니다’를 누른 것은 무엇이었고, 그때 무엇에 동의한 것인가?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 14 ───────────────────────────── */
 {
- no: "14", key: "neural",
- accent: "#8E5AA8", tint: "#F2EAF6", deep: "#5C3272",
- en: "The Machine That Learned to Guess",
- ko: "추측을 배운 기계",
- goal: "인공 신경망이 무엇을 학습하고 무엇을 학습하지 못하는지 설명할 수 있다.",
- fig: "Figure 1  층을 지나며 걸러지는 신호.",
- tip: "먼저 생각해 보자. 개와 고양이를 구별하는 규칙을 말로 적어 본다면 몇 줄이 필요할까?",
- sent: [
-  "Try writing down the rule that tells a dog from a cat.",
-  "Every rule you write will fail on some real animal.",
-  "A neural network is never handed such a rule at any point.",
-  "It is shown thousands of labelled pictures instead.",
-  "Inside, numbers pass through layers, and each layer passes on what it found.",
-  "Early layers notice edges; later ones notice ears, eyes, and shapes.",
-  "When the answer is wrong, the network changes its numbers a little.",
-  "Repeat this millions of times and the guesses grow accurate.",
-  "But the network has learned the pattern in its examples, not the world.",
-  "Feed it only photographs taken outdoors and it may quietly learn about grass.",
-  "Such a system can be right for a reason nobody chose and nobody checked.",
-  "It also cannot say in plain words why it answered as it did.",
-  "The numbers are visible, yet no sentence explains them.",
-  "This is why careful teams test a model on cases it has never seen.",
-  "A machine that guesses well is not the same as a machine that knows."
+ no: "14", key: "neural", accent: "#8E5AA8", tint: "#F2EAF6", deep: "#5C3272",
+ en: "Deep Neural Networks",
+ ko: "편향을 줄이면 점수가 떨어진다",
+ goal: "신경망이 데이터의 편향을 오히려 키우는 까닭을 정확도 계산과 연결해 설명할 수 있다.",
+ fig: "Figure 1  층을 지나며 걸러지는 신호 — 그리고 ‘왜 그렇게 답했지?’",
+ tip: "먼저 생각해 보자. 사진 속 사람이 요리를 하고 있다. 우리는 왜 성별까지 함께 짐작하게 될까?",
+ sent: T(14).sent, kor: T(14).kor,
+ bank: [
+  ["intensify", "①", "강화하다"],
+  ["portray", "③", "묘사하다"],
+  ["misidentify", "⑦", "잘못 식별하다"],
+  ["evaluate", "⑨", "평가하다"],
+  ["discriminate", "⑨", "차별하다"],
+  ["amplify", "⑭", "확대하다"]
  ],
- kor: [
-  "개와 고양이를 가려내는 규칙을 적어 보려고 해 보라.",
-  "당신이 적는 모든 규칙은 어떤 실제 동물 앞에서 무너질 것이다.",
-  "인공 신경망은 어느 단계에서도 그런 규칙을 건네받지 않는다.",
-  "대신 이름표가 붙은 사진 수천 장을 본다.",
-  "안에서는 숫자들이 층을 지나가고, 각 층은 자기가 찾아낸 것을 다음으로 넘긴다.",
-  "앞쪽 층은 가장자리를 알아채고, 뒤쪽 층은 귀와 눈과 형태를 알아챈다.",
-  "답이 틀리면 신경망은 자기 숫자들을 조금씩 바꾼다.",
-  "이 일을 수백만 번 되풀이하면 추측이 정확해진다.",
-  "그러나 신경망이 배운 것은 자기 예시 안의 패턴이지 세계가 아니다.",
-  "야외에서 찍은 사진만 먹이면, 그것은 조용히 풀에 대해 배워 버릴 수도 있다.",
-  "그런 체계는 아무도 고르지 않았고 아무도 확인하지 않은 이유로 맞힐 수 있다.",
-  "또한 그것은 왜 그렇게 답했는지를 평범한 말로 설명하지 못한다.",
-  "숫자들은 다 보이지만, 그것을 설명해 주는 문장은 없다.",
-  "신중한 팀이 한 번도 본 적 없는 사례로 모형을 시험하는 이유가 여기에 있다.",
-  "잘 추측하는 기계가 곧 아는 기계인 것은 아니다."
+ defs: [
+  ["intensify", "to make something stronger or greater"],
+  ["portray", "to show someone in a picture or story"],
+  ["misidentify", "to name something as the wrong thing"],
+  ["evaluate", "to judge how good something is"],
+  ["discriminate", "to treat one group worse than another"],
+  ["amplify", "to make something larger or louder"]
  ],
- bank: [["label","④","이름표를 붙이다"],["layer","⑤","층"],["edge","⑥","가장자리"],
-        ["accurate","⑧","정확한"],["pattern","⑨","패턴, 규칙성"],["intend","⑪","의도하다"]],
- defs: [["label","to mark something with its name"],
-        ["layer","one level in a stack of levels"],
-        ["edge","the line where a shape ends"],
-        ["accurate","correct in every detail"],
-        ["pattern","a regular way in which things repeat"],
-        ["intend","to plan something on purpose"]],
- defOrder: [2,0,4,5,1,3],
+ defOrder: [4, 1, 5, 0, 3, 2],
  flow: [
-  ["Problem","No written rule can tell a dog from a cat in every case",null],
-  ["Method","The network is shown thousands of (  ①  ) pictures","labelled"],
-  ["Learning","Wrong answers make it adjust its (  ②  ) a little each time","numbers"],
-  ["Limit 1","It learns the pattern in its (  ③  ), not the world","examples"],
-  ["Limit 2","It cannot say (  ④  ) it answered as it did","why"]
+  ["The claim", "Biased data can be made worse by neural networks", null],
+  ["The test", "A network learned activities and (  ①  ) from photos", "genders"],
+  ["The result", "Cooking photos were 67% women; the network said (  ②  )%", "84"],
+  ["The reason", "Performance is scored by correct (  ③  ), not fairness", "answers"],
+  ["The trade", "Guessing fairly drops accuracy to about (  ④  )%", "56"]
  ],
- flowBogi: "labelled · numbers · examples · why · rules · grass",
+ flowBogi: "genders · 84 · answers · 56 · colours · 33",
  para: [
-  ["② Every rule you write will fail","No written rule covers every ______.","case"],
-  ["⑧ the guesses grow accurate","Repetition makes the answers more ______.","exact"],
-  ["⑨ the pattern in its examples, not the world","It learns its ______, not reality.","data"],
-  ["⑪ right for a reason nobody intended","It can be correct by ______.","accident"],
-  ["⑮ not the same as a machine that knows","Guessing well is not ______.","understanding"]
+  ["① deep neural networks may intensify the problem", "The system can make the problem ______.", "worse"],
+  ["④ These pictures had a typical gender bias", "The photo set leaned the ______ way already.", "usual"],
+  ["⑦ misidentifying about half of the male cooks", "It got half the male cooks ______.", "wrong"],
+  ["⑨ by the number of correct answers", "Scores count only how often it is ______.", "right"],
+  ["⑯ amplifying it can lead to better performance", "Enlarging the bias can raise the ______.", "score"]
  ],
- paraBogi: "case · exact · data · accident · understanding · rule · design · doubting",
+ paraBogi: "worse · usual · wrong · right · score · better · even · cost",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How to Tell a Dog from a Cat","Guessing Well Is Not Knowing",
-       "Neural Networks Will Replace Teachers","A Guide to Taking Better Photographs",
-       "Why Machines Should Never Be Trusted"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["신경망은 이름표가 붙은 사진을 대량으로 본다.","앞쪽 층은 가장자리 같은 단순한 특징을 알아챈다.",
-       "신경망은 자기가 왜 그렇게 답했는지 문장으로 설명한다.","야외 사진만 주면 배경을 배워 버릴 수 있다.",
-       "신중한 팀은 처음 보는 사례로 모형을 시험한다."], ans:3},
-  {t:"write", q:"필자가 '잘 추측하는 것과 아는 것은 다르다'고 한 근거를 우리말 한 문장으로 써 보세요.",
-   ans:"예시 안의 패턴만 익혀 아무도 의도하지 않은 이유로 맞힐 수 있고, 그 이유를 설명하지도 못하기 때문이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How Networks Recognise a Frying Pan",
+    "Fairness Costs Accuracy",
+    "Neural Networks Correct Human Bias",
+    "A Beginner's Guide to Photography",
+    "Why Men Do Less Housework"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "학습에 쓰인 사진에는 남성이 야외 활동에, 여성이 조리·쇼핑에 더 많이 나왔다.",
+    "요리 사진의 67%가 여성이었는데 신경망은 84%가 여성이라고 결론지었다.",
+    "연구자들은 신경망의 성과를 정답의 수로 평가한다.",
+    "모든 요리사를 여성이라고 추측하면 편향은 오히려 줄어든다.",
+    "무작위로 3분의 2와 3분의 1로 나누어 추측하면 정답률은 약 56%에 그친다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "신경망이 차별을 키우는 쪽이 더 유리해지는 까닭을 우리말 한 문장으로 써 보세요.",
+   ans: "성과를 차별하는 정도가 아니라 정답의 수로만 재기 때문에, 데이터에 있는 편향을 그대로 키우는 쪽이 정답률을 더 높이기 때문이다."
+  }
  ],
  fl: {
-  model: { n:"⑩",
-   toks: [["Feed","v"],["it","m"],["only photographs taken outdoors","m"],["and","c"],
-          ["it","s2"],["may quietly learn","v2"],["about grass","m"]],
-   ko:"야외에서 찍은 사진만 먹이면, 그것은 조용히 풀에 대해 배워 버릴 수도 있다." },
+  model: {
+   n: "⑨",
+   toks: [
+    ["One reason", "s"], ["is", "v"], ["that", "c"], ["researchers", "s2"], ["evaluate", "v2"],
+    ["a network's performance", null], ["by the number of correct answers,", "m"],
+    ["not by the degree to which it discriminates.", "m"]
+   ],
+   ko: "한 가지 이유는 연구자들이 신경망의 성과를 그것이 차별하는 정도가 아니라 정답의 수로 평가하기 때문이다."
+  },
   drill: [
-   { n:"⑤", en:"Inside, numbers pass through layers, and each layer passes on what it found.",
-     ans:"M Inside · S numbers · △V pass · M through layers · [and] S each layer · △V passes on · O what it found",
-     ko:"안에서는 숫자들이 층을 지나가고, 각 층은 자기가 찾아낸 것을 다음으로 넘긴다." },
-   { n:"⑨", en:"But the network has learned the pattern in its examples, not the world.",
-     ans:"S the network · △V has learned · O the pattern in its examples · M not the world",
-     ko:"그러나 신경망이 배운 것은 자기 예시 안의 패턴이지 세계가 아니다." },
-   { n:"⑭", en:"This is why careful teams test a model on cases it has never seen.",
-     ans:"S This · △V is · C why careful teams test a model on cases it has never seen",
-     ko:"신중한 팀이 한 번도 본 적 없는 사례로 모형을 시험하는 이유가 여기에 있다." }
+   {
+    n: "③",
+    en: "A neural network was fed tens of thousands of pictures of human activities and taught to identify the activities and the genders of those portrayed.",
+    ans: "S A neural network · △V was fed · O tens of thousands of pictures of human activities · and △V taught · C to identify the activities and the genders of those portrayed",
+    ko: "한 신경망에 인간 활동 사진 수만 장을 넣고, 묘사된 사람들의 활동과 성별을 식별하도록 학습시켰다."
+   },
+   {
+    n: "⑫",
+    en: "To obtain the best results, it would guess that every cook is female, which means that two-thirds of the answers would be correct.",
+    ans: "M To obtain the best results · S it · △V would guess · [that] S′ every cook · △V′ is · C female · [which] △V′ means · [that] S′ two-thirds of the answers △V′ would be correct",
+    ko: "최상의 결과를 얻으려면 모든 요리사를 여성이라고 추측할 텐데, 그러면 답의 3분의 2가 정답이 된다."
+   },
+   {
+    n: "⑯",
+    en: "In general, if there is a bias in the data, amplifying it can lead to better performance than by trying to be ‘fair’.",
+    ans: "M In general · [if] S′ there △V′ is · C a bias in the data · S amplifying it · △V can lead · M to better performance than by trying to be ‘fair’",
+    ko: "일반적으로 데이터에 편향이 있다면, 그것을 키우는 편이 ‘공정’하려 애쓰는 것보다 더 나은 성과로 이어질 수 있다."
+   }
   ]
  },
  syn: [
-  { n:"⑩", name:"명령문 + and + 절",
-    q:"«Feed it only photographs taken outdoors and it may quietly learn» about grass.",
-    d:"<b>명령문 + and</b>는 '~하라, 그러면 …할 것이다'. if 절과 같은 뜻으로 읽으면 된다.",
-    k:"야외 사진만 먹이면 그것은 조용히 풀에 대해 배워 버릴 수도 있다." },
-  { n:"④", name:"수동태 + 목적어 (show A B 의 수동형)",
-    q:"It «is shown thousands of labelled pictures» instead.",
-    d:"show A B 에서 A를 주어로 올린 형태. <b>be shown + 목적어</b>로 목적어 하나가 남는다.",
-    k:"대신 그것은 이름표가 붙은 사진 수천 장을 보게 된다." }
+  {
+   n: "⑨",
+   name: "전치사 + 관계대명사  to which",
+   q: "…, not by the degree «to which it discriminates».",
+   d: "<b>to which</b>는 <b>the degree</b>를 받아 ‘그만큼 ~하는 정도’를 뜻한다. to the degree 를 관계사로 옮긴 모양이다.",
+   k: "그것이 차별하는 정도"
+  },
+  {
+   n: "⑪",
+   name: "가정을 여는 명령문 Say ~",
+   q: "«Say a network knows nothing except that» two-thirds of the cooks are female.",
+   d: "<b>Say</b>로 시작하는 명령문은 ‘~라고 해 보자’라는 가정을 연다. <b>Suppose</b>와 같은 구실을 한다.",
+   k: "어떤 신경망이 ~ 말고는 아무것도 모른다고 해 보자"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"Change one label and the whole result may move.",
-    k:"이름표 하나를 바꾸면 결과 전체가 움직일 수 있다." },
-  { u:"구문 2", en:"The class was shown two photographs of the same street.",
-    k:"학생들은 같은 거리를 찍은 사진 두 장을 보게 되었다." },
-  { u:"구문 1 + 2", en:"Give it clean data and the model will be shown a fairer world.",
-    k:"깨끗한 자료를 주면 그 모형은 더 공정한 세계를 보게 될 것이다." }
+  { u: "구문 1", en: "We measured the speed at which the model learned new labels.", k: "우리는 그 모형이 새 이름표를 배우는 속도를 측정했다." },
+  { u: "구문 2", en: "Say the data contains twice as many photos of one group.", k: "자료에 한 집단의 사진이 두 배로 많다고 해 보자." },
+  { u: "구문 1 + 2", en: "Say we lower the rate at which the network guesses; accuracy falls.", k: "신경망이 추측하는 비율을 낮춘다고 해 보자. 그러면 정확도가 떨어진다." }
  ],
- wtype: ["지엽","정답","무관","무관","반대"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["개와 고양이는 문제를 여는 예시일 뿐이다"],["정답"],
-       ["교사 대체 이야기는 글에 나오지 않는다"],["사진 촬영법은 글의 소재가 아니다"],
-       ["글은 신중히 시험하면 쓸 수 있다고 본다 — 정반대다"]],
- src: [["④"],["⑥"],["⑫과 어긋남 — 왜 그렇게 답했는지 말하지 못한다"],["⑩"],["⑭"]],
+ why: [
+  ["사물 인식의 한 대목만 붙든 지엽적인 제목이다"],
+  ["정답"],
+  ["글은 신경망이 편향을 오히려 키운다고 말한다 — 정반대다"],
+  ["사진을 잘 찍는 방법은 글에 나오지 않는다"],
+  ["가사 분담은 글에서 다루지 않는다"]
+ ],
+ src: [["④"], ["⑦"], ["⑨"], ["⑬과 어긋남 — 편향을 최대로 키운다"], ["⑮"]],
  kb: {
-  title:"기계가 엉뚱하게 맞히는 법",
-  lead:"정답을 맞혔다고 이유까지 맞은 것은 아니다.",
+  title: "정답률이 감추는 것",
+  lead: "잘 맞히는 것과 옳게 맞히는 것은 다르다",
   items: [
-   ["늑대인가, 눈밭인가",
-    "2016년 리베이로 연구진은 늑대와 허스키를 구별하도록 학습시킨 분류기가 실제로는 배경의 눈을 보고 판단한다는 것을 보였다. 정확도는 높았지만 근거는 엉뚱했다."],
-   ["병원 표식을 배운 진단 모형",
-    "여러 의료 영상 연구에서 모형이 병변이 아니라 촬영 기기나 병원 표식을 단서로 삼은 사례가 보고되었다. 다른 병원 자료로 시험하면 성능이 크게 떨어진다."],
-   ["'설명 가능한 AI'라는 분야",
-    "왜 그렇게 판단했는지를 사람이 검토할 수 있게 만드는 연구를 XAI라 부른다. 유럽연합 규정 등에서 자동 결정에 대한 설명 요구가 논의되면서 실무 과제가 되었다."]
+   ["원 논문", "이 글이 소개한 실험은 Zhao 등(2017)의 「Men Also Like Shopping」이다. 이미지 속 활동과 성별을 함께 예측하게 했더니 학습 자료의 성별 쏠림보다 예측이 더 쏠렸다는 결과를 보고했다."],
+   ["정확도의 함정", "환자 100명 중 1명만 병이 있는 자료에서 ‘모두 정상’이라고 답하면 정확도는 99%가 된다. 정확도 하나만 보면 아무것도 못 찾는 모형이 최고가 된다. 그래서 정밀도와 재현율을 함께 본다."],
+   ["편향 완화라는 과제", "학습 자료의 균형을 맞추거나, 예측 결과가 집단별로 비슷한 비율이 되도록 제약을 거는 방법이 쓰인다. 어느 쪽이든 정답률이 얼마간 내려가는 것을 감수해야 한다."]
   ],
-  ask:"내가 어떤 문제를 '풀 줄 안다'고 할 때, 답만 맞히는 것과 이유를 아는 것을 어떻게 구별할 수 있을까?"
- }
+  ask: "여러분이 무언가를 ‘잘한다’고 말할 때, 그 잘함은 무엇으로 측정되고 있는가?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 15 ───────────────────────────── */
 {
- no: "15", key: "feed",
- accent: "#C24A62", tint: "#FAE7EB", deep: "#8B2740",
- en: "The Room That Only Agrees",
- ko: "동의만 돌아오는 방",
- goal: "추천 알고리즘이 의견을 좁히는 구조와 그 한계를 설명할 수 있다.",
- fig: "Figure 1  같은 방향으로만 넓어지는 방.",
- tip: "먼저 생각해 보자. 내 화면에 뜨는 글들은 누가 고른 것일까?",
- sent: [
-  "A feed is not a window; it is a selection.",
-  "Software watches what you stop to read and offers more of the same.",
-  "The aim behind that choice is simple, and it is not agreement.",
-  "The aim is attention, because attention is what advertisers pay for.",
-  "Posts that make people angry hold attention very well.",
-  "So the calmest account of an issue is rarely the one that spreads.",
-  "Over months the feed narrows without ever announcing it.",
-  "You still see disagreement, but mostly the weakest version of it.",
-  "The other side arrives already made to look foolish.",
-  "This is in one way worse than never meeting the other side at all.",
-  "A reader who has seen only weak arguments believes the question is settled.",
-  "Researchers disagree about how strong this effect is in practice.",
-  "Some studies find that most people still meet a fairly wide mix of views.",
-  "Even so, the machine has a direction, and the direction is not neutral.",
-  "Knowing that the room was arranged is the first step out of it."
+ no: "15", key: "feed", accent: "#C24A62", tint: "#FAE7EB", deep: "#8B2740",
+ en: "Anti-Social Media",
+ ko: "‘좋아요’가 대답이 될 수 없는 질문",
+ goal: "필자가 청소년기까지 소셜 미디어를 미루라고 권하는 근거를 정리해 설명할 수 있다.",
+ fig: "Figure 1  화면이 골라 주는 것들 — 무엇이 자주 보이고 무엇이 잘 보이지 않는가.",
+ tip: "먼저 생각해 보자. 올린 글에 ‘좋아요’가 적게 달린 날, 기분은 어떠했는가?",
+ sent: T(15).sent, kor: T(15).kor,
+ bank: [
+  ["correlation", "①", "상관관계"],
+  ["retreat", "②", "물러나다"],
+  ["disparaging", "⑤", "비방하는"],
+  ["adolescence", "⑩", "청소년기"],
+  ["conditional", "⑬", "조건부의"],
+  ["fickle", "⑰", "변덕스러운"]
  ],
- kor: [
-  "피드는 창이 아니라 선별이다.",
-  "소프트웨어는 당신이 멈춰서 읽는 것을 지켜보고, 같은 것을 더 내놓는다.",
-  "그 선택 뒤의 목적은 단순하며, 그것은 동의가 아니다.",
-  "목적은 주의(注意)다. 광고주가 돈을 내는 대상이 바로 주의이기 때문이다.",
-  "사람을 화나게 하는 글은 주의를 아주 잘 붙잡는다.",
-  "그래서 어떤 사안에 대한 가장 차분한 설명은 좀처럼 퍼지지 않는다.",
-  "여러 달에 걸쳐 피드는 그렇다고 알리는 일 없이 좁아진다.",
-  "당신은 여전히 반대 의견을 보지만, 대개는 그중 가장 약한 형태다.",
-  "반대편은 이미 어리석어 보이도록 다듬어진 채로 도착한다.",
-  "이것은 어떤 면에서 반대편을 아예 만나지 않는 것보다 나쁘다.",
-  "약한 논거만 본 독자는 그 문제가 이미 결판났다고 믿는다.",
-  "이 효과가 실제로 얼마나 강한지에 대해서는 연구자들의 의견이 갈린다.",
-  "어떤 연구들은 대부분의 사람이 여전히 꽤 폭넓은 견해를 접한다고 본다.",
-  "그렇다 해도 그 기계에는 방향이 있고, 그 방향은 중립이 아니다.",
-  "이 방이 누군가 배치한 것임을 아는 일이 거기서 빠져나오는 첫걸음이다."
+ defs: [
+  ["correlation", "a link between two things that change together"],
+  ["retreat", "to move back to a safer or quieter place"],
+  ["disparaging", "meant to make someone look worthless"],
+  ["adolescence", "the years between childhood and adulthood"],
+  ["conditional", "given only if something else is true"],
+  ["fickle", "changing feelings often and without reason"]
  ],
- bank: [["selection","①","선별"],["attention","④","주의, 관심"],["spread","⑥","퍼지다"],
-        ["narrow","⑦","좁아지다"],["settle","⑪","결판나다"],["neutral","⑭","중립의"]],
- defs: [["selection","a set of things chosen out of many"],
-        ["attention","the act of directing the mind to something"],
-        ["spread","to reach more and more people"],
-        ["narrow","to become less wide"],
-        ["settle","to be finally decided"],
-        ["neutral","not favouring either side"]],
- defOrder: [1,3,5,0,4,2],
+ defOrder: [2, 5, 0, 4, 1, 3],
  flow: [
-  ["What a feed is","A feed is a selection, not a window",null],
-  ["The aim","Software chases (  ①  ), which is what advertisers buy","attention"],
-  ["Side effect","Angry posts travel further than (  ②  ) ones","calm"],
-  ["The real harm","You meet only the (  ③  ) version of the other side","weakest"],
-  ["Honest limit","Researchers (  ④  ) about how strong the effect is","disagree"]
+  ["The finding", "Social interaction is tied to health and well-being", null],
+  ["The gap", "Posting to distant followers is not very (  ①  )", "social"],
+  ["The harm", "Children grow (  ②  ) about likes and follower counts", "anxious"],
+  ["The advice", "Delay social media through (  ③  )", "adolescence"],
+  ["The reason", "A child needs (  ④  ) love from real people", "unconditional"]
  ],
- flowBogi: "attention · calm · weakest · disagree · window · neutral",
+ flowBogi: "social · anxious · adolescence · unconditional · loud · childhood",
  para: [
-  ["① A feed is not a window","What you see has been ______ for you.","chosen"],
-  ["⑥ rarely the one that spreads","Calm accounts travel ______ than angry ones.","less"],
-  ["⑦ the feed narrows without ever announcing it","The change happens ______.","silently"],
-  ["⑨ already made to look foolish","Opponents arrive in a ______ form.","weakened"],
-  ["⑭ the direction is not neutral","The system carries a built-in ______.","bias"]
+  ["② followers they barely know in real life", "They hardly know these people ______ the screen.", "off"],
+  ["⑤ a lack of comments", "No reply feels like being ______.", "ignored"],
+  ["⑦ you don't see the effect of your words", "Online you cannot ______ what your words do.", "see"],
+  ["⑫ based on performance, appearance, and shock value", "Online liking rests on how you ______.", "perform"],
+  ["⑰ an online society that can be fickle and cruel", "The crowd online can turn ______ at any moment.", "cold"]
  ],
- paraBogi: "chosen · less · silently · weakened · bias · loudly · stronger · window",
+ paraBogi: "off · ignored · see · perform · cold · on · praised · hear",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How Advertising Companies Are Run","Meeting Only the Weakest Opposition",
-       "Social Media Should Be Banned","Why Angry People Read More",
-       "A History of the Internet Feed"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["피드의 목적은 동의가 아니라 주의를 붙잡는 것이다.","화나게 하는 글은 주의를 잘 붙잡는다.",
-       "연구자들은 이 효과의 크기에 대해 의견이 일치한다.","약한 논거만 본 독자는 문제가 끝났다고 믿는다.",
-       "필자는 방이 배치되었음을 아는 것이 첫걸음이라고 본다."], ans:3},
-  {t:"write", q:"필자가 '아예 만나지 않는 것보다 나쁘다'고 한 이유를 우리말 한 문장으로 써 보세요.",
-   ans:"약한 반대 논거만 보면 그 문제를 이미 다 따져 본 것으로 착각하게 되기 때문이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How Many Followers a Child Should Have",
+    "Wait: What a Child Needs First",
+    "Early Social Media Builds Confidence",
+    "How to Take a Better Selfie",
+    "The History of Online Networks"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "여러 연구는 사회적 상호 작용과 건강·안녕 사이의 강한 상관관계를 보여 주었다.",
+    "일부 초등학생도 소셜 미디어를 접하면서 ‘좋아요’ 수에 더 불안해진다.",
+    "온라인에서는 말의 효과를 볼 수 없어서 잔인한 말을 하기 쉽다.",
+    "온라인에서의 인기는 있는 그대로의 모습에 대한 무조건적인 애정에 기반한다.",
+    "필자는 자녀에게 소셜 미디어를 알려 주는 일을 청소년기까지 미루라고 제안한다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "필자가 아이에게 필요하다고 말하는 ‘확고한 기반’이 무엇인지 우리말 한 문장으로 써 보세요.",
+   ans: "자신이 아는 실제 사람들에게 있는 그대로의 자기 모습으로 좋아함을 받는 경험이 그 확고한 기반이다."
+  }
  ],
  fl: {
-  model: { n:"⑪",
-   toks: [["A reader","s"],["who has seen only weak arguments","m"],["believes","v"],
-          ["the question","s2"],["is settled","v2"]],
-   ko:"약한 논거만 본 독자는 그 문제가 이미 결판났다고 믿는다." },
+  model: {
+   n: "⑪",
+   toks: [
+    ["As", "c"], ["your child", "s2"], ["grows", "v2"], ["into a teenager,", "m"],
+    ["she", "s"], ["needs", "v"], ["the firm foundation of being liked for who she is,", null],
+    ["by real people she knows.", "m"]
+   ],
+   ko: "자녀가 십 대로 자라 갈 때, 그 아이에게는 자신이 아는 실제 사람들에게 있는 그대로 좋아함을 받는다는 확고한 기반이 필요하다."
+  },
   drill: [
-   { n:"④", en:"The aim is attention, because attention is what advertisers pay for.",
-     ans:"S The aim · △V is · C attention · [because] S′ attention · △V′ is · C what advertisers pay for",
-     ko:"목적은 주의다. 광고주가 돈을 내는 대상이 바로 주의이기 때문이다." },
-   { n:"⑦", en:"Over months the feed narrows without ever announcing it.",
-     ans:"M Over months · S the feed · △V narrows · M without ever announcing it",
-     ko:"여러 달에 걸쳐 피드는 그렇다고 알리는 일 없이 좁아진다." },
-   { n:"⑮", en:"Knowing that the room was arranged is the first step out of it.",
-     ans:"S Knowing that the room was arranged · △V is · C the first step out of it",
-     ko:"이 방이 누군가 배치한 것임을 아는 일이 거기서 빠져나오는 첫걸음이다." }
+   {
+    n: "②",
+    en: "Yet there's not much social about kids retreating to their rooms to post selfies and comments to dozens or hundreds of followers they barely know in real life.",
+    ans: "M Yet · △V there's · C not much social · M about kids retreating to their rooms · M to post selfies and comments to dozens or hundreds of followers they barely know in real life",
+    ko: "그러나 아이들이 방으로 물러나 현실에서 거의 모르는 수십, 수백 명의 팔로워에게 셀카와 댓글을 올리는 데는 사회적인 것이 별로 없다."
+   },
+   {
+    n: "⑧",
+    en: "It's one thing to post “No one likes you” and hit send from the comfort of your home.",
+    ans: "△V It's · C one thing · S to post “No one likes you” and hit send · M from the comfort of your home",
+    ko: "집에서 편안하게 ‘아무도 너를 좋아하지 않아’라고 올리고 보내기를 누르는 것은 한 가지 일이다."
+   },
+   {
+    n: "⑰",
+    en: "By limiting social media, you will help her find the answer in real people who care about her instead of an online society that can be fickle and cruel.",
+    ans: "M By limiting social media · S you · △V will help · O her find the answer · M in real people who care about her instead of an online society that can be fickle and cruel",
+    ko: "소셜 미디어를 제한함으로써, 변덕스럽고 잔인할 수 있는 온라인 사회 대신 자신을 아끼는 실제 사람들에게서 답을 찾도록 도울 수 있다."
+   }
   ]
  },
  syn: [
-  { n:"⑪", name:"주격 관계대명사절 + 현재완료",
-    q:"A reader «who has seen only weak arguments» believes the question is settled.",
-    d:"who 절이 주어 A reader 를 꾸민다. 주어가 길어져도 <b>본동사는 believes</b> 하나임을 놓치지 않는다.",
-    k:"약한 논거만 본 독자는 그 문제가 결판났다고 믿는다." },
-  { n:"⑮", name:"동명사 주어",
-    q:"«Knowing that the room was arranged» is the first step out of it.",
-    d:"동명사구가 주어이면 <b>단수 취급</b>해 is 를 쓴다. '~하는 것은'으로 옮긴다.",
-    k:"그 방이 배치된 것임을 아는 일이 첫걸음이다." }
+  {
+   n: "⑧",
+   name: "It is one thing to ~, another to …",
+   q: "«It's one thing to post “No one likes you” and hit send» from the comfort of your home.",
+   d: "두 일을 견주어 ‘~하는 것과 …하는 것은 전혀 다르다’를 나타낸다. <b>it</b>은 가주어, <b>to부정사</b>가 진주어다.",
+   k: "~하는 것과 …하는 것은 별개의 일이다"
+  },
+  {
+   n: "⑪",
+   name: "동명사의 수동형  being p.p.",
+   q: "…she needs the firm foundation of «being liked for who she is», by real people she knows.",
+   d: "<b>being + 과거분사</b>는 ‘~됨, ~받음’을 뜻하는 동명사다. 여기서는 전치사 <b>of</b>의 목적어로 쓰였다.",
+   k: "있는 그대로의 자신으로 좋아함을 받는 것"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"A student who has read only one side often sounds certain.",
-    k:"한쪽 이야기만 읽은 학생은 흔히 확신에 찬 것처럼 말한다." },
-  { u:"구문 2", en:"Choosing your own sources takes more time than scrolling.",
-    k:"자기 출처를 고르는 일은 화면을 넘기는 것보다 시간이 더 든다." },
-  { u:"구문 1 + 2", en:"Asking who arranged the room is what a reader who has been fooled learns to do.",
-    k:"누가 그 방을 배치했는지 묻는 일은, 속아 본 독자가 배우게 되는 일이다." }
+  { u: "구문 1", en: "It is one thing to read the rule, another to follow it.", k: "규칙을 읽는 것과 그것을 지키는 것은 별개의 일이다." },
+  { u: "구문 2", en: "She was tired of being judged by a number on a screen.", k: "그녀는 화면의 숫자로 평가받는 것에 지쳐 있었다." },
+  { u: "구문 1 + 2", en: "It is one thing to enjoy being liked, another to need it every day.", k: "좋아함을 받아 즐거운 것과 그것을 매일 필요로 하는 것은 별개의 일이다." }
  ],
- wtype: ["무관","정답","반대","지엽","무관"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["광고 회사 운영 방식은 글에 나오지 않는다"],["정답"],
-       ["글은 금지를 주장하지 않는다 — 정반대다"],
-       ["화나는 글이 잘 퍼진다는 것은 근거의 한 부분일 뿐이다"],
-       ["인터넷의 역사는 글의 소재가 아니다"]],
- src: [["③④"],["⑤"],["⑫과 어긋남 — 연구자들의 의견이 갈린다"],["⑪"],["⑮"]],
+ why: [
+  ["팔로워 수 자체는 글의 초점이 아닌 지엽적인 제목이다"],
+  ["정답"],
+  ["글은 이른 소셜 미디어가 불안을 키운다고 말한다 — 정반대다"],
+  ["사진을 잘 찍는 방법은 글에 나오지 않는다"],
+  ["온라인 네트워크의 역사는 글에서 다루지 않는다"]
+ ],
+ src: [["①"], ["④"], ["⑦"], ["⑫와 어긋남 — 성과·외모·충격 효과에 기반한 조건부 애정이다"], ["⑩"]],
  kb: {
-  title:"화면 뒤의 선택",
-  lead:"보이지 않는 편집자가 하루에도 몇 번씩 목록을 고쳐 쓴다.",
+  title: "숫자가 대답이 될 때",
+  lead: "‘나를 좋아하나요?’라는 물음에 무엇이 답할 수 있을까",
   items: [
-   ["'필터 버블'과 '메아리 방'",
-    "필터 버블은 2011년 일라이 파리저가, 메아리 방은 그보다 앞서 캐스 선스타인이 널리 알린 말이다. 앞의 것은 알고리즘이 좁히는 쪽을, 뒤의 것은 사람들이 스스로 모이는 쪽을 가리킨다."],
-   ["연구 결과는 한쪽으로 모이지 않는다",
-    "2015년 페이스북 자료를 쓴 연구는 개인의 선택이 알고리즘보다 더 크게 작용한다고 보고했다. 반대로 추천의 영향이 크다는 연구도 있어, 크기를 두고 논쟁이 이어지는 중이다."],
-   ["'허수아비 때리기'라는 오래된 이름",
-    "상대의 가장 약한 주장을 대신 세워 놓고 무너뜨리는 방식을 논리학에서는 허수아비 논증이라 부른다. 피드가 자동으로 하는 일이 이것과 닮았다."]
+   ["연령 제한의 뿌리", "미국의 어린이 온라인 사생활 보호법(COPPA, 1998)은 13세 미만 아동의 개인 정보를 수집할 때 부모 동의를 받도록 했다. 많은 서비스가 가입 연령을 13세로 정한 데에는 이 법의 부담을 피하려는 이유가 크다."],
+   ["‘좋아요’의 탄생", "Facebook의 좋아요 버튼은 2009년에 공개되었다. 반응을 숫자로 셀 수 있게 되면서, 게시물의 값어치가 셀 수 있는 형태로 바뀌었다."],
+   ["숨긴 좋아요 실험", "Instagram은 2019년부터 여러 나라에서 남의 게시물의 좋아요 수를 감추는 시험을 했고, 2021년에는 이용자가 직접 숨김을 고를 수 있게 했다. 숫자를 보이지 않게 하는 것만으로 무엇이 달라지는지 확인하려는 시도였다."]
   ],
-  ask:"내 화면에 마지막으로 뜬 글 다섯 개를 떠올려 보자. 그중 내 생각과 다른 것은 몇 개였는가?"
- }
+  ask: "여러분이 올린 글에 아무 반응이 없을 때, 그 침묵을 무엇이라고 해석해 왔는가?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 }
-]};
+
+ ]
+};

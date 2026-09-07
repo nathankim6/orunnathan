@@ -438,4 +438,17 @@ table.para th,table.cu th{color:var(--sub)}
 
 /* READ RIGHT 뒷면(이어지는 면) */
 .rrh.cont{margin-top:0}
+
+/* ── 넘침 방지 4단계 (.tightest) — 마무리 상자를 실은 마지막 해설 면의 마지막 조임.
+   글자 크기는 건드리지 않고 행간·여백만 한 단계 더 줄인다 */
+.page.tightest .akey td{line-height:1.3}
+.page.tightest .akey .hint{line-height:1.3}
+.page.tightest .trans{line-height:1.3;padding:.8mm 0}
+.page.tightest .how{margin-top:.8mm;gap:2.4mm}
+.page.tightest .how .box{padding:1mm 2.4mm}
+.page.tightest .how .box::before{margin:-1mm -2.4mm 1.2mm}
+.page.tightest .how .box h4{margin-bottom:.4mm}
+.page.tightest .how .box .n{margin-bottom:.5mm}
+.page.tightest .how .chk li{line-height:1.4;margin-bottom:.3mm}
+.page.tightest .how .box p{line-height:1.4}
 `;

@@ -335,7 +335,7 @@ if (ANSBACK) UNITS.forEach(UU=>{ useUnit(UU); pushAnswers(); });
 /* ── 넘침 방지(guard): 인쇄 직전에 면마다 본문 하단(탭·푸터 제외)을 재서, 아래 여백 18mm 선(279mm = clip.py 의 본문 하한)을
    넘는 면에만 조임 클래스를 한 단계씩 붙인다. 넘치지 않는 면은 손대지 않으므로 규격 면의 모양은 그대로다.
    READING 면(.psg): dense(행간 1.7) → snug(헤더 여백) → denser(1.6) — 지문 글자 수만으로는 두 줄 제목이나 긴 지문을 미리 알 수 없다.
-   해설 면(.akey): tight → tighta → tighter.   그 뒤 모든 면 공통 그물: t1(블록 여백) → t2(소단 여백·표 행 패딩) → t3(부속 블록 행간).
+   해설 면(.akey): tight → tighta → tighter → tightest.   그 뒤 모든 면 공통 그물: t1(블록 여백) → t2(소단 여백·표 행 패딩) → t3(부속 블록 행간).
    글자 크기는 어느 단계에서도 건드리지 않는다.   잰 값은 data-low(mm) 로 남긴다 */
 const GUARD=`<script>
 addEventListener("load",()=>{
@@ -347,7 +347,7 @@ addEventListener("load",()=>{
   const psg=pg.querySelector(".psg");
   const steps=[];
   if(psg) steps.push([psg,"dense"],[pg,"snug"],[psg,"denser"]);
-  if(pg.querySelector(".akey")) steps.push([pg,"tight"],[pg,"tighta"],[pg,"tighter"]);
+  if(pg.querySelector(".akey")) steps.push([pg,"tight"],[pg,"tighta"],[pg,"tighter"],[pg,"tightest"]);
   steps.push([pg,"t1"],[pg,"t2"],[pg,"t3"]);
   for(const [el,cls] of steps){if(low(pg)<=LIM)break;el.classList.add(cls);}
   pg.dataset.low=(low(pg)/96*25.4).toFixed(1);
