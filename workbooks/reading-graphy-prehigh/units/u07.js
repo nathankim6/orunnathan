@@ -1,684 +1,728 @@
-/* Unit 7 · Field 7 — Sports & Entertainment 스포츠·연예
-   원서 Theme 31–35 의 주제를 예비고1 수준으로 다시 쓴 것. */
+/* Unit 7 · Sports & Entertainment — 원문 Theme 31–35 */
+const R = require("../src/orig/all.json");
+const T = n => R[n - 1];
+
 module.exports = {
  no: 7,
  field: "Sports & Entertainment",
  ko: "스포츠·연예",
  tagline: "보는 일과 하는 일 — 무엇이 값을 만드는가",
- next: { en: "Politics, Law & History", ko: "규칙과 기록이 어떻게 만들어졌는지 읽습니다", words: "175–205 words" },
+ next: { en: "Politics, Law & History", ko: "규칙과 기록이 어떻게 만들어졌는지 읽습니다", words: "267–309 words" },
  lessons: [
+
+/* ───────────────────────────── 31 ───────────────────────────── */
 {
- no: "31", key: "coach",
- accent: "#35708C", tint: "#E4EFF4", deep: "#1E4A61",
- en: "The Coach Who Says Less",
- ko: "말을 줄이는 코치",
- goal: "좋은 코칭이 지시의 양이 아니라 시점과 자기 조정에 달려 있음을 설명할 수 있다.",
- fig: "Figure 1  말이 많은 코치와 기다리는 코치.",
- tip: "먼저 생각해 보자. 누군가 옆에서 계속 알려 주면 정말 더 빨리 배울까?",
- sent: [
-  "The loudest coach on the field is rarely the most effective one.",
-  "Beginners do need clear instruction, and nobody learns a grip by guessing.",
-  "But after the basics, constant correction starts to work against the learner.",
-  "A player told what to fix stops asking what went wrong.",
-  "The judgement that should grow inside the athlete stays outside, in the coach.",
-  "Studies of motor learning found this pattern again and again.",
-  "Groups given feedback after every attempt performed well during practice.",
-  "The same groups performed worse a week later than groups told far less.",
-  "Immediate feedback improves today and weakens tomorrow.",
-  "A good coach therefore chooses when to speak, not merely what to say.",
-  "Silence after a poor attempt gives the athlete room to notice something.",
-  "The question What did you feel there? teaches more than a correction does.",
-  "None of this means coaches should stand back and watch.",
-  "Someone must design the practice, spot the danger, and keep the standard honest.",
-  "The skill is knowing which of those jobs the moment actually calls for."
+ no: "31", key: "coach", accent: "#35708C", tint: "#E4EFF4", deep: "#1E4A61",
+ en: "The Role of Coaches",
+ ko: "교사도 아니고 선수도 아닌 자리",
+ goal: "코치라는 직업이 어떻게 생겨나 학교 안에 자리 잡았는지 순서대로 설명할 수 있다.",
+ fig: "Figure 1  말이 많은 코치와 기다리는 코치 — 코치는 어떤 의미의 교사인가.",
+ tip: "먼저 생각해 보자. 운동부 코치는 학교의 교사인가, 아니면 다른 무엇인가?",
+ sent: T(31).sent, kor: T(31).kor,
+ bank: [
+  ["coincide with", "①", "동시에 일어나다"],
+  ["autonomous", "①", "자율적인"],
+  ["pursuit", "③", "활동, 추구"],
+  ["attain", "④", "얻다"],
+  ["administration", "⑤", "행정 부서"],
+  ["niche", "⑥", "꼭 맞는 자리"]
  ],
- kor: [
-  "경기장에서 가장 목소리가 큰 코치가 가장 효과적인 코치인 경우는 드물다.",
-  "초보자에게는 분명한 지시가 필요하고, 그립을 짐작만으로 배우는 사람은 없다.",
-  "그러나 기본기를 넘어서면, 끊임없는 교정은 배우는 사람에게 불리하게 작용하기 시작한다.",
-  "무엇을 고치라는 말을 들은 선수는 무엇이 잘못됐는지 묻기를 그만둔다.",
-  "선수 안에서 자라야 할 판단이 바깥에, 코치에게 머물러 있게 된다.",
-  "운동 학습 연구는 이 무늬를 거듭해서 확인했다.",
-  "시도할 때마다 피드백을 받은 집단은 연습 중에는 잘했다.",
-  "그 같은 집단이 일주일 뒤에는 훨씬 덜 들은 집단보다 못했다.",
-  "즉각적인 피드백은 오늘을 좋게 하고 내일을 약하게 만든다.",
-  "그래서 좋은 코치는 무엇을 말할지만이 아니라 언제 말할지를 고른다.",
-  "실패한 시도 뒤의 침묵은 선수에게 무언가를 알아챌 자리를 준다.",
-  "\"거기서 뭐가 느껴졌어?\"라는 질문이 교정보다 더 많은 것을 가르친다.",
-  "이 가운데 무엇도 코치가 물러서서 구경만 하라는 뜻은 아니다.",
-  "누군가는 연습을 설계하고, 위험을 알아채고, 기준을 정직하게 지켜야 한다.",
-  "기술은 지금 이 순간이 그 일들 가운데 무엇을 요구하는지 아는 데 있다."
+ defs: [
+  ["coincide with", "to happen at the same time as"],
+  ["autonomous", "running by its own rules"],
+  ["pursuit", "an activity you spend time on"],
+  ["attain", "to reach or gain something"],
+  ["administration", "the people who run an organization"],
+  ["niche", "a place that suits someone well"]
  ],
- bank: [["effective","①","효과적인"],["instruction","②","지시"],["correction","③","교정"],
-        ["athlete","⑤","선수"],["attempt","⑦","시도"],["standard","⑭","기준"]],
- defs: [["effective","producing the result that was wanted"],
-        ["instruction","a clear statement of what to do"],
-        ["correction","a change that fixes a mistake"],
-        ["athlete","a person trained in a sport"],
-        ["attempt","one try at doing something"],
-        ["standard","a level that work is measured against"]],
- defOrder: [3,0,5,1,4,2],
+ defOrder: [4, 1, 5, 0, 3, 2],
  flow: [
-  ["Common belief","The loudest coach must be the most effective",null],
-  ["Where it holds","Beginners do need clear (  ①  )","instruction"],
-  ["Where it fails","Constant correction moves (  ②  ) out of the athlete","judgement"],
-  ["Evidence","Frequent feedback helps today and weakens (  ③  )","tomorrow"],
-  ["The real skill","Choosing (  ④  ) to speak, not only what to say","when"]
+  ["Where they came from", "Coaches appeared as sport itself rose", null],
+  ["The old word", "Before the Civil War, coach meant a private (  ①  )", "tutor"],
+  ["The turn", "Within a decade coaches won some (  ②  )", "recognition"],
+  ["The reason", "Academic status let the college claim (  ③  )", "control"],
+  ["The limit", "They were not (  ④  ) in the conventional sense", "teachers"]
  ],
- flowBogi: "instruction · judgement · tomorrow · when · silence · danger",
+ flowBogi: "tutor · recognition · control · teachers · players · silence",
  para: [
-  ["④ stops asking what went wrong","Being told removes the need to ______.","self-check"],
-  ["⑤ stays outside, in the coach","Judgement remains ______ rather than internal.","external"],
-  ["⑧ performed worse a week later","The gain did not ______.","last"],
-  ["⑪ gives the athlete room to notice","Silence creates space for ______.","discovery"],
-  ["⑮ which of those jobs the moment calls for","Good coaching is a matter of ______.","timing"]
+  ["① coinciding with the rise of sport", "They appeared as sport was ______.", "growing"],
+  ["③ referring most often to a private tutor", "The word usually meant a private ______.", "teacher"],
+  ["④ had already attained some recognition", "They had won some ______ by then.", "respect"],
+  ["⑤ could claim some control", "The college could keep a ______ on them.", "hold"],
+  ["⑦ no assurance of happiness or longevity", "No promise of a happy or long ______.", "life"]
  ],
- paraBogi: "self-check · external · last · discovery · timing · obey · internal · volume",
+ paraBogi: "growing · teacher · respect · hold · life · fading · student · game",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How to Hold a Racket Correctly","Knowing When to Speak, Not Only What",
-       "Coaches Should Stop Giving Feedback","The Highest-Paid Coaches in Sport",
-       "Why Beginners Learn Faster Than Experts"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["초보자에게는 분명한 지시가 필요하다.","매번 피드백을 받은 집단은 연습 중에는 잘했다.",
-       "필자는 코치가 물러서서 구경만 해야 한다고 본다.","실패 뒤의 침묵은 선수에게 알아챌 자리를 준다.",
-       "누군가는 연습을 설계하고 위험을 알아채야 한다."], ans:3},
-  {t:"write", q:"필자가 즉각적인 피드백의 문제로 지적한 것을 우리말 한 문장으로 써 보세요.",
-   ans:"연습 당일의 수행은 좋아지지만 나중까지 남는 학습은 오히려 약해진다는 것이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "What B. H. Hall Wrote About College Words",
+    "A New Profession That Did Not Fit the School",
+    "Coaches Became Ordinary Classroom Teachers",
+    "How to Train for a Long Race",
+    "The Rules of Nineteenth-Century Football"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "코치와 트레이너는 19세기 후반에 등장한 본질적으로 새로운 전문직 집단이었다.",
+    "남북전쟁 이전에 coach 라는 낱말은 주로 개인 교사를 가리켰다.",
+    "남북전쟁이 끝난 뒤 10년 안에 일부 코치들은 어느 정도 인정을 받고 있었다.",
+    "코치에게 학문적 지위를 넓혀 준 것은 주로 코치의 처우를 높이기 위해서였다.",
+    "코치는 일반 학생이나 관중에게 신체적 혜택을 거의 주지 않았다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "필자가 코치를 전통적 의미의 교사로 보지 않는 근거를 우리말 한 문장으로 써 보세요.",
+   ans: "일반 학생이나 관중에게 신체적 혜택을 거의 주지 않았고, 팀을 이룬 소수에게조차 행복이나 장수를 보장하지 않았기 때문이다."
+  }
  ],
  fl: {
-  model: { n:"⑧",
-   toks: [["The same groups","s"],["performed","v"],["worse","m"],["a week later","m"],
-          ["than groups told far less","m"]],
-   ko:"그 같은 집단이 일주일 뒤에는 훨씬 덜 들은 집단보다 못했다." },
+  model: {
+   n: "⑤",
+   toks: [
+    ["The extension of any form of academic status to the coaches", "s"], ["was", "v"],
+    ["largely a means", null], ["by which", "c"],
+    ["a college's faculty or administration", "s2"], ["could claim", "v2"],
+    ["some control over the athletic behavior of the students and athletic management in general.", null]
+   ],
+   ko: "코치에게 어떤 형태로든 학문적 지위를 넓혀 준 것은, 대학의 교수진이나 행정 부서가 학생의 운동 행동과 운영 전반에 대해 어느 정도 통제권을 주장할 수 있는 수단이었다."
+  },
   drill: [
-   { n:"③", en:"But after the basics, constant correction starts to work against the learner.",
-     ans:"M after the basics · S constant correction · △V starts · M to work against the learner",
-     ko:"그러나 기본기를 넘어서면, 끊임없는 교정은 배우는 사람에게 불리하게 작용하기 시작한다." },
-   { n:"⑩", en:"A good coach therefore chooses when to speak, not merely what to say.",
-     ans:"S A good coach · M therefore · △V chooses · O when to speak · M not merely what to say",
-     ko:"그래서 좋은 코치는 무엇을 말할지만이 아니라 언제 말할지를 고른다." },
-   { n:"⑮", en:"The skill is knowing which of those jobs the moment actually calls for.",
-     ans:"S The skill · △V is · C knowing which of those jobs the moment actually calls for",
-     ko:"기술은 지금 이 순간이 그 일들 가운데 무엇을 요구하는지 아는 데 있다." }
+   {
+    n: "②",
+    en: "The very word coach appears not to have been associated with games and athletic competition in the years before the Civil War.",
+    ans: "S The very word coach · △V appears · C not to have been associated · M with games and athletic competition · M in the years before the Civil War",
+    ko: "coach 라는 낱말 자체는 남북전쟁 이전에는 경기나 운동 시합과 결부되지 않았던 것으로 보인다."
+   },
+   {
+    n: "④",
+    en: "Within a decade after the Civil War, however, coaches who regarded sport as a scientific study had already attained some recognition in several of the older schools of the Northeast and in a number of well-sponsored private athletic clubs.",
+    ans: "M Within a decade after the Civil War · S coaches [who] △V′ regarded sport as a scientific study · △V had already attained · O some recognition · M in several of the older schools of the Northeast and in a number of well-sponsored private athletic clubs",
+    ko: "그러나 남북전쟁 후 10년 안에, 스포츠를 과학적 연구로 본 코치들은 북동부의 오래된 학교 몇 곳과 후원이 좋은 사설 운동 클럽에서 이미 어느 정도 인정을 얻고 있었다."
+   },
+   {
+    n: "⑥",
+    en: "For this reason, although they found a niche in the schools, coaches did not act as teachers in the conventional sense.",
+    ans: "M For this reason · [although] S′ they · △V′ found · O a niche in the schools · S coaches · △V did not act · M as teachers in the conventional sense",
+    ko: "이런 이유로 코치들은 학교 안에 자리를 얻었지만, 전통적인 의미의 교사처럼 활동하지는 않았다."
+   }
   ]
  },
  syn: [
-  { n:"④", name:"과거분사구의 명사 수식",
-    q:"«A player told what to fix» stops asking what went wrong.",
-    d:"<b>명사 + 과거분사구</b>는 '~된 …'. told 앞에 who is 가 생략된 것으로 읽으면 쉽다.",
-    k:"무엇을 고치라는 말을 들은 선수는 무엇이 잘못됐는지 묻기를 그만둔다." },
-  { n:"⑩", name:"의문사 + to부정사 (목적어)",
-    q:"A good coach chooses «when to speak», not merely what to say.",
-    d:"<b>의문사 + to부정사</b>가 목적어 자리에 온다. '언제 ~할지'로 옮긴다.",
-    k:"좋은 코치는 언제 말할지를 고른다." }
+  {
+   n: "⑤",
+   name: "전치사 + 관계대명사  by which",
+   q: "…largely a means «by which a college's faculty or administration could claim some control»…",
+   d: "<b>by which</b>는 <b>a means</b>를 받아 ‘그것으로 ~하는 수단’을 뜻한다. by the means 로 풀어 읽으면 쉽다.",
+   k: "그것으로 통제권을 주장할 수 있는 수단"
+  },
+  {
+   n: "②",
+   name: "완료부정사의 수동형  to have been p.p.",
+   q: "The very word coach «appears not to have been associated» with games and athletic competition…",
+   d: "본동사보다 <b>앞선 때</b>의 일을 나타낸다. 여기서는 ‘~였던 것으로 보인다’라는 뜻이 된다.",
+   k: "결부되지 않았던 것으로 보인다"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"A runner pushed too early loses the last lap.",
-    k:"너무 일찍 몰아붙여진 주자는 마지막 바퀴를 잃는다." },
-  { u:"구문 2", en:"Nobody explained where to stand during the drill.",
-    k:"훈련 중에 어디에 서 있어야 할지는 아무도 설명해 주지 않았다." },
-  { u:"구문 1 + 2", en:"A student given the answer never learns when to ask.",
-    k:"답을 받은 학생은 언제 물어야 할지를 결코 배우지 못한다." }
+  { u: "구문 1", en: "He looked for a rule by which the two claims could be judged.", k: "그는 그 두 주장을 판단할 수 있는 규칙을 찾았다." },
+  { u: "구문 2", en: "The letter appears to have been written in a hurry.", k: "그 편지는 급하게 쓰인 것으로 보인다." },
+  { u: "구문 1 + 2", en: "The record appears to have been the means by which the club judged its members.", k: "그 기록은 클럽이 회원을 판단하던 수단이었던 것으로 보인다." }
  ],
- wtype: ["무관","정답","반대","무관","지엽"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["그립 잡는 법은 글의 관심사가 아니다"],["정답"],
-       ["글은 피드백을 끊으라고 하지 않는다 — 정반대다"],
-       ["코치의 보수는 글에 나오지 않는다"],
-       ["초보자 이야기는 조건을 나누기 위한 한 부분일 뿐이다"]],
- src: [["②"],["⑦"],["⑬과 어긋남 — 물러서서 구경하라는 뜻이 아니라고 했다"],["⑪"],["⑭"]],
+ why: [
+  ["문장 ③의 인용만 붙든 지엽적인 제목이다"],
+  ["정답"],
+  ["글은 코치가 전통적 의미의 교사처럼 활동하지 않았다고 말한다 — 정반대다"],
+  ["훈련 방법은 글에 나오지 않는다"],
+  ["당시 경기 규칙은 글에서 다루지 않는다"]
+ ],
+ src: [["①"], ["③"], ["④"], ["⑤와 어긋남 — 학생의 운동 행동과 운영을 통제하려는 수단이었다"], ["⑦"]],
  kb: {
-  title:"덜 말할수록 오래 남는다",
-  lead:"연습장의 성적과 경기장의 성적은 다르다.",
+  title: "코치라는 말이 옮겨 온 길",
+  lead: "마차에서 개인 교사로, 그리고 운동장으로",
   items: [
-   ["수행과 학습은 다르다",
-    "운동 학습 연구는 연습 중의 성적(performance)과 시간이 지난 뒤의 유지(learning)를 나눠서 본다. 둘이 어긋나는 경우가 많아, 연습장 성적만 보고 방법을 고르면 틀리기 쉽다."],
-   ["피드백 빈도를 줄인 실험",
-    "1990년 윈스타인과 슈미트는 시도마다 피드백을 준 집단과 일부만 준 집단을 비교했다. 연습 중에는 전자가 좋았지만, 지연 검사에서는 후자가 더 나았다."],
-   ["'바깥에 집중하라'",
-    "가브리엘 볼프의 연구들은 몸의 움직임(내적 초점)보다 도구나 목표(외적 초점)에 주의를 두게 할 때 수행이 좋아진다고 보고했다. 코치의 말 한마디가 초점을 어디로 돌리는지가 중요하다."]
+   ["마차에서 온 말", "coach 는 헝가리 마을 Kocs 에서 만들던 마차를 가리키던 말이다. 1830년대 영국 대학가에서 학생을 시험까지 ‘실어다 준다’는 뜻의 은어로 개인 교사를 부르게 되었고, 그 뒤 운동 지도자에게 옮겨 갔다."],
+   ["A Collection of College Words and Customs", "B. H. Hall 이 1851년에 처음 낸 이 책은 미국 대학가에서 쓰이던 은어와 관습을 모은 사전이다. 당시 coach 가 어떤 뜻으로 쓰였는지 알려 주는 자료로 이 글에 인용되었다."],
+   ["돈을 받은 첫 기록", "예일대 조정팀은 1860년대에 전문 지도자를 두었고, 미식축구에서는 1892년 Allegheny Athletic Association 이 선수에게 돈을 준 기록이 남아 있다. 아마추어 원칙과 돈 사이의 긴장은 이때부터 시작되었다."]
   ],
-  ask:"누군가 옆에서 계속 알려 줄 때와 혼자 해 볼 때, 나는 어느 쪽에서 더 오래 남는 것을 배웠는가?"
- }
+  ask: "여러분을 가장 크게 성장시킨 지도자는 무엇을 해 주었는가? 그것은 ‘가르침’이었는가?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 32 ───────────────────────────── */
 {
- no: "32", key: "esports",
- accent: "#7B4FA6", tint: "#F0EAF7", deep: "#4E2E70",
- en: "When Watching Became the Sport",
- ko: "보는 일이 종목이 되었을 때",
- goal: "이스포츠가 관중 산업으로 자란 조건과 '스포츠인가'라는 논쟁의 쟁점을 설명할 수 있다.",
+ no: "32", key: "esports", accent: "#7B4FA6", tint: "#F0EAF7", deep: "#4E2E70",
+ en: "The Rise of E-Sports",
+ ko: "취미가 직업이 되던 10년",
+ goal: "1990년대 후반 경쟁 게임이 직업으로 자리 잡는 과정을 두 축으로 나누어 설명할 수 있다.",
  fig: "Figure 1  경기장 하나와 화면 수백만 개.",
- tip: "먼저 생각해 보자. 남이 게임하는 것을 보는 일이 왜 재미있을까?",
- sent: [
-  "Watching other people play games is older than the internet.",
-  "Arcades had crowds, and a good player drew a ring of watchers.",
-  "What changed was distance: streaming let that ring grow without a room.",
-  "A single match can now be followed by more people than fill a stadium.",
-  "The money followed the audience, as it always does.",
-  "Prize pools passed several million dollars, and sponsors arrived after them.",
-  "Universities began offering scholarships, which surprised almost everyone.",
-  "Whether this counts as sport is argued more loudly than it needs to be.",
-  "One side points to the training load, the reflexes, and the team structure.",
-  "The other points to the absence of physical exertion as the deciding line.",
-  "The disagreement is mostly about the definition rather than the facts.",
-  "Both sides agree on what players actually do all day.",
-  "A more useful question concerns who owns the game itself.",
-  "A football league does not need permission from the inventor of football.",
-  "An e-sports league plays a game that one company can change or close."
+ tip: "먼저 생각해 보자. 어떤 활동이 ‘직업’이 되려면 무엇이 갖추어져야 할까?",
+ sent: T(32).sent, kor: T(32).kor,
+ bank: [
+  ["take shape", "①", "구체화되다"],
+  ["hobbyist", "②", "취미로 하는 사람"],
+  ["barrier", "③", "장벽"],
+  ["legitimize", "⑤", "정당한 것으로 인정받게 하다"],
+  ["instrumental", "⑥", "중요한 역할을 하는"],
+  ["precursor", "⑩", "선구자, 전조"]
  ],
- kor: [
-  "다른 사람이 게임하는 것을 보는 일은 인터넷보다 오래되었다.",
-  "오락실에는 사람들이 몰렸고, 잘하는 사람 주위에는 구경꾼의 원이 생겼다.",
-  "달라진 것은 거리였다. 중계는 그 원을 방 없이도 커지게 했다.",
-  "이제 한 경기를 경기장을 채우는 것보다 많은 사람이 지켜볼 수 있다.",
-  "돈은 늘 그렇듯 관중을 따라갔다.",
-  "상금은 수백만 달러를 넘어섰고, 그 뒤로 후원사들이 왔다.",
-  "대학들이 장학금을 주기 시작했는데, 이는 거의 모두를 놀라게 했다.",
-  "이것이 스포츠에 해당하느냐는 필요 이상으로 시끄럽게 다투어진다.",
-  "한쪽은 훈련량과 반사 신경, 팀 구조를 가리킨다.",
-  "다른 쪽은 신체적 힘씀이 없다는 점을 가르는 선으로 든다.",
-  "이 이견은 사실보다 정의(定義)에 관한 것이다.",
-  "선수들이 하루 종일 실제로 무엇을 하는지에 대해서는 양쪽이 같은 생각이다.",
-  "더 쓸모 있는 질문은 그 게임 자체를 누가 소유하느냐에 관한 것이다.",
-  "축구 리그는 축구를 발명한 사람의 허락을 받을 필요가 없다.",
-  "이스포츠 리그는 한 회사가 바꾸거나 닫을 수 있는 게임을 한다."
+ defs: [
+  ["take shape", "to become clear and definite"],
+  ["hobbyist", "a person who does it for fun only"],
+  ["barrier", "something that blocks the way"],
+  ["legitimize", "to make something officially accepted"],
+  ["instrumental", "playing an important part in a result"],
+  ["precursor", "something that comes before another"]
  ],
- bank: [["arcade","②","오락실"],["audience","⑤","관중"],["sponsor","⑥","후원사"],
-        ["scholarship","⑦","장학금"],["exertion","⑩","힘씀, 노력"],["definition","⑪","정의(定義)"]],
- defs: [["arcade","a place with coin-operated game machines"],
-        ["audience","the people watching or listening"],
-        ["sponsor","a company that pays to support an event"],
-        ["scholarship","money given to support a student"],
-        ["exertion","the use of physical effort"],
-        ["definition","a statement of what a word means"]],
- defOrder: [2,4,0,5,1,3],
+ defOrder: [2, 5, 0, 4, 1, 3],
  flow: [
-  ["The old thing","Crowds have always gathered around a good player",null],
-  ["What changed","Streaming removed the limit of (  ①  )","distance"],
-  ["What followed","Money followed the (  ②  ), then sponsors and scholarships","audience"],
-  ["The loud argument","Whether it counts as sport is a dispute over the (  ③  )","definition"],
-  ["The better question","Who (  ④  ) the game that the league plays","owns"]
+  ["The shift", "Gaming moved from hobby to paid competition", null],
+  ["The internet", "It broke down (  ①  ) barriers", "geographic"],
+  ["The league", "The CPL ran tournaments with cash (  ②  )", "prizes"],
+  ["Korea", "A 1998 strategy game became a national (  ③  )", "sensation"],
+  ["The result", "TV broadcast matches live, a precursor to (  ④  )", "streaming"]
  ],
- flowBogi: "distance · audience · definition · owns · prize · reflexes",
+ flowBogi: "geographic · prizes · sensation · streaming · language · radio",
  para: [
-  ["③ streaming let that ring grow","Broadcast removed the ______ limit.","spatial"],
-  ["⑤ The money followed the audience","Investment goes where the ______ is.","attention"],
-  ["⑧ argued more loudly than it needs to be","The debate is ______ noisy.","needlessly"],
-  ["⑪ mostly about the definition","They differ over ______, not facts.","meaning"],
-  ["⑮ one company can change or close","The game rests on private ______.","control"]
+  ["① began to take shape", "The idea started to grow ______.", "clear"],
+  ["③ breaking down geographic barriers", "Distance stopped ______ who could play.", "limiting"],
+  ["⑥ paving the way for professional players", "It opened the ______ for a career.", "road"],
+  ["⑨ make a living solely by competing", "They lived on prize money ______.", "alone"],
+  ["⑩ a precursor to the widespread streaming culture", "TV came ______ the streaming era.", "before"]
  ],
- paraBogi: "spatial · attention · needlessly · meaning · control · temporal · quietly · evidence",
+ paraBogi: "clear · limiting · road · alone · before · dim · helping · after",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["The Best Games to Watch Online","A Bigger Question Than Whether It Is Sport",
-       "E-Sports Is Clearly a Real Sport","How to Win a Prize Pool",
-       "Why Arcades Disappeared"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["오락실에도 구경꾼이 모였다.","대학들이 장학금을 주기 시작했다.",
-       "필자는 이스포츠가 스포츠인지 결론을 내린다.","양쪽은 선수들이 하는 일에 대해서는 같은 생각이다.",
-       "축구 리그는 발명자의 허락이 필요 없다."], ans:3},
-  {t:"write", q:"필자가 더 쓸모 있다고 본 질문을 우리말 한 문장으로 써 보세요.",
-   ans:"리그가 하는 그 게임 자체를 누가 소유하고 있느냐는 질문이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "What the Letters CPL Stand For",
+    "The Decade Play Became Work",
+    "Competitive Gaming Stayed a Local Hobby",
+    "How to Win a Strategy Game",
+    "A History of Korean Television"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "1990년대 후반에 게임을 전문 직업으로 여기는 개념이 구체화되기 시작했다.",
+    "인터넷 접속의 확대로 게이머들이 전 세계 규모로 연결되어 겨룰 수 있게 되었다.",
+    "CPL 은 1997년에 설립되어 상금이 걸린 대회를 열었다.",
+    "1998년에 나온 전략 게임은 한국에서 큰 관심을 끌지 못했다.",
+    "한국 방송사들이 경기를 생중계하기 시작한 것은 스트리밍 문화의 전조였다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "CPL 이 경쟁 게임의 직업화에 기여한 방식을 우리말 한 문장으로 써 보세요.",
+   ans: "상금이 걸린 대회를 열어 전통 스포츠 리그에 견줄 만한 구조화된 행사를 만들고, 후원·팀 계약·대회 상금으로 생계를 유지할 길을 열었다."
+  }
  ],
  fl: {
-  model: { n:"③",
-   toks: [["What changed","s"],["was","v"],["distance","c"],[":",null],
-          ["streaming","s"],["let","v"],["that ring grow without a room","m"]],
-   ko:"달라진 것은 거리였다. 중계는 그 원을 방 없이도 커지게 했다." },
+  model: {
+   n: "③",
+   toks: [
+    ["The rise of internet access", "s"], ["allowed", "v"],
+    ["gamers to connect and compete on a global scale,", null],
+    ["breaking down geographic barriers", "m"], ["that", "c"], ["had previously limited", "v2"],
+    ["competitive gaming to local or regional events.", null]
+   ],
+   ko: "인터넷 접속의 확대는 게이머들이 전 세계 규모로 연결되어 겨루게 해 주었고, 그전까지 경쟁 게임을 지역 행사로 묶어 두던 지리적 장벽을 무너뜨렸다."
+  },
   drill: [
-   { n:"⑦", en:"Universities began offering scholarships, which surprised almost everyone.",
-     ans:"S Universities · △V began · O offering scholarships · M which surprised almost everyone",
-     ko:"대학들이 장학금을 주기 시작했는데, 이는 거의 모두를 놀라게 했다." },
-   { n:"⑧", en:"Whether this counts as sport is argued more loudly than it needs to be.",
-     ans:"S Whether this counts as sport · △V is argued · M more loudly than it needs to be",
-     ko:"이것이 스포츠에 해당하느냐는 필요 이상으로 시끄럽게 다투어진다." },
-   { n:"⑮", en:"An e-sports league plays a game that one company can change or close.",
-     ans:"S An e-sports league · △V plays · O a game · M that one company can change or close",
-     ko:"이스포츠 리그는 한 회사가 바꾸거나 닫을 수 있는 게임을 한다." }
+   {
+    n: "②",
+    en: "This period marked a critical shift from gaming competitions being purely recreational or hobbyist-driven, to events that offered significant financial rewards.",
+    ans: "S This period · △V marked · O a critical shift · M from gaming competitions being purely recreational or hobbyist-driven · M to events that offered significant financial rewards",
+    ko: "이 시기는 게임 대회가 순전히 오락이나 취미 중심이던 데서 상당한 금전적 보상을 주는 행사로 넘어간 중대한 전환을 나타냈다."
+   },
+   {
+    n: "⑥",
+    en: "The CPL was instrumental in formalizing competitive gaming as a career path, paving the way for professional players to earn a living through sponsorships, team contracts, and tournament winnings.",
+    ans: "S The CPL · △V was · C instrumental in formalizing competitive gaming as a career path · M paving the way for professional players to earn a living through sponsorships, team contracts, and tournament winnings",
+    ko: "CPL 은 경쟁 게임을 직업 경로로 공식화하는 데 중요한 역할을 했고, 프로 선수들이 후원·팀 계약·대회 상금으로 생계를 유지할 길을 열었다."
+   },
+   {
+    n: "⑨",
+    en: "Tournaments featuring the game began drawing large audiences, and soon, professional players emerged who could make a living solely by competing.",
+    ans: "S Tournaments featuring the game · △V began · O drawing large audiences · and M soon · S professional players · △V emerged · [who] △V′ could make a living solely by competing",
+    ko: "그 게임을 내건 대회들이 많은 관중을 끌기 시작했고, 곧 겨루는 것만으로 생계를 유지할 수 있는 프로 선수들이 나타났다."
+   }
   ]
  },
  syn: [
-  { n:"③", name:"사역동사 let + 목적어 + 동사원형",
-    q:"Streaming «let that ring grow» without a room.",
-    d:"<b>let + 목적어 + 동사원형</b>은 '~가 …하게 두다'. to 를 쓰지 않는다.",
-    k:"중계는 그 원이 커지게 두었다." },
-  { n:"⑧", name:"Whether절 주어",
-    q:"«Whether this counts as sport» is argued more loudly than it needs to be.",
-    d:"<b>Whether + 절</b>이 주어일 때 '~인지 아닌지'로 옮기고, 단수 취급한다.",
-    k:"이것이 스포츠에 해당하는지가 시끄럽게 다투어진다." }
+  {
+   n: "②",
+   name: "from A to B  (A 자리의 명사 + -ing)",
+   q: "…a critical shift «from gaming competitions being purely recreational or hobbyist-driven, to events»…",
+   d: "<b>from A to B</b>는 변화의 두 끝을 묶는다. 여기서 A 는 <b>gaming competitions being ~</b>처럼 ‘명사 + -ing’ 모양이다.",
+   k: "게임 대회가 오락 중심이던 데서 행사로"
+  },
+  {
+   n: "⑩",
+   name: "It is not long before ~",
+   q: "…and «it wasn't long before television networks in South Korea began broadcasting matches live»…",
+   d: "‘머지않아 ~하다’라는 뜻이다. <b>before</b> 뒤에는 완전한 절이 온다.",
+   k: "머지않아 방송사들이 경기를 생중계하기 시작했다"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"The new rule let younger players join the league.",
-    k:"그 새 규칙은 더 어린 선수들이 리그에 들어오게 해 주었다." },
-  { u:"구문 2", en:"Whether the match will be replayed is still unclear.",
-    k:"그 경기가 다시 치러질지는 아직 분명하지 않다." },
-  { u:"구문 1 + 2", en:"Whether we let the clock run was the only question left.",
-    k:"시계를 그대로 흐르게 둘지가 남은 유일한 질문이었다." }
+  { u: "구문 1", en: "The plan moved from a small club meeting to a national event.", k: "그 계획은 작은 동아리 모임에서 전국 행사로 옮겨 갔다." },
+  { u: "구문 2", en: "It wasn't long before the seats were all sold.", k: "머지않아 좌석이 모두 팔렸다." },
+  { u: "구문 1 + 2", en: "It wasn't long before the sport moved from a hobby to a career.", k: "머지않아 그 종목은 취미에서 직업으로 옮겨 갔다." }
  ],
- wtype: ["무관","정답","반대","무관","지엽"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["볼 만한 게임 목록은 글에 나오지 않는다"],["정답"],
-       ["글은 어느 한쪽으로 결론짓지 않는다 — 정반대다"],
-       ["상금을 타는 법은 글의 관심사가 아니다"],
-       ["오락실은 도입의 배경일 뿐 주제가 아니다"]],
- src: [["②"],["⑦"],["⑧⑪과 어긋남 — 정의 논쟁이라며 결론을 내지 않는다"],["⑫"],["⑭"]],
+ why: [
+  ["약칭의 뜻은 글의 초점이 아닌 지엽적인 제목이다"],
+  ["정답"],
+  ["글은 인터넷이 지리적 장벽을 무너뜨렸다고 말한다 — 정반대다"],
+  ["게임을 잘하는 방법은 글에 나오지 않는다"],
+  ["텔레비전의 역사는 글에서 다루지 않는다"]
+ ],
+ src: [["①"], ["③"], ["④"], ["⑧과 어긋남 — 한국에서 전국적인 열풍을 일으켰다"], ["⑩"]],
  kb: {
-  title:"관중이 만든 종목",
-  lead:"보는 사람이 늘면 판이 바뀐다.",
+  title: "경기장이 화면으로 옮겨 가기까지",
+  lead: "구경꾼의 원은 어떻게 넓어졌나",
   items: [
-   ["1972년 스탠퍼드의 첫 대회",
-    "스탠퍼드 대학에서 열린 Spacewar! 대회가 기록에 남은 초기 게임 대회로 꼽힌다. 우승 상품은 잡지 1년 구독권이었다."],
-   ["상금 규모의 변화",
-    "Dota 2 의 The International 은 커뮤니티가 아이템을 사면 그 일부가 상금에 더해지는 방식으로 상금 규모를 키웠다. 관중이 상금을 직접 만드는 구조다."],
-   ["누가 규칙을 바꾸는가",
-    "축구 규칙은 국제기구가 합의로 고치지만, 대부분의 이스포츠 종목은 개발사가 패치 하나로 균형을 바꾼다. 종목의 수명이 회사의 결정에 달려 있다는 점이 전통 스포츠와 크게 다르다."]
+   ["가장 이른 대회", "1972년 스탠퍼드 대학에서 열린 Spacewar! 대회가 비디오 게임 대회의 첫 기록으로 꼽힌다. 상품은 잡지 1년 구독권이었다."],
+   ["CPL", "Cyberathlete Professional League 는 1997년 미국 텍사스에서 시작되었다. 상금을 걸고 정해진 규칙과 일정으로 대회를 운영한 초기 사례로, ‘프로’라는 말을 게임에 붙인 조직 가운데 하나다."],
+   ["방송으로 간 경기", "한국에서는 2000년 무렵 게임 전문 채널이 개국해 경기를 정규 편성으로 중계했다. 경기장에 가지 않고도 같은 경기를 함께 보는 구조가 이때 자리 잡았다."]
   ],
-  ask:"내가 즐겨 보는 경기나 방송이 있다면, 그 규칙은 누가 정하고 누가 바꿀 수 있을까?"
- }
+  ask: "여러분이 즐기는 활동이 ‘직업’이 되려면 무엇이 더 갖추어져야 할까?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 33 ───────────────────────────── */
 {
- no: "33", key: "synth",
- accent: "#B25A34", tint: "#F9EBE3", deep: "#7E3616",
- en: "The Extra Nobody Filmed",
- ko: "아무도 찍지 않은 단역",
- goal: "제작 현장의 자동화가 무엇을 바꾸고 무엇을 바꾸지 못하는지 설명할 수 있다.",
+ no: "33", key: "synth", accent: "#B25A34", tint: "#F9EBE3", deep: "#7E3616",
+ en: "Technology and AI in the Media and Entertainment Industry",
+ ko: "여덟 시간을 두고 벌어지는 경쟁",
+ goal: "미디어·엔터테인먼트 산업이 커진 배경과 기업들이 AI로 향하는 까닭을 순서대로 설명할 수 있다.",
  fig: "Figure 1  실제로 찍힌 것과 채워 넣은 것.",
- tip: "먼저 생각해 보자. 영화 속 군중 가운데 진짜 사람은 몇 명일까?",
- sent: [
-  "A crowd scene used to require a crowd.",
-  "Now a few dozen people are filmed and the rest of the square is filled in.",
-  "The same tools smooth a face, age an actor, or replace a sky after the shoot.",
-  "Dubbing has changed even more quietly than the pictures have.",
-  "A voice can now be carried into a language the actor never spoke.",
-  "Studios describe all of this as saving money, which is true and incomplete.",
-  "Each of these tools also moves a decision from the set to a later room.",
-  "What used to be settled by a hundred people on a Tuesday is now settled by three.",
-  "That shift is why the disputes are about consent rather than quality.",
-  "An extra who is scanned once may appear in films she never worked on.",
-  "A voice used for training may return in a performance nobody agreed to.",
-  "Recent contracts in the industry now spell out permission and payment for reuse.",
-  "The technical question was answered years ago; the harder question was not.",
-  "Audiences, meanwhile, mostly do not notice, and that is the point of the craft.",
-  "A tool that hides its own work makes the rules around it matter more, not less."
+ tip: "먼저 생각해 보자. 하루 여덟 시간을 오락에 쓴다면, 그 시간을 두고 무엇이 겨루고 있을까?",
+ sent: T(33).sent, kor: T(33).kor,
+ bank: [
+  ["manageable", "①", "감당할 만한"],
+  ["distribute", "③", "배포하다"],
+  ["availability", "⑤", "이용 가능성"],
+  ["revenue", "⑦", "매출"],
+  ["retain", "⑩", "유지하다"],
+  ["resort to", "⑪", "~에 의지하다"]
  ],
- kor: [
-  "군중 장면에는 예전에 군중이 필요했다.",
-  "지금은 수십 명을 찍고 광장의 나머지는 채워 넣는다.",
-  "같은 도구가 얼굴을 다듬고, 배우를 나이 들게 하고, 촬영이 끝난 뒤 하늘을 바꾼다.",
-  "더빙은 화면보다도 더 조용하게 바뀌었다.",
-  "이제 한 목소리를 그 배우가 해 본 적 없는 언어로 실어 나를 수 있다.",
-  "제작사들은 이 모두를 비용 절감이라고 설명하는데, 맞는 말이지만 충분하지는 않다.",
-  "이 도구들은 저마다 결정을 촬영 현장에서 나중의 방으로 옮기기도 한다.",
-  "예전에 화요일 하루 백 명이 정하던 것을 지금은 세 사람이 정한다.",
-  "그 이동 때문에 논쟁이 품질이 아니라 동의를 두고 벌어지는 것이다.",
-  "한 번 스캔된 단역 배우는 자기가 일한 적 없는 영화에 나타날 수 있다.",
-  "학습에 쓰인 목소리가 아무도 동의하지 않은 연기 안에 돌아올 수 있다.",
-  "최근 업계 계약들은 재사용에 대한 허락과 대가를 명문화하기 시작했다.",
-  "기술적 질문은 여러 해 전에 답이 났고, 더 어려운 질문은 그렇지 않았다.",
-  "한편 관객은 대개 알아채지 못하는데, 그것이 이 기술의 목표이기도 하다.",
-  "자기 작업을 감추는 도구일수록 그것을 둘러싼 규칙이 덜이 아니라 더 중요해진다."
+ defs: [
+  ["manageable", "easy enough to deal with"],
+  ["distribute", "to send something out to many people"],
+  ["availability", "the state of being ready for use"],
+  ["revenue", "the money a business takes in"],
+  ["retain", "to keep something you already have"],
+  ["resort to", "to turn to something for help"]
  ],
- bank: [["crowd","①","군중"],["dub","④","더빙하다"],["consent","⑨","동의"],
-        ["scan","⑩","(3D로) 스캔하다"],["contract","⑫","계약"],["craft","⑭","기술, 솜씨"]],
- defs: [["crowd","a large group of people in one place"],
-        ["dub","to replace the speech in a film with another language"],
-        ["consent","permission freely given"],
-        ["scan","to record the shape of something as data"],
-        ["contract","a written agreement between parties"],
-        ["craft","skill in making something well"]],
- defOrder: [4,0,5,2,3,1],
+ defOrder: [5, 2, 0, 4, 1, 3],
  flow: [
-  ["What changed","A crowd scene no longer requires a crowd",null],
-  ["Other uses","Faces, ages, skies, and even the (  ①  ) can be altered","voice"],
-  ["Stated reason","Studios call it saving (  ②  ), which is true but partial","money"],
-  ["Real shift","Decisions move from the set to a (  ③  ) room","later"],
-  ["The dispute","Arguments are about (  ④  ), not quality","consent"]
+  ["Why now", "Easier lives leave more free time for entertainment", null],
+  ["The scale", "People in the USA spend (  ①  ) hours a day on media", "eight"],
+  ["The cause", "Viewers moved from cable and radio to (  ②  )", "streaming"],
+  ["The pressure", "Firms must deliver quality or lose (  ③  )", "customers"],
+  ["The answer", "They turn to AI and computer (  ④  )", "vision"]
  ],
- flowBogi: "voice · money · later · consent · crowd · quality",
+ flowBogi: "eight · streaming · customers · vision · two · paper",
  para: [
-  ["⑥ which is true and incomplete","The explanation is ______ but partial.","accurate"],
-  ["⑧ now settled by three","Fewer people hold the ______.","decision"],
-  ["⑩ films she never worked on","Her image appears without her ______.","involvement"],
-  ["⑫ spell out permission and payment","Contracts now state the terms ______.","explicitly"],
-  ["⑮ hides its own work","An invisible tool needs stronger ______.","rules"]
+  ["① get more manageable with the advancements", "Daily life becomes easier to ______.", "handle"],
+  ["⑤ accessing unlimited entertainment on the go", "They watch anywhere they ______.", "move"],
+  ["⑧ switching from traditional media channels", "Viewers are ______ away from cable.", "moving"],
+  ["⑩ they cannot attract and retain customers", "Otherwise the customers do not ______.", "stay"],
+  ["⑬ unlocking new digital approaches", "They open up ______ ways of working.", "new"]
  ],
- paraBogi: "accurate · decision · involvement · explicitly · rules · false · budget · vaguely",
+ paraBogi: "handle · move · moving · stay · new · drop · sit · old",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How to Film a Crowd Scene","When a Tool Hides Its Own Work",
-       "New Technology Has Ruined Cinema","The Highest-Grossing Films of the Decade",
-       "Why Dubbing Should Be Banned"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["군중 장면은 예전에 실제 군중이 필요했다.","제작사는 이 도구들을 비용 절감으로 설명한다.",
-       "필자는 이 기술이 영화를 망쳤다고 본다.","최근 계약은 재사용 허락과 대가를 명문화한다.",
-       "관객은 대개 이 작업을 알아채지 못한다."], ans:3},
-  {t:"write", q:"필자가 논쟁의 초점이 '동의'라고 본 이유를 우리말 한 문장으로 써 보세요.",
-   ans:"결정이 현장에서 소수의 방으로 옮겨 가면서, 찍힌 사람의 허락 없이 그 모습과 목소리가 쓰일 수 있게 되었기 때문이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How Much a Streaming Subscription Costs",
+    "Eight Hours a Day and a Race to Fill Them",
+    "Cable and Radio Are Winning Viewers Back",
+    "How Computer Vision Recognises Faces",
+    "A History of the Film Camera"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "미국 사람들은 하루 평균 여덟 시간을 오락과 미디어 콘텐츠에 쓴다.",
+    "2020년 전 세계 미디어·엔터테인먼트 산업의 매출은 2조 달러였다.",
+    "빠른 성장은 주로 사람들이 디지털·모바일 스트리밍으로 옮겨 가기 때문이다.",
+    "콘텐츠 제공업체는 고품질 제공에 대한 압박에서 점점 자유로워지고 있다.",
+    "많은 업계 전문가가 AI 를 도입해 새로운 디지털 접근 방식을 활용하고 있다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "기업들이 인공지능과 컴퓨터 비전 기반 해법으로 향하는 이유를 우리말 한 문장으로 써 보세요.",
+   ans: "빠른 성장과 콘텐츠 수요로 경쟁이 치열해져, 고품질 서비스를 제공하지 못하면 고객을 끌고 유지할 수 없기 때문이다."
+  }
  ],
  fl: {
-  model: { n:"⑧",
-   toks: [["What used to be settled by a hundred people on a Tuesday","s"],
-          ["is","v"],["now","m"],["settled","v"],["by three","m"]],
-   ko:"예전에 화요일 하루 백 명이 정하던 것을 지금은 세 사람이 정한다." },
+  model: {
+   n: "①",
+   toks: [
+    ["As", "c"], ["the lives of modern people", "s2"], ["get", "v2"], ["more manageable", null],
+    ["with the advancements in technology,", "m"], ["they", "s"], ["have", "v"],
+    ["more free time", null], ["to seek entertainment in their daily lives.", "m"]
+   ],
+   ko: "기술의 발전으로 현대인의 삶이 더 감당할 만해짐에 따라, 그들은 일상에서 오락을 찾을 자유 시간을 더 갖게 된다."
+  },
   drill: [
-   { n:"②", en:"Now a few dozen people are filmed and the rest of the square is filled in.",
-     ans:"M Now · S a few dozen people · △V are filmed · [and] S the rest of the square · △V is filled in",
-     ko:"지금은 수십 명을 찍고 광장의 나머지는 채워 넣는다." },
-   { n:"⑨", en:"That shift is why the disputes are about consent rather than quality.",
-     ans:"S That shift · △V is · C why the disputes are about consent rather than quality",
-     ko:"그 이동 때문에 논쟁이 품질이 아니라 동의를 두고 벌어지는 것이다." },
-   { n:"⑮", en:"A tool that hides its own work makes the rules around it matter more, not less.",
-     ans:"S A tool · M that hides its own work · △V makes · O the rules around it matter more, not less",
-     ko:"자기 작업을 감추는 도구는 그것을 둘러싼 규칙을 덜이 아니라 더 중요하게 만든다." }
+   {
+    n: "⑤",
+    en: "With the support of high-speed network availability and easy-to-access media platforms, users are accessing unlimited entertainment on the go.",
+    ans: "M With the support of high-speed network availability and easy-to-access media platforms · S users · △V are accessing · O unlimited entertainment · M on the go",
+    ko: "고속 통신망의 이용 가능성과 접근하기 쉬운 미디어 플랫폼의 뒷받침으로, 사용자들은 이동 중에도 무제한의 오락에 접근하고 있다."
+   },
+   {
+    n: "⑩",
+    en: "Content providers and distribution companies are facing increasing pressure to deliver high-quality media content and entertainment services; otherwise, they cannot attract and retain customers to drive business value.",
+    ans: "S Content providers and distribution companies · △V are facing · O increasing pressure to deliver high-quality media content and entertainment services · M otherwise · S they · △V cannot attract and retain · O customers",
+    ko: "콘텐츠 제공업체와 배급사는 고품질 콘텐츠와 오락 서비스를 제공해야 한다는 압박을 점점 더 받고 있으며, 그러지 못하면 사업 가치를 만들어 줄 고객을 끌고 유지할 수 없다."
+   },
+   {
+    n: "⑫",
+    en: "Artificial intelligence and computer vision in the media and entertainment industry enable companies to build digital solutions that help service providers deliver quality services and enhance their customer experiences.",
+    ans: "S Artificial intelligence and computer vision in the media and entertainment industry · △V enable · O companies to build digital solutions · [that] △V′ help · O service providers deliver quality services and enhance their customer experiences",
+    ko: "미디어·엔터테인먼트 산업의 인공지능과 컴퓨터 비전은, 서비스 제공자가 양질의 서비스를 전달하고 고객 경험을 높이도록 돕는 디지털 해법을 기업이 만들 수 있게 해 준다."
+   }
   ]
  },
  syn: [
-  { n:"⑧", name:"What절 주어 + used to",
-    q:"«What used to be settled» by a hundred people is now settled by three.",
-    d:"<b>What + 절</b>이 주어이고, <b>used to</b>는 지금은 그렇지 않은 과거의 습관을 뜻한다.",
-    k:"예전에 백 명이 정하던 것이 지금은 세 사람에 의해 정해진다." },
-  { n:"⑮", name:"make + 목적어 + 동사원형",
-    q:"A tool that hides its own work «makes the rules around it matter» more.",
-    d:"<b>make + 목적어 + 동사원형</b>. 목적어가 길어져도 뒤의 matter 가 동사원형임을 놓치지 않는다.",
-    k:"그런 도구는 주변 규칙을 더 중요하게 만든다." }
+  {
+   n: "⑩",
+   name: "부사 otherwise (그러지 않으면)",
+   q: "…increasing pressure to deliver high-quality media content …; «otherwise, they cannot attract and retain customers»…",
+   d: "앞 문장의 조건이 지켜지지 않는 경우를 가리킨다. ‘그러지 않으면’으로 읽으며 뒤에는 완전한 절이 온다.",
+   k: "그러지 않으면 고객을 끌고 유지할 수 없다"
+  },
+  {
+   n: "⑫",
+   name: "enable + 목적어 + to부정사",
+   q: "Artificial intelligence and computer vision … «enable companies to build digital solutions»…",
+   d: "‘~가 …할 수 있게 하다’이다. <b>allow, permit</b>도 같은 자리에 to부정사를 취한다.",
+   k: "기업이 디지털 해법을 만들 수 있게 한다"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"What used to take a week now takes an afternoon.",
-    k:"예전에 일주일 걸리던 일이 지금은 한나절 걸린다." },
-  { u:"구문 2", en:"The new lighting makes the background look real.",
-    k:"그 새 조명은 배경이 진짜처럼 보이게 만든다." },
-  { u:"구문 1 + 2", en:"What used to be a rule now makes everyone hesitate.",
-    k:"예전에 규칙이던 것이 이제는 모두를 망설이게 만든다." }
+  { u: "구문 1", en: "Post the file today; otherwise, it will miss the deadline.", k: "오늘 그 파일을 올려라. 그러지 않으면 마감을 놓칠 것이다." },
+  { u: "구문 2", en: "The new tool enables editors to cut a scene in minutes.", k: "그 새 도구는 편집자가 몇 분 만에 장면을 자를 수 있게 한다." },
+  { u: "구문 1 + 2", en: "The system enables staff to answer fast; otherwise, viewers leave.", k: "그 시스템은 직원이 빠르게 답할 수 있게 한다. 그러지 않으면 시청자가 떠난다." }
  ],
- wtype: ["무관","정답","반대","무관","반대"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["촬영 기법을 알려 주는 글이 아니다"],["정답"],
-       ["글은 망쳤다고 판단하지 않는다 — 정반대다"],
-       ["흥행 순위는 글에 나오지 않는다"],
-       ["글은 더빙 금지를 주장하지 않는다 — 정반대다"]],
- src: [["①"],["⑥"],["⑮과 어긋남 — 규칙이 더 중요해진다고 했을 뿐이다"],["⑫"],["⑭"]],
+ why: [
+  ["구독료는 글에 나오지 않는다"],
+  ["정답"],
+  ["글은 시청자가 전통 채널에서 디지털로 옮겨 간다고 말한다 — 정반대다"],
+  ["컴퓨터 비전의 작동 원리는 글의 초점이 아니다"],
+  ["영화 카메라의 역사는 글에서 다루지 않는다"]
+ ],
+ src: [["②"], ["⑦"], ["⑧"], ["⑩과 어긋남 — 고품질 제공에 대한 압박을 점점 더 많이 받고 있다"], ["⑬"]],
  kb: {
-  title:"보이지 않게 만든 것들",
-  lead:"티가 나지 않을수록 규칙이 필요해진다.",
+  title: "여덟 시간을 둘러싼 다툼",
+  lead: "무엇이 우리의 시간을 두고 겨루는가",
   items: [
-   ["군중을 늘리는 소프트웨어",
-    "『반지의 제왕』 제작에 쓰인 매시브(MASSIVE)는 각 인물에게 간단한 행동 규칙을 주어 수만 명 규모의 전투를 만들었다. 사람을 더 부르는 대신 규칙을 설계하는 방식이다."],
-   ["2023년의 계약",
-    "미국 배우조합 파업 이후 체결된 협약에는 배우의 디지털 복제본을 만들 때 사전 동의와 별도 보수를 규정하는 조항이 들어갔다. 기술이 아니라 권리가 협상 대상이었다."],
-   ["더빙에서 입 모양까지",
-    "번역된 음성에 맞춰 입 모양을 바꾸는 기술이 상용화되면서, 더빙판에서도 입이 맞게 되었다. 편의가 커지는 만큼 원본과 변형본의 경계도 흐려진다."]
+   ["시간이라는 자원", "Netflix 는 주주 서한에서 자사의 경쟁 상대가 다른 스트리밍 서비스만이 아니라 사람들의 ‘수면’이라고 쓴 적이 있다. 콘텐츠 산업의 진짜 자원이 돈이 아니라 시간이라는 관점이다."],
+   ["컴퓨터 비전", "영상 속 장면·인물·사물을 자동으로 알아보는 기술이다. 자막 자동 생성, 장면 검색, 부적절한 장면 걸러 내기, 예고편 후보 뽑기처럼 사람이 일일이 보던 일을 대신한다."],
+   ["추천이 만드는 소비", "무엇을 볼지 고르는 시간이 줄면 보는 시간이 는다. 그래서 추천 시스템의 성능은 콘텐츠 자체의 품질만큼이나 사업에 직접 작용한다."]
   ],
-  ask:"내가 찍힌 사진이나 목소리가 내 허락 없이 다른 곳에 쓰인다면, 무엇이 문제일까?"
- }
+  ask: "어제 여러분의 시간을 가장 많이 가져간 화면은 무엇이었고, 무엇이 그것을 고르게 했는가?"
+ },
+ wtype: ["무관", "정답", "반대", "지엽", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 34 ───────────────────────────── */
 {
- no: "34", key: "longtail",
- accent: "#2F7A5E", tint: "#E4F0EA", deep: "#1B5240",
- en: "Everything Available, Nothing Found",
- ko: "다 있는데 아무것도 못 찾는다",
- goal: "음악 유통의 변화가 왜 '기회의 확대'로만 이어지지 않았는지 설명할 수 있다.",
- fig: "Figure 1  긴 꼬리와 좁은 문.",
- tip: "먼저 생각해 보자. 세상 모든 노래를 들을 수 있게 되면 나는 더 다양한 노래를 들을까?",
- sent: [
-  "Twenty years ago a shop could stock only a few thousand albums.",
-  "Shelf space decided what most people would ever hear.",
-  "Streaming removed that limit completely, and predictions followed at once.",
-  "Writers expected a long tail: countless small artists each finding a small audience.",
-  "The tail did appear, and it is longer than anyone imagined.",
-  "What nobody predicted was how steep the head would become.",
-  "A tiny share of tracks still collects most of the listening.",
-  "The reason is simple once stated: shelves were never the only bottleneck.",
-  "Attention is the scarcer resource, and it did not expand with the catalogue.",
-  "A listener with unlimited choice needs help choosing more than before, not less.",
-  "So the gatekeeper moved rather than disappeared.",
-  "It used to be a buyer in a shop; it is now a playlist and a recommendation.",
-  "Being available is easy now, and being found is harder than it ever was.",
-  "Many musicians describe reaching more countries and earning less money.",
-  "Access and opportunity turned out to be different things."
+ no: "34", key: "longtail", accent: "#2F7A5E", tint: "#E4F0EA", deep: "#1B5240",
+ en: "Being Successful in the Music Industry",
+ ko: "가장 잘하는 것과 팔리는 것",
+ goal: "음악 업계에서 실력과 성공이 곧바로 이어지지 않는 까닭을 근거를 들어 설명할 수 있다.",
+ fig: "Figure 1  긴 꼬리와 좁은 문 — 올리기는 쉽고 발견되기는 어렵다.",
+ tip: "먼저 생각해 보자. ‘가장 잘하는 사람’이 늘 가장 널리 알려지는가?",
+ sent: T(34).sent, kor: T(34).kor,
+ bank: [
+  ["outweigh", "①", "~보다 크다"],
+  ["populace", "③", "대중, 사람들"],
+  ["dexterity", "⑤", "손재주"],
+  ["demographic", "⑤", "인구 집단"],
+  ["venture", "⑦", "모험적 사업"],
+  ["merit", "⑨", "장점"]
  ],
- kor: [
-  "20년 전 한 상점은 앨범 수천 장 정도만 들여놓을 수 있었다.",
-  "진열대 공간이 대부분의 사람이 평생 들을 것을 정했다.",
-  "스트리밍은 그 한계를 완전히 없앴고, 곧바로 예측들이 뒤따랐다.",
-  "필자들은 '긴 꼬리'를 예상했다. 수많은 작은 음악가가 저마다 작은 청중을 찾는 그림이었다.",
-  "꼬리는 실제로 나타났고, 누가 상상한 것보다도 길다.",
-  "아무도 예측하지 못한 것은 머리가 얼마나 가팔라질지였다.",
-  "아주 작은 비율의 곡이 여전히 재생의 대부분을 가져간다.",
-  "이유는 말해 놓고 보면 간단하다. 진열대가 유일한 병목이었던 적은 없었다.",
-  "더 희소한 자원은 주의이며, 그것은 음원 목록과 함께 늘어나지 않았다.",
-  "선택이 무한한 청취자는 예전보다 덜이 아니라 더 많은 고르기 도움을 필요로 한다.",
-  "그래서 문지기는 사라진 것이 아니라 자리를 옮겼다.",
-  "예전에는 상점의 구매 담당자였고, 지금은 재생목록과 추천이다.",
-  "이제 올리는 일은 쉽고, 발견되는 일은 그 어느 때보다 어렵다.",
-  "많은 음악가가 더 많은 나라에 닿으면서 돈은 더 적게 번다고 말한다.",
-  "접근과 기회는 서로 다른 것으로 드러났다."
+ defs: [
+  ["outweigh", "to be greater in weight or value"],
+  ["populace", "all the people of a place"],
+  ["dexterity", "skill in using the hands quickly"],
+  ["demographic", "a group of people of one kind"],
+  ["venture", "a new project with some risk"],
+  ["merit", "a good point worth praising"]
  ],
- bank: [["stock","①","(상품을) 들여놓다"],["shelf","②","진열대"],["catalogue","⑨","음원 목록"],
-        ["scarce","⑨","희소한"],["gatekeeper","⑪","문지기"],["access","⑮","접근"]],
- defs: [["stock","to keep goods available for sale"],
-        ["shelf","a flat board for holding goods"],
-        ["catalogue","the full list of items on offer"],
-        ["scarce","available only in small amounts"],
-        ["gatekeeper","someone who controls what gets through"],
-        ["access","the chance to reach or use something"]],
- defOrder: [1,4,0,5,2,3],
+ defOrder: [3, 0, 5, 1, 4, 2],
  flow: [
-  ["Before","Shelf space decided what most people would hear",null],
-  ["The prediction","A long (  ①  ) of small artists finding small audiences","tail"],
-  ["What also happened","The head grew (  ②  ) than anyone expected","steeper"],
-  ["The reason","(  ③  ), not shelf space, is the scarce resource","attention"],
-  ["Result","The gatekeeper (  ④  ) instead of disappearing","moved"]
+  ["The effort", "Musicians practise for hours from a young age", null],
+  ["The contrast", "In sport the fastest runner (  ①  ) the race", "wins"],
+  ["The problem", "In music, ‘best’ in the eyes of (  ②  )?", "whom"],
+  ["The answer", "Aim at the target (  ③  ) who will care", "demographic"],
+  ["The proof", "Decca turned down (  ④  ) in 1962", "The Beatles"]
  ],
- flowBogi: "tail · steeper · attention · moved · shelf · money",
+ flowBogi: "wins · whom · demographic · The Beatles · loses · everyone",
  para: [
-  ["② decided what most people would ever hear","Shelves ______ what reached listeners.","limited"],
-  ["⑥ how steep the head would become","Popularity grew more ______, not less.","concentrated"],
-  ["⑨ it did not expand with the catalogue","Attention stayed ______ while supply grew.","fixed"],
-  ["⑪ moved rather than disappeared","The filter changed ______, not existence.","form"],
-  ["⑮ different things","Access and opportunity are not ______.","equivalent"]
+  ["① practise for hours on end from a young age", "They train for hours ______ end.", "without"],
+  ["③ this may actually carry little weight", "Being best may ______ for little.", "count"],
+  ["⑤ not everybody will be impressed", "It will not move ______.", "everyone"],
+  ["⑦ the music has no audience or purpose", "Refusal does not mean ______ will listen.", "nobody"],
+  ["⑨ enough belief in it to proceed with investment", "Belief strong enough to ______ money in.", "put"]
  ],
- paraBogi: "limited · concentrated · fixed · form · equivalent · widened · scattered · growing",
+ paraBogi: "without · count · everyone · nobody · put · with · pay · few",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How to Start a Record Shop","Access Is Not the Same as Opportunity",
-       "Streaming Has Made Musicians Rich","The Best Playlists of the Year",
-       "Why Small Artists No Longer Exist"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["예전에는 진열대 공간이 들을 수 있는 것을 정했다.","긴 꼬리는 실제로 나타났다.",
-       "작은 비율의 곡이 재생의 대부분을 가져간다는 예상이 맞아떨어졌다.","주의는 음원 목록과 함께 늘지 않았다.",
-       "문지기는 사라지지 않고 자리를 옮겼다."], ans:3},
-  {t:"write", q:"필자가 '접근과 기회는 다르다'고 한 근거를 우리말 한 문장으로 써 보세요.",
-   ans:"올리는 일은 쉬워졌지만 주의가 늘지 않아 발견되는 일은 더 어려워졌기 때문이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How Decca Chose Its Artists in 1962",
+    "Best Is Not the Same as Wanted",
+    "The Finest Player Always Wins the Contract",
+    "How to Tune a Guitar Quickly",
+    "A History of the Recording Studio"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "많은 프로 뮤지션은 어릴 때부터 여러 시간 계속 연습한다.",
+    "달리기에서는 다른 모든 선수보다 빠르면 경주에서 이긴다.",
+    "‘슈레드 연주법’ 재능은 놀라운 손재주를 보여도 모두를 감동시키지는 않는다.",
+    "업계 투자자가 투자하지 않으면 그 음악에는 청중도 목적도 없는 것이다.",
+    "1962년 Decca 는 비틀스와 계약할 기회를 놓쳤다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "필자가 슈레드 기법 기타리스트에게 권하는 바를 우리말 한 문장으로 써 보세요.",
+   ans: "모두를 감동시키려 하지 말고, 그 연주에 크게 관심을 가질 특정 목표 인구 집단에 집중하라는 것이다."
+  }
  ],
  fl: {
-  model: { n:"⑩",
-   toks: [["A listener","s"],["with unlimited choice","m"],["needs","v"],
-          ["help choosing","m"],["more than before, not less","m"]],
-   ko:"선택이 무한한 청취자는 예전보다 덜이 아니라 더 많은 고르기 도움을 필요로 한다." },
+  model: {
+   n: "⑦",
+   toks: [
+    ["This,", "s"], ["however,", "m"], ["is not", "v"], ["the case", null],
+    ["— just because an industry investor does not invest in a particular music venture", "s"],
+    ["does not mean", "v"], ["that", "c"], ["the music", "s2"], ["has", "v2"],
+    ["no audience or purpose.", null]
+   ],
+   ko: "그러나 그렇지 않은데, 업계 투자자가 어떤 음악 사업에 투자하지 않는다고 해서 그 음악에 청중이나 목적이 없다는 뜻은 아니다."
+  },
   drill: [
-   { n:"⑥", en:"What nobody predicted was how steep the head would become.",
-     ans:"S What nobody predicted · △V was · C how steep the head would become",
-     ko:"아무도 예측하지 못한 것은 머리가 얼마나 가팔라질지였다." },
-   { n:"⑧", en:"The reason is simple once stated: shelves were never the only bottleneck.",
-     ans:"S The reason · △V is · C simple · M once stated · S shelves · △V were · C never the only bottleneck",
-     ko:"이유는 말해 놓고 보면 간단하다. 진열대가 유일한 병목이었던 적은 없었다." },
-   { n:"⑬", en:"Being available is easy now, and being found is harder than it ever was.",
-     ans:"S Being available · △V is · C easy · M now · [and] S being found · △V is · C harder than it ever was",
-     ko:"이제 올리는 일은 쉽고, 발견되는 일은 그 어느 때보다 어렵다." }
+   {
+    n: "②",
+    en: "Although the music industry is a competitive place, compare music with sport: if you can run faster than all the other athletes, you will win the race.",
+    ans: "[Although] S′ the music industry · △V′ is · C a competitive place · △V compare · O music with sport · [if] S′ you · △V′ can run faster · S you · △V will win · O the race",
+    ko: "음악 업계가 경쟁이 치열한 곳이긴 하지만, 음악을 스포츠와 견주어 보라. 다른 선수들보다 빨리 달릴 수 있으면 경주에서 이긴다."
+   },
+   {
+    n: "④",
+    en: "Defining the words ‘best musician’ creates the first problem: ‘best’ in the eyes of whom?",
+    ans: "S Defining the words ‘best musician’ · △V creates · O the first problem · M ‘best’ in the eyes of whom?",
+    ko: "‘최고의 뮤지션’이라는 말을 정의하는 데서 첫 번째 문제가 생긴다. 누구의 눈에 ‘최고’인가?"
+   },
+   {
+    n: "⑨",
+    en: "In essence, there will be huge variation between companies or persons that recognise certain merits in a musical concept and have enough belief in it to proceed with investment.",
+    ans: "M In essence · △V there will be · S huge variation · M between companies or persons · [that] △V′ recognise certain merits and have enough belief to proceed with investment",
+    ko: "본질적으로, 어떤 음악적 구상에서 장점을 알아보고 투자를 진행할 만큼 믿음을 갖는 회사나 사람 사이에는 큰 차이가 있을 것이다."
+   }
   ]
  },
  syn: [
-  { n:"⑥", name:"What절 주어 + 의문사절 보어",
-    q:"«What nobody predicted was how steep» the head would become.",
-    d:"주어도 절, 보어도 절이다. <b>how + 형용사 + 주어 + 동사</b> 어순에 주의한다.",
-    k:"아무도 예측하지 못한 것은 머리가 얼마나 가팔라질지였다." },
-  { n:"⑬", name:"동명사 주어 + 비교급",
-    q:"«Being available is easy» now, and «being found is harder» than it ever was.",
-    d:"동명사구 주어는 단수. than it ever was 는 '지금까지 어느 때보다'라는 뜻이다.",
-    k:"올리는 일은 쉽고, 발견되는 일은 그 어느 때보다 어렵다." }
+  {
+   n: "⑤",
+   name: "It ~ that 강조 구문 (목적어 강조)",
+   q: "…and «it is that target demographic that the guitar shredder must focus and concentrate on»…",
+   d: "강조하고 싶은 말을 <b>It is</b>와 <b>that</b> 사이에 넣는다. 여기서는 전치사 <b>on</b>의 목적어가 앞으로 나왔다.",
+   k: "슈레드 기타리스트가 집중해야 하는 것은 바로 그 목표 인구 집단이다"
+  },
+  {
+   n: "⑦",
+   name: "Just because ~ does not mean …",
+   q: "«just because an industry investor does not invest in a particular music venture does not mean that» the music has no audience…",
+   d: "‘단지 ~라고 해서 …인 것은 아니다’로 읽는다. because 절 전체가 주어 노릇을 한다.",
+   k: "단지 투자하지 않는다고 해서 ~라는 뜻은 아니다"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"What surprised the team was how quickly the song spread.",
-    k:"그 팀을 놀라게 한 것은 그 노래가 얼마나 빨리 퍼졌는지였다." },
-  { u:"구문 2", en:"Recording is cheaper now, but touring is harder than it was.",
-    k:"녹음은 지금 더 싸지만, 순회공연은 예전보다 더 어렵다." },
-  { u:"구문 1 + 2", en:"What nobody expected was how much harder being noticed would become.",
-    k:"아무도 예상하지 못한 것은 눈에 띄는 일이 얼마나 더 어려워질지였다." }
+  { u: "구문 1", en: "It is the audience that the singer must reach first.", k: "그 가수가 먼저 닿아야 하는 것은 바로 청중이다." },
+  { u: "구문 2", en: "Just because a song is short does not mean it is simple.", k: "단지 노래가 짧다고 해서 단순한 것은 아니다." },
+  { u: "구문 1 + 2", en: "Just because it is the label that pays does not mean it decides the sound.", k: "단지 돈을 내는 쪽이 음반사라고 해서 소리를 정하는 것은 아니다." }
  ],
- wtype: ["무관","정답","반대","무관","반대"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["음반 가게 창업은 글의 관심사가 아니다"],["정답"],
-       ["글은 많은 음악가가 돈을 더 적게 번다고 말한다 — 정반대다"],
-       ["재생목록 추천은 글에 나오지 않는다"],
-       ["글은 작은 음악가가 사라졌다고 하지 않는다 — 꼬리는 나타났다"]],
- src: [["②"],["⑤"],["⑥과 어긋남 — 머리가 가팔라지는 것은 아무도 예측하지 못했다"],["⑨"],["⑪"]],
+ why: [
+  ["문장 ⑧의 일화만 붙든 지엽적인 제목이다"],
+  ["정답"],
+  ["글은 최고의 연주자여도 업계에서 중요성이 거의 없을 수 있다고 말한다 — 정반대다"],
+  ["기타 조율법은 글에 나오지 않는다"],
+  ["녹음실의 역사는 글에서 다루지 않는다"]
+ ],
+ src: [["①"], ["②"], ["⑤"], ["⑦과 어긋남 — 투자하지 않는다고 청중이나 목적이 없다는 뜻은 아니다"], ["⑧"]],
  kb: {
-  title:"긴 꼬리 뒤에 남은 것",
-  lead:"고를 것이 많아질수록 고르기가 어려워진다.",
+  title: "거절된 밴드",
+  lead: "1962년 1월 1일의 오디션",
   items: [
-   ["'롱테일'이라는 말",
-    "2004년 크리스 앤더슨이 잡지 『와이어드』에 쓴 글에서 널리 퍼졌다. 진열 공간의 제약이 사라지면 비주류 상품의 합이 주류를 넘어설 수 있다는 전망이었다."],
-   ["머리는 더 가팔라졌다",
-    "여러 스트리밍 자료 분석에서 상위 소수 트랙이 전체 재생의 큰 몫을 차지하는 집중 현상이 확인되었다. 꼬리가 길어지는 것과 머리가 두꺼워지는 것은 동시에 일어날 수 있다."],
-   ["추천이 문지기가 되면",
-    "재생목록 편성과 알고리즘 추천이 노출을 좌우하면서, 그 기준이 새로운 관문이 되었다. 무엇이 추천되는지가 공개되지 않는다는 점이 논쟁거리다."]
+   ["Decca 오디션", "비틀스는 1962년 1월 1일 런던에서 Decca 오디션을 보았고 계약을 얻지 못했다. 같은 해 EMI 의 Parlophone 레이블에서 프로듀서 George Martin 을 만나 계약으로 이어졌다."],
+   ["긴 꼬리", "Chris Anderson 은 2004년 글에서, 온라인에서는 잘 팔리지 않는 수많은 상품의 합이 소수의 히트에 맞먹을 수 있다고 썼다. 다만 그것은 ‘발견될 수 있을 때’의 이야기다."],
+   ["누구의 최고인가", "음악 경연의 심사표는 대개 정확성·표현력·독창성처럼 서로 다른 항목을 섞는다. 항목의 가중치를 바꾸면 순위가 달라진다. ‘최고’는 기준을 고른 뒤에야 생기는 말이다."]
   ],
-  ask:"내가 최근에 새로 알게 된 노래는 어떻게 알게 되었는가? 누가 그것을 내 앞에 놓았을까?"
- }
+  ask: "여러분이 잘하는 것을 알아볼 사람은 누구인가? 그 사람은 지금 어디에 있는가?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 35 ───────────────────────────── */
 {
- no: "35", key: "boxoffice",
- accent: "#B84A6A", tint: "#FAE8EC", deep: "#832945",
- en: "Why Studios Repeat Themselves",
- ko: "제작사가 같은 것을 되풀이하는 이유",
- goal: "흥행 산업의 위험 구조가 어떻게 반복적인 기획으로 이어지는지 설명할 수 있다.",
+ no: "35", key: "boxoffice", accent: "#B84A6A", tint: "#FAE8EC", deep: "#832945",
+ en: "Success at the Box Office",
+ ko: "오래 걸린다는 것과 잘된다는 것",
+ goal: "상영 기간이 실적 지표가 되는 방식과 제작사·극장의 이해가 갈리는 지점을 설명할 수 있다.",
  fig: "Figure 1  소수의 성공이 나머지를 먹여 살리는 구조.",
- tip: "먼저 생각해 보자. 왜 극장에는 속편과 리메이크가 그렇게 많을까?",
- sent: [
-  "Audiences complain that films have stopped being new, and they are partly right.",
-  "The reason is less about imagination than about how the money is arranged.",
-  "A large film is financed before anyone knows whether it will work.",
-  "Most releases lose money, and a few pay for all of them.",
-  "That shape pushes every decision toward reducing uncertainty.",
-  "A familiar character is a piece of evidence that an audience already exists.",
-  "So is a novel that sold well, or a film that worked in another country.",
-  "Marketing costs make the pressure sharper still.",
-  "A studio may spend as much on advertising as on filming.",
-  "That money must be committed months before a single ticket is sold.",
-  "Opening weekend then decides almost everything, because screens are reassigned by Monday.",
-  "A story that needs word of mouth has very little time to collect it.",
-  "None of this means original films cannot succeed, and each year several do.",
-  "It means they carry a risk the sequel does not, and are judged faster.",
-  "Repetition is not a failure of imagination so much as a response to a structure."
+ tip: "먼저 생각해 보자. 영화가 오래 걸리는 것은 누구에게 이득일까?",
+ sent: T(35).sent, kor: T(35).kor,
+ bank: [
+  ["indicator", "①", "지표"],
+  ["metric", "④", "측정 기준"],
+  ["gross", "④", "총액의"],
+  ["exhibitor", "⑦", "극장 경영자"],
+  ["wane", "⑧", "시들해지다"],
+  ["magnify", "⑪", "확대하다"]
  ],
- kor: [
-  "관객은 영화가 새롭기를 그만두었다고 불평하는데, 부분적으로는 맞는 말이다.",
-  "그 이유는 상상력보다 돈이 배치된 방식에 더 가깝다.",
-  "큰 영화는 그것이 통할지 아무도 모르는 상태에서 자금을 마련한다.",
-  "대부분의 개봉작은 손해를 보고, 몇 편이 그 모두를 감당한다.",
-  "그 구조는 모든 결정을 불확실성을 줄이는 쪽으로 민다.",
-  "익숙한 인물은 이미 관객이 존재한다는 증거 한 조각이다.",
-  "잘 팔린 소설이나 다른 나라에서 통한 영화도 마찬가지다.",
-  "마케팅 비용이 그 압력을 한층 더 날카롭게 만든다.",
-  "제작사는 촬영에 쓰는 만큼을 광고에 쓰기도 한다.",
-  "그 돈은 표 한 장이 팔리기 여러 달 전에 집행해야 한다.",
-  "그러면 개봉 첫 주말이 거의 모든 것을 정한다. 월요일이면 상영관이 재배정되기 때문이다.",
-  "입소문이 필요한 이야기는 그것을 모을 시간이 아주 적다.",
-  "이 가운데 무엇도 독창적인 영화가 성공할 수 없다는 뜻은 아니며, 해마다 몇 편은 성공한다.",
-  "다만 그것들이 속편은 지지 않는 위험을 지고, 더 빨리 평가받는다는 뜻이다.",
-  "반복은 상상력의 실패라기보다 하나의 구조에 대한 반응이다."
+ defs: [
+  ["indicator", "a sign that shows how things stand"],
+  ["metric", "a measure used to judge results"],
+  ["gross", "counted before costs are taken out"],
+  ["exhibitor", "a person who shows films to the public"],
+  ["wane", "to become weaker or smaller"],
+  ["magnify", "to make something look greater"]
  ],
- bank: [["finance","③","자금을 대다"],["release","④","개봉작"],["uncertainty","⑤","불확실성"],
-        ["commit","⑩","(자금을) 집행하다"],["reassign","⑪","재배정하다"],["repetition","⑮","반복"]],
- defs: [["finance","to provide money for a project"],
-        ["release","a film or record made available to the public"],
-        ["uncertainty","the state of not knowing what will happen"],
-        ["commit","to promise money or effort in advance"],
-        ["reassign","to give something to a different use"],
-        ["repetition","the act of doing the same thing again"]],
- defOrder: [2,0,4,1,5,3],
+ defOrder: [4, 1, 5, 0, 3, 2],
  flow: [
-  ["The complaint","Audiences say films have stopped being new",null],
-  ["The structure","Most releases lose money and a few pay for (  ①  )","all"],
-  ["The effect","Every decision is pushed toward reducing (  ②  )","uncertainty"],
-  ["The squeeze","Marketing must be committed before a ticket is (  ③  )","sold"],
-  ["The verdict","Opening (  ④  ) decides almost everything","weekend"]
+  ["The measure", "How long a film stays in cinemas is one indicator", null],
+  ["The logic", "A longer run attracts more paying (  ①  )", "customers"],
+  ["The split", "Producers want long runs; (  ②  ) often want short ones", "exhibitors"],
+  ["The fact", "About (  ③  )% of cinema revenue comes in week one", "40"],
+  ["The lever", "Time the release for peak (  ④  ) periods", "holiday"]
  ],
- flowBogi: "all · uncertainty · sold · weekend · imagination · sequel",
+ flowBogi: "customers · exhibitors · 40 · holiday · critics · 10",
  para: [
-  ["② less about imagination than about money","The cause is ______, not creative.","financial"],
-  ["⑥ evidence that an audience already exists","A known character lowers the ______.","risk"],
-  ["⑩ months before a single ticket is sold","The spending comes ______ any return.","before"],
-  ["⑫ very little time to collect it","Word of mouth arrives too ______.","late"],
-  ["⑮ a response to a structure","Repetition is a ______ to conditions.","reaction"]
+  ["① the length of time it survives a theatre run", "How long it stays on ______.", "screen"],
+  ["④ not as widely used as gross box office receipts", "Total takings are used ______ often.", "more"],
+  ["⑧ once a movie's appeal starts to wane", "When the pull begins to ______.", "fade"],
+  ["⑩ the more longevity it is likely to have", "A strong start means a ______ run.", "longer"],
+  ["⑫ aiming for release at peak holiday times", "Open when crowds are ______.", "biggest"]
  ],
- paraBogi: "financial · risk · before · late · reaction · artistic · after · early",
+ paraBogi: "screen · more · fade · longer · biggest · shelf · less · grow",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How to Write a Sequel","Repetition as a Response to Risk",
-       "Original Films Never Succeed","A List of the Year's Best Movies",
-       "Why Advertising Should Be Cheaper"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["대부분의 개봉작은 손해를 본다.","광고비는 표가 팔리기 전에 집행된다.",
-       "필자는 독창적인 영화가 성공할 수 없다고 본다.","월요일이면 상영관이 재배정된다.",
-       "익숙한 인물은 관객이 존재한다는 증거로 쓰인다."], ans:3},
-  {t:"write", q:"필자가 반복을 '상상력의 실패가 아니다'라고 본 이유를 우리말 한 문장으로 써 보세요.",
-   ans:"소수의 성공이 나머지를 감당하는 자금 구조가 모든 결정을 위험을 줄이는 쪽으로 밀기 때문이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "What Gross Box Office Receipts Mean",
+    "The First Week Decides the Rest",
+    "Long Runs Are Best for Everyone",
+    "How Film Critics Write Reviews",
+    "A Guide to Building a Cinema"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "영화가 극장에서 오래 걸릴수록 더 많은 유료 관객을 끌 수 있다.",
+    "상영 기간은 박스 오피스 총 매상액만큼 널리 쓰이는 지표는 아니다.",
+    "제작자와 배급사에게는 상영 기간이 긴 편이 최선이다.",
+    "영화의 매력이 시들해져도 극장 경영자는 같은 영화를 계속 거는 편이 낫다.",
+    "개봉 시기를 제대로 잡으면 그 효과가 더욱 확대된다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "제작자와 극장 경영자의 이해가 갈리는 지점을 우리말 한 문장으로 써 보세요.",
+   ans: "제작자와 배급사는 상영되는 동안 수입이 생기므로 긴 상영을 바라지만, 극장 경영자는 매력이 식은 영화를 새 영화로 바꾸는 편이 관객과 수익을 더 늘릴 수 있어 짧은 상영을 바라는 경우가 많다."
+  }
  ],
  fl: {
-  model: { n:"⑪",
-   toks: [["Opening weekend","s"],["then","m"],["decides","v"],["almost everything","m"],
-          ["because","c"],["screens","s2"],["are reassigned","v2"],["by Monday","m"]],
-   ko:"그러면 개봉 첫 주말이 거의 모든 것을 정한다. 월요일이면 상영관이 재배정되기 때문이다." },
+  model: {
+   n: "⑧",
+   toks: [
+    ["This", "s"], ["is", "v"], ["because", "c"], ["once", "c"], ["a movie's appeal", "s2"],
+    ["starts", "v2"], ["to wane", null], ["and", "c"], ["audiences", "s2"], ["fall off,", "v2"],
+    ["switching to a newer movie", "s2"], ["might generate", "v2"],
+    ["bigger audiences in the theatre and more revenues for the owner of the theatres.", null]
+   ],
+   ko: "이는 영화의 매력이 시들해지고 관객이 줄기 시작하면, 더 새로운 영화로 바꾸는 편이 극장에 더 많은 관객과 소유주에게 더 많은 수익을 만들어 낼 수 있기 때문이다."
+  },
   drill: [
-   { n:"④", en:"Most releases lose money, and a few pay for all of them.",
-     ans:"S Most releases · △V lose · O money · [and] S a few · △V pay · M for all of them",
-     ko:"대부분의 개봉작은 손해를 보고, 몇 편이 그 모두를 감당한다." },
-   { n:"⑨", en:"A studio may spend as much on advertising as on filming.",
-     ans:"S A studio · △V may spend · O as much · M on advertising as on filming",
-     ko:"제작사는 촬영에 쓰는 만큼을 광고에 쓰기도 한다." },
-   { n:"⑭", en:"It means they carry a risk the sequel does not, and are judged faster.",
-     ans:"S It · △V means · [that] S′ they · △V′ carry · O a risk the sequel does not · [and] △V′ are judged · M faster",
-     ko:"다만 그것들이 속편은 지지 않는 위험을 지고, 더 빨리 평가받는다는 뜻이다." }
+   {
+    n: "③",
+    en: "Clearly, the longer a movie shows in cinemas, the more paying customers it can attract.",
+    ans: "M Clearly · [the longer] S′ a movie · △V′ shows in cinemas · [the more] O paying customers · S it · △V can attract",
+    ko: "분명히, 영화가 극장에서 오래 걸릴수록 더 많은 유료 관객을 끌 수 있다."
+   },
+   {
+    n: "⑥",
+    en: "For the producer and distributor, a longer run is best because while the movie is in the movie theatres, it is generating some income.",
+    ans: "M For the producer and distributor · S a longer run · △V is · C best · [because] [while] S′ the movie · △V′ is · M in the movie theatres · S′ it · △V′ is generating · O some income",
+    ko: "제작자와 배급사에게는 상영 기간이 긴 편이 최선인데, 영화가 극장에 걸려 있는 동안 얼마간 수입이 생기기 때문이다."
+   },
+   {
+    n: "⑨",
+    en: "It is the case anyway that with most movies, something like 40% of all the revenue they will generate in cinemas is earned during the first week after release.",
+    ans: "S It · △V is · C the case · M anyway · [that] S′ something like 40% of all the revenue · △V′ is earned · M during the first week after release",
+    ko: "어쨌든 대부분의 영화는 극장에서 벌어들일 전체 수익의 40% 정도를 개봉 첫 주에 번다는 것이 사실이다."
+   }
   ]
  },
  syn: [
-  { n:"⑨", name:"as much A as B (원급 비교)",
-    q:"A studio may spend «as much on advertising as on filming».",
-    d:"<b>as ~ as</b> 사이에는 원급이 온다. 비교되는 두 자리(on advertising / on filming)를 맞춰 읽는다.",
-    k:"촬영에 쓰는 만큼을 광고에 쓰기도 한다." },
-  { n:"⑮", name:"not A so much as B",
-    q:"Repetition is «not a failure of imagination so much as a response» to a structure.",
-    d:"<b>not A so much as B</b>는 'A라기보다 오히려 B'. 무게가 B 쪽에 실린다.",
-    k:"반복은 상상력의 실패라기보다 구조에 대한 반응이다." }
+  {
+   n: "⑤",
+   name: "전치사 + whether절",
+   q: "The overall length of a movie's run is determined «by whether it continues to pull in sufficient revenues».",
+   d: "<b>whether</b>가 이끄는 명사절이 전치사 <b>by</b>의 목적어가 된다. <b>if</b>는 전치사 뒤에 쓰지 않는다.",
+   k: "충분한 수익을 계속 벌어들이는지에 따라"
+  },
+  {
+   n: "⑨",
+   name: "It is the case that ~",
+   q: "«It is the case anyway that with most movies, something like 40% … is earned» during the first week…",
+   d: "<b>it</b>이 가주어, <b>that절</b>이 진주어다. ‘~라는 것이 사실이다’로 읽는다.",
+   k: "~라는 것이 어쨌든 사실이다"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"The team spent as much time on the plan as on the work.",
-    k:"그 팀은 작업에 쓴 만큼의 시간을 계획에 썼다." },
-  { u:"구문 2", en:"The delay was not laziness so much as caution.",
-    k:"그 지연은 게으름이라기보다 신중함이었다." },
-  { u:"구문 1 + 2", en:"He earned not as much money as attention, so much as trouble.",
-    k:"그가 얻은 것은 돈이라기보다 관심, 그보다도 오히려 곤란이었다." }
+  { u: "구문 1", en: "The result depends on whether the film opens in summer.", k: "그 결과는 그 영화가 여름에 개봉하는지에 달려 있다." },
+  { u: "구문 2", en: "It is the case that most films earn little after week three.", k: "대부분의 영화가 3주 차 이후에는 거의 벌지 못한다는 것이 사실이다." },
+  { u: "구문 1 + 2", en: "It is the case that success depends on whether the first week goes well.", k: "성공이 첫 주가 잘 되는지에 달려 있다는 것이 사실이다." }
  ],
- wtype: ["무관","정답","반대","무관","무관"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["속편 쓰는 법은 글의 관심사가 아니다"],["정답"],
-       ["글은 해마다 몇 편은 성공한다고 말한다 — 정반대다"],
-       ["영화 추천 목록은 글에 나오지 않는다"],["광고비 인하 주장은 글에 없다"]],
- src: [["④"],["⑩"],["⑬과 어긋남 — 해마다 몇 편은 성공한다고 했다"],["⑪"],["⑥"]],
+ why: [
+  ["문장 ④의 용어 하나만 붙든 지엽적인 제목이다"],
+  ["정답"],
+  ["글은 극장 경영자에게는 단기 상영이 나은 경우가 많다고 말한다 — 정반대다"],
+  ["평론가의 글쓰기는 글에 나오지 않는다"],
+  ["극장을 짓는 방법은 글에서 다루지 않는다"]
+ ],
+ src: [["③"], ["④"], ["⑥"], ["⑧과 어긋남 — 더 새로운 영화로 바꾸는 편이 관객과 수익을 늘릴 수 있다"], ["⑪"]],
  kb: {
-  title:"위험을 줄이는 방법들",
-  lead:"돈이 먼저 움직이고 이야기가 뒤따른다.",
+  title: "아무도 모른다",
+  lead: "흥행은 왜 예측이 어려운가",
   items: [
-   ["\"아무도 모른다\"",
-    "각본가 윌리엄 골드먼은 1983년 회고록에서 할리우드에 대해 \"Nobody knows anything\"이라고 썼다. 어떤 영화가 흥행할지 사전에 아는 사람은 없다는 뜻으로 지금도 인용된다."],
-   ["P&A 라는 항목",
-    "제작비와 별도로 광고·배급에 드는 비용을 P&A(Prints and Advertising)라 부른다. 대작에서는 제작비에 맞먹는 규모가 되기도 하며, 개봉 전에 대부분 집행된다."],
-   ["첫 주말이 정하는 것",
-    "극장은 좌석 점유율에 따라 상영관을 주 단위로 재배정한다. 개봉 첫 주 성적이 나쁘면 다음 주에 상영관이 줄어, 입소문이 퍼질 시간을 얻기 어렵다."]
+   ["Goldman 의 문장", "각본가 William Goldman 은 1983년 회고록에서 할리우드에 대해 ‘아무도 아무것도 모른다(Nobody knows anything)’고 썼다. 무엇이 통할지 미리 아는 사람은 없다는 뜻으로 지금도 인용된다."],
+   ["개봉 첫 주의 무게", "북미 극장가는 금요일에 개봉해 주말 사흘 성적으로 다음 주 상영관 수를 조정하는 관행이 굳어져 있다. 첫 주말이 곧 다음 주의 상영 규모를 정하는 셈이다."],
+   ["여름과 연말", "블록버스터 개봉이 여름과 연말에 몰리는 것은 학교가 쉬고 이동이 늘어 관객 수가 최대가 되기 때문이다. 같은 영화라도 언제 여는지가 성적에 크게 작용한다."]
   ],
-  ask:"내가 최근에 본 영화는 왜 그것을 보게 되었는가? 무엇이 나를 극장으로 데려갔을까?"
- }
+  ask: "여러분이 무언가를 시작할 때, ‘언제’를 고르는 일이 결과를 바꾼 적이 있는가?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 }
-]};
+
+ ]
+};
