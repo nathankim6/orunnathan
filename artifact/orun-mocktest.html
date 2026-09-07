@@ -2,12 +2,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/docx@9.1.0/build/index.umd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" integrity="sha384-+mbV2IY1Zk/X1p/nWllGySJSUN8uMs+gUAN10Or95UBH0fpj6GfKgPmgC5EXieXG" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" integrity="sha384-vtjasyidUo0kW94K5MXDXntzOJpQgBKXmE7e2Ga4LG0skTTLeBi97eFAXsqewJjw" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js" integrity="sha384-rNlaE5fs9dGIjmxWDALQh/RBAaGRYT5ChrzHo6tRfgrZ36iRFAiquP5g41Jsv+0j" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" integrity="sha384-/1qUCSGwTur9vjf/z9lmu/eCUYbpOTgSjmpbMQZ1/CtX2v/WcAIKqRv+U1DUCG6e" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js" integrity="sha384-SnzOobpRMLXZ52iJvZm/C0fYw0OQemTXzTjIsdsfMcrCtCEe9qgzxTd3RSklO5x2" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/docx@9.1.0/build/index.umd.js" integrity="sha384-LrP2iKGIDznkgkHfHqWN+9TUFjaXfyUTJgf6zsJx74Omjx0dqO4mHG8N9mngCdRI" crossorigin="anonymous"></script>
 <style>
 /* ═══════════════════════════════════════════════════════════════════════════
    ORUN ENGLISH · 동형 모의고사 생성기 — 헤어라인 (Quiet Precision)
@@ -582,6 +582,21 @@ textarea:focus, input:focus { border-color: var(--line-4); outline: 2px solid va
 .api-card .st.bad { color: var(--neg); }
 .api-card .api-model { margin-top: var(--s3); max-width: 360px; }
 .api-card .api-engine { margin: var(--s3) 0 var(--s3); max-width: 360px; }
+.api-card .api-keep { margin-top: var(--s3); max-width: 360px; }
+.lib-warn {
+  margin: var(--s5) 0 0; padding: var(--s3) var(--s4);
+  background: var(--neg-surface); border: 1px solid var(--neg-line); border-radius: var(--r3);
+  font-size: var(--fs-small); line-height: var(--lh-small); color: var(--neg);
+}
+.api-card .api-safe {
+  margin: var(--s3) 0 0; font-size: var(--fs-micro); line-height: 1.65; color: var(--n8);
+}
+.api-card .api-safe b { color: var(--n10); font-weight: var(--w-med); }
+.api-card .api-probe { margin-top: var(--s3); display: flex; align-items: center; gap: var(--s3); flex-wrap: wrap; }
+.api-card .api-probe .btn { padding: 9px var(--s3); font-size: var(--fs-meta); }
+.api-card .probe-out { font-size: var(--fs-meta); line-height: var(--lh-meta); color: var(--n8); min-width: 0; }
+.api-card .probe-out.ok { color: var(--pos); }
+.api-card .probe-out.bad { color: var(--neg); }
 .api-card #apiKeyBody[hidden] { display: none; }
 
 /* ═════════ 하단 고정 바 — 유리 두 겹 중 둘 ═════════ */
@@ -1675,7 +1690,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     <span class="step" data-step="2"></span><span class="step-rule"></span>
     <span class="step" data-step="3"></span>
   </div>
-  <div class="state"><span class="build" id="buildTag">2026-09-07 19:43</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
+  <div class="state"><span class="build" id="buildTag">2026-09-07 20:02</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
 </div>
 
 <!-- 화면 0 · 시작 -->
@@ -1716,9 +1731,23 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
         <button type="button" class="btn ghost" id="apiKeySave">저장</button>
         <button type="button" class="btn link" id="apiKeyClear">지우기</button>
       </div>
+      <p class="st" id="apiStatus"></p>
+      <div class="seg api-keep" id="apiKeepSeg">
+        <button type="button" data-v="browser">이 브라우저에 저장</button>
+        <button type="button" data-v="session">창을 닫으면 지움</button>
+      </div>
       <div class="seg api-model" id="apiModelSeg"><button type="button" class="on" data-v="opus">Opus 5 · 정밀</button><button type="button" data-v="sonnet">Sonnet 5 · 빠르고 저렴</button></div>
+      <p class="api-safe">
+        키는 이 브라우저에만 남고 <b>api.anthropic.com</b> 한 곳으로만 보내요. 저장한 작업 내용·이력에는 들어가지 않아요.
+        여럿이 쓰는 컴퓨터라면 ‘창을 닫으면 지움’을 고르세요.
+        이 도구 전용 키를 따로 발급하고 <b>console.anthropic.com</b> 에서 한도(Spend limit)를 걸어 두면, 키가 새더라도 피해가 그 한도 안에서 멈춰요.
+      </p>
+      <div class="api-probe">
+        <button type="button" class="btn ghost" id="apiTestBtn">연결 확인</button>
+        <span class="probe-out" id="apiTestOut"></span>
+      </div>
     </div>
-    <p class="st" id="apiStatus"></p>
+    <p class="st" id="apiStatusSub"></p>
   </div>
 
   <details class="history" id="history" hidden>
@@ -3381,9 +3410,51 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   const API_MAX_TOKENS = { complex: 16000, default: 8000 };
   let apiFallbackOk = true;   // 서버가 폴백 베타를 거절하면 이후로는 빼고 보낸다
 
-  function getApiKey() { try { return (localStorage.getItem(API_KEY_STORE) || "").trim(); } catch (e) { return ""; } }
+  // 키 보관 — 여럿이 쓰는 컴퓨터를 위해 '창을 닫으면 지움'(sessionStorage) 을 고를 수 있다.
+  const API_KEEP_STORE = "orun_api_keep";
+  function keepMode() {
+    let v = ""; try { v = localStorage.getItem(API_KEEP_STORE) || ""; } catch (e) {}
+    return v === "session" ? "session" : "browser";
+  }
+  function getApiKey() {
+    try { const v = (sessionStorage.getItem(API_KEY_STORE) || "").trim(); if (v) return v; } catch (e) {}
+    try { return (localStorage.getItem(API_KEY_STORE) || "").trim(); } catch (e) {}
+    return "";
+  }
   function setApiKey(k) {
-    try { if (k) localStorage.setItem(API_KEY_STORE, k.trim()); else localStorage.removeItem(API_KEY_STORE); } catch (e) {}
+    try { sessionStorage.removeItem(API_KEY_STORE); } catch (e) {}
+    try { localStorage.removeItem(API_KEY_STORE); } catch (e) {}
+    if (!k) return;
+    try { (keepMode() === "session" ? sessionStorage : localStorage).setItem(API_KEY_STORE, k.trim()); } catch (e) {}
+  }
+  function setKeepMode(v) {
+    const k = getApiKey();                       // 이미 있는 키를 새 자리로 옮긴다
+    try { localStorage.setItem(API_KEEP_STORE, v === "session" ? "session" : "browser"); } catch (e) {}
+    setApiKey(k);
+  }
+  // 키와 연결을 실제로 확인한다 — 가장 작은 요청 하나(출력 1토큰)로 끝난다.
+  async function probeApi() {
+    const key = getApiKey();
+    if (!key) return { ok: false, msg: "키를 먼저 저장해 주세요." };
+    let res;
+    try {
+      res = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json", "x-api-key": key,
+          "anthropic-version": "2023-06-01", "anthropic-dangerous-direct-browser-access": "true",
+        },
+        body: JSON.stringify({ model: apiModelId(), max_tokens: 1, messages: [{ role: "user", content: "hi" }] }),
+      });
+    } catch (e) {
+      return { ok: false, msg: "api.anthropic.com 에 연결하지 못했어요. " + (window.claude
+        ? "지금 화면(claude.ai 아티팩트)에서는 외부 연결이 막혀 있을 수 있어요 — ‘내 Claude 구독’으로 바꾸거나, 이 파일을 웹 주소에 올려서 열어 주세요."
+        : location.protocol === "file:"
+          ? "파일을 그대로 연 상태(file://)라 브라우저가 요청을 막았을 수 있어요. 웹 주소(https://…)에 올려서 열면 해결돼요."
+          : "인터넷 연결과 광고 차단 확장을 확인해 주세요.") };
+    }
+    if (res.ok) return { ok: true, msg: "연결됐어요 — 바로 쓸 수 있어요." };
+    return { ok: false, msg: friendlySampleError(apiHttpError(res.status, await res.text())) };
   }
   function blobToBase64(blob) {
     return new Promise((res, rej) => {
@@ -3526,10 +3597,11 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   // 시작 화면의 실행 엔진 카드. 아티팩트 안에서는 구독/API 를 고를 수 있고, 밖에서는 API 뿐이다.
   let refreshEngineCard = () => {};
   function bindApiCard() {
-    const card = $("apiCard"), inp = $("apiKey"), st = $("apiStatus");
+    const card = $("apiCard"), inp = $("apiKey"), st = $("apiStatus"), stSub = $("apiStatusSub");
     if (!card) return;
     card.hidden = false;
     const engSeg = $("apiEngineSeg"), body = $("apiKeyBody"), desc = $("apiDesc"), title = $("apiTitle");
+    const keepSeg = $("apiKeepSeg"), probeOut = $("apiTestOut");
     engSeg.hidden = !SUB;                       // 고를 게 하나뿐이면 선택지를 보여주지 않는다
 
     const refresh = () => {
@@ -3538,26 +3610,32 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
       body.hidden = eng !== "api";
       title.textContent = SUB ? "무엇으로 실행할까요" : "Anthropic API 키로 실행해요";
 
+      st.textContent = ""; stSub.textContent = "";
       if (eng === "use") {
         desc.textContent = "내 Claude 구독으로 실행돼요. 사용량은 Claude 계정에서 차감되고, 따로 요금이 붙지 않아요."
           + (SUB_IMAGES === "no" ? " 다만 이 화면에서는 스캔한 사진 PDF를 읽지 못해요 — 그럴 땐 API 키로 바꿔 주세요." : "");
-        st.className = "st ok";
-        st.textContent = SUB_KIND === "legacy" ? "구버전 뷰어예요 — 글자 자료만 읽어요." : "바로 시작할 수 있어요.";
+        stSub.className = "st ok";
+        stSub.textContent = SUB_KIND === "legacy" ? "구버전 뷰어예요 — 글자 자료만 읽어요." : "바로 시작할 수 있어요.";
         btn.disabled = false; btn.removeAttribute("title");
       } else {
         desc.textContent = (SUB ? "Anthropic API 키로 실행해요. " : "지금은 claude.ai 밖에서 열려 있어요. ")
           + "키를 한 번 저장하면 이 브라우저에서 바로 실행되고, 스캔한 사진 PDF도 읽어요. "
           + "키는 이 브라우저에만 남고 api.anthropic.com 으로만 보내요. 사용량은 Anthropic 계정에 청구돼요.";
+        // 저장된 키를 입력칸에 되채우지 않는다 — 화면·개발자도구에 원문이 남을 이유가 없다
+        inp.value = "";
         if (k) {
-          inp.value = k;
+          inp.placeholder = "저장됨 (…" + k.slice(-4) + ") — 바꾸려면 새 키를 붙여넣으세요";
           st.className = "st ok";
-          st.textContent = "키가 저장돼 있어요 (…" + k.slice(-6) + "). 분석을 시작할 수 있어요.";
+          st.textContent = "키가 저장돼 있어요 · "
+            + (keepMode() === "session" ? "창을 닫으면 지워져요" : "이 브라우저에 남아 있어요");
           btn.disabled = false; btn.removeAttribute("title");
         } else {
+          inp.placeholder = "sk-ant-api03-…";
           st.className = "st";
           st.textContent = "console.anthropic.com 에서 발급한 키를 넣고 저장을 누르세요.";
           btn.disabled = true; btn.title = "API 키를 먼저 저장해 주세요";
         }
+        keepSeg.querySelectorAll("button").forEach(b => b.classList.toggle("on", b.dataset.v === keepMode()));
       }
       const note = document.querySelector('[data-s="options"] .cta-note');
       if (note) {
@@ -3571,14 +3649,38 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 
     const save = () => {
       const v = inp.value.trim();
-      if (v && !/^sk-ant-/.test(v)) { st.className = "st bad"; st.textContent = "Anthropic API 키는 sk-ant- 로 시작해요. 다시 확인해 주세요."; return; }
+      if (!v) {                                  // 빈 칸으로 저장을 눌러 기존 키를 날리지 않는다
+        if (getApiKey()) { toast("이미 저장된 키를 그대로 씁니다"); refresh(); }
+        else { st.className = "st"; st.textContent = "console.anthropic.com 에서 발급한 키를 넣고 저장을 누르세요."; }
+        return;
+      }
+      if (!/^sk-ant-/.test(v)) { st.className = "st bad"; st.textContent = "Anthropic API 키는 sk-ant- 로 시작해요. 다시 확인해 주세요."; return; }
       setApiKey(v);
+      probeOut.textContent = ""; probeOut.className = "probe-out";
       refresh();
-      if (v) toast("API 키를 저장했어요");
+      toast("API 키를 저장했어요");
     };
     $("apiKeySave").addEventListener("click", save);
     inp.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); save(); } });
-    $("apiKeyClear").addEventListener("click", () => { inp.value = ""; setApiKey(""); refresh(); });
+    $("apiKeyClear").addEventListener("click", () => {
+      inp.value = ""; setApiKey("");
+      probeOut.textContent = ""; probeOut.className = "probe-out";
+      refresh(); toast("저장된 키를 지웠어요");
+    });
+    keepSeg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+      setKeepMode(b.dataset.v);
+      refresh();
+      toast(b.dataset.v === "session" ? "창을 닫으면 키가 지워져요" : "이 브라우저에 키를 저장해요");
+    }));
+    $("apiTestBtn").addEventListener("click", async () => {
+      const btnT = $("apiTestBtn");
+      btnT.disabled = true;
+      probeOut.className = "probe-out"; probeOut.textContent = "확인하는 중…";
+      const r = await probeApi();
+      probeOut.className = "probe-out " + (r.ok ? "ok" : "bad");
+      probeOut.textContent = r.msg;
+      btnT.disabled = false;
+    });
     engSeg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
       setEngine(b.dataset.v);
       refresh();
@@ -3663,7 +3765,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     const c = window.claude;
     return [
       "ORUN 동형 모의고사 진단",
-      "build: 2026-09-07 19:43",
+      "build: 2026-09-07 20:02",
       "url: " + location.href,
       "runtime: " + RUNTIME + (c ? "" : " (window.claude 없음)"),
       "엔진 선택: " + engineKey() + " (구독 " + (SUB ? SUB_KIND : "없음") + ")",
@@ -3711,6 +3813,24 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   }
 
   // 런타임이 준비되기 전에는 실행 버튼을 잠가 두고, 준비되면 연다.
+  // 무결성 검사에 걸리거나 CDN 이 죽으면 라이브러리가 통째로 빠진다.
+  // 나중에 파일을 올리다 실패하게 두지 말고, 시작할 때 무엇이 빠졌는지 말해 준다.
+  (function warnMissingLibs() {
+    const need = [
+      [typeof pdfjsLib !== "undefined", "PDF 읽기"],
+      [typeof JSZip !== "undefined", "한글·워드 읽기와 워드 저장"],
+      [typeof XLSX !== "undefined", "엑셀 읽기"],
+      [typeof docx !== "undefined", "워드 저장(고급)"],
+    ].filter(x => !x[0]).map(x => x[1]);
+    if (!need.length) return;
+    const note = document.querySelector('[data-s="home"] .foot-note');
+    const p = document.createElement("p");
+    p.className = "lib-warn";
+    p.textContent = "일부 기능을 불러오지 못했어요 (" + need.join(", ") + "). "
+      + "인터넷 연결이나 사내 보안 프로그램이 cdnjs.cloudflare.com · cdn.jsdelivr.net 을 막고 있는지 확인해 주세요.";
+    if (note && note.parentNode) note.parentNode.insertBefore(p, note);
+  })();
+
   runtimeReady = (async () => {
     await initRuntime();
     bindApiCard();             // 카드는 항상 뜬다 — 아티팩트 안에서는 구독/API 를 고를 수 있다
