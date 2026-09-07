@@ -9,3 +9,6 @@ _orig.js
 _orig_clean.json
 _t0*.json
 units/_ref.js
+units/_l*.js
+rr/_*.bak
+LESSON_SPEC 사본*
