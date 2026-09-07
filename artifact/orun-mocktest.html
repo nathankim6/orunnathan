@@ -406,11 +406,38 @@ table.plan [contenteditable]:focus-visible,
 
 .filelist { list-style: none; margin: var(--s3) 0 0; padding: 0; display: flex; flex-direction: column; gap: var(--s2); }
 .filelist li {
-  display: flex; align-items: center; gap: var(--s3);
+  display: flex; align-items: center; gap: var(--s3); flex-wrap: wrap;
   min-height: var(--h-cta); padding: 0 var(--s4);
   border-radius: var(--r3); font-size: var(--fs-small); line-height: var(--lh-small);
   transition: border-color var(--d1) var(--e-out), background-color var(--d1) var(--e-out);
 }
+.filelist li.loading { padding-top: var(--s3); padding-bottom: var(--s3); }
+
+/* ─── 읽는 중 진행 막대 — 파일 줄 아래에 붙는 한 칸 ─── */
+.fprog { flex-basis: 100%; min-width: 0; margin-top: var(--s2); }
+.fbar { height: 3px; border-radius: 2px; background: var(--n2); overflow: hidden; position: relative; }
+.fbar i {
+  display: block; height: 100%; width: 0; border-radius: 2px; background: var(--y);
+  transition: width var(--d3) var(--e-out);
+}
+/* 쪽 수를 아직 모를 때 — 살아 있다는 것만 보여주는 왕복 막대 */
+.fbar.indet i { width: 34%; animation: fbarSweep 1.5s var(--e-inout) infinite; }
+@keyframes fbarSweep { 0% { transform: translateX(-110%); } 100% { transform: translateX(330%); } }
+.fline {
+  display: flex; align-items: baseline; gap: var(--s2); margin-top: 7px;
+  font-size: var(--fs-micro); line-height: var(--lh-micro); color: var(--n8);
+  font-variant-numeric: tabular-nums;
+}
+.fline .ph { color: var(--n9); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fline .ph .live-dot {
+  display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--y);
+  margin-right: 6px; vertical-align: 1px;
+  box-shadow: 0 0 0 3px var(--y-halo); animation: pulse 1.4s var(--e-inout) infinite;
+}
+.fline .gap { flex: 1; }
+.fline .pct { color: var(--ink); font-weight: var(--w-med); flex: none; }
+.fline .eta { flex: none; white-space: nowrap; }
+.fline .eta::before { content: "·"; margin-right: var(--s2); color: var(--n6); }
 .filelist li:hover { border-color: var(--line-3); }
 .filelist li.err { border-color: var(--neg-line); }
 /* 확장자 배지 — 색색깔을 버리고 11px 대문자 아이브로우 + 1px 테두리로 통일 */
@@ -572,6 +599,34 @@ textarea:focus, input:focus { border-color: var(--line-4); outline: 2px solid va
 }
 .cta-bar .in { max-width: var(--w-narrow); margin: 0 auto; display: flex; flex-direction: column; gap: var(--s2); }
 .screen.wide .cta-bar .in { max-width: var(--w-wide); }
+/* ─── 다 읽었을 때 — 다음으로 넘어가라고 손짓하는 한 번의 신호 ───
+   버튼 크기·자리는 그대로 두고(레이아웃 불변) 링 하나가 두 번 퍼진 뒤 사라진다. */
+.btn.block.ready { position: relative; }
+.btn.block.ready::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit;
+  border: 2px solid var(--y); pointer-events: none;
+  animation: ctaRing 1.15s var(--e-out) 2;
+}
+@keyframes ctaRing {
+  0%   { opacity: .95; transform: scale(1); }
+  70%  { opacity: 0;   transform: scale(1.045); }
+  100% { opacity: 0;   transform: scale(1.045); }
+}
+.btn.block.ready { animation: ctaLift .5s var(--e-emph); }
+@keyframes ctaLift { 40% { transform: translateY(-2px); } }
+
+/* 읽기를 끝낸 파일 줄 — 초록 체크가 한 번 지나간다 */
+.filelist li.done { animation: fileDone 1.5s var(--e-out); }
+@keyframes fileDone {
+  0%   { background: rgba(18,122,82,.10); border-color: rgba(18,122,82,.35); }
+  100% { background: transparent; }
+}
+.filelist .meta .tick {
+  display: inline-block; margin-right: 6px; color: var(--pos); font-weight: var(--w-med);
+  animation: tickIn .4s var(--e-emph) backwards;
+}
+@keyframes tickIn { from { opacity: 0; transform: scale(.4); } }
+
 .cta-links { display: flex; justify-content: center; gap: var(--s6); flex-wrap: wrap; }
 .cta-links button {
   background: none; border: 0; cursor: pointer; font: inherit;
@@ -742,6 +797,15 @@ textarea:focus, input:focus { border-color: var(--line-4); outline: 2px solid va
   width: 44px; flex: none; font-size: var(--fs-micro); color: var(--n7);
   font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1;
 }
+/* 어두운 작업대가 막을 선언하는 화면에서는, 아래 패널이 같은 말을 되풀이하지 않는다.
+   패널은 시트 맵·단계 띠·로그·남은 시간만 맡는다. */
+.seq.with-stage .seq-act .no,
+.seq.with-stage .seq-act .name,
+.seq.with-stage .seq-pct { display: none; }
+.seq.with-stage .seq-act .detail { margin-top: 0; font-size: var(--fs-body); color: var(--n10); min-height: 0; }
+/* 받침 패널은 낮게 — 시선은 위 작업대에 머물러야 한다 */
+.seq.with-stage .seq-body { align-items: center; padding-top: var(--s4); padding-bottom: var(--s4); }
+.seq.with-stage .map-sheet { aspect-ratio: 3.4 / 1; max-height: 104px; }
 .seq.done .seq-eyebrow { color: var(--pos); }
 .seq.done .seq-eyebrow::after { background: var(--line-2); }
 
@@ -1160,6 +1224,59 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
 .stage.live::after { opacity: 1; animation: railSweep 2.4s cubic-bezier(.5,0,.5,1) infinite; }
 @keyframes railSweep { 0% { transform: translateX(-100%); } 100% { transform: translateX(394%); } }
 
+/* ─── 막(ACT) 배너 — 이 화면의 주인공. 지금 무슨 일이 벌어지는지를 크게 말한다 ─── */
+.st-act {
+  display: flex; align-items: center; gap: var(--s3);
+  padding: var(--s4) var(--s5) var(--s3);
+  border-bottom: 1px solid var(--d-line-2);
+}
+.st-act .beat {
+  width: 7px; height: 7px; flex: none; border-radius: 50%; background: var(--y);
+  box-shadow: 0 0 0 0 var(--y-halo);
+}
+.stage.live .st-act .beat { animation: beatRing 1.6s var(--e-out) infinite; }
+@keyframes beatRing {
+  0%   { box-shadow: 0 0 0 0 rgba(255,212,0,.55); }
+  70%  { box-shadow: 0 0 0 9px rgba(255,212,0,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,212,0,0); }
+}
+.st-act .who { min-width: 0; display: flex; flex-direction: column; gap: 2px; overflow: hidden; }
+.st-act .eyebrow {
+  font-size: var(--fs-eyebrow); letter-spacing: var(--ls-eyebrow); text-transform: uppercase;
+  font-weight: var(--w-med); color: var(--d-tx-3); font-variant-numeric: tabular-nums;
+}
+.st-act .name {
+  font-size: 21px; line-height: 1.2; font-weight: var(--w-semi); color: var(--d-tx);
+  letter-spacing: -.012em; white-space: nowrap;
+}
+.st-act .name.cut { animation: actCut .5s var(--e-emph); }
+@keyframes actCut {
+  from { opacity: 0; transform: translateY(10px); letter-spacing: .06em; }
+  to   { opacity: 1; transform: translateY(0);   letter-spacing: -.012em; }
+}
+.st-act .sp { flex: 1; }
+.st-act .pct {
+  flex: none; font-size: 30px; line-height: 1; font-weight: var(--w-semi);
+  color: var(--d-tx); letter-spacing: -.02em;
+  font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1;
+  display: inline-block; min-width: 4.6ch; text-align: right;   /* 0→100 에서 % 가 밀리지 않게 */
+}
+.st-act .pct small { font-size: 13px; margin-left: 2px; color: var(--d-tx-3); font-weight: var(--w-med); }
+
+/* 작업대 맨 아래 1px 진행선 — 막이 넘어갈 때마다 자란다 */
+.st-rail { height: 1px; background: var(--d-line-2); }
+.st-rail i {
+  display: block; height: 100%; width: 0; background: var(--y);
+  transition: width var(--d4) var(--e-linear);
+}
+/* 막이 바뀌는 순간 작업대 전체를 한 번 훑는다 */
+.stage.cut::after {
+  content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background: linear-gradient(100deg, transparent 34%, rgba(255,212,0,.10) 50%, transparent 66%);
+  animation: stageCut .75s var(--e-out) 1;
+}
+@keyframes stageCut { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
+
 .st-meter { display: flex; flex-wrap: wrap; gap: 0; border-bottom: 1px solid var(--d-line-2); }
 .st-meter .m { flex: 1 1 120px; padding: var(--s3) var(--s4); border-right: 1px solid var(--d-line-1); }
 .st-meter .m:last-child { border-right: 0; }
@@ -1556,7 +1673,7 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
     <span class="step" data-step="2"></span><span class="step-rule"></span>
     <span class="step" data-step="3"></span>
   </div>
-  <div class="state"><span class="build" id="buildTag">2026-09-07 15:49</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
+  <div class="state"><span class="build" id="buildTag">2026-09-07 17:02</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
 </div>
 
 <!-- 화면 0 · 시작 -->
@@ -1716,6 +1833,15 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
   <p class="h-sub" id="analyzeSub">문항 하나하나 뜯어보고, 범위에서 지문을 고르는 중이에요.</p>
 
   <div class="stage" id="analyzeStage">
+    <div class="st-act">
+      <span class="beat"></span>
+      <div class="who">
+        <span class="eyebrow" id="stActNo">ACT 01 / 03</span>
+        <b class="name" id="stActName">준비</b>
+      </div>
+      <span class="sp"></span>
+      <span class="pct" id="stActPct">0<small>%</small></span>
+    </div>
     <div class="st-meter">
       <div class="m" id="stChars"><div class="v">0</div><div class="k">읽어들인 글자</div></div>
       <div class="m" id="stQ"><div class="v">0</div><div class="k">찾은 문항</div></div>
@@ -1728,6 +1854,7 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
       <div class="st-log" id="stLog"></div>
     </div>
     <div class="st-tail"><span class="lbl">STREAM</span><span class="tx" id="stTail"></span><span class="cur"></span></div>
+    <div class="st-rail"><i id="stRail"></i></div>
   </div>
 
   <div class="seq" id="analyzeProgress"></div>
@@ -1888,14 +2015,13 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
     clearError("analyzeError");
     const f = examFileRef;
     examPdf = { name: f.name, size: f.size, ext: "pdf", text: "", status: "loading" };
+    progInit(examPdf, "exam", "스캔본을 여는 중");
     renderExamList();
     try {
-      const r = await textFromFile(f, "pdf", (from, to, total, phase) => {
-        examPdf.progress = "스캔본 " + total + "쪽 중 " + from + (to > from ? "~" + to : "") + "쪽 · " + phase;
-        renderExamList();
-      }, true);
+      const r = await textFromFile(f, "pdf", (info) => progStep(examPdf, "exam", info), true);
       examPdf = { name: f.name, size: f.size, ext: "pdf", text: r.text, note: r.note, status: "ready" };
       renderExamList();
+      celebrate("examList", "nextExam");
       toast("스캔본으로 " + r.text.length.toLocaleString() + "자를 읽었습니다");
       markStale();
     } catch (e) {
@@ -2239,17 +2365,166 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
   async function processScopeFile(file, item) {
     const ext = item.ext;
     item.kind = "text";
-    const r = await textFromFile(file, ext, (from, to, total, phase) => {
-      item.progress = "스캔본 " + total + "쪽 중 " + from + (to > from ? "~" + to : "") + "쪽 · " + phase;
-      renderScopeList();
-    });
-    item.progress = "";
+    const r = await textFromFile(file, ext, (info) => progStep(item, "scope-" + item.id, info));
+    item.prog = null; delete PROGS["scope-" + item.id];
     item.text = r.text;
     if (r.note) item.note = r.note;
     if (!item.text) throw new Error("텍스트를 추출하지 못했습니다.");
   }
 
   // ---------- 파일 목록 UI ----------
+  // ==================================================================
+  //  업로드 진행 표시 — 쪽을 그림으로 만들고 Claude 가 읽는 동안,
+  //  파일 줄 아래에서 실제 진척과 남은 시간을 보여준다.
+  //  진척은 꾸며낸 애니메이션이 아니라 (끝낸 쪽 + 지금 들어오는 글자) 로 잰다.
+  // ==================================================================
+  const OCR_RENDER_SHARE = 0.3;      // 한 쪽에서 '그림 만들기' 가 차지하는 몫
+  const OCR_CHARS_PER_PAGE = 1800;   // 읽는 중 진척을 가늠할 기준 (넘치면 쪽 몫에서 잘린다)
+  const progTimers = new Set();
+
+  function fmtDur(sec) {
+    sec = Math.max(0, Math.round(sec));
+    if (sec < 60) return sec + "초";
+    const m = Math.floor(sec / 60), s = sec % 60;
+    return s ? m + "분 " + s + "초" : m + "분";
+  }
+  const PROGS = {};                  // key → 진행 상태 (화면 요소는 다시 그려도 상태는 남는다)
+  function progInit(item, key, note) {
+    item.prog = { total: 0, done: 0, phase: "", label: note || "파일을 여는 중", chars: 0,
+                  t0: Date.now(), acc: { render: { sec: 0, units: 0 }, read: { sec: 0, units: 0 } } };
+    PROGS[key] = item.prog;
+    progTick();
+    return item.prog;
+  }
+  // 쪽을 그림으로 만드는 일과 Claude 가 읽는 일은 속도가 열 배쯤 다르다.
+  // 둘을 뭉뚱그려 재면 그림 단계에서 남은 시간을 턱없이 짧게 부르고, 읽기가 시작되면 숫자가 늘어난다.
+  // 그래서 두 단계의 속도를 따로 재고, 읽기 속도까지 잡히기 전에는 숫자를 부르지 않는다.
+  function progAcc(pr, phase, done, now) {
+    if (phase === "read" && pr.lastPhase !== "read") {      // 이 묶음의 읽기가 시작된 순간
+      pr.batch = { t0: now, done0: done, sec: 0, units: 0 };
+    }
+    if (pr.lastAt && pr.lastPhase === phase && (phase === "render" || phase === "read")) {
+      const dt = (now - pr.lastAt) / 1000, du = done - pr.lastDone;
+      if (dt > 0 && dt < 120 && du >= 0) {
+        const a = pr.acc[phase]; a.sec += dt; a.units += du;
+        if (phase === "read" && pr.batch) { pr.batch.sec += dt; pr.batch.units += du; }
+      }
+    }
+    // 묶음이 끝나면 그 묶음의 '진짜' 소요 시간과 글자량으로 맞춘다.
+    // 스트림이 한참 조용하다 몰아서 오는 경우, 중간 집계만 믿으면 읽기 속도를 크게 잘못 잡는다.
+    if (phase === "done" && pr.batch) {
+      const a = pr.acc.read;
+      a.sec += Math.max(0, (now - pr.batch.t0) / 1000 - pr.batch.sec);
+      a.units += Math.max(0, (done - pr.batch.done0) - pr.batch.units);
+      pr.batch = null;
+    }
+    pr.lastAt = now; pr.lastPhase = phase; pr.lastDone = done;
+  }
+  function progEta(pr) {
+    if (!pr.total) return "";
+    const now = Date.now();
+    const dt = (now - (pr.etaAt || now)) / 1000;
+    pr.etaAt = now;
+    const R = pr.acc.render, D = pr.acc.read;
+    // 읽기 속도는 반 쪽 넘게 실제로 읽어본 뒤에만 믿는다. 스트림이 열리기 직전의 정적을
+    // 속도로 착각하면 '두 시간 남음' 같은 숫자가 나온다.
+    const ready = R.sec > .6 && R.units > .02 && D.sec > 1.5 && D.units > .5;
+    if (ready && pr.done > (pr.etaDone == null ? -1 : pr.etaDone) + 0.005) {
+      // 한 쪽에 드는 시간 = 그림 몫 × 그림 속도 + 읽기 몫 × 읽기 속도.
+      // 두 속도 모두 누적 평균이라 그 자체로 이미 매끄럽다 — 남은 시간을 또 섞으면
+      // 일이 많이 남았을 때 잰 옛 값이 계속 살아남아 숫자가 부풀어 오른다.
+      const perPage = OCR_RENDER_SHARE * (R.sec / R.units) + (1 - OCR_RENDER_SHARE) * (D.sec / D.units);
+      const raw = Math.max(0, pr.total - pr.done) * perPage;
+      if (isFinite(raw)) pr.etaSec = raw;
+      pr.etaDone = pr.done; pr.stallAt = now;
+    } else if (pr.etaSec != null) {
+      pr.etaSec = Math.max(0, pr.etaSec - dt);      // 새 근거가 없으면 실제 시간만큼 깎기만 한다
+      if (pr.done > (pr.etaDone == null ? -1 : pr.etaDone) + 0.005) { pr.etaDone = pr.done; pr.stallAt = now; }
+    }
+    if (!pr.stallAt) pr.stallAt = now;
+    if (pr.etaSec == null) return "시간 재는 중";
+    // 예상보다 오래 끌고 있으면 그렇다고 말한다. 0초에 붙어 있는 숫자는 거짓말이다.
+    if (pr.etaSec <= 0 && now - pr.stallAt > 15000) return "조금 더 걸리고 있어요";
+    return pr.etaSec < 8 ? "곧 끝나요" : "약 " + fmtDur(pr.etaSec) + " 남음";
+  }
+  const progPainted = {};
+  function progPaint(key, force) {
+    const now = Date.now();
+    if (!force && now - (progPainted[key] || 0) < 100) return;   // 스트림은 초당 수십 번 온다
+    progPainted[key] = now;
+    const box = document.querySelector('[data-prog="' + key + '"]');
+    if (!box) return;
+    const pr = PROGS[key];
+    if (!pr) return;
+    const bar = box.querySelector(".fbar"), fill = box.querySelector(".fbar i");
+    const pct = pr.total ? Math.max(0, Math.min(100, 100 * pr.done / pr.total)) : 0;
+    bar.classList.toggle("indet", !pr.total);
+    if (pr.total) fill.style.width = pct.toFixed(1) + "%";
+    box.querySelector(".ph").innerHTML = '<span class="live-dot"></span>';
+    box.querySelector(".ph").append(document.createTextNode(
+      pr.label + (pr.chars ? " · " + pr.chars.toLocaleString() + "자 받는 중" : "")));
+    box.querySelector(".pct").textContent = pr.total ? Math.floor(pct) + "%" : fmtDur((Date.now() - pr.t0) / 1000);
+    box.querySelector(".eta").textContent = pr.total ? progEta(pr) : "읽는 중";
+  }
+  // 단계 알림이 뜸해도 남은 시간·경과가 멈춘 것처럼 보이지 않게 계속 다시 그린다
+  function progTick() {
+    if (progTimers.size) return;
+    const iv = setInterval(() => {
+      const boxes = document.querySelectorAll("[data-prog]");
+      if (!boxes.length) { clearInterval(iv); progTimers.delete(iv); return; }
+      boxes.forEach(b => progPaint(b.dataset.prog, true));
+    }, 500);
+    progTimers.add(iv);
+  }
+  function progStep(item, key, o) {
+    const pr = item.prog && PROGS[key] === item.prog ? item.prog : progInit(item, key);
+    if (o.total) pr.total = o.total;
+    if (typeof o.done === "number") pr.done = Math.max(pr.done, o.done);
+    pr.chars = o.chars || 0;
+    progAcc(pr, o.phase, pr.done, Date.now());
+    const span = o.from ? (o.to > o.from ? o.from + "~" + o.to : String(o.from)) + "쪽" : "";
+    const was = pr.label;
+    pr.label = o.phase === "render" ? span + " 그림으로 만드는 중"
+             : o.phase === "read"   ? span + " Claude 가 읽는 중"
+             : o.phase === "done"   ? span + " 읽기 완료"
+             : (o.label || pr.label);
+    progPaint(key, was !== pr.label);          // 단계가 바뀌는 순간은 곧바로 보여준다
+  }
+  // 다 읽었다는 신호. 버튼이 열린 뒤 한 번만 울린다 — 매번 울리면 신호가 아니라 소음이 된다.
+  function nudgeNext(btnId) {
+    const btn = $(btnId);
+    if (!btn || btn.disabled) return;
+    btn.classList.remove("ready"); void btn.offsetWidth; btn.classList.add("ready");
+    setTimeout(() => btn.classList.remove("ready"), 2600);
+  }
+  function markDone(listId, idx) {
+    const list = document.querySelectorAll("#" + listId + " li");
+    const li = list[idx == null ? list.length - 1 : idx];
+    if (!li) return;
+    li.classList.remove("done"); void li.offsetWidth; li.classList.add("done");
+  }
+  // 버튼이 실제로 열린 다음에 손짓해야 한다 (updateCta 가 0.4초마다 잠금을 푼다)
+  function celebrate(listId, btnId, idx) {
+    markDone(listId, idx);
+    let n = 0;
+    const t = setInterval(() => {
+      const btn = $(btnId);
+      if (btn && !btn.disabled) { clearInterval(t); nudgeNext(btnId); return; }
+      if (++n > 12) clearInterval(t);
+    }, 120);
+  }
+
+  // 파일 줄에 붙일 진행 칸을 만든다 (읽는 중일 때만)
+  function progRow(item, key) {
+    if (!item.prog) return null;
+    const box = document.createElement("div");
+    box.className = "fprog"; box.dataset.prog = key;
+    box.innerHTML = '<div class="fbar"><i></i></div>' +
+      '<div class="fline"><span class="ph"></span><span class="gap"></span><span class="pct"></span><span class="eta"></span></div>';
+    PROGS[key] = item.prog;
+    return box;
+  }
+
   function renderExamList() {
     $("examList").innerHTML = "";
     if (!examPdf) return;
@@ -2257,15 +2532,22 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
     const [eb, ec] = badgeOf(examPdf.ext || "pdf");
     li.innerHTML = `<span class="fbadge ${ec}">${eb}</span><span class="fname"></span><span class="meta"></span>`;
     li.querySelector(".fname").textContent = examPdf.name;
-    li.querySelector(".meta").textContent = examPdf.status === "loading"
-      ? fmtSize(examPdf.size) + " · " + (examPdf.progress || "텍스트 추출 중…")
-      : fmtSize(examPdf.size) + " · 텍스트 " + examPdf.text.length.toLocaleString() + "자"
-        + (examPdf.note ? " · " + examPdf.note : "");
+    const loading = examPdf.status === "loading";
+    li.classList.toggle("loading", loading);
+    const meta = li.querySelector(".meta");
+    if (loading) meta.textContent = fmtSize(examPdf.size);
+    else {
+      const tick = document.createElement("span"); tick.className = "tick"; tick.textContent = "✓";
+      meta.append(tick, document.createTextNode(fmtSize(examPdf.size) + " · 텍스트 "
+        + examPdf.text.length.toLocaleString() + "자" + (examPdf.note ? " · " + examPdf.note : "")));
+    }
     const rm = document.createElement("button");
     rm.textContent = "✕"; rm.title = "삭제";
     rm.onclick = () => { examPdf = null; renderExamList(); markStale(); };
     li.appendChild(rm);
+    if (loading) { const row = progRow(examPdf, "exam"); if (row) li.appendChild(row); }
     $("examList").appendChild(li);
+    if (loading) progPaint("exam", true);
   }
 
   function renderScopeList() {
@@ -2276,17 +2558,24 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
       li.innerHTML = `<span class="fbadge ${bclass}">${blabel}</span><span class="fname"></span><span class="meta"></span>`;
       li.querySelector(".fname").textContent = item.name;
       const meta = li.querySelector(".meta");
-      if (item.status === "loading") meta.textContent = fmtSize(item.size) + " · " + (item.progress || "추출 중…");
+      const busy = item.status === "loading";
+      li.classList.toggle("loading", busy);
+      if (busy) meta.textContent = fmtSize(item.size);
       else if (item.status === "error") { meta.textContent = item.note || "오류"; meta.classList.add("err"); }
       else if (item.kind === "text") {
-        meta.textContent = fmtSize(item.size) + " · 텍스트 " + item.text.length.toLocaleString() + "자 추출" + (item.note ? " · " + item.note : "");
+        const tick = document.createElement("span"); tick.className = "tick"; tick.textContent = "✓";
+        meta.append(tick, document.createTextNode(fmtSize(item.size) + " · 텍스트 "
+          + item.text.length.toLocaleString() + "자 추출" + (item.note ? " · " + item.note : "")));
         if (item.note) meta.classList.add("warn");
       } else meta.textContent = fmtSize(item.size);
       const rm = document.createElement("button");
       rm.textContent = "✕"; rm.title = "삭제";
       rm.onclick = () => { scopeItems = scopeItems.filter(x => x.id !== item.id); renderScopeList(); markStale(); };
       li.appendChild(rm);
+      const k = "scope-" + item.id;
+      if (busy) { const row = progRow(item, k); if (row) li.appendChild(row); }
       $("scopeList").appendChild(li);
+      if (busy) progPaint(k, true);
     });
 
     const chip = $("scopeCount");
@@ -2309,19 +2598,18 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
     const ext = extOf(f.name);
     examFileRef = f;
     examPdf = { name: f.name, size: f.size, ext, text: "", status: "loading" };
+    progInit(examPdf, "exam", "파일을 여는 중");
     renderExamList();
     syncOcrBtn();
     try {
-      const r = await textFromFile(f, ext, (from, to, total, phase) => {
-        examPdf.progress = "스캔본 " + total + "쪽 중 " + from + (to > from ? "~" + to : "") + "쪽 · " + phase;
-        renderExamList();
-      });
+      const r = await textFromFile(f, ext, (info) => progStep(examPdf, "exam", info));
       if (!r.ocr && r.text.replace(/\s/g, "").length < 120)
         throw new Error("시험지에서 읽어낼 글자가 너무 적습니다. 한글·워드 원본으로 올리시거나 본문을 붙여넣어 주세요.");
       examPdf = { name: f.name, size: f.size, ext, text: r.text, note: r.note, status: "ready" };
     } catch (e) { examPdf = null; renderExamList(); showError("analyzeError", e.message); revealExamPaste(); return; }
     clearError("analyzeError");
     renderExamList();
+    celebrate("examList", "nextExam");
     syncOcrBtn();
     markStale();
   });
@@ -2342,11 +2630,14 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
       if (!allowed.includes(ext)) { showError("analyzeError", f.name + ": 지원하지 않는 형식입니다."); return; }
       if (f.size > MAX_FILE_BYTES) { showError("analyzeError", f.name + ": 파일이 100MB를 넘습니다. (개당 100MB)"); return; }
       const item = { id: ++seq, name: f.name, size: f.size, ext, kind: "text", status: "loading" };
+      progInit(item, "scope-" + item.id, "파일을 여는 중");
       scopeItems.push(item);
       renderScopeList();
-      try { await processScopeFile(f, item); item.status = "ready"; }
+      let ok = false;
+      try { await processScopeFile(f, item); item.status = "ready"; ok = true; }
       catch (e) { item.status = "error"; item.note = e.message; toast(f.name + " — " + e.message, "err"); }
       renderScopeList();
+      if (ok) celebrate("scopeList", "nextScope", scopeItems.indexOf(item));
       markStale();
     });
   });
@@ -2529,6 +2820,7 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
       });
       paintMap();
       setRail(rootId === "analyzeProgress" ? 1 : 2, cur);
+      if (rootId === "analyzeProgress") { try { stage.pct(cur); } catch (e) {} }
       setBarProgress(cur);
       syncMini();
     }
@@ -2628,6 +2920,7 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
 
   const analyzeProg = createProgress("analyzeProgress",
     ["자료 판독", "문항 분석", "범위 색인", "지문 매칭", "결과 정리"], { eyebrow: "ANALYZING · LIVE" });
+  $("analyzeProgress").classList.add("with-stage");   // 막 선언은 위 작업대가 맡는다
   const genProg = createProgress("genProgress",
     ["계획 확인", "지문 배치", "문항 출제", "검수위원 풀이", "정답 정리"], { eyebrow: "COMPOSING · LIVE" });
 
@@ -3316,7 +3609,7 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
     const c = window.claude;
     return [
       "ORUN 동형 모의고사 진단",
-      "build: 2026-09-07 15:49",
+      "build: 2026-09-07 17:02",
       "url: " + location.href,
       "runtime: " + RUNTIME + (c ? "" : " (window.claude 없음)"),
       "claude.use: " + (c && typeof c.use === "function" ? "있음" : "없음"),
@@ -3503,29 +3796,37 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
     const total = Math.min(doc.numPages, OCR_MAX_PAGES);
     const perCall = maxImagesPerCall();
     const out = [];
+    const step = (o) => { if (onStep) onStep(Object.assign({ total }, o)); };
+    let base = 0;                                   // 지금까지 끝낸 쪽 수
     for (let start = 1; start <= total; start += perCall) {
       if (cancelRequested) throw new Error("__aborted__");
       const nos = [];
       for (let n = start; n < start + perCall && n <= total; n++) nos.push(n);
-      if (onStep) onStep(nos[0], nos[nos.length - 1], total, "쪽 그림 만드는 중");
+      const a = nos[0], z = nos[nos.length - 1], cnt = nos.length;
       const blobs = [];
-      for (const n of nos) {
-        const img = await withTimeout(renderPdfPage(doc, n), 45000,
-          n + "쪽을 그림으로 만드는 데 실패했습니다. 쪽수가 적은 파일로 나눠 올려주세요.");
-        if (!img) throw new Error(n + "쪽 이미지를 만들지 못했습니다.");
+      for (let i = 0; i < nos.length; i++) {
+        step({ from: a, to: z, phase: "render", done: base + OCR_RENDER_SHARE * i });
+        const img = await withTimeout(renderPdfPage(doc, nos[i]), 45000,
+          nos[i] + "쪽을 그림으로 만드는 데 실패했습니다. 쪽수가 적은 파일로 나눠 올려주세요.");
+        if (!img) throw new Error(nos[i] + "쪽 이미지를 만들지 못했습니다.");
         blobs.push(img);
       }
-      if (onStep) onStep(nos[0], nos[nos.length - 1], total, "Claude 가 읽는 중");
-      try { stage.log("스캔본 " + nos[0] + (nos.length > 1 ? "~" + nos[nos.length - 1] : "") + "쪽을 그림으로 읽는 중"); } catch (e) {}
-      const label = nos.length === 1
-        ? nos[0] + "쪽"
-        : nos[0] + "~" + nos[nos.length - 1] + "쪽";
+      step({ from: a, to: z, phase: "read", done: base + OCR_RENDER_SHARE * cnt });
+      try { stage.log("스캔본 " + a + (cnt > 1 ? "~" + z : "") + "쪽을 그림으로 읽는 중"); } catch (e) {}
+      const label = cnt === 1 ? a + "쪽" : a + "~" + z + "쪽";
       const text = await callClaude(
         OCR_RULES + "\n\n첨부한 그림은 시험지 " + label + "이다(순서대로). " +
         "각 쪽의 시작에 [p.쪽번호] 를 한 줄로 넣고 이어서 옮겨 적어라. " +
-        "이 묶음의 첫 쪽 번호는 " + nos[0] + " 이다.",
-        { images: blobs, tier: "default" }
+        "이 묶음의 첫 쪽 번호는 " + a + " 이다.",
+        { images: blobs, tier: "default",
+          onText: ({ text: t }) => {               // 글자가 들어오는 만큼 이 묶음의 읽기 몫을 채운다
+            const got = Math.min(cnt, t.length / OCR_CHARS_PER_PAGE);
+            step({ from: a, to: z, phase: "read", chars: t.length,
+                   done: base + OCR_RENDER_SHARE * cnt + (1 - OCR_RENDER_SHARE) * got });
+          } }
       );
+      base += cnt;
+      step({ from: a, to: z, phase: "done", done: base });
       out.push(String(text || "").trim());
     }
     if (doc.cleanup) try { doc.cleanup(); } catch (e) {}
@@ -3536,10 +3837,10 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
   }
 
   // 파일 한 개 → 텍스트. 글자 없는 PDF 는 자동으로 스캔본 읽기로 넘어간다.
-  // {text, note, ocr} 반환. onStep(done, total, phase) 으로 진행 상황을 알린다.
+  // {text, note, ocr} 반환. onStep({from,to,total,phase,done,chars}) 으로 진행 상황을 알린다.
   async function textFromFile(file, ext, onStep, forceOcr) {
     if (ext === "pdf" && forceOcr) {
-      const o = await ocrPdf(await readAsBuffer(file), (a, b2, t, ph) => onStep && onStep(a, b2, t, ph));
+      const o = await ocrPdf(await readAsBuffer(file), (info) => onStep && onStep(info));
       return { text: o.text, note: "스캔본 · Claude가 " + o.pages + "쪽을 읽어냈습니다", ocr: true };
     }
     if (ext !== "pdf") {
@@ -3559,8 +3860,7 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
         throw new Error("이 시험지는 스캔한 사진 PDF라 이 화면에서는 글자를 읽을 수 없어요. 한글·워드 원본으로 올리거나, 아래 ‘본문을 직접 붙여넣을게요’에 붙여넣어 주세요.");
       throw new Error(emptyPdfMessage(r, "이 PDF") + " [" + runtimeReport() + "]");
     }
-    const o = await ocrPdf(buf, (from, to, total, phase) =>
-      onStep && onStep(from, to, total, phase));
+    const o = await ocrPdf(buf, (info) => onStep && onStep(info));
     return {
       text: o.text,
       note: "스캔본 · Claude가 " + o.pages + "쪽을 읽어냈습니다" + (o.truncated ? " (앞 " + o.pages + "쪽만)" : ""),
@@ -3758,7 +4058,10 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
     const nums = { chars: 0, q: 0, p: 0, m: 0, calls: 0 };
     const cell = { chars: $("stChars"), q: $("stQ"), p: $("stP"), m: $("stM"), calls: $("stCalls") };
     const tailEl = $("stTail");
+    const actNo = $("stActNo"), actName = $("stActName"), actPct = $("stActPct"), rail = $("stRail");
+    const ACTS = ["문항 판독", "범위 색인", "지문 매칭"];
     let t0 = 0, mode = "", qNodes = {}, pNodes = {}, svg = null;
+    const rollers = {};
 
     const clock = () => {
       const sec = (Date.now() - t0) / 1000;
@@ -3766,11 +4069,33 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
     };
     function setNum(k, v) {
       if (nums[k] === v) return;
+      const from = nums[k] < 0 ? v : nums[k];
       nums[k] = v;
       const el = cell[k] && cell[k].querySelector(".v");
       if (!el) return;
-      el.textContent = v.toLocaleString();
       el.classList.remove("tick"); void el.offsetWidth; el.classList.add("tick");
+      // 큰 폭으로 뛰면 굴려 올린다. 작은 변화는 그냥 찍는다 (초당 수십 번 오는 글자 수 때문)
+      if (rollers[k]) { cancelAnimationFrame(rollers[k]); rollers[k] = 0; }
+      if (Math.abs(v - from) < 2) { el.textContent = v.toLocaleString(); return; }
+      const st = performance.now(), dur = 420;
+      const run = (now) => {
+        const t = Math.min(1, (now - st) / dur);
+        const e = 1 - Math.pow(1 - t, 3);
+        el.textContent = Math.round(from + (v - from) * e).toLocaleString();
+        if (t < 1) rollers[k] = requestAnimationFrame(run); else { rollers[k] = 0; el.textContent = v.toLocaleString(); }
+      };
+      rollers[k] = requestAnimationFrame(run);
+    }
+    // 막이 바뀐다 — 이름을 갈아 끼우고 작업대를 한 번 훑는다
+    function setAct(i, name) {
+      actNo.textContent = i < 0 ? "PREPARING"
+        : "ACT " + String(i + 1).padStart(2, "0") + " / " + String(ACTS.length).padStart(2, "0");
+      if (actName.textContent !== name) {
+        actName.textContent = name;
+        actName.classList.remove("cut"); void actName.offsetWidth; actName.classList.add("cut");
+        root.classList.remove("cut"); void root.offsetWidth; root.classList.add("cut");
+        setTimeout(() => root.classList.remove("cut"), 800);
+      }
     }
     function focus(k) {
       Object.keys(cell).forEach(x => cell[x] && cell[x].classList.toggle("now", x === k));
@@ -3806,9 +4131,20 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
       return h;
     }
     return {
+      // 전체 진행률 — 배너의 큰 숫자와 바닥 1px 선에 함께 물린다
+      pct(v) {
+        const n = Math.max(0, Math.min(100, v || 0));
+        actPct.textContent = "";
+        actPct.append(document.createTextNode(String(Math.round(n))));
+        const sm = document.createElement("small"); sm.textContent = "%";
+        actPct.appendChild(sm);
+        rail.style.width = n.toFixed(1) + "%";
+      },
       start(note) {
         t0 = Date.now();
         root.classList.add("show", "live");
+        setAct(-1, "자료 준비");
+        this.pct(0);
         log.innerHTML = ""; board.innerHTML = ""; tailEl.textContent = "";
         qNodes = {}; pNodes = {}; svg = null; mode = "";
         Object.keys(nums).forEach(k => { nums[k] = -1; setNum(k, 0); });
@@ -3824,7 +4160,7 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
       calls(n) { setNum("calls", n); },
       // ── 문항 분석 모드
       scan(total) {
-        mode = "scan"; focus("q");
+        mode = "scan"; focus("q"); setAct(0, ACTS[0]);
         board.innerHTML = "";
         board.appendChild(head("문항 판독", total ? total + "부분" : ""));
         const g = document.createElement("div"); g.className = "qgrid"; g.id = "stQGrid";
@@ -3848,7 +4184,7 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
       },
       // ── 범위 색인 모드
       index(name) {
-        mode = "index"; focus("p");
+        mode = "index"; focus("p"); setAct(1, ACTS[1]);
         board.innerHTML = "";
         board.appendChild(head("범위 색인", name || ""));
         const g = document.createElement("div"); g.className = "pgrid"; g.id = "stPGrid";
@@ -3871,7 +4207,7 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
       },
       // ── 매칭 모드
       wire(questions, catalog) {
-        mode = "match"; focus("m");
+        mode = "match"; focus("m"); setAct(2, ACTS[2]);
         board.innerHTML = "";
         board.appendChild(head("지문 매칭", questions.length + " ↔ " + catalog.length));
         const w = document.createElement("div"); w.className = "wire";
@@ -3914,6 +4250,8 @@ body.busy .drop, body.busy .filelist button { pointer-events: none; opacity: .45
       },
       done(msg) {
         root.classList.remove("live");
+        this.pct(100);
+        setAct(ACTS.length - 1, "분석 완료");
         dropWait();
         tailEl.textContent = "";
         focus("");
