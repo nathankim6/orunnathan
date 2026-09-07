@@ -18,7 +18,7 @@ def split_en(t):
             if j < n and t[j] == " ":
                 nxt = t[j+1:j+2]
                 last = buf.split(" ")[-1]
-                single_initial = bool(re.match(r"^[A-Z]\.$", last))
+                single_initial = bool(re.match(r"^(?:[A-Z]\.)+$", last))
                 if (last in ABBR and last != "etc.") or single_initial:
                     i = j; continue
                 if nxt and (nxt.isupper() or nxt.isdigit() or nxt in '"“‘\''):
@@ -43,7 +43,7 @@ def split_ko(t):
                 buf += t[j]; j += 1
             if j < n and t[j] == " ":
                 last = buf.split(" ")[-1]
-                if re.match(r"^[A-Z]\.$", last) or last in ABBR:
+                if re.match(r"^(?:[A-Z]\.)+$", last) or last in ABBR:
                     i = j; continue
                 out.append(buf.strip()); buf = ""; i = j+1; continue
             elif j >= n:

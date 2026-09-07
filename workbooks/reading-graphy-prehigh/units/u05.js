@@ -1,685 +1,727 @@
-/* Unit 5 · Field 5 — Philosophy & Religion 철학·종교
-   원서 Theme 21–25 의 주제를 예비고1 수준으로 다시 쓴 것. */
+/* Unit 5 · Philosophy & Religion — 원문 Theme 21–25 */
+const R = require("../src/orig/all.json");
+const T = n => R[n - 1];
+
 module.exports = {
  no: 5,
  field: "Philosophy & Religion",
  ko: "철학·종교",
  tagline: "묻는 자리 — 무엇을 답할 수 있고 무엇을 답할 수 없는가",
- next: { en: "Media & IT", ko: "연결이 우리에게서 무엇을 가져가는지 읽습니다", words: "175–205 words" },
+ next: { en: "Media & IT", ko: "연결이 우리에게서 무엇을 가져가는지 읽습니다", words: "251–282 words" },
  lessons: [
+
+/* ───────────────────────────── 21 ───────────────────────────── */
 {
- no: "21", key: "ritual",
- accent: "#6B5B95", tint: "#EEEBF6", deep: "#453A66",
- en: "What a Ritual Does",
- ko: "의례가 하는 일",
- goal: "종교적 의례가 공동체에서 맡는 역할을 사회적 기능의 관점에서 설명할 수 있다.",
- fig: "Figure 1  같은 시각에 같은 동작을 하는 사람들.",
- tip: "먼저 생각해 보자. 우리 집에도 해마다 같은 날 반복하는 일이 있는가? 그것을 그만두면 무엇이 사라질까?",
- sent: [
-  "Scholars who study religion often begin with a question that sounds odd.",
-  "They ask not whether a belief is true, but what the belief does.",
-  "A ritual gathers people at the same hour and asks them to move together.",
-  "Standing, kneeling, singing the same line — the body learns before the mind agrees.",
-  "Emile Durkheim argued that such moments make a group feel like one thing.",
-  "The feeling is real even for those who cannot explain it afterwards.",
-  "Rituals also cut time into pieces that a person can hold.",
-  "A week has a shape because something returns on the seventh day.",
-  "Birth, marriage, and death are marked so that they are not simply endured.",
-  "Beliefs carry memory as well, storing what a community wants to keep.",
-  "A story repeated for centuries outlives the people who first told it.",
-  "None of this settles the question of whether the beliefs are true.",
-  "That is a separate question, and a different kind of evidence answers it.",
-  "But the social work is visible, and it can be studied like any other pattern.",
-  "Asking what a practice does is not the same as judging it."
+ no: "21", key: "ritual", accent: "#6B5B95", tint: "#EEEBF6", deep: "#453A66",
+ en: "The Role of Religious Beliefs",
+ ko: "믿음이 실제로 하는 일",
+ goal: "필자가 인정하는 종교의 효과와 과학의 약점을 나누어 정리해 설명할 수 있다.",
+ fig: "Figure 1  같은 시각에 같은 동작을 하는 사람들 — 믿음이 하는 일.",
+ tip: "먼저 생각해 보자. 어떤 믿음이 참인지 묻는 것과, 그 믿음이 무엇을 하는지 묻는 것은 어떻게 다를까?",
+ sent: T(21).sent, kor: T(21).kor,
+ bank: [
+  ["disadvantaged", "②", "불우한"],
+  ["stimulate", "③", "자극하다"],
+  ["surpass", "⑤", "능가하다"],
+  ["discernable", "⑦", "뚜렷이 알아볼 수 있는"],
+  ["confine", "⑨", "국한하다"],
+  ["hardship", "⑨", "고난"]
  ],
- kor: [
-  "종교를 연구하는 학자들은 흔히 이상하게 들리는 질문에서 출발한다.",
-  "그들은 어떤 믿음이 참인지가 아니라, 그 믿음이 무엇을 하는지를 묻는다.",
-  "의례는 같은 시각에 사람들을 모으고, 함께 움직이라고 요구한다.",
-  "서고, 무릎 꿇고, 같은 구절을 노래하는 동안 — 마음이 동의하기 전에 몸이 먼저 배운다.",
-  "에밀 뒤르켐은 그런 순간이 한 집단을 하나처럼 느끼게 만든다고 주장했다.",
-  "그 느낌은 나중에 그것을 설명하지 못하는 사람에게도 실재한다.",
-  "의례는 또한 시간을 사람이 붙들 수 있는 조각으로 잘라 준다.",
-  "일주일이 하나의 모양을 갖는 것은 이레째에 무언가가 돌아오기 때문이다.",
-  "태어남과 혼인과 죽음은 표시되어, 그저 견뎌 내는 일이 되지 않는다.",
-  "믿음은 기억도 나르는데, 한 공동체가 지키고 싶어 하는 것을 담아 둔다.",
-  "수백 년 되풀이된 이야기는 그것을 처음 말한 사람들보다 오래 살아남는다.",
-  "이 가운데 무엇도 그 믿음이 참인지의 문제를 결판내지는 않는다.",
-  "그것은 별개의 질문이며, 다른 종류의 증거가 답한다.",
-  "그러나 그 사회적 작용은 눈에 보이며, 다른 어떤 무늬처럼 연구될 수 있다.",
-  "어떤 관행이 무엇을 하는지 묻는 일은 그것을 판단하는 일과 같지 않다."
+ defs: [
+  ["disadvantaged", "having less money or chance than others"],
+  ["stimulate", "to make something grow or become active"],
+  ["surpass", "to be greater or better than something"],
+  ["discernable", "able to be noticed or made out"],
+  ["confine", "to keep something within set limits"],
+  ["hardship", "a time of serious trouble or need"]
  ],
- bank: [["ritual","③","의례"],["kneel","④","무릎 꿇다"],["endure","⑨","견뎌 내다"],
-        ["outlive","⑪","~보다 오래 남다"],["settle","⑫","결판내다"],["practice","⑮","관행"]],
- defs: [["ritual","a set of actions repeated in a fixed order"],
-        ["kneel","to rest on your knees"],
-        ["endure","to bear something difficult"],
-        ["outlive","to continue after others have gone"],
-        ["settle","to end a question by deciding it"],
-        ["practice","something a group does regularly"]],
- defOrder: [1,4,0,5,2,3],
+ defOrder: [2, 5, 0, 4, 1, 3],
  flow: [
-  ["The question","Scholars ask not whether a belief is true, but what it does",null],
-  ["Function 1","Moving together makes a group feel like (  ①  ) thing","one"],
-  ["Function 2","Returning events cut (  ②  ) into pieces people can hold","time"],
-  ["Function 3","Repeated stories carry (  ③  ) beyond one lifetime","memory"],
-  ["Limit","This never (  ④  ) whether the beliefs are true","settles"]
+  ["The good", "Religious belief moves people to run charities", null],
+  ["In art", "It has inspired painting, sculpture, and (  ①  )", "music"],
+  ["Science's gift", "It reveals a Universe that (  ②  ) what anyone imagined", "surpasses"],
+  ["Science's lack", "With no overall (  ③  ), its view looks bleak to some", "purpose"],
+  ["The result", "Most turn to religion for meaning and (  ④  )", "comfort"]
  ],
- flowBogi: "one · time · memory · settles · body · silence",
+ flowBogi: "music · surpasses · purpose · comfort · silence · profit",
  para: [
-  ["② not whether a belief is true, but what it does","They study the ______, not the truth.","function"],
-  ["④ the body learns before the mind agrees","Action comes ______ of understanding.","ahead"],
-  ["⑨ so that they are not simply endured","Marking events makes them ______.","meaningful"],
-  ["⑪ outlives the people who first told it","A story lasts ______ its authors.","beyond"],
-  ["⑮ not the same as judging it","Describing is different from ______.","evaluating"]
+  ["② motivated by their religious outlook", "Their faith is what ______ them.", "drives"],
+  ["④ look up at the Sistine Chapel ceiling", "One ______ upward is enough to see it.", "look"],
+  ["⑤ surpasses anything imagined by supernaturalists", "It goes ______ what anyone imagined.", "beyond"],
+  ["⑦ bleak and joyless by comparison", "Beside religion it can look ______.", "empty"],
+  ["⑩ where a naturalistic approach might provide none", "Where nature alone offers ______ hope.", "no"]
  ],
- paraBogi: "function · ahead · meaningful · beyond · evaluating · truth · behind · proving",
+ paraBogi: "drives · look · beyond · empty · no · stops · word · full",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["Which Religion Is the True One","Asking What a Belief Does",
-       "The Life of Emile Durkheim","Why People Should Attend Ceremonies",
-       "A History of the Seven-Day Week"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["학자들은 믿음이 무엇을 하는지에서 출발한다.","의례는 사람들을 같은 시각에 모은다.",
-       "필자는 이 연구가 믿음의 참·거짓도 판정한다고 본다.","되풀이된 이야기는 첫 화자보다 오래 남는다.",
-       "필자는 기술하는 일과 판단하는 일을 구분한다."], ans:3},
-  {t:"write", q:"필자가 '무엇을 하는지 묻는 일'과 '판단하는 일'을 구분한 이유를 우리말 한 문장으로 써 보세요.",
-   ans:"참·거짓은 다른 종류의 증거가 답하는 별개의 질문이기 때문이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "A Visitor's Guide to the Sistine Chapel",
+    "What Belief Does, Not Whether It Is True",
+    "Science Now Offers More Comfort Than Religion",
+    "How the Hubble Telescope Was Built",
+    "The Poetry of T.S. Eliot"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "가난하고 불우한 사람을 돕는 자선 단체 운영자 다수는 종교적 관점에서 동기를 얻는다.",
+    "필자는 과학이 종교만큼 예술에 영감을 주지는 못했다고 본다.",
+    "과학이 정서적 매력이 부족한 것은 우주에 뚜렷한 전반적 목적이 없기 때문이다.",
+    "대다수 사람들은 슬픔과 고난의 시기에 과학에서 의미와 위안을 찾는다.",
+    "초자연적인 것에 대한 믿음은 자연주의적 접근이 주지 못하는 희망을 줄 수 있다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "필자가 과학이 종교만큼 정서적 매력을 갖지 못한다고 본 이유를 우리말 한 문장으로 써 보세요.",
+   ans: "우주에 뚜렷하고 전반적인 목적이 없다는 관점이, 목적을 좇으며 사는 개인의 삶과 어긋나 황량하고 기쁨 없어 보이기 때문이다."
+  }
  ],
  fl: {
-  model: { n:"⑧",
-   toks: [["A week","s"],["has","v"],["a shape","m"],["because","c"],["something","s2"],
-          ["returns","v2"],["on the seventh day","m"]],
-   ko:"일주일이 하나의 모양을 갖는 것은 이레째에 무언가가 돌아오기 때문이다." },
+  model: {
+   n: "⑤",
+   toks: [
+    ["Science", "s"], ["has not inspired", "v"], ["art", null],
+    ["to anything like the same extent,", "m"], ["but", "c"], ["in my personal view,", "m"],
+    ["what science is doing", "s"], ["is", "v"], ["revealing a Universe", null], ["whose", "c"],
+    ["complexity and beauty", "s2"], ["surpasses", "v2"], ["anything imagined by supernaturalists.", null]
+   ],
+   ko: "과학은 결코 같은 정도로 예술에 영감을 주지 못했지만, 내 개인적 견해로는 과학이 하는 일이란 초자연주의자들이 상상한 무엇보다 복잡하고 아름다운 우주를 드러내는 것이다."
+  },
   drill: [
-   { n:"②", en:"They ask not whether a belief is true, but what the belief does.",
-     ans:"S They · △V ask · O not whether a belief is true, but what the belief does",
-     ko:"그들은 어떤 믿음이 참인지가 아니라, 그 믿음이 무엇을 하는지를 묻는다." },
-   { n:"⑤", en:"Emile Durkheim argued that such moments make a group feel like one thing.",
-     ans:"S Emile Durkheim · △V argued · [that] S′ such moments · △V′ make · O a group feel like one thing",
-     ko:"에밀 뒤르켐은 그런 순간이 한 집단을 하나처럼 느끼게 만든다고 주장했다." },
-   { n:"⑭", en:"But the social work is visible, and it can be studied like any other pattern.",
-     ans:"S the social work · △V is · C visible · [and] S it · △V can be studied · M like any other pattern",
-     ko:"그러나 그 사회적 작용은 눈에 보이며, 다른 어떤 무늬처럼 연구될 수 있다." }
+   {
+    n: "③",
+    en: "It is also obvious that such beliefs have inspired and stimulated many forms of art, especially painting, sculpture, architecture and music.",
+    ans: "S It · △V is · C also obvious · [that] S′ such beliefs · △V′ have inspired and stimulated · O many forms of art, especially painting, sculpture, architecture and music",
+    ko: "그러한 믿음이 회화·조각·건축·음악 같은 여러 형태의 예술에 영감과 자극을 주어 왔다는 것도 분명하다."
+   },
+   {
+    n: "⑧",
+    en: "This view conflicts with the purpose-driven, individual lives that we all lead.",
+    ans: "S This view · △V conflicts · M with the purpose-driven, individual lives · [that] S′ we all △V′ lead",
+    ko: "이 관점은 우리 모두가 살아가는, 목적에 이끌리는 개인의 삶과 충돌한다."
+   },
+   {
+    n: "⑩",
+    en: "Belief in the supernatural provides the possibility of hope in circumstances where a naturalistic approach might provide none.",
+    ans: "S Belief in the supernatural · △V provides · O the possibility of hope · M in circumstances · [where] S′ a naturalistic approach · △V′ might provide · O none",
+    ko: "초자연적인 것에 대한 믿음은 자연주의적 접근이 아무 희망도 주지 못할 상황에서 희망의 가능성을 준다."
+   }
   ]
  },
  syn: [
-  { n:"②", name:"not A but B — 의문사절 병렬",
-    q:"They ask «not whether a belief is true, but what the belief does».",
-    d:"<b>not A but B</b> 자리에 의문사절 둘이 나란히 왔다. 두 절 모두 ask 의 목적어다.",
-    k:"그들은 믿음이 참인지가 아니라 그 믿음이 무엇을 하는지를 묻는다." },
-  { n:"⑨", name:"so that + 절 (목적)",
-    q:"Birth, marriage, and death are marked «so that they are not simply endured».",
-    d:"<b>so that + 절</b>은 '~하도록'이라는 목적을 나타낸다. 앞의 행위가 노리는 결과다.",
-    k:"태어남과 혼인과 죽음은 그저 견뎌 내는 일이 되지 않도록 표시된다." }
+  {
+   n: "④",
+   name: "have only to + 동사원형",
+   q: "«You have only to look up at the Sistine Chapel ceiling … to realise this.»",
+   d: "‘~하기만 하면 된다’는 뜻이다. <b>only</b>가 뒤의 to부정사를 한정해 다른 것은 필요 없음을 나타낸다.",
+   k: "올려다보기만 하면 된다"
+  },
+  {
+   n: "⑨",
+   name: "관계부사 why",
+   q: "This relative lack of appeal is probably the main reason «why the majority of people confine their interest in science»…",
+   d: "<b>the reason</b>을 받아 그 까닭을 설명하는 절을 이끈다. <b>why</b> 대신 <b>that</b>을 쓰거나 아예 생략하기도 한다.",
+   k: "대다수 사람들이 과학에 대한 관심을 국한하는 이유"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"The class discussed not who wrote it but why it was written.",
-    k:"학생들은 누가 그것을 썼는지가 아니라 왜 쓰였는지를 논의했다." },
-  { u:"구문 2", en:"The bell rings early so that everyone arrives together.",
-    k:"모두가 함께 도착하도록 종이 일찍 울린다." },
-  { u:"구문 1 + 2", en:"They kept the date not for comfort but so that no one would forget.",
-    k:"그들이 그 날짜를 지킨 것은 위안 때문이 아니라 아무도 잊지 않도록 하기 위해서였다." }
+  { u: "구문 1", en: "You have only to open the book to see what he means.", k: "그가 무슨 말을 하는지 알려면 그 책을 펴 보기만 하면 된다." },
+  { u: "구문 2", en: "That is the reason why she stopped asking questions.", k: "그것이 그녀가 질문을 그만둔 이유이다." },
+  { u: "구문 1 + 2", en: "You have only to listen once to know the reason why the choir moves people.", k: "그 성가대가 사람을 움직이는 이유를 알려면 한 번 들어 보기만 하면 된다." }
  ],
- wtype: ["무관","정답","무관","반대","지엽"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["어느 종교가 참인지는 다루지 않는다고 밝히고 있다"],["정답"],
-       ["뒤르켐의 생애는 글의 주제가 아니다"],
-       ["글은 참석을 권하지 않는다 — 판단과 기술을 구분한다"],
-       ["일주일의 유래는 예로 든 한 부분일 뿐이다"]],
- src: [["①②"],["③"],["⑫⑬과 어긋남 — 참·거짓은 별개의 질문이라고 했다"],["⑪"],["⑮"]],
+ why: [
+  ["문장 ④의 예시만 붙든 지엽적인 제목이다"],
+  ["정답"],
+  ["글은 대다수가 의미와 위안을 종교에서 찾는다고 말한다 — 정반대다"],
+  ["망원경을 만든 과정은 글에 나오지 않는다"],
+  ["Eliot의 시 세계는 글에서 다루지 않는다"]
+ ],
+ src: [["②"], ["⑤"], ["⑦"], ["⑨와 어긋남 — 대다수는 종교에 의지해 의미와 위안을 찾는다"], ["⑩"]],
  kb: {
-  title:"함께 움직인다는 것",
-  lead:"몸이 먼저 배우는 일들이 있다.",
+  title: "믿음이 남긴 것들",
+  lead: "천장과 성가대와 자선 단체",
   items: [
-   ["뒤르켐의 '집합적 열광'",
-    "1912년 『종교 생활의 원초적 형태』에서 뒤르켐은 사람들이 한자리에 모여 같은 동작을 할 때 생기는 고양된 감정을 집합적 열광이라 불렀다. 그는 이것이 사회가 스스로를 확인하는 방식이라고 보았다."],
-   ["같이 걸으면 마음이 맞춰진다",
-    "심리학 실험에서 낯선 사람들끼리 발을 맞춰 걷거나 함께 노래한 뒤에는 협력 과제 성적이 올라간다는 결과가 여러 차례 보고되었다. 동작의 동기화가 소속감을 만든다는 쪽의 근거로 쓰인다."],
-   ["달력은 왜 이레인가",
-    "칠일 주기는 천체 관측이 아니라 관습에서 왔다. 프랑스 혁명기와 소련이 각각 10일·5일 주기를 도입했지만 오래가지 못하고 되돌아갔다."]
+   ["시스티나 천장", "미켈란젤로는 1508년부터 1512년까지 시스티나 예배당 천장을 그렸다. 스스로를 조각가로 여기던 그에게 벽화는 낯선 일이었지만, 창세기 아홉 장면을 담은 이 그림은 서양 회화의 기준이 되었다."],
+   ["King's College 성가대", "케임브리지 King's College 예배당의 성가대는 1441년 헨리 6세가 이 학교를 세운 이래 이어져 왔다. 1928년부터 해마다 크리스마스이브에 방송되는 Nine Lessons and Carols 는 가장 오래 이어진 정기 방송 가운데 하나다."],
+   ["허블이 찍은 깊은 하늘", "1995년 허블 우주 망원경은 아무것도 없어 보이던 하늘 한 조각을 열흘 동안 노출해 촬영했다. 그 안에서 약 3,000개의 은하가 드러났다. Hubble Deep Field 라 불리는 이 사진은 우주의 규모에 대한 감각을 바꾸었다."]
   ],
-  ask:"내가 매주 같은 요일에 반복하는 일이 있는가? 그것이 내 한 주의 모양을 어떻게 만들고 있는가?"
- }
+  ask: "여러분에게 ‘숨이 멎을 만큼’이라는 느낌을 준 것은 무엇이었고, 그것은 어디에서 왔는가?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 22 ───────────────────────────── */
 {
- no: "22", key: "twoq",
- accent: "#3F7D5C", tint: "#E6F1EB", deep: "#245239",
- en: "Two Kinds of Question",
- ko: "두 종류의 질문",
- goal: "'어떻게'를 묻는 질문과 '무엇을 해야 하는가'를 묻는 질문의 차이를 설명할 수 있다.",
+ no: "22", key: "twoq", accent: "#3F7D5C", tint: "#E6F1EB", deep: "#245239",
+ en: "Darwinian Evolution vs. Religion",
+ ko: "고정되지 않은 것은 종뿐일까",
+ goal: "다윈의 진화론이 일부 종교 집단에 문제가 되는 까닭을 근거를 들어 설명할 수 있다.",
  fig: "Figure 1  같은 사실 위에 놓인 서로 다른 질문.",
- tip: "먼저 생각해 보자. '물이 100도에서 끓는다'는 사실에서 '물을 끓여야 한다'가 따라 나오는가?",
- sent: [
-  "Darwin's account explains how living forms changed over long stretches of time.",
-  "It describes variation, inheritance, and the slow filtering of survival.",
-  "That is an answer to a question about mechanism.",
-  "Many arguments treat it as an answer to a different question altogether.",
-  "They read it as a claim about what human life is for.",
-  "But a description of how something came about does not tell us how to live.",
-  "Philosophers call this gap the difference between is and ought.",
-  "No list of facts, however long, produces a duty on its own.",
-  "The gap runs in both directions, which is easy to forget.",
-  "A moral conviction cannot decide what happened in the fossil record either.",
-  "Recognising the gap does not end disagreement, and it is not meant to.",
-  "People still differ deeply about meaning, and those differences are real.",
-  "What the gap does is keep two questions from being mistaken for one.",
-  "A biologist and a believer may be answering different questions entirely.",
-  "Much heat is produced by arguments that were never about the same thing."
+ tip: "먼저 생각해 보자. 자연이 변한다는 사실에서 도덕도 변한다는 결론이 곧바로 따라 나올까?",
+ sent: T(22).sent, kor: T(22).kor,
+ bank: [
+  ["empirical", "②", "실증적인"],
+  ["flexible", "②", "유동적인"],
+  ["cohort", "③", "무리, 집단"],
+  ["take for granted", "④", "당연하게 여기다"],
+  ["contradict", "⑦", "모순되다"],
+  ["prospect", "⑨", "전망"]
  ],
- kor: [
-  "다윈의 설명은 생명의 형태가 아주 긴 시간에 걸쳐 어떻게 변해 왔는지를 설명한다.",
-  "그것은 변이와 유전, 그리고 생존이라는 느린 걸러 냄을 서술한다.",
-  "그것은 작동 방식에 관한 질문에 대한 답이다.",
-  "많은 논쟁은 그것을 전혀 다른 질문에 대한 답인 것처럼 다룬다.",
-  "그들은 그것을 인간의 삶이 무엇을 위한 것인가에 대한 주장으로 읽는다.",
-  "그러나 무언가가 어떻게 생겨났는지에 대한 서술은 어떻게 살아야 하는지를 말해 주지 않는다.",
-  "철학자들은 이 간극을 '있다'와 '해야 한다'의 차이라고 부른다.",
-  "아무리 긴 사실의 목록도 그것만으로 의무를 만들어 내지는 못한다.",
-  "그 간극은 양쪽으로 다 나 있는데, 이 점은 잊히기 쉽다.",
-  "도덕적 확신 역시 화석 기록에서 무슨 일이 있었는지를 정할 수는 없다.",
-  "간극을 알아본다고 해서 이견이 끝나지는 않으며, 그것을 노린 것도 아니다.",
-  "사람들은 여전히 의미에 대해 깊이 다르게 생각하고, 그 차이는 실재한다.",
-  "그 간극이 하는 일은 두 질문이 하나로 오해되지 않게 막는 것이다.",
-  "생물학자와 신앙인은 아예 다른 질문에 답하고 있는 것일 수 있다.",
-  "애초에 같은 것을 두고 다툰 적이 없는 논쟁에서 많은 열기가 생겨난다."
+ defs: [
+  ["empirical", "based on what is seen and measured"],
+  ["flexible", "able to change to fit new conditions"],
+  ["cohort", "a group that shares the same period"],
+  ["take for granted", "to accept without asking why"],
+  ["contradict", "to say the opposite of something"],
+  ["prospect", "a thing that may happen in future"]
  ],
- bank: [["variation","②","변이"],["inheritance","②","유전"],["mechanism","③","작동 방식"],
-        ["duty","⑧","의무"],["conviction","⑩","확신"],["disagreement","⑪","이견"]],
- defs: [["variation","small differences among individuals"],
-        ["inheritance","the passing of traits to offspring"],
-        ["mechanism","the way a process actually works"],
-        ["duty","something a person ought to do"],
-        ["conviction","a firmly held belief"],
-        ["disagreement","a state of holding different views"]],
- defOrder: [2,0,4,5,1,3],
+ defOrder: [4, 1, 5, 0, 3, 2],
  flow: [
-  ["What it answers","Darwin's account explains the mechanism of change",null],
-  ["The misreading","Some treat it as a claim about what life is (  ①  )","for"],
-  ["The principle","Facts alone never produce a (  ②  )","duty"],
-  ["Both directions","A conviction cannot decide the (  ③  ) record either","fossil"],
-  ["What it achieves","It keeps two questions from being mistaken for (  ④  )","one"]
+  ["The claim", "If evolution is true, nature's categories are not fixed", null],
+  ["The evidence", "Over generations creatures become new (  ①  )", "species"],
+  ["The example", "Weiner's finches change and sometimes change (  ②  )", "back"],
+  ["The clash", "Fixed-at-creation stories are (  ③  )", "contradicted"],
+  ["The worry", "If nature shifts, may the (  ④  ) order shift too?", "moral"]
  ],
- flowBogi: "for · duty · fossil · one · meaning · variation",
+ flowBogi: "species · back · contradicted · moral · fixed · forward",
  para: [
-  ["⑥ does not tell us how to live","Description gives no ______ for action.","rule"],
-  ["⑧ however long, produces a duty","Facts alone cannot create an ______.","obligation"],
-  ["⑨ The gap runs in both directions","The limit applies to ______ sides.","both"],
-  ["⑪ does not end disagreement","Naming the gap leaves the dispute ______.","open"],
-  ["⑮ arguments that were never about the same thing","Much conflict comes from ______ questions.","confused"]
+  ["② nature's categories are flexible rather than fixed", "Nature's lines can ______ rather than hold.", "move"],
+  ["③ to the extent that they become whole new species", "They change so far as to become ______.", "new"],
+  ["④ take for granted as fixed", "We assume without asking that it stays ______.", "same"],
+  ["⑦ contradicts Judeo-Christian and other narratives", "The theory ______ those old stories.", "opposes"],
+  ["⑨ many religious people find upsetting", "That possibility ______ many believers.", "disturbs"]
  ],
- paraBogi: "rule · obligation · both · open · confused · proof · closed · single",
+ paraBogi: "move · new · same · opposes · disturbs · freeze · old · comforts",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How Fossils Are Dated","Two Questions That Are Often Confused",
-       "Why Science Should Replace Belief","The Life and Voyages of Darwin",
-       "Which Side Wins the Debate"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["다윈의 설명은 작동 방식에 관한 답이다.","사실의 목록만으로는 의무가 생기지 않는다.",
-       "간극을 알아보면 이견이 사라진다.","도덕적 확신도 화석 기록을 정할 수는 없다.",
-       "필자는 두 질문이 다를 수 있다고 본다."], ans:3},
-  {t:"write", q:"필자가 말하는 '간극'이 실제로 하는 일을 우리말 한 문장으로 써 보세요.",
-   ans:"서로 다른 두 질문이 같은 하나의 질문으로 오해되지 않게 막아 주는 일이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How Finches Feed on Different Seeds",
+    "When Fixed Categories Start to Move",
+    "Why Species Never Change Their Form",
+    "A Life of Jonathan Weiner",
+    "How the Pulitzer Prize Is Awarded"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "실증적 증거가 뒷받침한다는 의미에서 진화론이 참이라면 자연의 범주는 유동적이다.",
+    "여러 세대에 걸쳐 생물 무리의 신체적 특징이 변하기도 한다.",
+    "Weiner는 되새 한 종류가 자연 선택으로 새로운 종류가 되는 과정을 분석한다.",
+    "다윈의 진화론은 창조 시점에 모든 범주가 확정되었다는 서사와 잘 들어맞는다.",
+    "자연 질서가 고정되어 있지 않다는 함의는 종교인에게 충격적일 수 있다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "필자가 말하는, 종교인에게 더 큰 함의가 되는 질문이 무엇인지 우리말 한 문장으로 써 보세요.",
+   ans: "자연 질서가 고정되어 있지 않다면 사회 질서와 도덕 질서 같은 다른 형태의 질서도 일시적이고 변하는 것이 아닌가 하는 질문이다."
+  }
  ],
  fl: {
-  model: { n:"⑬",
-   toks: [["What the gap does","s"],["is","v"],
-          ["keep two questions from being mistaken for one","c"]],
-   ko:"그 간극이 하는 일은 두 질문이 하나로 오해되지 않게 막는 것이다." },
+  model: {
+   n: "②",
+   toks: [
+    ["To begin with,", "m"], ["if", "c"], ["Darwinian evolution", "s2"], ["is", "v2"],
+    ["indeed true", null], ["in the sense", "m"], ["that", "c"], ["empirical evidence", "s2"],
+    ["supports", "v2"], ["the theory,", null], ["then", "m"], ["nature's categories", "s"],
+    ["are", "v"], ["flexible rather than fixed.", null]
+   ],
+   ko: "우선, 실증적 증거가 그 이론을 뒷받침한다는 의미에서 다윈의 진화론이 참이라면, 자연의 범주는 고정된 것이 아니라 유동적이다."
+  },
   drill: [
-   { n:"⑥", en:"But a description of how something came about does not tell us how to live.",
-     ans:"S a description of how something came about · △V does not tell · O us · O how to live",
-     ko:"그러나 무언가가 어떻게 생겨났는지에 대한 서술은 어떻게 살아야 하는지를 말해 주지 않는다." },
-   { n:"⑧", en:"No list of facts, however long, produces a duty on its own.",
-     ans:"S No list of facts · M however long · △V produces · O a duty · M on its own",
-     ko:"아무리 긴 사실의 목록도 그것만으로 의무를 만들어 내지는 못한다." },
-   { n:"⑮", en:"Much heat is produced by arguments that were never about the same thing.",
-     ans:"S Much heat · △V is produced · M by arguments that were never about the same thing",
-     ko:"애초에 같은 것을 두고 다툰 적이 없는 논쟁에서 많은 열기가 생겨난다." }
+   {
+    n: "④",
+    en: "“This” becomes “that,” calling into question the essential “this”-ness of a category that we might otherwise take for granted as fixed.",
+    ans: "S “This” · △V becomes · C “that” · M calling into question the essential “this”-ness of a category · [that] S′ we · △V′ might otherwise take for granted as fixed",
+    ko: "‘이것’이 ‘저것’이 되면서, 그러지 않았다면 고정된 것으로 당연히 여겼을 범주의 본질적인 ‘이것다움’에 의문을 던진다."
+   },
+   {
+    n: "⑥",
+    en: "He makes it clear that species as natural categories are not fixed.",
+    ans: "S He · △V makes · O it clear · [that] S′ species as natural categories · △V′ are not · C fixed",
+    ko: "그는 자연 범주로서의 종이 고정된 것이 아님을 분명히 한다."
+   },
+   {
+    n: "⑨",
+    en: "Perhaps they, too, are temporary and shifting, a prospect that many religious people find upsetting.",
+    ans: "M Perhaps · S they, too, · △V are · C temporary and shifting · M a prospect that many religious people find upsetting",
+    ko: "아마 그것들도 일시적이고 변하는 것일 텐데, 이는 많은 종교인이 불편해하는 전망이다."
+   }
   ]
  },
  syn: [
-  { n:"⑧", name:"however + 형용사 (양보)",
-    q:"No list of facts, «however long», produces a duty on its own.",
-    d:"<b>however + 형용사/부사</b>는 '아무리 ~하더라도'. no matter how 와 같은 뜻이다.",
-    k:"아무리 긴 사실의 목록이라도 그것만으로 의무를 만들지 못한다." },
-  { n:"⑬", name:"What절 주어 + is + 명사구",
-    q:"«What the gap does is keep» two questions from being mistaken for one.",
-    d:"<b>What ~ does is (to) 동사원형</b>은 '~가 하는 일은 …하는 것이다'. to 는 흔히 생략된다.",
-    k:"그 간극이 하는 일은 두 질문을 갈라 두는 것이다." }
+  {
+   n: "②",
+   name: "in the sense that ~",
+   q: "…if Darwinian evolution is indeed true «in the sense that empirical evidence supports the theory»…",
+   d: "‘~라는 점에서’라는 뜻으로, 어떤 의미에서 그 말이 참인지를 한정한다. that절이 <b>the sense</b>의 내용이 된다.",
+   k: "실증적 증거가 그 이론을 뒷받침한다는 점에서"
+  },
+  {
+   n: "⑥",
+   name: "가목적어 it — 진목적어 that절",
+   q: "He makes «it clear that species as natural categories are not fixed».",
+   d: "<b>make/find/think + it + 형용사 + that절</b>에서 <b>it</b>은 자리만 채우고 진짜 목적어는 that절이다.",
+   k: "그는 종이 고정되어 있지 않다는 것을 분명히 한다"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"However clear the data looks, it cannot tell us what is fair.",
-    k:"자료가 아무리 분명해 보여도, 무엇이 공정한지는 말해 주지 못한다." },
-  { u:"구문 2", en:"What the rule does is give everyone the same starting point.",
-    k:"그 규칙이 하는 일은 모두에게 같은 출발점을 주는 것이다." },
-  { u:"구문 1 + 2", en:"What the method does, however simple it seems, is keep the two apart.",
-    k:"그 방법이 하는 일은, 아무리 단순해 보여도, 그 둘을 갈라 두는 것이다." }
+  { u: "구문 1", en: "The map is useful in the sense that it shows the order of stops.", k: "그 지도는 정차 순서를 보여 준다는 점에서 쓸모가 있다." },
+  { u: "구문 2", en: "She made it clear that the result could change.", k: "그녀는 그 결과가 바뀔 수 있다는 것을 분명히 했다." },
+  { u: "구문 1 + 2", en: "He made it clear that the theory is true in the sense that evidence supports it.", k: "그는 증거가 뒷받침한다는 점에서 그 이론이 참임을 분명히 했다." }
  ],
- wtype: ["무관","정답","반대","무관","반대"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["화석 연대 측정법은 글에 나오지 않는다"],["정답"],
-       ["글은 한쪽이 다른 쪽을 대체한다고 말하지 않는다 — 정반대다"],
-       ["다윈의 생애와 항해는 글의 소재가 아니다"],
-       ["글은 승패를 가리려는 것이 아니라고 말한다 — 정반대다"]],
- src: [["③"],["⑧"],["⑪과 어긋남 — 이견이 끝나지는 않는다고 했다"],["⑩"],["⑭"]],
+ why: [
+  ["되새의 먹이 이야기는 글의 초점이 아니다"],
+  ["정답"],
+  ["글은 종이 고정되어 있지 않다고 말한다 — 정반대다"],
+  ["작가의 생애는 글에 나오지 않는다"],
+  ["상의 심사 과정은 글에서 다루지 않는다"]
+ ],
+ src: [["②"], ["③"], ["⑤"], ["⑦과 어긋남 — 그런 서사와 모순된다"], ["⑧"]],
  kb: {
-  title:"사실과 당위 사이",
-  lead:"다리 하나가 빠져 있는 논증들.",
+  title: "되새의 부리가 바뀐 해",
+  lead: "변화는 얼마나 빨리 눈에 보일까",
   items: [
-   ["흄이 지적한 한 걸음",
-    "1739년 데이비드 흄은 논증이 '이다'로 이어지다가 갑자기 '해야 한다'로 넘어가는 대목을 지적하며, 그 전환에는 따로 설명이 필요하다고 썼다. 오늘날 '흄의 단두대'라고 부른다."],
-   ["'자연스럽다'는 말의 함정",
-    "자연에서 흔히 일어난다는 이유로 옳다고 결론짓는 것을 자연주의적 오류라 한다. 1903년 무어가 정식화했고, 지금도 광고와 논쟁에서 자주 등장한다."],
-   ["교황청과 진화론",
-    "1996년 요한 바오로 2세는 진화가 '하나의 가설 이상'이라고 언급했다. 기제에 관한 설명과 의미에 관한 질문을 분리해 다루는 입장의 한 예로 자주 인용된다."]
+   ["갈라파고스의 관찰", "Peter Grant와 Rosemary Grant 부부는 1973년부터 갈라파고스 Daphne Major 섬에서 되새를 해마다 측정했다. 1977년 큰 가뭄으로 작은 씨앗이 사라지자, 큰 부리를 가진 개체가 더 살아남아 다음 세대의 평균 부리 크기가 커졌다."],
+   ["되돌아온 변화", "몇 해 뒤 비가 많이 내려 작은 씨앗이 흔해지자 평균 부리 크기는 다시 줄었다. 방향이 정해진 진보가 아니라 환경에 따라 오가는 변화라는 것을 보여 준 관찰이다."],
+   ["책과 상", "Jonathan Weiner의 『The Beak of the Finch』는 이 관찰을 다룬 논픽션으로 1995년 퓰리처상 일반 논픽션 부문을 받았다."]
   ],
-  ask:"'원래 그런 것이다'라는 말로 끝난 논쟁을 떠올려 보자. 거기서 빠져 있던 한 걸음은 무엇이었을까?"
- }
+  ask: "여러분이 ‘원래 그런 것’이라고 여겨 온 범주 가운데, 사실은 조건에 따라 움직이는 것이 있을까?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 23 ───────────────────────────── */
 {
- no: "23", key: "sophist",
- accent: "#B5673A", tint: "#FAEDE4", deep: "#7F3F18",
- en: "Winning Without Being Right",
- ko: "옳지 않고도 이기는 법",
- goal: "설득의 기술과 참을 가리는 일이 어떻게 갈라지는지 예를 들어 설명할 수 있다.",
+ no: "23", key: "sophist", accent: "#B5673A", tint: "#FAEDE4", deep: "#7F3F18",
+ en: "What Is Sophistry?",
+ ko: "이기는 길과 맞는 길",
+ goal: "궤변술이 철학과 어떻게 닮았고 어디에서 갈라지는지 대비해 설명할 수 있다.",
  fig: "Figure 1  이기는 길과 맞는 길이 갈라지는 지점.",
- tip: "먼저 생각해 보자. 토론에서 이긴 사람이 늘 옳은 사람일까?",
- sent: [
-  "In ancient Athens, a citizen who could speak well could change his own life.",
-  "Courts had no lawyers, so each man argued his case himself.",
-  "Teachers appeared who promised to make any student persuasive.",
-  "They were called sophists, and at first the word was not an insult.",
-  "They taught structure, timing, and the art of anticipating an objection.",
-  "Much of that teaching is still sound, and debate classes use it today.",
-  "The trouble began with a further promise.",
-  "Some claimed they could make the weaker argument appear the stronger.",
-  "Plato attacked this fiercely, and the word has carried his scorn ever since.",
-  "His complaint was not that persuasion is bad.",
-  "It was that a skill aimed only at winning has no reason to stop at the truth.",
-  "The same tools that clarify a good case can dress up a poor one.",
-  "This is why we teach argument and evidence together rather than separately.",
-  "A student who learns only to win becomes harder to correct, not easier.",
-  "Rhetoric is a tool, and tools take the direction the hand gives them."
+ tip: "먼저 생각해 보자. 토론에서 이겼는데 내가 틀렸다면, 그 승리는 무엇인가?",
+ sent: T(23).sent, kor: T(23).kor,
+ bank: [
+  ["disguise", "②", "위장"],
+  ["stand for", "②", "옹호하다"],
+  ["rhetoric", "⑤", "수사적 기교"],
+  ["substance", "⑤", "실체"],
+  ["stumble", "⑥", "비틀거리다"],
+  ["guarantee", "⑧", "보장하다"]
  ],
- kor: [
-  "고대 아테네에서는 말을 잘하는 시민이 자기 삶을 바꿀 수 있었다.",
-  "법정에는 변호사가 없어서, 저마다 자기 사건을 스스로 변론했다.",
-  "어떤 학생이든 설득력 있게 만들어 주겠다고 약속하는 교사들이 나타났다.",
-  "그들은 소피스트라 불렸고, 처음에 그 말은 욕이 아니었다.",
-  "그들은 구성과 때 맞추기, 그리고 반론을 미리 내다보는 기술을 가르쳤다.",
-  "그 가르침의 많은 부분은 지금도 타당해서, 오늘날 토론 수업이 그것을 쓴다.",
-  "문제는 한 걸음 더 나아간 약속에서 시작되었다.",
-  "일부는 더 약한 논거를 더 강해 보이게 만들 수 있다고 주장했다.",
-  "플라톤은 이를 맹렬히 공격했고, 그 말은 이후로 그의 경멸을 지니고 다닌다.",
-  "그의 불만은 설득이 나쁘다는 것이 아니었다.",
-  "이기는 것만을 겨눈 기술에는 진실 앞에서 멈출 이유가 없다는 것이었다.",
-  "좋은 주장을 또렷하게 만드는 바로 그 도구가 나쁜 주장을 그럴듯하게 꾸밀 수도 있다.",
-  "우리가 논증과 증거를 따로가 아니라 함께 가르치는 이유가 이것이다.",
-  "이기는 법만 배운 학생은 고치기 쉬워지는 것이 아니라 더 어려워진다.",
-  "수사학은 도구이고, 도구는 그것을 쥔 손이 주는 방향을 따라간다."
+ defs: [
+  ["disguise", "a way of hiding what something is"],
+  ["stand for", "to support an idea or value"],
+  ["rhetoric", "the art of speaking to persuade"],
+  ["substance", "the real content behind the surface"],
+  ["stumble", "to walk unsteadily and nearly fall"],
+  ["guarantee", "to promise that something will happen"]
  ],
- bank: [["citizen","①","시민"],["persuasive","③","설득력 있는"],["insult","④","모욕"],
-        ["objection","⑤","반론"],["scorn","⑨","경멸"],["clarify","⑫","또렷하게 하다"]],
- defs: [["citizen","a legal member of a state"],
-        ["persuasive","able to make others agree"],
-        ["insult","a remark meant to offend"],
-        ["objection","a reason given against a claim"],
-        ["scorn","a feeling that something deserves no respect"],
-        ["clarify","to make something easier to understand"]],
- defOrder: [3,0,5,1,4,2],
+ defOrder: [3, 0, 5, 1, 4, 2],
  flow: [
-  ["Setting","In Athens each citizen argued his own case in court",null],
-  ["The teachers","Sophists promised to make any student (  ①  )","persuasive"],
-  ["What was useful","Structure, timing, and anticipating an (  ②  )","objection"],
-  ["The further promise","Making the (  ③  ) argument appear the stronger","weaker"],
-  ["Plato's point","A skill aimed only at winning need not stop at the (  ④  )","truth"]
+  ["The birth", "Sophistry was born as philosophy's evil twin", null],
+  ["The mask", "It looks like philosophy but wears a (  ①  )", "disguise"],
+  ["The aim", "Money, fame, contests, and political (  ②  )", "power"],
+  ["The method", "Logic is turned into (  ③  ), style over substance", "rhetoric"],
+  ["The rule", "Rule number one is to look (  ④  )", "good"]
  ],
- flowBogi: "persuasive · objection · weaker · truth · insult · silence",
+ flowBogi: "disguise · power · rhetoric · good · truth · silence",
  para: [
-  ["④ at first the word was not an insult","The term became negative only ______.","later"],
-  ["⑥ Much of that teaching is still sound","Part of their method remains ______.","useful"],
-  ["⑩ not that persuasion is bad","Plato did not ______ persuasion itself.","reject"],
-  ["⑫ can dress up a poor one","The same skill can ______ a weak case.","disguise"],
-  ["⑮ tools take the direction the hand gives","A method has no ______ of its own.","aim"]
+  ["② go completely against everything", "They run ______ what philosophy defends.", "against"],
+  ["③ pretends to care about all of this", "It only ______ to care about truth.", "pretends"],
+  ["⑤ emphasizes style over substance", "It puts looks ______ real content.", "above"],
+  ["⑥ like children fumbling in the dark", "They grope about as if it were ______.", "dark"],
+  ["⑧ wisdom is supposed to be an end in itself", "Wisdom is its own ______.", "reward"]
  ],
- paraBogi: "later · useful · reject · disguise · aim · early · praise · truth",
+ paraBogi: "against · pretends · above · dark · reward · beside · refuses · bright",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How Athenian Courts Were Organised","A Skill That Need Not Stop at the Truth",
-       "Debate Classes Should Be Abolished","The Complete Biography of Plato",
-       "Why Ancient Greeks Had No Lawyers"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["아테네 법정에는 변호사가 없었다.","'소피스트'는 처음부터 모욕적인 말이었다.",
-       "그들이 가르친 기술의 일부는 지금도 쓰인다.","플라톤은 설득 자체를 나쁘다고 하지 않았다.",
-       "필자는 논증과 증거를 함께 가르쳐야 한다고 본다."], ans:2},
-  {t:"write", q:"필자가 논증과 증거를 함께 가르쳐야 한다고 본 이유를 우리말 한 문장으로 써 보세요.",
-   ans:"이기는 기술만 익히면 나쁜 주장도 그럴듯하게 꾸미게 되어 고치기 어려워지기 때문이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "How to Become Rich and Famous",
+    "The Twin That Wears Philosophy's Face",
+    "Why Sophistry Is the Purer Search for Truth",
+    "A Short History of Ancient Greece",
+    "Rules for Winning a School Debate"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "궤변술은 철학이 태어난 직후에 철학의 사악한 쌍둥이로 태어났다.",
+    "궤변술은 진지하게 받아들여지려고 철학으로 자신을 가장한다.",
+    "궤변술은 논리적 추론을 실체보다 스타일을 앞세우는 수사적 기교로 바꾼다.",
+    "궤변가는 자신이 바보처럼 보이는 것을 기꺼이 받아들인다.",
+    "철학은 지혜가 그 자체로 목적이므로 성공이나 명성을 보장하지 않는다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "필자가 궤변술을 철학과 갈라놓는 결정적인 차이로 무엇을 드는지 우리말 한 문장으로 써 보세요.",
+   ans: "철학은 현실·지식·가치의 궁극적 본질을 정직하게 탐구하지만, 궤변술은 그런 척만 하고 실제로는 돈·명성·승리·권력 같은 이기적 목적에만 집중한다는 점이다."
+  }
  ],
  fl: {
-  model: { n:"⑪",
-   toks: [["It","s"],["was","v"],["that","c"],["a skill aimed only at winning","s2"],
-          ["has","v2"],["no reason to stop at the truth","m"]],
-   ko:"이기는 것만을 겨눈 기술에는 진실 앞에서 멈출 이유가 없다는 것이었다." },
+  model: {
+   n: "⑤",
+   toks: [
+    ["It", "s"], ["takes", "v"], ["logical reasoning, the basic tool of philosophy,", null],
+    ["and", "c"], ["turns", "v"], ["it into rhetoric,", null], ["which", "c"], ["emphasizes", "v2"],
+    ["style over substance, looking good rather than getting it right.", null]
+   ],
+   ko: "그것은 철학의 기본 도구인 논리적 추론을 가져다가 수사적 기교로 바꾸는데, 그 기교는 실체보다 스타일을, 바르게 하는 것보다 멋있어 보이는 것을 앞세운다."
+  },
   drill: [
-   { n:"②", en:"Courts had no lawyers, so each man argued his case himself.",
-     ans:"S Courts · △V had · O no lawyers · [so] S′ each man · △V′ argued · O his case · M himself",
-     ko:"법정에는 변호사가 없어서, 저마다 자기 사건을 스스로 변론했다." },
-   { n:"⑧", en:"Some claimed they could make the weaker argument appear the stronger.",
-     ans:"S Some · △V claimed · [that] S′ they · △V′ could make · O the weaker argument appear the stronger",
-     ko:"일부는 더 약한 논거를 더 강해 보이게 만들 수 있다고 주장했다." },
-   { n:"⑭", en:"A student who learns only to win becomes harder to correct, not easier.",
-     ans:"S A student · M who learns only to win · △V becomes · C harder to correct, not easier",
-     ko:"이기는 법만 배운 학생은 고치기 쉬워지는 것이 아니라 더 어려워진다." }
+   {
+    n: "②",
+    en: "Sophistry wears a mask that makes it look a lot like philosophy, but it uses this disguise to commit all sorts of crimes that go completely against everything philosophy stands for.",
+    ans: "S Sophistry · △V wears · O a mask · [that] △V′ makes · O it look a lot like philosophy · [but] S it · △V uses · O this disguise · M to commit all sorts of crimes that go completely against everything philosophy stands for",
+    ko: "궤변술은 자신을 철학과 아주 비슷해 보이게 하는 가면을 쓰지만, 이 위장을 이용해 철학이 옹호하는 모든 것에 정면으로 반하는 온갖 범죄를 저지른다."
+   },
+   {
+    n: "⑥",
+    en: "Philosophers often look silly as they stumble around trying to make sense of the world, like children fumbling in the dark.",
+    ans: "S Philosophers · M often · △V look · C silly · [as] S′ they · △V′ stumble around · M trying to make sense of the world, like children fumbling in the dark",
+    ko: "철학자들은 어둠 속에서 더듬거리는 아이처럼 세상을 이해하려 비틀거리며 다닐 때 바보처럼 보이는 일이 많다."
+   },
+   {
+    n: "⑦",
+    en: "Sophists never allow themselves to look silly; looking good is rule number one in the sophistry rule book.",
+    ans: "S Sophists · △V never allow · O themselves to look silly · S looking good · △V is · C rule number one in the sophistry rule book",
+    ko: "궤변가는 자신이 바보처럼 보이는 것을 결코 용납하지 않는다. 멋있어 보이는 것이 궤변술 규정집의 첫 번째 규칙이다."
+   }
   ]
  },
  syn: [
-  { n:"⑧", name:"make + 목적어 + 동사원형",
-    q:"Some claimed they could «make the weaker argument appear» the stronger.",
-    d:"<b>make + 목적어 + 동사원형</b>은 '~가 …하게 만들다'. appear 뒤에는 보어가 온다.",
-    k:"더 약한 논거가 더 강해 보이게 만들 수 있다." },
-  { n:"⑭", name:"형용사 + to부정사 (to 부정사의 부사적 용법)",
-    q:"A student who learns only to win becomes «harder to correct», not easier.",
-    d:"<b>형용사 + to부정사</b>는 '~하기에 …한'. correct 의 목적어는 앞의 주어다.",
-    k:"이기는 법만 배운 학생은 고치기 더 어려워진다." }
+  {
+   n: "④",
+   name: "in order to + 수동태 부정사",
+   q: "«it disguises itself as philosophy in order to be taken seriously» but then focuses completely on other selfish activities…",
+   d: "<b>in order to</b>는 목적을 나타낸다. 뒤에 <b>be + 과거분사</b>가 오면 ‘~되기 위해’라는 뜻이 된다.",
+   k: "진지하게 받아들여지기 위해"
+  },
+  {
+   n: "⑧",
+   name: "가정을 품은 관계절 + would",
+   q: "…«a sophist who isn't rich, famous, and successful … would be regarded as a complete failure».",
+   d: "관계절이 조건 구실을 하고 주절에 <b>would</b>가 온다. ‘~한 궤변가라면 …로 여겨질 것이다’로 읽는다.",
+   k: "부유하지도 유명하지도 않은 궤변가라면 완전한 실패자로 여겨질 것이다"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"A good question can make a quiet class start talking.",
-    k:"좋은 질문 하나가 조용한 교실을 말하게 만들 수 있다." },
-  { u:"구문 2", en:"The old rule was simple to state but hard to follow.",
-    k:"그 오래된 규칙은 말하기는 쉬웠지만 지키기는 어려웠다." },
-  { u:"구문 1 + 2", en:"Practice makes the argument easier to build and harder to break.",
-    k:"연습은 그 논증을 세우기 쉽고 무너뜨리기 어렵게 만든다." }
+  { u: "구문 1", en: "He lowered his voice in order to be trusted.", k: "그는 신뢰를 얻기 위해 목소리를 낮췄다." },
+  { u: "구문 2", en: "A speaker who never admits an error would lose our trust.", k: "실수를 결코 인정하지 않는 연설자라면 우리의 신뢰를 잃을 것이다." },
+  { u: "구문 1 + 2", en: "A writer who hides his sources in order to be praised would soon be found out.", k: "칭찬받기 위해 출처를 숨기는 작가라면 곧 들통날 것이다." }
  ],
- wtype: ["지엽","정답","반대","무관","지엽"],
- stype: ["일치","반대","일치","일치","일치"],
- why: [["법정 조직은 배경으로만 언급된다"],["정답"],
-       ["글은 토론 교육이 지금도 유용하다고 말한다 — 정반대다"],
-       ["플라톤의 생애는 글의 소재가 아니다"],
-       ["변호사가 없었다는 사실은 배경의 한 조각일 뿐이다"]],
- src: [["②"],["④과 어긋남 — 처음에는 욕이 아니었다"],["⑥"],["⑩"],["⑬"]],
+ why: [
+  ["부와 명성은 궤변가의 목표일 뿐 글의 주제가 아니다"],
+  ["정답"],
+  ["글은 궤변술이 진리 탐구를 가장할 뿐이라고 말한다 — 정반대다"],
+  ["고대 그리스의 역사는 글에 나오지 않는다"],
+  ["토론에서 이기는 규칙은 글에서 다루지 않는다"]
+ ],
+ src: [["①"], ["④"], ["⑤"], ["⑦과 어긋남 — 바보처럼 보이는 것을 절대 용납하지 않는다"], ["⑧"]],
  kb: {
-  title:"말의 기술이 남긴 것",
-  lead:"같은 도구가 두 방향으로 쓰인다.",
+  title: "가면을 쓴 논증",
+  lead: "설득의 기술은 언제 속임수가 되는가",
   items: [
-   ["프로타고라스의 유명한 문장",
-    "\"인간은 만물의 척도다\"라는 말은 소피스트 프로타고라스에게서 왔다. 절대적 기준을 의심한 이 문장은 상대주의 논쟁의 출발점으로 오래 인용되어 왔다."],
-   ["아리스토텔레스의 세 가지 설득 수단",
-    "『수사학』은 설득을 에토스(화자의 신뢰), 파토스(청중의 감정), 로고스(논증)로 나눈다. 플라톤과 달리 그는 수사학을 정당한 학문으로 다루었다."],
-   ["오늘날의 이름들",
-    "허수아비 논증, 인신공격, 미끄러운 비탈길 같은 오류 이름은 대부분 이 시기 논쟁에서 정리된 것이다. 이름을 아는 것만으로도 알아보기가 쉬워진다."]
+   ["소피스트라는 직업", "기원전 5세기 아테네에서 소피스트는 보수를 받고 변론술을 가르치던 순회 교사였다. 민회와 법정에서 스스로 말해야 했던 시민들에게 필요한 기술이었고, 처음부터 나쁜 말은 아니었다."],
+   ["프로타고라스의 문장", "‘인간은 만물의 척도다’라는 말은 소피스트 프로타고라스가 남긴 것으로 전한다. 판단의 기준을 각 사람에게 두는 이 생각은 플라톤이 소피스트를 비판하는 주된 표적이 되었다."],
+   ["허수아비 논증", "상대의 주장을 약하게 바꿔 놓고 그것을 무너뜨리는 방식을 허수아비 논증(straw man)이라 한다. 이기기는 쉽지만 실제 주장은 조금도 건드리지 못한다."]
   ],
-  ask:"내가 최근에 이긴 말다툼을 떠올려 보자. 이겼을 때 나는 옳기도 했는가?"
- }
+  ask: "여러분이 최근에 본 논쟁에서, 이기기 위한 말과 맞기 위한 말을 나눌 수 있었는가?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 24 ───────────────────────────── */
 {
- no: "24", key: "stoic",
- accent: "#2E6E8E", tint: "#E3EFF4", deep: "#1B4A61",
- en: "The Part You Control",
- ko: "내가 어쩔 수 있는 몫",
- goal: "스토아의 '통제 구분'이 무엇을 말하고 무엇을 말하지 않는지 설명할 수 있다.",
- fig: "Figure 1  선 하나로 나뉘는 두 영역.",
- tip: "먼저 생각해 보자. 시험 결과와 시험 공부 중에서 내가 정말로 정할 수 있는 것은 어느 쪽일까?",
- sent: [
-  "Epictetus was born a slave and taught philosophy after he was freed.",
-  "His starting point was a single division.",
-  "Some things are up to us, and some things are not.",
-  "Our judgements and our efforts belong to the first group.",
-  "Our reputation, our health, and the weather belong to the second.",
-  "Suffering, he argued, comes from treating the second group as if it were the first.",
-  "A runner who demands victory has staked himself on what he cannot control.",
-  "A runner who demands good training has staked himself on what he can.",
-  "The second runner may still lose, and he will still be disappointed.",
-  "But the disappointment will not become the collapse of his whole footing.",
-  "This is often misread as advice to stop caring.",
-  "The Stoics cared a great deal and held public office throughout their lives.",
-  "Marcus Aurelius wrote these notes while running an empire at war.",
-  "The point was never to want less but to place wanting where it can act.",
-  "Effort is the part that answers when you call it."
+ no: "24", key: "stoic", accent: "#2E6E8E", tint: "#E3EFF4", deep: "#1B4A61",
+ en: "The Stoics",
+ ko: "고문을 받으면서도 행복할 수 있다는 말",
+ goal: "스토아학파가 행복을 무엇으로 보았고 왜 감정을 정화하라고 했는지 설명할 수 있다.",
+ fig: "Figure 1  선 하나로 나뉘는 두 영역 — 내가 어쩔 수 있는 것과 없는 것.",
+ tip: "먼저 생각해 보자. 건강도 평판도 잃은 사람이 행복하다고 말한다면, 우리는 무엇을 믿어야 할까?",
+ sent: T(24).sent, kor: T(24).kor,
+ bank: [
+  ["flourish", "①", "번성하다"],
+  ["originate", "②", "시작되다"],
+  ["epistemology", "③", "인식론"],
+  ["virtuous", "⑨", "덕이 있는"],
+  ["regardless of", "⑪", "~에 상관없이"],
+  ["purge", "⑯", "없애다, 정화하다"]
  ],
- kor: [
-  "에픽테토스는 노예로 태어나 해방된 뒤 철학을 가르쳤다.",
-  "그의 출발점은 단 하나의 구분이었다.",
-  "어떤 것은 우리에게 달려 있고, 어떤 것은 그렇지 않다.",
-  "우리의 판단과 노력은 앞의 무리에 속한다.",
-  "우리의 평판과 건강과 날씨는 뒤의 무리에 속한다.",
-  "괴로움은 뒤의 무리를 앞의 무리인 것처럼 다루는 데서 온다고 그는 주장했다.",
-  "승리를 요구하는 주자는 자기가 통제할 수 없는 것에 자신을 걸어 둔 것이다.",
-  "좋은 훈련을 요구하는 주자는 자기가 할 수 있는 것에 자신을 걸어 둔 것이다.",
-  "두 번째 주자도 여전히 질 수 있고, 여전히 실망할 것이다.",
-  "그러나 그 실망이 그가 딛고 선 자리 전체를 무너뜨리지는 않는다.",
-  "이것은 흔히 신경을 끄라는 조언으로 잘못 읽힌다.",
-  "스토아 철학자들은 몹시 많이 신경 썼고, 평생 공직을 맡았다.",
-  "마르쿠스 아우렐리우스는 전쟁 중인 제국을 운영하면서 이 기록을 썼다.",
-  "요점은 덜 원하라는 것이 아니라, 원함을 그것이 작동할 수 있는 자리에 놓으라는 것이었다.",
-  "노력은 부르면 대답하는 쪽의 몫이다."
+ defs: [
+  ["flourish", "to grow strongly over a period"],
+  ["originate", "to begin in a certain place or time"],
+  ["epistemology", "the study of what knowing means"],
+  ["virtuous", "living by high moral standards"],
+  ["regardless of", "without being affected by something"],
+  ["purge", "to remove something completely"]
  ],
- bank: [["division","②","구분"],["judgement","④","판단"],["reputation","⑤","평판"],
-        ["suffering","⑥","괴로움"],["stake","⑦","(~에) 걸다"],["collapse","⑩","무너짐"]],
- defs: [["division","a line drawn between two groups"],
-        ["judgement","the act of forming an opinion"],
-        ["reputation","what others generally think of you"],
-        ["suffering","the experience of pain or distress"],
-        ["stake","to risk something on an outcome"],
-        ["collapse","a sudden falling apart"]],
- defOrder: [1,4,0,5,3,2],
+ defOrder: [5, 2, 0, 4, 1, 3],
  flow: [
-  ["The division","Some things are up to us, and some things are not",null],
-  ["Group one","Our (  ①  ) and our efforts","judgements"],
-  ["Group two","Reputation, health, and the (  ②  )","weather"],
-  ["The claim","Suffering comes from confusing the (  ③  ) group for the first","second"],
-  ["The correction","Not to want (  ④  ), but to aim wanting where it can act","less"]
+  ["Where", "Stoicism spread from Cyprus to Athens and Rome", null],
+  ["The stuff", "Living things are passive matter plus (  ①  )", "pneuma"],
+  ["The question", "How should a person (  ②  )?", "live"],
+  ["The answer", "Happiness is an excellent activity of the (  ③  )", "soul"],
+  ["The conclusion", "Since emotions carry beliefs, (  ④  ) them", "purge"]
  ],
- flowBogi: "judgements · weather · second · less · victory · office",
+ flowBogi: "pneuma · live · soul · purge · money · body",
  para: [
-  ["⑥ treating the second group as if it were the first","Pain comes from ______ the two groups.","confusing"],
-  ["⑦ has staked himself on what he cannot control","He bets on an ______ outcome.","uncertain"],
-  ["⑩ will not become the collapse of his whole footing","Loss stays ______, not total.","partial"],
-  ["⑪ misread as advice to stop caring","People mistake it for ______.","indifference"],
-  ["⑭ not to want less but to place wanting","Redirect desire rather than ______ it.","shrink"]
+  ["① flourished in the Greco-Roman world", "The school ______ across Greece and Rome.", "spread"],
+  ["⑤ keeps it evolving and changing", "God holds the world in constant ______.", "change"],
+  ["⑩ nothing to do with actually possessing them", "Owning them is ______ to happiness.", "unrelated"],
+  ["⑫ could be happy even while being tortured", "Even under torture one could stay ______.", "happy"],
+  ["⑬ emotions are not merely feelings", "Feelings always carry a ______ inside.", "belief"]
  ],
- paraBogi: "confusing · uncertain · partial · indifference · shrink · sorting · certain · total",
+ paraBogi: "spread · change · unrelated · happy · belief · shrank · rest · doubt",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How to Stop Caring About Results","Aiming Effort Where It Can Act",
-       "The Roman Empire at War","Why Slaves Became Philosophers",
-       "A Training Plan for Runners"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["에픽테토스는 노예로 태어났다.","판단과 노력은 우리에게 달린 쪽에 속한다.",
-       "스토아 철학자들은 세상일에 관심을 끊고 물러났다.","좋은 훈련을 요구한 주자도 질 수 있다.",
-       "요점은 덜 원하라는 것이 아니었다."], ans:3},
-  {t:"write", q:"필자가 이 구분이 '신경을 끄라는 말이 아니다'라고 한 근거를 우리말 한 문장으로 써 보세요.",
-   ans:"스토아 철학자들은 평생 공직을 맡으며 세상일에 깊이 관여했기 때문이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "Where Zeno of Citium Was Born",
+    "Happiness the Stoics Could Not Lose",
+    "Why the Stoics Chased Wealth and Fame",
+    "A Map of the Roman Empire",
+    "How Greek Was Written and Read"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "스토아학파는 기원전 4세기부터 기원후 2세기까지 그리스·로마 세계에서 번성했다.",
+    "그들은 살아 있는 것이 수동적 물질과 pneuma 라는 능동적 힘으로 이루어졌다고 보았다.",
+    "그들에게 행복은 덕·용기·겸손·인내를 갖춘 ‘영혼의 탁월한 활동’이었다.",
+    "그들은 부와 명예와 건강을 바라는 것 자체가 불합리하다고 보았다.",
+    "그들은 감정이 단지 느낌이 아니라 늘 믿음을 수반한다고 믿었다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "스토아학파가 감정을 정화하라고 권한 논리를 우리말 한 문장으로 써 보세요.",
+   ans: "감정은 늘 믿음을 수반하는데, 덕이 있는 사람은 질병 앞에서도 행복할 수 있으므로 질병이 나쁘다는 믿음이 잘못이고, 따라서 그 믿음에 딸린 감정도 버려야 한다는 것이다."
+  }
  ],
  fl: {
-  model: { n:"⑥",
-   toks: [["Suffering","s"],[", he argued,",null],["comes","v"],["from treating the second group","m"],
-          ["as if","c"],["it","s2"],["were","v2"],["the first","m"]],
-   ko:"괴로움은 뒤의 무리를 앞의 무리인 것처럼 다루는 데서 온다고 그는 주장했다." },
+  model: {
+   n: "⑪",
+   toks: [
+    ["Indeed,", "m"], ["the Stoics", "s"], ["believed", "v"], ["that", "c"], ["a person", "s2"],
+    ["who", "c"], ["was", "v2"], ["fully virtuous", null], ["could be", "v2"], ["happy", null],
+    ["regardless of his or her physical well-being.", "m"]
+   ],
+   ko: "실제로 스토아학파는 충분히 덕이 있는 사람이라면 자신의 신체적 안녕과 상관없이 행복할 수 있다고 믿었다."
+  },
   drill: [
-   { n:"①", en:"Epictetus was born a slave and taught philosophy after he was freed.",
-     ans:"S Epictetus · △V was born · C a slave · [and] △V taught · O philosophy · [after] S′ he · △V′ was freed",
-     ko:"에픽테토스는 노예로 태어나 해방된 뒤 철학을 가르쳤다." },
-   { n:"⑬", en:"Marcus Aurelius wrote these notes while running an empire at war.",
-     ans:"S Marcus Aurelius · △V wrote · O these notes · M while running an empire at war",
-     ko:"마르쿠스 아우렐리우스는 전쟁 중인 제국을 운영하면서 이 기록을 썼다." },
-   { n:"⑭", en:"The point was never to want less but to place wanting where it can act.",
-     ans:"S The point · △V was · M never · C to want less but to place wanting where it can act",
-     ko:"요점은 덜 원하라는 것이 아니라 원함을 작동할 수 있는 자리에 놓으라는 것이었다." }
+   {
+    n: "②",
+    en: "Originating with Zeno of Citium in Cyprus but eventually spreading to Athens, Rome, and the rest of the Roman Empire, Stoicism had a major influence on ancient civilization.",
+    ans: "M Originating with Zeno of Citium in Cyprus but eventually spreading to Athens, Rome, and the rest of the Roman Empire · S Stoicism · △V had · O a major influence on ancient civilization",
+    ko: "키프로스의 제논에게서 시작해 아테네와 로마, 로마 제국 전역으로 퍼진 스토아 철학은 고대 문명에 큰 영향을 미쳤다."
+   },
+   {
+    n: "⑭",
+    en: "For instance, they thought being afraid of disease required believing that disease was bad.",
+    ans: "M For instance · S they · △V thought · [that] S′ being afraid of disease · △V′ required · O believing that disease was bad",
+    ko: "예를 들어 그들은 질병을 두려워하려면 질병이 나쁘다고 믿어야 한다고 생각했다."
+   },
+   {
+    n: "⑮",
+    en: "However, since a truly virtuous person could be happy in the face of disease, it was wrong to believe that disease is bad.",
+    ans: "M However · [since] S′ a truly virtuous person · △V′ could be · C happy in the face of disease · S it · △V was · C wrong · to believe that disease is bad",
+    ko: "그러나 진정으로 덕이 있는 사람은 질병 앞에서도 행복할 수 있으므로, 질병이 나쁘다고 믿는 것은 잘못이었다."
+   }
   ]
  },
  syn: [
-  { n:"⑥", name:"as if + 가정법 과거",
-    q:"Suffering comes from treating the second group «as if it were» the first.",
-    d:"<b>as if + 주어 + 과거형</b>은 사실이 아닌 일을 가정한다. be동사는 인칭과 관계없이 were.",
-    k:"뒤의 무리를 마치 앞의 무리인 것처럼 다루는 데서 온다." },
-  { n:"⑬", name:"접속사 + 분사구문 (while ~ing)",
-    q:"Marcus Aurelius wrote these notes «while running» an empire at war.",
-    d:"<b>while + ~ing</b>는 주절과 동시에 일어난 일을 나타낸다. 주어가 같아서 생략되었다.",
-    k:"그는 제국을 운영하면서 이 기록을 썼다." }
+  {
+   n: "②",
+   name: "분사구문 두 개의 병렬",
+   q: "«Originating with Zeno of Citium in Cyprus but eventually spreading to Athens,» … Stoicism had a major influence…",
+   d: "<b>-ing</b> 덩어리 두 개를 <b>but</b>으로 이어 주어의 두 면을 함께 설명한다. 주어는 뒤의 <b>Stoicism</b>이다.",
+   k: "키프로스에서 시작했지만 결국 아테네로 퍼져 나가면서"
+  },
+  {
+   n: "⑪",
+   name: "regardless of + 명사",
+   q: "…a person who was fully virtuous could be happy «regardless of his or her physical well-being».",
+   d: "‘~에 상관없이’라는 뜻의 전치사구다. 뒤에는 명사나 동명사가 오며 절이 오지 않는다.",
+   k: "신체적 안녕과 상관없이"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"He speaks about the plan as if it were already finished.",
-    k:"그는 그 계획을 마치 이미 끝난 것처럼 말한다." },
-  { u:"구문 2", en:"She took notes while listening to the lecture.",
-    k:"그녀는 강의를 들으면서 필기를 했다." },
-  { u:"구문 1 + 2", en:"He kept working as if nothing had changed, while waiting for the result.",
-    k:"그는 결과를 기다리면서도 아무것도 달라지지 않은 것처럼 계속 일했다." }
+  { u: "구문 1", en: "Beginning in one city but reaching many, the idea changed shape.", k: "한 도시에서 시작했지만 여러 곳에 닿으면서 그 생각은 모습이 바뀌었다." },
+  { u: "구문 2", en: "He kept his calm regardless of the noise around him.", k: "그는 주변의 소음과 상관없이 평정을 유지했다." },
+  { u: "구문 1 + 2", en: "Starting small but spreading fast, the school taught calm regardless of fortune.", k: "작게 시작했지만 빠르게 퍼지면서, 그 학파는 운과 상관없는 평정을 가르쳤다." }
  ],
- wtype: ["반대","정답","지엽","무관","무관"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["글은 신경을 끄라는 말이 아니라고 밝힌다 — 정반대다"],["정답"],
-       ["전쟁 중인 제국은 배경으로만 언급된다"],
-       ["노예 출신이라는 사실은 도입의 한 조각일 뿐이다"],
-       ["훈련 계획을 알려 주는 글이 아니다"]],
- src: [["①"],["④"],["⑫과 어긋남 — 평생 공직을 맡았다"],["⑨"],["⑭"]],
+ why: [
+  ["문장 ②의 한 대목만 붙든 지엽적인 제목이다"],
+  ["정답"],
+  ["글은 행복이 그것을 소유하는 것과 무관하다고 말한다 — 정반대다"],
+  ["로마 제국의 지도는 글에 나오지 않는다"],
+  ["그리스어 표기는 글에서 다루지 않는다"]
+ ],
+ src: [["①"], ["④"], ["⑨"], ["⑩과 어긋남 — 그런 것을 바라는 것 자체는 합리적이라고 보았다"], ["⑬"]],
  kb: {
-  title:"통제할 수 있는 것의 목록",
-  lead:"경계를 그으면 힘 쓸 자리가 보인다.",
+  title: "회랑에서 시작된 학파",
+  lead: "이름부터가 장소였다",
   items: [
-   ["『엥케이리디온』 첫 문장",
-    "에픽테토스의 편람은 \"어떤 것은 우리에게 달려 있고, 어떤 것은 그렇지 않다\"로 시작한다. 제자 아리아노스가 강의를 받아 적어 남긴 책이다."],
-   ["전장에서 쓴 일기",
-    "마르쿠스 아우렐리우스의 『명상록』은 출판을 염두에 두지 않은 자기 기록으로, 상당 부분이 게르만 원정 중에 쓰였다. 물러난 사람의 글이 아니라 일하는 사람의 글이다."],
-   ["오늘날의 인지행동치료",
-    "\"사람을 괴롭히는 것은 사건이 아니라 사건에 대한 견해다\"라는 에픽테토스의 문장은 CBT 교과서에 자주 인용된다. 창시자 아론 벡과 앨버트 엘리스가 직접 영향을 밝혔다."]
+   ["스토아라는 이름", "제논이 제자들과 이야기하던 곳은 아테네 아고라의 채색 주랑(Stoa Poikilē)이었다. 학파의 이름은 그 회랑에서 왔다. 특정 인물이 아니라 장소에서 이름을 얻은 드문 경우다."],
+   ["세 사람의 기록", "로마 시대 스토아 철학의 글은 신분이 크게 달랐던 세 사람이 남겼다. 노예 출신 에픽테토스, 정치가 세네카, 황제 마르쿠스 아우렐리우스다. 같은 가르침이 전혀 다른 처지에서 쓰였다."],
+   ["파토스와 아파테이아", "스토아학파가 없애라고 한 것은 느낌 전부가 아니라 잘못된 판단에 딸린 격정(pathos)이었다. 그 결과 이르는 상태를 아파테이아(apatheia)라 불렀는데, 무감각이 아니라 격정에 휘둘리지 않음을 뜻한다."]
   ],
-  ask:"요즘 나를 가장 힘들게 하는 일 하나를 골라, 내가 정할 수 있는 부분과 없는 부분으로 나눠 적어 보자."
- }
+  ask: "여러분이 최근에 크게 흔들렸던 감정 하나를 골라, 그 밑에 어떤 판단이 깔려 있었는지 적어 볼 수 있는가?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 },
+
+/* ───────────────────────────── 25 ───────────────────────────── */
 {
- no: "25", key: "wanting",
- accent: "#93476B", tint: "#F7E8EF", deep: "#67284A",
- en: "The Wanting That Never Ends",
- ko: "끝나지 않는 원함",
- goal: "쇼펜하우어의 욕망 구조 분석과 그가 제안한 해방의 통로를 설명할 수 있다.",
- fig: "Figure 1  올라설 때마다 다시 멀어지는 지평선.",
- tip: "먼저 생각해 보자. 간절히 바라던 것을 손에 넣었을 때, 그 기쁨은 얼마나 오래갔는가?",
- sent: [
-  "Schopenhauer began from an observation anyone can check.",
-  "Getting what you wanted feels wonderful, and the feeling does not last.",
-  "The satisfied wish leaves a quiet space, and a new wish moves in.",
-  "He called the force behind this restlessness the will.",
-  "The will has no goal of its own; it only continues.",
-  "On this account, pleasure is mostly the removal of a want rather than a positive gain.",
-  "Boredom is what remains when nothing is missing, and he thought it revealing.",
-  "His conclusion was famously dark, and many readers stop there.",
-  "But he also described two ways out of the circle.",
-  "The first is art, where for a moment you look without wanting anything.",
-  "Music was his highest example, because it asks for nothing outside itself.",
-  "The second is compassion, in which the wall between self and other thins.",
-  "Neither escape is permanent, and he never claimed otherwise.",
-  "Later thinkers disagreed sharply about whether the picture is accurate.",
-  "Even so, the description of the treadmill is hard to forget once read."
+ no: "25", key: "wanting", accent: "#93476B", tint: "#F7E8EF", deep: "#67284A",
+ en: "Schopenhauer's Concerns",
+ ko: "정언 명령은 황금률의 다른 이름인가",
+ goal: "쇼펜하우어가 칸트의 정언 명령을 비판한 지점과 동정심을 둘러싼 두 사람의 견해 차이를 설명할 수 있다.",
+ fig: "Figure 1  올라설 때마다 다시 멀어지는 지평선 — 그 원 밖에 서게 하는 것은 연민이다.",
+ tip: "먼저 생각해 보자. ‘내가 당하기 싫은 일은 남에게도 하지 말라’는 말에는 무엇이 빠져 있을까?",
+ sent: T(25).sent, kor: T(25).kor,
+ bank: [
+  ["find fault with", "②", "흠을 잡다"],
+  ["methodology", "③", "방법론"],
+  ["boil down to", "③", "~로 요약되다"],
+  ["trappings", "④", "겉치레, 장식"],
+  ["humanizing", "⑥", "인간답게 만드는"],
+  ["egoism", "⑨", "이기주의"]
  ],
- kor: [
-  "쇼펜하우어는 누구나 확인해 볼 수 있는 관찰에서 시작했다.",
-  "바라던 것을 얻는 일은 굉장하게 느껴지지만, 그 느낌은 오래가지 않는다.",
-  "채워진 바람은 조용한 빈자리를 남기고, 새로운 바람이 그리로 들어온다.",
-  "그는 이 들썩임 뒤의 힘을 '의지'라고 불렀다.",
-  "의지에는 자기 목표가 없다. 그저 계속될 뿐이다.",
-  "이 설명에 따르면 쾌락은 대개 적극적인 이득이라기보다 결핍의 제거다.",
-  "지루함은 부족한 것이 없을 때 남는 것이며, 그는 그것이 많은 것을 드러낸다고 보았다.",
-  "그의 결론은 어둡기로 유명해서, 많은 독자가 거기서 멈춘다.",
-  "그러나 그는 이 원에서 빠져나가는 두 길도 서술했다.",
-  "첫째는 예술인데, 거기서는 잠시 아무것도 원하지 않은 채로 바라보게 된다.",
-  "음악이 그의 가장 높은 예였는데, 자기 바깥의 무엇도 요구하지 않기 때문이다.",
-  "둘째는 연민이며, 그 안에서 나와 남 사이의 벽이 얇아진다.",
-  "어느 탈출도 영구적이지 않고, 그도 그렇게 주장한 적이 없다.",
-  "뒤의 사상가들은 이 그림이 정확한지를 두고 날카롭게 갈라졌다.",
-  "그렇다 해도 그 쳇바퀴에 대한 서술은 한번 읽으면 잊기 어렵다."
+ defs: [
+  ["find fault with", "to point out what is wrong in it"],
+  ["methodology", "a set of methods used in a study"],
+  ["boil down to", "to come down to one simple point"],
+  ["trappings", "outward signs that dress something up"],
+  ["humanizing", "making someone more truly human"],
+  ["egoism", "the habit of thinking only of oneself"]
  ],
- bank: [["satisfy","③","채우다, 만족시키다"],["restlessness","④","들썩임, 안절부절"],
-        ["removal","⑥","제거"],["boredom","⑦","지루함"],["compassion","⑫","연민"],["permanent","⑬","영구적인"]],
- defs: [["satisfy","to meet a need or a wish"],
-        ["restlessness","the state of being unable to settle"],
-        ["removal","the act of taking something away"],
-        ["boredom","the feeling of having nothing to engage you"],
-        ["compassion","concern for the suffering of others"],
-        ["permanent","lasting without end"]],
- defOrder: [3,0,5,1,4,2],
+ defOrder: [4, 1, 5, 0, 3, 2],
  flow: [
-  ["Observation","Getting what you wanted feels wonderful, and then fades",null],
-  ["The mechanism","A satisfied wish is replaced by a (  ①  ) one","new"],
-  ["The name","He called the force behind this the (  ②  )","will"],
-  ["Way out 1","In (  ③  ) you look for a moment without wanting","art"],
-  ["Way out 2","In compassion the wall between self and other (  ④  )","thins"]
+  ["The agreement", "Schopenhauer shared many of Kant's ethical positions", null],
+  ["The complaint", "The Categorical Imperative boils down to the (  ①  ) Rule", "Golden"],
+  ["His claim", "Humans act from selfishness but as often from (  ②  )", "sympathy"],
+  ["Kant's reply", "Feelings are unstable, so they give no (  ③  )", "bedrock"],
+  ["The answer", "Denying sympathy raises (  ④  ), which clouds judgment", "egoism"]
  ],
- flowBogi: "new · will · art · thins · boredom · music",
+ flowBogi: "Golden · sympathy · bedrock · egoism · Iron · profit",
  para: [
-  ["⑤ it only continues","The will moves without any ______.","destination"],
-  ["⑥ the removal of a want rather than a gain","Pleasure is mainly ______, not addition.","relief"],
-  ["⑦ what remains when nothing is missing","Boredom appears once desire is ______.","absent"],
-  ["⑩ you look without wanting anything","Art suspends the act of ______.","wanting"],
-  ["⑬ Neither escape is permanent","Both exits are only ______.","temporary"]
+  ["② found fault with the Categorical Imperative", "He pointed out what was ______ in it.", "wrong"],
+  ["④ reworded in intellectual trappings", "The same rule dressed in fancy ______.", "words"],
+  ["⑤ sometimes humans are driven by selfishness", "At times self-interest ______ us.", "moves"],
+  ["⑦ little place for the hard-to-quantify things", "Things hard to ______ have little room.", "measure"],
+  ["⑨ an increased egoism, which clouds judgment", "Ignoring feeling makes judgment ______.", "cloudy"]
  ],
- paraBogi: "destination · relief · absent · wanting · temporary · purpose · gain · lasting",
+ paraBogi: "wrong · words · moves · measure · cloudy · right · numbers · rests",
  check: [
-  {t:"title", q:"이 글의 제목으로 가장 알맞은 것은?",
-   ch:["How to Get What You Want","A Circle, and Two Doors Out of It",
-       "Why Music Is Better Than Painting","The Complete Life of Schopenhauer",
-       "Boredom Is Always Harmful"], ans:2},
-  {t:"fact", q:"이 글의 내용과 일치하지 <b>않는</b> 것은?",
-   ch:["채워진 바람은 곧 새 바람으로 대체된다.","그는 쾌락을 주로 결핍의 제거로 보았다.",
-       "그는 예술과 연민이 영구적인 해방이라고 주장했다.","음악을 가장 높은 예로 들었다.",
-       "뒤의 사상가들은 이 그림을 두고 갈라졌다."], ans:3},
-  {t:"write", q:"쇼펜하우어가 음악을 가장 높은 예로 든 이유를 우리말 한 문장으로 써 보세요.",
-   ans:"음악은 자기 바깥의 무엇도 요구하지 않기 때문이다."}
+  {
+   t: "title", q: "이 글의 제목으로 가장 알맞은 것은?",
+   ch: [
+    "The Four Methods of the Categorical Imperative",
+    "The Feeling Kant Left Out",
+    "Why Schopenhauer Rejected All of Kant's Ethics",
+    "A Biography of Immanuel Kant",
+    "How to Write a Moral Code"
+   ], ans: 2
+  },
+  {
+   t: "fact", q: "이 글의 내용과 일치하지 <b>않는</b> 것은?",
+   ch: [
+    "쇼펜하우어는 윤리에 대한 칸트의 입장 다수에 동의했다.",
+    "그는 정언 명령이 결국 황금률을 지적 장식으로 바꿔 쓴 것이라고 보았다.",
+    "그는 인간이 때로 이기심에, 그만큼 자주 동정심이나 공감에 이끌린다고 보았다.",
+    "칸트는 감정이 도덕규범의 기반이 될 수 있다고 보아 동정심을 자세히 다루었다.",
+    "그는 동정심이 동료에게 도덕적으로 행동하는 방법을 정하는 데 필요하다고 말했다."
+   ], ans: 4
+  },
+  {
+   t: "write", q: "쇼펜하우어가 동정심을 부정하면 안 된다고 본 이유를 우리말 한 문장으로 써 보세요.",
+   ans: "동정심 같은 감정을 부정하면 이기심이 커지고, 그 이기심이 판단을 흐리기 때문이다."
+  }
  ],
  fl: {
-  model: { n:"⑩",
-   toks: [["The first","s"],["is","v"],["art","c"],[",",null],["where","c"],
-          ["you","s2"],["look","v2"],["without wanting anything","m"]],
-   ko:"첫째는 예술인데, 거기서는 잠시 아무것도 원하지 않은 채로 바라보게 된다." },
+  model: {
+   n: "⑤",
+   toks: [
+    ["One of Schopenhauer's main arguments", "s"], ["was", "v"], ["that", "c"],
+    ["human actions", "s2"], ["aren't always guided", "v2"], ["by the same thing", "m"],
+    ["— that", "c"], ["sometimes", "m"], ["humans", "s2"], ["are driven", "v2"],
+    ["by selfishness, but just as often by sympathy or empathy.", "m"]
+   ],
+   ko: "쇼펜하우어의 주요 주장 가운데 하나는, 인간의 행동이 늘 같은 것에 이끌리지는 않는다는 것, 즉 때로는 이기심에 이끌리지만 그만큼 자주 동정심이나 공감에 이끌린다는 것이었다."
+  },
   drill: [
-   { n:"③", en:"The satisfied wish leaves a quiet space, and a new wish moves in.",
-     ans:"S The satisfied wish · △V leaves · O a quiet space · [and] S a new wish · △V moves in",
-     ko:"채워진 바람은 조용한 빈자리를 남기고, 새로운 바람이 그리로 들어온다." },
-   { n:"⑦", en:"Boredom is what remains when nothing is missing, and he thought it revealing.",
-     ans:"S Boredom · △V is · C what remains when nothing is missing · [and] S he · △V thought · O it revealing",
-     ko:"지루함은 부족한 것이 없을 때 남는 것이며, 그는 그것이 많은 것을 드러낸다고 보았다." },
-   { n:"⑮", en:"Even so, the description of the treadmill is hard to forget once read.",
-     ans:"M Even so · S the description of the treadmill · △V is · C hard to forget · M once read",
-     ko:"그렇다 해도 그 쳇바퀴에 대한 서술은 한번 읽으면 잊기 어렵다." }
+   {
+    n: "④",
+    en: "In other words, the Categorical Imperative, to Schopenhauer, was the Golden Rule, reworded in intellectual trappings.",
+    ans: "M In other words · S the Categorical Imperative · M to Schopenhauer · △V was · C the Golden Rule · M reworded in intellectual trappings",
+    ko: "다시 말해 쇼펜하우어에게 정언 명령은 지적 장식으로 바꿔 쓴 황금률이었다."
+   },
+   {
+    n: "⑥",
+    en: "Schopenhauer found there to be a great deal of sympathy in completely moral actions, and that it was just as humanizing a thing as Kant's free will.",
+    ans: "S Schopenhauer · △V found · O there to be a great deal of sympathy in completely moral actions · and [that] S′ it · △V′ was · C just as humanizing a thing as Kant's free will",
+    ko: "쇼펜하우어는 완전히 도덕적인 행위에 많은 동정심이 있다고 보았고, 그것이 칸트의 자유의지만큼이나 인간답게 만드는 것이라고 보았다."
+   },
+   {
+    n: "⑨",
+    en: "But Schopenhauer argued that denying feelings like sympathy leads to an increased egoism, which clouds judgment.",
+    ans: "[But] S Schopenhauer · △V argued · [that] S′ denying feelings like sympathy · △V′ leads · M to an increased egoism · [which] △V′ clouds · O judgment",
+    ko: "그러나 쇼펜하우어는 동정심 같은 감정을 부정하면 이기심이 커지고, 그것이 판단을 흐린다고 주장했다."
+   }
   ]
  },
  syn: [
-  { n:"⑩", name:"계속적 용법의 관계부사 where",
-    q:"The first is art, «where for a moment you look» without wanting anything.",
-    d:"쉼표 뒤의 <b>where</b>는 앞의 명사를 보충 설명한다. '그런데 거기서는 ~' 으로 이어 읽는다.",
-    k:"첫째는 예술인데, 거기서는 아무것도 원하지 않은 채 바라보게 된다." },
-  { n:"⑮", name:"분사구문 축약 (once read)",
-    q:"The description of the treadmill is hard to forget «once read».",
-    d:"<b>once + 과거분사</b>는 'once it is read' 에서 주어와 be동사가 빠진 형태다.",
-    k:"그 서술은 한번 읽고 나면 잊기 어렵다." }
+  {
+   n: "③",
+   name: "not to mention ~",
+   q: "Despite four highly detailed methodologies …, «not to mention the reasoning behind even the decision»…",
+   d: "‘~은 말할 것도 없이’라는 뜻으로, 앞의 내용에 더 큰 것을 덧붙여 강조한다.",
+   k: "그 결정 이면의 추론은 말할 것도 없이"
+  },
+  {
+   n: "⑥",
+   name: "find + there to be ~",
+   q: "Schopenhauer «found there to be a great deal of sympathy» in completely moral actions.",
+   d: "<b>there is</b> 구문을 <b>to be</b> 형태로 바꾸어 동사의 목적어 자리에 넣은 모양이다. ‘~이 있다고 보았다’로 읽는다.",
+   k: "많은 동정심이 있다고 보았다"
+  }
  ],
  synd: [
-  { u:"구문 1", en:"He returned to the hall, where the music had begun again.",
-    k:"그는 강당으로 돌아갔는데, 거기서는 음악이 다시 시작되어 있었다." },
-  { u:"구문 2", en:"The rule is simple once explained.",
-    k:"그 규칙은 한번 설명하고 나면 간단하다." },
-  { u:"구문 1 + 2", en:"She opened the letter, which was easy to understand once read aloud.",
-    k:"그녀는 그 편지를 열었는데, 소리 내어 읽고 나니 이해하기 쉬웠다." }
+  { u: "구문 1", en: "The plan costs time, not to mention money.", k: "그 계획은 돈은 말할 것도 없이 시간이 든다." },
+  { u: "구문 2", en: "We found there to be no simple answer to the question.", k: "우리는 그 질문에 간단한 답이 없다고 보았다." },
+  { u: "구문 1 + 2", en: "He found there to be little proof, not to mention agreement.", k: "그는 합의는 말할 것도 없이 증거도 거의 없다고 보았다." }
  ],
- wtype: ["반대","정답","지엽","무관","반대"],
- stype: ["일치","일치","반대","일치","일치"],
- why: [["글은 원하는 것을 얻는 법을 다루지 않는다 — 정반대다"],["정답"],
-       ["음악은 예술이라는 통로의 한 예일 뿐이다"],
-       ["쇼펜하우어의 생애는 글의 소재가 아니다"],
-       ["글은 지루함을 드러내 주는 것으로 본다 — 해롭다고만 하지 않는다"]],
- src: [["③"],["⑥"],["⑬과 어긋남 — 어느 탈출도 영구적이지 않다"],["⑪"],["⑭"]],
+ why: [
+  ["문장 ③의 방법론 대목만 붙든 지엽적인 제목이다"],
+  ["정답"],
+  ["글은 그가 칸트의 입장 다수에 동의했다고 말한다 — 정반대다"],
+  ["칸트의 생애는 글에 나오지 않는다"],
+  ["도덕규범을 쓰는 방법은 글에서 다루지 않는다"]
+ ],
+ src: [["①"], ["④"], ["⑤"], ["⑦과 어긋남 — 동정심을 많이 다루지 않았고 감정을 기반으로 보지 않았다"], ["⑩"]],
  kb: {
-  title:"원함의 구조",
-  lead:"채워도 줄지 않는 것에 관하여.",
+  title: "황금률과 정언 명령",
+  lead: "닮았지만 같지는 않은 두 문장",
   items: [
-   ["'쾌락의 쳇바퀴'",
-    "1971년 브릭먼과 캠벨이 이름 붙인 개념으로, 큰 행운이나 불운을 겪은 뒤에도 사람의 주관적 행복이 원래 수준으로 되돌아가는 경향을 가리킨다. 쇼펜하우어의 관찰과 겹치는 대목이 많다."],
-   ["동양 사상과의 접점",
-    "쇼펜하우어는 유럽 철학자 가운데 드물게 우파니샤드와 불교 문헌을 읽고 자기 체계에 끌어들였다. 욕망과 고통을 잇는 그의 도식은 그 독서와 무관하지 않다."],
-   ["니체가 갈라선 지점",
-    "니체는 쇼펜하우어를 스승처럼 읽었지만, 같은 관찰에서 정반대 결론을 냈다. 원함을 끄는 대신 그것을 긍정하는 쪽으로 방향을 돌린 것이다."]
+   ["정언 명령", "칸트는 『윤리형이상학 정초』(1785)에서 ‘네 행위의 준칙이 보편적 법칙이 되기를 네가 동시에 바랄 수 있도록 행위하라’고 썼다. 결과가 아니라 준칙의 보편화 가능성을 기준으로 삼는다."],
+   ["칸트 자신의 반론", "칸트는 황금률이 정언 명령과 같지 않다고 주석에서 밝혔다. 벌 받기 싫은 범죄자가 그 규칙을 들어 판사에게 항의할 수 있기 때문이다. 자신이 당하기 싫은 일이 곧 남에게 해서는 안 될 일과 같지는 않다."],
+   ["동정의 윤리", "쇼펜하우어는 『도덕의 기초에 관하여』(1840)에서 도덕의 근거를 의무가 아니라 타인의 고통을 자기 것처럼 느끼는 연민(Mitleid)에 두었다. 의무에서 출발한 칸트와 갈라지는 지점이다."]
   ],
-  ask:"최근에 간절히 원했던 것 하나를 떠올려 보자. 손에 넣은 뒤 그 자리에 무엇이 들어왔는가?"
- }
+  ask: "누군가를 돕게 만드는 것은 규칙인가, 느낌인가? 여러분의 경험에서는 어느 쪽이었는가?"
+ },
+ wtype: ["지엽", "정답", "반대", "무관", "무관"],
+ stype: ["일치", "일치", "일치", "반대", "일치"]
 }
-]};
+
+ ]
+};
