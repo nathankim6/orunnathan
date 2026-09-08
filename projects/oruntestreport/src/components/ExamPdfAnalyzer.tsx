@@ -8,6 +8,15 @@ import { toast } from 'sonner';
 import { FileUp, Sparkles, Trash2, Check, Loader2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { EXAM_AI_MODEL_LABEL, EXAM_AI_VENDOR } from '@/lib/aiModel';
+import {
+  buildAllSegments,
+  fallbackSegments,
+  type CropSegment,
+  type ColumnLayout,
+  type NumberMark,
+} from '@/utils/questionCrop';
+import { renderSegments } from '@/utils/questionCropRender';
+import { extractQuestionText, type TextPiece, type QuestionText } from '@/utils/questionText';
 import claudeLogoAsset from '@/assets/claude-logo.png.asset.json';
 const claudeLogo = claudeLogoAsset.url;
 
@@ -79,21 +88,24 @@ export interface AppliedCrop {
 interface CropCandidate {
   id: string;
   problem: AnalyzedProblem;
+  /** 문항을 이루는 조각들. 단·페이지를 넘으면 2개 이상이 된다. */
+  segments: CropSegment[];
+  /** 아래 네 값은 첫 조각의 사본 — 조정 슬라이더가 이 값을 읽고 쓴다. */
   yStart: number;
   yEnd: number;
   xStart: number;
   xEnd: number;
+  /** 시험지에서 그대로 뽑아낸 문제 글자(발문 · 지문 · 선택지) */
+  text: QuestionText;
+  /** 글자로 담기 어려운 문항(표 · 그림 · 스캔본)일 때만 채워지는 그림 */
   dataUrl: string;
   selected: boolean;
+  /** 번호 좌표를 못 찾아 AI 추정으로 잡은 영역이면 false 로 두어 자동 업로드를 막는다. */
+  confident: boolean;
 }
 
-interface NumberMark {
-  page: number;
-  number: number;
-  y: number; // normalized top position (0~1)
-  x: number; // normalized left position (0~1)
-  column: 0 | 1;
-}
+// NumberMark 는 questionCrop.ts 의 것을 그대로 쓴다(단 번호를 0|1 로 좁히면 3단을 못 담는다).
+
 
 interface ExamPdfAnalyzerProps {
   schoolType: 'middle' | 'high';
@@ -165,6 +177,12 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
   const inputRef = useRef<HTMLInputElement>(null);
   const pageCanvasesRef = useRef<HTMLCanvasElement[]>([]);
   const marksRef = useRef<NumberMark[]>([]);
+  /** 페이지별 글자 조각 — 문항 본문을 그대로 뽑아 쓰는 데 사용 */
+  const textPiecesRef = useRef<TextPiece[][]>([]);
+  /** 문항 번호 -> 그 문항을 이루는 조각 목록 */
+  const segmentsRef = useRef<Map<number, CropSegment[]>>(new Map());
+  /** 시험지 단 구성(자동 판정) */
+  const layoutRef = useRef<ColumnLayout>({ count: 1, bounds: [[0, 1]] });
   const rampRef = useRef<number | null>(null);
   const [fileName, setFileName] = useState('');
   const [stage, setStage] = useState<'idle' | 'rendering' | 'analyzing' | 'review' | 'applying'>('idle');
@@ -226,48 +244,42 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
   const buildCandidates = useCallback((problems: AnalyzedProblem[]) => {
     const canvases = pageCanvasesRef.current;
     const marks = marksRef.current;
+    const segmentsByNumber = segmentsRef.current;
+    const pieces = textPiecesRef.current;
+    // 중요 문항만 담는다 — 킬러 · 최고난도 · 변형 문항.
     const targets = problems.filter((p) => p.isKiller || p.difficulty === 'very_hard' || p.isVariant);
+
     return targets.slice(0, 12).map((problem) => {
       const mark =
         marks.find((m) => m.number === problem.number && m.page === (problem.page || 1)) ??
         marks.find((m) => m.number === problem.number);
-      const page = mark ? mark.page : problem.page || 1;
-      const canvas = canvases[Math.max(0, page - 1)];
+      const found = segmentsByNumber.get(problem.number);
+      // 번호 좌표를 찾았으면 그 조각을 쓰고, 못 찾았으면 AI 가 준 대략 위치로 대신한다.
+      const segments =
+        mark && found && found.length > 0
+          ? found
+          : fallbackSegments(problem.page || 1, problem.yStart, problem.yEnd, layoutRef.current);
+      const confident = Boolean(mark && found && found.length > 0);
+      const page = segments[0]?.page ?? problem.page ?? 1;
 
-      let yStart: number;
-      let yEnd: number;
-      let xStart = 0;
-      let xEnd = 1;
-
-      if (mark) {
-        // 같은 컬럼에서 다음 문항 번호 위치까지만 잘라냄
-        const next = marks
-          .filter((m) => m.page === mark.page && m.column === mark.column && m.y > mark.y + 0.01)
-          .sort((a, b) => a.y - b.y)[0];
-        yStart = Math.max(0, mark.y - 0.012);
-        yEnd = next ? Math.min(1, next.y - 0.006) : 0.97;
-        const twoColumn = marks.some((m) => m.page === mark.page && m.column !== mark.column);
-        if (twoColumn) {
-          xStart = mark.column === 0 ? 0.02 : 0.5;
-          xEnd = mark.column === 0 ? 0.52 : 0.98;
-        } else {
-          xStart = 0.02;
-          xEnd = 0.98;
-        }
-      } else {
-        yStart = Number.isFinite(problem.yStart) ? problem.yStart : 0;
-        yEnd = Number.isFinite(problem.yEnd) ? problem.yEnd : Math.min(1, yStart + 0.25);
-      }
+      const text = extractQuestionText(pieces, segments);
+      // 글자로 충분히 담기면 그림은 만들지 않는다(용량·선명도 때문에).
+      // 표·그림이 섞였거나 스캔본이라 글자가 없으면 그림도 함께 만든다.
+      const dataUrl = text.needsImage ? renderSegments(segments, canvases) : '';
 
       return {
         id: `${problem.number}-${page}`,
         problem: { ...problem, page },
-        yStart,
-        yEnd,
-        xStart,
-        xEnd,
-        dataUrl: canvas ? cropFromPage(canvas, yStart, yEnd, xStart, xEnd) : '',
-        selected: true,
+        segments,
+        yStart: segments[0]?.yStart ?? 0,
+        yEnd: segments[0]?.yEnd ?? 1,
+        xStart: segments[0]?.xStart ?? 0,
+        xEnd: segments[0]?.xEnd ?? 1,
+        text,
+        dataUrl,
+        // 좌표를 못 찾은 문항은 엉뚱한 데를 자를 수 있으니 기본 선택에서 뺀다.
+        selected: confident,
+        confident,
       } satisfies CropCandidate;
     });
   }, []);
@@ -294,6 +306,7 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
       mark('rendering', 8, `총 ${pdf.numPages}페이지를 확인했습니다.`);
       const canvases: HTMLCanvasElement[] = [];
       const marks: NumberMark[] = [];
+      const allPieces: TextPiece[][] = [];
       let lastMarkCount = 0;
       for (let i = 1; i <= pdf.numPages; i += 1) {
         const page = await pdf.getPage(i);
@@ -307,20 +320,35 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
         canvases.push(canvas);
         mark('rendering', 8 + (i / pdf.numPages) * 14, `${i}/${pdf.numPages}페이지 이미지 변환 완료`);
 
-        // 문항 번호(예: "12." / "12)")의 실제 좌표를 추출해 문제 단위로 정확히 크롭
+        // 페이지의 모든 글자와 그 좌표를 모은다.
+        // 여기서 (1) 문항 번호 위치 (2) 단 구성 판정용 x 분포 (3) 문항 본문 글자
+        // 세 가지를 모두 얻는다.
         try {
           const base = page.getViewport({ scale: 1 });
           const textContent = await page.getTextContent();
-          for (const item of textContent.items as { str: string; transform: number[] }[]) {
-            const match = item.str.trim().match(/^(\d{1,2})\s*[.)]/);
-            if (!match) continue;
-            const num = parseInt(match[1], 10);
-            if (!num || num > 60) continue;
+          const pagePieces: TextPiece[] = [];
+          for (const item of textContent.items as {
+            str: string;
+            transform: number[];
+            width?: number;
+            height?: number;
+          }[]) {
             const x = item.transform[4] / base.width;
             const y = 1 - item.transform[5] / base.height;
+            if (!Number.isFinite(x) || !Number.isFinite(y)) continue;
+            const h = (item.height || Math.abs(item.transform[3]) || 10) / base.height;
+            const w = (item.width || 0) / base.width;
+            if (item.str.trim()) pagePieces.push({ str: item.str, x, y, h, w });
+
+            const match = item.str.trim().match(/^(\d{1,3})\s*[.)]/);
+            if (!match) continue;
+            const num = parseInt(match[1], 10);
+            if (!num || num > 99) continue;
             if (x > 0.9) continue;
-            marks.push({ page: i, number: num, x, y, column: x < 0.48 ? 0 : 1 });
+            // 단 번호는 뒤에서 실제 단 구성을 판정한 뒤 다시 매긴다.
+            marks.push({ page: i, number: num, x, y, column: 0 });
           }
+          allPieces[i - 1] = pagePieces;
         } catch (e) {
           console.warn('텍스트 좌표 추출 실패:', e);
         }
@@ -344,11 +372,21 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
         }),
       );
 
-      // 같은 번호가 여러 번 나오면 가장 왼쪽(문항 번호 위치)만 남김
-      marksRef.current = marks
-        .sort((a, b) => a.page - b.page || a.y - b.y || a.x - b.x)
-        .filter((m, idx, arr) => arr.findIndex((o) => o.page === m.page && o.number === m.number) === idx);
-      mark('reading', 26, `문항 번호 ${marksRef.current.length}개의 좌표 인식 완료`);
+      // 단 구성을 먼저 판정하고(본문 글자 x 분포 사용) 그 기준으로 문항마다
+      // "조각 목록"을 만든다. 단이나 페이지를 넘어가는 문항은 조각이 2개 이상이 된다.
+      textPiecesRef.current = allPieces;
+      const bodyXs = allPieces.flat().map((t) => t.x);
+      const built = buildAllSegments(marks, bodyXs);
+      layoutRef.current = built.layout;
+      marksRef.current = built.marks;
+      segmentsRef.current = built.segmentsByNumber;
+      const spanning = [...built.segmentsByNumber.values()].filter((v) => v.length > 1).length;
+      mark(
+        'reading',
+        26,
+        `문항 번호 ${built.marks.length}개 인식 · ${built.layout.count}단 구성` +
+          (spanning > 0 ? ` · 단/페이지를 넘는 문항 ${spanning}개` : ''),
+      );
 
       setStage('analyzing');
       const hasOriginal = Boolean(originalPassages?.trim());
@@ -531,14 +569,6 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
   };
 
   /** 크롭 영역(페이지 · 좌우 · 상하)을 갱신하고 미리보기를 즉시 다시 생성 */
-  /**
-   * yStart/yEnd 슬라이더용 어댑터.
-   * 슬라이더가 존재하지 않는 updateRange 를 부르고 있어 만지는 순간 죽었다.
-   * (ReferenceError — tsconfig.app.json 기준 TS2304 2건)
-   */
-  const updateRange = (id: string, key: 'yStart' | 'yEnd', value: number) =>
-    updateRegion(id, { [key]: value });
-
   const updateRegion = (
     id: string,
     patch: Partial<Pick<CropCandidate, 'yStart' | 'yEnd' | 'xStart' | 'xEnd'>> & { page?: number },
@@ -552,14 +582,30 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
           ...patch,
           problem: { ...c.problem, page },
         };
-        const canvas = pageCanvasesRef.current[Math.max(0, page - 1)];
+        // 손으로 고치면 첫 조각을 그 값으로 바꾸고, 뒤에 이어지는 조각은 그대로 둔다.
+        // (단·페이지를 넘는 문항이라도 앞부분만 다듬을 수 있게)
+        const head: CropSegment = {
+          page,
+          xStart: next.xStart,
+          xEnd: next.xEnd,
+          yStart: next.yStart,
+          yEnd: next.yEnd,
+        };
+        const segments = [head, ...c.segments.slice(1)];
+        const text = extractQuestionText(textPiecesRef.current, segments);
         return {
           ...next,
-          dataUrl: canvas ? cropFromPage(canvas, next.yStart, next.yEnd, next.xStart, next.xEnd) : c.dataUrl,
+          segments,
+          text,
+          dataUrl: text.needsImage ? renderSegments(segments, pageCanvasesRef.current) || c.dataUrl : '',
         };
       }),
     );
   };
+
+  /** yStart/yEnd 슬라이더용 어댑터 */
+  const updateRange = (id: string, key: 'yStart' | 'yEnd', value: number) =>
+    updateRegion(id, { [key]: value });
 
 
   const handleApply = async () => {
