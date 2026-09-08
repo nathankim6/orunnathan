@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-"""ORUN NEXUS UNIVERSE 조립기.
+"""ORUN UNIVERSE 조립기.
 
 src/head.html + src/body.html + data/{grammar,reading,vocab,usage,syntax}.json + src/engine.js
-→ ORUN_NEXUS_UNIVERSE.html (자기완결 단일 파일)
+→ ORUN_UNIVERSE.html (자기완결 단일 파일)
 
 데이터를 고치면 data/gen_*.py 를 돌린 뒤 이 스크립트를 다시 돌린다.
 grammar.json 은 원본 넥서스에서 그대로 뽑은 것이라 재생성하지 않는다.
@@ -43,7 +43,7 @@ def main():
            + "\n".join(blobs) + "\n"
            + "<script>\n" + engine.rstrip() + "\n</script>\n")
 
-    dest = os.path.join(HERE, "ORUN_NEXUS_UNIVERSE.html")
+    dest = os.path.join(HERE, "ORUN_UNIVERSE.html")
     with io.open(dest, "w", encoding="utf-8") as f:
         f.write(out)
     print("built:", dest, "%.2f MB" % (os.path.getsize(dest) / 1048576.0))

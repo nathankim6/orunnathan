@@ -1,4 +1,4 @@
-# ORUN NEXUS UNIVERSE
+# ORUN UNIVERSE
 
 옳은영어 커리큘럼 유니버스 — **한 하늘에 뜬 다섯 Galaxy**.
 
@@ -75,7 +75,7 @@
 
 ## 파일
 
-- `ORUN_NEXUS_UNIVERSE.html` — **완성본. 이 파일 하나만 열면 된다.**
+- `ORUN_UNIVERSE.html` — **완성본. 이 파일 하나만 열면 된다.**
 - `build.py` — 아래 소스를 완성본 하나로 조립한다.
 - `src/head.html` · `src/body.html` · `src/engine.js` — 화면과 엔진.
 - `data/grammar.json` — 문법 Galaxy 데이터 (넥서스에서 그대로 추출, 생성기 없음).
@@ -92,7 +92,7 @@ python3 data/gen_vocab.py      # 보카 데이터 수정 시
 python3 data/gen_syntax.py     # 주간지 데이터 수정 시
 python3 data/gen_usage.py      # 어법 데이터 수정 시
 python3 data/gen_reading.py    # 독해 데이터 수정 시
-python3 build.py               # ORUN_NEXUS_UNIVERSE.html 재조립
+python3 build.py               # ORUN_UNIVERSE.html 재조립
 ```
 
 ## 데이터 상태 (2026-08 기준)
