@@ -168,3 +168,40 @@ export const extractQuestionText = (
     charCount,
   };
 };
+
+/**
+ * 이 문항을 글자만으로 담을 수 있는지 판단한다.
+ *
+ * 어법·어휘 문제는 "밑줄 친 (a)~(e)" 나 네모 상자가 문제의 핵심인데,
+ * 밑줄과 네모는 PDF 에서 글자가 아니라 선을 그린 것이라 텍스트로는 살아나지
+ * 않는다. (a) (b) 같은 표시 자체는 글자로 나오지만 어디에 밑줄이 그어졌는지가
+ * 사라지면 문제가 성립하지 않는다. 그래서 이런 유형은 시험지 그림을 쓴다.
+ *
+ * 판단 재료는 셋이다.
+ *  1. AI 가 직접 알려 준 값(markupDependent) — 가장 정확하다.
+ *  2. 대분류·소분류의 낱말 — AI 표시가 없을 때의 대비책.
+ *  3. 글자 추출 결과(표·그림이 섞였거나 스캔본이라 글자가 없는 경우).
+ */
+const MARKUP_KEYWORDS = [
+  '밑줄', '네모', '상자', '어법', '문법', '어휘', '지칭', '지시', '가리키는',
+  '어색한', '틀린 것', '쓰임이', '바꿔 쓸',
+];
+
+export interface MarkupHints {
+  /** 대분류 */
+  category?: string;
+  /** 소분류 · 문제 유형 */
+  name?: string;
+  /** AI 가 "밑줄·네모가 있어야 성립하는 문항"이라고 표시한 값 */
+  markupDependent?: boolean;
+}
+
+export const needsOriginalImage = (hints: MarkupHints, text: QuestionText): boolean => {
+  // 표·그림이 섞였거나 스캔본이면 밑줄 여부와 무관하게 그림이 필요하다.
+  if (text.needsImage) return true;
+  // AI 는 실제 문제를 읽고 판단하므로 낱말 규칙보다 우선한다.
+  // 특히 AI 가 "밑줄 없음"이라고 한 것을 대분류 낱말만 보고 뒤집으면 안 된다.
+  if (hints.markupDependent !== undefined) return hints.markupDependent;
+  const haystack = `${hints.category ?? ''} ${hints.name ?? ''}`;
+  return MARKUP_KEYWORDS.some((k) => haystack.includes(k));
+};

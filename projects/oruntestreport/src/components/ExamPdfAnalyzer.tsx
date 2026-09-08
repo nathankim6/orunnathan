@@ -16,7 +16,12 @@ import {
   type NumberMark,
 } from '@/utils/questionCrop';
 import { renderSegments } from '@/utils/questionCropRender';
-import { extractQuestionText, type TextPiece, type QuestionText } from '@/utils/questionText';
+import {
+  extractQuestionText,
+  needsOriginalImage,
+  type TextPiece,
+  type QuestionText,
+} from '@/utils/questionText';
 import claudeLogoAsset from '@/assets/claude-logo.png.asset.json';
 const claudeLogo = claudeLogoAsset.url;
 
@@ -37,6 +42,8 @@ export interface AnalyzedProblem {
   yStart?: number;
   yEnd?: number;
   note?: string;
+  /** 밑줄·네모가 있어야 성립하는 문항인지(어법·어휘). AI 가 알려 준다. */
+  markupDependent?: boolean;
 }
 
 export interface ExamFeatureItem {
@@ -264,8 +271,12 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
 
       const text = extractQuestionText(pieces, segments);
       // 글자로 충분히 담기면 그림은 만들지 않는다(용량·선명도 때문에).
-      // 표·그림이 섞였거나 스캔본이라 글자가 없으면 그림도 함께 만든다.
-      const dataUrl = text.needsImage ? renderSegments(segments, canvases) : '';
+      // 밑줄·네모가 핵심인 어법·어휘 문항, 표·그림이 섞인 문항, 스캔본은 그림을 쓴다.
+      const useImage = needsOriginalImage(
+        { category: problem.category, name: problem.name, markupDependent: problem.markupDependent },
+        text,
+      );
+      const dataUrl = useImage ? renderSegments(segments, canvases) : '';
 
       return {
         id: `${problem.number}-${page}`,
@@ -593,11 +604,15 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
         };
         const segments = [head, ...c.segments.slice(1)];
         const text = extractQuestionText(textPiecesRef.current, segments);
+        const useImage = needsOriginalImage(
+          { category: c.problem.category, name: c.problem.name, markupDependent: c.problem.markupDependent },
+          text,
+        );
         return {
           ...next,
           segments,
           text,
-          dataUrl: text.needsImage ? renderSegments(segments, pageCanvasesRef.current) || c.dataUrl : '',
+          dataUrl: useImage ? renderSegments(segments, pageCanvasesRef.current) || c.dataUrl : '',
         };
       }),
     );
