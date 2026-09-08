@@ -663,26 +663,42 @@ textarea:focus, input:focus { border-color: var(--line-4); outline: 2px solid va
   content: ""; position: absolute; left: 5px; top: 3px; width: 5px; height: 9px;
   border: 2px solid #fff; border-top: 0; border-left: 0; transform: rotate(42deg);
 }
-/* 모델 고르기 — 넷을 2×2 로. 한 줄 세그먼트로는 이름이 안 들어간다 */
-.api-card .model-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s2); max-width: 420px; }
+/* ── 카드 안의 덩어리 나눔 — 한글 rig 라벨이 구조를 드러낸다 ─────────── */
+.api-card .api-group { margin-top: var(--s5); }
+.api-card .api-group > .slug { margin-bottom: var(--s2); }
+.api-card .api-group > .api-row:first-of-type,
+.api-card .api-group > .model-grid { margin-top: 0; }
+
+/* ── 모델 고르기 — 넷을 2×2 로. 한 줄 세그먼트로는 이름이 안 들어간다 ── */
+.api-card .model-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s2); max-width: 460px; }
 .api-card .model-grid button {
-  display: flex; flex-direction: column; gap: 1px; align-items: flex-start;
-  padding: var(--s2) var(--s3); min-height: 46px;
-  border: var(--line-w) solid var(--line-2); border-radius: var(--r2);
+  position: relative;
+  display: flex; flex-direction: column; gap: 2px; align-items: flex-start;
+  padding: 9px var(--s3) 9px calc(var(--s3) + 15px); min-height: 52px;
+  border: var(--line-w) solid var(--line-2); border-radius: var(--r3);
   background: var(--n0); cursor: pointer; text-align: left;
-  transition: border-color var(--d1) var(--e-out), background-color var(--d1) var(--e-out);
+  transition: border-color var(--d2) var(--e-out), box-shadow var(--d2) var(--e-out),
+              transform var(--d2) var(--e-emph);
 }
-.api-card .model-grid button:hover:not(.on) { border-color: var(--line-3); background: var(--n2); }
-.api-card .model-grid button.on { border-color: var(--line-4); background: var(--n2); }
+.api-card .model-grid button:hover:not(.on) {
+  border-color: var(--line-3); transform: translateY(-1px); box-shadow: var(--sh-pop);
+}
+.api-card .model-grid button:active { transform: translateY(0); }
+/* 고른 것은 잉크 경계 + 노랑 점. 이 앱에서 '지금'은 늘 노랑 점 하나다 */
+.api-card .model-grid button.on { border-color: var(--line-4); box-shadow: var(--sh-pop); }
+.api-card .model-grid .dot {
+  position: absolute; left: var(--s3); top: 50%; margin-top: -3px;
+  width: 6px; height: 6px; border-radius: var(--r-full); background: var(--n5);
+  transition: background-color var(--d2) var(--e-out), box-shadow var(--d2) var(--e-out);
+}
+.api-card .model-grid button.on .dot { background: var(--y); box-shadow: 0 0 0 3px var(--y-halo); }
 .api-card .model-grid button b {
   font-size: var(--fs-meta); line-height: var(--lh-meta);
   font-weight: var(--w-med); color: var(--n9);
 }
 .api-card .model-grid button.on b { color: var(--ink); font-weight: var(--w-semi); }
-/* 켜진 타일은 바닥이 --n2 라 --n8 설명글이 4.43:1 로 떨어진다 — 한 칸 진하게 */
-.api-card .model-grid button.on i { color: var(--n9); }
-.api-card .model-grid button i {
-  font-style: normal; font-size: var(--fs-micro); line-height: var(--lh-micro); color: var(--n8);
+.api-card .model-grid button span {
+  font-size: var(--fs-micro); line-height: var(--lh-micro); color: var(--n8);
 }
 @keyframes provSpin { to { rotate: 1turn; } }
 @keyframes provSheen { from { left: -70%; } to { left: 130%; } }
@@ -698,8 +714,8 @@ textarea:focus, input:focus { border-color: var(--line-4); outline: 2px solid va
   .api-card .prov-tile.on::before { rotate: none; background: var(--pv-a); }
 }
 .api-card .oa-model label { display: inline; margin: 0; font-size: var(--fs-meta); font-weight: var(--w-reg); color: var(--n9); }
-.api-card .oa-model input { width: 220px; padding: 9px var(--s3); font-size: var(--fs-meta); }
-.api-card .oa-model .btn { padding: 9px var(--s3); font-size: var(--fs-meta); white-space: nowrap; }
+.api-card .oa-model input { width: 220px; height: 36px; padding: 0 var(--s3); font-size: var(--fs-meta); }
+.api-card .oa-model .btn { height: 36px; padding: 0 var(--s4); font-size: var(--fs-meta); white-space: nowrap; }
 .api-card .oa-model .oa-note { flex-basis: 100%; font-size: var(--fs-micro); line-height: var(--lh-micro); color: var(--n8); }
 .api-card .oa-model .oa-note.bad { color: var(--neg); }
 .lib-warn {
@@ -708,7 +724,7 @@ textarea:focus, input:focus { border-color: var(--line-4); outline: 2px solid va
   font-size: var(--fs-small); line-height: var(--lh-small); color: var(--neg);
 }
 .api-card .api-probe { display: flex; align-items: center; gap: var(--s3); flex-wrap: wrap; }
-.api-card .api-probe .btn { padding: 9px var(--s3); font-size: var(--fs-meta); }
+.api-card .api-probe .btn { height: 36px; padding: 0 var(--s4); font-size: var(--fs-meta); }
 .api-card .probe-out { font-size: var(--fs-meta); line-height: var(--lh-meta); color: var(--n8); min-width: 0; }
 .api-card .probe-out.ok { color: var(--pos); }
 .api-card .probe-out.bad { color: var(--neg); }
@@ -1925,7 +1941,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v13H3z"/><path d="M2 4h20v3H2z"/><path d="M10 11h4"/></svg>
     <span class="lb">저장소</span><i class="n" id="vaultCount" hidden>0</i>
   </button>
-  <div class="state"><span class="build" id="buildTag">2026-09-08 23:00</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
+  <div class="state"><span class="build" id="buildTag">2026-09-09 00:55</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
 </div>
 
 <!-- 화면 0 · 시작 -->
@@ -1977,27 +1993,32 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
         <button type="button" class="btn link" id="apiKeyClear">지우기</button>
       </div>
       <p class="st" id="apiStatus"></p>
-      <div class="api-row split">
-        <div class="seg api-keep" id="apiKeepSeg">
-          <button type="button" data-v="browser">이 브라우저에 저장</button>
-          <button type="button" data-v="session">창을 닫으면 지움</button>
-        </div>
-        <div class="api-probe">
-          <button type="button" class="btn ghost" id="apiTestBtn">연결 확인</button>
-          <span class="probe-out" id="apiTestOut"></span>
+      <div class="api-group">
+        <span class="slug">키 보관</span>
+        <div class="api-row split">
+          <div class="seg api-keep" id="apiKeepSeg">
+            <button type="button" data-v="browser">이 브라우저에 저장</button>
+            <button type="button" data-v="session">창을 닫으면 지움</button>
+          </div>
+          <div class="api-probe">
+            <button type="button" class="btn ghost" id="apiTestBtn">연결 확인</button>
+            <span class="probe-out" id="apiTestOut"></span>
+          </div>
         </div>
       </div>
+      <div class="api-group">
+        <span class="slug" id="modelSlug">모델</span>
       <div class="model-grid api-row" id="apiModelSeg" role="radiogroup" aria-label="Claude 모델">
-        <button type="button" class="on" data-v="opus" role="radio"><b>Opus 5</b><i>정밀 · 기본</i></button>
-        <button type="button" data-v="sonnet" role="radio"><b>Sonnet 5</b><i>빠르고 저렴</i></button>
-        <button type="button" data-v="fable" role="radio"><b>Fable 5.1</b><i>가장 뛰어남 · 비쌈</i></button>
-        <button type="button" data-v="opus47" role="radio"><b>Opus 4.7</b><i>이전 세대</i></button>
+        <button type="button" class="on" data-v="opus" role="radio"><i class="dot" aria-hidden="true"></i><b>Opus 5</b><span>정밀 · 기본</span></button>
+        <button type="button" data-v="sonnet" role="radio"><i class="dot" aria-hidden="true"></i><b>Sonnet 5</b><span>빠르고 저렴</span></button>
+        <button type="button" data-v="fable" role="radio"><i class="dot" aria-hidden="true"></i><b>Fable 5.1</b><span>가장 뛰어남 · 비쌈</span></button>
+        <button type="button" data-v="opus47" role="radio"><i class="dot" aria-hidden="true"></i><b>Opus 4.7</b><span>이전 세대</span></button>
       </div>
       <div class="model-grid api-row" id="oaModelSeg" role="radiogroup" aria-label="GPT 모델" hidden>
-        <button type="button" data-v="gpt-6-astra" role="radio"><b>GPT-6 Astra</b><i>가장 뛰어남 · 비쌈</i></button>
-        <button type="button" data-v="gpt-5.6-sol" role="radio"><b>GPT-5.6 Sol</b><i>정밀</i></button>
-        <button type="button" data-v="gpt-5.6-terra" role="radio"><b>GPT-5.6 Terra</b><i>기본</i></button>
-        <button type="button" data-v="gpt-5.6-luna" role="radio"><b>GPT-5.6 Luna</b><i>가장 저렴</i></button>
+        <button type="button" data-v="gpt-6-astra" role="radio"><i class="dot" aria-hidden="true"></i><b>GPT-6 Astra</b><span>가장 뛰어남 · 비쌈</span></button>
+        <button type="button" data-v="gpt-5.6-sol" role="radio"><i class="dot" aria-hidden="true"></i><b>GPT-5.6 Sol</b><span>정밀</span></button>
+        <button type="button" data-v="gpt-5.6-terra" role="radio"><i class="dot" aria-hidden="true"></i><b>GPT-5.6 Terra</b><span>기본</span></button>
+        <button type="button" data-v="gpt-5.6-luna" role="radio"><i class="dot" aria-hidden="true"></i><b>GPT-5.6 Luna</b><span>가장 저렴</span></button>
       </div>
       <div class="oa-model api-row" id="oaModelRow" hidden>
         <label for="oaModel">모델</label>
@@ -2005,6 +2026,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
         <datalist id="oaModelList"></datalist>
         <button type="button" class="btn ghost" id="oaListBtn">모델 목록 불러오기</button>
         <span class="oa-note" id="oaModelNote"></span>
+      </div>
       </div>
     </div>
   </div>
