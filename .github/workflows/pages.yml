@@ -1,0 +1,46 @@
+# 동형 모의고사 생성기를 GitHub Pages 로 올린다.
+# 저장소 전체가 아니라 이 한 파일만 site 로 묶는다 — 나머지는 웹으로 열리지 않는다.
+name: Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'public/mocktest-generator.html'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 올릴 파일만 모은다
+        run: |
+          mkdir -p _site
+          cp public/mocktest-generator.html _site/index.html
+          cp public/mocktest-generator.html _site/mocktest-generator.html
+
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deploy
+        uses: actions/deploy-pages@v4
