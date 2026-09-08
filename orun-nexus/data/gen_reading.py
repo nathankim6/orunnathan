@@ -386,7 +386,7 @@ def build():
                     {"kind": "error-explain", "en": "CHECK RIGHT", "kr": "세부 확인"},
                 ],
             },
-            "academyApp": "ORUN NEXUS UNIVERSE",
+            "academyApp": "ORUN UNIVERSE",
         },
         "books": books,
         "topics": topics,

@@ -245,7 +245,7 @@ def build():
                     {"kind": "error-explain", "en": "SAY RIGHT", "kr": "근거 서술"},
                 ],
             },
-            "academyApp": "ORUN NEXUS UNIVERSE",
+            "academyApp": "ORUN UNIVERSE",
         },
         "books": [book], "topics": [], "worksheets": WS,
         "rankTotal": 1,

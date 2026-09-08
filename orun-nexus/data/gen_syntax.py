@@ -392,7 +392,7 @@ def build():
                     {"kind": "error-explain", "en": "FIX RIGHT", "kr": "오류 판별"},
                 ],
             },
-            "academyApp": "ORUN NEXUS UNIVERSE",
+            "academyApp": "ORUN UNIVERSE",
         },
         "books": [book], "topics": topics, "worksheets": WS,
         "rankTotal": 1,

@@ -415,7 +415,7 @@ def build():
                     {"kind": "error-explain", "en": "FIX RIGHT", "kr": "문장 속 쓰임 교정"},
                 ],
             },
-            "academyApp": "ORUN NEXUS UNIVERSE",
+            "academyApp": "ORUN UNIVERSE",
         },
         "books": books,
         "topics": [],
