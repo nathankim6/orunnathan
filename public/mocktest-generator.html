@@ -741,6 +741,7 @@ textarea:focus, input:focus { border-color: var(--line-4); outline: 2px solid va
   --skin:#d9a984; --skin-2:#c2946f; --hair:#4a3a2e;
   --shirt:#7d8fa6; --shirt-2:#6b7d93;
   --mug:#c0392b; --paper:#fbfaf6; --paper-2:#e4e0d3;
+  --case:#e2ded2; --case-2:#cdc8b8; --case-3:#b6b0a0; --slot:#33342f;
   --sh:rgba(52,60,54,.16);
   position: relative; border-radius: var(--r4); overflow: hidden;
   margin: 0 0 var(--s3); background: var(--wall);
@@ -814,6 +815,18 @@ textarea:focus, input:focus { border-color: var(--line-4); outline: 2px solid va
   .room .typist { width: 140px; left: 2%; }
 }
 
+/* ── 띠 장면 — 화면 머리에 놓는 방의 한 조각 ── */
+.scene.band { margin: 0 0 var(--s5); border-radius: var(--r4); }
+.scene.band svg { display: block; width: 100%; height: auto; }
+.screen > .scene.band:first-child { margin-top: 0; }
+@keyframes scPaperIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: none; } }
+.scene .sheetstack > * { animation: scPaperIn var(--d3) var(--e-emph) backwards; }
+@keyframes scBlink { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
+.scene.band .blink { animation: scBlink 1.6s steps(1, end) infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .scene .sheetstack > *, .scene.band .blink { animation: none; }
+}
+
 /* ── 검수 장면 — 심사대 뒤의 세 사람. 팻말이 답이다 ── */
 .scene.bench { --wain:#a2845f; --bench:#8a6f52; --bench-2:#6f5941; --bench-3:#59462f;
                --plate:#e8e2d2; --stick:#a98d63; --sign:#fbfaf6; --sign-miss:#f2d8d1;
@@ -832,7 +845,6 @@ textarea:focus, input:focus { border-color: var(--line-4); outline: 2px solid va
 .scene.confer .gavel { animation: scGavel .5s var(--e-out) 3; }
 
 /* ── 출력 장면 — 인쇄기에서 밀려 나온다 ── */
-.scene.printer { --case:#e2ded2; --case-2:#cdc8b8; --case-3:#b6b0a0; --slot:#33342f; }
 .scene.printer { margin: 0 0 -22px; border-radius: 0; background: none; position: relative; z-index: 2; pointer-events: none; }
 @keyframes scLed { 0%, 100% { opacity: 1; } 50% { opacity: .25; } }
 .scene.printer.busy .led { animation: scLed .8s steps(1, end) infinite; }
@@ -2017,11 +2029,12 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v13H3z"/><path d="M2 4h20v3H2z"/><path d="M10 11h4"/></svg>
     <span class="lb">저장소</span><i class="n" id="vaultCount" hidden>0</i>
   </button>
-  <div class="state"><span class="build" id="buildTag">2026-09-09 02:00</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
+  <div class="state"><span class="build" id="buildTag">2026-09-09 02:28</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
 </div>
 
 <!-- 화면 0 · 시작 -->
 <section class="screen on" data-s="home">
+  <div class="scene band" aria-hidden="true"><svg viewBox="0 0 900 190" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="900" height="118" fill="var(--wall)"/><g transform="translate(46,14)"><rect width="120" height="84" fill="var(--blind)"/><g fill="var(--slat)"><rect x="7" y="9" width="106" height="6"/><rect x="7" y="24" width="106" height="6"/><rect x="7" y="39" width="106" height="6"/><rect x="7" y="54" width="106" height="6"/><rect x="7" y="69" width="106" height="6"/></g></g><rect y="118" width="900" height="72" fill="var(--floor)"/><rect x="286" y="26" width="196" height="106" rx="4" fill="var(--mon)"/><rect x="294" y="34" width="180" height="82" fill="var(--scr)"/><g fill="#c7ccd4"><rect x="304" y="44" width="96" height="6"/><rect x="304" y="56" width="140" height="5"/><rect x="304" y="67" width="120" height="5"/><rect x="304" y="78" width="132" height="5"/></g><rect x="368" y="132" width="32" height="14" fill="var(--mon-2)"/><polygon points="346,146 422,146 430,152 338,152" fill="var(--mon)"/><polygon points="596,96 748,96 762,110 582,110" fill="var(--case)"/><rect x="582" y="110" width="180" height="34" rx="3" fill="var(--case-2)"/><rect x="600" y="136" width="144" height="7" rx="2" fill="var(--slot)"/><circle class="blink" cx="742" cy="122" r="4" fill="#4ad06a"/><polygon points="606,142 738,142 744,168 600,168" fill="#fbfaf6"/><use href="#rvpix-C" x="118" y="34" width="76" height="120"/><polygon points="14,152 886,152 900,168 0,168" fill="var(--desk)"/><rect y="168" width="900" height="12" fill="var(--desk-edge)"/></svg></div>
   <div class="banner" id="restoreBanner" role="status">
     <span class="b-text" id="restoreText"></span>
     <button type="button" class="primary" id="restoreBtn">이어서 보기</button>
@@ -2121,6 +2134,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 
 <!-- 화면 1 · 시험지 -->
 <section class="screen" data-s="exam">
+  <div class="scene band" aria-hidden="true"><svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="900" height="92" fill="var(--wall)"/><g transform="translate(58,14)"><rect width="120" height="60" fill="var(--blind)"/><g fill="var(--slat)"><rect x="7" y="9" width="106" height="6"/><rect x="7" y="24" width="106" height="6"/><rect x="7" y="39" width="106" height="6"/></g></g><rect y="92" width="900" height="58" fill="var(--floor)"/><g class="sheetstack"><polygon points="352,42 548,42 556,56 344,56" fill="#fbfaf6" style="animation-delay:.05s"/><polygon points="348,54 552,54 560,68 340,68" fill="#f0ede2" style="animation-delay:.12s"/><polygon points="344,66 556,66 564,80 336,80" fill="#fbfaf6" style="animation-delay:.2s"/></g><polygon points="330,80 570,80 582,96 318,96" fill="var(--case-2)"/><rect x="318" y="96" width="264" height="14" rx="2" fill="var(--case-3)"/><use href="#rvpix-A" x="140" y="8" width="66" height="104"/><polygon points="14,110 886,110 900,124 0,124" fill="var(--desk)"/><rect y="124" width="900" height="12" fill="var(--desk-edge)"/></svg></div>
   <h1 class="h-title">시험지를 올려주세요</h1>
   <p class="h-sub" id="examSub">PDF, 한글, 워드 다 괜찮아요. 스캔한 사진 PDF도 읽어요.</p>
 
@@ -2152,6 +2166,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 
 <!-- 화면 2 · 시험범위 -->
 <section class="screen" data-s="scope">
+  <div class="scene band" aria-hidden="true"><svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="900" height="92" fill="var(--wall)"/><g transform="translate(58,14)"><rect width="120" height="60" fill="var(--blind)"/><g fill="var(--slat)"><rect x="7" y="9" width="106" height="6"/><rect x="7" y="24" width="106" height="6"/><rect x="7" y="39" width="106" height="6"/></g></g><rect y="92" width="900" height="58" fill="var(--floor)"/><g class="sheetstack"><polygon points="352,42 548,42 556,56 344,56" fill="#fbfaf6" style="animation-delay:.05s"/><polygon points="348,54 552,54 560,68 340,68" fill="#f0ede2" style="animation-delay:.12s"/><polygon points="344,66 556,66 564,80 336,80" fill="#fbfaf6" style="animation-delay:.2s"/></g><polygon points="330,80 570,80 582,96 318,96" fill="var(--case-2)"/><rect x="318" y="96" width="264" height="14" rx="2" fill="var(--case-3)"/><use href="#rvpix-B" x="700" y="8" width="66" height="104"/><polygon points="14,110 886,110 900,124 0,124" fill="var(--desk)"/><rect y="124" width="900" height="12" fill="var(--desk-edge)"/></svg></div>
   <h1 class="h-title">시험범위 자료를 올려주세요 <span class="chip" id="scopeCount">0 / 15</span></h1>
   <p class="h-sub">교과서, 부교재, 모의고사… 여러 개 올려도 돼요. 아래에 텍스트로 붙여넣어도 돼요.</p>
 
@@ -2259,6 +2274,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 
 <!-- 화면 5 · 매칭 확인 -->
 <section class="screen wide" data-s="plan" id="step2">
+  <div class="scene band" aria-hidden="true"><svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="900" height="150" fill="var(--wall)"/><rect x="120" y="14" width="660" height="122" rx="4" fill="#c49a68"/><rect x="128" y="22" width="644" height="106" fill="#b98c58"/><g stroke="#8c6a3f" stroke-width="2"><line x1="236" y1="44" x2="470" y2="60"/><line x1="236" y1="70" x2="470" y2="60"/><line x1="236" y1="96" x2="470" y2="104"/><line x1="640" y1="60" x2="470" y2="60"/><line x1="640" y1="104" x2="470" y2="104"/></g><g fill="#fbfaf6"><rect x="160" y="34" width="76" height="22" rx="2"/><rect x="160" y="60" width="76" height="22" rx="2"/><rect x="160" y="86" width="76" height="22" rx="2"/><rect x="600" y="48" width="80" height="26" rx="2"/><rect x="600" y="92" width="80" height="26" rx="2"/></g><g fill="#c9c2ad"><rect x="167" y="41" width="46" height="4"/><rect x="167" y="49" width="58" height="3"/><rect x="167" y="67" width="46" height="4"/><rect x="167" y="75" width="58" height="3"/><rect x="167" y="93" width="46" height="4"/><rect x="167" y="101" width="58" height="3"/><rect x="608" y="56" width="60" height="4"/><rect x="608" y="64" width="46" height="3"/><rect x="608" y="100" width="60" height="4"/><rect x="608" y="108" width="46" height="3"/></g><circle cx="470" cy="60" r="6" fill="#d6483a"/><circle cx="470" cy="104" r="6" fill="#d6483a"/><use href="#rvpix-A" x="24" y="30" width="72" height="113"/></svg></div>
   <h1 class="h-title">이렇게 매칭했어요</h1>
   <p class="h-sub">지문을 바꾸거나 방향을 고칠 수 있어요. 그대로 출제해도 돼요.</p>
 
@@ -2346,6 +2362,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 
 <!-- 화면 4 · 저장소 -->
 <section class="screen wide" data-s="vault">
+  <div class="scene band" aria-hidden="true"><svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="900" height="112" fill="var(--wall)"/><rect y="112" width="900" height="38" fill="var(--floor)"/><g transform="translate(300,10)"><rect x="-6" y="-6" width="242" height="126" rx="4" fill="var(--case)"/><rect x="0" y="2" width="230" height="36" rx="2" fill="var(--case-2)"/><rect x="0" y="34" width="230" height="4" fill="var(--case-3)"/><rect x="86" y="15" width="58" height="9" rx="3" fill="var(--case-3)"/><rect x="14" y="13" width="46" height="12" rx="2" fill="#fbfaf6"/><rect x="0" y="40" width="230" height="36" rx="2" fill="var(--case-2)"/><rect x="0" y="72" width="230" height="4" fill="var(--case-3)"/><rect x="86" y="53" width="58" height="9" rx="3" fill="var(--case-3)"/><rect x="14" y="51" width="46" height="12" rx="2" fill="#fbfaf6"/><rect x="0" y="78" width="230" height="36" rx="2" fill="var(--case-2)"/><rect x="0" y="110" width="230" height="4" fill="var(--case-3)"/><rect x="86" y="91" width="58" height="9" rx="3" fill="var(--case-3)"/><rect x="14" y="89" width="46" height="12" rx="2" fill="#fbfaf6"/></g><g transform="translate(560,10)"><rect x="-6" y="-6" width="242" height="126" rx="4" fill="var(--case)"/><rect x="0" y="2" width="230" height="36" rx="2" fill="var(--case-2)"/><rect x="0" y="34" width="230" height="4" fill="var(--case-3)"/><rect x="86" y="15" width="58" height="9" rx="3" fill="var(--case-3)"/><rect x="14" y="13" width="46" height="12" rx="2" fill="#fbfaf6"/><rect x="0" y="40" width="230" height="36" rx="2" fill="var(--case-2)"/><rect x="0" y="72" width="230" height="4" fill="var(--case-3)"/><rect x="86" y="53" width="58" height="9" rx="3" fill="var(--case-3)"/><rect x="14" y="51" width="46" height="12" rx="2" fill="#fbfaf6"/><rect x="0" y="78" width="230" height="36" rx="2" fill="var(--case-2)"/><rect x="0" y="110" width="230" height="4" fill="var(--case-3)"/><rect x="86" y="91" width="58" height="9" rx="3" fill="var(--case-3)"/><rect x="14" y="89" width="46" height="12" rx="2" fill="#fbfaf6"/></g><use href="#rvpix-B" x="150" y="14" width="66" height="104"/><polygon points="0,118 900,118 900,130 0,130" fill="var(--desk-edge)"/></svg></div>
   <h1 class="h-title">저장소</h1>
   <p class="h-sub">만든 시험지를 계정에 담아 둬요. 다른 컴퓨터에서 로그인해도 그대로 열려요.</p>
 
