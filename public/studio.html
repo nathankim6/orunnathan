@@ -1,0 +1,301 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ORUN STUDIO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300..900;1,300..900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#03060e; --panel:rgba(8,18,34,.66); --edge:rgba(120,190,255,.16); --edge-hot:rgba(120,190,255,.44);
+  --gold:#f5c518; --gold-hi:#ffe066; --holo:#5cbcff;
+  --text:#dceaf6; --dim:#87a4bd; --faint:#55708a;
+  --f:'Noto Sans','Noto Sans KR',system-ui,-apple-system,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--void);color:var(--text);font-family:var(--f);font-optical-sizing:auto;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block}
+.scan{position:fixed;inset:0;z-index:58;pointer-events:none;opacity:.42;
+  background:repeating-linear-gradient(180deg,rgba(120,190,255,.05) 0 1px,transparent 1px 3px)}
+.grain{position:fixed;inset:0;z-index:59;pointer-events:none;opacity:.04;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.vig{position:fixed;inset:0;z-index:57;pointer-events:none;
+  background:radial-gradient(ellipse 118% 90% at 50% 50%,transparent 44%,rgba(0,0,0,.74) 100%)}
+
+/* HUD */
+.hud{position:fixed;top:0;left:0;right:0;z-index:70;display:flex;align-items:center;justify-content:space-between;
+  padding:15px 28px;border-bottom:1px solid var(--edge);background:linear-gradient(180deg,rgba(3,8,18,.9),rgba(3,8,18,.25))}
+.mark{display:flex;align-items:center;gap:11px}
+.mark i{width:10px;height:10px;background:var(--gold);transform:rotate(45deg);box-shadow:0 0 14px rgba(245,197,24,.8)}
+.mark b{font-weight:800;font-size:15px;letter-spacing:.2em}
+.hud nav{display:flex;gap:26px}
+.hud nav a{font-weight:600;font-size:11px;letter-spacing:.2em;color:var(--dim);position:relative;padding:4px 0;transition:color .25s}
+.hud nav a:hover{color:var(--holo)}
+.hud nav a::after{content:'';position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--holo);transition:right .35s cubic-bezier(.7,0,.2,1)}
+.hud nav a:hover::after{right:0}
+.sysr{display:flex;align-items:center;gap:14px;font-weight:600;font-size:10px;letter-spacing:.18em;color:var(--faint);font-variant-numeric:tabular-nums}
+.sysr .on{display:flex;align-items:center;gap:7px;color:#4ade80}
+.sysr .on i{width:6px;height:6px;border-radius:50%;background:#4ade80;box-shadow:0 0 8px #4ade80;animation:blink 2.2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+
+/* hero */
+.hero{position:relative;z-index:10;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:17vh 24px 26vh;text-align:center;pointer-events:none}
+.hero>*{pointer-events:auto}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:10.5px;letter-spacing:.34em;color:var(--dim);text-transform:uppercase}
+.eyebrow::before,.eyebrow::after{content:'';width:36px;height:1px;background:linear-gradient(90deg,transparent,var(--edge-hot))}
+.eyebrow::after{background:linear-gradient(270deg,transparent,var(--edge-hot))}
+h1{margin-top:24px;font-weight:900;font-size:clamp(44px,10vw,142px);line-height:.94;letter-spacing:-.035em;
+  background:linear-gradient(180deg,#fff 0%,#d8e9ff 38%,#87b0d8 68%,#3a5d7c 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 40px rgba(92,188,255,.32))}
+.tagline{margin-top:20px;font-weight:500;font-size:15px;line-height:1.75;color:var(--dim)}
+.tagline b{color:var(--text);font-weight:800}
+.cta{margin-top:38px;display:inline-flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:11px;padding:14px 24px;font-weight:800;font-size:12.5px;letter-spacing:.14em;
+  clip-path:polygon(0 0,calc(100% - 11px) 0,100% 11px,100% 100%,11px 100%,0 calc(100% - 11px));transition:transform .3s,box-shadow .3s,background .3s}
+.btn.g{background:var(--gold);color:#08111f;box-shadow:0 0 0 1px rgba(245,197,24,.5),0 16px 34px -14px rgba(245,197,24,.6)}
+.btn.g:hover{transform:translateY(-3px);background:var(--gold-hi);box-shadow:0 22px 44px -14px rgba(245,197,24,.85)}
+.btn.o{border:1px solid var(--edge-hot);color:var(--text);background:rgba(8,18,34,.5);backdrop-filter:blur(8px)}
+.btn.o:hover{transform:translateY(-3px);border-color:var(--holo);box-shadow:0 0 30px -10px rgba(92,188,255,.6)}
+.hstats{position:absolute;left:0;right:0;bottom:30px;display:flex;justify-content:center;flex-wrap:wrap}
+.hstats div{padding:0 30px;border-left:1px solid var(--edge);text-align:center}
+.hstats div:first-child{border-left:none}
+.hstats b{display:block;font-weight:800;font-size:22px;color:var(--holo);font-variant-numeric:tabular-nums;letter-spacing:.01em}
+.hstats i{display:block;margin-top:7px;font-style:normal;font-weight:600;font-size:9.5px;letter-spacing:.24em;color:var(--faint)}
+
+/* sections */
+.sec{position:relative;z-index:10;max-width:1340px;margin:0 auto;padding:100px 24px 0}
+.sec-hd{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:36px}
+.sec-hd h2{font-weight:900;font-size:clamp(24px,2.8vw,40px);letter-spacing:.06em}
+.sec-hd .kr{margin-top:10px;font-size:13.5px;line-height:1.75;color:var(--dim);max-width:540px;word-break:keep-all}
+.sec-hd .cnt{font-weight:700;font-size:10.5px;letter-spacing:.24em;color:var(--faint)}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tile{--ac:#5cbcff;position:relative;display:block;padding:22px 20px 20px;min-height:184px;overflow:hidden;
+  background:linear-gradient(160deg,rgba(10,22,40,.86),rgba(6,14,26,.78));backdrop-filter:blur(10px);
+  border:1px solid var(--edge);
+  clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px));
+  transition:transform .32s cubic-bezier(.2,.7,.2,1),border-color .32s,box-shadow .32s,background .32s}
+.tile::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--ac);opacity:.55;transition:opacity .3s,box-shadow .3s}
+.tile::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .45s;
+  background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.13) 47%,transparent 62%)}
+.tile:hover{transform:translateY(-6px);border-color:var(--ac);
+  box-shadow:0 26px 54px -22px rgba(0,0,0,.9),0 0 0 1px color-mix(in srgb,var(--ac) 42%,transparent),0 0 46px -10px color-mix(in srgb,var(--ac) 50%,transparent)}
+.tile:hover::before{opacity:1;box-shadow:0 0 18px var(--ac)}
+.tile:hover::after{opacity:1}
+.tile .no{font-weight:700;font-size:10px;letter-spacing:.2em;color:var(--faint);font-variant-numeric:tabular-nums}
+.tile .glyph{margin-top:15px;width:44px;height:44px;display:grid;place-items:center;font-weight:900;font-size:17px;color:var(--ac);
+  border:1px solid color-mix(in srgb,var(--ac) 46%,transparent);background:color-mix(in srgb,var(--ac) 12%,transparent);
+  clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px))}
+.tile h3{margin-top:17px;font-weight:800;font-size:14.5px;letter-spacing:.06em}
+.tile p{margin-top:8px;font-size:12px;line-height:1.65;color:var(--dim);word-break:keep-all}
+.tile .go{position:absolute;right:18px;bottom:16px;font-weight:700;font-size:10px;letter-spacing:.2em;color:var(--ac);opacity:0;transform:translateX(-6px);transition:opacity .3s,transform .3s}
+.tile:hover .go{opacity:1;transform:translateX(0)}
+.tile.feat{grid-column:span 2}
+.tile.feat h3{font-size:17px}
+
+/* campaign */
+.camp{position:relative;z-index:10;max-width:1340px;margin:100px auto 0;padding:0 24px}
+.campin{position:relative;overflow:hidden;min-height:clamp(400px,50vw,600px);border:1px solid var(--edge-hot);
+  clip-path:polygon(0 0,calc(100% - 34px) 0,100% 34px,100% 100%,34px 100%,0 calc(100% - 34px));
+  box-shadow:0 40px 90px -34px rgba(0,0,0,.95),0 0 60px -20px rgba(92,188,255,.2)}
+.campin img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.campin .veil{position:absolute;inset:0;background:linear-gradient(96deg,rgba(3,7,16,.95) 0%,rgba(3,7,16,.7) 42%,rgba(3,7,16,.14) 78%)}
+.campin .brk{position:absolute;width:26px;height:26px;border:1px solid var(--gold);opacity:.6}
+.campin .brk.tl{left:20px;top:20px;border-right:none;border-bottom:none}
+.campin .brk.br{right:20px;bottom:20px;border-left:none;border-top:none}
+.campbody{position:relative;z-index:2;padding:clamp(34px,5vw,72px);max-width:600px;height:100%;display:flex;flex-direction:column;justify-content:center}
+.badge{display:inline-flex;align-items:center;gap:9px;align-self:flex-start;padding:6px 13px;border:1px solid rgba(245,197,24,.45);
+  background:rgba(245,197,24,.09);font-weight:700;font-size:9.5px;letter-spacing:.26em;color:var(--gold)}
+.campbody h2{margin-top:20px;font-weight:900;font-size:clamp(34px,5.2vw,72px);line-height:1;letter-spacing:-.02em;color:#fff;
+  filter:drop-shadow(0 0 32px rgba(92,188,255,.4))}
+.campbody p{margin-top:18px;font-size:14.5px;line-height:1.85;color:rgba(214,232,246,.82);max-width:470px;word-break:keep-all}
+.gxrow{position:absolute;right:clamp(24px,4vw,54px);bottom:clamp(22px,3.2vw,38px);z-index:2;display:flex;gap:22px}
+.gxrow span{font-weight:700;font-size:10px;letter-spacing:.24em;color:rgba(255,255,255,.5)}
+footer{position:relative;z-index:10;max-width:1340px;margin:100px auto 0;padding:22px 24px 56px;border-top:1px solid var(--edge);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-weight:600;font-size:10px;letter-spacing:.18em;color:var(--faint)}
+@media(max-width:1100px){.tiles{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.tiles{grid-template-columns:1fr}.tile.feat{grid-column:span 1}.hud nav{display:none}}
+</style></head><body>
+<canvas id="gl"></canvas>
+<div class="vig"></div><div class="scan"></div><div class="grain"></div>
+
+<header class="hud">
+  <div class="mark"><i></i><b>ORUN STUDIO</b></div>
+  <nav><a href="#modules">MODULES</a><a href="#universe">UNIVERSE</a><a href="#">ORUN ENGLISH</a></nav>
+  <div class="sysr"><span class="on"><i></i>SYSTEM ONLINE</span><span id="fps">-- FPS</span></div>
+</header>
+
+<section class="hero">
+  <div class="eyebrow">옳은영어 · ORUN ENGLISH</div>
+  <h1>ORUN STUDIO</h1>
+  <div class="tagline">가르치는 모든 것을 한 자리에. <b>여덟 개의 모듈</b>이 대기 중입니다.</div>
+  <div class="cta">
+    <a class="btn g" href="/orun-universe.html">UNIVERSE 진입
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="5" y1="12" x2="18" y2="12"/><polyline points="12 6 18 12 12 18"/></svg></a>
+    <a class="btn o" href="#modules">모듈 선택</a>
+  </div>
+  <div class="hstats">
+    <div><b>08</b><i>MODULES</i></div><div><b>33</b><i>교재</i></div><div><b>1,379</b><i>단원</i></div><div><b>678</b><i>시험지</i></div><div><b>05</b><i>GALAXY</i></div>
+  </div>
+</section>
+
+<section class="sec" id="modules">
+  <div class="sec-hd">
+    <div><h2>MODULE SELECT</h2><div class="kr">수업이 도는 여덟 개의 도구입니다. 타일을 누르면 바로 그 도구로 들어갑니다.</div></div>
+    <div class="cnt">08 AVAILABLE</div>
+  </div>
+  <div class="tiles" id="tiles"></div>
+</section>
+
+<section class="camp" id="universe"><div class="campin">
+  <img src="orun-universe-poster.jpg" alt="ORUN UNIVERSE">
+  <div class="veil"></div><div class="brk tl"></div><div class="brk br"></div>
+  <div class="campbody">
+    <div class="badge">CURRICULUM MAP</div>
+    <h2>ORUN<br>UNIVERSE</h2>
+    <p>다섯 Galaxy가 한 하늘에 떠 있습니다. 등대를 누르면 그 커리큘럼으로 들어가 단원을 고르고 시험지를 발행합니다.</p>
+    <a class="btn g" style="margin-top:32px;align-self:flex-start" href="/orun-universe.html">ENTER
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="5" y1="12" x2="18" y2="12"/><polyline points="12 6 18 12 12 18"/></svg></a>
+  </div>
+  <div class="gxrow"><span>VOCAB</span><span>GRAMMAR</span><span>SYNTAX</span><span>USAGE</span><span>READING</span></div>
+</div></section>
+
+<footer><div>ORUN ENGLISH · 옳은영어 · 서울 동작구</div><div>© 2026 ORUN STUDIO</div></footer>
+
+<script src="three.min.js"></script>
+<script>
+const M=[
+ {t:'ORUN UNIVERSE',k:'다섯 Galaxy로 보는 커리큘럼 지도',c:'#f5c518',h:'/orun-universe.html',g:'U',f:1},
+ {t:'ORUN GRAMMAR',k:'영문법 개념과 문제풀이 학습',c:'#3b82f6',h:'/orun-grammar.html',g:'G',f:1},
+ {t:'ORUN TEST',k:'옳은영어 표준 시험 솔루션',c:'#8b5cf6',h:'https://omr-quiz-scan.lovable.app/',g:'T'},
+ {t:'ORUN VOCA',k:'옳은영어 단어 학습 플랫폼',c:'#10b981',h:'https://orunvoca.lovable.app',g:'V'},
+ {t:'QUIZ MAKER',k:'맞춤형 변형문제 생성 도구',c:'#6366f1',h:'https://orunquiz.lovable.app',g:'Q'},
+ {t:'WORKBOOK MAKER',k:'워크북 자동 생성 도구',c:'#ec4899',h:'https://orunworkbook.lovable.app',g:'W'},
+ {t:'ORUN HOMEWORK',k:'학생별 숙제 관리 및 피드백',c:'#f43f5e',h:'https://orunhomework.com',g:'H'},
+ {t:'SCHOOL ANALYSIS',k:'3개년 학교별 기출 분석',c:'#0ea5e9',h:'https://schoolanalysis.lovable.app',g:'S'},
+];
+document.getElementById('tiles').innerHTML=M.map((m,i)=>`
+ <a class="tile${m.f?' feat':''}" href="${m.h}" style="--ac:${m.c}">
+   <div class="no">${String(i+1).padStart(2,'0')}</div><div class="glyph">${m.g}</div>
+   <h3>${m.t}</h3><p>${m.k}</p><div class="go">ENTER ▸</div></a>`).join('');
+
+/* ── 3D: 등대 하나가 은하 원반 한가운데 서 있고, 빔이 돈다.
+      마우스로 시점이 기울고 스크롤로 카메라가 물러난다. ── */
+(function(){
+  const cv=document.getElementById('gl');
+  const rn=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});
+  rn.setPixelRatio(Math.min(2,devicePixelRatio||1));
+  const sc=new THREE.Scene();
+  sc.fog=new THREE.FogExp2(0x03060e,0.0016);
+  const cam=new THREE.PerspectiveCamera(42,1,0.1,3000);
+
+  function sprite(){ const c=document.createElement('canvas'); c.width=c.height=64;
+    const g=c.getContext('2d'), gr=g.createRadialGradient(32,32,0,32,32,32);
+    gr.addColorStop(0,'rgba(255,255,255,1)');gr.addColorStop(.25,'rgba(255,255,255,.55)');gr.addColorStop(1,'rgba(255,255,255,0)');
+    g.fillStyle=gr;g.fillRect(0,0,64,64); const t=new THREE.CanvasTexture(c); return t; }
+  const SP=sprite();
+
+  /* 별밭 */
+  function stars(n,r0,r1,size,op){
+    const p=new Float32Array(n*3), col=new Float32Array(n*3);
+    for(let i=0;i<n;i++){
+      const r=r0+Math.random()*(r1-r0), th=Math.random()*Math.PI*2, ph=Math.acos(2*Math.random()-1);
+      p[i*3]=r*Math.sin(ph)*Math.cos(th); p[i*3+1]=r*Math.cos(ph)*0.55; p[i*3+2]=r*Math.sin(ph)*Math.sin(th);
+      const w=Math.random(); const c=w<.22?[1,.86,.68]:(w<.62?[.94,.96,1]:[.72,.83,1]);
+      const b=.35+Math.random()*.65; col[i*3]=c[0]*b;col[i*3+1]=c[1]*b;col[i*3+2]=c[2]*b;
+    }
+    const g=new THREE.BufferGeometry();
+    g.setAttribute('position',new THREE.BufferAttribute(p,3));
+    g.setAttribute('color',new THREE.BufferAttribute(col,3));
+    return new THREE.Points(g,new THREE.PointsMaterial({size:size,map:SP,vertexColors:true,transparent:true,opacity:op,
+      depthWrite:false,blending:THREE.AdditiveBlending,sizeAttenuation:true}));
+  }
+  const far=stars(4200,420,1400,3.2,.85), near=stars(900,180,420,4.4,.9);
+  sc.add(far); sc.add(near);
+
+  /* 은하 원반 — 두 팔의 로그 나선 */
+  const N=16000, pos=new Float32Array(N*3), col=new Float32Array(N*3);
+  const CORE=new THREE.Color(0xffe6b0), MID=new THREE.Color(0x8fd0ff), OUT=new THREE.Color(0x6d7dff);
+  for(let i=0;i<N;i++){
+    const t=Math.pow(Math.random(),.62), r=9+t*165;
+    const arm=(i%2)*Math.PI, th=Math.log(r/8)/Math.tan(.30)+arm+ (Math.random()-.5)*(.55+1.6*t);
+    const y=(Math.random()-.5)*(11*(1-t*.75));
+    pos[i*3]=Math.cos(th)*r; pos[i*3+1]=y; pos[i*3+2]=Math.sin(th)*r;
+    const c=t<.34?CORE.clone().lerp(MID,t/.34):MID.clone().lerp(OUT,(t-.34)/.66);
+    const b=(1-t*.42)*(.55+Math.random()*.55);
+    col[i*3]=c.r*b; col[i*3+1]=c.g*b; col[i*3+2]=c.b*b;
+  }
+  const dg=new THREE.BufferGeometry();
+  dg.setAttribute('position',new THREE.BufferAttribute(pos,3));
+  dg.setAttribute('color',new THREE.BufferAttribute(col,3));
+  const disc=new THREE.Points(dg,new THREE.PointsMaterial({size:2.4,map:SP,vertexColors:true,transparent:true,opacity:1,
+    depthWrite:false,blending:THREE.AdditiveBlending,sizeAttenuation:true}));
+  sc.add(disc);
+
+  /* 등대 — 홀로그램 와이어 */
+  const LH=new THREE.Group(); LH.scale.setScalar(1.75); sc.add(LH);
+  const wire=(geo,color,op)=>{ const m=new THREE.LineSegments(new THREE.EdgesGeometry(geo,18),
+      new THREE.LineBasicMaterial({color:color,transparent:true,opacity:op})); return m; };
+  const skin=(geo,color,op)=>new THREE.Mesh(geo,new THREE.MeshBasicMaterial({color:color,transparent:true,opacity:op,
+      side:THREE.DoubleSide,depthWrite:false}));
+  const base=new THREE.CylinderGeometry(7.4,8.6,2.2,26);
+  LH.add(wire(base,0x9fd8ff,.5)); const bs=skin(base,0x0d2a44,.5); bs.position.y=0; LH.add(bs);
+  const tow=new THREE.CylinderGeometry(3.1,6.4,26,20,1,true);
+  const tw=wire(tow,0xbfe4ff,.42); tw.position.y=14.1; LH.add(tw);
+  const tsk=new THREE.Mesh(tow,new THREE.MeshBasicMaterial({color:0x0e2b47,transparent:true,opacity:.42,side:THREE.DoubleSide,depthWrite:false}));
+  tsk.position.y=14.1; LH.add(tsk);
+  const gal=new THREE.TorusGeometry(4.2,.5,8,28); const gm=wire(gal,0xffd75e,.75); gm.rotation.x=Math.PI/2; gm.position.y=27.4; LH.add(gm);
+  const lamp=new THREE.SphereGeometry(2.5,20,14);
+  const lm=new THREE.Mesh(lamp,new THREE.MeshBasicMaterial({color:0xfff3c8,transparent:true,opacity:.96}));
+  lm.position.y=30.2; LH.add(lm);
+  const roof=wire(new THREE.ConeGeometry(3.6,4.4,18),0xffd75e,.62); roof.position.y=34.6; LH.add(roof);
+  const halo=new THREE.Sprite(new THREE.SpriteMaterial({map:SP,color:0xffd98a,transparent:true,opacity:.95,
+    blending:THREE.AdditiveBlending,depthWrite:false}));
+  halo.scale.set(46,46,1); halo.position.y=30.2; LH.add(halo);
+  const halo2=halo.clone(); halo2.scale.set(120,120,1); halo2.material=halo.material.clone(); halo2.material.opacity=.3; LH.add(halo2);
+
+  /* 빔 — 마주 보는 두 갈래, 가산합성 */
+  const BEAM=new THREE.Group(); BEAM.position.y=30.2; LH.add(BEAM);
+  for(let s=0;s<2;s++){
+    const g=new THREE.ConeGeometry(13,190,26,1,true);
+    const m=new THREE.Mesh(g,new THREE.MeshBasicMaterial({color:0xffe08a,transparent:true,opacity:.045,
+      side:THREE.DoubleSide,depthWrite:false,blending:THREE.AdditiveBlending}));
+    m.rotation.z=Math.PI/2*(s?1:-1); m.position.x=(s?1:-1)*95; BEAM.add(m);
+  }
+
+  /* 바닥 링 */
+  for(let i=0;i<3;i++){
+    const r=62+i*52, g=new THREE.RingGeometry(r,r+.5,140);
+    const m=new THREE.Mesh(g,new THREE.MeshBasicMaterial({color:0x5cbcff,transparent:true,opacity:.09-i*.02,
+      side:THREE.DoubleSide,depthWrite:false,blending:THREE.AdditiveBlending}));
+    m.rotation.x=-Math.PI/2; sc.add(m);
+  }
+
+  let W=0,H=0;
+  function size(){ W=innerWidth;H=innerHeight; rn.setSize(W,H,false); cam.aspect=W/H; cam.updateProjectionMatrix(); }
+  addEventListener('resize',size); size();
+
+  const mouse={x:0,y:0}, cur={x:0,y:0};
+  addEventListener('mousemove',e=>{ mouse.x=(e.clientX/innerWidth-.5); mouse.y=(e.clientY/innerHeight-.5); });
+  let scroll=0; addEventListener('scroll',()=>{ scroll=scrollY/innerHeight; },{passive:true});
+
+  const fpsEl=document.getElementById('fps'); let fc=0,ft=performance.now();
+  function frame(t){
+    requestAnimationFrame(frame);
+    cur.x+=(mouse.x-cur.x)*.045; cur.y+=(mouse.y-cur.y)*.045;
+    const s=Math.min(scroll,2.2);
+    const rad=300+s*150, hgt=88+s*74;
+    const a=t*0.00004 + cur.x*0.55;
+    cam.position.set(Math.sin(a)*rad, hgt - cur.y*46, Math.cos(a)*rad);
+    cam.lookAt(0,74-s*16,0);
+    disc.rotation.y=t*0.000045;
+    far.rotation.y=t*0.000012; near.rotation.y=-t*0.00002;
+    BEAM.rotation.y=t*0.00042;
+    const pulse=.86+Math.sin(t*.0016)*.14;
+    halo.material.opacity=.95*pulse; halo2.material.opacity=.3*pulse;
+    rn.render(sc,cam);
+    fc++; if(t-ft>1000){ fpsEl.textContent=Math.round(fc*1000/(t-ft))+' FPS'; fc=0; ft=t; }
+  }
+  requestAnimationFrame(frame);
+})();
+</script></body></html>
