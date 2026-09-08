@@ -1391,8 +1391,8 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 /* 본문 문단은 양쪽정렬 — 시험지는 오른쪽 끝이 맞아야 한다 */
 .page .question > p, .page .passage p, .page .given p, .page .ak, .page li { text-align: justify; }
 .page p { margin: 0 0 3pt; }
-.page ol, .page ul { list-style: none; margin: 2pt 0; padding-left: 2pt; }
-.page li { margin: 0 0 1pt; }
+.page ol, .page ul { list-style: none; margin: 2pt 0 0; padding-left: 2pt; }
+.page li { margin: 0 0 1pt; line-height: 1.35; }   /* 한 줄짜리 선지에 1.5 는 헐겁다 */
 .page .choices-inline { margin: 2pt 0 0; padding-left: 2pt; letter-spacing: .02em; }
 .page u { text-underline-offset: 2pt; }
 .page .ak { margin: 0 0 3pt; }
@@ -1925,7 +1925,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v13H3z"/><path d="M2 4h20v3H2z"/><path d="M10 11h4"/></svg>
     <span class="lb">저장소</span><i class="n" id="vaultCount" hidden>0</i>
   </button>
-  <div class="state"><span class="build" id="buildTag">2026-09-08 18:28</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
+  <div class="state"><span class="build" id="buildTag">2026-09-08 23:00</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
 </div>
 
 <!-- 화면 0 · 시작 -->
@@ -3431,7 +3431,90 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     const box = document.createElement("div");
     box.innerHTML = sanitize(html);
     foldSymbolChoices(box);
+    liftChoicesOutOfBoxes(box);
+    dropRedundantSymbolRow(box);
+    underlineStemPhrase(box);
     return box.innerHTML;
+  }
+
+  // 모델이 선지를 지문 상자 안에 넣어 보내는 일이 잦다. 그러면 선지에 네모가 쳐진다.
+  // 상자 끝에 ①②③④⑤ 가 차례로 붙어 있으면 그건 선지다 — 상자 밖으로 꺼낸다.
+  // 낱말 밑줄 문항처럼 ① 이 지문 문장 속에 섞인 경우는 '문단이 기호로 시작'하지 않으므로 걸리지 않는다.
+  function liftChoicesOutOfBoxes(root) {
+    root.querySelectorAll(".passage, .given").forEach(box => {
+      const kids = [...box.children];
+      const picked = [];
+      for (let i = kids.length - 1; i >= 0; i--) {
+        const t = (kids[i].textContent || "").replace(/\s+/g, " ").trim();
+        if (!/^[①-⑤]\s*\S/.test(t)) break;
+        picked.unshift(kids[i]);
+      }
+      if (picked.length < 3) return;
+      const first = "①".charCodeAt(0);
+      const inOrder = picked.every((el, i) => (el.textContent || "").trim().charCodeAt(0) === first + i);
+      if (!inOrder) return;
+      const ol = document.createElement("ol");
+      picked.forEach(el => {
+        const li = document.createElement("li");
+        li.innerHTML = el.innerHTML;
+        ol.appendChild(li);
+        el.remove();
+      });
+      box.after(ol);
+      if (!box.textContent.trim()) box.remove();        // 상자가 선지뿐이었다면 상자 자체를 버린다
+    });
+    return root;
+  }
+
+  // 선지를 상자 안에 넣은 문항은 상자 밖에 기호만 남긴 줄(①②③④⑤)을 하나 더 보내온다.
+  // 글자 선지가 이미 있으면 그 줄은 군더더기다.
+  function dropRedundantSymbolRow(root) {
+    root.querySelectorAll(".question").forEach(q => {
+      const rows = [...q.querySelectorAll(".choices-inline")];
+      if (!rows.length) return;
+      const hasWordy = [...q.querySelectorAll("ol > li, ul > li")]
+        .some(li => (li.textContent || "").replace(/\s+/g, " ").trim().length > 4);
+      if (hasWordy) rows.forEach(r => r.remove());
+    });
+    return root;
+  }
+
+  // '밑줄 친 X' 라고 물으면 발문의 X 에도 밑줄을 긋는다. 지문에 그은 대목을 먼저 찾고,
+  // 없으면 '밑줄 친' 뒤에 이어지는 로마자 구절을 잡는다.
+  function underlineStemPhrase(root) {
+    root.querySelectorAll(".question").forEach(q => {
+      const stem = q.querySelector("p");
+      if (!stem || !/밑줄\s*친/.test(stem.textContent || "")) return;
+      if (stem.querySelector("u")) return;
+      const stemText = stem.textContent || "";
+      const marks = [...q.querySelectorAll("u")]
+        .map(u => (u.textContent || "").replace(/\s+/g, " ").trim())
+        .filter(t => t.length >= 6)
+        .sort((a, b) => b.length - a.length);
+      let hit = marks.find(t => stemText.indexOf(t) >= 0);
+      if (!hit) {
+        const m = stemText.match(/밑줄\s*친\s+([A-Za-z][^가-힣]*[A-Za-z.'"\u201d\u2019)\]])/);
+        if (m) hit = m[1].trim();
+      }
+      if (hit && hit.length >= 4) underlineTextIn(stem, hit);
+    });
+    return root;
+  }
+  function underlineTextIn(el, phrase) {
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    for (const node of nodes) {
+      const i = (node.nodeValue || "").indexOf(phrase);
+      if (i < 0) continue;
+      const mid = node.splitText(i);
+      mid.splitText(phrase.length);
+      const u = document.createElement("u");
+      u.textContent = mid.nodeValue;
+      mid.replaceWith(u);
+      return true;
+    }
+    return false;
   }
   function sanitize(html) {
     const doc = new DOMParser().parseFromString("<div>" + html + "</div>", "text/html");
@@ -3498,6 +3581,13 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
         const tb = ch.querySelector("table");
         if (tb) blocks.push(headTableBlock(ch, tb));
         else walkBlocks(ch, blocks, { box: false, center: true });
+      }
+      else if (/choices-inline/.test(cls)) {
+        // 화면에서는 flex 로 고르게 펼치지만 워드에는 그런 게 없다.
+        // 기호를 그냥 이으면 ①②③④⑤ 로 붙고, 양쪽정렬까지 걸리면 단 끝까지 늘어난다.
+        const syms = [...ch.children].map(sp => (sp.textContent || "").trim()).filter(Boolean);
+        const line = (syms.length ? syms : [(ch.textContent || "").trim()]).join("\u3000\u3000\u3000");
+        if (line) blocks.push({ kind: "p", noJustify: true, runs: [{ t: line, b: false, u: false }] });
       }
       else if (tag === "OL" || tag === "UL") walkBlocks(ch, blocks, ctx);
       else if (tag === "LI" || tag === "P") {
@@ -3587,7 +3677,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     else if (b.kind === "center") { ppr += '<w:jc w:val="center"/><w:spacing w:after="60"/>'; }
     else if (b.kind === "h2") { ppr += '<w:keepNext/><w:pageBreakBefore/><w:spacing w:before="160" w:after="60"/><w:pBdr><w:bottom w:val="single" w:sz="8" w:space="2" w:color="000000"/></w:pBdr>'; extra = '<w:b/><w:sz w:val="20"/><w:szCs w:val="20"/>'; }
     else if (b.kind === "boxp") { ppr += '<w:keepLines/><w:jc w:val="both"/>' + BOX; }
-    else { ppr += '<w:jc w:val="both"/>' + (b.pageBreak ? "<w:pageBreakBefore/>" : "") + '<w:spacing w:after="' + (b.spaceAfter ? 520 : 40) + '"/>'; }
+    else { ppr += '<w:jc w:val="' + (b.noJustify ? "left" : "both") + '"/>' + (b.pageBreak ? "<w:pageBreakBefore/>" : "") + '<w:spacing w:after="' + (b.spaceAfter ? 520 : 40) + '"/>'; }
     ppr += "</w:pPr>";
     return "<w:p>" + ppr + b.runs.map(r => docxRun(r, extra)).join("") + "</w:p>";
   }
@@ -3641,7 +3731,10 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
       if (b.kind === "h2") return new D.Paragraph({ keepNext: true, pageBreakBefore: true, spacing: { before: 160, after: 60 }, border: { bottom: LINE(8, 2) }, children: runs(b, { bold: true, size: 20 }) });
       if (b.kind === "boxp") return new D.Paragraph({ keepLines: true, alignment: D.AlignmentType.JUSTIFIED, border: { top: LINE(6, 3), left: LINE(6, 6), bottom: LINE(6, 3), right: LINE(6, 6) }, children: runs(b, {}) });
       // 26pt = 520 twip — 화면의 문항 간격과 같은 값
-      return new D.Paragraph({ alignment: D.AlignmentType.JUSTIFIED, pageBreakBefore: !!b.pageBreak, spacing: { after: b.spaceAfter ? 520 : 40 }, children: runs(b, {}) });
+      return new D.Paragraph({
+        alignment: b.noJustify ? D.AlignmentType.LEFT : D.AlignmentType.JUSTIFIED,
+        pageBreakBefore: !!b.pageBreak, spacing: { after: b.spaceAfter ? 520 : 40 }, children: runs(b, {}),
+      });
     });
     const PAGE = { size: { width: 11906, height: 16838 }, margin: { top: 567, right: 567, bottom: 567, left: 567, header: 0, footer: 0, gutter: 0 } };
     const doc = new D.Document({
@@ -4627,6 +4720,9 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 '   · 요약문 완성: 지문을 <div class="passage"> 에, 요약문(빈칸 (A)(B) 포함)을 <div class="given"> 에 씁니다.\n' +
 '   · 〈보기〉가 필요한 그 밖의 유형도 같은 방식으로 <div class="given"> 을 따로 씁니다.\n' +
 "   · 문장 삽입·순서처럼 선지가 기호뿐인 문항은 <li>①</li><li>②</li><li>③</li><li>④</li><li>⑤</li> 다섯 개만 씁니다. 기호를 겹쳐 쓰거나 되풀이하지 않습니다.\n" +
+"   · <b>선지는 어떤 경우에도 상자 안에 넣지 않습니다.</b> <ol> 은 반드시 </div> 로 상자를 닫은 다음에 씁니다. 선지에는 네모가 쳐지지 않아야 합니다.\n" +
+"   · 선지를 상자 안에 넣고 상자 밖에 기호만 다시 늘어놓는 식으로 두 번 쓰지 않습니다. 선지는 한 번만 씁니다.\n" +
+"   · 발문에 '밑줄 친 …' 이라고 썼으면 그 대목을 지문에서 <u>로 긋고, <b>발문 안에서 그 대목을 되풀이할 때도 똑같이 <u>로 긋습니다.</b>\n" +
 "7. 지문·발문·선지는 원본 시험지의 문장 길이와 어투를 따릅니다. 지문 단락을 임의로 줄이거나 늘이지 않습니다.\n" +
 (extra ? "8. 사용자 요청사항(반드시 반영): " + extra + "\n" : "") +
 "\n[시험 정보] " + (info.title || "") + "\n" +
@@ -5458,9 +5554,9 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   //  요소 자체를 옮기므로 편집·핸들러·도장이 그대로 보존된다.
   // ==================================================================
   const MM = 96 / 25.4;
-  // 문항 사이를 두 줄 비우면서 넷을 한 쪽에 가두면, 넷이 왼쪽 단만 채우고 오른쪽 단이 통째로 빈다.
-  // 그래서 한 쪽이 아니라 한 단에 넷까지로 센다 — 두 단이 다 차고 나서 쪽이 넘어간다.
-  const MAX_Q_PER_PAGE = 8;
+  // 쪽을 언제 넘길지는 실측(단이 넘쳤는가)이 정한다. 이 숫자는 폭주를 막는 울타리일 뿐,
+  // 여기에 걸려 쪽이 넘어가면 그만큼 종이가 빈다. 그래서 넉넉히 잡는다.
+  const MAX_Q_PER_PAGE = 12;
   let docUnits = [];
   let paperDirty = false;
   let paperZoom = 0;            // 0 = 너비 맞춤
