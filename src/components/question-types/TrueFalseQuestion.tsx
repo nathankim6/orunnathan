@@ -13,7 +13,9 @@ export const TrueFalseQuestion = ({
 }: TrueFalseQuestionProps) => {
   const lines = questionPart.split('\n');
   const title = lines[0];
-  const questions = lines.slice(1).join('\n');
+  const questions = lines.slice(1).join('\n')
+    .replace(/([가-힣])\n+([A-Za-z])/g, '$1 $2')
+    .replace(/\n([1-5]\.)/g, '\n\n$1');
 
   return (
     <div className="mb-8">
@@ -25,15 +27,13 @@ export const TrueFalseQuestion = ({
         </h3>
         
         <div className="space-y-4">
-          {/* Questions Section */}
-          <div className="result-text whitespace-pre-wrap leading-relaxed relative bg-[#F8F7FF] p-4 rounded-lg border border-[#0EA5E9]/20">
+          <div className="question-content whitespace-pre-wrap leading-relaxed relative bg-[#F8F7FF] p-4 rounded-lg border border-[#0EA5E9]/20">
             <h4 className="font-semibold text-[#403E43] mb-2">다음 글의 내용으로 옳고 그름(T/F)을 고르시오</h4>
             {questions}
           </div>
           
-          {/* Answers and Explanations Section */}
           {answerPart && (
-            <div className="result-text whitespace-pre-wrap leading-relaxed relative bg-[#F8F7FF] p-4 rounded-lg border border-[#0EA5E9]/20">
+            <div className="question-content whitespace-pre-wrap leading-relaxed relative bg-[#F8F7FF] p-4 rounded-lg border border-[#0EA5E9]/20">
               <h4 className="font-semibold text-[#403E43] mb-2">[정답] 및 해설</h4>
               {answerPart}
             </div>

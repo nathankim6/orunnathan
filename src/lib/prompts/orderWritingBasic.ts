@@ -12,11 +12,13 @@ ${text}
 주어진 단어들을 순서대로 배열하여 우리말과 같은 의미가 되도록 영작하시오.
 (단, 단어의 형태는 변형하지 마시오.)
 
+**중요**: 제시하는 단어들은 반드시 정답 문장과 정확히 일치해야 합니다.
+
 [우리말]
 {Write a Korean translation of the answer sentence}
 
 [단어]
-{Take all words from the answer sentence and scramble them, separated by /}
+{Take all words from the answer sentence, RANDOMLY SCRAMBLE THEM into a different order, then present them separated by /}
 
 [정답]
 {Write ONE grammatically correct English sentence that matches the Korean translation}

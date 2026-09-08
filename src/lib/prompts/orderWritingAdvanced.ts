@@ -1,3 +1,4 @@
+
 export const getOrderWritingAdvancedPrompt = (text: string) => `
 You are an expert at creating sentence completion questions based on English texts.
 
@@ -33,7 +34,7 @@ The output must follow this exact format:
 [조건]
 1) [N]단어로 빈칸을 완성하시오.
 2) 다음 단어를 한 번씩 사용하여 배열하시오.
-    [Words from the original sentence in order of appearance]
+    [Words from the original sentence in order of appearance, separated by slash (/) only, no commas or periods]
 
 [정답]
 [Original sentence]

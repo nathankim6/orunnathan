@@ -21,7 +21,7 @@ export const VocabularyActions = ({
     <div className="flex justify-between mt-4">
       <Button
         onClick={onAddEntry}
-        className="bg-[#9b87f5] hover:bg-[#7E69AB]"
+        className="bg-cyan-500 hover:bg-cyan-600"
         disabled={isAddingEntry}
       >
         <Plus className="w-4 h-4 mr-2" />
@@ -31,7 +31,7 @@ export const VocabularyActions = ({
         <div className="space-x-2">
           <Button
             onClick={onSaveNewEntry}
-            className="bg-[#9b87f5] hover:bg-[#7E69AB]"
+            className="bg-cyan-500 hover:bg-cyan-600"
           >
             저장
           </Button>
@@ -45,7 +45,7 @@ export const VocabularyActions = ({
       ) : (
         <Button
           onClick={onDownloadPDF}
-          className="bg-gradient-to-r from-[#9b87f5] to-[#7E69AB] hover:opacity-90"
+          className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:opacity-90"
         >
           <FileDown className="w-4 h-4 mr-2" />
           WORD로 저장하기

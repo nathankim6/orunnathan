@@ -10,7 +10,7 @@ interface QuestionContextType {
   onAddPassage: (typeId: string) => void;
   onRemovePassage: (typeId: string, passageId: string) => void;
   onTextChange: (typeId: string, passageId: string, newText: string) => void;
-  onPasteValues: (typeId: string, passageId: string, values: string[]) => void;
+  onPasteValues: (typeId: string, passageId: string, values: string[], titles?: string[]) => void;
 }
 
 const QuestionContext = createContext<QuestionContextType | undefined>(undefined);

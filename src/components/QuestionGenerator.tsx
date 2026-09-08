@@ -1,55 +1,131 @@
-import { TypeSelector } from "./TypeSelector";
-import { LoadingProgress } from "./LoadingProgress";
-import { TypeEntry } from "./question/TypeEntry";
-import { GeneratedQuestions } from "./question/GeneratedQuestions";
+
+import { useState } from "react";
 import { QuestionProvider } from "./question/QuestionContext";
 import { useQuestionState } from "./question/QuestionState";
 import { useQuestionActions } from "./question/QuestionActions";
-import { Star } from "lucide-react";
-import { useState } from "react";
-import { ActionButtons as QuestionActionButtons } from "./question/ActionButtons";
+import { Sidebar } from "./question/Sidebar";
+import { MainContent } from "./question/MainContent";
+import { MockExamGenerator } from "./mock-exam/MockExamGenerator";
+import { QuestionsStorage } from "./question/QuestionsStorage";
+import { SaveQuestionsDialog } from "./question/SaveQuestionsDialog";
+import { useQuestionsStorage } from "@/hooks/use-questions-storage";
 
 export const QuestionGenerator = () => {
+  const questionState = useQuestionState();
   const {
     selectedTypes,
     isLoading,
     setIsLoading,
     progress,
     setProgress,
+    difficulty,
+    complexity,
+    handleDifficultyChange,
+    handleComplexityChange,
     handleTypeSelect,
     handleRemoveType,
+    handleRemoveAllTypes,
     handleAddPassage,
     handleRemovePassage,
     handleTextChange,
+    handleTitleChange,
     handlePasteValues,
     handleStopGeneration,
     setAbortController,
-    toast
-  } = useQuestionState();
+    toast,
+    handleOrderModeChange,
+    handleSummaryModeChange,
+    handleChoiceLanguageChange,
+    handleManualModeChange,
+    handleManualMarkersChange,
+    handleCombinedTypesChange,
+    handleParaphraseBlankChange,
+    handleSubTypeChange,
+    selectDiversePairs,
+    setSelectedTypes,
+  } = questionState;
 
-  const { handleGenerateAll, handleDownloadDoc } = useQuestionActions({
+  const { saveQuestions } = useQuestionsStorage();
+
+  // Update the handleDownloadDoc function to match the expected signature
+  const { 
+    handleGenerateAll, 
+    handleContinueGeneration, 
+    handleDownloadDoc,
+    checkGenerationStats 
+  } = useQuestionActions({
     selectedTypes,
     setIsLoading,
     setProgress,
-    setSelectedTypes: (types) => {
-      selectedTypes.splice(0, selectedTypes.length, ...types);
-    },
+    setSelectedTypes,
     setAbortController,
-    toast
+    difficulty,
+    complexity,
+    toast,
+    saveQuestions,
+    selectDiversePairs
   });
 
+  // 생성 상태 체크
+  const generationStats = checkGenerationStats();
+
   const [showVocabModal, setShowVocabModal] = useState(false);
+  const [showMockExamModal, setShowMockExamModal] = useState(false);
+  const [showStorageModal, setShowStorageModal] = useState(false);
+  const [showSaveDialog, setShowSaveDialog] = useState(false);
+
+  const handleRefreshQuestion = (questionId: string, newContent: string) => {
+    setSelectedTypes(prevTypes => prevTypes.map(typeEntry => ({
+      ...typeEntry,
+      passages: typeEntry.passages.map(passage => 
+        passage.id === questionId 
+          ? { ...passage, result: newContent }
+          : passage
+      )
+    })));
+  };
+
+  const extractTitleFromResult = (result: string): { title: string; content: string } => {
+    const knownTags = ['서답형', 'OUTPUT', 'OUPUT', '출력', '정답', '해설', 'output'];
+    const match = result.match(/^\s*\[([^\]]+)\]\s*/);
+    if (match) {
+      const potentialTitle = match[1].trim();
+      if (!knownTags.some(tag => potentialTitle.toLowerCase() === tag.toLowerCase())) {
+        return { title: potentialTitle, content: result.substring(match[0].length) };
+      }
+    }
+    return { title: '', content: result };
+  };
 
   const generatedQuestions = selectedTypes.flatMap((typeEntry) => 
     typeEntry.passages
-      .map((passage) => ({
-        id: passage.id,
-        content: passage.result,
-        questionNumber: 0,
-        originalText: typeEntry.type.id === "weekendClinic" ? passage.text : undefined
-      }))
+      .map((passage) => {
+        const manualTitle = passage.title || '';
+        const { title: extractedTitle, content: cleanedResult } = extractTitleFromResult(passage.result);
+        const finalTitle = manualTitle || extractedTitle;
+        return {
+          id: passage.id,
+          content: finalTitle && extractedTitle ? cleanedResult : passage.result,
+          questionNumber: 0,
+          originalText: passage.text,
+          type: typeEntry.type.id,
+          passageTitle: finalTitle
+        };
+      })
       .filter(q => q.content)
   );
+
+  const handleSaveQuestions = () => {
+    if (generatedQuestions.length === 0) {
+      toast({
+        title: "저장 불가",
+        description: "저장할 문제가 없습니다.",
+        variant: "destructive",
+      });
+      return;
+    }
+    setShowSaveDialog(true);
+  };
 
   const contextValue = {
     selectedTypes,
@@ -61,87 +137,80 @@ export const QuestionGenerator = () => {
     onRemovePassage: handleRemovePassage,
     onTextChange: handleTextChange,
     onPasteValues: handlePasteValues,
+    onOrderModeChange: handleOrderModeChange,
+    onSummaryModeChange: handleSummaryModeChange,
   };
 
   return (
     <QuestionProvider value={contextValue}>
-      <div className="flex gap-8">
-        {/* Type Selector Frame - Now positioned on the left */}
-        <div className="w-80 flex-shrink-0">
-          <div className="sticky top-8">
-            <div className="bg-gradient-to-r from-white/80 via-gray-50/50 to-white/80 shadow-lg border border-gray-200 backdrop-blur-sm p-4 rounded-lg relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#1A1F2C]/40 to-[#403E43]/30 opacity-70 animate-gradient"></div>
-              <div className="absolute inset-0 bg-gradient-to-br from-[#1A1F2C]/95 to-[#403E43]/95 mix-blend-overlay"></div>
-              <div className="relative z-10">
-                <TypeSelector 
-                  selectedTypes={selectedTypes.map(entry => entry.type)} 
-                  onSelect={handleTypeSelect}
-                  onRemove={handleRemoveType}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className="toss-smooth flex gap-8">
+        <Sidebar
+          selectedTypes={selectedTypes}
+          handleTypeSelect={handleTypeSelect}
+          handleRemoveType={handleRemoveType}
+          handleRemoveAllTypes={handleRemoveAllTypes}
+          handleReorderTypes={(from, to) =>
+            setSelectedTypes((prev) => {
+              const next = [...prev];
+              const [moved] = next.splice(from, 1);
+              next.splice(to, 0, moved);
+              return next;
+            })
+          }
+          handleGenerateAll={handleGenerateAll}
+          handleContinueGeneration={handleContinueGeneration}
+          isLoading={isLoading}
+          difficulty={difficulty}
+          complexity={complexity}
+          handleDifficultyChange={handleDifficultyChange}
+          handleComplexityChange={handleComplexityChange}
+          handleStopGeneration={handleStopGeneration}
+          handleDownloadDoc={handleDownloadDoc}
+          openVocabModal={() => setShowVocabModal(true)}
+          openStorageModal={() => setShowStorageModal(true)}
+          openMockExamModal={() => setShowMockExamModal(true)}
+          progress={progress}
+          generationStats={generationStats}
+        />
 
-        {/* Main Content Area */}
-        <div className="flex-1 space-y-8">
-          {selectedTypes.length > 0 ? (
-            <>
-              {selectedTypes.map((typeEntry) => (
-                <TypeEntry
-                  key={typeEntry.type.id}
-                  type={typeEntry.type}
-                  passages={typeEntry.passages}
-                  onAddPassage={handleAddPassage}
-                  onRemovePassage={handleRemovePassage}
-                  onTextChange={handleTextChange}
-                  onPasteValues={handlePasteValues}
-                  onRemoveType={handleRemoveType}
-                />
-              ))}
 
-              <div className="flex flex-col gap-4">
-                {isLoading && progress.total > 0 && (
-                  <LoadingProgress 
-                    current={progress.current} 
-                    total={progress.total}
-                    onStop={handleStopGeneration}
-                  />
-                )}
-              </div>
-
-              <QuestionActionButtons
-                onGenerate={handleGenerateAll}
-                onDownload={handleDownloadDoc}
-                isLoading={isLoading}
-              />
-
-              <GeneratedQuestions questions={generatedQuestions} />
-            </>
-          ) : (
-            <div className="flex flex-col items-center justify-center h-[800px] bg-[#F1F0FB]/30 rounded-lg border-2 border-dashed border-[#D6BCFA]/30 p-8 space-y-4">
-              <div className="relative">
-                <Star 
-                  className="w-24 h-24 text-[#FFD700] animate-bounce filter drop-shadow-lg
-                    after:content-[''] after:absolute after:inset-0 after:bg-yellow-200/30 
-                    after:blur-lg after:animate-pulse"
-                  strokeWidth={1.5}
-                  fill="#FFD700"
-                />
-                <div className="absolute inset-0 animate-ping">
-                  <Star 
-                    className="w-24 h-24 text-[#FFD700] opacity-20"
-                    strokeWidth={1.5}
-                  />
-                </div>
-              </div>
-              <div className="text-center space-y-2">
-                <h3 className="text-xl font-semibold text-[#1A1F2C]">문제 유형을 선택해주세요</h3>
-                <p className="text-sm text-[#6B7280]">원하는 문제 유형을 선택하면<br />지문 입력 및 문제생성 기능이 활성됩니다.</p>
-              </div>
-            </div>
-          )}
-        </div>
+        <MainContent
+          selectedTypes={selectedTypes}
+          isLoading={isLoading}
+          progress={progress}
+          handleAddPassage={handleAddPassage}
+          handleRemovePassage={handleRemovePassage}
+          handleTextChange={handleTextChange}
+          handleTitleChange={handleTitleChange}
+          handlePasteValues={handlePasteValues}
+          handleRemoveType={handleRemoveType}
+          handleRemoveAllTypes={handleRemoveAllTypes}
+          handleGenerateAll={handleGenerateAll}
+          handleDownloadDoc={handleDownloadDoc} // Using without passing format
+          difficulty={difficulty}
+          complexity={complexity}
+          handleDifficultyChange={handleDifficultyChange}
+          handleComplexityChange={handleComplexityChange}
+          handleStopGeneration={handleStopGeneration}
+          generatedQuestions={generatedQuestions}
+          onOrderModeChange={handleOrderModeChange}
+          onSummaryModeChange={handleSummaryModeChange}
+          onChoiceLanguageChange={handleChoiceLanguageChange}
+          onManualModeChange={handleManualModeChange}
+          onManualMarkersChange={handleManualMarkersChange}
+          onCombinedTypesChange={handleCombinedTypesChange}
+          onParaphraseBlankChange={handleParaphraseBlankChange}
+          onSubTypeChange={handleSubTypeChange}
+          onRefreshQuestion={handleRefreshQuestion}
+          onReorderTypes={(from, to) =>
+            setSelectedTypes((prev) => {
+              const next = [...prev];
+              const [moved] = next.splice(from, 1);
+              next.splice(to, 0, moved);
+              return next;
+            })
+          }
+        />
       </div>
 
       {/* Vocab Modal */}
@@ -162,6 +231,25 @@ export const QuestionGenerator = () => {
           </div>
         </div>
       )}
+
+      {/* Mock Exam Generator */}
+      <MockExamGenerator 
+        isOpen={showMockExamModal} 
+        onClose={() => setShowMockExamModal(false)} 
+      />
+
+      {/* Questions Storage */}
+      <QuestionsStorage
+        isOpen={showStorageModal}
+        onClose={() => setShowStorageModal(false)}
+      />
+
+      {/* Save Questions Dialog */}
+      <SaveQuestionsDialog
+        isOpen={showSaveDialog}
+        onClose={() => setShowSaveDialog(false)}
+        questions={generatedQuestions}
+      />
     </QuestionProvider>
   );
 };
