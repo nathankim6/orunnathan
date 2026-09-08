@@ -1,5 +1,6 @@
 # 동형 모의고사 생성기를 GitHub Pages 로 올린다.
-# 저장소 전체가 아니라 이 한 파일만 site 로 묶는다 — 나머지는 웹으로 열리지 않는다.
+# Pages 는 gh-pages 브랜치를 소스로 읽는다. 그 브랜치에는 생성기 한 파일만 둔다 —
+# 저장소의 나머지는 웹으로 열리지 않는다.
 name: Pages
 
 on:
@@ -11,36 +12,41 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  publish:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
-      - name: 올릴 파일만 모은다
+      - name: 생성기를 gh-pages 로 올린다
         run: |
-          mkdir -p _site
-          cp public/mocktest-generator.html _site/index.html
-          cp public/mocktest-generator.html _site/mocktest-generator.html
+          set -e
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - uses: actions/configure-pages@v5
-        with:
-          enablement: true
+          # 작업트리를 갈아엎지 않고 배관으로 커밋을 짓는다 — 저장소가 크다
+          blob=$(git hash-object -w public/mocktest-generator.html)
+          tree=$(printf '100644 blob %s\tindex.html\n100644 blob %s\tmocktest-generator.html\n' "$blob" "$blob" | git mktree)
 
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
+          git fetch --no-tags --depth=1 origin gh-pages || true
+          parent=$(git rev-parse -q --verify FETCH_HEAD || true)
 
-      - id: deploy
-        uses: actions/deploy-pages@v4
+          if [ -n "$parent" ] && [ "$(git rev-parse "$parent^{tree}")" = "$tree" ]; then
+            echo "바뀐 것이 없습니다 — 그대로 둡니다."
+            exit 0
+          fi
+
+          msg="동형 모의고사 생성기 ${GITHUB_SHA:0:7}"
+          if [ -n "$parent" ]; then
+            commit=$(git commit-tree "$tree" -p "$parent" -m "$msg")
+          else
+            commit=$(git commit-tree "$tree" -m "$msg")
+          fi
+          git push origin "$commit:refs/heads/gh-pages"
+          echo "https://nathankim6.github.io/orunnathan/ 로 올렸습니다."
