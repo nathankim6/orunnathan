@@ -4,8 +4,9 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-// Anthropic Claude API 직접 호출 — Claude Sonnet 5
-const MODEL = 'claude-sonnet-5';
+// Anthropic Claude API 직접 호출 — Claude Opus 5
+// (화면 표기는 src/lib/aiModel.ts 와 맞춰 둔다)
+const MODEL = 'claude-opus-5';
 const ANTHROPIC_URL = 'https://api.anthropic.com/v1/messages';
 const ANTHROPIC_VERSION = '2023-06-01';
 

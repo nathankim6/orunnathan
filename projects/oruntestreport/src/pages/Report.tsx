@@ -636,7 +636,9 @@ const Report: React.FC = () => {
                       themeColors={themeColors}
                     />
                   )}
-                  {(reportData.killerTop5?.length ?? 0) === 0 && (
+                  {/* 킬러 TOP5 가 있으면 숨기던 조건을 없앴다. AI 가 TOP5 를 채우는
+                      정상 경로에서는 잘라낸 문항 이미지가 리포트에 아예 안 나왔다. */}
+                  {(reportData.hitQuestionPhotos?.length ?? 0) > 0 && (
                     <HitQuestionPhotos 
                       photos={reportData.hitQuestionPhotos}
                       themeColors={themeColors}

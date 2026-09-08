@@ -7,6 +7,7 @@ import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
 import { FileUp, Sparkles, Trash2, Check, Loader2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
+import { EXAM_AI_MODEL_LABEL, EXAM_AI_VENDOR } from '@/lib/aiModel';
 import claudeLogoAsset from '@/assets/claude-logo.png.asset.json';
 const claudeLogo = claudeLogoAsset.url;
 
@@ -351,7 +352,7 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
 
       setStage('analyzing');
       const hasOriginal = Boolean(originalPassages?.trim());
-      mark('analyzing', 32, 'Claude Sonnet 5(Anthropic)에 시험지를 전송했습니다.');
+      mark('analyzing', 32, `${EXAM_AI_MODEL_LABEL}(${EXAM_AI_VENDOR})에 시험지를 전송했습니다.`);
       startRamp(
         32,
         hasOriginal ? 88 : 92,
@@ -530,6 +531,14 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
   };
 
   /** 크롭 영역(페이지 · 좌우 · 상하)을 갱신하고 미리보기를 즉시 다시 생성 */
+  /**
+   * yStart/yEnd 슬라이더용 어댑터.
+   * 슬라이더가 존재하지 않는 updateRange 를 부르고 있어 만지는 순간 죽었다.
+   * (ReferenceError — tsconfig.app.json 기준 TS2304 2건)
+   */
+  const updateRange = (id: string, key: 'yStart' | 'yEnd', value: number) =>
+    updateRegion(id, { [key]: value });
+
   const updateRegion = (
     id: string,
     patch: Partial<Pick<CropCandidate, 'yStart' | 'yEnd' | 'xStart' | 'xEnd'>> & { page?: number },
@@ -652,7 +661,7 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
                 style={{ animation: 'ai-logo-spin 8s linear infinite' }}
               />
             </span>
-            AI Configuration: Claude Sonnet 5 by Anthropic 
+            AI Configuration: {EXAM_AI_MODEL_LABEL} by {EXAM_AI_VENDOR} 
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full rounded-full bg-[#F5C64F] opacity-75 animate-ping" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#F5C64F]" />
