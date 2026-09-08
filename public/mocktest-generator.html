@@ -196,7 +196,8 @@ table.plan [contenteditable]:focus-visible,
 .st-tail .lbl,
 .seq-eyebrow,
 .map-label > span:first-child,
-.api-card::before {
+.api-card::before,
+.vault-auth::before {
   font-size: var(--fs-eyebrow); line-height: var(--lh-eyebrow);
   letter-spacing: var(--ls-eyebrow); text-transform: uppercase;
   font-weight: var(--w-med); color: var(--n8);
@@ -313,7 +314,7 @@ table.plan [contenteditable]:focus-visible,
 
 /* L1 카드 — 그림자 없음. 층은 명도 한 칸(1.03:1)과 1px 알파 괘선으로만 만든다 */
 .panel, .opts, .how, .spec, .seq-frame, .statbox, .stats, .history,
-.review-room, .api-card, .scan-help, .redo-box, .sheet-stage, .banner, .filelist li {
+.review-room, .api-card, .vault-auth, .scan-help, .redo-box, .sheet-stage, .banner, .filelist li {
   background: var(--n0);
   border: var(--line-w) solid var(--line-2);
   border-radius: var(--r4);
@@ -580,11 +581,99 @@ textarea:focus, input:focus { border-color: var(--line-4); outline: 2px solid va
 .api-card .st { margin: var(--s2) 0 0; font-size: var(--fs-meta); line-height: var(--lh-meta); color: var(--n8); }
 .api-card .st.ok { color: var(--pos); }
 .api-card .st.bad { color: var(--neg); }
-.api-card .api-model { margin-top: var(--s3); max-width: 360px; }
-.api-card .api-engine { margin: var(--s3) 0 var(--s3); max-width: 360px; }
-.api-card .api-keep { margin-top: var(--s3); max-width: 360px; }
-.api-card .api-provider { margin: var(--s3) 0; max-width: 360px; }
-.api-card .oa-model { margin-top: var(--s3); display: flex; align-items: center; gap: var(--s2); flex-wrap: wrap; }
+.api-card .api-model { max-width: 360px; }
+.api-card .api-engine { max-width: 360px; }
+.api-card .api-keep { max-width: 360px; flex: 1 1 300px; }
+.api-card .oa-model { display: flex; align-items: center; gap: var(--s2); flex-wrap: wrap; }
+/* 카드 안의 줄들은 한 리듬으로만 벌어진다 — 층층이 쌓인 다섯 덩어리를 한 덩어리로 */
+.api-card .api-row { margin-top: var(--s3); }
+.api-card .api-row.split { display: flex; align-items: center; gap: var(--s3); flex-wrap: wrap; }
+
+/* ── 엔진 타일 — 이 화면에서 브랜드 색이 허용되는 유일한 곳 ──────────── */
+.api-card .prov { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s3); margin: var(--s4) 0; }
+.api-card .prov-tile {
+  --pv-a:#c9ced6; --pv-b:#eef0f3; --pv-ink:var(--n7); --pv-wash:var(--n0);
+  position: relative; overflow: hidden; isolation: isolate;
+  display: flex; align-items: center; gap: var(--s3);
+  min-height: 68px; padding: var(--s3) var(--s4);
+  border: var(--line-w) solid var(--line-2); border-radius: var(--r4);
+  background: var(--n0); color: var(--n9); cursor: pointer; text-align: left;
+  transition: border-color var(--d2) var(--e-out), transform var(--d2) var(--e-emph),
+              box-shadow var(--d3) var(--e-out), color var(--d2) var(--e-out);
+}
+.api-card .prov-tile:hover { border-color: var(--line-3); transform: translateY(-1px); box-shadow: var(--sh-pop); }
+.api-card .prov-tile:active { transform: translateY(0) scale(.99); }
+.api-card .prov-tile[data-v="anthropic"] { --pv-a:#d97757; --pv-b:#f6c9b4; --pv-ink:#b4552f; --pv-wash:#fffaf7; }
+.api-card .prov-tile[data-v="openai"]    { --pv-a:#10a37f; --pv-b:#8fe6cd; --pv-ink:#0b7a5f; --pv-wash:#f7fdfb; }
+.api-card .prov-tile.on {
+  border-color: transparent; color: var(--ink);
+  transform: translateY(-1px); box-shadow: var(--sh-pop);
+}
+/* 도는 그러데이션 테두리 — 바깥 원판이 돌고, 안쪽 판이 그 위를 덮어 1px 만 남긴다 */
+.api-card .prov-tile.on::before {
+  content: ""; position: absolute; z-index: -2;
+  top: 50%; left: 50%; width: 190%; aspect-ratio: 1; translate: -50% -50%;   /* 정사각이라야 돌아도 모서리가 빈다 */
+  background: conic-gradient(var(--pv-a), var(--pv-b), var(--pv-a), var(--pv-b), var(--pv-a));
+  animation: provSpin 5.5s var(--e-linear) infinite;
+}
+.api-card .prov-tile.on::after {
+  content: ""; position: absolute; inset: 1.5px; z-index: -1;
+  border-radius: calc(var(--r4) - 1px); background: var(--pv-wash);
+}
+/* 대각선 빛 한 줄 — hover 와 선택 순간에만 지나간다 */
+.api-card .prov-sheen { position: absolute; inset: 0; z-index: 1; overflow: hidden; border-radius: inherit; pointer-events: none; }
+.api-card .prov-sheen::before {
+  content: ""; position: absolute; top: -50%; bottom: -50%; left: -70%; width: 38%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.9), transparent);
+  transform: skewX(-18deg);
+}
+.api-card .prov-tile:hover .prov-sheen::before,
+.api-card .prov-tile.on .prov-sheen::before { animation: provSheen 900ms var(--e-out); }
+.api-card .prov-mark {
+  position: relative; z-index: 2; flex: none;
+  width: 34px; height: 34px; display: grid; place-items: center;
+}
+.api-card .prov-mark svg { width: 100%; height: 100%; display: block; fill: var(--n7); transition: fill var(--d2) var(--e-out); }
+.api-card .prov-tile.on .prov-mark svg { fill: var(--pv-a); }
+.api-card .prov-tile.on .prov-mark.claude svg { animation: markPop 520ms var(--e-emph), burstSpin 18s var(--e-linear) 520ms infinite; }
+.api-card .prov-tile.on .prov-mark.gpt svg { animation: markPop 520ms var(--e-emph), knotBreathe 3.8s var(--e-inout) 520ms infinite; }
+.api-card .prov-txt { position: relative; z-index: 2; display: flex; flex-direction: column; min-width: 0; }
+.api-card .prov-txt b {
+  font-size: var(--fs-ts); line-height: var(--lh-ts); letter-spacing: var(--ls-ts);
+  font-weight: var(--w-semi); color: inherit;
+}
+.api-card .prov-txt i {
+  font-style: normal; font-size: var(--fs-eyebrow); line-height: var(--lh-eyebrow);
+  letter-spacing: var(--ls-eyebrow); text-transform: uppercase; font-weight: var(--w-med); color: var(--n8);
+}
+.api-card .prov-tile.on .prov-txt i { color: var(--pv-ink); }
+.api-card .prov-tick {
+  position: relative; z-index: 2; margin-left: auto; flex: none;
+  width: 18px; height: 18px; border-radius: var(--r-full);
+  border: var(--line-w) solid var(--line-2); background: var(--n0);
+  transition: background var(--d2) var(--e-out), border-color var(--d2) var(--e-out);
+}
+.api-card .prov-tile.on .prov-tick {
+  border-color: transparent; background: var(--pv-a);
+  animation: tickPop 420ms var(--e-emph);
+}
+.api-card .prov-tile.on .prov-tick::after {
+  content: ""; position: absolute; left: 5px; top: 3px; width: 5px; height: 9px;
+  border: 2px solid #fff; border-top: 0; border-left: 0; transform: rotate(42deg);
+}
+@keyframes provSpin { to { rotate: 1turn; } }
+@keyframes provSheen { from { left: -70%; } to { left: 130%; } }
+@keyframes markPop { 0% { transform: scale(.6) rotate(-40deg); opacity: .4; } 60% { transform: scale(1.14) rotate(6deg); } 100% { transform: scale(1) rotate(0); } }
+@keyframes burstSpin { to { transform: rotate(1turn); } }
+@keyframes knotBreathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.09); } }
+@keyframes tickPop { 0% { transform: scale(0); } 62% { transform: scale(1.2); } 100% { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .api-card .prov-tile.on::before,
+  .api-card .prov-sheen::before,
+  .api-card .prov-tile.on .prov-mark svg,
+  .api-card .prov-tile.on .prov-tick { animation: none; }
+  .api-card .prov-tile.on::before { rotate: none; background: var(--pv-a); }
+}
 .api-card .oa-model label { display: inline; margin: 0; font-size: var(--fs-meta); font-weight: var(--w-reg); color: var(--n9); }
 .api-card .oa-model input { width: 220px; padding: 9px var(--s3); font-size: var(--fs-meta); }
 .api-card .oa-model .btn { padding: 9px var(--s3); font-size: var(--fs-meta); white-space: nowrap; }
@@ -595,16 +684,89 @@ textarea:focus, input:focus { border-color: var(--line-4); outline: 2px solid va
   background: var(--neg-surface); border: 1px solid var(--neg-line); border-radius: var(--r3);
   font-size: var(--fs-small); line-height: var(--lh-small); color: var(--neg);
 }
-.api-card .api-safe {
-  margin: var(--s3) 0 0; font-size: var(--fs-micro); line-height: 1.65; color: var(--n8);
-}
-.api-card .api-safe b { color: var(--n10); font-weight: var(--w-med); }
-.api-card .api-probe { margin-top: var(--s3); display: flex; align-items: center; gap: var(--s3); flex-wrap: wrap; }
+.api-card .api-probe { display: flex; align-items: center; gap: var(--s3); flex-wrap: wrap; }
 .api-card .api-probe .btn { padding: 9px var(--s3); font-size: var(--fs-meta); }
 .api-card .probe-out { font-size: var(--fs-meta); line-height: var(--lh-meta); color: var(--n8); min-width: 0; }
 .api-card .probe-out.ok { color: var(--pos); }
 .api-card .probe-out.bad { color: var(--neg); }
 .api-card #apiKeyBody[hidden] { display: none; }
+
+/* ═════════ 저장소 — 계정에 담아 두는 시험지 ═════════ */
+.console .vault-btn {
+  display: inline-flex; align-items: center; gap: 6px; flex: none;
+  height: var(--h-sm); padding: 0 var(--s3);
+  border: var(--line-w) solid var(--line-2); border-radius: var(--r2);
+  background: var(--n0); color: var(--n9); cursor: pointer;
+  font-size: var(--fs-meta); font-weight: var(--w-med); white-space: nowrap;
+  transition: border-color var(--d1) var(--e-out), color var(--d1) var(--e-out);
+}
+.console .vault-btn:hover { border-color: var(--line-3); color: var(--ink); }
+.console .vault-btn svg { width: 15px; height: 15px; flex: none; }
+.console .vault-btn .n {
+  min-width: 18px; height: 18px; padding: 0 5px; border-radius: var(--r-full);
+  background: var(--ink); color: var(--n0);
+  font-size: 11px; line-height: 18px; font-variant-numeric: tabular-nums;
+}
+.console .vault-btn .dot {
+  width: 6px; height: 6px; border-radius: var(--r-full); background: var(--y);
+  box-shadow: 0 0 0 3px var(--y-halo);
+}
+/* 출제 중에는 저장소로 못 빠져나간다 — 그 사이엔 뒤로가기가 잠기기 때문 */
+body.busy .console .vault-btn { opacity: .4; pointer-events: none; }
+@media (max-width: 720px) { .console .vault-btn .lb { display: none; } }
+
+.vault-auth { margin: var(--s6) 0 0; padding: var(--s5); position: relative; }
+.vault-auth::before { content: "SIGN IN"; display: block; margin-bottom: var(--s3); }
+.vault-auth .k {
+  font-size: var(--fs-ts); line-height: var(--lh-ts); letter-spacing: var(--ls-ts);
+  font-weight: var(--w-semi); color: var(--ink); margin-bottom: var(--s1);
+}
+.vault-auth .d { font-size: var(--fs-meta); line-height: var(--lh-meta); color: var(--n8); margin-bottom: var(--s4); }
+.vault-auth .row { display: flex; gap: var(--s2); margin-bottom: var(--s2); }
+.vault-auth .row input { flex: 1; min-width: 0; }
+.vault-auth .row .btn { white-space: nowrap; }
+.vault-auth .st { margin: var(--s2) 0 0; font-size: var(--fs-meta); line-height: var(--lh-meta); color: var(--n8); }
+.vault-auth .st.ok { color: var(--pos); }
+.vault-auth .st.bad { color: var(--neg); }
+.vault-auth .alt { margin-top: var(--s3); display: flex; align-items: center; gap: var(--s3); flex-wrap: wrap; }
+
+.vault-head { display: flex; align-items: center; gap: var(--s3); flex-wrap: wrap; margin-top: var(--s6); }
+.vault-head .who { font-size: var(--fs-meta); color: var(--n8); white-space: nowrap; }
+.vault-head .who b { color: var(--n10); font-weight: var(--w-med); }
+.vault-head .find { flex: 1 1 200px; min-width: 0; padding: 9px var(--s3); font-size: var(--fs-meta); }
+.vault-head .btn { padding: 9px var(--s3); font-size: var(--fs-meta); white-space: nowrap; }
+
+.vault-list { list-style: none; margin: var(--s4) 0 0; padding: 0; border-top: 1px solid var(--line-2); }
+.vault-list li {
+  display: flex; align-items: center; gap: var(--s3);
+  padding: var(--s3) var(--s1); border-bottom: 1px solid var(--line-1);
+  animation: vaultRow var(--d3) var(--e-emph) both;
+}
+.vault-list li:hover { background: var(--n2); }
+.vault-list .t { flex: 1; min-width: 0; }
+.vault-list .t b {
+  display: block; font-size: var(--fs-small); line-height: var(--lh-small);
+  font-weight: var(--w-med); color: var(--ink);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.vault-list .t span {
+  display: block; font-size: var(--fs-micro); line-height: var(--lh-micro); color: var(--n8);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.vault-list .ops { display: flex; gap: var(--s1); flex: none; }
+.vault-list .ops button {
+  height: var(--h-xs); padding: 0 var(--s3); border-radius: var(--r2);
+  border: var(--line-w) solid var(--line-2); background: var(--n0);
+  font-size: var(--fs-micro); font-weight: var(--w-med); color: var(--n9);
+  cursor: pointer; white-space: nowrap;
+  transition: border-color var(--d1) var(--e-out), color var(--d1) var(--e-out);
+}
+.vault-list .ops button:hover { border-color: var(--line-3); color: var(--ink); }
+.vault-list .ops button.warn:hover { border-color: var(--neg-line); color: var(--neg); }
+.vault-note { margin: var(--s4) 0 0; font-size: var(--fs-meta); line-height: var(--lh-meta); color: var(--n8); }
+.vault-note.bad { color: var(--neg); }
+@keyframes vaultRow { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .vault-list li { animation: none; } }
 
 /* ═════════ 하단 고정 바 — 유리 두 겹 중 둘 ═════════ */
 .cta-bar {
@@ -1726,7 +1888,11 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     <span class="step" data-step="2"></span><span class="step-rule"></span>
     <span class="step" data-step="3"></span>
   </div>
-  <div class="state"><span class="build" id="buildTag">2026-09-08 02:31</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
+  <button type="button" class="vault-btn" id="vaultBtn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v13H3z"/><path d="M2 4h20v3H2z"/><path d="M10 11h4"/></svg>
+    <span class="lb">저장소</span><i class="n" id="vaultCount" hidden>0</i>
+  </button>
+  <div class="state"><span class="build" id="buildTag">2026-09-08 12:28</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
 </div>
 
 <!-- 화면 0 · 시작 -->
@@ -1755,10 +1921,20 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   </div>
 
   <div class="api-card" id="apiCard" hidden>
-    <div class="k" id="apiTitle">어느 API 로 실행할까요</div>
-    <div class="seg api-provider" id="apiProviderSeg">
-      <button type="button" data-v="anthropic">Anthropic</button>
-      <button type="button" data-v="openai">OpenAI</button>
+    <div class="k" id="apiTitle">어느 엔진으로 실행할까요</div>
+    <div class="prov" id="apiProviderSeg" role="radiogroup" aria-label="실행 엔진">
+      <button type="button" class="prov-tile" data-v="anthropic" role="radio" aria-checked="false">
+        <span class="prov-sheen" aria-hidden="true"></span>
+        <span class="prov-mark claude" aria-hidden="true"><svg viewBox="0 0 24 24" role="img"><path d="M13.85 12Q12.555 5.986 12 2.3Q11.445 5.986 10.15 12ZM13.556 13Q15.249 7.971 16.487 5.018Q14.315 7.371 10.444 11ZM12.769 13.683Q17.532 10.084 20.551 8.095Q17.071 9.074 11.231 10.317ZM11.737 13.831Q17.199 13.308 20.512 13.224Q17.357 12.209 12.263 10.169ZM10.789 13.398Q16.182 16.358 19.331 18.352Q16.909 15.519 13.211 10.602ZM10.225 12.521Q12.9 17.034 14.31 19.868Q13.965 16.722 13.775 11.479ZM10.225 11.479Q9.808 17.495 9.324 21.115Q10.873 17.808 13.775 12.521ZM10.789 10.602Q7.654 15.032 5.576 17.566Q8.381 15.871 13.211 13.398ZM11.737 10.169Q6.03 12.298 2.498 13.366Q6.188 13.396 12.263 13.831ZM12.769 10.317Q7.55 9.357 4.45 8.552Q7.088 10.367 11.231 13.683ZM13.556 11Q9.316 6.797 6.918 4.092Q8.382 7.397 10.444 13Z"/></svg></span>
+        <span class="prov-txt"><b>Claude</b><i>Anthropic</i></span>
+        <span class="prov-tick" aria-hidden="true"></span>
+      </button>
+      <button type="button" class="prov-tile" data-v="openai" role="radio" aria-checked="false">
+        <span class="prov-sheen" aria-hidden="true"></span>
+        <span class="prov-mark gpt" aria-hidden="true"><svg viewBox="0 0 24 24" role="img"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg></span>
+        <span class="prov-txt"><b>GPT</b><i>OpenAI</i></span>
+        <span class="prov-tick" aria-hidden="true"></span>
+      </button>
     </div>
     <div class="d" id="apiDesc"></div>
     <div id="apiKeyBody">
@@ -1768,26 +1944,23 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
         <button type="button" class="btn link" id="apiKeyClear">지우기</button>
       </div>
       <p class="st" id="apiStatus"></p>
-      <div class="seg api-keep" id="apiKeepSeg">
-        <button type="button" data-v="browser">이 브라우저에 저장</button>
-        <button type="button" data-v="session">창을 닫으면 지움</button>
+      <div class="api-row split">
+        <div class="seg api-keep" id="apiKeepSeg">
+          <button type="button" data-v="browser">이 브라우저에 저장</button>
+          <button type="button" data-v="session">창을 닫으면 지움</button>
+        </div>
+        <div class="api-probe">
+          <button type="button" class="btn ghost" id="apiTestBtn">연결 확인</button>
+          <span class="probe-out" id="apiTestOut"></span>
+        </div>
       </div>
-      <div class="seg api-model" id="apiModelSeg"><button type="button" class="on" data-v="opus">Opus 5 · 정밀</button><button type="button" data-v="sonnet">Sonnet 5 · 빠르고 저렴</button></div>
-      <div class="oa-model" id="oaModelRow" hidden>
+      <div class="seg api-model api-row" id="apiModelSeg"><button type="button" class="on" data-v="opus">Opus 5 · 정밀</button><button type="button" data-v="sonnet">Sonnet 5 · 빠르고 저렴</button></div>
+      <div class="oa-model api-row" id="oaModelRow" hidden>
         <label for="oaModel">모델</label>
         <input type="text" id="oaModel" list="oaModelList" spellcheck="false" autocomplete="off" placeholder="gpt-5.6-terra">
         <datalist id="oaModelList"></datalist>
         <button type="button" class="btn ghost" id="oaListBtn">모델 목록 불러오기</button>
         <span class="oa-note" id="oaModelNote"></span>
-      </div>
-      <p class="api-safe">
-        키는 이 브라우저에만 남고 <b>api.anthropic.com</b> 한 곳으로만 보내요. 저장한 작업 내용·이력에는 들어가지 않아요.
-        여럿이 쓰는 컴퓨터라면 ‘창을 닫으면 지움’을 고르세요.
-        이 도구 전용 키를 따로 발급하고 <b>console.anthropic.com</b> 에서 한도(Spend limit)를 걸어 두면, 키가 새더라도 피해가 그 한도 안에서 멈춰요.
-      </p>
-      <div class="api-probe">
-        <button type="button" class="btn ghost" id="apiTestBtn">연결 확인</button>
-        <span class="probe-out" id="apiTestOut"></span>
       </div>
     </div>
   </div>
@@ -2014,12 +2187,45 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   <div class="cta-bar"><div class="in">
     <button type="button" class="btn block" id="docxBtn">워드로 저장</button>
     <div class="cta-links">
+      <button type="button" id="vaultSaveBtn">저장소에 담기</button>
       <button type="button" id="htmlBtn">HTML 저장</button>
       <button type="button" id="pdfBtn">인쇄 / PDF</button>
       <button type="button" id="copyBtn">본문 복사</button>
       <button type="button" id="resetBtn">처음부터</button>
     </div>
   </div></div>
+</section>
+
+<!-- 화면 4 · 저장소 -->
+<section class="screen wide" data-s="vault">
+  <h1 class="h-title">저장소</h1>
+  <p class="h-sub">만든 시험지를 계정에 담아 둬요. 다른 컴퓨터에서 로그인해도 그대로 열려요.</p>
+
+  <div class="vault-auth" id="vaultAuth">
+    <div class="k">옳은영어 계정으로 로그인</div>
+    <div class="d">담아 둔 시험지는 로그인한 계정에만 보여요. 다른 계정에서는 열리지 않아요.</div>
+    <div class="row"><input type="email" id="vaultEmail" placeholder="이메일" autocomplete="username" spellcheck="false"></div>
+    <div class="row">
+      <input type="password" id="vaultPw" placeholder="비밀번호" autocomplete="current-password">
+      <button type="button" class="btn" id="vaultLogin">로그인</button>
+    </div>
+    <p class="st" id="vaultAuthSt"></p>
+    <div class="alt">
+      <button type="button" class="btn ghost" id="vaultSignup">계정 만들기</button>
+      <span class="st" id="vaultAltSt"></span>
+    </div>
+  </div>
+
+  <div id="vaultBody" hidden>
+    <div class="vault-head">
+      <span class="who" id="vaultWho"></span>
+      <input type="search" class="find" id="vaultFind" placeholder="제목으로 찾기" spellcheck="false">
+      <button type="button" class="btn ghost" id="vaultReload">새로고침</button>
+      <button type="button" class="btn link" id="vaultLogout">로그아웃</button>
+    </div>
+    <ul class="vault-list" id="vaultList"></ul>
+    <p class="vault-note" id="vaultNote"></p>
+  </div>
 </section>
 
 <!-- 화면과 무관하게 아래에 뜨는 오류 -->
@@ -3816,7 +4022,11 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     const refresh = () => {
       const oa = provider() === "openai";
       const k = currentKey(), btn = $("analyzeBtn");
-      provSeg.querySelectorAll("button").forEach(b => b.classList.toggle("on", b.dataset.v === provider()));
+      provSeg.querySelectorAll("button").forEach(b => {
+        const mine = b.dataset.v === provider();
+        b.classList.toggle("on", mine);
+        b.setAttribute("aria-checked", mine ? "true" : "false");
+      });
       modelSeg.hidden = oa;                       // Opus/Sonnet 선택은 Anthropic 일 때만
       oaRow.hidden = !oa;
       if (oa && document.activeElement !== oaInp) oaInp.value = oaModel();
@@ -4990,6 +5200,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
       renderUsage();
       saveSession({ output: cleanOutputHtml(), calls });
       pushHistory();
+      vaultAutoSave();
       const flags = reviewFlags();
       toast(flags.length ? "미합의 " + flags.length + "건 — " + flags[0]
             : rv.fixed ? "합의로 " + rv.fixed + "문항을 조정했습니다 — 검수실에서 결론을 확인하세요"
@@ -5838,6 +6049,273 @@ list.map(disputeBlock).join("\n");
   window.addEventListener("beforeunload", (e) => { if (running) { e.preventDefault(); e.returnValue = ""; } });
 
   // ---------- 최근 작업 이력 (최대 5개) ----------
+  // ---------- 저장소 (Supabase) ----------
+  // 행은 로그인한 계정에만 보인다 — RLS(user_id = auth.uid()) 가 서버에서 막는다.
+  // 아래 anon 키는 공개용이다. 이 키만으로는 남의 시험지를 한 줄도 읽지 못한다.
+  // API 키와 달리 이 값은 브라우저에 박아 두는 게 정상이고, 시험지 본문 말고는 아무것도 나가지 않는다.
+  const SB_URL = "https://jpanpwbdlhsxnyaldddm.supabase.co";
+  const SB_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpwYW5wd2JkbGhzeG55YWxkZGRtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQ4MDI2MzgsImV4cCI6MjA1MDM3ODYzOH0.lyofnzjEvGs0ZeAHmAK6mz_1ysNYryr70-eYbSpjEXc";
+  const VAULT_TABLE = "mock_exam_papers";
+  const VAULT_SESSION_KEY = "orun_vault_session";
+  const VAULT_COLS = "id,title,note,question_count,page_count,provider,model,created_at,updated_at";
+
+  let vaultSess = null;
+  try { vaultSess = JSON.parse(localStorage.getItem(VAULT_SESSION_KEY) || "null"); } catch (_) {}
+  let vaultRows = [];        // 목록 캐시
+  let vaultRowId = null;     // 지금 화면의 시험지가 저장소에서 차지한 자리
+  let vaultRowSession = "";  // 그 자리가 어느 분석 회차의 것인지 — 새로 분석하면 새 줄이 된다
+  let vaultBusy = false;
+
+  function vaultOn() { return !!(vaultSess && vaultSess.access_token); }
+  function setVaultSess(v) {
+    vaultSess = v;
+    try { v ? localStorage.setItem(VAULT_SESSION_KEY, JSON.stringify(v)) : localStorage.removeItem(VAULT_SESSION_KEY); }
+    catch (_) {}
+  }
+  function keepVaultSess(j) {
+    if (!j || !j.access_token) return null;
+    setVaultSess({
+      access_token: j.access_token,
+      refresh_token: j.refresh_token || "",
+      expires_at: j.expires_at ? j.expires_at * 1000 : Date.now() + (j.expires_in || 3600) * 1000,
+      email: (j.user && j.user.email) || (vaultSess && vaultSess.email) || "",
+    });
+    return vaultSess;
+  }
+  async function sbAuth(path, body) {
+    const r = await fetch(SB_URL + "/auth/v1/" + path, {
+      method: "POST",
+      headers: { apikey: SB_ANON, "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok) throw new Error(j.error_description || j.msg || j.message || ("실패했어요 (" + r.status + ")"));
+    return j;
+  }
+  async function vaultToken() {
+    if (!vaultOn()) throw new Error("저장소에 로그인해 주세요");
+    if (Date.now() < vaultSess.expires_at - 60000) return vaultSess.access_token;
+    try {
+      keepVaultSess(await sbAuth("token?grant_type=refresh_token", { refresh_token: vaultSess.refresh_token }));
+      return vaultSess.access_token;
+    } catch (_) {
+      setVaultSess(null); paintVault();
+      throw new Error("로그인이 만료됐어요 — 다시 로그인해 주세요");
+    }
+  }
+  async function sbRest(path, opts) {
+    opts = opts || {};
+    const tok = await vaultToken();
+    const head = { apikey: SB_ANON, Authorization: "Bearer " + tok, "Content-Type": "application/json" };
+    Object.keys(opts.headers || {}).forEach(k => { head[k] = opts.headers[k]; });
+    const r = await fetch(SB_URL + "/rest/v1/" + path, {
+      method: opts.method || "GET", headers: head,
+      body: opts.body ? JSON.stringify(opts.body) : undefined,
+    });
+    if (!r.ok) {
+      let msg = "";
+      try { const j = JSON.parse(await r.text()); msg = j.message || j.hint || ""; } catch (_) {}
+      throw new Error("저장소 오류 (" + r.status + ")" + (msg ? " — " + msg : ""));
+    }
+    if (r.status === 204) return null;
+    const t = await r.text();
+    return t ? JSON.parse(t) : null;
+  }
+
+  // ── 지금 화면의 시험지를 한 줄로 ─────────────────────────────────────
+  function vaultPayload() {
+    const html = cleanOutputHtml();
+    if (!html) return null;
+    const info = (analysis && analysis.exam_info) || {};
+    const qn = docUnits.filter(u => u.classList && u.classList.contains("question")).length;
+    const pg = $("examOutput").querySelectorAll(".page").length;
+    const model = provider() === "openai" ? oaModel() : apiModelId();
+    return {
+      title: String(info.title || "이름 없는 시험").slice(0, 160),
+      note: String(info.summary || "").slice(0, 400) || null,
+      question_count: qn, page_count: pg,
+      provider: providerName(), model: model,
+      paper_html: html,
+      meta: { analysis: analysis, pipe: pipe, calls: calls, sessionId: sessionId },
+    };
+  }
+  async function vaultStore(quiet) {
+    const row = vaultPayload();
+    if (!row) { if (!quiet) toast("먼저 시험지를 만들어 주세요", "err"); return null; }
+    if (!vaultOn()) {
+      if (!quiet) { toast("저장소에 로그인하면 담을 수 있어요"); showScreen("vault"); }
+      return null;
+    }
+    const reuse = vaultRowId && vaultRowSession === sessionId;
+    const saved = reuse
+      ? await sbRest(VAULT_TABLE + "?id=eq." + encodeURIComponent(vaultRowId) + "&select=" + VAULT_COLS,
+                     { method: "PATCH", body: row, headers: { Prefer: "return=representation" } })
+      : await sbRest(VAULT_TABLE + "?select=" + VAULT_COLS,
+                     { method: "POST", body: row, headers: { Prefer: "return=representation" } });
+    const one = Array.isArray(saved) ? saved[0] : saved;
+    if (one && one.id) {
+      vaultRowId = one.id; vaultRowSession = sessionId;
+      const brief = {};                          // 목록에 쓰는 칸만 추려 캐시를 그 자리에서 맞춘다
+      VAULT_COLS.split(",").forEach(k => { brief[k] = one[k]; });
+      const at = vaultRows.findIndex(x => x.id === one.id);
+      if (at >= 0) vaultRows[at] = brief; else vaultRows.unshift(brief);
+      paintVault();
+    }
+    if (!quiet) toast("저장소에 담았어요 — 상단 ‘저장소’에서 다시 열 수 있어요");
+    return one;
+  }
+  // 시험지가 완성되면 조용히 담는다. 실패해도 화면 흐름은 건드리지 않는다.
+  function vaultAutoSave() {
+    if (!vaultOn()) return;
+    vaultStore(true)
+      .then(one => { if (one) toast("저장소에 담았어요"); })
+      .catch(e => toast(e.message, "err"));
+  }
+
+  // ── 화면 ────────────────────────────────────────────────────────────
+  function vaultWhen(iso) {
+    const d = new Date(iso);
+    if (isNaN(d)) return "";
+    return d.getFullYear() + "." + String(d.getMonth() + 1).padStart(2, "0") + "." +
+           String(d.getDate()).padStart(2, "0") + " " +
+           String(d.getHours()).padStart(2, "0") + ":" + String(d.getMinutes()).padStart(2, "0");
+  }
+  function paintVault() {
+    const on = vaultOn();
+    $("vaultAuth").hidden = on;
+    $("vaultBody").hidden = !on;
+    $("vaultWho").innerHTML = "";
+    if (on) {
+      const b = document.createElement("b"); b.textContent = vaultSess.email || "로그인됨";
+      $("vaultWho").append(b, document.createTextNode(" 의 저장소"));
+    }
+    const n = $("vaultCount");
+    n.textContent = String(vaultRows.length);
+    n.hidden = !(on && vaultRows.length);
+    renderVaultList();
+  }
+  function renderVaultList() {
+    const ul = $("vaultList"), note = $("vaultNote");
+    if (!ul) return;
+    const q = ($("vaultFind").value || "").trim().toLowerCase();
+    const rows = q ? vaultRows.filter(r => (r.title || "").toLowerCase().indexOf(q) >= 0) : vaultRows;
+    ul.innerHTML = "";
+    rows.forEach((r, i) => {
+      const li = document.createElement("li");
+      li.style.animationDelay = Math.min(i, 12) * 22 + "ms";
+      const t = document.createElement("div"); t.className = "t";
+      const b = document.createElement("b"); b.textContent = r.title || "이름 없는 시험";
+      const meta = document.createElement("span");
+      meta.textContent = [
+        r.question_count ? r.question_count + "문항" : "",
+        r.page_count ? r.page_count + "쪽" : "",
+        r.model || r.provider || "",
+        vaultWhen(r.created_at),
+      ].filter(Boolean).join(" · ");
+      t.append(b, meta);
+      const ops = document.createElement("div"); ops.className = "ops";
+      const open = document.createElement("button"); open.type = "button"; open.textContent = "열기";
+      open.addEventListener("click", () => vaultOpen(r).catch(e => toast(e.message, "err")));
+      const ren = document.createElement("button"); ren.type = "button"; ren.textContent = "이름";
+      ren.addEventListener("click", () => vaultRename(r).catch(e => toast(e.message, "err")));
+      const del = document.createElement("button"); del.type = "button"; del.className = "warn"; del.textContent = "삭제";
+      del.addEventListener("click", () => vaultDelete(r).catch(e => toast(e.message, "err")));
+      ops.append(open, ren, del);
+      li.append(t, ops);
+      ul.appendChild(li);
+    });
+    note.className = "vault-note";
+    note.textContent = vaultBusy ? "불러오는 중…"
+      : !vaultRows.length ? "아직 담아 둔 시험지가 없어요. 시험지를 만들면 자동으로 담겨요."
+      : !rows.length ? "‘" + q + "’ 로 찾은 시험지가 없어요."
+      : rows.length + "개";
+  }
+  async function vaultLoad() {
+    if (!vaultOn()) { paintVault(); return; }
+    vaultBusy = true; renderVaultList();
+    try {
+      vaultRows = (await sbRest(VAULT_TABLE + "?select=" + VAULT_COLS + "&order=created_at.desc&limit=300")) || [];
+    } finally { vaultBusy = false; }
+    paintVault();
+  }
+  async function vaultOpen(r) {
+    const got = await sbRest(VAULT_TABLE + "?id=eq." + encodeURIComponent(r.id) + "&select=paper_html,meta,title");
+    const one = (got || [])[0];
+    if (!one) throw new Error("이 시험지를 찾지 못했어요");
+    const m = one.meta || {};
+    if (!m.analysis) throw new Error("이 시험지는 분석 정보가 없어 다시 열 수 없어요");
+    applySession({ id: m.sessionId, analysis: m.analysis, pipe: m.pipe, calls: m.calls || 0, output: one.paper_html });
+    vaultRowId = r.id; vaultRowSession = sessionId;   // 이어서 고치면 같은 자리에 덮어쓴다
+    toast("저장소에서 ‘" + (one.title || "시험지") + "’ 을(를) 열었어요");
+  }
+  async function vaultRename(r) {
+    const v = prompt("새 이름", r.title || "");
+    if (v === null) return;
+    const title = v.trim();
+    if (!title) return;
+    await sbRest(VAULT_TABLE + "?id=eq." + encodeURIComponent(r.id), { method: "PATCH", body: { title: title.slice(0, 160) } });
+    r.title = title; renderVaultList(); toast("이름을 바꿨어요");
+  }
+  async function vaultDelete(r) {
+    if (!confirm("‘" + (r.title || "이름 없는 시험") + "’ 을(를) 저장소에서 지울까요? 되돌릴 수 없어요.")) return;
+    await sbRest(VAULT_TABLE + "?id=eq." + encodeURIComponent(r.id), { method: "DELETE" });
+    vaultRows = vaultRows.filter(x => x.id !== r.id);
+    if (vaultRowId === r.id) { vaultRowId = null; vaultRowSession = ""; }
+    paintVault(); toast("저장소에서 지웠어요");
+  }
+
+  function bindVault() {
+    const st = $("vaultAuthSt"), alt = $("vaultAltSt");
+    const say = (el, msg, cls) => { el.className = "st" + (cls ? " " + cls : ""); el.textContent = msg; };
+    const creds = () => ({ email: ($("vaultEmail").value || "").trim(), password: $("vaultPw").value || "" });
+
+    $("vaultBtn").addEventListener("click", () => {
+      showScreen("vault");
+      paintVault();
+      if (vaultOn() && !vaultRows.length) vaultLoad().catch(e => say(st, e.message, "bad"));
+    });
+    $("vaultLogin").addEventListener("click", async () => {
+      const c = creds();
+      if (!c.email || !c.password) { say(st, "이메일과 비밀번호를 넣어 주세요", "bad"); return; }
+      say(st, "로그인 중…");
+      try {
+        keepVaultSess(await sbAuth("token?grant_type=password", c));
+        $("vaultPw").value = "";
+        say(st, "");
+        paintVault();
+        await vaultLoad();
+        toast("저장소에 로그인했어요");
+      } catch (e) { say(st, e.message, "bad"); }
+    });
+    $("vaultPw").addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); $("vaultLogin").click(); } });
+    $("vaultSignup").addEventListener("click", async () => {
+      const c = creds();
+      if (!c.email || c.password.length < 6) { say(alt, "이메일과 6자 이상 비밀번호를 넣어 주세요", "bad"); return; }
+      say(alt, "계정을 만드는 중…");
+      try {
+        const j = await sbAuth("signup", c);
+        if (j.access_token) {
+          keepVaultSess(j); $("vaultPw").value = "";
+          say(alt, ""); paintVault(); await vaultLoad();
+          toast("계정을 만들고 로그인했어요");
+        } else {
+          say(alt, "메일함에서 확인 링크를 눌러 주세요 — 그 뒤 로그인하면 됩니다", "ok");
+        }
+      } catch (e) { say(alt, e.message, "bad"); }
+    });
+    $("vaultLogout").addEventListener("click", () => {
+      setVaultSess(null); vaultRows = []; vaultRowId = null; vaultRowSession = "";
+      paintVault(); toast("로그아웃했어요");
+    });
+    $("vaultReload").addEventListener("click", () => { vaultLoad().catch(e => toast(e.message, "err")); });
+    $("vaultFind").addEventListener("input", renderVaultList);
+    $("vaultSaveBtn").addEventListener("click", () => {
+      vaultStore(false).catch(e => toast(e.message, "err"));
+    });
+    paintVault();
+    if (vaultOn()) vaultLoad().catch(() => {});
+  }
+
   const HISTORY_KEY = "orun_mock_history";
   function readHistory() { try { return JSON.parse(localStorage.getItem(HISTORY_KEY) || "[]"); } catch (_) { return []; } }
   function pushHistory() {
@@ -5931,6 +6409,7 @@ list.map(disputeBlock).join("\n");
   $("examPaste").addEventListener("input", updateCta);
   $("scopeText").addEventListener("input", updateCta);
   updateCta();
+  bindVault();
   renderHistory();
   $("editToggle").addEventListener("click", () => { if (!requireOutput()) return; editing ? exitEditMode() : enterEditMode(); });
   $("exportMode").querySelectorAll("button").forEach(btn => btn.addEventListener("click", () => {
