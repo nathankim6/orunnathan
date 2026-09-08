@@ -20,12 +20,19 @@ export const SummaryBlankQuestion = ({
   const summaryMatch = questionText.match(/\[요약문\]([\s\S]*?)(?=\[|$)/);
   const summaryText = summaryMatch ? summaryMatch[1].trim() : '';
 
-  // Format the answer part
+  // Format the answer part and remove extra line breaks between Korean and English text
   const formattedAnswer = answerPart
     .split('\n')
     .map(line => line.trim())
     .filter(line => line)
-    .join('\n');
+    .join('\n')
+    .replace(/([가-힣])\n+([A-Za-z])/g, '$1 $2');
+
+  // Remove extra line breaks between Korean and English text in original text and add spacing before options
+  const formattedOriginalText = originalText
+    .replace(/([가-힣])\n+([A-Za-z])/g, '$1 $2')
+    .replace(/\n([①-⑤])/g, '\n\n$1')
+    .replace(/\n(<보기>)/g, '\n\n$1');
 
   return (
     <div className="mb-8">
@@ -39,7 +46,7 @@ export const SummaryBlankQuestion = ({
         <div className="space-y-4">
           {/* Original Text Section */}
           <div className="result-text whitespace-pre-wrap leading-relaxed relative bg-[#F1F0FB] p-4 rounded-lg border border-[#D3E4FD]/30">
-            {originalText}
+            {formattedOriginalText}
           </div>
 
           {/* Question Section */}

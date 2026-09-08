@@ -1,34 +1,99 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Figtree:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gulim&display=swap');
 @import './styles/animations.css';
 @import './styles/title.css';
 @import './styles/components.css';
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: 0 0% 100%;
-  --foreground: 240 10% 3.9%;
-  --card: 0 0% 98%;
-  --card-foreground: 240 10% 3.9%;
+  /* Premium neutral palette */
+  --background: 220 20% 97%;
+  --foreground: 222 47% 11%;
+
+  /* Enhanced cards & surfaces with depth */
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
   --popover: 0 0% 100%;
-  --popover-foreground: 240 10% 3.9%;
-  --primary: 259 94% 51%;
-  --primary-foreground: 0 0% 98%;
-  --secondary: 240 4.8% 95.9%;
-  --secondary-foreground: 240 5.9% 10%;
-  --muted: 240 4.8% 95.9%;
-  --muted-foreground: 240 3.8% 46.1%;
-  --accent: 259 94% 51%;
-  --accent-foreground: 0 0% 98%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 0 0% 98%;
-  --border: 240 5.9% 90%;
-  --input: 240 5.9% 90%;
-  --ring: 259 94% 51%;
+  --popover-foreground: 222 47% 11%;
+
+  /* Premium primary - deep royal blue with glow */
+  --primary: 221 83% 53%;
+  --primary-foreground: 0 0% 100%;
+  --primary-glow: 221 93% 65%;
+  --primary-dark: 221 83% 43%;
+
+  /* Modern secondary - sophisticated gray */
+  --secondary: 220 14% 96%;
+  --secondary-foreground: 222 47% 11%;
+
+  /* Muted tones for elegant subtlety */
+  --muted: 220 14% 96%;
+  --muted-foreground: 220 9% 46%;
+
+  /* Premium accent - vibrant teal with energy */
+  --accent: 190 95% 50%;
+  --accent-foreground: 0 0% 100%;
+  --accent-glow: 190 95% 60%;
+
+  /* Neon colors for premium effects */
+  --neon-cyan: 190 100% 50%;
+  --neon-purple: 270 100% 60%;
+  --neon-pink: 330 100% 60%;
+  --neon-blue: 210 100% 55%;
+
+  /* Sophisticated destructive */
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+
+  /* Premium borders & inputs */
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --ring: 221 83% 53%;
+
+  /* Modern radius for premium look */
   --radius: 0.75rem;
+
+  /* Premium gradient tokens */
+  --gradient-primary: linear-gradient(135deg, hsl(221 83% 53%) 0%, hsl(190 95% 50%) 100%);
+  --gradient-neon: linear-gradient(135deg, hsl(190 100% 50%) 0%, hsl(270 100% 60%) 100%);
+  --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 14% 98%) 100%);
+  --gradient-accent: linear-gradient(135deg, hsl(190 95% 50%) 0%, hsl(200 90% 55%) 100%);
+  --gradient-purple: linear-gradient(135deg, hsl(270 100% 60%) 0%, hsl(290 100% 65%) 100%);
+  --gradient-cyberpunk: linear-gradient(135deg, hsl(190 100% 50%) 0%, hsl(270 100% 60%) 50%, hsl(330 100% 60%) 100%);
+  
+  /* Premium shadow tokens with glow effects */
+  --shadow-sm: 0 1px 2px 0 hsl(220 13% 91% / 0.05);
+  --shadow-md: 0 4px 6px -1px hsl(220 43% 11% / 0.1), 0 2px 4px -2px hsl(220 43% 11% / 0.1);
+  --shadow-lg: 0 10px 15px -3px hsl(220 43% 11% / 0.1), 0 4px 6px -4px hsl(220 43% 11% / 0.1);
+  --shadow-xl: 0 20px 25px -5px hsl(220 43% 11% / 0.1), 0 8px 10px -6px hsl(220 43% 11% / 0.1);
+  --shadow-2xl: 0 25px 50px -12px hsl(220 43% 11% / 0.25);
+  --shadow-glow: 0 0 20px hsl(221 83% 53% / 0.3);
+  --shadow-glow-cyan: 0 0 30px hsl(190 100% 50% / 0.4), 0 0 60px hsl(190 100% 50% / 0.2);
+  --shadow-glow-purple: 0 0 30px hsl(270 100% 60% / 0.4), 0 0 60px hsl(270 100% 60% / 0.2);
+  --shadow-neon: 0 0 5px hsl(190 100% 50% / 0.5), 0 0 10px hsl(190 100% 50% / 0.3), 0 0 20px hsl(190 100% 50% / 0.2);
+  
+  /* Animation timing */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Toss-style easing curves — soft, natural, never linear */
+  --ease-toss: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-toss-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-toss-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 @layer base {
@@ -37,42 +102,349 @@
   }
 
   body {
-    @apply bg-luxury-dark text-[#1A1F2C] min-h-screen relative overflow-x-hidden;
-    font-family: 'Orbitron', sans-serif;
+    @apply bg-background text-foreground;
+    font-family: 'Figtree', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-feature-settings: 'cv11', 'ss01', 'ss03';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
   }
 
-  .input-text, .result-text {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Noto Sans KR', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  button, .button {
+    font-family: 'Outfit', 'Figtree', 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+
+  /* Update this section to apply Gulim font to all question content */
+  .input-text, 
+  .result-text,
+  .question-content,
+  .grammar-question,
+  .whitespace-pre-wrap {
     font-family: Gulim, '굴림', sans-serif !important;
-    @apply text-[#1A1F2C] font-bold;
+  }
+
+  /* Code and technical content */
+  pre, code, .mono {
+    font-family: 'Source Code Pro', monospace !important;
+    font-weight: 400;
   }
 
   .font-nanum {
     font-family: 'Nanum Gothic', sans-serif !important;
   }
+
+  .font-system {
+    font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  }
+
+  /* Keep the logo/header font as Orbitron */
+  .glass-title {
+    font-family: 'Orbitron', sans-serif !important;
+  }
+  :root {
+    /* Premium neutral palette - sophisticated and clean */
+    --background: 220 20% 97%;
+    --foreground: 222 47% 11%;
+    
+    /* Card surfaces with subtle warmth */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    /* Premium primary - refined slate-indigo */
+    --primary: 226 70% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 226 80% 65%;
+    --primary-dark: 226 70% 45%;
+    
+    /* Secondary - elegant gray */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
+    
+    /* Muted - sophisticated neutrals */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 13% 46%;
+    
+    /* Accent - subtle indigo tint */
+    --accent: 226 76% 96%;
+    --accent-foreground: 226 70% 45%;
+    
+    /* Premium destructive */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Refined borders */
+    --border: 220 13% 90%;
+    --input: 220 13% 90%;
+    --ring: 226 70% 55%;
+    
+    /* Chart colors */
+    --chart-1: 226 70% 55%;
+    --chart-2: 226 60% 65%;
+    --chart-3: 220 14% 65%;
+    --chart-4: 220 14% 55%;
+    --chart-5: 220 14% 45%;
+    
+    /* Sidebar */
+    --sidebar: 0 0% 100%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 226 70% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 226 76% 96%;
+    --sidebar-accent-foreground: 226 70% 45%;
+    --sidebar-border: 220 13% 90%;
+    --sidebar-ring: 226 70% 55%;
+    
+    /* Typography */
+    --font-sans: 'Figtree', 'Outfit', 'Noto Sans KR', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-serif: 'Lora', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+    --font-mono: 'Space Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    
+    /* Premium spacing and radius */
+    --radius: 0.75rem;
+    --spacing: 0.25rem;
+    --tracking-normal: 0em;
+    
+    /* Premium shadows */
+    --shadow-2xs: 0 1px 2px 0 hsl(220 13% 11% / 0.03);
+    --shadow-xs: 0 1px 3px 0 hsl(220 13% 11% / 0.04);
+    --shadow-sm: 0 2px 4px -1px hsl(220 13% 11% / 0.06), 0 1px 2px -1px hsl(220 13% 11% / 0.04);
+    --shadow: 0 4px 6px -1px hsl(220 13% 11% / 0.07), 0 2px 4px -2px hsl(220 13% 11% / 0.05);
+    --shadow-md: 0 6px 12px -2px hsl(220 13% 11% / 0.08), 0 3px 6px -3px hsl(220 13% 11% / 0.06);
+    --shadow-lg: 0 12px 24px -4px hsl(220 13% 11% / 0.1), 0 6px 12px -6px hsl(220 13% 11% / 0.08);
+    --shadow-xl: 0 20px 40px -8px hsl(220 13% 11% / 0.12), 0 10px 20px -10px hsl(220 13% 11% / 0.1);
+    --shadow-2xl: 0 32px 64px -12px hsl(220 13% 11% / 0.16);
+    
+    /* Premium glow effects */
+    --shadow-glow: 0 0 20px hsl(226 70% 55% / 0.15);
+    --shadow-glow-lg: 0 0 40px hsl(226 70% 55% / 0.2);
+  }
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 217 32% 17%;
+    --card-foreground: 210 40% 98%;
+    --popover: 215 24% 26%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 198 93% 59%;
+    --primary-foreground: 204 80% 15%;
+    --secondary: 212 26% 83%;
+    --secondary-foreground: 228 84% 4%;
+    --muted: 215 16% 46%;
+    --muted-foreground: 210 40% 98%;
+    --accent: 228 84% 4%;
+    --accent-foreground: 215 20% 65%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 85% 97%;
+    --border: 215 19% 34%;
+    --input: 215 19% 34%;
+    --ring: 198 93% 59%;
+    --chart-1: 199 95% 73%;
+    --chart-2: 211 96% 78%;
+    --chart-3: 215 20% 65%;
+    --chart-4: 215 16% 46%;
+    --chart-5: 215 19% 34%;
+    --sidebar: 217 32% 17%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 198 93% 59%;
+    --sidebar-primary-foreground: 204 80% 15%;
+    --sidebar-accent: 215 20% 65%;
+    --sidebar-accent-foreground: 228 84% 4%;
+    --sidebar-border: 215 19% 34%;
+    --sidebar-ring: 198 93% 59%;
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+  }
 }
 
-.luxury-card {
-  @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl shadow-xl;
-  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.1) 100%);
-}
+@layer utilities {
+  /* Premium scrollbar */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--neon-cyan) / 0.3) transparent;
+  }
 
-.luxury-button {
-  @apply bg-luxury-accent text-[#1A1F2C] px-4 py-2 rounded-lg transition-all duration-300
-         hover:shadow-lg hover:scale-105 active:scale-95 font-bold;
-  background: linear-gradient(135deg, #9b87f5 0%, #7E69AB 100%);
-}
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
 
-.luxury-input {
-  @apply bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-[#1A1F2C]
-         placeholder-[#4B5563] focus:outline-none focus:ring-2 focus:ring-luxury-accent/50;
-}
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
 
-.luxury-title {
-  @apply text-[#1A1F2C] bg-clip-text animate-luxury-fade font-bold;
-  background: linear-gradient(135deg, #1A1F2C 0%, #4B5563 100%);
-}
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, hsl(var(--neon-cyan) / 0.4), hsl(var(--neon-purple) / 0.3));
+    border-radius: 10px;
+    transition: var(--transition-smooth);
+  }
 
-/* Add specific styling for question content */
-.question-content {
-  font-family: Gulim, '굴림', sans-serif !important;
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, hsl(var(--neon-cyan) / 0.6), hsl(var(--neon-purple) / 0.5));
+    box-shadow: 0 0 10px hsl(var(--neon-cyan) / 0.5);
+  }
+
+  /* Premium hover scale animation */
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+  }
+
+  /* Glow effect utilities */
+  .glow-cyan {
+    box-shadow: var(--shadow-glow-cyan);
+  }
+
+  .glow-purple {
+    box-shadow: var(--shadow-glow-purple);
+  }
+
+  .glow-neon {
+    box-shadow: var(--shadow-neon);
+  }
+
+  /* Gradient text effect */
+  .text-gradient {
+    background: var(--gradient-cyberpunk);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Premium border glow */
+  .border-glow {
+    position: relative;
+  }
+
+  .border-glow::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: var(--gradient-neon);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: var(--transition-smooth);
+  }
+
+  .border-glow:hover::before {
+    opacity: 1;
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Remove number input spinners when applying .no-spinner */
+  .no-spinner::-webkit-outer-spin-button,
+  .no-spinner::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .no-spinner {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+
+  /* ===== Toss-style smooth UX layer ===== */
+  /* Scope: everything inside .toss-smooth root inherits buttery interactions */
+  .toss-smooth,
+  .toss-smooth * {
+    transition-timing-function: var(--ease-toss-out);
+  }
+
+  .toss-smooth button:not(:disabled),
+  .toss-smooth [role="button"]:not([aria-disabled="true"]),
+  .toss-smooth a {
+    transition: transform 0.22s var(--ease-toss-out),
+                background-color 0.22s var(--ease-toss-out),
+                color 0.22s var(--ease-toss-out),
+                box-shadow 0.22s var(--ease-toss-out),
+                border-color 0.22s var(--ease-toss-out),
+                opacity 0.22s var(--ease-toss-out);
+    will-change: transform;
+  }
+
+  .toss-smooth button:not(:disabled):active,
+  .toss-smooth [role="button"]:not([aria-disabled="true"]):active {
+    transform: scale(0.97);
+    transition-duration: 0.08s;
+  }
+
+  /* Inputs & textareas feel responsive on focus */
+  .toss-smooth input,
+  .toss-smooth textarea,
+  .toss-smooth select {
+    transition: border-color 0.2s var(--ease-toss-out),
+                box-shadow 0.2s var(--ease-toss-out),
+                background-color 0.2s var(--ease-toss-out);
+  }
+
+  /* Smooth scrolling within the section */
+  .toss-smooth {
+    scroll-behavior: smooth;
+  }
+
+  /* Toss-like entrance for newly appearing items */
+  @keyframes toss-rise {
+    0%   { opacity: 0; transform: translateY(8px) scale(0.985); }
+    100% { opacity: 1; transform: translateY(0)   scale(1); }
+  }
+  .toss-rise {
+    animation: toss-rise 0.42s var(--ease-toss-out) both;
+  }
+
+  @keyframes toss-pop {
+    0%   { opacity: 0; transform: scale(0.92); }
+    60%  { opacity: 1; transform: scale(1.02); }
+    100% { transform: scale(1); }
+  }
+  .toss-pop {
+    animation: toss-pop 0.36s var(--ease-toss-spring) both;
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .toss-smooth,
+    .toss-smooth * {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
+  }
 }

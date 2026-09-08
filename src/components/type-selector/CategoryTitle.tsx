@@ -1,13 +1,14 @@
-import { Sparkles } from "lucide-react";
+
+import React from 'react';
 
 interface CategoryTitleProps {
   children: React.ReactNode;
 }
 
-export const CategoryTitle = ({ children }: CategoryTitleProps) => (
-  <div className="flex items-center justify-center mb-4">
-    <h3 className="text-lg font-semibold text-[#1A1F2C] relative">
+export const CategoryTitle = ({ children }: CategoryTitleProps) => {
+  return (
+    <span className="text-slate-700 font-medium text-[13px] tracking-tight">
       {children}
-    </h3>
-  </div>
-);
+    </span>
+  );
+};

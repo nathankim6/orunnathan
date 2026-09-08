@@ -10,7 +10,7 @@ export const AdminLogin = ({ onLoginSuccess }: { onLoginSuccess: () => void }) =
   const navigate = useNavigate();
 
   const handleAdminLogin = () => {
-    if (adminCode === "101100") {
+    if (adminCode === "skywalker89" || adminCode === "891127") {
       localStorage.setItem("isAdmin", "true");
       onLoginSuccess();
       toast({

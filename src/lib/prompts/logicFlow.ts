@@ -1,44 +1,32 @@
-export const getLogicFlowPrompt = (text: string) => `당신은 영어 지문을 입력받아 논리적 흐름을 체계적으로 분석하는 전문가입니다. 각 구성 요소를 파악하고 핵심 표현을 인용하여 정리하세요. 관련표현을 인용할 때는 문장 전체보다는 일부 어구등을 활용하십시오. 전체적으로 어투는 "~함" "~임" 을 사용하세요.
+export const getLogicFlowPrompt = (text: string) => `영어 지문의 로직플로우를 다음 형식으로 정리해주세요:
 
-다음 규칙에 따라 분석을 진행해주세요:
+[정리 원칙]
+각 카테고리는 대괄호[ ]로 표시
+지문의 성격에 따라 서론, 본론, 결론, 문제제기, 대조 등 적절한 카테고리 사용
+모든 내용은 "ㆍ"로 시작
+지문 속 핵심 표현은 소괄호( )로 표시하되, 간단한 구나 어구 위주로 인용
+각 카테고리는 논리적 흐름에 따라 배치
+하나의 항목에는 하나의 핵심 내용만 포함
+모든 내용은 원문의 근거 반드시 포함
 
-분석 형식:
-[지문 요약]
-- 전체 지문의 핵심 내용을 한 문장으로 요약
+예시:
+[input]
+The human brain has shrunk in mass by about 10 percent since the stone age. This change, which peaked in size 15,000-30,000 years ago, occurred because humans no longer lived in a world of dangerous predators. Today, many tasks of survival have been outsourced to the wider society. However, brain size is not necessarily an indicator of human intelligence.
 
-[서론]
-- 글의 시작 부분에서 제기되는 주요 질문이나 문제
-- 관련 표현: 직접 인용
+[output]
+[핵심 현상]
+ㆍ인간 뇌 크기의 10% 감소 ("shrunk in mass by about 10 percent")
+ㆍ감소 시작 시점: 15,000-30,000년 전 ("peaked in size 15,000-30,000 years ago")
 
-[문제 제시]
-- 글에서 다루는 핵심 문제나 쟁점
-- 관련 표현: 직접 인용
-
-[해결책 제안]
-- 제시된 문제에 대한 해결 방안이나 대안
-- 관련 표현: 직접 인용
-
-[근거]
-- 주장을 뒷받침하는 증거나 사례
-- 관련 표현: 직접 인용
-
-[예시]
-- 구체적인 사례나 적용 방법
-- 관련 표현: 직접 인용
+[원인 분석]
+ㆍ과거 환경: 포식자 위협 ("dangerous predators")
+ㆍ현재 변화: 생존 과제의 사회화 ("tasks of survival", "outsourced")
 
 [결론]
-- 전체 논의의 마무리와 시사점
-- 관련 표현: 직접 인용
+ㆍ지능과의 무관성 ("not necessarily an indicator")
 
-주의사항:
-- 각 섹션은 지문의 내용과 구조에 따라 유연하게 조정
-- 일부 섹션은 생략하거나 다른 섹션 추가 가능
-- 모든 관련 표현은 반드시 원문에서 직접 인용하되, 문장 전체보다는 핵심 어구를 활용
-- 분석은 객관적이고 명확하게 작성하며, "~함" "~임"의 어투를 사용
-
-다음 지문을 위 형식에 따라 분석해주세요:
+다음 지문을 위 형식에 맞춰 분석해주세요:
 
 ${text}
 
-[OUTPUT]
-`;
+[OUTPUT]`;

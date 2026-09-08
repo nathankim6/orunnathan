@@ -1,64 +1,114 @@
-import { Card, CardContent } from "@/components/ui/card";
+
+import { Button } from "@/components/ui/button";
+import { Book } from "lucide-react";
+import { VocabularyModal } from "../VocabularyModal";
 
 interface DefaultQuestionProps {
   questionNumber: number;
   questionPart: string;
   answerPart: string;
+  showVocabButton?: boolean;
+  isVocabModalOpen: boolean;
+  setIsVocabModalOpen: (isOpen: boolean) => void;
 }
 
 export const DefaultQuestion = ({
   questionNumber,
   questionPart,
-  answerPart
+  answerPart,
+  showVocabButton = true,
+  isVocabModalOpen,
+  setIsVocabModalOpen,
 }: DefaultQuestionProps) => {
-  // For Logic Flow questions, split content into sections and filter out empty ones
-  const isLogicFlow = questionPart.includes('[지문 요약]') || questionPart.includes('[서론]');
-  
-  if (isLogicFlow) {
-    const sections = questionPart.split(/\[(.*?)\]/g).filter(Boolean);
-    const formattedSections: { title: string; content: string }[] = [];
-    
-    for (let i = 0; i < sections.length; i += 2) {
-      if (sections[i + 1] && sections[i + 1].trim()) {  // Only add sections with non-empty content
-        formattedSections.push({
-          title: sections[i],
-          content: sections[i + 1].trim()
-        });
-      }
-    }
+  const isGrammarQuestion = questionPart.includes('어법상') || questionPart.includes('[29] 어법');
 
-    return (
-      <Card className="mb-4">
-        <CardContent className="pt-6">
-          <div className="text-lg font-semibold mb-4">문제 {questionNumber}</div>
-          {formattedSections.map((section, index) => (
-            <div key={index} className="mb-4">
-              <div className="font-medium text-gray-700">[{section.title}]</div>
-              <div className="mt-1 whitespace-pre-wrap question-content">{section.content}</div>
-            </div>
-          ))}
-          {answerPart && (
-            <div className="mt-4 pt-4 border-t border-gray-200 question-content">
-              {answerPart}
+  const formatGrammarText = (text: string) => {
+    return text
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/([①-⑤])/g, '<span class="text-primary">$1</span>');
+  };
+
+  const formatTextWithSpacing = (text: string) => {
+    // Add line spacing before options (①-⑤) and choices
+    return text
+      .replace(/\n([①-⑤])/g, '\n\n$1')
+      .replace(/\n(1\.)/g, '\n\n$1')
+      .replace(/\n(2\.)/g, '\n\n$1')
+      .replace(/\n(3\.)/g, '\n\n$1')
+      .replace(/\n(4\.)/g, '\n\n$1')
+      .replace(/\n(5\.)/g, '\n\n$1')
+      .replace(/\n(<보기>)/g, '\n\n$1')
+      .replace(/\n(\[조건\])/g, '\n\n$1')
+      .replace(/\n(\[문제\])/g, '\n\n$1')
+      .replace(/\n(\[요약문\])/g, '\n\n$1');
+  };
+
+  // Clean out any [출력] or [OUTPUT] text that might be in the content
+  const cleanQuestionPart = questionPart
+    .replace(/\[출력\]\s*/g, '')
+    .replace(/\[OUTPUT\]\s*/g, '')
+    .replace(/\n\s*\n/g, '\n')
+    .trim();
+    
+  const cleanAnswerPart = answerPart
+    .replace(/\[출력\]\s*/g, '')
+    .replace(/\[OUTPUT\]\s*/g, '')
+    .replace(/\n\s*\n/g, '\n')
+    .trim();
+
+  return (
+    <div className="py-6 first:pt-0 last:pb-0 border-b last:border-b-0 border-[#D6BCFA]/30">
+      <div className="space-y-4">
+        <div className="flex items-start justify-between gap-4">
+          <h3 className="font-semibold text-[#1A1F2C]">
+            {questionNumber}번
+          </h3>
+          {showVocabButton && !isGrammarQuestion && (
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsVocabModalOpen(true)}
+              className="shrink-0"
+            >
+              <Book className="w-4 h-4" />
+            </Button>
+          )}
+        </div>
+
+        <div className={`space-y-4 text-[#4A5568] ${isGrammarQuestion ? 'grammar-question' : ''}`}>
+          {/* Question Part */}
+          <div className="whitespace-pre-wrap">
+            {isGrammarQuestion ? (
+              <div 
+                dangerouslySetInnerHTML={{ 
+                  __html: formatGrammarText(cleanQuestionPart) 
+                }} 
+              />
+            ) : (
+              formatTextWithSpacing(cleanQuestionPart)
+            )}
+          </div>
+
+          {/* Answer Part */}
+          {cleanAnswerPart && (
+            <div className="pt-4 border-t border-[#D6BCFA]/30">
+              <p className="font-semibold text-[#1A1F2C] mb-2">정답</p>
+              <div 
+                className="whitespace-pre-wrap"
+                dangerouslySetInnerHTML={{
+                  __html: isGrammarQuestion ? formatGrammarText(cleanAnswerPart) : formatTextWithSpacing(cleanAnswerPart)
+                }}
+              />
             </div>
           )}
-        </CardContent>
-      </Card>
-    );
-  }
+        </div>
+      </div>
 
-  // For non-Logic Flow questions, keep the original rendering
-  return (
-    <Card className="mb-4">
-      <CardContent className="pt-6">
-        <div className="text-lg font-semibold mb-4">문제 {questionNumber}</div>
-        <div className="whitespace-pre-wrap question-content">{questionPart}</div>
-        {answerPart && (
-          <div className="mt-4 pt-4 border-t border-gray-200 question-content">
-            {answerPart}
-          </div>
-        )}
-      </CardContent>
-    </Card>
+      <VocabularyModal
+        isOpen={isVocabModalOpen}
+        onClose={() => setIsVocabModalOpen(false)}
+        content={cleanQuestionPart}
+      />
+    </div>
   );
 };

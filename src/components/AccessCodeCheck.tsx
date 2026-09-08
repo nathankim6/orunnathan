@@ -1,173 +1,142 @@
+
 import { useState, useEffect } from "react";
+import { LoginForm } from "./login/LoginForm";
+import { LoginTitle } from "./login/LoginTitle";
+import { LoginLogo } from "./login/LoginLogo";
+import { BackgroundMedia } from "./login/BackgroundMedia";
+import { supabase } from "@/integrations/supabase/client";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "./ui/use-toast";
-import { supabase } from "@/integrations/supabase/client";
-import { LoginLogo } from "./login/LoginLogo";
-import { LoginTitle } from "./login/LoginTitle";
-import { LoginForm } from "./login/LoginForm";
-import { BackgroundMedia } from "./login/BackgroundMedia";
-import type { Database } from "@/integrations/supabase/types";
 
 interface AccessCodeCheckProps {
   onAccessGranted: () => void;
 }
 
-const SESSION_TIMEOUT = 2 * 60 * 60 * 1000; // 2 hours in milliseconds
-
-export function AccessCodeCheck({ onAccessGranted }: AccessCodeCheckProps) {
-  const [code, setCode] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [subscriptionExpiry, setSubscriptionExpiry] = useState<string | null>(null);
+export const AccessCodeCheck = ({ onAccessGranted }: AccessCodeCheckProps) => {
+  const [background, setBackground] = useState<{ url: string; is_video: boolean }>({
+    url: "https://jpanpwbdlhsxnyaldddm.supabase.co/storage/v1/object/public/backgrounds/___202511181049.mp4",
+    is_video: true
+  });
   const navigate = useNavigate();
   const { toast } = useToast();
 
   useEffect(() => {
-    const lastLoginTime = localStorage.getItem("lastLoginTime");
-    const hasAccess = localStorage.getItem("hasAccess");
-    
-    if (lastLoginTime && hasAccess) {
-      const timeDiff = Date.now() - parseInt(lastLoginTime);
-      if (timeDiff < SESSION_TIMEOUT) {
-        onAccessGranted();
-        navigate("/");
-      } else {
-        handleLogout();
-      }
-    }
+    const fetchRandomBackground = async () => {
+      const { data: countData } = await supabase
+        .from('backgrounds')
+        .select('id', { count: 'exact' });
 
-    const intervalId = setInterval(() => {
-      const lastLogin = localStorage.getItem("lastLoginTime");
-      if (lastLogin) {
-        const timeDiff = Date.now() - parseInt(lastLogin);
-        if (timeDiff >= SESSION_TIMEOUT) {
-          handleLogout();
+      if (countData) {
+        const count = countData.length;
+        const randomOffset = Math.floor(Math.random() * count);
+
+        const { data, error } = await supabase
+          .from('backgrounds')
+          .select('url, is_video')
+          .range(randomOffset, randomOffset)
+          .limit(1);
+
+        if (!error && data && data.length > 0) {
+          setBackground(data[0]);
         }
       }
-    }, 60000); // Check every minute
+    };
 
-    return () => clearInterval(intervalId);
-  }, [navigate, onAccessGranted]);
+    fetchRandomBackground();
+  }, []);
 
-  const handleLogout = () => {
-    localStorage.removeItem("hasAccess");
-    localStorage.removeItem("lastLoginTime");
-    localStorage.removeItem("subscriptionExpiry");
-    localStorage.removeItem("userName");
-    localStorage.removeItem("isAdmin");
-    navigate("/login");
-    toast({
-      title: "세션 만료",
-      description: "보안을 위해 자동으로 로그아웃되었습니다.",
-      variant: "destructive",
-    });
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setCode(e.target.value);
-  };
-
-  const handleSubmit = async () => {
-    if (code.length < 4) {
+  const handleAccessCode = async (code: string) => {
+    // Admin codes
+    if (code === "skywalker89" || code === "891127") {
+      localStorage.setItem("isAdmin", "true");
+      localStorage.setItem("hasAccess", "true");
+      localStorage.setItem("lastLoginTime", Date.now().toString());
+      localStorage.setItem("accessCode", code);
+      localStorage.setItem("userName", code === "891127" ? "슈퍼관리자" : "관리자");
+      window.dispatchEvent(new Event('auth-changed'));
       toast({
-        title: "입력 오류",
-        description: "엑세스 코드는 최소 4자리 이상이어야 합니다.",
+        title: "관리자 모드",
+        description: "관리자 모드로 전환되었습니다.",
+      });
+      onAccessGranted();
+      navigate("/admin");
+      return;
+    }
+
+    const { data, error } = await supabase.rpc('validate_access_code', { input_code: code });
+
+    if (error) {
+      toast({
+        title: "오류",
+        description: "엑세스 코드 확인 중 오류가 발생했습니다.",
         variant: "destructive",
       });
       return;
     }
 
-    setIsLoading(true);
-
-    try {
-      if (code === "101100") {
-        onAccessGranted();
-        localStorage.setItem("isAdmin", "true");
-        localStorage.setItem("userName", "관리자");
+    const row = Array.isArray(data) ? data[0] : data;
+    if (row) {
+      const expiryDate = new Date(row.expiry_date);
+      if (row.valid) {
         localStorage.setItem("hasAccess", "true");
         localStorage.setItem("lastLoginTime", Date.now().toString());
+        localStorage.setItem("subscriptionExpiry", expiryDate.toISOString());
+        localStorage.setItem("userName", row.name);
+        localStorage.setItem("accessCode", code);
+        await supabase.rpc('touch_access_code', { input_code: code });
+        window.dispatchEvent(new Event('auth-changed'));
+        onAccessGranted();
+      } else {
         toast({
-          title: "관리자 로그인 성공",
-          description: "관리자 페이지로 이동합니다.",
-        });
-        navigate("/admin");
-        return;
-      }
-
-      const { data: accessCode, error } = await supabase
-        .from('access_codes')
-        .select('*')
-        .eq('code', code)
-        .maybeSingle();
-
-      if (error) {
-        console.error("Supabase error:", error);
-        throw new Error("데이터베이스 접근 중 오류가 발생했습니다.");
-      }
-
-      if (!accessCode) {
-        toast({
-          title: "접속 실패",
-          description: "유효하지 않은 엑세스 코드입니다.",
+          title: "만료된 코드",
+          description: "엑세스 코드가 만료되었습니다.",
           variant: "destructive",
         });
-        return;
       }
-
-      if (new Date(accessCode.expiry_date) <= new Date()) {
-        toast({
-          title: "접속 실패",
-          description: "만료된 엑세스 코드입니다.",
-          variant: "destructive",
-        });
-        return;
-      }
-
-      onAccessGranted();
-      localStorage.setItem("userName", accessCode.name || '');
-      localStorage.setItem("hasAccess", "true");
-      localStorage.setItem("lastLoginTime", Date.now().toString());
-      localStorage.setItem("subscriptionExpiry", accessCode.expiry_date);
-      setSubscriptionExpiry(accessCode.expiry_date);
-      
+    } else {
       toast({
-        title: "접속 성공",
-        description: "엑세스 코드가 확인되었습니다.",
-      });
-      navigate("/");
-
-    } catch (error) {
-      console.error("Access code check error:", error);
-      toast({
-        title: "오류 발생",
-        description: error instanceof Error ? error.message : "엑세스 코드 확인 중 오류가 발생했습니다.",
+        title: "잘못된 코드",
+        description: "올바르지 않은 엑세스 코드입니다.",
         variant: "destructive",
       });
-    } finally {
-      setIsLoading(false);
     }
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-hidden">
-      <BackgroundMedia
-        url="https://wxjazdqabryflvfztujk.supabase.co/storage/v1/object/sign/hakmoondang/20250112_1415_AI%20Quizmaker%20Unveiled_simple_compose_01jhcf0xhvf519j4h32pk0k5xv.mp4?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJoYWttb29uZGFuZy8yMDI1MDExMl8xNDE1X0FJIFF1aXptYWtlciBVbnZlaWxlZF9zaW1wbGVfY29tcG9zZV8wMWpoY2YweGh2ZjUxOWo0aDMycGswazV4di5tcDQiLCJpYXQiOjE3MzY2NjAwNDUsImV4cCI6MjA1MjAyMDA0NX0.J2_yG0K_2L7mdHFnRfblI3QiKF-YDaafg17xO7Vbc3k&t=2025-01-12T05%3A34%3A05.338Z"
-        isVideo={true}
-      />
+    <div className="min-h-screen flex items-center justify-center relative">
+      <BackgroundMedia url={background.url} isVideo={background.is_video} />
       
-      <div className="fixed bottom-0 left-0 right-0 z-50 p-8 bg-black/30 backdrop-blur-sm">
-        <div className="mx-auto max-w-lg">
-          <div className="flex flex-col items-center space-y-8">
-            <LoginLogo />
-            <LoginTitle subscriptionExpiry={subscriptionExpiry} />
-            <LoginForm 
-              code={code}
-              onCodeChange={handleInputChange}
-              onSubmit={handleSubmit}
-              isLoading={isLoading}
-            />
+      {/* Overlay gradient for depth */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-[1]" />
+      
+      <div className="relative z-10 w-full max-w-sm mx-auto px-6">
+        {/* Glass card with premium styling */}
+        <div className="relative overflow-hidden">
+          {/* Subtle glow effect behind card */}
+          <div className="absolute -inset-4 bg-gradient-to-br from-white/10 via-transparent to-white/5 blur-2xl" />
+          
+          <div className="relative backdrop-blur-xl bg-white/[0.08] border border-white/[0.12] rounded-2xl p-8 shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
+            {/* Top accent line */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-[2px] bg-gradient-to-r from-transparent via-white/40 to-transparent" />
+            
+            <div className="space-y-6">
+              <LoginLogo />
+              <LoginTitle />
+              <div className="pt-2">
+                <LoginForm onAccessGranted={handleAccessCode} />
+              </div>
+            </div>
+            
+            {/* Bottom subtle decoration */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
           </div>
         </div>
+        
+        {/* Footer text */}
+        <p className="text-center text-white/40 text-xs mt-6 tracking-wider font-light">
+          ORUN ACADEMY © 2025
+        </p>
       </div>
     </div>
   );
-}
+};

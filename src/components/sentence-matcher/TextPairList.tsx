@@ -1,4 +1,4 @@
-import { TextEntry } from './TextEntry';
+import { TextPairInput } from "./TextPairInput";
 
 interface TextPair {
   id: string;
@@ -13,33 +13,26 @@ interface TextPairListProps {
   onDeletePair: (id: string) => void;
 }
 
-export const TextPairList = ({ 
-  textPairs, 
-  onUpdateText, 
-  onAddNewPair, 
-  onDeletePair 
+export const TextPairList = ({
+  textPairs,
+  onUpdateText,
+  onAddNewPair,
+  onDeletePair,
 }: TextPairListProps) => {
   return (
-    <>
-      {textPairs.map((pair, index) => (
-        <div key={pair.id} className="grid grid-cols-2 gap-4">
-          <TextEntry
-            label={`영어 텍스트 ${index + 1}`}
-            value={pair.english}
-            onChange={(value) => onUpdateText(pair.id, 'english', value)}
-            onEnterPress={onAddNewPair}
-            onDelete={() => onDeletePair(pair.id)}
-            placeholder="영어 텍스트를 입력하세요..."
-          />
-          <TextEntry
-            label={`한글 텍스트 ${index + 1}`}
-            value={pair.korean}
-            onChange={(value) => onUpdateText(pair.id, 'korean', value)}
-            onDelete={() => onDeletePair(pair.id)}
-            placeholder="한글 텍스트를 입력하세요..."
-          />
-        </div>
+    <div className="space-y-4">
+      {textPairs.map((pair) => (
+        <TextPairInput
+          key={pair.id}
+          id={pair.id}
+          english={pair.english}
+          korean={pair.korean}
+          showDelete={textPairs.length > 1}
+          onUpdateText={onUpdateText}
+          onDeletePair={onDeletePair}
+          onAddNewPair={onAddNewPair}
+        />
       ))}
-    </>
+    </div>
   );
 };

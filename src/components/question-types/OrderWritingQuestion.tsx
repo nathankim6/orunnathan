@@ -14,14 +14,18 @@ export const OrderWritingQuestion = ({
   // Extract the passage text from questionPart
   const passageText = questionPart.split('다음 글을 읽고, 물음에 답하시오.\n\n')[1]?.split('\n\n[문제]')[0]?.trim();
   
-  // Extract the question text
-  const questionText = questionPart.match(/\[문제\](.*?)(?=\[우리말\])/s)?.[1]?.trim() || '';
+  // Extract the question text and remove extra line breaks between Korean and English text
+  const questionText = (questionPart.match(/\[문제\](.*?)(?=\[우리말\])/s)?.[1]?.trim() || '')
+    .replace(/([가-힣])\n+([A-Za-z])/g, '$1 $2')
+    .replace(/\n([①-⑤])/g, '\n\n$1')
+    .replace(/\n(\[조건\])/g, '\n\n$1');
   
   // Extract Korean text from questionPart
   const koreanText = questionPart.match(/\[우리말\](.*?)(?=\[단어\])/s)?.[1]?.trim() || '';
   
-  // Extract word list
-  const wordList = questionPart.match(/\[단어\](.*?)(?=\[정답\])/s)?.[1]?.trim() || '';
+  // Extract word list and remove periods and commas
+  const wordList = (questionPart.match(/\[단어\](.*?)(?=\[정답\])/s)?.[1]?.trim() || '')
+    .replace(/[.,]/g, '');
 
   // Format the answer part
   const formattedAnswer = answerPart
