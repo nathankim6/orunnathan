@@ -11,7 +11,6 @@ import { allSchools, getRecords } from "@/lib/schools/data";
 import { useObservations } from "@/lib/schools/store";
 import { useAchievements } from "@/lib/schools/achievementStore";
 import { AchievementImport } from "@/components/schools/AchievementImport";
-import { NEWS } from "@/data/news";
 import { SOURCED } from "@/data/sourced";
 import { APP } from "@/lib/schools/copy";
 import type { IconName } from "@/assets/art";
@@ -197,7 +196,6 @@ function TopBar({
 function Hero() {
   const total = allSchools().length;
   const seen = Object.keys(SOURCED).length;
-  const news = Object.keys(NEWS).length;
   return (
     <>
       <section className="orun-hero orun-rise">
@@ -212,7 +210,6 @@ function Hero() {
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 20 }}>
             <span className="orun-chip orun-chip--yellow">{APP.stats.fact(total)}</span>
             <span className="orun-chip orun-chip--blue">{APP.stats.seen(seen)}</span>
-            <span className="orun-chip orun-chip--mint">{APP.stats.news(news)}</span>
           </div>
         </div>
         <Scene name="hero" className="orun-hero__art orun-bob" />

@@ -2,7 +2,6 @@ import { useMemo, useState } from "react";
 import { GROUP_LABEL, type SchoolFact, type SchoolGroup } from "@/types/school";
 import { groupsWithCounts, hasAchievement, hasObservation, schoolsInGroups } from "@/lib/schools/data";
 import { SOURCED } from "@/data/sourced";
-import { getNews } from "@/data/news";
 import { PICKER } from "@/lib/schools/copy";
 import { Icon, Logo } from "@/components/schools/Art";
 
@@ -17,13 +16,12 @@ function layers(code: string) {
   return {
     obs: hasObservation(code),
     deep: Boolean(SOURCED[code]),
-    news: Boolean(getNews(code)),
     ach: hasAchievement(code),
   };
 }
 const hasAny = (code: string) => {
   const l = layers(code);
-  return l.obs || l.deep || l.news || l.ach;
+  return l.obs || l.deep || l.ach;
 };
 
 export function SchoolPicker({ selected, onChange, onBuild }: Props) {
@@ -151,7 +149,6 @@ function SchoolCard({ school, checked, onToggle }: { school: SchoolFact; checked
           {l.obs && <span className="orun-chip orun-chip--yellow">{PICKER.badgeObs}</span>}
           {l.deep && <span className="orun-chip orun-chip--coral">{PICKER.badgeSourced}</span>}
           {l.ach && <span className="orun-chip orun-chip--blue">{PICKER.badgeAchieve}</span>}
-          {l.news && !l.deep && <span className="orun-chip orun-chip--mint">{PICKER.badgeNews}</span>}
           <span className="orun-pick__num">{school.g1Total ? PICKER.g1(school.g1Total) : "—"}</span>
         </span>
       </span>

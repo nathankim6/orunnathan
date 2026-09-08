@@ -4,12 +4,11 @@ import { ART_RATIO, DARK, LIGHT, artSvg, iconSvg, svgDataUrl, type ArtName, type
 import { TOON_PPT, crestSvg } from "@/assets/toon";
 import type { SchoolRecord } from "@/types/school";
 import { RESULT_BASIS_LABEL } from "@/data/results";
-import { NEWS_KIND_LABEL, type SchoolNews } from "@/data/news";
 import { ORUN_MESSAGES, ORUN_RESULTS, type ExamReport, type SourcedSchool } from "@/data/sourced";
 import { COVER, DECK } from "@/lib/schools/copy";
 import { profileText, repPoint } from "@/lib/schools/achievementText";
 import { LETTERS, SUBJECTS3, fix, pct, profileOf, type AchievementProfile } from "@/lib/schools/achievement";
-import { NEWS_KIND_ICON, NEWS_KIND_ORDER, tmiIcon } from "@/lib/schools/icons";
+import { tmiIcon } from "@/lib/schools/icons";
 import { dropoutRate, headlinePath, pathBreakdown, seatsForGrade1, specialHighDetail } from "@/lib/schools/metrics";
 
 /**
@@ -785,49 +784,12 @@ function tmiSlide(pptx: PptxGenJS, r: SchoolRecord, sc: SourcedSchool, page: num
   s.addNotes(C.note);
 }
 
-/** 학교별 — 학교 밖에서 확인한 것 */
-function newsSlide(pptx: PptxGenJS, r: SchoolRecord, n: SchoolNews, page: number) {
-  const s = pptx.addSlide();
-  logo(s, r, W - M - 0.9, 0.55, 0.9);
-  const C = DECK.news;
-  const clip = (t: string, max: number) => (t.length > max ? t.slice(0, max - 1) + "…" : t);
-  // 한 줄 요약이 길면 두 줄까지만 보이고, 첫 행을 그만큼 아래서 시작한다.
-  const sub = n.oneLiner ? clip(n.oneLiner, 150) : undefined;
-  eyebrow(s, C.en);
-  title(s, C.title(short(r.fact.name)), sub);
-  let y = sub && sub.length > 70 ? 2.6 : 2.35;
-  const labelW = 1.55;
-  const textW = W - M * 2 - labelW;
-  const bottom = H - 1.1;
-  // 글 길이에 맞춰 행 높이를 잡는다. 한 줄에 한글 약 58자(10.5pt, 8.7in).
-  const items = [...n.items].sort((a, b) => NEWS_KIND_ORDER.indexOf(a.kind) - NEWS_KIND_ORDER.indexOf(b.kind));
-  for (const it of items.slice(0, 6)) {
-    const summary = clip(it.summary, 210);
-    const lines = 1 + Math.ceil(summary.length / 57);
-    const rowH = 0.06 + lines * 0.2;
-    if (y + rowH > bottom) break;
-    icon(s, NEWS_KIND_ICON[it.kind], M, y + 0.02, 0.22);
-    s.addText(NEWS_KIND_LABEL[it.kind].toUpperCase(), T({ x: M + 0.3, y: y + 0.03, w: labelW - 0.3, h: 0.22, fontSize: 8.5, bold: true, color: it.kind === "results" ? YELLOW_S : it.kind === "curriculum" ? BLUE : GREY, charSpacing: 1.5 }));
-    s.addText(
-      [
-        { text: clip(it.title, 70), options: { bold: true, color: INK, fontSize: 11.5, breakLine: true } },
-        { text: summary, options: { color: BODY, fontSize: 10.5 } },
-      ],
-      T({ x: M + labelW, y, w: textW, h: rowH, lineSpacing: 14, valign: "top" }),
-    );
-    y += rowH + 0.14;
-    hair(s, y - 0.08);
-  }
-  footer(s, page);
-  s.addNotes(C.note(n.items[0]?.title ?? ""));
-}
 
 /** 출처층 슬라이드 묶음 — 관측이 없는 학교도 만든다 */
 function sourcedSlides(pptx: PptxGenJS, r: SchoolRecord, startPage: number): number {
   const sc = r.sourced;
   if (!sc) return startPage;
   let page = startPage;
-  if (sc.news?.items.length) newsSlide(pptx, r, sc.news, page++);
   const grades = [...new Set(sc.exams.map((e) => e.grade))].sort();
   grades.forEach((g) => {
     const exams = sc.exams.filter((e) => e.grade === g);

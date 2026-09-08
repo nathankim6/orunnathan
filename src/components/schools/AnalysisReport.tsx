@@ -10,7 +10,6 @@ import {
   ExamTrend2026,
   LiveInsights,
   OrunSection,
-  SchoolNewsBlock,
   SeniorTmi,
   SourcedBlock,
   SourcedResults,
@@ -91,7 +90,7 @@ export function AnalysisReport({ records, onBack }: Props) {
             {...ch("school")!}
             en={SECTION.school.en}
             ko={SECTION.school.ko}
-            lede={seen ? SECTION.school.ledeSeen(seen, detailed.length) : SECTION.school.ledeNewsOnly(detailed.length)}
+            lede={seen ? SECTION.school.ledeSeen(seen, detailed.length) : SECTION.school.ledePlain(detailed.length)}
             art="zoom"
           />
           <div className="orun-rail orun-no-print" style={{ marginBottom: 30 }}>
@@ -618,7 +617,6 @@ function SchoolDetail({ record }: { record: SchoolRecord }) {
         {g && <Stat icon="percent" label={S.coed} value={`${g.male} : ${g.female}`} unit="" />}
       </div>
 
-      {sourced?.news && <SchoolNewsBlock n={sourced.news} />}
       {sourced && <ExamTrend2026 s={sourced} level={fact.level} />}
 
       {o && (

@@ -78,7 +78,6 @@ const ICONS = {
   quote: (c) => `<path d="M7 15c-2 0-3-1.5-3-3.5S5.5 7 8 7c.5 0 1 .1 1.5.3C9.2 10 8.5 12.5 7 15z"/><path d="M16 15c-2 0-3-1.5-3-3.5S14.5 7 17 7c.5 0 1 .1 1.5.3C18.2 10 17.5 12.5 16 15z" stroke="${c.accent}"/>`,
   mic: (c) => `<path d="M9 4a3 3 0 0 1 6 0v6a3 3 0 0 1-6 0z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6"/><circle cx="19.5" cy="4.5" r="1.8" fill="${c.accent}" stroke="none"/>`,
   megaphone: (c) => `<path d="M4 10v4l10 4V6z"/><path d="M14 6l4-2v16l-4-2M5 14l1.5 5h3l-1-5"/><path d="M20.5 8.5a5 5 0 0 1 0 7" stroke="${c.accent}" stroke-width="2.2"/>`,
-  news: (c) => `<path d="M4 5h13v14H6a2 2 0 0 1-2-2z"/><path d="M17 8h3v9a2 2 0 0 1-2 2"/><path d="M7 9h4v4H7zM13 12h2M7 16h8"/><path d="M13 9h2" stroke="${c.accent}" stroke-width="2.4"/>`,
   camera: (c) => `<path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/><circle cx="12" cy="13" r="1.2" fill="${c.accent}" stroke="none"/>`,
   folder: (c) => `<path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 11h18" stroke="${c.accent}" stroke-width="1.6"/>`,
   calendar: (c) => `<path d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4"/><rect x="13.5" y="13" width="3" height="3" fill="${c.accent}" stroke="none"/>`,
@@ -238,17 +237,6 @@ const ART: Record<string, Draw> = {
     <circle cx="284" cy="108" r="4.5" fill="${c.accent}" stroke="none"/>
     <path d="M60 182h60a8 8 0 0 1 8 8v16a8 8 0 0 1-8 8H88l-12 10v-10H60a8 8 0 0 1-8-8v-16a8 8 0 0 1 8-8z" stroke="${c.accent}" stroke-width="2.5"/>
     <circle cx="76" cy="198" r="3" fill="${c.ink}" stroke="none"/><circle cx="90" cy="198" r="3" fill="${c.ink}" stroke="none"/><circle cx="104" cy="198" r="3" fill="${c.ink}" stroke="none"/>
-  `,
-  /** 학교 소식 — 신문과 확성기 */
-  news: (c) => `
-    <path d="M16 40h160v140H32a16 16 0 0 1-16-16z" fill="${c.paper}"/>
-    <path d="M176 60h34v104a16 16 0 0 1-16 16"/>
-    <rect x="36" y="60" width="64" height="52"/>
-    <path d="M116 64h44M116 80h44M116 96h30M36 128h124M36 144h124M36 160h84" stroke-width="1.5"/>
-    <path d="M212 132v40l64 22V110z" fill="${c.paper}"/>
-    <path d="M220 172l10 30h20l-8-28M276 110l24-14v102l-24-14"/>
-    <path d="M306 138a20 20 0 0 1 0 28" stroke="${c.accent}" stroke-width="3"/>
-    <path d="M312 126a36 36 0 0 1 0 52" stroke="${c.accent}" stroke-width="2"/>
   `,
   /** 성적표 — 시상대 */
   podium: (c) => `

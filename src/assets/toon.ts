@@ -323,16 +323,6 @@ export const SCENES: Record<string, Draw> = {
     ${ground(c, 206)}
   `,
   /** 학교 소식 — 신문과 확성기 */
-  news: (c) => `
-    <path d="M26 44 H186 V176 H44 a18 18 0 0 1 -18 -18z" fill="${c.white}" stroke="${c.ink}"/>
-    <path d="M186 64 H216 V158 a18 18 0 0 1 -18 18" fill="${c.soft}" stroke="${c.ink}"/>
-    <rect x="44" y="62" width="64" height="50" rx="6" fill="${c.sky}" stroke="${c.ink}"/>
-    <path d="M120 66 h50 M120 82 h50 M120 98 h30 M44 128 h126 M44 144 h126 M44 160 h86" stroke="${c.ink}" stroke-width="3"/>
-    <path d="M214 128 v40 l62 22 V106z" fill="${c.coral}" stroke="${c.ink}"/>
-    <path d="M222 168 l10 30 h20 l-8 -28" fill="${c.orange}" stroke="${c.ink}"/>
-    <path d="M276 106 l24 -14 v100 l-24 -14" fill="${c.orange}" stroke="${c.ink}"/>
-    <path d="M306 136 a20 20 0 0 1 0 26" fill="none" stroke="${c.yellow}" stroke-width="5"/><path d="M312 124 a36 36 0 0 1 0 50" fill="none" stroke="${c.yellow}" stroke-width="3"/>
-  `,
   /** 마무리 — 마스코트가 방향을 가리킨다 */
   closing: (c) => `
     ${cloud(c, 40, 20, 0.7)}${cloud(c, 240, 28, 0.5)}

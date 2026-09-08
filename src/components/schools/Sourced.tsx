@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import type { SchoolRecord } from "@/types/school";
-import { NEWS_KIND_LABEL, type NewsKind, type SchoolNews } from "@/data/news";
-import { NEWS_KIND_ICON, NEWS_KIND_ORDER, tmiIcon } from "@/lib/schools/icons";
+import { tmiIcon } from "@/lib/schools/icons";
 import { ORUN_MESSAGES, ORUN_RESULTS, type ExamReport, type SourcedSchool } from "@/data/sourced";
 import type { IconName } from "@/assets/art";
 import type { SceneName } from "@/assets/toon";
@@ -358,39 +357,3 @@ export function OrunSection({ chapter, head }: { chapter: Chapter; head: HeadFn 
   );
 }
 
-/* ── 학교 소식 ──────────────────────────── */
-
-const KIND_CHIP: Record<NewsKind, string> = {
-  news: "orun-chip--yellow",
-  curriculum: "orun-chip--blue",
-  results: "orun-chip--coral",
-  life: "orun-chip--mint",
-  program: "orun-chip--lav",
-  english: "orun-chip--blue",
-  freeSemester: "orun-chip--mint",
-  admission: "orun-chip--coral",
-};
-
-export function SchoolNewsBlock({ n }: { n: SchoolNews }) {
-  if (!n.items.length) return null;
-  const items = [...n.items].sort((a, b) => NEWS_KIND_ORDER.indexOf(a.kind) - NEWS_KIND_ORDER.indexOf(b.kind));
-  return (
-    <SourcedBlock en={BLOCK.news.en} ko={BLOCK.news.ko} icon="news">
-      {n.oneLiner && (
-        <p style={{ margin: "0 0 14px", fontSize: 15.5, color: "var(--ink)", fontFamily: "var(--display)", lineHeight: 1.5 }}>{n.oneLiner}</p>
-      )}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 12 }}>
-        {items.map((it, i) => (
-          <div key={i} className="orun-card orun-card--flat" style={{ padding: "14px 16px", display: "grid", gap: 8 }}>
-            <span className={`orun-chip ${KIND_CHIP[it.kind]}`} style={{ justifySelf: "start" }}>
-              <Icon name={NEWS_KIND_ICON[it.kind]} size={13} />
-              {NEWS_KIND_LABEL[it.kind]}
-            </span>
-            <div style={{ fontSize: 14.5, fontWeight: 700, color: "var(--ink)", lineHeight: 1.4 }}>{it.title}</div>
-            <div style={{ fontSize: 13, color: "var(--body)", lineHeight: 1.55 }}>{it.summary}</div>
-          </div>
-        ))}
-      </div>
-    </SourcedBlock>
-  );
-}
