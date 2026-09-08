@@ -1,5 +1,5 @@
-# 동형 모의고사 생성기를 GitHub Pages 로 올린다.
-# Pages 는 gh-pages 브랜치를 소스로 읽는다. 그 브랜치에는 생성기 한 파일만 둔다 —
+# 정적 HTML 앱들을 GitHub Pages 로 올린다.
+# Pages 는 gh-pages 브랜치를 소스로 읽는다. 그 브랜치에는 여기 나열한 파일만 둔다 —
 # 저장소의 나머지는 웹으로 열리지 않는다.
 name: Pages
 
@@ -8,6 +8,8 @@ on:
     branches: [main]
     paths:
       - 'public/mocktest-generator.html'
+      - 'public/orun-universe.html'
+      - 'public/orun-grammar.html'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -24,15 +26,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: 생성기를 gh-pages 로 올린다
+      - name: 정적 앱을 gh-pages 로 올린다
         run: |
           set -e
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           # 작업트리를 갈아엎지 않고 배관으로 커밋을 짓는다 — 저장소가 크다
-          blob=$(git hash-object -w public/mocktest-generator.html)
-          tree=$(printf '100644 blob %s\tindex.html\n100644 blob %s\tmocktest-generator.html\n' "$blob" "$blob" | git mktree)
+          mock=$(git hash-object -w public/mocktest-generator.html)
+          uni=$(git hash-object -w public/orun-universe.html)
+          gram=$(git hash-object -w public/orun-grammar.html)
+          # index.html 은 지금까지처럼 생성기다. 나머지는 제 이름으로 나란히 선다.
+          tree=$(printf '100644 blob %s\tindex.html\n100644 blob %s\tmocktest-generator.html\n100644 blob %s\torun-universe.html\n100644 blob %s\torun-grammar.html\n' \
+                 "$mock" "$mock" "$uni" "$gram" | git mktree)
 
           git fetch --no-tags --depth=1 origin gh-pages || true
           parent=$(git rev-parse -q --verify FETCH_HEAD || true)
@@ -42,7 +48,7 @@ jobs:
             exit 0
           fi
 
-          msg="동형 모의고사 생성기 ${GITHUB_SHA:0:7}"
+          msg="정적 앱 배포 ${GITHUB_SHA:0:7}"
           if [ -n "$parent" ]; then
             commit=$(git commit-tree "$tree" -p "$parent" -m "$msg")
           else
