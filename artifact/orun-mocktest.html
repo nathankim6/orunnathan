@@ -120,7 +120,7 @@
   --bar-h:56px;      /* .console — .seq-mini{top:56px} 와 한 세트, 절대 변경 금지 */
 
   /* ── 레이아웃 ── */
-  --w-narrow:640px; --w-wide:960px;
+  --w-narrow:640px; --w-wide:960px; --w-result:1280px; --w-rail:340px;
   --pad-x:20px; --pad-bottom:150px;
 
   /* ── 모션: 상한 320ms. transition:all 은 쓰지 않는다 ── */
@@ -1452,6 +1452,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 .exam-output u { text-underline-offset: 3px; }
 
 /* ═════════ 종이 미리보기 — A4 실측 불가침 ═════════ */
+#exportMode { min-width: 300px; }
 .paper-tools { display: flex; align-items: center; gap: var(--s3); flex-wrap: wrap; margin: 0 0 var(--s3); }
 .paper-tools .zoom { display: flex; align-items: center; gap: 0; background: var(--n3); border-radius: var(--r3); padding: 2px; }
 .paper-tools .zoom button {
@@ -1848,6 +1849,35 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 /* 아래 둘은 더 이상 어디에도 적용하지 않는다 — JS 호환을 위해 이름만 남긴다 */
 @keyframes sweep { to { transform: translateX(100%); } }
 @keyframes lampPulse { to { box-shadow: 0 0 0 3px var(--y-halo); } }
+
+/* ═════════ 완성 화면 두 기둥 — 종이가 화면을 갖고, 계기와 검수실은 옆 난간으로 ═════════ */
+.result-split { display: grid; gap: var(--s5); }
+.result-split > .paper-col { min-width: 0; }
+.result-split > .result-rail { min-width: 0; }
+@media (min-width: 1000px) {
+  .screen[data-s="result"] { max-width: var(--w-result); }
+  .screen[data-s="result"] .cta-bar .in { max-width: var(--w-result); }
+  .result-split { grid-template-columns: minmax(0, 1fr) var(--w-rail); align-items: start; }
+  /* 종이가 붙박이다 — 난간을 읽어 내려도 시험지는 화면에 남는다 */
+  .result-split > .paper-col {
+    grid-column: 1; grid-row: 1;
+    position: sticky; top: calc(var(--bar-h) + var(--s4));
+  }
+  .result-split > .result-rail { grid-column: 2; grid-row: 1; }
+  .result-rail > .h-title { margin-top: 0; }
+  .result-rail > .desk { flex-wrap: wrap; margin: 0 0 var(--s3); }
+  .result-rail .rr-head { flex-direction: column; align-items: flex-start; gap: 2px; }
+  .result-rail #exportMode { min-width: 0; width: 100%; }
+  /* 인쇄기는 종이 위에 얹힌 장식이다 — 종이 자리를 빼앗지 않을 만큼만 */
+  .paper-col .scene.printer { max-width: 560px; margin-left: auto; margin-right: auto; }
+  .screen[data-s="result"] { padding-top: var(--s6); }
+  /* 난간에서는 계기가 세로로 선다 */
+  .result-rail .meter { padding: var(--s4); grid-template-columns: 1fr; gap: var(--s3); }
+  .result-rail .meter .m-big { font-size: var(--fs-tl); }
+  .result-rail .meter .m-stats { flex-direction: column; gap: var(--s1); }
+  .result-rail .review-room { padding: var(--s3) var(--s4) var(--s4); }
+  .result-rail .rr-cards { grid-template-columns: 1fr; gap: var(--s2); }
+}
 
 /* ═════════ 검수실 ═════════ */
 .review-room { padding: var(--s4) var(--s5) var(--s5); margin: 0 0 var(--s3); }
@@ -2300,51 +2330,58 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 
 <!-- 화면 6 · 완성 -->
 <section class="screen wide" data-s="result" id="step3">
-  <h1 class="h-title" id="resultTitle">시험지가 완성됐어요</h1>
-  <p class="h-sub" id="resultSub">문항 위에 마우스를 올리면 다시 출제하거나 지울 수 있어요.</p>
 
-  <div class="meter" id="genMeter" hidden>
-    <div class="m-big"><span id="meterDone">0</span><small>/ <span id="meterTotal">0</span> 문항</small></div>
-    <div class="m-stats"><span><i class="lamp"></i><span id="meterState">출제 중</span></span><span><b id="meterChars">0</b> 자 출력</span><span><b id="meterRate">0</b> 자/초</span><span><b id="meterElapsed">0:00</b> 경과</span></div>
-    <div class="m-bar"><i id="meterBar"></i></div>
-    <div class="m-chips" id="meterChips"></div>
-  </div>
-
-  <div class="review-room" id="reviewRoom" hidden>
-    <div class="scene bench" id="reviewScene" aria-hidden="true"><svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="900" height="206" fill="var(--wall)"/><rect y="206" width="900" height="94" fill="var(--wain)"/><g class="seat" id="seat-A" transform="translate(200,0)"><g class="body"><use href="#rvpix-A" x="-60" y="22" width="120" height="189"/></g><g class="pl" style="transform-origin:96px 160px"><rect x="92" y="80" width="8" height="80" fill="var(--stick)"/><ellipse cx="96" cy="158" rx="12" ry="9" fill="#f7d0ad"/><rect class="sign" x="65" y="28" width="62" height="48" rx="4"/><text class="glyph" x="96" y="62" text-anchor="middle" font-size="30">?</text></g></g><g class="seat" id="seat-B" transform="translate(450,0)"><g class="body"><use href="#rvpix-B" x="-60" y="22" width="120" height="189"/></g><g class="pl" style="transform-origin:96px 160px"><rect x="92" y="80" width="8" height="80" fill="var(--stick)"/><ellipse cx="96" cy="158" rx="12" ry="9" fill="#f7d0ad"/><rect class="sign" x="65" y="28" width="62" height="48" rx="4"/><text class="glyph" x="96" y="62" text-anchor="middle" font-size="30">?</text></g></g><g class="seat" id="seat-C" transform="translate(700,0)"><g class="body"><use href="#rvpix-C" x="-60" y="22" width="120" height="189"/></g><g class="pl" style="transform-origin:96px 160px"><rect x="92" y="80" width="8" height="80" fill="var(--stick)"/><ellipse cx="96" cy="158" rx="12" ry="9" fill="#f7d0ad"/><rect class="sign" x="65" y="28" width="62" height="48" rx="4"/><text class="glyph" x="96" y="62" text-anchor="middle" font-size="30">?</text></g></g><polygon points="26,198 874,198 894,220 6,220" fill="var(--bench)"/><rect x="6" y="220" width="888" height="62" fill="var(--bench-2)"/><rect x="6" y="282" width="888" height="18" fill="var(--bench-3)"/><g font-size="13" text-anchor="middle" fill="#4a4034"><rect x="154" y="234" width="92" height="24" rx="3" fill="var(--plate)"/><text x="200" y="251">이명악</text><rect x="404" y="234" width="92" height="24" rx="3" fill="var(--plate)"/><text x="450" y="251">조정석</text><rect x="654" y="234" width="92" height="24" rx="3" fill="var(--plate)"/><text x="700" y="251">싼티</text></g><g class="gavel" transform="translate(816,178) rotate(-14)" style="transform-origin:840px 190px"><rect x="0" y="0" width="48" height="13" rx="3" fill="#6f5334"/><rect x="19" y="11" width="9" height="24" fill="#87673f"/></g></svg></div>
-    <div class="rr-head"><span class="rr-title">검수실</span><span class="rr-sum" id="rrSum"></span></div>
-    <div class="rr-cards" id="rrCards"></div>
-    <div class="rr-table" id="rrTable" hidden>
-      <div class="rr-t-head"><span class="dot"></span><b id="rrTableTitle">합의 회의</b><span class="gap"></span><span class="rr-t-note" id="rrTableNote"></span></div>
-      <ul class="rr-t-list" id="rrTableList"></ul>
-    </div>
-  </div>
-
-  <div class="desk" style="margin-top:4px">
+  <div class="result-split">
+    <aside class="result-rail">
+    <h1 class="h-title" id="resultTitle">시험지가 완성됐어요</h1>
+    <p class="h-sub" id="resultSub">문항 위에 마우스를 올리면 다시 출제하거나 지울 수 있어요.</p>
+    <div class="desk">
     <button type="button" class="btn ghost" id="editToggle">직접 수정</button>
     <span class="gap"></span>
     <span class="slug">저장 범위</span>
-    <div class="seg" id="exportMode" style="min-width:300px">
-      <button type="button" class="on" data-v="all">문제 + 정답</button>
-      <button type="button" data-v="q">문제지만</button>
-      <button type="button" data-v="a">정답지만</button>
+    <div class="seg" id="exportMode">
+    <button type="button" class="on" data-v="all">문제 + 정답</button>
+    <button type="button" data-v="q">문제지만</button>
+    <button type="button" data-v="a">정답지만</button>
+    </div>
+    </div>
+    <div class="meter" id="genMeter" hidden>
+      <div class="m-big"><span id="meterDone">0</span><small>/ <span id="meterTotal">0</span> 문항</small></div>
+      <div class="m-stats"><span><i class="lamp"></i><span id="meterState">출제 중</span></span><span><b id="meterChars">0</b> 자 출력</span><span><b id="meterRate">0</b> 자/초</span><span><b id="meterElapsed">0:00</b> 경과</span></div>
+      <div class="m-bar"><i id="meterBar"></i></div>
+      <div class="m-chips" id="meterChips"></div>
+    </div>
+  
+    <div class="review-room" id="reviewRoom" hidden>
+      <div class="scene bench" id="reviewScene" aria-hidden="true"><svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="900" height="206" fill="var(--wall)"/><rect y="206" width="900" height="94" fill="var(--wain)"/><g class="seat" id="seat-A" transform="translate(200,0)"><g class="body"><use href="#rvpix-A" x="-60" y="22" width="120" height="189"/></g><g class="pl" style="transform-origin:96px 160px"><rect x="92" y="80" width="8" height="80" fill="var(--stick)"/><ellipse cx="96" cy="158" rx="12" ry="9" fill="#f7d0ad"/><rect class="sign" x="65" y="28" width="62" height="48" rx="4"/><text class="glyph" x="96" y="62" text-anchor="middle" font-size="30">?</text></g></g><g class="seat" id="seat-B" transform="translate(450,0)"><g class="body"><use href="#rvpix-B" x="-60" y="22" width="120" height="189"/></g><g class="pl" style="transform-origin:96px 160px"><rect x="92" y="80" width="8" height="80" fill="var(--stick)"/><ellipse cx="96" cy="158" rx="12" ry="9" fill="#f7d0ad"/><rect class="sign" x="65" y="28" width="62" height="48" rx="4"/><text class="glyph" x="96" y="62" text-anchor="middle" font-size="30">?</text></g></g><g class="seat" id="seat-C" transform="translate(700,0)"><g class="body"><use href="#rvpix-C" x="-60" y="22" width="120" height="189"/></g><g class="pl" style="transform-origin:96px 160px"><rect x="92" y="80" width="8" height="80" fill="var(--stick)"/><ellipse cx="96" cy="158" rx="12" ry="9" fill="#f7d0ad"/><rect class="sign" x="65" y="28" width="62" height="48" rx="4"/><text class="glyph" x="96" y="62" text-anchor="middle" font-size="30">?</text></g></g><polygon points="26,198 874,198 894,220 6,220" fill="var(--bench)"/><rect x="6" y="220" width="888" height="62" fill="var(--bench-2)"/><rect x="6" y="282" width="888" height="18" fill="var(--bench-3)"/><g font-size="13" text-anchor="middle" fill="#4a4034"><rect x="154" y="234" width="92" height="24" rx="3" fill="var(--plate)"/><text x="200" y="251">이명악</text><rect x="404" y="234" width="92" height="24" rx="3" fill="var(--plate)"/><text x="450" y="251">조정석</text><rect x="654" y="234" width="92" height="24" rx="3" fill="var(--plate)"/><text x="700" y="251">싼티</text></g><g class="gavel" transform="translate(816,178) rotate(-14)" style="transform-origin:840px 190px"><rect x="0" y="0" width="48" height="13" rx="3" fill="#6f5334"/><rect x="19" y="11" width="9" height="24" fill="#87673f"/></g></svg></div>
+      <div class="rr-head"><span class="rr-title">검수실</span><span class="rr-sum" id="rrSum"></span></div>
+      <div class="rr-cards" id="rrCards"></div>
+      <div class="rr-table" id="rrTable" hidden>
+        <div class="rr-t-head"><span class="dot"></span><b id="rrTableTitle">합의 회의</b><span class="gap"></span><span class="rr-t-note" id="rrTableNote"></span></div>
+        <ul class="rr-t-list" id="rrTableList"></ul>
+      </div>
+    </div>
+  
+    </aside>
+    <div class="paper-col">
+    <div class="redo-box" id="redoBox">
+      <span class="slug" id="redoLabel">1번 다시 출제</span>
+      <select id="redoPassage"></select>
+      <input type="text" id="redoNote" placeholder="원하는 방향 (선택) — 예) 빈칸을 앞 문장으로, 오답 더 매력적으로">
+      <button type="button" class="btn" id="redoGo">출제</button>
+      <button type="button" class="btn link" id="redoCancel">취소</button>
+    </div>
+    <div class="paper-tools">
+      <div class="zoom"><button type="button" id="zoomOut" aria-label="축소">−</button><span class="zv" id="zoomVal">100%</span><button type="button" id="zoomIn" aria-label="확대">+</button><button type="button" class="fit" id="zoomFit">맞춤</button></div>
+      <span class="pages" id="pageCount"></span>
+      <span class="gap"></span>
+      <span class="pages">A4 · 2단 · 함초롬바탕 8pt · 여백 10mm — 워드·인쇄와 같은 판형</span>
+    </div>
+    <div class="scene printer" id="printScene" aria-hidden="true"><svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="352,10 548,10 560,26 340,26" fill="var(--case-3)"/><rect class="sheet" x="392" y="0" width="116" height="20" rx="2" fill="#fbfaf6"/><polygon points="318,26 582,26 606,52 294,52" fill="var(--case)"/><rect x="294" y="52" width="312" height="62" rx="4" fill="var(--case-2)"/><rect x="294" y="94" width="312" height="20" fill="var(--case-3)"/><rect x="330" y="100" width="240" height="11" rx="2" fill="var(--slot)"/><rect x="314" y="64" width="52" height="7" rx="2" fill="var(--case-3)"/><rect x="314" y="76" width="32" height="6" rx="2" fill="var(--case-3)"/><circle class="led" cx="586" cy="72" r="5" fill="#4ad06a"/><rect x="306" y="114" width="288" height="9" rx="3" fill="var(--case-3)"/><polygon points="342,110 558,110 566,150 334,150" fill="#fbfaf6"/><g fill="#e2ded2"><rect x="358" y="120" width="184" height="3"/><rect x="358" y="129" width="184" height="3"/><rect x="358" y="138" width="150" height="3"/></g></svg></div>
+    <div class="paper-view" id="paperView"><div class="paper-box" id="paperBox"><div class="paper-scale" id="examOutput"></div></div></div>
     </div>
   </div>
-  <div class="redo-box" id="redoBox">
-    <span class="slug" id="redoLabel">1번 다시 출제</span>
-    <select id="redoPassage"></select>
-    <input type="text" id="redoNote" placeholder="원하는 방향 (선택) — 예) 빈칸을 앞 문장으로, 오답 더 매력적으로">
-    <button type="button" class="btn" id="redoGo">출제</button>
-    <button type="button" class="btn link" id="redoCancel">취소</button>
-  </div>
-  <div class="scene printer" id="printScene" aria-hidden="true"><svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="352,10 548,10 560,26 340,26" fill="var(--case-3)"/><rect class="sheet" x="392" y="0" width="116" height="20" rx="2" fill="#fbfaf6"/><polygon points="318,26 582,26 606,52 294,52" fill="var(--case)"/><rect x="294" y="52" width="312" height="62" rx="4" fill="var(--case-2)"/><rect x="294" y="94" width="312" height="20" fill="var(--case-3)"/><rect x="330" y="100" width="240" height="11" rx="2" fill="var(--slot)"/><rect x="314" y="64" width="52" height="7" rx="2" fill="var(--case-3)"/><rect x="314" y="76" width="32" height="6" rx="2" fill="var(--case-3)"/><circle class="led" cx="586" cy="72" r="5" fill="#4ad06a"/><rect x="306" y="114" width="288" height="9" rx="3" fill="var(--case-3)"/><polygon points="342,110 558,110 566,150 334,150" fill="#fbfaf6"/><g fill="#e2ded2"><rect x="358" y="120" width="184" height="3"/><rect x="358" y="129" width="184" height="3"/><rect x="358" y="138" width="150" height="3"/></g></svg></div>
-  <div class="paper-tools">
-    <div class="zoom"><button type="button" id="zoomOut" aria-label="축소">−</button><span class="zv" id="zoomVal">100%</span><button type="button" id="zoomIn" aria-label="확대">+</button><button type="button" class="fit" id="zoomFit">맞춤</button></div>
-    <span class="pages" id="pageCount"></span>
-    <span class="gap"></span>
-    <span class="pages">A4 · 2단 · 함초롬바탕 8pt · 여백 10mm — 워드·인쇄와 같은 판형</span>
-  </div>
-  <div class="paper-view" id="paperView"><div class="paper-box" id="paperBox"><div class="paper-scale" id="examOutput"></div></div></div>
+
 
   <div class="seq" id="genProgress"></div>
   <p class="callcount" id="usageInfo"></p>
@@ -4509,7 +4546,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   function diagnostics() {
     return [
       "ORUN 동형 모의고사 진단",
-      "build: 2026-09-09 02:00",
+      "build: 2026-09-09 03:10",
       "url: " + location.href,
       "runtime: API 키 전용 빌드",
       "sample 확보: " + (SAMPLE ? "예" : "아니오"),
@@ -5819,9 +5856,21 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     const h = (view.clientHeight - 34) / (297 * MM);
     return Math.max(0.25, Math.min(1.6, Math.min(w, h)));
   }
+  // 두 기둥 배치에서는 종이 칸이 접힌 선에서 끝나야 한 쪽이 통째로 보인다.
+  // 칸의 높이를 눈금으로 재서 남은 만큼만 준다 — 상수로 박으면 화면마다 어긋난다.
+  function sizePaperView() {
+    const view = $("paperView");
+    if (!view || !view.getClientRects().length) return;
+    if (innerWidth < 1000) { view.style.maxHeight = ""; return; }
+    const top = view.getBoundingClientRect().top + scrollY;   // 문서 기준 — 스크롤과 무관하게
+    const bar = document.querySelector('[data-s="result"] .cta-bar');
+    const barH = bar ? bar.getBoundingClientRect().height : 0;
+    view.style.maxHeight = Math.max(320, Math.round(innerHeight - top - barH - 10)) + "px";
+  }
   function applyZoom() {
     const view = $("paperView"), root = $("examOutput"), box = $("paperBox");
     if (!view || !root) return;
+    sizePaperView();
     const z = paperZoom || fitZoom();
     root.style.transform = "scale(" + z + ")";
     root.style.marginLeft = Math.max(0, (view.clientWidth - 210 * MM * z) / 2) + "px";
