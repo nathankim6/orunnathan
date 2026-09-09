@@ -96,9 +96,12 @@ export interface ExamAnalysis {
 
 
 export interface AppliedCrop {
+  /** 시험지 그림 주소. 글자로만 담는 문항은 빈 문자열이다. */
   url: string;
   problemNumber: string;
   problemName: string;
+  /** 시험지에서 그대로 뽑아낸 문제 글자. 글자로 담기는 문항은 이쪽이 본체다. */
+  text?: QuestionText;
 }
 
 interface CropCandidate {
@@ -635,7 +638,9 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
   const handleApply = async () => {
     if (!analysis) return;
     setStage('applying');
-    const targets = candidates.filter((c) => c.selected && c.dataUrl);
+    // 글자로 담는 문항은 dataUrl 이 비어 있다. 그림이 없다고 빠뜨리면
+    // 정작 본체인 글자가 리포트에 들어가지 않는다.
+    const targets = candidates.filter((c) => c.selected && (c.dataUrl || c.text.charCount > 0));
     setProgress(0);
     setProgressLog([]);
     mark('applying', 5, `문항 이미지 ${targets.length}건 업로드를 시작합니다.`);
@@ -643,23 +648,35 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
     try {
       let done = 0;
       for (const candidate of targets) {
-        const blob = dataUrlToBlob(candidate.dataUrl);
-        const path = `ai-crop-${Date.now()}-${candidate.problem.number}.jpg`;
-        const { error } = await supabase.storage.from('report-photos').upload(path, blob, {
-          contentType: 'image/jpeg',
-          upsert: true,
-        });
         done += 1;
-        mark('applying', 5 + (done / Math.max(1, targets.length)) * 88, `${candidate.problem.number}번 문항 이미지 업로드 완료`);
-        if (error) {
-          console.error('문항 이미지 업로드 실패:', error);
-          continue;
+        // 그림이 필요한 문항만 업로드한다. 글자로 담는 문항은 올릴 것이 없다.
+        let url = '';
+        if (candidate.dataUrl) {
+          const blob = dataUrlToBlob(candidate.dataUrl);
+          const path = `ai-crop-${Date.now()}-${candidate.problem.number}.jpg`;
+          const { error } = await supabase.storage.from('report-photos').upload(path, blob, {
+            contentType: 'image/jpeg',
+            upsert: true,
+          });
+          if (error) {
+            console.error('문항 이미지 업로드 실패:', error);
+          } else {
+            url = supabase.storage.from('report-photos').getPublicUrl(path).data.publicUrl;
+          }
         }
-        const { data } = supabase.storage.from('report-photos').getPublicUrl(path);
+        mark(
+          'applying',
+          5 + (done / Math.max(1, targets.length)) * 88,
+          candidate.dataUrl
+            ? `${candidate.problem.number}번 문항 이미지 업로드 완료`
+            : `${candidate.problem.number}번 문항 글자 정리 완료`,
+        );
+        if (!url && candidate.text.charCount === 0) continue;
         crops.push({
-          url: data.publicUrl,
+          url,
           problemNumber: String(candidate.problem.number),
           problemName: candidate.problem.note || candidate.problem.name,
+          text: candidate.text.charCount > 0 ? candidate.text : undefined,
         });
       }
       onApply(analysis, crops);

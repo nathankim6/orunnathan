@@ -724,6 +724,8 @@ const ReportForm: React.FC<ReportFormProps> = ({
           url: crop.url,
           problemNumber: Number(crop.problemNumber) || undefined,
           problemName: crop.problemName,
+          // 글자로 담는 문항은 url 이 비어 있고 이쪽이 본체다.
+          text: crop.text,
         })),
       ],
     }));

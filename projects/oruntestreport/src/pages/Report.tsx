@@ -16,6 +16,7 @@ import ReportKpiRail from "@/components/ReportKpiRail";
 import ReportStatCharts from "@/components/ReportStatCharts";
 import DifficultProblemsExplanation from "@/components/DifficultProblemsExplanation";
 import HitQuestionPhotos from "@/components/HitQuestionPhotos";
+import type { QuestionText } from "@/utils/questionText";
 import ExamFeaturesSection from "@/components/ExamFeaturesSection";
 import KillerTop5Section from "@/components/KillerTop5Section";
 import PassageVariantSection from "@/components/PassageVariantSection";
@@ -64,9 +65,12 @@ type ReportDataType = {
   highlights?: Array<ReportHighlight>;
 
   hitQuestionPhotos?: Array<{
+    /** 시험지 그림. 글자로만 담는 문항은 비어 있다. */
     url: string;
     problemNumber?: number;
     problemName?: string;
+    /** 시험지에서 뽑아낸 문제 글자 — 있으면 그림 대신 조판해 보여 준다. */
+    text?: QuestionText;
     selectedArea?: {
       x: number;
       y: number;
