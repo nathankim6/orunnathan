@@ -823,6 +823,7 @@ textarea:focus, input:focus { border-color: var(--line-4); outline: 2px solid va
 .scene .sheetstack > * { animation: scPaperIn var(--d3) var(--e-emph) backwards; }
 @keyframes scBlink { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
 .scene.band .blink { animation: scBlink 1.6s steps(1, end) infinite; }
+.scene.band .dw { opacity: 0; transition: opacity var(--d2) var(--e-out); }
 @media (prefers-reduced-motion: reduce) {
   .scene .sheetstack > *, .scene.band .blink { animation: none; }
 }
@@ -2134,7 +2135,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 
 <!-- 화면 1 · 시험지 -->
 <section class="screen" data-s="exam">
-  <div class="scene band" aria-hidden="true"><svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="900" height="92" fill="var(--wall)"/><g transform="translate(58,14)"><rect width="120" height="60" fill="var(--blind)"/><g fill="var(--slat)"><rect x="7" y="9" width="106" height="6"/><rect x="7" y="24" width="106" height="6"/><rect x="7" y="39" width="106" height="6"/></g></g><rect y="92" width="900" height="58" fill="var(--floor)"/><g class="sheetstack"><polygon points="352,42 548,42 556,56 344,56" fill="#fbfaf6" style="animation-delay:.05s"/><polygon points="348,54 552,54 560,68 340,68" fill="#f0ede2" style="animation-delay:.12s"/><polygon points="344,66 556,66 564,80 336,80" fill="#fbfaf6" style="animation-delay:.2s"/></g><polygon points="330,80 570,80 582,96 318,96" fill="var(--case-2)"/><rect x="318" y="96" width="264" height="14" rx="2" fill="var(--case-3)"/><use href="#rvpix-A" x="140" y="8" width="66" height="104"/><polygon points="14,110 886,110 900,124 0,124" fill="var(--desk)"/><rect y="124" width="900" height="12" fill="var(--desk-edge)"/></svg></div>
+  <div class="scene band" aria-hidden="true"><svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="900" height="92" fill="var(--wall)"/><g transform="translate(58,14)"><rect width="120" height="60" fill="var(--blind)"/><g fill="var(--slat)"><rect x="7" y="9" width="106" height="6"/><rect x="7" y="24" width="106" height="6"/><rect x="7" y="39" width="106" height="6"/></g></g><rect y="92" width="900" height="58" fill="var(--floor)"/><g class="sheetstack" id="examTray"></g><polygon points="330,80 570,80 582,96 318,96" fill="var(--case-2)"/><rect x="318" y="96" width="264" height="14" rx="2" fill="var(--case-3)"/><use href="#rvpix-A" x="140" y="8" width="66" height="104"/><polygon points="14,110 886,110 900,124 0,124" fill="var(--desk)"/><rect y="124" width="900" height="12" fill="var(--desk-edge)"/></svg></div>
   <h1 class="h-title">시험지를 올려주세요</h1>
   <p class="h-sub" id="examSub">PDF, 한글, 워드 다 괜찮아요. 스캔한 사진 PDF도 읽어요.</p>
 
@@ -2166,7 +2167,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 
 <!-- 화면 2 · 시험범위 -->
 <section class="screen" data-s="scope">
-  <div class="scene band" aria-hidden="true"><svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="900" height="92" fill="var(--wall)"/><g transform="translate(58,14)"><rect width="120" height="60" fill="var(--blind)"/><g fill="var(--slat)"><rect x="7" y="9" width="106" height="6"/><rect x="7" y="24" width="106" height="6"/><rect x="7" y="39" width="106" height="6"/></g></g><rect y="92" width="900" height="58" fill="var(--floor)"/><g class="sheetstack"><polygon points="352,42 548,42 556,56 344,56" fill="#fbfaf6" style="animation-delay:.05s"/><polygon points="348,54 552,54 560,68 340,68" fill="#f0ede2" style="animation-delay:.12s"/><polygon points="344,66 556,66 564,80 336,80" fill="#fbfaf6" style="animation-delay:.2s"/></g><polygon points="330,80 570,80 582,96 318,96" fill="var(--case-2)"/><rect x="318" y="96" width="264" height="14" rx="2" fill="var(--case-3)"/><use href="#rvpix-B" x="700" y="8" width="66" height="104"/><polygon points="14,110 886,110 900,124 0,124" fill="var(--desk)"/><rect y="124" width="900" height="12" fill="var(--desk-edge)"/></svg></div>
+  <div class="scene band" aria-hidden="true"><svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="900" height="92" fill="var(--wall)"/><g transform="translate(58,14)"><rect width="120" height="60" fill="var(--blind)"/><g fill="var(--slat)"><rect x="7" y="9" width="106" height="6"/><rect x="7" y="24" width="106" height="6"/><rect x="7" y="39" width="106" height="6"/></g></g><rect y="92" width="900" height="58" fill="var(--floor)"/><g class="sheetstack" id="scopeTray"></g><polygon points="330,80 570,80 582,96 318,96" fill="var(--case-2)"/><rect x="318" y="96" width="264" height="14" rx="2" fill="var(--case-3)"/><use href="#rvpix-B" x="700" y="8" width="66" height="104"/><polygon points="14,110 886,110 900,124 0,124" fill="var(--desk)"/><rect y="124" width="900" height="12" fill="var(--desk-edge)"/></svg></div>
   <h1 class="h-title">시험범위 자료를 올려주세요 <span class="chip" id="scopeCount">0 / 15</span></h1>
   <p class="h-sub">교과서, 부교재, 모의고사… 여러 개 올려도 돼요. 아래에 텍스트로 붙여넣어도 돼요.</p>
 
@@ -2362,7 +2363,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 
 <!-- 화면 4 · 저장소 -->
 <section class="screen wide" data-s="vault">
-  <div class="scene band" aria-hidden="true"><svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="900" height="112" fill="var(--wall)"/><rect y="112" width="900" height="38" fill="var(--floor)"/><g transform="translate(300,10)"><rect x="-6" y="-6" width="242" height="126" rx="4" fill="var(--case)"/><rect x="0" y="2" width="230" height="36" rx="2" fill="var(--case-2)"/><rect x="0" y="34" width="230" height="4" fill="var(--case-3)"/><rect x="86" y="15" width="58" height="9" rx="3" fill="var(--case-3)"/><rect x="14" y="13" width="46" height="12" rx="2" fill="#fbfaf6"/><rect x="0" y="40" width="230" height="36" rx="2" fill="var(--case-2)"/><rect x="0" y="72" width="230" height="4" fill="var(--case-3)"/><rect x="86" y="53" width="58" height="9" rx="3" fill="var(--case-3)"/><rect x="14" y="51" width="46" height="12" rx="2" fill="#fbfaf6"/><rect x="0" y="78" width="230" height="36" rx="2" fill="var(--case-2)"/><rect x="0" y="110" width="230" height="4" fill="var(--case-3)"/><rect x="86" y="91" width="58" height="9" rx="3" fill="var(--case-3)"/><rect x="14" y="89" width="46" height="12" rx="2" fill="#fbfaf6"/></g><g transform="translate(560,10)"><rect x="-6" y="-6" width="242" height="126" rx="4" fill="var(--case)"/><rect x="0" y="2" width="230" height="36" rx="2" fill="var(--case-2)"/><rect x="0" y="34" width="230" height="4" fill="var(--case-3)"/><rect x="86" y="15" width="58" height="9" rx="3" fill="var(--case-3)"/><rect x="14" y="13" width="46" height="12" rx="2" fill="#fbfaf6"/><rect x="0" y="40" width="230" height="36" rx="2" fill="var(--case-2)"/><rect x="0" y="72" width="230" height="4" fill="var(--case-3)"/><rect x="86" y="53" width="58" height="9" rx="3" fill="var(--case-3)"/><rect x="14" y="51" width="46" height="12" rx="2" fill="#fbfaf6"/><rect x="0" y="78" width="230" height="36" rx="2" fill="var(--case-2)"/><rect x="0" y="110" width="230" height="4" fill="var(--case-3)"/><rect x="86" y="91" width="58" height="9" rx="3" fill="var(--case-3)"/><rect x="14" y="89" width="46" height="12" rx="2" fill="#fbfaf6"/></g><use href="#rvpix-B" x="150" y="14" width="66" height="104"/><polygon points="0,118 900,118 900,130 0,130" fill="var(--desk-edge)"/></svg></div>
+  <div class="scene band" aria-hidden="true"><svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="900" height="112" fill="var(--wall)"/><rect y="112" width="900" height="38" fill="var(--floor)"/><g transform="translate(300,10)"><rect x="-6" y="-6" width="242" height="126" rx="4" fill="var(--case)"/><rect x="0" y="2" width="230" height="36" rx="2" fill="var(--case-2)"/><rect x="0" y="34" width="230" height="4" fill="var(--case-3)"/><rect x="86" y="15" width="58" height="9" rx="3" fill="var(--case-3)"/><rect class="dw" x="14" y="13" width="46" height="12" rx="2" fill="#fbfaf6"/><rect x="0" y="40" width="230" height="36" rx="2" fill="var(--case-2)"/><rect x="0" y="72" width="230" height="4" fill="var(--case-3)"/><rect x="86" y="53" width="58" height="9" rx="3" fill="var(--case-3)"/><rect class="dw" x="14" y="51" width="46" height="12" rx="2" fill="#fbfaf6"/><rect x="0" y="78" width="230" height="36" rx="2" fill="var(--case-2)"/><rect x="0" y="110" width="230" height="4" fill="var(--case-3)"/><rect x="86" y="91" width="58" height="9" rx="3" fill="var(--case-3)"/><rect class="dw" x="14" y="89" width="46" height="12" rx="2" fill="#fbfaf6"/></g><g transform="translate(560,10)"><rect x="-6" y="-6" width="242" height="126" rx="4" fill="var(--case)"/><rect x="0" y="2" width="230" height="36" rx="2" fill="var(--case-2)"/><rect x="0" y="34" width="230" height="4" fill="var(--case-3)"/><rect x="86" y="15" width="58" height="9" rx="3" fill="var(--case-3)"/><rect class="dw" x="14" y="13" width="46" height="12" rx="2" fill="#fbfaf6"/><rect x="0" y="40" width="230" height="36" rx="2" fill="var(--case-2)"/><rect x="0" y="72" width="230" height="4" fill="var(--case-3)"/><rect x="86" y="53" width="58" height="9" rx="3" fill="var(--case-3)"/><rect class="dw" x="14" y="51" width="46" height="12" rx="2" fill="#fbfaf6"/><rect x="0" y="78" width="230" height="36" rx="2" fill="var(--case-2)"/><rect x="0" y="110" width="230" height="4" fill="var(--case-3)"/><rect x="86" y="91" width="58" height="9" rx="3" fill="var(--case-3)"/><rect class="dw" x="14" y="89" width="46" height="12" rx="2" fill="#fbfaf6"/></g><use href="#rvpix-B" x="150" y="14" width="66" height="104"/><polygon points="0,118 900,118 900,130 0,130" fill="var(--desk-edge)"/></svg></div>
   <h1 class="h-title">저장소</h1>
   <p class="h-sub">만든 시험지를 계정에 담아 둬요. 다른 컴퓨터에서 로그인해도 그대로 열려요.</p>
 
@@ -2959,7 +2960,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 
   function renderExamList() {
     $("examList").innerHTML = "";
-    if (!examPdf) return;
+    if (!examPdf) { sceneTray("examTray", []); return; }
     const li = document.createElement("li");
     const [eb, ec] = badgeOf(examPdf.ext || "pdf");
     li.innerHTML = `<span class="fbadge ${ec}">${eb}</span><span class="fname"></span><span class="meta"></span>`;
@@ -2980,6 +2981,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     if (loading) { const row = progRow(examPdf, "exam"); if (row) li.appendChild(row); }
     $("examList").appendChild(li);
     if (loading) progPaint("exam", true);
+    sceneTray("examTray", examPdf ? [examPdf.status] : []);
   }
 
   function renderScopeList() {
@@ -3009,6 +3011,8 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
       $("scopeList").appendChild(li);
       if (busy) progPaint(k, true);
     });
+
+    sceneTray("scopeTray", scopeItems.map(i => i.status));
 
     const chip = $("scopeCount");
     chip.textContent = scopeItems.length + " / " + MAX_SCOPE_FILES;
@@ -4505,7 +4509,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   function diagnostics() {
     return [
       "ORUN 동형 모의고사 진단",
-      "build: 2026-09-08 02:31",
+      "build: 2026-09-09 02:00",
       "url: " + location.href,
       "runtime: API 키 전용 빌드",
       "sample 확보: " + (SAMPLE ? "예" : "아니오"),
@@ -4941,6 +4945,32 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 
   // 장면은 무대(계기판)와 같은 신호를 받아 움직인다. 화면에 읽히는 정보는 무대가 책임지고,
   // 장면은 그 일이 '누가 무엇을 하고 있는지'로 보이게 한다.
+  // 장면이 상태를 비추게 한다 — 서류함에 쌓이는 종이는 올린 파일 수, 캐비닛 서랍은 담아 둔 시험지 수.
+  const TRAY_MAX = 6;
+  function sceneTray(id, states) {
+    const g = $(id); if (!g) return;
+    const want = states.slice(0, TRAY_MAX);
+    if (g.dataset.k === want.join(",")) return;
+    g.dataset.k = want.join(",");
+    g.innerHTML = "";
+    for (let i = want.length - 1; i >= 0; i--) {   // 아래 장이 앞에 오도록 위에서부터 그린다
+      const y = 66 - 12 * i, o = 4 * i;
+      const el = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+      el.setAttribute("points", [
+        (344 + o) + "," + y, (556 - o) + "," + y,
+        (564 - o) + "," + (y + 14), (336 + o) + "," + (y + 14),
+      ].join(" "));
+      el.setAttribute("fill", want[i] === "loading" ? "#e4e0d3" : want[i] === "error" ? "#e8cfc9"
+        : i % 2 ? "#f0ede2" : "#fbfaf6");
+      el.style.animationDelay = (0.05 + 0.07 * i).toFixed(2) + "s";
+      g.appendChild(el);
+    }
+  }
+  function sceneDrawers(n) {
+    document.querySelectorAll('[data-s="vault"] .scene.band .dw')
+      .forEach((el, i) => { el.style.opacity = i < n ? "1" : "0"; });
+  }
+
   const scene = (() => {
     const root = $("analyzeScene"), act = $("scAct"), lines = $("scLines");
     return {
@@ -6653,6 +6683,7 @@ list.map(disputeBlock).join("\n");
     const n = $("vaultCount");
     n.textContent = String(vaultRows.length);
     n.hidden = !(on && vaultRows.length);
+    sceneDrawers(on ? vaultRows.length : 0);
     renderVaultList();
   }
   function renderVaultList() {
