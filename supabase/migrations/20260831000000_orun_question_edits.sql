@@ -19,7 +19,11 @@ alter table public.orun_question_edits enable row level security;
 drop policy if exists "orun_edits_read"   on public.orun_question_edits;
 drop policy if exists "orun_edits_insert" on public.orun_question_edits;
 drop policy if exists "orun_edits_update" on public.orun_question_edits;
+drop policy if exists "orun_edits_delete" on public.orun_question_edits;
 
 create policy "orun_edits_read"   on public.orun_question_edits for select using (true);
 create policy "orun_edits_insert" on public.orun_question_edits for insert with check (true);
 create policy "orun_edits_update" on public.orun_question_edits for update using (true) with check (true);
+-- delete 정책이 없으면 앱의 '편집 되돌리기'(delRemote)가 204를 받고도 행을 지우지 못해
+-- 다음 동기화 때 삭제한 편집본이 되살아난다.
+create policy "orun_edits_delete" on public.orun_question_edits for delete using (true);
