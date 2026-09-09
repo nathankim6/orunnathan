@@ -22,6 +22,7 @@ import {
   type TextPiece,
   type QuestionText,
 } from '@/utils/questionText';
+import QuestionTextView from '@/components/QuestionTextView';
 import claudeLogoAsset from '@/assets/claude-logo.png.asset.json';
 const claudeLogo = claudeLogoAsset.url;
 
@@ -930,14 +931,18 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
                       </div>
                     </div>
 
-                    {candidate.dataUrl ? (
-                      <img
-                        src={candidate.dataUrl}
-                        alt={`${candidate.problem.number}번 문항`}
-                        className="w-full max-h-[220px] object-contain border border-slate-900/10 bg-white/70"
-                      />
-                    ) : (
-                      <p className="text-[12px] text-[hsl(var(--ink-soft))]">이미지를 생성할 수 없습니다.</p>
+                    {/* 글자로 담기는 문항은 리포트 서체로 조판해 보여 주고,
+                        밑줄·표가 있는 문항은 시험지 그림을 함께 보여 준다. */}
+                    <QuestionTextView
+                      text={candidate.text}
+                      number={candidate.problem.number}
+                      imageUrl={candidate.dataUrl || undefined}
+                      dense
+                    />
+                    {!candidate.confident && (
+                      <p className="mt-2 text-[11px]" style={{ color: 'hsl(var(--c3-deep))' }}>
+                        문항 번호 위치를 찾지 못해 대략적인 범위로 잡았습니다. 확인 후 선택하세요.
+                      </p>
                     )}
 
                     <div className="grid grid-cols-2 gap-2 mt-2">
