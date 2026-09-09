@@ -2,27 +2,9 @@ import React, { useCallback, useMemo, useRef, useState } from 'react';
 import * as pdfjsLib from 'pdfjs-dist';
 import workerSrc from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
-import { FileUp, Sparkles, Trash2, Check, Loader2 } from 'lucide-react';
-import { supabase } from '@/integrations/supabase/client';
+import { FileUp, Sparkles, Check, Loader2 } from 'lucide-react';
 import { EXAM_AI_MODEL_LABEL, EXAM_AI_VENDOR } from '@/lib/aiModel';
-import {
-  buildAllSegments,
-  fallbackSegments,
-  type CropSegment,
-  type ColumnLayout,
-  type NumberMark,
-} from '@/utils/questionCrop';
-import { renderSegments } from '@/utils/questionCropRender';
-import {
-  extractQuestionText,
-  needsOriginalImage,
-  type TextPiece,
-  type QuestionText,
-} from '@/utils/questionText';
-import QuestionTextView from '@/components/QuestionTextView';
 import claudeLogoAsset from '@/assets/claude-logo.png.asset.json';
 const claudeLogo = claudeLogoAsset.url;
 
@@ -43,8 +25,6 @@ export interface AnalyzedProblem {
   yStart?: number;
   yEnd?: number;
   note?: string;
-  /** 밑줄·네모가 있어야 성립하는 문항인지(어법·어휘). AI 가 알려 준다. */
-  markupDependent?: boolean;
 }
 
 export interface ExamFeatureItem {
@@ -95,44 +75,13 @@ export interface ExamAnalysis {
 
 
 
-export interface AppliedCrop {
-  /** 시험지 그림 주소. 글자로만 담는 문항은 빈 문자열이다. */
-  url: string;
-  problemNumber: string;
-  problemName: string;
-  /** 시험지에서 그대로 뽑아낸 문제 글자. 글자로 담기는 문항은 이쪽이 본체다. */
-  text?: QuestionText;
-}
-
-interface CropCandidate {
-  id: string;
-  problem: AnalyzedProblem;
-  /** 문항을 이루는 조각들. 단·페이지를 넘으면 2개 이상이 된다. */
-  segments: CropSegment[];
-  /** 아래 네 값은 첫 조각의 사본 — 조정 슬라이더가 이 값을 읽고 쓴다. */
-  yStart: number;
-  yEnd: number;
-  xStart: number;
-  xEnd: number;
-  /** 시험지에서 그대로 뽑아낸 문제 글자(발문 · 지문 · 선택지) */
-  text: QuestionText;
-  /** 글자로 담기 어려운 문항(표 · 그림 · 스캔본)일 때만 채워지는 그림 */
-  dataUrl: string;
-  selected: boolean;
-  /** 번호 좌표를 못 찾아 AI 추정으로 잡은 영역이면 false 로 두어 자동 업로드를 막는다. */
-  confident: boolean;
-}
-
-// NumberMark 는 questionCrop.ts 의 것을 그대로 쓴다(단 번호를 0|1 로 좁히면 3단을 못 담는다).
-
-
 interface ExamPdfAnalyzerProps {
   schoolType: 'middle' | 'high';
   /** 강사가 기본 정보 단계에서 입력한 시험 범위 — AI가 문항별 범위를 이 기준으로 지정 */
   examScope?: string;
   /** 시험 범위 원문 — 실제 출제 문장과 대조해 변형 분석 */
   originalPassages?: string;
-  onApply: (analysis: ExamAnalysis, crops: AppliedCrop[]) => void;
+  onApply: (analysis: ExamAnalysis) => void;
 }
 
 
@@ -144,44 +93,8 @@ const readAsDataUrl = (file: File) =>
     reader.readAsDataURL(file);
   });
 
-const cropFromPage = (
-  pageCanvas: HTMLCanvasElement,
-  yStart: number,
-  yEnd: number,
-  xStart = 0,
-  xEnd = 1,
-): string => {
-  const s = Math.max(0, Math.min(0.98, Math.min(yStart, yEnd)));
-  const e = Math.max(s + 0.02, Math.min(1, Math.max(yStart, yEnd)));
-  const top = Math.floor(pageCanvas.height * s);
-  const height = Math.max(24, Math.floor(pageCanvas.height * (e - s)));
-  const xs = Math.max(0, Math.min(0.95, Math.min(xStart, xEnd)));
-  const xe = Math.max(xs + 0.05, Math.min(1, Math.max(xStart, xEnd)));
-  const left = Math.floor(pageCanvas.width * xs);
-  const width = Math.max(24, Math.floor(pageCanvas.width * (xe - xs)));
-  const out = document.createElement('canvas');
-  out.width = width;
-  out.height = height;
-  const ctx = out.getContext('2d');
-  if (!ctx) return '';
-  ctx.fillStyle = '#ffffff';
-  ctx.fillRect(0, 0, out.width, out.height);
-  ctx.drawImage(pageCanvas, left, top, width, height, 0, 0, width, height);
-  return out.toDataURL('image/jpeg', 0.92);
-};
-
-const dataUrlToBlob = (dataUrl: string): Blob => {
-  const [head, body] = dataUrl.split(',');
-  const mime = head.match(/:(.*?);/)?.[1] ?? 'image/jpeg';
-  const bin = atob(body);
-  const bytes = new Uint8Array(bin.length);
-  for (let i = 0; i < bin.length; i += 1) bytes[i] = bin.charCodeAt(i);
-  return new Blob([bytes], { type: mime });
-};
-
 const PROGRESS_STEPS = [
-  { key: 'rendering', label: '시험지 페이지 렌더링' },
-  { key: 'reading', label: '문항 번호 · 좌표 인식' },
+  { key: 'rendering', label: '시험지 확인' },
   { key: 'analyzing', label: 'AI 문항 정밀 분석' },
   { key: 'variant', label: '원문 대조 · 변형 추출' },
   { key: 'applying', label: '입력폼 자동 반영' },
@@ -194,27 +107,16 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
   onApply,
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
-  const pageCanvasesRef = useRef<HTMLCanvasElement[]>([]);
-  const marksRef = useRef<NumberMark[]>([]);
-  /** 페이지별 글자 조각 — 문항 본문을 그대로 뽑아 쓰는 데 사용 */
-  const textPiecesRef = useRef<TextPiece[][]>([]);
-  /** 문항 번호 -> 그 문항을 이루는 조각 목록 */
-  const segmentsRef = useRef<Map<number, CropSegment[]>>(new Map());
-  /** 시험지 단 구성(자동 판정) */
-  const layoutRef = useRef<ColumnLayout>({ count: 1, bounds: [[0, 1]] });
   const rampRef = useRef<number | null>(null);
   const [fileName, setFileName] = useState('');
   const [stage, setStage] = useState<'idle' | 'rendering' | 'analyzing' | 'review' | 'applying'>('idle');
   const [analysis, setAnalysis] = useState<ExamAnalysis | null>(null);
-  const [candidates, setCandidates] = useState<CropCandidate[]>([]);
   const [progress, setProgress] = useState(0);
   const [progressStep, setProgressStep] = useState<(typeof PROGRESS_STEPS)[number]['key']>('rendering');
   const [progressDetail, setProgressDetail] = useState('');
   const [progressLog, setProgressLog] = useState<string[]>([]);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [numPages, setNumPages] = useState(0);
-  const [pagePreviews, setPagePreviews] = useState<string[]>([]);
-  const [editingId, setEditingId] = useState<string | null>(null);
 
 
   const busy = stage === 'rendering' || stage === 'analyzing' || stage === 'applying';
@@ -260,52 +162,6 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
   );
 
 
-  const buildCandidates = useCallback((problems: AnalyzedProblem[]) => {
-    const canvases = pageCanvasesRef.current;
-    const marks = marksRef.current;
-    const segmentsByNumber = segmentsRef.current;
-    const pieces = textPiecesRef.current;
-    // 중요 문항만 담는다 — 킬러 · 최고난도 · 변형 문항.
-    const targets = problems.filter((p) => p.isKiller || p.difficulty === 'very_hard' || p.isVariant);
-
-    return targets.slice(0, 12).map((problem) => {
-      const mark =
-        marks.find((m) => m.number === problem.number && m.page === (problem.page || 1)) ??
-        marks.find((m) => m.number === problem.number);
-      const found = segmentsByNumber.get(problem.number);
-      // 번호 좌표를 찾았으면 그 조각을 쓰고, 못 찾았으면 AI 가 준 대략 위치로 대신한다.
-      const segments =
-        mark && found && found.length > 0
-          ? found
-          : fallbackSegments(problem.page || 1, problem.yStart, problem.yEnd, layoutRef.current);
-      const confident = Boolean(mark && found && found.length > 0);
-      const page = segments[0]?.page ?? problem.page ?? 1;
-
-      const text = extractQuestionText(pieces, segments);
-      // 글자로 충분히 담기면 그림은 만들지 않는다(용량·선명도 때문에).
-      // 밑줄·네모가 핵심인 어법·어휘 문항, 표·그림이 섞인 문항, 스캔본은 그림을 쓴다.
-      const useImage = needsOriginalImage(
-        { category: problem.category, name: problem.name, markupDependent: problem.markupDependent },
-        text,
-      );
-      const dataUrl = useImage ? renderSegments(segments, canvases) : '';
-
-      return {
-        id: `${problem.number}-${page}`,
-        problem: { ...problem, page },
-        segments,
-        yStart: segments[0]?.yStart ?? 0,
-        yEnd: segments[0]?.yEnd ?? 1,
-        xStart: segments[0]?.xStart ?? 0,
-        xEnd: segments[0]?.xEnd ?? 1,
-        text,
-        dataUrl,
-        // 좌표를 못 찾은 문항은 엉뚱한 데를 자를 수 있으니 기본 선택에서 뺀다.
-        selected: confident,
-        confident,
-      } satisfies CropCandidate;
-    });
-  }, []);
 
   const handleFile = async (file: File) => {
     if (file.type !== 'application/pdf') {
@@ -314,7 +170,6 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
     }
     setFileName(file.name);
     setAnalysis(null);
-    setCandidates([]);
     setProgress(0);
     setProgressLog([]);
     setErrorMessage(null);
@@ -326,90 +181,7 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
       const buffer = await file.arrayBuffer();
       const pdf = await pdfjsLib.getDocument({ data: buffer }).promise;
       setNumPages(pdf.numPages);
-      mark('rendering', 8, `총 ${pdf.numPages}페이지를 확인했습니다.`);
-      const canvases: HTMLCanvasElement[] = [];
-      const marks: NumberMark[] = [];
-      const allPieces: TextPiece[][] = [];
-      let lastMarkCount = 0;
-      for (let i = 1; i <= pdf.numPages; i += 1) {
-        const page = await pdf.getPage(i);
-        const viewport = page.getViewport({ scale: 2 });
-        const canvas = document.createElement('canvas');
-        canvas.width = viewport.width;
-        canvas.height = viewport.height;
-        const ctx = canvas.getContext('2d');
-        if (!ctx) continue;
-        await page.render({ canvasContext: ctx, viewport }).promise;
-        canvases.push(canvas);
-        mark('rendering', 8 + (i / pdf.numPages) * 14, `${i}/${pdf.numPages}페이지 이미지 변환 완료`);
-
-        // 페이지의 모든 글자와 그 좌표를 모은다.
-        // 여기서 (1) 문항 번호 위치 (2) 단 구성 판정용 x 분포 (3) 문항 본문 글자
-        // 세 가지를 모두 얻는다.
-        try {
-          const base = page.getViewport({ scale: 1 });
-          const textContent = await page.getTextContent();
-          const pagePieces: TextPiece[] = [];
-          for (const item of textContent.items as {
-            str: string;
-            transform: number[];
-            width?: number;
-            height?: number;
-          }[]) {
-            const x = item.transform[4] / base.width;
-            const y = 1 - item.transform[5] / base.height;
-            if (!Number.isFinite(x) || !Number.isFinite(y)) continue;
-            const h = (item.height || Math.abs(item.transform[3]) || 10) / base.height;
-            const w = (item.width || 0) / base.width;
-            if (item.str.trim()) pagePieces.push({ str: item.str, x, y, h, w });
-
-            const match = item.str.trim().match(/^(\d{1,3})\s*[.)]/);
-            if (!match) continue;
-            const num = parseInt(match[1], 10);
-            if (!num || num > 99) continue;
-            if (x > 0.9) continue;
-            // 단 번호는 뒤에서 실제 단 구성을 판정한 뒤 다시 매긴다.
-            marks.push({ page: i, number: num, x, y, column: 0 });
-          }
-          allPieces[i - 1] = pagePieces;
-        } catch (e) {
-          console.warn('텍스트 좌표 추출 실패:', e);
-        }
-        // 좌표 인식 개수를 페이지별로 실시간 표시
-        if (marks.length !== lastMarkCount) {
-          lastMarkCount = marks.length;
-          mark('reading', 22 + (i / pdf.numPages) * 3, `문항 번호 좌표 인식 중… ${marks.length}개 발견`);
-        }
-      }
-      pageCanvasesRef.current = canvases;
-      // 크롭 편집용 페이지 미리보기(가로 900px 축소본)
-      setPagePreviews(
-        canvases.map((c) => {
-          const scale = Math.min(1, 900 / c.width);
-          const small = document.createElement('canvas');
-          small.width = Math.round(c.width * scale);
-          small.height = Math.round(c.height * scale);
-          small.getContext('2d')?.drawImage(c, 0, 0, small.width, small.height);
-          return small.toDataURL('image/jpeg', 0.85);
-
-        }),
-      );
-
-      // 단 구성을 먼저 판정하고(본문 글자 x 분포 사용) 그 기준으로 문항마다
-      // "조각 목록"을 만든다. 단이나 페이지를 넘어가는 문항은 조각이 2개 이상이 된다.
-      textPiecesRef.current = allPieces;
-      const bodyXs = allPieces.flat().map((t) => t.x);
-      const built = buildAllSegments(marks, bodyXs);
-      layoutRef.current = built.layout;
-      marksRef.current = built.marks;
-      segmentsRef.current = built.segmentsByNumber;
-      const spanning = [...built.segmentsByNumber.values()].filter((v) => v.length > 1).length;
-      mark(
-        'reading',
-        26,
-        `문항 번호 ${built.marks.length}개 인식 · ${built.layout.count}단 구성` +
-          (spanning > 0 ? ` · 단/페이지를 넘는 문항 ${spanning}개` : ''),
-      );
+      mark('rendering', 18, `총 ${pdf.numPages}페이지를 확인했습니다.`);
 
       setStage('analyzing');
       const hasOriginal = Boolean(originalPassages?.trim());
@@ -573,9 +345,8 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
       if (hasOriginal) {
         mark('variant', 94, `원문 변형 ${result.passageVariants?.length ?? 0}건을 정리했습니다.`);
       }
-      mark('variant', 96, `문항 ${result.problems.length}개 분석 완료 — 이미지 크롭 생성 중…`);
+      mark('variant', 96, `문항 ${result.problems.length}개 분석을 마쳤습니다.`);
       setAnalysis(result);
-      setCandidates(buildCandidates(result.problems));
       setProgress(100);
       setStage('review');
       toast.success(`분석 완료 — ${result.problems.length}개 문항을 인식했습니다.`);
@@ -591,104 +362,19 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
 
   };
 
-  /** 크롭 영역(페이지 · 좌우 · 상하)을 갱신하고 미리보기를 즉시 다시 생성 */
-  const updateRegion = (
-    id: string,
-    patch: Partial<Pick<CropCandidate, 'yStart' | 'yEnd' | 'xStart' | 'xEnd'>> & { page?: number },
-  ) => {
-    setCandidates((prev) =>
-      prev.map((c) => {
-        if (c.id !== id) return c;
-        const page = patch.page ?? c.problem.page ?? 1;
-        const next: CropCandidate = {
-          ...c,
-          ...patch,
-          problem: { ...c.problem, page },
-        };
-        // 손으로 고치면 첫 조각을 그 값으로 바꾸고, 뒤에 이어지는 조각은 그대로 둔다.
-        // (단·페이지를 넘는 문항이라도 앞부분만 다듬을 수 있게)
-        const head: CropSegment = {
-          page,
-          xStart: next.xStart,
-          xEnd: next.xEnd,
-          yStart: next.yStart,
-          yEnd: next.yEnd,
-        };
-        const segments = [head, ...c.segments.slice(1)];
-        const text = extractQuestionText(textPiecesRef.current, segments);
-        const useImage = needsOriginalImage(
-          { category: c.problem.category, name: c.problem.name, markupDependent: c.problem.markupDependent },
-          text,
-        );
-        return {
-          ...next,
-          segments,
-          text,
-          dataUrl: useImage ? renderSegments(segments, pageCanvasesRef.current) || c.dataUrl : '',
-        };
-      }),
-    );
-  };
-
-  /** yStart/yEnd 슬라이더용 어댑터 */
-  const updateRange = (id: string, key: 'yStart' | 'yEnd', value: number) =>
-    updateRegion(id, { [key]: value });
-
-
-  const handleApply = async () => {
+  const handleApply = () => {
     if (!analysis) return;
     setStage('applying');
-    // 글자로 담는 문항은 dataUrl 이 비어 있다. 그림이 없다고 빠뜨리면
-    // 정작 본체인 글자가 리포트에 들어가지 않는다.
-    const targets = candidates.filter((c) => c.selected && (c.dataUrl || c.text.charCount > 0));
-    setProgress(0);
-    setProgressLog([]);
-    mark('applying', 5, `문항 이미지 ${targets.length}건 업로드를 시작합니다.`);
-    const crops: AppliedCrop[] = [];
+    mark('applying', 60, '분석 결과를 입력폼에 옮기는 중…');
     try {
-      let done = 0;
-      for (const candidate of targets) {
-        done += 1;
-        // 그림이 필요한 문항만 업로드한다. 글자로 담는 문항은 올릴 것이 없다.
-        let url = '';
-        if (candidate.dataUrl) {
-          const blob = dataUrlToBlob(candidate.dataUrl);
-          const path = `ai-crop-${Date.now()}-${candidate.problem.number}.jpg`;
-          const { error } = await supabase.storage.from('report-photos').upload(path, blob, {
-            contentType: 'image/jpeg',
-            upsert: true,
-          });
-          if (error) {
-            console.error('문항 이미지 업로드 실패:', error);
-          } else {
-            url = supabase.storage.from('report-photos').getPublicUrl(path).data.publicUrl;
-          }
-        }
-        mark(
-          'applying',
-          5 + (done / Math.max(1, targets.length)) * 88,
-          candidate.dataUrl
-            ? `${candidate.problem.number}번 문항 이미지 업로드 완료`
-            : `${candidate.problem.number}번 문항 글자 정리 완료`,
-        );
-        if (!url && candidate.text.charCount === 0) continue;
-        crops.push({
-          url,
-          problemNumber: String(candidate.problem.number),
-          problemName: candidate.problem.note || candidate.problem.name,
-          text: candidate.text.charCount > 0 ? candidate.text : undefined,
-        });
-      }
-      onApply(analysis, crops);
+      onApply(analysis);
       setProgress(100);
       toast.success('입력폼에 자동으로 반영되었습니다.');
-      setStage('review');
-
     } catch (err) {
       console.error(err);
       toast.error('반영 중 오류가 발생했습니다.');
-      setStage('review');
     }
+    setStage('review');
   };
 
   return (
@@ -893,118 +579,6 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
                 </p>
               </div>
             ))}
-          </div>
-
-          <div>
-            <Label className="editorial-kicker text-[10px] tracking-[0.35em]">문항 이미지 확인 · 크롭 조정</Label>
-            <p className="text-[12px] text-[hsl(var(--ink-soft))] mt-1 mb-3">
-              AI가 지목한 킬러·변형 문항 위치를 자동으로 잘라냈습니다. 필요하면 영역을 조정하거나 삭제한 뒤 적용하세요.
-            </p>
-            {candidates.length === 0 ? (
-              <p className="text-[13px] text-[hsl(var(--ink-soft))]">자동 크롭할 킬러·변형 문항이 없습니다.</p>
-            ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-h-[520px] overflow-y-auto pr-1">
-                {candidates.map((candidate) => (
-                  <div
-                    key={candidate.id}
-                    className={`rounded-xl border p-3 bg-white/70 transition-all ${
-                      candidate.selected
-                        ? 'border-[#F5C64F]/60 shadow-[0_0_0_1px_rgba(245,198,79,0.35)] bg-[#F5C64F]/10'
-                        : 'border-[hsl(var(--ink)/0.12)] opacity-60'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between gap-2 mb-2">
-                      <div className="flex items-center gap-2 min-w-0">
-                        <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-[#F5C64F] text-[#2B3642] text-[12px] font-bold tabular-nums">
-                          {candidate.problem.number}
-                        </span>
-                        <div className="min-w-0">
-                          <p className="text-[13px] font-semibold text-[hsl(var(--ink))] truncate">
-                            {candidate.problem.name}
-                          </p>
-                          <p className="text-[11px] text-[hsl(var(--ink-soft))] truncate">
-                            {candidate.problem.category} · {candidate.problem.points}점 · p.{candidate.problem.page}
-                          </p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Button
-                          type="button"
-                          size="icon"
-                          variant="ghost"
-                          className="h-8 w-8"
-                          title={candidate.selected ? '제외' : '포함'}
-                          onClick={() =>
-                            setCandidates((prev) =>
-                              prev.map((c) => (c.id === candidate.id ? { ...c, selected: !c.selected } : c)),
-                            )
-                          }
-                        >
-                          <Check
-                            className={`h-4 w-4 ${candidate.selected ? 'text-[hsl(var(--gold-deep))]' : 'text-[hsl(var(--ink-soft))]'}`}
-                          />
-                        </Button>
-                        <Button
-                          type="button"
-                          size="icon"
-                          variant="ghost"
-                          className="h-8 w-8 text-red-500 hover:text-red-600"
-                          onClick={() => setCandidates((prev) => prev.filter((c) => c.id !== candidate.id))}
-                        >
-                          <Trash2 className="h-4 w-4" />
-                        </Button>
-                      </div>
-                    </div>
-
-                    {/* 글자로 담기는 문항은 리포트 서체로 조판해 보여 주고,
-                        밑줄·표가 있는 문항은 시험지 그림을 함께 보여 준다. */}
-                    <QuestionTextView
-                      text={candidate.text}
-                      number={candidate.problem.number}
-                      imageUrl={candidate.dataUrl || undefined}
-                      dense
-                    />
-                    {!candidate.confident && (
-                      <p className="mt-2 text-[11px]" style={{ color: 'hsl(var(--c3-deep))' }}>
-                        문항 번호 위치를 찾지 못해 대략적인 범위로 잡았습니다. 확인 후 선택하세요.
-                      </p>
-                    )}
-
-                    <div className="grid grid-cols-2 gap-2 mt-2">
-                      <label className="text-[11px] text-[hsl(var(--ink-soft))]">
-                        시작 위치
-                        <Input
-                          type="range"
-                          min={0}
-                          max={0.98}
-                          step={0.01}
-                          value={candidate.yStart}
-                          onChange={(e) => updateRange(candidate.id, 'yStart', parseFloat(e.target.value))}
-                          className="h-6 p-0 border-0 bg-transparent"
-                        />
-                      </label>
-                      <label className="text-[11px] text-[hsl(var(--ink-soft))]">
-                        끝 위치
-                        <Input
-                          type="range"
-                          min={0.02}
-                          max={1}
-                          step={0.01}
-                          value={candidate.yEnd}
-                          onChange={(e) => updateRange(candidate.id, 'yEnd', parseFloat(e.target.value))}
-                          className="h-6 p-0 border-0 bg-transparent"
-                        />
-                      </label>
-                    </div>
-                    {candidate.problem.note && (
-                      <p className="text-[11.5px] text-[hsl(var(--ink-soft))] mt-2 break-keep">
-                        {candidate.problem.note}
-                      </p>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
           </div>
 
           <div className="flex justify-end">

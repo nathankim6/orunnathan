@@ -16,7 +16,6 @@ import ReportKpiRail from "@/components/ReportKpiRail";
 import ReportStatCharts from "@/components/ReportStatCharts";
 import DifficultProblemsExplanation from "@/components/DifficultProblemsExplanation";
 import HitQuestionPhotos from "@/components/HitQuestionPhotos";
-import type { QuestionText } from "@/utils/questionText";
 import ExamFeaturesSection from "@/components/ExamFeaturesSection";
 import KillerTop5Section from "@/components/KillerTop5Section";
 import PassageVariantSection from "@/components/PassageVariantSection";
@@ -65,12 +64,9 @@ type ReportDataType = {
   highlights?: Array<ReportHighlight>;
 
   hitQuestionPhotos?: Array<{
-    /** 시험지 그림. 글자로만 담는 문항은 비어 있다. */
     url: string;
     problemNumber?: number;
     problemName?: string;
-    /** 시험지에서 뽑아낸 문제 글자 — 있으면 그림 대신 조판해 보여 준다. */
-    text?: QuestionText;
     selectedArea?: {
       x: number;
       y: number;
@@ -640,8 +636,7 @@ const Report: React.FC = () => {
                       themeColors={themeColors}
                     />
                   )}
-                  {/* 킬러 TOP5 가 있으면 숨기던 조건을 없앴다. AI 가 TOP5 를 채우는
-                      정상 경로에서는 잘라낸 문항 이미지가 리포트에 아예 안 나왔다. */}
+                  {/* 강사가 올린 사진은 킬러 TOP5 유무와 상관없이 보여 준다. */}
                   {(reportData.hitQuestionPhotos?.length ?? 0) > 0 && (
                     <HitQuestionPhotos 
                       photos={reportData.hitQuestionPhotos}

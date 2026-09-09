@@ -18,7 +18,7 @@ import ExamFeaturesEditor from './ExamFeaturesEditor';
 import KillerTop5Editor from './KillerTop5Editor';
 import OverallEvaluation, { STRATEGY_CATEGORY, SUMMARY_CATEGORY } from './OverallEvaluation';
 
-import ExamPdfAnalyzer, { type ExamAnalysis, type AppliedCrop } from './ExamPdfAnalyzer';
+import ExamPdfAnalyzer, { type ExamAnalysis } from './ExamPdfAnalyzer';
 import OriginalPassageInput from './OriginalPassageInput';
 import PassageVariantEditor from './PassageVariantEditor';
 
@@ -656,7 +656,7 @@ const ReportForm: React.FC<ReportFormProps> = ({
 
   // 테마 색상 설정 (DifficultProblemsExplanation, HitQuestionPhotos 컴포넌트에 필요)
   // AI 시험지 분석 결과를 폼 전체에 반영
-  const handleAiAnalysis = (analysis: ExamAnalysis, crops: AppliedCrop[]) => {
+  const handleAiAnalysis = (analysis: ExamAnalysis) => {
     const problems = [...analysis.problems].sort((a, b) => (a.number || 0) - (b.number || 0));
     const problemTypes: ProblemType[] = problems.map((p, index) => ({
       id: `${Date.now()}-${index}-${p.number}`,
@@ -717,17 +717,6 @@ const ReportForm: React.FC<ReportFormProps> = ({
               impact: v.impact || '',
             }))
           : prev.passageVariants,
-
-      hitQuestionPhotos: [
-        ...(prev.hitQuestionPhotos || []),
-        ...crops.map((crop) => ({
-          url: crop.url,
-          problemNumber: Number(crop.problemNumber) || undefined,
-          problemName: crop.problemName,
-          // 글자로 담는 문항은 url 이 비어 있고 이쪽이 본체다.
-          text: crop.text,
-        })),
-      ],
     }));
 
     // 리포트 상세도도 AI 가 정한다(문항 수 · 서답형 · 킬러 비중 기준).
@@ -768,7 +757,6 @@ const ReportForm: React.FC<ReportFormProps> = ({
     if (analysis.examFeatures?.length) filled.push(`출제 특징 ${analysis.examFeatures.length}개`);
     if (analysis.killerTop5?.length) filled.push(`킬러 문항 ${Math.min(analysis.killerTop5.length, 5)}개`);
     if (analysis.passageVariants?.length) filled.push(`변형 분석 ${analysis.passageVariants.length}개`);
-    if (crops.length > 0) filled.push(`문항 이미지 ${crops.length}장`);
     if (analysis.teacher?.trim()) filled.push('담당 강사');
     if (analysis.difficultProblemsExplanation?.trim()) filled.push('시험 특징 서술');
     if (analysis.overallEvaluation?.trim()) filled.push('종합 평가');

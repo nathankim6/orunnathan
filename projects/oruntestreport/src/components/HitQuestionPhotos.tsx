@@ -4,17 +4,12 @@ import { TeacherPhotoUploader } from '@/components/TeacherPhotoUploader';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { useProblemComments } from '@/hooks/useProblemComments';
-import QuestionTextView from '@/components/QuestionTextView';
-import type { QuestionText } from '@/utils/questionText';
 
 interface HitQuestionPhotosProps {
  photos?: Array<{
- /** 시험지 그림. 글자로만 담는 문항은 비어 있다. */
  url: string;
  problemNumber?: number;
  problemName?: string;
- /** 시험지에서 뽑아낸 문제 글자 — 있으면 그림 대신 이걸 조판해 보여 준다. */
- text?: QuestionText;
  selectedArea?: {
  x: number;
  y: number;
@@ -90,18 +85,6 @@ const HitQuestionPhotos: React.FC<HitQuestionPhotosProps> = ({
   </Button>
   )}
 
-  {/* 글자로 뽑은 문항은 리포트 서체로 조판한다. 그림은 밑줄·표가 있는
-      문항이나 스캔본일 때만 쓴다. 글자는 높이가 정해져 있지 않으므로
-      고정 비율 상자(aspect-[21/9]) 를 쓰지 않는다. */}
-  {photo.text && !photo.url ? (
-  <div className="relative">
-  <QuestionTextView
-  text={photo.text}
-  number={photo.problemNumber}
-  meta={photo.problemName || undefined}
-  />
-  </div>
-  ) : (
   <div className="aspect-[21/9] relative overflow-hidden bg-[hsl(var(--paper-warm))]">
   {/* Subtle inner frame */}
   <div className="absolute inset-0 border border-[hsl(var(--ink)/0.06)] pointer-events-none z-20" />
@@ -142,7 +125,6 @@ const HitQuestionPhotos: React.FC<HitQuestionPhotosProps> = ({
   />
   )}
   </div>
-  )}
 
  {editable && onPhotoNameChange && (
    <div className="px-4 py-3 border-t border-[hsl(var(--ink)/0.08)]">
