@@ -4745,7 +4745,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   function diagnostics() {
     return [
       "ORUN 동형 모의고사 진단",
-      "build: 2026-09-09 11:00",
+      "build: 2026-09-09 12:10",
       "url: " + location.href,
       "runtime: API 키 전용 빌드",
       "sample 확보: " + (SAMPLE ? "예" : "아니오"),
@@ -4872,11 +4872,16 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   // ---------- 스캔본 PDF: 쪽을 그림으로 만들어 Claude 가 읽게 한다 ----------
   const OCR_MAX_PAGES = 40;          // 한 파일에서 읽어낼 최대 쪽수
   const OCR_SCALE_TARGET = 1700;     // 렌더 가로 픽셀 (읽을 만하면서 과하지 않게)
+  const OCR_MAX_PX = 9e6;            // 캔버스 넓이 상한 — 고해상도 스캔이 브라우저를 붙잡지 않게
+  const OCR_PAGE_MS = 60000;         // 한 쪽을 그리는 데 줄 시간
 
-  async function renderPdfPage(doc, pageNo) {
+  async function renderPdfPage(doc, pageNo, target) {
     const page = await doc.getPage(pageNo);
     const base = page.getViewport({ scale: 1 });
-    const scale = Math.min(3, Math.max(1, OCR_SCALE_TARGET / base.width));
+    let scale = Math.min(3, Math.max(1, (target || OCR_SCALE_TARGET) / base.width));
+    // 600dpi 스캔처럼 원래 쪽이 큰 파일은 이대로 그리면 캔버스가 수천만 화소가 된다
+    const px = base.width * base.height * scale * scale;
+    if (px > OCR_MAX_PX) scale *= Math.sqrt(OCR_MAX_PX / px);
     const vp = page.getViewport({ scale });
     const canvas = document.createElement("canvas");
     canvas.width = Math.round(vp.width);
@@ -4922,8 +4927,16 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
       const blobs = [];
       for (let i = 0; i < nos.length; i++) {
         step({ from: a, to: z, phase: "render", done: base + OCR_RENDER_SHARE * i });
-        const img = await withTimeout(renderPdfPage(doc, nos[i]), 45000,
-          nos[i] + "쪽을 그림으로 만드는 데 실패했습니다. 쪽수가 적은 파일로 나눠 올려주세요.");
+        // 무거운 쪽은 한 번 더, 해상도를 낮춰 그려 본다. 곧바로 포기하면 멀쩡한 파일이 반려된다.
+        let img = null;
+        try {
+          img = await withTimeout(renderPdfPage(doc, nos[i]), OCR_PAGE_MS, "__slow_page__");
+        } catch (e) {
+          if (e.message !== "__slow_page__") throw e;
+          try { stage.log(nos[i] + "쪽이 무거워 해상도를 낮춰 다시 그립니다", "warn"); } catch (e2) {}
+          img = await withTimeout(renderPdfPage(doc, nos[i], 1100), OCR_PAGE_MS,
+            nos[i] + "쪽이 너무 무거워 그림으로 만들지 못했습니다. 스캔을 200~300dpi로 다시 저장하거나, 쪽수를 나눠 올려주세요.");
+        }
         if (!img) throw new Error(nos[i] + "쪽 이미지를 만들지 못했습니다.");
         blobs.push(img);
       }
