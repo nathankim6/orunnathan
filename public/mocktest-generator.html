@@ -1486,11 +1486,20 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 }
 .paper-box { position: relative; }
 .paper-scale { width: 210mm; transform-origin: top left; }
-/* 나란히 보기 — 왼쪽 줄 시험지, 오른쪽 줄 정답과 해설 */
+/* 나란히 보기 — 왼쪽 칸은 시험지, 오른쪽 칸은 정답·해설. 두 칸은 따로 구른다 */
+.paper-view.two { overflow: hidden; }
 .paper-scale.two { width: auto; display: flex; align-items: flex-start; gap: 6mm; }
-.paper-scale.two > .lane { width: 210mm; flex: none; }
+.paper-scale.two > .lane {
+  width: 210mm; flex: none; overflow-y: auto; overflow-x: hidden;
+  scrollbar-width: thin; overscroll-behavior: contain;
+}
 .paper-scale.two > .lane.a:empty { display: none; }
-.paper-scale.two > .lane.a > .page:first-child { position: relative; }
+.paper-scale.two > .lane > .cap {
+  position: sticky; top: 0; z-index: 3; margin: 0 0 4mm;
+  background: var(--n3); color: var(--n9);
+  font: var(--w-med) 11pt/1 var(--sans); letter-spacing: .04em;
+  padding: 3mm 0; text-align: center; border-radius: var(--r2);
+}
 
 /* ── 종이 한 장 (실물) — 이 안의 값은 워드 DOCX 와 1:1. 한 글자도 바꾸지 않는다 ── */
 .page {
@@ -4686,7 +4695,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   function diagnostics() {
     return [
       "ORUN 동형 모의고사 진단",
-      "build: 2026-09-09 09:30",
+      "build: 2026-09-09 10:10",
       "url: " + location.href,
       "runtime: API 키 전용 빌드",
       "sample 확보: " + (SAMPLE ? "예" : "아니오"),
@@ -5821,6 +5830,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
         if (box) { box.classList.remove("printed"); void box.offsetWidth; box.classList.add("printed"); }
         const view = $("paperView");
         if (view) view.scrollTo({ top: 0, behavior: "smooth" });   // 1쪽을 통째로
+        view.querySelectorAll(".lane").forEach(l => l.scrollTo({ top: 0, behavior: "smooth" }));
       } catch (e) {}
       saveSession({ output: cleanOutputHtml(), calls });
       pushHistory();
@@ -6012,8 +6022,14 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     let laneQ = null, laneA = null, answerSide = false;
     root.classList.toggle("two", sideLive);
     if (sideLive) {
-      laneQ = document.createElement("div"); laneQ.className = "lane q";
-      laneA = document.createElement("div"); laneA.className = "lane a";
+      const lane = (cls, cap) => {
+        const el = document.createElement("div"); el.className = "lane " + cls;
+        const c = document.createElement("div"); c.className = "cap"; c.textContent = cap;
+        el.appendChild(c);
+        return el;
+      };
+      laneQ = lane("q", "시험지");
+      laneA = lane("a", "정답 및 해설");
       root.append(laneQ, laneA);
     }
     const host = () => (sideLive ? (answerSide ? laneA : laneQ) : root);
@@ -6169,8 +6185,8 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     // 새 문항을 따라가되 쪽 단위로만 움직인다 — 쪽 중간에 멈추면 A4 가 잘려 보인다.
     // 이미 그 쪽이 떠 있으면 끌어당기지 않는다 (매번 스크롤하면 종이가 요동친다).
     if (revealNext && revealNext.isConnected) {
-      const view = $("paperView");
       const page = revealNext.closest(".page");
+      const view = (page && page.closest(".lane")) || $("paperView");
       if (page) {
         const vr = view.getBoundingClientRect(), pr = page.getBoundingClientRect();
         const shown = pr.top >= vr.top - 2 && pr.bottom <= vr.bottom + 2;
@@ -6192,10 +6208,17 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   const PAPER_GAP_MM = 6;
   function paperWidthMM() { return sideLive ? 210 * 2 + PAPER_GAP_MM : 210; }
   // 쪽 하나가 통째로 보이도록 — 너비와 높이 중 더 빡빡한 쪽에 맞춘다
+  // 나란히 볼 때 칸 위의 이름표도 한 쪽과 함께 들어가야 한다 — 자 기준 높이를 재서 뺀다
+  function capHeightPx() {
+    const cap = $("examOutput").querySelector(".lane > .cap");
+    if (!cap) return 0;
+    const st = getComputedStyle(cap);
+    return cap.offsetHeight + (parseFloat(st.marginBottom) || 0);
+  }
   function fitZoom() {
     const view = $("paperView");
     const w = (view.clientWidth - 24) / (paperWidthMM() * MM);
-    const h = (view.clientHeight - 34) / (297 * MM);
+    const h = (view.clientHeight - 34) / (297 * MM + (sideLive ? capHeightPx() : 0));
     return Math.max(0.25, Math.min(1.6, Math.min(w, h)));
   }
   // 두 기둥 배치에서는 종이 칸이 접힌 선에서 끝나야 한 쪽이 통째로 보인다.
@@ -6221,6 +6244,11 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     const z = paperZoom || fitZoom();
     root.style.transform = "scale(" + z + ")";
     const W = paperWidthMM() * MM;
+    view.classList.toggle("two", sideLive);
+    // 두 칸은 각자 구른다 — 확대·축소된 안쪽 자에 맞춰 칸 높이를 실제 눈금으로 준다
+    root.querySelectorAll(".lane").forEach(l => {
+      l.style.height = sideLive ? Math.max(120, (view.clientHeight - 34) / z) + "px" : "";
+    });
     root.style.marginLeft = Math.max(0, (view.clientWidth - W * z) / 2) + "px";
     box.style.height = (root.offsetHeight * z) + "px";
     box.style.width = Math.max(view.clientWidth, W * z + 24) + "px";
