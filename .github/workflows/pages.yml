@@ -1,4 +1,7 @@
 # 정적 HTML 앱들을 GitHub Pages 로 올린다.
+# 생성기는 public/mocktest-generator.html 한 벌뿐이고, 여기서 index.html ·
+# mocktest-generator.html · mock-exam.html 세 이름으로 함께 내보낸다.
+# (예전에 사본을 두 벌 두던 때가 있어 주소가 셋이다 — 주소는 지키고 파일만 하나로 줄였다.)
 # Pages 는 gh-pages 브랜치를 소스로 읽는다. 그 브랜치에는 여기 나열한 파일만 둔다 —
 # 저장소의 나머지는 웹으로 열리지 않는다.
 name: Pages
@@ -10,7 +13,6 @@ on:
       - 'public/mocktest-generator.html'
       - 'public/orun-universe.html'
       - 'public/orun-grammar.html'
-      - 'public/mock-exam.html'
       - 'public/studio.html'
       - 'public/three.min.js'
       - 'public/orun-universe-poster.jpg'
@@ -40,13 +42,12 @@ jobs:
           mock=$(git hash-object -w public/mocktest-generator.html)
           uni=$(git hash-object -w public/orun-universe.html)
           gram=$(git hash-object -w public/orun-grammar.html)
-          mockexam=$(git hash-object -w public/mock-exam.html)
           stud=$(git hash-object -w public/studio.html)
           three=$(git hash-object -w public/three.min.js)
           post=$(git hash-object -w public/orun-universe-poster.jpg)
           # index.html 은 지금까지처럼 생성기다. 나머지는 제 이름으로 나란히 선다.
           tree=$(printf '100644 blob %s\tindex.html\n100644 blob %s\tmocktest-generator.html\n100644 blob %s\torun-universe.html\n100644 blob %s\torun-grammar.html\n100644 blob %s\tmock-exam.html\n100644 blob %s\tstudio.html\n100644 blob %s\tthree.min.js\n100644 blob %s\torun-universe-poster.jpg\n' \
-                 "$mock" "$mock" "$uni" "$gram" "$mockexam" "$stud" "$three" "$post" | git mktree)
+                 "$mock" "$mock" "$uni" "$gram" "$mock" "$stud" "$three" "$post" | git mktree)
 
           git fetch --no-tags --depth=1 origin gh-pages || true
           parent=$(git rev-parse -q --verify FETCH_HEAD || true)

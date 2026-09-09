@@ -8,10 +8,11 @@
 
 1. 회귀 검사를 돌린다 (스크래치패드의 `*.mjs`, Playwright). 통과해야 다음으로 간다.
 2. 빌드 도장을 올린다 — 파일 안 `build: YYYY-MM-DD HH:MM`.
-3. 같은 바이트를 **세 곳**에 둔다. 셋의 sha256 이 같아야 한다.
+3. 같은 바이트를 **두 곳**에 둔다. 둘의 sha256 이 같아야 한다.
    - `artifact/orun-mocktest.html` (원본)
-   - `public/mocktest-generator.html` (Pages 의 `index.html` 이자 같은 이름 파일)
-   - `public/mock-exam.html` (ORUN STUDIO 타일이 여는 주소)
+   - `public/mocktest-generator.html` (공개본 한 벌)
+   워크플로가 이 한 벌을 `index.html` · `mocktest-generator.html` ·
+   `mock-exam.html` 세 이름으로 함께 내보낸다. 사본을 더 만들지 않는다.
 4. 작업 브랜치에 커밋·푸시한다.
 5. `main` 에 머지하고 푸시한다. `.github/workflows/pages.yml` 이 `main` 푸시에서
    돌아 `gh-pages` 를 다시 짓는다.
@@ -21,6 +22,9 @@
 7. 사용자에게 HTML 파일을 보낸다 (`SendUserFile`). 고칠 때마다 준다.
 
 `tools/sync-mock-exam.sh` 는 아티팩트 파일을 받아 3~6번을 대신 해 준다.
+
+주소가 셋인 것은 예전에 사본을 두 벌 두던 흔적이다. 주소는 그대로 지키되
+파일은 한 벌만 둔다 — 사본이 둘이면 주소마다 다른 버전이 나간다.
 
 ## 배포되는 것들
 

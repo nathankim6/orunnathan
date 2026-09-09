@@ -3,7 +3,7 @@
 #
 #   tools/sync-mock-exam.sh <아티팩트를 내려받은 파일 경로>
 #
-# 원본 아티팩트는 소유자만 열 수 있어서, 같은 바이트를 public/mock-exam.html 로
+# 원본 아티팩트는 소유자만 열 수 있어서, 같은 바이트를 public/mocktest-generator.html 로
 # 복사해 Pages 가 대신 공개한다. 이 스크립트는 그 복사본이 원본과 같은지 보고
 # 다르면 새로 올린다. 같으면 아무것도 하지 않는다.
 set -e
@@ -12,7 +12,7 @@ src="$1"
 [ -f "$src" ] || { echo "파일이 없습니다: $src"; exit 2; }
 
 repo=$(cd "$(dirname "$0")/.." && pwd)
-dst="$repo/public/mock-exam.html"
+dst="$repo/public/mocktest-generator.html"
 url=https://nathankim6.github.io/orunnathan/mock-exam.html
 
 new=$(sha256sum "$src" | cut -d' ' -f1)
@@ -27,7 +27,7 @@ fi
 
 cp "$src" "$dst"
 cd "$repo"
-git add public/mock-exam.html
+git add public/mocktest-generator.html
 git -c user.name="Claude" -c user.email="noreply@anthropic.com" \
     commit -q -m "Refresh the hosted mock exam generator from its artifact"
 
