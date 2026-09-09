@@ -133,7 +133,7 @@ footer{position:relative;z-index:10;max-width:1360px;margin:110px auto 0;padding
 <section class="hero">
   <div class="brow">옳은영어 · ORUN ENGLISH</div>
   <h1>ORUN <b>STUDIO</b></h1>
-  <div class="sub">가르치는 모든 것을 한 자리에. <b>여덟 개의 모듈</b>이 대기 중입니다.</div>
+  <div class="sub">가르치는 모든 것을 한 자리에. <b>아홉 개의 모듈</b>이 대기 중입니다.</div>
   <div class="cta">
     <a class="btn g" href="orun-universe.html">UNIVERSE 진입
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="5" y1="12" x2="18" y2="12"/><polyline points="12 6 18 12 12 18"/></svg></a>
@@ -143,8 +143,8 @@ footer{position:relative;z-index:10;max-width:1360px;margin:110px auto 0;padding
 
 <section class="sec" id="modules">
   <div class="shd">
-    <div><h2>MODULE <b>SELECT</b></h2><div class="kr">수업이 도는 여덟 개의 도구입니다. 타일을 누르면 바로 그 도구로 들어갑니다.</div></div>
-    <div class="cnt">08 AVAILABLE</div>
+    <div><h2>MODULE <b>SELECT</b></h2><div class="kr">수업이 도는 아홉 개의 도구입니다. 타일을 누르면 바로 그 도구로 들어갑니다.</div></div>
+    <div class="cnt">09 AVAILABLE</div>
   </div>
   <div class="tiles" id="tiles"></div>
 </section>
@@ -174,6 +174,7 @@ const MODS=[
  {t:'WORKBOOK MAKER',k:'워크북 자동 생성 도구',c:'#ff5f8a',h:'https://orunworkbook.lovable.app',g:'W'},
  {t:'ORUN HOMEWORK',k:'학생별 숙제 관리 및 피드백',c:'#ff8a5f',h:'https://orunhomework.com',g:'H'},
  {t:'SCHOOL ANALYSIS',k:'3개년 학교별 기출 분석',c:'#38bdf8',h:'https://schoolanalysis.lovable.app',g:'S'},
+ {t:'MOCK EXAM CREATOR',k:'동형 모의고사 생성기 · 기출을 넣으면 같은 꼴의 새 시험지가 나옵니다',c:'#ffd400',h:'https://claude.ai/code/artifact/01cff797-74c8-4c30-9db9-7526406035e0',g:'M',big:1},
 ];
 document.getElementById('tiles').innerHTML=MODS.map((m,i)=>
  '<a class="tile'+(m.big?' big':'')+'" href="'+m.h+'" style="--ac:'+m.c+'"'+(/^http/.test(m.h)?' target="_blank" rel="noopener"':'')+'>'+
