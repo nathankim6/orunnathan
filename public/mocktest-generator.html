@@ -1912,9 +1912,46 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   .result-rail .rr-cards { grid-template-columns: 1fr; gap: var(--s2); }
 }
 
+/* ═════════ 쪽 크게 보기 — 눌러서 키우고 그 자리에서 고친다 ═════════ */
+.bigpop {
+  position: fixed; inset: 0; z-index: 70; display: flex; flex-direction: column;
+  background: rgba(16, 19, 24, .62); animation: qpopIn var(--d3) var(--e-out);
+}
+.bigpop-bar {
+  display: flex; align-items: center; gap: var(--s3);
+  padding: var(--s3) var(--s5); background: var(--d-bg); color: var(--d-tx);
+}
+.bigpop-bar b { font-size: var(--fs-small); font-weight: var(--w-semi); }
+.bigpop-bar .bigpop-note { font-size: var(--fs-meta); color: var(--d-tx-3); }
+.bigpop-bar .gap { flex: 1; }
+.bigpop-bar button {
+  height: 30px; min-width: 34px; padding: 0 var(--s3); border: 0; border-radius: var(--r2);
+  background: var(--d-fill); color: var(--d-tx-2); font-size: var(--fs-meta); cursor: pointer;
+}
+.bigpop-bar button:hover { background: var(--d-fill-2); color: var(--d-tx); }
+.bigpop-bar button:disabled { opacity: .35; cursor: default; }
+.bigpop-bar button.x { background: transparent; }
+.bigpop-body { flex: 1; min-height: 0; overflow: auto; padding: var(--s4); text-align: center; }
+.bigpop-body .page { transform-origin: top center; margin: 0 auto; }
+.bigpop-body .qbar, .bigpop-body .rv, .bigpop-body .big-btn { display: none; }
+.bigpop-body.editing [contenteditable="true"] {
+  outline: 1px dashed #b9bec7; outline-offset: 3px; border-radius: 2px;
+}
+.bigpop-body.editing [contenteditable="true"]:focus { outline: 2px solid #111; }
+/* 미리보기에서 쪽을 누르면 커진다는 신호 */
+.paper-view:not(.zoomable) .page { cursor: default; }
+.paper-view.zoomable .page { cursor: zoom-in; }
+.page .big-btn {
+  position: absolute; top: 3mm; right: 3mm; z-index: 4;
+  height: 22px; padding: 0 8px; border: 0; border-radius: 4px;
+  background: rgba(17,20,26,.82); color: #fff; font: 500 11px/22px var(--sans);
+  opacity: 0; transition: opacity var(--d2) var(--e-out); cursor: zoom-in;
+}
+.page:hover .big-btn { opacity: 1; }
+
 /* ═════════ 글자 서식 막대 — 시험지에서 글을 잡으면 따라 뜬다 ═════════ */
 .fmtbar {
-  position: fixed; z-index: 55; display: flex; align-items: center; gap: 2px;
+  position: fixed; z-index: 80;      /* 쪽 크게 보기(70) 위에 떠야 한다 */ display: flex; align-items: center; gap: 2px;
   padding: 3px; border-radius: var(--r3); background: var(--d-bg);
   box-shadow: 0 6px 20px rgba(0,0,0,.28);
 }
@@ -2490,6 +2527,19 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 
   <div class="seq" id="genProgress"></div>
   <p class="callcount" id="usageInfo"></p>
+
+  <div class="bigpop" id="bigPop" hidden role="dialog" aria-modal="true" aria-labelledby="bigTitle">
+    <div class="bigpop-bar">
+      <b id="bigTitle">1쪽</b>
+      <span class="bigpop-note">글자를 눌러 바로 고칠 수 있어요 · 잡으면 굵게·밑줄</span>
+      <span class="gap"></span>
+      <button type="button" id="bigPrev" title="이전 쪽">‹</button>
+      <button type="button" id="bigNext" title="다음 쪽">›</button>
+      <button type="button" id="bigZoom">실제 크기</button>
+      <button type="button" class="x" id="bigClose" aria-label="닫기">✕</button>
+    </div>
+    <div class="bigpop-body" id="bigWrap"></div>
+  </div>
 
   <div class="fmtbar" id="fmtBar" hidden aria-label="글자 서식">
     <button type="button" data-cmd="bold" title="굵게 (Ctrl+B)"><b>B</b></button>
@@ -4695,7 +4745,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   function diagnostics() {
     return [
       "ORUN 동형 모의고사 진단",
-      "build: 2026-09-09 10:10",
+      "build: 2026-09-09 11:00",
       "url: " + location.href,
       "runtime: API 키 전용 빌드",
       "sample 확보: " + (SAMPLE ? "예" : "아니오"),
@@ -5975,8 +6025,81 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     const span = document.createElement("div"); span.className = "span";
     const cols = document.createElement("div"); cols.className = "cols";
     const pno = document.createElement("div"); pno.className = "pno"; pno.textContent = "- " + n + " -";
-    pg.append(span, cols, pno);
+    const big = document.createElement("button");
+    big.type = "button"; big.className = "big-btn"; big.textContent = "⤢ 크게";
+    big.title = "이 쪽을 크게 열어 고치기";
+    big.addEventListener("click", (e) => { e.stopPropagation(); openBigPage(pg); });
+    pg.append(span, cols, pno, big);
     return pg;
+  }
+
+  // ── 쪽 크게 보기 ─────────────────────────────────────────────────────
+  // 쪽을 팝업으로 옮겨 키운다. 옮기는 것은 원본 노드 그대로라 여기서 고친 글이 곧 시험지다.
+  let bigPage = null, bigMark = null, bigFit = true;
+  function bigPagesList() {
+    return [...$("examOutput").querySelectorAll(".page")];
+  }
+  function openBigPage(pg) {
+    if (!pg || bigPage === pg) return;
+    if (bigPage) restoreBigPage();
+    bigMark = document.createComment("page");
+    pg.parentNode.insertBefore(bigMark, pg);
+    bigPage = pg;
+    const wrap = $("bigWrap");
+    wrap.appendChild(pg);
+    wrap.classList.add("editing");
+    pg.querySelectorAll(EDIT_SEL).forEach(n => n.setAttribute("contenteditable", "true"));
+    try { document.execCommand("styleWithCSS", false, false); } catch (e) {}
+    const pno = pg.querySelector(".pno");
+    $("bigTitle").textContent = (pno ? pno.textContent.replace(/[-\s]/g, "") : "") + "쪽";
+    $("bigPop").hidden = false;
+    bigFit = true;
+    paintBigZoom();
+    fitBigPage();
+    const first = pg.querySelector("[contenteditable]");
+    if (first) setTimeout(() => { try { first.focus({ preventScroll: true }); } catch (e) {} }, 30);
+  }
+  function fitBigPage() {
+    if (!bigPage) return;
+    const wrap = $("bigWrap");
+    const z = bigFit
+      ? Math.max(0.3, Math.min((wrap.clientWidth - 24) / (210 * MM), (wrap.clientHeight - 24) / (297 * MM)))
+      : 1;
+    bigPage.style.transform = "scale(" + z + ")";
+    bigPage.style.marginBottom = (297 * MM * (z - 1)) + "px";   // 줄어든 만큼 자리도 줄인다
+  }
+  function paintBigZoom() { $("bigZoom").textContent = bigFit ? "실제 크기" : "맞춤"; }
+  function restoreBigPage() {
+    if (!bigPage) return;
+    const pg = bigPage;
+    pg.style.transform = ""; pg.style.marginBottom = "";
+    if (!editing) pg.querySelectorAll("[contenteditable]").forEach(n => n.removeAttribute("contenteditable"));
+    if (bigMark && bigMark.parentNode) bigMark.parentNode.insertBefore(pg, bigMark);
+    if (bigMark) bigMark.remove();
+    bigMark = null; bigPage = null;
+    $("bigWrap").classList.remove("editing");
+  }
+  function closeBigPage(quiet) {
+    if (!bigPage) return;
+    restoreBigPage();
+    $("bigPop").hidden = true;
+    fmtBarHide();
+    layoutPaper();
+    saveSession({ output: cleanOutputHtml() });
+    if (editingVaultRow()) {
+      vaultStore(true)
+        .then(one => { if (one && !quiet) toast("고친 내용을 저장소에 담았어요"); })
+        .catch(e => toast(e.message, "err"));
+    }
+  }
+  function stepBigPage(dir) {
+    if (!bigPage) return;
+    const cur = bigPage;
+    restoreBigPage();                       // 제자리에 돌려놓고 이웃 쪽을 찾는다
+    const all = bigPagesList();
+    const at = all.indexOf(cur);
+    const next = all[at + dir];
+    openBigPage(next || cur);
   }
   const BOXES = ".passage, .given, blockquote";
   // 가른 상자의 뒷부분을 원래 상자에 도로 붙인다 (갈린 문단은 한 문단으로 다시 잇는다)
@@ -6245,6 +6368,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     root.style.transform = "scale(" + z + ")";
     const W = paperWidthMM() * MM;
     view.classList.toggle("two", sideLive);
+    view.classList.toggle("zoomable", !editing);
     // 두 칸은 각자 구른다 — 확대·축소된 안쪽 자에 맞춰 칸 높이를 실제 눈금으로 준다
     root.querySelectorAll(".lane").forEach(l => {
       l.style.height = sideLive ? Math.max(120, (view.clientHeight - 34) / z) + "px" : "";
@@ -6941,13 +7065,13 @@ list.map(disputeBlock).join("\n");
   function fmtBarHide() { const b = $("fmtBar"); if (b) b.hidden = true; }
   function fmtBarUpdate() {
     const bar = $("fmtBar"); if (!bar) return;
-    if (!editing) return fmtBarHide();
+    if (!editing && !bigPage) return fmtBarHide();
     const sel = window.getSelection();
     if (!sel || !sel.rangeCount || sel.isCollapsed) return fmtBarHide();
     const r = sel.getRangeAt(0);
     const node = r.commonAncestorContainer;
     const host = node.nodeType === 1 ? node : node.parentElement;
-    if (!host || !host.closest || !host.closest("#examOutput [contenteditable]")) return fmtBarHide();
+    if (!host || !host.closest || !host.closest("#examOutput [contenteditable], #bigWrap [contenteditable]")) return fmtBarHide();
     const rect = r.getBoundingClientRect();
     if (!rect.width && !rect.height) return fmtBarHide();
     bar.hidden = false;
@@ -6965,7 +7089,7 @@ list.map(disputeBlock).join("\n");
     });
   }
   function fmtRun(cmd) {
-    if (!editing || !cmd) return;
+    if ((!editing && !bigPage) || !cmd) return;
     try { document.execCommand(cmd, false, null); } catch (e) { return; }
     markEdited();
     fmtBarUpdate();
@@ -7532,6 +7656,20 @@ list.map(disputeBlock).join("\n");
   window.addEventListener("scroll", fmtBarUpdate, true);
   window.addEventListener("resize", fmtBarUpdate);
   $("examOutput").addEventListener("input", () => { if (editing) markEdited(); });
+  $("bigWrap").addEventListener("input", () => { if (bigPage) markEdited(); });
+  // 쪽을 누르면 크게 — 수정 중일 때는 글자를 눌러 고치는 것이 먼저다
+  $("paperView").addEventListener("click", (e) => {
+    if (editing || bigPage) return;
+    if (e.target.closest(".qbar, .big-btn")) return;
+    const pg = e.target.closest(".page");
+    if (pg) openBigPage(pg);
+  });
+  $("bigClose").addEventListener("click", () => closeBigPage());
+  $("bigPrev").addEventListener("click", () => stepBigPage(-1));
+  $("bigNext").addEventListener("click", () => stepBigPage(1));
+  $("bigZoom").addEventListener("click", () => { bigFit = !bigFit; paintBigZoom(); fitBigPage(); });
+  $("bigWrap").addEventListener("click", (e) => { if (e.target === $("bigWrap")) closeBigPage(); });
+  window.addEventListener("resize", fitBigPage);
   $("qPopClose").addEventListener("click", closeConfPop);
   $("qPopDone").addEventListener("click", closeConfPop);
   $("qPop").addEventListener("click", (e) => { if (e.target === $("qPop")) closeConfPop(); });
@@ -7540,7 +7678,11 @@ list.map(disputeBlock).join("\n");
     closeConfPop();
     if (no) openRedo(no);
   });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeConfPop(); });
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    if (bigPage) { closeBigPage(); return; }
+    closeConfPop();
+  });
   $("examOcrBtn").addEventListener("click", reReadAsScan);
   $("diagBtn").addEventListener("click", async () => {
     const text = diagnostics();
