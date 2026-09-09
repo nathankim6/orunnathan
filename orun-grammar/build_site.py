@@ -23,5 +23,5 @@ open(H+'/옳은문법.html','w',encoding='utf-8').write(out)
 import collections
 print('교재 항목',len(cats),'· 문제',sum(len(c['questions']) for c in cats),
       '·',dict(collections.Counter(c['grade'] for c in cats)),
-      '· 시그니처',sum(len(g['questions']) for g in sig),'· 학교 세트',sum(len(x['sets']) for x in schools),'· 학교 문항',sum(len(st['questions']) for x in schools for st in x['sets']),
+      '· 지정문법',sum(len(g['questions']) for g in sig),'· 학교 세트',sum(len(x['sets']) for x in schools),'· 학교 문항',sum(len(st['questions']) for x in schools for st in x['sets']),
       '· %.2f MB'%(len(out.encode())/1048576))
