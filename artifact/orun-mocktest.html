@@ -1509,7 +1509,9 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 }
 .page .question { break-inside: auto; }                 /* 문항은 단·쪽을 넘어 이어져도 된다 */
 .page .question.q-cut { margin-bottom: 0; }             /* 쪽을 넘어 이어지는 앞 조각 */
-.page .passage, .page .given { break-inside: avoid; }   /* 상자는 쪼개지 않는다 */
+/* 상자도 단·쪽을 넘어 이어진다. 통째로 옮기면 그만큼 종이가 빈다 —
+   시험지는 빈 자리보다 이어지는 상자를 택한다. 대신 한두 줄만 남기고 끊기지는 않게 한다. */
+.page .passage, .page .given { break-inside: auto; orphans: 2; widows: 2; }
 .page .question > p { break-after: avoid; }             /* 발문만 남고 지문이 넘어가지 않게 */
 .page .pno { position: absolute; bottom: 2.4mm; left: 0; right: 0; text-align: center; font-size: 7pt; color: #777; }
 .page h1 { font-size: 13pt; margin: 0 0 2pt; font-weight: bold; text-align: center; letter-spacing: 0; color: #000; }
@@ -1535,6 +1537,9 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 /* 〈보기〉·주어진 문장 — 지문과 같은 상자에 넣지 않는다. 원본 시험지는 늘 따로 친다. */
 .page .given { border: 0.5pt solid #000; padding: 4pt 6pt; margin: 3pt 0; font-size: 8pt; }
 .page .given + .passage { margin-top: 4pt; }
+/* 상자와 선지 사이는 한 줄 띄운다 (8pt·1.5 → 한 줄 12pt) */
+.page .passage + ol, .page .passage + ul, .page .passage + .choices-inline,
+.page .given + ol, .page .given + ul, .page .given + .choices-inline { margin-top: 12pt; }
 /* 기호만 있는 선지(①~⑤)는 단 너비에 고르게 펼친다 */
 .page .choices-inline {
   margin: 3pt 0 0; padding: 0 2pt;
@@ -1891,6 +1896,20 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   .result-rail .rr-cards { grid-template-columns: 1fr; gap: var(--s2); }
 }
 
+/* ═════════ 글자 서식 막대 — 시험지에서 글을 잡으면 따라 뜬다 ═════════ */
+.fmtbar {
+  position: fixed; z-index: 55; display: flex; align-items: center; gap: 2px;
+  padding: 3px; border-radius: var(--r3); background: var(--d-bg);
+  box-shadow: 0 6px 20px rgba(0,0,0,.28);
+}
+.fmtbar button {
+  min-width: 30px; height: 28px; padding: 0 var(--s2); border: 0; border-radius: var(--r2);
+  background: transparent; color: var(--d-tx-2); font-size: var(--fs-small); cursor: pointer;
+}
+.fmtbar button:hover { background: var(--d-fill); color: var(--d-tx); }
+.fmtbar button.on { background: var(--y); color: var(--ink); }
+.fmtbar .sep { width: 1px; height: 16px; background: var(--d-line-2); margin: 0 2px; }
+
 /* ═════════ 합의 못 한 문항 들여다보기 ═════════ */
 .qpop {
   position: fixed; inset: 0; z-index: 60; display: flex; align-items: center; justify-content: center;
@@ -2201,12 +2220,12 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
         <button type="button" class="on" data-v="opus" role="radio"><i class="dot" aria-hidden="true"></i><b>Opus 5</b><span>정밀 · 기본</span></button>
         <button type="button" data-v="sonnet" role="radio"><i class="dot" aria-hidden="true"></i><b>Sonnet 5</b><span>빠르고 저렴</span></button>
         <button type="button" data-v="fable" role="radio"><i class="dot" aria-hidden="true"></i><b>Fable 5.1</b><span>가장 뛰어남 · 비쌈</span></button>
-        <button type="button" data-v="opus47" role="radio"><i class="dot" aria-hidden="true"></i><b>Opus 4.7</b><span>이전 세대</span></button>
+        <button type="button" data-v="opus46" role="radio"><i class="dot" aria-hidden="true"></i><b>Opus 4.6</b><span>이전 세대</span></button>
       </div>
       <div class="model-grid api-row" id="oaModelSeg" role="radiogroup" aria-label="GPT 모델" hidden>
+        <button type="button" class="on" data-v="gpt-5.6-terra" role="radio"><i class="dot" aria-hidden="true"></i><b>GPT-5.6 Terra</b><span>기본</span></button>
         <button type="button" data-v="gpt-6-astra" role="radio"><i class="dot" aria-hidden="true"></i><b>GPT-6 Astra</b><span>가장 뛰어남 · 비쌈</span></button>
         <button type="button" data-v="gpt-5.6-sol" role="radio"><i class="dot" aria-hidden="true"></i><b>GPT-5.6 Sol</b><span>정밀</span></button>
-        <button type="button" data-v="gpt-5.6-terra" role="radio"><i class="dot" aria-hidden="true"></i><b>GPT-5.6 Terra</b><span>기본</span></button>
         <button type="button" data-v="gpt-5.6-luna" role="radio"><i class="dot" aria-hidden="true"></i><b>GPT-5.6 Luna</b><span>가장 저렴</span></button>
       </div>
       <div class="oa-model api-row" id="oaModelRow" hidden>
@@ -2454,6 +2473,13 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
 
   <div class="seq" id="genProgress"></div>
   <p class="callcount" id="usageInfo"></p>
+
+  <div class="fmtbar" id="fmtBar" hidden aria-label="글자 서식">
+    <button type="button" data-cmd="bold" title="굵게 (Ctrl+B)"><b>B</b></button>
+    <button type="button" data-cmd="underline" title="밑줄 (Ctrl+U)"><u>U</u></button>
+    <span class="sep"></span>
+    <button type="button" data-cmd="removeFormat" title="서식 지우기">지우기</button>
+  </div>
 
   <div class="qpop" id="qPop" hidden role="dialog" aria-modal="true" aria-labelledby="qPopTitle">
     <div class="qpop-box">
@@ -3884,7 +3910,10 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     const root = document.createElement("div");
     root.innerHTML = outputHtml();
     walkBlocks(root, blocks, { box: false, center: false });
-    return blocks.filter(b => b.kind === "headtable" || (b.runs.length && b.runs.some(r => (r.t || "").trim())));
+    const kept = blocks.filter(b => b.kind === "headtable" || (b.runs.length && b.runs.some(r => (r.t || "").trim())));
+    // 상자 바로 뒤의 문단(선지)에는 한 줄만큼 앞 간격을 준다 — 화면과 같은 간격
+    kept.forEach((b, i) => { const pv = kept[i - 1]; if (pv && pv.kind === "boxp" && b.kind !== "boxp") b.afterBox = true; });
+    return kept;
   }
   function blocksToText(blocks) {
     return blocks.map(b => b.kind === "headtable"
@@ -3930,8 +3959,9 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     if (b.kind === "title") { ppr += '<w:keepNext/><w:jc w:val="center"/><w:spacing w:after="60"/>'; extra = '<w:b/><w:sz w:val="26"/><w:szCs w:val="26"/>'; }
     else if (b.kind === "center") { ppr += '<w:jc w:val="center"/><w:spacing w:after="60"/>'; }
     else if (b.kind === "h2") { ppr += '<w:keepNext/><w:pageBreakBefore/><w:spacing w:before="160" w:after="60"/><w:pBdr><w:bottom w:val="single" w:sz="8" w:space="2" w:color="000000"/></w:pBdr>'; extra = '<w:b/><w:sz w:val="20"/><w:szCs w:val="20"/>'; }
-    else if (b.kind === "boxp") { ppr += '<w:keepLines/><w:jc w:val="both"/>' + BOX; }
-    else { ppr += '<w:jc w:val="' + (b.noJustify ? "left" : "both") + '"/>' + (b.pageBreak ? "<w:pageBreakBefore/>" : "") + '<w:spacing w:after="' + (b.spaceAfter ? 520 : 40) + '"/>'; }
+    else if (b.kind === "boxp") { ppr += '<w:jc w:val="both"/>' + BOX; }
+    else { ppr += '<w:jc w:val="' + (b.noJustify ? "left" : "both") + '"/>' + (b.pageBreak ? "<w:pageBreakBefore/>" : "")
+             + '<w:spacing' + (b.afterBox ? ' w:before="240"' : "") + ' w:after="' + (b.spaceAfter ? 520 : 40) + '"/>'; }
     ppr += "</w:pPr>";
     return "<w:p>" + ppr + b.runs.map(r => docxRun(r, extra)).join("") + "</w:p>";
   }
@@ -3983,11 +4013,12 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
       if (b.kind === "title") return new D.Paragraph({ alignment: D.AlignmentType.CENTER, keepNext: true, spacing: { after: 60 }, children: runs(b, { bold: true, size: 26 }) });
       if (b.kind === "center") return new D.Paragraph({ alignment: D.AlignmentType.CENTER, spacing: { after: 60 }, children: runs(b, {}) });
       if (b.kind === "h2") return new D.Paragraph({ keepNext: true, pageBreakBefore: true, spacing: { before: 160, after: 60 }, border: { bottom: LINE(8, 2) }, children: runs(b, { bold: true, size: 20 }) });
-      if (b.kind === "boxp") return new D.Paragraph({ keepLines: true, alignment: D.AlignmentType.JUSTIFIED, border: { top: LINE(6, 3), left: LINE(6, 6), bottom: LINE(6, 3), right: LINE(6, 6) }, children: runs(b, {}) });
+      if (b.kind === "boxp") return new D.Paragraph({ alignment: D.AlignmentType.JUSTIFIED, border: { top: LINE(6, 3), left: LINE(6, 6), bottom: LINE(6, 3), right: LINE(6, 6) }, children: runs(b, {}) });
       // 26pt = 520 twip — 화면의 문항 간격과 같은 값
       return new D.Paragraph({
         alignment: b.noJustify ? D.AlignmentType.LEFT : D.AlignmentType.JUSTIFIED,
-        pageBreakBefore: !!b.pageBreak, spacing: { after: b.spaceAfter ? 520 : 40 }, children: runs(b, {}),
+        pageBreakBefore: !!b.pageBreak,
+        spacing: { before: b.afterBox ? 240 : 0, after: b.spaceAfter ? 520 : 40 }, children: runs(b, {}),
       });
     });
     const PAGE = { size: { width: 11906, height: 16838 }, margin: { top: 567, right: 567, bottom: 567, left: 567, header: 0, footer: 0, gutter: 0 } };
@@ -4095,7 +4126,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     opus:   "claude-opus-5",
     sonnet: "claude-sonnet-5",
     fable:  "claude-fable-5-1",
-    opus47: "claude-opus-4-7",
+    opus46: "claude-opus-4-6",
   };
   const API_MODEL_STORE = "orun_api_model";
   function apiModelKey() { let m = "opus"; try { m = localStorage.getItem(API_MODEL_STORE) || "opus"; } catch (e) {} return API_MODELS[m] ? m : "opus"; }
@@ -4638,7 +4669,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   function diagnostics() {
     return [
       "ORUN 동형 모의고사 진단",
-      "build: 2026-09-09 05:20",
+      "build: 2026-09-09 07:40",
       "url: " + location.href,
       "runtime: API 키 전용 빌드",
       "sample 확보: " + (SAMPLE ? "예" : "아니오"),
@@ -5892,11 +5923,32 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     pg.append(span, cols, pno);
     return pg;
   }
+  const BOXES = ".passage, .given, blockquote";
+  // 가른 상자의 뒷부분을 원래 상자에 도로 붙인다 (갈린 문단은 한 문단으로 다시 잇는다)
+  function unsplitBox(box, tb) {
+    const first = tb.firstElementChild;
+    if (first && first.dataset && first.dataset.pcont && box.lastElementChild) {
+      while (first.firstChild) box.lastElementChild.appendChild(first.firstChild);
+      first.remove();
+    }
+    while (tb.firstChild) box.appendChild(tb.firstChild);
+  }
+  // 뒷조각을 앞조각에 도로 붙인다. 상자를 가른 조각은 새 상자가 아니라 원래 상자 안으로 돌려보낸다.
+  function mergeBack(head, tail) {
+    while (tail.firstChild) {
+      const n = tail.firstChild;
+      if (n.nodeType === 1 && n.dataset && n.dataset.boxcont) {
+        const box = [...head.children].reverse().find(x => x.matches && x.matches(BOXES));
+        if (box) { unsplitBox(box, n); n.remove(); continue; }
+      }
+      head.appendChild(n);
+    }
+  }
   // 쪽을 넘어 이어 붙였던 조각을 원래 문항으로 되돌린다 (배치는 매번 처음부터 다시 한다)
   function unsplitUnit(u) {
     u.classList.remove("q-cut");
     if (!u.__tails) return;
-    u.__tails.forEach(t => { while (t.firstChild) u.appendChild(t.firstChild); t.remove(); });
+    u.__tails.forEach(t => { mergeBack(u, t); t.remove(); });
     u.__tails = null;
   }
   function layoutPaper() {
@@ -5924,11 +5976,62 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     };
     // 넘치는 뒷부분만 떼어 다음 쪽으로 보낸다. 문항을 통째로 넘기면 그만큼 종이가 빈다.
     // 떼어낸 조각은 원래 문항의 자식 노드 그대로다 — 다음 배치 때 unsplitUnit 이 도로 붙인다.
+    // 상자가 마지막 단 밖으로 흘러넘친 첫 글자 자리를 찾는다 (글자 단위 이분 탐색)
+    const overflowPoint = (box) => {
+      const limit = cols.getBoundingClientRect().right + 1;
+      const walk = document.createTreeWalker(box, NodeFilter.SHOW_TEXT);
+      const r = document.createRange();
+      let n;
+      while ((n = walk.nextNode())) {
+        const t = n.nodeValue || "";
+        if (!t.trim()) continue;
+        r.selectNodeContents(n);
+        const rects = [...r.getClientRects()];
+        if (!rects.length) continue;
+        if (rects.every(x => x.left < limit)) continue;      // 이 노드는 아직 안쪽
+        let lo = 0, hi = t.length;
+        while (lo < hi) {                                    // 넘어간 첫 글자
+          const mid = (lo + hi) >> 1;
+          r.setStart(n, 0); r.setEnd(n, mid + 1);
+          const rs = [...r.getClientRects()];
+          const last = rs[rs.length - 1];
+          if (!last || last.left < limit) lo = mid + 1; else hi = mid;
+        }
+        let off = lo;
+        while (off > 0 && !/\s/.test(t[off - 1])) off--;     // 낱말 가운데를 자르지 않는다
+        while (off > 0 && /\s/.test(t[off - 1])) off--;
+        return off > 0 ? { node: n, offset: off } : { node: n, offset: 0 };
+      }
+      return null;
+    };
+    // 상자를 그 자리에서 갈라 뒷부분만 새 상자에 담아 돌려준다
+    const splitBox = (box) => {
+      const pt = overflowPoint(box);
+      if (!pt) return null;
+      const startP = pt.node.parentElement ? pt.node.parentElement.closest("p") : null;
+      const r = document.createRange();
+      r.setStart(pt.node, pt.offset);
+      r.setEndAfter(box.lastChild);
+      const frag = r.extractContents();
+      if (!frag || !frag.textContent.trim() || !box.textContent.trim()) {   // 한쪽이 비면 가르지 않는다
+        box.appendChild(frag);
+        return null;
+      }
+      const tailBox = document.createElement(box.tagName);
+      tailBox.className = box.className;
+      tailBox.dataset.boxcont = "1";
+      tailBox.appendChild(frag);
+      const first = tailBox.firstElementChild;
+      if (first && startP && startP.isConnected && startP.textContent.trim() && first.tagName === startP.tagName) {
+        first.dataset.pcont = "1";               // 갈린 문단의 뒷부분임을 적어 둔다 (되붙일 때 쓴다)
+      }
+      return tailBox;
+    };
     const cutTail = (el) => {
       const owner = el.__owner || el;
       if (!owner.classList.contains("question")) return null;
       const kids = [...el.children].filter(k => !k.classList.contains("qbar"));
-      if (kids.length < 2) return null;
+      if (!kids.length) return null;
       const tail = document.createElement("div");
       tail.className = owner.className;
       tail.dataset.cont = owner.dataset.no || "1";
@@ -5937,8 +6040,39 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
       el.classList.add("q-cut");
       while (kids.length > 1) { reflow(); if (!overflowed()) break; tail.insertBefore(kids.pop(), tail.firstChild); }
       reflow();
-      if (overflowed()) {                       // 첫 덩이조차 안 들어간다 → 자르지 않는다
-        while (tail.firstChild) el.appendChild(tail.firstChild);
+      // 통째로 넘어간 첫 덩이가 지문 상자라면 도로 데려와, 들어가는 데까지만 남기고 가른다.
+      // 상자 하나 때문에 종이 반 장이 비느니 상자가 쪽을 넘어 이어지는 편이 낫다.
+      const moved = tail.firstElementChild;
+      if (!overflowed() && moved && moved.matches && moved.matches(BOXES)) {
+        const mark = document.createComment("cut");
+        tail.insertBefore(mark, moved);
+        el.appendChild(moved);
+        reflow();
+        let kept = !overflowed();               // 뒤 덩이가 빠지니 상자가 통째로 들어가기도 한다
+        if (!kept) {
+          const tb = splitBox(moved);
+          if (tb) {
+            tail.insertBefore(tb, mark);
+            reflow();
+            // 상자 아래 테두리·여백이 마지막 줄을 밀어낸다 — 넘치면 한 조각씩 더 넘긴다
+            let guard = 0;
+            while (overflowed() && guard++ < 6 && moved.textContent.trim().length >= 40) {
+              const more = splitBox(moved);
+              if (!more) break;
+              unsplitBox(more, tb);                       // more(앞) + tb(뒤) 를 하나로
+              while (tb.firstChild) tb.removeChild(tb.firstChild);
+              while (more.firstChild) tb.appendChild(more.firstChild);
+              reflow();
+            }
+            kept = !overflowed() && moved.textContent.trim().length >= 40 && tb.textContent.trim().length >= 40;
+            if (!kept) { tb.remove(); unsplitBox(moved, tb); }
+          }
+        }
+        if (!kept) { tail.insertBefore(moved, mark); reflow(); }
+        mark.remove();
+      }
+      if (overflowed()) {                       // 그래도 안 되면 자르지 않는다
+        mergeBack(el, tail);
         el.classList.remove("q-cut");
         return null;
       }
@@ -6054,7 +6188,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
       if (u.hidden || u.classList.contains("live")) return;
       const c = u.cloneNode(true);
       // 쪽을 넘느라 조각나 있으면 뒷조각을 붙여 온전한 문항으로 내보낸다
-      if (u.__tails) u.__tails.forEach(t => [...t.children].forEach(k => c.appendChild(k.cloneNode(true))));
+      if (u.__tails) u.__tails.forEach(t => mergeBack(c, t.cloneNode(true)));
       c.classList.remove("q-cut");
       c.querySelectorAll(".qbar, .rv").forEach(n => n.remove());
       c.querySelectorAll("[contenteditable]").forEach(n => n.removeAttribute("contenteditable"));
@@ -6658,13 +6792,22 @@ list.map(disputeBlock).join("\n");
       q.prepend(bar);
     });
   }
+  const EDIT_SEL = ".question > p, .passage p, .given p, .question li, .choices-inline, .ak, "
+                 + "h2, .exam-header h1, .exam-header .eh-t p, .exam-header .eh-v, .exam-header .eh-n";
+  let editSaveTimer = null;
+  function markEdited() {                    // 고친 내용을 놓치지 않게 잠깐 뒤에 담아 둔다
+    if (editSaveTimer) clearTimeout(editSaveTimer);
+    editSaveTimer = setTimeout(() => { editSaveTimer = null; saveSession({ output: cleanOutputHtml() }); }, 900);
+  }
   function enterEditMode() {
     editing = true;
     $("examOutput").classList.add("editing");
-    $("examOutput").querySelectorAll(".question > p, .passage p, .given p, .question li, .choices-inline, .ak").forEach(n => n.setAttribute("contenteditable", "true"));
+    $("examOutput").querySelectorAll(EDIT_SEL).forEach(n => n.setAttribute("contenteditable", "true"));
+    // 굵게·밑줄이 <span style> 가 아니라 <b>·<u> 로 남아야 워드·인쇄까지 그대로 간다
+    try { document.execCommand("styleWithCSS", false, false); } catch (e) {}
     $("editToggle").textContent = "수정 끝내기";
     $("editToggle").classList.remove("ghost");
-    toast("문항 본문을 클릭해 바로 고칠 수 있습니다");
+    toast("글자를 끌어 잡으면 굵게·밑줄 막대가 뜹니다 (Ctrl+B · Ctrl+U)");
   }
   function exitEditMode() {
     if (!editing) return;
@@ -6673,8 +6816,43 @@ list.map(disputeBlock).join("\n");
     $("examOutput").querySelectorAll("[contenteditable]").forEach(n => n.removeAttribute("contenteditable"));
     $("editToggle").textContent = "직접 수정";
     $("editToggle").classList.add("ghost");
+    fmtBarHide();
+    if (editSaveTimer) { clearTimeout(editSaveTimer); editSaveTimer = null; }
     layoutPaper();
     saveSession({ output: cleanOutputHtml() });
+  }
+  // ── 글자 서식 막대 — 시험지에서 글을 잡았을 때만 따라 뜬다 ────────────
+  function fmtBarHide() { const b = $("fmtBar"); if (b) b.hidden = true; }
+  function fmtBarUpdate() {
+    const bar = $("fmtBar"); if (!bar) return;
+    if (!editing) return fmtBarHide();
+    const sel = window.getSelection();
+    if (!sel || !sel.rangeCount || sel.isCollapsed) return fmtBarHide();
+    const r = sel.getRangeAt(0);
+    const node = r.commonAncestorContainer;
+    const host = node.nodeType === 1 ? node : node.parentElement;
+    if (!host || !host.closest || !host.closest("#examOutput [contenteditable]")) return fmtBarHide();
+    const rect = r.getBoundingClientRect();
+    if (!rect.width && !rect.height) return fmtBarHide();
+    bar.hidden = false;
+    const bw = bar.offsetWidth || 150, bh = bar.offsetHeight || 34;
+    let left = rect.left + rect.width / 2 - bw / 2;
+    left = Math.max(8, Math.min(left, window.innerWidth - bw - 8));
+    let top = rect.top - bh - 8;
+    if (top < 64) top = Math.min(rect.bottom + 8, window.innerHeight - bh - 8);
+    bar.style.left = Math.round(left) + "px";
+    bar.style.top = Math.round(top) + "px";
+    bar.querySelectorAll("button[data-cmd]").forEach(b => {
+      let on = false;
+      try { on = document.queryCommandState(b.dataset.cmd); } catch (e) {}
+      b.classList.toggle("on", !!on);
+    });
+  }
+  function fmtRun(cmd) {
+    if (!editing || !cmd) return;
+    try { document.execCommand(cmd, false, null); } catch (e) { return; }
+    markEdited();
+    fmtBarUpdate();
   }
   function openRedo(no) {
     const it = lastItems.find(x => String(x.number) === String(no));
@@ -6765,7 +6943,8 @@ list.map(disputeBlock).join("\n");
       ".question,.q{break-inside:auto;margin:0 0 26pt}" +
       ".question>p{break-after:avoid}" +
       "h2{break-before:page;page-break-before:always}" +
-      ".passage,blockquote,.given{border:0.5pt solid #000;padding:4pt 6pt;margin:3pt 0;break-inside:avoid;page-break-inside:avoid}" +
+      ".passage,blockquote,.given{border:0.5pt solid #000;padding:4pt 6pt;margin:3pt 0;break-inside:auto;orphans:2;widows:2}" +
+      ".passage+ol,.passage+ul,.passage+.choices-inline,.given+ol,.given+ul,.given+.choices-inline{margin-top:12pt}" +
       ".answer-key{break-before:page;page-break-before:always}" +
       "[data-pagestart]{break-before:page;page-break-before:always}" +
       ".given+.passage{margin-top:4pt}" +
@@ -7189,7 +7368,13 @@ list.map(disputeBlock).join("\n");
 
   bindExamPaste();
   bindOptions();
-  $("examOutput").addEventListener("focusout", () => { if (editing) queueLayout(); });
+  // 시험지 안에서 칸을 옮겨 다닐 때마다 다시 짜면 잡아 둔 글이 풀린다 — 종이 밖으로 나갈 때만 다시 짠다
+  $("examOutput").addEventListener("focusout", (e) => {
+    if (!editing) return;
+    const to = e.relatedTarget;
+    if (to && $("examOutput").contains(to)) return;
+    queueLayout();
+  });
   $("zoomIn").addEventListener("click", () => zoomStep(1));
   $("zoomOut").addEventListener("click", () => zoomStep(-1));
   $("zoomFit").addEventListener("click", () => { paperZoom = 0; applyZoom(); });
@@ -7212,6 +7397,16 @@ list.map(disputeBlock).join("\n");
   }));
   $("redoGo").addEventListener("click", () => { redoQuestion().catch(e => toast(e.message, "err")); });
   $("redoCancel").addEventListener("click", () => $("redoBox").classList.remove("show"));
+  $("fmtBar").addEventListener("mousedown", (e) => {
+    const b = e.target.closest("button[data-cmd]");
+    if (!b) return;
+    e.preventDefault();                       // 잡아 둔 글이 풀리면 안 된다
+    fmtRun(b.dataset.cmd);
+  });
+  document.addEventListener("selectionchange", fmtBarUpdate);
+  window.addEventListener("scroll", fmtBarUpdate, true);
+  window.addEventListener("resize", fmtBarUpdate);
+  $("examOutput").addEventListener("input", () => { if (editing) markEdited(); });
   $("qPopClose").addEventListener("click", closeConfPop);
   $("qPopDone").addEventListener("click", closeConfPop);
   $("qPop").addEventListener("click", (e) => { if (e.target === $("qPop")) closeConfPop(); });
