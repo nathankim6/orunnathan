@@ -1684,7 +1684,7 @@ function makeNebula(THREE, opts) {
   ].join('\n');
 
   /* ------------------------------ mesh ------------------------------ */
-  var geo = new THREE.SphereBufferGeometry(1, 32, 20);
+  var geo = new THREE.SphereGeometry(1, 32, 20);
   var mat = new THREE.ShaderMaterial({
     uniforms: uniforms,
     vertexShader: VERT,
