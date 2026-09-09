@@ -3,87 +3,73 @@ import { getSchoolLogo } from '@/lib/schoolLogos';
 import { useLogoBannerTheme } from '@/lib/logoColor';
 
 interface ReportHeaderProps {
- date: string;
- themeColors: any;
- schoolName?: string;
+  date: string;
+  themeColors: any;
+  schoolName?: string;
 }
 
-const ReportHeader: React.FC<ReportHeaderProps> = ({ date, themeColors, schoolName }) => {
-  // 리포트 시리얼 — 날짜 기반 (없으면 오늘)
+/**
+ * 리포트 표제 — 예전에는 화면 가득한 남색 그라데이션 띠였다.
+ * 색을 크게 쓰면 눈에는 먼저 들어오지만 학원 인쇄물보다 발표 자료처럼 보인다.
+ * 흰 면에 학교 색을 가는 선으로만 남겨 두면 오히려 정돈되어 보인다.
+ */
+const ReportHeader: React.FC<ReportHeaderProps> = ({ date, schoolName }) => {
   const parsed = date ? new Date(date) : new Date();
   const issueDate = isNaN(parsed.getTime()) ? new Date() : parsed;
-  const yyyy = issueDate.getFullYear();
-  const mm = String(issueDate.getMonth() + 1).padStart(2, '0');
-  const dd = String(issueDate.getDate()).padStart(2, '0');
-  const issued = `${yyyy}_${mm}_${dd}`;
+  const issued = `${issueDate.getFullYear()}. ${String(issueDate.getMonth() + 1).padStart(2, '0')}. ${String(
+    issueDate.getDate(),
+  ).padStart(2, '0')}`;
 
-  // 학교 로고 대표 색상 → 배너 테마 자동 산출
-  const logoUrl = getSchoolLogo(schoolName);
-  const banner = useLogoBannerTheme(logoUrl);
+  const schoolLogo = getSchoolLogo(schoolName);
+  const banner = useLogoBannerTheme(schoolLogo);
+  const [logoOk, setLogoOk] = React.useState(true);
 
   return (
-    <header className="relative pb-1">
-      {/* 배너 바 */}
-      <div
-        className="relative flex items-center gap-4 md:gap-6 px-3.5 md:px-5 py-3 md:py-3.5 border-x border-b overflow-hidden"
-        style={{
-          background: `linear-gradient(135deg, ${banner.from} 0%, ${banner.mid} 50%, ${banner.to} 100%)`,
-          borderColor: `color-mix(in srgb, ${banner.mid} 45%, transparent)`,
-        }}
-      >
-        {/* 다이아몬드 패턴 */}
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.12]"
-          style={{
-            backgroundImage:
-              'repeating-linear-gradient(45deg, rgba(255,255,255,0.18) 0 1px, transparent 1px 22px), repeating-linear-gradient(-45deg, rgba(255,255,255,0.18) 0 1px, transparent 1px 22px)',
-          }}
+    <header className="rp-card rp-card-tight overflow-hidden">
+      {/* 학교 색은 왼쪽 가는 띠 하나로만 — 면을 칠하지 않는다 */}
+      <span
+        aria-hidden
+        className="absolute left-0 top-0 bottom-0 w-[3px]"
+        style={{ background: `linear-gradient(180deg, ${banner.from}, ${banner.mid})` }}
+      />
+
+      <div className="flex items-center gap-4 md:gap-5 pl-2">
+        <img
+          src="/lovable-uploads/orun-logo-new.png"
+          alt="ORUN ACADEMY"
+          className="h-11 w-11 md:h-12 md:w-12 shrink-0 rounded-[10px] object-contain"
         />
 
-        {/* 로고 타일 */}
-        <div className="relative shrink-0 h-12 w-12 md:h-14 md:w-14 border border-white/40 bg-white/10 p-[3px] backdrop-blur-sm">
-          <img
-            src="/lovable-uploads/orun-logo-new.png"
-            alt="ORUN ACADEMY"
-            className="h-full w-full object-contain"
-          />
-        </div>
+        <span aria-hidden className="h-9 w-px shrink-0 bg-[hsl(var(--ink)/0.10)]" />
 
-        <span className="relative h-10 md:h-12 w-px bg-white/25" />
-
-        {/* 타이틀 */}
-        <div className="relative min-w-0 flex-1">
-          <div
-            className="flex items-center gap-1.5 text-[8.5px] md:text-[9.5px] font-semibold uppercase text-white/70"
-            style={{ letterSpacing: '0.32em' }}
-          >
-            <span className="text-[7px] text-[hsl(var(--gold))]">◆</span>
+        <div className="min-w-0 flex-1">
+          <p className="rp-label" style={{ color: banner.mid }}>
             ORUN ENGLISH
-          </div>
-          <h1
-            className="mt-1 font-orbitron text-[17px] sm:text-[22px] md:text-[27px] leading-[1.05] font-bold text-white whitespace-nowrap"
-            style={{ letterSpacing: '0.04em' }}
-          >
-            ORUN ENGLISH <span style={{ color: banner.accent, filter: `drop-shadow(0 0 8px ${banner.accent})` }}>EXAM</span> ANALYSIS
+          </p>
+          <h1 className="mt-1.5 font-display text-[18px] sm:text-[22px] md:text-[26px] font-semibold leading-none tracking-[-0.03em] text-[hsl(var(--ink))]">
+            내신시험 분석 리포트
           </h1>
         </div>
 
-        {/* 우측 배지 */}
-        <div className="relative shrink-0 flex items-center gap-2">
-          <span
-            className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 border border-white/30 text-[10px] md:text-[11px] font-semibold text-white whitespace-nowrap metric-num"
-            style={{ letterSpacing: '0.1em' }}
+        {schoolLogo && logoOk && (
+          <img
+            src={schoolLogo}
+            alt={`${schoolName ?? ''} 로고`}
+            onError={() => setLogoOk(false)}
+            className="hidden sm:block h-10 md:h-12 w-auto max-w-[130px] shrink-0 object-contain"
+          />
+        )}
+
+        <div className="shrink-0 text-right">
+          <p className="rp-label">ISSUED</p>
+          <p
+            className="mt-1.5 text-[12px] md:text-[13px] font-semibold leading-none text-[hsl(var(--ink))]"
+            style={{ fontFeatureSettings: "'tnum' 1" }}
           >
-            ISSUED : {issued}
-          </span>
+            {issued}
+          </p>
         </div>
       </div>
-
-      {/* 하단 골드 액센트 */}
-      <div className="flex">
-        <span className="h-[3px] flex-1" style={{ background: `color-mix(in srgb, ${banner.mid} 12%, transparent)` }} />
-      </div>
-
     </header>
   );
 };

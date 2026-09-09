@@ -1,4 +1,5 @@
 import React from 'react';
+import ReportSectionHead from '@/components/ReportSectionHead';
 import type { KillerProblem } from '@/integrations/supabase/reportService';
 
 interface KillerTop5SectionProps {
@@ -12,17 +13,7 @@ const KillerTop5Section: React.FC<KillerTop5SectionProps> = ({ items }) => {
 
   return (
     <section className="report-section">
-      <div className="flex items-center gap-3 mb-6">
-        <span className="section-numeral section-numeral-c2">★</span>
-        <div>
-          <span className="editorial-kicker block" style={{ color: 'hsl(var(--c2-deep))' }}>
-            Killer
-          </span>
-          <h2 className="font-display text-2xl md:text-3xl text-[hsl(var(--ink))] tracking-[-0.025em] font-medium leading-tight pdf-capture-nowrap">
-            등급을 가른 문항 TOP {list.length}
-          </h2>
-        </div>
-      </div>
+      <ReportSectionHead kicker="KILLER" title={`등급을 가른 문항 TOP ${list.length}`} tone="--c2" />
 
       <ol className="space-y-3">
         {list.map((item, index) => (
@@ -60,7 +51,7 @@ const KillerTop5Section: React.FC<KillerTop5SectionProps> = ({ items }) => {
 
                 {item.reason?.trim() && (
                   <p
-                    className="mt-2 text-[13.5px] leading-[1.75] text-[hsl(var(--ink-soft))] text-justify"
+                    className="mt-2 text-[13.5px] leading-[1.75] text-[hsl(var(--ink-soft))] rp-prose"
                     style={{ wordBreak: 'keep-all' }}
                   >
                     {item.reason}

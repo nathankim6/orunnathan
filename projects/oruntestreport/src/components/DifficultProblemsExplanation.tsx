@@ -52,7 +52,7 @@ const DifficultProblemsExplanation: React.FC<DifficultProblemsExplanationProps> 
           </div>
 
           <p
-            className="text-[14.5px] md:text-[16px] text-[hsl(var(--ink))] leading-[1.85] tracking-[-0.008em] whitespace-pre-wrap text-justify"
+            className="text-[14.5px] md:text-[16px] text-[hsl(var(--ink))] leading-[1.85] tracking-[-0.008em] whitespace-pre-wrap rp-prose"
             style={{ wordBreak: 'keep-all' }}
           >
             {explanation}

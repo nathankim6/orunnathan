@@ -1,4 +1,5 @@
 import React from 'react';
+import ReportSectionHead from '@/components/ReportSectionHead';
 import { ArrowRight } from 'lucide-react';
 import type { PassageVariant } from '@/integrations/supabase/reportService';
 
@@ -13,16 +14,8 @@ const PassageVariantSection: React.FC<PassageVariantSectionProps> = ({ items }) 
 
   return (
     <section className="mt-10">
-      <div className="flex items-center gap-3 mb-4">
-        <span className="editorial-kicker text-[10px] tracking-[0.35em] font-bold text-[#16233A] pdf-capture-nowrap">
-          PASSAGE VARIANTS
-        </span>
-        <span className="h-px flex-1 bg-slate-900/10" />
-      </div>
-      <h3 className="font-display text-[20px] md:text-[23px] font-medium text-slate-900 leading-tight pdf-capture-nowrap">
-        원문 대조 · 지문 변형 분석
-      </h3>
-      <p className="mt-1.5 text-[12.5px] text-slate-500 break-keep">
+      <ReportSectionHead kicker="PASSAGE VARIANTS" title="원문 대조 · 지문 변형 분석" tone="--c3" className="mb-2" />
+      <p className="mb-1 text-[12.5px] text-[hsl(var(--ink-soft))] break-keep">
         시험 범위 원문과 실제 출제 문장을 문장 단위로 대조해, 변형된 지점과 그 함정을 정리했습니다.
       </p>
 

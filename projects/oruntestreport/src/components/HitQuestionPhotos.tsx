@@ -248,7 +248,7 @@ const HitPhotoComment: React.FC<{
   return (
     <div className="group/photo-comment px-4 py-4 bg-[hsl(46_85%_88%)] border-t border-[hsl(var(--gold)/0.35)] flex items-start justify-between gap-3">
       <p
-        className="text-[14px] leading-[1.7] whitespace-pre-wrap flex-1 tracking-[-0.005em] text-justify"
+        className="text-[14px] leading-[1.7] whitespace-pre-wrap flex-1 tracking-[-0.005em] rp-prose"
         style={{
           fontFamily:
             "'Noto Sans KR', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', system-ui, sans-serif",

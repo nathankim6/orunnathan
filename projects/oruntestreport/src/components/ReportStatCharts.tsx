@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import QuestionTypePieChart from "@/components/QuestionTypePieChart";
 import ProblemTypeBarChart from "@/components/ProblemTypeBarChart";
 import DifficultyBarChart from "@/components/DifficultyBarChart";
+import ReportSectionHead from "@/components/ReportSectionHead";
 import type { BannerTheme } from "@/lib/logoColor";
 
 interface ReportStatChartsProps {
@@ -37,30 +38,8 @@ const SectionHeader: React.FC<{
   kicker: string;
   title: string;
   tone?: string;
-}> = ({ numeral, kicker, title, tone = '--c1' }) => (
-  <div className="mb-6">
-    <div
-      className="flex items-center gap-3 px-4 py-3 rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--paper-warm))] shadow-[0_1px_2px_-1px_hsl(var(--ink)/0.05)]"
-    >
-      <span
-        className="section-numeral shrink-0"
-        style={{ ['--sec' as any]: `var(${tone})` }}
-      >
-        {numeral}
-      </span>
-      <div className="flex flex-col">
-        <span
-          className="editorial-kicker tracking-[0.28em] text-[9.5px] leading-none"
-          style={{ color: `hsl(var(${tone}-deep))` }}
-        >
-          {kicker}
-        </span>
-        <h2 className="font-display font-semibold text-[hsl(var(--ink))] text-base md:text-lg leading-tight mt-0.5">
-          {title}
-        </h2>
-      </div>
-    </div>
-  </div>
+}> = ({ kicker, title, tone = '--c1' }) => (
+  <ReportSectionHead kicker={kicker} title={title} tone={tone} />
 );
 
 const ReportStatCharts: React.FC<ReportStatChartsProps> = ({

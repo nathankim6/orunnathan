@@ -95,59 +95,34 @@ const ProblemTypeBarChart: React.FC<ProblemTypeBarChartProps> = ({
 
  {/* 헤더색 테마 헤더 */}
   <CardHeader
-  className="border-0 pb-3 pt-4 px-5 relative overflow-hidden"
-  style={{
-  background: `linear-gradient(135deg, ${b.from} 0%, ${b.mid} 50%, ${b.to} 100%)`,
-  }}
+  className="border-0 pb-3 pt-5 px-5 relative"
+  style={{ background: 'hsl(var(--paper))' }}
   >
- {/* 미세 텍스처 — 도트 패턴 */}
- <div
- className="absolute inset-0 opacity-[0.06] pointer-events-none"
- style={{
- backgroundImage: `radial-gradient(circle at 1px 1px, ${b.accent} 1px, transparent 0)`,
- backgroundSize: '12px 12px',
- }}
- />
-  <div className="flex items-end justify-between relative">
-  <div className="flex items-center gap-3">
-  {/* 헤더색 액자형 아이콘 */}
-  <div className="relative">
-  <div className="absolute inset-0 rounded-full" style={{
-  background: `conic-gradient(from 220deg, ${b.from}, ${b.accent}, ${b.mid}, ${b.from})`,
-  padding: '1.5px',
-  }}>
-  <div className="w-full h-full rounded-full" style={{ background: b.from }} />
-  </div>
-  <div className="relative w-9 h-9 rounded-full border flex items-center justify-center m-[1.5px]" style={{ background: b.from, borderColor: `${b.accent}66` }}>
-  <ChartPie size={16} style={{ color: b.accent }} />
-  </div>
-  </div>
-  <div className="flex flex-col gap-1">
-  <span className="editorial-kicker tracking-[0.32em] text-[10px] font-bold uppercase" style={{ color: b.accent }}>
-  유형 · 분포
+  <div className="flex items-end justify-between gap-4">
+  <div className="rp-head">
+  <span className="rp-glyph" style={{ ['--tone' as never]: 'var(--c2)' }}>
+  <ChartPie size={15} />
   </span>
-  <CardTitle className="font-display text-xl md:text-2xl font-semibold text-[hsl(var(--paper))] tracking-[-0.025em] leading-tight">
-  문제 유형 <span className="font-medium" style={{ color: b.accent }}>분포</span>
+  <div className="flex flex-col gap-1">
+  <span className="rp-label">유형 · 분포</span>
+  <CardTitle className="font-display text-[17px] md:text-[19px] font-semibold text-[hsl(var(--ink))] tracking-[-0.025em] leading-none">
+  문제 유형 분포
   </CardTitle>
   </div>
   </div>
 
   {/* 우측 수치 */}
-  <div className="text-right">
-  <div className="editorial-kicker text-[10px] tracking-[0.32em] font-bold uppercase" style={{ color: b.accent }}>
-  총 문항수
-  </div>
-  <div className="font-display text-[28px] leading-none text-[hsl(var(--paper))] font-bold tracking-[-0.03em] mt-0.5 tabular-nums">
-  {totalProblems}<span className="text-[14px] ml-1 font-semibold not-italic" style={{ color: b.accent }}>문항</span>
+  <div className="text-right shrink-0">
+  <div className="rp-label">총 문항수</div>
+  <div className="rp-metric justify-end mt-1.5">
+  <span className="rp-metric-num rp-metric-num-sm">{totalProblems}</span>
+  <span className="rp-metric-unit">문항</span>
   </div>
   </div>
   </div>
 
-  {/* 헤더 하단 더블 라인 */}
-  <div className="mt-3 space-y-1">
-  <div className="h-[2px] w-16" style={{ background: b.accent }} />
-  <div className="h-px w-full" style={{ background: `${b.accent}26` }} />
-  </div>
+  {/* 헤더 아래 구분선 — 흰 면 위에서는 가는 선 하나면 충분하다 */}
+  <div className="mt-4 h-px w-full" style={{ background: 'hsl(var(--ink) / 0.08)' }} />
  </CardHeader>
 
  <CardContent className="p-7 bg-[hsl(var(--paper))]">

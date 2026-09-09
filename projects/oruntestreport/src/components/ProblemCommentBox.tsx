@@ -157,7 +157,7 @@ const ProblemCommentBox: React.FC<Props> = ({
             <div className="flex items-start justify-between gap-3">
               {comment?.comment ? (
                 <p
-                  className="text-[14px] leading-[1.7] whitespace-pre-wrap flex-1 tracking-[-0.005em] text-justify"
+                  className="text-[14px] leading-[1.7] whitespace-pre-wrap flex-1 tracking-[-0.005em] rp-prose"
                   style={{
                     fontFamily:
                       "'Noto Sans KR', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', system-ui, sans-serif",

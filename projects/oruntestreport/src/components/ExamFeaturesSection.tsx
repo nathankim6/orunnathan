@@ -1,4 +1,5 @@
 import React from 'react';
+import ReportSectionHead from '@/components/ReportSectionHead';
 import type { ExamFeature } from '@/integrations/supabase/reportService';
 
 interface ExamFeaturesSectionProps {
@@ -12,17 +13,7 @@ const ExamFeaturesSection: React.FC<ExamFeaturesSectionProps> = ({ features }) =
 
   return (
     <section className="report-section">
-      <div className="flex items-center gap-3 mb-6">
-        <span className="section-numeral section-numeral-c1">II</span>
-        <div>
-          <span className="editorial-kicker block" style={{ color: 'hsl(var(--c1-deep))' }}>
-            Overview
-          </span>
-          <h2 className="font-display text-2xl md:text-3xl text-[hsl(var(--ink))] tracking-[-0.025em] font-medium leading-tight pdf-capture-nowrap">
-            한눈에 보는 출제 특징
-          </h2>
-        </div>
-      </div>
+      <ReportSectionHead kicker="OVERVIEW" title="한눈에 보는 출제 특징" tone="--c1" />
 
       <div className="grid gap-3 md:grid-cols-2">
         {items.map((feature, index) => (
@@ -44,7 +35,7 @@ const ExamFeaturesSection: React.FC<ExamFeaturesSectionProps> = ({ features }) =
                 </h3>
                 {feature.detail?.trim() && (
                   <p
-                    className="mt-1.5 text-[13.5px] leading-[1.75] text-[hsl(var(--ink-soft))] text-justify"
+                    className="mt-1.5 text-[13.5px] leading-[1.75] text-[hsl(var(--ink-soft))] rp-prose"
                     style={{ wordBreak: 'keep-all' }}
                   >
                     {feature.detail}

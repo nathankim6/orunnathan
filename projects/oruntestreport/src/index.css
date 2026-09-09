@@ -1002,3 +1002,107 @@
   color: rgba(30, 41, 59, 0.65);
   backdrop-filter: blur(12px);
 }
+
+/* ══════════════════════════════════════════════════════════════════
+   리포트 대시보드 카드 — 공통 언어
+   ------------------------------------------------------------------
+   면은 흰색, 테두리는 머리카락 한 올, 그림자는 거의 안 보일 만큼.
+   색은 카드가 아니라 데이터(막대 · 점 · 숫자)에만 쓴다. 화려함은
+   색을 늘려서가 아니라 여백과 글자 크기 차이로 만든다.
+   ══════════════════════════════════════════════════════════════════ */
+@layer components {
+  .rp-card {
+    @apply relative rounded-[18px] bg-white p-5 md:p-6;
+    border: 1px solid hsl(var(--ink) / 0.07);
+    box-shadow:
+      0 1px 2px hsl(var(--ink) / 0.03),
+      0 12px 28px -22px hsl(var(--ink) / 0.4);
+  }
+  .rp-card-tight { @apply p-4 md:p-5; }
+
+  /* 카드 머리 — 작은 색 타일 + 제목. 그 밖의 장식은 두지 않는다. */
+  .rp-head { @apply flex items-center gap-2.5; }
+  .rp-glyph {
+    @apply inline-flex items-center justify-center w-7 h-7 rounded-[9px] shrink-0;
+    background: hsl(var(--tone, var(--c1)) / 0.10);
+    color: hsl(var(--tone, var(--c1)));
+  }
+  .rp-label {
+    @apply text-[10px] font-bold uppercase leading-none truncate;
+    letter-spacing: 0.18em;
+    color: hsl(var(--ink-soft));
+  }
+  .rp-title { @apply text-[13px] font-semibold leading-tight text-[hsl(var(--ink))]; }
+
+  /* 큰 숫자 — 단위는 작게 붙이고 설명은 아래에 흐리게 */
+  .rp-metric { @apply flex items-baseline gap-1; }
+  .rp-metric-num {
+    font-family: 'Noto Sans', 'Noto Sans KR', sans-serif;
+    font-feature-settings: 'tnum' 1, 'lnum' 1;
+    @apply text-[32px] md:text-[38px] font-bold leading-none;
+    letter-spacing: -0.045em;
+    color: hsl(var(--ink));
+  }
+  .rp-metric-num-sm { @apply text-[22px] md:text-[26px]; }
+  .rp-metric-unit {
+    @apply text-[11px] font-semibold;
+    color: hsl(var(--ink-soft));
+  }
+  .rp-metric-cap {
+    @apply mt-2 block text-[11.5px] leading-snug break-keep;
+    color: hsl(var(--ink-soft));
+  }
+  /* 값이 글자일 때 — 숫자만큼 크게 가지 않고 한 단계 낮춘다 */
+  .rp-value {
+    @apply font-display font-semibold leading-tight break-keep;
+    letter-spacing: -0.02em;
+    color: hsl(var(--ink));
+  }
+
+  /* 한 줄 누적 막대 + 점 범례 */
+  .rp-bar {
+    @apply flex h-2.5 w-full overflow-hidden rounded-full;
+    gap: 2px;
+    background: hsl(var(--ink) / 0.05);
+  }
+  .rp-bar > span { @apply block h-full; }
+  .rp-bar > span:first-child { @apply rounded-l-full; }
+  .rp-bar > span:last-child { @apply rounded-r-full; }
+  .rp-legend { @apply mt-3 flex flex-wrap items-center gap-x-5 gap-y-1.5; }
+  .rp-legend-item {
+    @apply inline-flex items-center gap-1.5 text-[11.5px];
+    color: hsl(var(--ink-soft));
+  }
+  .rp-dot { @apply inline-block w-[7px] h-[7px] rounded-full shrink-0; }
+  .rp-legend-value {
+    @apply font-semibold;
+    font-feature-settings: 'tnum' 1;
+    color: hsl(var(--ink));
+  }
+
+  /* 섹션 머리 — 채운 띠 대신 작은 키커 + 제목 + 가는 선 */
+  .rp-section-head { @apply flex items-baseline gap-3 mb-5; }
+  .rp-section-kicker {
+    @apply text-[9.5px] font-bold uppercase shrink-0 leading-none;
+    /* 한글 키커도 섞이므로 자간은 0.2em 까지만 — 더 벌리면 낱말이 흩어진다 */
+    letter-spacing: 0.2em;
+    color: hsl(var(--sec, var(--gold)));
+  }
+  .rp-section-title {
+    @apply font-display text-[18px] md:text-[21px] font-semibold shrink-0 leading-none;
+    letter-spacing: -0.02em;
+    color: hsl(var(--ink));
+  }
+  .rp-rule {
+    @apply h-px flex-1;
+    background: hsl(var(--ink) / 0.09);
+  }
+
+  /* 본문 — 한국어는 양끝맞춤을 하면 낱말 사이가 강처럼 벌어진다.
+     왼쪽 맞춤에 낱말 단위 줄바꿈(break-keep)이 훨씬 깔끔하다. */
+  .rp-prose {
+    @apply text-left break-keep;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+}
