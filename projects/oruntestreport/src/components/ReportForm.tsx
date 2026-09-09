@@ -680,6 +680,14 @@ const ReportForm: React.FC<ReportFormProps> = ({
       grade: analysis.grade?.trim() || prev.grade,
       examInfo: analysis.examInfo?.trim() || prev.examInfo,
       examScope: prev.examScope?.trim() || analysis.examScope?.trim() || prev.examScope,
+      // 강사가 이미 적어 둔 값은 건드리지 않고, 비어 있을 때만 AI 가 채운다.
+      teacher: prev.teacher?.trim() || analysis.teacher?.trim() || prev.teacher,
+      difficultProblemsExplanation:
+        prev.difficultProblemsExplanation?.trim() ||
+        analysis.difficultProblemsExplanation?.trim() ||
+        prev.difficultProblemsExplanation,
+      overallEvaluation:
+        prev.overallEvaluation?.trim() || analysis.overallEvaluation?.trim() || prev.overallEvaluation,
       problemTypes: problemTypes.length > 0 ? problemTypes : prev.problemTypes,
       totalQuestions: problemTypes.length > 0 ? problemTypes.length : prev.totalQuestions,
       objectiveQuestions: problemTypes.length > 0 ? objective : prev.objectiveQuestions,
@@ -720,6 +728,11 @@ const ReportForm: React.FC<ReportFormProps> = ({
       ],
     }));
 
+    // 리포트 상세도도 AI 가 정한다(문항 수 · 서답형 · 킬러 비중 기준).
+    if (analysis.analysisType === 'detailed' || analysis.analysisType === 'simple') {
+      setAnalysisType(analysis.analysisType);
+    }
+
     if (analysis.examInfo && !['1학기 중간고사', '1학기 기말고사', '2학기 중간고사', '2학기 기말고사'].includes(analysis.examInfo)) {
       setShowCustomExamInfo(true);
     }
@@ -746,6 +759,23 @@ const ReportForm: React.FC<ReportFormProps> = ({
       });
     }
 
+    // 무엇이 자동으로 채워졌는지 바로 알려 준다.
+    // 예전에는 반영 후 5단계를 직접 훑어야 결과를 알 수 있었다.
+    const filled: string[] = [];
+    if (problemTypes.length > 0) filled.push(`문항 ${problemTypes.length}개`);
+    if (analysis.examFeatures?.length) filled.push(`출제 특징 ${analysis.examFeatures.length}개`);
+    if (analysis.killerTop5?.length) filled.push(`킬러 문항 ${Math.min(analysis.killerTop5.length, 5)}개`);
+    if (analysis.passageVariants?.length) filled.push(`변형 분석 ${analysis.passageVariants.length}개`);
+    if (crops.length > 0) filled.push(`문항 이미지 ${crops.length}장`);
+    if (analysis.teacher?.trim()) filled.push('담당 강사');
+    if (analysis.difficultProblemsExplanation?.trim()) filled.push('시험 특징 서술');
+    if (analysis.overallEvaluation?.trim()) filled.push('종합 평가');
+    if (incoming.length > 0) filled.push('학습 전략 · 학부모 요약');
+
+    toast.success('입력폼에 자동 반영했습니다', {
+      description: filled.length > 0 ? filled.join(' · ') : '반영할 항목을 찾지 못했습니다.',
+      duration: 7000,
+    });
   };
 
   const themeColors = {

@@ -82,6 +82,14 @@ export interface ExamAnalysis {
   passageVariants?: PassageVariantItem[];
   levelStrategy?: string;
   parentSummary?: string;
+  /** 시험지에 인쇄된 담당 교사명(없으면 비어 있음) */
+  teacher?: string;
+  /** 이번 시험이 어려웠던 이유 — 학부모용 서술 */
+  difficultProblemsExplanation?: string;
+  /** 시험 전체 총평 */
+  overallEvaluation?: string;
+  /** 문항 수·서답형·킬러 비중으로 AI 가 정한 리포트 상세도 */
+  analysisType?: 'detailed' | 'simple';
   problems: AnalyzedProblem[];
 }
 
