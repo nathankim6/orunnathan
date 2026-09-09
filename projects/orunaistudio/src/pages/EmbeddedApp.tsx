@@ -104,26 +104,72 @@ const readWithProgress = async (
   return chunks;
 };
 
+/** 조각들을 이어 붙인다(문자열로 풀지 않는다). */
+const concatChunks = (chunks: Uint8Array[]): Uint8Array => {
+  const total = chunks.reduce((n, c) => n + c.byteLength, 0);
+  const out = new Uint8Array(total);
+  let at = 0;
+  chunks.forEach((chunk) => {
+    out.set(chunk, at);
+    at += chunk.byteLength;
+  });
+  return out;
+};
+
+/** 바이트 더미에서 찾을 바이트열의 위치. 없으면 -1. */
+const indexOfBytes = (hay: Uint8Array, needle: Uint8Array, from: number): number => {
+  const last = hay.length - needle.length;
+  for (let i = from; i <= last; i += 1) {
+    let hit = true;
+    for (let j = 0; j < needle.length; j += 1) {
+      if (hay[i + j] !== needle[j]) {
+        hit = false;
+        break;
+      }
+    }
+    if (hit) return i;
+  }
+  return -1;
+};
+
 /**
  * 조각들을 blob 하나로 묶는다.
- * 고칠 글자가 없으면 바이트 그대로 묶어 메모리를 아끼고,
- * 고칠 게 있을 때만 문자열로 푼다.
+ *
+ * 고칠 글자가 있어도 문자열로 풀지 않고 바이트에서 바로 바꾼다.
+ * 25MB 짜리를 문자열로 풀면 그 사이 화면이 멈춰 로딩 화면이 새까맣게
+ * 보이고, 휴대폰에서는 메모리가 모자랄 수도 있다. 찾을 글자가 전부
+ * 아스키라서 UTF-8 바이트에서 그대로 찾아도 글자 가운데가 걸릴 일이 없다.
  */
 const toBlob = (chunks: Uint8Array[], patch?: Array<[string, string]>): Blob => {
   const type = 'text/html;charset=utf-8';
   if (!patch || patch.length === 0) return new Blob(chunks as BlobPart[], { type });
 
-  const decoder = new TextDecoder('utf-8');
-  let html = '';
-  chunks.forEach((chunk, i) => {
-    html += decoder.decode(chunk, { stream: i < chunks.length - 1 });
+  const encoder = new TextEncoder();
+  const pageUrl = `${window.location.origin}${window.location.pathname}`;
+  let parts: Uint8Array[] = [concatChunks(chunks)];
+
+  patch.forEach(([from, to]) => {
+    const needle = encoder.encode(from);
+    const replacement = encoder.encode(to.split(PAGE_URL_TOKEN).join(pageUrl));
+    if (needle.length === 0) return;
+    const next: Uint8Array[] = [];
+    parts.forEach((part) => {
+      let at = 0;
+      for (;;) {
+        const hit = indexOfBytes(part, needle, at);
+        if (hit < 0) {
+          next.push(part.subarray(at));
+          break;
+        }
+        next.push(part.subarray(at, hit));
+        next.push(replacement);
+        at = hit + needle.length;
+      }
+    });
+    parts = next;
   });
 
-  const pageUrl = `${window.location.origin}${window.location.pathname}`;
-  patch.forEach(([from, to]) => {
-    html = html.split(from).join(to.split(PAGE_URL_TOKEN).join(pageUrl));
-  });
-  return new Blob([html], { type });
+  return new Blob(parts as BlobPart[], { type });
 };
 
 const asMb = (bytes: number): string => (bytes / 1024 / 1024).toFixed(1);
@@ -158,6 +204,11 @@ const EmbeddedApp = ({ src, title, subtitle, poster, patch }: EmbeddedAppProps) 
       setTotal(0);
       setError('');
       try {
+        // 로딩 화면이 먼저 한 번 그려지도록 한 프레임 넘긴다.
+        await new Promise<void>((resolve) => {
+          requestAnimationFrame(() => resolve());
+        });
+        if (cancelled) return;
         const res = await resolvePayload(src, controller.signal);
         const chunks = await readWithProgress(res, (got, all) => {
           if (cancelled) return;
@@ -205,6 +256,12 @@ const EmbeddedApp = ({ src, title, subtitle, poster, patch }: EmbeddedAppProps) 
         >
           <span className="corner corner-top" aria-hidden="true" />
           <span className="corner corner-bottom" aria-hidden="true" />
+
+          {/* 돌아가기는 이 화면에만 둔다. 앱이 뜬 뒤에는 앱이 화면 전체를
+              쓰므로 그 위에 무엇을 얹으면 앱의 제 머리말을 가린다. */}
+          <Link className="embed-back" to="/">
+            <span aria-hidden="true">←</span> STUDIO
+          </Link>
 
           <div className="embed-cover-inner">
             <p className="embed-eyebrow">
@@ -258,9 +315,6 @@ const EmbeddedApp = ({ src, title, subtitle, poster, patch }: EmbeddedAppProps) 
         </div>
       )}
 
-      <Link className="embed-back" to="/">
-        <span aria-hidden="true">←</span> STUDIO
-      </Link>
     </div>
   );
 };
