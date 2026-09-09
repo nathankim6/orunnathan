@@ -4669,7 +4669,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   function diagnostics() {
     return [
       "ORUN 동형 모의고사 진단",
-      "build: 2026-09-09 07:40",
+      "build: 2026-09-09 08:20",
       "url: " + location.href,
       "runtime: API 키 전용 빌드",
       "sample 확보: " + (SAMPLE ? "예" : "아니오"),
@@ -6794,10 +6794,20 @@ list.map(disputeBlock).join("\n");
   }
   const EDIT_SEL = ".question > p, .passage p, .given p, .question li, .choices-inline, .ak, "
                  + "h2, .exam-header h1, .exam-header .eh-t p, .exam-header .eh-v, .exam-header .eh-n";
-  let editSaveTimer = null;
+  let editSaveTimer = null, vaultEditTimer = null;
+  // 저장소에서 연 시험지인가 — 그렇다면 고친 내용을 그 자리에 도로 담아야 한다
+  function editingVaultRow() {
+    try { return !!(vaultOn() && vaultRowId && vaultRowSession === sessionId); } catch (e) { return false; }
+  }
   function markEdited() {                    // 고친 내용을 놓치지 않게 잠깐 뒤에 담아 둔다
     if (editSaveTimer) clearTimeout(editSaveTimer);
     editSaveTimer = setTimeout(() => { editSaveTimer = null; saveSession({ output: cleanOutputHtml() }); }, 900);
+    if (!editingVaultRow()) return;
+    if (vaultEditTimer) clearTimeout(vaultEditTimer);          // 저장소는 손을 멈춘 뒤에 한 번만
+    vaultEditTimer = setTimeout(() => {
+      vaultEditTimer = null;
+      vaultStore(true).catch(e => toast(e.message, "err"));
+    }, 4000);
   }
   function enterEditMode() {
     editing = true;
@@ -6818,8 +6828,15 @@ list.map(disputeBlock).join("\n");
     $("editToggle").classList.add("ghost");
     fmtBarHide();
     if (editSaveTimer) { clearTimeout(editSaveTimer); editSaveTimer = null; }
+    if (vaultEditTimer) { clearTimeout(vaultEditTimer); vaultEditTimer = null; }
     layoutPaper();
     saveSession({ output: cleanOutputHtml() });
+    // 저장소에서 연 시험지면 고친 내용을 그 자리에 덮어쓴다
+    if (editingVaultRow()) {
+      vaultStore(true)
+        .then(one => { if (one) toast("고친 내용을 저장소에 담았어요"); })
+        .catch(e => toast(e.message, "err"));
+    }
   }
   // ── 글자 서식 막대 — 시험지에서 글을 잡았을 때만 따라 뜬다 ────────────
   function fmtBarHide() { const b = $("fmtBar"); if (b) b.hidden = true; }
