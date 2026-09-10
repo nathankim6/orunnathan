@@ -37,11 +37,49 @@ Pages 는 `gh-pages` 브랜치를 읽고, 그 브랜치에는 워크플로가 �
 | `/studio.html` | ORUN STUDIO 랜딩 (타일이 `/mock-exam.html` 을 가리킨다) |
 | `/orun-universe.html` , `/orun-grammar.html` | 그 밖의 앱 |
 
-## Lovable
+## 무엇이 무엇에 이어져 있나
 
-`src/`·`package.json` 의 Vite+React 프로젝트는 Lovable 에서 한 번 떠 온 스냅샷이다.
-Lovable 편집기는 이 저장소를 자기 소스로 읽지 않는다 — 연결은 Lovable UI 에서만
-할 수 있다. 그러니 여기서 고친 것이 Lovable 사이트에 저절로 가지 않는다.
+생성기는 파일이 한 벌뿐이고, 그것을 보는 곳이 여럿이다. 아래 화살표는
+"고치면 저절로 따라온다" 는 뜻이다.
+
+```
+artifact/orun-mocktest.html
+  └─ public/mocktest-generator.html   (같은 바이트 · sha256 이 같아야 한다)
+       └─ gh-pages                     (pages.yml 이 main 푸시에서 짓는다)
+            ├─ /  ·  /mocktest-generator.html  ·  /mock-exam.html
+            ├─ /studio.html            타일이 mock-exam.html 을 가리킨다
+            └─ ORUN STUDIO (Lovable orunaistudio)
+                 MOCK EXAM CREATOR 타일이
+                 https://nathankim6.github.io/orunnathan/mock-exam.html 을 가리킨다
+```
+
+스튜디오는 생성기 사본을 들고 있지 않다. 그래서 여기서 배포하면 스튜디오가
+여는 것도 같이 새것이 된다 — Lovable 을 다시 배포할 필요가 없다.
+**스튜디오에 생성기 사본을 만들지 말 것.** 사본이 생기는 순간 이 화살표가 끊긴다.
+
+GitHub Pages 는 `access-control-allow-origin: *` 를 준다. 다른 사이트가 이 파일을
+`fetch` 로 받아 자기 화면에 띄우는 것도 되므로, 사본을 둘 이유는 어디에도 없다.
+
+## Lovable — 여기서 고친 것이 가지 않는 곳
+
+| Lovable 프로젝트 | 사는 곳 | 이 저장소와의 관계 |
+|---|---|---|
+| `orunaistudio` (ORUN STUDIO) | orunaistudio.lovable.app | 없음. 타일 링크로만 이어진다 |
+| `orunquiz` (QUIZ MAKER) | orunquiz.lovable.app | `src/`·`package.json` 이 그 스냅샷이다 |
+
+`src/` 는 `orunquiz` 를 한 번 떠 온 것이고, **살아 있는 연결이 아니다.**
+여기서 고쳐도 Lovable 로 가지 않고, Lovable 에서 고친 것도 여기로 오지 않는다.
+지금 이 저장소에서 `npm run build` 로 나오는 것은 어디에도 배포되지 않는다.
+
+이어 붙이는 길은 하나뿐이다 — Lovable 편집기에서 GitHub 을 연결하는 것.
+그 버튼은 Lovable UI 에만 있어 MCP 로는 누를 수 없다(`add_connector` 도
+대시보드 주소만 돌려준다). 연결하면 Lovable 이 그 프로젝트만의 저장소를
+새로 만든다. 이 저장소에 합쳐지지 않는다 — 같은 경로에 다른 내용과 다른
+역사가 이미 있기 때문이다.
+
+연결이 끝나 저장소 이름을 받으면, 그 저장소를 세션에 붙여(`add_repo`) 거기서
+직접 고친다. 그때 `src/` 스냅샷은 지운다 — 두 벌을 남기면 어느 쪽이 원본인지
+모르게 된다.
 
 ## 생성기를 고칠 때 지키는 것
 
