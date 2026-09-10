@@ -5,22 +5,29 @@ const captureToDataUrl = async (
   element: HTMLElement,
   options: { width?: number; height?: number } = {}
 ): Promise<string> => {
-  return toPng(element, {
-    cacheBust: true,
-    pixelRatio: 2,
-    backgroundColor: '#ffffff',
-    width: options.width ?? element.scrollWidth,
-    height: options.height ?? element.scrollHeight,
-    style: { transform: 'none' },
-    filter: (node: HTMLElement) => {
-      // 캡처/PDF에서 숨길 요소 제외 (print:hidden, .capture-hide, data-capture-hide)
-      if (!(node instanceof HTMLElement)) return true;
-      if (node.classList?.contains('capture-hide')) return false;
-      if (node.classList?.contains('print:hidden')) return false;
-      if (node.dataset?.captureHide !== undefined) return false;
-      return true;
-    },
-  });
+  // 아직 화면에 안 들어온 섹션은 투명한 상태다. 그대로 찍으면 리포트가
+  // 군데군데 비어 나오므로, 캡처 동안에는 등장 효과를 전부 끈다.
+  document.body.classList.add('rp-capturing');
+  try {
+    return await toPng(element, {
+      cacheBust: true,
+      pixelRatio: 2,
+      backgroundColor: '#ffffff',
+      width: options.width ?? element.scrollWidth,
+      height: options.height ?? element.scrollHeight,
+      style: { transform: 'none' },
+      filter: (node: HTMLElement) => {
+        // 캡처/PDF에서 숨길 요소 제외 (print:hidden, .capture-hide, data-capture-hide)
+        if (!(node instanceof HTMLElement)) return true;
+        if (node.classList?.contains('capture-hide')) return false;
+        if (node.classList?.contains('print:hidden')) return false;
+        if (node.dataset?.captureHide !== undefined) return false;
+        return true;
+      },
+    });
+  } finally {
+    document.body.classList.remove('rp-capturing');
+  }
 };
 
 const loadImage = (src: string): Promise<HTMLImageElement> =>

@@ -9,7 +9,7 @@ const Navigation: React.FC = () => {
   const location = useLocation();
 
   return (
-    <div className="w-full py-2 px-4 fixed top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-slate-900/10">
+    <div className="app-nav w-full py-2 px-4 fixed top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-slate-900/10">
       <div className="max-w-7xl mx-auto flex justify-center items-center px-4 sm:px-6">
         <div className="flex items-center justify-between w-full max-w-6xl">
           <Link to="/" className="flex items-center gap-2.5">

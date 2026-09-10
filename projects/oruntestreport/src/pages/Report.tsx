@@ -13,6 +13,10 @@ import FloatingThemeToggle from "@/components/FloatingThemeToggle";
 import ReportHeader from "@/components/ReportHeader";
 import ReportInfoCards from "@/components/ReportInfoCards";
 import ReportKpiRail from "@/components/ReportKpiRail";
+import CinematicBackdrop from "@/components/CinematicBackdrop";
+import CinematicIntro from "@/components/CinematicIntro";
+import useCinematicStage from "@/hooks/useCinematicStage";
+import ExamConstellation from "@/components/ExamConstellation";
 import ReportStatCharts from "@/components/ReportStatCharts";
 import DifficultProblemsExplanation from "@/components/DifficultProblemsExplanation";
 import HitQuestionPhotos from "@/components/HitQuestionPhotos";
@@ -107,6 +111,7 @@ const Report: React.FC = () => {
   // 학교 로고에서 추출한 헤더 배너 컬러 — 리포트 테두리에도 동일 적용
   const banner = useLogoBannerTheme(getSchoolLogo(reportData?.school || ''));
   const [reportTitle, setReportTitle] = useState<string>("");
+  useCinematicStage(reportContainerRef, isLoaded);
   const [submissionsOpen, setSubmissionsOpen] = useState(false);
   
   const {
@@ -552,7 +557,7 @@ const Report: React.FC = () => {
   return (
     <div 
       data-theme={theme}
-      className="min-h-screen py-12 px-4 print:bg-white print:py-0 relative" 
+      className="cinema-stage min-h-screen py-12 px-4 print:bg-white print:py-0 relative" 
       style={{
         '--theme-primary': themeColors.primary,
         '--theme-secondary': themeColors.secondary,
@@ -563,13 +568,17 @@ const Report: React.FC = () => {
         '--theme-pastel': themeColors.pastel,
         '--theme-accent2': themeColors.accent2,
         '--theme-highlight': themeColors.highlight,
-        backgroundColor: 'hsl(var(--paper-warm))',
-        backgroundImage: `
-          radial-gradient(1100px 640px at 108% -12%, hsl(var(--backdrop-glow-1) / 0.07), transparent 62%),
-          radial-gradient(900px 560px at -8% 108%, hsl(var(--backdrop-glow-2) / 0.06), transparent 62%)
-        `
       } as React.CSSProperties}
     >
+      {/* 화면에서만 보이는 배경 — PDF 에는 들어가지 않는다 */}
+      <CinematicBackdrop accent={banner.mid} />
+      <CinematicIntro
+        school={reportData.school}
+        exam={`${reportData.grade} · ${reportData.examInfo || '내신시험'} 분석 리포트`}
+        accent={banner.accent}
+      />
+      <div className="cinema-bar cinema-bar-top capture-hide print:hidden" aria-hidden="true" />
+      <div className="cinema-bar cinema-bar-bottom capture-hide print:hidden" aria-hidden="true" />
       <div 
         className={`w-full max-w-5xl mx-auto transition-all duration-700 relative z-10 ${
           isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
@@ -612,6 +621,8 @@ const Report: React.FC = () => {
               <div className="report-section">
                 <ReportKpiRail problemTypes={reportData.problemTypes as any} />
               </div>
+
+              <ExamConstellation problems={reportData.problemTypes as any} />
 
               <ReportStatCharts 
                 stats={stats}
