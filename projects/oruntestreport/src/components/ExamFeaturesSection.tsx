@@ -1,4 +1,5 @@
 import React from 'react';
+import FxStage from '@/components/FxStage';
 import ReportSectionHead from '@/components/ReportSectionHead';
 import type { ExamFeature } from '@/integrations/supabase/reportService';
 
@@ -14,6 +15,15 @@ const ExamFeaturesSection: React.FC<ExamFeaturesSectionProps> = ({ features }) =
   return (
     <section className="report-section">
       <ReportSectionHead kicker="OVERVIEW" title="한눈에 보는 출제 특징" tone="--c1" />
+
+      <FxStage
+        kind="field"
+        options={{ count: 120, tone: 'hsl(220, 26%, 58%)', tone2: '#ffffff' }}
+        height={56}
+        label="OVERVIEW"
+        readout={`${items.length}가지`}
+        className="mb-4"
+      />
 
       <div className="grid gap-3 md:grid-cols-2">
         {items.map((feature, index) => (

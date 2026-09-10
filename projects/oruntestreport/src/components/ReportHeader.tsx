@@ -1,4 +1,5 @@
 import React from 'react';
+import FxStage from '@/components/FxStage';
 import { getSchoolLogo } from '@/lib/schoolLogos';
 import { useLogoBannerTheme } from '@/lib/logoColor';
 
@@ -70,6 +71,16 @@ const ReportHeader: React.FC<ReportHeaderProps> = ({ date, schoolName }) => {
           </p>
         </div>
       </div>
+
+      {/* 표제 아래 빛 띠 — 화면에서만 흐른다 */}
+      <FxStage
+        kind="sweep"
+        options={{ tone: banner.accent, gain: 1.15 }}
+        height={40}
+        label="EXAM ANALYSIS"
+        readout={schoolName || 'ORUN ENGLISH'}
+        className="mt-4"
+      />
     </header>
   );
 };

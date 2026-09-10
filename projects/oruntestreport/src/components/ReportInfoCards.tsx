@@ -1,4 +1,5 @@
 import React from 'react';
+import FxStage from '@/components/FxStage';
 import { School, GraduationCap, ClipboardList, UserRound, BookOpenText } from 'lucide-react';
 
 interface ReportInfoCardsProps {
@@ -100,6 +101,16 @@ const ReportInfoCards: React.FC<ReportInfoCardsProps> = ({ reportData }) => {
           </p>
         </div>
       </div>
+
+      {/* 시험 범위를 따라 흐르는 입자 — 화면에서만 */}
+      <FxStage
+        kind="flow"
+        options={{ tone: 'hsl(188, 32%, 46%)', tone2: 'hsl(42, 42%, 58%)', count: 130 }}
+        height={48}
+        label="SCOPE"
+        readout={`${reportData.grade} · ${examInfo}`}
+        className="mt-3 md:mt-4"
+      />
     </section>
   );
 };

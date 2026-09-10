@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import FxStage from '@/components/FxStage';
 import { Camera, X, Pencil, Check, MessageSquarePlus } from 'lucide-react';
 import { TeacherPhotoUploader } from '@/components/TeacherPhotoUploader';
 import { Button } from '@/components/ui/button';
@@ -62,6 +63,15 @@ const HitQuestionPhotos: React.FC<HitQuestionPhotosProps> = ({
  />
   ) : null}
  </div>
+
+      <FxStage
+        kind="field"
+        options={{ count: 110, tone: 'hsl(188, 32%, 56%)', tone2: '#ffffff' }}
+        height={52}
+        label="KILLER"
+        readout={`${photos?.length ?? 0}문항`}
+        className="mb-4"
+      />
 
  <div className="space-y-8">
  {photos &&

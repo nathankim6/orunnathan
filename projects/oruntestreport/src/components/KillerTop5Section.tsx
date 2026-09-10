@@ -1,4 +1,5 @@
 import React from 'react';
+import FxStage from '@/components/FxStage';
 import ReportSectionHead from '@/components/ReportSectionHead';
 import type { KillerProblem } from '@/integrations/supabase/reportService';
 
@@ -11,9 +12,21 @@ const KillerTop5Section: React.FC<KillerTop5SectionProps> = ({ items }) => {
   const list = (items || []).filter((it) => it.number?.trim() || it.title?.trim() || it.reason?.trim());
   if (list.length === 0) return null;
 
+  // 불티의 세기는 이 문항들이 가져간 배점 합으로 정한다 — 숫자가 그림이 된다.
+  const killerPoints = list.reduce((sum, it) => sum + (Number(it.points) || 0), 0);
+
   return (
     <section className="report-section">
       <ReportSectionHead kicker="KILLER" title={`등급을 가른 문항 TOP ${list.length}`} tone="--c2" />
+
+      <FxStage
+        kind="ember"
+        options={{ value: Math.min(1, killerPoints / 40), tone: 'hsl(8, 54%, 54%)', count: 100 }}
+        height={64}
+        label="KILLER"
+        readout={`${list.length}문항 · ${killerPoints.toFixed(1)}점`}
+        className="mb-4"
+      />
 
       <ol className="space-y-3">
         {list.map((item, index) => (

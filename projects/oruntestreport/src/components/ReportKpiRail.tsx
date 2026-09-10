@@ -1,4 +1,5 @@
 import React from 'react';
+import FxStage from '@/components/FxStage';
 import { ListChecks, Sigma, Flame, Shuffle, Gauge } from 'lucide-react';
 
 type Problem = {
@@ -50,6 +51,7 @@ const ReportKpiRail: React.FC<ReportKpiRailProps> = ({ problemTypes }) => {
   const hardRatio = total ? Math.round((hardish / total) * 100) : 0;
 
   return (
+    <>
     <div className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4">
       <KpiCard
         label="문항"
@@ -92,6 +94,21 @@ const ReportKpiRail: React.FC<ReportKpiRailProps> = ({ problemTypes }) => {
         icon={<Gauge className="w-3.5 h-3.5" />}
       />
     </div>
+
+    {/* 문항 하나가 점 하나 — 화면에서만 돈다 */}
+    <FxStage
+      kind="orbit"
+      options={{
+        count: total,
+        tone: 'hsl(214, 30%, 62%)',
+        tone2: 'hsl(188, 30%, 60%)',
+      }}
+      height={112}
+      label="문항 구성"
+      readout={`${total}문항 · 킬러 ${killer}`}
+      className="mt-3 md:mt-4"
+    />
+    </>
   );
 };
 

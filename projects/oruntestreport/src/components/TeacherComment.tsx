@@ -1,4 +1,5 @@
 import React from 'react';
+import FxStage from '@/components/FxStage';
 import ReportSectionHead from '@/components/ReportSectionHead';
 import { User } from 'lucide-react';
 import teacherIcon from '@/assets/teacher-icon.png';
@@ -68,6 +69,15 @@ const TeacherComment: React.FC<TeacherCommentProps> = ({
   return (
     <section className="report-section">
       <ReportSectionHead kicker="TEACHER'S NOTE" title="담당 강사 코멘트" tone="--c5" />
+
+      <FxStage
+        kind="field"
+        options={{ count: 130, tone: 'hsl(214, 26%, 60%)', tone2: '#ffffff' }}
+        height={56}
+        label="TEACHER'S NOTE"
+        readout={teacher || 'ORUN ENGLISH'}
+        className="mb-4"
+      />
 
       {/* Modern editorial card — horizontal split */}
       <div className="rp-card overflow-hidden p-0 md:p-0">

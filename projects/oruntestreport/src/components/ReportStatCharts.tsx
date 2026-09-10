@@ -1,4 +1,5 @@
 import React from 'react';
+import FxStage from '@/components/FxStage';
 import { Card } from "@/components/ui/card";
 import QuestionTypePieChart from "@/components/QuestionTypePieChart";
 import ProblemTypeBarChart from "@/components/ProblemTypeBarChart";
@@ -117,6 +118,41 @@ const ReportStatCharts: React.FC<ReportStatChartsProps> = ({
             </div>
           </Card>
         </div>
+
+        {/* 같은 수치를 입체로 한 번 더 — 화면에서만 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 mt-3 md:mt-4">
+          <FxStage
+            kind="ring"
+            options={{
+              value: stats.objectivePercentage / 100,
+              tone: 'hsl(220, 24%, 62%)',
+              tone2: 'hsl(42, 40%, 60%)',
+            }}
+            height={136}
+            label="객관식 비중"
+            readout={`${Math.round(stats.objectivePercentage)}%`}
+          />
+          <FxStage
+            kind="bars"
+            options={{
+              values: [
+                stats.difficulty.easy / 100,
+                stats.difficulty.medium / 100,
+                stats.difficulty.hard / 100,
+                stats.difficulty.very_hard / 100,
+              ],
+              colors: [
+                'hsl(188, 40%, 52%)',
+                'hsl(214, 30%, 60%)',
+                'hsl(30, 52%, 58%)',
+                'hsl(8, 52%, 56%)',
+              ],
+            }}
+            height={136}
+            label="난도 분포"
+            readout={`최상 ${Math.round(stats.difficulty.very_hard)}%`}
+          />
+        </div>
       </section>
 
       <section className="report-section">
@@ -125,6 +161,20 @@ const ReportStatCharts: React.FC<ReportStatChartsProps> = ({
         kicker="유형별 분석"
           title="출제 유형 분석"
           tone="--c3"
+        />
+
+        {/* 소분류 하나가 점 하나 */}
+        <FxStage
+          kind="orbit"
+          options={{
+            count: new Set(stats.problemTypes.map((p) => p.name)).size,
+            tone: 'hsl(20, 42%, 58%)',
+            tone2: 'hsl(214, 24%, 58%)',
+          }}
+          height={112}
+          label="출제 유형"
+          readout={`${new Set(stats.problemTypes.map((p) => p.name)).size}종 · ${stats.problemTypes.length}문항`}
+          className="mb-3 md:mb-4"
         />
 
         <Card className="bento-tile bg-[hsl(var(--paper-warm))] border border-[hsl(var(--border))] p-5 rounded-2xl text-left shadow-[0_1px_2px_-1px_hsl(var(--ink)/0.05)]">

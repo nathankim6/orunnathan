@@ -1,4 +1,5 @@
 import React from 'react';
+import FxStage from '@/components/FxStage';
 import ReportSectionHead from '@/components/ReportSectionHead';
 import { ArrowRight } from 'lucide-react';
 import type { PassageVariant } from '@/integrations/supabase/reportService';
@@ -18,6 +19,15 @@ const PassageVariantSection: React.FC<PassageVariantSectionProps> = ({ items }) 
       <p className="mb-1 text-[12.5px] text-[hsl(var(--ink-soft))] break-keep">
         시험 범위 원문과 실제 출제 문장을 문장 단위로 대조해, 변형된 지점과 그 함정을 정리했습니다.
       </p>
+
+      <FxStage
+        kind="flow"
+        options={{ tone: 'hsl(214, 26%, 58%)', tone2: 'hsl(42, 44%, 60%)', count: 140 }}
+        height={64}
+        label="원문 → 시험지"
+        readout={`${list.length}건`}
+        className="mt-4"
+      />
 
       <div className="mt-5 space-y-4">
         {list.map((v, idx) => (

@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import FxStage from '@/components/FxStage';
 import { ScrollArea } from "@/components/ui/scroll-area";
 import ProblemItem from './ProblemItem';
 import ProblemCommentBox from './ProblemCommentBox';
@@ -64,6 +65,15 @@ const ProblemList: React.FC<ProblemListProps> = ({ problemTypes, reportId }) => 
   ];
 
   return (
+    <>
+    <FxStage
+      kind="sweep"
+      options={{ tone: 'hsl(214, 30%, 62%)', gain: 0.9 }}
+      height={36}
+      label="문항 목록"
+      readout={`${total}문항 · 킬러 ${killerCount}`}
+      className="mb-3"
+    />
  <div className="relative">
  {/* 요약 대시보드 */}
  <div className="mb-3 overflow-hidden rounded-xl border border-[hsl(var(--ink)/0.08)] bg-[hsl(var(--paper))]">
@@ -157,6 +167,7 @@ const ProblemList: React.FC<ProblemListProps> = ({ problemTypes, reportId }) => 
  </div>
  </div>
  </div>
+    </>
  );
 };
 

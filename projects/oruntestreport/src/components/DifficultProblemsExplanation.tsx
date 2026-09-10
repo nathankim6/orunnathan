@@ -1,4 +1,5 @@
 import React from 'react';
+import FxStage from '@/components/FxStage';
 import SectionOrnament from './SectionOrnament';
 
 interface DifficultProblemsExplanationProps {
@@ -26,6 +27,15 @@ const DifficultProblemsExplanation: React.FC<DifficultProblemsExplanationProps> 
           </div>
         </div>
       </div>
+
+      <FxStage
+        kind="ember"
+        options={{ value: 0.6, tone: 'hsl(30, 52%, 56%)', count: 90 }}
+        height={56}
+        label="SPOTLIGHT"
+        readout="시험 특징"
+        className="mb-4"
+      />
 
       <div className="editorial-card relative !p-0 overflow-hidden">
         {/* 좌측 골드 룰 */}
