@@ -186,6 +186,12 @@ const Report: React.FC = () => {
           if (node instanceof HTMLElement) {
             if (node.hasAttribute('data-comment-empty-actions')) return false;
             if (node.hasAttribute('data-comment-actions')) return false;
+            // 화면 전용 장식은 PDF 에 넣지 않는다. 3차원 효과 판이 대표적인데,
+            // 효과 자체는 화면에 떠 있는 캔버스 한 장에 그려지므로 판만 찍히면
+            // 까만 상자만 남는다. 이미지 캡처 쪽(captureUtils)과 같은 규칙이다.
+            if (node.classList.contains('capture-hide')) return false;
+            if (node.classList.contains('print:hidden')) return false;
+            if (node.dataset.captureHide !== undefined) return false;
           }
           return true;
         },
