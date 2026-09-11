@@ -25,8 +25,13 @@ const IgDonut: React.FC<{
   thickness?: number;
   /** 조각 사이 틈 */
   gap?: number;
+  /**
+   * 아이소메트릭 흉내. 같은 고리를 아래로 조금 밀어 진하게 한 번 더 그려 두께를
+   * 만든다. 레퍼런스 "ISOMETRIC VIEWS" 의 납작한 원반이다. WebGL 이 아니다.
+   */
+  iso?: boolean;
   className?: string;
-}> = ({ segments, centerCap, centerValue, thickness = 13, gap = 1.1, className = '' }) => {
+}> = ({ segments, centerCap, centerValue, thickness = 13, gap = 1.1, iso = false, className = '' }) => {
   const total = segments.reduce((s, x) => s + (x.value || 0), 0) || 1;
   const R = 50 - thickness / 2;
   const C = 2 * Math.PI * R;
@@ -43,10 +48,33 @@ const IgDonut: React.FC<{
   return (
     <div className={`flex items-center gap-5 md:gap-7 ${className}`}>
       <div className="relative flex-none" style={{ width: 'clamp(132px, 22vw, 186px)' }}>
-        <svg viewBox="0 0 100 100" width="100" height="100"
+        <svg viewBox={iso ? '0 0 100 106' : '0 0 100 100'} width="100" height={iso ? 106 : 100}
              preserveAspectRatio="xMidYMid meet"
              style={{ width: '100%', height: 'auto', display: 'block' }}
              role="img" aria-hidden="true">
+          {iso && (
+            <g transform="translate(0 5)">
+              {arcs.map((a, i) => (
+                <circle
+                  key={`iso-${i}`}
+                  cx="50" cy="50" r={R} fill="none"
+                  stroke={a.color} strokeWidth={thickness}
+                  strokeDasharray={`${a.len} ${a.rest}`} strokeDashoffset={a.offset}
+                  transform="rotate(-90 50 50)"
+                />
+              ))}
+              {/* 옆면을 어둡게 — 같은 호 위에 반투명 먹을 한 겹 */}
+              {arcs.map((a, i) => (
+                <circle
+                  key={`iso-shade-${i}`}
+                  cx="50" cy="50" r={R} fill="none"
+                  stroke="hsl(var(--ink) / 0.32)" strokeWidth={thickness}
+                  strokeDasharray={`${a.len} ${a.rest}`} strokeDashoffset={a.offset}
+                  transform="rotate(-90 50 50)"
+                />
+              ))}
+            </g>
+          )}
           <circle cx="50" cy="50" r={R} fill="none" stroke="hsl(var(--ink) / 0.06)" strokeWidth={thickness} />
           {arcs.map((a, i) => (
             <circle

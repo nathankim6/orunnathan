@@ -1302,3 +1302,65 @@
     .report-container.ig-sheet { padding: 0; box-shadow: none !important; border-top: 0 !important; }
   }
 }
+
+/* ── 모자이크 격자와 좁은 서체 ───────────────────────────────────
+   레퍼런스는 3열 모자이크다. 6칸 격자 위에 모듈마다 칸 수(span)를 주고,
+   좁은 화면에서는 전부 한 열로 내린다. 영문 보조어·큰 숫자·대문자 라벨은
+   좁고 굵은 Oswald 로 바꾼다. 한글 글자는 자동으로 Noto Sans KR 로 떨어진다. */
+@layer components {
+  .ig-stack > * { min-width: 0; grid-column: 1 / -1; }
+  @media (min-width: 768px) {
+    .ig-stack { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .ig-stack > * { grid-column: span 6 / span 6; }
+    .ig-span-2 { grid-column: span 2 / span 2 !important; }
+    .ig-span-3 { grid-column: span 3 / span 3 !important; }
+    .ig-span-4 { grid-column: span 4 / span 4 !important; }
+    .ig-span-6 { grid-column: span 6 / span 6 !important; }
+  }
+  /* 인쇄 폭(A4 ≈ 794px)도 md 이상이지만, 브라우저마다 판정이 달라 명시한다 */
+  @media print {
+    .ig-stack { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .ig-module { break-inside: avoid; page-break-inside: avoid; }
+  }
+
+  .ig-condensed { font-family: 'Oswald', 'Noto Sans KR', sans-serif; }
+  .ig-sub, .ig-sub-1, .ig-stat-n, .ig-leg-n, .ig-num, .ig-chip, .ig-col-l {
+    font-family: 'Oswald', 'Noto Sans KR', sans-serif;
+  }
+  .ig-sub { font-weight: 600; letter-spacing: 0.04em; }
+  .ig-sub-1 { font-weight: 700; }
+  .ig-stat-n { font-weight: 700; letter-spacing: -0.01em; }
+  .ig-leg-n { font-weight: 600; }
+  .ig-col-l { font-weight: 600; letter-spacing: 0.12em; }
+  .ig-chip { font-weight: 600; }
+}
+
+/* ── 제목 옆 거대 숫자, 점 매트릭스 장식 ─────────────────────────
+   거대 숫자는 레퍼런스 "INFOGRAPHIC TOOLS 7" 의 7 이다. 제목보다 크고
+   흐리게 눌러, 읽히기보다 먼저 보이게 한다. 점 매트릭스는 제호에만 쓴다.
+   차트 근처에 두면 데이터로 오독된다. */
+@layer components {
+  .ig-big {
+    font-family: 'Oswald', 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    font-size: clamp(40px, 6.4vw, 68px);
+    line-height: 0.8;
+    letter-spacing: -0.02em;
+    color: hsl(var(--ink) / 0.16);
+    flex: none;
+    align-self: flex-start;
+    margin-top: -0.04em;
+    font-variant-numeric: tabular-nums;
+  }
+  .ig-big-unit {
+    font-size: 0.32em;
+    font-weight: 600;
+    margin-left: 0.08em;
+    color: hsl(var(--ink) / 0.3);
+  }
+  .ig-dots {
+    background-image: radial-gradient(circle, hsl(var(--ink) / 0.14) 1.2px, transparent 1.4px);
+    background-size: 9px 9px;
+    background-position: 0 0;
+  }
+}

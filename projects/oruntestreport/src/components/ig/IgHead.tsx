@@ -13,20 +13,34 @@ const IgHead: React.FC<{
   title2?: string;
   /** 오른쪽 보조어. 첫 줄이 가장 크다. */
   sub?: string[];
+  /**
+   * 제목 옆에 아주 크게 얹는 숫자. 레퍼런스 "INFOGRAPHIC TOOLS 7" 의 7 이다.
+   * 실제 데이터에서 온 값만 넣는다(문항 수, 킬러 수 …).
+   */
+  big?: string | number;
+  bigUnit?: string;
   rule?: 'heavy' | 'soft' | 'none';
   className?: string;
-}> = ({ title, title2, sub, rule = 'heavy', className = '' }) => (
+}> = ({ title, title2, sub, big, bigUnit, rule = 'heavy', className = '' }) => (
   <div className={className}>
     <div className="ig-head">
-      <h2 className="ig-h pdf-capture-nowrap">
-        {title}
-        {title2 && (
-          <>
-            <br />
-            <span className="ig-h-mute">{title2}</span>
-          </>
+      <div className="flex items-start gap-3 min-w-0">
+        <h2 className="ig-h pdf-capture-nowrap">
+          {title}
+          {title2 && (
+            <>
+              <br />
+              <span className="ig-h-mute">{title2}</span>
+            </>
+          )}
+        </h2>
+        {big !== undefined && big !== null && big !== '' && (
+          <span className="ig-big" aria-label={`${big}${bigUnit ?? ''}`}>
+            {big}
+            {bigUnit && <span className="ig-big-unit">{bigUnit}</span>}
+          </span>
         )}
-      </h2>
+      </div>
       {sub && sub.length > 0 && (
         <p className="ig-sub">
           {sub.map((line, i) => (

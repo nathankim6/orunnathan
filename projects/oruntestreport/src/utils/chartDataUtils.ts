@@ -22,14 +22,10 @@ export const calculateChartData = (problemTypes: ProblemType[], isHighSchool: bo
   // Group problem types by their categories
   const categoryCount: Record<string, number> = {};
 
-  console.log('calculateChartData - isHighSchool:', isHighSchool);
-  console.log('calculateChartData - problemTypes:', problemTypes);
-
   if (isHighSchool) {
     // For high school: group by actual category names and filter to only show high school categories
     problemTypes.forEach(type => {
       const category = type.category;
-      console.log('Processing high school category:', category);
       // 고등학교 표준 카테고리 또는 "기타(직접입력): XXX" 사용자 입력 카테고리 카운트
       if (HIGH_SCHOOL_CATEGORIES.includes(category) || isCustomCategory(category)) {
         const label = normalizeCategoryLabel(category);
@@ -43,7 +39,6 @@ export const calculateChartData = (problemTypes: ProblemType[], isHighSchool: bo
     // For middle school: use predefined main categories (어휘, 대화문, 본문, 문법/어법, 서술형)
     problemTypes.forEach(type => {
       const category = type.category;
-      console.log('Processing middle school category:', category);
       // 중등 표준 카테고리(빈 "기타(직접입력)" 제외) 또는 사용자 입력 카테고리 카운트
       const isStandard = MAIN_CATEGORIES.includes(category) && category !== "기타(직접입력)";
       if (isStandard || isCustomCategory(category)) {
@@ -56,7 +51,19 @@ export const calculateChartData = (problemTypes: ProblemType[], isHighSchool: bo
     });
   }
 
-  console.log('Final categoryCount:', categoryCount);
+  // 고정 목록은 리포트 양식이 정해져 있을 때만 맞는다. AI 자동 채움처럼 category 에
+  // 문항 유형(어법·빈칸추론·순서배열…)이 들어오면 목록에 걸리는 게 한둘뿐이라
+  // "어휘 50% · 서답형 50%" 처럼 두 개만 남고 나머지 문항이 조용히 사라진다.
+  // 그래서 걸린 문항이 6할이 안 되면 실제 값 그대로 묶는다. 잘못 묶이는 것보다
+  // 하나도 안 빠지는 쪽이 낫다.
+  const counted = Object.values(categoryCount).reduce((sum, n) => sum + n, 0);
+  if (problemTypes.length > 0 && counted / problemTypes.length < 0.6) {
+    Object.keys(categoryCount).forEach((k) => delete categoryCount[k]);
+    problemTypes.forEach((type) => {
+      const label = normalizeCategoryLabel(type.category || '미분류');
+      categoryCount[label] = (categoryCount[label] || 0) + 1;
+    });
+  }
 
   // Get raw counts for all categories that have problems
   const rawData = Object.entries(categoryCount)
@@ -67,8 +74,6 @@ export const calculateChartData = (problemTypes: ProblemType[], isHighSchool: bo
         value: count
       };
     });
-
-  console.log('Raw data:', rawData);
 
   // Calculate percentages
   const totalCount = problemTypes.length;
@@ -110,8 +115,6 @@ export const calculateChartData = (problemTypes: ProblemType[], isHighSchool: bo
     value: item.value,
     percentage: item.percentage.toString()
   })).sort((a, b) => b.value - a.value);
-
-  console.log('Final chart data:', finalData);
   
   return finalData;
 };

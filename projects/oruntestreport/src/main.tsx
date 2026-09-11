@@ -10,6 +10,10 @@ import '@fontsource/noto-sans-kr/700.css';
 import '@fontsource/noto-sans/400.css';
 import '@fontsource/orbitron/600.css';
 import '@fontsource/orbitron/700.css';
+// 인포그래픽 표제·숫자용 좁고 굵은 서체. 한글은 Noto Sans KR 로 자동 대체된다.
+import '@fontsource/oswald/500.css';
+import '@fontsource/oswald/600.css';
+import '@fontsource/oswald/700.css';
 
 const container = document.getElementById('root');
 

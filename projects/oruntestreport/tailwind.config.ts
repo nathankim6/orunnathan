@@ -151,6 +151,7 @@ export default {
         display: ['Noto Sans KR', 'Noto Sans', 'system-ui', 'sans-serif'],
         serif: ['Noto Serif KR', 'Noto Sans KR', 'serif'],
         orbitron: ['Orbitron', 'Noto Sans KR', 'sans-serif'],
+        condensed: ['Oswald', 'Noto Sans KR', 'sans-serif'],
         noto: ['Noto Sans KR', 'Noto Sans', 'sans-serif'],
         inter: ['Noto Sans', 'Noto Sans KR', 'sans-serif'],
       },
