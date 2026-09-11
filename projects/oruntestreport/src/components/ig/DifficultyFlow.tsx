@@ -26,19 +26,28 @@ const ROWS: { key: Problem['difficulty']; label: string; token: string }[] = [
  *
  * 선이 위로 솟은 구간이 어디서 점수가 갈렸는지를 그대로 보여 준다.
  */
-const DifficultyFlow: React.FC<{ problems?: Problem[]; className?: string }> = ({
+const DifficultyFlow: React.FC<{
+  problems?: Problem[];
+  className?: string;
+  /** 뷰박스 높이 */
+  height?: number;
+  /** 킬러 고리 — isKiller 필드가 실제로 있는 리포트에서만 */
+  showKillerRing?: boolean;
+}> = ({
   problems,
   className = '',
+  height = 208,
+  showKillerRing = true,
 }) => {
   const list = problems || [];
   const n = list.length;
 
   const geom = useMemo(() => {
     const W = 720;
-    const H = 208;
+    const H = height;
     const padL = 78;
     const padR = 14;
-    const padT = 16;
+    const padT = 24;
     const padB = 30;
     const plotW = W - padL - padR;
     const plotH = H - padT - padB;
@@ -52,14 +61,14 @@ const DifficultyFlow: React.FC<{ problems?: Problem[]; className?: string }> = (
       i,
     }));
     return { W, H, padL, padR, padT, padB, plotW, plotH, rowY, pts };
-  }, [list, n]);
+  }, [list, n, height]);
 
   if (n === 0) return null;
 
   const { W, H, padL, padR, rowY, pts } = geom;
   const line = pts.map((pt) => `${pt.x.toFixed(1)},${pt.y.toFixed(1)}`).join(' ');
-  // 문항이 많으면 번호를 다 적을 수 없다. 대여섯 개만 골라 적는다.
-  const tickEvery = Math.max(1, Math.ceil(n / 7));
+  // 눈금: 문항이 32 이하면 짝수 번호 전부, 그보다 많으면 5 배수만.
+  const isTick = (i: number) => (n <= 32 ? (i + 1) % 2 === 0 || i === 0 : (i + 1) % 5 === 0 || i === 0);
 
   return (
     <div className={className}>
@@ -77,8 +86,9 @@ const DifficultyFlow: React.FC<{ problems?: Problem[]; className?: string }> = (
               <line x1={padL} y1={y} x2={W - padR} y2={y}
                     stroke="hsl(var(--ink) / 0.09)" strokeWidth="1" />
               <text x={padL - 10} y={y + 3.5} textAnchor="end"
+                    fontFamily="'Noto Sans KR', sans-serif"
                     fontSize="10" fontWeight="700" letterSpacing="0.02em"
-                    fill="hsl(var(--ink) / 0.42)">
+                    fill="hsl(var(--ink) / 0.55)">
                 {r.label}
               </text>
             </g>
@@ -86,13 +96,14 @@ const DifficultyFlow: React.FC<{ problems?: Problem[]; className?: string }> = (
         })}
 
         {/* 흐름선 — 점을 잇기만 한다 */}
-        <polyline points={line} fill="none" stroke="hsl(var(--ink) / 0.26)" strokeWidth="1.4"
+        <polyline points={line} fill="none" stroke="hsl(var(--ink) / 0.18)" strokeWidth="1"
                   strokeLinejoin="round" strokeLinecap="round" />
 
         {/* 문항 하나가 점 하나 */}
         {pts.map((pt) => {
           const row = ROWS.find((r) => r.key === pt.p.difficulty) ?? ROWS[2];
-          const killer = pt.p.isKiller || pt.p.difficulty === 'very_hard';
+          const veryHard = pt.p.difficulty === 'very_hard';
+          const killer = showKillerRing && (!!pt.p.isKiller || veryHard);
           return (
             <g key={pt.i}>
               {killer && (
@@ -100,15 +111,23 @@ const DifficultyFlow: React.FC<{ problems?: Problem[]; className?: string }> = (
                         stroke={`hsl(var(${row.token}) / 0.35)`} strokeWidth="1.6" />
               )}
               <circle cx={pt.x} cy={pt.y} r="4" fill={`hsl(var(${row.token}))`} />
+              {veryHard && (
+                <text x={pt.x} y={pt.y - 11} textAnchor="middle"
+                      fontFamily="Oswald, 'Noto Sans KR', sans-serif" fontWeight="600" fontSize="10"
+                      fill="hsl(var(--ig-coral))">
+                  {pt.i + 1}
+                </text>
+              )}
             </g>
           );
         })}
 
         {/* 문항 번호 */}
         {pts.map((pt) =>
-          pt.i % tickEvery === 0 || pt.i === n - 1 ? (
+          isTick(pt.i) || pt.i === n - 1 ? (
             <text key={`t${pt.i}`} x={pt.x} y={H - 10} textAnchor="middle"
-                  fontSize="9.5" fontWeight="700" fill="hsl(var(--ink) / 0.36)">
+                  fontFamily="Oswald, 'Noto Sans KR', sans-serif"
+                  fontSize="9.5" fontWeight="600" fill="hsl(var(--ink) / 0.45)">
               {pt.i + 1}
             </text>
           ) : null,
@@ -122,11 +141,13 @@ const DifficultyFlow: React.FC<{ problems?: Problem[]; className?: string }> = (
             <span className="ig-leg-l">{r.label}</span>
           </span>
         ))}
-        <span className="ig-leg">
-          <span className="ig-leg-dot"
-                style={{ background: 'transparent', boxShadow: `inset 0 0 0 1.6px hsl(var(--ig-coral) / 0.5)` }} />
-          <span className="ig-leg-l">킬러 문항</span>
-        </span>
+        {showKillerRing && (
+          <span className="ig-leg">
+            <span className="ig-leg-dot"
+                  style={{ background: 'transparent', border: '1.6px solid hsl(var(--ig-coral) / 0.5)', boxSizing: 'border-box' }} />
+            <span className="ig-leg-l">킬러 문항</span>
+          </span>
+        )}
       </div>
     </div>
   );

@@ -11,11 +11,15 @@ import { addHighlightStyles, removeHighlightStyles } from "@/utils/highlightUtil
 import ReportToolbar from "@/components/ReportToolbar";
 import FloatingThemeToggle from "@/components/FloatingThemeToggle";
 import ReportHeader from "@/components/ReportHeader";
-import ReportInfoCards from "@/components/ReportInfoCards";
 import ReportKpiRail from "@/components/ReportKpiRail";
-import DifficultyFlow from "@/components/ig/DifficultyFlow";
-import IgHead from "@/components/ig/IgHead";
-import ReportStatCharts from "@/components/ReportStatCharts";
+import TypeDonutSection from "@/components/TypeDonutSection";
+import ItemMapSection from "@/components/ItemMapSection";
+import DifficultySection from "@/components/DifficultySection";
+import AppendixSection from "@/components/AppendixSection";
+import TeacherOverallSection from "@/components/TeacherOverallSection";
+import LevelStrategySection from "@/components/LevelStrategySection";
+import { computeReportStats, parseOverallEvaluation, parseTiers } from "@/lib/reportStats";
+import { waitForFonts, getReportFontCss, nextFrames } from "@/lib/captureFonts";
 import DifficultProblemsExplanation from "@/components/DifficultProblemsExplanation";
 import HitQuestionPhotos from "@/components/HitQuestionPhotos";
 import ExamFeaturesSection from "@/components/ExamFeaturesSection";
@@ -24,17 +28,15 @@ import PassageVariantSection from "@/components/PassageVariantSection";
 import type { ExamFeature, KillerProblem, PassageVariant } from "@/integrations/supabase/reportService";
 
 
-import TeacherComment from "@/components/TeacherComment";
 import ReportFooter from "@/components/ReportFooter";
 import useHighlights from "@/hooks/useHighlights";
 import useCapture from "@/hooks/useCapture";
 import useKeyboardShortcuts from "@/hooks/useKeyboardShortcuts";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { getSchoolLogo } from "@/lib/schoolLogos";
 import { useLogoBannerTheme } from "@/lib/logoColor";
 import { Download } from "lucide-react";
 import jsPDF from "jspdf";
-import { toPng } from "html-to-image";
+import { toJpeg } from "html-to-image";
 import { Users } from "lucide-react";
 import StudentSubmissionsDialog from "@/components/StudentSubmissionsDialog";
 
@@ -146,49 +148,94 @@ const Report: React.FC = () => {
     }, 600);
   };
 
+  /**
+   * 개발 모드 넘침 검출 — 격자에서 넘침은 잘림이 아니라 이웃 모듈 위에 겹쳐
+   * 찍힌다. 캡처 전에 모듈마다 자손이 모듈 오른쪽 변을 넘는지 본다.
+   */
+  const warnOverflow = (root: HTMLElement) => {
+    root.querySelectorAll<HTMLElement>('.ig-module').forEach((mod) => {
+      const box = mod.getBoundingClientRect();
+      const title = mod.querySelector('.ig-h')?.textContent?.trim().slice(0, 20) || mod.className;
+      mod.querySelectorAll<HTMLElement>('*').forEach((el) => {
+        if (el.classList.contains('capture-hide') || el.closest('.capture-hide')) return;
+        const r = el.getBoundingClientRect();
+        if (r.width === 0) return;
+        if (el.scrollWidth > el.clientWidth + 1 && getComputedStyle(el).overflowX === 'visible') {
+          console.warn('[ig-overflow] scroll', title, el.className);
+        } else if (r.right > box.right + 1) {
+          console.warn('[ig-overflow] right', title, el.className, Math.round(r.right - box.right));
+        }
+      });
+    });
+  };
+
   const handleDownloadPDF = async () => {
     if (!reportContainerRef.current) return;
     const target = reportContainerRef.current;
     const toastId = toast.loading("PDF 생성 중입니다...");
+    const themed = target.closest<HTMLElement>('[data-theme]');
+    const prevTheme = themed?.getAttribute('data-theme') ?? null;
+    const prevWidth = target.style.width;
+    const prevMaxWidth = target.style.maxWidth;
+    const restoreImgs: { img: HTMLImageElement; src: string }[] = [];
     try {
-      // Temporarily expand any internal scroll areas so full content is captured
-      const viewports = target.querySelectorAll<HTMLElement>('[data-radix-scroll-area-viewport]');
-      const originalStyles: { el: HTMLElement; maxHeight: string; height: string; overflow: string }[] = [];
-      viewports.forEach((el) => {
-        originalStyles.push({
-          el,
-          maxHeight: el.style.maxHeight,
-          height: el.style.height,
-          overflow: el.style.overflow,
-        });
-        el.style.maxHeight = 'none';
-        el.style.height = 'auto';
-        el.style.overflow = 'visible';
-      });
+      // 1) 판 폭을 1024 로 고정한다. 창이 좁으면 좁게 찍혀 모자이크 칸이 넘친다.
+      //    캡처·인쇄는 항상 라이트다.
+      themed?.setAttribute('data-theme', 'light');
+      target.style.width = '1024px';
+      target.style.maxWidth = 'none';
 
-      // 예전에는 여기서 리포트 전체에 pdf-capture-nowrap 을 걸었다. 그 규칙은
-      // 모든 하위 요소에 white-space: nowrap 을 강제하는데, 문단이 한 줄로
-      // 늘어나면서 칸이 캡처 폭 밖으로 밀려나 표가 잘려 나왔다. 줄바꿈을
-      // 막아야 하는 짧은 라벨들은 저마다 그 클래스를 이미 달고 있다.
+      // 2) 다른 출처의 사진(강사 사진·업로드 사진)은 캡처가 못 읽는다.
+      //    먼저 받아 data URL 로 바꿔 넣고, 끝나면 되돌린다.
+      let failed = 0;
+      const imgs = Array.from(target.querySelectorAll('img'));
+      await Promise.all(imgs.map(async (img) => {
+        try {
+          if (!img.src || img.src.startsWith('data:')) return;
+          const u = new URL(img.src, location.href);
+          if (u.origin === location.origin) return;
+          const res = await fetch(u.toString(), { mode: 'cors' });
+          if (!res.ok) throw new Error(String(res.status));
+          const blob = await res.blob();
+          const dataUrl = await new Promise<string>((resolve, reject) => {
+            const fr = new FileReader();
+            fr.onload = () => resolve(String(fr.result));
+            fr.onerror = () => reject(fr.error);
+            fr.readAsDataURL(blob);
+          });
+          restoreImgs.push({ img, src: img.src });
+          img.src = dataUrl;
+        } catch {
+          failed += 1;
+        }
+      }));
 
-      await new Promise((r) => setTimeout(r, 200));
+      // 3) 서체·이미지가 다 준비되고 재배치가 끝난 뒤에 찍는다.
+      await waitForFonts();
+      await Promise.all(imgs.map((i) => (typeof i.decode === 'function' ? i.decode().catch(() => undefined) : Promise.resolve())));
+      await nextFrames(2);
+      if (import.meta.env.DEV) warnOverflow(target);
 
-      const dataUrl = await toPng(target, {
-        cacheBust: true,
+      const fontEmbedCSS = await getReportFontCss(target);
+      const w = target.scrollWidth;
+      const h = target.scrollHeight;
+
+      // 4) JPEG 로 받는다. jsPDF 는 PNG 를 순수 JS 로 풀기 때문에 2048×13000 이면
+      //    수십 초가 걸리고 파일이 80MB 를 넘었다. JPEG 0.95 는 수 MB 다.
+      const dataUrl = await toJpeg(target, {
+        quality: 0.95,
         pixelRatio: 2,
         backgroundColor: '#ffffff',
-        width: target.scrollWidth,
-        height: target.scrollHeight,
-        style: {
-          transform: 'none',
-        },
+        width: w,
+        height: h,
+        fontEmbedCSS,
+        cacheBust: false,
+        style: { width: '1024px', transform: 'none' },
         filter: (node) => {
           if (node instanceof HTMLElement) {
             if (node.hasAttribute('data-comment-empty-actions')) return false;
             if (node.hasAttribute('data-comment-actions')) return false;
-            // 화면 전용 장식은 PDF 에 넣지 않는다. 3차원 효과 판이 대표적인데,
-            // 효과 자체는 화면에 떠 있는 캔버스 한 장에 그려지므로 판만 찍히면
-            // 까만 상자만 남는다. 이미지 캡처 쪽(captureUtils)과 같은 규칙이다.
+            // 화면 전용 요소는 PDF 에 넣지 않는다. 이미지 캡처 쪽(captureUtils)과 같은 규칙.
             if (node.classList.contains('capture-hide')) return false;
             if (node.classList.contains('print:hidden')) return false;
             if (node.dataset.captureHide !== undefined) return false;
@@ -197,143 +244,27 @@ const Report: React.FC = () => {
         },
       });
 
-      // Restore styles
-      originalStyles.forEach(({ el, maxHeight, height, overflow }) => {
-        el.style.maxHeight = maxHeight;
-        el.style.height = height;
-        el.style.overflow = overflow;
-      });
-
-      // Load image to get dimensions
-      const img = new Image();
-      img.src = dataUrl;
-      await new Promise<void>((resolve, reject) => {
-        img.onload = () => resolve();
-        img.onerror = () => reject(new Error('Failed to load captured image'));
-      });
-
-      // 이미지 픽셀 크기와 정확히 일치하는 단일 페이지로 저장 (여백 제거)
-      const pdfWidthPx = img.width;
-      const pdfHeightPx = img.height;
-
+      // 5) 페이지 크기는 css px 다(이미지 픽셀이 아니다). 이미지 픽셀로 잡으면
+      //    높이가 Acrobat 한계(14,400pt)에 닿는다.
       const pdf = new jsPDF({
-        orientation: pdfHeightPx > pdfWidthPx ? 'p' : 'l',
+        orientation: h > w ? 'p' : 'l',
         unit: 'px',
-        format: [pdfWidthPx, pdfHeightPx],
+        format: [w, h],
         hotfixes: ['px_scaling'],
       });
+      pdf.addImage(dataUrl, 'JPEG', 0, 0, w, h);
+      pdf.save(`${reportTitle || 'report'}.pdf`);
 
-      pdf.addImage(dataUrl, 'PNG', 0, 0, pdfWidthPx, pdfHeightPx);
-
-      const filename = `${reportTitle || 'report'}.pdf`;
-      pdf.save(filename);
+      if (failed > 0) toast.warning(`사진 ${failed}장을 PDF에 넣지 못했습니다.`);
       toast.success("PDF가 저장되었습니다.", { id: toastId });
     } catch (e) {
       console.error('PDF 생성 실패:', e);
       toast.error("PDF 생성에 실패했습니다.", { id: toastId });
-    }
-  };
-
-  const calculateStatistics = (data: ReportDataType) => {
-    // Check if this is simple analysis mode
-    const isSimpleAnalysis = data.analysisType === 'simple';
-
-    if (isSimpleAnalysis) {
-      // For simple analysis, use the actual question counts from the form
-      const objectivePercentage = data.objectiveQuestions / data.totalQuestions * 100;
-      const subjectivePercentage = data.subjectiveQuestions / data.totalQuestions * 100;
-      
-      // Calculate difficulty distribution based on category-weighted counts
-      const difficulty = {
-        easy: 0,
-        medium: 0,
-        hard: 0,
-        very_hard: 0
-      };
-      
-      const categoryDifficultyCount: Record<string, Record<string, number>> = {};
-      
-      // Count difficulties by category
-      data.problemTypes.forEach(type => {
-        const category = type.category || '기타';
-        if (!categoryDifficultyCount[category]) {
-          categoryDifficultyCount[category] = { easy: 0, medium: 0, hard: 0, very_hard: 0 };
-        }
-        categoryDifficultyCount[category][type.difficulty]++;
-      });
-      
-      // Sum up difficulties across all categories
-      Object.values(categoryDifficultyCount).forEach(categoryDiff => {
-        Object.keys(difficulty).forEach(key => {
-          difficulty[key as keyof typeof difficulty] += categoryDiff[key as keyof typeof categoryDiff] || 0;
-        });
-      });
-      
-      // Convert to percentages
-      const totalProblems = Math.max(1, Object.values(difficulty).reduce((sum, count) => sum + count, 0));
-      Object.keys(difficulty).forEach(key => {
-        difficulty[key as keyof typeof difficulty] = (difficulty[key as keyof typeof difficulty] / totalProblems) * 100;
-      });
-      
-      // Ensure all problemTypes have the category property
-      const problemTypes = data.problemTypes.map(type => {
-        if (!type.category) {
-          return {
-            ...type,
-            category: type.name?.split(' ')[0] || '기타'
-          };
-        }
-        return type;
-      });
-      
-      return {
-        objectivePercentage,
-        subjectivePercentage,
-        problemTypes,
-        difficulty
-      };
-    } else {
-      // Original calculation for detailed analysis
-      // Calculate raw percentages
-      const objectivePercentage = data.objectiveQuestions / data.totalQuestions * 100;
-      const subjectivePercentage = data.subjectiveQuestions / data.totalQuestions * 100;
-
-      // Calculate difficulty distribution
-      const difficulty = {
-        easy: 0,
-        medium: 0,
-        hard: 0,
-        very_hard: 0
-      };
-      
-      // Ensure all problemTypes have the category property
-      const problemTypes = data.problemTypes.map(type => {
-        // Only add category if it doesn't exist
-        if (!type.category) {
-          return {
-            ...type,
-            category: type.name?.split(' ')[0] || '기타' // Use first word of name as category or default to '기타'
-          };
-        }
-        return type;
-      });
-      
-      problemTypes.forEach(type => {
-        difficulty[type.difficulty]++;
-      });
-
-      // Convert to percentages based on total problems
-      const totalProblems = problemTypes.length;
-      Object.keys(difficulty).forEach(key => {
-        difficulty[key as keyof typeof difficulty] = difficulty[key as keyof typeof difficulty] / totalProblems * 100;
-      });
-
-      return {
-        objectivePercentage,
-        subjectivePercentage,
-        problemTypes,
-        difficulty
-      };
+    } finally {
+      target.style.width = prevWidth;
+      target.style.maxWidth = prevMaxWidth;
+      if (prevTheme) themed?.setAttribute('data-theme', prevTheme);
+      restoreImgs.forEach(({ img, src }) => { img.src = src; });
     }
   };
 
@@ -511,7 +442,20 @@ const Report: React.FC = () => {
     );
   }
 
-  const stats = calculateStatistics(reportData);
+  // 숫자의 단일 출처 — 화면의 모든 모듈은 이 값만 본다.
+  const igStats = computeReportStats(reportData.problemTypes as any, {
+    total: reportData.totalQuestions,
+    objective: reportData.objectiveQuestions,
+    subjective: reportData.subjectiveQuestions,
+  });
+  const evalParts = parseOverallEvaluation(reportData.overallEvaluation);
+  const tiers = parseTiers(evalParts.strategy);
+  const featureCount = (reportData.examFeatures || []).filter((f) => f.title?.trim() || f.detail?.trim()).length;
+  const killerCount = (reportData.killerTop5 || []).filter((it) => it.number?.trim() || it.title?.trim() || it.reason?.trim()).length;
+  const passageCount = (reportData.passageVariants || []).filter((v) => v && (v.originalText || v.examText || v.changeDetail)).length;
+  const showDetail =
+    reportData.school.includes('고등학교') || reportData.grade.includes('고') ||
+    (!reportData.school.includes('고등학교') && !reportData.grade.includes('고') && reportData.analysisType === 'detailed');
   
   // Ensure gradient consistency for all school types
   const gradient = `from-${theme}-50 via-${theme}-50/30 to-${theme}-50/10`;
@@ -599,77 +543,66 @@ const Report: React.FC = () => {
             boxShadow: '0 1px 2px hsl(var(--ink) / 0.06), 0 18px 44px -30px hsl(var(--ink) / 0.35)',
           }}
         >
-          <ScrollArea className="flex-1 overflow-hidden">
-            <div className="ig-stack">
-              <ReportHeader 
-                date={date}
-                themeColors={themeColors}
-                schoolName={reportData.school}
-              />
+          <div className="ig-stack">
+            <ReportHeader
+              className="ig-span-6"
+              date={date}
+              schoolName={reportData.school}
+              grade={reportData.grade}
+              examInfo={reportData.examInfo}
+              teacher={reportData.teacher}
+              examScope={reportData.examScope}
+              stats={igStats}
+              problems={reportData.problemTypes as any}
+            />
 
-              <ReportInfoCards 
-                reportData={reportData}
-                themeColors={themeColors}
-              />
+            {/* what — 무엇이 나왔나 */}
+            <ReportKpiRail className="ig-span-4" stats={igStats} />
+            <TypeDonutSection className="ig-span-2-side" stats={igStats} />
+            <ItemMapSection className="ig-span-4" stats={igStats} problems={reportData.problemTypes as any} />
+            <DifficultySection className="ig-span-2-side" stats={igStats} />
 
-              <ReportKpiRail problemTypes={reportData.problemTypes as any} />
+            {/* where — 어디서 갈렸나. 고등부는 항상, 중등부는 상세 분석에서만 */}
+            {showDetail && (
+              <>
+                <ExamFeaturesSection className={killerCount > 0 ? 'ig-span-3' : 'ig-span-6'} features={reportData.examFeatures} />
+                <KillerTop5Section className={featureCount > 0 ? 'ig-span-3' : 'ig-span-6'} items={reportData.killerTop5} />
+                <PassageVariantSection className="ig-span-6" items={reportData.passageVariants || []} />
+                {featureCount === 0 && (
+                  <DifficultProblemsExplanation
+                    className="ig-span-6"
+                    explanation={reportData.difficultProblemsExplanation}
+                    hasDifficultProblems={hasDifficultProblems}
+                    themeColors={themeColors}
+                  />
+                )}
+                {(reportData.hitQuestionPhotos?.length ?? 0) > 0 && (
+                  <HitQuestionPhotos
+                    className="ig-span-6 ig-module-tall"
+                    photos={reportData.hitQuestionPhotos}
+                    themeColors={themeColors}
+                    reportId={id}
+                  />
+                )}
+              </>
+            )}
 
-              <section className="ig-module">
-                <IgHead title="문항 순서로 본 난도 흐름" sub={['LINE', 'GRAPH']} />
-                <p className="ig-lede">
-                  가로는 문항 번호, 세로는 난도입니다. 점 하나가 문항 하나이고, 선이 위로 솟은 구간에서
-                  점수가 갈렸습니다.
-                </p>
-                <DifficultyFlow className="mt-5" problems={reportData.problemTypes as any} />
-              </section>
+            {/* next — 무엇을 할 것인가 */}
+            <TeacherOverallSection
+              className={tiers ? 'ig-span-3' : 'ig-span-6'}
+              teacher={reportData.teacher}
+              teacherPhoto={reportData.teacherPhoto}
+              overall={evalParts.overall}
+              strategyFallback={!tiers ? evalParts.strategy : undefined}
+            />
+            {tiers && <LevelStrategySection className="ig-span-3" tiers={tiers} />}
 
-              <ReportStatCharts 
-                stats={stats}
-                themeColors={themeColors}
-                analysisType={reportData.analysisType}
-                reportId={id}
-                banner={banner}
-              />
+            {/* 부록 */}
+            <AppendixSection className="ig-span-6 ig-module-tall" stats={igStats} problems={reportData.problemTypes as any} reportId={id} />
 
-              {/* 고등부는 항상 표시, 중등부는 상세분석에서만 표시 */}
-              {(reportData.school.includes('고등학교') || reportData.grade.includes('고') || 
-                (!reportData.school.includes('고등학교') && !reportData.grade.includes('고') && reportData.analysisType === 'detailed')) && (
-                <>
-                  <ExamFeaturesSection features={reportData.examFeatures} />
-                  <KillerTop5Section items={reportData.killerTop5} />
-                  <PassageVariantSection items={reportData.passageVariants || []} />
+            <ReportFooter className="ig-span-6" stats={igStats} passageCount={passageCount} date={date} teacher={reportData.teacher} />
+          </div>
 
-                  {(reportData.examFeatures?.length ?? 0) === 0 && (
-                    <DifficultProblemsExplanation 
-                      explanation={reportData.difficultProblemsExplanation}
-                      hasDifficultProblems={hasDifficultProblems}
-                      themeColors={themeColors}
-                    />
-                  )}
-                  {/* 강사가 올린 사진은 킬러 TOP5 유무와 상관없이 보여 준다. */}
-                  {(reportData.hitQuestionPhotos?.length ?? 0) > 0 && (
-                    <HitQuestionPhotos 
-                      photos={reportData.hitQuestionPhotos}
-                      themeColors={themeColors}
-                      reportId={id}
-                    />
-                  )}
-                </>
-              )}
-
-
-              <TeacherComment 
-                teacherPhoto={reportData.teacherPhoto}
-                teacher={reportData.teacher}
-                overallEvaluation={reportData.overallEvaluation}
-                themeColors={themeColors}
-                isHighSchool={reportData.school.includes('고등학교') || reportData.grade.includes('고')}
-                banner={banner}
-              />
-            </div>
-          </ScrollArea>
-
-          <ReportFooter themeColors={themeColors} />
         </div>
       </div>
 

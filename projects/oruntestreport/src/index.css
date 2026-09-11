@@ -1143,7 +1143,7 @@
   .ig-sheet { background: hsl(var(--ig-gutter)); }
   .ig-stack { display: grid; gap: 9px; }
 
-  .ig-module { background: hsl(var(--paper)); padding: 22px 22px 24px; }
+  .ig-module { background: hsl(var(--paper)); padding: 22px 22px 24px; overflow: hidden; position: relative; }
   @media (min-width: 768px) { .ig-module { padding: 26px 28px 30px; } }
   .ig-module-tight { padding: 16px 18px 18px; }
   @media (min-width: 768px) { .ig-module-tight { padding: 18px 22px 20px; } }
@@ -1152,8 +1152,9 @@
   .ig-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
   .ig-h {
     @apply font-display;
-    font-weight: 800;
-    font-size: clamp(21px, 3.2vw, 32px);
+    font-weight: 900;
+    text-wrap: balance;
+    font-size: 32px;
     line-height: 0.94;
     letter-spacing: -0.035em;
     color: hsl(var(--ink));
@@ -1169,10 +1170,10 @@
     letter-spacing: 0.015em;
     line-height: 1.02;
     color: hsl(var(--ink) / 0.26);
-    font-size: clamp(10px, 1.35vw, 13px);
+    font-size: 13px;
     white-space: nowrap;
   }
-  .ig-sub-1 { display: block; font-size: clamp(13px, 1.9vw, 19px); color: hsl(var(--ink) / 0.32); }
+  .ig-sub-1 { display: block; font-size: 19px; color: hsl(var(--ink) / 0.32); }
   .ig-rule { margin-top: 9px; height: 3px; background: hsl(var(--ink)); }
   .ig-rule-soft { margin-top: 8px; height: 1px; background: hsl(var(--ink) / 0.13); }
 
@@ -1189,20 +1190,21 @@
   .ig-stat-n {
     @apply font-display tabular-nums;
     font-weight: 800;
-    font-size: clamp(30px, 4.6vw, 46px);
+    font-size: 46px;
     line-height: 0.86;
+    white-space: nowrap;
     letter-spacing: -0.045em;
     color: hsl(var(--ink));
   }
-  .ig-stat-n-sm { font-size: clamp(22px, 3vw, 30px); }
-  .ig-stat-u { font-size: 11px; font-weight: 800; color: hsl(var(--ink) / 0.45); }
+  .ig-stat-n.ig-stat-n-sm { font-size: 30px; }
+  .ig-stat-u { font-size: 11px; font-weight: 500; color: hsl(var(--ink) / 0.55); }
   .ig-stat-c {
     margin-top: 7px;
-    font-size: 9.5px;
-    font-weight: 800;
-    letter-spacing: 0.17em;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: hsl(var(--ink) / 0.4);
+    color: hsl(var(--ink) / 0.58);
     white-space: nowrap;
   }
 
@@ -1219,9 +1221,9 @@
   .ig-leg-l {
     font-size: 10px;
     font-weight: 800;
-    letter-spacing: 0.13em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: hsl(var(--ink) / 0.44);
+    color: hsl(var(--ink) / 0.58);
     word-break: keep-all;
   }
 
@@ -1235,9 +1237,9 @@
     margin-top: 11px;
     font-size: 11px;
     font-weight: 800;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: hsl(var(--ink));
+    color: hsl(var(--ink) / 0.58);
     word-break: keep-all;
   }
   .ig-col-b {
@@ -1303,47 +1305,75 @@
   }
 }
 
-/* ── 모자이크 격자와 좁은 서체 ───────────────────────────────────
+/* ── 모자이크 격자 ───────────────────────────────────────────────
    레퍼런스는 3열 모자이크다. 6칸 격자 위에 모듈마다 칸 수(span)를 주고,
-   좁은 화면에서는 전부 한 열로 내린다. 영문 보조어·큰 숫자·대문자 라벨은
-   좁고 굵은 Oswald 로 바꾼다. 한글 글자는 자동으로 Noto Sans KR 로 떨어진다. */
+   md 미만은 한 열이다. 인쇄 뷰포트는 A4 에서 여백을 빼면 약 703px 라
+   md 규칙이 전부 실패하므로 인쇄 규칙을 따로 적고, 옆칸(span-2-side)과
+   span-4 는 3칸으로 맞춘다. 격자에서 넘침은 "잘림"이 아니라 이웃 모듈
+   위에 겹쳐 찍히므로 모듈은 overflow: hidden 이다. */
 @layer components {
+  .ig-stack { display: grid; gap: 9px; align-items: stretch; }
   .ig-stack > * { min-width: 0; grid-column: 1 / -1; }
   @media (min-width: 768px) {
     .ig-stack { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-    .ig-stack > * { grid-column: span 6 / span 6; }
-    .ig-span-2 { grid-column: span 2 / span 2 !important; }
-    .ig-span-3 { grid-column: span 3 / span 3 !important; }
-    .ig-span-4 { grid-column: span 4 / span 4 !important; }
-    .ig-span-6 { grid-column: span 6 / span 6 !important; }
+    .ig-span-2, .ig-span-2-side { grid-column: span 2 / span 2; }
+    .ig-span-3 { grid-column: span 3 / span 3; }
+    .ig-span-4 { grid-column: span 4 / span 4; }
+    .ig-span-6 { grid-column: span 6 / span 6; }
   }
-  /* 인쇄 폭(A4 ≈ 794px)도 md 이상이지만, 브라우저마다 판정이 달라 명시한다 */
   @media print {
-    .ig-stack { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-    .ig-module { break-inside: avoid; page-break-inside: avoid; }
+    .ig-stack { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; }
+    .ig-module { padding: 16px 18px; break-inside: avoid; page-break-inside: avoid; }
+    .ig-span-2 { grid-column: span 2 / span 2; }
+    .ig-span-2-side, .ig-span-3, .ig-span-4 { grid-column: span 3 / span 3; }
+    .ig-span-6 { grid-column: span 6 / span 6; }
+    .ig-module-tall { break-inside: auto; page-break-inside: auto; }
+    .ig-module-tall tr, .ig-module-tall article, .ig-module-tall li, .ig-module-tall .ig-feature {
+      break-inside: avoid; page-break-inside: avoid;
+    }
+    .ig-module-tall thead { display: table-header-group; }
+    .ig-head { break-after: avoid; page-break-after: avoid; }
+    /* 인쇄·캡처는 항상 라이트. 어두운 테마를 켜 두었어도 종이는 희다. */
+    :root, [data-theme] {
+      --ink: 220 20% 13%; --ink-soft: 218 12% 38%; --paper: 40 22% 98%; --ig-gutter: 210 15% 88%;
+    }
+    .report-container.ig-sheet { outline: none; }
   }
+  /* 페이지 외곽선 — 화면·캡처 전용 */
+  .report-container.ig-sheet { outline: 1px solid hsl(var(--ink) / 0.14); outline-offset: -1px; }
 
-  .ig-condensed { font-family: 'Oswald', 'Noto Sans KR', sans-serif; }
-  .ig-sub, .ig-sub-1, .ig-stat-n, .ig-leg-n, .ig-num, .ig-chip, .ig-col-l {
+  /* ── 칸 폭에 따른 글자 크기 계단 (vw 대신) ─────────────────── */
+  .ig-span-3 .ig-h, .ig-span-4 .ig-h { font-size: 26px; }
+  .ig-span-2 .ig-h, .ig-span-2-side .ig-h { font-size: 21px; }
+  .ig-span-3 .ig-sub-1, .ig-span-4 .ig-sub-1 { font-size: 16px; }
+  .ig-span-2 .ig-sub-1, .ig-span-2-side .ig-sub-1 { font-size: 14px; }
+  .ig-span-2 .ig-sub, .ig-span-2-side .ig-sub { font-size: 11px; }
+  .ig-span-3 .ig-stat-n, .ig-span-4 .ig-stat-n { font-size: 38px; }
+  .ig-span-2 .ig-stat-n, .ig-span-2-side .ig-stat-n { font-size: 32px; }
+  .ig-span-3 .ig-stat-n.ig-stat-n-sm, .ig-span-4 .ig-stat-n.ig-stat-n-sm { font-size: 28px; }
+  .ig-span-2 .ig-stat-n.ig-stat-n-sm, .ig-span-2-side .ig-stat-n.ig-stat-n-sm { font-size: 26px; }
+  /* 좁은 모듈에서는 머리를 세로로 쌓는다 — 보조어가 제목을 밀지 않게 */
+  .ig-span-2 .ig-head, .ig-span-2-side .ig-head { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .ig-span-2 .ig-sub, .ig-span-2-side .ig-sub { text-align: left; }
+
+  /* ── 좁고 굵은 서체 — 영문 보조어·숫자·대문자 라벨 ─────────────
+     한글 글자는 자동으로 Noto Sans KR 로 떨어진다. */
+  .ig-condensed,
+  .ig-sub, .ig-sub-1, .ig-stat-n, .ig-stat-u, .ig-leg-n, .ig-num, .ig-chip, .ig-col-l, .ig-big {
     font-family: 'Oswald', 'Noto Sans KR', sans-serif;
   }
   .ig-sub { font-weight: 600; letter-spacing: 0.04em; }
   .ig-sub-1 { font-weight: 700; }
   .ig-stat-n { font-weight: 700; letter-spacing: -0.01em; }
   .ig-leg-n { font-weight: 600; }
-  .ig-col-l { font-weight: 600; letter-spacing: 0.12em; }
-  .ig-chip { font-weight: 600; }
-}
+  .ig-col-l { font-weight: 600; }
+  .ig-chip { font-weight: 600; letter-spacing: 0.08em; }
 
-/* ── 제목 옆 거대 숫자, 점 매트릭스 장식 ─────────────────────────
-   거대 숫자는 레퍼런스 "INFOGRAPHIC TOOLS 7" 의 7 이다. 제목보다 크고
-   흐리게 눌러, 읽히기보다 먼저 보이게 한다. 점 매트릭스는 제호에만 쓴다.
-   차트 근처에 두면 데이터로 오독된다. */
-@layer components {
+  /* ── 제목 옆 거대 숫자 — 레퍼런스 "INFOGRAPHIC TOOLS 7" 의 7 ─────
+     제목보다 크고 흐리게 눌러, 읽히기보다 먼저 보이게 한다. 실데이터만. */
   .ig-big {
-    font-family: 'Oswald', 'Noto Sans KR', sans-serif;
     font-weight: 700;
-    font-size: clamp(40px, 6.4vw, 68px);
+    font-size: 68px;
     line-height: 0.8;
     letter-spacing: -0.02em;
     color: hsl(var(--ink) / 0.16);
@@ -1351,16 +1381,12 @@
     align-self: flex-start;
     margin-top: -0.04em;
     font-variant-numeric: tabular-nums;
+    white-space: nowrap;
   }
-  .ig-big-unit {
-    font-size: 0.32em;
-    font-weight: 600;
-    margin-left: 0.08em;
-    color: hsl(var(--ink) / 0.3);
-  }
-  .ig-dots {
-    background-image: radial-gradient(circle, hsl(var(--ink) / 0.14) 1.2px, transparent 1.4px);
-    background-size: 9px 9px;
-    background-position: 0 0;
-  }
+  .ig-big-unit { font-size: 0.32em; font-weight: 600; margin-left: 0.08em; color: hsl(var(--ink) / 0.3); }
+  .ig-span-3 .ig-big, .ig-span-4 .ig-big { font-size: 56px; }
+  .ig-span-2 .ig-big, .ig-span-2-side .ig-big { font-size: 44px; }
+
+  /* ── 색 타일·격자 셀은 인쇄에서도 색이 남아야 한다 ────────────── */
+  .ig-print-color { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }

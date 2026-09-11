@@ -5,6 +5,7 @@ interface DifficultProblemsExplanationProps {
   explanation?: string;
   hasDifficultProblems: boolean;
   themeColors: any;
+  className?: string;
 }
 
 /**
@@ -16,11 +17,12 @@ interface DifficultProblemsExplanationProps {
 const DifficultProblemsExplanation: React.FC<DifficultProblemsExplanationProps> = ({
   explanation,
   hasDifficultProblems,
+  className = '',
 }) => {
   if (!hasDifficultProblems || !explanation) return null;
 
   return (
-    <section className="ig-module">
+    <section className={`ig-module ${className}`}>
       <IgHead title="시험 특징 & 킬러 문항" sub={['IN', 'DETAIL']} />
 
       <div className="mt-6 border-l-[3px] border-[hsl(var(--ig-coral))] pl-5">

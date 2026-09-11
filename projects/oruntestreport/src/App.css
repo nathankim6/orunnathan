@@ -162,12 +162,8 @@
 }
 
 @media print {
-  .report-container {
-    width: 100%;
-    margin: 0;
-    padding: 2cm;
-    page-break-inside: avoid;
-  }
+  /* .report-container 의 인쇄 여백·나눔 규칙은 index.css 의 인포그래픽 계층이 맡는다.
+     예전의 padding: 2cm 은 레이어 밖 규칙이라 계층 안 규칙을 이겨 첫 장을 비웠다. */
   
   .highlighted-text {
     -webkit-print-color-adjust: exact;

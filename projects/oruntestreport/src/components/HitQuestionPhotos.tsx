@@ -23,6 +23,7 @@ interface HitQuestionPhotosProps {
  editable?: boolean;
   reportId?: string;
   onPhotoNameChange?: (photoIndex: number, name: string) => void;
+  className?: string;
 }
 
 const HitQuestionPhotos: React.FC<HitQuestionPhotosProps> = ({
@@ -33,6 +34,7 @@ const HitQuestionPhotos: React.FC<HitQuestionPhotosProps> = ({
  editable = false,
   reportId,
   onPhotoNameChange,
+  className = '',
 }) => {
  if (!photos || (photos.length === 0 && !editable)) return null;
 
@@ -41,7 +43,7 @@ const HitQuestionPhotos: React.FC<HitQuestionPhotosProps> = ({
   const photoCommentId = (photo: { url: string }) => `hit-photo:${photo.url}`;
 
  return (
- <section className="ig-module">
+ <section className={`ig-module ${className}`}>
  <div className="flex items-baseline justify-between mb-6">
  <div className="flex items-center gap-3">
  <span className="section-numeral section-numeral-c2">★</span>
@@ -94,6 +96,8 @@ const HitQuestionPhotos: React.FC<HitQuestionPhotosProps> = ({
   src={photo.url}
   alt={`킬러문항 ${photo.problemNumber || index + 1}`}
   className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+  style={{ maxHeight: 360 }}
+  decoding="sync"
   />
 
   {photo.problemNumber && (

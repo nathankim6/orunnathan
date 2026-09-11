@@ -1,8 +1,8 @@
 import React from 'react';
 import type { LucideIcon } from 'lucide-react';
 import {
-  SpellCheck, PenLine, BookOpen, Shuffle, ListOrdered, Quote, Puzzle, Sparkles, Flame,
-  Braces, ScrollText, ArrowLeftRight, Type, Highlighter, Target,
+  SpellCheck, PenLine, BookOpen, Shuffle, ListOrdered, Quote, Puzzle, Flame,
+  Braces, ScrollText, ArrowLeftRight, Type, Highlighter, Target, Lightbulb,
 } from 'lucide-react';
 
 /**
@@ -33,7 +33,7 @@ const RULES: { test: RegExp; icon: LucideIcon }[] = [
 export const iconFor = (text: string | undefined, props: { className?: string; strokeWidth?: number } = {}) => {
   const t = text || '';
   const hit = RULES.find((r) => r.test.test(t));
-  const Icon = hit ? hit.icon : Sparkles;
+  const Icon = hit ? hit.icon : Lightbulb;
   return <Icon className={props.className ?? 'w-6 h-6'} strokeWidth={props.strokeWidth ?? 1.75} />;
 };
 

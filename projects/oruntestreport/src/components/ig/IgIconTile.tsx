@@ -18,7 +18,7 @@ const IgIconTile: React.FC<{
 }> = ({ icon, tone = '--ig-navy', label, value, size = 52, layout = 'right', className = '' }) => (
   <div className={`flex ${layout === 'below' ? 'flex-col items-center text-center' : 'items-center'} gap-3 ${className}`}>
     <span
-      className="flex flex-none items-center justify-center text-[hsl(var(--paper))]"
+      className="flex flex-none items-center justify-center text-[hsl(var(--paper))] ig-print-color"
       style={{ width: size, height: size, background: `hsl(var(${tone}))` }}
     >
       {icon}
@@ -27,7 +27,7 @@ const IgIconTile: React.FC<{
       <span className="min-w-0">
         {label && <span className="ig-col-l block" style={{ marginTop: 0 }}>{label}</span>}
         {value && (
-          <span className="block font-display text-[14px] font-bold leading-snug text-[hsl(var(--ink))]" style={{ wordBreak: 'keep-all' }}>
+          <span className="block ig-condensed text-[16px] font-semibold leading-snug text-[hsl(var(--ink))]" style={{ wordBreak: 'keep-all' }}>
             {value}
           </span>
         )}

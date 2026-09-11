@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { toJpeg } from "html-to-image";
+import { getReportFontCss } from "@/lib/captureFonts";
 import JSZip from "jszip";
 import {
   useStudentSubmissions,
@@ -78,7 +79,7 @@ const StudentSubmissionsDialog: React.FC<Props> = ({ open, onOpenChange, reportI
       quality: 0.95,
       pixelRatio: 2,
       backgroundColor: "#ffffff",
-      skipFonts: true,
+      fontEmbedCSS: await getReportFontCss(reportRef.current),
     });
   };
 
