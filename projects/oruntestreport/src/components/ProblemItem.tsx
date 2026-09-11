@@ -25,27 +25,27 @@ const difficultyMeta: Record<
 > = {
   easy: {
     label: '쉬움',
-    dot: 'hsl(160 60% 42%)',
-    bar: 'hsl(160 60% 42%)',
-    text: 'hsl(160 60% 28%)',
+    dot: 'hsl(var(--ig-teal))',
+    bar: 'hsl(var(--ig-teal))',
+    text: 'hsl(var(--ig-teal))',
   },
   medium: {
     label: '보통',
-    dot: 'hsl(var(--ink-soft))',
-    bar: 'hsl(var(--ink)/0.35)',
-    text: 'hsl(var(--ink))',
+    dot: 'hsl(var(--ig-slate))',
+    bar: 'hsl(var(--ig-slate))',
+    text: 'hsl(var(--ink-soft))',
   },
   hard: {
     label: '어려움',
-    dot: 'hsl(30 85% 46%)',
-    bar: 'hsl(30 85% 50%)',
-    text: 'hsl(30 85% 42%)',
+    dot: 'hsl(var(--ig-sand))',
+    bar: 'hsl(var(--ig-sand))',
+    text: 'hsl(var(--ig-sand))',
   },
   very_hard: {
     label: '매우 어려움',
-    dot: 'hsl(0 65% 48%)',
-    bar: 'hsl(0 65% 48%)',
-    text: 'hsl(0 65% 38%)',
+    dot: 'hsl(var(--ig-coral))',
+    bar: 'hsl(var(--ig-coral))',
+    text: 'hsl(var(--ig-coral))',
   },
 };
 
@@ -66,7 +66,7 @@ const ProblemItem: React.FC<ProblemItemProps> = ({ problem, index }) => {
   const isKiller = problem.difficulty === 'very_hard' || !!problem.isKiller;
   const isHard = problem.difficulty === 'hard';
   const isVariant = !!problem.isVariant;
-  const killerColor = 'hsl(0 70% 45%)';
+  const killerColor = 'hsl(var(--ig-coral))';
   const hardColor = 'hsl(30 80% 44%)';
   const variantColor = 'hsl(265 50% 48%)';
 

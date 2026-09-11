@@ -13,10 +13,8 @@ import FloatingThemeToggle from "@/components/FloatingThemeToggle";
 import ReportHeader from "@/components/ReportHeader";
 import ReportInfoCards from "@/components/ReportInfoCards";
 import ReportKpiRail from "@/components/ReportKpiRail";
-import CinematicBackdrop from "@/components/CinematicBackdrop";
-import CinematicIntro from "@/components/CinematicIntro";
-import useCinematicStage from "@/hooks/useCinematicStage";
-import ExamConstellation from "@/components/ExamConstellation";
+import DifficultyFlow from "@/components/ig/DifficultyFlow";
+import IgHead from "@/components/ig/IgHead";
 import ReportStatCharts from "@/components/ReportStatCharts";
 import DifficultProblemsExplanation from "@/components/DifficultProblemsExplanation";
 import HitQuestionPhotos from "@/components/HitQuestionPhotos";
@@ -111,7 +109,6 @@ const Report: React.FC = () => {
   // 학교 로고에서 추출한 헤더 배너 컬러 — 리포트 테두리에도 동일 적용
   const banner = useLogoBannerTheme(getSchoolLogo(reportData?.school || ''));
   const [reportTitle, setReportTitle] = useState<string>("");
-  useCinematicStage(reportContainerRef, isLoaded);
   const [submissionsOpen, setSubmissionsOpen] = useState(false);
   
   const {
@@ -169,7 +166,10 @@ const Report: React.FC = () => {
         el.style.overflow = 'visible';
       });
 
-      target.classList.add('pdf-capture-nowrap');
+      // 예전에는 여기서 리포트 전체에 pdf-capture-nowrap 을 걸었다. 그 규칙은
+      // 모든 하위 요소에 white-space: nowrap 을 강제하는데, 문단이 한 줄로
+      // 늘어나면서 칸이 캡처 폭 밖으로 밀려나 표가 잘려 나왔다. 줄바꿈을
+      // 막아야 하는 짧은 라벨들은 저마다 그 클래스를 이미 달고 있다.
 
       await new Promise((r) => setTimeout(r, 200));
 
@@ -198,7 +198,6 @@ const Report: React.FC = () => {
       });
 
       // Restore styles
-      target.classList.remove('pdf-capture-nowrap');
       originalStyles.forEach(({ el, maxHeight, height, overflow }) => {
         el.style.maxHeight = maxHeight;
         el.style.height = height;
@@ -563,7 +562,7 @@ const Report: React.FC = () => {
   return (
     <div 
       data-theme={theme}
-      className="cinema-stage min-h-screen py-12 px-4 print:bg-white print:py-0 relative" 
+      className="min-h-screen bg-[hsl(var(--paper-warm))] py-10 px-4 print:bg-white print:py-0 relative" 
       style={{
         '--theme-primary': themeColors.primary,
         '--theme-secondary': themeColors.secondary,
@@ -576,15 +575,6 @@ const Report: React.FC = () => {
         '--theme-highlight': themeColors.highlight,
       } as React.CSSProperties}
     >
-      {/* 화면에서만 보이는 배경 — PDF 에는 들어가지 않는다 */}
-      <CinematicBackdrop accent={banner.mid} />
-      <CinematicIntro
-        school={reportData.school}
-        exam={`${reportData.grade} · ${reportData.examInfo || '내신시험'} 분석 리포트`}
-        accent={banner.accent}
-      />
-      <div className="cinema-bar cinema-bar-top capture-hide print:hidden" aria-hidden="true" />
-      <div className="cinema-bar cinema-bar-bottom capture-hide print:hidden" aria-hidden="true" />
       <div 
         className={`w-full max-w-5xl mx-auto transition-all duration-700 relative z-10 ${
           isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
@@ -601,18 +591,16 @@ const Report: React.FC = () => {
           title={reportTitle}
         />
 
-        <div 
-          ref={reportContainerRef} 
-          className="report-container print:shadow-none print:border-none print:outline-none flex flex-col"
+        <div
+          ref={reportContainerRef}
+          className="report-container ig-sheet print:shadow-none print:border-none print:outline-none flex flex-col"
           style={{
-            borderColor: 'hsl(0 0% 100% / 0.75)',
-            outline: `1px solid color-mix(in srgb, ${banner.mid} 40%, transparent)`,
-            outlineOffset: '-18px',
-            boxShadow: `inset 0 1px 0 hsl(0 0% 100% / 0.9), inset 0 0 0 1px color-mix(in srgb, ${banner.mid} 18%, transparent), 0 1px 2px hsl(var(--ink) / 0.04), 0 24px 60px -28px color-mix(in srgb, ${banner.from} 55%, transparent), 0 64px 120px -56px hsl(var(--ink) / 0.35)`,
+            borderTop: `4px solid ${banner.mid}`,
+            boxShadow: '0 1px 2px hsl(var(--ink) / 0.06), 0 18px 44px -30px hsl(var(--ink) / 0.35)',
           }}
         >
-          <ScrollArea className="flex-1 overflow-hidden pr-4">
-            <div className="space-y-8">
+          <ScrollArea className="flex-1 overflow-hidden">
+            <div className="ig-stack">
               <ReportHeader 
                 date={date}
                 themeColors={themeColors}
@@ -624,11 +612,16 @@ const Report: React.FC = () => {
                 themeColors={themeColors}
               />
 
-              <div className="report-section">
-                <ReportKpiRail problemTypes={reportData.problemTypes as any} />
-              </div>
+              <ReportKpiRail problemTypes={reportData.problemTypes as any} />
 
-              <ExamConstellation problems={reportData.problemTypes as any} />
+              <section className="ig-module">
+                <IgHead title="문항 순서로 본 난도 흐름" sub={['LINE', 'GRAPH']} />
+                <p className="ig-lede">
+                  가로는 문항 번호, 세로는 난도입니다. 점 하나가 문항 하나이고, 선이 위로 솟은 구간에서
+                  점수가 갈렸습니다.
+                </p>
+                <DifficultyFlow className="mt-5" problems={reportData.problemTypes as any} />
+              </section>
 
               <ReportStatCharts 
                 stats={stats}

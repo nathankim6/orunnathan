@@ -79,7 +79,7 @@ const SubcategoryBreakdown: React.FC<Props> = ({ data, total }) => {
 
       {/* 전체 구성 스펙트럼 바 */}
       <div>
-        <div className="flex h-3 w-full overflow-hidden rounded-full border border-[hsl(var(--ink)/0.08)]">
+        <div className="flex h-3 w-full overflow-hidden">
           {data.map((item, i) => (
             <div
               key={item.name}
@@ -136,9 +136,9 @@ const SubcategoryBreakdown: React.FC<Props> = ({ data, total }) => {
                 </span>
                 <span className="pb-1 text-[13px] font-semibold text-[hsl(var(--ink-soft))]">%</span>
               </div>
-              <div className="mt-3 h-[6px] w-full overflow-hidden rounded-full" style={{ background: accent.track }}>
+              <div className="mt-3 h-[6px] w-full overflow-hidden" style={{ background: accent.track }}>
                 <div
-                  className="h-full rounded-full transition-all duration-700 ease-out"
+                  className="h-full transition-all duration-700 ease-out"
                   style={{ width: `${(pct / maxPct) * 100}%`, background: accent.bar }}
                 />
               </div>
@@ -173,11 +173,11 @@ const SubcategoryBreakdown: React.FC<Props> = ({ data, total }) => {
                       {item.name}
                     </div>
                     <div
-                      className="mt-1 h-[4px] w-full overflow-hidden rounded-full"
+                      className="mt-1 h-[4px] w-full overflow-hidden"
                       style={{ background: accent.track }}
                     >
                       <div
-                        className="h-full rounded-full"
+                        className="h-full"
                         style={{ width: `${(pct / maxPct) * 100}%`, background: accent.bar }}
                       />
                     </div>

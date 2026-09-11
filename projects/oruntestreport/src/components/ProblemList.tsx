@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react';
-import FxStage from '@/components/FxStage';
 import { ScrollArea } from "@/components/ui/scroll-area";
 import ProblemItem from './ProblemItem';
 import ProblemCommentBox from './ProblemCommentBox';
@@ -23,10 +22,10 @@ type ProblemListProps = {
 };
 
 const legendItems: { label: string; key: ProblemType['difficulty']; color: string }[] = [
- { label: '쉬움', key: 'easy', color: 'hsl(160 60% 42%)' },
- { label: '보통', key: 'medium', color: 'hsl(var(--ink)/0.4)' },
- { label: '어려움', key: 'hard', color: 'hsl(var(--gold))' },
- { label: '매우 어려움', key: 'very_hard', color: 'hsl(0 65% 48%)' },
+ { label: '쉬움', key: 'easy', color: 'hsl(var(--ig-teal))' },
+ { label: '보통', key: 'medium', color: 'hsl(var(--ig-slate))' },
+ { label: '어려움', key: 'hard', color: 'hsl(var(--ig-sand))' },
+ { label: '매우 어려움', key: 'very_hard', color: 'hsl(var(--ig-coral))' },
 ];
 
 const ProblemList: React.FC<ProblemListProps> = ({ problemTypes, reportId }) => {
@@ -59,21 +58,12 @@ const ProblemList: React.FC<ProblemListProps> = ({ problemTypes, reportId }) => 
   const statTiles = [
     { label: '전체 문항', value: total, color: 'hsl(var(--ink))' },
     { label: '객관식', value: objectiveCount, color: 'hsl(var(--ink-soft))' },
-    { label: '서답형', value: subjectiveCount, color: 'hsl(var(--gold-deep))' },
-    { label: '킬러문항', value: killerCount, color: 'hsl(0 70% 45%)' },
-    { label: '원문변형', value: variantCount, color: 'hsl(265 50% 48%)' },
+    { label: '서답형', value: subjectiveCount, color: 'hsl(var(--ig-teal))' },
+    { label: '킬러문항', value: killerCount, color: 'hsl(var(--ig-coral))' },
+    { label: '원문변형', value: variantCount, color: 'hsl(var(--ig-slate))' },
   ];
 
   return (
-    <>
-    <FxStage
-      kind="sweep"
-      options={{ tone: 'hsl(214, 30%, 62%)', gain: 0.9 }}
-      height={36}
-      label="문항 목록"
-      readout={`${total}문항 · 킬러 ${killerCount}`}
-      className="mb-3"
-    />
  <div className="relative">
  {/* 요약 대시보드 */}
  <div className="mb-3 overflow-hidden rounded-xl border border-[hsl(var(--ink)/0.08)] bg-[hsl(var(--paper))]">
@@ -167,7 +157,6 @@ const ProblemList: React.FC<ProblemListProps> = ({ problemTypes, reportId }) => 
  </div>
  </div>
  </div>
-    </>
  );
 };
 

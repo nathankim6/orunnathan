@@ -86,7 +86,7 @@ const ProblemTypeBarChart: React.FC<ProblemTypeBarChartProps> = ({
  }
  
  return (
- <Card className="bg-[hsl(var(--paper))] rounded-none overflow-hidden border border-[hsl(var(--ink)/0.08)] shadow-[0_1px_0_hsl(var(--ink)/0.04),0_30px_60px_-30px_hsl(var(--ink)/0.18)] relative">
+ <Card className="bg-transparent rounded-none overflow-hidden border-0 shadow-none relative">
  {/* 상단 헤더색 액센트 라인 */}
  <div
  className="absolute top-0 left-0 right-0 h-[3px]"
@@ -95,7 +95,7 @@ const ProblemTypeBarChart: React.FC<ProblemTypeBarChartProps> = ({
 
  {/* 헤더색 테마 헤더 */}
   <CardHeader
-  className="border-0 pb-3 pt-5 px-5 relative"
+  className="border-0 pb-3 pt-0 px-0 relative"
   style={{ background: 'hsl(var(--paper))' }}
   >
   <div className="flex items-end justify-between gap-4">
@@ -142,7 +142,7 @@ const ProblemTypeBarChart: React.FC<ProblemTypeBarChartProps> = ({
 
   {/* 전체 구성 스택 바 + 범례 */}
   <div className="mb-5">
-  <div className="flex h-4 w-full overflow-hidden rounded-full border border-[hsl(var(--ink)/0.08)]">
+  <div className="flex h-4 w-full overflow-hidden">
   {chartData.map((item, i) => (
   <div
   key={`stack-${i}`}

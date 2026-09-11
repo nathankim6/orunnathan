@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import FxStage from '@/components/FxStage';
 import { Camera, X, Pencil, Check, MessageSquarePlus } from 'lucide-react';
 import { TeacherPhotoUploader } from '@/components/TeacherPhotoUploader';
 import { Button } from '@/components/ui/button';
@@ -42,7 +41,7 @@ const HitQuestionPhotos: React.FC<HitQuestionPhotosProps> = ({
   const photoCommentId = (photo: { url: string }) => `hit-photo:${photo.url}`;
 
  return (
- <section className="report-section">
+ <section className="ig-module">
  <div className="flex items-baseline justify-between mb-6">
  <div className="flex items-center gap-3">
  <span className="section-numeral section-numeral-c2">★</span>
@@ -64,14 +63,6 @@ const HitQuestionPhotos: React.FC<HitQuestionPhotosProps> = ({
   ) : null}
  </div>
 
-      <FxStage
-        kind="field"
-        options={{ count: 110, tone: 'hsl(188, 32%, 56%)', tone2: '#ffffff' }}
-        height={52}
-        label="KILLER"
-        readout={`${photos?.length ?? 0}문항`}
-        className="mb-4"
-      />
 
  <div className="space-y-8">
  {photos &&
