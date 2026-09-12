@@ -75,8 +75,22 @@ GitHub Pages 는 `access-control-allow-origin: *` 를 준다. 다른 사이트�
   으로 나뉘어 있다.
 - 키·모델 저장 키는 생성기와 같다(`orun_api_key` 등) — 같은 주소에서 키를 나눠 쓴다.
   API 는 브라우저에서 `api.anthropic.com` / `api.openai.com` 으로만 간다. 서버 없음.
-- 저장은 IndexedDB `orun_oracle`. 파일 원본은 저장하지 않는다(추출 텍스트만).
-- 회귀 검사: Playwright e2e(모의 API) 가 스크래치패드 `tests/e2e.js` 에 있다. 고쳤으면
+- 저장은 IndexedDB `orun_oracle` 이 작업본이고, 같은 문서를 Supabase 프로젝트
+  `wxjazdqabryflvfztujk` 의 `public.oracle_docs` (id · workspace · store · teacher_id · data jsonb)
+  에 그대로 비춘다. anon 키 + REST 직접 호출, 열린 RLS(옳은문법 앱과 같은 방식) — 주소를 아는
+  사람은 누구나 그 작업공간을 읽고 쓴다. 작업공간 이름은 `orun_oracle_ws`(기본 `heukseok`),
+  끄기는 `orun_oracle_sync=off`. 배경 영상(media)은 올리지 않는다. 파일 원본은 어디에도 저장하지
+  않는다(추출 텍스트만).
+- 파일 종류는 셋 — 기출(exam) · 범위 원문(scope) · 선생님 프린트(handout). 프린트는 지문과
+  어법·어휘·예상문제 포인트로 색인하고, 기출 문항 하나하나가 프린트의 무엇에서 왔는지 세어
+  **프린트 반영율**(시험별 `exam.reflection`, 자료별 `source.reflection`, 프로파일 `handout`)을
+  낸다. 예측은 프린트에 실린 지문을 과거 반영율만큼 우선한다.
+- 첫 실행에 흑석고 선생님 두 분(윤은영 영어A · 전정이 영어B)을 심는다(설정 `seeded`).
+- 글꼴: 영문 Orbitron, 한글 Noto Sans KR (`--f` / `--fk`). 인쇄 시험지만 명조를 쓴다.
+- 힉스필드(Higgsfield)는 이 세션에서 부를 수 없다. 설정 → 힉스필드 탭의 프롬프트 묶음으로
+  영상·이미지를 만들어 배경 슬롯에 넣는다.
+- 회귀 검사: Playwright e2e(모의 API · 모의 Supabase) 가 스크래치패드 `tests/e2e.js`, 단위 검사가
+  `tests/unit.js`, 3D 무대 검사가 `tests/run-stage-smoke.js` 에 있다. 고쳤으면
   돌리고, 빌드 도장(`build: YYYY-MM-DD HH:MM`) 을 올리고, `main` 에 머지해 라이브를 확인한다
   (`curl -sS https://nathankim6.github.io/orunnathan/orun-oracle.html | sha256sum`).
 - `<!doctype html>` 을 쓴다(표준 모드). 생성기의 quirks 규칙은 이 파일에 적용되지 않는다.
