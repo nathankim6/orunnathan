@@ -175,6 +175,7 @@ const MODS=[
  {t:'ORUN HOMEWORK',k:'학생별 숙제 관리 및 피드백',c:'#ff8a5f',h:'https://orunhomework.com',g:'H'},
  {t:'SCHOOL ANALYSIS',k:'3개년 학교별 기출 분석',c:'#38bdf8',h:'https://schoolanalysis.lovable.app',g:'S'},
  {t:'MOCK EXAM CREATOR',k:'동형 모의고사 생성기 · 기출을 넣으면 같은 꼴의 새 시험지가 나옵니다',c:'#ffd400',h:'https://nathankim6.github.io/orunnathan/mock-exam.html',g:'M',big:1},
+ {t:'ORUN ORACLE',k:'출제자 성향 프로파일러 · 선생님별 기출을 학습해 다음 시험을 예측하고 적중 모의고사를 만듭니다',c:'#37c6ff',h:'orun-oracle.html',g:'O',big:1},
 ];
 document.getElementById('tiles').innerHTML=MODS.map((m,i)=>
  '<a class="tile'+(m.big?' big':'')+'" href="'+m.h+'" style="--ac:'+m.c+'"'+(/^http/.test(m.h)?' target="_blank" rel="noopener"':'')+'>'+

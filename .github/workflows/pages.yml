@@ -1,4 +1,5 @@
 # 정적 HTML 앱들을 GitHub Pages 로 올린다.
+# orun-oracle.html 은 출제자 성향 프로파일러(ORUN ORACLE) — 한 벌뿐이고 제 이름으로 나간다.
 # 생성기는 public/mocktest-generator.html 한 벌뿐이고, 여기서 index.html ·
 # mocktest-generator.html · mock-exam.html 세 이름으로 함께 내보낸다.
 # (예전에 사본을 두 벌 두던 때가 있어 주소가 셋이다 — 주소는 지키고 파일만 하나로 줄였다.)
@@ -14,6 +15,7 @@ on:
       - 'public/orun-universe.html'
       - 'public/orun-grammar.html'
       - 'public/studio.html'
+      - 'public/orun-oracle.html'
       - 'public/three.min.js'
       - 'public/orun-universe-poster.jpg'
       - '.github/workflows/pages.yml'
@@ -43,11 +45,12 @@ jobs:
           uni=$(git hash-object -w public/orun-universe.html)
           gram=$(git hash-object -w public/orun-grammar.html)
           stud=$(git hash-object -w public/studio.html)
+          orac=$(git hash-object -w public/orun-oracle.html)
           three=$(git hash-object -w public/three.min.js)
           post=$(git hash-object -w public/orun-universe-poster.jpg)
           # index.html 은 지금까지처럼 생성기다. 나머지는 제 이름으로 나란히 선다.
-          tree=$(printf '100644 blob %s\tindex.html\n100644 blob %s\tmocktest-generator.html\n100644 blob %s\torun-universe.html\n100644 blob %s\torun-grammar.html\n100644 blob %s\tmock-exam.html\n100644 blob %s\tstudio.html\n100644 blob %s\tthree.min.js\n100644 blob %s\torun-universe-poster.jpg\n' \
-                 "$mock" "$mock" "$uni" "$gram" "$mock" "$stud" "$three" "$post" | git mktree)
+          tree=$(printf '100644 blob %s\tindex.html\n100644 blob %s\tmocktest-generator.html\n100644 blob %s\torun-universe.html\n100644 blob %s\torun-grammar.html\n100644 blob %s\tmock-exam.html\n100644 blob %s\tstudio.html\n100644 blob %s\torun-oracle.html\n100644 blob %s\tthree.min.js\n100644 blob %s\torun-universe-poster.jpg\n' \
+                 "$mock" "$mock" "$uni" "$gram" "$mock" "$stud" "$orac" "$three" "$post" | git mktree)
 
           git fetch --no-tags --depth=1 origin gh-pages || true
           parent=$(git rev-parse -q --verify FETCH_HEAD || true)
