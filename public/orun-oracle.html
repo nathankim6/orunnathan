@@ -292,7 +292,7 @@ body.dragging #dropAll { opacity: 1; }
 <script>
 (function () {
   "use strict";
-  const BUILD = "build: 2026-09-12 17:15";
+  const BUILD = "build: 2026-09-12 17:22";
   // ==================================================================
   //  DB — IndexedDB. 파일 원본은 두지 않고 추출한 텍스트와 데이터만 둔다.
   //  stores: teachers · exams · questions · passages · profiles · events · settings · media
@@ -894,12 +894,35 @@ body.dragging #dropAll { opacity: 1; }
       let s = String(raw || "").trim().replace(/^```(?:json)?/i, "").replace(/```$/, "").trim();
       const open = wantArray ? "[" : "{", close = wantArray ? "]" : "}";
       const a = s.indexOf(open), b = s.lastIndexOf(close);
-      if (a === -1 || b === -1 || b < a) throw err("invalid_json", "JSON 아님");
-      let body = s.slice(a, b + 1);
+      if (a === -1) throw err("invalid_json", "JSON 아님");
+      let body = b > a ? s.slice(a, b + 1) : s.slice(a);        // 닫는 괄호가 없으면(잘림) 끝까지 두고 아래에서 살린다
       try { return JSON.parse(body); } catch (e) {}
       // 흔한 손상: 끝의 쉼표, 스마트 따옴표
       body = body.replace(/,\s*([\]}])/g, "$1").replace(/[“”]/g, '"');
-      try { return JSON.parse(body); } catch (e) { throw err("invalid_json", "JSON 해석 실패"); }
+      try { return JSON.parse(body); } catch (e) {}
+      // 잘린 출력: 마지막으로 온전한 항목까지만 살린다 (배열 항목 경계 "}," 에서 잘라 닫는다)
+      const salvaged = salvage(body, wantArray);
+      if (salvaged) return salvaged;
+      throw err("invalid_json", "JSON 해석 실패");
+    }
+    function salvage(body, wantArray) {
+      let cut = body.length;
+      for (let i = 0; i < 60; i++) {
+        cut = body.lastIndexOf("}", cut - 1);
+        if (cut < 0) return null;
+        const head = body.slice(0, cut + 1);
+        // 열린 괄호를 세어 닫아 준다
+        let depthA = 0, depthO = 0, inStr = false, escp = false;
+        for (const ch of head) { if (inStr) { if (escp) escp = false; else if (ch === "\\") escp = true; else if (ch === '"') inStr = false; continue; } if (ch === '"') inStr = true; else if (ch === "[") depthA++; else if (ch === "]") depthA--; else if (ch === "{") depthO++; else if (ch === "}") depthO--; }
+        if (inStr || depthA < 0 || depthO < 0) continue;
+        let tail = "";
+        // 닫는 순서는 열린 순서의 역순이어야 하지만, 여기서는 배열/객체가 번갈아 중첩된 흔한 꼴만 다룬다
+        const stack = []; inStr = false; escp = false;
+        for (const ch of head) { if (inStr) { if (escp) escp = false; else if (ch === "\\") escp = true; else if (ch === '"') inStr = false; continue; } if (ch === '"') inStr = true; else if (ch === "[" || ch === "{") stack.push(ch); else if (ch === "]" || ch === "}") stack.pop(); }
+        while (stack.length) tail += stack.pop() === "[" ? "]" : "}";
+        try { const v = JSON.parse(head + tail); if (wantArray ? Array.isArray(v) : (v && typeof v === "object")) return v; } catch (e) {}
+      }
+      return null;
     }
     // json(prompt, opts) — 잘못된 JSON 이 오면 한 번 더 요청한다 (두 번째는 더 엄한 꼬리말)
     async function json(prompt, opts) {
@@ -2993,7 +3016,7 @@ items.map(it => "■ " + it.number + "번 · " + it.type + (it.subtype ? "(" + i
       if (!post) tex.encoding = THREE.sRGBEncoding;
       const m = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.ShaderMaterial({ uniforms: { tMap: { value: tex }, uDim: { value: dim === undefined ? 0.5 : dim } }, depthTest: false, depthWrite: false,
         vertexShader: COL_VS, fragmentShader: `uniform sampler2D tMap; uniform float uDim; varying vec2 vUv;
-          void main(){ vec3 c = texture2D(tMap, vUv).rgb; c = c * c * uDim * (1.0 - smoothstep(0.30, 0.95, length(vUv - 0.5) * 1.3)); gl_FragColor = vec4(c, 1.0);
+          void main(){ vec3 c = texture2D(tMap, vUv).rgb; float m = 1.0 - smoothstep(0.12, 0.72, length((vUv - 0.5) * vec2(1.0, 1.25)) * 1.3); c = c * c * uDim * m * 0.75; gl_FragColor = vec4(c, 1.0);
           ${TAIL} }` }));
       m.renderOrder = -100; m.frustumCulled = false;
       m.onBeforeRender = function () {
@@ -3398,7 +3421,7 @@ items.map(it => "■ " + it.number + "번 · " + it.type + (it.subtype ? "(" + i
       teachers: new Map(), selectedId: null, hoverId: null, queue: [], running: 0, busy: new Map(),   // busy: teacherId → 문구
       profiles: new Map(), predictions: new Map(), counts: new Map(), mode: "stage",
       ui: { autoLearn: true, quality: "auto", reduced: false, forceFlat: false, onboardingDone: false, lastTeacherId: null, light: true, showFps: false },
-      bg: { opacity: 0.5, field: 60, hasVideo: false },
+      bg: { opacity: 0.35, field: 60, hasVideo: false },
     };
     let stage = null, listeners = [];
     const on = (fn) => listeners.push(fn);
@@ -3653,6 +3676,8 @@ items.map(it => "■ " + it.number + "번 · " + it.type + (it.subtype ? "(" + i
           basedOn: { examIds: exams.map(e => e.id), nQuestions: questions.length, nExams: exams.length, nPassages: passages.filter(p => p.kind === "지문").length, matched: questions.filter(q => q.match && q.match.passageId).length },
           profile, narrative, delta: delta.headline, constellation: PROFILE.constellation(profile, questions), reason: o.reason || (prev ? "자료 추가" : "첫 학습") };
         await DB.put("profiles", rec); state.profiles.set(teacherId, rec);
+        const olds = (await DB.where("profiles", "teacherId", teacherId)).sort((a, b) => b.version - a.version).slice(30);   // 최근 30판만 둔다
+        for (const o of olds) await DB.del("profiles", o.id);
         t.stats = Object.assign({}, t.stats, { profileVersion: rec.version, lastLearnedAt: rec.createdAt, level: profile.level.id }); await DB.put("teachers", t);
         for (const e of exams) { if (e.learnedInVersion === null || e.learnedInVersion === undefined) { e.learnedInVersion = rec.version; e.status = "learned"; } } await DB.putAll("exams", exams);
         log(teacherId, "learn", "프로파일 v" + rec.version + " · " + delta.headline.join(" / "), { profileId: rec.id });
@@ -3871,6 +3896,8 @@ items.map(it => "■ " + it.number + "번 · " + it.type + (it.subtype ? "(" + i
       html += sources.map(s => '<div class="it" data-src="' + s.id + '"><span class="t">범위 원문 · ' + esc(s.name) + '</span><span class="badge">' + esc(s.kind) + '</span><span class="s">지문 ' + s.passages + '개 · ' + esc(s.file.name) + '</span></div>').join("");
       html += '</div></div>';
       html += queueHtml(t.id);
+      const evs = (await DB.where("events", "teacherId", t.id)).filter(e => ["ingest", "index", "learn", "predict", "generate"].includes(e.kind)).sort((a, b) => b.at - a.at).slice(0, 8);
+      if (evs.length) html += '<div class="sec"><h4>학습 이력</h4><div class="small">' + evs.map(e => '<div>' + esc(TEXT.fmtDate(e.at)) + ' · <span class="chip dim" style="font-size:10px">' + ({ ingest: "기출", index: "범위", learn: "학습", predict: "예측", generate: "출제" })[e.kind] + '</span> ' + esc(e.msg) + '</div>').join("") + '</div></div>';
       body.innerHTML = html;
       body.querySelectorAll("[data-exam]").forEach(el => el.onclick = () => openDrawer("exam", el.dataset.exam));
       body.querySelectorAll("[data-src]").forEach(el => el.onclick = () => openDrawer("source", el.dataset.src));
