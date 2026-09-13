@@ -27,3 +27,6 @@ dist-ssr
 oracle/node_modules
 oracle/tests/cdn
 oracle/tests/out
+
+# 코딩 도구가 만드는 작업트리
+.claude/worktrees

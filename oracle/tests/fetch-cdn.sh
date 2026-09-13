@@ -14,6 +14,6 @@ for u in \
   https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js ; do
   f="$D/$(echo "$u" | sed 's#^https://##; s#/#__#g')"
   if [ -s "$f" ]; then echo "있음  $(basename "$f")"; continue; fi
-  echo "받기  $u"; curl -fsSL --retry 3 -o "$f" "$u"
+  echo "받기  $u"; curl -fsSL --retry 3 -o "$f.part" "$u" && mv "$f.part" "$f"   # 끊긴 파일이 남지 않게 다 받은 뒤 이름을 바꾼다
 done
 echo "cdn 준비 완료: $D"

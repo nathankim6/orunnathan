@@ -2,8 +2,11 @@
 const { launch } = require("./browser");
 const fs = require("fs"), path = require("path");
 const T = __dirname, P = path.join(T, "..", "parts");
+// three.js 주소는 build.sh 의 <script> 줄에서 읽는다 — 버전을 올려도 여기를 따로 고치지 않게
+const THREE_URL = (/<script src="(https:\/\/cdnjs\.cloudflare\.com\/ajax\/libs\/three\.js\/[^"]+)"/.exec(fs.readFileSync(path.join(T, "..", "build.sh"), "utf8")) || [])[1];
+if (!THREE_URL) { console.error("FAIL build.sh 에서 three.js <script> 줄을 찾지 못했다"); process.exit(1); }
 const html = '<title>stage smoke</title>\n<style>html,body{margin:0;height:100%;background:#03060e}#fx{position:fixed;inset:0;width:100%;height:100%}</style>\n<canvas id="fx"></canvas>\n' +
-  '<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>\n<script>\n' +
+  '<script src="' + THREE_URL + '"></script>\n<script>\n' +
   fs.readFileSync(path.join(P, "40-post.js"), "utf8") + "\n" + fs.readFileSync(path.join(P, "41-stage.js"), "utf8") + "\n" +
   fs.readFileSync(path.join(T, "stage-smoke.tail.js"), "utf8") + "\n</script>\n";
 fs.mkdirSync(path.join(T, "out"), { recursive: true });

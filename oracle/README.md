@@ -6,7 +6,7 @@
 
 ```sh
 cd oracle
-npm ci && npx playwright install --with-deps chromium && npm run cdn   # 처음 한 번
+npm ci && npx playwright install --with-deps chromium && npm run cdn   # 처음 한 번 (크로미움이 이미 있으면 install 은 건너뛴다 — tests/browser.js 가 찾는다)
 # parts/* 를 고친 뒤
 npm run build   # → ../public/orun-oracle.html
 npm test        # check(어긋남) · unit · e2e(모의 API·모의 Supabase) · stage(three.js)
@@ -19,7 +19,7 @@ npm test        # check(어긋남) · unit · e2e(모의 API·모의 Supabase) �
    ```sh
    cd oracle && npm ci && npx playwright install --with-deps chromium && npm run cdn
    ```
-3. Codex 는 루트의 `AGENTS.md` 를 읽고 시작한다. 거기에 "parts 를 고치고 → `npm run build` → `npm test` → parts 와 public 파일을 함께 커밋" 이 적혀 있다.
+3. Codex 는 루트의 `AGENTS.md` 를 읽고 시작한다. 거기에 "parts 를 고치고 → `npm run build` → `npm test` → parts 와 public 파일을 함께 커밋 → 작업 브랜치 푸시·PR" 이 적혀 있다. `main` 머지는 사람이 한다.
 4. PR 이 열리면 `.github/workflows/oracle-ci.yml` 이 같은 검사를 GitHub 에서 다시 돈다. `main` 에 합쳐지면 `pages.yml` 이 라이브로 올린다.
 
 ## 폴더

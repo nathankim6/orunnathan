@@ -77,7 +77,7 @@ GitHub Pages 는 `access-control-allow-origin: *` 를 준다. 다른 사이트�
 - 키·모델 저장 키는 생성기와 같다(`orun_api_key` 등) — 같은 주소에서 키를 나눠 쓴다.
   API 는 브라우저에서 `api.anthropic.com` / `api.openai.com` 으로만 간다. 서버 없음.
 - 저장은 IndexedDB `orun_oracle` 이 작업본이고, 같은 문서를 Supabase 프로젝트
-  `wxjazdqabryflvfztujk` 의 `public.oracle_docs` (id · workspace · store · teacher_id · data jsonb)
+  `wxjazdqabryflvfztujk` 의 `public.oracle_docs` (id · workspace · store · teacher_id · data jsonb · updated_at)
   에 그대로 비춘다. anon 키 + REST 직접 호출, 열린 RLS(옳은문법 앱과 같은 방식) — 주소를 아는
   사람은 누구나 그 작업공간을 읽고 쓴다. 작업공간 이름은 `orun_oracle_ws`(기본 `heukseok`),
   끄기는 `orun_oracle_sync=off`. 배경 영상(media)은 올리지 않는다. 파일 원본은 어디에도 저장하지

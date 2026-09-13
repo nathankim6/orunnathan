@@ -5,13 +5,14 @@ set -e
 S=$(cd "$(dirname "$0")/.." && pwd)
 PUB="$S/../public/orun-oracle.html"
 TMP=$(mktemp)
+trap 'rm -f "$TMP" "$TMP.a" "$TMP.b"' EXIT
 ORACLE_STAMP="0000-00-00 00:00" sh "$S/build.sh" "$TMP" >/dev/null
 sed 's/build: [0-9-]* [0-9:]*/build: X/' "$TMP" > "$TMP.a"
 sed 's/build: [0-9-]* [0-9:]*/build: X/' "$PUB" > "$TMP.b"
 if cmp -s "$TMP.a" "$TMP.b"; then
-  echo "ok   parts 와 public/orun-oracle.html 이 같다"; rm -f "$TMP" "$TMP.a" "$TMP.b"
+  echo "ok   parts 와 public/orun-oracle.html 이 같다"
 else
   echo "FAIL parts 로 지은 결과와 public/orun-oracle.html 이 다르다 — 'cd oracle && npm run build' 로 다시 짓고 둘을 함께 커밋하세요"
   diff "$TMP.a" "$TMP.b" | head -20 || true
-  rm -f "$TMP" "$TMP.a" "$TMP.b"; exit 1
+  exit 1
 fi
