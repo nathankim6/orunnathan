@@ -6,7 +6,12 @@
     const TYPES = "주제|제목|요지|주장|목적|심경|분위기|빈칸|어법|어휘|순서|삽입|무관한문장|함축의미|요약문|내용일치|내용불일치|지칭추론|세부정보|연결어|영영풀이|도표|안내문|서술형|기타";
     const GRAMMAR = "수일치·시제·태·분사·분사구문·관계사·접속사·가정법·도치·비교·부정사·동명사·대명사·형용사/부사·병렬·조동사·전치사·어순";
 
-    function classify(name, head) {
+    // 파일을 넣은 사람이 함께 적어 준 말 — 분류·메타·해석에 반영하되 지어내지 않게 한다
+    function memoBlock(memo) {
+      memo = String(memo || "").trim().slice(0, 600);
+      return memo ? "[사용자 메모 — 파일을 넣은 사람이 이 파일에 대해 알려 준 것입니다. 분류·시험 정보·해석에 반영하되, 텍스트에 없는 사실을 지어내지 마세요]\n" + memo + "\n\n" : "";
+    }
+    function classify(name, head, memo) {
       return ROLE +
 "[작업] 아래는 파일 \"" + name + "\" 에서 추출한 텍스트의 앞부분입니다. 이 파일이 (A) 학교 기출 시험지인지 (B) 시험범위 원문(교과서·부교재·모의고사 지문 자료)인지 판정하세요.\n" +
 "- 기출 시험지: 문항 번호·발문·①~⑤ 선지·배점·서술형 안내가 있다.\n" +
@@ -14,7 +19,7 @@
 "- 기출 시험지면 학교·연도·학년·학기·시험명(중간|기말|1차지필|2차지필)·과목을 텍스트에서 찾아 적고, 없으면 빈 문자열.\n" +
 "[출력 — JSON만]\n" +
 '{"kind":"exam|scope","confidence":0.0,"reason":"한 줄","meta":{"school":"","year":"","grade":"","semester":"","term":"","subject":""}}\n' +
-"[텍스트]\n" + head;
+memoBlock(memo) + "[텍스트]\n" + head;
     }
 
     function dataize(chunk, o) {
@@ -45,10 +50,10 @@
 "[출력 — JSON만]\n" +
 '{ "exam_info": { "title": "시험명(학교/학년/학기/과목 추정)", "year": 숫자|null, "semester": 1|2|null, "term": "중간|기말|1차지필|2차지필|기타", "grade": "고1|고2|고3|중3|기타", "subject": "영어|영어I|영어II|영어독해와작문|공통영어|기타", "total_questions": 숫자, "objective": 숫자, "subjective": 숫자, "total_points": 숫자|null, "has_explanations": true|false, "summary": "출제 경향 2~3문장" },\n' +
 '  "questions": [ { "number":"1", "type":"", "subtype":"", "format":"", "points":null, "points_printed":false, "difficulty":"중", "difficulty_reason":"", "stem":"", "options":[], "answer":"", "answer_source":"none", "passage":{"has":true,"lang":"en","first10":"","last6":"","words":0,"scale":"보통"}, "set":"", "set_role":"", "transformation":{"technique":"","blank_position":"","blank_unit":"","grammar_points":[],"grammar_count":0,"order_split":"","insert_position":"","underline_count":0,"vocab_swap":"","summary_blanks":0}, "distractor":{"style":[],"parallel":false,"lang":"en","lengths":[]}, "external":null, "external_reason":"", "ko_stem":{"ending":"","honorific":"","bracket_points":false,"kice_like":0.5}, "subjective":null, "features":"", "confidence":0.8 } ] }\n\n' +
-"[시험지 텍스트]\n" + (o.carry ? "(앞 부분에서 이어진 세트 지문)\n" + o.carry + "\n---\n" : "") + chunk;
+memoBlock(o.memo) + "[시험지 텍스트]\n" + (o.carry ? "(앞 부분에서 이어진 세트 지문)\n" + o.carry + "\n---\n" : "") + chunk;
     }
 
-    function index(name, chunk, i, n) {
+    function index(name, chunk, i, n, memo) {
       return ROLE +
 "[작업] 아래는 시험범위 자료 '" + name + "'" + (n > 1 ? " (" + i + "/" + n + " 부분)" : "") + "의 텍스트입니다. 출제에 쓸 수 있는 '지문 단위'를 모두 찾아 목록으로 만드세요.\n" +
 "- 지문 = 영어 본문 4문장 이상의 단락(또는 이어지는 단락 묶음). 한 지문은 하나의 항목으로. 교과서면 Lesson/과·Reading 번호, 모의고사면 문항 번호를 src 에 적습니다.\n" +
@@ -58,11 +63,11 @@
 "- order_friendly: 연결어·시간 흐름이 뚜렷해 순서 문제에 적합하면 true. insert_friendly: 지시어·대명사 연결이 뚜렷해 삽입 문제에 적합하면 true.\n\n" +
 "[출력 — JSON 배열만]\n" +
 '[ { "id": "P1", "kind": "지문|어휘|문법|기타", "src": "자료 내 위치", "lesson_key": "L3", "genre": "설명문|논설문|이야기|편지·안내문|대화|기사|기타", "first": "첫 10단어 원문", "last": "마지막 6단어 원문", "gist": "한국어 한 줄 요지", "words": 대략단어수, "feats": ["연결어 뚜렷","시간 흐름","개념 정의","대조·비교","예시 열거","편지·안내문","주장·요지 명확","서술형 적합","인과 관계","문제·해결","일화·서사"], "topic_idx": 1, "blank_candidates": [1,5], "grammar_targets": [{"point":"분사구문","sent":3}], "order_friendly": true, "insert_friendly": false, "difficulty_est": "상|중|하" } ]\n\n' +
-"[자료 텍스트]\n" + chunk;
+memoBlock(memo) + "[자료 텍스트]\n" + chunk;
     }
 
     // 선생님이 나눠 준 프린트(학습지): 지문 + 포인트(어법·어휘·예상문제·정리)
-    function indexHandout(name, chunk, i, n) {
+    function indexHandout(name, chunk, i, n, memo) {
       return ROLE +
 "[작업] 아래는 학교 선생님이 학생들에게 나눠 준 프린트(학습지) '" + name + "'" + (n > 1 ? " (" + i + "/" + n + " 부분)" : "") + "의 텍스트입니다. 시험에 무엇이 나올지 예고하는 자료이므로 두 가지를 뽑습니다.\n" +
 "1) passages: 영어 본문 지문 단위(4문장 이상). first/last 는 원문 '글자 그대로'(첫 10단어·마지막 6단어). 교과서 지문을 다시 실은 것이면 src 에 그 위치를 적습니다.\n" +
@@ -70,7 +75,7 @@
 "[출력 — JSON만]\n" +
 '{ "passages": [ { "id": "H1", "src": "위치", "first": "첫 10단어", "last": "마지막 6단어", "gist": "요지 한 줄", "words": 숫자, "feats": [], "topic_idx": -1, "blank_candidates": [], "grammar_targets": [{"point":"","sent":0}] } ],\n' +
 '  "items": [ { "kind": "어법|어휘|예상문제|정리", "text": "원문 80자 이내", "point": "", "stem": "", "words": [] } ] }\n\n' +
-"[프린트 텍스트]\n" + chunk;
+memoBlock(memo) + "[프린트 텍스트]\n" + chunk;
     }
 
     function catalogLines(cat, level) {
@@ -172,5 +177,5 @@ items.map(it => "■ " + it.number + "번 · " + it.type + (it.subtype ? "(" + i
     function repair(raw) {
       return "아래 텍스트는 JSON 이어야 하는데 깨져 있습니다. 내용은 바꾸지 말고 문법만 고쳐 유효한 JSON 하나만 출력하세요. 잘린 끝은 가장 가까운 닫는 괄호로 마무리합니다.\n\n" + raw;
     }
-    return { ROLE, classify, dataize, index, indexHandout, catalogLines, matchConfirm, aiJudge, narrative, refine, generateSystem, generateUser, repair };
+    return { ROLE, memoBlock, classify, dataize, index, indexHandout, catalogLines, matchConfirm, aiJudge, narrative, refine, generateSystem, generateUser, repair };
   })();

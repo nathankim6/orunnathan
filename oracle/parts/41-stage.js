@@ -146,19 +146,30 @@
       ctx.lineWidth = 10; ctx.globalAlpha = 1; for (let i = 0; i < 4; i++) { const a = i * Math.PI / 2 + Math.PI / 4; ctx.beginPath(); ctx.arc(0, 0, 312, a - 0.12, a + 0.12); ctx.stroke(); }
       ctx.globalAlpha = 0.5; ctx.lineWidth = 2; for (let i = 0; i < 72; i++) { const a = i / 72 * Math.PI * 2; ctx.beginPath(); ctx.moveTo(Math.cos(a) * 282, Math.sin(a) * 282); ctx.lineTo(Math.cos(a) * 290, Math.sin(a) * 290); ctx.stroke(); }
     });
-    function discTexture(t) {                        // 가운데 원판: 이름·부제
+    function discTexture() {                         // 가운데 원판: 빛무리와 안쪽 링 (더하기 합성)
       return ringCanvas((ctx) => {
-        const g = ctx.createRadialGradient(0, 0, 40, 0, 0, 270); g.addColorStop(0, "rgba(255,255,255,0.55)"); g.addColorStop(0.55, "rgba(255,255,255,0.22)"); g.addColorStop(0.95, "rgba(255,255,255,0.05)"); g.addColorStop(1, "rgba(255,255,255,0)");
+        const g = ctx.createRadialGradient(0, 0, 40, 0, 0, 270); g.addColorStop(0, "rgba(255,255,255,0.30)"); g.addColorStop(0.55, "rgba(255,255,255,0.16)"); g.addColorStop(0.95, "rgba(255,255,255,0.05)"); g.addColorStop(1, "rgba(255,255,255,0)");
         ctx.fillStyle = g; ctx.beginPath(); ctx.arc(0, 0, 270, 0, Math.PI * 2); ctx.fill();
         ctx.strokeStyle = "rgba(255,255,255,0.7)"; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(0, 0, 236, 0, Math.PI * 2); ctx.stroke();
-        ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillStyle = "#fff"; ctx.shadowColor = "#fff"; ctx.shadowBlur = 18;
-        const name = t.name || "ORACLE"; const en = /^[A-Za-z0-9 .'-]+$/.test(name);
-        ctx.font = (en ? "800 " : "700 ") + (name.length > 6 ? 84 : 108) + "px " + (en ? FONT_EN : FONT_KO); ctx.fillText(name, 0, -18);
-        ctx.shadowBlur = 8; ctx.font = "500 30px " + FONT_EN; ctx.fillText((t.sub || "").toUpperCase(), 0, 66);
-        ctx.globalAlpha = 0.8; ctx.font = "500 22px " + FONT_EN; ctx.fillText(t.tag || "ALWAYS LEARNING", 0, 112);
-        ctx.globalAlpha = 0.65; ctx.font = "500 26px " + FONT_KO; ctx.fillText(t.school || "", 0, -104);
       });
     }
+    // 이름표 — 원판과 달리 보통 합성으로 그려서, 어두운 받침이 뒤의 코어 빛을 가리고 글자가 읽힌다
+    function plateTexture(t) {
+      return ringCanvas((ctx) => {
+        const name = t.name || "ORACLE"; const en = /^[A-Za-z0-9 .'-]+$/.test(name);
+        const bg = ctx.createRadialGradient(0, -10, 40, 0, -10, 230); bg.addColorStop(0, "rgba(2,7,18,0.86)"); bg.addColorStop(0.7, "rgba(2,7,18,0.74)"); bg.addColorStop(1, "rgba(2,7,18,0)");
+        ctx.fillStyle = bg; ctx.beginPath(); ctx.ellipse(0, -10, 232, 178, 0, 0, Math.PI * 2); ctx.fill();
+        ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.lineJoin = "round";
+        ctx.font = (en ? "800 " : "700 ") + (name.length > 6 ? 84 : 108) + "px " + (en ? FONT_EN : FONT_KO);
+        ctx.strokeStyle = "rgba(1,4,12,0.9)"; ctx.lineWidth = 10; ctx.strokeText(name, 0, -18);
+        ctx.shadowColor = "rgba(160,225,255,0.9)"; ctx.shadowBlur = 10; ctx.fillStyle = "#ffffff"; ctx.fillText(name, 0, -18);
+        ctx.shadowBlur = 0; ctx.fillStyle = "#dff3ff"; ctx.font = "600 30px " + FONT_EN; ctx.fillText((t.sub || "").toUpperCase(), 0, 66);
+        ctx.globalAlpha = 0.85; ctx.font = "500 22px " + FONT_EN; ctx.fillText(t.tag || "ALWAYS LEARNING", 0, 112);
+        ctx.globalAlpha = 0.75; ctx.font = "500 26px " + FONT_KO; ctx.fillText(t.school || "", 0, -104);
+      });
+    }
+    const PLATE_FS = `uniform sampler2D tMap; uniform vec3 uColor; uniform float uAlpha; varying vec2 vUv;
+      void main(){ vec4 t = texture2D(tMap, vUv); gl_FragColor = vec4(uColor * t.rgb, t.a * uAlpha); ${TAIL} }`;
     const planeGeo = new THREE.PlaneGeometry(1, 1);
     const pedGeo = new THREE.CylinderGeometry(1.15, 1.35, 0.26, 56);
     const pedMat = new THREE.MeshStandardMaterial({ color: 0x0a1a30, metalness: 0.75, roughness: 0.35, emissive: 0x06142a });
@@ -194,10 +205,12 @@
       // 다이얼 (카메라를 향한다)
       const dial = new THREE.Group(); dial.position.y = DIAL_Y; group.add(dial);
       const ticks = texPlane(texTicks, 4.2, uni, { userData: { speed: 0.06 } }), arcs = texPlane(texArcs, 4.2, uni, { userData: { speed: -0.22 } }), inner = texPlane(texInner, 4.2, uni, { userData: { speed: 0.11 } });
-      const disc = texPlane(discTexture(t), 4.2, uni, { userData: { speed: 0 } }); disc.material.uniforms.uColor = { value: new THREE.Color(0xffffff).lerp(color, 0.35) }; disc.material.depthTest = false; disc.renderOrder = 5;
-      ticks.position.z = -0.12; arcs.position.z = -0.06; inner.position.z = 0.0; disc.position.z = 0.05;
-      [ticks, arcs, inner, disc].forEach(m => dial.add(m));
-      const core = new THREE.Mesh(coreGeo, new THREE.ShaderMaterial({ uniforms: { uColor: uni.uColor, uTime: uni.uTime, uPulse: uni.uPulse, uBusy: uni.uBusy, uEnergy: uni.uEnergy }, vertexShader: CORE_VS, fragmentShader: CORE_FS })); core.position.z = -1.1; core.scale.setScalar(0.8); dial.add(core);
+      const disc = texPlane(discTexture(), 4.2, uni, { userData: { speed: 0 } }); disc.material.uniforms.uColor = { value: new THREE.Color(0xffffff).lerp(color, 0.35) }; disc.material.depthTest = false; disc.renderOrder = 5;
+      const plate = new THREE.Mesh(planeGeo, new THREE.ShaderMaterial({ uniforms: { tMap: { value: plateTexture(t) }, uColor: { value: new THREE.Color(0xffffff).lerp(color, 0.22) }, uAlpha: { value: 1 } }, vertexShader: V2, fragmentShader: PLATE_FS, transparent: true, depthWrite: false, depthTest: false, blending: THREE.NormalBlending, side: THREE.DoubleSide }));
+      plate.scale.set(4.2, 4.2, 1); plate.renderOrder = 6; plate.userData.speed = 0;
+      ticks.position.z = -0.12; arcs.position.z = -0.06; inner.position.z = 0.0; disc.position.z = 0.05; plate.position.z = 0.09;
+      [ticks, arcs, inner, disc, plate].forEach(m => dial.add(m));
+      const core = new THREE.Mesh(coreGeo, new THREE.ShaderMaterial({ uniforms: { uColor: uni.uColor, uTime: uni.uTime, uPulse: uni.uPulse, uBusy: uni.uBusy, uEnergy: uni.uEnergy }, vertexShader: CORE_VS, fragmentShader: CORE_FS })); core.position.z = -1.25; core.scale.setScalar(0.74); dial.add(core);
       const scan = new THREE.Mesh(new THREE.TorusGeometry(2.05, 0.012, 8, 96), new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0, toneMapped: false })); scan.rotation.x = Math.PI / 2; scan.position.y = 1.0; group.add(scan);
       // 지식 파편·헤일로 (다이얼 둘레)
       const SH = 120; const shards = new THREE.InstancedMesh(shardGeo, new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.85, toneMapped: false }), SH); shards.count = 0; shards.frustumCulled = false; shards.position.y = DIAL_Y; group.add(shards);
@@ -214,7 +227,7 @@
       const hit = new THREE.Mesh(new THREE.SphereGeometry(2.4, 8, 8), new THREE.MeshBasicMaterial({ visible: false })); hit.position.y = DIAL_Y; hit.userData.teacherId = t.id; group.add(hit);
       group.position.set(0, -8, 0);
       scene.add(group);
-      const rig = { id: t.id, group, uni, dial, core, col, rings, layers: [ticks, arcs, inner, disc], disc, scan, shards, shardData, halo, hg, constel, bars, hit, hex, color, level: 0, busy: 0, hover: 0, phase: Math.random() * 6.28, slot: order.length, scale: 1, targetScale: 1, dim: 0 };
+      const rig = { id: t.id, group, uni, dial, core, col, rings, layers: [ticks, arcs, inner, disc, plate], disc, plate, scan, shards, shardData, halo, hg, constel, bars, hit, hex, color, level: 0, busy: 0, hover: 0, phase: Math.random() * 6.28, slot: order.length, scale: 1, targetScale: 1, dim: 0 };
       teachers.set(t.id, rig); order.push(t.id);
       rig.layers.forEach(m => m.scale.setScalar(0.01));
       tween(1.3, (e) => { rig.layers.forEach(m => m.scale.setScalar(0.01 + 4.2 * e)); uni.uPulse.value = (1 - e) * 1.5; }, ease.elastic);
@@ -224,16 +237,16 @@
     }
     function updateTeacher(t) {
       const rig = teachers.get(t.id); if (!rig) return;
-      if (t.color) { rig.color.set(t.color); rig.hex = "#" + rig.color.getHexString(); rig.scan.material.color.copy(rig.color); rig.shards.material.color.copy(rig.color); rig.disc.material.uniforms.uColor.value.set(0xffffff).lerp(rig.color, 0.35);
+      if (t.color) { rig.color.set(t.color); rig.hex = "#" + rig.color.getHexString(); rig.scan.material.color.copy(rig.color); rig.shards.material.color.copy(rig.color); rig.disc.material.uniforms.uColor.value.set(0xffffff).lerp(rig.color, 0.35); rig.plate.material.uniforms.uColor.value.set(0xffffff).lerp(rig.color, 0.22);
         [rig.constel, rig.bars].forEach(g => g.traverse(o => { if (o.material && o.material.color && !o.material.map && !(o.material.color.getHex() === 0xf5c518)) o.material.color.copy(rig.color); })); }
-      const old = rig.disc.material.uniforms.tMap.value; rig.disc.material.uniforms.tMap.value = discTexture(t); old.dispose();
+      const old = rig.plate.material.uniforms.tMap.value; rig.plate.material.uniforms.tMap.value = plateTexture(t); old.dispose();
     }
     function removeTeacher(id) {
       const rig = teachers.get(id); if (!rig) return;
       teachers.delete(id); const i = order.indexOf(id); if (i >= 0) order.splice(i, 1); exSlot(rig.slot).z = 0; if (selectedId === id) selectedId = null;
       tween(0.7, (e) => { rig.group.position.y = -8 * e; rig.group.scale.setScalar(rig.scale * (1 - e * 0.6)); }, ease.inout, () => {
         scene.remove(rig.group); rig.shards.dispose();
-        rig.group.traverse(o => { if (o.material) { if (o.material.map) o.material.map.dispose(); if (o.material.uniforms && o.material.uniforms.tMap && o === rig.disc) o.material.uniforms.tMap.value.dispose(); o.material.dispose(); } if (o.geometry && ![planeGeo, pedGeo, floorGeo, coreGeo, colGeo, shardGeo, barGeo].includes(o.geometry)) o.geometry.dispose(); });
+        rig.group.traverse(o => { if (o.material) { if (o.material.map) o.material.map.dispose(); if (o.material.uniforms && o.material.uniforms.tMap && (o === rig.disc || o === rig.plate)) o.material.uniforms.tMap.value.dispose(); o.material.dispose(); } if (o.geometry && ![planeGeo, pedGeo, floorGeo, coreGeo, colGeo, shardGeo, barGeo].includes(o.geometry)) o.geometry.dispose(); });
       });
       for (let s = order.length; s < EXN; s++) fieldUni.uEx.value[s].z = 0;   // 빈 자리의 필드 흥분점을 끈다
       order.forEach((tid, i) => { const r = teachers.get(tid); if (r) r.slot = i; });

@@ -101,7 +101,7 @@
           const prevLast = byNo[chunks[i - 1].numbers[chunks[i - 1].numbers.length - 1]];
           if (prevLast && prevLast.setId === byNo[c.numbers[0]].setId) carry = prevLast.text.slice(0, 600);
         }
-        const prompt = PROMPTS.dataize(c.text, { i: i + 1, n: chunks.length, numbers: c.numbers, prevNumbers, carry });
+        const prompt = PROMPTS.dataize(c.text, { i: i + 1, n: chunks.length, numbers: c.numbers, prevNumbers, carry, memo: o.memo });
         let r = await API.json(prompt, { light: true, tier: "complex", effort: "medium", signal: o.signal, validate, onText: o.onText });
         if ((!r.questions || !r.questions.length) && c.numbers.length) {   // 빈 결과 — 주 모델로 한 번 더
           r = await API.json(prompt, { tier: "complex", effort: "high", signal: o.signal, validate });
@@ -116,7 +116,7 @@
         if (o.signal && o.signal.aborted) throw API.err("cancelled", "중단됨");
         if (o.onStep) o.onStep({ phase: "analyze", i: chunks.length, n: chunks.length, detail: n + "번 보정" });
         try {
-          const r = await API.json(PROMPTS.dataize(byNo[n].text, { i: 1, n: 1, numbers: [n], prevNumbers: [], carry: "" }), { light: true, tier: "default", effort: "low", signal: o.signal, validate, retries: 0 });
+          const r = await API.json(PROMPTS.dataize(byNo[n].text, { i: 1, n: 1, numbers: [n], prevNumbers: [], carry: "", memo: o.memo }), { light: true, tier: "default", effort: "low", signal: o.signal, validate, retries: 0 });
           for (const q of r.questions) { const m = TEXT.canonNo(q && q.number); if (m && !seen.has(m)) { q.number = m; seen.add(m); raws.push(q); } }
         } catch (e) { if (e.code === "cancelled") throw e; }
       }
@@ -166,7 +166,7 @@
       for (let i = 0; i < chunks.length; i++) {
         if (o.signal && o.signal.aborted) throw API.err("cancelled", "중단됨");
         if (o.onStep) o.onStep({ phase: "index", i: i + 1, n: chunks.length });
-        const list = await API.json(PROMPTS.index(o.name || "자료", chunks[i], i + 1, chunks.length), { light: true, array: true, tier: "default", effort: "low", signal: o.signal,
+        const list = await API.json(PROMPTS.index(o.name || "자료", chunks[i], i + 1, chunks.length, o.memo), { light: true, array: true, tier: "default", effort: "low", signal: o.signal,
           validate: v => Array.isArray(v) ? "" : "배열이 아닙니다" });
         for (const e of list) {
           if (!e || !e.first) continue;
@@ -192,7 +192,7 @@
       for (let i = 0; i < chunks.length; i++) {
         if (o.signal && o.signal.aborted) throw API.err("cancelled", "중단됨");
         if (o.onStep) o.onStep({ phase: "index", i: i + 1, n: chunks.length });
-        const r = await API.json(PROMPTS.indexHandout(o.name || "프린트", chunks[i], i + 1, chunks.length), { light: true, tier: "default", effort: "low", signal: o.signal, validate: v => v && (Array.isArray(v.passages) || Array.isArray(v.items)) ? "" : "passages/items 없음" });
+        const r = await API.json(PROMPTS.indexHandout(o.name || "프린트", chunks[i], i + 1, chunks.length, o.memo), { light: true, tier: "default", effort: "low", signal: o.signal, validate: v => v && (Array.isArray(v.passages) || Array.isArray(v.items)) ? "" : "passages/items 없음" });
         for (const e of arr(r.passages)) {
           if (!e || !e.first) continue;
           const full = locate(chunks[i], e.first, e.last); const txt = full || str(e.first, 200);
@@ -409,8 +409,8 @@
     }
     const AI_DISCLAIMER = "이 추정은 시험지 텍스트의 문체·형식 신호만으로 계산한 가능성이며, 실제 제작 과정을 확인한 것이 아닙니다. 선생님 개인의 문체, 편집 프로그램, 추출·OCR 오류가 같은 신호를 만들 수 있습니다. 특정 선생님을 평가·비난하는 근거로 쓰지 마세요. 참고용 지표입니다.";
 
-    async function classifyLLM(name, head, signal) {
-      const r = await API.json(PROMPTS.classify(name, head.slice(0, 1500)), { light: true, tier: "small", effort: "low", signal, validate: v => v && (v.kind === "exam" || v.kind === "scope") ? "" : "kind 없음" });
+    async function classifyLLM(name, head, signal, memo) {
+      const r = await API.json(PROMPTS.classify(name, head.slice(0, 1500), memo), { light: true, tier: "small", effort: "low", signal, validate: v => v && (v.kind === "exam" || v.kind === "scope") ? "" : "kind 없음" });
       return { kind: r.kind, confidence: clamp01(r.confidence === undefined ? 0.6 : r.confidence), meta: r.meta || {} };
     }
     return { dataizeExam, indexScope, indexHandout, reflection, matchQuestions, fidelity, aiLocal, aiJudge, combineAI, AI_DISCLAIMER, classifyLLM, normalizeQuestion, isSubj, TYPES, BUDGET };

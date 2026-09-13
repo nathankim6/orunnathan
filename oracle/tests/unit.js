@@ -5,7 +5,7 @@ const src = fs.readFileSync(FILE, "utf8");
 const cut = (name, next) => { const a = src.indexOf("  const " + name + " = (function () {"); const b = src.indexOf("  const " + next + " = (function () {"); if (a < 0 || b < 0) throw new Error("module " + name); return src.slice(a, b); };
 const body = ["TEXT:PROMPTS", "PROMPTS:ANALYZE", "ANALYZE:PROFILE", "PROFILE:PREDICT", "PREDICT:GENERATE"].map(x => cut(...x.split(":"))).join("\n") + src.slice(src.indexOf("  const GENERATE = (function () {"), src.indexOf("  function makePost("));
 const API = { err: (c, m) => { const e = new Error(m); e.code = c; return e; }, ready: () => false, totals: {} };
-const { TEXT, ANALYZE, PROFILE, PREDICT, GENERATE } = new Function("crypto", "TextEncoder", "API", "JSZip", body + ";return {TEXT,ANALYZE,PROFILE,PREDICT,GENERATE};")(globalThis.crypto, TextEncoder, API, {});
+const { TEXT, PROMPTS, ANALYZE, PROFILE, PREDICT, GENERATE } = new Function("crypto", "TextEncoder", "API", "JSZip", body + ";return {TEXT,PROMPTS,ANALYZE,PROFILE,PREDICT,GENERATE};")(globalThis.crypto, TextEncoder, API, {});
 let n = 0, bad = 0; const ok = (c, m) => { n++; if (c) console.log("ok  ", m); else { bad++; console.log("FAIL", m); } };
 // TEXT
 const sample = fs.readFileSync(__dirname + "/fixtures/exam1.txt", "utf8");
@@ -19,6 +19,9 @@ ok(TEXT.splitByQuestion("01. 다음 글의 주제는?\nA b c.\n02) 다음\nx\n[3
 ok(TEXT.templateOf("다음 글의 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은? [3점]") === "다음 글의 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은? [#점]", "templateOf");
 ok(TEXT.chunkByQuestions(sp.blocks, 800).every(c => c.text.length <= 2500), "chunkByQuestions");
 ok(TEXT.englishOnly("3. 다음 글의 빈칸에 When people talk ______ ① joy").startsWith("3. When people talk"), "englishOnly");
+// PROMPTS memo
+ok(PROMPTS.dataize("1. x", { i: 1, n: 1, numbers: ["1"], prevNumbers: [], carry: "", memo: "2학기 기말이에요" }).includes("[사용자 메모") && PROMPTS.dataize("1. x", { i: 1, n: 1, numbers: ["1"], prevNumbers: [], carry: "" }).indexOf("[사용자 메모") < 0, "dataize prompt carries the user memo only when given");
+ok(PROMPTS.index("a", "b", 1, 1, "x".repeat(700)).indexOf("x".repeat(601)) < 0 && PROMPTS.indexHandout("a", "b", 1, 1, "메모").includes("메모\n\n[프린트 텍스트]") && PROMPTS.classify("a", "b", "메모").includes("[사용자 메모"), "memo is clipped to 600 chars and precedes the text block in index/handout/classify prompts");
 // ANALYZE normalize
 const q = ANALYZE.normalizeQuestion({ number: "12", type: "빈칸", format: "5지선다", options: [{ label: "①", text: "a" }], passage: { has: true, first10: "x y z" }, transformation: {}, distractor: {}, ko_stem: {} }, { block: "12. 발문 [3점]" });
 ok(q.options.length === 5 && q.optionsIncomplete && q.points === 3 && q.pointsPrinted, "normalizeQuestion fills options/points");
