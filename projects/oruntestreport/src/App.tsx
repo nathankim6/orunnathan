@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Index from './pages/Index';
@@ -10,14 +9,23 @@ import SchoolTypeSelector from './components/SchoolTypeSelector';
 import EditReportWrapper from './components/EditReportWrapper';
 import Navigation from './components/Navigation';
 import StudentSubmit from './pages/StudentSubmit';
+import UniverseStage from './components/universe/UniverseStage';
 import './App.css';
 import { Toaster } from "sonner";
 
 const AppShell: React.FC = () => {
   const location = useLocation();
   const isStudentSubmit = location.pathname.startsWith('/submit/');
+  /* 리포트(/report, /report/:id)는 종이 위의 문서다 — 은하 무대를 깔지 않는다. */
+  const isReport = location.pathname === '/report' || location.pathname.startsWith('/report/');
   return (
     <>
+      {!isReport && (
+        <UniverseStage
+          variant={isStudentSubmit ? 'subtle' : 'cinema'}
+          letterbox={location.pathname === '/' ? 'hold' : isStudentSubmit ? 'none' : 'intro'}
+        />
+      )}
       {!isStudentSubmit && <Navigation />}
       <div className={isStudentSubmit ? '' : 'pt-16'}>
         <Routes>
@@ -33,6 +41,7 @@ const AppShell: React.FC = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
+      <Toaster position="top-right" theme={isReport ? 'light' : 'dark'} />
     </>
   );
 };
@@ -41,7 +50,6 @@ function App() {
   return (
     <BrowserRouter>
       <AppShell />
-      <Toaster position="top-right" />
     </BrowserRouter>
   );
 }

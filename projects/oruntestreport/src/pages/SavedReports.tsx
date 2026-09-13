@@ -1,14 +1,11 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo, type PointerEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { getReportCards, deleteReportCard } from "@/integrations/supabase/reportService";
 import { getReportCardById, convertDbToAppFormat, ProblemType } from "@/integrations/supabase/reportService";
 import StudentSubmissionsDialog from "@/components/StudentSubmissionsDialog";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Edit, Trash2, Plus, Eye, FileText, School, User, CalendarDays, Filter, ChevronRight, Users } from "lucide-react";
 import { toast } from "sonner";
 import { format } from "date-fns";
-import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { getSchoolLogo } from "@/lib/schoolLogos";
@@ -43,6 +40,16 @@ const EXAM_TYPES = [
   { value: "2학기 중간고사", label: "2학기 중간고사" },
   { value: "2학기 기말고사", label: "2학기 기말고사" },
 ];
+
+const idx = (i: number) => ({ "--i": i } as React.CSSProperties);
+
+/** 카드 위 조명이 마우스를 따라간다 */
+const moveLight = (event: PointerEvent<HTMLElement>) => {
+  if (event.pointerType !== "mouse") return;
+  const box = event.currentTarget.getBoundingClientRect();
+  event.currentTarget.style.setProperty("--light-x", `${event.clientX - box.left}px`);
+  event.currentTarget.style.setProperty("--light-y", `${event.clientY - box.top}px`);
+};
 
 const SavedReports: React.FC = () => {
   const navigate = useNavigate();
@@ -171,6 +178,8 @@ const SavedReports: React.FC = () => {
     }
     return '기타';
   };
+  const schoolTone = (schoolType: string) => (schoolType === '고등부' ? 'u-tile--gold' : schoolType === '중등부' ? 'u-tile--blue' : 'u-tile--violet');
+  const schoolEyebrow = (schoolType: string) => (schoolType === '고등부' ? 'High School' : schoolType === '중등부' ? 'Middle School' : 'Other');
 
   // Group reports by school type and teacher
   const groupedReports: GroupedReports = filteredReports.reduce((groups, report) => {
@@ -215,107 +224,66 @@ const SavedReports: React.FC = () => {
   }, [reports]);
 
   const showTeacherCategories = teacherFilter === "all";
+  const hasFilter = teacherFilter !== "all" || examFilter !== "all" || yearFilter !== "all";
+
   if (isLoading) {
     return (
-      <div className="orun-stage relative overflow-hidden flex items-center justify-center" style={{ fontFamily: "'Noto Sans KR', sans-serif" }}>
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-14 w-14 border-4 border-[#F5C64F]/25 border-t-[#F5C64F] mx-auto mb-6"></div>
-          <p className="text-slate-500 text-lg font-medium">리포트를 불러오는 중...</p>
+      <div className="u-page u-center">
+        <div className="u-loader" role="status" aria-live="polite">
+          <span className="u-loader-ring" aria-hidden="true" />
+          <span className="u-eyebrow u-eyebrow--gold">Loading · Report Repository</span>
+          <p>리포트를 불러오는 중...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="orun-stage relative overflow-hidden" style={{ fontFamily: "'Noto Sans KR', sans-serif" }}>
-            {/* faint grid */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-40"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)",
-          backgroundSize: "56px 56px",
-          maskImage: "radial-gradient(ellipse at center, black 40%, transparent 80%)",
-        }}
-      />
-      {/* gold glow */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-40 -right-32 w-[520px] h-[520px] rounded-full blur-3xl opacity-40"
-        style={{
-          background: "radial-gradient(circle, rgba(245,198,79,0.35), transparent 70%)",
-        }}
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -bottom-40 -left-32 w-[480px] h-[480px] rounded-full blur-3xl opacity-30"
-        style={{
-          background: "radial-gradient(circle, rgba(120,150,190,0.30), transparent 70%)",
-        }}
-      />
-      {/* trim corners */}
-      <span aria-hidden className="absolute top-20 left-6 w-5 h-5 border-l border-t border-slate-900/20" />
-      <span aria-hidden className="absolute top-20 right-6 w-5 h-5 border-r border-t border-slate-900/20" />
-      <span aria-hidden className="absolute bottom-6 left-6 w-5 h-5 border-l border-b border-slate-900/20" />
-      <span aria-hidden className="absolute bottom-6 right-6 w-5 h-5 border-r border-b border-slate-900/20" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 py-16">
-        {/* Header */}
-        <div className="flex justify-between items-start mb-16">
-          <Button
-            variant="ghost"
-            onClick={() => navigate("/")}
-            className="flex items-center gap-2 text-slate-600 hover:text-slate-900 hover:bg-slate-900/5 -ml-4 rounded-2xl"
-          >
-            <ArrowLeft size={18} />
-            <span className="font-medium tracking-tight">돌아가기</span>
-          </Button>
-
-          <Button
-            onClick={() => navigate("/")}
-            className="flex items-center gap-2 bg-[#F5C64F] hover:bg-[#FFD666] text-[#2B3642] shadow-lg shadow-[#F5C64F]/25 transition-all rounded-2xl px-6"
-          >
-            <Plus size={18} />
-            <span className="font-semibold tracking-tight">새 리포트 작성</span>
-          </Button>
+    <div className="u-page">
+      <div className="u-shell u-section">
+        {/* 상단 바 */}
+        <div className="u-topbar u-rise" style={idx(0)}>
+          <button type="button" onClick={() => navigate("/")} className="u-btn u-btn--sm">
+            <ArrowLeft aria-hidden="true" />
+            돌아가기
+          </button>
+          <button type="button" onClick={() => navigate("/create-report")} className="u-btn u-btn--gold u-btn--sm">
+            <Plus aria-hidden="true" />
+            새 리포트 작성
+          </button>
         </div>
 
-        {/* Title */}
-        <div className="text-center mb-12">
-          <p className="text-[11px] tracking-[0.25em] font-semibold text-[#F5C64F] mb-3">저장된 리포트</p>
-          <h1
-            className="text-3xl md:text-5xl font-black tracking-[0.04em] text-slate-900 mb-4"
-            style={{ fontFamily: "'Orbitron', sans-serif" }}
-          >
+        {/* 제목 */}
+        <header className="u-page-head u-rise" style={idx(1)}>
+          <span className="u-eyebrow u-eyebrow--rule u-eyebrow--gold" style={{ width: "min(420px, 100%)" }}>
+            <i aria-hidden="true" />
             Report Repository
-          </h1>
-          <p className="text-slate-500 text-base">
-            총 <span className="font-bold text-[#F5C64F]">{reports.length}</span>개의 리포트
+            <i aria-hidden="true" />
+          </span>
+          <h1 className="u-h1">저장된 리포트</h1>
+          <p className="u-lede">
+            총 <b>{reports.length}</b>개의 리포트가 보관되어 있습니다. 선생님을 고르면 해당 리포트만 모아 보여 드립니다.
           </p>
-        </div>
+        </header>
 
-        {/* Filters */}
-        <div className="mb-14 rounded-3xl bg-white/70 border border-slate-900/10 p-6 md:p-8 backdrop-blur-xl shadow-[0_8px_32px_-16px_hsl(var(--ink)/0.08)]">
-          <div className="flex items-center gap-3 mb-5">
-            <div className="p-2 rounded-full bg-[#F5C64F]/10">
-              <Filter className="h-5 w-5 text-[#F5C64F]" />
+        {/* 필터 */}
+        <section className="u-panel u-panel--pad u-panel--gold u-rise" style={{ ...idx(2), marginBottom: 40 }} aria-label="리포트 필터">
+          <div className="u-group-head" style={{ marginBottom: 16 }}>
+            <span className="u-icon-tile" aria-hidden="true"><Filter /></span>
+            <div>
+              <span className="u-eyebrow u-eyebrow--gold">Filter</span>
+              <h2 className="u-h3" style={{ marginTop: 6 }}>조건으로 찾기</h2>
             </div>
-            <h3 className="text-sm font-semibold tracking-[0.2em] text-slate-600">필터</h3>
-            {(teacherFilter !== "all" || examFilter !== "all" || yearFilter !== "all") && (
-              <Badge className="bg-[#F5C64F]/10 text-slate-900 border border-[#F5C64F]/25">
-                {filteredReports.length}개 결과
-              </Badge>
-            )}
+            {hasFilter && <span className="u-badge">{filteredReports.length}개 결과</span>}
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-slate-500">작성연도</label>
+          <div className="u-field-grid u-field-grid--3">
+            <div>
+              <label className="u-label" htmlFor="filter-year">작성연도</label>
               <Select value={yearFilter} onValueChange={setYearFilter}>
-                <SelectTrigger className="w-full border-slate-900/10 bg-white/80 text-slate-900 backdrop-blur-md hover:border-[#F5C64F] transition-colors rounded-2xl">
+                <SelectTrigger id="filter-year" className="u-input u-select">
                   <SelectValue placeholder="연도 선택" />
                 </SelectTrigger>
-                <SelectContent className="bg-white/95 backdrop-blur-xl border-slate-900/10 text-slate-900 rounded-2xl [&_*]:text-slate-700">
+                <SelectContent className="u-pop">
                   <SelectItem value="all">전체 연도</SelectItem>
                   {uniqueYears.map(year => (
                     <SelectItem key={year} value={year}>{year}년</SelectItem>
@@ -323,13 +291,13 @@ const SavedReports: React.FC = () => {
                 </SelectContent>
               </Select>
             </div>
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-slate-500">선생님별</label>
+            <div>
+              <label className="u-label" htmlFor="filter-teacher">선생님별</label>
               <Select value={teacherFilter} onValueChange={setTeacherFilter}>
-                <SelectTrigger className="w-full border-slate-900/10 bg-white/80 text-slate-900 backdrop-blur-md hover:border-[#F5C64F] transition-colors rounded-2xl">
+                <SelectTrigger id="filter-teacher" className="u-input u-select">
                   <SelectValue placeholder="선생님 선택" />
                 </SelectTrigger>
-                <SelectContent className="bg-white/95 backdrop-blur-xl border-slate-900/10 text-slate-900 rounded-2xl [&_*]:text-slate-700">
+                <SelectContent className="u-pop">
                   <SelectItem value="all">전체 선생님</SelectItem>
                   {uniqueTeachers.map(teacher => (
                     <SelectItem key={teacher} value={teacher}>{teacher} 선생님</SelectItem>
@@ -337,13 +305,13 @@ const SavedReports: React.FC = () => {
                 </SelectContent>
               </Select>
             </div>
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-slate-500">시험별</label>
+            <div>
+              <label className="u-label" htmlFor="filter-exam">시험별</label>
               <Select value={examFilter} onValueChange={setExamFilter}>
-                <SelectTrigger className="w-full border-slate-900/10 bg-white/80 text-slate-900 backdrop-blur-md hover:border-[#F5C64F] transition-colors rounded-2xl">
+                <SelectTrigger id="filter-exam" className="u-input u-select">
                   <SelectValue placeholder="시험 선택" />
                 </SelectTrigger>
-                <SelectContent className="bg-white/95 backdrop-blur-xl border-slate-900/10 text-slate-900 rounded-2xl [&_*]:text-slate-700">
+                <SelectContent className="u-pop">
                   {EXAM_TYPES.map(exam => (
                     <SelectItem key={exam.value} value={exam.value}>{exam.label}</SelectItem>
                   ))}
@@ -351,219 +319,168 @@ const SavedReports: React.FC = () => {
               </Select>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* Empty State */}
+        {/* 빈 상태 */}
         {reports.length === 0 ? (
-          <Card className="p-16 text-center border-slate-900/10 bg-white/80 backdrop-blur-xl rounded-2xl">
-            <FileText className="h-20 w-20 text-[#F5C64F]/40 mx-auto mb-6" />
-            <h3 className="text-2xl font-semibold text-slate-900 mb-3">저장된 리포트가 없습니다</h3>
-            <p className="text-slate-500 text-lg mb-8">리포트를 생성하여 저장해보세요.</p>
-            <Button
-              onClick={() => navigate("/")}
-              className="bg-[#F5C64F] hover:bg-[#FFD666] text-[#2B3642] shadow-lg shadow-[#F5C64F]/25 rounded-2xl px-8"
-            >
+          <div className="u-panel u-panel--pad u-rise" style={{ ...idx(3), textAlign: "center", padding: "64px 24px" }}>
+            <span className="u-icon-tile u-icon-tile--lg" aria-hidden="true"><FileText /></span>
+            <h3 className="u-h2" style={{ marginTop: 20 }}>저장된 리포트가 없습니다</h3>
+            <p className="u-lede" style={{ marginTop: 10 }}>리포트를 생성하여 저장해보세요.</p>
+            <button type="button" onClick={() => navigate("/create-report")} className="u-btn u-btn--gold" style={{ marginTop: 28 }}>
+              <Plus aria-hidden="true" />
               새 리포트 작성하기
-            </Button>
-          </Card>
+            </button>
+          </div>
         ) : filteredReports.length === 0 ? (
-          <Card className="p-16 text-center border-slate-900/10 bg-white/80 backdrop-blur-xl rounded-2xl">
-            <Filter className="h-20 w-20 text-[#F5C64F]/40 mx-auto mb-6" />
-            <h3 className="text-2xl font-semibold text-slate-900 mb-3">필터에 맞는 리포트가 없습니다</h3>
-            <p className="text-slate-500 text-lg mb-8">다른 조건으로 검색해보세요.</p>
-            <Button
-              variant="outline"
+          <div className="u-panel u-panel--pad u-rise" style={{ ...idx(3), textAlign: "center", padding: "64px 24px" }}>
+            <span className="u-icon-tile u-icon-tile--lg" aria-hidden="true"><Filter /></span>
+            <h3 className="u-h2" style={{ marginTop: 20 }}>필터에 맞는 리포트가 없습니다</h3>
+            <p className="u-lede" style={{ marginTop: 10 }}>다른 조건으로 검색해보세요.</p>
+            <button
+              type="button"
               onClick={() => { setTeacherFilter("all"); setExamFilter("all"); setYearFilter("all"); }}
-              className="border-[#F5C64F]/30 text-[#F5C64F] hover:bg-[#F5C64F]/10 rounded-2xl px-8"
+              className="u-btn"
+              style={{ marginTop: 28 }}
             >
               필터 초기화
-            </Button>
-          </Card>
+            </button>
+          </div>
         ) : showTeacherCategories ? (
-          /* Teacher Categories View by School Type */
-          <div className="space-y-12">
-            {['고등부', '중등부'].map((schoolType) => {
+          /* 선생님 카테고리 — 학교급별 */
+          <div className="u-stack" style={{ display: "grid", gap: 48 }}>
+            {['고등부', '중등부'].map((schoolType, gi) => {
               const teachers = teacherSummariesBySchoolType[schoolType] || [];
               if (teachers.length === 0) return null;
               return (
-                <div key={schoolType}>
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="p-2.5 rounded-full bg-[#F5C64F]/10">
-                      <User className="h-6 w-6 text-[#F5C64F]" />
+                <section key={schoolType} className="u-rise" style={idx(3 + gi)} aria-label={`${schoolType} 선생님`}>
+                  <div className="u-group-head">
+                    <span className={`u-icon-tile ${schoolTone(schoolType)}`} aria-hidden="true"><User /></span>
+                    <div>
+                      <span className="u-eyebrow">{schoolEyebrow(schoolType)} · Teachers</span>
+                      <h2 className="u-h2" style={{ marginTop: 6 }}>{schoolType} 리포트</h2>
                     </div>
-                    <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-slate-900">
-                      {schoolType} 리포트
-                    </h2>
-                    <Badge className="bg-[#F5C64F]/10 text-[#F5C64F] border border-[#F5C64F]/25 px-3 py-1">
-                      {teachers.length}명
-                    </Badge>
+                    <span className="u-badge u-badge--dim">{teachers.length}명</span>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                  <div className="u-grid-cards">
                     {teachers.map((t) => (
                       <button
                         key={t.teacher}
+                        type="button"
                         onClick={() => setTeacherFilter(t.teacher)}
-                        className="group relative border border-slate-900/10 bg-white/80 backdrop-blur-xl overflow-hidden hover:border-slate-900/20  transition-all duration-300 rounded-2xl text-left"
+                        onPointerMove={moveLight}
+                        className={`u-tile u-tile--row ${schoolTone(schoolType)}`}
                       >
-                        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#F5C64F] via-[#FFE9A8] to-[#F5C64F] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        <div className="p-6 flex items-center gap-4">
-                          <Avatar className="h-16 w-16 rounded-full ring-2 ring-white/15">
-                            <AvatarImage src={t.photo || undefined} alt={t.teacher} className="object-cover" />
-                            <AvatarFallback className="bg-slate-900/5 text-[#F5C64F] text-lg font-bold rounded-full">
-                              {t.teacher.substring(0, 2)}
-                            </AvatarFallback>
-                          </Avatar>
-                          <div className="flex-1 min-w-0">
-                            <h4 className="font-bold text-slate-900 text-lg mb-1 truncate">
-                              {t.teacher} 선생님
-                            </h4>
-                            <div className="flex items-center gap-2 flex-wrap">
-                              <Badge className="bg-[#F5C64F]/10 text-[#F5C64F] border border-[#F5C64F]/25 text-xs">
-                                {t.count}개 리포트
-                              </Badge>
-                              <span className="text-xs text-slate-500">{schoolType}</span>
-                            </div>
-                            <p className="text-xs text-slate-400 mt-1.5">
-                              최근 {formatDate(t.latest)}
-                            </p>
+                        <span className="u-tile-accent" aria-hidden="true" />
+                        <span className="u-tile-glyph" aria-hidden="true">{/^[A-Za-z]/.test(t.teacher) ? t.teacher.substring(0, 1).toUpperCase() : schoolType === '고등부' ? 'H' : 'M'}</span>
+                        <Avatar className="h-14 w-14 rounded-full ring-1 ring-white/15 shrink-0">
+                          <AvatarImage src={t.photo || undefined} alt={t.teacher} className="object-cover" />
+                          <AvatarFallback className="bg-[hsl(var(--u-navy))] text-[hsl(var(--u-gold))] text-base font-bold rounded-full">
+                            {t.teacher.substring(0, 2)}
+                          </AvatarFallback>
+                        </Avatar>
+                        <div className="u-tile-content">
+                          <h3>{t.teacher} 선생님</h3>
+                          <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+                            <span className="u-badge">{t.count}개 리포트</span>
+                            <span className="u-cap">{schoolType}</span>
                           </div>
-                          <ChevronRight className="h-5 w-5 text-slate-900/30 group-hover:text-[#F5C64F] transition-colors" />
+                          <p className="u-cap" style={{ marginTop: 6 }}>최근 {formatDate(t.latest)}</p>
                         </div>
+                        <ChevronRight aria-hidden="true" />
                       </button>
                     ))}
                   </div>
-                </div>
+                </section>
               );
             })}
           </div>
         ) : (
-          /* Reports by School Type */
-          <div className="space-y-16">
-            <div className="flex items-center justify-between mb-2">
-              <Button
-                variant="ghost"
-                onClick={() => setTeacherFilter("all")}
-                className="flex items-center gap-2 text-slate-600 hover:text-[#F5C64F] hover:bg-[#F5C64F]/10 -ml-3 rounded-2xl"
-              >
-                <ArrowLeft size={16} />
-                <span className="font-medium">선생님 목록으로</span>
-              </Button>
+          /* 선택한 선생님의 리포트 — 학교급별 */
+          <div style={{ display: "grid", gap: 56 }}>
+            <div>
+              <button type="button" onClick={() => setTeacherFilter("all")} className="u-btn u-btn--ghost u-btn--sm" style={{ marginLeft: -12 }}>
+                <ArrowLeft aria-hidden="true" />
+                선생님 목록으로
+              </button>
             </div>
-            {Object.entries(groupedReports).map(([schoolType, teacherGroups]) => {
+            {Object.entries(groupedReports).map(([schoolType, teacherGroups], gi) => {
               const schoolReports = Object.values(teacherGroups).flat();
               return (
-                <section key={schoolType}>
-                  <div className="flex items-center gap-4 mb-8">
-                    <div className="p-2.5 rounded-full bg-[#F5C64F]/10">
-                      <School className="h-6 w-6 text-[#F5C64F]" />
+                <section key={schoolType} className="u-rise" style={idx(gi)} aria-label={`${schoolType} 리포트`}>
+                  <div className="u-group-head" style={{ marginBottom: 24 }}>
+                    <span className={`u-icon-tile ${schoolTone(schoolType)}`} aria-hidden="true"><School /></span>
+                    <div>
+                      <span className="u-eyebrow">{schoolEyebrow(schoolType)}</span>
+                      <h2 className="u-h2" style={{ marginTop: 6 }}>{schoolType}</h2>
                     </div>
-                    <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-slate-900">
-                      {schoolType}
-                    </h2>
-                    <Badge className="bg-[#F5C64F]/10 text-slate-900 border border-[#F5C64F]/25 px-3 py-1">
-                      {schoolReports.length}개 리포트
-                    </Badge>
+                    <span className="u-badge u-badge--dim">{schoolReports.length}개 리포트</span>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                    {schoolReports.map(report => (
-                      <Card
-                        key={report.id}
-                        className="group relative border border-slate-900/10 bg-white/80 backdrop-blur-xl overflow-hidden hover:border-slate-900/20  transition-all duration-300 rounded-2xl"
-                      >
-                        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#F5C64F] via-[#FFE9A8] to-[#F5C64F] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        <CardContent className="p-6">
-                          <div className="flex items-start gap-4 mb-4">
-                            <Avatar className="h-14 w-14 rounded-full ring-2 ring-white/15">
+                  <div className="u-grid-cards">
+                    {schoolReports.map(report => {
+                      const logo = getSchoolLogo(report.school);
+                      return (
+                        <article key={report.id} className={`u-panel u-panel--pad ${schoolType === '고등부' ? 'u-panel--gold' : 'u-panel--blue'}`} style={{ padding: 22 }}>
+                          <div style={{ display: "flex", alignItems: "flex-start", gap: 14, marginBottom: 16 }}>
+                            <Avatar className="h-12 w-12 rounded-full ring-1 ring-white/15 shrink-0">
                               <AvatarImage src={report.teacher_photo || undefined} alt={report.teacher} className="object-cover" />
-                              <AvatarFallback className="bg-slate-900/5 text-[#F5C64F] text-base font-bold rounded-full">
+                              <AvatarFallback className="bg-[hsl(var(--u-navy))] text-[hsl(var(--u-gold))] text-sm font-bold rounded-full">
                                 {report.teacher.substring(0, 2)}
                               </AvatarFallback>
                             </Avatar>
-                            <div className="flex-1 min-w-0">
-                              <h4 className="font-bold text-slate-900 text-base mb-1 truncate">
+                            <div style={{ flex: 1, minWidth: 0 }}>
+                              <span className="u-eyebrow">Teacher</span>
+                              <h4 className="u-h3" style={{ marginTop: 4, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                                 {report.teacher} 선생님
                               </h4>
                             </div>
-                            <Badge
-                              className={`text-xs px-2.5 py-1 font-medium border ${
-                                report.analysisType === 'simple'
-                                  ? 'bg-slate-900/5 text-[#0F1B33] border-slate-900/10'
-                                  : 'bg-[#F5C64F]/10 text-[#0F1B33] border-[#F5C64F]/25'
-                              }`}
-                            >
+                            <span className={`u-badge ${report.analysisType === 'simple' ? 'u-badge--dim' : ''}`}>
                               {report.analysisType === 'simple' ? '간단분석' : '상세분석'}
-                            </Badge>
+                            </span>
                           </div>
 
-                          <div className="relative mb-5 flex items-stretch gap-3">
-                            {getSchoolLogo(report.school) && (
-                              <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-slate-900/5 border border-slate-900/10 p-2 flex items-center justify-center self-center">
-                                <img
-                                  src={getSchoolLogo(report.school)!}
-                                  alt={`${report.school} 로고`}
-                                  className="w-full h-full object-contain"
-                                />
+                          <div style={{ display: "flex", alignItems: "stretch", gap: 12, marginBottom: 18 }}>
+                            {logo && (
+                              <div className="u-photo-frame" style={{ width: 56, height: 56, display: "flex", alignItems: "center", justifyContent: "center", alignSelf: "center", flexShrink: 0 }}>
+                                <img src={logo} alt={`${report.school} 로고`} style={{ width: "100%", height: "100%", objectFit: "contain" }} onError={(e) => { (e.currentTarget.closest('.u-photo-frame') as HTMLElement | null)?.setAttribute('hidden', ''); }} />
                               </div>
                             )}
-                            <div className="flex flex-col justify-center gap-1.5">
-                              <Badge className="w-fit inline-flex items-center gap-1 bg-[#F5C64F]/10 text-[#0F1B33] border border-[#F5C64F]/25 px-2 py-1 text-xs font-bold tracking-tight">
-                                {getSchoolLogo(report.school) && (
-                                  <img
-                                    src={getSchoolLogo(report.school)!}
-                                    alt={`${report.school} 로고`}
-                                    className="h-3.5 w-3.5 object-contain flex-shrink-0"
-                                  />
-                                )}
+                            <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", gap: 6, minWidth: 0, flex: 1 }}>
+                              <span className="u-badge u-badge--blue" style={{ width: "fit-content" }}>
+                                {logo && <img src={logo} alt="" onError={(e) => { e.currentTarget.hidden = true; }} />}
                                 {report.school}{report.grade}
-                              </Badge>
-                              <p className="font-semibold text-slate-900 leading-snug line-clamp-2">
+                              </span>
+                              <p style={{ margin: 0, fontWeight: 700, fontSize: 15, lineHeight: 1.4, color: "hsl(var(--u-ink))" }}>
                                 {report.examInfo || "시험 분석 리포트"}
                               </p>
                             </div>
-                            <div className="ml-auto flex flex-col items-end justify-center gap-1 text-sm text-slate-500">
-                              <CalendarDays className="h-3.5 w-3.5 text-[#F5C64F]" />
+                            <div className="u-cap" style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", justifyContent: "center", gap: 4, flexShrink: 0 }}>
+                              <CalendarDays size={14} style={{ color: "hsl(var(--u-gold))" }} aria-hidden="true" />
                               <span>{formatDate(report.created_at)}</span>
                             </div>
                           </div>
 
-                          <div className="flex gap-2 pt-4 border-t border-slate-900/10">
-                            <Button
-                              onClick={() => handleView(report.id)}
-                              className="btn-premium flex-1 h-12 text-[15px] rounded-2xl"
-                            >
-                              <Eye className="h-4 w-4 mr-1.5 relative z-10" />
-                              <span className="font-semibold relative z-10">분석지 확인</span>
-                            </Button>
-                            <Button
-                              onClick={() => handleEdit(report.id)}
-                              className="btn-premium flex-1 h-12 text-[15px] rounded-2xl"
-                            >
-                              <Edit className="h-4 w-4 mr-1.5 relative z-10" />
-                              <span className="font-semibold relative z-10">수정</span>
-                            </Button>
-
-                            <Button
-                              variant="outline"
-                              onClick={() => handleDelete(report.id)}
-                              className="h-12 w-12 bg-white/90 text-slate-900 border-white hover:bg-white hover:text-red-600 rounded-2xl shadow-sm"
-                            >
-                              <Trash2 className="h-4 w-4" />
-                            </Button>
-
+                          <div style={{ display: "flex", gap: 8, paddingTop: 16, borderTop: "1px solid hsl(var(--u-line) / .12)" }}>
+                            <button type="button" onClick={() => handleView(report.id)} className="u-btn u-btn--gold u-btn--sm" style={{ flex: 1 }}>
+                              <Eye aria-hidden="true" />
+                              분석지 확인
+                            </button>
+                            <button type="button" onClick={() => handleEdit(report.id)} className="u-btn u-btn--sm" style={{ flex: 1 }}>
+                              <Edit aria-hidden="true" />
+                              수정
+                            </button>
+                            <button type="button" onClick={() => handleDelete(report.id)} className="u-btn u-btn--sm u-btn--icon u-btn--danger" aria-label="리포트 삭제" title="리포트 삭제" style={{ width: 40 }}>
+                              <Trash2 aria-hidden="true" />
+                            </button>
                           </div>
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            onClick={() => handleStudentSubmit(report.id)}
-                            className="w-full mt-2 h-8 text-xs bg-[#F5C64F] text-slate-900 border-[#F5C64F] hover:bg-[#e6b73f] hover:text-slate-900 hover:border-[#e6b73f] rounded-xl shadow-md shadow-[#F5C64F]/20"
-                          >
-                            <Users className="h-3 w-3 mr-1" />
-                              <span className="font-medium">학생 성적 제출</span>
-                          </Button>
-                        </CardContent>
-                      </Card>
-                    ))}
+                          <button type="button" onClick={() => handleStudentSubmit(report.id)} className="u-btn u-btn--xs u-btn--block" style={{ marginTop: 8, borderColor: "hsl(var(--u-gold) / .45)", color: "hsl(var(--u-gold))" }}>
+                            <Users aria-hidden="true" />
+                            학생 성적 제출
+                          </button>
+                        </article>
+                      );
+                    })}
                   </div>
                 </section>
               );

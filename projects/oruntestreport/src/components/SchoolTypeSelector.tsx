@@ -1,81 +1,76 @@
-import React from "react";
+import React, { type PointerEvent } from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, School, GraduationCap, ChevronRight } from "lucide-react";
+import { ArrowLeft, School, GraduationCap, ArrowRight } from "lucide-react";
 import orunLogoAsset from "@/assets/orun-logo.png.asset.json";
 
 const orunLogo = orunLogoAsset.url;
+const idx = (i: number) => ({ "--i": i } as React.CSSProperties);
+
+const moveLight = (event: PointerEvent<HTMLElement>) => {
+  if (event.pointerType !== "mouse") return;
+  const box = event.currentTarget.getBoundingClientRect();
+  event.currentTarget.style.setProperty("--light-x", `${event.clientX - box.left}px`);
+  event.currentTarget.style.setProperty("--light-y", `${event.clientY - box.top}px`);
+};
 
 const SchoolTypeSelector: React.FC = () => {
   const navigate = useNavigate();
 
   const cards = [
-    {
-      type: "middle",
-      title: "중학교",
-      sub: "중1 · 중2 · 중3 내신 분석 리포트",
-      icon: School,
-    },
-    {
-      type: "high",
-      title: "고등학교",
-      sub: "고등부 내신 · 모의고사 분석 리포트",
-      icon: GraduationCap,
-    },
+    { type: "middle", eyebrow: "Middle School", title: "중학교", sub: "중1 · 중2 · 중3 내신 분석 리포트", icon: School, glyph: "M", tone: "u-tile--blue", n: "01" },
+    { type: "high", eyebrow: "High School", title: "고등학교", sub: "고등부 내신 · 모의고사 분석 리포트", icon: GraduationCap, glyph: "H", tone: "u-tile--gold", n: "02" },
   ];
 
   return (
-    <div className="orun-stage" style={{ fontFamily: "'Noto Sans KR', sans-serif" }}>
-      <div className="mx-auto w-full max-w-[720px] px-5 pt-8 pb-16 sm:px-8">
-        <div className="flex items-center justify-between">
-          <button
-            type="button"
-            onClick={() => navigate("/")}
-            className="inline-flex h-10 items-center gap-1.5 rounded-xl border border-slate-900/10 bg-white/80 px-4 text-[14px] font-bold text-slate-600 backdrop-blur-md transition-all hover:bg-white hover:text-slate-900"
-          >
-            <ArrowLeft className="h-4 w-4" />
+    <div className="u-page">
+      <div className="u-shell u-shell--narrow u-section">
+        <div className="u-topbar u-rise" style={idx(0)}>
+          <button type="button" onClick={() => navigate("/")} className="u-btn u-btn--sm">
+            <ArrowLeft aria-hidden="true" />
             홈으로
           </button>
-          <img src={orunLogo} alt="옳은영어 로고" className="h-10 w-10 rounded-full bg-white object-contain p-1 shadow-[0_6px_20px_rgba(0,0,0,0.3)]" />
+          <img src={orunLogo} alt="옳은영어 로고" className="u-nav-logo" style={{ width: 40, height: 40 }} onError={(e) => { e.currentTarget.hidden = true; }} />
         </div>
 
-        <div className="mt-10">
-          <span className="orun-chip">STEP 1 · SCHOOL TYPE</span>
-          <h1 className="mt-4 text-[28px] font-extrabold leading-[1.32] tracking-[-0.03em] break-keep text-slate-900 md:text-[36px]">
+        <header className="u-page-head u-rise" style={idx(1)}>
+          <span className="u-chip">Step 1 · School Type</span>
+          <h1 className="u-h1">
             어떤 학교의 리포트를
             <br />
             작성할까요?
           </h1>
-          <p className="mt-3 text-[15px] font-medium leading-[1.7] text-slate-500 break-keep">
-            학교 유형을 선택하면 맞춤 입력 폼이 준비됩니다.
-          </p>
-        </div>
+          <p className="u-lede">학교 유형을 선택하면 맞춤 입력 폼이 준비됩니다.</p>
+        </header>
 
-        <div className="mt-10 flex flex-col gap-3">
-          {cards.map((c) => {
+        <div className="u-stack">
+          {cards.map((c, i) => {
             const Icon = c.icon;
             return (
               <button
                 key={c.type}
                 type="button"
                 onClick={() => navigate(`/create-report/${c.type}`)}
-                className="orun-glass orun-glass-hover group flex items-center gap-4 p-6 text-left transition-all"
+                onPointerMove={moveLight}
+                className={`u-tile u-tile--row u-rise ${c.tone}`}
+                style={{ ...idx(2 + i), width: "100%" }}
               >
-                <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl border border-slate-900/10 bg-slate-900/5">
-                  <Icon className="h-6 w-6 text-[#F5C64F]" />
+                <span className="u-tile-accent" aria-hidden="true" />
+                <span className="u-tile-glyph" aria-hidden="true">{c.glyph}</span>
+                <span className="u-icon-tile u-icon-tile--lg" aria-hidden="true">
+                  <Icon />
+                </span>
+                <div className="u-tile-content">
+                  <span className="u-tile-eyebrow">{c.n} · {c.eyebrow}</span>
+                  <h3>{c.title}</h3>
+                  <p>{c.sub}</p>
                 </div>
-                <div className="min-w-0 flex-1">
-                  <p className="text-[19px] font-bold tracking-[-0.02em] text-slate-900">{c.title}</p>
-                  <p className="mt-1 text-[14px] font-medium text-slate-500 break-keep">
-                    {c.sub}
-                  </p>
-                </div>
-                <ChevronRight className="h-5 w-5 flex-shrink-0 text-slate-400 transition-transform group-hover:translate-x-0.5 group-hover:text-[#F5C64F]" />
+                <ArrowRight aria-hidden="true" />
               </button>
             );
           })}
         </div>
 
-        <p className="mt-10 text-[13px] font-medium text-slate-400">
+        <p className="u-cap u-rise" style={{ ...idx(4), marginTop: 28 }}>
           선택한 유형은 이후 단계에서 변경할 수 있어요.
         </p>
       </div>

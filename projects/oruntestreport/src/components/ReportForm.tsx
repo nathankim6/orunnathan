@@ -25,30 +25,19 @@ import PassageVariantEditor from './PassageVariantEditor';
 
 import { getSchoolLogo } from '@/lib/schoolLogos';
 
-// 매거진 톤 섹션 헤더
+// 은하 시네마 톤 섹션 헤더 — 조건부 영문 아이브로우 + 헤어라인 + 한글 제목
 const SectionHeading: React.FC<{ kicker: string; title: string; description?: string }> = ({
   kicker,
   title,
   description,
 }) => (
-  <div className="mt-12 mb-6">
-    <div className="flex items-center gap-3 mb-2.5">
-      <span className="glass-pill editorial-kicker text-[10px] tracking-[0.35em] font-bold text-[#16233A]">
-        {kicker}
-      </span>
-
-      <span className="h-px flex-1 bg-[hsl(var(--ink)/0.08)]" />
+  <div className="u-section-head">
+    <div className="u-section-head-row">
+      <span className="u-chip">{kicker}</span>
+      <span className="u-rule" aria-hidden="true" />
     </div>
-    <h2
-      className="font-display text-[22px] md:text-[26px] tracking-[-0.02em] font-medium text-[hsl(var(--ink))] leading-tight"
-    >
-      {title}
-    </h2>
-    {description && (
-      <p className="mt-1.5 text-[13px] text-[hsl(var(--ink-soft))] leading-relaxed break-keep">
-        {description}
-      </p>
-    )}
+    <h2>{title}</h2>
+    {description && <p>{description}</p>}
   </div>
 );
 
@@ -806,171 +795,107 @@ const ReportForm: React.FC<ReportFormProps> = ({
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  return <div data-theme="blue" className="glass-stage min-h-screen py-10 px-4 sm:px-6">
-      {/* 오로라 블롭 */}
-      <div aria-hidden className="pointer-events-none fixed inset-0 overflow-hidden">
-        <span className="absolute -top-32 -left-24 w-[520px] h-[520px] rounded-full bg-[#F5C64F]/15 blur-[120px]" />
-        <span className="absolute top-1/3 -right-32 w-[460px] h-[460px] rounded-full bg-[#8FA6B8]/15 blur-[120px]" />
-        <span className="absolute -bottom-40 left-1/3 w-[520px] h-[520px] rounded-full bg-[#B3D1FF]/20 blur-[130px]" />
+  return <div data-theme="blue" className="u-page u-form">
+      <form onSubmit={handleSubmit} className="u-shell u-shell--form u-section">
+      {/* 상단 바 — 뒤로가기 + 에디터 라벨 */}
+      <div className="u-topbar u-rise" style={{ '--i': 0 } as React.CSSProperties}>
+        <button type="button" onClick={handleBackClick} className="u-btn u-btn--sm">
+          <ArrowLeft aria-hidden="true" />
+          <span className="u-btn-kicker">Back</span>
+        </button>
+        <span className="u-chip u-chip--dim">ORUN ENGLISH · REPORT EDITOR</span>
       </div>
-      <form onSubmit={handleSubmit} className="glass-panel glass-form relative overflow-hidden space-y-10 max-w-5xl mx-auto px-6 sm:px-10 md:px-14 py-10 md:py-14">
-      <span aria-hidden className="glass-sheen" />
 
-      {/* 헤더 — 뒤로가기 + 타이틀 */}
-      <div className="relative space-y-6">
-        <div className="flex items-center justify-between">
-          <Button
-            type="button"
-            variant="ghost"
-            onClick={handleBackClick}
-            className="glass-ghost flex items-center gap-2 px-4 text-[hsl(var(--ink-soft))] hover:text-[hsl(var(--ink))]"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span className="editorial-kicker text-[10px] tracking-[0.3em] font-bold">BACK</span>
-          </Button>
-          <span className="glass-pill editorial-kicker text-[9.5px] tracking-[0.35em] font-semibold text-[hsl(var(--ink-soft))]">
-            ORUN ENGLISH · REPORT EDITOR
-          </span>
+      {/* 마스트헤드 — 입력값이 즉시 제목이 된다 */}
+      <div className="u-panel u-masthead u-rise" style={{ '--i': 1 } as React.CSSProperties}>
+        <i className="u-corner u-corner--tl" aria-hidden="true" />
+        <i className="u-corner u-corner--br" aria-hidden="true" />
+        <span className="u-eyebrow u-eyebrow--gold">{id ? 'Edit Report' : 'New Report'}</span>
+        <div className="u-masthead-title">
+          {schoolLogoUrl && (
+            <img src={schoolLogoUrl} alt="학교 로고" className="u-masthead-logo" onError={(e) => { e.currentTarget.hidden = true; }} />
+          )}
+          <h1>{formLiveTitle}</h1>
         </div>
+        <p className="u-masthead-sub">{isHighSchool ? 'High School' : 'Middle School'} · {STEPS[step].kicker}</p>
+      </div>
 
-        <div className="relative overflow-hidden rounded-[20px] border border-white/25 bg-gradient-to-br from-[#16233A] via-[#1E3357] to-[#16233A] px-5 py-4 text-center shadow-[0_14px_40px_-20px_rgba(22,35,58,0.7)]">
-          {/* 장식 — 골드 글로우 & 미세 도트 패턴 */}
-          <div
-            className="pointer-events-none absolute inset-0 opacity-[0.18]"
-            style={{
-              backgroundImage: 'radial-gradient(rgba(245,198,79,0.9) 1px, transparent 1px)',
-              backgroundSize: '16px 16px',
-            }}
-          />
-          <div className="pointer-events-none absolute -top-16 -right-10 h-48 w-48 rounded-full bg-[#F5C64F]/25 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-20 -left-12 h-48 w-48 rounded-full bg-[#5B8DEF]/25 blur-3xl" />
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
-
-          <div className="relative space-y-2">
-            <span className="editorial-kicker inline-block rounded-full bg-[#F5C64F] px-2.5 py-0.5 text-[9px] tracking-[0.35em] font-bold text-[#16233A] shadow-[0_4px_14px_-5px_rgba(245,198,79,0.8)]">
-              NEW REPORT
-            </span>
-            <div className="flex items-center justify-center gap-3">
-              {schoolLogoUrl && (
-                <img
-                  src={schoolLogoUrl}
-                  alt="학교 로고"
-                  className="h-9 w-auto max-w-[64px] rounded-lg bg-white/90 p-0.5 object-contain shadow-sm"
-                />
-              )}
-              <h1 className="text-[18px] md:text-[22px] font-extrabold tracking-[-0.02em] text-white break-keep drop-shadow-sm">
-                {formLiveTitle}
-              </h1>
-            </div>
-          </div>
+      {/* 단계 진행 표시 */}
+      <div className="u-panel u-stepper u-rise" style={{ '--i': 2, marginTop: 18 } as React.CSSProperties}>
+        <div className="u-stepper-head">
+          <span className="u-eyebrow">Step {step + 1} <i>/ {STEPS.length}</i></span>
+          <span className="u-stepper-title">{STEPS[step].title}</span>
         </div>
-
-
-        {/* 단계 진행 표시 — Toss 스타일 스테퍼 */}
-        <div className="glass-card p-5 md:p-6 space-y-4">
-          <div className="flex items-center justify-between">
-            <span className="text-[13px] font-bold text-[#16233A] tracking-[-0.01em]">
-              STEP {step + 1} <span className="text-[#16233A]/60 font-medium">/ {STEPS.length}</span>
-            </span>
-
-            <span className="text-[13px] font-semibold text-[hsl(var(--ink))] tracking-[-0.01em]">
-              {STEPS[step].title}
-            </span>
-          </div>
-          <div className="h-1.5 rounded-full bg-[hsl(var(--ink)/0.06)] overflow-hidden">
-            <div
-              className="h-full rounded-full bg-gradient-to-r from-[#F5C64F] to-[#FFD666] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
-              style={{ width: `${((step + 1) / STEPS.length) * 100}%` }}
-            />
-          </div>
-          <div className="flex items-center gap-1.5 md:gap-2">
-            {STEPS.map((s, i) => {
-              const done = i < step;
-              const active = i === step;
-              return (
-                <button
-                  key={s.key}
-                  type="button"
-                  onClick={() => { if (i <= step) { setDir(i > step ? 1 : -1); setStep(i); } }}
-                  className={`flex-1 flex flex-col items-center gap-1.5 py-2 rounded-2xl border transition-all duration-300 ${
-                    active
-                      ? 'bg-[#F5C64F]/10 border-[#F5C64F]/40'
-                      : done
-                        ? 'hover:bg-[hsl(var(--ink)/0.04)] cursor-pointer border-[hsl(var(--ink)/0.1)]'
-                        : 'opacity-45 cursor-default border-[hsl(var(--ink)/0.08)]'
-                  }`}
-                >
-                  <span
-                    className={`w-6 h-6 rounded-full flex items-center justify-center text-[11px] font-bold transition-all duration-300 ${
-                      active
-                        ? 'bg-[#F5C64F] text-[#2B3642] shadow-[0_4px_12px_rgba(245,198,79,0.45)] scale-110'
-                        : done
-                          ? 'bg-[#F5C64F]/15 text-[#F5C64F]'
-                          : 'bg-[hsl(var(--ink)/0.06)] text-[hsl(var(--ink-soft))]'
-                    }`}
-                  >
-                    {done ? '✓' : i + 1}
-                  </span>
-                  <span className={`hidden md:block text-[10.5px] font-semibold tracking-[-0.01em] whitespace-nowrap ${active ? 'text-black' : 'text-black/70'}`}>
-                    {s.title}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
+        <div className="u-progress" role="progressbar" aria-valuemin={1} aria-valuemax={STEPS.length} aria-valuenow={step + 1} aria-label="작성 진행">
+          <div className="u-progress-bar" style={{ width: `${((step + 1) / STEPS.length) * 100}%` }} />
         </div>
+        <div className="u-steps">
+          {STEPS.map((s, i) => {
+            const done = i < step;
+            const active = i === step;
+            return (
+              <button
+                key={s.key}
+                type="button"
+                onClick={() => { if (i <= step) { setDir(i > step ? 1 : -1); setStep(i); } }}
+                className="u-step"
+                data-state={active ? 'active' : done ? 'done' : 'todo'}
+                aria-current={active ? 'step' : undefined}
+                tabIndex={i > step ? -1 : 0}
+              >
+                <span className="u-step-num">{done ? '✓' : i + 1}</span>
+                <span className="u-step-label">{s.title}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
 
+      <div className="u-rise" style={{ '--i': 3 } as React.CSSProperties}>
         {/* STEP 1 · 기본 정보 + AI 자동 분석 */}
-        <div key={step === 0 ? `active-0-${step}-${dir}` : 'idle-0'} className={`${step === 0 ? (dir >= 0 ? 'wizard-step-next' : 'wizard-step-prev') : 'hidden'} glass-card p-6 md:p-8`}>
-        {/* Basic info compact card */}
-        <div className="rounded-[20px] border border-slate-200/80 bg-white/60 overflow-hidden shadow-sm">
-          {/* Header with gold accent */}
-          <div className="relative px-5 py-4 border-b border-slate-200/80 bg-gradient-to-r from-white via-white to-[#F5C64F]/6">
-            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#F5C64F] via-[#FFD666] to-[#F5C64F]" />
-            <div className="flex items-center gap-2.5">
-              <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-[#F5C64F]/12 text-[#B8860B]">
-                <span className="text-[11px] font-bold">00</span>
-              </span>
+        <div key={step === 0 ? `active-0-${step}-${dir}` : 'idle-0'} className={`${step === 0 ? (dir >= 0 ? 'wizard-step-next' : 'wizard-step-prev') : 'hidden'} u-panel u-step-panel`}>
+        {/* 기본 정보 카드 */}
+        <div className="u-card">
+          <div className="u-card-head">
+            <div className="u-card-head-row">
+              <span className="u-numeral">00</span>
               <div>
-                <p className="text-[10px] font-bold tracking-[0.22em] text-[#B8860B] uppercase">Basic Information</p>
-                <h2 className="text-[16px] font-semibold text-[hsl(var(--ink))] tracking-[-0.01em]">기본 정보</h2>
+                <span className="u-eyebrow u-eyebrow--gold">Basic Information</span>
+                <h2 className="u-card-title">기본 정보</h2>
               </div>
             </div>
-            <p className="mt-2 text-[12px] text-[hsl(var(--ink-soft))] leading-relaxed break-keep">
-              학교, 학년, 시험 정보와 시험 범위를 먼저 입력해 주세요.
-            </p>
+            <p className="u-card-desc">학교, 학년, 시험 정보와 시험 범위를 먼저 입력해 주세요.</p>
           </div>
 
-          {/* Compact form body */}
-          <div className="p-5 space-y-4">
-            {/* School / Grade / Exam - 3 columns */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="space-y-1.5">
-                <Label htmlFor="school" className="text-[12px] font-semibold text-[hsl(var(--ink))]">학교</Label>
-                <Input id="school" name="school" value={formData.school} onChange={handleInputChange} placeholder="예: 숭의여자중학교" className="h-10 bg-white text-black text-[13px]" required />
+          <div className="u-card-body space-y-4">
+            {/* 학교 / 학년 / 시험 — 3열 */}
+            <div className="u-field-grid u-field-grid--3">
+              <div>
+                <Label htmlFor="school" className="u-label">학교</Label>
+                <Input id="school" name="school" value={formData.school} onChange={handleInputChange} placeholder="예: 숭의여자중학교" className="u-input" required />
               </div>
-              <div className="space-y-1.5">
-                <Label htmlFor="grade" className="text-[12px] font-semibold text-[hsl(var(--ink))]">학년/반</Label>
+              <div>
+                <Label htmlFor="grade" className="u-label">학년/반</Label>
                 <Select value={showCustomGrade ? '직접 입력' : formData.grade || ''} onValueChange={handleGradeChange}>
-                  <SelectTrigger className="h-10 text-[13px]">
+                  <SelectTrigger id="grade" className="u-input u-select">
                     <SelectValue placeholder="학년 선택" />
                   </SelectTrigger>
-                  <SelectContent className="bg-white">
+                  <SelectContent className="u-pop">
                     <SelectItem value="1학년">1학년</SelectItem>
                     <SelectItem value="2학년">2학년</SelectItem>
                     <SelectItem value="3학년">3학년</SelectItem>
                     <SelectItem value="직접 입력">직접 입력</SelectItem>
                   </SelectContent>
                 </Select>
-                {showCustomGrade && <Input id="customGrade" name="grade" value={formData.grade} onChange={handleInputChange} placeholder="학년/반 직접 입력" className="mt-1.5 h-9 text-[13px]" />}
+                {showCustomGrade && <Input id="customGrade" name="grade" value={formData.grade} onChange={handleInputChange} placeholder="학년/반 직접 입력" className="u-input mt-2" />}
               </div>
-              <div className="space-y-1.5">
-                <Label htmlFor="examInfo" className="text-[12px] font-semibold text-[hsl(var(--ink))]">시험 정보</Label>
+              <div>
+                <Label htmlFor="examInfo" className="u-label">시험 정보</Label>
                 <Select value={showCustomExamInfo ? '직접 입력' : formData.examInfo || ''} onValueChange={handleExamInfoChange}>
-                  <SelectTrigger className="h-10 text-[13px]">
+                  <SelectTrigger id="examInfo" className="u-input u-select">
                     <SelectValue placeholder="시험 종류 선택" />
                   </SelectTrigger>
-                  <SelectContent className="bg-white">
+                  <SelectContent className="u-pop">
                     <SelectItem value="1학기 중간고사">1학기 중간고사</SelectItem>
                     <SelectItem value="1학기 기말고사">1학기 기말고사</SelectItem>
                     <SelectItem value="2학기 중간고사">2학기 중간고사</SelectItem>
@@ -978,23 +903,23 @@ const ReportForm: React.FC<ReportFormProps> = ({
                     <SelectItem value="직접 입력">직접 입력</SelectItem>
                   </SelectContent>
                 </Select>
-                {showCustomExamInfo && <Input id="customExamInfo" name="examInfo" value={formData.examInfo} onChange={handleInputChange} placeholder="시험 정보 직접 입력" className="mt-1.5 h-9 text-[13px]" />}
+                {showCustomExamInfo && <Input id="customExamInfo" name="examInfo" value={formData.examInfo} onChange={handleInputChange} placeholder="시험 정보 직접 입력" className="u-input mt-2" />}
               </div>
             </div>
 
-            {/* Exam scope */}
-            <div className="space-y-1.5">
-              <Label htmlFor="examScope" className="text-[12px] font-semibold text-[hsl(var(--ink))]">시험 범위</Label>
-              <Input id="examScope" name="examScope" value={formData.examScope} onChange={handleInputChange} placeholder="예: 교과서: 동아(이) 2,3과, 부교재: 리딩파워 30지문" className="h-10 bg-white text-black text-[13px]" required />
+            {/* 시험 범위 */}
+            <div>
+              <Label htmlFor="examScope" className="u-label">시험 범위</Label>
+              <Input id="examScope" name="examScope" value={formData.examScope} onChange={handleInputChange} placeholder="예: 교과서: 동아(이) 2,3과, 부교재: 리딩파워 30지문" className="u-input" required />
             </div>
 
-            <div className="space-y-1.5">
-              <Label htmlFor="examDate" className="text-[12px] font-semibold text-[hsl(var(--ink))]">실제 시험일</Label>
-              <Input id="examDate" name="examDate" type="date" value={formData.examDate || ''} onChange={handleInputChange} className="h-10 bg-white text-black text-[13px]" />
-              <p className="text-[11px] text-slate-500">학생 포털의 최근 시험 순서는 이 날짜를 기준으로 합니다.</p>
+            <div>
+              <Label htmlFor="examDate" className="u-label">실제 시험일</Label>
+              <Input id="examDate" name="examDate" type="date" value={formData.examDate || ''} onChange={handleInputChange} className="u-input" />
+              <p className="u-hint">학생 포털의 최근 시험 순서는 이 날짜를 기준으로 합니다.</p>
             </div>
 
-            {/* Original passage */}
+            {/* 원문 */}
             <OriginalPassageInput
               value={formData.originalPassages || ''}
               onChange={(value) => setFormData((prev) => ({ ...prev, originalPassages: value }))}
@@ -1002,33 +927,32 @@ const ReportForm: React.FC<ReportFormProps> = ({
           </div>
         </div>
 
-        {/* Teacher info compact card */}
-        <div className="mt-4 rounded-[20px] border border-slate-200/80 bg-white/60 overflow-hidden shadow-sm">
-          <div className="px-5 py-3 border-b border-slate-200/80 bg-gradient-to-r from-white via-white to-[#3182F6]/4">
-            <div className="flex items-center gap-2.5">
-              <span className="inline-flex items-center justify-center w-6 h-6 rounded-lg bg-[#3182F6]/10 text-[#3182F6]">
-                <Camera className="w-3 h-3" />
-              </span>
-              <h3 className="text-[14px] font-semibold text-[hsl(var(--ink))]">강사 정보</h3>
+        {/* 강사 정보 카드 */}
+        <div className="u-card u-card--blue">
+          <div className="u-card-head">
+            <div className="u-card-head-row">
+              <span className="u-numeral"><Camera className="w-3.5 h-3.5" aria-hidden="true" /></span>
+              <div>
+                <span className="u-eyebrow">Teacher</span>
+                <h3 className="u-card-title">강사 정보</h3>
+              </div>
             </div>
           </div>
-          <div className="p-5">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-1.5">
-                <Label htmlFor="teacher" className="text-[12px] font-semibold text-[hsl(var(--ink))]">강사 이름</Label>
-                <Input id="teacher" name="teacher" value={formData.teacher} onChange={handleInputChange} placeholder="예: Jennie" className="h-10 text-[13px]" />
+          <div className="u-card-body">
+            <div className="u-field-grid u-field-grid--2">
+              <div>
+                <Label htmlFor="teacher" className="u-label">강사 이름</Label>
+                <Input id="teacher" name="teacher" value={formData.teacher} onChange={handleInputChange} placeholder="예: Jennie" className="u-input" />
               </div>
-              <div className="space-y-1.5">
-                <Label className="text-[12px] font-semibold text-[hsl(var(--ink))]">강사 사진</Label>
-                <div className="rounded-xl border border-dashed border-slate-300 bg-white/60 p-3">
+              <div>
+                <Label className="u-label">강사 사진</Label>
+                <div className="u-dropzone">
                   {!formData.teacherPhoto ? (
                     <div className="flex items-center justify-between gap-3">
-                      <div className="flex items-center gap-2.5 min-w-0">
-                        <div className="p-2 rounded-full bg-primary/10 shrink-0">
-                          <Camera className="h-4 w-4 text-primary" />
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-2 shrink-0">
+                      <span className="u-icon-tile" aria-hidden="true">
+                        <Camera />
+                      </span>
+                      <div className="flex items-center gap-2 shrink-0 flex-wrap justify-end">
                         <TeacherPhotoUploader onPhotoUpload={url => {
                           setFormData(prev => ({ ...prev, teacherPhoto: url }));
                         }} bucketName="teacher-photos" />
@@ -1040,10 +964,10 @@ const ReportForm: React.FC<ReportFormProps> = ({
                   ) : (
                     <div className="flex items-center gap-4">
                       <div className="relative">
-                        <div className="border border-primary/20 rounded-lg p-1.5 shadow-sm bg-white">
+                        <div className="u-photo-frame">
                           <img src={formData.teacherPhoto} alt="강사 사진" className="w-20 h-20 object-contain" />
                         </div>
-                        <Button type="button" variant="destructive" size="icon" className="absolute -top-2 -right-2 rounded-full shadow-md h-6 w-6" onClick={() => setFormData(prev => ({ ...prev, teacherPhoto: '' }))}>
+                        <Button type="button" variant="destructive" size="icon" className="absolute -top-2 -right-2 rounded-full shadow-md h-6 w-6" onClick={() => setFormData(prev => ({ ...prev, teacherPhoto: '' }))} aria-label="강사 사진 제거">
                           <X className="h-3 w-3" />
                         </Button>
                       </div>
@@ -1063,7 +987,7 @@ const ReportForm: React.FC<ReportFormProps> = ({
           </div>
         </div>
 
-        <div className="form-section-block last">
+        <div className="u-form-block">
           <SectionHeading
             kicker="01 · AI"
             title="시험지 자동 분석"
@@ -1081,115 +1005,97 @@ const ReportForm: React.FC<ReportFormProps> = ({
         {/* // STEP 1 · 기본 정보 끝 */}
 
         {/* STEP 2 · 문항 수 */}
-        <div key={step === 1 ? `active-1-${step}-${dir}` : 'idle-1'} className={`${step === 1 ? (dir >= 0 ? 'wizard-step-next' : 'wizard-step-prev') : 'hidden'} glass-card p-6 md:p-8`}>
+        <div key={step === 1 ? `active-1-${step}-${dir}` : 'idle-1'} className={`${step === 1 ? (dir >= 0 ? 'wizard-step-next' : 'wizard-step-prev') : 'hidden'} u-panel u-step-panel`}>
         <SectionHeading kicker="02 · COUNT" title="문항 수" description="총 문항·객관식·서답형 수를 입력합니다." />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="space-y-2">
-            <Label htmlFor="totalQuestions">총 문항수</Label>
-            <Input id="totalQuestions" type="number" min="0" value={formData.totalQuestions} onChange={e => handleQuestionCountChange('totalQuestions', e.target.value)} required />
+        <div className="u-field-grid u-field-grid--3">
+          <div>
+            <Label htmlFor="totalQuestions" className="u-label">총 문항수</Label>
+            <Input id="totalQuestions" type="number" min="0" value={formData.totalQuestions} onChange={e => handleQuestionCountChange('totalQuestions', e.target.value)} className="u-input" required />
           </div>
-          <div className="space-y-2">
-            <Label htmlFor="objectiveQuestions">객관식</Label>
-            <Input id="objectiveQuestions" type="number" min="0" value={formData.objectiveQuestions} onChange={e => handleQuestionCountChange('objectiveQuestions', e.target.value)} />
+          <div>
+            <Label htmlFor="objectiveQuestions" className="u-label">객관식</Label>
+            <Input id="objectiveQuestions" type="number" min="0" value={formData.objectiveQuestions} onChange={e => handleQuestionCountChange('objectiveQuestions', e.target.value)} className="u-input" />
           </div>
-          <div className="space-y-2">
-            <Label htmlFor="subjectiveQuestions">서답형</Label>
-            <Input id="subjectiveQuestions" type="number" min="0" value={formData.subjectiveQuestions} onChange={e => handleQuestionCountChange('subjectiveQuestions', e.target.value)} />
+          <div>
+            <Label htmlFor="subjectiveQuestions" className="u-label">서답형</Label>
+            <Input id="subjectiveQuestions" type="number" min="0" value={formData.subjectiveQuestions} onChange={e => handleQuestionCountChange('subjectiveQuestions', e.target.value)} className="u-input" />
           </div>
         </div>
         </div>
         {/* // STEP 2 · 문항 수 끝 */}
 
         {/* STEP 3 · 문제 유형 */}
-        <div key={step === 2 ? `active-2-${step}-${dir}` : 'idle-2'} className={`${step === 2 ? (dir >= 0 ? 'wizard-step-next' : 'wizard-step-prev') : 'hidden'} glass-card p-6 md:p-8`}>
+        <div key={step === 2 ? `active-2-${step}-${dir}` : 'idle-2'} className={`${step === 2 ? (dir >= 0 ? 'wizard-step-next' : 'wizard-step-prev') : 'hidden'} u-panel u-step-panel`}>
         <SectionHeading kicker="03 · TYPES" title="문제 유형" description="각 문항의 분류·세부유형·난이도를 지정합니다." />
-        
+
         {/* 중등 리포트일 때만 분석 유형 선택 옵션 표시 */}
         {!isHighSchool && (
-          <div className="glass-card mb-8 p-6">
-            <div className="flex items-center gap-3 mb-1.5">
-              <span className="editorial-kicker text-[10px] tracking-[0.35em] font-bold text-[#F5C64F]">
-                ANALYSIS MODE
-              </span>
-              <span className="h-px flex-1 bg-[hsl(var(--ink)/0.08)]" />
+          <div className="u-card mb-8">
+            <div className="u-card-head">
+              <div className="u-card-head-row">
+                <span className="u-numeral">AM</span>
+                <div>
+                  <span className="u-eyebrow u-eyebrow--gold">Analysis Mode</span>
+                  <h3 className="u-card-title">분석 유형</h3>
+                </div>
+              </div>
+              <p className="u-card-desc">상세분석은 문항별 정밀 분석을, 간단분석은 핵심만 빠르게 정리합니다.</p>
             </div>
-            <Label className="block font-display text-[18px] tracking-[-0.015em] font-medium text-[hsl(var(--ink))] mb-1">
-              분석 유형
-            </Label>
-            <p className="text-[13px] text-[hsl(var(--ink-soft))] mb-5 break-keep">
-              상세분석은 문항별 정밀 분석을, 간단분석은 핵심만 빠르게 정리합니다.
-            </p>
-            <div className="grid grid-cols-2 gap-3">
-              {[
-                { val: 'detailed', label: '상세 분석', sub: 'DETAILED' },
-                { val: 'simple', label: '간단 분석', sub: 'SIMPLE' },
-              ].map((opt) => {
-                const active = analysisType === (opt.val as 'detailed' | 'simple');
-                return (
-                  <label
-                    key={opt.val}
-                    htmlFor={opt.val}
-                    className={`relative cursor-pointer flex flex-col items-center justify-center gap-1 px-5 py-5 border transition-all duration-200 rounded-sm ${
-                      active
-                        ? 'bg-[rgba(49,130,246,0.08)] border-[rgba(49,130,246,0.5)] shadow-[0_0_0_4px_rgba(49,130,246,0.12)]'
-                        : 'bg-white/60 border-[hsl(var(--ink)/0.1)] hover:border-[rgba(49,130,246,0.35)] hover:bg-white/80'
-                    }`}
-                  >
-                    <input
-                      type="radio"
-                      id={opt.val}
-                      name="analysisType"
-                      value={opt.val}
-                      checked={active}
-                      onChange={(e) => setAnalysisType(e.target.value as 'detailed' | 'simple')}
-                      className="sr-only"
-                    />
-                    <span className={`editorial-kicker text-[9.5px] tracking-[0.4em] font-bold ${active ? 'text-[#F5C64F]' : 'text-[hsl(var(--ink-soft))]'}`}>
-                      {opt.sub}
-                    </span>
-                    <span className={`font-display text-[17px] tracking-[-0.01em] font-medium ${active ? 'text-[hsl(var(--ink))]' : 'text-[hsl(var(--ink))]'}`}>
-                      {opt.label}
-                    </span>
-                    {active && (
-                      <span aria-hidden className="absolute top-2 right-2 w-1.5 h-1.5 rounded-full bg-[#F5C64F]" />
-                    )}
-                  </label>
-                );
-              })}
+            <div className="u-card-body">
+              <div className="u-mode" role="radiogroup" aria-label="분석 유형">
+                {[
+                  { val: 'detailed', label: '상세 분석', sub: 'Detailed' },
+                  { val: 'simple', label: '간단 분석', sub: 'Simple' },
+                ].map((opt) => {
+                  const active = analysisType === (opt.val as 'detailed' | 'simple');
+                  return (
+                    <label key={opt.val} htmlFor={opt.val} className="u-mode-opt" data-active={active}>
+                      <input
+                        type="radio"
+                        id={opt.val}
+                        name="analysisType"
+                        value={opt.val}
+                        checked={active}
+                        onChange={(e) => setAnalysisType(e.target.value as 'detailed' | 'simple')}
+                        className="sr-only"
+                      />
+                      <span className={`u-eyebrow ${active ? 'u-eyebrow--gold' : ''}`}>{opt.sub}</span>
+                      <strong>{opt.label}</strong>
+                      {active && <span aria-hidden className="u-mode-dot" />}
+                    </label>
+                  );
+                })}
+              </div>
             </div>
           </div>
         )}
-        
+
         {!isHighSchool ? <MiddleSchoolProblemTypes problemTypes={formData.problemTypes} onAddProblemType={handleAddProblemType} onAddMultiple={handleAddMultiple} onRemoveType={handleRemoveType} onRemoveAll={handleRemoveAllTypes} onUpdateType={handleUpdateType} addCount={addCount} onAddCountChange={setAddCount} isSimpleMode={analysisType === 'simple'} /> : <HighSchoolProblemTypes problemTypes={formData.problemTypes} onAddProblemType={handleAddProblemType} onAddMultiple={handleAddMultiple} onRemoveType={handleRemoveType} onRemoveAll={handleRemoveAllTypes} onUpdateType={handleUpdateType} addCount={addCount} onAddCountChange={setAddCount} />}
         </div>
         {/* // STEP 3 · 문제 유형 끝 */}
 
         {/* STEP 4 · 출제 특징 & 킬러 문항 (상세 분석 모드에서만) */}
         {showDetailSteps && (
-        <div key={step === 3 ? `active-3-${step}-${dir}` : 'idle-3'} className={`${step === 3 ? (dir >= 0 ? 'wizard-step-next' : 'wizard-step-prev') : 'hidden'} glass-card p-6 md:p-8`}>
+        <div key={step === 3 ? `active-3-${step}-${dir}` : 'idle-3'} className={`${step === 3 ? (dir >= 0 ? 'wizard-step-next' : 'wizard-step-prev') : 'hidden'} u-panel u-step-panel`}>
         {/* 한눈에 보는 출제 특징 - 고등부는 항상 표시, 중등부는 상세분석에서만 표시 */}
         {(isHighSchool || (!isHighSchool && analysisType === 'detailed')) && <>
             <SectionHeading kicker="04 · OVERVIEW" title="한눈에 보는 출제 특징" description="이번 시험의 출제 특징을 항목별로 정리합니다. PDF 자동 분석으로 채울 수 있습니다." />
-            <div className="space-y-4">
-              <div className="glass-card p-5">
-                <ExamFeaturesEditor
-                  features={formData.examFeatures || []}
-                  onChange={(features) => setFormData(prev => ({ ...prev, examFeatures: features }))}
-                />
-              </div>
+            <div className="u-card u-card--pad">
+              <ExamFeaturesEditor
+                features={formData.examFeatures || []}
+                onChange={(features) => setFormData(prev => ({ ...prev, examFeatures: features }))}
+              />
             </div>
           </>}
 
         {/* 등급을 가른 문항 TOP 5 - 고등부는 항상 표시, 중등부는 상세분석에서만 표시 */}
         {(isHighSchool || (!isHighSchool && analysisType === 'detailed')) && <>
             <SectionHeading kicker="05 · KILLER" title="등급을 가른 문항 TOP 5" description="예상 오답률이 높은 순으로 문항 번호와 이유를 정리합니다." />
-            <div className="space-y-4">
-              <div className="glass-card p-5">
-                <KillerTop5Editor
-                  items={formData.killerTop5 || []}
-                  onChange={(items) => setFormData(prev => ({ ...prev, killerTop5: items }))}
-                />
-              </div>
+            <div className="u-card u-card--pad u-card--violet">
+              <KillerTop5Editor
+                items={formData.killerTop5 || []}
+                onChange={(items) => setFormData(prev => ({ ...prev, killerTop5: items }))}
+              />
             </div>
           </>}
 
@@ -1199,13 +1105,11 @@ const ReportForm: React.FC<ReportFormProps> = ({
           title="원문 대조 · 지문 변형 분석"
           description="기본 정보 단계에서 입력한 원문과 실제 출제 문장을 대조한 결과입니다. 자유롭게 수정·추가할 수 있습니다."
         />
-        <div className="space-y-4">
-          <div className="glass-card p-5">
-            <PassageVariantEditor
-              items={formData.passageVariants || []}
-              onChange={(items) => setFormData(prev => ({ ...prev, passageVariants: items }))}
-            />
-          </div>
+        <div className="u-card u-card--pad u-card--blue">
+          <PassageVariantEditor
+            items={formData.passageVariants || []}
+            onChange={(items) => setFormData(prev => ({ ...prev, passageVariants: items }))}
+          />
         </div>
 
         </div>
@@ -1213,13 +1117,13 @@ const ReportForm: React.FC<ReportFormProps> = ({
         {/* // STEP 4 · 출제 특징 & 킬러 문항 끝 */}
 
         {/* STEP 5 · 종합 평가 */}
-        <div key={step === lastStep ? `active-last-${step}-${dir}` : 'idle-last'} className={`${step === lastStep ? (dir >= 0 ? 'wizard-step-next' : 'wizard-step-prev') : 'hidden'} glass-card p-6 md:p-8`}>
+        <div key={step === lastStep ? `active-last-${step}-${dir}` : 'idle-last'} className={`${step === lastStep ? (dir >= 0 ? 'wizard-step-next' : 'wizard-step-prev') : 'hidden'} u-panel u-step-panel`}>
         <SectionHeading kicker="06 · EVALUATION" title="종합 평가" description="출제 특징과 학부모님께 전하는 종합의견을 나누어 작성합니다." />
         <div className="space-y-6">
-          <OverallEvaluation 
-            evaluations={categoryEvaluations} 
-            onEvaluationChange={handleEvaluationChange} 
-            selectedCategories={selectedCategories.length > 0 ? selectedCategories : undefined} 
+          <OverallEvaluation
+            evaluations={categoryEvaluations}
+            onEvaluationChange={handleEvaluationChange}
+            selectedCategories={selectedCategories.length > 0 ? selectedCategories : undefined}
             isHighSchool={isHighSchool}
             gptLoading={gptLoading.overallEvaluation}
             onGptEnhance={(category) => {
@@ -1234,7 +1138,7 @@ const ReportForm: React.FC<ReportFormProps> = ({
               handleGptEnhance('overallEvaluation', currentText, target);
             }}
           />
-          <p className="text-[12px] text-[hsl(var(--ink-soft))] tracking-[-0.005em]">※ 두 항목 모두 작성하시면 리포트에 순서대로 표시됩니다.</p>
+          <p className="u-hint">※ 두 항목 모두 작성하시면 리포트에 순서대로 표시됩니다.</p>
 
         </div>
         </div>
@@ -1242,54 +1146,36 @@ const ReportForm: React.FC<ReportFormProps> = ({
       </div>
 
       {/* 하단 네비게이션 — 단계별 이전/다음/저장 */}
-      <div className="relative pt-8 mt-4">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[hsl(var(--ink)/0.15)] to-transparent" />
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span className="editorial-kicker text-[10px] tracking-[0.4em] font-bold text-[hsl(var(--ink-soft))]">
-            © ORUN ENGLISH
-          </span>
-          <div className="flex gap-3 w-full sm:w-auto">
-            {step === 0 ? (
-              <Button
-                type="button"
-                onClick={() => navigate('/saved-reports')}
-                disabled={loading}
-                className="glass-ghost border-none px-6 rounded-full"
-              >
-                취소
-              </Button>
-            ) : (
-              <Button
-                type="button"
-                onClick={goPrev}
-                disabled={loading}
-                className="glass-ghost border-none px-6 rounded-full"
-              >
-                ← 이전
-              </Button>
-            )}
-            {step < lastStep ? (
-              <Button
-                type="button"
-                onClick={goNext}
-                className="flex-1 sm:flex-none rounded-full bg-[#F5C64F] hover:bg-[#FFD666] text-[#2B3642] font-bold tracking-[-0.01em] px-10 h-11 shadow-[0_8px_20px_rgba(245,198,79,0.35)] transition-all duration-200 hover:shadow-[0_10px_24px_rgba(245,198,79,0.45)] hover:-translate-y-0.5 active:translate-y-0"
-              >
-                다음
-              </Button>
-            ) : (
-              <Button
-                type="submit"
-                disabled={loading}
-                className="flex-1 sm:flex-none rounded-full bg-[#F5C64F] hover:bg-[#FFD666] text-[#2B3642] font-bold tracking-[-0.01em] px-10 h-11 shadow-[0_8px_20px_rgba(245,198,79,0.35)] transition-all duration-200 hover:shadow-[0_10px_24px_rgba(245,198,79,0.45)] hover:-translate-y-0.5 active:translate-y-0"
-              >
-                {loading ? '저장 중…' : '리포트 저장'}
-              </Button>
-            )}
-          </div>
+      <div className="u-formnav u-rise" style={{ '--i': 4 } as React.CSSProperties}>
+        <span className="u-eyebrow">© ORUN ENGLISH</span>
+        <div className="u-formnav-actions">
+          {step === 0 ? (
+            <button key="cancel" type="button" onClick={() => navigate('/saved-reports')} disabled={loading} className="u-btn">
+              취소
+            </button>
+          ) : (
+            <button key="prev" type="button" onClick={goPrev} disabled={loading} className="u-btn">
+              <ArrowLeft aria-hidden="true" />
+              이전
+            </button>
+          )}
+          {/* key 를 달리 해 '다음'과 '저장'이 같은 DOM 노드를 공유하지 않게 한다.
+              같은 노드를 재사용하면 마지막 '다음' 클릭의 기본 동작이 type=submit 로 바뀐
+              뒤에 실행되어 폼이 그대로 제출된다. */}
+          {step < lastStep ? (
+            <button key="next" type="button" onClick={goNext} className="u-btn u-btn--gold">
+              다음
+              <span className="u-btn-kicker" aria-hidden="true">Next</span>
+            </button>
+          ) : (
+            <button key="save" type="submit" disabled={loading} className="u-btn u-btn--gold">
+              <Sparkles aria-hidden="true" />
+              {loading ? '저장 중…' : '리포트 저장'}
+            </button>
+          )}
         </div>
       </div>
     </form>
     </div>;
 };
 export default ReportForm;
-

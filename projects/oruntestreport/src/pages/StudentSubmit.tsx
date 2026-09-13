@@ -2,9 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { convertDbToAppFormat, ReportCardData } from "@/integrations/supabase/reportService";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { Check, X, Minus, Loader2 } from "lucide-react";
@@ -14,6 +12,12 @@ import {
   submitStudentAnswers,
 } from "@/hooks/useStudentSubmissions";
 
+const idx = (i: number) => ({ "--i": i } as React.CSSProperties);
+
+/**
+ * 학생 자가 채점 — 학생이 휴대폰으로 연다.
+ * 은하 무대는 'subtle' 로 낮추고, 터치 표적은 44px 이상으로 잡는다.
+ */
 const StudentSubmit: React.FC = () => {
   const { reportId } = useParams<{ reportId: string }>();
   const [report, setReport] = useState<ReportCardData | null>(null);
@@ -113,173 +117,145 @@ const StudentSubmit: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="orun-stage flex items-center justify-center">
-        <Loader2 className="w-8 h-8 animate-spin text-slate-400" />
+      <div className="u-page u-page--subtle u-center">
+        <div className="u-loader" role="status" aria-live="polite">
+          <span className="u-loader-ring" aria-hidden="true" />
+          <span className="u-eyebrow u-eyebrow--gold">Loading</span>
+          <p>시험 정보를 불러오는 중...</p>
+        </div>
       </div>
     );
   }
 
   if (!report) {
     return (
-      <div className="orun-stage flex items-center justify-center">
-        <p className="text-slate-500">리포트를 찾을 수 없습니다.</p>
+      <div className="u-page u-page--subtle u-center">
+        <div className="u-panel u-panel--pad" style={{ maxWidth: 420, width: "100%", textAlign: "center" }}>
+          <span className="u-eyebrow u-eyebrow--gold">Not Found</span>
+          <p className="u-lede" style={{ marginTop: 10 }}>리포트를 찾을 수 없습니다.</p>
+        </div>
       </div>
     );
   }
 
   if (done) {
     return (
-      <div className="orun-stage flex items-center justify-center px-4">
-        <div className="orun-glass p-10 max-w-md w-full text-center">
-          <div className="w-16 h-16 mx-auto rounded-full bg-emerald-400/20 flex items-center justify-center mb-4">
-            <Check className="w-8 h-8 text-emerald-600" />
-          </div>
-          <h2 className="text-2xl font-bold text-slate-900 mb-2">제출 완료</h2>
-          <p className="text-slate-600">선생님에게 결과가 전달되었습니다.</p>
-          <p className="text-sm text-slate-400 mt-6">이 창은 닫으셔도 됩니다.</p>
+      <div className="u-page u-page--subtle u-center">
+        <div className="u-panel u-panel--pad u-rise" style={{ maxWidth: 440, width: "100%", textAlign: "center", padding: "40px 28px" }}>
+          <span className="u-done-ring" aria-hidden="true"><Check /></span>
+          <span className="u-eyebrow u-eyebrow--gold" style={{ display: "block", marginTop: 20, justifyContent: "center" }}>Submitted</span>
+          <h2 className="u-h2" style={{ marginTop: 8 }}>제출 완료</h2>
+          <p className="u-lede" style={{ marginTop: 8 }}>선생님에게 결과가 전달되었습니다.</p>
+          <p className="u-cap" style={{ marginTop: 22 }}>이 창은 닫으셔도 됩니다.</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="orun-stage py-8 px-4">
-      <div className="max-w-2xl mx-auto">
+    <div className="u-page u-page--subtle">
+      <div className="u-shell u-shell--narrow u-section--tight u-stack" style={{ paddingInline: 14 }}>
         {/* 헤더 */}
-        <div className="orun-glass p-6 mb-6">
-          <p className="text-[11px] tracking-[0.4em] font-semibold text-[#F5C64F] mb-2">
-            학생 자가 채점
-          </p>
-          <h1 className="text-2xl font-bold text-slate-900 mb-1">
-            {report.examScope || "시험 채점"}
-          </h1>
-          <p className="text-sm text-slate-500">
-            {report.school} · {report.grade}
-          </p>
-        </div>
+        <header className="u-panel u-submit-head u-rise" style={idx(0)}>
+          <i className="u-corner u-corner--tl" aria-hidden="true" />
+          <span className="u-eyebrow u-eyebrow--gold">Self Grading · 학생 자가 채점</span>
+          <h1 className="u-h1 u-h1--sm">{report.examScope || "시험 채점"}</h1>
+          <p className="u-lede u-lede--sm">{report.school} · {report.grade}</p>
+        </header>
 
         {/* 학생 정보 */}
-        <div className="orun-glass p-6 mb-6 space-y-4">
-          <h2 className="text-lg font-bold text-slate-900 mb-2">내 정보</h2>
-          <div className="grid grid-cols-2 gap-3">
+        <section className="u-panel u-block u-rise" style={idx(1)} aria-labelledby="profile-title">
+          <div className="u-block-head">
             <div>
-              <Label htmlFor="school">학교</Label>
-              <Input id="school" value={school} onChange={(e) => setSchool(e.target.value)} />
+              <span className="u-eyebrow">01 · Profile</span>
+              <h2 id="profile-title" className="u-h3">내 정보</h2>
+            </div>
+          </div>
+          <div className="u-field-grid u-field-grid--2" style={{ gap: 12 }}>
+            <div>
+              <label className="u-label" htmlFor="school">학교</label>
+              <Input id="school" className="u-input" value={school} onChange={(e) => setSchool(e.target.value)} />
             </div>
             <div>
-              <Label htmlFor="grade">학년</Label>
-              <Input id="grade" value={grade} onChange={(e) => setGrade(e.target.value)} />
+              <label className="u-label" htmlFor="grade">학년</label>
+              <Input id="grade" className="u-input" value={grade} onChange={(e) => setGrade(e.target.value)} />
             </div>
             <div>
-              <Label htmlFor="name">이름</Label>
-              <Input id="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="홍길동" />
+              <label className="u-label" htmlFor="name">이름</label>
+              <Input id="name" className="u-input" value={name} onChange={(e) => setName(e.target.value)} placeholder="홍길동" autoComplete="name" />
             </div>
             <div>
-              <Label htmlFor="score">점수</Label>
+              <label className="u-label" htmlFor="score">점수</label>
               <Input
                 id="score"
+                className="u-input"
                 type="number"
+                inputMode="decimal"
                 value={score}
                 onChange={(e) => setScore(e.target.value)}
                 placeholder="예: 85"
               />
             </div>
           </div>
-        </div>
+        </section>
 
         {/* 문항 체크 */}
-        <div className="orun-glass p-6 mb-6">
-          <div className="flex items-baseline justify-between mb-4">
-            <h2 className="text-lg font-bold text-slate-900">문항 채점</h2>
-            <p className="text-xs text-slate-500">
-              기본은 <span className="text-emerald-600 font-semibold">맞음</span>, 틀린 것만 눌러주세요
+        <section className="u-panel u-block u-rise" style={idx(2)} aria-labelledby="grading-title">
+          <div className="u-block-head">
+            <div>
+              <span className="u-eyebrow">02 · Grading</span>
+              <h2 id="grading-title" className="u-h3">문항 채점</h2>
+            </div>
+            <p className="u-cap" style={{ textAlign: "right" }}>
+              기본은 <span className="u-ok">맞음</span>,<br />틀린 것만 눌러주세요
             </p>
           </div>
 
-          <div className="space-y-2">
-            {sortedProblems.map((p, idx) => {
+          <div>
+            {sortedProblems.map((p, i) => {
               const st = statuses[p.id] || "correct";
               const isSubjective = p.questionType === "subjective";
               return (
-                <div
-                  key={p.id}
-                  className="p-3 rounded-xl border border-slate-900/10 bg-white/70 space-y-2"
-                >
-                  <div className="flex items-center justify-between gap-3">
-                  <div className="min-w-0 flex items-center gap-2">
-                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-900/5 text-slate-700 text-xs font-bold shrink-0">
-                      {idx + 1}
-                    </span>
-                    <div className="min-w-0">
-                      <p className="font-semibold text-slate-900">{p.name}</p>
-                      <p className="text-xs text-slate-500 truncate">
-                        {p.category} · {isSubjective ? "서답형" : "객관식"}
-                      </p>
+                <div key={p.id} className="u-q">
+                  <div className="u-q-row">
+                    <div className="u-q-main">
+                      <span className="u-q-num" aria-hidden="true">{i + 1}</span>
+                      <div style={{ minWidth: 0 }}>
+                        <p className="u-q-name">{p.name}</p>
+                        <p className="u-q-meta">{p.category} · {isSubjective ? "서답형" : "객관식"}</p>
+                      </div>
                     </div>
-                  </div>
 
-                  {isSubjective ? (
-                    <div className="flex gap-1 shrink-0">
+                    {isSubjective ? (
+                      <div className="u-grade-group" role="group" aria-label={`${p.name} 채점`}>
+                        <button type="button" onClick={() => setSubjective(p.id, "correct")} className="u-grade" data-state={st === "correct" ? "correct" : "idle"} aria-pressed={st === "correct"} aria-label="맞음">
+                          <Check aria-hidden="true" />
+                        </button>
+                        <button type="button" onClick={() => setSubjective(p.id, "partial")} className="u-grade" data-state={st === "partial" ? "partial" : "idle"} aria-pressed={st === "partial"} aria-label="부분점수">
+                          <Minus aria-hidden="true" />
+                        </button>
+                        <button type="button" onClick={() => setSubjective(p.id, "wrong")} className="u-grade" data-state={st === "wrong" ? "wrong" : "idle"} aria-pressed={st === "wrong"} aria-label="틀림">
+                          <X aria-hidden="true" />
+                        </button>
+                      </div>
+                    ) : (
                       <button
                         type="button"
-                        onClick={() => setSubjective(p.id, "correct")}
-                        className={`w-10 h-10 rounded-lg flex items-center justify-center border transition ${
-                          st === "correct"
-                            ? "bg-emerald-500 text-white border-emerald-500"
-                            : "bg-slate-900/5 text-slate-500 border-slate-900/10"
-                        }`}
-                        aria-label="맞음"
+                        onClick={() => toggleObjective(p.id)}
+                        className="u-grade u-grade--lg"
+                        data-state={st === "wrong" ? "wrong" : "correct"}
+                        aria-pressed={st === "wrong"}
+                        aria-label={st === "wrong" ? "틀림" : "맞음"}
                       >
-                        <Check className="w-5 h-5" />
+                        {st === "wrong" ? <X aria-hidden="true" /> : <Check aria-hidden="true" />}
                       </button>
-                      <button
-                        type="button"
-                        onClick={() => setSubjective(p.id, "partial")}
-                        className={`w-10 h-10 rounded-lg flex items-center justify-center border transition ${
-                          st === "partial"
-                            ? "bg-amber-500 text-white border-amber-500"
-                            : "bg-slate-900/5 text-slate-500 border-slate-900/10"
-                        }`}
-                        aria-label="부분점수"
-                      >
-                        <Minus className="w-5 h-5" />
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setSubjective(p.id, "wrong")}
-                        className={`w-10 h-10 rounded-lg flex items-center justify-center border transition ${
-                          st === "wrong"
-                            ? "bg-rose-500 text-white border-rose-500"
-                            : "bg-slate-900/5 text-slate-500 border-slate-900/10"
-                        }`}
-                        aria-label="틀림"
-                      >
-                        <X className="w-5 h-5" />
-                      </button>
-                    </div>
-                  ) : (
-                    <button
-                      type="button"
-                      onClick={() => toggleObjective(p.id)}
-                      className={`w-12 h-12 rounded-xl flex items-center justify-center border-2 transition shrink-0 ${
-                        st === "wrong"
-                          ? "bg-rose-500 text-white border-rose-500"
-                          : "bg-emerald-400/15 text-emerald-300 border-emerald-400/30"
-                      }`}
-                      aria-label={st === "wrong" ? "틀림" : "맞음"}
-                    >
-                      {st === "wrong" ? <X className="w-6 h-6" /> : <Check className="w-6 h-6" />}
-                    </button>
-                  )}
+                    )}
                   </div>
                   {(st === "wrong" || st === "partial") && (
-                    <div className="pt-1">
-                      <Label
-                        htmlFor={`reason-${p.id}`}
-                        className="text-[11px] font-semibold text-slate-600 mb-1 block"
-                      >
-                        틀린 이유 <span className="text-slate-400 font-normal">(선택, 스스로 되돌아보기)</span>
-                      </Label>
+                    <div>
+                      <label htmlFor={`reason-${p.id}`} className="u-label" style={{ fontSize: 11.5 }}>
+                        틀린 이유 <span className="u-cap" style={{ display: "inline", fontWeight: 400 }}>(선택, 스스로 되돌아보기)</span>
+                      </label>
                       <Textarea
                         id={`reason-${p.id}`}
                         value={reasons[p.id] || ""}
@@ -288,7 +264,8 @@ const StudentSubmit: React.FC = () => {
                         }
                         placeholder="예: 지문의 반전 표현을 놓쳤음 / 어휘 뜻 헷갈림 / 시간 부족으로 찍음"
                         maxLength={500}
-                        className="min-h-[64px] text-sm bg-white/75 border-slate-900/10 text-slate-900 placeholder:text-slate-400"
+                        className="u-input u-input--area"
+                        style={{ minHeight: 64, fontSize: 13.5 }}
                       />
                     </div>
                   )}
@@ -296,16 +273,18 @@ const StudentSubmit: React.FC = () => {
               );
             })}
           </div>
-        </div>
+        </section>
 
-        <Button
+        <button
+          type="button"
           onClick={handleSubmit}
           disabled={submitting}
-          size="lg"
-          className="w-full h-14 text-base font-bold bg-[#F5C64F] hover:bg-[#FFD666] text-[#2B3642] rounded-2xl shadow-[0_12px_32px_rgba(245,198,79,0.26)]"
+          className="u-btn u-btn--gold u-btn--lg u-btn--block u-rise"
+          style={idx(3)}
         >
-          {submitting ? <Loader2 className="w-5 h-5 animate-spin" /> : "제출하기"}
-        </Button>
+          {submitting ? <Loader2 className="animate-spin" aria-hidden="true" /> : "제출하기"}
+        </button>
+        <p className="u-cap" style={{ textAlign: "center", marginTop: 14 }}>ORUN ENGLISH · 옳은영어</p>
       </div>
     </div>
   );

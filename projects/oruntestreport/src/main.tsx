@@ -3,6 +3,8 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
+// 은하 시네마 UI — index.css 뒤에 실어 토큰·부품을 덮어쓴다 (리포트 규칙은 건드리지 않음)
+import './styles/universe.css';
 import '@fontsource/noto-sans-kr/300.css';
 import '@fontsource/noto-sans-kr/400.css';
 import '@fontsource/noto-sans-kr/500.css';

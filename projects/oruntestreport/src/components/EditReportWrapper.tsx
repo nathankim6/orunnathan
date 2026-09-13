@@ -28,14 +28,11 @@ const EditReportWrapper: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 py-8 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-center justify-center h-64">
-            <div className="text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-              <p className="text-gray-600">리포트를 불러오는 중...</p>
-            </div>
-          </div>
+      <div className="u-page u-center">
+        <div className="u-loader" role="status" aria-live="polite">
+          <span className="u-loader-ring" aria-hidden="true" />
+          <span className="u-eyebrow u-eyebrow--gold">Loading · Report Editor</span>
+          <p>리포트를 불러오는 중...</p>
         </div>
       </div>
     );
