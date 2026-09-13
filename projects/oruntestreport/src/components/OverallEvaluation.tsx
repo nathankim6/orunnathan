@@ -18,16 +18,16 @@ interface OverallEvaluationProps {
   onGptEnhance?: (category?: string) => void;
 }
 
-export const STRATEGY_CATEGORY = '수준별 학습 전략';
+export const STRATEGY_CATEGORY = '출제 특징';
 export const SUMMARY_CATEGORY = '종합의견';
 
 const FIELDS: Array<{ category: string; label: string; hint: string; placeholder: string }> = [
   {
     category: STRATEGY_CATEGORY,
-    label: '1. 수준별 학습 전략',
-    hint: '상위권·중위권·기초권으로 나누어 앞으로의 학습 방향을 제시합니다.',
+    label: '1. 출제 특징',
+    hint: '이번 시험의 지문 활용, 원문 변형, 선택지 구성과 배점상의 특징을 설명합니다.',
     placeholder:
-      '예) 상위권(90점 이상): 어법 오류 개수 계산형 문항을 시간 제한 훈련으로 반복하고 … / 중위권: … / 기초권: …',
+      '예) 어법 3문항과 내용일치 2문항을 복수정답형으로 구성하고, 각 문항에 3.8점을 배정했습니다.',
   },
   {
     category: SUMMARY_CATEGORY,

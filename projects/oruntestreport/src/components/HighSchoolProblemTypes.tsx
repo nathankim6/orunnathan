@@ -1,3 +1,4 @@
+import { shouldShowInsight } from '@/utils/problemInsight';
 
 import React from 'react';
 import { BarChart, Plus, Trash2, Sparkles } from 'lucide-react';
@@ -152,15 +153,15 @@ const HighSchoolProblemTypes: React.FC<HighSchoolProblemTypesProps> = ({
                 />
               </div>
 
-              <div className="w-full md:basis-full md:order-last">
+              {shouldShowInsight(type) && (<div className="w-full md:basis-full md:order-last">
                 <Textarea
                   value={type.insight ?? ''}
                   onChange={e => onUpdateType(type.id, 'insight', e.target.value)}
-                  placeholder="출제 포인트 · 오답 함정 (예: (e)는 comma splice — 독립분사구문 one example being 으로 써야 함)"
+                  placeholder="출제 방향성 · 이 문제의 출제 특징 (예: 문맥상 의미의 대조를 이용해 어휘의 적절성을 판별하게 한 유형으로, 단순 암기보다 문맥 판단을 변별 요소로 둔 문항입니다)"
                   className="min-h-[60px] w-full bg-white/80 border-gray-200 text-[13px] leading-[1.6] focus:border-blue-300 transition-all"
                   style={{ wordBreak: 'keep-all' }}
                 />
-              </div>
+              </div>)}
 
 
               <div className="flex flex-col md:flex-row gap-2 w-full md:w-auto">
@@ -225,3 +226,4 @@ const HighSchoolProblemTypes: React.FC<HighSchoolProblemTypesProps> = ({
 };
 
 export default HighSchoolProblemTypes;
+

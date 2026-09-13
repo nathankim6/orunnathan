@@ -1,3 +1,4 @@
+import { shouldShowInsight } from '@/utils/problemInsight';
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import * as pdfjsLib from 'pdfjs-dist';
 import workerSrc from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
@@ -75,6 +76,7 @@ export interface ExamAnalysis {
 
 
 
+
 interface ExamPdfAnalyzerProps {
   schoolType: 'middle' | 'high';
   /** 강사가 기본 정보 단계에서 입력한 시험 범위 — AI가 문항별 범위를 이 기준으로 지정 */
@@ -92,6 +94,7 @@ const readAsDataUrl = (file: File) =>
     reader.onerror = () => reject(reader.error);
     reader.readAsDataURL(file);
   });
+
 
 const PROGRESS_STEPS = [
   { key: 'rendering', label: '시험지 확인' },
@@ -111,6 +114,7 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
   const [fileName, setFileName] = useState('');
   const [stage, setStage] = useState<'idle' | 'rendering' | 'analyzing' | 'review' | 'applying'>('idle');
   const [analysis, setAnalysis] = useState<ExamAnalysis | null>(null);
+  
   const [progress, setProgress] = useState(0);
   const [progressStep, setProgressStep] = useState<(typeof PROGRESS_STEPS)[number]['key']>('rendering');
   const [progressDetail, setProgressDetail] = useState('');
@@ -170,6 +174,7 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
     }
     setFileName(file.name);
     setAnalysis(null);
+    
     setProgress(0);
     setProgressLog([]);
     setErrorMessage(null);
@@ -192,13 +197,13 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
         [
           '문항별 배점과 정답을 판독하는 중…',
           '대분류 · 소분류 유형을 분류하는 중…',
-          '난이도와 오답 함정을 추론하는 중…',
+          '난이도와 출제 방향성을 정리하는 중…',
           '시험 범위와 문항 출처를 대조하는 중…',
           ...(hasOriginal
             ? ['원문과 출제 문장을 문장 단위로 대조하는 중…', '어휘 치환 · 구문 변형 지점을 추출하는 중…']
             : []),
           '등급을 가른 문항 TOP 5를 선별하는 중…',
-          '수준별 학습 전략과 종합의견을 작성하는 중…',
+          '출제 특징과 종합의견을 작성하는 중…',
         ],
       );
 
@@ -346,6 +351,7 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
         mark('variant', 94, `원문 변형 ${result.passageVariants?.length ?? 0}건을 정리했습니다.`);
       }
       mark('variant', 96, `문항 ${result.problems.length}개 분석을 마쳤습니다.`);
+      result.problems = result.problems.map(p => ({ ...p, insight: shouldShowInsight(p) ? p.insight : '' }));
       setAnalysis(result);
       setProgress(100);
       setStage('review');
@@ -580,6 +586,7 @@ const ExamPdfAnalyzer: React.FC<ExamPdfAnalyzerProps> = ({
               </div>
             ))}
           </div>
+
 
           <div className="flex justify-end">
             <Button

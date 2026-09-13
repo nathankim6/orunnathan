@@ -5,3 +5,6 @@ verify_jwt = false
 
 [functions.analyze-exam-pdf]
 verify_jwt = false
+
+[functions.student-report-feed]
+verify_jwt = false

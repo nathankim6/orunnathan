@@ -1,3 +1,4 @@
+import { shouldShowInsight } from '@/utils/problemInsight';
 
 import React from 'react';
 import { BarChart, Plus, Trash2, Sparkles } from 'lucide-react';
@@ -191,15 +192,15 @@ const MiddleSchoolProblemTypes: React.FC<MiddleSchoolProblemTypesProps> = ({
                     />
                   </div>
 
-                  <div className="w-full md:basis-full md:order-last">
+                  {shouldShowInsight(type) && (<div className="w-full md:basis-full md:order-last">
                     <Textarea
                       value={type.insight ?? ''}
                       onChange={e => onUpdateType(type.id, 'insight', e.target.value)}
-                      placeholder="출제 포인트 · 오답 함정"
+                      placeholder="출제 방향성 · 이 문제의 출제 특징 (정답 해설이 아니라, 무엇을 변별하려고 낸 문제인지)"
                       className="min-h-[60px] w-full bg-white/80 border-gray-200 text-[13px] leading-[1.6] focus:border-purple-300 transition-all"
                       style={{ wordBreak: 'keep-all' }}
                     />
-                  </div>
+                  </div>)}
 
 
                   <div className="flex flex-col md:flex-row gap-2 w-full md:w-auto">
@@ -272,3 +273,4 @@ const MiddleSchoolProblemTypes: React.FC<MiddleSchoolProblemTypesProps> = ({
 };
 
 export default MiddleSchoolProblemTypes;
+

@@ -1,3 +1,4 @@
+import { shouldShowInsight } from '@/utils/problemInsight';
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Input } from "@/components/ui/input";
@@ -118,6 +119,7 @@ const ReportForm: React.FC<ReportFormProps> = ({
     difficultProblemsExplanation: '',
     overallEvaluation: '',
     examInfo: '',
+    examDate: '',
     // Add default value for examInfo
     hitQuestionPhotos: [],
     examFeatures: [],
@@ -137,7 +139,7 @@ const ReportForm: React.FC<ReportFormProps> = ({
   }, [formData.school, formData.grade, formData.examInfo]);
 
 
-  // 종합 평가 — 수준별 학습 전략 / 종합의견 2분할
+  // 종합 평가 — 출제 특징 / 종합의견 2분할
   const [categoryEvaluations, setCategoryEvaluations] = useState<CategoryEvaluation[]>([{
     category: STRATEGY_CATEGORY,
     evaluation: ''
@@ -610,7 +612,7 @@ const ReportForm: React.FC<ReportFormProps> = ({
       const { data, error } = await supabase.functions.invoke('gpt-enhance-text', {
         body: {
           text: currentText,
-          type: field === 'difficultProblemsExplanation' ? 'exam-characteristics' : 'overall-evaluation'
+          type: field === 'difficultProblemsExplanation' || targetCategory === STRATEGY_CATEGORY ? 'exam-characteristics' : 'overall-evaluation'
         }
       });
 
@@ -668,7 +670,7 @@ const ReportForm: React.FC<ReportFormProps> = ({
       isKiller: Boolean(p.isKiller),
       points: typeof p.points === 'number' && !Number.isNaN(p.points) ? p.points : undefined,
       answer: p.answer?.trim() || '',
-      insight: p.insight?.trim() || '',
+      insight: shouldShowInsight(p) ? p.insight?.trim() || '' : '',
     }));
 
     const objective = problemTypes.filter((p) => p.questionType === 'objective').length;
@@ -724,6 +726,7 @@ const ReportForm: React.FC<ReportFormProps> = ({
       setAnalysisType(analysis.analysisType);
     }
 
+
     if (analysis.examInfo && !['1학기 중간고사', '1학기 기말고사', '2학기 중간고사', '2학기 기말고사'].includes(analysis.examInfo)) {
       setShowCustomExamInfo(true);
     }
@@ -760,7 +763,7 @@ const ReportForm: React.FC<ReportFormProps> = ({
     if (analysis.teacher?.trim()) filled.push('담당 강사');
     if (analysis.difficultProblemsExplanation?.trim()) filled.push('시험 특징 서술');
     if (analysis.overallEvaluation?.trim()) filled.push('종합 평가');
-    if (incoming.length > 0) filled.push('학습 전략 · 학부모 요약');
+    if (incoming.length > 0) filled.push('출제 특징 · 학부모 요약');
 
     toast.success('입력폼에 자동 반영했습니다', {
       description: filled.length > 0 ? filled.join(' · ') : '반영할 항목을 찾지 못했습니다.',
@@ -985,6 +988,12 @@ const ReportForm: React.FC<ReportFormProps> = ({
               <Input id="examScope" name="examScope" value={formData.examScope} onChange={handleInputChange} placeholder="예: 교과서: 동아(이) 2,3과, 부교재: 리딩파워 30지문" className="h-10 bg-white text-black text-[13px]" required />
             </div>
 
+            <div className="space-y-1.5">
+              <Label htmlFor="examDate" className="text-[12px] font-semibold text-[hsl(var(--ink))]">실제 시험일</Label>
+              <Input id="examDate" name="examDate" type="date" value={formData.examDate || ''} onChange={handleInputChange} className="h-10 bg-white text-black text-[13px]" />
+              <p className="text-[11px] text-slate-500">학생 포털의 최근 시험 순서는 이 날짜를 기준으로 합니다.</p>
+            </div>
+
             {/* Original passage */}
             <OriginalPassageInput
               value={formData.originalPassages || ''}
@@ -1058,7 +1067,7 @@ const ReportForm: React.FC<ReportFormProps> = ({
           <SectionHeading
             kicker="01 · AI"
             title="시험지 자동 분석"
-            description="위에 입력한 시험 범위를 기준으로, AI가 시험지 PDF의 문항별 범위·배점·난도·정답·출제 포인트를 자동으로 채워 줍니다."
+            description="위에 입력한 시험 범위를 기준으로, AI가 시험지 PDF의 문항별 범위·배점·난도·정답·출제 방향성을 자동으로 채워 줍니다."
           />
           <ExamPdfAnalyzer
             schoolType={isHighSchool ? 'high' : 'middle'}
@@ -1205,7 +1214,7 @@ const ReportForm: React.FC<ReportFormProps> = ({
 
         {/* STEP 5 · 종합 평가 */}
         <div key={step === lastStep ? `active-last-${step}-${dir}` : 'idle-last'} className={`${step === lastStep ? (dir >= 0 ? 'wizard-step-next' : 'wizard-step-prev') : 'hidden'} glass-card p-6 md:p-8`}>
-        <SectionHeading kicker="06 · EVALUATION" title="종합 평가" description="수준별 학습 전략과 학부모님께 전하는 종합의견을 나누어 작성합니다." />
+        <SectionHeading kicker="06 · EVALUATION" title="종합 평가" description="출제 특징과 학부모님께 전하는 종합의견을 나누어 작성합니다." />
         <div className="space-y-6">
           <OverallEvaluation 
             evaluations={categoryEvaluations} 
@@ -1283,3 +1292,4 @@ const ReportForm: React.FC<ReportFormProps> = ({
     </div>;
 };
 export default ReportForm;
+

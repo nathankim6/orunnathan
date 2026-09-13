@@ -1580,6 +1580,54 @@ export type Database = {
           },
         ]
       }
+      mock_exam_papers: {
+        Row: {
+          answer_key: Json
+          created_at: string
+          id: string
+          meta: Json
+          model: string | null
+          note: string | null
+          page_count: number
+          paper_html: string
+          provider: string | null
+          question_count: number
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          answer_key?: Json
+          created_at?: string
+          id?: string
+          meta?: Json
+          model?: string | null
+          note?: string | null
+          page_count?: number
+          paper_html: string
+          provider?: string | null
+          question_count?: number
+          title: string
+          updated_at?: string
+          user_id?: string
+        }
+        Update: {
+          answer_key?: Json
+          created_at?: string
+          id?: string
+          meta?: Json
+          model?: string | null
+          note?: string | null
+          page_count?: number
+          paper_html?: string
+          provider?: string | null
+          question_count?: number
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       mock_test_scores: {
         Row: {
           average: number
@@ -1973,6 +2021,7 @@ export type Database = {
           analysis_type: string | null
           created_at: string
           difficult_problems_explanation: string | null
+          exam_date: string | null
           exam_features: Json | null
           exam_info: string | null
           exam_scope: string
@@ -1998,6 +2047,7 @@ export type Database = {
           analysis_type?: string | null
           created_at?: string
           difficult_problems_explanation?: string | null
+          exam_date?: string | null
           exam_features?: Json | null
           exam_info?: string | null
           exam_scope: string
@@ -2023,6 +2073,7 @@ export type Database = {
           analysis_type?: string | null
           created_at?: string
           difficult_problems_explanation?: string | null
+          exam_date?: string | null
           exam_features?: Json | null
           exam_info?: string | null
           exam_scope?: string
@@ -2043,6 +2094,128 @@ export type Database = {
           teacher_photo?: string | null
           total_questions?: number
           updated_at?: string
+        }
+        Relationships: []
+      }
+      report_school_aliases: {
+        Row: {
+          alias_key: string
+          approved_at: string | null
+          canonical_key: string
+          created_at: string
+          note: string | null
+        }
+        Insert: {
+          alias_key: string
+          approved_at?: string | null
+          canonical_key: string
+          created_at?: string
+          note?: string | null
+        }
+        Update: {
+          alias_key?: string
+          approved_at?: string | null
+          canonical_key?: string
+          created_at?: string
+          note?: string | null
+        }
+        Relationships: []
+      }
+      report_student_identity_keys: {
+        Row: {
+          approved_at: string | null
+          created_at: string
+          grade_key: string
+          grade_label: string
+          id: string
+          report_student_id: string
+          school_key: string
+          school_label: string
+          student_name_key: string
+          student_name_label: string
+        }
+        Insert: {
+          approved_at?: string | null
+          created_at?: string
+          grade_key: string
+          grade_label: string
+          id?: string
+          report_student_id: string
+          school_key: string
+          school_label: string
+          student_name_key: string
+          student_name_label: string
+        }
+        Update: {
+          approved_at?: string | null
+          created_at?: string
+          grade_key?: string
+          grade_label?: string
+          id?: string
+          report_student_id?: string
+          school_key?: string
+          school_label?: string
+          student_name_key?: string
+          student_name_label?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "report_student_identity_keys_report_student_id_fkey"
+            columns: ["report_student_id"]
+            isOneToOne: false
+            referencedRelation: "report_students"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      report_students: {
+        Row: {
+          created_at: string
+          display_name: string
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          display_name: string
+          id?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string
+          id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      report_text_snapshots: {
+        Row: {
+          created_at: string
+          difficult_problems_explanation: string | null
+          id: string
+          overall_evaluation: string | null
+          problem_types: Json | null
+          reason: string
+          report_id: string
+        }
+        Insert: {
+          created_at?: string
+          difficult_problems_explanation?: string | null
+          id?: string
+          overall_evaluation?: string | null
+          problem_types?: Json | null
+          reason?: string
+          report_id: string
+        }
+        Update: {
+          created_at?: string
+          difficult_problems_explanation?: string | null
+          id?: string
+          overall_evaluation?: string | null
+          problem_types?: Json | null
+          reason?: string
+          report_id?: string
         }
         Relationships: []
       }
@@ -2336,6 +2509,7 @@ export type Database = {
           report_id: string
           school: string
           score: number | null
+          source_student_id: string | null
           student_name: string
           updated_at: string
         }
@@ -2347,6 +2521,7 @@ export type Database = {
           report_id: string
           school: string
           score?: number | null
+          source_student_id?: string | null
           student_name: string
           updated_at?: string
         }
@@ -2358,6 +2533,7 @@ export type Database = {
           report_id?: string
           school?: string
           score?: number | null
+          source_student_id?: string | null
           student_name?: string
           updated_at?: string
         }
@@ -2367,6 +2543,13 @@ export type Database = {
             columns: ["report_id"]
             isOneToOne: false
             referencedRelation: "report_cards"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "student_submissions_source_student_id_fkey"
+            columns: ["source_student_id"]
+            isOneToOne: false
+            referencedRelation: "report_students"
             referencedColumns: ["id"]
           },
         ]
@@ -3380,6 +3563,7 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      canonical_report_school: { Args: { value: string }; Returns: string }
       clean_choice_text: { Args: { input_text: string }; Returns: string }
       cleanup_orphaned_student_history: { Args: never; Returns: undefined }
       delete_old_generated_questions: { Args: never; Returns: undefined }
@@ -3394,11 +3578,16 @@ export type Database = {
       }
       get_current_employee_id: { Args: never; Returns: string }
       is_admin_access_code: { Args: { input_code: string }; Returns: boolean }
+      merge_report_students: {
+        Args: { duplicate_id: string; primary_id: string }
+        Returns: undefined
+      }
       move_class_to_deleted: { Args: { class_id: string }; Returns: undefined }
       normalize_for_comparison: {
         Args: { text_input: string }
         Returns: string
       }
+      normalize_report_identity: { Args: { value: string }; Returns: string }
       regrade_all_submissions: {
         Args: never
         Returns: {
@@ -3463,12 +3652,12 @@ export type Tables<
   DefaultSchemaTableNameOrOptions extends
     | keyof (DefaultSchema["Tables"] & DefaultSchema["Views"])
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
         DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -3492,11 +3681,11 @@ export type TablesInsert<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -3517,11 +3706,11 @@ export type TablesUpdate<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -3542,11 +3731,11 @@ export type Enums<
   DefaultSchemaEnumNameOrOptions extends
     | keyof DefaultSchema["Enums"]
     | { schema: keyof DatabaseWithoutInternals },
-  EnumName extends DefaultSchemaEnumNameOrOptions extends {
+  EnumName extends (DefaultSchemaEnumNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaEnumNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -3559,11 +3748,11 @@ export type CompositeTypes<
   PublicCompositeTypeNameOrOptions extends
     | keyof DefaultSchema["CompositeTypes"]
     | { schema: keyof DatabaseWithoutInternals },
-  CompositeTypeName extends PublicCompositeTypeNameOrOptions extends {
+  CompositeTypeName extends (PublicCompositeTypeNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
-    : never = never,
+    : never) = never,
 > = PublicCompositeTypeNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }

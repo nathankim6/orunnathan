@@ -20,6 +20,7 @@ type SavedReport = {
   grade: string;
   examScope: string;
   examInfo?: string;
+  examDate?: string;
   teacher: string;
   teacher_photo?: string;
   created_at: string;
@@ -73,6 +74,7 @@ const SavedReports: React.FC = () => {
         grade: report.grade,
         examScope: report.exam_scope,
         examInfo: report.exam_info,
+        examDate: report.exam_date || undefined,
         teacher: report.teacher,
         teacher_photo: report.teacher_photo,
         created_at: report.created_at,

@@ -27,7 +27,7 @@ export interface ProblemType {
   isKiller?: boolean;
   /** 정답 (예: "⑤ (e)", "④, ⑤") */
   answer?: string;
-  /** 출제 포인트 · 오답 함정 */
+  /** 출제 방향성 · 이 문제의 출제 특징 (정답 해설이 아님) */
   insight?: string;
 }
 
@@ -113,6 +113,8 @@ export interface ReportCardData {
   };
   difficultProblemsExplanation?: string;
   examInfo?: string;
+  /** 실제 시험일. 등록일/제출일로 대체하지 않는다. */
+  examDate?: string;
   hitQuestionPhotos?: HitQuestionPhoto[];
   /** 한눈에 보는 출제 특징 */
   examFeatures?: ExamFeature[];
@@ -158,6 +160,7 @@ export async function saveReportCard(reportData: ReportCardData) {
     // difficulty 필드 제거 (테이블에 해당 컬럼이 없음)
     difficult_problems_explanation: rest.difficultProblemsExplanation || null,
     exam_info: rest.examInfo || null,
+    exam_date: rest.examDate || null,
     hit_question_photos: processedPhotos, // 문자열 배열로 처리된 사진들
     exam_features: rest.examFeatures && rest.examFeatures.length > 0 ? (rest.examFeatures as unknown as Json) : null,
     killer_top5: rest.killerTop5 && rest.killerTop5.length > 0 ? (rest.killerTop5 as unknown as Json) : null,
@@ -378,6 +381,7 @@ export const convertDbToAppFormat = (data: any): ReportCardData => {
     difficulty: defaultDifficulty, // 항상 기본값 사용
     difficultProblemsExplanation: data.difficult_problems_explanation,
     examInfo: data.exam_info,
+    examDate: data.exam_date || '',
     hitQuestionPhotos: hitQuestionPhotos,
     examFeatures: parseJsonArray<ExamFeature>(data.exam_features),
     killerTop5: parseJsonArray<KillerProblem>(data.killer_top5),

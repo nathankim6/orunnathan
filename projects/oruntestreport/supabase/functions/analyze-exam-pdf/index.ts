@@ -5,7 +5,6 @@ const corsHeaders = {
 };
 
 // Anthropic Claude API 직접 호출 — Claude Opus 5
-// (화면 표기는 src/lib/aiModel.ts 와 맞춰 둔다)
 const MODEL = 'claude-opus-5';
 const ANTHROPIC_URL = 'https://api.anthropic.com/v1/messages';
 const ANTHROPIC_VERSION = '2023-06-01';
@@ -22,10 +21,6 @@ const analysisSchema = {
     grade: { type: ['string', 'null'] },
     examInfo: { type: ['string', 'null'] },
     examScope: { type: ['string', 'null'] },
-    teacher: { type: ['string', 'null'] },
-    difficultProblemsExplanation: { type: ['string', 'null'] },
-    overallEvaluation: { type: ['string', 'null'] },
-    analysisType: { type: 'string', enum: ['detailed', 'simple'] },
     totalQuestions: { type: 'integer' },
     objectiveQuestions: { type: 'integer' },
     subjectiveQuestions: { type: 'integer' },
@@ -75,7 +70,11 @@ const analysisSchema = {
         required: ['number', 'source', 'variantType', 'originalText', 'examText', 'changeDetail', 'impact'],
       },
     },
-    /** 수준별 학습 전략 */
+    teacher: { type: ['string', 'null'] },
+    difficultProblemsExplanation: { type: ['string', 'null'] },
+    overallEvaluation: { type: ['string', 'null'] },
+    analysisType: { type: 'string', enum: ['detailed', 'simple'] },
+    /** 출제 특징 서술 */
     levelStrategy: { type: 'string' },
     /** 학부모님께 = 종합의견 */
     parentSummary: { type: 'string' },
@@ -87,6 +86,7 @@ const analysisSchema = {
         additionalProperties: false,
         properties: {
           number: { type: 'integer' },
+          page: { type: 'integer' },
           category: { type: 'string' },
           name: { type: 'string' },
           questionType: { type: 'string', enum: ['objective', 'subjective'] },
@@ -96,10 +96,10 @@ const analysisSchema = {
           insight: { type: 'string' },
           isVariant: { type: 'boolean' },
           isKiller: { type: 'boolean' },
-          page: { type: 'integer' },
         },
         required: [
           'number',
+          'page',
           'category',
           'name',
           'questionType',
@@ -109,7 +109,6 @@ const analysisSchema = {
           'insight',
           'isVariant',
           'isKiller',
-          'page',
         ],
       },
     },
@@ -125,7 +124,10 @@ const analysisSchema = {
     'examFeatures',
     'killerTop5',
     'passageVariants',
-
+    'teacher',
+    'difficultProblemsExplanation',
+    'overallEvaluation',
+    'analysisType',
     'levelStrategy',
     'parentSummary',
     'problems',
@@ -180,7 +182,15 @@ function systemPrompt(schoolType: 'middle' | 'high', examScope?: string, origina
     '- questionType: 선택지(①~⑤ 등)가 있으면 objective, 직접 쓰는 서답형/논술형이면 subjective',
     '- points(배점): 시험지에 표기된 배점을 그대로 숫자로. 표기가 없으면 총 100점을 문항 수로 나눠 소수 첫째 자리까지 추정',
     '- answer(정답): 자체 풀이 기준 정답을 "⑤ (e)", "④, ⑤", "① boost – efficiency"처럼 실제 표기 형태로. 확정할 수 없으면 빈 문자열.',
-    '- insight(출제 포인트 · 오답 함정): 왜 그 답인지, 어떤 오답 함정이 설계되었는지 2~3문장으로 구체적으로. 근거 표현·표지어·반의어 치환 등 실제 지문 근거를 인용하세요.',
+    '- 각 문항 insight는 이 시험문항에서 실제로 어떤 표현·문장·선택지·응답 조건을 어떻게 구성했는지 서술합니다. 유형의 일반적 정의나 평가 능력만 설명하지 않습니다. 원문이 제공되지 않았으면 원문과의 차이를 추정하지 않습니다.',
+    '- insight는 isVariant=true 또는 isKiller=true 또는 difficulty가 hard/very_hard인 문항에만 작성합니다. 나머지는 빈 문자열을 반환합니다. 모든 문항의 answer와 points 등 데이터는 그대로 제공합니다.',
+    '- 실제 학생 응시 결과가 없으므로 점수가 갈렸습니다, 오답률이 높았습니다 등 관측한 것처럼 쓰지 않습니다.',
+    '- insight(출제 방향성 · 출제 특징): 정답 해설이 아닙니다. 정답 선택지가 왜 정답인지, 오답이 왜 틀렸는지는 쓰지 마세요.',
+    '  이 문항이 무엇을 변별하려고 어떤 방식으로 설계되었는지, 그 출제 의도와 특징만 2~3문장으로 서술하세요.',
+    '  예) "문맥상 의미의 대조를 활용해 어휘의 적절성을 판별하게 한 유형입니다. 단순 어휘 암기보다 문맥 판단을 변별 요소로 둔 문항입니다."',
+    '  예) "긴 주어와 삽입구 뒤의 수일치를 묻는 구조로, 문장 골격을 끝까지 추적하는 능력을 변별합니다."',
+    '  어조는 \'~입니다 / ~했습니다\' 형태의 설명 존댓말로 쓰고, 명령형(\'~하십시오\', \'~익히십시오\')은 쓰지 마세요.',
+    '  시험지에서 확인되지 않는 출제 사실은 지어내지 마세요.',
     '- difficulty: easy/medium/hard/very_hard (하/중/상/최상). 변별력이 매우 높은 킬러문항은 very_hard',
     '- isKiller: 상위권도 실수하기 쉬운 변별 문항이면 true',
     '- isVariant: 원문 지문을 어순/어휘/문장 구조를 바꿔 변형해 출제했으면 true',
@@ -208,15 +218,19 @@ function systemPrompt(schoolType: 'middle' | 'high', examScope?: string, origina
     originalBlock,
     '',
 
-    '[수준별 학습 전략 · levelStrategy]',
-    '- 상위권 / 중위권 / 하위권 세 구간으로 나눠 각 2~3개의 학습 처방을 제시. 각 구간을 "상위권 — …" 형태의 소제목으로 시작하고 줄바꿈으로 구분하세요. 마크다운·이모지 금지.',
-    '- 어조는 아래 종합의견(parentSummary)과 똑같이 맞추세요. 이 글도 학생이 아니라 학부모님이 읽습니다.',
-    '- 학생에게 내리는 명령형("~하십시오", "~하세요", "~해야 합니다")은 쓰지 말고, 학부모께 보고하는 정중한 문어체로 서술하세요.',
-    '  예: "…을 반복해 훈련하도록 지도하겠습니다", "…을 정리한 오답노트가 필요합니다", "…을 권해 드립니다", "…이 이번 학기의 관건입니다".',
-    '- 근거가 되는 문항 번호와 유형은 그대로 인용하되, 지시가 아니라 설명으로 풀어 쓰세요.',
+    '[출제 특징 서술 · levelStrategy]',
+    '- 상위권·중위권·하위권 학습 조언을 쓰지 않습니다. 이번 시험의 지문 활용, 원문 변형, 선택지 구성, 복수정답 여부와 배점 배치를 4~5문장으로 설명합니다.',
+    '- 일반적인 문제 유형의 정의가 아니라 이 시험에 실제 적용된 구체적인 출제 방식을 근거와 함께 설명합니다. 문항 번호·배점·변형 내용은 확인된 것만 씁니다.',
+    '- 학원 강사가 직접 정리한 듯 자연스럽고 부드러운 존댓말로 쓰세요: \'~입니다\', \'~했습니다\', \'~도움이 됩니다\', \'~좋겠습니다\', \'~권해 드립니다\'.',
+    '- 명령형은 금지합니다: \'~하십시오\', \'~하십시요\', \'~반복하십시오\', \'~익히십시오\', \'~하세요\', \'~해야 합니다\'.',
+    '- 과장된 표현, AI 상투어, 불필요하게 거창한 제안은 피하세요. 마크다운·이모지 금지.',
+    '- 근거가 되는 문항 번호나 유형은 시험지에서 확인된 것만 인용하고, 없으면 만들지 마세요.',
     '',
     '[종합의견(학부모님께) · parentSummary]',
-    '- 학부모께 보고하는 정중한 문어체 4~6문장(400~550자) 한 단락. 이번 시험의 난이도와 출제 경향, 학생이 주의해야 할 지점, 앞으로의 대비 방안을 이번 시험지에서 실제로 확인된 출제 특성과 연결해 구체적으로 제시하세요. 막연한 다짐 대신 어떤 유형을 어떻게 훈련할지 담으세요. 마크다운·이모지 금지.',
+    '- 학원 강사가 직접 정리한 것처럼 자연스럽고 부드러운 존댓말 4~6문장(350~500자) 한 단락.',
+    '- 이번 시험의 난이도와 출제 경향, 학생이 주의할 지점, 앞으로의 대비 방향을 시험지에서 실제로 확인된 특성과 연결해 담담하게 설명하세요.',
+    '- 어미는 \'~입니다\', \'~했습니다\', \'~도움이 됩니다\', \'~좋겠습니다\' 처럼 설명·제안하는 형태로 쓰고, 명령형(\'~하십시오\', \'~하세요\')은 쓰지 마세요.',
+    '- 과장된 수식어와 AI 상투어, 긴 체크리스트는 넣지 마세요. 근거가 없으면 문항 번호나 시험 특징을 만들어내지 마세요. 마크다운·이모지 금지.',
     '',
     '시험지에 실제로 없는 내용은 절대 추측해 만들지 말고, 확인 가능한 근거에 기반해 분석하세요.',
     '반드시 지정된 JSON 스키마에 맞는 JSON 객체만 출력하세요. 설명 문장이나 코드펜스는 절대 붙이지 마세요.',
@@ -297,7 +311,7 @@ Deno.serve(async (req) => {
             },
             {
               type: 'text',
-              text: `이 시험지를 분석해서 지정된 JSON 스키마에 맞게 모든 문항 정보(배점·난도·정답·출제 포인트·오답 함정)와 출제 특징, 등급을 가른 문항 TOP 5, 수준별 학습 전략, 종합의견을 채워 주세요.${
+              text: `이 시험지를 분석해서 지정된 JSON 스키마에 맞게 모든 문항 정보(배점·난도·정답·출제 방향성)와 출제 특징, 등급을 가른 문항 TOP 5, 출제 특징 서술, 종합의견을 채워 주세요.${
                 originalPassages
                   ? ' 또한 제공된 시험 범위 원문과 시험지 문장을 문장 단위로 대조해 passageVariants(원문 변형 분석)를 채워 주세요.'
                   : ''
@@ -347,3 +361,4 @@ Deno.serve(async (req) => {
     );
   }
 });
+
