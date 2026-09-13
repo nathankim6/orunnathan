@@ -1,6 +1,7 @@
 import React from 'react';
 import IgHead from '@/components/ig/IgHead';
 import { iconFor } from '@/components/ig/iconFor';
+import IgIllustration from '@/components/ig/IgIllustration';
 import type { ExamFeature } from '@/integrations/supabase/reportService';
 
 const TONES = ['--ig-coral', '--ig-teal', '--ig-navy', '--ig-sand', '--ig-slate'];
@@ -18,7 +19,7 @@ const ExamFeaturesSection: React.FC<{ features?: ExamFeature[]; className?: stri
 
   return (
     <section className={`ig-module ${className}`}>
-      <IgHead title="한눈에 보는" title2="출제 특징" big={items.length} sub={['KEY', 'FINDINGS']} />
+      <IgHead title="이번 시험은" title2="이렇게 나왔습니다" big={items.length} sub={['KEY', 'FINDINGS']} aside={<IgIllustration kind="growth" size={92} className="hidden sm:block print:block" />} />
       <div className="mt-5">
         {items.map((feature, index) => {
           const tone = TONES[index % TONES.length];

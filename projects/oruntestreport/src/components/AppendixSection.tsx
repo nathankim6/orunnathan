@@ -1,24 +1,14 @@
 import React from 'react';
 import IgHead from '@/components/ig/IgHead';
-import IgStackedBar from '@/components/ig/IgStackedBar';
 import ProblemList from '@/components/ProblemList';
-import { DIFFICULTIES, DIFF_LABEL, DIFF_TONE, type ReportStats, type Problem, type DiffCount } from '@/lib/reportStats';
-
-const segmentsOf = (c: DiffCount) =>
-  DIFFICULTIES.map((d) => ({ key: d, value: c[d], tone: DIFF_TONE[d], label: c[d] >= 2 ? String(c[d]) : undefined }));
-
-const hardPlusPct = (c: DiffCount) => {
-  const n = DIFFICULTIES.reduce((s, d) => s + c[d], 0);
-  return n ? Math.round(((c.hard + c.very_hard) / n) * 100) : 0;
-};
+import { DIFFICULTIES, DIFF_LABEL, DIFF_TONE, type ReportStats, type Problem } from '@/lib/reportStats';
 
 /**
  * 부록 — 출제 유형 분석.
  *
  * 맨 뒤로 보냈다. 학부모가 먼저 읽을 것은 위에 다 있고, 이건 대조용 상세다.
- * ① 유형×난도 누적 막대 세 줄(전체·객관식·서답형) — "서답형은 전부 어려움
- * 이상" 같은 사실이 그림으로 드러난다. ② 소분류 누적 막대 두 단 — 길이는
- * 문항 수, 조각은 난도. % 는 뺐다(14줄이 전부 7.1% 면 잡음이다). ③ 문항 목록.
+ * ① 소분류 누적 막대 두 단 — 길이는 문항 수, 조각은 난도. % 는 뺐다(14줄이
+ * 전부 7.1% 면 잡음이다). ② 문항 목록. 유형×난도는 사람 그림과 입체 파이가 맡는다.
  *
  * 예전의 대분류 타일(고정 목록에 걸린 두 개만 세어 "어휘 50%·서답형 50%")은
  * 없앴다.
@@ -32,43 +22,21 @@ const AppendixSection: React.FC<{ stats: ReportStats; problems: Problem[]; repor
 
   return (
     <section className={`ig-module ${className}`}>
-      <IgHead title="출제 유형 분석" title2="문항별 상세" sub={['APPENDIX', 'DETAIL']} />
+      <IgHead title="시험 문제," title2="하나씩 살펴봅니다" sub={['APPENDIX', 'ITEM BY ITEM']} />
 
-      {/* ① 유형 × 난도 */}
+      {/* ① 소분류 */}
       <div className="mt-5">
-        <span className="ig-col-l" style={{ marginTop: 0 }}>By type · 유형 × 난도</span>
-        <div className="mt-3 space-y-3">
-          {([['all', 'ALL', '전체'], ['objective', 'OBJECTIVE', '객관식'], ['subjective', 'SUBJECTIVE', '서답형']] as const).map(([k, en, ko]) => {
-            const c = stats.byType[k];
-            const n = DIFFICULTIES.reduce((s, d) => s + c[d], 0);
-            if (n === 0) return null;
-            return (
-              <IgStackedBar
-                key={k}
-                labelEn={en}
-                label={`${ko} ${n}`}
-                readout={`어려움 이상 ${hardPlusPct(c)}%`}
-                height={16}
-                approxWidth={860}
-                segments={segmentsOf(c)}
-              />
-            );
-          })}
+        <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+          <span className="ig-col-l" style={{ marginTop: 0 }}>By subtype · 소분류 {stats.bySubtype.length}종</span>
+          <span className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            {DIFFICULTIES.map((d) => (
+              <span key={d} className="ig-leg">
+                <span className="ig-leg-dot ig-print-color" style={{ background: `hsl(var(${DIFF_TONE[d]}))`, borderRadius: 2 }} />
+                <span className="ig-leg-l">{DIFF_LABEL[d]}</span>
+              </span>
+            ))}
+          </span>
         </div>
-        <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1">
-          {DIFFICULTIES.map((d) => (
-            <span key={d} className="ig-leg">
-              <span className="ig-leg-dot ig-print-color" style={{ background: `hsl(var(${DIFF_TONE[d]}))`, borderRadius: 2 }} />
-              <span className="ig-leg-l">{DIFF_LABEL[d]}</span>
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* ② 소분류 */}
-      <div className="ig-rule-soft mt-6" />
-      <div className="mt-5">
-        <span className="ig-col-l" style={{ marginTop: 0 }}>By subtype · 소분류 {stats.bySubtype.length}종</span>
         <div className={`mt-3 grid gap-x-8 gap-y-2.5 grid-cols-1 ${subCols === 3 ? 'md:grid-cols-3 print:grid-cols-3' : 'md:grid-cols-2 print:grid-cols-2'}`}>
           {stats.bySubtype.map((s) => {
             const frac = s.count / maxCount;
@@ -95,7 +63,7 @@ const AppendixSection: React.FC<{ stats: ReportStats; problems: Problem[]; repor
         </div>
       </div>
 
-      {/* ③ 문항 목록 */}
+      {/* ② 문항 목록 */}
       <div className="ig-rule-soft mt-6" />
       <div className="mt-5">
         <span className="ig-col-l" style={{ marginTop: 0 }}>Item list · 문항 목록</span>

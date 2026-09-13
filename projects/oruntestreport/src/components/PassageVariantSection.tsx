@@ -1,6 +1,7 @@
 import React from 'react';
 import IgHead from '@/components/ig/IgHead';
 import IgHeaderCard from '@/components/ig/IgHeaderCard';
+import IgIllustration from '@/components/ig/IgIllustration';
 import type { PassageVariant } from '@/integrations/supabase/reportService';
 
 /**
@@ -16,7 +17,7 @@ const PassageVariantSection: React.FC<{ items: PassageVariant[]; className?: str
 
   return (
     <section className={`ig-module ${className} ${list.length >= 3 ? 'ig-module-tall' : ''}`}>
-      <IgHead title="원문 대조" title2="지문 변형" big={list.length} bigUnit="건" sub={['SOURCE', 'VS EXAM']} />
+      <IgHead title="원문 대조" title2="지문 변형 분석" big={list.length} bigUnit="건" sub={['SOURCE', 'VS EXAM']} aside={<IgIllustration kind="reading" size={92} className="hidden sm:block print:block" />} />
       <p className="ig-lede">시험 범위 원문과 실제 출제 문장을 문장 단위로 대조해, 변형된 지점과 그 함정을 정리했습니다.</p>
 
       <div className="mt-4">

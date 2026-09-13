@@ -23,7 +23,7 @@ const KillerTop5Section: React.FC<{ items?: KillerProblem[]; className?: string 
 
   return (
     <section className={`ig-module ${className}`}>
-      <IgHead title="등급을 가른" title2={`문항 TOP ${list.length}`} big={list.length} sub={['WHERE', 'IT', 'SPLIT']} />
+      <IgHead title="등급을 가른" title2={`문항 ${list.length}가지`} big={list.length} sub={['WHERE', 'IT', 'SPLIT']} />
 
       {pointsOk && (
         <p className="ig-lede">이 {list.length}문항이 가져간 배점은 모두 {sum.toFixed(1)}점입니다. 점수 차이는 대개 여기에서 갈립니다.</p>

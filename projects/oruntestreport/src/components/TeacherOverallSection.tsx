@@ -1,6 +1,7 @@
 import React from 'react';
 import { UserRound } from 'lucide-react';
 import IgHead from '@/components/ig/IgHead';
+import IgIllustration from '@/components/ig/IgIllustration';
 
 /**
  * 담당 강사 종합의견.
@@ -21,7 +22,7 @@ const TeacherOverallSection: React.FC<{
     || '문제 난이도는 평이했으며, 기본 개념을 잘 이해하고 있다면 충분히 해결할 수 있는 문제들로 구성되어 있습니다.';
   return (
     <section className={`ig-module ${className}`}>
-      <IgHead title="담당 강사" title2="종합의견" sub={["TEACHER'S", 'NOTE']} />
+      <IgHead title="담당 강사" title2="종합의견" sub={["TEACHER'S", 'NOTE']} aside={<IgIllustration kind="feedback" size={92} className="hidden sm:block print:block" />} />
 
       <div className="mt-5 flex items-center gap-4">
         {teacherPhoto ? (

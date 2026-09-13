@@ -10,6 +10,10 @@ export const DIFFICULTIES: Difficulty[] = ['easy', 'medium', 'hard', 'very_hard'
 export const DIFF_LABEL: Record<Difficulty, string> = { easy: '쉬움', medium: '보통', hard: '어려움', very_hard: '매우 어려움' };
 export const DIFF_LABEL_EN: Record<Difficulty, string> = { easy: 'EASY', medium: 'MEDIUM', hard: 'HARD', very_hard: 'KILLER' };
 export const DIFF_TONE: Record<Difficulty, string> = { easy: '--ig-teal', medium: '--ig-slate', hard: '--ig-sand', very_hard: '--ig-coral' };
+/** 문항 유형 색 — 객관식 남색, 서답형 자주. 난도 색(청록·슬레이트·모래·코랄)과 겹치지 않는다. */
+export const TYPE_TONE = { objective: '--ig-navy', subjective: '--ig-plum' } as const;
+/** 출제 유형(대분류) 색 순환 — 많은 순서대로 배정한다 */
+export const CATEGORY_TONES = ['--ig-coral', '--ig-teal', '--ig-sand', '--ig-navy', '--ig-plum', '--ig-slate'];
 const WEIGHT: Record<Difficulty, number> = { easy: 1, medium: 2, hard: 3, very_hard: 4 };
 
 export interface Problem {
@@ -184,4 +188,75 @@ export function parseOverallEvaluation(raw?: string): { strategy?: string; overa
   } catch {
     return { overall: raw };
   }
+}
+
+/* ── 대분류를 다시 큰 묶음으로 ─────────────────────────────────
+   AI 자동 채움은 category 에 세부 유형(빈칸추론·순서배열…)을 넣는다. 도넛에
+   열네 조각을 올릴 수는 없으니 낱말로 큰 묶음을 만든다. 순서가 곧 우선순위다
+   ("서술형 요약 쓰기" 는 독해가 아니라 서술형). 못 고르면 "기타". */
+export const COARSE_GROUPS: { key: string; test: RegExp; tone: string }[] = [
+  { key: '서술형', test: /서술|서답|영작|쓰기|writing/i, tone: '--ig-plum' },
+  { key: '어법', test: /어법|문법|grammar/i, tone: '--ig-coral' },
+  { key: '어휘', test: /어휘|단어|영영|vocab|word/i, tone: '--ig-sand' },
+  { key: '대화문', test: /대화|듣기|listening|dialog/i, tone: '--ig-navy' },
+  { key: '독해', test: /독해|본문|지문|빈칸|순서|삽입|요약|제목|주제|함축|일치|추론|지칭|무관|심경|요지|목적|분위기|글의|read|passage/i, tone: '--ig-teal' },
+];
+export const coarseGroupOf = (p: { category?: string; name?: string }) => {
+  const text = `${p.category || ''} ${p.name || ''}`;
+  return COARSE_GROUPS.find((g) => g.test.test(text)) || { key: '기타', tone: '--ig-slate', test: /$^/ };
+};
+
+export interface CoarseShare { key: string; count: number; pct: number; tone: string; byDifficulty: DiffCount }
+
+/** 큰 묶음별 문항 수 — 많은 순. 도넛과 기기 목업이 쓴다. */
+export function coarseShares(problems: Problem[] | undefined): CoarseShare[] {
+  const list = (problems || []).filter(Boolean);
+  if (list.length === 0) return [];
+  const map = new Map<string, { tone: string; c: DiffCount }>();
+  for (const p of list) {
+    const g = coarseGroupOf(p);
+    if (!map.has(g.key)) map.set(g.key, { tone: g.tone, c: zero() });
+    const d = DIFFICULTIES.includes(p.difficulty) ? p.difficulty : 'medium';
+    map.get(g.key)!.c[d] += 1;
+  }
+  return Array.from(map.entries())
+    .map(([key, v]) => {
+      const count = DIFFICULTIES.reduce((s, d) => s + v.c[d], 0);
+      return { key, count, pct: pct(count, list.length), tone: v.tone, byDifficulty: v.c };
+    })
+    .sort((a, b) => b.count - a.count || a.key.localeCompare(b.key, 'ko'));
+}
+
+export interface CategoryShare {
+  category: string;
+  count: number;
+  pct: number;
+  tone: string;
+  byDifficulty: DiffCount;
+  /** 어려움 이상 비율 (이 유형 안에서) */
+  hardPlusPct: number;
+}
+
+/**
+ * 상위 n 개 대분류와 나머지("기타") — 도넛·상자 줄·누적 막대가 같은 목록을 쓴다.
+ * 나머지가 한 종류뿐이면 이름을 그대로 둔다(“기타 1문항” 은 정보가 없다).
+ */
+export function topCategories(stats: ReportStats, n = 5): CategoryShare[] {
+  const total = stats.byCategory.reduce((s, c) => s + c.count, 0);
+  if (total === 0) return [];
+  const head = stats.byCategory.slice(0, n);
+  const tail = stats.byCategory.slice(n);
+  const rows = head.map((c) => ({ category: c.category, count: c.count, byDifficulty: c.byDifficulty }));
+  if (tail.length === 1) rows.push({ category: tail[0].category, count: tail[0].count, byDifficulty: tail[0].byDifficulty });
+  else if (tail.length > 1) {
+    const c = zero();
+    for (const t of tail) for (const d of DIFFICULTIES) c[d] += t.byDifficulty[d];
+    rows.push({ category: `기타 ${tail.length}종`, count: tail.reduce((s, t) => s + t.count, 0), byDifficulty: c });
+  }
+  return rows.map((r, i) => ({
+    ...r,
+    pct: pct(r.count, total),
+    tone: CATEGORY_TONES[i % CATEGORY_TONES.length],
+    hardPlusPct: pct(r.byDifficulty.hard + r.byDifficulty.very_hard, r.count),
+  }));
 }

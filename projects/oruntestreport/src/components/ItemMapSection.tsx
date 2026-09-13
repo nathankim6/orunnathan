@@ -2,6 +2,7 @@ import React from 'react';
 import IgHead from '@/components/ig/IgHead';
 import IgUnitGrid from '@/components/ig/IgUnitGrid';
 import DifficultyFlow from '@/components/ig/DifficultyFlow';
+import IgIllustration from '@/components/ig/IgIllustration';
 import type { ReportStats, Problem } from '@/lib/reportStats';
 
 const joinNumbers = (nums: number[], max = 12) =>
@@ -18,7 +19,7 @@ const ItemMapSection: React.FC<{ stats: ReportStats; problems: Problem[]; classN
   if (!problems || problems.length === 0) return null;
   return (
     <section className={`ig-module ${className}`}>
-      <IgHead title="문항 지도와" title2="난도 흐름" big={stats.total} sub={['ONE TILE', 'ONE ITEM']} />
+      <IgHead title="문항 지도와" title2="난도 흐름" big={stats.total} sub={['ONE TILE', 'ONE ITEM']} aside={<IgIllustration kind="answers" size={92} className="hidden sm:block print:block" />} />
 
       {/* 인쇄(3칸, 내용 폭 ≈297px)에서는 격자 옆에 글이 못 들어간다 — 아래로 내린다. */}
       <div className="mt-5 flex flex-col md:flex-row print:flex-col gap-6 items-start">

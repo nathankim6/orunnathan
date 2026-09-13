@@ -12,7 +12,10 @@ import ReportToolbar from "@/components/ReportToolbar";
 import FloatingThemeToggle from "@/components/FloatingThemeToggle";
 import ReportHeader from "@/components/ReportHeader";
 import ReportKpiRail from "@/components/ReportKpiRail";
-import TypeDonutSection from "@/components/TypeDonutSection";
+import CategoryDonutSection from "@/components/CategoryDonutSection";
+import CategoryBarsSection from "@/components/CategoryBarsSection";
+import PictogramSection from "@/components/PictogramSection";
+import OnlineSection from "@/components/OnlineSection";
 import ItemMapSection from "@/components/ItemMapSection";
 import DifficultySection from "@/components/DifficultySection";
 import AppendixSection from "@/components/AppendixSection";
@@ -158,6 +161,8 @@ const Report: React.FC = () => {
       const title = mod.querySelector('.ig-h')?.textContent?.trim().slice(0, 20) || mod.className;
       mod.querySelectorAll<HTMLElement>('*').forEach((el) => {
         if (el.classList.contains('capture-hide') || el.closest('.capture-hide')) return;
+        // SVG 안쪽 요소의 scrollWidth 는 글자 폭이라 넘침이 아니다.
+        if (el instanceof SVGElement && el.tagName.toLowerCase() !== 'svg') return;
         const r = el.getBoundingClientRect();
         if (r.width === 0) return;
         if (el.scrollWidth > el.clientWidth + 1 && getComputedStyle(el).overflowX === 'visible') {
@@ -456,6 +461,16 @@ const Report: React.FC = () => {
   const showDetail =
     reportData.school.includes('고등학교') || reportData.grade.includes('고') ||
     (!reportData.school.includes('고등학교') && !reportData.grade.includes('고') && reportData.analysisType === 'detailed');
+  const hasCategories = igStats.byCategory.length > 0;
+  const hasFeatures = showDetail && featureCount > 0;
+  const hasKiller = showDetail && killerCount > 0;
+  // 개발 서버에서만: ?demoOnline 로 저장 전 리포트에도 온라인 모듈을 미리 본다.
+  const onlineId = id || (import.meta.env.DEV && new URLSearchParams(window.location.search).has('demoOnline') ? 'demo' : undefined);
+  const hasOnline = !!onlineId;
+  // 반 칸(span-3) 모듈이 홀수면 마지막 하나를 온 칸으로 늘려 격자에 구멍을 남기지 않는다.
+  const halves = ([['features', hasFeatures], ['killer', hasKiller], ['online', hasOnline]] as const).filter(([, on]) => on).map(([k]) => k);
+  const halfSpan = (key: string) => (halves.length % 2 === 1 && halves[halves.length - 1] === key ? 'ig-span-6' : 'ig-span-3');
+
   
   // Ensure gradient consistency for all school types
   const gradient = `from-${theme}-50 via-${theme}-50/30 to-${theme}-50/10`;
@@ -553,20 +568,28 @@ const Report: React.FC = () => {
               teacher={reportData.teacher}
               examScope={reportData.examScope}
               stats={igStats}
-              problems={reportData.problemTypes as any}
             />
 
             {/* what — 무엇이 나왔나 */}
             <ReportKpiRail className="ig-span-4" stats={igStats} />
-            <TypeDonutSection className="ig-span-2-side" stats={igStats} />
+            {hasCategories ? (
+              <>
+                <CategoryDonutSection className="ig-span-2-side" stats={igStats} problems={reportData.problemTypes as any} />
+                <CategoryBarsSection className="ig-span-4" stats={igStats} />
+                <PictogramSection className="ig-span-2-side" stats={igStats} />
+              </>
+            ) : (
+              <PictogramSection className="ig-span-2-side" stats={igStats} />
+            )}
             <ItemMapSection className="ig-span-4" stats={igStats} problems={reportData.problemTypes as any} />
             <DifficultySection className="ig-span-2-side" stats={igStats} />
 
-            {/* where — 어디서 갈렸나. 고등부는 항상, 중등부는 상세 분석에서만 */}
+            {/* where — 어디서 갈렸나. 반 칸짜리 모듈은 짝이 맞게 span 을 정한다 */}
+            {hasFeatures && <ExamFeaturesSection className={halfSpan('features')} features={reportData.examFeatures} />}
+            {hasKiller && <KillerTop5Section className={halfSpan('killer')} items={reportData.killerTop5} />}
+            {hasOnline && <OnlineSection className={halfSpan('online')} stats={igStats} problems={reportData.problemTypes as any} reportId={onlineId} />}
             {showDetail && (
               <>
-                <ExamFeaturesSection className={killerCount > 0 ? 'ig-span-3' : 'ig-span-6'} features={reportData.examFeatures} />
-                <KillerTop5Section className={featureCount > 0 ? 'ig-span-3' : 'ig-span-6'} items={reportData.killerTop5} />
                 <PassageVariantSection className="ig-span-6" items={reportData.passageVariants || []} />
                 {featureCount === 0 && (
                   <DifficultProblemsExplanation

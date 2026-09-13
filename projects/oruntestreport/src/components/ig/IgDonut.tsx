@@ -1,4 +1,5 @@
 import React from 'react';
+import IgMiniPie from '@/components/ig/IgMiniPie';
 
 export interface DonutSegment {
   label: string;
@@ -32,12 +33,16 @@ const IgDonut: React.FC<{
   /** 도넛 지름 (px) — 폭에 따라 흔들리지 않게 px 로 고정 */
   size?: number;
   legend?: 'right' | 'below';
+  /** 범례 앞 표지 — 점, 또는 값만큼 찬 작은 파이 */
+  legendMark?: 'dot' | 'pie';
   /** 범례 셋째 칸 — 예: seg => `${seg.value}문항` */
   countLabel?: (seg: DonutSegment) => string;
+  /** 가운데 자리에 놓을 것(아이콘 등). 있으면 centerCap·centerValue 보다 우선 */
+  center?: React.ReactNode;
   className?: string;
 }> = ({
   segments, centerCap, centerValue, thickness = 15, gap = 1.1, iso = false,
-  size = 150, legend = 'right', countLabel, className = '',
+  size = 150, legend = 'right', legendMark = 'dot', countLabel, center, className = '',
 }) => {
   const live = segments.filter((s) => (s.value || 0) > 0);
   const total = live.reduce((s, x) => s + x.value, 0) || 1;
@@ -89,7 +94,9 @@ const IgDonut: React.FC<{
                   transform="rotate(-90 50 50)" />
         ))}
       </svg>
-      {(centerCap || centerValue !== undefined) && (
+      {center ? (
+        <div className="absolute inset-0 flex items-center justify-center" style={{ paddingBottom: iso ? 6 : 0 }}>{center}</div>
+      ) : (centerCap || centerValue !== undefined) && (
         <div className="absolute inset-0 flex flex-col items-center justify-center" style={{ paddingBottom: iso ? 6 : 0 }}>
           {centerCap && <span className="ig-stat-c" style={{ marginTop: 0 }}>{centerCap}</span>}
           {centerValue !== undefined && (
@@ -104,7 +111,11 @@ const IgDonut: React.FC<{
     <ul className={`min-w-0 ${legend === 'below' ? 'mt-4 w-full' : 'flex-1'} space-y-2.5`}>
       {live.map((seg, i) => (
         <li key={i} className="ig-leg">
-          <span className="ig-leg-dot" style={{ background: seg.color }} />
+          {legendMark === 'pie' ? (
+            <IgMiniPie fraction={seg.value / total} color={seg.color} size={18} />
+          ) : (
+            <span className="ig-leg-dot" style={{ background: seg.color }} />
+          )}
           <span className="ig-leg-n">{Math.round((seg.value / total) * 100)}%</span>
           <span className="ig-leg-l">{seg.label}</span>
           {countLabel && (
