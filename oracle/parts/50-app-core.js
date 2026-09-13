@@ -106,16 +106,21 @@
 
     // ---- 큐 ----
     const VIDEO_RE = /\.(mp4|webm)$/i;
-    function enqueue(files, teacherId, at) {
+    // enqueue(files, teacherId, at, { memo, kinds }) — memo 는 파일과 함께 모델에 전하는 말, kinds 는 파일별 종류(exam|scope|handout, 빈 값이면 자동)
+    function enqueue(files, teacherId, at, opts) {
       const t = teacher(teacherId); if (!t) return [];
       const jobs = [];
-      let n = 0;
+      const memo = String(opts && opts.memo || "").trim().slice(0, 600);
+      const kinds = (opts && Array.isArray(opts.kinds)) ? opts.kinds : [];
+      let n = 0, fi = -1;
       for (const f of files) {
+        fi++;
         if (VIDEO_RE.test(f.name)) { emit("askVideo", f); continue; }
         if (n >= 20) { emit("toast", { msg: "한 번에 20개까지 넣을 수 있어요 — 나머지는 다음에 넣어 주세요" }); break; }
         n++;
         const ext = EXTRACT.extOf(f.name);
-        const job = { id: uid("j"), teacherId, file: f, name: f.name, ext, size: f.size, kind: "auto", kindGuess: null, stage: "queued", progress: 0, detail: "대기", text: "", error: null, ctrl: null, force: false, createdAt: Date.now() };
+        const job = { id: uid("j"), teacherId, file: f, name: f.name, ext, size: f.size, kind: "auto", kindGuess: null, stage: "queued", progress: 0, detail: "대기", text: "", error: null, ctrl: null, force: false, memo, createdAt: Date.now() };
+        if (KINDS.includes(kinds[fi])) { job.kind = kinds[fi]; job.kindForced = true; }
         if (!EXTRACT.ACCEPT.split(",").includes("." + ext)) { job.stage = "error"; job.error = "지원하지 않는 형식이에요: ." + ext + " (PDF·워드·한글·엑셀·텍스트·사진)"; }
         jobs.push(job); state.queue.push(job);
       }
@@ -168,7 +173,7 @@
         if (!job.kindForced) {
           const g = TEXT.guessKind(job.name, job.text);
           job.kindGuess = g;
-          if (!g.sure && API.ready()) { try { const c = await withRetry(job, () => ANALYZE.classifyLLM(job.name, job.text, signal)); job.kindGuess = { kind: c.kind, confidence: c.confidence, sure: true, by: "llm" }; llmMeta = c.meta; } catch (e) { if (e.code === "cancelled") throw e; } }
+          if (!g.sure && API.ready()) { try { const c = await withRetry(job, () => ANALYZE.classifyLLM(job.name, job.text, signal, job.memo)); job.kindGuess = { kind: c.kind, confidence: c.confidence, sure: true, by: "llm" }; llmMeta = c.meta; } catch (e) { if (e.code === "cancelled") throw e; } }
           if (!job.kindForced) job.kind = job.kindGuess.kind;
         }
         const hash = await TEXT.sha256(TEXT.norm(job.text).slice(0, 20000));
@@ -196,9 +201,9 @@
       }
     }
     async function runExam(job, t, hash, llmMeta, signal) {
-      const meta = TEXT.guessExamMeta(job.text, job.name, t);
+      const meta = TEXT.guessExamMeta((job.memo ? job.memo + "\n" : "") + job.text, job.name, t);   // 메모에 "2학기 기말" 이라 적었으면 그것이 먼저 잡힌다
       if (llmMeta) { if (llmMeta.year && +llmMeta.year) { meta.year = +llmMeta.year; meta.yearGuessed = false; } if (/[12]/.test(llmMeta.semester || "")) { meta.semester = +/[12]/.exec(llmMeta.semester)[0]; meta.semesterGuessed = false; } if (llmMeta.term) { meta.term = /기말/.test(llmMeta.term) ? "기말" : /중간/.test(llmMeta.term) ? "중간" : meta.term; meta.termGuessed = false; } if (llmMeta.school) { meta.school = llmMeta.school; meta.schoolGuessed = false; } if (llmMeta.subject) { meta.subject = llmMeta.subject; meta.subjectGuessed = false; } }
-      const r = await withRetry(job, () => ANALYZE.dataizeExam(job.text, { signal, onStep: (i) => step(job, "analyze", "문항 분석 " + i.i + "/" + i.n + (i.detail ? " · " + i.detail : ""), 0.4 + 0.3 * (i.i / i.n)) }));
+      const r = await withRetry(job, () => ANALYZE.dataizeExam(job.text, { signal, memo: job.memo, onStep: (i) => step(job, "analyze", "문항 분석 " + i.i + "/" + i.n + (i.detail ? " · " + i.detail : ""), 0.4 + 0.3 * (i.i / i.n)) }));
       if (!r.questions.length) throw new Error("문항을 찾지 못했어요 — 범위 원문이라면 칩을 '범위'로 바꿔 주세요");
       if (r.info.year && meta.yearGuessed) { meta.year = r.info.year; meta.yearGuessed = false; }
       if (r.info.semester && meta.semesterGuessed) { meta.semester = r.info.semester; meta.semesterGuessed = false; }
@@ -219,7 +224,7 @@
       const ai = ANALYZE.combineAI(loc, llm, r.questions.length);
       if (signal.aborted || !teacher(t.id)) throw API.err("cancelled", "중단됨");
       step(job, "save", "저장 중", 0.95);
-      const exam = { id: examId, teacherId: t.id, title: TEXT.examLabel(meta), meta, file: { name: job.name, ext: job.ext, size: job.size, pages: job.pages, chars: job.text.length }, ocr: job.ocr, text: job.text, hash,
+      const exam = { id: examId, teacherId: t.id, title: TEXT.examLabel(meta), meta, file: { name: job.name, ext: job.ext, size: job.size, pages: job.pages, chars: job.text.length }, ocr: job.ocr, text: job.text, hash, memo: job.memo || "",
         status: "analyzed", analysis: { total: r.info.total, objective: r.info.objective, subjective: r.info.subjective, points: r.info.points, summary: r.info.summary, hasExplanations: r.info.hasExplanations, title: r.info.title }, ai, gaps: r.gaps, answerKeyText: r.answerKeyText.slice(0, 20000),
         matched: mres.matched, createdAt: Date.now(), analyzedAt: Date.now(), learnedInVersion: null };
       const qs = r.questions.map(q => Object.assign(q, { id: uid("q"), examId, teacherId: t.id, tags: [], note: "", createdAt: Date.now() }));
@@ -228,13 +233,13 @@
       log(t.id, "ingest", exam.title + " · 문항 " + qs.length, { examId });
     }
     async function runScope(job, t, hash, signal) {
-      const list = await withRetry(job, () => ANALYZE.indexScope(job.text, { name: job.name, signal, onStep: (i) => step(job, "index", "지문 색인 " + i.i + "/" + i.n, 0.4 + 0.4 * (i.i / i.n)) }));
+      const list = await withRetry(job, () => ANALYZE.indexScope(job.text, { name: job.name, signal, memo: job.memo, onStep: (i) => step(job, "index", "지문 색인 " + i.i + "/" + i.n, 0.4 + 0.4 * (i.i / i.n)) }));
       const good = list.filter(p => p.kind === "지문");
       if (!good.length) throw new Error("지문을 찾지 못했어요 — 기출 시험지라면 칩을 '기출'로 바꿔 주세요");
       const sourceId = uid("s");
       const kind = /교과서|textbook|lesson/i.test(job.name + job.text.slice(0, 500)) ? "교과서" : /모의고사|모평|학평/.test(job.name) ? "모의고사" : /부교재|워크북|workbook/i.test(job.name) ? "부교재" : "기타";
       const ps = list.map((p, i) => Object.assign(p, { id: uid("p"), teacherId: t.id, sourceId, order: i + 1, createdAt: Date.now() }));
-      const src = { id: sourceId, teacherId: t.id, name: job.name.replace(/\.[a-z0-9]+$/i, ""), kind, file: { name: job.name, ext: job.ext, size: job.size, pages: job.pages, chars: job.text.length }, ocr: job.ocr, text: job.text, hash, passages: good.length, createdAt: Date.now(), complete: false };
+      const src = { id: sourceId, teacherId: t.id, name: job.name.replace(/\.[a-z0-9]+$/i, ""), kind, file: { name: job.name, ext: job.ext, size: job.size, pages: job.pages, chars: job.text.length }, ocr: job.ocr, text: job.text, hash, memo: job.memo || "", passages: good.length, createdAt: Date.now(), complete: false };
       if (signal.aborted || !teacher(t.id)) throw API.err("cancelled", "중단됨");
       step(job, "save", "저장 중", 0.85);
       await DB.put("sources", src); await DB.putAll("passages", ps);
@@ -254,13 +259,13 @@
       log(t.id, "index", src.name + " · 지문 " + good.length, { sourceId });
     }
     async function runHandout(job, t, hash, signal) {
-      const r = await withRetry(job, () => ANALYZE.indexHandout(job.text, { name: job.name, signal, onStep: (i) => step(job, "index", "프린트 읽는 중 " + i.i + "/" + i.n, 0.4 + 0.4 * (i.i / i.n)) }));
+      const r = await withRetry(job, () => ANALYZE.indexHandout(job.text, { name: job.name, signal, memo: job.memo, onStep: (i) => step(job, "index", "프린트 읽는 중 " + i.i + "/" + i.n, 0.4 + 0.4 * (i.i / i.n)) }));
       if (!r.passages.length && !r.items.length) throw new Error("프린트에서 지문이나 포인트를 찾지 못했어요 — 기출 시험지라면 칩을 '기출'로 바꿔 주세요");
       const sourceId = uid("s");
-      const target = TEXT.guessExamMeta(job.text, job.name, t);
+      const target = TEXT.guessExamMeta((job.memo ? job.memo + "\n" : "") + job.text, job.name, t);
       const ps = r.passages.map((p, i) => Object.assign(p, { id: uid("p"), teacherId: t.id, sourceId, order: i + 1, createdAt: Date.now() }));
       const src = { id: sourceId, teacherId: t.id, name: job.name.replace(/\.[a-z0-9]+$/i, ""), kind: "프린트", target: { year: target.year, semester: target.semester, term: target.term, guessed: target.yearGuessed || target.termGuessed }, items: r.items,
-        file: { name: job.name, ext: job.ext, size: job.size, pages: job.pages, chars: job.text.length }, ocr: job.ocr, text: job.text, hash, passages: ps.length, createdAt: Date.now(), complete: false, reflection: null };
+        file: { name: job.name, ext: job.ext, size: job.size, pages: job.pages, chars: job.text.length }, ocr: job.ocr, text: job.text, hash, memo: job.memo || "", passages: ps.length, createdAt: Date.now(), complete: false, reflection: null };
       if (signal.aborted || !teacher(t.id)) throw API.err("cancelled", "중단됨");
       step(job, "save", "저장 중", 0.85);
       await DB.put("sources", src); if (ps.length) await DB.putAll("passages", ps);

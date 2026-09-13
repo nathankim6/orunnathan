@@ -175,7 +175,7 @@
         const chip = ["queued", "extract", "ocr", "classify"].includes(j.stage) ? '<button type="button" class="chip' + (j.kind === "scope" ? " gold" : j.kind === "handout" ? "" : j.kind === "auto" ? " dim" : "") + '" data-flip="' + j.id + '" title="종류가 다르면 눌러서 바꾸세요 (기출 → 범위 → 프린트)">' + KL[j.kind] + '</button>' : '<span class="chip' + (j.kind === "scope" ? " gold" : "") + '">' + KL[j.kind] + '</span>';
         const x = ["done", "error", "cancelled"].includes(j.stage) ? '<button type="button" class="x ghost" data-rm="' + j.id + '">✕</button>' : '<button type="button" class="x ghost" data-cancel="' + j.id + '" title="취소">✕</button>';
         const err = j.stage === "error" ? '<div class="d bad">⚠ ' + esc(j.error) + ' ' + (j.canForce ? '<button type="button" class="link" data-force="' + j.id + '">그래도 넣기</button>' : (j.tries || 0) < 3 ? '<button type="button" class="link" data-retry="' + j.id + '">다시</button>' : '<span class="faint">(3번 실패 — 건너뛸게요)</span>') + '</div>' : "";
-        return '<div class="q' + (j.stage === "error" ? " err" : "") + '"><span class="n">' + tn + esc(j.name) + '</span><span class="row">' + chip + x + '</span><div class="d">' + esc(j.detail || "") + (j.note ? ' · ' + esc(j.note) : "") + '</div>' + (["done", "error", "cancelled", "queued"].includes(j.stage) ? "" : '<div class="bar prog"><i style="width:' + Math.round(j.progress * 100) + '%"></i></div>') + err + '</div>'; }).join("") + '</div>';
+        return '<div class="q' + (j.stage === "error" ? " err" : "") + '"><span class="n">' + tn + esc(j.name) + '</span><span class="row">' + chip + x + '</span><div class="d">' + esc(j.detail || "") + (j.note ? ' · ' + esc(j.note) : "") + (j.memo ? '<div class="memo" title="' + esc(j.memo) + '">✎ ' + esc(j.memo.length > 60 ? j.memo.slice(0, 60) + "…" : j.memo) + '</div>' : "") + '</div>' + (["done", "error", "cancelled", "queued"].includes(j.stage) ? "" : '<div class="bar prog"><i style="width:' + Math.round(j.progress * 100) + '%"></i></div>') + err + '</div>'; }).join("") + '</div>';
     }
     function bindQueue(root) {
       const find = (id) => S.queue.find(j => j.id === id);
@@ -206,6 +206,7 @@
         const g = (k) => e.meta[k + "Guessed"] ? ' <span class="badge warn" title="시험지에서 읽어 추정한 값이에요. 틀리면 고쳐 주세요">추정</span>' : "";
         let html = '<div class="sec"><h4>시험 정보</h4><div class="kv"><b>연도' + g("year") + '</b><input type="number" data-m="year" value="' + esc(e.meta.year) + '" style="width:90px"><b>학기' + g("semester") + '</b><span class="seg" data-seg="semester">' + [1, 2].map(v => '<button type="button" data-v="' + v + '" class="' + (e.meta.semester === v ? "on" : "") + '">' + v + '학기</button>').join("") + '</span><b>시험명' + g("term") + '</b><span class="seg" data-seg="term">' + ["중간", "기말", "1차지필", "2차지필"].map(v => '<button type="button" data-v="' + v + '" class="' + (e.meta.term === v ? "on" : "") + '">' + v + '</button>').join("") + '</span><b>학년' + g("grade") + '</b><span class="seg" data-seg="grade">' + [1, 2, 3].map(v => '<button type="button" data-v="' + v + '" class="' + (+e.meta.grade === v ? "on" : "") + '">' + v + '</button>').join("") + '</span><b>과목' + g("subject") + '</b><input type="text" data-m="subject" value="' + esc(e.meta.subject) + '"><b>학교' + g("school") + '</b><input type="text" data-m="school" value="' + esc(e.meta.school) + '"></div></div>';
         html += '<div class="sec"><h4>분석</h4><div class="small">문항 ' + e.analysis.total + ' · 객관식 ' + e.analysis.objective + ' · 서술형 ' + e.analysis.subjective + (e.analysis.points ? ' · 총점 ' + e.analysis.points : "") + (e.gaps && e.gaps.length ? ' · <span class="bad">못 읽은 번호 ' + e.gaps.map(esc).join(",") + '</span>' : "") + '</div><div class="narr" style="font-size:12px">' + esc(e.analysis.summary || "") + '</div></div>';
+        if (e.memo) html += '<div class="sec"><h4>넣을 때 남긴 메모</h4><div class="memo">✎ ' + esc(e.memo) + '</div></div>';
         if (e.reflection) html += '<div class="sec"><h4>프린트 반영율 <span>' + pct(e.reflection.rate) + '</span></h4><div class="bar gold"><i style="width:' + Math.round(e.reflection.rate * 100) + '%"></i></div><div class="small">' + e.reflection.hits.length + '/' + e.reflection.n + ' 문항이 프린트에서 나왔어요 · ' + Object.keys(e.reflection.kinds).map(k => esc(k) + " " + e.reflection.kinds[k]).join(" · ") + '</div></div>';
         if (e.ai) html += '<div class="sec"><h4>AI 활용 추정 <span>' + esc(e.ai.label) + '</span></h4><div class="bar gold"><i style="width:' + Math.round(e.ai.aiLikelihood * 100) + '%"></i></div><div class="small">' + pct(e.ai.aiLikelihood) + ' (구간 ' + pct(e.ai.band[0]) + '~' + pct(e.ai.band[1]) + ') · 신호 커버리지 ' + pct(e.ai.coverage) + '</div>' + (e.ai.llm ? '<div class="small" style="margin-top:4px">' + esc(e.ai.llm.summary) + '</div><ul class="small" style="padding-left:16px;margin:4px 0">' + e.ai.llm.evidence.map(v => '<li>' + (v.direction === "ai" ? "🤖" : v.direction === "human" ? "✍" : "·") + ' ' + esc(v.note) + (v.quote ? ' <span class="faint">“' + esc(v.quote) + '”</span>' : "") + '</li>').join("") + '</ul>' : "") + '<details class="raw"><summary>신호표</summary><table class="tbl">' + e.ai.signals.map(x => '<tr><td>' + esc(x.name) + '</td><td class="mono">' + (x.available ? x.score.toFixed(2) : "—") + '</td><td class="small">' + esc(x.detail) + '</td></tr>').join("") + '</table></details><div class="note">' + esc(ANALYZE.AI_DISCLAIMER) + '</div></div>';
         html += '<div class="sec"><h4>문항 ' + qs.length + '</h4><table class="tbl"><tr><th>NO</th><th>유형</th><th>배점</th><th>난이도</th><th>지문</th><th>프린트</th></tr>' + qs.map(q => '<tr class="rowbtn" data-q="' + q.id + '"><td>' + esc(q.number) + (q.set ? ' <span class="faint">[' + esc(q.set) + ']</span>' : "") + '</td><td>' + esc(q.type) + (q.subtype ? ' <span class="faint">' + esc(q.subtype) + '</span>' : "") + '</td><td>' + (q.points === null ? "—" : q.points) + '</td><td>' + esc(q.difficulty) + '</td><td class="small">' + (q.match && q.match.passageId && pmap[q.match.passageId] ? esc(pmap[q.match.passageId].src || "지문") : q.external ? "범위 밖" : q.passage && q.passage.has ? '<span class="faint">미매칭</span>' : "") + '</td><td class="small">' + (q.handoutHit ? '<span class="gold">★ ' + q.handoutHit.kinds.map(esc).join("·") + '</span>' : "") + '</td></tr>').join("") + '</table></div>';
@@ -244,6 +245,7 @@
         if (!isH) html += '<div class="row" style="margin-top:6px"><span class="small">종류</span><span class="seg" id="dKind">' + ["교과서", "부교재", "모의고사", "기타"].map(k => '<button type="button" data-v="' + k + '" class="' + (sc.kind === k ? "on" : "") + '">' + k + '</button>').join("") + '</span></div><label class="row" style="margin-top:8px"><input type="checkbox" id="dComplete"' + (sc.complete ? " checked" : "") + ' style="width:auto"> 이 자료로 시험 범위를 다 넣었어요 (범위 밖 지문을 더 정확히 가려요)</label>';
         else { const tg = sc.target || {}; html += '<div class="row" style="margin-top:6px"><span class="small">어느 시험용 프린트인가요</span><input type="number" id="dTy" value="' + esc(tg.year || "") + '" style="width:80px"><span class="seg" id="dTs">' + [1, 2].map(v => '<button type="button" data-v="' + v + '" class="' + (tg.semester === v ? "on" : "") + '">' + v + '학기</button>').join("") + '</span><span class="seg" id="dTt">' + ["중간", "기말"].map(v => '<button type="button" data-v="' + v + '" class="' + (tg.term === v ? "on" : "") + '">' + v + '</button>').join("") + '</span>' + (tg.guessed ? '<span class="badge warn">추정</span>' : "") + '</div>'; }
         html += '</div>';
+        if (sc.memo) html += '<div class="sec"><h4>넣을 때 남긴 메모</h4><div class="memo">✎ ' + esc(sc.memo) + '</div></div>';
         if (isH) {
           const r = sc.reflection;
           html += '<div class="sec"><h4>시험 실질 반영율 <span>' + (r ? pct(r.rate) : "기출과 짝이 없어요") + '</span></h4>' + (r ? '<div class="bar gold"><i style="width:' + Math.round(r.rate * 100) + '%"></i></div><div class="small">' + r.exams.map(x => esc(x.label) + " " + x.hit + "/" + x.n + " (" + pct(x.rate) + ")").join(" · ") + '</div>' : '<div class="small">같은 시험(연도·학기·중간/기말)의 기출 시험지를 넣으면 이 프린트에서 몇 문항이 실제로 나왔는지 계산해요.</div>') + '</div>';
@@ -291,7 +293,7 @@
         if (!t && [...S.teachers.values()].some(x => x.name === d.name && x.school === d.school) && !confirm("같은 학교에 같은 이름의 선생님이 있어요. 그래도 만들까요?")) return;
         const pf = pendingFiles; closeSheet();
         if (t) { await APP.updateTeacher(t.id, d); toast("저장했어요", { ok: true }); }
-        else { const nt = await APP.createTeacher(d); toast(nt.name + " 선생님을 만들었어요", { ok: true }); if (pf && pf.length) APP.enqueue(pf, nt.id); } };
+        else { const nt = await APP.createTeacher(d); toast(nt.name + " 선생님을 만들었어요", { ok: true }); if (pf && pf.length) openFilesSheet(pf, nt.id); } };
       f.el.querySelector("#tfOk").onclick = submit; f.el.querySelector("#tfCancel").onclick = closeSheet;
       const del = f.el.querySelector("#tfDel"); if (del) del.onclick = () => { closeSheet(); openDeleteSheet(t); };
       f.el.addEventListener("keydown", (e) => { if (e.key === "Enter" && e.target.tagName === "INPUT") { e.preventDefault(); submit(); } });
@@ -482,7 +484,7 @@
         el.onclick = () => APP.select(el.dataset.id);
         ["dragover", "dragenter"].forEach(ev => el.addEventListener(ev, e => { e.preventDefault(); e.stopPropagation(); el.classList.add("over"); }));
         ["dragleave", "drop"].forEach(ev => el.addEventListener(ev, e => { e.preventDefault(); e.stopPropagation(); el.classList.remove("over"); }));
-        el.addEventListener("drop", e => { const files = [...e.dataTransfer.files]; if (files.length) APP.enqueue(files, el.dataset.id); });
+        el.addEventListener("drop", e => { const files = [...e.dataTransfer.files]; if (files.length) openFilesSheet(files, el.dataset.id); });
       });
       $("flatNew").onclick = () => openTeacherSheet(null);
     }
@@ -503,18 +505,33 @@
         if (media.length && !docs.length && !/\.(jpg|jpeg|png|webp)$/i.test(media[0].name)) toast("배경 영상으로 쓸까요? " + media[0].name, { action: "배경으로 쓰기", onAction: () => setVideo(media[0]) });
         else if (media.length && /\.(jpg|jpeg|png|webp)$/i.test(media[0].name) && !docs.length) toast("그림을 배경으로 쓸까요? (시험지 사진이면 '시험지로 읽기')", { action: "배경으로", onAction: () => setVideo(media[0]) }).appendChild(h('<button type="button">시험지로 읽기</button>')).onclick = () => { const t = sel(); if (t) APP.enqueue(media, t.id, at); else toast("먼저 선생님을 골라 주세요"); };
         if (!docs.length) return;
-        if (id) { APP.enqueue(docs, id, at); return; }
+        if (id) { openFilesSheet(docs, id, at); return; }
         if (!S.teachers.size) { openTeacherSheet(null, docs); return; }
         const t = sel();
-        if (t) toast("선택한 " + t.name + " 선생님에게 넣을까요?", { action: "넣기", onAction: () => APP.enqueue(docs, t.id, at) });
+        if (t) toast("선택한 " + t.name + " 선생님에게 넣을까요?", { action: "넣기", onAction: () => openFilesSheet(docs, t.id, at) });
         else openPickSheet(docs);
       });
       function clearDrop() { const st = APP.stage(); if (st && dropTarget) st.fx.highlight(dropTarget, false); dropTarget = null; }
       function hasFiles(e) { return e.dataTransfer && [...(e.dataTransfer.types || [])].includes("Files"); }
     }
+    // 파일을 넣기 전에 한 번 보여 준다 — 종류를 고르고, 모델에게 함께 전할 말을 적는다
+    function openFilesSheet(files, teacherId, at, presetKind) {
+      files = [...files]; const t = T(teacherId); if (!t || !files.length) return;
+      const KL = { auto: "자동", exam: "기출", scope: "범위", handout: "프린트" }, ORDER = ["auto", "exam", "scope", "handout"];
+      const kinds = files.map(f => presetKind || (TEXT.guessKind(f.name, "").sure ? TEXT.guessKind(f.name, "").kind : "auto"));
+      const el = h('<div><div class="small" style="margin-bottom:8px"><b style="font-family:var(--fk)">' + esc(t.name) + '</b> 선생님에게 ' + files.length + '개를 넣어요. 종류 칩을 눌러 바꿀 수 있어요 (자동 → 기출 → 범위 → 프린트).</div>'
+        + '<div class="tlist flist">' + files.map((f, i) => '<div class="it" style="cursor:default"><span class="grow" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="' + esc(f.name) + '">' + esc(f.name) + '</span><span class="small">' + TEXT.fmtBytes(f.size) + '</span><button type="button" class="chip' + (kinds[i] === "auto" ? " dim" : kinds[i] === "scope" ? " gold" : "") + '" data-k="' + i + '">' + KL[kinds[i]] + '</button></div>').join("") + '</div>'
+        + '<div class="field" style="margin-top:12px"><label>AI 에게 함께 전할 말 (선택)</label><textarea id="fsMemo" maxlength="600" placeholder="예) 2학기 기말 시험지예요. 서술형은 마지막 장에 있어요 · 이 프린트는 어법 정리 위주예요 · 교과서는 3과까지만 범위예요"></textarea><div class="small">파일 종류 판정, 시험 정보, 문항·지문 해석에 반영돼요. 넣은 뒤에도 시험·자료 화면에서 볼 수 있어요.</div></div>'
+        + '<div class="actions"><button type="button" id="fsCancel">취소</button><button type="button" class="pri" id="fsGo">넣기</button></div></div>');
+      el.querySelectorAll("[data-k]").forEach(b => b.onclick = () => { const i = +b.dataset.k; kinds[i] = ORDER[(ORDER.indexOf(kinds[i]) + 1) % ORDER.length]; b.textContent = KL[kinds[i]]; b.className = "chip" + (kinds[i] === "auto" ? " dim" : kinds[i] === "scope" ? " gold" : ""); });
+      const go = () => { const memo = el.querySelector("#fsMemo").value.trim(); closeSheet(); APP.enqueue(files, teacherId, at, { memo, kinds: kinds.map(k => k === "auto" ? "" : k) }); };
+      el.querySelector("#fsGo").onclick = go; el.querySelector("#fsCancel").onclick = closeSheet;
+      el.querySelector("#fsMemo").addEventListener("keydown", e => { if ((e.ctrlKey || e.metaKey) && e.key === "Enter") { e.preventDefault(); go(); } });
+      openSheet("파일 넣기", el, { kind: "files" });
+    }
     function openPickSheet(files) {
       const el = h('<div><div class="tlist">' + [...S.teachers.values()].map(t => '<div class="it" data-pick="' + t.id + '"><i class="dot" style="background:' + t.color + ';color:' + t.color + '"></i><span class="grow">' + esc(t.name) + '</span><span class="small">' + esc(APP.sub(t)) + '</span></div>').join("") + '</div><div class="actions"><button type="button" id="pickNew">새 선생님 만들기</button></div></div>');
-      el.querySelectorAll("[data-pick]").forEach(x => x.onclick = () => { closeSheet(); APP.enqueue(files, x.dataset.pick); });
+      el.querySelectorAll("[data-pick]").forEach(x => x.onclick = () => { closeSheet(); openFilesSheet(files, x.dataset.pick); });
       el.querySelector("#pickNew").onclick = () => openTeacherSheet(null, files);
       openSheet("어느 선생님에게 넣을까요?", el, { kind: "pick" });
     }
@@ -528,7 +545,7 @@
       $("btnNew").onclick = () => openTeacherSheet(null);
       $("btnFiles").onclick = () => { if (sel()) $("fileInput").click(); };
       $("fileInput").accept = EXTRACT.ACCEPT + ",.mp4,.webm";
-      $("fileInput").onchange = () => { const t = sel(); const files = [...$("fileInput").files]; $("fileInput").value = ""; if (t && files.length) { const jobs = APP.enqueue(files, t.id); if (pendingKind) { jobs.forEach(j => APP.setJobKind(j, pendingKind)); pendingKind = null; } } };
+      $("fileInput").onchange = () => { const t = sel(); const files = [...$("fileInput").files]; $("fileInput").value = ""; const pk = pendingKind; pendingKind = null; if (t && files.length) openFilesSheet(files, t.id, null, pk); };
       $("importInput").onchange = async () => { const f = $("importInput").files[0]; $("importInput").value = ""; if (!f) return; try { const r = await APP.importJson(f); toast("불러왔어요 — 선생님 " + r.teachers + "명" + (r.dupSkipped ? ", 겹친 파일 " + r.dupSkipped + "개는 건너뛰었어요" : ""), { ok: true }); closeSheet(); } catch (e) { toast(e.message, { bad: true }); } };
       $("videoInput").onchange = () => { const f = $("videoInput").files[0]; $("videoInput").value = ""; if (f) setVideo(f); };
       $("btnLearn").onclick = () => { const t = sel(); if (t) run(() => APP.learn(t.id, { force: true })); };
@@ -579,5 +596,5 @@
       });
       requestAnimationFrame(chipsLoop); waveLoop(); globeLoop();
     }
-    return { init, toast, openSettings, openTeacherSheet, openPaper, openDrawer };
+    return { init, toast, openSettings, openTeacherSheet, openFilesSheet, openPaper, openDrawer };
   })();
