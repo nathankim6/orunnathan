@@ -1,0 +1,44 @@
+# ORUN ORACLE 검사 — oracle/ 이나 public/orun-oracle.html 이 바뀐 푸시·PR 마다 돈다.
+# 1) parts 로 지은 결과가 public 파일과 같은가 (어긋남 검사)  2) 단위  3) 브라우저 끝에서 끝까지(모의 API)  4) 3D 무대
+# 배포는 이 워크플로가 아니라 pages.yml 이 main 푸시에서 한다.
+name: ORUN ORACLE
+
+on:
+  push:
+    paths: ['oracle/**', 'public/orun-oracle.html', '.github/workflows/oracle-ci.yml']
+  pull_request:
+    paths: ['oracle/**', 'public/orun-oracle.html', '.github/workflows/oracle-ci.yml']
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: oracle
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: oracle/package-lock.json
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: CDN 라이브러리 받기
+        run: npm run cdn
+      - name: parts ↔ public 어긋남 검사
+        run: npm run check
+      - name: 단위 검사
+        run: npm run test:unit
+      - name: 끝에서 끝까지 (모의 API · 모의 Supabase)
+        run: npm run test:e2e
+      - name: 3D 무대 연기 검사
+        run: npm run test:stage
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: oracle-screenshots
+          path: oracle/tests/out/*.png
+          if-no-files-found: ignore
