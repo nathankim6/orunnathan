@@ -69,14 +69,15 @@ GitHub Pages 는 `access-control-allow-origin: *` 를 준다. 다른 사이트�
 `pages.yml` 이 `/orun-oracle.html` 로 그대로 내보낸다. 스튜디오 타일 `ORUN ORACLE` 이
 이 주소를 가리킨다.
 
-- 조립: 스크래치패드의 `parts/*.js` 를 `build.sh` 가 한 파일로 잇는다. 세션이 끝나면 부분
-  파일은 사라지므로, 이후 수정은 `public/orun-oracle.html` 을 직접 고친다. 구획 주석
-  (`// ==== DB / EXTRACT / API / TEXT / PROMPTS / ANALYZE / PROFILE / PREDICT / GENERATE / POST / STAGE / APP / UI`)
-  으로 나뉘어 있다.
+- 소스는 저장소의 `oracle/parts/*` (모듈 16개) 이고 `oracle/build.sh` 가 한 파일로 잇는다.
+  **`public/orun-oracle.html` 을 직접 고치지 않는다** — parts 를 고치고 `cd oracle && npm run build`
+  로 다시 지은 뒤 parts 와 public 파일을 같은 커밋에 넣는다. `npm run check` 가 둘의 어긋남을 잡고,
+  `.github/workflows/oracle-ci.yml` 이 푸시·PR 마다 같은 검사를 돈다. 모듈별 역할 표와 순서는
+  루트 `AGENTS.md` 에 있다 (Codex 등 다른 에이전트가 읽는 파일 — 규칙을 바꾸면 둘을 함께 고친다).
 - 키·모델 저장 키는 생성기와 같다(`orun_api_key` 등) — 같은 주소에서 키를 나눠 쓴다.
   API 는 브라우저에서 `api.anthropic.com` / `api.openai.com` 으로만 간다. 서버 없음.
 - 저장은 IndexedDB `orun_oracle` 이 작업본이고, 같은 문서를 Supabase 프로젝트
-  `wxjazdqabryflvfztujk` 의 `public.oracle_docs` (id · workspace · store · teacher_id · data jsonb)
+  `wxjazdqabryflvfztujk` 의 `public.oracle_docs` (id · workspace · store · teacher_id · data jsonb · updated_at)
   에 그대로 비춘다. anon 키 + REST 직접 호출, 열린 RLS(옳은문법 앱과 같은 방식) — 주소를 아는
   사람은 누구나 그 작업공간을 읽고 쓴다. 작업공간 이름은 `orun_oracle_ws`(기본 `heukseok`),
   끄기는 `orun_oracle_sync=off`. 배경 영상(media)은 올리지 않는다. 파일 원본은 어디에도 저장하지
@@ -89,9 +90,10 @@ GitHub Pages 는 `access-control-allow-origin: *` 를 준다. 다른 사이트�
 - 글꼴: 영문 Orbitron, 한글 Noto Sans KR (`--f` / `--fk`). 인쇄 시험지만 명조를 쓴다.
 - 힉스필드(Higgsfield)는 이 세션에서 부를 수 없다. 설정 → 힉스필드 탭의 프롬프트 묶음으로
   영상·이미지를 만들어 배경 슬롯에 넣는다.
-- 회귀 검사: Playwright e2e(모의 API · 모의 Supabase) 가 스크래치패드 `tests/e2e.js`, 단위 검사가
-  `tests/unit.js`, 3D 무대 검사가 `tests/run-stage-smoke.js` 에 있다. 고쳤으면
-  돌리고, 빌드 도장(`build: YYYY-MM-DD HH:MM`) 을 올리고, `main` 에 머지해 라이브를 확인한다
+- 회귀 검사는 `oracle/tests/` 에 있다 — `npm test` = 어긋남 검사 + 단위(`unit.js`) + 브라우저
+  끝에서 끝까지(`e2e.js`, 모의 API · 모의 Supabase) + 3D 무대(`run-stage-smoke.js`). 처음엔
+  `cd oracle && npm ci && npx playwright install --with-deps chromium && npm run cdn`. 고쳤으면
+  검사를 돌리고(빌드 도장은 `npm run build` 가 찍는다), `main` 에 머지해 라이브를 확인한다
   (`curl -sS https://nathankim6.github.io/orunnathan/orun-oracle.html | sha256sum`).
 - `<!doctype html>` 을 쓴다(표준 모드). 생성기의 quirks 규칙은 이 파일에 적용되지 않는다.
 
