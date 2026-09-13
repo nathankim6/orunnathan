@@ -7,7 +7,9 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-const ADMIN_CODE = '101100';
+// Admin code comes from the ADMIN_CODE secret (Supabase Dashboard > Edge Functions > Secrets).
+// It must never be a literal in source: this file is committed to git.
+const ADMIN_CODE = Deno.env.get('ADMIN_CODE');
 
 const GRAMMAR_CATEGORIES = [
   // 절 구조
@@ -54,6 +56,13 @@ serve(async (req) => {
   }
 
   try {
+    if (!ADMIN_CODE) {
+      console.error('ADMIN_CODE secret is not configured');
+      return new Response(
+        JSON.stringify({ error: 'Server misconfigured: ADMIN_CODE secret is not set' }),
+        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
     const { action, sentence, answer, questionId, workbookId, adminCode, categories } = await req.json();
     const effectiveWorkbookId = workbookId || 'syntax10000';
 

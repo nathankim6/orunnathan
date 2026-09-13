@@ -3,8 +3,20 @@ import { createClient } from '@supabase/supabase-js';
 import type { Database } from './types';
 import { brokeredPreviewStorage } from './previewAuthStorage';
 
-const SUPABASE_URL = "https://jpanpwbdlhsxnyaldddm.supabase.co";
-const SUPABASE_PUBLISHABLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpwYW5wd2JkbGhzeG55YWxkZGRtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQ4MDI2MzgsImV4cCI6MjA1MDM3ODYzOH0.lyofnzjEvGs0ZeAHmAK6mz_1ysNYryr70-eYbSpjEXc";
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+const SUPABASE_PUBLISHABLE_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+
+if (!SUPABASE_URL || !SUPABASE_PUBLISHABLE_KEY) {
+  const missing = [
+    !SUPABASE_URL && 'VITE_SUPABASE_URL',
+    !SUPABASE_PUBLISHABLE_KEY && 'VITE_SUPABASE_PUBLISHABLE_KEY',
+  ]
+    .filter(Boolean)
+    .join(', ');
+  const message = `[supabase] Missing environment variable(s): ${missing}. Copy .env.example to .env and fill in the values.`;
+  console.error(message);
+  throw new Error(message);
+}
 
 // Import the supabase client like this:
 // import { supabase } from "@/integrations/supabase/client";

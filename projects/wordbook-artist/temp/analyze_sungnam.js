@@ -1,7 +1,13 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = 'https://xquvuwckxspnflxeodlu.supabase.co';
-const anonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhxdXZ1d2NreHNwbmZseGVvZGx1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYxODIyMDcsImV4cCI6MjA4MTc1ODIwN30.Y_n5OrmgJKkLQP9UCb7vyw-FiRW5l_HsKdF41I_k2HQ';
+// Supabase connection comes from the environment (same public values as .env):
+//   SUPABASE_URL=... SUPABASE_ANON_KEY=... node temp/analyze_sungnam.js
+const supabaseUrl = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL;
+const anonKey = process.env.SUPABASE_ANON_KEY || process.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+if (!supabaseUrl || !anonKey) {
+  console.error('Set SUPABASE_URL and SUPABASE_ANON_KEY (or the VITE_* equivalents) before running this script.');
+  process.exit(1);
+}
 
 const supabase = createClient(supabaseUrl, anonKey);
 

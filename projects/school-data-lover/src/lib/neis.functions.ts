@@ -108,7 +108,12 @@ export const getAchievement3yr = createServerFn({ method: "POST" })
 
     // 3) 학교알리미 OpenAPI (공시정보) - apiType 56: 교과별(학년별) 평가계획에 따른 학업성취사항
     //    응답 XML에서 국/영/수 "보통학력이상" 비율을 파싱.
-    const aliKey = process.env.NEIS_API_KEY || "3d026aef9591456c89de699fd4f0fc3d";
+    // 학교알리미(schoolinfo.go.kr) OpenAPI 인증키 — 서버 환경변수로만 받는다 (SCHOOLINFO_API_KEY,
+    // 예전 이름 NEIS_API_KEY 도 허용). 소스에 기본값을 두지 않는다.
+    const aliKey = process.env.SCHOOLINFO_API_KEY || process.env.NEIS_API_KEY;
+    if (!aliKey) {
+      return { ok: false as const, error: "SCHOOLINFO_API_KEY 환경변수가 설정되지 않음", years };
+    }
     const schulKnd = data.level === "고등학교" ? "04" : "03";
     const per: Record<number, { kor?: number; eng?: number; math?: number; avg?: number }> = {};
     for (const yr of years) {
