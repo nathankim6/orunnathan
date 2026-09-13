@@ -1,5 +1,5 @@
 
-export type ThemeType = 'blue' | 'emerald' | 'purple' | 'yellow';
+export type ThemeType = 'blue' | 'emerald' | 'purple' | 'yellow' | 'charcoal';
 
 export const themeColorMap = {
   // 고등부 — 딥 네이비 + 골드 (Editorial Premium)
@@ -49,6 +49,19 @@ export const themeColorMap = {
     pastel: "#fdf8e3",
     accent2: "#b8860b",
     highlight: "#f0c419"
+  },
+  // 화면 전용 — 차콜 판 위의 인포그래픽(레퍼런스 "INFOGRAPHIC TOOLS 2" 어두운 판).
+  // 인쇄·PDF 는 언제나 밝은 종이로 찍힌다.
+  charcoal: {
+    primary: "#1c2129",
+    secondary: "#2a313b",
+    tertiary: "#e8632b",
+    accent: "#2fa5c0",
+    light: "#c9d0d8",
+    vibrant: "#e8632b",
+    pastel: "#2a313b",
+    accent2: "#d9a31a",
+    highlight: "#e8632b"
   }
 };
 
@@ -57,7 +70,8 @@ export const themeDescriptions = {
   blue: "고등부",
   emerald: "중3",
   purple: "중2",
-  yellow: "중1"
+  yellow: "중1",
+  charcoal: "차콜(화면)"
 };
 
 // Helper function to get theme color based on school and grade

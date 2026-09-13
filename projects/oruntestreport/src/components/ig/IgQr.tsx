@@ -20,7 +20,7 @@ const IgQr: React.FC<{ text: string; size?: number; className?: string }> = ({ t
   return (
     <span
       className={`ig-print-color ${className}`}
-      style={{ width: size, height: size, display: 'block', flex: 'none', color: 'hsl(var(--ink))', background: svg ? 'transparent' : 'hsl(var(--ink) / 0.06)' }}
+      style={{ width: size + 8, height: size + 8, padding: 4, boxSizing: 'border-box', display: 'block', flex: 'none', color: 'hsl(var(--ig-qr-ink))', background: 'hsl(var(--ig-qr-bg))' }}
       role="img"
       aria-label={`QR: ${text}`}
       dangerouslySetInnerHTML={svg ? { __html: svg } : undefined}

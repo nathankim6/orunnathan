@@ -158,6 +158,29 @@
   }
 }
 
+/* ── 차콜 판 — 화면 전용 테마 ────────────────────────────────────
+   레퍼런스의 어두운 판 버전이다. 잉크와 종이가 뒤집히고 격자 바탕은
+   더 짙어진다. 팔레트(코랄·청록·모래·남색·자주)는 그대로라 데이터 색이
+   흐트러지지 않는다. 인쇄·PDF 캡처는 @media print 와 캡처 코드가 항상
+   밝은 토큰으로 되돌린다. QR 은 토큰과 무관하게 항상 밝은 바탕에 찍힌다. */
+@layer base {
+  :root { --ig-qr-bg: 40 22% 98%; --ig-qr-ink: 220 20% 13%; }
+  [data-theme="charcoal"] {
+    --ink: 40 20% 96%;
+    --ink-soft: 218 12% 72%;
+    --paper: 218 16% 15%;
+    --paper-warm: 218 16% 12%;
+    --ig-gutter: 220 18% 9%;
+    --ig-navy: 210 36% 58%;
+    --ig-slate: 210 12% 62%;
+    --background: 220 18% 8%;
+    --foreground: 40 20% 96%;
+    --muted-foreground: 218 10% 70%;
+    --border: 218 12% 26%;
+  }
+  [data-theme="charcoal"] .report-container.ig-sheet { outline-color: hsl(var(--ink) / 0.18); }
+}
+
 @layer base {
   * {
     @apply border-border;

@@ -34,9 +34,15 @@ const presetSwatches: Record<ThemeType, { ink: string; gold: string; paper: stri
     paper: 'hsl(150 28% 97%)',
     label: '중3 · 포레스트',
   },
+  charcoal: {
+    ink: 'hsl(40 20% 96%)',
+    gold: 'hsl(14 74% 54%)',
+    paper: 'hsl(218 16% 15%)',
+    label: '차콜 · 화면 전용(인쇄는 밝게)',
+  },
 };
 
-const themeOrder: ThemeType[] = ['blue', 'yellow', 'purple', 'emerald'];
+const themeOrder: ThemeType[] = ['blue', 'yellow', 'purple', 'emerald', 'charcoal'];
 
 const FloatingThemeToggle: React.FC<FloatingThemeToggleProps> = ({
   currentTheme,
