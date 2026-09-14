@@ -69,10 +69,15 @@
     // toast(msg, { ok, bad, ms, action, onAction }) → el. 액션 버튼(예: 5초 취소)은 action/onAction.
     function toast(msg, o) {
       o = o || {};
+      const box = $("toasts");
+      // 누를 것이 있는 토스트는 한 번에 하나만 — 두 장이 겹치면 어느 단추인지 헷갈린다. 쌓이는 것도 셋까지.
+      box.querySelectorAll(".toast button").forEach(b => b.parentNode.remove());
+      while (box.children.length >= 3) box.firstElementChild.remove();
       const el = h('<div class="toast' + (o.bad ? " bad" : o.ok ? " ok" : "") + '" role="status"><span>' + esc(msg) + '</span></div>');
       if (o.action) { const b = h('<button type="button">' + esc(o.action) + '</button>'); b.onclick = () => { el.remove(); o.onAction && o.onAction(); }; el.appendChild(b); }
-      $("toasts").appendChild(el);
+      box.appendChild(el);
       setTimeout(() => { el.style.opacity = "0"; setTimeout(() => el.remove(), 300); }, o.ms || (o.action ? 9000 : 4200));
+      if (!o.rendered) { try { APP.emit("toast", Object.assign({}, o, { msg: String(msg == null ? "" : msg), rendered: true })); } catch (e) {} }   // 뜬 토스트는 APP 신호로도 알린다
       return el;
     }
 
@@ -813,32 +818,37 @@
       if (r.kind === "teacher") tid = r.id; else { const d = INDEX.get ? INDEX.get(r.id) : null; if (d && d.teacherId) tid = d.teacherId; }
       if (tid && tid !== S.selectedId && S.teachers.has(tid)) { following = true; try { APP.select(tid, true); } finally { following = false; } }
     }
+    // 뷰 하나를 그린다. 그 뷰가 비동기면 그 약속을 돌려준다 — 라우터가 다 그린 뒤에 #main[data-view] 를 찍는다.
     function renderView(r, entering) {
-      if (!bootDone || !r) return;
+      if (!bootDone || !r) return null;
       try {
         switch (r.view) {
-          case "today": VIEWS.today(); renderOnboard(); renderChanged(); break;
-          case "inbox": VIEWS.inbox(); break;
-          case "note": NOTEUI.render(r.id, r.query || {}); break;
-          case "tag": VIEWS.tag(r.name); break;
-          case "library": VIEWS.library(r.kind, r.query || {}); break;
-          case "brain": if (entering) BRAINUI.enter(r.query || {}); else BRAINUI.refresh(); break;
-          case "timeline": VIEWS.timeline((r.query || {}).week || ""); break;
-          case "ask": VIEWS.ask(r.query || {}); break;
-          case "search": VIEWS.search((r.query || {}).q || ""); break;
+          case "today": { const p = VIEWS.today(); renderOnboard(); renderChanged(); return p; }
+          case "inbox": return VIEWS.inbox();
+          case "note": return NOTEUI.render(r.id, r.query || {});
+          case "tag": return VIEWS.tag(r.name);
+          case "library": return VIEWS.library(r.kind, r.query || {});
+          case "brain": return entering ? BRAINUI.enter(r.query || {}) : BRAINUI.refresh();
+          case "timeline": return VIEWS.timeline((r.query || {}).week || "");
+          case "ask": return VIEWS.ask(r.query || {});
+          case "search": return VIEWS.search((r.query || {}).q || "");
         }
       } catch (e) { console.error(e); }
+      return null;
     }
+    let routeSeq = 0;
     function onRoute(r, prev) {
-      cur = r; const view = r.view;
+      cur = r; const view = r.view; const seq = ++routeSeq;
       if (prev && prev.view === "brain" && view !== "brain") { try { if (document.body.classList.contains("brainFull")) BRAINUI.fullscreen(false); BRAINUI.leave(); } catch (e) { console.error(e); document.body.classList.remove("brainFull"); } }
       document.querySelectorAll("#main > .view").forEach(v => { v.hidden = v.dataset.view !== view; });
-      $("main").dataset.view = view;
       document.body.classList.toggle("brainView", view === "brain");
       if (!prev || prev.view !== view || (view === "note" && prev.id !== r.id) || (view === "library" && prev.kind !== r.kind)) { $("main").scrollTop = 0; if (isNarrow()) window.scrollTo(0, 0); }
       if (isNarrow()) closeNavDrawer();
       followTeacher(r);
-      renderView(r, !prev || prev.view !== view);
+      const drawn = renderView(r, !prev || prev.view !== view);
+      // #main[data-view] 는 "지금 그려져 있는 뷰" 를 뜻한다 — 비동기 뷰는 다 그린 뒤에 찍는다(§2.1)
+      const stamp = () => { if (seq === routeSeq) $("main").dataset.view = view; };
+      if (drawn && typeof drawn.then === "function") drawn.then(stamp, stamp); else stamp();
       renderAside(r); renderNav(); renderTopbar(); renderTabbar();
       if (view === "note" && r.id) pushRecent(r.id);
       if (view === "brain") afterLayout();
@@ -898,12 +908,12 @@
         case "queue": case "busy":
           renderStatusbar(); renderAsideQueue(); renderTabbar(); renderOnboard();
           { const act = S.queue.filter(ACTIVE).length; $("navInboxCount").textContent = act ? String(act) : ""; }
-          if (cur && cur.view === "inbox") { try { VIEWS.inbox(); } catch (e) { console.error(e); } }
-          else if (cur && cur.view === "today") { clearTimeout(todayT); todayT = setTimeout(() => { try { VIEWS.today(); renderOnboard(); renderChanged(); } catch (e) { console.error(e); } }, 250); }
+          try { VIEWS.inbox(); } catch (e) { console.error(e); }          // 인박스는 보이지 않아도 다시 그린다 (§5.15 — 뷰는 늘 DOM 에 있다)
+          if (cur && cur.view === "today") { clearTimeout(todayT); todayT = setTimeout(() => { try { VIEWS.today(); renderOnboard(); renderChanged(); } catch (e) { console.error(e); } }, 250); }
           break;
         case "index": renderStatusbar(); if (data && data.ready) { renderNav(); renderTopbar(); } { const st = $("sIndexStat"); if (st) st.textContent = indexText(); } break;
         case "growth": pulseGrowth(); growthCache = null; renderNav(); break;
-        case "toast": if (data) toast(data.msg, data); break;
+        case "toast": if (data && !data.rendered) { data.rendered = true; toast(data.msg, data); } break;
         case "needKey": openSettings("engine"); break;
         case "askVideo": if (data) toast("배경 영상으로 쓸까요? " + data.name, { action: "브레인 뷰 배경으로", onAction: () => setVideo(data) }); break;
         case "mode": renderNav(); break;

@@ -492,14 +492,27 @@
 
     // ================= 링크 · 백링크 =================
     const whyOf = (e) => e.kind === "wiki" || e.kind === "manual" ? "링크" : (e.label || LINKS.KIND_LABEL[e.kind] || e.kind);
+    // anchor 메모에는 제 페이지가 없다 — 줄은 메모가 붙어 있는 노트로 보낸다(제목은 "메모 · <그 노트>" 그대로).
+    // 이 노트에 붙은 제 메모는 백링크가 아니다(바로 위 본문에 이미 있다).
+    function backRows(id, back) {
+      const out = [];
+      const seen = new Set();
+      back.forEach(b => {
+        const to = b.anchorOf || b.from;
+        if (to === id) return;
+        const k = to + "|" + b.kind; if (seen.has(k)) return; seen.add(k);
+        out.push({ id: to, kind: b.anchorOf ? nodeKind(to) : b.fromKind, title: b.title || nodeTitle(b.from), why: whyOf(b) });
+      });
+      return out;
+    }
     function renderLinks() {
       const id = cur.id;
       let out = [], back = [];
       try { out = LINKS.outlinks(id); back = LINKS.backlinks(id); } catch (e) { console.error(e); }
       if (cur.store === "notes") (cur.doc.links || []).forEach(l => { if (!l.to) out.push({ to: "", kind: "wiki", label: l.text, title: l.text, toKind: "note", broken: true }); });
-      const seenB = new Set(); back = back.filter(b => { const k = b.from + "|" + b.kind; if (seenB.has(k)) return false; seenB.add(k); return true; });
+      const rows = backRows(id, back);
       $("noteLinks").innerHTML = '<h4 class="kicker">링크 <span class="num">' + out.length + '</span></h4>' + (out.length ? out.map(e => e.broken || !e.to ? '<span class="lrow broken" title="이 제목의 노트가 없어요">' + kindTag("note") + '<span class="t">' + esc(e.title || e.label || "") + '</span><span class="why">깨진 링크</span></span>' : row(e.to, e.toKind, e.title || nodeTitle(e.to), whyOf(e))).join("") : '<div class="small">이어진 노트가 없어요 — 메모에 [[ 로 이어 보세요</div>');
-      $("noteBacklinks").innerHTML = '<h4 class="kicker">백링크 <span class="num">' + back.length + '</span></h4>' + (back.length ? back.slice(0, 40).map(e => row(e.from, e.fromKind, e.title || nodeTitle(e.from), whyOf(e))).join("") : '<div class="small">이 노트를 가리키는 노트가 없어요</div>');
+      $("noteBacklinks").innerHTML = '<h4 class="kicker">백링크 <span class="num">' + rows.length + '</span></h4>' + (rows.length ? rows.slice(0, 40).map(e => row(e.id, e.kind, e.title, e.why)).join("") : '<div class="small">이 노트를 가리키는 노트가 없어요</div>');
     }
 
     // ================= 액션 =================
@@ -611,7 +624,7 @@
         clearTimeout(memo.timer);
         Object.assign(memo, { key, mode: own ? "own" : "anchor", noteId: own ? doc.id : null, teacherId: cur.teacherId, saved: body, links, docId, author, updatedAt, dirty: false, saving: false, again: false, timer: 0, pendingDel: store === "notes" && NOTES.pending(doc.id) });
         t.value = body;
-        setMode(own && !body.trim() ? "edit" : "view", true);
+        setMode(body.trim() ? "view" : "edit", true);          // 빈 메모는 곧장 쓸 수 있게 — 미리보기할 것이 없다
       } else {
         // 같은 노트 — 입력 중이면 건드리지 않는다. 밖에서 바뀐 것(클라우드 · 다른 탭)만 받는다.
         Object.assign(memo, { links, docId, author, updatedAt: updatedAt || memo.updatedAt, teacherId: cur.teacherId });
@@ -699,7 +712,14 @@
         if (e.target.closest("a[href]")) return;
         if (!memo.pendingDel) setMode("edit");
       });
-      // 파생 태그 칩 → 그 태그가 붙은 문항 목록 · 본문 안 [data-q] 등은 <a href> 라 그대로 간다
+      // 본문 안 이동: 대부분 <a href> 라 스스로 가지만, 표의 행(tr.rowbtn[data-q]) 처럼 링크가 아닌 것은 여기서 보낸다
+      $("noteBody").addEventListener("click", (e) => {
+        if (e.target.closest("a[href], button, input, select, textarea, summary, label")) return;
+        const r = e.target.closest("[data-q],[data-exam],[data-pass],[data-src],[data-mock]"); if (!r) return;
+        const id = r.dataset.q || r.dataset.exam || r.dataset.pass || r.dataset.src || r.dataset.mock; if (!id) return;
+        e.preventDefault(); ROUTE.go(noteHref(id));
+      });
+      // 파생 태그 칩 → 그 태그가 붙은 문항 목록
       $("noteTags").addEventListener("click", (e) => { const d = e.target.closest(".chip.derived[data-tag]"); if (d && cur) { e.preventDefault(); const tag = d.dataset.tag; const q = tag === "프린트적중" ? { hit: 1 } : tag === "외부지문" ? { ext: 1 } : /^난이도/.test(tag) ? { q: tag.slice(3) } : { type: tag }; ROUTE.go(ROUTE.all(cur.kind === "passage" ? "passages" : "questions", q)); } });
     }
     function openNoteMenu(anchor) {
@@ -741,8 +761,8 @@
       if (m && m.updatedAt) kv.push(["메모", ago(m.updatedAt)]);
       const box = $("asideProps"); box.innerHTML = '<h4>This note</h4><div class="kv">' + kv.map(x => '<b>' + x[0] + '</b><span>' + x[1] + '</span>').join("") + '</div>';
       let back = []; try { back = LINKS.backlinks(id); } catch (e) {}
-      const seen = new Set(); back = back.filter(b => { const key = b.from + "|" + b.kind; if (seen.has(key)) return false; seen.add(key); return true; });
-      $("asideBacklinks").innerHTML = '<h4>백링크 <span class="num">' + back.length + '</span></h4>' + (back.length ? back.slice(0, 12).map(e => row(e.from, e.fromKind, e.title || nodeTitle(e.from), whyOf(e))).join("") + (back.length > 12 ? '<div class="small">… ' + (back.length - 12) + '개 더 — 본문 아래 백링크에서</div>' : "") : '<div class="small">아직 없어요</div>');
+      const brows = backRows(id, back);
+      $("asideBacklinks").innerHTML = '<h4>백링크 <span class="num">' + brows.length + '</span></h4>' + (brows.length ? brows.slice(0, 12).map(e => row(e.id, e.kind, e.title, e.why)).join("") + (brows.length > 12 ? '<div class="small">… ' + (brows.length - 12) + '개 더 — 본문 아래 백링크에서</div>' : "") : '<div class="small">아직 없어요</div>');
       const rel = related(id);
       $("asideRelated").innerHTML = '<h4>관련 <span class="num">' + rel.length + '</span></h4>' + (rel.length ? rel.map(r => row(r.id, nodeKind(r.id), nodeTitle(r.id), r.why)).join("") : '<div class="small">이웃이 없어요</div>');
       drawMiniGraph(id);

@@ -16,7 +16,11 @@
       fxQueue: [], indexReady: false, booted: false, bootTries: 0, cloud: null,
     };
     let stage = null, listeners = [];
-    const on = (fn) => { listeners.push(fn); return () => { listeners = listeners.filter(f => f !== fn); }; };
+    // on(fn) → 모든 신호 · on("toast", fn) → 그 신호만 (둘 다 받는다)
+    const on = (why, fn) => {
+      const f = typeof why === "function" ? why : (w, d) => { if (w === why) fn(d, w); };
+      listeners.push(f); return () => { listeners = listeners.filter(x => x !== f); };
+    };
     // emit 이름: boot teachers select data queue busy profile prediction mock toast needKey askVideo stageTap hover bg
     //          + bootError index note link tag ask graph growth stage
     const emit = (why, data) => listeners.forEach(fn => { try { fn(why, data); } catch (e) { console.error(e); } });
@@ -37,7 +41,7 @@
     const logN = {};
     function log(teacherId, kind, msg, ref) {
       const tid = teacherId && teacherId !== ALL ? teacherId : null;
-      DB.put("events", { id: uid("ev"), teacherId: tid, at: Date.now(), kind, msg: String(msg || "").slice(0, 300), ref: ref || {} })
+      return DB.put("events", { id: uid("ev"), teacherId: tid, at: Date.now(), kind, msg: String(msg || "").slice(0, 300), ref: ref || {} })
         .then(() => { const k = tid || "_"; logN[k] = (logN[k] || 0) + 1; if (logN[k] % 50 === 0) trimEvents(tid).catch(() => {}); })
         .catch(() => {});
     }
@@ -58,13 +62,13 @@
       examTitle: (id) => ctxCache.examTitle.get(id) || "",
       passageSrc: (id) => ctxCache.passageSrc.get(id) || "",
       teacherName: (id) => { const t = teacher(id); return t ? t.name : ""; },
-      memoOf: (anchorKey) => ctxCache.memo.get(anchorKey) || "",
+      memoOf: (anchorKey) => ctxCache.memo.get(anchorKey) || null,      // { body, tags } — 태그까지 줘야 색인이 사용자 태그를 잃지 않는다
     };
     function cacheDoc(store, d) {
       if (!d) return;
       if (store === "exams") ctxCache.examTitle.set(d.id, d.title || TEXT.examLabel(d.meta || {}));
       else if (store === "passages") ctxCache.passageSrc.set(d.id, d.src || "");
-      else if (store === "notes" && d.kind === "anchor" && d.anchorKey) { ctxCache.memo.set(d.anchorKey, d.body || ""); ctxCache.noteAnchor.set(d.id, d.anchorKey); }
+      else if (store === "notes" && d.kind === "anchor" && d.anchorKey) { ctxCache.memo.set(d.anchorKey, { body: d.body || "", tags: (d.tags || []).slice() }); ctxCache.noteAnchor.set(d.id, d.anchorKey); }
     }
     function uncache(store, id) {
       if (store === "exams") ctxCache.examTitle.delete(id);
@@ -652,9 +656,10 @@
       if (p) { const f = ANALYZE.fidelity(q, p); q.match = { passageId: p.id, sourceId: p.sourceId, method: "user", score: 1, confidence: 1, fidelity: f.fidelity, reason: "직접 지정", altered: "", changed: f.changed }; q.external = false; }
       else q.match = { passageId: null, sourceId: null, method: "user", score: 0, confidence: 1, fidelity: null, reason: "직접 해제", altered: "" };
       q.updatedAt = Date.now();
+      // 이벤트를 먼저 남긴다 — 문항이 바뀐 것을 본 쪽(타임라인 · 검사)이 그 순간 이벤트도 볼 수 있게
+      await log(q.teacherId, "match", (indexCtx.examTitle(q.examId) || "시험") + " · " + (q.number || "") + "번 → " + (p ? (p.src || "지문") : "매칭 해제"), { id: questionId, questionId, passageId: p ? p.id : null });
       await DB.put("questions", q); await refreshExamMatched(q.teacherId); await refreshCounts(q.teacherId);
       if ((state.counts.get(q.teacherId) || {}).handouts) await recomputeReflection(q.teacherId);
-      log(q.teacherId, "match", (indexCtx.examTitle(q.examId) || "시험") + " · " + (q.number || "") + "번 → " + (p ? (p.src || "지문") : "매칭 해제"), { id: questionId, questionId, passageId: p ? p.id : null });
       emit("data", q.teacherId); refreshLinks(q.teacherId);
       return q;
     }

@@ -154,9 +154,15 @@
     // derived(id) → 이 노드에 닿는 파생 간선 (owner 제외)
     function derived(id) { const out = []; [...(outE.get(id) || []), ...(inE.get(id) || [])].forEach(k => { const e = edges.get(k); if (e && !e.user && e.kind !== "owner") out.push({ from: e.from, to: e.to, kind: e.kind, label: e.label }); }); return out; }
     // backlinks(id) → [{ from, kind, label, teacherId, title, fromKind, user, id }]  (파생 역방향 ∪ 사용자 링크 to === id)
+    // anchor 메모는 제 주소가 없다 — 붙어 있는 문서가 곧 그 메모의 자리다 (UI 가 백링크 줄을 그곳으로 보낸다)
+    function anchorTarget(id) {
+      const n = nodes.get(id); if (!n || n.noteKind !== "anchor") return "";
+      let to = ""; (outE.get(id) || []).forEach(k => { const e = edges.get(k); if (e && e.kind === "anchor" && nodes.has(e.to)) to = e.to; });
+      return to;
+    }
     function backlinks(id) {
       const out = [];
-      (inE.get(id) || []).forEach(k => { const e = edges.get(k); if (!e || e.kind === "owner") return; out.push({ from: e.from, kind: e.kind, label: e.label, teacherId: e.teacherId, title: title(e.from), fromKind: kind(e.from), user: e.user, id: e.id }); });
+      (inE.get(id) || []).forEach(k => { const e = edges.get(k); if (!e || e.kind === "owner") return; out.push({ from: e.from, kind: e.kind, label: e.label, teacherId: e.teacherId, title: title(e.from), fromKind: kind(e.from), user: e.user, id: e.id, anchorOf: anchorTarget(e.from) }); });
       return out.sort((a, b) => (b.user - a.user) || a.kind.localeCompare(b.kind));
     }
     // outlinks(id) → [{ to, kind, label, title, toKind, user, broken, id }]
@@ -252,5 +258,5 @@
       else if (ev.op === "clear") { if (store === "links") { [...userLinks.keys()].forEach(dropUser); } else [...nodes.values()].forEach(n => { if (n.store === store) remove(n.id); }); }
     }
     if (typeof DB !== "undefined" && DB && typeof DB.onWrite === "function") DB.onWrite(onDbWrite);
-    return { rebuild, rebuildTeacher, clear, upsert, remove, derived, backlinks, outlinks, neighbors, graph, resolve, addUser, removeUser, setUserLinks, userLinks: userLinksOf, loadUserLinks, counts, title, kind, node: (id) => nodes.get(id) || null, nodes: () => nodes, KIND_LABEL, GRAPH_KINDS };
+    return { rebuild, rebuildTeacher, clear, upsert, remove, derived, backlinks, outlinks, neighbors, graph, resolve, addUser, removeUser, setUserLinks, userLinks: userLinksOf, loadUserLinks, counts, title, kind, anchorTarget, node: (id) => nodes.get(id) || null, nodes: () => nodes, KIND_LABEL, GRAPH_KINDS };
   })();

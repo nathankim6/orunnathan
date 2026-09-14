@@ -66,8 +66,9 @@
       const d = docs.get(id); return d ? d.title : "";
     }
     function memoFor(ctx, anchorKey) {
-      if (ctx && typeof ctx.memoOf === "function") { try { const m = ctx.memoOf(anchorKey); if (m) return typeof m === "string" ? { body: m, tags: [] } : { body: m.body || "", tags: m.tags || [] }; } catch (e) {} }
-      return memos.get(anchorKey) || null;
+      const cached = memos.get(anchorKey) || null;
+      if (ctx && typeof ctx.memoOf === "function") { try { const m = ctx.memoOf(anchorKey); if (m) return typeof m === "string" ? { body: m, tags: cached ? (cached.tags || []).slice() : [] } : { body: m.body || "", tags: (m.tags || (cached ? cached.tags : []) || []).slice() }; } catch (e) {} }
+      return cached;
     }
     function titleOf(store, doc, ctx) {
       ctx = ctx || ctxDefault;
