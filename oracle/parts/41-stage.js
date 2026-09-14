@@ -4,6 +4,7 @@
   //  힉스 필드(바닥 입자장)는 데이터가 흐를 때 그 자리가 밝아지고 학습이 끝나면 파동이 퍼진다.
   //  WebGL 이 없으면 null 을 돌려주고 앱은 2D 로 간다.
   //  makeStage(canvas, opts) → { addTeacher, removeTeacher, updateTeacher, setProfile, setLevel, fx:{...}, focus, pick, anchor, resize, setBackdrop, ... }
+  //  + 그래프(spec §3.4 · §5.7): setGraph({nodes, edges}) · clearGraph · graph · pickNode(x, y) · focusNode(id) · setNodeFilter(kinds) · nodeScreen(id) · hoverNode(id) · onNode({onSelect,onHover,onOpen}) · fx.link(a, b) · running 게터
   // ==================================================================
   function makeStage(canvas, opts) {
     opts = opts || {};
@@ -243,6 +244,7 @@
     }
     function removeTeacher(id) {
       const rig = teachers.get(id); if (!rig) return;
+      if (graphSt.teacherId === id) clearGraph();
       teachers.delete(id); const i = order.indexOf(id); if (i >= 0) order.splice(i, 1); exSlot(rig.slot).z = 0; if (selectedId === id) selectedId = null;
       tween(0.7, (e) => { rig.group.position.y = -8 * e; rig.group.scale.setScalar(rig.scale * (1 - e * 0.6)); }, ease.inout, () => {
         scene.remove(rig.group); rig.shards.dispose();
@@ -321,16 +323,211 @@
           const h = 0.15 + Math.max(0, Math.min(1, b.value || 0)) * 1.6; tween(0.9 + i * 0.07, (e) => { m.scale.y = Math.max(0.001, h * e); }, ease.elastic); const lb = makeLabel(b.label || "", Math.round((b.value || 0) * 100) + "%", rig.hex); lb.scale.set(0.9, 0.28, 1); lb.position.set(x, h + 0.3, 0); g.add(lb); }); },
       highlight(id, on) { const rig = teachers.get(id); if (!rig) return; const from = rig.hover, to = on ? 1 : 0; tween(0.35, (e) => { rig.hover = from + (to - from) * e; rig.uni.uGlow.value = Math.max(rig.hover, rig.busy); }, ease.out, null, "hover:" + id); },
     };
+    // ---- 그래프 (spec §3.4 · §5.7) ----
+    // 선택된 선생님의 리그(rig.group) 아래에 붙는다 — 문항은 THREE.Points 하나(속성 버퍼), 시험 · 지문 · 프린트 · 예측 · 모의고사 · 메모는 종류별 InstancedMesh,
+    // 간선은 LineSegments 하나. 색은 선생님 색, 프린트 지문 · 적중은 금색. 궤도 배치: 시험 링 3.6 → 지문 · 프린트 링 5.2(프린트 지문 4.6) → 문항은 매칭 지문 주위 산개
+    // (매칭 없으면 시험 링 바깥 4.3) → 메모 · 예측 · 모의고사는 이어진 노드 옆. 궤도면은 뒤로 갈수록 높아지게 기울어져 있어 다이얼을 감싸는 원반으로 보인다.
+    const GOLD = new THREE.Color(0xf5c518);
+    const G_KINDS = ["exam", "passage", "handout", "note", "prediction", "mock"];
+    const G_GEO = { exam: new THREE.TorusGeometry(0.26, 0.035, 8, 40), passage: new THREE.SphereGeometry(0.15, 12, 10), handout: new THREE.SphereGeometry(0.21, 14, 12), note: new THREE.OctahedronGeometry(0.17, 0), prediction: new THREE.CylinderGeometry(0.25, 0.25, 0.08, 6), mock: new THREE.CylinderGeometry(0.2, 0.2, 0.08, 6) };
+    const G_ROT = { exam: new THREE.Euler(Math.PI / 2 - 0.28, 0, 0), prediction: new THREE.Euler(0.3, 0, 0), mock: new THREE.Euler(0.3, 0, 0) };
+    const G_Y0 = 1.6, G_TC = new THREE.Vector3(0, 1.15, 0);   // 궤도 기준 높이 · 선생님 중심(빛기둥 가운데)
+    const orbit = (r, a, dy) => new THREE.Vector3(Math.cos(a) * r, G_Y0 + Math.sin(a) * r * 0.3 + (dy || 0), Math.sin(a) * r * -0.58);
+    const hash01 = (i, s) => { const x = Math.sin(i * 12.9898 + (s || 0) * 78.233) * 43758.5453; return x - Math.floor(x); };
+    const G_PT_VS = `uniform float uTime; uniform float uPx; attribute vec3 aColor; attribute float aSize; attribute float aAlpha; varying vec3 vC; varying float vA;
+      void main(){ vC = aColor; vA = aAlpha * (0.72 + 0.28*sin(uTime*1.7 + position.x*3.1 + position.z*2.3)); vec4 mv = modelViewMatrix * vec4(position, 1.0); gl_PointSize = uPx * aSize * clamp(14.0 / -mv.z, 0.3, 3.0); gl_Position = projectionMatrix * mv; }`;
+    const G_PT_FS = `varying vec3 vC; varying float vA; void main(){ vec2 c = gl_PointCoord - 0.5; float r = dot(c, c); if (r > 0.25) discard; float a = smoothstep(0.25, 0.04, r) * vA; if (a < 0.003) discard; gl_FragColor = vec4(vC * a * 1.6, a); ${TAIL} }`;
+    const graphSt = { nodes: [], edges: [], byId: new Map(), adj: new Map(), teacherId: null, rig: null, group: null, objs: [], pts: null, ptsAttr: null, lines: null, filter: null, focus: null, focusSet: null, hover: null, marker: null, focusMark: null, links: [], sig: "" };
+    const nodeHandlers = {};
+    function disposeObj(o) { if (o.material) { if (o.material.map) o.material.map.dispose(); if (o.material.uniforms && o.material.uniforms.tMap && o.material.uniforms.tMap.value) o.material.uniforms.tMap.value.dispose(); o.material.dispose(); } if (o.geometry && !Object.values(G_GEO).includes(o.geometry)) o.geometry.dispose(); if (o.dispose && o.isInstancedMesh) o.dispose(); }
+    function clearGraphObjects() {
+      if (graphSt.group) { [...graphSt.group.children].forEach(o => { graphSt.group.remove(o); disposeObj(o); }); if (graphSt.group.parent) graphSt.group.parent.remove(graphSt.group); }
+      graphSt.group = null; graphSt.objs = []; graphSt.pts = null; graphSt.ptsAttr = null; graphSt.lines = null; graphSt.marker = null; graphSt.focusMark = null;
+    }
+    function clearGraph() { clearGraphObjects(); graphSt.nodes = []; graphSt.edges = []; graphSt.byId.clear(); graphSt.adj.clear(); graphSt.teacherId = null; graphSt.rig = null; graphSt.focus = null; graphSt.focusSet = null; graphSt.hover = null; graphSt.sig = ""; }
+    function graphTeacherOf(nodes, edges) {
+      const cnt = new Map(); nodes.forEach(n => { if (n.teacherId) cnt.set(n.teacherId, (cnt.get(n.teacherId) || 0) + 1); });
+      edges.forEach(e => { if (e[2] === "owner" && teachers.has(e[1])) cnt.set(e[1], (cnt.get(e[1]) || 0) + 0.5); });
+      let best = null, bn = 0; cnt.forEach((v, k) => { if (v > bn) { bn = v; best = k; } });
+      if (best && !teachers.has(best)) { const alt = [...cnt.keys()].find(k => teachers.has(k)); if (alt) best = alt; }
+      return best;
+    }
+    // 배치 — 궤도. 결정적(같은 그래프면 같은 자리)이라 다시 그려도 노드가 튀지 않는다.
+    function layoutGraph() {
+      const ns = graphSt.nodes, adj = graphSt.adj, byId = graphSt.byId;
+      const of = (k) => ns.filter(n => n.kind === k);
+      const nb = (n, kinds) => { const out = []; (adj.get(n.id) || []).forEach(([b, k]) => { const m = byId.get(b); if (m && m.pos && (!kinds || kinds.includes(k))) out.push(m); }); return out; };
+      const exams = of("exam"); exams.forEach((n, i) => { n.ang = Math.PI / 6 + (i / Math.max(1, exams.length)) * Math.PI * 2; n.pos = orbit(3.6, n.ang, 0); });
+      // 지문 · 프린트 링 — 프린트마다 그 지문을 모아 두고(자료 순), 나머지 지문은 뒤에
+      const hs = of("handout"), ps = of("passage"), used = new Set(), ring = [];
+      hs.forEach(h => { ring.push(h); (adj.get(h.id) || []).forEach(([b, k]) => { const m = byId.get(b); if (m && m.kind === "passage" && !used.has(m.id) && (k === "from" || k === "hit")) { used.add(m.id); ring.push(m); } }); });
+      ps.forEach(p => { if (!used.has(p.id)) ring.push(p); });
+      ring.forEach((n, i) => { n.ang = Math.PI / 6 + 0.35 + (i / Math.max(1, ring.length)) * Math.PI * 2; n.pos = orbit(n.kind === "passage" && n.hit ? 4.6 : 5.2, n.ang, n.kind === "handout" ? 0.25 : 0); });
+      // 문항 — 매칭 지문 주위 산개, 없으면 소속 시험 링 바깥
+      let qi = 0;
+      of("question").forEach(n => {
+        const i = ++qi; const p = nb(n, ["match"])[0], e = nb(n, ["belongs"])[0];
+        if (p) { const a = hash01(i, 1) * Math.PI * 2, r = 0.32 + hash01(i, 2) * 0.45; n.pos = p.pos.clone().add(new THREE.Vector3(Math.cos(a) * r, (hash01(i, 3) - 0.5) * 0.5, Math.sin(a) * r * 0.7)); }
+        else if (e) n.pos = orbit(4.3, e.ang + (hash01(i, 4) - 0.5) * 0.7, (hash01(i, 5) - 0.5) * 0.5);
+        else n.pos = orbit(4.3, hash01(i, 6) * Math.PI * 2, (hash01(i, 7) - 0.5) * 0.5);
+      });
+      // 메모 · 예측 · 모의고사 — 이어진 노드 옆 (두 번 돌아 메모→메모도 붙는다), 이어진 것이 없으면 안쪽 링
+      const rest = ns.filter(n => n.kind === "note" || n.kind === "prediction" || n.kind === "mock");
+      for (let pass = 0; pass < 2; pass++) rest.forEach((n, i) => {
+        if (n.pos) return;
+        const cand = nb(n).filter(m => m.kind !== "question").concat(nb(n).filter(m => m.kind === "question"))[0];
+        if (cand) { const k = (adj.get(cand.id) || []).length; const a = Math.atan2(cand.pos.z, cand.pos.x) + (hash01(i + 11, k) - 0.5) * 1.2; const out = new THREE.Vector3(Math.cos(a) * 0.6, 0.38 + hash01(i, 9) * 0.25, Math.sin(a) * 0.5); n.pos = cand.pos.clone().add(out); }
+        else if (pass === 1) n.pos = orbit(2.5, Math.PI / 6 + 0.9 + i * 0.75, 0.7);
+      });
+      ns.forEach(n => { if (!n.pos) n.pos = orbit(2.5, hash01(n.idx, 8) * Math.PI * 2, 0.7); });
+    }
+    const nodeVisible = (n) => (!graphSt.filter || graphSt.filter.has(n.kind)) && (!graphSt.focusSet || graphSt.focusSet.has(n.id));
+    const nodeScale = (n) => 0.8 + 0.1 * Math.min(6, +n.size || 1);
+    function nodeColor(n, out) { out.copy(n.hit ? GOLD : graphSt.rig.color); if (n.kind === "passage" && !n.hit && n.pUse > 0) out.lerp(GOLD, Math.min(0.6, n.pUse)); return out; }
+    // 화면 객체를 (다시) 만든다 — 필터 · 포커스가 바뀌면 통째로 다시 만든다 (≤ 수천 노드라 싸다)
+    function buildGraphObjects() {
+      clearGraphObjects();
+      const rig = graphSt.rig; if (!rig || !graphSt.nodes.length) return;
+      const group = new THREE.Group(); group.name = "graph"; group.scale.setScalar(0.9); rig.group.add(group); graphSt.group = group;
+      const col = new THREE.Color(), mat4b = new THREE.Matrix4(), qb = new THREE.Quaternion(), sb = new THREE.Vector3();
+      G_KINDS.forEach(kind => {
+        const list = graphSt.nodes.filter(n => n.kind === kind && nodeVisible(n)); if (!list.length) return;
+        const mesh = new THREE.InstancedMesh(G_GEO[kind], new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: kind === "exam" ? 0.95 : 0.88, toneMapped: false }), list.length);
+        mesh.frustumCulled = false; mesh.userData.kind = kind;
+        list.forEach((n, i) => { n.inst = i; qb.setFromEuler(G_ROT[kind] || new THREE.Euler()); sb.setScalar(nodeScale(n)); mat4b.compose(n.pos, qb, sb); mesh.setMatrixAt(i, mat4b); mesh.setColorAt(i, nodeColor(n, col)); });
+        mesh.instanceMatrix.needsUpdate = true; if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
+        group.add(mesh); graphSt.objs.push(mesh);
+      });
+      const qs = graphSt.nodes.filter(n => n.kind === "question" && nodeVisible(n));
+      if (qs.length) {
+        const pos = new Float32Array(qs.length * 3), c = new Float32Array(qs.length * 3), sz = new Float32Array(qs.length), al = new Float32Array(qs.length);
+        qs.forEach((n, i) => { n.inst = i; pos[i * 3] = n.pos.x; pos[i * 3 + 1] = n.pos.y; pos[i * 3 + 2] = n.pos.z; nodeColor(n, col); c[i * 3] = col.r; c[i * 3 + 1] = col.g; c[i * 3 + 2] = col.b; sz[i] = n.hit ? 1.35 : 1; al[i] = 1; });
+        const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(pos, 3)); g.setAttribute("aColor", new THREE.BufferAttribute(c, 3)); g.setAttribute("aSize", new THREE.BufferAttribute(sz, 1)); g.setAttribute("aAlpha", new THREE.BufferAttribute(al, 1));
+        const pts = new THREE.Points(g, new THREE.ShaderMaterial({ uniforms: { uTime: { value: clock.t }, uPx: { value: 4.2 * DPR } }, vertexShader: G_PT_VS, fragmentShader: G_PT_FS, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }));
+        pts.frustumCulled = false; group.add(pts); graphSt.pts = pts; graphSt.ptsAttr = { sz, al };
+      }
+      // 이름표 — 시험 · 프린트 · 예측 · 모의고사만 (최대 24)
+      let nl = 0;
+      graphSt.nodes.forEach(n => { if (nl >= 24 || !nodeVisible(n) || !["exam", "handout", "prediction", "mock"].includes(n.kind)) return; nl++; const lb = makeLabel(String(n.label || "").slice(0, 22), n.sub ? String(n.sub).slice(0, 26) : "", n.hit ? "#f5c518" : rig.hex); lb.scale.set(0.9, 0.28, 1); lb.position.copy(n.pos).add(new THREE.Vector3(0, 0.42, 0)); group.add(lb); });
+      // 호버 · 포커스 표식
+      const mk = (r, op) => { const m = new THREE.Mesh(new THREE.TorusGeometry(r, 0.025, 8, 40), new THREE.MeshBasicMaterial({ color: rig.color, transparent: true, opacity: op, blending: THREE.AdditiveBlending, toneMapped: false, depthWrite: false })); m.visible = false; m.frustumCulled = false; group.add(m); return m; };
+      graphSt.marker = mk(0.42, 0.9); graphSt.focusMark = mk(0.55, 0.7);
+      const lines = new THREE.LineSegments(new THREE.BufferGeometry(), new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, opacity: 0.55, blending: THREE.AdditiveBlending, toneMapped: false, depthWrite: false }));
+      lines.frustumCulled = false; group.add(lines); graphSt.lines = lines;
+      rebuildEdges();
+      rig.group.updateMatrixWorld(true);
+    }
+    // 간선 — 200개를 넘으면 문항에 닿지 않는 간선 + 호버/포커스 노드의 이웃만
+    function rebuildEdges() {
+      const L = graphSt.lines; if (!L) return;
+      const sparse = graphSt.edges.length > 200, hot = new Set([graphSt.hover, graphSt.focus].filter(Boolean));
+      const vis = (id) => { if (id === graphSt.teacherId) return true; const n = graphSt.byId.get(id); return !!(n && nodeVisible(n)); };
+      const at = (id) => id === graphSt.teacherId ? G_TC : graphSt.byId.get(id).pos;
+      const pos = [], col = [], c = new THREE.Color();
+      graphSt.edges.forEach(([a, b, k]) => {
+        if (!vis(a) || !vis(b)) return;
+        const na = graphSt.byId.get(a), nbb = graphSt.byId.get(b);
+        if (sparse && ((na && na.kind === "question") || (nbb && nbb.kind === "question")) && !hot.has(a) && !hot.has(b)) return;
+        const pa = at(a), pb = at(b); pos.push(pa.x, pa.y, pa.z, pb.x, pb.y, pb.z);
+        if (k === "hit") c.copy(GOLD); else c.copy(graphSt.rig.color).multiplyScalar(k === "owner" ? 0.35 : 0.7);
+        if (hot.size && !hot.has(a) && !hot.has(b)) c.multiplyScalar(0.45);
+        col.push(c.r, c.g, c.b, c.r, c.g, c.b);
+      });
+      L.geometry.dispose(); L.geometry = new THREE.BufferGeometry();
+      L.geometry.setAttribute("position", new THREE.BufferAttribute(new Float32Array(pos), 3)); L.geometry.setAttribute("color", new THREE.BufferAttribute(new Float32Array(col), 3));
+    }
+    function setGraph(g) {
+      g = g || {}; const raw = Array.isArray(g.nodes) ? g.nodes : [], rawE = Array.isArray(g.edges) ? g.edges : [];
+      clearGraph();
+      const seen = new Set();
+      raw.forEach((n, i) => { if (!n || !n.id || seen.has(n.id)) return; seen.add(n.id); const kind = n.kind === "source" ? "passage" : n.kind; if (!G_KINDS.includes(kind) && kind !== "question") return;
+        graphSt.nodes.push({ id: n.id, kind, label: n.label || "", sub: n.sub || "", size: +n.size || 1, teacherId: n.teacherId || null, hit: !!n.hit, pUse: +n.pUse || 0, noteKind: n.noteKind || "", idx: i, pos: null, inst: -1 }); });
+      graphSt.nodes.forEach(n => graphSt.byId.set(n.id, n));
+      graphSt.teacherId = graphTeacherOf(graphSt.nodes, rawE);
+      rawE.forEach(e => { if (!Array.isArray(e) || e.length < 2) return; const [a, b, k] = e; const okA = graphSt.byId.has(a) || a === graphSt.teacherId, okB = graphSt.byId.has(b) || b === graphSt.teacherId; if (!okA || !okB || a === b) return; graphSt.edges.push([a, b, k || "link"]); });
+      const add = (a, b, k) => { if (!graphSt.adj.has(a)) graphSt.adj.set(a, []); graphSt.adj.get(a).push([b, k]); };
+      graphSt.edges.forEach(([a, b, k]) => { add(a, b, k); add(b, a, k); });
+      graphSt.rig = graphSt.teacherId ? teachers.get(graphSt.teacherId) || null : null;
+      layoutGraph();
+      buildGraphObjects();
+    }
+    function graph() { return { nodes: graphSt.nodes.map(n => ({ id: n.id, kind: n.kind, label: n.label, sub: n.sub, size: n.size, teacherId: n.teacherId, hit: n.hit, pUse: n.pUse })), edges: graphSt.edges.map(e => e.slice()), teacherId: graphSt.teacherId, rendered: !!graphSt.group }; }
+    const gW = new THREE.Vector3();
+    function nodeWorld(id) {
+      if (id === graphSt.teacherId || (!graphSt.byId.has(id) && teachers.has(id))) { const rig = teachers.get(id); if (!rig) return null; return gW.copy(G_TC).multiplyScalar(rig.scale).add(rig.group.position); }
+      const n = graphSt.byId.get(id); if (!n || !graphSt.group) return null; return graphSt.group.localToWorld(gW.copy(n.pos));
+    }
+    function nodeScreen(id) {
+      const w = nodeWorld(id); if (!w) return null;
+      const n = graphSt.byId.get(id); const p = w.clone().project(camera);
+      return { x: (p.x + 1) / 2 * W, y: (1 - p.y) / 2 * H, visible: p.z < 1 && Math.abs(p.x) < 1.05 && Math.abs(p.y) < 1.05 && (!n || nodeVisible(n)) };
+    }
+    // pickNode(x, y) → { id, kind, … } | null — 클라이언트 좌표. 문항은 가장 가까운 점(8px), 다른 노드는 12px, 그 다음 선생님(기존 pick)
+    function pickNode(x, y, nodesOnly) {
+      const r = canvas.getBoundingClientRect(); const cx = x - r.left, cy = y - r.top;
+      let best = null, bd = Infinity;
+      if (graphSt.group) {
+        const mw = graphSt.group.matrixWorld;
+        graphSt.nodes.forEach(n => { if (!nodeVisible(n)) return; const p = gW.copy(n.pos).applyMatrix4(mw).project(camera); if (p.z >= 1) return; const sx = (p.x + 1) / 2 * W, sy = (1 - p.y) / 2 * H; const d = Math.hypot(sx - cx, sy - cy) - (n.kind === "question" ? 8 : 12); if (d < 0 && d < bd) { bd = d; best = n; } });
+      }
+      if (best) return { id: best.id, kind: best.kind, label: best.label, sub: best.sub, teacherId: best.teacherId, hit: best.hit };
+      if (nodesOnly) return null;
+      const tid = pick(x, y); return tid ? { id: tid, kind: "teacher", teacherId: tid } : null;
+    }
+    function hoverNode(id) {
+      id = id && graphSt.byId.has(id) ? id : null; if (id === graphSt.hover) return;
+      graphSt.hover = id; if (graphSt.marker) { const n = id ? graphSt.byId.get(id) : null; graphSt.marker.visible = !!n; if (n) graphSt.marker.position.copy(n.pos); }
+      if (graphSt.edges.length > 200 || graphSt.focus) rebuildEdges();
+    }
+    function focusNode(id) {
+      id = id && (graphSt.byId.has(id) || id === graphSt.teacherId) ? id : null;
+      graphSt.focus = id;
+      if (!id) graphSt.focusSet = null;
+      else { const seen = new Set([id]); let fr = [id]; for (let h = 0; h < 2; h++) { const nx = []; fr.forEach(a => (graphSt.adj.get(a) || []).forEach(([b]) => { if (!seen.has(b)) { seen.add(b); nx.push(b); } })); fr = nx; } graphSt.focusSet = seen; }
+      buildGraphObjects();
+      if (graphSt.focusMark) { const n = id ? graphSt.byId.get(id) : null; graphSt.focusMark.visible = !!n; if (n) graphSt.focusMark.position.copy(n.pos); }
+      const w = id ? nodeWorld(id) : null;
+      if (w) { cam.tTarget.set(0, DIAL_Y - 0.15, 0).lerp(w, 0.4); cam.tDist = 9.8; } else { cam.tTarget.set(0, DIAL_Y - 0.15, 0); cam.tDist = 11.5; }
+      cam.idle = 0;
+    }
+    function setNodeFilter(kinds) { graphSt.filter = Array.isArray(kinds) && kinds.length ? new Set(kinds) : null; buildGraphObjects(); if (graphSt.focusMark && graphSt.focus && graphSt.byId.has(graphSt.focus)) { graphSt.focusMark.visible = true; graphSt.focusMark.position.copy(graphSt.byId.get(graphSt.focus).pos); } }
+    // fx.link(a, b) — 두 노드 사이에 선이 0.8초에 걸쳐 자라고 1.2초 머문 뒤 사라진다
+    function fxLink(a, b) {
+      const pa = nodeWorld(a); if (!pa) return; const A = pa.clone(); const pb = nodeWorld(b); if (!pb) return; const B = pb.clone();
+      const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(new Float32Array([A.x, A.y, A.z, A.x, A.y, A.z]), 3));
+      const color = (graphSt.rig ? graphSt.rig.color : new THREE.Color(0x5fc8ff)).clone().lerp(new THREE.Color(0xffffff), 0.35);
+      const line = new THREE.Line(g, new THREE.LineBasicMaterial({ color, transparent: true, opacity: 1, blending: THREE.AdditiveBlending, toneMapped: false, depthWrite: false })); line.frustumCulled = false; scene.add(line); graphSt.links.push(line);
+      const arr = g.attributes.position.array;
+      tween(calm ? 0.2 : 0.8, (e) => { arr[3] = A.x + (B.x - A.x) * e; arr[4] = A.y + (B.y - A.y) * e; arr[5] = A.z + (B.z - A.z) * e; g.attributes.position.needsUpdate = true; }, ease.out, () => {
+        tween(1.2, (e) => { line.material.opacity = 1 - e; }, ease.lin, () => { scene.remove(line); g.dispose(); line.material.dispose(); const i = graphSt.links.indexOf(line); if (i >= 0) graphSt.links.splice(i, 1); });
+      });
+      const nb = graphSt.byId.get(b); if (nb && graphSt.marker) { graphSt.marker.visible = true; graphSt.marker.position.copy(nb.pos); graphSt.marker.scale.setScalar(0.3); tween(0.8, (e) => { graphSt.marker.scale.setScalar(0.3 + 0.7 * e); }, ease.elastic, () => { if (graphSt.hover !== b) graphSt.marker.visible = false; }); }
+    }
+    fx.link = fxLink;
+    function graphFrame(dt) {
+      if (!graphSt.group) return;
+      const t = clock.t;
+      if (graphSt.pts) graphSt.pts.material.uniforms.uTime.value = t;
+      if (graphSt.marker && graphSt.marker.visible) { graphSt.marker.rotation.y = t * 1.2; graphSt.marker.rotation.x = Math.PI / 2 - 0.3 + Math.sin(t * 2) * 0.1; }
+      if (graphSt.focusMark && graphSt.focusMark.visible) { const s = 1 + 0.12 * Math.sin(t * 3); graphSt.focusMark.scale.setScalar(s); graphSt.focusMark.rotation.x = Math.PI / 2 - 0.3; graphSt.focusMark.rotation.z = -t * 0.8; }
+    }
+
     // ---- 카메라 ----
     const cam = { theta: 0, phi: 1.30, dist: 11.5, target: new THREE.Vector3(0, DIAL_Y - 0.15, 0), auto: false, idle: 0, tTarget: new THREE.Vector3(0, DIAL_Y - 0.15, 0), tDist: 11.5, tTheta: 0, tPhi: 1.30 };
     function applyCam() { cam.target.lerp(cam.tTarget, 0.08); cam.dist += (cam.tDist - cam.dist) * 0.08; cam.theta += (cam.tTheta - cam.theta) * 0.1; cam.phi += (cam.tPhi - cam.phi) * 0.1; const s = Math.sin(cam.phi); camera.position.set(cam.target.x + Math.sin(cam.theta) * s * cam.dist, cam.target.y + Math.cos(cam.phi) * cam.dist, cam.target.z + Math.cos(cam.theta) * s * cam.dist); camera.lookAt(cam.target); }
     let drag = null, moved = 0, hoverId = null;
     const onDown = (e) => { if (e.button !== undefined && e.button !== 0) return; drag = { x: e.clientX, y: e.clientY, th: cam.tTheta, ph: cam.tPhi }; moved = 0; cam.idle = 0; };
     const onMove = (e) => { if (drag) { const dx = e.clientX - drag.x, dy = e.clientY - drag.y; moved += Math.abs(dx) + Math.abs(dy); cam.tTheta = Math.max(-0.9, Math.min(0.9, drag.th - dx * 0.005)); cam.tPhi = Math.max(1.05, Math.min(1.48, drag.ph + dy * 0.004)); cam.idle = 0; }
-      const id = pick(e.clientX, e.clientY); if (id !== hoverId) { if (hoverId) fx.highlight(hoverId, false); hoverId = id; if (id) fx.highlight(id, true); if (opts.onHover) opts.onHover(id); canvas.style.cursor = id ? "pointer" : (drag ? "grabbing" : "grab"); } };
-    const onUp = (e) => { if (drag && moved < 6) { const id = pick(e.clientX, e.clientY); if (opts.onSelect) opts.onSelect(id); } drag = null; };
+      let nid = null;
+      if (graphSt.group && !drag) { const n = pickNode(e.clientX, e.clientY, true); if (n) nid = n.id; }
+      if (nid !== graphSt.hover) { hoverNode(nid); if (nodeHandlers.onHover) nodeHandlers.onHover(nid ? pickInfo(nid) : null); }
+      const id = nid ? null : pick(e.clientX, e.clientY); if (id !== hoverId) { if (hoverId) fx.highlight(hoverId, false); hoverId = id; if (id) fx.highlight(id, true); if (opts.onHover) opts.onHover(id); }
+      canvas.style.cursor = (id || nid) ? "pointer" : (drag ? "grabbing" : "grab"); };
+    const pickInfo = (id) => { const n = graphSt.byId.get(id); return n ? { id: n.id, kind: n.kind, label: n.label, sub: n.sub, teacherId: n.teacherId, hit: n.hit } : (teachers.has(id) ? { id, kind: "teacher", teacherId: id } : null); };
+    const onUp = (e) => { if (drag && moved < 6) { const n = graphSt.group ? pickNode(e.clientX, e.clientY, true) : null; if (n) { if (nodeHandlers.onSelect) nodeHandlers.onSelect(n); } else { const id = pick(e.clientX, e.clientY); if (opts.onSelect) opts.onSelect(id); } } drag = null; };
+    const onDbl = (e) => { const n = pickNode(e.clientX, e.clientY); if (n && nodeHandlers.onOpen) nodeHandlers.onOpen(n); };
     const onWheel = (e) => { e.preventDefault(); cam.tDist = Math.max(7.5, Math.min(18, cam.tDist + e.deltaY * 0.012)); cam.idle = 0; };
-    canvas.addEventListener("pointerdown", onDown); window.addEventListener("pointermove", onMove); window.addEventListener("pointerup", onUp); canvas.addEventListener("wheel", onWheel, { passive: false }); canvas.style.cursor = "grab";
+    canvas.addEventListener("pointerdown", onDown); window.addEventListener("pointermove", onMove); window.addEventListener("pointerup", onUp); canvas.addEventListener("dblclick", onDbl); canvas.addEventListener("wheel", onWheel, { passive: false }); canvas.style.cursor = "grab";
     const ray = new THREE.Raycaster(), ndc = new THREE.Vector2();
     function pick(x, y) { const r = canvas.getBoundingClientRect(); ndc.set(((x - r.left) / r.width) * 2 - 1, -((y - r.top) / r.height) * 2 + 1); ray.setFromCamera(ndc, camera); const hits = ray.intersectObjects([...teachers.values()].map(t => t.hit), false); return hits.length ? hits[0].object.userData.teacherId : null; }
     function focus(id) { selectedId = id && teachers.has(id) ? id : null; layout(); cam.tTheta = 0; cam.idle = 0; }
@@ -374,6 +571,7 @@
         const ex = exSlot(rig.slot); ex.x = rig.group.position.x; ex.y = rig.group.position.z; if (ex.w < 1) ex.w = 2.8;
         if (!rig.busy && ex.z > 0.12) ex.z = Math.max(0.12, ex.z - dt * 0.4); else if (!rig.busy && ex.z < 0.12) ex.z = Math.min(0.12, ex.z + dt * 0.2);
       });
+      graphFrame(dt);
       for (let i = bursts.length - 1; i >= 0; i--) { const b = bursts[i]; b.p.material.uniforms.uTime.value = clock.t; if (clock.t > b.until) { scene.remove(b.p); b.p.geometry.dispose(); b.p.material.dispose(); bursts.splice(i, 1); } }
       const t0 = performance.now();
       if (post) post.render(scene, camera, calm ? 0 : clock.t); else renderer.render(scene, camera);
@@ -388,7 +586,11 @@
     canvas.addEventListener("webglcontextlost", (e) => { e.preventDefault(); running = false; }, false);
     canvas.addEventListener("webglcontextrestored", () => { resize(); running = true; }, false);
     return { ok: true, addTeacher, removeTeacher, updateTeacher, setProfile, setLevel, fx, focus, pick, anchor, resize, setBackdrop, setBackdropDim, degrade, fps: () => Math.round(1000 / Math.max(1, ema)),
-      debug() { return { cam: camera.position.toArray().map(v => +v.toFixed(2)), rigs: [...teachers.values()].map(r => r.group.position.toArray().map(v => +v.toFixed(2))), t: +clock.t.toFixed(1), tweens: tweens.length, selected: selectedId }; },
+      // 그래프 (§5.7)
+      setGraph, clearGraph, graph, pickNode: (x, y) => pickNode(x, y, false), focusNode, setNodeFilter, nodeScreen, hoverNode,
+      onNode(h) { Object.assign(nodeHandlers, h || {}); },     // { onSelect(node), onHover(node|null), onOpen(node) } — 노드 클릭 · 호버 · 더블클릭 (선생님 클릭은 opts.onSelect 그대로)
+      get running() { return running; },
+      debug() { return { cam: camera.position.toArray().map(v => +v.toFixed(2)), rigs: [...teachers.values()].map(r => r.group.position.toArray().map(v => +v.toFixed(2))), t: +clock.t.toFixed(1), tweens: tweens.length, selected: selectedId, graph: { nodes: graphSt.nodes.length, edges: graphSt.edges.length, rendered: !!graphSt.group, focus: graphSt.focus, hover: graphSt.hover, filter: graphSt.filter ? [...graphSt.filter] : null } }; },
       teachers: () => [...teachers.keys()], pause() { running = false; }, resume() { running = true; last = performance.now(); },
-      dispose() { cancelAnimationFrame(raf); window.removeEventListener("resize", resize); window.removeEventListener("pointermove", onMove); window.removeEventListener("pointerup", onUp); renderer.dispose(); if (post) post.dispose(); } };
+      dispose() { cancelAnimationFrame(raf); clearGraph(); graphSt.links.splice(0).forEach(l => { scene.remove(l); l.geometry.dispose(); l.material.dispose(); }); window.removeEventListener("resize", resize); window.removeEventListener("pointermove", onMove); window.removeEventListener("pointerup", onUp); canvas.removeEventListener("dblclick", onDbl); renderer.dispose(); if (post) post.dispose(); } };
   }

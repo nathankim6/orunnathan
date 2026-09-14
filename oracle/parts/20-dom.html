@@ -1,68 +1,228 @@
-<div id="room" aria-hidden="true"></div>
-<canvas id="fx" aria-hidden="true"></canvas>
+<!-- ==================================================================
+     ORUN ORACLE — 화면 뼈대 (spec §2). 모든 .view 는 늘 DOM 에 있고 hidden 으로만 토글한다.
+     뷰 안의 동적 부분은 VIEWS · NOTEUI · BRAINUI 가 innerHTML 로 채운다. 고정 껍데기(id)는 여기에 둔다.
+     #paper · #bgVideo · #toasts · #cmdk · #acPop · #bootError · #sheetWrap · 숨은 입력은 body 직계(인쇄 CSS).
+     ================================================================== -->
 <video id="bgVideo" muted loop playsinline aria-hidden="true"></video>
 <div id="dropAll" aria-hidden="true"></div>
-<div id="chips" aria-hidden="true"></div>
 
 <header id="topbar">
-  <div id="brand"><b>ORUN ORACLE</b><span id="brandSub">흑석고 영어 출제 오라클</span></div>
+  <button type="button" class="icon" id="navToggle" title="목차 접기 ([)" aria-label="목차"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <div id="brand"><b>ORUN ORACLE</b><span id="brandSub">흑석고 영어 · 출제자 세컨드 브레인</span></div>
+  <nav id="crumbs" aria-label="경로"></nav>
+  <button type="button" id="btnSearch" title="검색 · 명령 · 질문 (⌘K)"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><span class="lb">⌘K 검색 · 명령 · 질문…</span><kbd>⌘K</kbd></button>
   <button type="button" id="engine" title="엔진 설정"><i></i><span id="engineLabel">NO KEY</span></button>
   <button type="button" id="cloud" title="Supabase 동기화"><i></i><span id="cloudLabel">CLOUD</span></button>
-  <div id="topRight">
-    <span id="fpsTag" hidden></span>
-    <button type="button" id="btnHelp" title="단축키 (?)">?</button>
-    <button type="button" id="btnSettings" title="설정">⚙ 설정</button>
-  </div>
+  <span id="fpsTag" hidden></span>
+  <button type="button" id="btnHelp" title="단축키 (?)" aria-label="단축키">?</button>
+  <button type="button" id="btnSettings" title="설정" aria-label="설정"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
+  <button type="button" class="icon" id="asideToggle" title="오른쪽 패널 접기 (])" aria-label="오른쪽 패널"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M15 4v16"/></svg></button>
 </header>
 
-<div class="corner" id="wordsTL">LEARN<br>PREDICT<br>HIT<small>A SMARTER EXAM<br>WITH ORUN ORACLE</small><span class="ko" id="wordsSchool">흑석고등학교 · 영어</span></div>
-<div class="corner" id="wordsTR">INTELLIGENCE<br>PREDICTION<br>A BETTER SCORE</div>
-<div class="corner" id="wordsBL">INTELLIGENCE &nbsp;|&nbsp; PREDICTION &nbsp;|&nbsp; A BETTER SCORE</div>
-<div class="corner" id="wordsBR">More Possibilities Together</div>
+<nav id="nav" aria-label="목차">
+  <div id="navHead">
+    <div id="navTeacherWrap">
+      <button type="button" id="navTeacher" aria-haspopup="menu" aria-expanded="false"><i class="dot" style="background:#5fc8ff"></i><span class="nm">선생님</span><span class="badge">V0</span></button>
+      <div id="navTeacherMenu" role="menu" hidden>
+        <button type="button" role="menuitem" data-teacher="*"><i class="dot" style="background:var(--dim)"></i><span class="nm">모든 선생님</span></button>
+        <button type="button" role="menuitem" id="btnNew">＋ 선생님</button>
+      </div>
+    </div>
+  </div>
+  <div id="navMain">
+    <a class="nav-item" data-nav="today" href="#/today"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span class="lb">오늘</span></a>
+    <a class="nav-item" data-nav="inbox" href="#/inbox"><svg viewBox="0 0 24 24"><path d="M4 4h16v11h-5l-2 3h-2l-2-3H4z"/><path d="M4 15v5h16v-5"/></svg><span class="lb">인박스</span><span class="badge" id="navInboxCount"></span></a>
+    <a class="nav-item" data-nav="library" href="#/all/exams"><svg viewBox="0 0 24 24"><path d="M4 4h4v16H4zM10 4h4v16h-4zM16 5l4 1-3 14-4-1z"/></svg><span class="lb">서재</span></a>
+    <a class="nav-item" data-nav="brain" href="#/brain"><svg viewBox="0 0 24 24"><path d="M9 4a3 3 0 0 0-3 3v1a3 3 0 0 0-2 3 3 3 0 0 0 2 3v1a3 3 0 0 0 3 3h1V4H9zM15 4a3 3 0 0 1 3 3v1a3 3 0 0 1 2 3 3 3 0 0 1-2 3v1a3 3 0 0 1-3 3h-1V4h1z"/></svg><span class="lb">브레인</span></a>
+    <a class="nav-item" data-nav="timeline" href="#/timeline"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h13"/></svg><span class="lb">타임라인</span></a>
+    <a class="nav-item" data-nav="ask" href="#/ask"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .8-1 1.5M12 17h.01"/></svg><span class="lb">물어보기</span></a>
+  </div>
+  <div class="nav-sec" id="navLib">
+    <h5>Library</h5>
+    <a class="nav-item" data-nav-kind="exams" href="#/all/exams"><span class="lb">시험</span><span class="cnt"></span></a>
+    <a class="nav-item" data-nav-kind="questions" href="#/all/questions"><span class="lb">문항</span><span class="cnt"></span></a>
+    <a class="nav-item" data-nav-kind="passages" href="#/all/passages"><span class="lb">지문</span><span class="cnt"></span></a>
+    <a class="nav-item" data-nav-kind="sources" href="#/all/sources"><span class="lb">자료</span><span class="cnt"></span></a>
+    <a class="nav-item" data-nav-kind="profiles" href="#/all/profiles"><span class="lb">프로파일</span><span class="cnt"></span></a>
+    <a class="nav-item" data-nav-kind="predictions" href="#/all/predictions"><span class="lb">예측</span><span class="cnt"></span></a>
+    <a class="nav-item" data-nav-kind="mocks" href="#/all/mocks"><span class="lb">모의고사</span><span class="cnt"></span></a>
+    <a class="nav-item" data-nav-kind="notes" href="#/all/notes"><span class="lb">메모</span><span class="cnt"></span></a>
+  </div>
+  <div class="nav-sec" id="navTags"><h5>Tags <a href="#/all/notes?tags=1">더보기</a></h5></div>
+  <div class="nav-sec" id="navRecent"><h5>Recent</h5></div>
+  <div id="navGrowth" title="타임라인"><div class="g"></div><canvas id="navGrowthCanvas" width="224" height="28" aria-hidden="true"></canvas></div>
+</nav>
+<div id="navBack" hidden></div>
 
-<button type="button" class="tog glass" id="togL" title="왼쪽 패널 접기 ([)">‹</button>
-<button type="button" class="tog glass" id="togR" title="오른쪽 패널 접기 (])">›</button>
+<main id="main" data-view="today">
+  <!-- 오늘 -->
+  <section class="view" id="vToday" data-view="today" hidden>
+    <div id="homeHead"><div class="kicker">TODAY</div></div>
+    <div class="grid2">
+      <div class="card" id="homeNext"></div>
+      <div class="card" id="homeLevel"></div>
+    </div>
+    <div class="stats" id="homeStats">
+      <div class="stat" data-stat="questions"><b class="num">0</b><span>문항</span></div>
+      <div class="stat" data-stat="passages"><b class="num">0</b><span>지문</span></div>
+      <div class="stat" data-stat="reflection"><b class="num">—</b><span>프린트 반영율</span></div>
+      <div class="stat" data-stat="profile"><b class="num">V0</b><span>프로파일</span></div>
+      <div class="stat" data-stat="notes"><b class="num">0</b><span>메모</span></div>
+      <div id="homeGrowth"><canvas id="homeGrowthCanvas" width="760" height="44" class="spark" aria-hidden="true"></canvas></div>
+    </div>
+    <div class="card" id="homeCapture">
+      <div class="drop" id="homeDrop"><b>기출 · 범위 원문 · 프린트 · 사진을 여기에 놓으세요</b><span class="small">PDF · 워드 · 한글 · 엑셀 · 텍스트 · 사진(OCR)</span><div class="row"><button type="button" id="homePick">파일 고르기</button></div></div>
+      <div class="capture"><textarea id="homeCaptureText" placeholder="한 줄 메모 — [[ 로 잇고 # 로 태그 · ⏎ 저장"></textarea><button type="button" class="pri" id="homeCaptureGo">저장</button></div>
+    </div>
+    <div id="homeQueue"></div>
+    <div id="nextUp"></div>
+    <div id="onboard" hidden>
+      <div class="st" id="ob1"><b data-n="1">엔진 연결</b><p>API 키를 저장하면 시험지를 읽고 학습해요</p><button type="button" class="pri" id="ob1Btn">키 넣기</button></div>
+      <div class="st" id="ob2"><b data-n="2">선생님</b><p>흑석고 윤은영(영어A) · 전정이(영어B) 가 준비돼 있어요</p><button type="button" class="pri" id="ob2Btn">＋ 선생님 추가</button></div>
+      <div class="st" id="ob3"><b data-n="3">파일 넣기</b><p>기출 시험지 · 시험범위 원문 · 선생님 프린트를 <b style="display:inline">인박스에</b> 놓으세요</p><button type="button" class="pri" id="ob3Btn">인박스 열기</button><span class="small" id="ob3Note">선생님을 만들면 열려요</span></div>
+    </div>
+    <div id="homeRecent"></div>
+    <div class="card" id="homeAsk"><div class="kicker" style="margin-bottom:8px">ASK</div><div class="row" style="flex-wrap:nowrap"><input type="text" id="homeAskInput" placeholder="두뇌에게 묻기 — 예) 빈칸을 어디에 뚫나?"><button type="button" class="pri" id="homeAskGo">묻기</button></div></div>
+    <div id="homeChanged" hidden><span>ⓘ 무엇이 바뀌었나 — 홀로그램은 브레인(G), 파일은 인박스(I), 상세는 노트 페이지로 갔어요. ⌘K 로 무엇이든 찾고 물어보세요.</span><button type="button" class="ghost" id="homeChangedClose">닫기</button></div>
+  </section>
 
-<aside id="panelL" aria-label="상태">
-  <section class="glass" id="pStatus"><div class="ph"><span>System Status</span><span class="grow"></span><button type="button" id="btnEditTeacher" hidden>✎</button></div><div class="pb" id="statusBody"></div></section>
-  <section class="glass" id="pIntel"><div class="ph"><span>Global Intelligence</span><span class="grow"></span><span id="profVer" class="small"></span></div><div class="pb" id="intelBody"></div></section>
+  <!-- 인박스 -->
+  <section class="view" id="vInbox" data-view="inbox" hidden>
+    <div class="vhead"><div class="kicker">INBOX</div><div class="tools"><span class="small">종류</span><div class="seg" id="inboxKind"><button type="button" data-v="auto" class="on">자동</button><button type="button" data-v="exam">기출</button><button type="button" data-v="scope">범위</button><button type="button" data-v="handout">프린트</button></div></div></div>
+    <div class="drop" id="inboxDrop"><b>기출 · 범위 원문 · 프린트를 여기에 놓으세요</b><span class="small" id="inboxHint">PDF · 워드 · 한글 · 엑셀 · 텍스트 · 사진(OCR) · 20개까지</span><div class="row"><button type="button" class="pri" id="inboxPick">파일 고르기</button><button type="button" id="inboxCamera">사진 찍기</button></div></div>
+    <div class="capture"><textarea id="captureText" placeholder="빠른 메모 — 오늘 수업에서 들은 것, [[지문]] 과 #태그 · ⏎ 저장 (⇧⏎ 줄바꿈)"></textarea><button type="button" class="pri" id="captureGo">저장</button></div>
+    <div class="vhead" style="margin-top:24px"><div class="kicker">작업</div><div class="tools"><button type="button" class="ghost" id="queueClear">완료 지우기</button><button type="button" class="ghost" id="queueCancelAll">모두 취소</button></div></div>
+    <div id="queueList"></div>
+  </section>
+
+  <!-- 노트 (한 벌의 템플릿) -->
+  <article class="view read" id="vNote" data-view="note" data-kind="" hidden>
+    <div id="noteHead"><button type="button" class="ghost icon" id="noteBackBtn" title="뒤로">‹</button><span id="noteCrumb"></span><button type="button" class="ghost icon" id="noteMenu" title="더보기" aria-haspopup="menu">⋯</button></div>
+    <section id="noteTop">
+      <div class="kicker" id="noteKicker"></div>
+      <h1 id="noteTitle"></h1>
+      <div id="noteTags"><button type="button" class="chip dim" id="noteTagAdd" title="태그 달기">⊕ 태그</button></div>
+      <div id="noteAiMemo"></div>
+    </section>
+    <section><div id="noteProps"></div></section>
+    <section><div id="noteBody"></div></section>
+    <section id="noteMemo">
+      <div id="noteMemoHead"><h4 class="kicker">내 메모</h4><span id="noteMemoMeta"></span><button type="button" class="ghost" id="noteMemoToggle" title="편집 ↔ 미리보기 (E)">미리보기</button><button type="button" class="pri" id="noteMemoSave" title="저장 (⌘⏎)">저장</button></div>
+      <textarea id="noteMemoText" placeholder="작년과 같은 문장에서 빈칸. [[Lesson 3 · Reading 1]] 재출제 유력 #재출제" hidden></textarea>
+      <div id="noteMemoView"></div>
+      <div id="noteMemoHint">작업공간 이름을 아는 사람은 이 메모를 볼 수 있어요 · [[ 로 잇고 # 로 태그 · ⌘⏎ 저장</div>
+    </section>
+    <section><div id="noteLinksWrap"><div id="noteLinks"></div><div id="noteBacklinks"></div></div></section>
+    <section><div id="noteActions"></div></section>
+  </article>
+
+  <!-- 태그 -->
+  <section class="view read" id="vTag" data-view="tag" hidden>
+    <div class="kicker">TAG</div>
+    <div id="tagHead"><input type="color" id="tagColor" title="색" value="#5fc8ff"><h1 id="tagTitle"></h1><span class="grow"></span><button type="button" class="ghost" id="tagRename">이름 바꾸기</button><button type="button" class="danger" id="tagDelete">삭제</button></div>
+    <div class="field"><textarea id="tagDescText" placeholder="이 태그의 설명"></textarea></div>
+    <div id="tagList"></div>
+  </section>
+
+  <!-- 서재 -->
+  <section class="view" id="vLibrary" data-view="library" data-kind="" hidden>
+    <div id="libHead"><div class="kicker">LIBRARY</div><h2 class="view-title" id="libCount"></h2><input type="search" id="libSearch" placeholder="검색…"><select id="libSort"></select></div>
+    <div id="libFilter"><button type="button" class="chip" data-f="type">유형 ▾</button><button type="button" class="chip" data-f="tag">태그 ▾</button><button type="button" class="chip" data-f="hit">★ 프린트</button><button type="button" class="chip" data-f="matched">미매칭</button><button type="button" class="chip" data-f="year">연도 ▾</button><button type="button" class="link" id="libFilterClear">×초기화</button><div id="libFilterPop" hidden></div></div>
+    <div class="tblwrap"><table class="tbl" id="libTable"><thead></thead><tbody></tbody></table></div>
+    <div id="libCards"></div>
+    <div class="empty" id="libEmpty" hidden><b>기출 시험지를 인박스에 놓으세요</b><button type="button" class="pri" id="libEmptyAct">파일 넣기</button></div>
+  </section>
+
+  <!-- 브레인 (3D 무대 · 2D 폴백) -->
+  <section class="view" id="vBrain" data-view="brain" hidden>
+    <canvas id="fx" aria-hidden="true"></canvas>
+    <canvas id="brainFlat" aria-hidden="true"></canvas>
+    <div id="chips" aria-hidden="true"></div>
+    <div id="flat"><div id="flatGrid"><div class="tcard new" id="flatNew">＋ 새 선생님</div></div></div>
+    <div id="brainBar">
+      <span class="kicker">BRAIN</span>
+      <button type="button" class="chip" data-node="exam">시험</button><button type="button" class="chip" data-node="passage">지문</button><button type="button" class="chip" data-node="question">문항</button><button type="button" class="chip gold" data-node="handout">프린트</button><button type="button" class="chip" data-node="note">메모</button><button type="button" class="chip" data-node="prediction">예측</button><button type="button" class="chip" data-node="mock">모의고사</button>
+      <span class="chip" id="brainFocus"></span>
+      <span class="tools"><button type="button" id="brain2d" title="2D/3D 전환">2D</button><button type="button" id="brainFull" title="전체화면 (Esc 로 해제)">⛶</button></span>
+    </div>
+    <div class="hud" id="brainHud" hidden><div class="pb"><h3 id="brainHudTitle"></h3><div id="brainHudSub"></div><div class="row"><button type="button" class="pri" id="brainHudOpen">열기</button><button type="button" id="brainHudAsk">여기서 물어보기</button><span class="grow"></span><button type="button" class="ghost" id="brainHudClose">✕</button></div></div></div>
+    <div id="brainEmpty" hidden>파일을 넣으면 여기서 가지가 뻗어요</div>
+    <div class="corner" id="wordsTL">LEARN<br>PREDICT<br>HIT<small>A SMARTER EXAM<br>WITH ORUN ORACLE</small><span class="ko" id="wordsSchool">흑석고등학교 · 영어</span></div>
+    <div class="corner" id="wordsTR">INTELLIGENCE<br>PREDICTION<br>A BETTER SCORE</div>
+    <div class="corner" id="wordsBL">INTELLIGENCE &nbsp;|&nbsp; PREDICTION &nbsp;|&nbsp; A BETTER SCORE</div>
+    <div class="corner" id="wordsBR">More Possibilities Together</div>
+  </section>
+
+  <!-- 타임라인 -->
+  <section class="view" id="vTimeline" data-view="timeline" hidden>
+    <div id="tlHead"><div class="kicker">TIMELINE</div><button type="button" class="ghost icon" id="tlPrev" title="지난 주">‹</button><span id="tlRange"></span><button type="button" class="ghost icon" id="tlNext" title="다음 주">›</button><span class="grow"></span><button type="button" id="tlToday">+ 오늘 로그</button></div>
+    <div class="card" id="tlWeek"></div>
+    <div class="row" style="margin:-12px 0 16px"><span class="grow"></span><button type="button" class="ghost" id="tlRetro">회고 쓰기</button></div>
+    <div id="tlFilter"><button type="button" class="chip on" data-f="">전체</button><button type="button" class="chip" data-f="ingest">캡처</button><button type="button" class="chip" data-f="learn">학습</button><button type="button" class="chip" data-f="predict">예측</button><button type="button" class="chip" data-f="generate">출제</button><button type="button" class="chip" data-f="edit">수정</button><button type="button" class="chip" data-f="note">메모</button><button type="button" class="chip" data-f="ask">질문</button><button type="button" class="chip" data-f="error">오류</button></div>
+    <div id="tlDays"></div>
+    <div class="empty" id="tlEmpty" hidden>이 주에는 아무것도 없어요</div>
+  </section>
+
+  <!-- 물어보기 -->
+  <section class="view" id="vAsk" data-view="ask" hidden>
+    <div id="askHead"><div class="kicker">ASK</div><span class="small">범위</span><select id="askScope"></select><span class="chip" id="askCtx" hidden><span class="t"></span><button type="button" class="link" id="askCtxClear">×</button></span></div>
+    <div id="askLog" aria-live="polite"></div>
+    <div id="askCites"></div>
+    <div class="empty" id="askEmpty" hidden>두뇌에 아직 이 내용이 없어요 — 검색어를 바꾸거나 자료를 넣어 주세요</div>
+    <div id="askStatus"></div>
+    <div id="askCost"></div>
+    <div id="askForm"><textarea id="askInput" placeholder="질문… (⏎ 전송 · ⇧⏎ 줄바꿈)"></textarea><button type="button" class="pri" id="askGo">묻기</button><button type="button" id="askStop" hidden>중단</button></div>
+    <div class="row" style="margin-top:8px"><button type="button" class="ghost" id="askSave" hidden>노트로 저장</button><button type="button" class="ghost" id="askAgain" hidden>다시 묻기</button></div>
+    <div id="askHistory"></div>
+    <div id="citePop" hidden></div>
+  </section>
+
+  <!-- 검색 결과 -->
+  <section class="view" id="vSearch" data-view="search" hidden>
+    <div class="kicker" style="margin-bottom:8px">SEARCH</div>
+    <input type="search" id="searchQ" placeholder="검색…">
+    <div id="searchList"></div>
+    <div id="searchGrep"></div>
+  </section>
+</main>
+
+<aside id="aside" aria-label="이 노트">
+  <section id="asideProps"><h4>This note</h4><div class="kv"></div></section>
+  <section id="asideBacklinks"><h4>백링크</h4></section>
+  <section id="asideRelated"><h4>관련</h4></section>
+  <section id="asideGraph"><canvas id="asideGraphCanvas" width="288" height="160" aria-hidden="true"></canvas><button type="button" class="ghost" id="asideGraphOpen">브레인에서 보기</button></section>
+  <section id="asideAsk"><h4>이 노트에 대해 묻기</h4><div class="row"><input type="text" id="asideAskInput" placeholder="질문…"><button type="button" class="pri icon" id="asideAskGo" title="묻기">↵</button></div></section>
+  <section id="asideQueue" hidden><h4>작업</h4><div class="list"></div></section>
+  <section id="asidePeek" hidden><h5 id="asidePeekTitle"><span></span><button type="button" class="ghost icon" id="asidePeekOpen" title="열기">↗</button><button type="button" class="ghost icon" id="asidePeekClose" title="닫기">✕</button></h5><div id="asidePeekBody"></div></section>
 </aside>
 
-<aside id="panelR" aria-label="오라클">
-  <section class="glass" id="pListen"><div class="ph"><span id="listenTitle">Listening…</span><span class="grow"></span><span class="small" id="listenTok"></span></div><div class="pb" style="padding:8px 12px"><canvas id="wave" width="640" height="116" aria-hidden="true"></canvas><div class="small" id="listenSub" style="font-family:var(--fk)">파일을 끌어다 놓으면 읽어요</div></div></section>
-  <section class="glass" id="pHelp"><div class="ph"><span>I Can Help You With</span></div><div class="pb" id="helpBody"></div></section>
-  <section class="glass" id="pData"><div class="ph"><span>Real-Time Data</span><span class="grow"></span><span class="small" id="dataSub"></span></div><div class="pb" id="dataBody"></div></section>
-</aside>
+<footer id="statusbar" title="인박스">
+  <span id="queueMini"><span class="txt"></span><button type="button" class="link" id="qCancelAll" hidden>모두 취소</button><button type="button" class="link" id="qAbortGen" hidden>출제 중단</button></span>
+  <span id="indexMini"></span>
+  <span id="syncMini"></span>
+  <span id="buildMini"></span>
+</footer>
 
-<div id="flat"><div id="flatGrid"></div></div>
-
-<div id="onboard" class="glass" hidden>
-  <div class="st" id="ob1"><b data-n="1">엔진 연결</b><p>API 키를 저장하면 시험지를 읽고 학습해요</p><button type="button" class="pri" id="ob1Btn">키 넣기</button></div>
-  <div class="st" id="ob2"><b data-n="2">선생님</b><p>흑석고 윤은영(영어A) · 전정이(영어B) 홀로그램이 준비돼 있어요</p><button type="button" class="pri" id="ob2Btn">＋ 선생님 추가</button></div>
-  <div class="st" id="ob3"><b data-n="3">파일 넣기</b><p>기출 시험지 · 시험범위 원문 · 선생님 프린트를 홀로그램에 끌어다 놓으세요</p><span class="small" id="ob3Note">선생님을 만들면 열려요</span></div>
-</div>
-
-<nav id="dock" class="glass" aria-label="작업">
-  <button type="button" id="btnNew"><b>＋</b> 선생님</button>
-  <span class="sep"></span>
-  <button type="button" id="btnFiles" disabled>파일 넣기</button>
-  <button type="button" id="btnLearn" disabled>학습</button>
-  <button type="button" id="btnPredict" disabled>예측</button>
-  <button type="button" id="btnMock" class="pri" disabled>적중 모의고사 만들기</button>
-  <span class="sep"></span>
-  <button type="button" id="btnExport">내보내기 ▾</button>
-  <span id="queueMini" hidden></span>
+<nav id="tabbar" role="tablist" aria-label="화면">
+  <button type="button" class="tab" role="tab" data-tab="today"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>오늘</button>
+  <button type="button" class="tab" role="tab" data-tab="inbox" id="tabInbox"><svg viewBox="0 0 24 24"><path d="M4 4h16v11h-5l-2 3h-2l-2-3H4z"/><path d="M4 15v5h16v-5"/></svg>인박스<span class="badge"></span></button>
+  <button type="button" class="tab" role="tab" data-tab="library"><svg viewBox="0 0 24 24"><path d="M4 4h4v16H4zM10 4h4v16h-4zM16 5l4 1-3 14-4-1z"/></svg>서재</button>
+  <button type="button" class="tab" role="tab" data-tab="brain"><svg viewBox="0 0 24 24"><path d="M9 4a3 3 0 0 0-3 3v1a3 3 0 0 0-2 3 3 3 0 0 0 2 3v1a3 3 0 0 0 3 3h1V4H9zM15 4a3 3 0 0 1 3 3v1a3 3 0 0 1 2 3 3 3 0 0 1-2 3v1a3 3 0 0 1-3 3h-1V4h1z"/></svg>브레인</button>
+  <button type="button" class="tab" role="tab" data-tab="more" id="tabMore"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg>더보기</button>
 </nav>
 
-<aside id="drawer" class="glass" aria-label="상세">
-  <div class="ph"><button type="button" id="drawerBack" hidden>‹ 뒤로</button><span id="drawerTitle">상세</span><span class="grow"></span><button type="button" id="drawerClose">✕</button></div>
-  <div class="pb" id="drawerBody"></div>
-</aside>
-
-<div id="sheetWrap"><div id="sheet" class="glass" role="dialog" aria-modal="true">
-  <div class="ph"><span id="sheetTitle">설정</span><span class="grow"></span><button type="button" id="sheetClose">✕</button></div>
+<div id="sheetWrap"><div id="sheet" class="card" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="ph"><span id="sheetTitle">설정</span><span class="grow"></span><button type="button" id="sheetClose" aria-label="닫기">✕</button></div>
   <div class="pb" id="sheetBody"></div>
 </div></div>
+
+<div id="cmdkBack" hidden></div>
+<div id="cmdk" role="dialog" aria-modal="true" aria-label="검색 · 명령 · 질문" hidden>
+  <input type="text" id="cmdkInput" role="combobox" aria-expanded="false" aria-controls="cmdkList" aria-autocomplete="list" autocomplete="off" spellcheck="false" placeholder="검색 · > 명령 · # 태그 · ? 질문">
+  <div id="cmdkList" role="listbox"></div>
+  <div id="cmdkFoot"><span id="cmdkHint">↑↓ 이동 · ⏎ 열기 · ⌘⏎ 미리보기 · Esc 닫기</span><span id="cmdkStatus"></span></div>
+</div>
+<div id="acPop" role="listbox" hidden></div>
 
 <div id="paper" role="dialog" aria-label="적중 모의고사">
   <div id="paperBar">
@@ -76,6 +236,8 @@
 </div>
 
 <div id="toasts" aria-live="polite"></div>
+<div id="bootError" hidden><div class="card"><div class="kicker">BOOT</div><h2 class="view-title" style="margin:8px 0 0">시작하지 못했어요</h2><p id="bootErrorMsg"></p><button type="button" class="pri" id="bootRetry">다시 시도</button></div></div>
 <input type="file" id="fileInput" multiple hidden>
 <input type="file" id="importInput" accept=".json,application/json" hidden>
 <input type="file" id="videoInput" accept="video/mp4,video/webm,image/jpeg,image/png,image/webp" hidden>
+<input type="file" id="cameraInput" accept="image/*" capture="environment" multiple hidden>

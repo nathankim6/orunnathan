@@ -20,7 +20,7 @@ const page_ = path.join(T, "out", "stage-smoke.html"); fs.writeFileSync(page_, h
     if (fs.existsSync(f)) route.fulfill({ path: f, contentType: "text/javascript" }); else route.abort();
   });
   let bad = 0;
-  const shots = [["a-idle", "?fx=0", 9000], ["c-learn", "?fx=1", 8000]];
+  const shots = [["a-idle", "?fx=0", 9000], ["c-learn", "?fx=1", 8000], ["d-graph", "?fx=0&graph=1", 7000]];   // d-graph: setGraph 500 노드 · 600 간선 (spec §5.7)
   for (const [name, qs, wait] of shots) {
     const page = await ctx.newPage();
     const logs = [];
@@ -29,8 +29,9 @@ const page_ = path.join(T, "out", "stage-smoke.html"); fs.writeFileSync(page_, h
     await page.goto("file://" + page_ + qs);
     await page.waitForTimeout(wait);
     await page.screenshot({ path: path.join(T, "out", "stage-" + name + ".png") });
-    const info = await page.evaluate(() => ({ ok: !!window.__stage, errors: window.__errors }));
-    const fine = info.ok && !info.errors.length && !logs.length; if (!fine) bad++;
+    const info = await page.evaluate(() => ({ ok: !!window.__stage, errors: window.__errors, graph: window.__graph || null }));
+    const graphFine = !/graph=1/.test(qs) || !!(info.graph && info.graph.ok);
+    const fine = info.ok && !info.errors.length && !logs.length && graphFine; if (!fine) bad++;
     console.log((fine ? "ok   " : "FAIL ") + name, JSON.stringify(info), logs.length ? logs.join(" | ") : "no console errors");
     await page.close();
   }

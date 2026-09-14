@@ -198,10 +198,12 @@
       const edges = Object.keys(pair).sort((a, b) => pair[b] - pair[a]).slice(0, 14).map(k => { const [a, b] = k.split("-").map(Number); return [a, b, pair[k]]; });
       return { nodes, edges };
     }
-    async function narrate(p, signal) {
-      const r = await API.json(PROMPTS.narrative(compact(p), stemSamples(p, 10)), { tier: "small", effort: "medium", signal, validate: v => v && v.narrative ? "" : "narrative 없음" });
+    // narrate(p, signal, { notes: string[] }) — notes 는 강사 메모(≤ 3, 각 ≤ 300자). 서술 프롬프트의 [강사 메모] 블록으로 들어간다.
+    async function narrate(p, signal, opts) {
+      const notes = (opts && Array.isArray(opts.notes) ? opts.notes : []).map(n => String(n == null ? "" : n).replace(/\s+/g, " ").trim().slice(0, 300)).filter(Boolean).slice(0, 3);
+      const r = await API.json(PROMPTS.narrative(compact(p), stemSamples(p, 10), notes), { tier: "small", effort: "medium", signal, validate: v => v && v.narrative ? "" : "narrative 없음" });
       return { text: String(r.narrative || "").slice(0, 1200), keywords: (Array.isArray(r.keywords) ? r.keywords : []).map(k => String(k).slice(0, 14)).filter(Boolean).slice(0, 5),
-               watchouts: (Array.isArray(r.watchouts) ? r.watchouts : []).map(k => String(k).slice(0, 60)).filter(Boolean).slice(0, 3), at: Date.now() };
+               watchouts: (Array.isArray(r.watchouts) ? r.watchouts : []).map(k => String(k).slice(0, 60)).filter(Boolean).slice(0, 3), at: Date.now(), usedNotes: notes.length };
     }
     return { build, compact, stemSamples, diff, constellation, narrate, levelOf, jsd };
   })();

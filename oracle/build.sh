@@ -12,7 +12,7 @@ cat <<'HEAD'
 <html lang="ko">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ORUN ORACLE · 흑석고 출제 오라클</title>
+<title>ORUN ORACLE · 출제자 세컨드 브레인</title>
 <meta name="description" content="학교 기출문제와 시험범위 원문을 쌓아 선생님별 출제 성향을 학습하고, 다음 시험을 예측해 적중 동형 모의고사를 만드는 도구">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,12 +31,12 @@ echo '<script>'
 echo '(function () {'
 echo '  "use strict";'
 echo "  const BUILD = \"build: $STAMP\";"
-for f in 30-db 31-extract 32-api 33-text 34-prompts 35-analyze 36-profile 37-predict 38-generate 39-sync 40-post 41-stage 50-app-core 51-app-ui; do
+for f in 30-db 31-extract 32-api 33-text 34-prompts 35-analyze 36-profile 37-predict 38-generate 39-sync 40-post 41-stage 42-index 43-links 44-notes 45-ask 46-graph2d 50-app-core 51-router 52-app-shell 53-ui-note 54-ui-views 55-ui-brain; do
   cat "$S/parts/$f.js"; echo
 done
 cat <<'TAIL'
   // ---- 시작 ----
-  window.ORACLE = { APP, UI, API, DB, SYNC, TEXT, ANALYZE, PROFILE, PREDICT, GENERATE, BUILD };
+  window.ORACLE = { APP, UI, API, DB, SYNC, TEXT, ANALYZE, PROFILE, PREDICT, GENERATE, INDEX, LINKS, NOTES, ASK, ROUTE, NOTEUI, VIEWS, BRAINUI, BUILD };
   function start() {
     UI.init();
     APP.boot().catch(e => { console.error(e); UI.toast("시작하지 못했어요: " + (e && e.message || e), { bad: true, ms: 12000 }); });
