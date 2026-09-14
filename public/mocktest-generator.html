@@ -607,7 +607,8 @@ textarea:focus, input:focus { border-color: var(--line-4); outline: 2px solid va
 .api-card .api-row.split { display: flex; align-items: center; gap: var(--s3); flex-wrap: wrap; }
 
 /* ── 엔진 타일 — 이 화면에서 브랜드 색이 허용되는 유일한 곳 ──────────── */
-.api-card .prov { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s3); margin: var(--s4) 0; }
+.api-card .prov { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s3); margin: var(--s4) 0; }
+@media (max-width: 560px) { .api-card .prov { grid-template-columns: 1fr; } }
 .api-card .prov-tile {
   --pv-a:#c9ced6; --pv-b:#eef0f3; --pv-ink:var(--n7); --pv-wash:var(--n0);
   position: relative; overflow: hidden; isolation: isolate;
@@ -622,6 +623,8 @@ textarea:focus, input:focus { border-color: var(--line-4); outline: 2px solid va
 .api-card .prov-tile:active { transform: translateY(0) scale(.99); }
 .api-card .prov-tile[data-v="anthropic"] { --pv-a:#d97757; --pv-b:#f6c9b4; --pv-ink:#b4552f; --pv-wash:#fffaf7; }
 .api-card .prov-tile[data-v="openai"]    { --pv-a:#10a37f; --pv-b:#8fe6cd; --pv-ink:#0b7a5f; --pv-wash:#f7fdfb; }
+/* 구독 연결은 남의 상표가 아니라 이 앱의 것이다 — 무채색으로 둔다 */
+.api-card .prov-tile[data-v="bridge"]    { --pv-a:#3b434e; --pv-b:#c9ced6; --pv-ink:#3b434e; --pv-wash:#fbfcfd; }
 .api-card .prov-tile.on {
   border-color: transparent; color: var(--ink);
   transform: translateY(-1px); box-shadow: var(--sh-pop);
@@ -654,6 +657,57 @@ textarea:focus, input:focus { border-color: var(--line-4); outline: 2px solid va
 .api-card .prov-tile.on .prov-mark svg { fill: var(--pv-a); }
 .api-card .prov-tile.on .prov-mark.claude svg { animation: markPop 520ms var(--e-emph), burstSpin 18s var(--e-linear) 520ms infinite; }
 .api-card .prov-tile.on .prov-mark.gpt svg { animation: markPop 520ms var(--e-emph), knotBreathe 3.8s var(--e-inout) 520ms infinite; }
+.api-card .prov-tile.on .prov-mark.link svg { animation: markPop 520ms var(--e-emph); }
+
+/* ── 구독 연결(브리지) 칸 ───────────────────────────────────────────────
+   키 칸과 같은 자리를 나눠 쓴다. 한쪽이 보이면 다른 쪽은 hidden 이다. */
+.api-card .bridge-code { display: flex; gap: var(--s2); align-items: center; flex-wrap: wrap; }
+.api-card .bridge-code input {
+  flex: 0 1 180px; min-width: 0; height: var(--h-md); padding: 0 var(--s3);
+  border: var(--line-w) solid var(--line-2); border-radius: var(--r2);
+  background: var(--n0); color: var(--ink); font-size: var(--fs-body);
+  letter-spacing: .18em; text-transform: uppercase; font-variant-numeric: tabular-nums;
+}
+.api-card .bridge-code input:focus { border-color: var(--line-4); outline: none; }
+.api-card .bridge-code input.url { flex: 1 1 240px; letter-spacing: 0; text-transform: none; }
+.api-card .bridge-how {
+  margin-top: var(--s3); padding: var(--s3) var(--s4);
+  border: var(--line-w) solid var(--line-2); border-radius: var(--r3); background: var(--n2);
+}
+.api-card .bridge-lead { display: flex; align-items: center; gap: var(--s3); flex-wrap: wrap; }
+.api-card .bridge-lead p { font-size: var(--fs-meta); line-height: var(--lh-meta); color: var(--n9); flex: 1 1 260px; min-width: 0; }
+.api-card .bridge-hand { margin-top: var(--s3); }
+.api-card .bridge-hand > summary {
+  cursor: pointer; list-style: none;
+  font-size: var(--fs-micro); line-height: var(--lh-micro); color: var(--n8);
+}
+.api-card .bridge-hand > summary::-webkit-details-marker { display: none; }
+.api-card .bridge-hand > summary::before { content: "▸ "; }
+.api-card .bridge-hand[open] > summary::before { content: "▾ "; }
+.api-card .bridge-hand > summary:hover { color: var(--ink); }
+.api-card .bridge-how ol { margin: var(--s3) 0 0; padding-left: 1.3em; }
+.api-card .bridge-how li { font-size: var(--fs-meta); line-height: 1.7; color: var(--n9); }
+.api-card .bridge-how li + li { margin-top: var(--s3); }
+.api-card .bridge-how .why { display: block; color: var(--n8); font-size: var(--fs-micro); line-height: var(--lh-micro); }
+.api-card .bridge-cmd {
+  display: flex; align-items: center; gap: var(--s2); margin-top: var(--s1);
+}
+.api-card .bridge-cmd code {
+  flex: 1 1 auto; min-width: 0; overflow-x: auto; white-space: nowrap;
+  padding: var(--s2) var(--s3); border-radius: var(--r2);
+  background: var(--d-bg); color: var(--d-tx); font-size: var(--fs-micro);
+}
+/* 남은 한도 — 계기 두 칸. 숫자가 아니라 길이로 먼저 읽히게 한다 */
+.api-card .bridge-limit { display: flex; gap: var(--s4); flex-wrap: wrap; margin-top: var(--s3); }
+.api-card .bridge-limit div { flex: 1 1 140px; min-width: 0; }
+.api-card .bridge-limit .lbl {
+  font-size: var(--fs-eyebrow); line-height: var(--lh-eyebrow); letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase; font-weight: var(--w-med); color: var(--n8);
+}
+.api-card .bridge-limit .bar { height: 4px; margin: var(--s1) 0; border-radius: var(--r-full); background: var(--n4); overflow: hidden; }
+.api-card .bridge-limit .bar i { display: block; height: 100%; width: 0; background: var(--ink); transition: width var(--d4) var(--e-out); }
+.api-card .bridge-limit .bar.hot i { background: var(--neg); }
+.api-card .bridge-limit .num { font-size: var(--fs-micro); color: var(--n8); font-variant-numeric: tabular-nums; }
 .api-card .prov-txt { position: relative; z-index: 2; display: flex; flex-direction: column; min-width: 0; }
 .api-card .prov-txt b {
   font-size: var(--fs-ts); line-height: var(--lh-ts); letter-spacing: var(--ls-ts);
@@ -2087,7 +2141,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v13H3z"/><path d="M2 4h20v3H2z"/><path d="M10 11h4"/></svg>
     <span class="lb">저장소</span><i class="n" id="vaultCount" hidden>0</i>
   </button>
-  <div class="state"><span class="build" id="buildTag">2026-09-10 06:29</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
+  <div class="state"><span class="build" id="buildTag">2026-09-14 11:46</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
 </div>
 
 <!-- 화면 0 · 시작 -->
@@ -2128,6 +2182,12 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
         <span class="prov-sheen" aria-hidden="true"></span>
         <span class="prov-mark gpt" aria-hidden="true"><svg viewBox="0 0 24 24" role="img"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg></span>
         <span class="prov-txt"><b>GPT</b><i>OpenAI</i></span>
+        <span class="prov-tick" aria-hidden="true"></span>
+      </button>
+      <button type="button" class="prov-tile" data-v="bridge" role="radio" aria-checked="false">
+        <span class="prov-sheen" aria-hidden="true"></span>
+        <span class="prov-mark link" aria-hidden="true"><svg viewBox="0 0 24 24" role="img"><path d="M10.6 13.4a1 1 0 0 1 0-1.41l2.83-2.83a3 3 0 0 1 4.24 4.24l-1.42 1.42a1 1 0 0 1-1.41-1.42l1.41-1.41a1 1 0 0 0-1.41-1.42l-2.83 2.83a1 1 0 0 1-1.41 0Zm2.8-2.8a1 1 0 0 1 0 1.41l-2.83 2.83a1 1 0 0 0 1.41 1.42l1.42-1.42a1 1 0 0 1 1.41 1.42l-1.41 1.41a3 3 0 0 1-4.25-4.24l2.83-2.83a1 1 0 0 1 1.42 0ZM4 4h4v2H6v2H4V4Zm12 0h4v4h-2V6h-2V4ZM4 16h2v2h2v2H4v-4Zm14 0h2v4h-4v-2h2v-2Z"/></svg></span>
+        <span class="prov-txt"><b>내 구독</b><i>이 컴퓨터</i></span>
         <span class="prov-tick" aria-hidden="true"></span>
       </button>
     </div>
@@ -2173,6 +2233,69 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
         <button type="button" class="btn ghost" id="oaListBtn">모델 목록 불러오기</button>
         <span class="oa-note" id="oaModelNote"></span>
       </div>
+      </div>
+    </div>
+
+    <div id="bridgeBody" hidden>
+      <div class="api-group">
+        <span class="slug">쓸 도구</span>
+        <div class="model-grid api-row" id="bridgeAgentSeg" role="radiogroup" aria-label="쓸 도구">
+          <button type="button" class="on" data-v="claude" role="radio"><i class="dot" aria-hidden="true"></i><b>Claude Code</b><span id="bridgeClaudeState">Claude Pro · Max</span></button>
+          <button type="button" data-v="codex" role="radio"><i class="dot" aria-hidden="true"></i><b>Codex</b><span id="bridgeCodexState">ChatGPT Plus · Pro · Team</span></button>
+        </div>
+      </div>
+      <div class="api-group">
+        <span class="slug">브리지 코드</span>
+        <div class="bridge-code api-row">
+          <input type="text" id="bridgeToken" maxlength="12" spellcheck="false" autocomplete="off" placeholder="ABC234">
+          <button type="button" class="btn ghost" id="bridgeSave">저장</button>
+          <button type="button" class="btn ghost" id="bridgeTest">연결 확인</button>
+          <span class="probe-out" id="bridgeOut"></span>
+        </div>
+        <div class="bridge-code api-row">
+          <input type="text" id="bridgeUrl" class="url" spellcheck="false" autocomplete="off" placeholder="http://127.0.0.1:8787">
+          <button type="button" class="btn link" id="bridgeForget">지우기</button>
+        </div>
+        <div class="bridge-limit" id="bridgeLimit" hidden>
+          <div><span class="lbl">5-HOUR</span><span class="bar"><i id="bridgeBar5"></i></span><span class="num" id="bridgeNum5">—</span></div>
+          <div><span class="lbl">7-DAY</span><span class="bar"><i id="bridgeBar7"></i></span><span class="num" id="bridgeNum7">—</span></div>
+        </div>
+        <div class="bridge-how">
+          <div class="bridge-lead">
+            <p id="bridgeLeadTxt">연결 파일을 내려받아 두 번 누르세요. 첫 회에만 필요한 것을 알아서 깔고 로그인 창을 띄웁니다. 그다음부터는 두 번 누르면 바로 이어집니다.</p>
+            <a class="btn ghost" id="bridgeGet" href="https://nathankim6.github.io/orunnathan/orun-connect.cmd" download>연결 파일 받기</a>
+          </div>
+          <details class="bridge-hand">
+            <summary>직접 켜고 싶으시면</summary>
+          <ol>
+            <li>Node.js 를 깝니다.
+              <span class="why" id="bridgeWhyNode">깐 다음에는 터미널 창을 닫았다 다시 열어야 합니다.</span>
+              <div class="bridge-cmd">
+                <code id="bcmdNode">winget install OpenJS.NodeJS.LTS</code>
+                <button type="button" class="btn ghost" data-copy="bcmdNode">복사</button>
+              </div>
+            </li>
+            <li>쓸 도구를 깔고 한 번 실행해 로그인합니다.
+              <span class="why" id="bridgeWhyTool">로그인은 그 도구가 기억합니다. 이 화면은 보지 않아요.</span>
+              <div class="bridge-cmd">
+                <code id="bcmdTool">npm i -g @anthropic-ai/claude-code</code>
+                <button type="button" class="btn ghost" data-copy="bcmdTool">복사</button>
+              </div>
+              <div class="bridge-cmd">
+                <code id="bcmdLogin">claude</code>
+                <button type="button" class="btn ghost" data-copy="bcmdLogin">복사</button>
+              </div>
+            </li>
+            <li>브리지를 켭니다. 이 창은 쓰는 동안 켜 둡니다.
+              <div class="bridge-cmd">
+                <code id="bridgeCmd">curl -fsSLO https://nathankim6.github.io/orunnathan/orun-bridge.mjs &amp;&amp; node orun-bridge.mjs</code>
+                <button type="button" class="btn ghost" data-copy="bridgeCmd">복사</button>
+              </div>
+            </li>
+            <li>거기 뜬 여섯 자리를 위 칸에 넣고 저장을 누릅니다.</li>
+          </ol>
+          </details>
+        </div>
       </div>
     </div>
   </div>
@@ -4216,7 +4339,8 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   let imagesState = "yes";   // API 는 언제나 이미지를 받는다
   let RUNTIME = "api";
 
-  function ocrAvailable() { return true; }   // API 빌드에서는 항상 스캔본을 읽을 수 있다
+  // 구독 연결(브리지)은 그림을 못 보낸다. 그 밖에는 언제나 스캔본을 읽을 수 있다.
+  function ocrAvailable() { return provider() !== "bridge"; }
   function maxImagesPerCall() {
     const n = LIMITS && LIMITS.images && LIMITS.images.maxCount;
     return Math.max(1, Math.min(Number(n) || 4, 8));
@@ -4245,13 +4369,64 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   const PROVIDER_STORE = "orun_provider";
   function provider() {
     let v = ""; try { v = localStorage.getItem(PROVIDER_STORE) || ""; } catch (e) {}
-    return v === "openai" ? "openai" : "anthropic";
+    return (v === "openai" || v === "bridge") ? v : "anthropic";
   }
   function setProvider(v) {
-    try { localStorage.setItem(PROVIDER_STORE, v === "openai" ? "openai" : "anthropic"); } catch (e) {}
+    try { localStorage.setItem(PROVIDER_STORE, (v === "openai" || v === "bridge") ? v : "anthropic"); } catch (e) {}
     applyProvider();
   }
-  function providerName() { return provider() === "openai" ? "OpenAI" : "Anthropic"; }
+  function providerName() {
+    const p = provider();
+    return p === "openai" ? "OpenAI" : p === "bridge" ? "내 구독" : "Anthropic";
+  }
+
+  // 런처(.cmd/.command)가 브라우저를 열 때 주소 끝에 코드를 달아 준다.
+  //   …/mock-exam.html#connect=ABC234            (주소는 기본값 127.0.0.1:8787)
+  //   …/mock-exam.html#connect=ABC234@http://127.0.0.1:8788
+  // 해시는 서버로 가지 않는다. 읽은 즉시 주소창에서 지워 기록에 남기지 않는다.
+  function adoptBridgeLink() {
+    let h = "";
+    try { h = String(location.hash || "").replace(/^#/, ""); } catch (e) { return false; }
+    const m = /(?:^|&)connect=([^&]+)/.exec(h);
+    if (!m) return false;
+    let v = "";
+    try { v = decodeURIComponent(m[1]); } catch (e) { v = m[1]; }
+    const at = v.indexOf("@");
+    const tok = (at === -1 ? v : v.slice(0, at)).trim().toUpperCase();
+    const url = at === -1 ? "" : v.slice(at + 1).trim();
+    try { history.replaceState(null, "", location.pathname + location.search); } catch (e) {}
+    if (!/^[A-Z0-9]{4,12}$/.test(tok)) return false;
+    // 주소는 이 컴퓨터 안만 받는다 — 남의 주소를 심어 넣지 못하게
+    if (url && !/^https?:\/\/(127\.0\.0\.1|localhost)(:\d+)?$/.test(url.replace(/\/+$/, ""))) return false;
+    try { localStorage.setItem(PROVIDER_STORE, "bridge"); } catch (e) {}
+    setBridgeToken(tok);
+    if (url) setBridgeUrl(url);
+    bridgeAdopted = true;
+    return true;
+  }
+  let bridgeAdopted = false;
+
+  // ── 구독 연결(브리지) ──────────────────────────────────────────────────
+  // 이 컴퓨터에서 도는 작은 중계소(tools/orun-bridge.mjs)에게 일을 시킨다.
+  // 구독 자격은 claude / codex 가 들고 있고, 여기로는 절대 넘어오지 않는다.
+  // 코드는 아무 웹사이트나 남의 구독을 태우지 못하게 막는 자물쇠다.
+  const BRIDGE_URL_STORE = "orun_bridge_url";
+  const BRIDGE_TOKEN_STORE = "orun_bridge_token";
+  const BRIDGE_AGENT_STORE = "orun_bridge_agent";
+  const BRIDGE_URL_DEFAULT = "http://127.0.0.1:8787";
+  function bridgeUrl() {
+    let v = ""; try { v = (localStorage.getItem(BRIDGE_URL_STORE) || "").trim(); } catch (e) {}
+    return (v || BRIDGE_URL_DEFAULT).replace(/\/+$/, "");
+  }
+  function setBridgeUrl(v) { try { localStorage.setItem(BRIDGE_URL_STORE, (v || "").trim()); } catch (e) {} }
+  function bridgeToken() { return readKey(BRIDGE_TOKEN_STORE).toUpperCase(); }
+  function setBridgeToken(v) { writeKey(BRIDGE_TOKEN_STORE, (v || "").trim().toUpperCase()); }
+  function bridgeAgent() {
+    let v = ""; try { v = localStorage.getItem(BRIDGE_AGENT_STORE) || ""; } catch (e) {}
+    return v === "codex" ? "codex" : "claude";
+  }
+  function setBridgeAgent(v) { try { localStorage.setItem(BRIDGE_AGENT_STORE, v === "codex" ? "codex" : "claude"); } catch (e) {} }
+  let bridgeLimit = null;      // 가장 최근에 들은 남은 한도
 
   // 키 보관 — 여럿이 쓰는 컴퓨터를 위해 '창을 닫으면 지움'(sessionStorage) 을 고를 수 있다.
   const API_KEEP_STORE = "orun_api_keep";
@@ -4275,8 +4450,8 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   function getOaKey() { return readKey(OA_KEY_STORE); }            // OpenAI
   function setOaKey(k) { writeKey(OA_KEY_STORE, k); }
   // 지금 고른 제공자의 키
-  function currentKey() { return provider() === "openai" ? getOaKey() : getApiKey(); }
-  function setCurrentKey(k) { return provider() === "openai" ? setOaKey(k) : setApiKey(k); }
+  function currentKey() { const p = provider(); return p === "openai" ? getOaKey() : p === "bridge" ? bridgeToken() : getApiKey(); }
+  function setCurrentKey(k) { const p = provider(); return p === "openai" ? setOaKey(k) : p === "bridge" ? setBridgeToken(k) : setApiKey(k); }
   function keyPrefix() { return provider() === "openai" ? "sk-" : "sk-ant-"; }
   // sk-ant- 도 sk- 로 시작한다 — 접두어만 보면 Anthropic 키가 OpenAI 칸을 통과한다.
   function keyLooksRight(v) {
@@ -4284,7 +4459,12 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     return v.indexOf("sk-ant-") === 0;
   }
   // 실행 준비가 됐는가 — OpenAI 는 모델까지 골라야 한다
-  function engineReady() { return provider() === "openai" ? !!(getOaKey() && oaModel()) : !!getApiKey(); }
+  function engineReady() {
+    const p = provider();
+    if (p === "openai") return !!(getOaKey() && oaModel());
+    if (p === "bridge") return !!bridgeToken();
+    return !!getApiKey();
+  }
   function setKeepMode(v) {
     const a = getApiKey(), o = getOaKey();       // 이미 있는 키들을 새 자리로 옮긴다
     try { localStorage.setItem(API_KEEP_STORE, v === "session" ? "session" : "browser"); } catch (e) {}
@@ -4292,6 +4472,20 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   }
   // 키와 연결을 실제로 확인한다 — 가장 작은 요청 하나(출력 1토큰)로 끝난다.
   async function probeApi() {
+    if (provider() === "bridge") {
+      if (!bridgeToken()) return { ok: false, msg: "브리지 코드를 먼저 저장해 주세요." };
+      let h;
+      try { h = await bridgeHealth(); }
+      catch (e) { return { ok: false, msg: friendlySampleError(e) }; }
+      const want = bridgeAgent();
+      const a = (h.agents || {})[want] || {};
+      try { paintBridgeAgents(h); } catch (e) {}
+      if (!a.ok) return { ok: false, msg: (a.label || want) + " 가 이 컴퓨터에 없거나 로그인돼 있지 않아요. 터미널에서 한 번 실행해 보세요." };
+      // 코드까지 맞는지 — 작은 요청 하나를 실제로 보내 본다
+      try { await bridgeCall("정확히 이 두 글자만 답해: OK"); }
+      catch (e) { return { ok: false, msg: friendlySampleError(e) }; }
+      return { ok: true, msg: "연결됐어요 — " + (a.label || want) + " " + (a.version || "") + " 로 바로 쓸 수 있어요." };
+    }
     const key = currentKey();
     if (!key) return { ok: false, msg: "키를 먼저 저장해 주세요." };
     const oa = provider() === "openai";
@@ -4602,6 +4796,103 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     const j = await res.json();
     return (j.data || []).map(m => m.id).filter(Boolean).sort();
   }
+  // ==================================================================
+  //  브리지 통로 — 이 컴퓨터에서 도는 중계소를 거쳐 내 구독으로 돌린다.
+  //  Anthropic·OpenAI 통로와 같은 모양의 어댑터라 나머지 코드는 그대로다.
+  // ==================================================================
+  function bridgeHttpError(status, body) {
+    let msg = "", code = "";
+    try { const j = JSON.parse(body); msg = j.message || ""; code = j.error || ""; } catch (e) { msg = String(body || "").slice(0, 200); }
+    if (status === 401) return apiError("bad_bridge_token", msg || "브리지 코드가 맞지 않습니다.", status);
+    if (status === 403) return apiError("bridge_origin", msg || "브리지가 이 화면을 허용하지 않습니다.", status);
+    if (status === 413) return apiError("prompt_too_large", msg || "보낸 글이 너무 큽니다.", status);
+    if (code === "no_images") return apiError("image_rejected", msg, status);
+    return apiError("http_" + status, msg || ("HTTP " + status), status);
+  }
+  function bridgeNetError() {
+    return apiError("network", "브리지에 연결하지 못했습니다. 터미널에서 orun-bridge 를 켜 두었는지 확인해 주세요. "
+      + (location.protocol === "https:"
+        ? "크롬이 '이 컴퓨터 안의 기기에 연결' 을 물어보면 허용해 주세요."
+        : "주소(" + bridgeUrl() + ")가 맞는지도 봐 주세요."));
+  }
+  // 중계소는 한 줄씩 SSE 로 준다 — delta / limit / done / error
+  async function readBridgeStream(res, onText, signal) {
+    const reader = res.body.getReader();
+    const dec = new TextDecoder();
+    let buf = "", text = "", done = null, err = null;
+    const handle = (line) => {
+      if (!line.startsWith("data:")) return;
+      let ev; try { ev = JSON.parse(line.slice(5).trim()); } catch (e) { return; }
+      if (ev.type === "delta" && ev.text) { text += ev.text; if (onText) onText({ text, delta: ev.text }); }
+      else if (ev.type === "limit") { bridgeLimit = ev.limit || null; try { paintBridgeLimit(); } catch (e) {} }
+      else if (ev.type === "done") done = ev;
+      else if (ev.type === "error") err = ev.message || "브리지 오류";
+    };
+    while (true) {
+      if (signal && signal.aborted) { try { reader.cancel(); } catch (e) {} throw apiError("cancelled", "중단됨"); }
+      const { value, done: fin } = await reader.read();
+      if (fin) break;
+      buf += dec.decode(value, { stream: true });
+      let i;
+      while ((i = buf.indexOf("\n")) !== -1) {
+        const line = buf.slice(0, i).replace(/\r$/, "");
+        buf = buf.slice(i + 1);
+        if (line) handle(line);
+      }
+    }
+    if (buf.trim()) handle(buf.trim());
+    if (err) throw apiError("bridge_failed", err);
+    return { text: (done && done.text) || text };
+  }
+  async function bridgeCall(input, opts) {
+    opts = opts || {};
+    const token = bridgeToken();
+    if (!token) throw apiError("no_key", "브리지 코드가 없습니다.");
+    if (opts.images && opts.images.length)
+      throw apiError("image_rejected", "구독 연결로는 스캔본(그림)을 보낼 수 없어요. 스캔한 시험지는 API 키 방식으로 돌려 주세요.");
+    // 이 통로는 한 번에 한 덩이만 받는다 — 주고받은 말은 하나로 이어 붙인다.
+    const prompt = typeof input === "string"
+      ? input
+      : input.map(t => (t.role === "assistant" ? "[앞서 네가 쓴 답]\n" : "[요청]\n") + String(t.content || "")).join("\n\n");
+    let res;
+    try {
+      res = await fetch(bridgeUrl() + "/run", {
+        method: "POST",
+        headers: { "content-type": "application/json", authorization: "Bearer " + token },
+        body: JSON.stringify({ agent: bridgeAgent(), prompt: prompt }),
+        signal: opts.signal,
+      });
+    } catch (e) {
+      if (e && e.name === "AbortError") throw apiError("cancelled", "중단됨");
+      throw bridgeNetError();
+    }
+    if (!res.ok) throw bridgeHttpError(res.status, await res.text());
+    const r = await readBridgeStream(res, opts.onText, opts.signal);
+    if (!r.text.trim()) throw apiError("empty_completion", "빈 응답");
+    return { text: r.text, truncated: false, modelTierApplied: "complex" };
+  }
+  async function bridgeHealth() {
+    let res;
+    try { res = await fetch(bridgeUrl() + "/health", { cache: "no-store" }); }
+    catch (e) { throw bridgeNetError(); }
+    if (!res.ok) throw bridgeHttpError(res.status, await res.text());
+    return await res.json();
+  }
+  function makeBridgeSampler() {
+    const fn = (input, opts) => bridgeCall(input, opts);
+    fn.json = async (input, opts) => {
+      const r = await fn(input, opts);
+      const t = r.text.trim().replace(/^```(?:json)?/i, "").replace(/```$/, "").trim();
+      const a = t.search(/[\[{]/);
+      if (a === -1) throw apiError("invalid_json", "JSON 아님");
+      const close = t[a] === "[" ? "]" : "}";
+      const b = t.lastIndexOf(close);
+      try { return JSON.parse(t.slice(a, b + 1)); } catch (e) { throw apiError("invalid_json", "JSON 해석 실패"); }
+    };
+    fn.limits = async () => ({ maxPromptBytes: 800 * 1024 });   // 그림은 못 보낸다
+    return fn;
+  }
+
   function makeOaSampler() {
     const fn = (input, opts) => oaCall(input, opts);
     fn.json = async (input, opts) => {
@@ -4620,6 +4911,86 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     return fn;
   }
 
+  // 남은 한도 두 칸을 칠한다. 들은 적이 없으면 숨긴다.
+  function paintBridgeLimit() {
+    const box = $("bridgeLimit");
+    if (!box) return;
+    if (!bridgeLimit || provider() !== "bridge") { box.hidden = true; return; }
+    box.hidden = false;
+    const one = (w, barId, numId) => {
+      const bar = $(barId), num = $(numId);
+      if (!bar || !num) return;
+      if (!w) { bar.style.width = "0"; num.textContent = "—"; return; }
+      const pct = Math.max(0, Math.min(100, Math.round((Number(w.utilization) || 0) * 100)));
+      bar.style.width = pct + "%";
+      bar.parentNode.classList.toggle("hot", pct >= 85);
+      let when = "";
+      if (w.resetsAt) {
+        const d = new Date(Number(w.resetsAt) * 1000);
+        if (!isNaN(d)) when = " · " + d.getHours() + "시 회복";
+      }
+      num.textContent = pct + "% 씀" + when;
+    };
+    one(bridgeLimit.five_hour, "bridgeBar5", "bridgeNum5");
+    one(bridgeLimit.seven_day, "bridgeBar7", "bridgeNum7");
+  }
+  // 켜는 법에 적히는 명령은 운영체제와 고른 도구에 따라 다르다.
+  // 잘못 적어 주면 선생님이 그대로 붙여넣고 막힌다 — 여기서 갈아 끼운다.
+  function hostOs() {
+    let s = "";
+    try { s = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || navigator.userAgent || ""; } catch (e) {}
+    s = String(s).toLowerCase();
+    if (s.includes("win")) return "win";
+    if (s.includes("mac") || s.includes("iphone") || s.includes("ipad")) return "mac";
+    return "other";
+  }
+  function paintBridgeHow() {
+    const set = (id, t) => { const el = $(id); if (el) el.textContent = t; };
+    const os = hostOs(), codex = bridgeAgent() === "codex";
+    if (os === "win") {
+      set("bcmdNode", "winget install OpenJS.NodeJS.LTS");
+      set("bridgeWhyNode", "깐 다음에는 터미널(명령 프롬프트) 창을 닫았다 다시 열어야 합니다. winget 이 없으면 nodejs.org 에서 LTS 를 내려받아 설치하세요.");
+    } else if (os === "mac") {
+      set("bcmdNode", "brew install node");
+      set("bridgeWhyNode", "깐 다음에는 터미널 창을 닫았다 다시 열어야 합니다. Homebrew 가 없으면 nodejs.org 에서 LTS 를 내려받아 설치하세요.");
+    } else {
+      set("bcmdNode", "nodejs.org 에서 LTS 를 내려받아 설치");
+      set("bridgeWhyNode", "깐 다음에는 터미널 창을 닫았다 다시 열어야 합니다.");
+    }
+    const get = $("bridgeGet");
+    if (get) {
+      // 맥은 내려받은 파일에 실행 권한이 없어 두 번 눌러도 안 열린다.
+      // 그래서 권한을 품은 zip 을 준다 — 압축만 풀면 바로 실행된다.
+      const file = os === "win" ? "orun-connect.cmd"
+                 : os === "mac" ? "orun-connect-mac.zip"
+                 : "orun-connect.command";
+      get.href = "https://nathankim6.github.io/orunnathan/" + file;
+      get.textContent = os === "win" ? "연결 파일 받기 (.cmd)" : os === "mac" ? "연결 파일 받기 (.zip)" : "연결 파일 받기 (.command)";
+      const lead = $("bridgeLeadTxt");
+      if (lead) lead.textContent = os === "win"
+        ? "연결 파일을 내려받아 두 번 누르세요. 첫 회에만 Node·도구를 알아서 깔고 로그인 창을 띄웁니다. 그다음부터는 두 번 누르면 바로 이어집니다."
+        : os === "mac"
+        ? "받은 zip 을 두 번 눌러 풀고, 나온 파일을 두 번 누르세요. 처음엔 오른쪽 눌러 ‘열기’ 를 골라야 할 수 있어요. 첫 회에만 필요한 것을 깔고 로그인 창을 띄웁니다."
+        : "연결 파일을 내려받아 실행 권한을 준 뒤(chmod +x) 실행하세요. 첫 회에만 필요한 것을 깔고 로그인 창을 띄웁니다.";
+    }
+    set("bcmdTool", codex ? "npm i -g @openai/codex" : "npm i -g @anthropic-ai/claude-code");
+    set("bcmdLogin", codex ? "codex" : "claude");
+    set("bridgeWhyTool", codex
+      ? "한 번 실행해 ChatGPT 계정으로 로그인하면 됩니다. 로그인은 Codex 가 기억하고 이 화면은 보지 않아요."
+      : "한 번 실행해 Claude 계정으로 로그인하면 됩니다. 로그인은 Claude Code 가 기억하고 이 화면은 보지 않아요.");
+  }
+
+  // 어떤 도구가 이 컴퓨터에 준비돼 있는지 타일 밑줄에 적는다.
+  function paintBridgeAgents(h) {
+    const one = (key, id) => {
+      const el = $(id), a = ((h && h.agents) || {})[key];
+      if (!el || !a) return;
+      el.textContent = a.ok ? "준비됨 · " + (a.version || "") : "이 컴퓨터에 없음";
+    };
+    one("claude", "bridgeClaudeState");
+    one("codex", "bridgeCodexState");
+  }
+
   // 시작 화면의 API 키 카드. 키가 있어야 분석 버튼이 열린다.
   let refreshEngineCard = () => {};
   function bindApiCard() {
@@ -4633,6 +5004,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     const OA_PRESETS = ["gpt-6-astra", "gpt-5.6-sol", "gpt-5.6-terra", "gpt-5.6-luna"];
 
     const refresh = () => {
+      const br = provider() === "bridge";
       const oa = provider() === "openai";
       const k = currentKey(), btn = $("analyzeBtn");
       provSeg.querySelectorAll("button").forEach(b => {
@@ -4640,6 +5012,38 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
         b.classList.toggle("on", mine);
         b.setAttribute("aria-checked", mine ? "true" : "false");
       });
+      // 키 칸과 구독 칸은 같은 자리를 나눠 쓴다
+      $("apiKeyBody").hidden = br;
+      $("bridgeBody").hidden = !br;
+      if (br) {
+        $("apiTitle").textContent = "이 컴퓨터의 구독으로 돌립니다";
+        desc.textContent = "브리지를 켜 두면 이 컴퓨터에 깔린 Claude Code · Codex 가 대신 일합니다. "
+          + "API 키도, 추가 요금도 없어요 — 그 도구의 구독 한도만 씁니다. 로그인 정보는 그 도구가 들고 있고 이 화면으로 넘어오지 않아요. "
+          + "다만 스캔한 사진 PDF는 아직 못 읽어요.";
+        const seg = $("bridgeAgentSeg");
+        if (seg) seg.querySelectorAll("button").forEach(b => b.classList.toggle("on", b.dataset.v === bridgeAgent()));
+        const t = $("bridgeToken"), u = $("bridgeUrl");
+        if (t && document.activeElement !== t) t.value = bridgeToken();
+        if (u && document.activeElement !== u) u.value = bridgeUrl();
+        paintBridgeLimit();
+        paintBridgeHow();
+        if (bridgeAdopted) {
+          bridgeAdopted = false;
+          const o = $("bridgeOut");
+          if (o) { o.className = "probe-out ok"; o.textContent = "연결 파일이 코드를 넣어 줬어요. 바로 쓰실 수 있어요."; }
+          try { toast("브리지에 이어졌어요"); } catch (e) {}
+        }
+        const ready0 = engineReady();
+        btn.disabled = !ready0;
+        if (ready0) btn.removeAttribute("title"); else btn.title = "브리지 코드를 먼저 저장해 주세요";
+        const note0 = document.querySelector('[data-s="options"] .cta-note');
+        if (note0) {
+          note0.className = "cta-note";
+          note0.textContent = "시험지 전체를 문항 단위로 분석해요 · 이 컴퓨터의 구독으로 돌아가 추가 요금이 없어요 · " + runtimeReport();
+        }
+        return;
+      }
+      $("apiTitle").textContent = "어느 엔진으로 실행할까요";
       modelSeg.hidden = oa;                       // Claude 모델 고르기는 Anthropic 일 때만
       oaSeg.hidden = !oa;
       oaRow.hidden = !oa;
@@ -4713,6 +5117,53 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
         setOaModel(b.dataset.v); refresh(); toast(b.dataset.v + " 로 실행해요");
       }));
     }
+
+    // ── 구독 연결 칸 ──────────────────────────────────────────────────
+    const bOut = $("bridgeOut"), bTok = $("bridgeToken"), bUrl = $("bridgeUrl");
+    const bSay = (ok, msg) => { if (bOut) { bOut.className = "probe-out " + (ok ? "ok" : "bad"); bOut.textContent = msg; } };
+    const bSeg = $("bridgeAgentSeg");
+    if (bSeg) bSeg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+      setBridgeAgent(b.dataset.v);
+      if (bOut) { bOut.textContent = ""; bOut.className = "probe-out"; }
+      refresh();
+      toast((b.dataset.v === "codex" ? "Codex" : "Claude Code") + " 로 실행해요");
+    }));
+    const bSaveFn = () => {
+      const v = (bTok ? bTok.value : "").trim().toUpperCase();
+      if (bUrl) setBridgeUrl(bUrl.value.trim());
+      if (!v) {
+        if (bridgeToken()) { toast("이미 저장된 코드를 그대로 씁니다"); return refresh(); }
+        return bSay(false, "터미널에 뜬 여섯 자리를 넣어 주세요.");
+      }
+      setBridgeToken(v);
+      bSay(true, "코드를 저장했어요. 연결 확인을 눌러 보세요.");
+      refresh();
+    };
+    if ($("bridgeSave")) $("bridgeSave").addEventListener("click", bSaveFn);
+    if (bTok) bTok.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); bSaveFn(); } });
+    if (bUrl) bUrl.addEventListener("change", () => { setBridgeUrl(bUrl.value.trim()); refresh(); });
+    if ($("bridgeForget")) $("bridgeForget").addEventListener("click", () => {
+      setBridgeToken(""); setBridgeUrl("");
+      bridgeLimit = null;
+      if (bTok) bTok.value = ""; if (bUrl) bUrl.value = BRIDGE_URL_DEFAULT;
+      bSay(false, "코드를 지웠어요.");
+      refresh(); toast("브리지 코드를 지웠어요");
+    });
+    if ($("bridgeTest")) $("bridgeTest").addEventListener("click", async () => {
+      const btn = $("bridgeTest");
+      btn.disabled = true;
+      bSay(true, "확인하는 중…");
+      if (bOut) bOut.className = "probe-out";
+      const r = await probeApi();
+      bSay(r.ok, r.msg);
+      refresh();
+      btn.disabled = false;
+    });
+    document.querySelectorAll("#bridgeBody [data-copy]").forEach(b => b.addEventListener("click", async () => {
+      const cmd = (($(b.dataset.copy) || {}).textContent || "").trim();
+      try { await navigator.clipboard.writeText(cmd); toast("명령을 복사했어요"); }
+      catch (e) { toast("복사가 막혔어요 — 직접 옮겨 적어 주세요"); }
+    }));
     // 키 없이도 고를 수 있게 알려진 모델을 미리 넣어 둔다. '모델 목록 불러오기' 는 계정에 실제로
     // 열려 있는 것만 가져오므로, 둘은 서로를 대신하지 않는다.
     (function seedOaList() {
@@ -4769,29 +5220,41 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   // 이 빌드는 API 키로만 돈다. 구독(claude.ai 아티팩트) 실행 경로는 두지 않는다.
   const API_FN = makeApiSampler();      // Anthropic
   const OA_FN = makeOaSampler();        // OpenAI
+  const BRIDGE_FN = makeBridgeSampler();  // 이 컴퓨터의 구독
   function applyProvider() {
-    SAMPLE = provider() === "openai" ? OA_FN : API_FN;
+    const p = provider();
+    SAMPLE = p === "openai" ? OA_FN : p === "bridge" ? BRIDGE_FN : API_FN;
     RUNTIME = "api";
-    imagesState = "yes";
-    LIMITS = { maxPromptBytes: 800 * 1024, images: { maxCount: 8, maxInputBytes: 20 * 1024 * 1024, mediaTypes: ["image/jpeg", "image/png", "image/webp"] } };
+    // 구독 연결은 그림을 못 보낸다 — 스캔본 약속을 여기서 정직하게 내린다
+    imagesState = p === "bridge" ? "no" : "yes";
+    LIMITS = p === "bridge"
+      ? { maxPromptBytes: 800 * 1024 }
+      : { maxPromptBytes: 800 * 1024, images: { maxCount: 8, maxInputBytes: 20 * 1024 * 1024, mediaTypes: ["image/jpeg", "image/png", "image/webp"] } };
     try { refreshEngineCard(); } catch (e) {}
+    try { applyScanCopy(); } catch (e) {}
+    try { syncOcrBtn(); } catch (e) {}
     return SAMPLE;
   }
-  function initRuntime() { return applyProvider(); }
+  function initRuntime() {
+    try { adoptBridgeLink(); } catch (e) {}
+    return applyProvider();
+  }
 
   let lastTrouble = "";   // 가장 최근에 막힌 지점
 
   function diagnostics() {
     return [
       "ORUN 동형 모의고사 진단",
-      "build: 2026-09-10 06:29",
+      "build: 2026-09-14 11:46",
       "url: " + location.href,
       "runtime: API 키 전용 빌드",
       "sample 확보: " + (SAMPLE ? "예" : "아니오"),
       "limits: " + (LIMITS ? JSON.stringify(LIMITS) : "없음"),
       "이미지: " + imagesState,
-      "제공자: " + provider() + " · 모델 " + (provider() === "openai" ? oaModel() : apiModelId()),
+      "제공자: " + provider() + " · 모델 "
+        + (provider() === "openai" ? oaModel() : provider() === "bridge" ? (bridgeAgent() + " @ " + bridgeUrl()) : apiModelId()),
       "API 키: " + (currentKey() ? "저장됨 (" + keepMode() + ")" : "없음"),
+      "브리지 한도: " + (bridgeLimit ? JSON.stringify(bridgeLimit) : "모름"),
       "docx-js: " + (typeof docx !== "undefined" ? "로드됨" : "없음(수제 OOXML 폴백)"),
       "three.js: " + (typeof THREE !== "undefined" ? "로드됨" : "없음") + " / 배경 필드: " + (FX && FX.ok ? "켜짐" : "꺼짐"),
       "pdf.js: " + (typeof pdfjsLib !== "undefined" ? "로드됨" : "없음") +
@@ -4807,17 +5270,28 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   // 지금 런타임이 무엇을 할 수 있는지 한 줄로 — 문제가 생겼을 때 원인을 바로 알 수 있게
   // 이 뷰어가 스캔본(이미지)을 못 읽으면 관련 약속 문구를 정직하게 바꾼다
   function applyScanCopy() {
-    // API 로만 도는 빌드라 스캔본은 언제나 읽을 수 있다 — 예전의 '못 읽는 뷰어' 갈림길은 없앴다.
     const set = (id, t) => { const el = $(id); if (el) el.textContent = t; };
+    if (!ocrAvailable()) {
+      // 구독 연결은 그림을 못 보낸다 — 할 수 있는 것만 약속한다
+      set("howRead", "시험지를 문항 하나하나 읽어요. 글자가 든 PDF·한글·워드를 올려 주세요.");
+      set("examSub", "PDF, 한글, 워드 다 괜찮아요. 스캔한 사진 PDF는 API 키 방식으로 돌려 주세요.");
+      set("examDropSmall", "PDF · 한글 · 워드 · 최대 100MB (스캔본 제외)");
+      return;
+    }
     set("howRead", "시험지를 문항 하나하나 읽어요. 스캔한 사진 PDF도 돼요.");
     set("examSub", "PDF, 한글, 워드 다 괜찮아요. 스캔한 사진 PDF도 읽어요.");
     set("examDropSmall", "PDF(스캔본 포함) · 한글 · 워드 · 최대 100MB");
   }
 
   function runtimeReport() {
+    const p = provider();
+    if (p === "bridge") {
+      if (!bridgeToken()) return "브리지 코드를 저장해 주세요";
+      return "내 구독 · " + (bridgeAgent() === "codex" ? "Codex" : "Claude Code") + " · 스캔본은 못 읽어요";
+    }
     if (!currentKey()) return providerName() + " API 키를 저장해 주세요";
-    if (provider() === "openai") return oaModel() ? "OpenAI · " + oaModel() + " · 스캔본 읽기 가능" : "쓸 모델을 골라 주세요";
-    return "Anthropic · " + (apiModelKey() === "opus" ? "Opus 5" : "Sonnet 5") + " · 스캔본 읽기 가능";
+    if (p === "openai") return oaModel() ? "OpenAI · " + oaModel() + " · 스캔본 읽기 가능" : "쓸 모델을 골라 주세요";
+    return "Anthropic · " + (API_MODEL_LABELS[apiModelKey()] || apiModelId()) + " · 스캔본 읽기 가능";
   }
 
   // 런타임이 준비되기 전에는 실행 버튼을 잠가 두고, 준비되면 연다.
@@ -4849,7 +5323,12 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   // ---------- Claude 호출 래퍼 ----------
   function friendlySampleError(e) {
     switch (e && e.code) {
-      case "no_key": return "API 키가 저장돼 있지 않습니다. 시작 화면에서 키를 넣고 저장한 뒤 다시 시도해 주세요.";
+      case "no_key": return provider() === "bridge"
+        ? "브리지 코드가 저장돼 있지 않습니다. 터미널에 뜬 여섯 자리를 시작 화면에 넣어 주세요."
+        : "API 키가 저장돼 있지 않습니다. 시작 화면에서 키를 넣고 저장한 뒤 다시 시도해 주세요.";
+      case "bad_bridge_token": return "브리지 코드가 맞지 않습니다. 터미널 창에 뜬 여섯 자리를 다시 넣어 주세요.";
+      case "bridge_origin": return "브리지가 이 화면을 허용하지 않습니다. 브리지를 --allow-origin " + location.origin + " 로 다시 켜 주세요.";
+      case "bridge_failed": return "이 컴퓨터의 도구가 답을 내지 못했습니다" + (e && e.message ? " — " + e.message : "") + ".";
       case "no_model": return "쓸 모델을 고르지 않았습니다. 시작 화면에서 모델을 골라 주세요.";
       case "bad_model": return "이 키로는 그 모델을 쓸 수 없습니다. 시작 화면에서 ‘모델 목록 불러오기’로 쓸 수 있는 모델을 확인해 주세요.";
       case "bad_key": return "API 키가 올바르지 않거나 권한이 없습니다. 발급한 콘솔에서 키를 다시 확인해 주세요.";
@@ -4858,7 +5337,9 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
       case "network": return e.message;
       case "rate_limited": return "Claude 사용량 한도에 도달했거나 요청이 너무 잦습니다. 잠시 후 '다시 시도'를 눌러 이어서 진행하세요.";
       case "prompt_too_large": return "한 번에 보내는 자료가 너무 큽니다. 범위 자료를 나눠 올려주세요.";
-      case "image_rejected": return "PDF 쪽 이미지를 Claude가 받지 못했습니다. 쪽수가 적은 파일로 나눠 올려주세요.";
+      case "image_rejected": return provider() === "bridge"
+        ? "구독 연결로는 스캔본(그림)을 보낼 수 없어요. 스캔한 시험지는 엔진을 Claude·GPT(API 키)로 바꿔 돌려 주세요."
+        : "PDF 쪽 이미지를 Claude가 받지 못했습니다. 쪽수가 적은 파일로 나눠 올려주세요.";
       case "refused": return "Claude가 이 자료의 처리를 거절했습니다. 자료를 확인한 뒤 다시 시도해 주세요.";
       case "empty_completion": return "Claude가 빈 응답을 보냈습니다. 자료를 조금 줄여 다시 시도해 주세요.";
       default: return "Claude 응답 중 일시적인 오류가 났습니다" + (e && e.message ? " (" + e.message + ")" : "") + ". 잠시 후 다시 시도해 주세요.";
@@ -4872,7 +5353,9 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   async function callClaude(input, opts) {
     opts = opts || {};
     if (cancelRequested) throw new Error("__aborted__");
-    if (!engineReady()) throw new Error("API 키와 모델을 먼저 정해 주세요. 시작 화면 아래 칸에서 설정할 수 있습니다.");
+    if (!engineReady()) throw new Error(provider() === "bridge"
+      ? "브리지 코드를 먼저 넣어 주세요. 터미널에서 orun-bridge 를 켜면 여섯 자리가 뜹니다."
+      : "API 키와 모델을 먼저 정해 주세요. 시작 화면 아래 칸에서 설정할 수 있습니다.");
     if (typeof input === "string") {
       const size = bytesOf(input);
       if (size > 64 * 1024) throw new Error("요청 크기(" + Math.round(size / 1024) + "KB)가 한도를 넘었습니다. 자료를 나눠 올려주세요.");
@@ -5026,7 +5509,9 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     if (!ocrAvailable()) {
       // 이미지 불가가 확정된 뷰어면 진단 문구 없이, 바로 할 수 있는 방법만 안내한다
       if (imagesState === "no")
-        throw new Error("이 시험지는 스캔한 사진 PDF라 이 화면에서는 글자를 읽을 수 없어요. 한글·워드 원본으로 올리거나, 아래 ‘본문을 직접 붙여넣을게요’에 붙여넣어 주세요.");
+        throw new Error(provider() === "bridge"
+          ? "이 시험지는 스캔한 사진 PDF예요. 구독 연결로는 그림을 보낼 수 없으니, 시작 화면에서 엔진을 Claude·GPT(API 키)로 바꿔 올리거나 아래 ‘본문을 직접 붙여넣을게요’에 붙여넣어 주세요."
+          : "이 시험지는 스캔한 사진 PDF라 이 화면에서는 글자를 읽을 수 없어요. 한글·워드 원본으로 올리거나, 아래 ‘본문을 직접 붙여넣을게요’에 붙여넣어 주세요.");
       throw new Error(emptyPdfMessage(r, "이 PDF") + " [" + runtimeReport() + "]");
     }
     const o = await ocrPdf(buf, (info) => onStep && onStep(info));
