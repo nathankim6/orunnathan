@@ -19,6 +19,8 @@ on:
       - 'public/three.min.js'
       - 'public/orun-universe-poster.jpg'
       - 'tools/orun-bridge.mjs'
+      - 'tools/orun-connect.cmd'
+      - 'tools/orun-connect.command'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -52,9 +54,12 @@ jobs:
           # 구독 연결용 로컬 중계소 — 선생님이 내려받아 이 컴퓨터에서 돌린다.
           # 사본을 만들지 않고 tools/ 의 원본을 그대로 내보낸다.
           brdg=$(git hash-object -w tools/orun-bridge.mjs)
+          # 더블클릭 런처 — 선생님이 받아서 두 번 누르는 파일
+          cwin=$(git hash-object -w tools/orun-connect.cmd)
+          cmac=$(git hash-object -w tools/orun-connect.command)
           # index.html 은 지금까지처럼 생성기다. 나머지는 제 이름으로 나란히 선다.
-          tree=$(printf '100644 blob %s\tindex.html\n100644 blob %s\tmocktest-generator.html\n100644 blob %s\torun-universe.html\n100644 blob %s\torun-grammar.html\n100644 blob %s\tmock-exam.html\n100644 blob %s\tstudio.html\n100644 blob %s\torun-oracle.html\n100644 blob %s\tthree.min.js\n100644 blob %s\torun-universe-poster.jpg\n100644 blob %s\torun-bridge.mjs\n' \
-                 "$mock" "$mock" "$uni" "$gram" "$mock" "$stud" "$orac" "$three" "$post" "$brdg" | git mktree)
+          tree=$(printf '100644 blob %s\tindex.html\n100644 blob %s\tmocktest-generator.html\n100644 blob %s\torun-universe.html\n100644 blob %s\torun-grammar.html\n100644 blob %s\tmock-exam.html\n100644 blob %s\tstudio.html\n100644 blob %s\torun-oracle.html\n100644 blob %s\tthree.min.js\n100644 blob %s\torun-universe-poster.jpg\n100644 blob %s\torun-bridge.mjs\n100644 blob %s\torun-connect.cmd\n100755 blob %s\torun-connect.command\n' \
+                 "$mock" "$mock" "$uni" "$gram" "$mock" "$stud" "$orac" "$three" "$post" "$brdg" "$cwin" "$cmac" | git mktree)
 
           git fetch --no-tags --depth=1 origin gh-pages || true
           parent=$(git rev-parse -q --verify FETCH_HEAD || true)

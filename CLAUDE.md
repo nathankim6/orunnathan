@@ -129,12 +129,26 @@ API 키 말고 "이 컴퓨터에 깔린 Claude Code · Codex" 로 돌리는 길�
                                   구독 자격은 여기에만 있다 ◀────────────┘
 ```
 
-원본은 `tools/orun-bridge.mjs` 한 파일이다. 워크플로가 이것을 그대로
-`gh-pages` 에 `orun-bridge.mjs` 로 내보내므로, 선생님은 한 줄로 받아 쓴다.
+원본은 세 파일이고 모두 `tools/` 에 있다. 워크플로가 사본 없이 그대로 내보낸다.
 
-```
-curl -fsSLO https://nathankim6.github.io/orunnathan/orun-bridge.mjs && node orun-bridge.mjs
-```
+| 파일 | 나가는 이름 | 하는 일 |
+|---|---|---|
+| `orun-bridge.mjs` | `/orun-bridge.mjs` | 중계소 본체 |
+| `orun-connect.cmd` | `/orun-connect.cmd` | 윈도우 더블클릭 런처 |
+| `orun-connect.command` | `/orun-connect.command` | 맥·리눅스 더블클릭 런처 |
+
+선생님이 하는 일은 런처를 받아 두 번 누르는 것뿐이다. 런처가 Node·도구를
+확인해 깔고, 로그인을 확인하고, 브리지를 내려받아 켜고, 코드가 들어간 주소로
+생성기를 연다 — `…/mock-exam.html#connect=<코드>@http://127.0.0.1:8787`.
+
+생성기의 `adoptBridgeLink()` 가 그 해시를 읽어 제공자를 `bridge` 로 돌리고
+코드를 저장한 뒤 주소창에서 해시를 지운다. 지킬 것 두 가지 —
+**해시에 실린 주소는 127.0.0.1·localhost 만 받는다**(남의 주소를 심어 넣지
+못하게), 그리고 **읽은 즉시 `history.replaceState` 로 지운다**(브라우저
+기록에 코드가 남지 않게).
+
+코드는 런처가 처음 한 번만 만들어 파일 옆 `.orun-code` 에 두고 그다음부터
+그대로 쓴다. 매번 새로 만들면 주소가 바뀌어 선생님이 다시 옮겨 적어야 한다.
 
 깨면 안 되는 것들 —
 
@@ -149,7 +163,11 @@ curl -fsSLO https://nathankim6.github.io/orunnathan/orun-bridge.mjs && node orun
 - **구독 연결은 그림을 못 보낸다.** 스캔본은 API 키 방식으로 돌린다.
   `imagesState` · `ocrAvailable()` · `applyScanCopy()` 세 곳이 한 세트다.
 - 회귀 검사: `bridgetest.sh`(자물쇠·스트리밍·오류) · `bridgeui.mjs`(화면) ·
-  `bridgescan.mjs`(스캔본 거절). 가짜 도구는 스크래치패드 `fakebin/` 에 있다.
+  `bridgescan.mjs`(스캔본 거절) · `bridgeos.mjs`(운영체제별 명령·받기 링크) ·
+  `connecttest.mjs`(연결 링크 — 정상·남의 주소·엉터리 코드).
+  가짜 도구는 스크래치패드 `fakebin/` 에 있다.
+- 윈도우 `.cmd` 는 이 환경에서 돌려 볼 수 없다. `.command` 쪽 논리를 먼저
+  가짜 도구로 통과시킨 뒤 같은 순서를 옮겨 적는다.
 
 ## 생성기를 고칠 때 지키는 것
 
