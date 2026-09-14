@@ -674,10 +674,12 @@ textarea:focus, input:focus { border-color: var(--line-4); outline: 2px solid va
   margin-top: var(--s3); padding: var(--s3) var(--s4);
   border: var(--line-w) solid var(--line-2); border-radius: var(--r3); background: var(--n2);
 }
-.api-card .bridge-how ol { margin: 0; padding-left: 1.2em; }
-.api-card .bridge-how li { font-size: var(--fs-meta); line-height: 1.9; color: var(--n9); }
+.api-card .bridge-how ol { margin: 0; padding-left: 1.3em; }
+.api-card .bridge-how li { font-size: var(--fs-meta); line-height: 1.7; color: var(--n9); }
+.api-card .bridge-how li + li { margin-top: var(--s3); }
+.api-card .bridge-how .why { display: block; color: var(--n8); font-size: var(--fs-micro); line-height: var(--lh-micro); }
 .api-card .bridge-cmd {
-  display: flex; align-items: center; gap: var(--s2); margin-top: var(--s2);
+  display: flex; align-items: center; gap: var(--s2); margin-top: var(--s1);
 }
 .api-card .bridge-cmd code {
   flex: 1 1 auto; min-width: 0; overflow-x: auto; white-space: nowrap;
@@ -2128,7 +2130,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v13H3z"/><path d="M2 4h20v3H2z"/><path d="M10 11h4"/></svg>
     <span class="lb">저장소</span><i class="n" id="vaultCount" hidden>0</i>
   </button>
-  <div class="state"><span class="build" id="buildTag">2026-09-14 07:44</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
+  <div class="state"><span class="build" id="buildTag">2026-09-14 08:57</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
 </div>
 
 <!-- 화면 0 · 시작 -->
@@ -2249,14 +2251,32 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
         </div>
         <div class="bridge-how">
           <ol>
-            <li>이 컴퓨터에 Claude Code 나 Codex 를 깔고 한 번 로그인합니다.</li>
-            <li>터미널에서 아래 한 줄을 실행합니다. 창은 켜 둡니다.</li>
-            <li>화면에 뜬 여섯 자리를 위 칸에 넣고 저장을 누릅니다.</li>
+            <li>Node.js 를 깝니다.
+              <span class="why" id="bridgeWhyNode">깐 다음에는 터미널 창을 닫았다 다시 열어야 합니다.</span>
+              <div class="bridge-cmd">
+                <code id="bcmdNode">winget install OpenJS.NodeJS.LTS</code>
+                <button type="button" class="btn ghost" data-copy="bcmdNode">복사</button>
+              </div>
+            </li>
+            <li>쓸 도구를 깔고 한 번 실행해 로그인합니다.
+              <span class="why" id="bridgeWhyTool">로그인은 그 도구가 기억합니다. 이 화면은 보지 않아요.</span>
+              <div class="bridge-cmd">
+                <code id="bcmdTool">npm i -g @anthropic-ai/claude-code</code>
+                <button type="button" class="btn ghost" data-copy="bcmdTool">복사</button>
+              </div>
+              <div class="bridge-cmd">
+                <code id="bcmdLogin">claude</code>
+                <button type="button" class="btn ghost" data-copy="bcmdLogin">복사</button>
+              </div>
+            </li>
+            <li>브리지를 켭니다. 이 창은 쓰는 동안 켜 둡니다.
+              <div class="bridge-cmd">
+                <code id="bridgeCmd">curl -fsSLO https://nathankim6.github.io/orunnathan/orun-bridge.mjs &amp;&amp; node orun-bridge.mjs</code>
+                <button type="button" class="btn ghost" data-copy="bridgeCmd">복사</button>
+              </div>
+            </li>
+            <li>거기 뜬 여섯 자리를 위 칸에 넣고 저장을 누릅니다.</li>
           </ol>
-          <div class="bridge-cmd">
-            <code id="bridgeCmd">curl -fsSLO https://nathankim6.github.io/orunnathan/orun-bridge.mjs &amp;&amp; node orun-bridge.mjs</code>
-            <button type="button" class="btn ghost" id="bridgeCopy">복사</button>
-          </div>
         </div>
       </div>
     </div>
@@ -4870,6 +4890,36 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     one(bridgeLimit.five_hour, "bridgeBar5", "bridgeNum5");
     one(bridgeLimit.seven_day, "bridgeBar7", "bridgeNum7");
   }
+  // 켜는 법에 적히는 명령은 운영체제와 고른 도구에 따라 다르다.
+  // 잘못 적어 주면 선생님이 그대로 붙여넣고 막힌다 — 여기서 갈아 끼운다.
+  function hostOs() {
+    let s = "";
+    try { s = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || navigator.userAgent || ""; } catch (e) {}
+    s = String(s).toLowerCase();
+    if (s.includes("win")) return "win";
+    if (s.includes("mac") || s.includes("iphone") || s.includes("ipad")) return "mac";
+    return "other";
+  }
+  function paintBridgeHow() {
+    const set = (id, t) => { const el = $(id); if (el) el.textContent = t; };
+    const os = hostOs(), codex = bridgeAgent() === "codex";
+    if (os === "win") {
+      set("bcmdNode", "winget install OpenJS.NodeJS.LTS");
+      set("bridgeWhyNode", "깐 다음에는 터미널(명령 프롬프트) 창을 닫았다 다시 열어야 합니다. winget 이 없으면 nodejs.org 에서 LTS 를 내려받아 설치하세요.");
+    } else if (os === "mac") {
+      set("bcmdNode", "brew install node");
+      set("bridgeWhyNode", "깐 다음에는 터미널 창을 닫았다 다시 열어야 합니다. Homebrew 가 없으면 nodejs.org 에서 LTS 를 내려받아 설치하세요.");
+    } else {
+      set("bcmdNode", "nodejs.org 에서 LTS 를 내려받아 설치");
+      set("bridgeWhyNode", "깐 다음에는 터미널 창을 닫았다 다시 열어야 합니다.");
+    }
+    set("bcmdTool", codex ? "npm i -g @openai/codex" : "npm i -g @anthropic-ai/claude-code");
+    set("bcmdLogin", codex ? "codex" : "claude");
+    set("bridgeWhyTool", codex
+      ? "한 번 실행해 ChatGPT 계정으로 로그인하면 됩니다. 로그인은 Codex 가 기억하고 이 화면은 보지 않아요."
+      : "한 번 실행해 Claude 계정으로 로그인하면 됩니다. 로그인은 Claude Code 가 기억하고 이 화면은 보지 않아요.");
+  }
+
   // 어떤 도구가 이 컴퓨터에 준비돼 있는지 타일 밑줄에 적는다.
   function paintBridgeAgents(h) {
     const one = (key, id) => {
@@ -4916,6 +4966,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
         if (t && document.activeElement !== t) t.value = bridgeToken();
         if (u && document.activeElement !== u) u.value = bridgeUrl();
         paintBridgeLimit();
+        paintBridgeHow();
         const ready0 = engineReady();
         btn.disabled = !ready0;
         if (ready0) btn.removeAttribute("title"); else btn.title = "브리지 코드를 먼저 저장해 주세요";
@@ -5042,11 +5093,11 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
       refresh();
       btn.disabled = false;
     });
-    if ($("bridgeCopy")) $("bridgeCopy").addEventListener("click", async () => {
-      const cmd = ($("bridgeCmd") || {}).textContent || "";
+    document.querySelectorAll("#bridgeBody [data-copy]").forEach(b => b.addEventListener("click", async () => {
+      const cmd = (($(b.dataset.copy) || {}).textContent || "").trim();
       try { await navigator.clipboard.writeText(cmd); toast("명령을 복사했어요"); }
       catch (e) { toast("복사가 막혔어요 — 직접 옮겨 적어 주세요"); }
-    });
+    }));
     // 키 없이도 고를 수 있게 알려진 모델을 미리 넣어 둔다. '모델 목록 불러오기' 는 계정에 실제로
     // 열려 있는 것만 가져오므로, 둘은 서로를 대신하지 않는다.
     (function seedOaList() {
@@ -5125,7 +5176,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   function diagnostics() {
     return [
       "ORUN 동형 모의고사 진단",
-      "build: 2026-09-14 07:44",
+      "build: 2026-09-14 08:57",
       "url: " + location.href,
       "runtime: API 키 전용 빌드",
       "sample 확보: " + (SAMPLE ? "예" : "아니오"),
