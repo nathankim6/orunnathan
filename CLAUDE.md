@@ -81,10 +81,44 @@ GitHub Pages 는 `access-control-allow-origin: *` 를 준다. 다른 사이트�
 직접 고친다. 그때 `src/` 스냅샷은 지운다 — 두 벌을 남기면 어느 쪽이 원본인지
 모르게 된다.
 
+## 구독 연결 — 로컬 브리지
+
+API 키 말고 "이 컴퓨터에 깔린 Claude Code · Codex" 로 돌리는 길이다.
+생성기의 RUN ENGINE 카드에 세 번째 타일 "내 구독" 으로 들어 있다.
+
+```
+브라우저(생성기)  ──HTTP/SSE──▶  orun-bridge (127.0.0.1)  ──stdio──▶  claude / codex
+                                                                        │
+                                  구독 자격은 여기에만 있다 ◀────────────┘
+```
+
+원본은 `tools/orun-bridge.mjs` 한 파일이다. 워크플로가 이것을 그대로
+`gh-pages` 에 `orun-bridge.mjs` 로 내보내므로, 선생님은 한 줄로 받아 쓴다.
+
+```
+curl -fsSLO https://nathankim6.github.io/orunnathan/orun-bridge.mjs && node orun-bridge.mjs
+```
+
+깨면 안 되는 것들 —
+
+- **브라우저는 Codex 의 app-server 에 직접 못 붙는다.** 그쪽은 Origin 헤더가
+  붙은 요청을 403 으로 막는다. 반드시 이 중계소를 한 겹 거친다.
+- **코드(여섯 자리)는 지우지 말 것.** 없으면 아무 웹사이트나 열린 브리지를
+  찾아 남의 구독을 태울 수 있다. Origin 허용 목록과 코드, 둘 다 자물쇠다.
+- **127.0.0.1 에만 붙인다.** 0.0.0.0 으로 열지 않는다.
+- **크롬 142 부터** 공개 사이트가 이 컴퓨터 안을 부르면 권한을 묻는다.
+  사전요청에 `access-control-allow-private-network: true` 를 돌려주는 줄이
+  있어야 한다. 지우면 https 로 연 생성기에서 연결이 막힌다.
+- **구독 연결은 그림을 못 보낸다.** 스캔본은 API 키 방식으로 돌린다.
+  `imagesState` · `ocrAvailable()` · `applyScanCopy()` 세 곳이 한 세트다.
+- 회귀 검사: `bridgetest.sh`(자물쇠·스트리밍·오류) · `bridgeui.mjs`(화면) ·
+  `bridgescan.mjs`(스캔본 거절). 가짜 도구는 스크래치패드 `fakebin/` 에 있다.
+
 ## 생성기를 고칠 때 지키는 것
 
 - API 키는 브라우저에만 두고 `api.anthropic.com` / `api.openai.com` 으로만 보낸다.
-  서버를 두지 않는다.
+  호스팅 서버를 두지 않는다 — 구독 연결의 브리지는 선생님 컴퓨터에서만 돌고
+  루프백에만 붙으므로 이 규칙을 깨지 않는다.
 - `<!DOCTYPE>` 를 넣지 않는다 — A4 조판이 quirks mode 에서 맞춰져 있다.
   첫 줄의 `<meta charset="utf-8">` 은 지운다.
 - 화면 미리보기와 워드(DOCX)·인쇄는 같은 판형이어야 한다. 한쪽만 고치지 않는다.
