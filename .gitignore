@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# ORUN ORACLE 조립·검사 도구 (oracle/) — 받아 둔 CDN 라이브러리와 검사 산출물은 올리지 않는다
+oracle/node_modules
+oracle/tests/cdn
+oracle/tests/out
+
+# 코딩 도구가 만드는 작업트리
+.claude/worktrees

@@ -1,0 +1,81 @@
+<div id="room" aria-hidden="true"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+<video id="bgVideo" muted loop playsinline aria-hidden="true"></video>
+<div id="dropAll" aria-hidden="true"></div>
+<div id="chips" aria-hidden="true"></div>
+
+<header id="topbar">
+  <div id="brand"><b>ORUN ORACLE</b><span id="brandSub">흑석고 영어 출제 오라클</span></div>
+  <button type="button" id="engine" title="엔진 설정"><i></i><span id="engineLabel">NO KEY</span></button>
+  <button type="button" id="cloud" title="Supabase 동기화"><i></i><span id="cloudLabel">CLOUD</span></button>
+  <div id="topRight">
+    <span id="fpsTag" hidden></span>
+    <button type="button" id="btnHelp" title="단축키 (?)">?</button>
+    <button type="button" id="btnSettings" title="설정">⚙ 설정</button>
+  </div>
+</header>
+
+<div class="corner" id="wordsTL">LEARN<br>PREDICT<br>HIT<small>A SMARTER EXAM<br>WITH ORUN ORACLE</small><span class="ko" id="wordsSchool">흑석고등학교 · 영어</span></div>
+<div class="corner" id="wordsTR">INTELLIGENCE<br>PREDICTION<br>A BETTER SCORE</div>
+<div class="corner" id="wordsBL">INTELLIGENCE &nbsp;|&nbsp; PREDICTION &nbsp;|&nbsp; A BETTER SCORE</div>
+<div class="corner" id="wordsBR">More Possibilities Together</div>
+
+<button type="button" class="tog glass" id="togL" title="왼쪽 패널 접기 ([)">‹</button>
+<button type="button" class="tog glass" id="togR" title="오른쪽 패널 접기 (])">›</button>
+
+<aside id="panelL" aria-label="상태">
+  <section class="glass" id="pStatus"><div class="ph"><span>System Status</span><span class="grow"></span><button type="button" id="btnEditTeacher" hidden>✎</button></div><div class="pb" id="statusBody"></div></section>
+  <section class="glass" id="pIntel"><div class="ph"><span>Global Intelligence</span><span class="grow"></span><span id="profVer" class="small"></span></div><div class="pb" id="intelBody"></div></section>
+</aside>
+
+<aside id="panelR" aria-label="오라클">
+  <section class="glass" id="pListen"><div class="ph"><span id="listenTitle">Listening…</span><span class="grow"></span><span class="small" id="listenTok"></span></div><div class="pb" style="padding:8px 12px"><canvas id="wave" width="640" height="116" aria-hidden="true"></canvas><div class="small" id="listenSub" style="font-family:var(--fk)">파일을 끌어다 놓으면 읽어요</div></div></section>
+  <section class="glass" id="pHelp"><div class="ph"><span>I Can Help You With</span></div><div class="pb" id="helpBody"></div></section>
+  <section class="glass" id="pData"><div class="ph"><span>Real-Time Data</span><span class="grow"></span><span class="small" id="dataSub"></span></div><div class="pb" id="dataBody"></div></section>
+</aside>
+
+<div id="flat"><div id="flatGrid"></div></div>
+
+<div id="onboard" class="glass" hidden>
+  <div class="st" id="ob1"><b data-n="1">엔진 연결</b><p>API 키를 저장하면 시험지를 읽고 학습해요</p><button type="button" class="pri" id="ob1Btn">키 넣기</button></div>
+  <div class="st" id="ob2"><b data-n="2">선생님</b><p>흑석고 윤은영(영어A) · 전정이(영어B) 홀로그램이 준비돼 있어요</p><button type="button" class="pri" id="ob2Btn">＋ 선생님 추가</button></div>
+  <div class="st" id="ob3"><b data-n="3">파일 넣기</b><p>기출 시험지 · 시험범위 원문 · 선생님 프린트를 홀로그램에 끌어다 놓으세요</p><span class="small" id="ob3Note">선생님을 만들면 열려요</span></div>
+</div>
+
+<nav id="dock" class="glass" aria-label="작업">
+  <button type="button" id="btnNew"><b>＋</b> 선생님</button>
+  <span class="sep"></span>
+  <button type="button" id="btnFiles" disabled>파일 넣기</button>
+  <button type="button" id="btnLearn" disabled>학습</button>
+  <button type="button" id="btnPredict" disabled>예측</button>
+  <button type="button" id="btnMock" class="pri" disabled>적중 모의고사 만들기</button>
+  <span class="sep"></span>
+  <button type="button" id="btnExport">내보내기 ▾</button>
+  <span id="queueMini" hidden></span>
+</nav>
+
+<aside id="drawer" class="glass" aria-label="상세">
+  <div class="ph"><button type="button" id="drawerBack" hidden>‹ 뒤로</button><span id="drawerTitle">상세</span><span class="grow"></span><button type="button" id="drawerClose">✕</button></div>
+  <div class="pb" id="drawerBody"></div>
+</aside>
+
+<div id="sheetWrap"><div id="sheet" class="glass" role="dialog" aria-modal="true">
+  <div class="ph"><span id="sheetTitle">설정</span><span class="grow"></span><button type="button" id="sheetClose">✕</button></div>
+  <div class="pb" id="sheetBody"></div>
+</div></div>
+
+<div id="paper" role="dialog" aria-label="적중 모의고사">
+  <div id="paperBar">
+    <b id="paperTitle">적중 모의고사</b><span class="grow"></span>
+    <button type="button" id="paperPrint">인쇄</button>
+    <button type="button" id="paperDocx" class="pri">워드로 저장</button>
+    <button type="button" id="paperCopy">본문 복사</button>
+    <button type="button" id="paperClose">닫기</button>
+  </div>
+  <div id="paperScroll"><div id="paperPage"></div></div>
+</div>
+
+<div id="toasts" aria-live="polite"></div>
+<input type="file" id="fileInput" multiple hidden>
+<input type="file" id="importInput" accept=".json,application/json" hidden>
+<input type="file" id="videoInput" accept="video/mp4,video/webm,image/jpeg,image/png,image/webp" hidden>

@@ -1,0 +1,18 @@
+{
+  "name": "orun-oracle-dev",
+  "private": true,
+  "description": "ORUN ORACLE 조립·검사 도구 — 소스는 parts/, 결과물은 ../public/orun-oracle.html 한 벌",
+  "scripts": {
+    "build": "sh build.sh",
+    "check": "sh tests/check-build.sh",
+    "cdn": "sh tests/fetch-cdn.sh",
+    "test": "npm run check && npm run test:unit && npm run test:e2e && npm run test:stage",
+    "test:unit": "node tests/unit.js",
+    "test:e2e": "node tests/e2e.js",
+    "test:stage": "node tests/run-stage-smoke.js",
+    "fixtures": "node tests/fixtures/make-fixtures.js"
+  },
+  "devDependencies": {
+    "playwright": "1.55.1"
+  }
+}
