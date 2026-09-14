@@ -674,7 +674,18 @@ textarea:focus, input:focus { border-color: var(--line-4); outline: 2px solid va
   margin-top: var(--s3); padding: var(--s3) var(--s4);
   border: var(--line-w) solid var(--line-2); border-radius: var(--r3); background: var(--n2);
 }
-.api-card .bridge-how ol { margin: 0; padding-left: 1.3em; }
+.api-card .bridge-lead { display: flex; align-items: center; gap: var(--s3); flex-wrap: wrap; }
+.api-card .bridge-lead p { font-size: var(--fs-meta); line-height: var(--lh-meta); color: var(--n9); flex: 1 1 260px; min-width: 0; }
+.api-card .bridge-hand { margin-top: var(--s3); }
+.api-card .bridge-hand > summary {
+  cursor: pointer; list-style: none;
+  font-size: var(--fs-micro); line-height: var(--lh-micro); color: var(--n8);
+}
+.api-card .bridge-hand > summary::-webkit-details-marker { display: none; }
+.api-card .bridge-hand > summary::before { content: "▸ "; }
+.api-card .bridge-hand[open] > summary::before { content: "▾ "; }
+.api-card .bridge-hand > summary:hover { color: var(--ink); }
+.api-card .bridge-how ol { margin: var(--s3) 0 0; padding-left: 1.3em; }
 .api-card .bridge-how li { font-size: var(--fs-meta); line-height: 1.7; color: var(--n9); }
 .api-card .bridge-how li + li { margin-top: var(--s3); }
 .api-card .bridge-how .why { display: block; color: var(--n8); font-size: var(--fs-micro); line-height: var(--lh-micro); }
@@ -2130,7 +2141,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v13H3z"/><path d="M2 4h20v3H2z"/><path d="M10 11h4"/></svg>
     <span class="lb">저장소</span><i class="n" id="vaultCount" hidden>0</i>
   </button>
-  <div class="state"><span class="build" id="buildTag">2026-09-14 08:57</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
+  <div class="state"><span class="build" id="buildTag">2026-09-14 11:27</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
 </div>
 
 <!-- 화면 0 · 시작 -->
@@ -2250,6 +2261,12 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
           <div><span class="lbl">7-DAY</span><span class="bar"><i id="bridgeBar7"></i></span><span class="num" id="bridgeNum7">—</span></div>
         </div>
         <div class="bridge-how">
+          <div class="bridge-lead">
+            <p id="bridgeLeadTxt">연결 파일을 내려받아 두 번 누르세요. 첫 회에만 필요한 것을 알아서 깔고 로그인 창을 띄웁니다. 그다음부터는 두 번 누르면 바로 이어집니다.</p>
+            <a class="btn ghost" id="bridgeGet" href="https://nathankim6.github.io/orunnathan/orun-connect.cmd" download>연결 파일 받기</a>
+          </div>
+          <details class="bridge-hand">
+            <summary>직접 켜고 싶으시면</summary>
           <ol>
             <li>Node.js 를 깝니다.
               <span class="why" id="bridgeWhyNode">깐 다음에는 터미널 창을 닫았다 다시 열어야 합니다.</span>
@@ -2277,6 +2294,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
             </li>
             <li>거기 뜬 여섯 자리를 위 칸에 넣고 저장을 누릅니다.</li>
           </ol>
+          </details>
         </div>
       </div>
     </div>
@@ -4362,6 +4380,32 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     return p === "openai" ? "OpenAI" : p === "bridge" ? "내 구독" : "Anthropic";
   }
 
+  // 런처(.cmd/.command)가 브라우저를 열 때 주소 끝에 코드를 달아 준다.
+  //   …/mock-exam.html#connect=ABC234            (주소는 기본값 127.0.0.1:8787)
+  //   …/mock-exam.html#connect=ABC234@http://127.0.0.1:8788
+  // 해시는 서버로 가지 않는다. 읽은 즉시 주소창에서 지워 기록에 남기지 않는다.
+  function adoptBridgeLink() {
+    let h = "";
+    try { h = String(location.hash || "").replace(/^#/, ""); } catch (e) { return false; }
+    const m = /(?:^|&)connect=([^&]+)/.exec(h);
+    if (!m) return false;
+    let v = "";
+    try { v = decodeURIComponent(m[1]); } catch (e) { v = m[1]; }
+    const at = v.indexOf("@");
+    const tok = (at === -1 ? v : v.slice(0, at)).trim().toUpperCase();
+    const url = at === -1 ? "" : v.slice(at + 1).trim();
+    try { history.replaceState(null, "", location.pathname + location.search); } catch (e) {}
+    if (!/^[A-Z0-9]{4,12}$/.test(tok)) return false;
+    // 주소는 이 컴퓨터 안만 받는다 — 남의 주소를 심어 넣지 못하게
+    if (url && !/^https?:\/\/(127\.0\.0\.1|localhost)(:\d+)?$/.test(url.replace(/\/+$/, ""))) return false;
+    try { localStorage.setItem(PROVIDER_STORE, "bridge"); } catch (e) {}
+    setBridgeToken(tok);
+    if (url) setBridgeUrl(url);
+    bridgeAdopted = true;
+    return true;
+  }
+  let bridgeAdopted = false;
+
   // ── 구독 연결(브리지) ──────────────────────────────────────────────────
   // 이 컴퓨터에서 도는 작은 중계소(tools/orun-bridge.mjs)에게 일을 시킨다.
   // 구독 자격은 claude / codex 가 들고 있고, 여기로는 절대 넘어오지 않는다.
@@ -4913,6 +4957,16 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
       set("bcmdNode", "nodejs.org 에서 LTS 를 내려받아 설치");
       set("bridgeWhyNode", "깐 다음에는 터미널 창을 닫았다 다시 열어야 합니다.");
     }
+    const get = $("bridgeGet");
+    if (get) {
+      const win = os === "win";
+      get.href = "https://nathankim6.github.io/orunnathan/orun-connect." + (win ? "cmd" : "command");
+      get.textContent = win ? "연결 파일 받기 (.cmd)" : "연결 파일 받기 (.command)";
+      const lead = $("bridgeLeadTxt");
+      if (lead) lead.textContent = win
+        ? "연결 파일을 내려받아 두 번 누르세요. 첫 회에만 Node·도구를 알아서 깔고 로그인 창을 띄웁니다. 그다음부터는 두 번 누르면 바로 이어집니다."
+        : "연결 파일을 내려받아 두 번 누르세요(맥에서 막히면 오른쪽 눌러 ‘열기’). 첫 회에만 필요한 것을 깔고 로그인 창을 띄웁니다.";
+    }
     set("bcmdTool", codex ? "npm i -g @openai/codex" : "npm i -g @anthropic-ai/claude-code");
     set("bcmdLogin", codex ? "codex" : "claude");
     set("bridgeWhyTool", codex
@@ -4967,6 +5021,12 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
         if (u && document.activeElement !== u) u.value = bridgeUrl();
         paintBridgeLimit();
         paintBridgeHow();
+        if (bridgeAdopted) {
+          bridgeAdopted = false;
+          const o = $("bridgeOut");
+          if (o) { o.className = "probe-out ok"; o.textContent = "연결 파일이 코드를 넣어 줬어요. 바로 쓰실 수 있어요."; }
+          try { toast("브리지에 이어졌어요"); } catch (e) {}
+        }
         const ready0 = engineReady();
         btn.disabled = !ready0;
         if (ready0) btn.removeAttribute("title"); else btn.title = "브리지 코드를 먼저 저장해 주세요";
@@ -5169,14 +5229,17 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     try { syncOcrBtn(); } catch (e) {}
     return SAMPLE;
   }
-  function initRuntime() { return applyProvider(); }
+  function initRuntime() {
+    try { adoptBridgeLink(); } catch (e) {}
+    return applyProvider();
+  }
 
   let lastTrouble = "";   // 가장 최근에 막힌 지점
 
   function diagnostics() {
     return [
       "ORUN 동형 모의고사 진단",
-      "build: 2026-09-14 08:57",
+      "build: 2026-09-14 11:27",
       "url: " + location.href,
       "runtime: API 키 전용 빌드",
       "sample 확보: " + (SAMPLE ? "예" : "아니오"),
