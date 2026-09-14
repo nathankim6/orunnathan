@@ -248,32 +248,94 @@ ok(saved.kind === "ask" && saved.ask.question === "빈칸을 몇 문항 내나�
 const citeTo = run1.evidence[0].id;
 ok(DB._s("links").has("lk_" + saved.id + "~" + citeTo + "~cite") && LINKS.backlinks(citeTo).some(b => b.from === saved.id && b.kind === "cite" && /인용 \[1\]/.test(b.label)) && [...DB._s("events").values()].some(e => e.kind === "ask" && e.ref.noteId === saved.id), "ASK.save: links(kind:cite) → 인용된 노트의 백링크 · events(ask)");
 ok((await ASK.history("t_1", 5))[0].id === saved.id && (await ASK.history("t_9", 5)).length === 0 && INDEX.get(saved.id).noteKind === "ask" && INDEX.search("빈칸을 몇 문항", { kinds: ["ask"] })[0].id === saved.id, "ASK.history · ask 노트는 색인에 질문 + 답으로");
+// 태그 캐시가 차가울 때(부팅 직후 · 개인 모드 · 오프라인) 있던 색 · 설명 · 고정을 지우지 않는다
+await DB.put("tags", { id: "tag:빈칸함정", teacherId: null, name: "빈칸함정", color: "#f5c518", desc: "작년에 또 나온 것", pinned: true, author: "김강사", createdAt: 1000, updatedAt: 1000 });
+NOTES.tags.cache().clear();                                                   // 새로 고침 = 차가운 캐시
+await NOTES.tags.ensure(["빈칸함정"], "이강사");
+const tgA = await DB.get("tags", "tag:빈칸함정");
+ok(tgA.color === "#f5c518" && tgA.desc === "작년에 또 나온 것" && tgA.pinned === true && tgA.author === "김강사" && tgA.createdAt === 1000, "tags.ensure with a cold cache keeps the stored color/desc/pinned: " + JSON.stringify(tgA));
+NOTES.tags.cache().clear();
+await NOTES.tags.update("빈칸함정", { desc: "설명만 고침" });
+const tgB = await DB.get("tags", "tag:빈칸함정");
+ok(tgB.color === "#f5c518" && tgB.pinned === true && tgB.desc === "설명만 고침", "tags.update with a cold cache merges onto the stored doc: " + JSON.stringify(tgB));
+NOTES.tags.cache().clear();
+ok(NOTES.tags.load([{ id: "tag:불러옴", name: "불러옴", color: "#fff" }]) === 1 && NOTES.tags.get("불러옴").color === "#fff", "tags.load fills the cache (APP.rebuildIndex calls it every boot)");
+// 삭제 5초 유예는 저장소에도 적는다 — 그 안에 새로 고쳐도 되살아나지 않고, 다음 부팅이 확정한다
+const sd = await NOTES.create({ kind: "note", title: "지울 메모", body: "본문 #재출제", teacherId: "t_1", author: "" });
+NOTES.remove(sd.id); await new Promise(r => setTimeout(r, 20));
+const sdDoc = await DB.get("notes", sd.id);
+ok(sdDoc && sdDoc.deletedAt > 0 && NOTES.hidden(sdDoc) && !INDEX.get(sd.id) && (await NOTES.list({ teacherId: "t_1" })).every(d => d.id !== sd.id), "remove() writes deletedAt at once — a refresh inside the 5s window keeps it deleted and out of the index");
+await NOTES.remove(sd.id, { now: true }).done;
+const sd2 = await NOTES.create({ kind: "note", title: "닫힌 탭", body: "x", teacherId: "t_1", author: "" });
+await DB.put("notes", Object.assign({}, await DB.get("notes", sd2.id), { deletedAt: Date.now() }));   // 탭이 닫혀 확정되지 못한 삭제
+ok((await NOTES.sweepDeleted()) >= 1 && !DB._s("notes").has(sd2.id), "sweepDeleted() finishes deletions the tab closed on (boot calls it)");
+// 메모를 지워도 그 지문 · 시험지 · 자료의 원문 검색(grep)이 살아 있다
+await NOTES.saveMemo({ anchorKey: "passages:p_1", teacherId: "t_1", body: "한 줄 메모", author: "" });
+ok(INDEX.grep("Habits are repeated").some(r => r.id === "p_1"), "grep finds the passage while it has a memo");
+await NOTES.saveMemo({ anchorKey: "passages:p_1", teacherId: "t_1", body: "  " });
+ok(INDEX.grep("Habits are repeated").some(r => r.id === "p_1"), "grep still finds the passage after its memo is deleted (raw text is not dropped)");
+// 배점 분포 — 가장 흔한 배점이 빠지지 않는다 (정수형 키는 객체 순서가 삽입 순서가 아니다)
+const pPts = Object.assign({}, p1, { pointsHist: { "2": 0.05, "3": 0.05, "4": 0.05, "5": 0.85 } });
+const stPts = ASK.structured("배점은 어떻게 되나요?", { profile: pPts }).find(l => l.includes("배점 분포")) || "";
+ok(stPts.includes("5점 85%") && stPts.indexOf("5점 85%") < stPts.indexOf("3점"), "배점 분포 lists the most common points first: " + stPts);
 // SYNC.bootstrap 병합 (모의 fetch): notes 는 updatedAt 비교, 나머지는 클라우드가 덮는다
 const cloudRows = []; const posted = [];
 globalThis.fetch = async (url, o) => { const m = o && o.method || "GET"; if (m === "GET") return { ok: true, text: async () => JSON.stringify(cloudRows.map(r => ({ id: r.id, store: r.store, data: r.data, updated_at: "" }))), headers: { get: () => "" } }; if (m === "POST") { posted.push(...JSON.parse(o.body)); return { ok: true, text: async () => "" }; } return { ok: true, text: async () => "" }; };
 const DB2 = fakeDB();
+const RID = (store, id) => SYNC.rowId(store, id);
 await DB2.put("notes", { id: "n_a", teacherId: "t_1", kind: "note", body: "A-local", updatedAt: 100, createdAt: 50 });
 await DB2.put("notes", { id: "n_c", teacherId: "t_1", kind: "note", body: "C-local newer", updatedAt: 900, createdAt: 50 });
 await DB2.put("notes", { id: "n_only", teacherId: "t_1", kind: "note", body: "local only", updatedAt: 1, createdAt: 1 });
 await DB2.put("exams", Object.assign({}, ex, { title: "local" }));
-cloudRows.push({ id: "n_a", store: "notes", data: { id: "n_a", teacherId: "t_1", kind: "note", body: "A-cloud newer", updatedAt: 200, createdAt: 50 } });
-cloudRows.push({ id: "n_c", store: "notes", data: { id: "n_c", teacherId: "t_1", kind: "note", body: "C-cloud older", updatedAt: 300, createdAt: 50 } });
-cloudRows.push({ id: "n_new", store: "notes", data: { id: "n_new", teacherId: "t_1", kind: "note", body: "cloud only", updatedAt: 5, createdAt: 5 } });
-cloudRows.push({ id: "e_1", store: "exams", data: Object.assign({}, ex, { title: "cloud" }) });
-cloudRows.push({ id: "tag:재출제", store: "tags", data: { id: "tag:재출제", teacherId: null, name: "재출제", updatedAt: 1, createdAt: 1 } });
+cloudRows.push({ id: RID("notes", "n_a"), store: "notes", data: { id: "n_a", teacherId: "t_1", kind: "note", body: "A-cloud newer", updatedAt: 200, createdAt: 50 } });
+cloudRows.push({ id: RID("notes", "n_c"), store: "notes", data: { id: "n_c", teacherId: "t_1", kind: "note", body: "C-cloud older", updatedAt: 300, createdAt: 50 } });
+cloudRows.push({ id: RID("notes", "n_new"), store: "notes", data: { id: "n_new", teacherId: "t_1", kind: "note", body: "cloud only", updatedAt: 5, createdAt: 5 } });
+cloudRows.push({ id: RID("exams", "e_1"), store: "exams", data: Object.assign({}, ex, { title: "cloud" }) });
+cloudRows.push({ id: RID("tags", "tag:재출제"), store: "tags", data: { id: "tag:재출제", teacherId: null, name: "재출제", updatedAt: 1, createdAt: 1 } });
 SYNC.st.enabled = true; SYNC.st.private = false;
 const bs = await SYNC.bootstrap(DB2);
 ok(bs.pulled === 4 && bs.pushed === 2 && bs.merged === 2 && !bs.error, "bootstrap counts: pulled 4 (n_a · n_new · e_1 · tag) · pushed 2 (n_c newer · n_only) · merged 2: " + JSON.stringify(bs));
 ok((await DB2.get("notes", "n_a")).body === "A-cloud newer" && (await DB2.get("notes", "n_c")).body === "C-local newer" && (await DB2.get("notes", "n_new")).body === "cloud only" && (await DB2.get("notes", "n_only")).body === "local only" && (await DB2.get("exams", "e_1")).title === "cloud" && DB2._s("tags").has("tag:재출제"), "MERGE: newer side wins per note · other stores overwritten by cloud");
 await new Promise(r => setTimeout(r, 30));
-ok(posted.some(r => r.id === "n_c" && r.data.body === "C-local newer" && r.store === "notes" && r.teacher_id === "t_1") && posted.some(r => r.id === "n_only") && !posted.some(r => r.id === "n_a"), "local-newer docs are pushed to the cloud (" + posted.map(r => r.id).join(",") + ")");
+ok(posted.some(r => r.id === RID("notes", "n_c") && r.data.body === "C-local newer" && r.store === "notes" && r.teacher_id === "t_1") && posted.some(r => r.id === RID("notes", "n_only")) && !posted.some(r => r.id === RID("notes", "n_a")), "local-newer docs are pushed to the cloud (" + posted.map(r => r.id).join(",") + ")");
+// 행 id 는 작업공간 · 저장소로 갈라진다 — 같은 이름의 태그 · settings 가 다른 작업공간의 행을 빼앗지 않는다
+ok(RID("tags", "tag:빈칸") !== "tag:빈칸" && RID("tags", "tag:빈칸").indexOf(SYNC.st.workspace + ":tags:") === 0 && RID("settings", "ui") !== RID("settings", "bg"), "rowId is scoped by workspace + store (" + RID("tags", "tag:빈칸") + ")");
 SYNC.setPrivate(true); posted.length = 0; cloudRows.length = 0;
 const DB3 = fakeDB(); await DB3.put("notes", { id: "n_p", teacherId: "t_1", kind: "note", body: "private", updatedAt: 1, createdAt: 1 }); await DB3.put("exams", ex);
 const bs2 = await SYNC.bootstrap(DB3); await new Promise(r => setTimeout(r, 30));
 ok(bs2.pushed === 1 && posted.every(r => r.store !== "notes") && posted.some(r => r.store === "exams"), "PRIVATE on: notes are neither pushed nor pulled, other stores still sync");
 SYNC.push("notes", [{ id: "n_x", updatedAt: 1 }]); SYNC.push("exams", [ex]);
 ok(SYNC.st.pending === 1, "SYNC.push skips PRIVATE stores while private");
-SYNC.setPrivate(false); SYNC.st.enabled = false;
+SYNC.setPrivate(false);
+// flush 가 요청이 나가 있는 동안 들어온 쓰기를 버리지 않는다 (같은 id 의 더 새 판을 지우면 다음 부팅이 옛 내용으로 되돌린다)
+posted.length = 0; SYNC.st.enabled = true;
+let hold = null;
+globalThis.fetch = async (url, o) => { const m = o && o.method || "GET"; if (m === "GET") return { ok: true, text: async () => "[]", headers: { get: () => "" } };
+  if (m === "POST") { const rows = JSON.parse(o.body); await new Promise(r => { hold = r; }); posted.push(...rows); return { ok: true, text: async () => "" }; } return { ok: true, text: async () => "" }; };
+SYNC.push("exams", [{ id: "e_race", title: "v1", updatedAt: 1 }]);
+await new Promise(r => setTimeout(r, 700));                       // 디바운스가 끝나 POST 가 나가 있다
+SYNC.push("exams", [{ id: "e_race", title: "v2", updatedAt: 2 }]); // 요청이 나가 있는 동안 들어온 쓰기
+hold(); await new Promise(r => setTimeout(r, 50)); if (hold) hold(); await new Promise(r => setTimeout(r, 50));
+ok(posted.some(r => r.id === RID("exams", "e_race") && r.data.title === "v2"), "flush keeps a write that arrives while the request is in flight (" + posted.filter(r => r.id === RID("exams", "e_race")).map(r => r.data.title).join(",") + ")");
+// 삭제는 묘비를 남기고, 다음 부팅이 그 문서를 되살리지 않고 로컬에서도 지운다
+globalThis.fetch = async (url, o) => { const m = o && o.method || "GET"; if (m === "GET") return { ok: true, text: async () => JSON.stringify(cloudRows.map(r => ({ id: r.id, store: r.store, data: r.data, updated_at: "" }))), headers: { get: () => "" } }; if (m === "POST") { posted.push(...JSON.parse(o.body)); return { ok: true, text: async () => "" }; } return { ok: true, text: async () => "" }; };
+posted.length = 0; SYNC.remove("exams", ["e_gone"]); await new Promise(r => setTimeout(r, 700));
+ok(posted.some(r => r.id === RID("exams", "e_gone") && r.data && r.data.__deleted === true), "delete writes a tombstone row instead of dropping the row");
+cloudRows.length = 0;
+cloudRows.push({ id: RID("exams", "e_1"), store: "exams", data: { __deleted: true, at: Date.now(), id: "e_1" } });
+cloudRows.push({ id: RID("questions", "q_9"), store: "questions", data: { __deleted: true, at: Date.now(), id: "q_9" } });
+const DB4 = fakeDB(); await DB4.put("exams", ex); await DB4.put("questions", { id: "q_9", teacherId: "t_1", number: "9" });
+const bs3 = await SYNC.bootstrap(DB4);
+ok(bs3.deleted === 2 && !DB4._s("exams").has("e_1") && !DB4._s("questions").has("q_9"), "bootstrap deletes tombstoned docs locally instead of resurrecting them: " + JSON.stringify(bs3));
+// 작업공간을 바꾸면 이 브라우저의 문서를 저절로 올리지 않는다 (동료 작업공간에 내 자료가 섞이지 않게)
+cloudRows.length = 0; posted.length = 0;
+SYNC.setWorkspace("mokdong");
+const DB5 = fakeDB(); await DB5.put("exams", ex); await DB5.put("teachers", { id: "t_1", name: "윤은영" });
+const bs4 = await SYNC.bootstrap(DB5); await new Promise(r => setTimeout(r, 30));
+ok(bs4.pushed === 0 && !posted.length, "switching workspace pulls only — local docs are not auto-pushed into the other workspace");
+const bs5 = await SYNC.bootstrap(DB5); await new Promise(r => setTimeout(r, 30));
+ok(bs5.pushed === 2, "the next boot in that workspace syncs normally again: " + JSON.stringify(bs5));
+SYNC.setWorkspace("heukseok"); SYNC.st.enabled = false;
 console.log(bad ? "UNIT FAILED " + bad + "/" + n : "UNIT ALL PASSED " + n);
 process.exitCode = bad ? 1 : 0;
 })().catch(e => { console.error("UNIT CRASHED", e); process.exitCode = 1; });

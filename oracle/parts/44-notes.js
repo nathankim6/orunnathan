@@ -95,8 +95,32 @@
       try { if (typeof APP !== "undefined" && APP && typeof APP.log === "function") { APP.log(teacherId, kind, msg, ref); return; } } catch (e) {}
       DB.put("events", { id: uid("ev"), teacherId: teacherId || null, at: Date.now(), kind, msg: S(msg, 300), ref: ref || {} }).catch(() => {});
     }
-    function resolveLinks(links, teacherId, prev) {
-      return links.map(l => { const c = (prev || []).find(x => x.text === l.text); const r = LINKS.resolve(l.text, teacherId, c && c.to); return { text: l.text, to: r ? r.id : null }; });
+    // hints: 자동완성에서 고른 {text, to} — 같은 제목이 둘일 때 사용자가 고른 그 문서를 가리키게 한다. 없으면 이전 캐시(prev).
+    function resolveLinks(links, teacherId, prev, hints) {
+      return links.map(l => {
+        const hv = (hints || []).find(x => x && x.text === l.text && x.to);
+        const c = (prev || []).find(x => x.text === l.text);
+        const r = LINKS.resolve(l.text, teacherId, (hv && hv.to) || (c && c.to));
+        if (!r) mayHaveBroken = true;
+        return { text: l.text, to: r ? r.id : null };
+      });
+    }
+    // relink() → n. 깨진 [[링크]] 중 이제 가리킬 노트가 생긴 것을 다시 잇는다 (본문은 그대로, links 캐시와 links 저장소만 고친다).
+    // 명세 §3.2 가 안내하는 길 — 깨진 링크 → "이 제목으로 새 메모 만들기" — 이 끝나면 여기서 이어진다.
+    let mayHaveBroken = true;      // 부팅 뒤 한 번은 훑는다. 깨진 링크가 하나도 없으면 다음부터 건너뛴다.
+    async function relink() {
+      if (!mayHaveBroken) return 0;
+      let n = 0, broken = false;
+      for (const d of await DB.all("notes")) {
+        if (!d || d.deletedAt || !(d.links || []).some(l => !l.to)) continue;
+        let hit = false;
+        const next = d.links.map(l => { if (l.to) return l; const r = LINKS.resolve(l.text, d.teacherId); if (!r) { broken = true; return l; } hit = true; return { text: l.text, to: r.id }; });
+        if (!hit) continue;
+        d.links = next; d.updatedAt = Date.now();
+        await DB.put("notes", d); await writeLinks(d); n++;
+      }
+      mayHaveBroken = broken;
+      return n;
     }
     async function writeLinks(doc) {
       await LINKS.setUserLinks(doc.id, (doc.links || []).filter(l => l.to).map(l => ({ to: l.to, text: l.text, teacherId: doc.teacherId, author: doc.author })), "wiki");
@@ -104,7 +128,7 @@
     // ---- 내 메모 (anchor) ----
     async function memo(key) {
       if (!key) return null;
-      const list = (await DB.where("notes", "anchorKey", key)).filter(d => d.kind === "anchor" && !pending.has(d.id));
+      const list = (await DB.where("notes", "anchorKey", key)).filter(d => d.kind === "anchor" && !hidden(d));
       list.sort((a, b) => (b.updatedAt || 0) - (a.updatedAt || 0));
       return list[0] || null;
     }
@@ -119,7 +143,7 @@
       const teacherId = o.teacherId !== undefined ? (o.teacherId === "*" ? null : o.teacherId) : (cur ? cur.teacherId : (target ? target.teacherId : null));
       const now = Date.now();
       const doc = Object.assign({}, cur || { id: uid("n"), createdAt: now, pinned: false, source: { kind: "editor" } },
-        { teacherId: teacherId || null, kind: "anchor", anchorKey: key, anchor: { store: ak.store, id: ak.id }, orphanOf: null, title: "", body, tags, links: resolveLinks(links, teacherId, cur && cur.links), date: null, ask: null,
+        { teacherId: teacherId || null, kind: "anchor", anchorKey: key, anchor: { store: ak.store, id: ak.id }, orphanOf: null, title: "", body, tags, links: resolveLinks(links, teacherId, cur && cur.links, o.linkHints), date: null, ask: null,
           author: o.author !== undefined ? S(o.author, 60) : (cur ? cur.author : author()), updatedAt: now });
       await tagsApi.ensure(tags, doc.author);
       await DB.put("notes", doc);
@@ -137,7 +161,7 @@
       const tags = [...new Set(parsed.tags.concat((o.tags || []).map(t => normTag(String(t).replace(/^#/, ""))).filter(Boolean)))];
       const teacherId = o.teacherId && o.teacherId !== "*" ? o.teacherId : null;
       const now = Date.now();
-      const doc = { id: o.id || uid("n"), teacherId, kind, anchorKey: "", anchor: null, orphanOf: null, title: S(o.title, 120).trim(), body, tags, links: resolveLinks(parsed.links, teacherId), date: o.date || null, ask: o.ask || null,
+      const doc = { id: o.id || uid("n"), teacherId, kind, anchorKey: "", anchor: null, orphanOf: null, title: S(o.title, 120).trim(), body, tags, links: resolveLinks(parsed.links, teacherId, null, o.linkHints), date: o.date || null, ask: o.ask || null,
         pinned: !!o.pinned, author: authorOr(o.author), source: o.source || { kind: kind === "ask" ? "ask" : "editor" }, createdAt: now, updatedAt: now };
       await tagsApi.ensure(tags, doc.author);
       await DB.put("notes", doc);
@@ -148,13 +172,14 @@
     // update(id, patch) → doc. body 가 바뀌면 태그 · 링크 캐시를 다시 만든다.
     async function update(id, patch) {
       const cur = await DB.get("notes", id); if (!cur) throw new Error("그 노트는 없어요");
-      patch = patch || {};
+      patch = Object.assign({}, patch || {});
+      const hints = patch.linkHints; delete patch.linkHints;       // 문서에는 남기지 않는다
       const doc = Object.assign({}, cur, patch, { id, updatedAt: Date.now() });
       if (patch.body !== undefined) {
         doc.body = String(patch.body == null ? "" : patch.body).replace(/\r/g, "");
         const parsed = parse(doc.body);
         doc.tags = [...new Set(parsed.tags.concat((patch.tags || []).map(t => normTag(String(t).replace(/^#/, ""))).filter(Boolean)))];
-        doc.links = resolveLinks(parsed.links, doc.teacherId, cur.links);
+        doc.links = resolveLinks(parsed.links, doc.teacherId, cur.links, hints);
       } else if (patch.tags) doc.tags = [...new Set(patch.tags.map(t => normTag(String(t).replace(/^#/, ""))).filter(Boolean))];
       await tagsApi.ensure(doc.tags, doc.author);
       await DB.put("notes", doc);
@@ -162,21 +187,46 @@
       return doc;
     }
     // remove(id, { now }) → { undo(), id, done }. 5초 뒤 확정(하드 삭제 — 이 노트에서 나가는 사용자 링크도 함께). 그동안 pending(id) 가 true.
+    // 유예는 메모리 타이머만으로는 탭과 함께 사라지므로, 지우는 순간 문서에 deletedAt 을 적어 둔다(소프트 삭제).
+    // 그래서 5초 안에 새로 고쳐도 노트는 목록 · 검색 · 그래프에서 사라진 채이고, 다음 부팅의 sweepDeleted() 가 확정한다.
     const pending = new Map();
-    async function hardRemove(id) {
-      pending.delete(id);
+    const hidden = (d) => !d || pending.has(d.id) || !!d.deletedAt;
+    // 한 노트의 표시 · 하드 삭제는 순서대로 — 되돌리기의 표시 지우기가 이미 지운 노트를 되살리지 않게
+    const ops = new Map();
+    function serial(id, fn) {
+      const run = (ops.get(id) || Promise.resolve()).then(fn, fn);
+      const tail = run.then(() => {}, () => {});
+      ops.set(id, tail); tail.then(() => { if (ops.get(id) === tail) ops.delete(id); });
+      return run;
+    }
+    async function mark(id, on) {
+      const d = await DB.get("notes", id); if (!d) return null;
+      if (on) d.deletedAt = Date.now(); else delete d.deletedAt;
+      d.updatedAt = Date.now();
+      await DB.put("notes", d);
+      return d;
+    }
+    async function doHardRemove(id) {
       for (const l of LINKS.userLinks({ from: id })) { try { await LINKS.removeUser(l.id); } catch (e) {} }
       await DB.del("notes", id);
       return true;
     }
+    function hardRemove(id) { const p = pending.get(id); if (p) clearTimeout(p.timer); pending.delete(id); return serial(id, () => doHardRemove(id)); }
     function remove(id, o) {
       if (o && o.now) return { id, undo: () => false, done: hardRemove(id) };
       if (pending.has(id)) clearTimeout(pending.get(id).timer);
       let fin;
       const done = new Promise(res => { fin = res; });
+      serial(id, () => mark(id, true));
       const timer = setTimeout(() => { hardRemove(id).then(() => fin(true), () => fin(false)); }, 5000);
       pending.set(id, { timer, fin });
-      return { id, done, undo: () => { const p = pending.get(id); if (!p) return false; clearTimeout(p.timer); pending.delete(id); p.fin(false); return true; } };
+      return { id, done, undo: () => { const p = pending.get(id); if (!p) return false; clearTimeout(p.timer); pending.delete(id); serial(id, () => mark(id, false)); p.fin(false); return true; } };
+    }
+    // sweepDeleted() → n. 부팅 때 한 번: 지난 세션에서 확정되지 못한 삭제를 끝낸다.
+    async function sweepDeleted() {
+      let n = 0;
+      for (const d of await DB.all("notes")) { if (d && d.deletedAt && !pending.has(d.id)) { try { await hardRemove(d.id); n++; } catch (e) {} } }
+      return n;
     }
     const isPending = (id) => pending.has(id);
     const pendingIds = () => [...pending.keys()];
@@ -226,27 +276,27 @@
     }
     // ---- 데일리 · 빠른 메모 ----
     async function daily(date, teacherId) {
-      const list = (await DB.where("notes", "date", date)).filter(d => d.kind === "daily" && !pending.has(d.id) && (teacherId === undefined || teacherId === "*" ? true : (d.teacherId || null) === (teacherId || null)));
+      const list = (await DB.where("notes", "date", date)).filter(d => d.kind === "daily" && !hidden(d) && (teacherId === undefined || teacherId === "*" ? true : (d.teacherId || null) === (teacherId || null)));
       list.sort((a, b) => (a.createdAt || 0) - (b.createdAt || 0));
       return list[0] || null;
     }
     async function ensureDaily(date, teacherId) { return (await daily(date, teacherId)) || create({ kind: "daily", date, teacherId, title: "", body: "", source: { kind: "editor" } }); }
     async function weekly(date, teacherId) {
-      const list = (await DB.where("notes", "date", date)).filter(d => d.kind === "weekly" && !pending.has(d.id) && (teacherId === undefined || teacherId === "*" ? true : (d.teacherId || null) === (teacherId || null)));
+      const list = (await DB.where("notes", "date", date)).filter(d => d.kind === "weekly" && !hidden(d) && (teacherId === undefined || teacherId === "*" ? true : (d.teacherId || null) === (teacherId || null)));
       return list[0] || null;
     }
     // quick(text, teacherId, author) → doc (제목 = 첫 줄)
-    function quick(text, teacherId, author) {
+    function quick(text, teacherId, author, linkHints) {
       const body = String(text == null ? "" : text).replace(/\r/g, "").trim();
       const first = excerpt(body.split("\n")[0], 60);
-      return create({ kind: "note", title: first, body, teacherId, author, source: { kind: "quick" } });
+      return create({ kind: "note", title: first, body, teacherId, author, linkHints, source: { kind: "quick" } });
     }
     // list({ teacherId, kind, limit }) → doc[] (수정 역순, 삭제 대기 제외)
     async function list(o) {
       o = o || {};
       let docs = o.kind ? await DB.where("notes", "kind", o.kind) : await DB.all("notes");
       if (o.teacherId && o.teacherId !== "*") docs = docs.filter(d => d.teacherId === o.teacherId);
-      docs = docs.filter(d => !pending.has(d.id));
+      docs = docs.filter(d => !hidden(d));
       docs.sort((a, b) => (b.updatedAt || 0) - (a.updatedAt || 0));
       return o.limit ? docs.slice(0, o.limit) : docs;
     }
@@ -264,6 +314,9 @@
         for (const raw of names || []) {
           const name = normTag(String(raw || "").replace(/^#/, "")); if (!name) continue;
           const id = "tag:" + name; if (tagCache.has(id)) continue;
+          // 캐시가 비어 있을 수 있다(부팅 직후 · 작업공간 전환). 저장소를 한 번 더 보고, 있으면 색 · 설명 · 고정을 덮지 않는다.
+          let old = null; try { old = await DB.get("tags", id); } catch (e) {}
+          if (old) { tagCache.set(id, old); continue; }
           const now = Date.now();
           const doc = { id, teacherId: null, name, color: "", desc: "", pinned: false, author: authorOr(author), createdAt: now, updatedAt: now };
           tagCache.set(id, doc); await DB.put("tags", doc); n++;
@@ -280,7 +333,14 @@
       },
       // docsWith(name, teacherId) → 색인 문서 id 들 (그 태그가 붙은 노트)
       docsWith(name, teacherId) { const n = normTag(String(name || "").replace(/^#/, "")); const out = []; INDEX.docs().forEach(d => { if (inScope(d, teacherId) && (d.userTags || []).includes(n)) out.push(d.id); }); return out; },
-      async update(name, patch) { const id = tagId(name); const cur = tagCache.get(id) || { id, teacherId: null, name: normTag(String(name || "").replace(/^#/, "")), color: "", desc: "", pinned: false, author: author(), createdAt: Date.now() }; const doc = Object.assign({}, cur, patch || {}, { id, name: cur.name, updatedAt: Date.now() }); tagCache.set(id, doc); await DB.put("tags", doc); return doc; },
+      async update(name, patch) {
+        const id = tagId(name);
+        let cur = tagCache.get(id);
+        if (!cur) { try { cur = await DB.get("tags", id); } catch (e) {} }           // 캐시가 비어 있어도 있던 색 · 설명을 지우지 않는다
+        cur = cur || { id, teacherId: null, name: normTag(String(name || "").replace(/^#/, "")), color: "", desc: "", pinned: false, author: author(), createdAt: Date.now() };
+        const doc = Object.assign({}, cur, patch || {}, { id, name: cur.name, updatedAt: Date.now() });
+        tagCache.set(id, doc); await DB.put("tags", doc); return doc;
+      },
       // rename(a, b) → 바뀐 노트 수. 본문의 #a 를 #b 로 바꾼다(태그의 진실은 본문).
       async rename(a, b) {
         const from = normTag(String(a || "").replace(/^#/, "")), to = normTag(String(b || "").replace(/^#/, "")); if (!from || !to || from === to) return 0;
@@ -322,5 +382,5 @@
     }
     if (typeof DB !== "undefined" && DB && typeof DB.onWrite === "function") DB.onWrite(onDbWrite);
     return { KIND, KINDS, KIND_LABEL, kindOf, storeOf, prefixOf, anchorKey, parseAnchorKey, kindLabel, author, setAuthor, parse, render, excerpt, titleOf, derivedTags, normTag,
-             memo, saveMemo, create, update, remove, pending: isPending, pendingIds, orphan, migrateLegacy, detachTeacher, daily, ensureDaily, weekly, quick, list, tags: tagsApi };
+             memo, saveMemo, create, update, remove, relink, sweepDeleted, pending: isPending, pendingIds, hidden, orphan, migrateLegacy, detachTeacher, daily, ensureDaily, weekly, quick, list, tags: tagsApi };
   })();

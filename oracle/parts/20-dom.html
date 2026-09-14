@@ -48,7 +48,7 @@
     <a class="nav-item" data-nav-kind="mocks" href="#/all/mocks"><span class="lb">모의고사</span><span class="cnt"></span></a>
     <a class="nav-item" data-nav-kind="notes" href="#/all/notes"><span class="lb">메모</span><span class="cnt"></span></a>
   </div>
-  <div class="nav-sec" id="navTags"><h5>Tags <a href="#/all/notes?tags=1">더보기</a></h5></div>
+  <div class="nav-sec" id="navTags"><h5>Tags <a href="#" id="navTagsMore">더보기</a></h5></div>
   <div class="nav-sec" id="navRecent"><h5>Recent</h5></div>
   <div id="navGrowth" title="타임라인"><div class="g"></div><canvas id="navGrowthCanvas" width="224" height="28" aria-hidden="true"></canvas></div>
 </nav>
@@ -78,7 +78,7 @@
     <div id="nextUp"></div>
     <div id="onboard" hidden>
       <div class="st" id="ob1"><b data-n="1">엔진 연결</b><p>API 키를 저장하면 시험지를 읽고 학습해요</p><button type="button" class="pri" id="ob1Btn">키 넣기</button></div>
-      <div class="st" id="ob2"><b data-n="2">선생님</b><p>흑석고 윤은영(영어A) · 전정이(영어B) 가 준비돼 있어요</p><button type="button" class="pri" id="ob2Btn">＋ 선생님 추가</button></div>
+      <div class="st" id="ob2"><b data-n="2">선생님</b><p>흑석고 윤은영(영어A) · 전정이(영어B)가 준비돼 있어요</p><button type="button" class="pri" id="ob2Btn">＋ 선생님 추가</button></div>
       <div class="st" id="ob3"><b data-n="3">파일 넣기</b><p>기출 시험지 · 시험범위 원문 · 선생님 프린트를 <b style="display:inline">인박스에</b> 놓으세요</p><button type="button" class="pri" id="ob3Btn">인박스 열기</button><span class="small" id="ob3Note">선생님을 만들면 열려요</span></div>
     </div>
     <div id="homeRecent"></div>
@@ -168,7 +168,7 @@
     <div id="askHead"><div class="kicker">ASK</div><span class="small">범위</span><select id="askScope"></select><span class="chip" id="askCtx" hidden><span class="t"></span><button type="button" class="link" id="askCtxClear">×</button></span></div>
     <div id="askLog" aria-live="polite"></div>
     <div id="askCites"></div>
-    <div class="empty" id="askEmpty" hidden>두뇌에 아직 이 내용이 없어요 — 검색어를 바꾸거나 자료를 넣어 주세요</div>
+    <div class="empty" id="askEmpty" hidden>두뇌에 아직 이 내용이 없어요 — 검색어를 바꾸거나 자료를 넣어 주세요<div class="actions" style="justify-content:center;margin-top:10px"><button type="button" id="askEmptyFiles">자료 넣기</button></div></div>
     <div id="askStatus"></div>
     <div id="askCost"></div>
     <div id="askForm"><textarea id="askInput" placeholder="질문… (⏎ 전송 · ⇧⏎ 줄바꿈)"></textarea><button type="button" class="pri" id="askGo">묻기</button><button type="button" id="askStop" hidden>중단</button></div>

@@ -261,12 +261,13 @@
         const rig = teachers.get(id); if (!rig) return;
         let target, sc;
         if (selectedId && id === selectedId) { target = new THREE.Vector3(0, 0, 0); sc = 1; }
-        else if (selectedId) { const k = others.indexOf(id), side = k % 2 === 0 ? -1 : 1, row = Math.floor(k / 2); target = new THREE.Vector3(side * (5.2 + row * 1.6), 0, -2.6 - row * 1.2); sc = 0.55; }
+        // 옆 선생님은 고른 선생님의 그래프 바깥에 둔다 — 그래프 반지름(5.2) × group.scale(0.9) + 이름판 반폭 + 여유
+        else if (selectedId) { const k = others.indexOf(id), side = k % 2 === 0 ? -1 : 1, row = Math.floor(k / 2); target = new THREE.Vector3(side * (6.6 + row * 1.7), 0, -3.4 - row * 1.2); sc = 0.5; }
         else { const n = order.length, k = order.indexOf(id); const spread = Math.min(3.0, 0.9 + n * 0.4), a = n === 1 ? 0 : (-spread / 2 + (k / (n - 1)) * spread), R = n <= 1 ? 0 : 5.2 + n * 0.4; target = new THREE.Vector3(Math.sin(a) * R, 0, -Math.cos(a) * R + (n <= 1 ? 0 : R * 0.72)); sc = n <= 1 ? 1 : 0.8; }
         const from = rig.group.position.clone(), s0 = rig.scale;
         rig.targetScale = sc;
         tween(1.1, (e) => { rig.group.position.lerpVectors(from, target, e); rig.scale = s0 + (sc - s0) * e; rig.group.scale.setScalar(rig.scale); }, ease.inout, null, "pos:" + id);
-        const d0 = rig.dim, d1 = selectedId && id !== selectedId ? 0.55 : 0;
+        const d0 = rig.dim, d1 = selectedId && id !== selectedId ? 0.7 : 0;
         tween(0.8, (e) => { rig.dim = d0 + (d1 - d0) * e; rig.layers.forEach(m => { m.material.uniforms.uAlpha.value = 1 - rig.dim * 0.7; }); }, ease.out, null, "dim:" + id);
       });
     }
@@ -276,12 +277,22 @@
       const apply = (v) => { rig.level = v; rig.shards.count = Math.min(120, Math.round(4 + v * 0.8)); rig.hg.setDrawRange(0, Math.min(1400, Math.round(v * 9))); rig.uni.uOn.value = Math.min(1, 0.3 + v / 60); rig.uni.uEnergy.value = Math.min(1, v / 120); };
       if (silent) apply(to); else tween(1.6, (e) => apply(from + (to - from) * e), ease.out, null, "lvl:" + id);
     }
+    // 이름표 — 글자 폭에 맞춰 캔버스를 넓히고 스프라이트도 같은 비율로 늘린다.
+    // 폭을 512 로 고정하면 한글 44px 은 11자쯤에서 끊기고, textAlign=center 라 양끝이 동시에 잘려 이름을 읽을 수 없다.
     function makeLabel(text, sub, colorHex) {
-      const cv = document.createElement("canvas"); cv.width = 512; cv.height = 160; const ctx = cv.getContext("2d");
+      const PAD = 28, H0 = 160, MAXW = 1536;
+      const cv = document.createElement("canvas"); const ctx = cv.getContext("2d");
+      ctx.font = "600 44px " + FONT_KO; const w1 = ctx.measureText(String(text || "")).width;
+      ctx.font = "500 26px " + FONT_EN; const w2 = ctx.measureText(String(sub || "")).width;
+      const W0 = Math.max(512, Math.min(MAXW, Math.ceil(Math.max(w1, w2)) + PAD * 2));
+      cv.width = W0; cv.height = H0;
+      const cx = W0 / 2, inner = W0 - PAD * 2;
       ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.shadowColor = colorHex; ctx.shadowBlur = 16; ctx.fillStyle = "#eaf6ff";
-      ctx.font = "600 44px " + FONT_KO; ctx.fillText(text, 256, 56); ctx.shadowBlur = 0; ctx.fillStyle = colorHex; ctx.font = "500 26px " + FONT_EN; ctx.fillText(sub || "", 256, 112);
+      ctx.font = "600 44px " + FONT_KO; ctx.fillText(String(text || ""), cx, 56, inner);
+      ctx.shadowBlur = 0; ctx.fillStyle = colorHex; ctx.font = "500 26px " + FONT_EN; ctx.fillText(String(sub || ""), cx, 112, inner);
       const tex = new THREE.CanvasTexture(cv); tex.minFilter = THREE.LinearFilter; tex.generateMipmaps = false; if (!post) tex.encoding = THREE.sRGBEncoding;
-      const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false, depthTest: false, toneMapped: false })); sp.scale.set(1.05, 0.33, 1); sp.renderOrder = 10; return sp;
+      const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false, depthTest: false, toneMapped: false }));
+      sp.scale.set(1.05 * (W0 / 512), 0.33, 1); sp.renderOrder = 10; return sp;
     }
     function clearGroup(g, keepGeos) { while (g.children.length) { const c = g.children.pop(); if (c.material) { if (c.material.map) c.material.map.dispose(); c.material.dispose(); } if (c.geometry && !keepGeos.includes(c.geometry)) c.geometry.dispose(); } }
     // 프로파일 → 성좌 (다이얼 둘레의 노드·실)
@@ -544,8 +555,8 @@
       if (opts.onDegrade) opts.onDegrade();
     }
     function frame(now) {
+      if (!running || !visible) { raf = 0; last = now; return; }      // 멈췄으면 다음 프레임을 예약하지 않는다 (resume · visibilitychange 가 다시 건다)
       raf = requestAnimationFrame(frame);
-      if (!running || !visible) { last = now; return; }
       const rawDt = (now - last) / 1000; let dt = Math.min(0.05, rawDt); last = now;
       ema = ema * 0.9 + Math.min(200, rawDt * 1000) * 0.1;
       if (work > 26) { if (++slowFrames > 120) degrade(); } else slowFrames = 0;      // 그리는 데 실제로 걸린 시간으로만 판단한다 (30Hz 화면에서 억울하게 강등되지 않게)
@@ -582,15 +593,40 @@
     let rzT = 0;
     function resize() { W = canvas.clientWidth || window.innerWidth; H = canvas.clientHeight || window.innerHeight; camera.aspect = W / H; camera.updateProjectionMatrix(); renderer.setSize(W, H, false); clearTimeout(rzT); rzT = setTimeout(() => { if (post) post.setSize(W, H); }, 180); }
     window.addEventListener("resize", resize);
-    document.addEventListener("visibilitychange", () => { visible = !document.hidden; last = performance.now(); });
-    canvas.addEventListener("webglcontextlost", (e) => { e.preventDefault(); running = false; }, false);
-    canvas.addEventListener("webglcontextrestored", () => { resize(); running = true; }, false);
+    const kick = () => { if (!raf && running && visible) { last = performance.now(); raf = requestAnimationFrame(frame); } };
+    const onVis = () => { visible = !document.hidden; last = performance.now(); kick(); };
+    const onLost = (e) => { e.preventDefault(); running = false; if (raf) { cancelAnimationFrame(raf); raf = 0; } };
+    const onRestored = () => { resize(); running = true; kick(); };
+    document.addEventListener("visibilitychange", onVis);
+    canvas.addEventListener("webglcontextlost", onLost, false);
+    canvas.addEventListener("webglcontextrestored", onRestored, false);
     return { ok: true, addTeacher, removeTeacher, updateTeacher, setProfile, setLevel, fx, focus, pick, anchor, resize, setBackdrop, setBackdropDim, degrade, fps: () => Math.round(1000 / Math.max(1, ema)),
       // 그래프 (§5.7)
       setGraph, clearGraph, graph, pickNode: (x, y) => pickNode(x, y, false), focusNode, setNodeFilter, nodeScreen, hoverNode,
       onNode(h) { Object.assign(nodeHandlers, h || {}); },     // { onSelect(node), onHover(node|null), onOpen(node) } — 노드 클릭 · 호버 · 더블클릭 (선생님 클릭은 opts.onSelect 그대로)
       get running() { return running; },
       debug() { return { cam: camera.position.toArray().map(v => +v.toFixed(2)), rigs: [...teachers.values()].map(r => r.group.position.toArray().map(v => +v.toFixed(2))), t: +clock.t.toFixed(1), tweens: tweens.length, selected: selectedId, graph: { nodes: graphSt.nodes.length, edges: graphSt.edges.length, rendered: !!graphSt.group, focus: graphSt.focus, hover: graphSt.hover, filter: graphSt.filter ? [...graphSt.filter] : null } }; },
-      teachers: () => [...teachers.keys()], pause() { running = false; }, resume() { running = true; last = performance.now(); },
-      dispose() { cancelAnimationFrame(raf); clearGraph(); graphSt.links.splice(0).forEach(l => { scene.remove(l); l.geometry.dispose(); l.material.dispose(); }); window.removeEventListener("resize", resize); window.removeEventListener("pointermove", onMove); window.removeEventListener("pointerup", onUp); canvas.removeEventListener("dblclick", onDbl); renderer.dispose(); if (post) post.dispose(); } };
+      teachers: () => [...teachers.keys()], pause() { running = false; if (raf) { cancelAnimationFrame(raf); raf = 0; } }, resume() { running = true; last = performance.now(); kick(); },
+      // 무대 한 벌을 온전히 놓아준다 — 리스너 · 씬 자원 · 타이머까지. 남기면 2D↔3D 를 누를 때마다 무대가 하나씩 샌다.
+      dispose() {
+        running = false; if (raf) { cancelAnimationFrame(raf); raf = 0; }
+        clearTimeout(rzT);
+        clearGraph();
+        graphSt.links.splice(0).forEach(l => { scene.remove(l); l.geometry.dispose(); l.material.dispose(); });
+        window.removeEventListener("resize", resize); window.removeEventListener("pointermove", onMove); window.removeEventListener("pointerup", onUp);
+        canvas.removeEventListener("pointerdown", onDown); canvas.removeEventListener("dblclick", onDbl); canvas.removeEventListener("wheel", onWheel);
+        canvas.removeEventListener("webglcontextlost", onLost); canvas.removeEventListener("webglcontextrestored", onRestored);
+        document.removeEventListener("visibilitychange", onVis);
+        teachers.clear(); order.splice(0);
+        const seen = new Set();
+        scene.traverse(o => {
+          if (o.isInstancedMesh && o.dispose) { try { o.dispose(); } catch (e) {} }
+          if (o.geometry && !seen.has(o.geometry)) { seen.add(o.geometry); try { o.geometry.dispose(); } catch (e) {} }
+          const ms = o.material ? (Array.isArray(o.material) ? o.material : [o.material]) : [];
+          ms.forEach(m => { if (!m || seen.has(m)) return; seen.add(m); if (m.map) { try { m.map.dispose(); } catch (e) {} } if (m.uniforms) Object.keys(m.uniforms).forEach(k => { const v = m.uniforms[k] && m.uniforms[k].value; if (v && v.isTexture) { try { v.dispose(); } catch (e) {} } }); try { m.dispose(); } catch (e) {} });
+        });
+        scene.clear ? scene.clear() : (scene.children.length = 0);
+        [texTicks, texArcs, texInner].forEach(t => { if (t && t.dispose) { try { t.dispose(); } catch (e) {} } });
+        renderer.dispose(); if (post) post.dispose();
+      } };
   }

@@ -8,7 +8,7 @@
   --bg: #0b1020;  --bg2: #0e1526;  --surface: #131c31;  --surface2: #18233b;
   --line: rgba(148,178,220,.14);  --line2: rgba(148,178,220,.32);
   /* 글 */
-  --ink: #e6edf7;  --dim: #a9b8cc;  --faint: #6f8199;   /* --faint on --bg ≥ 4.6:1 */
+  --ink: #e6edf7;  --dim: #a9b8cc;  --faint: #8ea0b8;   /* --faint 는 --bg 7.1:1 · 카드(--surface) 6.4:1 · .ncard.new 겹침 4.5:1 — 어디에 놓아도 AA */
   /* 강조 — 홀로 청록은 링크 · 포커스 · 활동에만 */
   --holo: #5fc8ff;  --holo2: #9fe3ff;  --holo-soft: rgba(95,200,255,.14);
   --gold: #f5c518;  --ok: #46f0c5;  --bad: #ff6b7a;  --warn: #ffb454;
@@ -341,9 +341,10 @@ body.asideClosed #aside, body.brainView #aside, body.brainFull #aside { display:
 #aside section { }
 #aside h4 { margin: 0 0 6px; font-family: 'Orbitron', sans-serif; font-size: 9.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--faint); font-weight: 500; }
 #aside .kv { font-size: 12px; }
-#asideGraph { border: 1px solid var(--line); border-radius: var(--r-card); background: var(--bg); position: relative; }
+#asideGraph { border: 1px solid var(--line); border-radius: var(--r-card); background: var(--bg); position: relative; padding-bottom: 30px; }
 #asideGraphCanvas { width: 100%; height: 160px; display: block; }
-#asideGraphOpen { position: absolute; right: 6px; bottom: 6px; min-height: 24px; padding: 2px 8px; font-size: 11px; }
+/* 캔버스 밖 아래 줄에 둔다 — 위에 겹쳐 두면 오른쪽 아래 이름표를 덮는다 */
+#asideGraphOpen { position: absolute; right: 6px; bottom: 4px; min-height: 24px; padding: 2px 8px; font-size: 11px; }
 #asideAsk .row { flex-wrap: nowrap; } #asideAskInput { flex: 1; }
 #asideQueue .q { margin-bottom: 4px; }
 #asidePeek { border: 1px solid var(--line2); border-radius: var(--r-card); background: var(--surface); box-shadow: var(--shadow-pop); padding: 10px 12px; }
@@ -420,7 +421,9 @@ pre.prompt { white-space: pre-wrap; font-family: var(--fk); font-size: 11.5px; b
   linear-gradient(180deg, #02060f 0%, #050d20 55%, #030812 100%); }
 body.nogl #fx, body.flat #fx { display: none; }
 body.nogl #brainFlat, body.flat #brainFlat { display: block; }
-#flat { position: absolute; inset: 0; overflow: auto; padding: 56px 24px 24px; display: none; z-index: 2; pointer-events: none; }
+/* 2D 는 위가 그래프, 아래가 선생님 카드 — 겹치면 노드 · 이름표가 반투명 카드를 뚫고 보인다 */
+body.nogl #brainFlat, body.flat #brainFlat { height: 52%; }
+#flat { position: absolute; left: 0; right: 0; top: 52%; bottom: 0; overflow: auto; padding: 14px 24px 24px; display: none; z-index: 2; pointer-events: none; background: linear-gradient(180deg, rgba(3,8,18,0), rgba(3,8,18,.86) 22px, rgba(3,8,18,.94)); }
 body.nogl #flat, body.flat #flat { display: block; }
 #flatGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; max-width: 1100px; margin: 0 auto; pointer-events: auto; }
 #chips { position: absolute; inset: 0; z-index: 5; pointer-events: none; overflow: hidden; }
@@ -440,7 +443,8 @@ body.nogl #flat, body.flat #flat { display: block; }
 #brainHud .pb { padding: 10px 14px 12px; }
 #brainHudTitle { font-family: var(--fk); font-size: 14px; font-weight: 500; color: var(--ink); margin: 0 0 4px; text-transform: none; letter-spacing: 0; }
 #brainHudSub { font-size: 12px; color: var(--dim); margin-bottom: 8px; }
-#brainEmpty { position: absolute; left: 50%; bottom: 20%; transform: translateX(-50%); z-index: 6; color: var(--dim); font-size: 13px; pointer-events: none; text-align: center; }
+#brainEmpty { position: absolute; left: 50%; bottom: 20%; transform: translateX(-50%); z-index: 6; color: var(--dim); font-size: 13px; pointer-events: none; text-align: center; max-width: min(420px, calc(100% - 32px)); }
+body.nogl #brainEmpty, body.flat #brainEmpty { bottom: auto; top: 20%; }      /* 2D 는 아래가 카드 자리라 그래프 쪽에 띄운다 */
 .hud { position: relative; background: var(--glass); backdrop-filter: blur(16px) saturate(140%); -webkit-backdrop-filter: blur(16px) saturate(140%); border: 1px solid rgba(95,200,255,.22); border-radius: var(--r-hud); box-shadow: 0 10px 40px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.02) inset, 0 0 32px rgba(95,200,255,.08); }
 .hud::before, .hud::after { content: ""; position: absolute; width: 14px; height: 14px; border-color: var(--line-hot); border-style: solid; pointer-events: none; }
 .hud::before { left: -1px; top: -1px; border-width: 2px 0 0 2px; border-radius: var(--r-hud) 0 0 0; }
@@ -477,7 +481,7 @@ body.brainFull #main { grid-column: 1 / -1; grid-row: 1 / -1; }
 #paper.on { display: flex; }
 #paperBar { display: flex; gap: 8px; align-items: center; padding: 10px 16px; background: var(--void2); border-bottom: 1px solid var(--line); font-family: var(--fk); }
 #paperScroll { flex: 1; overflow: auto; padding: 24px; }
-#paperPage { width: 210mm; min-height: 297mm; margin: 0 auto; background: #fff; color: #111; padding: 12mm 10mm; font-family: "함초롬바탕", "Noto Serif KR", "Noto Sans KR", serif; font-size: 10.5pt; line-height: 1.5; box-shadow: 0 10px 40px rgba(0,0,0,.5); }
+#paperPage { width: 210mm; min-height: 297mm; margin: 0 auto; background: #fff; color: #111; padding: 12mm 10mm; font-family: "함초롬바탕", "Noto Serif KR", "Noto Sans KR", serif; font-size: 10.5pt; line-height: 1.5; box-shadow: 0 10px 40px rgba(0,0,0,.5); word-break: keep-all; line-break: strict; overflow-wrap: break-word; }
 #paperPage .phead { width: 100%; border-collapse: collapse; margin-bottom: 8mm; } #paperPage .phead td { border: 1px solid #000; padding: 4px 8px; font-size: 10pt; } #paperPage .phead .pt { text-align: center; } #paperPage .phead .pt b { display: block; font-size: 15pt; } #paperPage .phead .pk { font-weight: 700; width: 60px; text-align: center; }
 #paperPage .pbody { column-count: 2; column-gap: 8mm; column-rule: 1px solid #999; }
 #paperPage .pq { break-inside: avoid; margin-bottom: 8mm; } #paperPage .pstem { margin: 0 0 3px; } #paperPage .ppass { border: 1px solid #000; padding: 6px 8px; margin: 3px 0 5px; text-align: justify; } #paperPage .ppass p { margin: 0 0 4px; }

@@ -94,7 +94,11 @@
     // 이동. path 는 "#/…" 문자열이나 라우트 객체. { replace: true } 면 히스토리를 남기지 않는다.
     function go(path, o) {
       const h = typeof path === "string" ? norm(path) : href(path);
-      const same = norm(location.hash || "") === h;
+      // 같은 주소인지는 디코드해서 본다 — 브라우저는 해시의 한글을 늘 퍼센트 인코딩해 돌려주는데
+      // 우리가 만든 주소는 날것이라, 그대로 비교하면 한글 주소에서 same 이 절대 참이 되지 않는다.
+      // 그러면 location.hash 대입이 무변화라 hashchange 도 안 나고 handle(true) 도 안 돌아 아무 일이 없다.
+      const dec = (x) => { try { return decodeURI(String(x || "")); } catch (e) { return String(x || ""); } };
+      const same = dec(norm(location.hash || "")) === dec(h);
       if (o && o.replace) {
         try { history.replaceState(history.state, "", h); } catch (e) { location.replace(h); }
         handle(true);

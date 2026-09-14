@@ -60,7 +60,7 @@ ORUN ORACLE 은 "흑석고 영어 선생님 한 분의 머릿속을 내 쪽에 �
 | `#/inbox` | `#vInbox` | 인박스 — 드롭 · 고르기 · 사진 찍기 · 빠른 메모 · 큐 |
 | `#/n/<id>` | `#vNote` (`data-kind`) | 노트 페이지. id 접두로 종류를 안다 (§4.1) |
 | `#/tag/<이름>` | `#vTag` | 태그 페이지 |
-| `#/all/<kind>[?…]` | `#vLibrary` (`data-kind`) | 서재 목록. kind = `exams` `questions` `passages` `sources` `profiles` `predictions` `mocks` `notes`. 쿼리: `q` `type` `tag` `hit=1` `year` `kind=프린트` `matched=0` `sort` `dir` |
+| `#/all/<kind>[?…]` | `#vLibrary` (`data-kind`) | 서재 목록. kind = `exams` `questions` `passages` `sources` `profiles` `predictions` `mocks` `notes`. 쿼리: `q` `type` `tag` `hit=1` `year` `kind=프린트` `matched=0` `ext=1` `exam=<e_id>` `passage=<p_id>` `diff=상\|중\|하` `genre=<장르>` `sort` `dir` |
 | `#/brain[?focus=<id>]` | `#vBrain` | 브레인(3D 그래프 · 2D 폴백) |
 | `#/timeline[?week=YYYY-MM-DD]` | `#vTimeline` | 타임라인 · 데일리 로그 · 주간 집계 |
 | `#/ask[?q=&ctx=<id>]` | `#vAsk` | 물어보기 |
@@ -184,7 +184,7 @@ ORUN ORACLE 은 "흑석고 영어 선생님 한 분의 머릿속을 내 쪽에 �
 | `source` (범위) | `s_` | 종류 `#dKind` 세그 · 지문 수 · 글자 수 · 범위 완비 `#dComplete` | 지문 목록 `[data-pass]` · 원문 | `#dDelSrc` | 드로어 source |
 | `source` (프린트) | `s_` | 대상 시험 `#dTy #dTs #dTt` (+추정 배지) · 반영율 · 지문 · 포인트 수 | 시험 실질 반영율(전체 · 시험별) · 포인트 목록(★ = 시험에 나옴) · 지문 목록 · 원문 | `#dDelSrc` · `#dAddPrint` | 드로어 source(프린트) + handouts |
 | `profile` | `pf_` | 버전 스위처 `#profVer`(select, V1…Vn) · 레벨 · 신뢰도 · 근거(시험/문항/지문 수) · 모델 · 이유 | **이번 판에서 달라진 점(delta)** 맨 위 · 서술 + 키워드 칩 + 주의점 · 유형 분포 `.dist` · 습관 `.kv`(배점 · 난이도 · 어법 · 빈칸 · 지문 · 세트 · 발문) · AI 활용 추정 · 프린트 반영 · 근거 시험 `[data-exam]` | `#pfRelearn` 다시 학습 · `#pfCopy` 이 판을 텍스트로 복사 | `#pIntel` |
-| `prediction` | `pd_` | 대상 시험 · 프로파일 V · 신뢰도 · 모델 · 만든 날 | 범위 지도 `#rangeMap`(canvas) · 구성 `.kv` · 유력 지문 `.hot[data-pass]` (pUse 막대 · ★) · 어법 포인트 · 서술형 형식 · 새로 나올 것 · 청사진 텍스트 `details` | `#rCopy` 청사진 복사 · `#rPredict` 예측 갱신 · `#rMock` 적중 모의고사 · (`#rLearn` 은 프로파일 없을 때 teacher 노트에) | `#pData` |
+| `prediction` | `pd_` | 대상 시험 · 프로파일 V · 신뢰도 · 모델 · 만든 날 | 범위 지도 `#rangeMap`(canvas) · 구성 `.kv` · 유력 지문 `.hot[data-pass]` (pUse 막대 · ★) · 어법 포인트 · 서술형 형식 · 새로 나올 것 · 청사진 텍스트 `details` | `#rCopy` 청사진 복사 · `#rPredict` 예측 갱신 · `#rMock` 적중 모의고사 · (프로파일이 없을 때의 학습은 teacher 노트의 `#btnLearn`) | `#pData` |
 | `mock` | `m_` | 대상 · 문항 수 · 배점 · 모델 · 예측 V · 만든 날 | 문항 요약 목록(번호 · 유형 · 배점 · 지문 `[data-pass]`) · 만들지 못한 문항 | `#openPaper` 시험지 열기(→ `#paper`) · `#mockDocx` 워드 · `#mockDel` 삭제 | 드로어 mocks |
 | `note` (자유 · daily · weekly) | `n_` | 만든 날 · 선생님 · 종류 · 날짜(daily) · 서명 | 본문 = 메모 편집기가 곧 본문 (`#noteMemo` 가 본문 자리에 온다, `#noteBody` 는 숨김) | `#nPin` 고정 · `#nDel` 삭제(5초 취소) | 신규 |
 | `note` (ask) | `n_` | 물은 시각 · 범위 · 모델 · 근거 수 | 질문 · 답(인용 칩 `.cite[data-id]`) · 근거 목록 `[data-cite]` · 후속 질문 | `#nAskAgain` 다시 묻기(→ `#/ask?q=`) · `#nDel` | 신규 |
@@ -213,7 +213,7 @@ ORUN ORACLE 은 "흑석고 영어 선생님 한 분의 머릿속을 내 쪽에 �
 | 선생님 스위처 | `#navTeacher` (버튼: 색 점 · 이름 · 과목 · V) → `#navTeacherMenu` (`[data-teacher]` 행들 + `[data-teacher="*"]` "모든 선생님" + `#btnNew` "＋ 선생님") | 클릭 = `APP.select(id)`. `← →` 순환 유지 |
 | 주 메뉴 | `#navMain` > `a[data-nav="today|inbox|library|brain|timeline|ask"]`, 인박스 배지 `#navInboxCount` | 활성 항목 `.on` |
 | 서재 | `#navLib` > `a[data-nav-kind="exams|questions|passages|sources|profiles|predictions|mocks|notes"] > .cnt` | `#/all/<kind>` |
-| 태그 | `#navTags` > `a[data-tag]` (상위 8 + "더보기" → `#/all/notes?tags=1`) | `#/tag/<이름>` |
+| 태그 | `#navTags` > `a[data-tag]` (상위 8 + "더보기" `#navTagsMore` → ⌘K 의 `#` 모드 = 태그 전체) | `#/tag/<이름>` |
 | 최근 | `#navRecent` > `a[data-id]` (최근 연 노트 8, localStorage) | |
 | 성장 | `#navGrowth` (문항 · 지문 · V · 메모 수, 8주 스파크라인 `#navGrowthCanvas`) | 클릭 → 타임라인. 파일 완료 시 400ms 펄스 `.pulse` |
 | 접기 | `#navToggle` | `[` |
@@ -230,7 +230,7 @@ ORUN ORACLE 은 "흑석고 영어 선생님 한 분의 머릿속을 내 쪽에 �
 ┌──────────────────────────────────────────────────────────────┐
 │ TODAY · 2026-09-14 · 윤은영 영어A                                │ #homeHead
 │ ┌ 다음 시험 ───────────────┐ ┌ 프로파일 ──────────────────────┐ │ #homeNext · #homeLevel
-│ │ 2026 1학기 중간 · D-31    │ │ V3 · 학습 Lv.2 · 신뢰도 0.41    │ │
+│ │ 2026 1학기 중간 · D-31    │ │ V3 · 학습 Lv.2 · 신뢰도 41%     │ │
 │ │ 예측 READY · 신뢰도 41%   │ │ 숙련까지 문항 19 · 시험 1        │ │
 │ │ [청사진] [모의고사]        │ │ [프로파일 보기]                  │ │
 │ └──────────────────────────┘ └────────────────────────────────┘ │
@@ -312,6 +312,7 @@ ORUN ORACLE 은 "흑석고 영어 선생님 한 분의 머릿속을 내 쪽에 �
 | notes (수정 역순) | 제목 · 종류(자유/daily/weekly/ask/anchor) · 붙은 곳 · 태그 · 서명 · 수정일 | — |
 
 필터 칩: `type=<유형>` `tag=<이름>` `hit=1` `matched=0` `year>=<n>` `kind=프린트|교과서|…` `ext=1`(외부지문). 조합은 주소 쿼리로만 산다(저장된 뷰는 §10).
+노트에서 오는 좁히기 — `exam=<e_id>`(시험 노트 [문항 목록으로]) · `passage=<p_id>`(문항 노트 `#qSiblings`) · `diff=상|중|하`(파생 태그 #난이도…) · `genre=<장르>`(지문). 칩은 없고 `#libCount` 옆에 무엇으로 좁혔는지 적으며 `#libFilterClear` 가 함께 지운다.
 
 ### 2.12 브레인 (`#vBrain`)
 
@@ -346,7 +347,7 @@ ORUN ORACLE 은 "흑석고 영어 선생님 한 분의 머릿속을 내 쪽에 �
 │  넣은 것 5 · 문항 +28 · 지문 +12 · 프로파일 V1→V3 · 예측 2 · 반영율 43%→57% · 메모 4│
 │ 필터 [전체][캡처][학습][예측][출제][수정][메모][질문][오류]   (#tlFilter [data-f])   │
 │ ─ 9/14 (일) ─────────────────────────────── (.tlDay[data-day="2026-09-14"])       │
-│  14:02 LEARN    프로파일 V3 · 신뢰도 0.21 → 0.38      → [[프로파일 V3]]  (.ev[data-ev][data-ref]) │
+│  14:02 LEARN    프로파일 V3 · 신뢰도 21% → 38%        → [[프로파일 V3]]  (.ev[data-ev][data-ref]) │
 │  13:58 INGEST   2025 2학기 기말 · 문항 7             → [[시험]]                       │
 │  13:40 NOTE     "[[Lesson 3]] 이번엔 분사구문" #어법  → [[메모]]                       │
 │  ✎ 오늘 로그 "겹침 정리"                            → [[daily 2026-09-14]]             │
@@ -370,7 +371,7 @@ ORUN ORACLE 은 "흑석고 영어 선생님 한 분의 머릿속을 내 쪽에 �
 │ │ 질문…  (#askInput, ⏎ 전송 · ⇧⏎ 줄바꿈)          [#askGo] [#askStop] │
 │ └──────────────────────────────────────────────────────────┘   │
 │ 지난 질문 (#askHistory > [data-id])                              │
-│ #askEmpty  "두뇌에 아직 이 내용이 없어요 — 검색어를 바꾸거나 자료를 넣어 주세요" │
+│ #askEmpty  "두뇌에 아직 이 내용이 없어요 — 검색어를 바꾸거나 자료를 넣어 주세요" [자료 넣기 #askEmptyFiles] │
 │ #citePop  (칩 호버 미리보기: 근거 첫 200자)                        │
 └────────────────────────────────────────────────────────────────┘
 ```
@@ -417,13 +418,13 @@ ORUN ORACLE 은 "흑석고 영어 선생님 한 분의 머릿속을 내 쪽에 �
           (teacher) #teacherStatus #btnEditTeacher #btnLearn #btnPredict #btnMock #btnFiles #btnExportOne #btnDelTeacher [data-exam] [data-src] [data-mock]
           (exam) [data-m] [data-seg] [data-q] #dDelExam   (question) #dMatchSel #qUnmatch #qSiblings #qBrain [data-pass]
           (passage) #pMock [data-q] [data-src]   (source) #dKind #dComplete #dTy #dTs #dTt #dDelSrc #dAddPrint [data-pass]
-          (profile) #profVer #pfRelearn #pfCopy [data-exam]   (prediction) #rangeMap #rCopy #rPredict #rMock #rLearn [data-pass]
+          (profile) #profVer #pfRelearn #pfCopy [data-exam]   (prediction) #rangeMap #rCopy #rPredict #rMock [data-pass]
           (mock) #openPaper #mockDocx #mockDel [data-pass]   (note) #nPin #nDel #nAskAgain
 태그      #vTag #tagTitle #tagColor #tagDescText #tagList #tagRename #tagDelete
 서재      #vLibrary #libHead #libCount #libSearch #libSort #libFilter [data-f] #libFilterPop #libFilterClear #libTable th[data-sort] tr[data-id] #libCards .card[data-id] #libEmpty #libEmptyAct
 브레인    #vBrain #fx #chips #brainFlat #flat #flatGrid .tcard[data-id] #flatNew #brainBar [data-node] #brain2d #brainFull #brainFocus #brainHud #brainHudTitle #brainHudSub #brainHudOpen #brainHudAsk #brainHudClose #brainEmpty #wordsTL #wordsTR #wordsBL #wordsBR #wordsSchool #bgVideo(body)
 타임라인  #vTimeline #tlPrev #tlNext #tlRange #tlWeek #tlRetro #tlFilter [data-f] #tlDays .tlDay[data-day] .ev[data-ev][data-ref] #tlToday #tlEmpty
-물어보기  #vAsk #askScope #askCtx #askCtxClear #askLog .msg .cite[data-id] #askCites [data-cite] .followup #askSave #askAgain #askStatus #askCost #askInput #askGo #askStop #askHistory #askEmpty #citePop
+물어보기  #vAsk #askScope #askCtx #askCtxClear #askLog .msg .cite[data-id] #askCites [data-cite] .followup #askSave #askAgain #askStatus #askCost #askInput #askGo #askStop #askHistory #askEmpty #askEmptyFiles #citePop
 검색      #vSearch #searchQ #searchList [data-id] #searchGrep [data-id][data-pos]
 시트      #sheetWrap #sheet #sheetTitle #sheetBody #sheetClose + §2.16 의 폼 id 전부
 시험지    #paper #paperBar #paperTitle #paperPrint #paperDocx #paperCopy #paperClose #paperScroll #paperPage .pq
@@ -490,15 +491,17 @@ ORUN ORACLE 은 "흑석고 영어 선생님 한 분의 머릿속을 내 쪽에 �
 
 ### 3.6 물어보기 — RAG 파이프라인 (`45-ask.js`)
 
-1. **범위**: `#askScope` 선생님(또는 `*`). `ctx`(열린 노트 · `#brainHudAsk` · `#asideAsk`)가 있으면 그 노트와 `LINKS.neighbors(ctx, 1)` 이웃을 근거 후보 맨 앞에 넣는다.
+1. **범위**: `#askScope` 선생님(또는 `*`). `ctx`(열린 노트 · `#brainHudAsk` · `#asideAsk`)가 있으면 그 노트와 `LINKS.neighbors(ctx, 1)` 이웃을 근거 후보 맨 앞에 넣는다. 이웃 몫은 `max(1, ⌊k/3⌋)` 까지다 — 예측 노트는 유력 지문이 30개, 시험 노트는 문항이 수십 개라 몫이 없으면 이웃만으로 `k` 가 다 차서 질문으로 찾은 근거가 하나도 못 들어간다. 종류 상한을 면제받는 것은 열린 노트 자신뿐이다.
+   범위가 `*` 면 근거가 여러 선생님 것으로 섞이므로 근거마다 `teacherName` 을 `sub` 앞에 붙이고(프롬프트 머리글 · `#askCites` 칩 둘 다) 프롬프트에 "선생님별로 나누어 답하고 합치지 말 것" 을 넣는다.
 2. **구조 근거** `ASK.structured(question, {profile, prediction, teacher})`: 질문에 유형명(`ANALYZE.TYPES`) · "몇 문항" · "문항 수" · "배점" · "비중" · "반영율" · "유력" · "확률" · "신뢰도" · "난이도" · "서술형" · "어법" 이 있으면 최신 프로파일 · 예측에서 숫자를 **로컬로** 뽑아 줄로 만든다(예: `프로파일 V3 (2026-09-14) · 빈칸 21% (시험당 3.0문항 · 평균 2.7점) · 서술형 14% · 프린트 반영율 57% · 예측 2026 1학기 중간: 빈칸 4문항 · 유력 지문 1위 Lesson 3 · Reading 1 (82%)`). 항상 선생님 카드 한 줄과 `PROFILE.compact()` 는 시스템 프롬프트에 들어간다.
 3. **검색**: `INDEX.search(question, {teacherId, limit: 40})` → **점수 하한**: `score >= max(2.0, 0.3 × top)` 이고 질문 토큰 중 2개 이상(질문 토큰이 2개 이하면 1개) 매칭된 문서만 → 종류 다양성 상한(문항 8 · 지문 5 · 프린트 3 · 메모 5 · 시험 3 · 질문 2 · 모의고사 1) → 1홉 확장(문항이 뽑히면 매칭 지문, 지문이 뽑히면 그 지문을 쓴 문항 상위 3) → 예산 12,000자(`#sAskK` 8/12/16 개 상한) 안에서 자른다.
 4. **근거 블록** `ASK.evidenceText(ev)`: 문항 = 발문 + 선지 + 정답 + 변형 + 매칭 지문 제목 + ★(≤ 600자) · 지문 = 요지 + 첫 두 문장 + 어법 타깃(≤ 700자) · 프린트 = 대상 시험 + 반영율 + 포인트 목록(≤ 800자) · 메모 = 본문(≤ 1,200자) · 시험 = 요약 + 반영율 + 문항 수 · 질문 = 답(≤ 600자) · 모의고사 = 문항 발문 목록.
 5. **프롬프트** `PROMPTS.ask(o)` → `{system, user}` (§5.4). `API.call(user, {system, cacheSystem:true, light: state.ui.askLight !== false, tier:"default", effort:"medium", onText, signal})` — **JSON 이 아니라 평문 스트리밍**. 답의 마지막 줄 `USED: 1,2,3`, 그 다음 줄 `FOLLOWUP: 질문 | 질문`.
-6. **표시**: 스트리밍 중 `[n]` 을 정규식으로 `.cite[data-id]` 칩으로 바꾼다(`TEXT.esc` 뒤). 끝나면 `USED` 를 파싱해 안 쓴 근거는 `.unused`(흐리게), 없는 번호는 `.dashed`. `FOLLOWUP` 은 `.followup` 버튼. `#askStatus` 3단계(근거 모으는 중 → n개 찾음 → 답 쓰는 중). `#askCost` 에 근거 수 · 글자 수 · 이번 세션 질문 수.
+6. **표시**: 스트리밍 중 `[n]` 을 정규식으로 `.cite[data-id]` 칩으로 바꾼다(`TEXT.esc` 뒤). 칩에는 그때의 근거 미리보기를 `data-prev` 로 박아 둔다 — `#askLog` 는 질문마다 쌓이고 번호는 1부터 다시 매겨지므로, 호버 팝업(`#citePop`)이 마지막 질문의 근거를 보면 지난 답의 칩이 엉뚱한 글을 보여 준다. 끝나면 `USED` 를 파싱해 안 쓴 근거는 `.unused`(흐리게), 없는 번호는 `.dashed`. `FOLLOWUP` 은 `.followup` 버튼. `#askStatus` 3단계(근거 모으는 중 → n개 찾음 → 답 쓰는 중). `#askCost` 에 근거 수 · 글자 수 · 이번 세션 질문 수.
 7. **저장**: 답이 끝나면 `ASK.save()` → `notes` 에 `kind:"ask"`(`ask:{question, scope, ctx, model, evidence:[ids], used:[n]}`, 본문 = 답 ≤ 4,000자) + `links(kind:"cite")`(질문 노트 → 인용된 노트마다) + `events(ask)`. 인용된 노트의 백링크에 "물어보기: …" 가 생긴다. `#askSave` 는 그 노트를 열 뿐(저장은 자동).
-8. **근거 0**: 모델을 부르지 않고 `#askEmpty` 문구 + "자료 넣기" 버튼. **키 없음**: `#askGo` 비활성 + 설정 열기 링크. **중단**: `#askStop` → AbortController → 지금까지의 답을 남기고 `USED` 없이 저장.
-9. 비용: 근거 12,000자 상한 · 구조 질의는 LLM 없이 · 시스템 프롬프트 캐시(`cacheSystem`) · 기본 Sonnet(`light`).
+8. **보내는 몸짓**: `#askGo` · `#askInput` ⏎ · 오늘 화면 `#homeAskGo` · 노트 오른쪽 `#asideAskGo`/⏎ · `#nAskAgain` · 후속 질문 · ⌘K 의 `?질문` ⏎ · `cmd:ask` — 전부 `VIEWS.submitAsk(q, ctx)` 를 지나 실제로 묻는다(주소만 바꾸면 §3.6 의 force 가드에 걸려 아무 일도 안 난다). 주소에 `q` 가 있어도 몸짓이 없으면 묻지 않고 `#askInput` 에 채워만 둔다(뒤로가기 · 북마크). 앞 질문이 도는 중이면 조용히 버리지 않고 입력칸에 되돌려 주며 [중단하고 새로 묻기] 를 띄운다.
+9. **근거 0**: 모델을 부르지 않고 `#askEmpty` 문구 + "자료 넣기" 버튼(`#askEmptyFiles` → 파일 시트). **키 없음**: `#askGo` 비활성 + 설정 열기 링크. **중단**: `#askStop` → AbortController → 지금까지의 답을 남기고 `USED` 없이 저장.
+10. 비용: 근거 12,000자 상한 · 구조 질의는 LLM 없이 · 시스템 프롬프트 캐시(`cacheSystem`) · 기본 Sonnet(`light`).
 
 ### 3.7 타임라인 · 데일리 로그 · 주간 집계
 
@@ -560,7 +563,7 @@ ORUN ORACLE 은 "흑석고 영어 선생님 한 분의 머릿속을 내 쪽에 �
 
 ### 3.11 온보딩 · 빈 상태 · "무엇이 바뀌었나"
 
-- `#onboard` 는 오늘 화면 카드. 문구: ① "엔진 연결 — API 키를 저장하면 시험지를 읽고 학습해요" [키 넣기 `#ob1Btn`] ② "선생님 — 흑석고 윤은영(영어A) · 전정이(영어B) 가 준비돼 있어요" [＋ 선생님 추가 `#ob2Btn`] ③ "파일 넣기 — 기출 시험지 · 시험범위 원문 · 선생님 프린트를 **인박스에** 놓으세요" [인박스 열기 `#ob3Btn`] (`#ob3Note` "선생님을 만들면 열려요"). 완료 조건은 지금과 같다(문항 또는 지문이 생기면 `onboardingDone`).
+- `#onboard` 는 오늘 화면 카드. 문구: ① "엔진 연결 — API 키를 저장하면 시험지를 읽고 학습해요" [키 넣기 `#ob1Btn`] ② "선생님 — 흑석고 윤은영(영어A) · 전정이(영어B)가 준비돼 있어요" [＋ 선생님 추가 `#ob2Btn`] ③ "파일 넣기 — 기출 시험지 · 시험범위 원문 · 선생님 프린트를 **인박스에** 놓으세요" [인박스 열기 `#ob3Btn`] (`#ob3Note` "선생님을 만들면 열려요"). 완료 조건은 지금과 같다(문항 또는 지문이 생기면 `onboardingDone`).
 - `#homeChanged`(1회, localStorage `orun_oracle_ui2.changedSeen`): "홀로그램은 브레인(G), 파일은 인박스(I), 상세는 노트 페이지로 갔어요. ⌘K 로 무엇이든 찾고 물어보세요."
 - 빈 상태마다 다음 행동 버튼(기존 토스트 문구를 승격): 시험 없음 → "기출 시험지를 인박스에 놓으세요" [파일 넣기]; 프로파일 없음 → "문항이 1개 이상이면 학습할 수 있어요" [학습](문항 0 이면 비활성 + 이유); 예측 없음 → "학습 뒤 예측할 수 있어요" [예측]; 모의고사 없음 → "예측 뒤에 만들 수 있어요"; 범위 원문 없음 → "범위 원문이 없어 유력 지문을 고를 수 없어요" [파일 넣기]; 프린트 없음 → "파일을 넣을 때 칩을 '프린트' 로 두면 반영율을 계산해요"; 메모 없음 → "이 노트에 첫 메모를 적어 보세요 — [[ 로 잇고 # 로 태그"; 브레인 노드 1개 → "파일을 넣으면 여기서 가지가 뻗어요".
 - 도움말 시트(`openHelp`)의 표는 §3.10 전체로 다시 쓴다. 파일 드롭 행: "인박스 · 오늘 · 어디에나 놓으면 파일 시트가 떠요 · 브레인에서는 홀로그램 위에".
@@ -672,7 +675,12 @@ events: { key: "id", idx: ["teacherId", "at"] },   // "at" 인덱스 추가 (기
 
 - `STORES` += `"notes", "links", "tags"`. `PRIVATE = ["notes", "links", "tags"]`, `st.private = localStorage orun_oracle_private === "on"`; `setPrivate(v)`. private 이면 `push/remove/pushAll/bootstrap` 에서 PRIVATE 저장소를 건너뛴다.
 - `bootstrap`: `MERGE = ["notes", "links", "tags"]` 는 문서별로 `local.updatedAt > cloud.updatedAt` 이면 로컬을 남기고 큐에 push, 아니면 `DB.put(cloud, true)`. 나머지 저장소는 지금처럼 `putAll(silent)`. 반환 `{pulled, pushed, merged}`. 끝나면 `APP` 이 `INDEX.rebuild` · `LINKS.rebuild` 를 한 번 돈다.
-- `rowId` · `teacher_id` 규칙 그대로(`teacherId` null 이면 `teacher_id` null — 공용 태그 · 고아 메모).
+- `rowId(store, id)` = `<작업공간>:<저장소>:<id>`. 작업공간을 붙이지 않으면 이름에서 나온 id(`tag:빈칸` · `settings:ui`)가 작업공간끼리 같은 행을 빼앗는다(표의 기본키가 `id` 하나뿐이고 쓰기는 `on_conflict=id`). 옛 규칙으로 올라간 행은 `bootstrap` 이 한 번 읽고 지운다. `teacher_id` 는 그대로(`teacherId` null 이면 null — 공용 태그 · 고아 메모).
+- **삭제는 묘비(tombstone)로 남긴다.** 행을 지우는 대신 같은 `id` 에 `data = { __deleted: true, at, <키필드>: id }` 를 쓴다. `bootstrap` 은 묘비가 있는 문서를 로컬에서도 지우고(`DB.del(store, key, true)` — 다시 올리지 않는다) `mine` 에서도 뺀다. 묘비가 없으면 "지웠다" 와 "아직 안 올렸다" 를 구분할 수 없어 다른 기기가 지운 문서를 되살린다. 묘비는 180일 뒤 진짜로 지운다.
+- **못 보낸 삭제는 localStorage(`orun_oracle_pendel`)에 적어 둔다.** 오프라인 · 개인 모드 · 동기화 꺼짐에서 지운 것이 탭과 함께 사라지지 않는다. `bootstrap` · 동기화 켜기 · 개인 모드 끄기에서 다시 큐에 올린다.
+- **`flush` 는 요청이 나가 있는 동안 들어온 쓰기를 버리지 않는다.** 큐 항목마다 단조 증가 `seq` 를 달고, 배치를 보낸 뒤에는 그 배치 항목과 `seq` 가 그보다 작거나 같은 같은-id 항목만 지운다.
+- **작업공간을 바꾸면 받기만 한다.** `setWorkspace` 가 바뀜을 기록하고(`orun_oracle_ws_new`) 다음 `bootstrap` 이 `mine` 자동 push 를 건너뛴다. 올리려면 설정 › 클라우드의 [모두 올리기](`#cPush`). 안 그러면 동료 작업공간 이름을 넣는 순간 이 브라우저의 자료가 통째로 그쪽에 합쳐진다.
+- `setPrivate(true)` 는 **지금부터** 올리지 않을 뿐이라 이미 올라간 메모 · 링크 · 태그는 남는다. UI 가 토스트로 `SYNC.wipePrivateCloud()` 를 물어본다(§3.13). 노트 화면의 "이 브라우저에만" 문구도 그 뜻으로 적는다.
 
 ### 4.6 개인 UI 상태 (localStorage, 거울하지 않음)
 
@@ -757,10 +765,17 @@ NOTES.update(id, patch) → Promise<doc> ; NOTES.remove(id) → Promise<{ undo }
 NOTES.orphan(store, ids) → Promise<n>
 NOTES.migrateLegacy(questions, teachers) → Promise<n>
 NOTES.daily(date, teacherId) → Promise<doc|null> ; NOTES.ensureDaily(date, teacherId) → Promise<doc>
-NOTES.quick(text, teacherId, author) → Promise<doc>       // 빠른 메모 (제목 = 첫 줄)
+NOTES.quick(text, teacherId, author, linkHints) → Promise<doc>       // 빠른 메모 (제목 = 첫 줄)
+NOTES.relink() → Promise<n>              // 깨진 [[링크]] 중 이제 가리킬 노트가 생긴 것을 다시 잇는다 (APP.rebuildIndex · refreshLinks 가 부른다)
+NOTES.sweepDeleted() → Promise<n>        // 지난 세션에서 5초 유예를 못 채운 삭제를 확정한다 (APP.boot 가 부른다)
+NOTES.hidden(doc) → bool                 // 삭제 대기(pending) 이거나 deletedAt 이 찍힌 노트
+NOTES.tags.load(docs) → n                // 태그 저장소 캐시를 채운다 — APP.rebuildIndex 가 all.tags 로 부른다(부팅 · 가져오기 · 다시 짓기)
 NOTES.tags.ensure(names, author) → Promise ; NOTES.tags.list(teacherId) → [{ name, count, color }] ; NOTES.tags.rename(a, b) ; NOTES.tags.remove(name) ; NOTES.tags.docsWith(name, teacherId) → ids
 NOTES.derivedTags(store, doc) → [name]
 ```
+
+`saveMemo` · `create` · `update` 는 `linkHints: [{text, to}]` 를 받는다 — `[[` 자동완성에서 고른 문서의 id (§3.2 "같은 제목이 둘이면 id 로 구분").
+삭제는 소프트 삭제다: `remove(id)` 가 그 자리에서 `deletedAt` 을 저장소에 적고(유예 중에는 목록 · 색인 · 그래프에서 빠진다) 5초 뒤 확정한다. 탭이 닫히면 다음 부팅의 `sweepDeleted()` 가 끝낸다 — 유예가 탭 수명에 달리지 않는다.
 
 ### 5.5 `45-ask.js` — `ASK`
 
@@ -875,7 +890,7 @@ ROUTE.note(id) → "#/n/" + id ; ROUTE.all(kind, query) ; ROUTE.tag(name)
   --bg: #0b1020;  --bg2: #0e1526;  --surface: #131c31;  --surface2: #18233b;
   --line: rgba(148,178,220,.14);  --line2: rgba(148,178,220,.32);
   /* 글 */
-  --ink: #e6edf7;  --dim: #a9b8cc;  --faint: #6f8199;   /* --faint on --bg ≥ 4.6:1 */
+  --ink: #e6edf7;  --dim: #a9b8cc;  --faint: #8ea0b8;   /* --faint 는 --bg 7.1:1 · 카드(--surface) 6.4:1 · .ncard.new 겹침 4.5:1 — 어디에 놓아도 AA */
   /* 강조 — 홀로 청록은 링크 · 포커스 · 활동에만 */
   --holo: #5fc8ff;  --holo2: #9fe3ff;  --holo-soft: rgba(95,200,255,.14);
   --gold: #f5c518;  --ok: #46f0c5;  --bad: #ff6b7a;  --warn: #ffb454;

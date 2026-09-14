@@ -88,7 +88,11 @@ npm run cdn                                  # 검사가 쓰는 CDN 라이브러
 - **화면 시험지와 DOCX 는 같은 판형.** 한쪽만 고치지 않는다. 시험지 글꼴은 두 곳에 같은 이름으로 있다 — `10-css.html` 의 `#paperPage` font-family 와
   `38-generate.js` 의 `FONT` 상수(DOCX). 검사는 이 둘의 일치를 보지 않으므로 손으로 맞춘다.
 - **Supabase**: 프로젝트 `wxjazdqabryflvfztujk`, 테이블 `public.oracle_docs`(id · workspace · store · teacher_id · data jsonb · updated_at), anon 키, 열린 RLS.
-  브라우저 저장소가 작업본이고 클라우드는 거울이다. 삭제도 거울로 간다. 배경 영상(media)은 올리지 않는다. 파일 원본은 어디에도 저장하지 않는다(추출 텍스트만).
+  브라우저 저장소가 작업본이고 클라우드는 거울이다. 배경 영상(media)은 올리지 않는다. 파일 원본은 어디에도 저장하지 않는다(추출 텍스트만).
+  행 id 는 `<작업공간>:<저장소>:<id>` 다 — 붙이지 않으면 이름에서 나온 id(`tag:빈칸` · `settings:ui`)가 작업공간끼리 같은 행을 빼앗는다(기본키가 `id` 하나뿐).
+  **삭제는 행을 지우지 않고 묘비(`data.__deleted`)를 남긴다.** 그래야 다른 기기가 "지웠다" 와 "아직 안 올렸다" 를 구분한다(묘비가 없으면 지운 문서가 되살아난다).
+  못 보낸 삭제는 `localStorage`(`orun_oracle_pendel`)에 적어 둔다. 작업공간을 바꾸면 다음 부팅은 **받기만** 한다(올리기는 설정 › 클라우드의 [모두 올리기]).
+  자세한 계약은 `oracle/design/spec.md` §4.5 에 있다 — 규칙을 바꾸면 그 둘을 함께 고친다.
   테이블 DDL·RLS 는 이 저장소에 없다 — `supabase/` 는 다른 프로젝트(orunquiz 스냅샷)의 것이니 거기에 넣지 말고, 스키마 변경은 Supabase 대시보드/MCP 에서 한다.
   service_role 키는 절대 넣지 않는다.
 - **파일 종류 셋**: 기출(exam) · 범위 원문(scope) · 선생님 프린트(handout). 프린트는 지문 + 어법·어휘·예상문제 포인트로 색인하고, 기출 문항마다 프린트 출처를 세어 반영율을 낸다. 예측은 프린트 지문을 과거 반영율만큼 우선한다.

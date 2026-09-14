@@ -209,24 +209,32 @@
       return { passages, items: items.slice(0, 200) };
     }
     // 프린트 반영율 — 시험 문항 하나하나가 프린트의 어떤 것에서 왔나 (결정적)
-    // reflection({ questions, handouts:[{source, passages, items}], passagesById }) → { rate, n, hits, byHandout }
+    // reflection({ questions, handouts:[{source, passages, items}], passagesById, cache }) → { rate, n, hits, byHandout }
+    // cache 는 reflectionCache() 로 만들어 시험마다 넘긴다 — 없으면 이 호출 안에서만 쓰는 것을 새로 만든다.
+    // 넘기지 않으면 시험 수만큼 프린트 지문 셔글을 다시 만들게 되어(시험 30 × 지문 480) 파일 한 장에 수 초가 걸린다.
+    function reflectionCache() { return { s6: new Map(), scope: new Map() }; }
     function reflection(o) {
       const qs = (o.questions || []).filter(q => q.setRole !== "member" || true);
       const hs = o.handouts || [];
       if (!qs.length || !hs.length) return null;
-      // 프린트 지문 셔글 (교과서 지문을 다시 실은 것과 맞추기 위해 원문끼리도 본다)
-      const hp = hs.flatMap(h => h.passages.map(p => ({ h, p, s6: TEXT.shingles(p.text, 6) })));
-      const scopeCache = {};
+      const C = o.cache && o.cache.s6 ? o.cache : reflectionCache();
+      // 프린트 지문 셔글 (교과서 지문을 다시 실은 것과 맞추기 위해 원문끼리도 본다) — 지문 하나당 한 번만 만든다
+      const hp = hs.flatMap(h => h.passages.map(p => { let s6 = C.s6.get(p.id); if (!s6) { s6 = TEXT.shingles(p.text, 6); C.s6.set(p.id, s6); } return { h, p, s6 }; }));
+      const byPid = new Map(); hp.forEach(e => { if (!byPid.has(e.p.id)) byPid.set(e.p.id, e.h); });
+      const scopeShingles = (pid) => {
+        if (C.scope.has(pid)) return C.scope.get(pid);
+        const d = o.passagesById && o.passagesById[pid];
+        const v = d ? TEXT.shingles(d.text, 6) : null; C.scope.set(pid, v); return v;
+      };
       const passageHit = (q) => {
-        const pid = q.match && q.match.passageId; const en = TEXT.englishOnly(q.rawBlock || "");
-        const q6 = TEXT.words(en).length >= 12 ? TEXT.shingles(en, 6) : null;
+        const pid = q.match && q.match.passageId;
+        if (pid && byPid.has(pid)) return byPid.get(pid);                              // 프린트 지문에 직접 매칭
+        const sp = pid ? scopeShingles(pid) : null;                                    // 범위 지문에 매칭됐지만 프린트에도 같은 지문이 실림
+        const en = sp || !pid ? TEXT.englishOnly(q.rawBlock || "") : "";
+        const q6 = en && TEXT.words(en).length >= 12 ? TEXT.shingles(en, 6) : null;
+        if (!sp && !q6) return null;
         for (const e of hp) {
-          if (pid && e.p.id === pid) return e.h;                                      // 프린트 지문에 직접 매칭
-          if (pid && o.passagesById && o.passagesById[pid]) {                           // 범위 지문에 매칭됐지만 프린트에도 같은 지문이 실림
-            const k = pid + ":" + e.p.id;
-            if (scopeCache[k] === undefined) scopeCache[k] = TEXT.containment(TEXT.shingles(o.passagesById[pid].text, 6), e.s6);
-            if (scopeCache[k] >= 0.5) return e.h;
-          }
+          if (sp && TEXT.containment(sp, e.s6) >= 0.5) return e.h;
           if (q6 && TEXT.containment(q6, e.s6) >= 0.45) return e.h;                    // 매칭 없이도 문항 지문이 프린트 지문과 겹침
         }
         return null;
@@ -413,5 +421,5 @@
       const r = await API.json(PROMPTS.classify(name, head.slice(0, 1500), memo), { light: true, tier: "small", effort: "low", signal, validate: v => v && (v.kind === "exam" || v.kind === "scope") ? "" : "kind 없음" });
       return { kind: r.kind, confidence: clamp01(r.confidence === undefined ? 0.6 : r.confidence), meta: r.meta || {} };
     }
-    return { dataizeExam, indexScope, indexHandout, reflection, matchQuestions, fidelity, aiLocal, aiJudge, combineAI, AI_DISCLAIMER, classifyLLM, normalizeQuestion, isSubj, TYPES, BUDGET };
+    return { dataizeExam, indexScope, indexHandout, reflection, reflectionCache, matchQuestions, fidelity, aiLocal, aiJudge, combineAI, AI_DISCLAIMER, classifyLLM, normalizeQuestion, isSubj, TYPES, BUDGET };
   })();

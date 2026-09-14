@@ -71,7 +71,7 @@
       if (tg.date) { const n = Math.ceil((new Date(tg.date + "T00:00:00").getTime() - Date.now()) / DAY); dday = ' <span class="badge ' + (n >= 0 ? "warn" : "") + '">' + (n >= 0 ? "D-" + n : "D+" + (-n)) + '</span>'; }
       const stale = p && pr.profileVersion < p.version;
       box.innerHTML = '<div class="kicker">다음 시험</div><div style="font-size:15px;margin:8px 0 4px">' + esc(tg.label || "다음 시험") + dday + '</div>'
-        + '<div class="small">예측 ' + (stale ? '<span class="warn">V' + pr.profileVersion + ' 기준 — 다시 예측하세요</span>' : "READY") + ' · 신뢰도 <b class="num">' + pct(bp.confidence && bp.confidence.overall) + '</b>' + ((bp.passages || []).length ? ' · 유력 지문 ' + bp.passages.length : "") + '</div>'
+        + '<div class="small">예측 ' + (stale ? '<span class="warn">V' + pr.profileVersion + ' 기준 — 다시 예측하세요</span>' : "있음") + ' · 신뢰도 <b class="num">' + pct(bp.confidence && bp.confidence.overall) + '</b>' + ((bp.passages || []).length ? ' · 유력 지문 ' + bp.passages.length : "") + '</div>'
         + '<div class="row" style="margin-top:10px"><button type="button" data-home="blueprint">청사진</button><button type="button" class="pri" data-home="mock">모의고사</button></div>';
       bindHomeCards();
     }
@@ -81,7 +81,7 @@
       const p = S.profiles.get(t.id), c = S.counts.get(t.id) || {};
       if (!p) { box.innerHTML = '<div class="kicker">프로파일</div><div class="small" style="margin-top:8px">' + (c.questions ? "문항 " + c.questions + "개 — 학습할 수 있어요" : "문항이 1개 이상이면 학습할 수 있어요") + '</div><div class="row" style="margin-top:10px"><button type="button" class="pri" data-home="learn"' + (c.questions ? "" : ' disabled title="기출 시험지를 먼저 넣어 주세요"') + '>학습</button></div>'; bindHomeCards(); return; }
       const P = p.profile || {}, lv = P.level || {};
-      box.innerHTML = '<div class="kicker">프로파일</div><div style="font-size:15px;margin:8px 0 4px"><span class="num">V' + p.version + '</span> · ' + esc(lv.name || "") + (lv.id ? ' <span class="small">Lv.' + lv.id + '</span>' : "") + ' · 신뢰도 <span class="num">' + (P.reliability === undefined ? "—" : P.reliability) + '</span></div>'
+      box.innerHTML = '<div class="kicker">프로파일</div><div style="font-size:15px;margin:8px 0 4px"><span class="num">V' + p.version + '</span> · ' + esc(lv.name || "") + (lv.id ? ' <span class="small">Lv.' + lv.id + '</span>' : "") + ' · 신뢰도 <span class="num">' + (P.reliability === undefined ? "—" : pct(P.reliability)) + '</span></div>'
         + '<div class="small">' + (lv.next ? "다음 " + esc(lv.next.name) + "까지 " + esc(lv.next.need || "") : "최고 단계예요") + '</div>'
         + '<div class="row" style="margin-top:10px"><button type="button" data-home="profile">프로파일 보기</button></div>';
       bindHomeCards();
@@ -166,12 +166,13 @@
     // 빠른 메모 (오늘 · 인박스 공용) — [[ · # 자동완성 · ⏎ 저장 · ⇧⏎ 줄바꿈
     function bindCapture(ta, btn) {
       if (!ta || !btn) return;
-      let ac = null;
-      try { ac = UI.autocomplete(ta, { teacherId: () => scopeId() }); } catch (e) { console.error(e); }
+      let ac = null, hints = [];
+      // 고른 항목의 id 를 기억한다 — 같은 제목이 둘일 때 사용자가 고른 그 문서에 링크가 걸리도록
+      try { ac = UI.autocomplete(ta, { teacherId: () => scopeId(), onPick: (it) => { if (it && it.kind === "link" && it.id && it.title) hints = hints.filter(x => x.text !== it.title).concat([{ text: it.title, to: it.id }]); } }); } catch (e) { console.error(e); }
       const save = async () => {
         const text = ta.value.trim(); if (!text) return;
-        ta.value = "";
-        try { const doc = await APP.quickNote(text); if (doc) UI.toast("메모를 저장했어요", { ok: true, action: "열기", onAction: () => ROUTE.go(ROUTE.note(doc.id)) }); }
+        ta.value = ""; const hs = hints; hints = [];
+        try { const doc = await APP.quickNote(text, hs); if (doc) UI.toast("메모를 저장했어요", { ok: true, action: "열기", onAction: () => ROUTE.go(ROUTE.note(doc.id)) }); }
         catch (e) { console.error(e); UI.toast("메모를 저장하지 못했어요: " + (e && e.message || e), { bad: true }); }
       };
       btn.onclick = save;
@@ -313,7 +314,7 @@
           { k: "version", t: "V", n: 1, v: (p) => p.version || 0, c: (p) => num("V" + (p.version || 0)) },
           { k: "createdAt", t: "만든 날", v: (p) => p.createdAt || 0, c: (p) => esc(TEXT.fmtDate(p.createdAt)) },
           { k: "level", t: "레벨", v: (p) => ((p.profile || {}).level || {}).id || 0, c: (p) => esc(((p.profile || {}).level || {}).name || "—") },
-          { k: "reliability", t: "신뢰도", n: 1, v: (p) => (p.profile || {}).reliability || 0, c: (p) => num((p.profile || {}).reliability === undefined ? "—" : (p.profile || {}).reliability) },
+          { k: "reliability", t: "신뢰도", n: 1, v: (p) => (p.profile || {}).reliability || 0, c: (p) => num((p.profile || {}).reliability === undefined ? "—" : pct((p.profile || {}).reliability)) },
           { k: "basedOn", t: "근거", v: (p) => (p.basedOn || {}).nQuestions || 0, c: (p) => '<span class="small">시험 ' + ((p.basedOn || {}).nExams || 0) + ' · 문항 ' + ((p.basedOn || {}).nQuestions || 0) + '</span>' },
           { k: "delta", t: "달라진 점", v: (p) => (p.delta || [])[0] || "", c: (p) => esc(clip((p.delta || [])[0] || "—", 40)) },
           { k: "model", t: "모델", v: (p) => p.model || "", c: (p) => '<span class="small">' + esc(p.model || "—") + '</span>' },
@@ -369,9 +370,14 @@
     const noteTitleOf = (id) => { const d = INDEX.get(id); return d ? d.title : id; };
     const libCtx = { srcName: {}, usedBy: {}, pUse: {}, examYear: {}, examAt: {} };
     let seqLib = 0, boundLib = false, libQuery = {}, libKind = "exams", libRowsCache = [];
+    const sameQuery = (a, b) => { const A = a || {}, B = b || {}; const ks = [...new Set(Object.keys(A).concat(Object.keys(B)))]; return ks.every(k => String(A[k] == null ? "" : A[k]) === String(B[k] == null ? "" : B[k])); };
     async function libraryView(kind, query) {
       const seq = ++seqLib;
       kind = LIB_KINDS.includes(kind) ? kind : "exams";
+      // 셀을 고치는 중에는 같은 목록을 다시 그리지 않는다 — 배경 신호(작업 완료 등)로 입력칸이 떨어지면 고치던 값이 그대로 저장된다.
+      // 이동(다른 kind · 다른 쿼리)은 그대로 그린다.
+      const tb = $("libTable");
+      if (kind === libKind && sameQuery(query, libQuery) && tb && tb.querySelector("td input, td select") && tb.contains(document.activeElement)) return;
       libKind = kind; libQuery = query || {};
       $("vLibrary").dataset.kind = kind;
       bindLib();
@@ -384,7 +390,8 @@
       const sign = dir === "asc" ? 1 : -1;
       const tie = spec.tie || ((a, b) => String(a.id).localeCompare(String(b.id)));
       filtered.sort((a, b) => { const x = col.v(a), y = col.v(b); return (typeof x === "number" && typeof y === "number" ? (x - y) : String(x).localeCompare(String(y), "ko")) * sign || tie(a, b); });
-      $("libCount").textContent = (LIB_LABEL[kind] || kind) + " " + filtered.length + (filtered.length !== rows.length ? " / " + rows.length : "");
+      const scopeBits = [libQuery.exam ? noteTitleOf(libQuery.exam) : "", libQuery.passage ? noteTitleOf(libQuery.passage) : "", libQuery.diff ? "난이도 " + libQuery.diff : "", libQuery.genre || ""].filter(Boolean);
+      $("libCount").textContent = (LIB_LABEL[kind] || kind) + " " + filtered.length + (filtered.length !== rows.length ? " / " + rows.length : "") + (scopeBits.length ? " · " + scopeBits.join(" · ") : "");
       renderLibFilter(kind, rows);
       renderLibSort(kind, sk, dir);
       const show = filtered.slice(0, 300);
@@ -439,6 +446,11 @@
       }
       if (q.matched === "0" && kind === "questions" && d.match && d.match.passageId) return false;
       if (q.ext === "1" && kind === "questions" && !d.external) return false;
+      // 노트에서 온 것들 — [문항 목록으로](시험) · [같은 지문 문항 보기](지문) · 파생 태그 #난이도상 · 장르
+      if (q.exam && (kind !== "questions" || d.examId !== q.exam)) return false;
+      if (q.passage && (kind !== "questions" || !(d.match && d.match.passageId === q.passage))) return false;
+      if (q.diff && (kind !== "questions" || String(d.difficulty || "") !== String(q.diff))) return false;
+      if (q.genre && (kind !== "passages" || String(d.genre || "") !== String(q.genre))) return false;
       if (q.year) {
         const y = kind === "exams" ? +(d.meta || {}).year || 0 : kind === "questions" ? (libCtx.examYear[d.examId] || 0) : 0;
         if (y !== +q.year) return false;
@@ -457,7 +469,7 @@
         b.classList.toggle("on", on);
         b.textContent = label[f] + (f === "type" && q.type ? " · " + q.type : f === "tag" && q.tag ? " · #" + q.tag : f === "year" && q.year ? " · " + q.year : "") + (f === "type" || f === "tag" || f === "year" ? " ▾" : "");
       });
-      const any = ["q", "type", "tag", "hit", "matched", "year", "kind", "ext"].some(k => q[k]);
+      const any = ["q", "type", "tag", "hit", "matched", "year", "kind", "ext", "exam", "passage", "diff", "genre"].some(k => q[k]);
       $("libFilterClear").hidden = !any;
       libRowsCache = rows;
     }
@@ -536,7 +548,11 @@
       let done = false;
       const cancel = () => { if (done) return; done = true; td.innerHTML = old; };
       const commit = async () => {
-        if (done) return; done = true;
+        if (done) return;
+        // 표가 통째로 다시 그려지면(배경 작업 완료 같은 신호) 입력칸이 DOM 에서 떨어지면서 blur 가 난다.
+        // 그 blur 는 사용자가 끝낸 것이 아니므로 입력 도중 값을 쓰지 않는다 — 진짜 blur 는 el 이 아직 붙어 있다.
+        if (!el.isConnected) { done = true; return; }
+        done = true;
         if (String(el.value) === was) { td.innerHTML = old; return; }                 // 그대로면 쓰지 않는다 (학습 중 문서를 덮지 않게)
         const patch = m === "year" ? { year: +el.value || 0 } : sg === "semester" ? { semester: +el.value } : { term: el.value };
         if (m === "year" && !patch.year) { td.innerHTML = old; return; }
@@ -556,7 +572,7 @@
       if (total > 0) { text = "이 조건에 맞는 것이 없어요"; label = "필터 지우기"; act = () => goLib({ q: "", type: "", tag: "", hit: "", matched: "", year: "", kind: "", ext: "" }); }
       else if (kind === "exams" || kind === "questions") text = "기출 시험지를 인박스에 놓으세요";
       else if (kind === "passages") text = "범위 원문이 없어 유력 지문을 고를 수 없어요";
-      else if (kind === "sources") text = libQuery.kind === "프린트" ? "선생님 프린트가 없어요 — 파일을 넣을 때 칩을 '프린트' 로 두면 반영율을 계산해요" : "시험범위 원문 · 선생님 프린트를 넣어 주세요";
+      else if (kind === "sources") text = libQuery.kind === "프린트" ? "선생님 프린트가 없어요 — 파일을 넣을 때 칩을 '프린트'로 두면 반영율을 계산해요" : "시험범위 원문 · 선생님 프린트를 넣어 주세요";
       else if (kind === "profiles") { text = "문항이 1개 이상이면 학습할 수 있어요"; label = "학습"; act = () => { if (t) UI.run(() => APP.learn(t.id, { force: true })); }; if (!t || !c.questions) { disabled = " disabled"; why = t ? "기출 시험지를 먼저 넣어 주세요" : "선생님을 골라 주세요"; } }
       else if (kind === "predictions") { text = "학습 뒤 예측할 수 있어요"; label = "예측"; act = () => { if (t) UI.openPredictSheet(t.id); }; if (!p) { disabled = " disabled"; why = "먼저 학습해 주세요"; } }
       else if (kind === "mocks") { text = "예측 뒤에 만들 수 있어요"; label = "적중 모의고사"; act = () => { if (t) UI.openMockSheet(t.id); }; if (!pr) { disabled = " disabled"; why = "먼저 예측해 주세요"; } }
@@ -578,7 +594,7 @@
         else if (f === "matched") goLib({ matched: libQuery.matched === "0" ? "" : "0" });
         else openLibFilterPop(b, f);
       });
-      $("libFilterClear").onclick = () => goLib({ q: "", type: "", tag: "", hit: "", matched: "", year: "", kind: "", ext: "", sort: "", dir: "" });
+      $("libFilterClear").onclick = () => goLib({ q: "", type: "", tag: "", hit: "", matched: "", year: "", kind: "", ext: "", exam: "", passage: "", diff: "", genre: "", sort: "", dir: "" });
     }
 
     // ================= 태그 (§2.5 끝) =================
@@ -741,7 +757,7 @@
       const key = q + "|" + ctx + "|" + askScopeId();
       // 주소에 질문이 있다고 저절로 묻지는 않는다 — 보낸다는 몸짓(#askGo · ⏎ · 오늘 화면 · 후속 질문)이 있을 때만 (§3.6)
       if (q && askS.force) { askS.force = false; askS.runKey = key; runAsk(q, ctx); }
-      else if (q && q !== askS.q) { const el = $("askInput"); if (!el.value.trim() && document.activeElement !== el) el.value = q; }
+      else if (q) { const el = $("askInput"); if (!el.value.trim() && document.activeElement !== el) el.value = q; }   // 묻지 않을 때는 적어도 글을 잃지 않게 채워 둔다
     }
     function renderAskScope() {
       const selEl = $("askScope"), cur = askScopeId();
@@ -775,7 +791,12 @@
     function askMsg(cls, html) { const el = h('<div class="msg ' + cls + '">' + html + '</div>'); $("askLog").appendChild(el); scrollDown(); return el; }
     const liveCites = (body) => esc(body).replace(/\[(\d{1,2}(?:\s*,\s*\d{1,2})*)\]/g, (m, ns) => ns.split(",").map(s => '<span class="cite">' + esc(s.trim()) + '</span>').join(""));
     async function runAsk(q, ctxId) {
-      if (askS.running) return;
+      if (askS.running) {
+        // 앞 질문이 아직 스트리밍 중이다 — 조용히 버리지 않고, 친 글을 입력칸에 돌려주고 무엇을 할지 묻는다
+        const el = $("askInput"); if (el && !el.value.trim()) el.value = q;
+        UI.toast("앞 질문에 답하는 중이에요", { action: "중단하고 새로 묻기", onAction: () => { if (askS.ctrl) { try { askS.ctrl.abort(); } catch (e) {} } setTimeout(() => submitAsk(q, ctxId), 250); } });
+        return;
+      }
       if (!API.ready()) { updateAskEnabled(); UI.toast("먼저 API 키를 저장해 주세요", { action: "설정 열기", onAction: () => UI.openSettings("engine") }); return; }
       if (!INDEX.state.ready) { $("askStatus").textContent = "색인이 끝나면 물을 수 있어요"; const ok = await waitIndex(); if (!ok) { updateAskEnabled(); return; } }
       const scope = askScopeId();
@@ -830,7 +851,7 @@
     function renderAskCites(r) {
       const ev = r.evidence || [], used = new Set(r.used || []), inv = (r.invalid || []).filter(n => !ev.some(e => e.n === n));
       $("askCites").innerHTML = '<div class="kicker" style="margin:8px 0 6px">근거 ' + ev.length + '</div>'
-        + ev.map(e => '<button type="button" class="chip' + (used.has(e.n) ? "" : " dim unused") + '" data-cite="' + esc(e.id) + '" data-n="' + e.n + '" title="' + esc(clip(e.text || "", 200)) + '">[' + e.n + '] ' + esc(e.kindLabel || KL[e.kind] || "") + ' · ' + esc(clip(e.title || "", 30)) + (e.flag ? ' ' + esc(e.flag) : "") + '</button>').join(" ")
+        + ev.map(e => '<button type="button" class="chip' + (used.has(e.n) ? "" : " dim unused") + '" data-cite="' + esc(e.id) + '" data-n="' + e.n + '" data-prev="' + esc(clip(e.text || "", 200)) + '" title="' + esc(clip(e.text || "", 200)) + '">[' + e.n + '] ' + esc(e.kindLabel || KL[e.kind] || "") + ' · ' + esc(clip(e.title || "", 30)) + (e.flag ? ' ' + esc(e.flag) : "") + '</button>').join(" ")
         + (inv.length ? '<div class="small dashed" style="margin-top:6px">근거에 없는 번호: ' + inv.map(n => '<span class="cite dashed">' + n + '</span>').join(" ") + '</div>' : "");
       $("askCites").querySelectorAll("[data-cite]").forEach(b => b.onclick = () => ROUTE.go(ROUTE.note(b.dataset.cite)));
     }
@@ -856,6 +877,7 @@
         if (e.defaultPrevented || e.altKey) return;
         if (e.key === "Enter" && (!e.shiftKey || e.metaKey || e.ctrlKey)) { e.preventDefault(); const el = $("askInput"); const q = el.value.trim(); if (q) { el.value = ""; submitAsk(q); } }
       });
+      const aef = $("askEmptyFiles"); if (aef) aef.onclick = () => UI.openPickSheet();      // 근거 0 → 바로 자료를 넣을 수 있게 (§3.6 8)
       $("askScope").addEventListener("change", () => { askS.scope = $("askScope").value; UI.ui2set({ askScope: askS.scope }); renderAskHistory(); });
       $("askCtxClear").onclick = () => { askS.runKey = String(askS.q || "") + "||" + askScopeId(); ROUTE.go(ROUTE.href({ view: "ask", query: askS.q ? { q: askS.q } : {} }), { replace: true }); };
       $("askSave").onclick = () => { if (askS.savedId) ROUTE.go(ROUTE.note(askS.savedId)); else UI.toast("저장 중이에요 — 잠시 뒤에 다시 눌러 주세요"); };
@@ -866,9 +888,11 @@
       });
       const pop = $("citePop");
       const showPop = (el) => {
-        const n = +el.dataset.n, r = askS.result; if (!r) return;
-        const e2 = (r.evidence || []).find(x => x.n === n); if (!e2) return;
-        pop.textContent = clip(e2.text || "", 200);
+        // 미리보기 글은 그릴 때 칩에 박아 둔다 — askS.result 는 늘 마지막 질문 것이라, 로그에 남은 지난 답의 칩에 엉뚱한 근거가 뜬다
+        let txt = el.dataset.prev || "";
+        if (!txt) { const r = askS.result; const e2 = r && (r.evidence || []).find(x => x.n === +el.dataset.n); txt = e2 ? clip(e2.text || "", 200) : ""; }
+        if (!txt) return;
+        pop.textContent = txt;
         pop.hidden = false;
         const b = el.getBoundingClientRect();
         pop.style.left = Math.max(8, Math.min(b.left, window.innerWidth - 372)) + "px";
@@ -926,5 +950,5 @@
     }
 
     return { today: todayView, inbox: inboxView, queueHtml, bindQueue, library: libraryView, tag: tagView, timeline: timelineView, ask: askView, search: searchView, renderAll,
-             askState: () => askS, libState: () => ({ kind: libKind, query: libQuery }) };
+             submitAsk, askState: () => askS, libState: () => ({ kind: libKind, query: libQuery }) };
   })();

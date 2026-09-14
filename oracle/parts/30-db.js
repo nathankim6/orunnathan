@@ -63,7 +63,8 @@
     const unmirror = (store, ids) => { try { if (typeof SYNC !== "undefined") SYNC.remove(store, ids); } catch (e) {} };
     // ---- 쓰기 훅 ----  fn({ op: "put"|"del"|"clear", store, docs?, keys?, silent })  — put/putAll/del/delWhere/clear/wipe 뒤에 부른다
     let hooks = [];
-    function onWrite(fn) { if (typeof fn === "function") hooks.push(fn); return () => { hooks = hooks.filter(f => f !== fn); }; }
+    // first=true 면 다른 훅보다 먼저 부른다 (APP 의 ctx 캐시가 INDEX 색인보다 먼저 갱신돼야 제목 · 메모가 한 박자 늦지 않다)
+    function onWrite(fn, first) { if (typeof fn === "function") { if (first) hooks.unshift(fn); else hooks.push(fn); } return () => { hooks = hooks.filter(f => f !== fn); }; }
     function fire(ev) { for (const fn of hooks) { try { fn(ev); } catch (e) { console.error(e); } } }
     const keyOf = (store, v) => v == null ? v : v[STORES[store] ? STORES[store].key : "id"];
     const api = {
@@ -72,7 +73,8 @@
       getMany: (store, ids) => tx(store, "readonly", st => { const o = { list: [] }; (ids || []).forEach(id => { const r = st.get(id); r.onsuccess = () => { if (r.result !== undefined) o.list.push(r.result); }; }); return o; }).then(o => o && o.list || []),
       put: async (store, value, silent) => { await tx(store, "readwrite", st => { st.put(value); return value; }); if (!silent) mirror(store, [value]); fire({ op: "put", store, docs: [value], keys: [keyOf(store, value)], silent: !!silent }); return value; },
       putAll: async (store, values, silent) => { await tx(store, "readwrite", st => { values.forEach(v => st.put(v)); return values.length; }); if (!silent && values.length) mirror(store, values); if (values.length) fire({ op: "put", store, docs: values, keys: values.map(v => keyOf(store, v)), silent: !!silent }); return values.length; },
-      del: async (store, key) => { await tx(store, "readwrite", st => { st.delete(key); return true; }); unmirror(store, [key]); fire({ op: "del", store, keys: [key], silent: false }); return true; },
+      // silent=true 면 클라우드에서 온 삭제라 다시 올리지 않는다 (훅은 그대로 부른다 — 색인 · 링크는 지워야 하므로)
+      del: async (store, key, silent) => { await tx(store, "readwrite", st => { st.delete(key); return true; }); if (!silent) unmirror(store, [key]); fire({ op: "del", store, keys: [key], silent: !!silent }); return true; },
       delWhere: async (store, idx, value) => {
         const keys = await tx(store, "readonly", st => wrap(st.index(idx).getAllKeys(IDBKeyRange.only(value))));
         if (keys.length) { await tx(store, "readwrite", st => { keys.forEach(k => st.delete(k)); return keys.length; }); unmirror(store, keys); fire({ op: "del", store, keys, silent: false }); }

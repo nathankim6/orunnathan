@@ -96,6 +96,8 @@
       else if (S.selectedId === APP.ALL) msg = "선생님을 고르면 그 두뇌의 가지가 보여요";
       else if (!t) msg = "선생님을 골라 주세요";
       else if (!g || g.nodes.length <= 1) msg = "파일을 넣으면 여기서 가지가 뻗어요";
+      // 2D 는 아래 카드 줄에 "＋ 새 선생님" 안내가 이미 있다 — 같은 말을 카드 위에 겹쳐 얹지 않는다
+      if (isFlat() && !S.teachers.size) msg = "";
       el.textContent = msg; el.hidden = !msg;
     }
 

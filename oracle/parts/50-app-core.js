@@ -82,41 +82,36 @@
       for (const s of DATA_STORES.concat(["notes", "links", "tags", "events"])) all[s] = await pick(s);
       return all;
     }
-    let indexRun = 0, indexing = false;
+    let indexRun = 0;
     // 전량 재구축 — 부팅 · importJson · deleteTeacher · 설정 #sReindex. all 을 주면 그 스냅샷으로 짓는다.
     async function rebuildIndex(all) {
       const run = ++indexRun;
       all = all || await loadAll(null);
       ctxCache.examTitle.clear(); ctxCache.passageSrc.clear(); ctxCache.memo.clear(); ctxCache.noteAnchor.clear();
       all.exams.forEach(d => cacheDoc("exams", d)); all.passages.forEach(d => cacheDoc("passages", d)); (all.notes || []).forEach(d => cacheDoc("notes", d));
-      indexing = true; state.indexReady = false; emit("index", INDEX.state);
+      state.indexReady = false; emit("index", INDEX.state);
+      try { NOTES.tags.load(all.tags || []); } catch (e) { console.error(e); }   // 태그 색 · 설명 · 고정을 캐시에 올린다(부팅 · 가져오기 · 다시 짓기)
       try {
         await Promise.all([INDEX.rebuild(all, indexCtx), Promise.resolve(LINKS.rebuild(all))]);
       } catch (e) { console.error(e); emit("toast", { msg: "색인을 짓지 못했어요: " + (e && e.message || e), bad: true }); }
       if (run !== indexRun) return;
       state.indexReady = !!(INDEX.state && INDEX.state.ready);
+      // 이제 가리킬 노트가 생긴 깨진 [[링크]] 를 다시 잇는다 (본문은 그대로 — links 캐시와 links 저장소만)
+      try { if (await NOTES.relink()) emit("link", null); } catch (e) { console.error(e); }
       emit("index", INDEX.state); emit("graph", null);
     }
     // 한 선생님의 파생 링크만 다시 만든다 (파일 완료 · 학습 · 예측 · 출제 · 삭제 · 매칭 수정 뒤)
     async function refreshLinks(teacherId) {
       if (!teacherId || teacherId === ALL || !state.teachers.has(teacherId)) return;
-      try { const all = await loadAll(teacherId); await LINKS.rebuildTeacher(teacherId, all); emit("graph", teacherId); } catch (e) { console.error(e); }
+      try { const all = await loadAll(teacherId); await LINKS.rebuildTeacher(teacherId, all); if (await NOTES.relink()) emit("link", null); emit("graph", teacherId); } catch (e) { console.error(e); }
     }
-    function upsertIndex(store, d) {
-      if (!INDEXED.includes(store) || !d) return;
-      try { INDEX.upsert(store, d, indexCtx); } catch (e) { console.error(e); }
-      // anchor 메모가 바뀌면 붙어 있는 원 문서의 memo 필드도 다시 색인한다
-      if (store === "notes" && d.kind === "anchor" && d.anchor && d.anchor.store && d.anchor.id && INDEXED.includes(d.anchor.store)) DB.get(d.anchor.store, d.anchor.id).then(x => { if (x) INDEX.upsert(d.anchor.store, x, indexCtx); }).catch(() => {});
-    }
-    // DB.onWrite 훅 — put/del/clear 를 색인에 반영한다. silent(클라우드 → 로컬 대량) 는 건너뛰고 끝에 한 번 rebuild.
+    // DB.onWrite 훅 — 색인 증분은 INDEX 가 자기 훅(42-index)으로 이미 한다. 여기서 또 하면 같은 문서를 두 번 색인하고
+    // INDEX 가 200개씩 조각내 둔 것을 한 덩어리 동기 루프로 되돌려 화면이 언다. 그래서 여기서는 그 훅이 읽는 ctx 캐시만 갱신한다.
+    // DB.onWrite(fn, true) 로 INDEX 훅보다 먼저 등록한다 — 제목 · 메모가 한 박자 늦게 반영되지 않도록.
     function onDbWrite(ev) {
-      if (!ev || ev.silent) return;
-      if (ev.op === "put") { for (const d of ev.docs || []) { cacheDoc(ev.store, d); if (indexing) upsertIndex(ev.store, d); } }
-      else if (ev.op === "del") { for (const k of ev.keys || []) { uncache(ev.store, k); if (indexing && INDEXED.includes(ev.store)) { try { INDEX.remove(k); } catch (e) {} } } }
-      else if (ev.op === "clear") {
-        for (const k of ev.keys || []) uncache(ev.store, k);
-        if (indexing && INDEXED.includes(ev.store)) { try { if (ev.keys && ev.keys.length) ev.keys.forEach(k => INDEX.remove(k)); else for (const d of [...INDEX.docs().values()]) if (d.store === ev.store) INDEX.remove(d.id); } catch (e) {} }
-      }
+      if (!ev) return;
+      if (ev.op === "put") { for (const d of ev.docs || []) cacheDoc(ev.store, d); }
+      else if (ev.op === "del" || ev.op === "clear") { for (const k of ev.keys || []) uncache(ev.store, k); }
     }
 
     // ---- 부팅 ----
@@ -130,7 +125,17 @@
         if (e && e.code === "blocked") { console.error(e); emit("bootError", { error: e, message: e.message, tries: state.bootTries }); return null; }   // #bootRetry → boot() 다시
         throw e;
       }
-      if (!hooked) { hooked = true; DB.onWrite(onDbWrite); INDEX.on((s) => { state.indexReady = !!(s && s.ready); emit("index", s); }); }
+      if (!hooked) {
+        hooked = true; DB.onWrite(onDbWrite, true);
+        // 색인 신호는 묶어서 낸다 — INDEX.upsert 는 문서마다 한 번 알리는데, 그때마다 셸을 다시 그리면 대량 쓰기에서 수백 번이 된다
+        let idxT = 0, idxAt = 0;
+        INDEX.on((s) => {
+          state.indexReady = !!(s && s.ready);
+          const now = Date.now();
+          if (s && s.building) { if (now - idxAt > 120) { idxAt = now; emit("index", s); } return; }
+          clearTimeout(idxT); idxT = setTimeout(() => { idxAt = Date.now(); emit("index", INDEX.state); }, 60);
+        });
+      }
       API.setLight(state.ui.light !== false);
       // 클라우드(Supabase) → 로컬. 실패해도 로컬로 계속 간다. notes · links · tags 는 updatedAt 병합(SYNC 가 한다).
       state.cloud = await SYNC.bootstrap(DB);
@@ -141,6 +146,8 @@
         await DB.setSetting("seeded", true);
       }
       for (const t of state.teachers.values()) { await refreshCounts(t.id); await loadLatest(t.id); }
+      // 지난 세션에서 5초 유예를 다 못 채우고 닫힌 삭제를 확정한다 (지운 메모가 되살아나지 않게)
+      try { await NOTES.sweepDeleted(); } catch (e) { console.error(e); }
       // 옛 메모 필드(questions.note · teachers.note) → anchor 노트. 멱등이라 매번 돌려도 된다(클라우드에서 옛 문서만 온 기기도 같은 길).
       const all = await loadAll(null);
       try {
@@ -409,6 +416,8 @@
         matched: mres.matched, createdAt: now, updatedAt: now, analyzedAt: now, learnedInVersion: null };
       const qs = r.questions.map(q => Object.assign(q, { id: uid("q"), examId, teacherId: t.id, tags: [], note: "", createdAt: now }));
       await DB.put("exams", exam); await DB.putAll("questions", qs);
+      // 프린트가 먼저 들어와 있으면 이 기출의 프린트 반영율을 바로 센다 (자동 학습이 꺼져 있어도 화면이 "프린트가 없어요" 라고 말하지 않게)
+      if ((await DB.where("sources", "teacherId", t.id)).some(x => x.kind === "프린트")) { step(job, "match", "프린트와 맞춰 보는 중", 0.97); await recomputeReflection(t.id); }
       job.examId = examId; job.added = qs.length; job.matchedNew = passages.length ? mres.matched : null;
       job.doneText = "완료 · 문항 " + qs.length + "개" + (passages.length ? " · 매칭 " + mres.matched : "");
       log(t.id, "ingest", exam.title + " · 문항 " + qs.length, { examId, id: examId });
@@ -465,15 +474,24 @@
       const hs = sources.filter(s => s.kind === "프린트").map(s => ({ source: s, passages: passages.filter(p => p.sourceId === s.id), items: s.items || [] }));
       const pById = {}; passages.forEach(p => { pById[p.id] = p; });
       const perSource = {}; hs.forEach(h => { perSource[h.source.id] = { hit: 0, n: 0, itemHits: [], exams: [] }; });
+      const cache = ANALYZE.reflectionCache();        // 프린트 지문 셔글을 시험마다 다시 만들지 않는다
+      const same = (a, b) => JSON.stringify(a || null) === JSON.stringify(b || null);
+      const exChanged = [], qChanged = [], sChanged = [];
+      let i = 0;
       for (const e of exams) {
+        if (i++ % 4 === 3) await new Promise(r => setTimeout(r, 0));                   // 시험 몇 개마다 화면에 프레임을 돌려준다
         const qs = questions.filter(q => q.examId === e.id);
         const mine = hs.filter(h => !h.source.target || h.source.target.guessed || (h.source.target.year === e.meta.year && h.source.target.semester === e.meta.semester && h.source.target.term === e.meta.term));
-        const r = ANALYZE.reflection({ questions: qs, handouts: mine.length ? mine : hs, passagesById: pById });
-        e.reflection = r; questions.filter(q => q.examId === e.id).forEach(q => { const h = r && r.hits.find(x => x.questionId === q.id); q.handoutHit = h ? { kinds: h.kinds, sourceIds: h.sourceIds } : null; });
+        const r = ANALYZE.reflection({ questions: qs, handouts: mine.length ? mine : hs, passagesById: pById, cache });
+        if (!same(e.reflection, r)) { e.reflection = r; exChanged.push(e); } else e.reflection = r;
+        qs.forEach(q => { const h = r && r.hits.find(x => x.questionId === q.id); const hit = h ? { kinds: h.kinds, sourceIds: h.sourceIds } : null; if (!same(q.handoutHit, hit)) { q.handoutHit = hit; qChanged.push(q); } });
         if (r) Object.keys(r.byHandout).forEach(id => { const b = perSource[id]; if (!b) return; b.hit += r.byHandout[id].hit; b.n += r.n; b.itemHits.push(...r.byHandout[id].itemHits.map(x => Object.assign({ examId: e.id }, x))); b.exams.push({ examId: e.id, label: TEXT.examLabel(e.meta), rate: r.byHandout[id].rate, hit: r.byHandout[id].hit, n: r.n }); });
       }
-      for (const h of hs) { const b = perSource[h.source.id]; h.source.reflection = b.n ? { rate: +(b.hit / b.n).toFixed(3), hit: b.hit, n: b.n, itemHits: b.itemHits, exams: b.exams } : null; }
-      if (exams.length) await DB.putAll("exams", exams); if (questions.length) await DB.putAll("questions", questions); if (hs.length) await DB.putAll("sources", hs.map(h => h.source));
+      for (const h of hs) { const b = perSource[h.source.id]; const next = b.n ? { rate: +(b.hit / b.n).toFixed(3), hit: b.hit, n: b.n, itemHits: b.itemHits, exams: b.exams } : null; if (!same(h.source.reflection, next)) { h.source.reflection = next; sChanged.push(h.source); } else h.source.reflection = next; }
+      // 바뀐 것만 쓴다 — 전량을 쓰면 IndexedDB · 색인 · 클라우드 업로드가 문항 수만큼 곱해진다
+      if (exChanged.length) await DB.putAll("exams", exChanged);
+      if (qChanged.length) await DB.putAll("questions", qChanged);
+      if (sChanged.length) await DB.putAll("sources", sChanged);
       return hs;
     }
     async function refreshExamMatched(teacherId) {
@@ -531,7 +549,7 @@
         if (olds.length) { try { await NOTES.orphan("profiles", olds.map(x => x.id)); } catch (e) { console.error(e); } for (const x of olds) await DB.del("profiles", x.id); }
         t.stats = Object.assign({}, t.stats, { profileVersion: rec.version, lastLearnedAt: rec.createdAt, level: profile.level.id }); t.updatedAt = now; await DB.put("teachers", t);
         for (const e of exams) { if (e.learnedInVersion !== null && e.learnedInVersion !== undefined) continue; const cur = await DB.get("exams", e.id); if (!cur) continue; cur.learnedInVersion = rec.version; cur.status = "learned"; await DB.put("exams", cur); }   // 학습 중 고친 시험 정보를 덮지 않는다
-        log(teacherId, "learn", "프로파일 v" + rec.version + " · " + delta.headline.join(" / "), { profileId: rec.id, id: rec.id });
+        log(teacherId, "learn", "프로파일 V" + rec.version + " · " + delta.headline.join(" / "), { profileId: rec.id, id: rec.id });
         state.busy.delete(teacherId);
         if (stage) { stage.fx.thinking(teacherId, false); stage.fx.learned(teacherId, { level: questions.length, profile: rec.constellation }); stage.updateTeacher(stageTeacher(t)); }
         else queueFx("learned", [teacherId, { level: questions.length, profile: rec.constellation }]);
@@ -607,10 +625,11 @@
         await DB.put("mocks", mock);
         log(teacherId, "generate", mock.title + " · " + mock.stats.total + "문항", { mockId: mock.id, id: mock.id });
         await refreshCounts(teacherId);
+        state.genCtrl = null;                       // 상태줄이 "출제 중" 과 [출제 중단] 을 그리기 전에 비운다
         state.busy.delete(teacherId); emit("busy", teacherId); if (stage) stage.fx.thinking(teacherId, false); emit("mock", mock);
         refreshLinks(teacherId);
         return mock;
-      } catch (e) { state.busy.delete(teacherId); if (stage) stage.fx.thinking(teacherId, false); emit("busy", teacherId); throw e; }
+      } catch (e) { state.genCtrl = null; state.busy.delete(teacherId); if (stage) stage.fx.thinking(teacherId, false); emit("busy", teacherId); throw e; }
       finally { state.genCtrl = null; }
     }
 
@@ -711,8 +730,8 @@
       if (c.questions && !p) add("learn", "문항이 " + c.questions + "개 — 학습할 수 있어요", "learn", null, "학습");
       if (p && !pr && c.passages) add("predict", "프로파일 V" + p.version + " — 다음 시험을 예측할 수 있어요", "predict", null, "예측");
       if (p && pr && pr.profileVersion < p.version) add("repredict", "예측이 프로파일 V" + pr.profileVersion + " 기준이에요 (지금 V" + p.version + ")", "predict", null, "다시 예측");
-      if (c.exams && !c.handouts) add("handout", "프린트를 넣으면 반영율을 계산해요 (칩을 '프린트' 로)", "inbox", null, "인박스");
-      if (c.passages && !c.scopeComplete) add("complete", "범위 원문이 다 들어왔으면 '범위 완비' 로 표시해 주세요", "library", "sources", "자료 보기");
+      if (c.exams && !c.handouts) add("handout", "프린트를 넣으면 반영율을 계산해요 (칩을 '프린트'로)", "inbox", null, "인박스");
+      if (c.passages && !c.scopeComplete) add("complete", "범위 원문이 다 들어왔으면 '범위 완비'로 표시해 주세요", "library", "sources", "자료 보기");
       if (p && pr && pr.profileVersion === p.version && !c.mocks) add("mock", "예측이 준비됐어요 — 적중 모의고사를 만들 수 있어요", "mock", null, "모의고사");
       if (pr && pr.target && pr.target.date) { const d = Math.ceil((new Date(pr.target.date + "T00:00:00").getTime() - Date.now()) / DAY); if (d >= 0 && d <= 21) add("dday", pr.target.label + " D-" + d, "note", pr.id, "청사진"); }
       return items.slice(0, 5);
@@ -755,10 +774,10 @@
       return { teacherId: one ? teacherId : ALL, weekStart: lo, weekEnd: hi, ingested, questions: q, passages: ps, learns, profileFrom, profileTo, predictions: preds, mocks, rateFrom, rateTo, notes, asks, events: events.length, text: parts.length ? parts.join(" · ") : "이 주에는 아무것도 없어요", empty };
     }
     // 빠른 메모 — 현재 선생님 범위("*" 면 선생님 없음)로 자유 메모를 만든다. 문항 번호 줄이 5개 이상이면 기출 시험지 같다고 알린다.
-    async function quickNote(text) {
+    async function quickNote(text, linkHints) {
       text = String(text || "").trim(); if (!text) return null;
       const teacherId = isAll() || !state.selectedId ? null : state.selectedId;
-      const doc = await NOTES.quick(text, teacherId, author());
+      const doc = await NOTES.quick(text, teacherId, author(), linkHints);
       log(teacherId, "note", NOTES.titleOf(doc), { id: doc.id, noteId: doc.id });
       emit("note", { id: doc.id, op: "create" }); emit("growth", teacherId);
       const numbered = text.split(/\n/).filter(l => /^\s*\d{1,2}\s*[.)]/.test(l)).length;
@@ -838,5 +857,5 @@
     return { state, on, emit, boot, createTeacher, updateTeacher, deleteTeacher, select, isAll, ALL, enqueue, setJobKind, cycleJobKind, cancelJob, retryJob, cancelAll, clearDone, runQueue, learn, predict, generateMock, abortGenerate, defaultTarget, recomputeReflection, setSourceComplete, predictBars,
              deleteExam, deleteSource, updateExamMeta, setQuestionMatch, exportJson, importJson, wipeAll, setBgVideo, setBgOpacity, saveUi, saveBg, refreshCounts, loadLatest, download,
              ensureStage, enterStage, leaveStage, disposeStage, setMode, queueFx, replayFx, growth, nextUp, weekSummary, quickNote, author, rebuildIndex, refreshLinks, loadAll, indexCtx, trimEvents, weekStartOf,
-             stage: () => stage, teacher, sub, PALETTE, log, calm };
+             stage: () => stage, teacher, teacherName: (id) => { const t = teacher(id); return t ? t.name : ""; }, sub, PALETTE, log, calm };
   })();

@@ -95,7 +95,7 @@
         case "questions": return j([doc.type, doc.subtype, doc.format, doc.points !== null && doc.points !== undefined ? doc.points + "점" : "", doc.difficulty ? "난이도 " + doc.difficulty : "", doc.handoutHit ? "★프린트" : ""]);
         case "passages": return j([look(ctx, "sourceName", doc.sourceId), doc.genre, doc.words ? doc.words + "단어" : "", doc.fromHandout ? "★프린트 지문" : ""]);
         case "sources": return j([doc.kind, doc.passages ? "지문 " + doc.passages : "", doc.items && doc.items.length ? "포인트 " + doc.items.length : "", doc.reflection && doc.reflection.n ? "반영율 " + pct(doc.reflection.rate) : ""]);
-        case "profiles": { const p = doc.profile || {}; return j([p.level ? "레벨 " + p.level.name : "", p.reliability !== undefined ? "신뢰도 " + p.reliability : "", p.basedOn ? "시험 " + p.basedOn.nExams + " · 문항 " + p.basedOn.nQuestions : ""]); }
+        case "profiles": { const p = doc.profile || {}; return j([p.level ? "레벨 " + p.level.name : "", p.reliability !== undefined ? "신뢰도 " + Math.round((+p.reliability || 0) * 100) + "%" : "", p.basedOn ? "시험 " + p.basedOn.nExams + " · 문항 " + p.basedOn.nQuestions : ""]); }
         case "predictions": { const bp = doc.blueprint || {}; return j(["V" + (doc.profileVersion || "?"), bp.confidence ? "신뢰도 " + pct(bp.confidence.overall) : "", bp.plan ? bp.plan.total + "문항" : ""]); }
         case "mocks": return j([doc.target, doc.stats ? doc.stats.total + "문항 · " + doc.stats.points + "점" : "", doc.model]);
         case "notes": return j([NOTES.kindLabel(doc.kind), doc.date, doc.orphanOf ? "고아" : "", doc.author]);
@@ -154,17 +154,18 @@
     }
     // ---- 색인 구조 ----
     function addDoc(d) {
-      removeDoc(d.id);
+      removeDoc(d.id, true);      // 다시 넣는 것이므로 원문은 그대로 둔다 (메모를 지워도 지문 원문 검색이 살아 있게)
       let L = 0; const tfs = {}; const set = new Set();
       FIELDS.forEach(f => { const toks = tokenize(d.fields[f]); toks.forEach(t => { const m = tfs[t] || (tfs[t] = {}); m[f] = (m[f] || 0) + 1; set.add(t); }); L += toks.length * W[f]; });
       Object.keys(tfs).forEach(t => { let m = post.get(t); if (!m) { m = new Map(); post.set(t, m); } m.set(d.id, { tf: tfs[t] }); });
       len.set(d.id, L); totalLen += L; dtoks.set(d.id, set); docs.set(d.id, d); titlesDirty = true; state.n = docs.size;
     }
-    function removeDoc(id) {
-      if (!docs.has(id)) { raw.delete(id); return false; }
+    // keepRaw=true 면 원문(grep 용)은 남긴다 — 같은 문서를 곧바로 다시 넣는 경우(addDoc · refreshMemo)
+    function removeDoc(id, keepRaw) {
+      if (!docs.has(id)) { if (!keepRaw) raw.delete(id); return false; }
       const set = dtoks.get(id) || new Set();
       set.forEach(t => { const m = post.get(t); if (m) { m.delete(id); if (!m.size) post.delete(t); } });
-      totalLen -= len.get(id) || 0; len.delete(id); dtoks.delete(id); docs.delete(id); raw.delete(id); titlesDirty = true; state.n = docs.size; return true;
+      totalLen -= len.get(id) || 0; len.delete(id); dtoks.delete(id); docs.delete(id); if (!keepRaw) raw.delete(id); titlesDirty = true; state.n = docs.size; return true;
     }
     function addFromStore(store, doc, ctx) {
       const d = docOf(store, doc, ctx); if (!d) return null;
@@ -205,6 +206,8 @@
       if (!STORE_KIND[store] || !doc || !doc.id) return null;
       ctx = ctx || ctxDefault;
       if (store === "notes") {
+        // 삭제 유예 중(deletedAt)인 노트는 색인에서 뺀다 — 되돌리면 다시 들어온다
+        if (doc.deletedAt) { memos.forEach((m, k) => { if (m.id === doc.id) { memos.delete(k); refreshMemo(k); } }); removeDoc(doc.id); return null; }
         // 옛 anchorKey 가 바뀌었거나(고아가 됨) 문서였다가 anchor 가 된 경우를 모두 정리한다
         memos.forEach((m, k) => { if (m.id === doc.id && k !== doc.anchorKey) { memos.delete(k); refreshMemo(k); } });
         if (doc.kind === "anchor" && doc.anchor && doc.anchorKey) { memos.set(doc.anchorKey, { id: doc.id, body: doc.body || "", tags: doc.tags || [] }); removeDoc(doc.id); refreshMemo(doc.anchorKey); return null; }
@@ -274,10 +277,13 @@
         if (d.updatedAt && now - d.updatedAt < 90 * 864e5) s *= 1.1;
         if (qn && normTitle(d.title) === qn) s *= 2;
         if (s < minScore) return;
-        out.push({ id, store: d.store, kind: d.kind, noteKind: d.noteKind, teacherId: d.teacherId, title: d.title, sub: d.sub, score: round(s), snippet: snippetOf(d, a.matched), matched: [...a.matched], handout: d.handout, hit: d.hit, updatedAt: d.updatedAt });
+        out.push({ d, score: round(s), matched: a.matched });
       });
-      out.sort((a, b) => b.score - a.score || (b.updatedAt || 0) - (a.updatedAt || 0));
-      return out.slice(0, limit);
+      out.sort((a, b) => b.score - a.score || (b.d.updatedAt || 0) - (a.d.updatedAt || 0));
+      // 스니펫과 matched 배열은 정렬 · 자르기 뒤에 만든다 — 한글 2-gram 질의는 후보가 사실상 전 문서라
+      // 여기서 미리 만들면 limit 개만 남기고 전부 버려진다(검색 시간의 대부분이 그 버려지는 계산이었다).
+      return out.slice(0, limit).map(r => ({ id: r.d.id, store: r.d.store, kind: r.d.kind, noteKind: r.d.noteKind, teacherId: r.d.teacherId, title: r.d.title, sub: r.d.sub,
+        score: r.score, snippet: snippetOf(r.d, r.matched), matched: [...r.matched], handout: r.d.handout, hit: r.d.hit, updatedAt: r.d.updatedAt }));
     }
     function ensureTitles() {
       if (!titlesDirty) return;

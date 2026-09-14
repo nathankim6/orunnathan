@@ -71,9 +71,11 @@
       o = o || {};
       const box = $("toasts");
       // 누를 것이 있는 토스트는 한 번에 하나만 — 두 장이 겹치면 어느 단추인지 헷갈린다. 쌓이는 것도 셋까지.
-      box.querySelectorAll(".toast button").forEach(b => b.parentNode.remove());
-      while (box.children.length >= 3) box.firstElementChild.remove();
+      // 되돌리기(keep)는 예외다: 5초 안에 배경 작업 완료 토스트 하나만 떠도 삭제를 되돌릴 길이 사라진다.
+      box.querySelectorAll(".toast button").forEach(b => { const t = b.parentNode; if (!t.dataset.keep) t.remove(); });
+      while (box.children.length >= 3) { const first = [...box.children].find(x => !x.dataset.keep) || box.firstElementChild; first.remove(); }
       const el = h('<div class="toast' + (o.bad ? " bad" : o.ok ? " ok" : "") + '" role="status"><span>' + esc(msg) + '</span></div>');
+      if (o.keep) el.dataset.keep = "1";
       if (o.action) { const b = h('<button type="button">' + esc(o.action) + '</button>'); b.onclick = () => { el.remove(); o.onAction && o.onAction(); }; el.appendChild(b); }
       box.appendChild(el);
       setTimeout(() => { el.style.opacity = "0"; setTimeout(() => el.remove(), 300); }, o.ms || (o.action ? 9000 : 4200));
@@ -223,10 +225,10 @@
           const c = SYNC.st; let n = null; try { n = await SYNC.count(); } catch (e) {}
           b.innerHTML = '<div class="note">데이터는 Supabase(프로젝트 orunnathan · 표 oracle_docs)에 저장돼요. 이 브라우저의 저장소가 작업본이고, 바뀔 때마다 클라우드에 그대로 올라가요. 다른 기기에서 같은 작업공간 이름으로 열면 같은 데이터를 봐요. 내 메모 · 링크 · 태그는 최신 수정이 이기는 규칙으로 합쳐지고, 배경 영상은 올리지 않아요.</div><label class="row"><input type="checkbox" id="cOn" ' + (c.enabled ? "checked" : "") + '> Supabase 동기화 켜기</label><div class="field" style="margin-top:10px"><label>작업공간 이름 <span class="faint">(영문·숫자 · 기기마다 같게 · 이름을 아는 사람은 누구나 읽고 써요)</span></label><div class="row"><input type="text" id="cWs" value="' + esc(c.workspace) + '" style="flex:1;width:auto"><button type="button" id="cWsSave">바꾸기</button></div></div><div class="kv"><b>상태</b><span id="cStat">' + esc(c.status === "error" ? "오류 — " + c.error : c.status === "syncing" ? "동기화 중" : c.enabled ? "연결됨" : "꺼짐") + '</span><b>클라우드 문서</b><span>' + (n === null ? "—" : n.toLocaleString() + "개") + '</span><b>마지막 동기화</b><span>' + (c.lastSync ? new Date(c.lastSync).toLocaleString("ko-KR") : "—") + '</span><b>대기 중</b><span>' + c.pending + '건</span>' + (c.private ? '<b>비공개</b><span>메모 · 링크 · 태그는 이 브라우저에만 (설정 › 브레인)</span>' : "") + '</div><div class="actions" style="justify-content:flex-start"><button type="button" id="cPush">이 브라우저 → 클라우드 전부 올리기</button><button type="button" id="cPull">클라우드 → 이 브라우저 (새로 고침)</button><button type="button" class="danger" id="cWipe">클라우드 작업공간 비우기</button></div>';
           b.querySelector("#cOn").onchange = (e) => { SYNC.setEnabled(e.target.checked); updateCloud(); };
-          b.querySelector("#cWsSave").onclick = () => { SYNC.setWorkspace(b.querySelector("#cWs").value); toast("작업공간을 바꿨어요 — 새로 고치면 그 작업공간의 데이터를 불러와요", { action: "지금 새로 고침", onAction: () => location.reload() }); show("cloud"); };
+          b.querySelector("#cWsSave").onclick = () => { SYNC.setWorkspace(b.querySelector("#cWs").value); toast("작업공간을 바꿨어요 — 새로 고치면 그 작업공간의 데이터를 불러와요. 이 브라우저의 자료는 저절로 올라가지 않아요([모두 올리기] 로 올려요)", { ms: 12000, action: "지금 새로 고침", onAction: () => location.reload() }); show("cloud"); };
           b.querySelector("#cPush").onclick = async () => { toast("올리는 중…"); await SYNC.pushAll(DB); toast(SYNC.st.status === "error" ? "실패: " + SYNC.st.error : "모두 올렸어요", { ok: SYNC.st.status !== "error", bad: SYNC.st.status === "error" }); show("cloud"); };
           b.querySelector("#cPull").onclick = () => location.reload();
-          b.querySelector("#cWipe").onclick = async () => { if (prompt("클라우드 작업공간 '" + c.workspace + "' 의 문서를 모두 지웁니다 (이 브라우저의 데이터는 남아요). '비우기' 라고 입력하세요") !== "비우기") return; try { await SYNC.wipeCloud(); toast("클라우드를 비웠어요"); show("cloud"); } catch (e) { toast(e.message, { bad: true }); } };
+          b.querySelector("#cWipe").onclick = async () => { if (prompt("클라우드 작업공간 '" + c.workspace + "' 의 문서를 모두 지웁니다 (이 브라우저의 데이터는 남아요). '비우기'라고 입력하세요") !== "비우기") return; try { await SYNC.wipeCloud(); toast("클라우드를 비웠어요"); show("cloud"); } catch (e) { toast(e.message, { bad: true }); } };
         } else if (k === "bg") {
           b.innerHTML = '<div class="field"><label>브레인 뷰 배경 (Higgsfield 등에서 만든 영상·그림)</label><div class="drop" id="sVidDrop">' + (S.bg.hasVideo ? "배경이 있어요 — 바꾸려면 여기에 놓거나 " : "mp4 · webm · jpg · png 를 여기에 놓거나 ") + '<button type="button" class="link" id="sVidPick">파일 선택</button></div>' + (S.bg.hasVideo ? '<div class="actions"><button type="button" id="sVidRm">배경 지우기</button></div>' : "") + '</div><div class="field"><label>배경 밝기 ' + Math.round(S.bg.opacity * 100) + '%</label><input type="range" id="sOpa" min="0" max="100" value="' + Math.round(S.bg.opacity * 100) + '"></div><div class="note">배경은 브레인 뷰(G)에만 깔려요. Higgsfield 는 이 화면에서 직접 부를 수 없어요(API 키·계정이 필요). 아래 프롬프트를 Higgsfield 에 붙여넣어 만든 영상·그림을 여기에 넣으면 무대 뒤에 깔리고, 3D 홀로그램·힉스 필드 입자는 그 위에 겹쳐요. 배경은 이 브라우저에만 남고 클라우드 · 백업에는 들어가지 않아요.</div>' + HIGGS_PROMPTS.map((x, i) => '<div class="field"><label>' + esc(x[0]) + ' <button type="button" class="link" data-copy="' + i + '">복사</button></label><pre class="prompt">' + esc(x[1]) + '</pre></div>').join("");
           const dz = b.querySelector("#sVidDrop");
@@ -253,12 +255,20 @@
           const sp = b.querySelector("#sPersist"); if (sp) sp.onclick = async () => { try { const ok = await navigator.storage.persist(); toast(ok ? "영구 저장이 허용됐어요" : "브라우저가 허용하지 않았어요"); show("data"); } catch (e) {} };
           b.querySelector("#sExport").onclick = () => APP.exportJson(null).then(r => toast("전체 백업을 내려받았어요 (" + TEXT.fmtBytes(r.size) + ")", { ok: true }));
           b.querySelector("#sImport").onclick = () => $("importInput").click();
-          b.querySelector("#sWipe").onclick = () => { const v = prompt("선생님 " + S.teachers.size + "명과 모든 데이터를 이 브라우저와 클라우드 작업공간에서 지웁니다. 백업을 먼저 받아 두세요.\n'모두 지우기' 라고 입력하세요"); if (v === "모두 지우기") APP.wipeAll().then(() => { closeSheet(); toast("모두 지웠어요"); ROUTE.go("#/today", { replace: true }); rerender(); }); };
+          b.querySelector("#sWipe").onclick = () => { const v = prompt("선생님 " + S.teachers.size + "명과 모든 데이터를 이 브라우저와 클라우드 작업공간에서 지웁니다. 백업을 먼저 받아 두세요.\n'모두 지우기'라고 입력하세요"); if (v === "모두 지우기") APP.wipeAll().then(() => { closeSheet(); toast("모두 지웠어요"); ROUTE.go("#/today", { replace: true }); rerender(); }); };
         } else if (k === "brain") {
           const author = APP.author(); const priv = !!(SYNC.st && SYNC.st.private); const askK = S.ui.askK || 12;
-          b.innerHTML = '<div class="field"><label>메모 서명 <span class="faint">— 작업공간은 여러 사람이 써요. 내 메모 · 링크 · 태그에 이 이름이 붙어요</span></label><input type="text" id="sAuthor" maxlength="20" placeholder="예) 김강사 (비워 두면 “이 기기”)" value="' + esc(author) + '"></div><label class="row"><input type="checkbox" id="sPrivate" ' + (priv ? "checked" : "") + '> 내 메모 · 링크 · 태그는 이 브라우저에만 (클라우드에 올리지 않음)</label><div class="small" style="margin:4px 0 12px 22px">작업공간 이름을 아는 사람은 누구나 클라우드의 메모를 볼 수 있어요. 켜면 이 기기의 메모는 백업(JSON)으로만 옮길 수 있어요.</div><div class="field"><label>물어보기 근거 개수</label><div class="seg" id="sAskK">' + [8, 12, 16].map(n => '<button type="button" data-v="' + n + '" class="' + (askK === n ? "on" : "") + '">' + n + '개</button>').join("") + '</div></div><label class="row"><input type="checkbox" id="sAskLight" ' + (S.ui.askLight !== false ? "checked" : "") + '> 물어보기는 Sonnet 으로 (빠르고 저렴)</label><div class="field" style="margin-top:14px"><label>검색 색인</label><div class="row"><button type="button" id="sReindex">색인 다시 짓기</button><span class="small" id="sIndexStat">' + esc(indexText()) + '</span></div><div class="small" style="margin-top:4px">색인은 저장하지 않고 열 때마다 다시 지어요. 검색 결과가 이상하면 여기서 다시 지으세요.</div></div>';
+          b.innerHTML = '<div class="field"><label>메모 서명 <span class="faint">— 작업공간은 여러 사람이 써요. 내 메모 · 링크 · 태그에 이 이름이 붙어요</span></label><input type="text" id="sAuthor" maxlength="20" placeholder="예) 김강사 (비워 두면 “이 기기”)" value="' + esc(author) + '"></div><label class="row"><input type="checkbox" id="sPrivate" ' + (priv ? "checked" : "") + '> 내 메모 · 링크 · 태그는 이 브라우저에만 (클라우드에 올리지 않음)</label><div class="small" style="margin:4px 0 12px 22px">작업공간 이름을 아는 사람은 누구나 클라우드의 메모를 볼 수 있어요. 켜면 <b>지금부터</b> 올리지 않고, 이미 올라간 것은 그대로 남아요(켤 때 지울지 물어봐요). 이 기기의 메모는 백업(JSON)으로만 옮길 수 있어요.</div><div class="field"><label>물어보기 근거 개수</label><div class="seg" id="sAskK">' + [8, 12, 16].map(n => '<button type="button" data-v="' + n + '" class="' + (askK === n ? "on" : "") + '">' + n + '개</button>').join("") + '</div></div><label class="row"><input type="checkbox" id="sAskLight" ' + (S.ui.askLight !== false ? "checked" : "") + '> 물어보기는 Sonnet 으로 (빠르고 저렴)</label><div class="field" style="margin-top:14px"><label>검색 색인</label><div class="row"><button type="button" id="sReindex">색인 다시 짓기</button><span class="small" id="sIndexStat">' + esc(indexText()) + '</span></div><div class="small" style="margin-top:4px">색인은 저장하지 않고 열 때마다 다시 지어요. 검색 결과가 이상하면 여기서 다시 지으세요.</div></div>';
           b.querySelector("#sAuthor").onchange = (e) => { try { localStorage.setItem("orun_oracle_author", e.target.value.trim()); } catch (x) {} toast("서명을 저장했어요", { ok: true }); };
-          b.querySelector("#sPrivate").onchange = (e) => { SYNC.setPrivate(e.target.checked); updateCloud(); toast(e.target.checked ? "메모 · 링크 · 태그를 이 브라우저에만 둬요" : "메모 · 링크 · 태그도 클라우드에 올려요"); };
+          b.querySelector("#sPrivate").onchange = (e) => {
+            SYNC.setPrivate(e.target.checked); updateCloud();
+            if (!e.target.checked) { toast("메모 · 링크 · 태그도 클라우드에 올려요"); return; }
+            // 지금부터 올리지 않을 뿐, 켜기 전에 올라간 것은 클라우드에 그대로 남는다 — 지울지 물어본다
+            toast("지금부터 메모 · 링크 · 태그를 올리지 않아요 — 이미 올라간 것은 남아 있어요", { ms: 12000, keep: true, action: "클라우드에서 지우기", onAction: async () => {
+              if (prompt("작업공간 '" + SYNC.st.workspace + "' 의 클라우드에서 메모 · 링크 · 태그를 지웁니다 (이 브라우저의 것은 남아요).\n'지우기'라고 입력하세요") !== "지우기") return;
+              try { await SYNC.wipePrivateCloud(); toast("클라우드에서 지웠어요", { ok: true }); } catch (err) { toast(err.message, { bad: true }); }
+            } });
+          };
           b.querySelector("#sAskK").querySelectorAll("button").forEach(x => x.onclick = () => { APP.saveUi({ askK: +x.dataset.v }); b.querySelector("#sAskK").querySelectorAll("button").forEach(y => y.classList.toggle("on", y === x)); });
           b.querySelector("#sAskLight").onchange = (e) => APP.saveUi({ askLight: e.target.checked });
           b.querySelector("#sReindex").onclick = async () => { const st = b.querySelector("#sIndexStat"); st.textContent = "색인 짓는 중…"; try { await APP.rebuildIndex(); st.textContent = indexText(); toast("색인을 다시 지었어요", { ok: true }); } catch (e) { st.textContent = "실패: " + (e && e.message || e); } };
@@ -352,7 +362,7 @@
       else if (a === "learn") { if (t) run(() => APP.learn(t.id, { force: true })); }
       else if (a === "predict") openPredictSheet();
       else if (a === "mock") openMockSheet();
-      else if (a === "ask") ROUTE.go(ROUTE.href({ view: "ask", query: { q, ctx: cur && cur.view === "note" ? cur.id : "" } }));
+      else if (a === "ask") { const c = cur && cur.view === "note" ? cur.id : ""; if (q) VIEWS.submitAsk(q, c); else ROUTE.go(ROUTE.href({ view: "ask", query: { ctx: c } })); }
       else if (a === "today") ROUTE.go("#/today"); else if (a === "inbox") ROUTE.go("#/inbox"); else if (a === "library") ROUTE.go(ROUTE.all("exams")); else if (a === "brain") ROUTE.go("#/brain"); else if (a === "timeline") ROUTE.go("#/timeline"); else if (a === "askview") ROUTE.go("#/ask");
       else if (a === "brainfocus") { if (cur && cur.view === "note") ROUTE.go(ROUTE.href({ view: "brain", query: { focus: cur.id } })); }
       else if (a.indexOf("teacher:") === 0) APP.select(a.slice(8));
@@ -455,7 +465,7 @@
         if (e.isComposing || e.keyCode === 229) return;
         if (e.key === "ArrowDown") { e.preventDefault(); if (ckHits.length) { ckIdx = (ckIdx + 1) % ckHits.length; markCk(); } }
         else if (e.key === "ArrowUp") { e.preventDefault(); if (ckHits.length) { ckIdx = (ckIdx - 1 + ckHits.length) % ckHits.length; markCk(); } }
-        else if (e.key === "Enter") { e.preventDefault(); const { mode, q } = parseQuery(inp.value); if (mode === "ask" && q) { closeCmdk(); ROUTE.go(ROUTE.href({ view: "ask", query: { q } })); return; } if (ckHits.length) cmdkPick(ckIdx, e.metaKey || e.ctrlKey); else if (q && (e.metaKey || e.ctrlKey)) { closeCmdk(); ROUTE.go(ROUTE.href({ view: "search", query: { q } })); } }
+        else if (e.key === "Enter") { e.preventDefault(); const { mode, q } = parseQuery(inp.value); if (mode === "ask" && q) { closeCmdk(); VIEWS.submitAsk(q, ""); return; } if (ckHits.length) cmdkPick(ckIdx, e.metaKey || e.ctrlKey); else if (q && (e.metaKey || e.ctrlKey)) { closeCmdk(); ROUTE.go(ROUTE.href({ view: "search", query: { q } })); } }
         else if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); closeCmdk(); }
         else if (e.key === "Tab") { e.preventDefault(); }
       });
@@ -503,7 +513,8 @@
         const tid = teacherId(); const multi = S.teachers.size > 1 || tid === APP.ALL;
         if (mode === "link") {
           let rs = []; try { rs = INDEX.prefix(q, { teacherId: tid, limit: 8 }) || []; } catch (e) { rs = []; }
-          items = rs.map(r => ({ id: r.id, kind: r.kind, title: r.title, label: r.title, sub: [KIND_LABEL[r.kind] || r.kind, multi ? tName(r.teacherId) : ""].filter(Boolean).join(" · ") }));
+          // r.sub 를 함께 보여 준다 — 같은 제목의 지문이 둘일 때(범위 원문 · 프린트) 눈으로 구별할 수 있게
+          items = rs.map(r => ({ id: r.id, kind: r.kind, title: r.title, label: r.title, sub: [KIND_LABEL[r.kind] || r.kind, multi ? tName(r.teacherId) : "", r.sub || ""].filter(Boolean).join(" · ") }));
         } else {
           let tags = []; try { tags = NOTES.tags.list(tid && tid !== APP.ALL ? tid : null) || []; } catch (e) { tags = []; }
           const ql = q.toLowerCase();
@@ -724,10 +735,10 @@
       if (t) pieces.push({ label: t.name, route: ROUTE.note(t.id) }); else if (all) pieces.push({ label: "모든 선생님", route: "#/today" });
       const v = r.view;
       if (v === "library") { pieces.push({ label: "서재", route: ROUTE.all("exams") }); pieces.push({ label: LIB_LABEL[r.kind] || r.kind, route: ROUTE.all(r.kind) }); if (r.query && r.query.kind) pieces.push({ label: r.query.kind, route: ROUTE.href(r) }); }
-      else if (v === "tag") { pieces.push({ label: "태그", route: ROUTE.all("notes", { tags: 1 }) }); pieces.push({ label: "#" + r.name, route: ROUTE.href(r) }); }
+      else if (v === "tag") { pieces.push({ label: "태그", route: ROUTE.all("notes", { tag: r.name }) }); pieces.push({ label: "#" + r.name, route: ROUTE.href(r) }); }
       else if (v === "note") { const d = INDEX.get ? INDEX.get(r.id) : null; const kind = d ? d.kind : r.kind; const store = { teacher: null, exam: "exams", question: "questions", passage: "passages", source: "sources", handout: "sources", profile: "profiles", prediction: "predictions", mock: "mocks", note: "notes", ask: "notes" }[kind]; if (kind !== "teacher") pieces.push({ label: KIND_LABEL[kind] || "노트", route: store ? ROUTE.all(store) : "#/today" }); if (!(kind === "teacher" && t && t.id === r.id)) pieces.push({ label: d ? d.title : (kind === "teacher" ? (T(r.id) || {}).name || "선생님" : "노트"), route: ROUTE.note(r.id) }); }
       else pieces.push({ label: VIEW_LABEL[v] || v, route: ROUTE.href({ view: v }) });
-      $("crumbs").innerHTML = pieces.map((x, i) => (i ? '<i>›</i>' : "") + '<a data-route="' + esc(x.route) + '" title="' + esc(x.label) + '">' + esc(x.label) + '</a>').join("");
+      $("crumbs").innerHTML = pieces.map((x, i) => (i ? '<i>›</i>' : "") + '<a href="' + esc(x.route) + '" data-route="' + esc(x.route) + '" title="' + esc(x.label) + '">' + esc(x.label) + '</a>').join("");
       updateEngine(); updateCloud();
     }
     function updateEngine(ok) {
@@ -807,7 +818,7 @@
     function asideAskGo() {
       const q = $("asideAskInput").value.trim(); if (!q) { ROUTE.go("#/ask"); return; }
       $("asideAskInput").value = "";
-      ROUTE.go(ROUTE.href({ view: "ask", query: { q, ctx: cur && cur.view === "note" ? cur.id : "" } }));
+      VIEWS.submitAsk(q, cur && cur.view === "note" ? cur.id : "");     // 눌렀으면 실제로 묻는다
     }
 
     // ================= 라우팅 규칙 (§5.15) =================
@@ -860,6 +871,7 @@
     // ================= 초기화 =================
     function bindShell() {
       $("btnSearch").onclick = () => openCmdk();
+      const tm = $("navTagsMore"); if (tm) tm.onclick = (e) => { e.preventDefault(); openCmdk("#"); };   // 태그 전체는 ⌘K 의 # 모드가 보여 준다
       $("btnSettings").onclick = () => openSettings("engine"); $("engine").onclick = () => openSettings("engine"); $("cloud").onclick = () => openSettings("cloud"); $("btnHelp").onclick = openHelp;
       $("asideToggle").onclick = () => toggleAside(); $("navToggle").onclick = () => toggleNav(); $("navBack").onclick = closeNavDrawer;
       $("navTeacher").onclick = (e) => { e.stopPropagation(); toggleTeacherMenu(); };
@@ -870,7 +882,7 @@
       $("statusbar").addEventListener("click", (e) => { if (e.target.closest("button")) return; ROUTE.go("#/inbox"); });
       $("qCancelAll").onclick = (e) => { e.stopPropagation(); APP.cancelAll(); }; $("qAbortGen").onclick = (e) => { e.stopPropagation(); APP.abortGenerate(); };
       $("tabbar").addEventListener("click", (e) => { const b = e.target.closest("[data-tab]"); if (!b) return; const k = b.dataset.tab; if (k === "more") openMoreSheet(); else if (k === "library") ROUTE.go(ROUTE.all("exams")); else ROUTE.go("#/" + k); });
-      $("crumbs").addEventListener("click", (e) => { const a = e.target.closest("[data-route]"); if (a) ROUTE.go(a.dataset.route); });
+      $("crumbs").addEventListener("click", (e) => { const a = e.target.closest("[data-route]"); if (a) { e.preventDefault(); ROUTE.go(a.dataset.route); } });
       $("sheetClose").onclick = closeSheet; $("sheetWrap").addEventListener("click", e => { if (e.target === $("sheetWrap")) closeSheet(); });
       $("paperClose").onclick = closePaper; $("paperPrint").onclick = () => window.print(); $("paperDocx").onclick = paperDocx;
       $("paperCopy").onclick = async () => { const txt = $("paperPage").innerText; try { await navigator.clipboard.writeText(txt); toast("본문을 복사했어요", { ok: true }); } catch (e) { toast("복사하지 못했어요", { bad: true }); } };
@@ -896,7 +908,7 @@
         case "boot":
           bootDone = true; setBrand(); updateEngine(); updateCloud(); $("fpsTag").hidden = !S.ui.showFps; document.body.classList.toggle("reduced", !!S.ui.reduced);
           rerender(); renderChanged();
-          if (S.cloud && S.cloud.error) toast("Supabase 에 연결하지 못해 이 브라우저 저장소로만 갑니다 (" + String(S.cloud.error).slice(0, 60) + ")", { bad: true, ms: 8000 });
+          if (S.cloud && S.cloud.error) toast("클라우드에 연결하지 못해 이 브라우저에만 저장해요 — 잠시 뒤 다시 해 볼게요 (" + String(S.cloud.error).slice(0, 60) + ")", { bad: true, ms: 8000 });
           if (!API.ready()) setTimeout(() => toast("먼저 설정에서 API 키를 저장해 주세요 — 동형 모의고사 생성기에 저장한 키가 있으면 그대로 써요", { action: "설정 열기", onAction: () => openSettings("engine") }), 800);
           break;
         case "bootError": showBootError(data); break;

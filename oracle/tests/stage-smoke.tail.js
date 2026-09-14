@@ -1,6 +1,17 @@
 window.__errors = [];
 window.addEventListener("error", e => window.__errors.push(String(e.message)));
 const q = new URLSearchParams(location.search);
+// 리스너 계수기 — dispose() 가 무대 한 벌을 온전히 놓아주는지 본다 (2D↔3D 를 누를 때마다 새지 않게)
+window.__lis = { doc: {}, win: {}, cv: {} };
+(function countListeners() {
+  const wrap = (obj, bag) => {
+    const add = obj.addEventListener.bind(obj), rm = obj.removeEventListener.bind(obj);
+    obj.addEventListener = function (t) { bag[t] = (bag[t] || 0) + 1; return add.apply(null, arguments); };
+    obj.removeEventListener = function (t) { if (bag[t]) bag[t]--; return rm.apply(null, arguments); };
+  };
+  wrap(document, window.__lis.doc); wrap(window, window.__lis.win);
+  const cv = document.getElementById("fx"); if (cv) wrap(cv, window.__lis.cv);
+})();
 const stage = makeStage(document.getElementById("fx"), { onSelect: id => { window.__sel = id; }, onHover: () => {} });
 window.__stage = stage;
 if (stage) {
@@ -45,6 +56,19 @@ if (stage) {
       step("regraph", () => { stage.setGraph({ nodes: nodes.slice(0, 60), edges: edges.filter(e => +e[0].split("_")[1] < 60 && (+e[1].split("_")[1] < 60)) }); return stage.graph().nodes.length; });
       step("clearGraph", () => { stage.clearGraph(); return stage.graph().nodes.length; });
       step("setGraphAgain", () => { stage.setGraph({ nodes, edges }); return stage.graph().nodes.length; });
+      // dispose() → 리스너가 하나도 남지 않아야 한다 (남으면 makeStage 스코프 전체가 GC 를 못 받는다)
+      step("dispose", () => {
+        const base = JSON.parse(JSON.stringify(window.__lis));
+        const s2 = makeStage(document.getElementById("fx"), { onSelect: () => {}, onHover: () => {} });
+        if (!s2) throw new Error("두 번째 무대를 만들지 못했다");
+        s2.addTeacher({ id: "t9", name: "김영어", sub: "영어", school: "흑석고", color: "#5fc8ff", level: 10 });
+        s2.dispose();
+        const leaked = [];
+        ["doc", "win", "cv"].forEach(k => Object.keys(window.__lis[k]).forEach(t => { const d = (window.__lis[k][t] || 0) - (base[k][t] || 0); if (d > 0) leaked.push(k + ":" + t + "+" + d); }));
+        out.leaked = leaked;
+        if (leaked.length) throw new Error("dispose 뒤 남은 리스너 " + leaked.join(" "));
+        return "clean";
+      });
       out.ok = out.nodes === 500 && out.edges === 600 && out.rendered && out.picked && out.picked.id === "p_1" && !out.steps.some(s => /^ERR/.test(String(s[1])));
       window.__graph = out;
     }, 2600);

@@ -236,10 +236,12 @@ const fx = (n) => fs.readFileSync(path.join(T, "fixtures", n), "utf8");
   await page.waitForFunction(async (q) => { const d = await ORACLE.DB.get("questions", q); return d.match && d.match.method === "user"; }, qid, { timeout: 10000 });
   const ev21 = await page.evaluate(async () => (await ORACLE.DB.all("events")).filter(e => e.kind === "match").length);
   await go(page, "#/n/" + newPass, "note");
+  // 파생 링크는 매칭 저장 뒤 비동기로 다시 지어진다 — 나타날 때까지 기다린 뒤 본다 (샘플링하면 들쭉날쭉하다)
+  await page.waitForFunction(q => document.querySelector('#noteBacklinks [data-id="' + q + '"]') !== null || document.getElementById("noteBacklinks").textContent.indexOf(q) >= 0, qid, { timeout: 15000 }).catch(() => {});
   const back21new = await page.evaluate(q => document.querySelector('#noteBacklinks [data-id="' + q + '"]') !== null || document.getElementById("noteBacklinks").textContent.indexOf(q) >= 0, qid);
   let back21old = false;
-  if (oldPass && oldPass !== newPass) { await go(page, "#/n/" + oldPass, "note"); back21old = await page.evaluate(q => document.querySelector('#noteBacklinks [data-id="' + q + '"]') !== null, qid); }
-  ok(ev21 >= 1 && back21new && !back21old, "21. 매칭을 바꾸니 method=user · match 이벤트 " + ev21 + " · 새 지문 백링크 O · 옛 지문 백링크 X");
+  if (oldPass && oldPass !== newPass) { await go(page, "#/n/" + oldPass, "note"); await page.waitForTimeout(300); back21old = await page.evaluate(q => document.querySelector('#noteBacklinks [data-id="' + q + '"]') !== null, qid); }
+  ok(ev21 >= 1 && back21new && !back21old, "21. 매칭을 바꾸니 method=user · match 이벤트 " + ev21 + " · 새 지문 백링크 " + back21new + " · 옛 지문 백링크 " + back21old);
 
   await go(page, "#/n/" + prof.id, "note");
   const p22 = await page.evaluate(() => { const b = document.getElementById("noteBody"); const first = b.firstElementChild; return { kind: document.getElementById("vNote").dataset.kind, body: b.textContent, first: first ? first.textContent.slice(0, 40) : "", opts: document.querySelectorAll("#profVer option").length }; });
@@ -248,6 +250,17 @@ const fx = (n) => fs.readFileSync(path.join(T, "fixtures", n), "utf8");
   await page.evaluate(() => ORACLE.UI.openDrawer("handouts")); await view(page, "library"); await page.waitForTimeout(200);
   const d23 = await page.evaluate(() => ({ hash: decodeURIComponent(location.hash), tbl: document.getElementById("libTable").textContent }));
   ok(/^#\/all\/sources\?/.test(d23.hash) && /kind=프린트/.test(d23.hash) && /반영/.test(d23.tbl), "23. openDrawer('handouts') 어댑터가 서재 프린트 목록으로: " + d23.hash);
+
+  // 23b. 노트에서 오는 좁히기 — [문항 목록으로](exam) · [같은 지문 문항 보기](passage) 가 실제로 목록을 줄인다
+  await go(page, "#/all/questions", "library"); await page.waitForTimeout(250);
+  const all23 = await count(page, "#libTable tr[data-id]");
+  const exOf = await page.evaluate(async (q) => (await ORACLE.DB.get("questions", q)).examId, qid);
+  await go(page, "#/all/questions?exam=" + exOf, "library"); await page.waitForTimeout(250);
+  const byExam = await page.evaluate(async (e) => ({ rows: document.querySelectorAll("#libTable tr[data-id]").length, want: (await ORACLE.DB.where("questions", "examId", e)).length, clear: !document.getElementById("libFilterClear").hidden }), exOf);
+  await go(page, "#/all/questions?passage=" + newPass, "library"); await page.waitForTimeout(250);
+  const byPass = await page.evaluate(async (pid) => { const qs = await ORACLE.DB.all("questions"); return { rows: document.querySelectorAll("#libTable tr[data-id]").length, want: qs.filter(q => q.match && q.match.passageId === pid).length }; }, newPass);
+  ok(byExam.rows === byExam.want && byExam.rows < all23 && byExam.clear && byPass.rows === byPass.want && byPass.want >= 1,
+    "23b. exam · passage 쿼리가 서재를 실제로 좁힌다 (전체 " + all23 + " → 시험 " + byExam.rows + "/" + byExam.want + " · 지문 " + byPass.rows + "/" + byPass.want + ")");
 
   const midExam = await page.evaluate(async (id) => { const es = await ORACLE.DB.where("exams", "teacherId", id); const e = es.find(x => /1학기 중간/.test(ORACLE.TEXT.examLabel(x.meta))); return e.id; }, tid);
   await go(page, "#/n/" + midExam, "note");
@@ -301,6 +314,22 @@ const fx = (n) => fs.readFileSync(path.join(T, "fixtures", n), "utf8");
   const b27 = await page.evaluate(async (n) => ({ broken: document.querySelectorAll("#noteMemoView .broken").length, links: (await ORACLE.DB.all("links")).filter(l => l.from === n).length }), memoNoteId);
   ok(b27.broken >= 1 && b27.links === 0, "27. 깨진 링크는 .broken 으로 보이고 links 에 저장되지 않는다");
 
+  // 27b. 나중에 그 제목의 노트가 생기면 깨진 링크가 저절로 이어진다 (§3.2 가 안내하는 길의 끝)
+  await page.evaluate(() => ORACLE.NOTES.create({ kind: "note", title: "없는 제목", body: "", teacherId: ORACLE.APP.state.selectedId }));
+  await page.evaluate(() => ORACLE.APP.refreshLinks(ORACLE.APP.state.selectedId));
+  await page.waitForFunction(async (n) => { const d = await ORACLE.DB.get("notes", n); return !!(d && (d.links || []).length && d.links.every(l => l.to)); }, memoNoteId, { timeout: 15000 }).catch(() => {});
+  const b27b = await page.evaluate(async (n) => { const d = await ORACLE.DB.get("notes", n); return { to: (d.links || []).map(l => l.to), links: (await ORACLE.DB.all("links")).filter(l => l.from === n).length }; }, memoNoteId);
+  ok(b27b.to.every(Boolean) && b27b.links >= 1, "27b. 그 제목의 노트가 생기면 깨진 링크가 다시 이어지고 백링크도 생긴다 (" + b27b.to.join(",") + " · links " + b27b.links + ")");
+
+  // 27c. 노트→노트 이동(해시만 바뀜)이 저장 대기 중인 메모를 지우지 않는다
+  await go(page, "#/n/" + qid, "note");
+  await page.evaluate(() => { const tg = document.getElementById("noteMemoToggle"); if (document.getElementById("noteMemoText").hidden && tg) tg.click(); });
+  await page.fill("#noteMemoText", "이 선생님은 빈칸을 좋아함");
+  await page.evaluate((p) => ORACLE.ROUTE.go("#/n/" + p), newPass);          // 900ms 자동 저장 전에 옮긴다 (뒤로가기 · 스와이프 백과 같은 길)
+  await page.waitForTimeout(900);
+  const m27c = await page.evaluate(async (q) => { const m = await ORACLE.NOTES.memo("questions:" + q); return m ? m.body : null; }, qid);
+  ok(m27c === "이 선생님은 빈칸을 좋아함", "27c. 쓰다 만 메모는 노트를 옮겨도 살아남는다 (" + JSON.stringify(m27c) + ")");
+
   await go(page, "#/inbox", "inbox");
   await page.fill("#captureText", "오늘 수업 #어법");
   await page.click("#captureGo");
@@ -321,6 +350,17 @@ const fx = (n) => fs.readFileSync(path.join(T, "fixtures", n), "utf8");
   await page.waitForTimeout(5500);
   const gone = await page.evaluate(async (id) => !(await ORACLE.DB.get("notes", id)), delId);
   ok(alive && gone, "29. 메모 삭제는 5초 안에 취소할 수 있고, 취소하지 않으면 확정된다");
+
+  // 29b. 유예 중에 다른 토스트가 떠도 [취소] 가 살아 있고, 그 사이 새로 고쳐도 되살아나지 않는다
+  const delId2 = await page.evaluate(async () => (await ORACLE.APP.quickNote("지울 메모 둘")).id);
+  await go(page, "#/n/" + delId2, "note");
+  await page.click("#nDel"); await page.waitForSelector("#toasts button");
+  await page.evaluate(() => ORACLE.UI.toast("문항 +7 (총 21) · 매칭 6/7"));           // 배경 작업 완료 토스트
+  await page.waitForTimeout(150);
+  const soft29 = await page.evaluate(async (id) => { const d = await ORACLE.DB.get("notes", id); return { undo: !!document.querySelector("#toasts button"), deletedAt: !!(d && d.deletedAt), indexed: !!ORACLE.INDEX.get(id) }; }, delId2);
+  await page.click("#toasts button"); await page.waitForTimeout(400);
+  const back29 = await page.evaluate(async (id) => { const d = await ORACLE.DB.get("notes", id); return !!d && !d.deletedAt; }, delId2);
+  ok(soft29.undo && soft29.deletedAt && !soft29.indexed && back29, "29b. 다른 토스트가 떠도 [취소] 가 남고, 유예 중 deletedAt 이 저장소에 적혀 새로 고침에도 살아나지 않는다 " + JSON.stringify(soft29));
 
   // 30. 옛 v1 IndexedDB → v2 이전 (별도 컨텍스트 · 별도 작업공간)
   {
@@ -391,9 +431,13 @@ const fx = (n) => fs.readFileSync(path.join(T, "fixtures", n), "utf8");
   await page.fill("#cmdkInput", "#재"); await page.waitForTimeout(400);
   const h33 = await page.evaluate(() => [...document.querySelectorAll("#cmdkList .hit[data-hit]")].map(x => x.dataset.hit));
   await page.fill("#cmdkInput", "?빈칸"); await page.waitForTimeout(400);
-  await page.keyboard.press("Enter"); await view(page, "ask"); await page.waitForTimeout(200);
+  const n33 = calls.length;
+  await page.keyboard.press("Enter"); await view(page, "ask");
+  await page.waitForFunction(() => document.querySelectorAll("#askLog .msg.brain").length >= 1, null, { timeout: 30000 }).catch(() => {});
+  await page.waitForTimeout(400);
   const hash33 = await page.evaluate(() => decodeURIComponent(location.hash));
-  ok(h33.length >= 1 && h33.every(x => /^tag:/.test(x)) && h33.includes("tag:재출제") && /^#\/ask\?/.test(hash33) && /q=빈칸/.test(hash33), "33. # 접두는 태그만(" + h33.join(",") + ") · ? 접두는 물어보기로 (" + hash33 + ")");
+  const asked33 = calls.slice(n33).some(c => c.ask);
+  ok(h33.length >= 1 && h33.every(x => /^tag:/.test(x)) && h33.includes("tag:재출제") && /^#\/ask\?/.test(hash33) && /q=빈칸/.test(hash33) && asked33, "33. # 접두는 태그만(" + h33.join(",") + ") · ? 접두는 실제로 묻는다 (" + hash33 + " · 호출 " + (asked33 ? "있음" : "없음") + ")");
 
   await page.keyboard.press("Control+k"); await page.waitForSelector("#cmdk", { state: "visible" });
   await page.fill("#cmdkInput", "Ancient philosophers argued"); await page.waitForTimeout(500);
@@ -432,8 +476,8 @@ const fx = (n) => fs.readFileSync(path.join(T, "fixtures", n), "utf8");
 
   const citeId = await page.evaluate(() => { const el = document.querySelector("#askLog .msg.brain .cite[data-id]"); return el ? el.dataset.id : null; });
   await page.click("#askLog .msg.brain .cite[data-id]"); await view(page, "note"); await page.waitForTimeout(300);
-  const a37 = await page.evaluate(async () => ({ hash: location.hash, back: document.getElementById("noteBacklinks").textContent, notes: (await ORACLE.DB.where("notes", "kind", "ask")).length, cites: (await ORACLE.DB.all("links")).filter(l => l.kind === "cite").length }));
-  ok(a37.hash === "#/n/" + citeId && /물어보기/.test(a37.back) && a37.notes === 1 && a37.cites >= 1, "37. 인용 칩이 그 노트로 가고, 백링크에 물어보기 · ask 노트 1 · cite 링크 " + a37.cites);
+  const a37 = await page.evaluate(async () => ({ hash: location.hash, back: document.getElementById("noteBacklinks").textContent, notes: (await ORACLE.DB.where("notes", "kind", "ask")).filter(d => (d.ask || {}).question === "빈칸을 몇 문항 내나요?").length, cites: (await ORACLE.DB.all("links")).filter(l => l.kind === "cite").length }));
+  ok(a37.hash === "#/n/" + citeId && /물어보기/.test(a37.back) && a37.notes === 1 && a37.cites >= 1, "37. 인용 칩이 그 노트로 가고, 백링크에 물어보기 · 그 질문의 ask 노트 1 · cite 링크 " + a37.cites);
 
   await go(page, "#/ask", "ask");
   await page.fill("#askInput", "피아노 협주곡 악보");
@@ -454,15 +498,15 @@ const fx = (n) => fs.readFileSync(path.join(T, "fixtures", n), "utf8");
   }
 
   await go(page, "#/n/" + qid, "note");
+  const n40 = calls.length;
   await page.fill("#asideAskInput", "이 문항 작년에도?");
-  await page.click("#asideAskGo"); await view(page, "ask"); await page.waitForTimeout(300);
+  await page.click("#asideAskGo"); await view(page, "ask");
+  await page.waitForFunction(() => document.querySelectorAll("#askLog .msg.brain").length >= 1, null, { timeout: 30000 }).catch(() => {});
+  await page.waitForTimeout(600);
   const h40 = await page.evaluate(() => decodeURIComponent(location.hash));
   const ctxText = await text(page, "#askCtx");
-  const n40 = calls.length;
-  await page.click("#askGo");
-  await page.waitForTimeout(3000);
-  const ask40 = calls.slice(n40).find(c => c.ask);
-  ok(/ctx=/.test(h40) && h40.indexOf(qid) >= 0 && /번/.test(ctxText) && !!ask40 && ask40.marks.ctx, "40. 노트 맥락으로 물으면 ctx 가 주소와 칩과 프롬프트 [맥락] 에 실린다");
+  const ask40 = calls.slice(n40).find(c => c.ask);          // 한 번 눌렀으면 한 번에 묻는다 (#askGo 를 또 누르지 않는다)
+  ok(/ctx=/.test(h40) && h40.indexOf(qid) >= 0 && /번/.test(ctxText) && !!ask40 && ask40.marks.ctx, "40. 노트 오른쪽에서 물으면 한 번에 묻고, ctx 가 주소 · 칩 · 프롬프트 [맥락] 에 실린다");
 
   // ══════════════════════════════════════════════════════════════════════════
   // §8.7 예측 · 모의고사 · 시험지
@@ -503,6 +547,9 @@ const fx = (n) => fs.readFileSync(path.join(T, "fixtures", n), "utf8");
   const g44 = await page.evaluate(() => { const s = ORACLE.APP.stage(); const g = s.graph(); const by = {}; g.nodes.forEach(n => { by[n.kind] = (by[n.kind] || 0) + 1; }); return { teachers: s.teachers().length, n: g.nodes.length, by, running: s.running }; });
   ok(g44.teachers === 3 && g44.n >= 24 && (g44.by.passage || 0) >= 8 && (g44.by.exam || 0) >= 2 && (g44.by.question || 0) >= 14 && g44.running === true,
     "44. 브레인에 들어가면 무대가 생기고 그래프가 선다: 노드 " + g44.n + " " + JSON.stringify(g44.by));
+  // 무대 연출(솟아오르기 · 배치)이 끝난 뒤 찍는다 — 헤드리스는 느려서 중간 장면이 찍히면 볼 수가 없다
+  await page.waitForFunction(() => { const s = ORACLE.APP.stage(); return s && s.debug().tweens === 0; }, null, { timeout: 60000 }).catch(() => {});
+  await page.waitForTimeout(400);
   await shot(page, "e2e-brain");
 
   await page.click('#brainBar [data-node="question"]'); await page.waitForTimeout(600);

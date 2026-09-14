@@ -9,7 +9,9 @@
     const stats = { calls: 0, chars: 0, evidence: 0 };
     const S = (v, n) => { const s = String(v == null ? "" : v); return n ? s.slice(0, n) : s; };
     const pct = (x) => Math.round((+x || 0) * 100) + "%";
-    const top = (m, n) => Object.keys(m || {}).slice(0, n || 1);
+    // 값이 큰 것부터. PROFILE.dist 는 빈도 내림차순으로 넣지만 "2" "5" 같은 정수형 키는 JS 가 항상 오름차순으로 열거해
+    // 삽입 순서가 사라진다(배점 분포가 그렇다). 그래서 여기서 값으로 다시 정렬한다.
+    const top = (m, n) => Object.keys(m || {}).sort((a, b) => (m[b] || 0) - (m[a] || 0)).slice(0, n || 1);
     const uniq = (a) => [...new Set(a)];
     const esc = (s) => TEXT.esc(s);
     const capKey = (d) => d.handout ? "handout" : d.kind === "note" ? (d.noteKind === "ask" ? "ask" : "note") : d.kind;
@@ -55,6 +57,8 @@
       return lines;
     }
     // ---- 근거 모으기 ----
+    // 선생님 이름 — APP 이 있을 때만(단위 검사는 APP 없이 돈다)
+    function teacherName(id) { try { if (typeof APP !== "undefined" && APP && typeof APP.teacherName === "function") return APP.teacherName(id) || ""; } catch (e) {} const d = INDEX.get(id); return d && d.store === "teachers" ? d.title : ""; }
     async function latestProfile(teacherId) { const ps = await DB.where("profiles", "teacherId", teacherId); ps.sort((a, b) => (b.version || 0) - (a.version || 0)); return ps[0] || null; }
     async function latestPrediction(teacherId) { const pr = await DB.where("predictions", "teacherId", teacherId); pr.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0)); return pr[0] || null; }
     // retrieve(question, { teacherId, ctxId, k=12, budget=12000 }) → Promise<{ evidence: [{ n, id, store, kind, kindLabel, title, sub, flag, text, why, teacherId }], dropped, chars, tokens }>
@@ -64,14 +68,18 @@
       const qt = uniq(INDEX.tokenize(question)); const present = qt.filter(t => INDEX.hasToken(t)); const need = present.length <= 2 ? 1 : 2;
       const cand = [], seen = new Set();
       const add = (id, why, score) => { if (!id || seen.has(id)) return; const d = INDEX.get(id); if (!d) return; if (tid && d.teacherId && d.teacherId !== tid) return; seen.add(id); cand.push({ id, d, why, score }); };
-      if (o.ctxId) { add(o.ctxId, "열린 노트", 1e9); LINKS.neighbors(o.ctxId, 1).nodes.forEach(id => { if (id !== o.ctxId) add(id, "열린 노트의 이웃", 1e8); }); }
+      // 열린 노트는 무조건 넣고(1e9), 그 이웃은 몫을 정해 둔다 — 예측 노트는 유력 지문이 30개, 시험 노트는 문항이 수십 개라
+      // 몫이 없으면 이웃만으로 k 가 다 차서 질문으로 찾은 근거가 한 건도 들어가지 못한다.
+      const ctxQuota = Math.max(1, Math.floor(k / 3));
+      if (o.ctxId) { add(o.ctxId, "열린 노트", 1e9); LINKS.neighbors(o.ctxId, 1).nodes.slice(0, ctxQuota).forEach(id => { if (id !== o.ctxId) add(id, "열린 노트의 이웃", 1e8); }); }
       const hits = INDEX.search(question, { teacherId: tid, limit: 40, strict: !!tid });
       const topScore = hits.length ? hits[0].score : 0; const floor = Math.max(2.0, 0.3 * topScore);
       let passed = hits.filter(h => h.score >= floor && h.matched.length >= need);
       if (!passed.length) passed = hits.filter(h => h.score >= floor);      // 둘 다 통과하는 문서가 없으면 점수 하한만
       passed.forEach(h => add(h.id, "검색 · " + h.matched.slice(0, 3).join(" "), h.score));
       const counts = {}, picked = [], dropped = [];
-      cand.forEach(c => { const key = capKey(c.d); const n = counts[key] || 0; if (n >= (CAPS[key] || 3) && c.score < 1e8) { dropped.push({ id: c.id, title: c.d.title, why: "종류 상한" }); return; } counts[key] = n + 1; picked.push(c); });
+      // 종류 상한을 면제받는 것은 열린 노트 자신(1e9)뿐이다. 이웃까지 면제하면 이웃이 상한을 통째로 무시한다.
+      cand.forEach(c => { const key = capKey(c.d); const n = counts[key] || 0; if (n >= (CAPS[key] || 3) && c.score < 1e9) { dropped.push({ id: c.id, title: c.d.title, why: "종류 상한" }); return; } counts[key] = n + 1; picked.push(c); });
       // 1홉 확장 — 문항 → 매칭 지문, 지문 → 그 지문을 쓴 문항 상위 3
       const extra = [];
       picked.slice().forEach(c => {
@@ -89,7 +97,10 @@
         if (used + text.length > budget && evidence.length) { dropped.push({ id: c.id, title: c.d.title, why: "예산" }); continue; }
         used += text.length;
         const kind = capKey(c.d);
-        evidence.push({ n: evidence.length + 1, id: c.id, store: c.d.store, kind, kindLabel: KIND_LABEL[kind] || kind, title: c.d.title, sub: c.d.sub, flag: c.d.hit || c.d.handout ? "★프린트" : "", text, why: c.why, teacherId: c.d.teacherId, score: c.score });
+        // 범위가 "모든 선생님" 이면 근거가 여러 선생님 것이 섞인다 — 누구 것인지 sub 앞에 붙여 모델과 화면이 함께 알게 한다
+        const tname = !tid && c.d.teacherId ? teacherName(c.d.teacherId) : "";
+        const sub = tname ? (c.d.sub ? tname + " · " + c.d.sub : tname) : c.d.sub;
+        evidence.push({ n: evidence.length + 1, id: c.id, store: c.d.store, kind, kindLabel: KIND_LABEL[kind] || kind, title: c.d.title, sub, flag: c.d.hit || c.d.handout ? "★프린트" : "", text, why: c.why, teacherId: c.d.teacherId, teacherName: tname, score: c.score });
       }
       return { evidence, dropped, chars: used, tokens: qt };
     }
@@ -176,7 +187,8 @@
       o = o || {}; const t = o.teacher; const rec = o.profile;
       const p = rec && rec.profile && rec.profile.typeDist ? rec.profile : (rec && rec.typeDist ? rec : null);
       const teacherLine = t ? [t.name, [t.school, t.grade ? t.grade + "학년" : "", t.subject].filter(Boolean).join(" "), o.counts ? "시험 " + (o.counts.exams || 0) + " · 문항 " + (o.counts.questions || 0) : (p && p.basedOn ? "시험 " + p.basedOn.nExams + " · 문항 " + p.basedOn.nQuestions : ""), rec && rec.version ? "프로파일 V" + rec.version : (p ? "" : "프로파일 없음")].filter(Boolean).join(" · ") : "";
-      return PROMPTS.ask({ teacherLine, compact: p ? PROFILE.compact(p) : null, structured: o.structured || [], evidence: o.evidence || [], question, ctxLine: o.ctxLine || "" });
+      return PROMPTS.ask({ teacherLine, compact: p ? PROFILE.compact(p) : null, structured: o.structured || [], evidence: o.evidence || [], question, ctxLine: o.ctxLine || "",
+                           allTeachers: !t && (o.evidence || []).some(e => e.teacherName) });
     }
     // ---- 답 해석 · 표시 ----
     // parseAnswer(text) → { body, used: [n], followups: [], cited: [n] }
@@ -200,7 +212,8 @@
       const byN = new Map((evidence || []).map(e => [+e.n, e]));
       return String(bodyHtml == null ? "" : bodyHtml).replace(/\[(\d{1,2}(?:\s*,\s*\d{1,2})*)\]/g, (m, ns) => ns.split(",").map(s => {
         const n = +s.trim(); const e = byN.get(n);
-        return e ? '<button type="button" class="cite" data-id="' + esc(e.id) + '" data-n="' + n + '" title="' + esc((e.kindLabel || "") + " · " + (e.title || "")) + '">' + n + '</button>'
+        // data-prev 에 미리보기 글을 박아 둔다 — 로그에 쌓인 지난 답의 칩이 뒤에 온 질문의 근거를 보여 주지 않도록
+        return e ? '<button type="button" class="cite" data-id="' + esc(e.id) + '" data-n="' + n + '" data-prev="' + esc(S(e.text || "", 200)) + '" title="' + esc((e.kindLabel || "") + " · " + (e.title || "")) + '">' + n + '</button>'
                  : '<button type="button" class="cite dashed" data-n="' + n + '" title="근거에 없는 번호예요">' + n + '</button>';
       }).join(""));
     }
@@ -261,7 +274,7 @@
     async function history(teacherId, limit) {
       let list = await DB.where("notes", "kind", "ask");
       if (teacherId && teacherId !== "*") list = list.filter(d => d.teacherId === teacherId);
-      list = list.filter(d => !NOTES.pending(d.id));
+      list = list.filter(d => !NOTES.hidden(d));
       list.sort((a, b) => (b.updatedAt || 0) - (a.updatedAt || 0));
       return list.slice(0, limit || 20);
     }

@@ -187,7 +187,7 @@
           propRow("학교", esc(t.school || "—")), propRow("학년", t.grade ? t.grade + "학년" : "—"), propRow("과목", esc(t.subject || "—")),
           propRow("색", '<i class="dot" style="display:inline-block;width:12px;height:12px;border-radius:50%;background:' + esc(t.color || "#5fc8ff") + ';vertical-align:-1px"></i> <span class="num">' + esc(t.color || "") + '</span>'),
           propRow("레벨", p ? esc(p.profile.level.name) + ' Lv.' + p.profile.level.id + (p.profile.level.next ? ' <span class="small">· 다음 ' + esc(p.profile.level.next.name) + '까지 ' + esc(p.profile.level.next.need || "") + '</span>' : "") : "학습 전"),
-          propRow("프로파일", p ? link(p.id, "프로파일 V" + p.version) + ' <span class="small">신뢰도 ' + p.profile.reliability + '</span>' : "—"),
+          propRow("프로파일", p ? link(p.id, "프로파일 V" + p.version) + ' <span class="small">신뢰도 ' + pct(p.profile.reliability) + '</span>' : "—"),
           propRow("보유", '시험 <b class="num">' + (c.exams || 0) + '</b> · 문항 <b class="num">' + (c.questions || 0) + '</b> · 지문 <b class="num">' + (c.passages || 0) + '</b> · 자료 <b class="num">' + (c.sources || 0) + '</b>' + (c.handouts ? ' (프린트 ' + c.handouts + ')' : "") + ' · 모의고사 <b class="num">' + (c.mocks || 0) + '</b>'),
         ]);
       },
@@ -261,7 +261,7 @@
         return props([
           propRow("버전", sel + (d.versions[0] && d.versions[0].id !== p.id ? ' <span class="badge warn">옛 판</span>' : ' <span class="badge ok">최신</span>')),
           propRow("레벨", P.level ? esc(P.level.name) + ' Lv.' + P.level.id + (P.level.next ? ' <span class="small">· 다음 ' + esc(P.level.next.name) + '까지 ' + esc(P.level.next.need || "") + '</span>' : "") : "—"),
-          propRow("신뢰도", '<span class="num">' + (P.reliability !== undefined ? P.reliability : "—") + '</span>' + (P.consistency && P.consistency.overall !== null && P.consistency.overall !== undefined ? ' <span class="small">· 일관성 ' + P.consistency.overall + '</span>' : "")),
+          propRow("신뢰도", '<span class="num">' + (P.reliability !== undefined ? pct(P.reliability) : "—") + '</span>' + (P.consistency && P.consistency.overall !== null && P.consistency.overall !== undefined ? ' <span class="small">· 일관성 ' + P.consistency.overall + '</span>' : "")),
           propRow("근거", '시험 <span class="num">' + (b.nExams || 0) + '</span> · 문항 <span class="num">' + (b.nQuestions || 0) + '</span> · 지문 <span class="num">' + (b.nPassages || 0) + '</span> · 매칭 <span class="num">' + (b.matched || 0) + '</span>' + (b.span ? ' <span class="small">(' + esc(b.span.from) + ' ~ ' + esc(b.span.to) + ')</span>' : "")),
           propRow("모델", esc(p.model || "—") + (p.provider ? ' <span class="small">' + esc(p.provider) + '</span>' : "")),
           propRow("이유", esc(p.reason || "—")),
@@ -346,7 +346,7 @@
         let html = '<div class="sec" id="teacherStatus"><h4>Status</h4><div class="row" style="margin-bottom:8px"><i class="dot" style="width:10px;height:10px;border-radius:50%;background:' + esc(t.color) + ';box-shadow:0 0 10px ' + esc(t.color) + '"></i><b style="font-size:15px">' + esc(t.name) + '</b><span class="chip dim">' + esc(t.subject || "") + '</span><span class="grow"></span><span class="badge">' + (p ? "V" + p.version : "V0") + '</span></div>';
         html += irow("doc", "문항 데이터화", (c.questions || 0) + "문항 · 기출 " + (c.exams || 0) + "건", job && ["analyze", "ocr", "extract", "classify"].includes(job.stage) ? ST(1, "WORKING", "busy") : ST(c.questions, c.questions ? "ONLINE" : "STANDBY"));
         html += irow("globe", "지문 매칭", "범위 지문 " + (c.passages || 0) + "개 · 매칭 " + (c.matchable ? Math.round((c.matched || 0) / c.matchable * 100) + "%" : "—"), job && ["match", "index"].includes(job.stage) ? ST(1, "WORKING", "busy") : ST(c.passages, c.passages ? "ONLINE" : "STANDBY"));
-        html += irow("brain", "성향 학습", p ? "프로파일 V" + p.version + " · " + p.profile.level.name + " Lv." + p.profile.level.id + " · 신뢰도 " + p.profile.reliability : "아직 학습 전", busy === "학습 중" ? ST(1, "LEARNING", "busy") : ST(p, p ? "ONLINE" : "STANDBY"));
+        html += irow("brain", "성향 학습", p ? "프로파일 V" + p.version + " · " + p.profile.level.name + " Lv." + p.profile.level.id + " · 신뢰도 " + pct(p.profile.reliability) : "아직 학습 전", busy === "학습 중" ? ST(1, "LEARNING", "busy") : ST(p, p ? "ONLINE" : "STANDBY"));
         html += irow("target", "다음 시험 예측", pr ? pr.target.label + " · 신뢰도 " + pct(pr.blueprint.confidence.overall) : "예측 전", busy === "예측 중" ? ST(1, "WORKING", "busy") : ST(pr, pr ? "READY" : "STANDBY"));
         html += irow("print", "프린트 반영율", p && p.profile.handout ? "프린트 → 시험 " + pct(p.profile.handout.rate) + " (시험 " + p.profile.handout.nExams + "개)" : (c.sources ? "프린트를 넣으면 계산해요" : "선생님 프린트 없음"), ST(p && p.profile.handout, p && p.profile.handout ? pct(p.profile.handout.rate) : "STANDBY", p && p.profile.handout ? "warn" : "off"));
         html += irow("wifi", "클라우드 (Supabase)", cloud.enabled ? "작업공간 " + cloud.workspace + (cloud.lastSync ? " · " + TEXT.fmtDate(cloud.lastSync) : "") : "동기화 꺼짐", cloud.enabled ? (cloud.status === "error" ? ST(1, "OFFLINE", "warn") : cloud.status === "syncing" || cloud.pending ? ST(1, "SYNCING", "busy") : ST(1, "ONLINE")) : ST(0, "OFF"));
@@ -354,7 +354,7 @@
         html += '</div>';
         if (p) {
           const P = p.profile, n = p.narrative;
-          html += '<div class="sec"><h4>최신 프로파일 <span>' + esc(P.level.name) + ' · 신뢰도 ' + P.reliability + '</span></h4>' + (n ? '<div class="narr">' + esc(clip(n.text, 400)) + '</div><div class="chips" style="margin-top:6px">' + n.keywords.map(k => '<span class="chip">' + esc(k) + '</span>').join("") + '</div>' : '<div class="small">API 키가 있으면 서술을 만들어요</div>')
+          html += '<div class="sec"><h4>최신 프로파일 <span>' + esc(P.level.name) + ' · 신뢰도 ' + pct(P.reliability) + '</span></h4>' + (n ? '<div class="narr">' + esc(clip(n.text, 400)) + '</div><div class="chips" style="margin-top:6px">' + n.keywords.map(k => '<span class="chip">' + esc(k) + '</span>').join("") + '</div>' : '<div class="small">API 키가 있으면 서술을 만들어요</div>')
             + '<div class="dist" style="margin-top:8px">' + Object.keys(P.typeDist).slice(0, 5).map(k => '<span>' + esc(k) + '</span><div class="bar"><i style="width:' + Math.round(P.typeDist[k].wshare * 100) + '%"></i></div><i class="n">' + pct(P.typeDist[k].wshare) + '</i>').join("") + '</div>'
             + '<div class="row" style="margin-top:8px"><a class="chip" href="' + esc(noteHref(p.id)) + '">프로파일 V' + p.version + ' 열기</a>' + (pr ? '<a class="chip" href="' + esc(noteHref(pr.id)) + '">' + esc(pr.target.label) + ' 예측 열기</a>' : "") + '</div></div>';
         } else html += '<div class="sec"><h4>프로파일</h4>' + emptyBox(c.questions ? "문항이 " + c.questions + "개 — 학습할 수 있어요" : "문항이 1개 이상이면 학습할 수 있어요", c.questions ? "" : "기출 시험지를 넣으면 자동으로 학습해요") + '</div>';
@@ -465,7 +465,7 @@
         const html = ASK.renderCites(esc(n.body || "").replace(/\n/g, "<br>"), ev);
         let out = '<div class="msg me">' + esc(a.question || "") + '</div><div class="msg brain">' + (html || '<span class="small">답이 없어요</span>') + '</div>';
         out += '<div class="sec"><h4>근거 <span>' + ev.length + '</span></h4>' + (ev.length ? ev.map(e => '<a class="lrow' + (used.has(e.n) ? "" : " unused") + (e.alive ? "" : " broken") + '" data-cite="' + e.n + '" data-id="' + esc(e.id) + '" href="' + esc(noteHref(e.id)) + '"><span class="cite' + (used.has(e.n) ? "" : " unused") + '">' + e.n + '</span>' + kindTag(e.kind) + '<span class="t">' + esc(e.title) + '</span><span class="why">' + (used.has(e.n) ? "인용" : "안 씀") + '</span></a>').join("") : '<div class="small">근거 없이 답한 질문이에요</div>') + ((a.invalid || []).length ? '<div class="small">근거에 없는 번호: ' + a.invalid.map(x => '<span class="cite dashed">' + esc(x) + '</span>').join(" ") + '</div>' : "") + '</div>';
-        if ((a.followups || []).length) out += '<div class="sec"><h4>더 물어보기</h4>' + a.followups.map(f => '<a class="chip followup" href="' + esc(ROUTE.href({ view: "ask", query: { q: f, ctx: a.ctx || "" } })) + '">' + esc(f) + '</a>').join("") + '</div>';
+        if ((a.followups || []).length) out += '<div class="sec"><h4>더 물어보기</h4>' + a.followups.map(f => '<a class="chip followup" data-followask="' + esc(f) + '" data-followctx="' + esc(a.ctx || "") + '" href="' + esc(ROUTE.href({ view: "ask", query: { q: f, ctx: a.ctx || "" } })) + '">' + esc(f) + '</a>').join("") + '</div>';
         if ((a.structured || []).length) out += '<details class="raw"><summary>구조 근거 (프로파일 · 예측 숫자)</summary><pre>' + esc(a.structured.join("\n")) + '</pre></details>';
         return out;
       },
@@ -572,7 +572,7 @@
         const pending = NOTES.pending(doc.id);
         html = (sub === "ask" ? btn("nAskAgain", "다시 묻기", { pri: true }) : btn("nPin", doc.pinned ? "고정 해제" : "고정")) + '<span class="grow"></span>' + btn("nDel", pending ? "삭제 대기 중…" : "삭제", { danger: true, disabled: pending });
         box.innerHTML = html;
-        on("nAskAgain", () => ROUTE.go(ROUTE.href({ view: "ask", query: { q: (doc.ask || {}).question || "", ctx: (doc.ask || {}).ctx || "" } })));
+        on("nAskAgain", () => { const a = doc.ask || {}; if (a.question) VIEWS.submitAsk(a.question, a.ctx || ""); else ROUTE.go(ROUTE.href({ view: "ask" })); });
         on("nPin", () => NOTES.update(doc.id, { pinned: !doc.pinned }).then(() => { APP.emit("note", { id: doc.id, op: "update" }); UI.toast(doc.pinned ? "고정을 풀었어요" : "고정했어요", { ok: true }); }));
         on("nDel", () => deleteNote(doc));
       } else box.innerHTML = "";
@@ -583,7 +583,7 @@
     }
     function profileText(p) {
       const P = p.profile || {}, n = p.narrative, t = T(p.teacherId);
-      const L = ["프로파일 V" + p.version + (t ? " · " + t.name + " (" + APP.sub(t) + ")" : "") + " · " + TEXT.fmtDate(p.createdAt), "레벨 " + (P.level ? P.level.name + " Lv." + P.level.id : "—") + " · 신뢰도 " + P.reliability + " · 근거 시험 " + (p.basedOn || {}).nExams + " · 문항 " + (p.basedOn || {}).nQuestions];
+      const L = ["프로파일 V" + p.version + (t ? " · " + t.name + " (" + APP.sub(t) + ")" : "") + " · " + TEXT.fmtDate(p.createdAt), "레벨 " + (P.level ? P.level.name + " Lv." + P.level.id : "—") + " · 신뢰도 " + pct(P.reliability) + " · 근거 시험 " + (p.basedOn || {}).nExams + " · 문항 " + (p.basedOn || {}).nQuestions];
       if (n) { L.push("", n.text); if ((n.keywords || []).length) L.push("키워드: " + n.keywords.join(", ")); if ((n.watchouts || []).length) L.push("주의점: " + n.watchouts.join(" / ")); }
       if (p.delta && p.delta.length) L.push("", "이번 판에서 달라진 점: " + p.delta.join(" / "));
       const td = P.typeDist || {}; L.push("", "유형 분포: " + Object.keys(td).map(k => k + " " + pct(td[k].wshare) + " (시험당 " + td[k].perExam + ")").join(", "));
@@ -603,7 +603,7 @@
     function deleteNote(n) {
       const r = NOTES.remove(n.id); const title = NOTES.titleOf(n);
       memo.pendingDel = true; renderActions(); renderMemoMeta();
-      UI.toast("“" + clip(title, 30) + "” 을 지웠어요 — 5초 안에 되돌릴 수 있어요", { action: "취소", ms: 5200, onAction: () => { if (r.undo()) { memo.pendingDel = false; UI.toast("되돌렸어요", { ok: true }); if (cur && cur.id === n.id) render(n.id, cur.query); } } });
+      UI.toast("“" + clip(title, 30) + "” 을 지웠어요 — 5초 안에 되돌릴 수 있어요", { action: "취소", ms: 5200, keep: true, onAction: () => { if (r.undo()) { memo.pendingDel = false; UI.toast("되돌렸어요", { ok: true }); if (cur && cur.id === n.id) render(n.id, cur.query); } } });
       r.done.then(ok => { if (!ok) { memo.pendingDel = false; return; } APP.emit("note", { id: n.id, op: "delete" }); APP.emit("growth", n.teacherId); if (cur && cur.id === n.id) { memo.key = ""; ROUTE.go(n.kind === "ask" ? "#/ask" : ROUTE.all("notes"), { replace: true }); } });
     }
 
@@ -621,8 +621,11 @@
       else { let m = null; try { m = await NOTES.memo(key); } catch (e) { console.error(e); } if (m) { body = String(m.body || ""); links = m.links || []; docId = m.id; author = m.author || ""; updatedAt = m.updatedAt || 0; } }
       const t = ta(); if (!t) return;
       if (memo.key !== key) {
+        // 다른 노트로 넘어가기 전에 쓰다 만 메모를 먼저 저장한다. 해시만 바뀌는 이동(뒤로가기 · 스와이프 백 · ROUTE.go)은
+        // 포커스를 옮기지 않아 blur 저장이 돌지 않으므로, 여기서 비우지 않으면 900ms 자동 저장 타이머와 함께 글이 사라진다.
+        await flushMemo();
         clearTimeout(memo.timer);
-        Object.assign(memo, { key, mode: own ? "own" : "anchor", noteId: own ? doc.id : null, teacherId: cur.teacherId, saved: body, links, docId, author, updatedAt, dirty: false, saving: false, again: false, timer: 0, pendingDel: store === "notes" && NOTES.pending(doc.id) });
+        Object.assign(memo, { key, mode: own ? "own" : "anchor", noteId: own ? doc.id : null, teacherId: cur.teacherId, saved: body, links, docId, author, updatedAt, dirty: false, saving: false, again: false, composing: false, timer: 0, hints: [], pendingDel: store === "notes" && NOTES.pending(doc.id) });
         t.value = body;
         setMode(body.trim() ? "view" : "edit", true);          // 빈 메모는 곧장 쓸 수 있게 — 미리보기할 것이 없다
       } else {
@@ -659,6 +662,15 @@
     }
     function toggleMode() { if (memo.editing && memo.dirty) saveMemo(); setMode(memo.editing ? "view" : "edit"); }
     function scheduleSave() { clearTimeout(memo.timer); memo.timer = setTimeout(() => { if (memo.dirty && !memo.composing) saveMemo(); }, 900); }
+    // flushMemo() — 쓰다 만 메모를 지금 저장한다. 노트를 떠나기 전 · 페이지를 닫기 전에 부른다.
+    // 한글은 마지막 음절이 조합 상태로 남는 것이 정상이라 composing 도 저장 대상으로 본다.
+    async function flushMemo() {
+      const t = ta(); if (!t || !memo.key || memo.pendingDel) return false;
+      if (!memo.dirty && t.value === memo.saved) return false;
+      clearTimeout(memo.timer); memo.composing = false; memo.dirty = true;
+      try { await saveMemo(); } catch (e) { console.error(e); }
+      return true;
+    }
     async function saveMemo() {
       const t = ta(); if (!t || !memo.key || memo.pendingDel) return;
       if (memo.saving) { memo.again = true; return; }
@@ -667,8 +679,8 @@
       memo.saving = true; renderMemoMeta();
       const key = memo.key; let created = false;
       try {
-        if (memo.mode === "own") { const d = await NOTES.update(memo.noteId, { body }); memo.links = d.links || []; memo.updatedAt = d.updatedAt; memo.author = d.author || memo.author; }
-        else { const had = !!memo.docId; const d = await NOTES.saveMemo({ anchorKey: key, teacherId: memo.teacherId, body }); memo.docId = d ? d.id : null; memo.links = d ? d.links || [] : []; memo.updatedAt = d ? d.updatedAt : Date.now(); memo.author = d ? d.author || "" : memo.author; created = !had && !!d; }
+        if (memo.mode === "own") { const d = await NOTES.update(memo.noteId, { body, linkHints: memo.hints }); memo.links = d.links || []; memo.updatedAt = d.updatedAt; memo.author = d.author || memo.author; }
+        else { const had = !!memo.docId; const d = await NOTES.saveMemo({ anchorKey: key, teacherId: memo.teacherId, body, linkHints: memo.hints }); memo.docId = d ? d.id : null; memo.links = d ? d.links || [] : []; memo.updatedAt = d ? d.updatedAt : Date.now(); memo.author = d ? d.author || "" : memo.author; created = !had && !!d; }
         if (memo.key !== key) return;                       // 저장 중에 다른 노트로 갔다
         memo.saved = body; memo.dirty = t.value !== body;
         APP.emit("note", { id: memo.docId || memo.noteId, op: created ? "create" : "save", anchorKey: memo.mode === "own" ? "" : key });
@@ -705,7 +717,8 @@
       t.addEventListener("input", () => { memo.dirty = t.value !== memo.saved; renderMemoMeta(); if (!memo.composing) scheduleSave(); });
       t.addEventListener("keydown", (e) => { if (e.isComposing || e.keyCode === 229) return; if ((e.metaKey || e.ctrlKey) && e.key === "Enter") { e.preventDefault(); e.stopPropagation(); clearTimeout(memo.timer); memo.dirty = true; saveMemo().then(() => setMode("view")); } });
       t.addEventListener("blur", () => { if (memo.dirty) { clearTimeout(memo.timer); saveMemo(); } });
-      memo.ac = UI.autocomplete(t, { teacherId: () => memo.teacherId || S.selectedId });
+      // 고른 항목의 id 를 기억해 둔다 — 같은 제목이 둘일 때(범위 지문 · 프린트 지문) 사용자가 고른 그 문서에 링크가 걸리도록
+      memo.ac = UI.autocomplete(t, { teacherId: () => memo.teacherId || S.selectedId, onPick: (it) => { if (it && it.kind === "link" && it.id && it.title) memo.hints = (memo.hints || []).filter(x => x.text !== it.title).concat([{ text: it.title, to: it.id }]); } });
       v.addEventListener("click", (e) => {
         const tag = e.target.closest(".tag[data-tag]"); if (tag) { e.preventDefault(); ROUTE.go(ROUTE.tag(tag.dataset.tag)); return; }
         const br = e.target.closest("a.broken[data-text]"); if (br) { e.preventDefault(); brokenLinkToast(br.dataset.text); return; }
@@ -714,13 +727,26 @@
       });
       // 본문 안 이동: 대부분 <a href> 라 스스로 가지만, 표의 행(tr.rowbtn[data-q]) 처럼 링크가 아닌 것은 여기서 보낸다
       $("noteBody").addEventListener("click", (e) => {
+        const fa = e.target.closest("a[data-followask]");
+        if (fa) { e.preventDefault(); VIEWS.submitAsk(fa.dataset.followask, fa.dataset.followctx || ""); return; }   // "더 물어보기" 는 실제로 묻는다
         if (e.target.closest("a[href], button, input, select, textarea, summary, label")) return;
         const r = e.target.closest("[data-q],[data-exam],[data-pass],[data-src],[data-mock]"); if (!r) return;
         const id = r.dataset.q || r.dataset.exam || r.dataset.pass || r.dataset.src || r.dataset.mock; if (!id) return;
         e.preventDefault(); ROUTE.go(noteHref(id));
       });
-      // 파생 태그 칩 → 그 태그가 붙은 문항 목록
-      $("noteTags").addEventListener("click", (e) => { const d = e.target.closest(".chip.derived[data-tag]"); if (d && cur) { e.preventDefault(); const tag = d.dataset.tag; const q = tag === "프린트적중" ? { hit: 1 } : tag === "외부지문" ? { ext: 1 } : /^난이도/.test(tag) ? { q: tag.slice(3) } : { type: tag }; ROUTE.go(ROUTE.all(cur.kind === "passage" ? "passages" : "questions", q)); } });
+      // 파생 태그 칩 → 그 태그가 붙은 목록. 태그마다 갈 곳이 다르다 — 종류를 보지 않으면 늘 0건이 나온다.
+      $("noteTags").addEventListener("click", (e) => {
+        const d = e.target.closest(".chip.derived[data-tag]"); if (!d || !cur) return;
+        e.preventDefault();
+        const tag = d.dataset.tag, k = cur.kind;
+        let kind = "questions", q = null;
+        if (tag === "프린트적중") q = { hit: 1 };
+        else if (tag === "외부지문") q = { ext: 1 };
+        else if (tag === "프린트") { if (k === "passage") { kind = "passages"; q = { hit: 1 }; } else { kind = "sources"; q = { kind: "프린트" }; } }   // 지문은 프린트에서 나온 지문, 자료는 프린트 자료 목록
+        else if (/^난이도/.test(tag)) q = { diff: tag.slice(3) };
+        else q = k === "passage" ? { genre: tag } : { type: tag };
+        ROUTE.go(ROUTE.all(kind, q));
+      });
     }
     function openNoteMenu(anchor) {
       if (!cur) return; const { doc, kind, store, sub } = cur;
@@ -741,9 +767,10 @@
     async function bindMemo(anchorKey, teacherId) {
       bind();
       const t = ta(); if (!t) return null;
+      if (memo.key !== anchorKey) await flushMemo();                                // 쓰다 만 메모를 먼저 저장한다
       let m = null; try { m = await NOTES.memo(anchorKey); } catch (e) {}
       clearTimeout(memo.timer);
-      Object.assign(memo, { key: anchorKey, mode: "anchor", noteId: null, teacherId: teacherId || null, saved: m ? String(m.body || "") : "", links: m ? m.links || [] : [], docId: m ? m.id : null, author: m ? m.author || "" : "", updatedAt: m ? m.updatedAt || 0 : 0, dirty: false, saving: false, again: false, pendingDel: false });
+      Object.assign(memo, { key: anchorKey, mode: "anchor", noteId: null, teacherId: teacherId || null, saved: m ? String(m.body || "") : "", links: m ? m.links || [] : [], docId: m ? m.id : null, author: m ? m.author || "" : "", updatedAt: m ? m.updatedAt || 0 : 0, dirty: false, saving: false, again: false, composing: false, pendingDel: false });
       t.value = memo.saved; setMode(memo.saved.trim() ? "view" : "edit", true); renderMemoView(); renderMemoMeta();
       return m;
     }
@@ -791,13 +818,30 @@
       let nb; try { nb = LINKS.neighbors(id, 1); } catch (e) { nb = { nodes: [id], edges: [] }; }
       const others = nb.nodes.filter(x => x !== id).slice(0, 29);
       const colorOf = (x) => { const n = LINKS.node(x) || INDEX.get(x); const t = n && T(n.teacherId); return t ? t.color : "#5fc8ff"; };
-      const cx = W / 2, cy = H / 2, R = Math.min(W, H) / 2 - 18;
+      const cx = W / 2, cy = H / 2, R = Math.min(W, H) / 2 - 26;      // 아래 이름표(+14px)가 테두리에 닿지 않게 여유를 둔다
       miniNodes = [{ id, x: cx, y: cy, r: 7, self: true }];
       others.forEach((x, i) => { const a = -Math.PI / 2 + i * 2 * Math.PI / others.length; const rr = others.length > 12 && i % 2 ? R * 0.62 : R; miniNodes.push({ id: x, x: cx + Math.cos(a) * rr, y: cy + Math.sin(a) * rr, r: 4, kind: nodeKind(x) }); });
       ctx.lineWidth = 1; ctx.strokeStyle = "rgba(148,178,220,.35)";
       miniNodes.slice(1).forEach(n => { ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(n.x, n.y); ctx.stroke(); });
       miniNodes.forEach(n => { ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2); ctx.fillStyle = n.self ? "#5fc8ff" : (n.kind === "handout" || (INDEX.get(n.id) || {}).hit ? "#f5c518" : colorOf(n.id)); ctx.globalAlpha = n.self ? 1 : 0.85; ctx.fill(); ctx.globalAlpha = 1; if (n.self) { ctx.strokeStyle = "rgba(95,200,255,.5)"; ctx.beginPath(); ctx.arc(n.x, n.y, n.r + 4, 0, Math.PI * 2); ctx.stroke(); } });
-      if (others.length <= 12) { ctx.fillStyle = "rgba(169,184,204,.9)"; ctx.font = "9px 'Noto Sans KR', sans-serif"; ctx.textAlign = "center"; miniNodes.slice(1).forEach(n => ctx.fillText(clip(nodeTitle(n.id), 9), n.x, n.y + 14)); }
+      // 이름표 — 9자로 자르면 "Lesson 2 · Reading 1" 이 전부 "Lesson 2…" 가 되어 서로 구별되지 않는다.
+      // 두 줄로 나누고, 캔버스 안에 들어가도록 maxWidth 로 그린다.
+      if (others.length <= 12) {
+        ctx.fillStyle = "rgba(169,184,204,.95)"; ctx.font = "9px 'Noto Sans KR', sans-serif"; ctx.textAlign = "center";
+        const cell = Math.max(64, Math.min(120, W / Math.max(2, Math.min(4, others.length))));
+        miniNodes.slice(1).forEach(n => {
+          const full = String(nodeTitle(n.id) || "");
+          const lines = []; let rest = full;
+          for (let li = 0; li < 2 && rest; li++) {
+            let cut = rest.length;
+            while (cut > 1 && ctx.measureText(rest.slice(0, cut)).width > cell) cut--;
+            if (li === 1 && cut < rest.length) { lines.push(rest.slice(0, Math.max(1, cut - 1)) + "…"); rest = ""; }
+            else { lines.push(rest.slice(0, cut)); rest = rest.slice(cut); }
+          }
+          const x = Math.max(cell / 2 + 2, Math.min(W - cell / 2 - 2, n.x));
+          lines.forEach((ln, li) => ctx.fillText(ln, x, n.y + 14 + li * 10, cell));
+        });
+      }
       if (!others.length) { ctx.fillStyle = "rgba(111,129,153,.9)"; ctx.font = "11px 'Noto Sans KR', sans-serif"; ctx.textAlign = "center"; ctx.fillText("이어진 노트가 없어요", cx, cy + 26); }
       if (!miniBound) { miniBound = true; cv.style.cursor = "pointer"; cv.addEventListener("click", (e) => { const r = cv.getBoundingClientRect(); const x = e.clientX - r.left, y = e.clientY - r.top; let best = null, bd = 12; miniNodes.forEach(n => { const d = Math.hypot(n.x - x, n.y - y); if (d < bd) { bd = d; best = n; } }); if (best && !best.self) ROUTE.go(noteHref(best.id)); else if (best && best.self) ROUTE.go(ROUTE.href({ view: "brain", query: { focus: best.id } })); }); cv.addEventListener("mousemove", (e) => { const r = cv.getBoundingClientRect(); const x = e.clientX - r.left, y = e.clientY - r.top; const hit = miniNodes.find(n => Math.hypot(n.x - x, n.y - y) < 12); cv.title = hit ? nodeTitle(hit.id) : ""; }); }
     }
@@ -824,5 +868,5 @@
       box.innerHTML = html;
     }
 
-    return { render, renderAside, peek, bindMemo, blocks, propsOf, propsEditors, drawRangeMap, saveMemo, setMode, current: () => cur, memoState: () => memo, KL };
+    return { render, renderAside, peek, bindMemo, blocks, propsOf, propsEditors, drawRangeMap, saveMemo, flushMemo, setMode, current: () => cur, memoState: () => memo, KL };
   })();

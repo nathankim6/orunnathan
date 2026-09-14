@@ -128,7 +128,7 @@ qs.map(q => q.number + " | " + q.type + " | \"" + (q.passage && q.passage.first1
 "[통계 요약]\n" + JSON.stringify(compact) + "\n\n" + notesBlock(notes) + "[실제 발문 예시 — 유형 | 발문]\n" + stemSamples;
     }
 
-    // 물어보기(RAG) — 평문 스트리밍. o: { teacherLine, compact, structured: [string], evidence: [{ n, kindLabel|kind, title, sub, flag, text }], question, ctxLine }
+    // 물어보기(RAG) — 평문 스트리밍. o: { teacherLine, compact, structured: [string], evidence: [{ n, kindLabel|kind, title, sub, flag, text }], question, ctxLine, allTeachers }
     // 반환 { system, user }. mock-api.js 는 user 의 "아래 [근거] 만을 근거로 강사의 질문에" 를 보고 문자열을 돌려준다 — 문구를 바꾸면 둘을 함께 고친다.
     const ASK_KIND_LABEL = { teacher: "선생님", exam: "시험", question: "문항", passage: "지문", source: "자료", handout: "프린트", profile: "프로파일", prediction: "예측", mock: "모의고사", note: "메모", ask: "질문", daily: "데일리", weekly: "주간" };
     function ask(o) {
@@ -146,6 +146,7 @@ qs.map(q => q.number + " | " + q.type + " | \"" + (q.passage && q.passage.first1
       });
       const user =
 "[작업] 아래 [근거] 만을 근거로 강사의 질문에 한국어로 답합니다. 문장마다 근거 번호를 [n] 로 답니다. 숫자는 [구조 근거] 를 우선하고, 근거 번호 밖의 번호를 만들지 않습니다. 6문장 이내. 마지막 줄에 \"USED: 1,2\" 처럼 실제 인용한 번호를, 그 다음 줄에 \"FOLLOWUP: 질문 | 질문\" 을 씁니다. JSON · 코드펜스 없이 평문으로만.\n" +
+(o.allTeachers ? "[주의] 근거가 여러 선생님 것입니다. 선생님별로 나누어 답하고 한 사람의 습관으로 합치지 않습니다(근거 머리글의 선생님 이름을 보세요).\n" : "") +
 (o.ctxLine ? "[맥락] 지금 열려 있는 노트: " + clean(o.ctxLine, 200) + "\n" : "") +
 "[구조 근거]\n" + (structured.length ? structured.join("\n") : "(없음 — 이 질문에 맞는 통계가 아직 없어요)") + "\n" +
 "[근거]\n" + (evidence.length ? evidence.join("\n") : "(없음)") + "\n" +
