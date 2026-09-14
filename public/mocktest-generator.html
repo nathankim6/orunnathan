@@ -2141,7 +2141,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v13H3z"/><path d="M2 4h20v3H2z"/><path d="M10 11h4"/></svg>
     <span class="lb">저장소</span><i class="n" id="vaultCount" hidden>0</i>
   </button>
-  <div class="state"><span class="build" id="buildTag">2026-09-14 11:27</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
+  <div class="state"><span class="build" id="buildTag">2026-09-14 11:46</span><span class="lamp" id="consoleLamp"></span><span id="consoleState">대기</span></div>
 </div>
 
 <!-- 화면 0 · 시작 -->
@@ -4959,13 +4959,19 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     }
     const get = $("bridgeGet");
     if (get) {
-      const win = os === "win";
-      get.href = "https://nathankim6.github.io/orunnathan/orun-connect." + (win ? "cmd" : "command");
-      get.textContent = win ? "연결 파일 받기 (.cmd)" : "연결 파일 받기 (.command)";
+      // 맥은 내려받은 파일에 실행 권한이 없어 두 번 눌러도 안 열린다.
+      // 그래서 권한을 품은 zip 을 준다 — 압축만 풀면 바로 실행된다.
+      const file = os === "win" ? "orun-connect.cmd"
+                 : os === "mac" ? "orun-connect-mac.zip"
+                 : "orun-connect.command";
+      get.href = "https://nathankim6.github.io/orunnathan/" + file;
+      get.textContent = os === "win" ? "연결 파일 받기 (.cmd)" : os === "mac" ? "연결 파일 받기 (.zip)" : "연결 파일 받기 (.command)";
       const lead = $("bridgeLeadTxt");
-      if (lead) lead.textContent = win
+      if (lead) lead.textContent = os === "win"
         ? "연결 파일을 내려받아 두 번 누르세요. 첫 회에만 Node·도구를 알아서 깔고 로그인 창을 띄웁니다. 그다음부터는 두 번 누르면 바로 이어집니다."
-        : "연결 파일을 내려받아 두 번 누르세요(맥에서 막히면 오른쪽 눌러 ‘열기’). 첫 회에만 필요한 것을 깔고 로그인 창을 띄웁니다.";
+        : os === "mac"
+        ? "받은 zip 을 두 번 눌러 풀고, 나온 파일을 두 번 누르세요. 처음엔 오른쪽 눌러 ‘열기’ 를 골라야 할 수 있어요. 첫 회에만 필요한 것을 깔고 로그인 창을 띄웁니다."
+        : "연결 파일을 내려받아 실행 권한을 준 뒤(chmod +x) 실행하세요. 첫 회에만 필요한 것을 깔고 로그인 창을 띄웁니다.";
     }
     set("bcmdTool", codex ? "npm i -g @openai/codex" : "npm i -g @anthropic-ai/claude-code");
     set("bcmdLogin", codex ? "codex" : "claude");
@@ -5239,7 +5245,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   function diagnostics() {
     return [
       "ORUN 동형 모의고사 진단",
-      "build: 2026-09-14 11:27",
+      "build: 2026-09-14 11:46",
       "url: " + location.href,
       "runtime: API 키 전용 빌드",
       "sample 확보: " + (SAMPLE ? "예" : "아니오"),

@@ -57,9 +57,19 @@ jobs:
           # 더블클릭 런처 — 선생님이 받아서 두 번 누르는 파일
           cwin=$(git hash-object -w tools/orun-connect.cmd)
           cmac=$(git hash-object -w tools/orun-connect.command)
+          # 맥은 내려받은 파일에 실행 권한이 없어 두 번 눌러도 열리지 않는다.
+          # zip 은 유닉스 권한을 품으므로 압축만 풀면 바로 실행된다.
+          # 날짜를 고정해 zip 이 매번 같은 바이트가 되게 한다 — 안 그러면
+          # 바뀐 것이 없어도 트리가 달라져 매 푸시마다 다시 배포된다.
+          rm -rf /tmp/orunzip && mkdir -p /tmp/orunzip
+          cp tools/orun-connect.command /tmp/orunzip/
+          chmod 755 /tmp/orunzip/orun-connect.command
+          touch -t 202601010000 /tmp/orunzip/orun-connect.command
+          (cd /tmp/orunzip && zip -q -X orun-connect-mac.zip orun-connect.command)
+          czip=$(git hash-object -w /tmp/orunzip/orun-connect-mac.zip)
           # index.html 은 지금까지처럼 생성기다. 나머지는 제 이름으로 나란히 선다.
-          tree=$(printf '100644 blob %s\tindex.html\n100644 blob %s\tmocktest-generator.html\n100644 blob %s\torun-universe.html\n100644 blob %s\torun-grammar.html\n100644 blob %s\tmock-exam.html\n100644 blob %s\tstudio.html\n100644 blob %s\torun-oracle.html\n100644 blob %s\tthree.min.js\n100644 blob %s\torun-universe-poster.jpg\n100644 blob %s\torun-bridge.mjs\n100644 blob %s\torun-connect.cmd\n100755 blob %s\torun-connect.command\n' \
-                 "$mock" "$mock" "$uni" "$gram" "$mock" "$stud" "$orac" "$three" "$post" "$brdg" "$cwin" "$cmac" | git mktree)
+          tree=$(printf '100644 blob %s\tindex.html\n100644 blob %s\tmocktest-generator.html\n100644 blob %s\torun-universe.html\n100644 blob %s\torun-grammar.html\n100644 blob %s\tmock-exam.html\n100644 blob %s\tstudio.html\n100644 blob %s\torun-oracle.html\n100644 blob %s\tthree.min.js\n100644 blob %s\torun-universe-poster.jpg\n100644 blob %s\torun-bridge.mjs\n100644 blob %s\torun-connect.cmd\n100755 blob %s\torun-connect.command\n100644 blob %s\torun-connect-mac.zip\n' \
+                 "$mock" "$mock" "$uni" "$gram" "$mock" "$stud" "$orac" "$three" "$post" "$brdg" "$cwin" "$cmac" "$czip" | git mktree)
 
           git fetch --no-tags --depth=1 origin gh-pages || true
           parent=$(git rev-parse -q --verify FETCH_HEAD || true)
