@@ -112,7 +112,12 @@ qs.map(q => q.number + " | " + q.type + " | \"" + (q.passage && q.passage.first1
 "[발문 표본]\n" + stems + "\n[선지 표본]\n" + optionSets + "\n[서술형 조건 표본]\n" + (conditions || "(없음)") + "\n[해설 표본]\n" + (explanations || "(해설 없음)") + "\n[이전 시험과의 비교]\n" + (prior || "(이전 시험 없음)");
     }
 
-    function narrative(compact, stemSamples) {
+    // 강사가 직접 적은 메모 (선생님 anchor 메모 + 최근 프로파일 메모, ≤ 3개 · 각 ≤ 300자) — 통계가 말하지 않는 맥락으로만 참고하게 한다
+    function notesBlock(notes) {
+      const list = (Array.isArray(notes) ? notes : []).map(n => String(n == null ? "" : n).replace(/\s+/g, " ").trim().slice(0, 300)).filter(Boolean).slice(0, 3);
+      return list.length ? "[강사 메모 — 강사가 이 선생님에 대해 직접 적은 관찰입니다. 통계와 어긋나면 통계를 우선하되, 통계가 말하지 않는 맥락으로 참고하세요]\n" + list.map(n => "- " + n).join("\n") + "\n\n" : "";
+    }
+    function narrative(compact, stemSamples, notes) {
       return ROLE +
 "[작업] 한 고등학교 영어 선생님의 기출 문항 통계와 실제 발문 예시가 있습니다. 이 선생님의 출제 성향을 학원 강사가 학생에게 설명하듯 한국어로 서술하세요. 수치를 근거로 말하되 숫자를 나열하지 말고 습관·경향으로 풀어 씁니다. 통계에 없는 사실을 지어내지 않습니다. 표본이 적은 항목(n<3)은 단정하지 않고 \"~로 보입니다\"로 씁니다.\n" +
 "- narrative: 5~8문장. 첫 문장은 한 줄 총평, 이어서 유형 비중·서술형 습관·지문 선호·어법 포인트·변형 습관·프린트(학습지) 반영 정도·최근 변화 순.\n" +
@@ -120,7 +125,33 @@ qs.map(q => q.number + " | " + q.type + " | \"" + (q.passage && q.passage.first1
 "- watchouts: 학생이 대비할 때 주의할 점 3개, 각 40자 이내.\n\n" +
 "[출력 — JSON만]\n" +
 '{ "narrative": "…", "keywords": ["","","","",""], "watchouts": ["","",""] }\n\n' +
-"[통계 요약]\n" + JSON.stringify(compact) + "\n\n[실제 발문 예시 — 유형 | 발문]\n" + stemSamples;
+"[통계 요약]\n" + JSON.stringify(compact) + "\n\n" + notesBlock(notes) + "[실제 발문 예시 — 유형 | 발문]\n" + stemSamples;
+    }
+
+    // 물어보기(RAG) — 평문 스트리밍. o: { teacherLine, compact, structured: [string], evidence: [{ n, kindLabel|kind, title, sub, flag, text }], question, ctxLine, allTeachers }
+    // 반환 { system, user }. mock-api.js 는 user 의 "아래 [근거] 만을 근거로 강사의 질문에" 를 보고 문자열을 돌려준다 — 문구를 바꾸면 둘을 함께 고친다.
+    const ASK_KIND_LABEL = { teacher: "선생님", exam: "시험", question: "문항", passage: "지문", source: "자료", handout: "프린트", profile: "프로파일", prediction: "예측", mock: "모의고사", note: "메모", ask: "질문", daily: "데일리", weekly: "주간" };
+    function ask(o) {
+      o = o || {};
+      const clean = (s, n) => String(s == null ? "" : s).replace(/\r/g, "").trim().slice(0, n || 4000);
+      const system = ROLE +
+"[역할 보강] 당신은 이 선생님에 관해 쌓인 노트만을 근거로 답하는 두뇌입니다. 근거에 없는 것은 \"자료에 없어요\" 라고 말합니다.\n" +
+"[선생님] " + clean(o.teacherLine || "(선생님 범위 없음 — 모든 선생님)", 300) + "\n" +
+"[프로파일 요약] " + (o.compact ? JSON.stringify(o.compact) : "(아직 학습한 프로파일이 없어요)");
+      const structured = (Array.isArray(o.structured) ? o.structured : []).map(s => clean(s, 400)).filter(Boolean);
+      const evidence = (Array.isArray(o.evidence) ? o.evidence : []).map((e, i) => {
+        const n = e.n || i + 1;
+        const head = "[" + n + " | " + (e.kindLabel || ASK_KIND_LABEL[e.kind] || e.kind || "노트") + " | " + clean(e.title, 120).replace(/\|/g, "/") + " | " + clean(e.sub || e.why || "", 120).replace(/\|/g, "/") + " | " + clean(e.flag || "", 40) + "]";
+        return head + "\n" + clean(e.text, 2000);
+      });
+      const user =
+"[작업] 아래 [근거] 만을 근거로 강사의 질문에 한국어로 답합니다. 문장마다 근거 번호를 [n] 로 답니다. 숫자는 [구조 근거] 를 우선하고, 근거 번호 밖의 번호를 만들지 않습니다. 6문장 이내. 마지막 줄에 \"USED: 1,2\" 처럼 실제 인용한 번호를, 그 다음 줄에 \"FOLLOWUP: 질문 | 질문\" 을 씁니다. JSON · 코드펜스 없이 평문으로만.\n" +
+(o.allTeachers ? "[주의] 근거가 여러 선생님 것입니다. 선생님별로 나누어 답하고 한 사람의 습관으로 합치지 않습니다(근거 머리글의 선생님 이름을 보세요).\n" : "") +
+(o.ctxLine ? "[맥락] 지금 열려 있는 노트: " + clean(o.ctxLine, 200) + "\n" : "") +
+"[구조 근거]\n" + (structured.length ? structured.join("\n") : "(없음 — 이 질문에 맞는 통계가 아직 없어요)") + "\n" +
+"[근거]\n" + (evidence.length ? evidence.join("\n") : "(없음)") + "\n" +
+"[질문]\n" + clean(o.question, 1000);
+      return { system, user };
     }
 
     function refine(compact, blueprint, passageLines, target) {
@@ -177,5 +208,5 @@ items.map(it => "■ " + it.number + "번 · " + it.type + (it.subtype ? "(" + i
     function repair(raw) {
       return "아래 텍스트는 JSON 이어야 하는데 깨져 있습니다. 내용은 바꾸지 말고 문법만 고쳐 유효한 JSON 하나만 출력하세요. 잘린 끝은 가장 가까운 닫는 괄호로 마무리합니다.\n\n" + raw;
     }
-    return { ROLE, memoBlock, classify, dataize, index, indexHandout, catalogLines, matchConfirm, aiJudge, narrative, refine, generateSystem, generateUser, repair };
+    return { ROLE, memoBlock, notesBlock, classify, dataize, index, indexHandout, catalogLines, matchConfirm, aiJudge, narrative, ask, ASK_KIND_LABEL, refine, generateSystem, generateUser, repair };
   })();

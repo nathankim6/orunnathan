@@ -29,7 +29,7 @@
       for (const L of LEVELS) if (nq >= L.q && ne >= L.e && (rel || 0) >= L.r) lv = L;
       const next = LEVELS[lv.id + 1];
       let need = "";
-      if (next) { const parts = []; if (nq < next.q) parts.push("문항 " + (next.q - nq) + "개"); if (ne < next.e) parts.push("시험 " + (next.e - ne) + "개"); if ((rel || 0) < next.r) parts.push("신뢰도 " + round(next.r - (rel || 0), 2) + " 더"); need = parts.join(" · "); }
+      if (next) { const parts = []; if (nq < next.q) parts.push("문항 " + (next.q - nq) + "개"); if (ne < next.e) parts.push("시험 " + (next.e - ne) + "개"); if ((rel || 0) < next.r) parts.push("신뢰도 " + Math.round((next.r - (rel || 0)) * 100) + "% 더"); need = parts.join(" · "); }
       return { id: lv.id, name: lv.name, next: next ? { id: next.id, name: next.name, need } : null };
     }
 
@@ -177,7 +177,7 @@
       const lines = [], d = { headline: lines };
       if (!prev) { lines.push("첫 프로파일 — 시험 " + next.basedOn.nExams + "개 · 문항 " + next.basedOn.nQuestions + "개로 학습"); return d; }
       if (prev.level.id !== next.level.id) lines.push("단계 " + prev.level.name + " → " + next.level.name + (next.level.id > prev.level.id ? " 진입" : ""));
-      if (Math.abs(next.reliability - prev.reliability) >= 0.05) lines.push("신뢰도 " + prev.reliability + " → " + next.reliability);
+      if (Math.abs(next.reliability - prev.reliability) >= 0.05) lines.push("신뢰도 " + Math.round(prev.reliability * 100) + "% → " + Math.round(next.reliability * 100) + "%");
       const types = new Set([...Object.keys(prev.typeDist), ...Object.keys(next.typeDist)]);
       types.forEach(t => { const a = prev.typeDist[t] ? prev.typeDist[t].share : 0, b = next.typeDist[t] ? next.typeDist[t].share : 0; if (Math.abs(a - b) >= 0.05) lines.push(t + " 비중 " + Math.round(a * 100) + "% → " + Math.round(b * 100) + "%"); });
       const pg = new Set(prev.grammarPoints.map(g => g.point)); next.grammarPoints.slice(0, 5).forEach(g => { if (!pg.has(g.point)) lines.push("‘" + g.point + "’ 어법 포인트 첫 등장"); });
@@ -198,10 +198,12 @@
       const edges = Object.keys(pair).sort((a, b) => pair[b] - pair[a]).slice(0, 14).map(k => { const [a, b] = k.split("-").map(Number); return [a, b, pair[k]]; });
       return { nodes, edges };
     }
-    async function narrate(p, signal) {
-      const r = await API.json(PROMPTS.narrative(compact(p), stemSamples(p, 10)), { tier: "small", effort: "medium", signal, validate: v => v && v.narrative ? "" : "narrative 없음" });
+    // narrate(p, signal, { notes: string[] }) — notes 는 강사 메모(≤ 3, 각 ≤ 300자). 서술 프롬프트의 [강사 메모] 블록으로 들어간다.
+    async function narrate(p, signal, opts) {
+      const notes = (opts && Array.isArray(opts.notes) ? opts.notes : []).map(n => String(n == null ? "" : n).replace(/\s+/g, " ").trim().slice(0, 300)).filter(Boolean).slice(0, 3);
+      const r = await API.json(PROMPTS.narrative(compact(p), stemSamples(p, 10), notes), { tier: "small", effort: "medium", signal, validate: v => v && v.narrative ? "" : "narrative 없음" });
       return { text: String(r.narrative || "").slice(0, 1200), keywords: (Array.isArray(r.keywords) ? r.keywords : []).map(k => String(k).slice(0, 14)).filter(Boolean).slice(0, 5),
-               watchouts: (Array.isArray(r.watchouts) ? r.watchouts : []).map(k => String(k).slice(0, 60)).filter(Boolean).slice(0, 3), at: Date.now() };
+               watchouts: (Array.isArray(r.watchouts) ? r.watchouts : []).map(k => String(k).slice(0, 60)).filter(Boolean).slice(0, 3), at: Date.now(), usedNotes: notes.length };
     }
     return { build, compact, stemSamples, diff, constellation, narrate, levelOf, jsd };
   })();

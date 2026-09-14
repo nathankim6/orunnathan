@@ -10,7 +10,16 @@ function sse(text) {
   return out;
 }
 function section(prompt, head) { const i = prompt.indexOf(head); return i < 0 ? "" : prompt.slice(i + head.length); }
+// 물어보기(ASK) — JSON 이 아니라 평문을 돌려준다 (34-prompts.js 의 PROMPTS.ask 고정 문구와 짝). 근거가 1개면 [1] 만 인용한다.
+// e2e 라우트는 `const a = mock.answer(prompt); body: mock.sse(typeof a === "string" ? a : JSON.stringify(a))` 로 둘 다 받는다.
+function askAnswer(prompt) {
+  const ev = section(prompt, "[근거]");
+  const n = (ev.match(/^\[(\d+) \| /gm) || []).length;
+  if (n >= 2) return "근거에 따르면 빈칸은 시험당 평균 3문항이며 마지막 문장에 뚫립니다 [1]. 프린트 지문에서 나온 비율은 절반입니다 [2].\nUSED: 1,2\nFOLLOWUP: 어법 포인트는? | 서술형 조건은?";
+  return "근거에 따르면 빈칸은 시험당 평균 3문항이며 마지막 문장에 뚫립니다 [1].\nUSED: 1\nFOLLOWUP: 어법 포인트는? | 서술형 조건은?";
+}
 function answer(prompt) {
+  if (/아래 \[근거\] 만을 근거로 강사의 질문에/.test(prompt)) return askAnswer(prompt);
   if (/이 파일이 \(A\) 학교 기출 시험지인지/.test(prompt)) return { kind: /①/.test(prompt) ? "exam" : "scope", confidence: 0.9, reason: "mock", meta: {} };
   if (/각 문항을 아래 필드로 데이터화합니다/.test(prompt)) {
     const text = section(prompt, "[시험지 텍스트]");

@@ -253,14 +253,14 @@
       const ext = extOf(file.name);
       if (file.size > 100 * 1024 * 1024) throw new Error("100MB 를 넘는 파일은 올릴 수 없어요.");
       if (ext === "pdf") {
-        const buf = await readAsBuffer(file);
-        const copy = buf.slice(0);                      // pdf.js 가 버퍼를 가져가므로 스캔본용 사본을 둔다
+        // pdf.js 가 버퍼를 워커로 가져가 버리므로 스캔본으로 넘어갈 때는 파일에서 한 번 더 읽는다.
+        // 미리 사본을 뜨면 글자가 멀쩡한 PDF(대부분)에서도 파일 크기만큼(최대 100MB)을 헛되이 한 벌 더 든다.
         if (!o.forceOcr) {
-          const r = await pdfText(buf);
+          const r = await pdfText(await readAsBuffer(file));
           if (!looksUnreadable(r.text)) return { text: r.text, note: "", ocr: false, pages: r.pages };
           if (!API.ready()) throw new Error("글자가 없는(스캔) PDF 예요. API 키를 저장하면 그림으로 읽어 드려요.");
         }
-        const s = await ocrPdf(copy, o);
+        const s = await ocrPdf(await readAsBuffer(file), o);
         return { text: s.text, note: "스캔본 · " + s.pages + "쪽을 그림으로 읽었어요" + (s.truncated ? " (앞 " + OCR_MAX_PAGES + "쪽만)" : ""), ocr: true, pages: s.pages };
       }
       if (ext === "docx") return { text: await docx(await readAsBuffer(file)), note: "", ocr: false };

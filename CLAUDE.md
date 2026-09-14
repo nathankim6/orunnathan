@@ -35,7 +35,7 @@ Pages 는 `gh-pages` 브랜치를 읽고, 그 브랜치에는 워크플로가 �
 |---|---|
 | `/` , `/mocktest-generator.html` , `/mock-exam.html` | 동형 모의고사 생성기 |
 | `/studio.html` | ORUN STUDIO 랜딩 (타일이 `/mock-exam.html` 을 가리킨다) |
-| `/orun-oracle.html` | ORUN ORACLE — 출제자 성향 프로파일러 · 적중 모의고사 |
+| `/orun-oracle.html` | ORUN ORACLE — 출제자 세컨드 브레인 (성향 프로파일 · 예측 · 적중 모의고사) |
 | `/orun-universe.html` , `/orun-grammar.html` | 그 밖의 앱 |
 
 ## 무엇이 무엇에 이어져 있나
@@ -61,35 +61,37 @@ artifact/orun-mocktest.html
 GitHub Pages 는 `access-control-allow-origin: *` 를 준다. 다른 사이트가 이 파일을
 `fetch` 로 받아 자기 화면에 띄우는 것도 되므로, 사본을 둘 이유는 어디에도 없다.
 
-## ORUN ORACLE (출제자 성향 프로파일러) — `public/orun-oracle.html`
+## ORUN ORACLE (출제자 세컨드 브레인) — `public/orun-oracle.html`
 
-선생님 홀로그램(three.js)에 기출 시험지·시험범위 원문을 떨어뜨리면 문항 단위로
-데이터화하고, 범위 지문과 매칭해 출제 성향을 학습(프로파일 v1, v2, …)한 뒤 다음 시험을
-예측하고 적중 모의고사(화면·인쇄·DOCX)를 만든다. 파일은 **한 벌**(`public/orun-oracle.html`)이고
-`pages.yml` 이 `/orun-oracle.html` 로 그대로 내보낸다. 스튜디오 타일 `ORUN ORACLE` 이
-이 주소를 가리킨다.
+선생님별로 기출 시험지·시험범위 원문·선생님 프린트를 넣으면 문항 단위로 데이터화하고, 지문과
+매칭하고, 출제 성향을 학습(프로파일 v1, v2, …)한 뒤 다음 시험을 예측하고 적중 모의고사(화면·인쇄·DOCX)를
+만든다. 2026-09 에 **세컨드 브레인**으로 전면 재설계했다 — 선생님·시험·문항·지문·자료·프로파일·예측·
+모의고사·메모·질문 **열 가지가 모두 노트**이고 각자 주소(`#/n/<id>`)를 가진다. 어느 노트에든 내 메모를
+적고 `[[링크]]`·`#태그`로 잇고, ⌘K 로 무엇이든 찾고, 쌓인 것 위에서 두뇌에게 묻는다.
+파일은 **한 벌**(`public/orun-oracle.html`)이고 `pages.yml` 이 `/orun-oracle.html` 로 내보낸다.
 
-- 소스는 저장소의 `oracle/parts/*` (모듈 16개) 이고 `oracle/build.sh` 가 한 파일로 잇는다.
+- 화면: 오늘(첫 화면) · 인박스 · 서재 · 브레인 · 타임라인 · 물어보기. 3D 홀로그램은 **브레인 뷰**로
+  옮겼고(`G`), 거기서 시험·지문·문항·프린트·메모가 노드로 이어진 그래프가 된다. 첫 화면은 설정에서 바꿀 수 있다.
+- 소스는 `oracle/parts/*` (모듈 23개) 이고 `oracle/build.sh` 가 한 파일로 잇는다.
   **`public/orun-oracle.html` 을 직접 고치지 않는다** — parts 를 고치고 `cd oracle && npm run build`
   로 다시 지은 뒤 parts 와 public 파일을 같은 커밋에 넣는다. `npm run check` 가 둘의 어긋남을 잡고,
-  `.github/workflows/oracle-ci.yml` 이 푸시·PR 마다 같은 검사를 돈다. 모듈별 역할 표와 순서는
-  루트 `AGENTS.md` 에 있다 (Codex 등 다른 에이전트가 읽는 파일 — 규칙을 바꾸면 둘을 함께 고친다).
-- 키·모델 저장 키는 생성기와 같다(`orun_api_key` 등) — 같은 주소에서 키를 나눠 쓴다.
-  API 는 브라우저에서 `api.anthropic.com` / `api.openai.com` 으로만 간다. 서버 없음.
-- 저장은 IndexedDB `orun_oracle` 이 작업본이고, 같은 문서를 Supabase 프로젝트
-  `wxjazdqabryflvfztujk` 의 `public.oracle_docs` (id · workspace · store · teacher_id · data jsonb · updated_at)
-  에 그대로 비춘다. anon 키 + REST 직접 호출, 열린 RLS(옳은문법 앱과 같은 방식) — 주소를 아는
-  사람은 누구나 그 작업공간을 읽고 쓴다. 작업공간 이름은 `orun_oracle_ws`(기본 `heukseok`),
-  끄기는 `orun_oracle_sync=off`. 배경 영상(media)은 올리지 않는다. 파일 원본은 어디에도 저장하지
-  않는다(추출 텍스트만).
+  `.github/workflows/oracle-ci.yml` 이 푸시·PR 마다 같은 검사를 돈다. 모듈 표와 규칙은 루트 `AGENTS.md`,
+  설계 계약(화면·DOM id·데이터 모델·모듈 API)은 `oracle/design/spec.md` 에 있다 — 규칙을 바꾸면 함께 고친다.
+- 키·모델 저장 키는 생성기와 같다(`orun_api_key` 등). API 는 브라우저에서 `api.anthropic.com` /
+  `api.openai.com` 으로만 간다. 서버 없음.
+- 저장은 IndexedDB `orun_oracle`(VERSION 2) 이 작업본이고, 같은 문서를 Supabase 프로젝트
+  `wxjazdqabryflvfztujk` 의 `public.oracle_docs` 에 비춘다(메모·링크·태그 포함, 배경 영상 제외).
+  삭제는 묘비로 남기고, 메모·링크·태그는 `updatedAt` 으로 병합한다. 메모를 이 브라우저에만 두는
+  스위치가 설정 › 브레인에 있다 — 작업공간은 주소를 아는 누구나 읽고 쓰기 때문이다. 자세한 것은 `AGENTS.md`.
 - 파일 종류는 셋 — 기출(exam) · 범위 원문(scope) · 선생님 프린트(handout). 프린트는 지문과
   어법·어휘·예상문제 포인트로 색인하고, 기출 문항 하나하나가 프린트의 무엇에서 왔는지 세어
-  **프린트 반영율**(시험별 `exam.reflection`, 자료별 `source.reflection`, 프로파일 `handout`)을
-  낸다. 예측은 프린트에 실린 지문을 과거 반영율만큼 우선한다.
+  **프린트 반영율**을 낸다. 예측은 프린트에 실린 지문을 과거 반영율만큼 우선한다.
+- 물어보기는 로컬 검색(한글 2-gram BM25 + 원문 찾기)으로 근거를 모아 모델에 넘기고, 답에 `[n]` 인용을
+  달아 그 노트로 갈 수 있게 한 뒤 답을 노트로 남긴다. 근거가 없으면 모델을 부르지 않는다.
 - 첫 실행에 흑석고 선생님 두 분(윤은영 영어A · 전정이 영어B)을 심는다(설정 `seeded`).
-- 글꼴: 영문 Orbitron, 한글 Noto Sans KR (`--f` / `--fk`). 인쇄 시험지만 명조를 쓴다.
-- 힉스필드(Higgsfield)는 이 세션에서 부를 수 없다. 설정 → 힉스필드 탭의 프롬프트 묶음으로
-  영상·이미지를 만들어 배경 슬롯에 넣는다.
+- 글꼴: 영문 Orbitron 은 라벨·아이브로우·숫자·키캡에만, 본문·입력·버튼은 Noto Sans KR. 인쇄 시험지만 명조.
+- 힉스필드(Higgsfield)는 이 세션에서 부를 수 없다. 설정 → 배경 탭의 프롬프트 묶음으로 영상·이미지를
+  만들어 브레인 뷰 배경 슬롯에 넣는다.
 - 회귀 검사는 `oracle/tests/` 에 있다 — `npm test` = 어긋남 검사 + 단위(`unit.js`) + 브라우저
   끝에서 끝까지(`e2e.js`, 모의 API · 모의 Supabase) + 3D 무대(`run-stage-smoke.js`). 처음엔
   `cd oracle && npm ci && npx playwright install --with-deps chromium && npm run cdn`. 고쳤으면
