@@ -143,6 +143,13 @@ probe() {
     echo ping | codex exec --json --sandbox read-only --skip-git-repo-check - >/dev/null 2>&1
   fi
 }
+show_probe() {
+  if [ "$AGENT" = "claude" ]; then
+    echo ping | claude -p --output-format text
+  else
+    echo ping | codex exec --sandbox read-only --skip-git-repo-check -
+  fi
+}
 echo "  [3/5] 로그인을 확인합니다..."
 if ! probe; then
   echo
@@ -154,8 +161,20 @@ if ! probe; then
   echo
   echo "  로그인을 다시 확인합니다..."
 fi
-probe || die "아직 로그인이 안 돼 있습니다. 터미널에서 $AGENT 를 한 번 실행해 로그인한 뒤 다시 눌러 주세요."
-echo "  [3/5] 로그인 확인됨"
+# 확인이 안 돼도 여기서 끝내지 않는다 — 확인하는 방법이 도구 판마다 달라
+# 멀쩡히 로그인된 분을 막아 세우는 일이 생긴다. 진짜 판정은 아래 브리지 표가 한다.
+if probe; then
+  echo "  [3/5] 로그인 확인됨"
+else
+  echo
+  echo "  로그인 확인이 되지 않습니다. $AGENT 가 뭐라고 하는지 그대로 보여 드립니다 —"
+  echo "  ............................................................"
+  show_probe 2>&1 | sed 's/^/  /' | head -20
+  echo "  ............................................................"
+  echo
+  echo "  그래도 켜 보겠습니다. 잠시 뒤 나오는 표에서 $AGENT 가"
+  echo "  \"준비됨\" 이면 그대로 쓰시면 되고, \"없음\" 이면 로그인이 덜 된 것입니다."
+fi
 
 # ── 4. 브리지 ──────────────────────────────────────────────────────────────
 echo "  [4/5] 브리지를 내려받습니다..."
