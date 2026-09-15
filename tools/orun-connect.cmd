@@ -73,6 +73,21 @@ rem ── 그 문에 우리 브리지가 이미 떠 있는가 (0 그렇다) ─
 "%NODE%" -e "fetch('http://127.0.0.1:'+process.argv[1]+'/health').then(function(r){return r.json()}).then(function(j){process.exit(j&&j.name==='orun-bridge'?0:1)}).catch(function(){process.exit(1)})" %1 >nul 2>&1
 exit /b
 
+rem ── 주소를 열어 보고, 열렸든 안 열렸든 눈앞에 적어 주고 복사해 둔다 ──────
+rem 브라우저를 여는 길은 컴퓨터마다 막힐 수 있다. 막혔을 때 손에 쥘 것이 있어야 한다.
+:openurl
+start "" "%~1"
+echo %~1| clip 2>nul
+echo(
+echo   ------------------------------------------------------------
+echo   저절로 안 열렸으면 이 주소를 브라우저 주소창에 넣어 주세요
+echo   복사해 두었습니다 - 브라우저 주소창에서 Ctrl+V
+echo(
+echo   %~1
+echo   ------------------------------------------------------------
+>>"%LOG%" echo   [주소] %~1
+goto :eof
+
 rem ── 로그인돼 있는가 (0 그렇다) ────────────────────────────────────────────
 :probe
 if "%AGENT%"=="codex" goto probecodex
@@ -179,7 +194,7 @@ call :say "이미 켜져 있습니다. 새로 켜지 않고 그대로 씁니다.
 call :say "먼저 열어 둔 검은 창을 닫지 마세요 - 그 창이 연결을 잡고 있습니다."
 echo(
 call :say "[5/5] 생성기를 엽니다..."
-start "" "%APP%#connect=%CODE%@http://127.0.0.1:%PORT%"
+call :openurl "%APP%#connect=%CODE%@http://127.0.0.1:%PORT%"
 echo(
 call :say "이 창은 닫으셔도 됩니다."
 exit /b 0
@@ -281,7 +296,7 @@ exit /b 41
 rem ── 5. 켜고 연다 ───────────────────────────────────────────────────────────
 call :mark "생성기 열기"
 call :say "[5/5] 생성기를 엽니다..."
-start "" "%APP%#connect=%CODE%@http://127.0.0.1:%PORT%"
+call :openurl "%APP%#connect=%CODE%@http://127.0.0.1:%PORT%"
 echo(
 echo   ------------------------------------------------------------
 echo   이어졌습니다. 이 창은 쓰시는 동안 켜 두세요.

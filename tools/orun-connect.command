@@ -49,10 +49,31 @@ BRIDGE_URL="${ORUN_BRIDGE_URL:-https://nathankim6.github.io/orunnathan/orun-brid
 PORT="${ORUN_PORT:-8787}"
 TOKENFILE=".orun-code"
 
+# 브라우저를 여는 길은 컴퓨터마다 막힐 수 있다. 그래서 열어 보고,
+# 열렸든 안 열렸든 주소를 반드시 눈앞에 적어 주고 복사까지 해 둔다.
 open_url() {
-  if command -v open >/dev/null 2>&1; then open "$1"
+  if command -v open >/dev/null 2>&1; then open "$1" >/dev/null 2>&1
   elif command -v xdg-open >/dev/null 2>&1; then xdg-open "$1" >/dev/null 2>&1
-  else echo "   브라우저에서 직접 여세요: $1"; fi
+  else return 1; fi
+}
+copy_url() {
+  if command -v pbcopy >/dev/null 2>&1; then printf '%s' "$1" | pbcopy 2>/dev/null && return 0; fi
+  if command -v xclip >/dev/null 2>&1; then printf '%s' "$1" | xclip -selection clipboard 2>/dev/null && return 0; fi
+  if command -v wl-copy >/dev/null 2>&1; then printf '%s' "$1" | wl-copy 2>/dev/null && return 0; fi
+  return 1
+}
+show_url() {
+  copied=""
+  copy_url "$1" && copied="1"
+  echo
+  echo "  ------------------------------------------------------------"
+  echo "  저절로 안 열렸으면 이 주소를 브라우저 주소창에 넣어 주세요"
+  if [ -n "$copied" ]; then
+    echo "  (복사해 두었습니다 — 브라우저 주소창에서 Command+V)"
+  fi
+  echo
+  echo "  $1"
+  echo "  ------------------------------------------------------------"
 }
 die() { echo; echo "   ! $1"; exit 1; }
 
@@ -108,7 +129,9 @@ if port_taken "$PORT"; then
     echo "  (먼저 열어 둔 검정 창을 닫지 마세요 — 그 창이 연결을 잡고 있습니다.)"
     echo
     echo "  [5/5] 생성기를 엽니다..."
-    open_url "$APP#connect=$CODE@http://127.0.0.1:$PORT"
+    URL="$APP#connect=$CODE@http://127.0.0.1:$PORT"
+    open_url "$URL"
+    show_url "$URL"
     echo
     echo "  이 창은 닫으셔도 됩니다."
     exit 0
@@ -182,7 +205,9 @@ curl -fsSL "$BRIDGE_URL" -o orun-bridge.mjs || die "브리지 파일을 받지 �
 
 # ── 5. 켜고 연다 ───────────────────────────────────────────────────────────
 echo "  [5/5] 생성기를 엽니다..."
-open_url "$APP#connect=$CODE@http://127.0.0.1:$PORT"
+URL="$APP#connect=$CODE@http://127.0.0.1:$PORT"
+open_url "$URL"
+show_url "$URL"
 echo
 echo "  ------------------------------------------------------------"
 echo "  이어졌습니다. 이 창은 쓰시는 동안 켜 두세요."
