@@ -4419,6 +4419,35 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     return (v || BRIDGE_URL_DEFAULT).replace(/\/+$/, "");
   }
   function setBridgeUrl(v) { try { localStorage.setItem(BRIDGE_URL_STORE, (v || "").trim()); } catch (e) {} }
+  // 런처가 8787 번 문이 차 있으면 옆 문으로 비껴간다. 그래서 저장된 주소가 빗나갈 수 있다.
+  // 못 닿으면 이 컴퓨터 안의 옆 문 몇 개를 살펴 브리지를 찾아낸다 — 루프백만 본다.
+  const BRIDGE_PORTS = [8787, 8788, 8789, 8790, 8791, 8792, 8793, 8794, 8795];
+  function isLoopbackBase(u) {
+    return /^https?:\/\/(127\.0\.0\.1|localhost)(:\d+)?$/.test(String(u || "").replace(/\/+$/, ""));
+  }
+  async function peekBridge(base) {
+    let ctl = null, timer = null;
+    try { ctl = new AbortController(); timer = setTimeout(() => ctl.abort(), 1500); } catch (e) {}
+    try {
+      const res = await fetch(base + "/health", { cache: "no-store", signal: ctl ? ctl.signal : undefined });
+      if (!res.ok) return null;
+      const j = await res.json();
+      return (j && j.name === "orun-bridge") ? j : null;
+    } catch (e) { return null; }
+    finally { if (timer) clearTimeout(timer); }
+  }
+  // 옆 문을 하나씩 살핀다. 찾으면 그 주소를 기억해 두고 그 뒤로는 그리로 간다.
+  async function findBridgeNearby() {
+    const cur = bridgeUrl();
+    if (!isLoopbackBase(cur)) return null;
+    for (const port of BRIDGE_PORTS) {
+      const base = "http://127.0.0.1:" + port;
+      if (base === cur) continue;
+      const h = await peekBridge(base);
+      if (h) { setBridgeUrl(base); return { base: base, health: h }; }
+    }
+    return null;
+  }
   function bridgeToken() { return readKey(BRIDGE_TOKEN_STORE).toUpperCase(); }
   function setBridgeToken(v) { writeKey(BRIDGE_TOKEN_STORE, (v || "").trim().toUpperCase()); }
   function bridgeAgent() {
@@ -4826,10 +4855,11 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     return apiError("http_" + status, msg || ("HTTP " + status), status);
   }
   function bridgeNetError() {
-    return apiError("network", "브리지에 연결하지 못했습니다. 터미널에서 orun-bridge 를 켜 두었는지 확인해 주세요. "
+    return apiError("network", "브리지에 연결하지 못했습니다 (" + bridgeUrl() + "). "
+      + "연결 파일을 두 번 눌러 띄운 검은 창이 아직 열려 있는지 봐 주세요 — 그 창을 닫으면 연결이 끊깁니다. "
       + (location.protocol === "https:"
         ? "크롬이 '이 컴퓨터 안의 기기에 연결' 을 물어보면 허용해 주세요."
-        : "주소(" + bridgeUrl() + ")가 맞는지도 봐 주세요."));
+        : ""));
   }
   // 중계소는 한 줄씩 SSE 로 준다 — delta / limit / done / error
   async function readBridgeStream(res, onText, signal) {
@@ -4876,17 +4906,25 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     const prompt = typeof input === "string"
       ? input
       : input.map(t => (t.role === "assistant" ? "[앞서 네가 쓴 답]\n" : "[요청]\n") + String(t.content || "")).join("\n\n");
+    const post = () => fetch(bridgeUrl() + "/run", {
+      method: "POST",
+      headers: { "content-type": "application/json", authorization: "Bearer " + token },
+      body: JSON.stringify({ agent: bridgeAgent(), prompt: prompt, images: images }),
+      signal: opts.signal,
+    });
     let res;
     try {
-      res = await fetch(bridgeUrl() + "/run", {
-        method: "POST",
-        headers: { "content-type": "application/json", authorization: "Bearer " + token },
-        body: JSON.stringify({ agent: bridgeAgent(), prompt: prompt, images: images }),
-        signal: opts.signal,
-      });
+      res = await post();
     } catch (e) {
       if (e && e.name === "AbortError") throw apiError("cancelled", "중단됨");
-      throw bridgeNetError();
+      // 문이 옮겨 갔을 수 있다 — 한 번만 옆 문을 살펴보고 다시 두드린다
+      const near = await findBridgeNearby();
+      if (!near) throw bridgeNetError();
+      try { res = await post(); }
+      catch (e2) {
+        if (e2 && e2.name === "AbortError") throw apiError("cancelled", "중단됨");
+        throw bridgeNetError();
+      }
     }
     if (!res.ok) throw bridgeHttpError(res.status, await res.text());
     const r = await readBridgeStream(res, opts.onText, opts.signal);
@@ -4894,11 +4932,15 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
     return { text: r.text, truncated: false, modelTierApplied: "complex" };
   }
   async function bridgeHealth() {
-    let res;
+    let res = null;
     try { res = await fetch(bridgeUrl() + "/health", { cache: "no-store" }); }
-    catch (e) { throw bridgeNetError(); }
-    if (!res.ok) throw bridgeHttpError(res.status, await res.text());
-    return await res.json();
+    catch (e) { res = null; }
+    if (res && !res.ok) throw bridgeHttpError(res.status, await res.text());
+    if (res) return await res.json();
+    // 저장된 주소로 못 닿았다 — 옆 문을 살핀다 (런처가 문을 옮겼을 수 있다)
+    const near = await findBridgeNearby();
+    if (near) return near.health;
+    throw bridgeNetError();
   }
   function makeBridgeSampler() {
     const fn = (input, opts) => bridgeCall(input, opts);
@@ -5271,7 +5313,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   function diagnostics() {
     return [
       "ORUN 동형 모의고사 진단",
-      "build: 2026-09-15 04:45",
+      "build: 2026-09-15 12:45",
       "url: " + location.href,
       "runtime: API 키 전용 빌드",
       "sample 확보: " + (SAMPLE ? "예" : "아니오"),

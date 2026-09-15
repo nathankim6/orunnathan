@@ -197,7 +197,12 @@ API 키 말고 "이 컴퓨터에 깔린 Claude Code · Codex" 로 돌리는 길�
 - **브라우저가 저절로 열리지 않아도 길이 끊기지 않는다.** `open` · `start` 는 컴퓨터마다
   막힐 수 있다. 그래서 열어 본 뒤 **주소를 반드시 화면에 한 줄로 적고 클립보드에도
   담는다**(`pbcopy` · `clip`). 선생님이 붙여 넣을 것이 손에 있어야 한다.
+- **생성기는 브리지를 스스로 찾는다.** 런처가 문을 옮기면 저장된 주소가 빗나간다.
+  못 닿으면 `findBridgeNearby()` 가 127.0.0.1 의 8787~8795 를 훑어 `/health` 가
+  `name: "orun-bridge"` 로 답하는 문을 찾아 기억한다 — **루프백일 때만** 훑는다
+  (`isLoopbackBase()`). `bridgeHealth()` 와 `bridgeCall()` 이 한 번씩 쓴다.
 - 회귀 검사: `relaunch.sh`(런처 — 두 번 누르기·남의 문·실패 표시·CRLF) ·
+  `bridgefind.mjs`(옮긴 문을 화면이 찾아내는가) ·
   `bridgetest.sh`(자물쇠·스트리밍·오류) · `bridgeui.mjs`(화면) ·
   `bridgescan.mjs`(스캔본 거절) · `bridgeos.mjs`(운영체제별 명령·받기 링크) ·
   `connecttest.mjs`(연결 링크 — 정상·남의 주소·엉터리 코드) ·
