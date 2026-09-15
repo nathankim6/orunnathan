@@ -30,11 +30,11 @@
 import http from "node:http";
 import { spawn, execFile } from "node:child_process";
 import { randomBytes } from "node:crypto";
-import { mkdtemp, rm } from "node:fs/promises";
+import { mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
-const VERSION = "1.0.0";
+const VERSION = "1.1.0";
 
 // ── 뜰 때 준 것들 ──────────────────────────────────────────────────────────
 function readArgs(argv) {
@@ -82,8 +82,11 @@ const AGENTS = {
     bin: "claude",
     plan: "Claude Pro · Max 구독",
     versionArgs: ["--version"],
+    images: true,          // 그림을 파일로 놓아 주면 Read 로 본다
     // 코딩 도구가 아니라 글 쓰는 도구로 쓴다 — 연장은 전부 내려놓게 한다.
-    runArgs(model) {
+    // 스캔본을 읽을 때만 Read 하나를 열어 준다. 일하는 곳이 빈 임시 방이라
+    // 거기 놓인 쪽 그림 말고는 열 것이 없다.
+    runArgs(model, withImages) {
       const a = [
         "-p",
         "--output-format", "stream-json",
@@ -91,12 +94,16 @@ const AGENTS = {
         "--verbose",
         "--disable-slash-commands",
         "--disallowed-tools",
-        "Bash Edit Write Read Glob Grep WebFetch WebSearch Task NotebookEdit",
+        withImages
+          ? "Bash Edit Write Glob Grep WebFetch WebSearch Task NotebookEdit"
+          : "Bash Edit Write Read Glob Grep WebFetch WebSearch Task NotebookEdit",
         "--system-prompt",
         "너는 한국 고등학교 영어 시험지를 만드는 출제 조력자다. "
         + "받은 지시문을 그대로 따르고, 요청받은 형식(HTML 조각 또는 JSON)만 답한다. "
-        + "설명·인사·머리말을 덧붙이지 않는다.",
+        + "설명·인사·머리말을 덧붙이지 않는다."
+        + (withImages ? " 지금 폴더에 놓인 쪽 그림 말고 다른 파일은 열지 않는다." : ""),
       ];
+      if (withImages) a.push("--allowedTools", "Read");
       if (model) a.push("--model", model);
       return a;
     },
@@ -126,6 +133,7 @@ const AGENTS = {
     bin: "codex",
     plan: "ChatGPT Plus · Pro · Team 구독",
     versionArgs: ["--version"],
+    images: false,         // codex exec 는 --json 과 --image 를 같이 주면 멈춘다
     // exec 는 한 번 돌고 끝나는 모드다. 읽기 전용 상자 안에서만 돌게 묶는다.
     runArgs(model) {
       const a = ["exec", "--json", "--sandbox", "read-only", "--skip-git-repo-check"];
@@ -157,9 +165,35 @@ function probe(agent) {
 
 // ── 한 번 부르기 ───────────────────────────────────────────────────────────
 // SSE 로 delta 를 흘려 보내고 done 으로 끝낸다. 화면이 끊으면 아이를 죽인다.
-async function run(agent, prompt, model, res, timeoutMs) {
+const IMG_EXT = { "image/png": "png", "image/jpeg": "jpg", "image/jpg": "jpg", "image/webp": "webp" };
+
+async function run(agent, prompt, model, images, res, timeoutMs) {
   const dir = await mkdtemp(join(tmpdir(), "orun-bridge-"));   // 빈 방에서 돌린다
   let child, closed = false, sent = 0, whole = "", finished = false;
+
+  // 스캔본은 방 안에 쪽 그림으로 놓고, 지시문 맨 앞에 "이것부터 보라" 고 적는다.
+  // 방은 이 호출이 끝나면 통째로 지운다 — 시험지 그림이 컴퓨터에 남지 않는다.
+  let head = "";
+  if (images && images.length) {
+    const names = [];
+    for (let i = 0; i < images.length; i++) {
+      const im = images[i] || {};
+      const ext = IMG_EXT[String(im.mediaType || im.media_type || "").toLowerCase()] || "png";
+      const name = "page" + (i + 1) + "." + ext;
+      try { await writeFile(join(dir, name), Buffer.from(String(im.data || ""), "base64")); }
+      catch (e) { continue; }
+      names.push(name);
+    }
+    if (!names.length) {
+      await rm(dir, { recursive: true, force: true }).catch(() => {});
+      res.writeHead(200, { "content-type": "text/event-stream; charset=utf-8", "cache-control": "no-store" });
+      res.write("data: " + JSON.stringify({ type: "error", message: "쪽 그림을 옮기지 못했어요." }) + "\n\n");
+      return res.end();
+    }
+    head = "[첨부 그림]\n지금 폴더에 시험지 쪽 그림이 있다: " + names.join(", ") + "\n"
+      + "Read 도구로 " + names.length + "장을 하나씩 열어 본 뒤 아래 지시를 따른다. "
+      + "그림 밖의 파일은 열지 않는다.\n\n";
+  }
 
   const send = (obj) => { if (!closed) res.write("data: " + JSON.stringify(obj) + "\n\n"); };
   const finish = (obj) => {
@@ -179,7 +213,7 @@ async function run(agent, prompt, model, res, timeoutMs) {
   res.on("close", () => { closed = true; cleanup(); });
 
   try {
-    child = spawn(agent.bin, agent.runArgs(model), {
+    child = spawn(agent.bin, agent.runArgs(model, !!(images && images.length)), {
       cwd: dir,
       stdio: ["pipe", "pipe", "pipe"],
       env: { ...process.env, NO_COLOR: "1", FORCE_COLOR: "0" },
@@ -233,7 +267,7 @@ async function run(agent, prompt, model, res, timeoutMs) {
   });
 
   child.stdin.on("error", () => {});
-  child.stdin.end(prompt);
+  child.stdin.end(head + prompt);
 }
 
 // ── 문 열기 ────────────────────────────────────────────────────────────────
@@ -267,7 +301,7 @@ function readBody(req, limit) {
   });
 }
 
-const BODY_LIMIT = 8 * 1024 * 1024;
+const BODY_LIMIT = 48 * 1024 * 1024;   // 쪽 그림이 base64 로 실려 온다
 
 const server = http.createServer(async (req, res) => {
   if (!cors(req, res)) {
@@ -288,10 +322,10 @@ const server = http.createServer(async (req, res) => {
     return json(200, {
       ok: true, name: "orun-bridge", version: VERSION,
       agents: {
-        claude: { ...claude, label: AGENTS.claude.name, plan: AGENTS.claude.plan },
-        codex: { ...codex, label: AGENTS.codex.name, plan: AGENTS.codex.plan },
+        claude: { ...claude, label: AGENTS.claude.name, plan: AGENTS.claude.plan, images: AGENTS.claude.images },
+        codex: { ...codex, label: AGENTS.codex.name, plan: AGENTS.codex.plan, images: AGENTS.codex.images },
       },
-      images: false,          // 스캔본(그림)은 아직 못 보낸다
+      images: AGENTS.claude.images || AGENTS.codex.images,
     });
   }
 
@@ -308,8 +342,13 @@ const server = http.createServer(async (req, res) => {
     const agent = AGENTS[body.agent === "codex" ? "codex" : "claude"];
     const prompt = String(body.prompt || "");
     if (!prompt.trim()) return json(400, { ok: false, error: "no_prompt", message: "보낼 글이 비어 있어요." });
-    if (body.images && body.images.length) {
-      return json(400, { ok: false, error: "no_images", message: "구독 연결로는 아직 스캔본(그림)을 못 읽어요. 스캔한 시험지는 API 키 방식으로 돌려 주세요." });
+    const images = Array.isArray(body.images) ? body.images : [];
+    if (images.length && !agent.images) {
+      return json(400, { ok: false, error: "no_images",
+        message: agent.name + " 으로는 아직 스캔본(그림)을 못 읽어요. 쓸 도구를 Claude Code 로 바꾸거나, API 키 방식으로 돌려 주세요." });
+    }
+    if (images.length > 12) {
+      return json(400, { ok: false, error: "too_many_images", message: "한 번에 보낼 수 있는 쪽 그림은 12장까지예요." });
     }
     res.writeHead(200, {
       "content-type": "text/event-stream; charset=utf-8",
@@ -318,7 +357,7 @@ const server = http.createServer(async (req, res) => {
       "x-accel-buffering": "no",
     });
     res.write(": open\n\n");
-    return run(agent, prompt, String(body.model || "").trim(), res, Math.max(30, ARGS.timeout) * 1000);
+    return run(agent, prompt, String(body.model || "").trim(), images, res, Math.max(30, ARGS.timeout) * 1000);
   }
 
   json(404, { ok: false, error: "not_found" });
@@ -328,7 +367,8 @@ server.on("clientError", (e, sock) => { try { sock.destroy(); } catch (x) {} });
 
 server.listen(ARGS.port, "127.0.0.1", async () => {
   const [claude, codex] = await Promise.all([probe(AGENTS.claude), probe(AGENTS.codex)]);
-  const line = (a, p) => "  " + (p.ok ? "준비됨" : "없음  ") + "  " + a.name.padEnd(12) + (p.ok ? p.version : "— " + a.plan + " 으로 로그인한 뒤 다시 켜 주세요");
+  const line = (a, p) => "  " + (p.ok ? "준비됨" : "없음  ") + "  " + a.name.padEnd(12)
+    + (p.ok ? p.version + (a.images ? "   · 스캔본 읽기 됨" : "   · 스캔본 안 됨") : "— " + a.plan + " 으로 로그인한 뒤 다시 켜 주세요");
   console.log("");
   console.log("  ORUN 브리지 " + VERSION + " — 내 구독으로 시험지를 뽑습니다");
   console.log("  " + "─".repeat(62));

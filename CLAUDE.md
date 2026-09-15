@@ -162,11 +162,21 @@ API 키 말고 "이 컴퓨터에 깔린 Claude Code · Codex" 로 돌리는 길�
 - **크롬 142 부터** 공개 사이트가 이 컴퓨터 안을 부르면 권한을 묻는다.
   사전요청에 `access-control-allow-private-network: true` 를 돌려주는 줄이
   있어야 한다. 지우면 https 로 연 생성기에서 연결이 막힌다.
-- **구독 연결은 그림을 못 보낸다.** 스캔본은 API 키 방식으로 돌린다.
-  `imagesState` · `ocrAvailable()` · `applyScanCopy()` 세 곳이 한 세트다.
+- **스캔본(그림)은 도구에 따라 갈린다.** Claude Code 는 읽고, Codex 는 못 읽는다.
+  Claude Code 쪽은 중계소가 쪽 그림을 임시 폴더에 `page1.png …` 로 놓고
+  그때만 `Read` 하나를 열어 준 뒤, 지시문 맨 앞에 "이 그림부터 보라" 를 붙인다.
+  일하는 곳이 빈 임시 방이라 거기 놓인 그림 말고는 열 것이 없고, 호출이 끝나면
+  방을 통째로 지운다 — 시험지 그림이 컴퓨터에 남지 않는다. 한 번에 12장까지.
+  Codex 는 `exec --json` 과 `--image` 를 같이 주면 멈추는 문제가 있어 막아 두었다
+  (openai/codex #5773). 고쳐지면 `AGENTS.codex.images` 를 켜면 된다.
+  화면 쪽은 `bridgeCanImages()` 가 판정하고 `imagesState` · `ocrAvailable()` ·
+  `applyScanCopy()` · 카드 설명문이 한 세트로 따라 움직인다. 도구를 바꾸거나
+  연결 확인을 누르면 `applyProvider()` 가 다시 돌아 약속이 바뀐다.
 - 회귀 검사: `bridgetest.sh`(자물쇠·스트리밍·오류) · `bridgeui.mjs`(화면) ·
   `bridgescan.mjs`(스캔본 거절) · `bridgeos.mjs`(운영체제별 명령·받기 링크) ·
-  `connecttest.mjs`(연결 링크 — 정상·남의 주소·엉터리 코드).
+  `connecttest.mjs`(연결 링크 — 정상·남의 주소·엉터리 코드) ·
+  `scanbridge.sh`(쪽 그림이 파일로 닿는가 · Codex 거절 · 12장 상한 · 방 지움) ·
+  `bridgescan2.mjs`(화면에서 스캔본이 끝까지 읽히는가).
   가짜 도구는 스크래치패드 `fakebin/` 에 있다.
 - 윈도우 `.cmd` 는 이 환경에서 돌려 볼 수 없다. `.command` 쪽 논리를 먼저
   가짜 도구로 통과시킨 뒤 같은 순서를 옮겨 적는다.
