@@ -275,6 +275,34 @@ async function run(agent, prompt, model, images, res, timeoutMs) {
   child.stdin.end(head + prompt);
 }
 
+// ── 브라우저 열기 ──────────────────────────────────────────────────────────
+// 여는 명령은 컴퓨터마다 다르고, 없을 수도 있다. 차례로 해 보고 다 안 되면 말해 준다.
+// spawn 은 못 찾으면 예외가 아니라 error 이벤트로 온다 — 안 받으면 브리지가 통째로 죽는다.
+function openerList() {
+  if (process.platform === "darwin") return [["open", []], ["xdg-open", []]];
+  if (process.platform === "win32") return [["cmd", ["/c", "start", ""]], ["explorer", []]];
+  return [["xdg-open", []], ["gio", ["open"]], ["open", []]];
+}
+function openBrowser(url) {
+  const list = openerList();
+  const tryOne = (i) => {
+    if (i >= list.length) {
+      console.log("  (브라우저를 열지 못했습니다 — 위 '화면' 주소를 직접 열어 주세요)");
+      return;
+    }
+    const [bin, pre] = list[i];
+    let ch, moved = false;
+    const next = () => { if (!moved) { moved = true; tryOne(i + 1); } };
+    try { ch = spawn(bin, pre.concat([url]), { stdio: "ignore", detached: true }); }
+    catch (e) { return next(); }
+    ch.on("error", next);
+    // 있기는 한데 열지 못하고 끝나는 것도 있다(끝난 값이 0 이 아니면 다음 것으로).
+    ch.on("close", (code) => { if (code !== 0) next(); });
+    ch.unref();
+  };
+  tryOne(0);
+}
+
 // ── 문 열기 ────────────────────────────────────────────────────────────────
 function cors(req, res) {
   const origin = req.headers.origin;
@@ -431,16 +459,7 @@ server.listen(ARGS.port, "127.0.0.1", async () => {
   console.log("  " + "─".repeat(62));
   console.log("  이 창을 열어 둔 동안에만 이어집니다. 끄려면 Ctrl+C.");
   // 다 뜬 다음에 브라우저를 연다. 먼저 열면 아직 듣지 않아 빈 화면이 난다.
-  if (ARGS.open && /^http:\/\/(127\.0\.0\.1|localhost)(:\d+)?\//.test(ARGS.open)) {
-    const how = process.platform === "win32" ? ["cmd", ["/c", "start", "", ARGS.open]]
-      : process.platform === "darwin" ? ["open", [ARGS.open]] : ["xdg-open", [ARGS.open]];
-    // spawn 은 못 찾으면 예외가 아니라 error 이벤트로 온다. 안 받으면 브리지가 통째로 죽는다.
-    try {
-      const ch = spawn(how[0], how[1], { stdio: "ignore", detached: true });
-      ch.on("error", () => { console.log("  (브라우저를 열지 못했습니다 — 위 주소를 직접 열어 주세요)"); });
-      ch.unref();
-    } catch (e) {}
-  }
+  if (ARGS.open && /^http:\/\/(127\.0\.0\.1|localhost)(:\d+)?\//.test(ARGS.open)) openBrowser(ARGS.open);
   if (!claude.ok && !codex.ok) {
     console.log("");
     console.log("  ! 쓸 수 있는 도구가 없습니다. 둘 중 하나를 깔고 로그인해 주세요.");
