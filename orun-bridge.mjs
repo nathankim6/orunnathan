@@ -25,26 +25,31 @@
 //   --allow-origin <주소>    이 주소의 화면도 허용한다 (여러 번 쓸 수 있다)
 //   --timeout 900            한 번 부를 때 기다려 주는 초
 //   --token ABC123           코드를 직접 정한다 (안 쓰면 그때그때 새로 만든다)
+//   --app <주소>             생성기 화면을 어디서 받아 올지 (기본은 배포본)
+//   --open <주소>            다 뜬 뒤 브라우저로 이 주소를 연다 (루프백만)
 // ---------------------------------------------------------------------------
 
 import http from "node:http";
 import { spawn, execFile } from "node:child_process";
 import { randomBytes } from "node:crypto";
-import { mkdtemp, rm, writeFile } from "node:fs/promises";
+import { mkdtemp, rm, writeFile, readFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const VERSION = "1.1.0";
+const VERSION = "1.2.0";
 
 // ── 뜰 때 준 것들 ──────────────────────────────────────────────────────────
 function readArgs(argv) {
-  const out = { port: 8787, timeout: 900, token: "", origins: [] };
+  const out = { port: 8787, timeout: 900, token: "", origins: [], app: "", open: "" };
   for (let i = 0; i < argv.length; i++) {
     const k = argv[i], v = argv[i + 1];
     if (k === "--port") { out.port = Number(v) || out.port; i++; }
     else if (k === "--timeout") { out.timeout = Number(v) || out.timeout; i++; }
     else if (k === "--token") { out.token = String(v || "").trim(); i++; }
     else if (k === "--allow-origin") { if (v) out.origins.push(String(v).replace(/\/$/, "")); i++; }
+    else if (k === "--app") { if (v) out.app = String(v).trim(); i++; }
+    else if (k === "--open") { if (v) out.open = String(v).trim(); i++; }
   }
   return out;
 }
@@ -303,6 +308,39 @@ function readBody(req, limit) {
 
 const BODY_LIMIT = 48 * 1024 * 1024;   // 쪽 그림이 base64 로 실려 온다
 
+// ── 생성기 화면을 여기서 내준다 ────────────────────────────────────────────
+// 크롬은 공개 https 사이트가 이 컴퓨터 안(127.0.0.1)을 부르면 그 요청을 붙잡아
+// 둔다(로컬 네트워크 권한). 답이 영영 오지 않아 화면이 "확인하는 중" 에서 멈춘다.
+// 그래서 화면도 여기서 내준다 — 화면과 중계소가 같은 자리면 막을 것이 없다.
+// 사본을 만드는 것이 아니라 배포된 그 한 벌을 받아 와 그대로 흘려 준다.
+const APP_URL = ARGS.app || process.env.ORUN_APP_SRC || "https://nathankim6.github.io/orunnathan/mock-exam.html";
+const APP_CACHE = join(dirname(fileURLToPath(import.meta.url)), "orun-app.html");
+let appMem = null;            // 이번에 켠 동안 들고 있는 것
+async function fetchApp() {
+  if (APP_URL.startsWith("file://")) return await readFile(fileURLToPath(APP_URL), "utf8");
+  const ctl = new AbortController();
+  const timer = setTimeout(() => ctl.abort(), 15000);
+  try {
+    const r = await fetch(APP_URL, { cache: "no-store", signal: ctl.signal });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    return await r.text();
+  } finally { clearTimeout(timer); }
+}
+async function appHtml() {
+  if (appMem) return appMem;
+  try {
+    const html = await fetchApp();
+    if (!/<html|<body|orun/i.test(html)) throw new Error("생성기 화면이 아닙니다");
+    appMem = html;
+    writeFile(APP_CACHE, html).catch(() => {});
+    return html;
+  } catch (e) {
+    // 인터넷이 끊겨도 지난번에 받아 둔 것으로 연다
+    try { appMem = await readFile(APP_CACHE, "utf8"); return appMem; } catch (e2) {}
+    throw e;
+  }
+}
+
 const server = http.createServer(async (req, res) => {
   if (!cors(req, res)) {
     res.writeHead(403, { "content-type": "text/plain; charset=utf-8" });
@@ -315,6 +353,18 @@ const server = http.createServer(async (req, res) => {
     res.writeHead(code, { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" });
     res.end(JSON.stringify(obj));
   };
+
+  // 생성기 화면 — 여기서 열어야 크롬이 막지 않는다
+  if (req.method === "GET" && ["/", "/index.html", "/mock-exam.html", "/mocktest-generator.html"].includes(url.pathname)) {
+    try {
+      const html = await appHtml();
+      res.writeHead(200, { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" });
+      return res.end(html);
+    } catch (e) {
+      res.writeHead(502, { "content-type": "text/plain; charset=utf-8" });
+      return res.end("생성기 화면을 받아 오지 못했어요. 인터넷 연결을 확인한 뒤 새로 고쳐 주세요.\n" + String(e && e.message || e));
+    }
+  }
 
   // 어떤 도구가 준비돼 있는지 — 코드 없이도 볼 수 있게 둔다(코드 맞추기 화면용)
   if (req.method === "GET" && url.pathname === "/health") {
@@ -375,10 +425,22 @@ server.listen(ARGS.port, "127.0.0.1", async () => {
   console.log(line(AGENTS.claude, claude));
   console.log(line(AGENTS.codex, codex));
   console.log("  " + "─".repeat(62));
+  console.log("  화면      http://127.0.0.1:" + ARGS.port + "/     ← 여기서 여세요");
   console.log("  주소      http://127.0.0.1:" + ARGS.port);
   console.log("  코드      " + TOKEN + "   ← 생성기의 '브리지 코드' 칸에 넣으세요");
   console.log("  " + "─".repeat(62));
   console.log("  이 창을 열어 둔 동안에만 이어집니다. 끄려면 Ctrl+C.");
+  // 다 뜬 다음에 브라우저를 연다. 먼저 열면 아직 듣지 않아 빈 화면이 난다.
+  if (ARGS.open && /^http:\/\/(127\.0\.0\.1|localhost)(:\d+)?\//.test(ARGS.open)) {
+    const how = process.platform === "win32" ? ["cmd", ["/c", "start", "", ARGS.open]]
+      : process.platform === "darwin" ? ["open", [ARGS.open]] : ["xdg-open", [ARGS.open]];
+    // spawn 은 못 찾으면 예외가 아니라 error 이벤트로 온다. 안 받으면 브리지가 통째로 죽는다.
+    try {
+      const ch = spawn(how[0], how[1], { stdio: "ignore", detached: true });
+      ch.on("error", () => { console.log("  (브라우저를 열지 못했습니다 — 위 주소를 직접 열어 주세요)"); });
+      ch.unref();
+    } catch (e) {}
+  }
   if (!claude.ok && !codex.ok) {
     console.log("");
     console.log("  ! 쓸 수 있는 도구가 없습니다. 둘 중 하나를 깔고 로그인해 주세요.");

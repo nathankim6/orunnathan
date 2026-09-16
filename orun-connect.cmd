@@ -77,6 +77,10 @@ rem ── 주소를 열어 보고, 열렸든 안 열렸든 눈앞에 적어 주
 rem 브라우저를 여는 길은 컴퓨터마다 막힐 수 있다. 막혔을 때 손에 쥘 것이 있어야 한다.
 :openurl
 start "" "%~1"
+goto showurl
+
+rem ── 주소를 눈앞에 적어 주고 복사해 둔다 ───────────────────────────────────
+:showurl
 echo %~1| clip 2>nul
 echo(
 echo   ------------------------------------------------------------
@@ -194,7 +198,7 @@ call :say "이미 켜져 있습니다. 새로 켜지 않고 그대로 씁니다.
 call :say "먼저 열어 둔 검은 창을 닫지 마세요 - 그 창이 연결을 잡고 있습니다."
 echo(
 call :say "[5/5] 생성기를 엽니다..."
-call :openurl "%APP%#connect=%CODE%@http://127.0.0.1:%PORT%"
+call :openurl "http://127.0.0.1:%PORT%/#connect=%CODE%@http://127.0.0.1:%PORT%"
 echo(
 call :say "이 창은 닫으셔도 됩니다."
 exit /b 0
@@ -295,8 +299,11 @@ exit /b 41
 
 rem ── 5. 켜고 연다 ───────────────────────────────────────────────────────────
 call :mark "생성기 열기"
+rem 화면도 브리지가 내준다 - 크롬이 공개 사이트에서 이 컴퓨터 부르는 것을 막기 때문이다.
+rem 다 뜬 뒤 브리지가 스스로 브라우저를 연다. 먼저 열면 아직 안 떠 있어 빈 화면이 난다.
+set "OPENURL=http://127.0.0.1:%PORT%/#connect=%CODE%@http://127.0.0.1:%PORT%"
 call :say "[5/5] 생성기를 엽니다..."
-call :openurl "%APP%#connect=%CODE%@http://127.0.0.1:%PORT%"
+call :showurl "%OPENURL%"
 echo(
 echo   ------------------------------------------------------------
 echo   이어졌습니다. 이 창은 쓰시는 동안 켜 두세요.
@@ -305,5 +312,5 @@ echo   ------------------------------------------------------------
 echo(
 
 call :mark "브리지 켜기"
-"%NODE%" "%~dp0orun-bridge.mjs" --port %PORT% --token %CODE%
+"%NODE%" "%~dp0orun-bridge.mjs" --port %PORT% --token %CODE% --open "%OPENURL%"
 exit /b 0
