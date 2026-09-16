@@ -129,7 +129,7 @@ if port_taken "$PORT"; then
     echo "  (먼저 열어 둔 검정 창을 닫지 마세요 — 그 창이 연결을 잡고 있습니다.)"
     echo
     echo "  [5/5] 생성기를 엽니다..."
-    URL="$APP#connect=$CODE@http://127.0.0.1:$PORT"
+    URL="http://127.0.0.1:$PORT/#connect=$CODE@http://127.0.0.1:$PORT"
     open_url "$URL"
     show_url "$URL"
     echo
@@ -205,8 +205,7 @@ curl -fsSL "$BRIDGE_URL" -o orun-bridge.mjs || die "브리지 파일을 받지 �
 
 # ── 5. 켜고 연다 ───────────────────────────────────────────────────────────
 echo "  [5/5] 생성기를 엽니다..."
-URL="$APP#connect=$CODE@http://127.0.0.1:$PORT"
-open_url "$URL"
+URL="http://127.0.0.1:$PORT/#connect=$CODE@http://127.0.0.1:$PORT"
 show_url "$URL"
 echo
 echo "  ------------------------------------------------------------"
@@ -215,4 +214,6 @@ echo "  끝내시려면 Ctrl+C 를 누르거나 창을 닫으시면 됩니다."
 echo "  ------------------------------------------------------------"
 echo
 
-node orun-bridge.mjs --port "$PORT" --token "$CODE"
+# 화면도 브리지가 내준다 — 크롬이 공개 사이트에서 이 컴퓨터 부르는 것을 막기 때문이다.
+# 다 뜬 뒤 브리지가 스스로 브라우저를 연다(--open). 먼저 열면 빈 화면이 난다.
+node orun-bridge.mjs --port "$PORT" --token "$CODE" --open "$URL"
