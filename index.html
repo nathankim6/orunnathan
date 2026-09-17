@@ -4025,10 +4025,20 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   }
   function sanitize(html) {
     const doc = new DOMParser().parseFromString("<div>" + html + "</div>", "text/html");
-    doc.querySelectorAll("script, iframe, object, embed, link, meta, style").forEach(n => n.remove());
+    // 통째로 걷어낸다. svg·math 는 <animate> 로 주소를 나중에 바꿔 끼울 수 있고,
+    // base 는 이 문서의 상대주소를 통째로 남의 집으로 돌린다. 시험지에는 쓸 일이 없다.
+    doc.querySelectorAll("script, iframe, object, embed, link, meta, style, svg, math, base, form, template, noscript, frame, frameset, applet").forEach(n => n.remove());
+    // 주소를 담는 속성은 스킴을 본다. 브라우저는 앞뒤 공백과 제어문자를 버리고 읽으므로
+    // 검사도 같은 방식으로 지운 뒤에 봐야 한다 — " javascript:" 나 "java&#9;script:" 가 새지 않게.
+    const URL_ATTR = /^(href|src|xlink:href|action|formaction|poster|background|data|ping|srcset)$/i;
     doc.querySelectorAll("*").forEach(n => {
       [...n.attributes].forEach(a => {
-        if (/^on/i.test(a.name) || /^javascript:/i.test(a.value)) n.removeAttribute(a.name);
+        const name = a.name;
+        if (/^on/i.test(name) || /^(srcdoc|formtarget)$/i.test(name)) { n.removeAttribute(name); return; }
+        const v = String(a.value).replace(/[\u0000-\u0020\u00a0]/g, "").toLowerCase();
+        if (!/^(javascript|vbscript|livescript|data):/.test(v)) return;
+        // 스캔본 쪽 그림은 data:image 로 들어온다 — 그림만 남기고 나머지는 버린다.
+        if (!(URL_ATTR.test(name) && /^data:image\/(png|jpe?g|gif|webp|bmp);/.test(v))) n.removeAttribute(name);
       });
     });
     return doc.body.firstChild.innerHTML;
@@ -5344,7 +5354,7 @@ body.busy .drop, body.busy .filelist button, body.busy .api-card { pointer-event
   function diagnostics() {
     return [
       "ORUN 동형 모의고사 진단",
-      "build: 2026-09-16 03:57",
+      "build: 2026-09-17 03:19",
       "url: " + location.href,
       "runtime: API 키 전용 빌드",
       "sample 확보: " + (SAMPLE ? "예" : "아니오"),

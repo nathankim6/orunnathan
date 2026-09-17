@@ -31,7 +31,7 @@
 
 import http from "node:http";
 import { spawn, execFile } from "node:child_process";
-import { randomBytes } from "node:crypto";
+import { randomBytes, timingSafeEqual } from "node:crypto";
 import { mkdtemp, rm, writeFile, readFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join, dirname } from "node:path";
@@ -74,9 +74,29 @@ const DEFAULT_ORIGINS = [
 const ALLOW = new Set([...DEFAULT_ORIGINS, ...ARGS.origins]);
 function originOk(origin) {
   if (!origin) return true;                       // 헤더가 없는 호출(curl 등)
-  if (origin === "null") return true;             // 파일을 그대로 연 화면(file://)
+  // "null" 은 그냥 열어 두면 안 된다. 아무 웹사이트나 sandbox 를 붙인 iframe 하나로
+  // 제 출처를 null 로 만들 수 있어서, 열어 두면 남의 페이지가 이 문을 두드리게 된다.
+  // 런처는 http://127.0.0.1:<포트>/ 로 열기 때문에 여기 걸릴 일이 없다.
+  // 파일(file://)을 직접 열어 써야 하면 그때만 --allow-origin null 로 넣는다.
   if (ALLOW.has(origin)) return true;
   return /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
+}
+
+// /health 는 코드 없이 열려 있다. 답을 잠깐 들고 있어 두드리는 만큼 도구가 실행되지 않게 한다.
+let probeCache = null, probeAt = 0;
+function probeBoth() {
+  if (probeCache && Date.now() - probeAt < 5000) return probeCache;
+  probeAt = Date.now();
+  probeCache = Promise.all([probe(AGENTS.claude), probe(AGENTS.codex)]);
+  return probeCache;
+}
+
+// 코드 맞히기를 막는다. 틀릴수록 늦게 답한다 — 창 하나 띄워 놓고 훑지 못하게.
+let badTries = 0, banUntil = 0;
+function tokenOk(given) {
+  const a = Buffer.from(String(given).toUpperCase(), "utf8");
+  const b = Buffer.from(TOKEN, "utf8");
+  return a.length === b.length && timingSafeEqual(a, b);
 }
 
 // ── 도구 찾기 ──────────────────────────────────────────────────────────────
@@ -396,7 +416,9 @@ const server = http.createServer(async (req, res) => {
 
   // 어떤 도구가 준비돼 있는지 — 코드 없이도 볼 수 있게 둔다(코드 맞추기 화면용)
   if (req.method === "GET" && url.pathname === "/health") {
-    const [claude, codex] = await Promise.all([probe(AGENTS.claude), probe(AGENTS.codex)]);
+    // 코드 없이 열려 있는 자리다. 물을 때마다 도구를 실행하면 계속 두드리는 것만으로
+    // 이 컴퓨터가 프로세스를 끝없이 띄운다. 몇 초는 답을 들고 있는다.
+    const [claude, codex] = await probeBoth();
     return json(200, {
       ok: true, name: "orun-bridge", version: VERSION,
       agents: {
@@ -408,7 +430,16 @@ const server = http.createServer(async (req, res) => {
   }
 
   const bearer = String(req.headers.authorization || "").replace(/^Bearer\s+/i, "").trim();
-  if (bearer.toUpperCase() !== TOKEN) return json(401, { ok: false, error: "bad_token", message: "브리지 코드가 맞지 않아요. 터미널에 뜬 여섯 자리를 다시 넣어 주세요." });
+  if (Date.now() < banUntil) {
+    return json(429, { ok: false, error: "too_many",
+      message: "코드를 여러 번 틀렸어요. 잠시 뒤에 다시 넣어 주세요." });
+  }
+  if (!tokenOk(bearer)) {
+    badTries++;
+    if (badTries >= 5) banUntil = Date.now() + Math.min(30000, 1000 * (badTries - 4));
+    return json(401, { ok: false, error: "bad_token", message: "브리지 코드가 맞지 않아요. 터미널에 뜬 여섯 자리를 다시 넣어 주세요." });
+  }
+  badTries = 0;
 
   if (req.method === "POST" && url.pathname === "/run") {
     let body;
