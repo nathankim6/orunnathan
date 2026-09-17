@@ -29,21 +29,22 @@
 학생(student) ─ 자기 반 범위 연습 · 내 기록
 ```
 
-- **학생**: 담임이 만든다. 이름 + 휴대폰 뒷4자리(학부모) 를 넣으면 6자리 개인 코드가 생긴다.
-  로그인은 개인 코드 하나. 지금의 로그인 화면(Portal Access)을 그대로 쓰고, 코드가 `voca_students` 에 있으면 학생으로 들어간다.
-  코드가 유출돼도 남이 대신 공부해 주는 것 말고는 피해가 없으니 비밀번호는 두지 않는다.
+- **학생**: **반 코드 + 이름 + 휴대폰 뒷4자리** 로 들어온다. 담임이 미리 넣지 않아도 된다 —
+  그 반에 (이름, 뒷4자리) 가 없으면 첫 로그인에 `voca_students` 행이 생기고, 담임 표에 "새로 등록" 표시가 붙는다.
+  담임은 오타 계정을 다른 학생에 **합치기**(세션을 옮기고 행을 지운다) 하거나 삭제할 수 있다.
+  동명이인은 뒷4자리로 갈린다. 반 코드는 `voca_classes.code`(예: `3FO`) 로 담임이 정한다.
 - **담임**: Supabase Auth 이메일 로그인. 원장이 초대한다. `voca_teachers.auth_user_id` 로 잇는다.
   (기존 관리자 코드 셋은 원장 코드로 남긴다 — 화면 하나로 세 역할이 들어간다.)
 - **RLS**: 담임은 `voca_classes.teacher_id = 내 id` 인 반과 그 학생·세션만 읽고 쓴다.
-  학생은 anon 키로 들어오므로 **학생 쓰기는 RPC(`voca_log_session`) 로만** 받고 코드로 검증한다.
+  학생은 anon 키로 들어오므로 **학생 쓰기는 RPC(`voca_login`, `voca_log_session`) 로만** 받고 반 코드+이름+뒷4자리로 검증한다.
 
 ## 3. 데이터 모델 (모두 새 테이블, `voca_` 접두어)
 
 ```sql
 voca_teachers   (id, auth_user_id, name, is_admin, created_at)
-voca_classes    (id, name, teacher_id → voca_teachers, grade, is_active, created_at)
-voca_students   (id, class_id → voca_classes, name, code UNIQUE(6자리), parent_phone_last4,
-                 is_active, created_at, last_seen_at)
+voca_classes    (id, name, code UNIQUE, teacher_id → voca_teachers, grade, is_active, created_at)
+voca_students   (id, class_id → voca_classes, name, phone_last4, is_active, created_at, last_seen_at,
+                 UNIQUE(class_id, name, phone_last4))
 
 -- 담임이 "이번 시험 범위" 를 지정한다. 학생 첫 화면이 이것을 본다.
 voca_class_ranges (id, class_id, card_set_id → card_sets, days text[], exam_date date,
@@ -57,13 +58,9 @@ voca_sessions   (id, student_id, range_id, card_set_id, days text[],
                  wrong_words jsonb,                          -- [{word, meaning}]
                  completed bool, client_id text)             -- client_id: 중복 저장 방지
 
--- 문항 단위(분석용, 선택). 나중에 "시간 대 성취" 분석에 쓴다.
-voca_attempts   (id, session_id, word, mode, is_correct, response_ms, asked_at)
-
--- 혜택 규칙. 담임이 켜고 끈다.
-voca_reward_rules (id, class_id NULL=전체, name, min_sessions, min_avg_accuracy,
-                   min_active_minutes, benefit text  -- 예: '컷트라인 -5점'
-                   is_active)
+-- 문항 단위. 첫 판부터 남긴다. 나중에 "시간 대 성취" 분석의 재료.
+voca_attempts   (id, session_id, student_id, word, mode, is_correct, chosen, response_ms,
+                 is_retry bool, asked_at)
 
 -- 가정 공유 링크
 voca_report_shares (id, student_id, token UNIQUE, period_from, period_to, created_by, expires_at)
@@ -113,18 +110,17 @@ group by s.id, s.class_id;
 ## 6. 화면
 
 ### 학생 (모바일 우선)
-1. **홈** — 담임이 지정한 "이번 시험 범위" 카드(단어장·Day·시험일·D-day) + 4가지 모드 타일 + 내 기록 세 숫자(횟수·평균·누적시간) + 이번 범위 성취도 + 혜택 달성 배지.
+1. **홈** — 담임이 지정한 "이번 시험 범위" 카드(단어장·Day·시험일·D-day) + 4가지 모드 타일 + 내 기록 세 숫자(횟수·평균·누적시간) + 이번 범위 성취도.
 2. **연습** — 진행 바 · 문항 · 선지 4개 · 즉시 채점 · 우측 상단 활동 시간.
 3. **결과** — 점수 · 틀린 단어 목록 · "틀린 것만 다시" · "한 번 더" · 홈.
 4. **내 기록** — 날짜별 세션 목록, 모드별 정답률, 자주 틀리는 단어 TOP 10.
-범위 밖 단어장도 열어 볼 수 있게 하되(기존 단어장 목록 유지), 홈에서는 범위를 앞세운다.
+학생에게는 **담임이 지정한 범위만** 열린다. 단어장 목록·다른 Day 는 보이지 않는다. 범위가 없으면 "담임 선생님이 범위를 정하면 시작할 수 있어요" 만 보인다.
 
 ### 담임
-1. **내 반** — 반 선택 → 학생 표: 이름 · 총 횟수 · 평균 성취도 · 누적 시간 · 이번 범위 성취도 · 최근 학습 · 혜택. 열 정렬. 엑셀 내려받기.
+1. **내 반** — 반 선택 → 학생 표: 이름 · 뒷4자리 · 총 횟수 · 평균 성취도 · 누적 시간 · 이번 범위 성취도 · 최근 학습 · "새로 등록" 표시. 열 정렬. 엑셀 내려받기. 혜택(컷트라인 조정)은 앱 밖에서 원장이 이 표를 보고 정한다 — 앱에는 규칙을 두지 않는다.
 2. **학생 상세** — 세션 타임라인, 모드별 정답률, 누적 시간 추이, 틀린 단어 누적, 리포트 공유 버튼.
 3. **범위 지정** — 단어장 · Day · 시험일 · 제목. 현재 범위 하나만 `is_current`.
-4. **학생 관리** — 추가(이름·뒷4자리) · 코드 재발급 · 반 이동 · 비활성.
-5. **혜택 규칙** — "세션 N회 이상 · 평균 M% 이상 · 누적 T분 이상 → 컷트라인 −K점". 표에 달성 배지로 나온다.
+4. **학생 관리** — 반 코드 정하기 · 학생 미리 추가(선택) · 오타 계정 합치기 · 반 이동 · 비활성.
 
 ### 원장
 - 담임 계정 초대 · 반 만들기 · 담임 배정. 모든 반을 담임 화면과 같은 표로 본다. 단어장 관리는 지금 화면 그대로.
@@ -150,34 +146,35 @@ group by s.id, s.class_id;
 각 단계가 끝나면 그 자체로 쓸 수 있어야 한다.
 
 **1단계 — 사람과 반 (1주)**
-`voca_teachers`·`voca_classes`·`voca_students`·`voca_class_ranges` 마이그레이션 + RLS.
-로그인 화면에 세 역할 분기. 담임 로그인(이메일). 담임 화면: 반·학생 관리·범위 지정. 학생 홈(범위 카드만).
-→ 검증: 담임이 학생 10명을 넣고 코드로 로그인이 된다.
+`voca_teachers`·`voca_classes`·`voca_students`·`voca_class_ranges` 마이그레이션 + RLS + `voca_login` RPC.
+로그인 화면에 세 역할 분기. 담임 로그인(이메일). 담임 화면: 반 코드·학생 관리·범위 지정. 학생 홈(범위 카드만).
+→ 검증: 학생이 반 코드+이름+뒷4자리로 들어오면 담임 표에 나타난다.
 
 **2단계 — 연습 엔진과 기록 (1~2주)**
 `voca_sessions`·`voca_attempts` + `voca_log_session` RPC. 4모드 4지선다 화면, 선지 생성(캐시 우선), 활동 시간 측정, 결과 화면, 내 기록.
 → 검증: 20문항 세션 뒤 `voca_sessions` 에 한 행, `active_seconds` 가 실제와 ±5초.
 
-**3단계 — 대시보드·혜택·가정 리포트 (1주)**
-`voca_student_stats` 뷰, 담임 학생 표·상세, 혜택 규칙, 공유 링크와 리포트 화면, 엑셀.
-→ 검증: 규칙을 켜면 배지가 뜨고, 링크가 로그인 없이 열린다.
+**3단계 — 대시보드·가정 리포트 (1주)**
+`voca_student_stats` 뷰, 담임 학생 표·상세, 계정 합치기, 공유 링크와 리포트 화면, 엑셀.
+→ 검증: 표의 세 숫자가 `voca_sessions` 합계와 같고, 링크가 로그인 없이 열린다.
 
 **4단계 — 정리**
 기존 반 공용 코드 비활성, 메뉴 재배치, 사용 안 하는 페이지 숨김.
 
-## 9. 결정이 필요한 것
+## 9. 결정된 것 (2026-09-17)
 
-1. **혜택 기준값** — 초안: 세션 15회 이상 · 평균 85% 이상 · 누적 120분 이상 → 컷트라인 −5점. 반마다 다르게 둘 수 있게 했다.
-2. **학생 코드 방식** — 6자리 코드 하나(초안) vs 반 코드 + 이름 + 뒷4자리. 후자는 담임이 미리 넣지 않아도 되지만 동명이인과 오타 문제가 있다.
-3. **범위 밖 단어장 개방** — 학생에게 전체 단어장을 열어 둘지(초안: 연다, 홈에서는 범위 우선).
-4. **문항 단위 기록(`voca_attempts`)** — 첫 판부터 남길지. 저장량은 세션당 20~40행이라 부담은 없다. 초안: 남긴다.
+1. **혜택** — 앱에 넣지 않는다. 원장이 담임 표를 보고 오프라인으로 정한다.
+2. **학생 로그인** — 반 코드 + 이름 + 뒷4자리. 첫 로그인에 자동 등록, 담임이 합치기·삭제.
+3. **범위 밖 단어장** — 학생에게 열지 않는다. 지정 범위만.
+4. **문항 단위 기록** — `voca_attempts` 를 첫 판부터 남긴다.
 
 ## 10. Lovable 첫 프롬프트 (1단계용, 붙여넣기)
 
-> ORUN VOCA 를 "담임이 반을 관리하고 학생이 개인 코드로 들어오는 구조" 로 바꿉니다.
-> 새 테이블은 모두 `voca_` 접두어를 씁니다. 기존 테이블(`classes`, `students`, `student_access_codes`)은 건드리지 않습니다.
-> 1) 마이그레이션: voca_teachers(auth_user_id), voca_classes(teacher_id), voca_students(class_id, name, code 6자리 unique, parent_phone_last4), voca_class_ranges(class_id, card_set_id, days text[], exam_date, is_current). RLS: 담임은 자기 반만.
-> 2) `/` 로그인: 입력이 관리자 코드면 원장, `voca_students.code` 에 있으면 학생, 아니면 이메일 로그인 폼(담임).
-> 3) 담임 화면 `/teacher`: 내 반 목록 → 학생 표(이름·코드·최근 접속) · 학생 추가/코드 재발급 · "이번 시험 범위" 지정(단어장·Day·시험일).
-> 4) 학생 홈 `/home`: 이번 범위 카드(D-day 포함) + 4개 모드 타일(아직 동작 없음, 2단계).
-> 디자인은 지금 로그인 화면의 Warm Editorial 톤(#8b7355 · Noto Sans KR · Orbitron 은 라벨만)을 유지합니다.
+> ORUN VOCA 를 "담임이 반을 관리하고 학생이 반 코드+이름+휴대폰 뒷4자리로 들어오는 구조" 로 바꿉니다.
+> 새 테이블은 모두 `voca_` 접두어를 씁니다. 기존 테이블(`classes`, `students`, `student_access_codes`, `card_sets`)은 구조를 건드리지 않습니다. 기존 페이지·라우트는 지우지 말고 그대로 둡니다.
+> 1) 마이그레이션: voca_teachers(id, auth_user_id unique, name, is_admin), voca_classes(id, name, code unique, teacher_id, grade, is_active), voca_students(id, class_id, name, phone_last4 char(4), is_active, created_at, last_seen_at, unique(class_id,name,phone_last4)), voca_class_ranges(id, class_id, card_set_id → card_sets, days text[], exam_date date, title, is_current bool). RLS: 담임(auth 사용자)은 teacher_id 가 자기 voca_teachers.id 인 반과 그 학생·범위만 select/insert/update. is_admin 담임은 전부.
+> 2) security definer RPC `voca_login(class_code, name, phone_last4)`: 반 코드가 활성 반이면 (name, phone_last4) 학생을 찾고 없으면 만든 뒤 {student_id, class_id, class_name, current_range} 를 돌려준다. anon 이 호출한다.
+> 3) `/` 로그인 화면(지금 Warm Editorial 디자인 유지): 탭 둘 — "학생"(반 코드·이름·뒷4자리 세 칸 → voca_login → sessionStorage.vocaStudent 저장 → /home) · "선생님"(이메일·비밀번호 Supabase Auth → /teacher). 기존 관리자 코드(admin/101100/orun0088)는 학생 탭의 반 코드 칸에 넣으면 지금처럼 /dashboard 로 간다.
+> 4) `/teacher`: 내 반 목록(반 만들기: 이름·코드·학년) → 반 상세: 학생 표(이름·뒷4자리·최근 접속·등록일), 학생 미리 추가, 비활성, "이번 시험 범위" 지정 폼(단어장 select → 그 단어장의 selected_days 를 칩으로 → 시험일 → 제목, 저장하면 이 반의 다른 범위는 is_current=false).
+> 5) `/home`(학생): 상단에 이름·반, 이번 범위 카드(단어장 제목·Day 목록·시험일·D-day), 그 아래 4개 모드 타일(영단어→뜻 · 뜻→영단어 · 영영풀이→단어 · 예문→단어, 아직 비활성 표시 "곧 열려요"). 범위가 없으면 안내문만.
+> 디자인: 로그인 화면의 톤(#8b7355 · Noto Sans KR · Orbitron 은 라벨만) 을 유지하고, 학생 화면은 모바일 우선.
