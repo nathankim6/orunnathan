@@ -13,6 +13,7 @@
 | `public/studio.html` · `orun-universe.html` · `orun-grammar.html` (+ `orun-universe.html` 이 쓰는 `public/three.min.js` · `public/orun-universe-poster.jpg`) | 그 밖의 정적 앱 | `pages.yml` 이 나열한 이 파일들만 `gh-pages` 로 나가고, 이 파일들(또는 `pages.yml`)이 바뀐 `main` 푸시에서만 워크플로가 돈다 |
 | `src/`, `package.json`(루트), `supabase/` | Lovable 프로젝트 `orunquiz` 의 **옛** 스냅샷. 최신판은 별도 저장소 `nathankim6/orunquiz`(`projects/README.md`). 살아 있는 연결이 아니다 | 어디에도 배포되지 않는다. 여기서 개발하지 않는다 |
 | `projects/` | Lovable 프로젝트 41개의 코드 사본. 폴더마다 `LOVABLE.md`, 목록은 `projects/README.md` | 배포되지 않고 Lovable 과 동기화되지 않는다 |
+| `teacher-memory/` | 선생님별 기출·성향 프로파일·예측·모의고사를 **파일로** 누적하는 기억 저장소. ORUN ORACLE 과 같은 개념이지만 웹앱이 아니라 이 저장소 + 대화(스킬 `teacher-memory`, `.claude/skills/teacher-memory/SKILL.md`)로 돈다 | 배포되지 않는다. `pages.yml` 이 나열하지 않는다 |
 
 원칙 하나: **파일은 한 벌만 둔다.** 같은 HTML 의 사본을 다른 경로·다른 저장소·스튜디오에
 만들지 않는다. 사본이 생기면 주소마다 다른 버전이 나간다.
