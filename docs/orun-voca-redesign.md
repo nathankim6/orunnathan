@@ -178,3 +178,15 @@ group by s.id, s.class_id;
 > 4) `/teacher`: 내 반 목록(반 만들기: 이름·코드·학년) → 반 상세: 학생 표(이름·뒷4자리·최근 접속·등록일), 학생 미리 추가, 비활성, "이번 시험 범위" 지정 폼(단어장 select → 그 단어장의 selected_days 를 칩으로 → 시험일 → 제목, 저장하면 이 반의 다른 범위는 is_current=false).
 > 5) `/home`(학생): 상단에 이름·반, 이번 범위 카드(단어장 제목·Day 목록·시험일·D-day), 그 아래 4개 모드 타일(영단어→뜻 · 뜻→영단어 · 영영풀이→단어 · 예문→단어, 아직 비활성 표시 "곧 열려요"). 범위가 없으면 안내문만.
 > 디자인: 로그인 화면의 톤(#8b7355 · Noto Sans KR · Orbitron 은 라벨만) 을 유지하고, 학생 화면은 모바일 우선.
+
+## 11. UI 시스템 (2026-09-19 전면 개편)
+
+기준은 같은 저장소의 `projects/orunaistudio`(ORUN STUDIO) Premium Dark 시스템이다. 러버블에 세 묶음으로 보냈다.
+
+- 토큰: 배경 `220 20% 4%` · 카드 `220 15% 7%` · 골드 `42 55% 72%` · 정답 `152 60% 55%` · 오답 `6 80% 62%`. 글래스(blur 18px, 상단 1px 하이라이트), 그림자 2단, 골드 글로우. 라이트 모드 없음.
+- 글꼴: 본문·입력·버튼 Noto Sans KR, Orbitron 은 아이브로우·큰 숫자·키캡·로고만.
+- 배경 `CinematicBackground`: CSS 오로라 + 필름 그레인 + 비네트 + (데스크톱만) 마우스 글로우. WebGL 없음 — 휴대폰 성능.
+- 공용 `src/components/cinema/`: GlassCard · Eyebrow · BigNumber · PrimaryButton · GhostButton · AnswerButton · ProgressRing · StatTile · DdayChip · ModeTile · EmptyState · CinemaPageHeader.
+- 셸: 글래스 상단바, 모바일은 하단 탭바(safe-area). 페이지 전환 fade.
+- 묶음 1: 토큰·셸·로그인·학생 홈 / 묶음 2: 연습 시작·풀이·결과·내 기록 / 묶음 3: 담임 3화면·대시보드·나머지 관리 화면 전부 + 옛 웜 톤 하드코딩 0건 검증.
+- 접근성: 터치 44px, focus-visible 골드 링, 대비 4.5:1, reduced-motion 시 애니메이션 없음.
