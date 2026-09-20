@@ -111,12 +111,30 @@ class Hwpx:
         st.ensure_font(BODY_FONT); st.ensure_font(BOX_FONT)      # 글꼴을 먼저 등록해야 ensure_run 이 글꼴을 구분한다
         B = lambda **k: st.ensure_run(font=BODY_FONT, size=10, **k)
         E = lambda **k: st.ensure_run(font=BOX_FONT, size=10, **k)
+        self.pp_keep = self._keep_with_next_copy(T['p_blank'])   # 묶음 지시문·발문용: 다음 문단과 붙어 다님
+        self.pp_keep_body = self._keep_with_next_copy(T['p_body'])
         self.cp = {
             'base': B(), 'b': B(bold=True), 'u': B(underline=True), 'i': B(italic=True), 'ub': B(bold=True, underline=True),
             'e': E(), 'eb': E(bold=True), 'eu': E(underline=True), 'ei': E(italic=True), 'eub': E(bold=True, underline=True),
             'small': st.ensure_run(font=BODY_FONT, size=9.5), 'smallb': st.ensure_run(font=BODY_FONT, size=9.5, bold=True),
             'grp': B(bold=True),
         }
+
+    def _keep_with_next_copy(self, base_id):
+        """header.xml 의 paraPr 를 복사해 keepWithNext=1 로 만든 새 id."""
+        import copy
+        HH = {'hh': 'http://www.hancom.co.kr/hwpml/2011/head'}
+        hx = self.doc.headers[0].element
+        prs = hx.find('.//hh:paraProperties', HH)
+        src = prs.find('hh:paraPr[@id="%s"]' % base_id, HH)
+        new = copy.deepcopy(src)
+        nid = max(int(e.get('id')) for e in prs.findall('hh:paraPr', HH)) + 1
+        new.set('id', str(nid))
+        new.find('hh:breakSetting', HH).set('keepWithNext', '1')
+        prs.append(new)
+        prs.set('itemCnt', str(len(prs.findall('hh:paraPr', HH))))
+        self.doc.headers[0].mark_dirty()
+        return nid
 
     # ── 글자 모양 고르기 ──
     def cpid(self, f, eng=False):
@@ -165,6 +183,7 @@ class Hwpx:
         if not lines and not title:
             return
         t = self.table(1, 1, width or T['col_w'], inner=(420, 420, 230, 230), outer=(0, 0, 80, 140))
+        t.element.set('pageBreak', 'TABLE')          # 긴 지문은 쪽·단 경계에서 나뉘어 이어진다
         c = t.cell(0, 0)
         if title:
             self.para(f'<b>{title}</b>', target=c, eng=True)
@@ -306,14 +325,15 @@ class Hwpx:
             k = it.get('kind', 'mc')
             if k == 'group':
                 self.para('', pp=T['p_blank'])
-                self.para(f"{it['label']} {it['direction']}", cp=self.cp['grp'], pp=T['p_blank'])
+                self.para(f"{it['label']} {it['direction']}", cp=self.cp['grp'], pp=self.pp_keep)
                 self.box(it.get('box'))
+                self.para('', pp=T['p_blank'])
                 first = True
                 continue
             if not first:
                 self.para('', pp=T['p_blank'])
             first = False
-            self.para(f"{stem_no(it)} {it['stem']}{points_str(it)}")
+            self.para(f"{stem_no(it)} {it['stem']}{points_str(it)}", pp=self.pp_keep_body)
             if it.get('box'):
                 self.box(it['box'])
                 self.para('', pp=T['p_blank'])
