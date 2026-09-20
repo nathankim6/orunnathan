@@ -179,14 +179,13 @@ group by s.id, s.class_id;
 > 5) `/home`(학생): 상단에 이름·반, 이번 범위 카드(단어장 제목·Day 목록·시험일·D-day), 그 아래 4개 모드 타일(영단어→뜻 · 뜻→영단어 · 영영풀이→단어 · 예문→단어, 아직 비활성 표시 "곧 열려요"). 범위가 없으면 안내문만.
 > 디자인: 로그인 화면의 톤(#8b7355 · Noto Sans KR · Orbitron 은 라벨만) 을 유지하고, 학생 화면은 모바일 우선.
 
-## 11. UI 시스템 (2026-09-19 전면 개편)
+## 11. UI 시스템 — DEEP SPACE (2026-09-20 전면 개편, 배포)
 
-기준은 같은 저장소의 `projects/orunaistudio`(ORUN STUDIO) Premium Dark 시스템이다. 러버블에 세 묶음으로 보냈다.
+러버블 크레딧이 바닥나 러버블 에이전트 대신 `nathankim6/orunvoca` 저장소에 직접 코드를 써서 `main` 에 푸시했다(러버블은 GitHub 양방향 동기화). 설계 브리프와 구현된 컴포넌트 API 는 그 저장소의 `DESIGN_SPACE.md` 에 있다.
 
-- 토큰: 배경 `220 20% 4%` · 카드 `220 15% 7%` · 골드 `42 55% 72%` · 정답 `152 60% 55%` · 오답 `6 80% 62%`. 글래스(blur 18px, 상단 1px 하이라이트), 그림자 2단, 골드 글로우. 라이트 모드 없음.
-- 글꼴: 본문·입력·버튼 Noto Sans KR, Orbitron 은 아이브로우·큰 숫자·키캡·로고만.
-- 배경 `CinematicBackground`: CSS 오로라 + 필름 그레인 + 비네트 + (데스크톱만) 마우스 글로우. WebGL 없음 — 휴대폰 성능.
-- 공용 `src/components/cinema/`: GlassCard · Eyebrow · BigNumber · PrimaryButton · GhostButton · AnswerButton · ProgressRing · StatTile · DdayChip · ModeTile · EmptyState · CinemaPageHeader.
-- 셸: 글래스 상단바, 모바일은 하단 탭바(safe-area). 페이지 전환 fade.
-- 묶음 1: 토큰·셸·로그인·학생 홈 / 묶음 2: 연습 시작·풀이·결과·내 기록 / 묶음 3: 담임 3화면·대시보드·나머지 관리 화면 전부 + 옛 웜 톤 하드코딩 0건 검증.
-- 접근성: 터치 44px, focus-visible 골드 링, 대비 4.5:1, reduced-motion 시 애니메이션 없음.
+- 콘셉트: "실제 우주를 탐색하며 떠다니는" 초하이퍼리얼. 은유 — 로그인 DOCKING · 학생 홈 THIS MISSION/MODULES/FLIGHT LOG · 풀이 VIEWPORT(HUD) · 결과 MISSION COMPLETE/DEBRIEF · 내 기록 TELEMETRY/ANOMALIES · 담임 MISSION CONTROL/CREW MANIFEST · 단어장 STAR CHART(행성 카드) · 404 LOST IN SPACE.
+- 3D 배경 `src/components/space/SpaceScene.tsx`: three 0.170 + @react-three/fiber 8(React 18 호환). 별 3층 6,100개·은하수·FBM 성운·고리 가스 행성·전진 먼지·유성·라우트 워프·집중/축하 모드. 전부 프로시저럴(외부 이미지 없음). 별도 lazy 청크(gzip 228KB), DPR 상한, 탭 숨김 시 정지, WebGL 없음·모션 줄이기·저메모리는 CSS 폴백.
+- 토큰: 배경 `228 40% 3%`, 골드 `42 55% 72%`, 이온 `190 90% 60%`, 플라즈마 `265 70% 66%`. 글꼴: 본문·**학습 콘텐츠(영단어·뜻·예문)는 Noto Sans**, Orbitron 은 아이브로우·숫자·키캡·로고·HUD 눈금만.
+- 공용 `src/components/space/`: GlassCard · HudFrame · OrbitProgress · FloatCard · SegmentControl · Telemetry · Chip · StatTile · AnswerButton · SpacePageHeader 등. `@/components/cinema` 는 재수출 shim.
+- 원칙: 로직·RPC·라우트·sessionStorage 무변경(감사 통과). 인쇄 영역(시험지·리포트 이미지)은 흰 종이 유지. 터치 44px, 대비 4.5:1, 360~1440 가로 넘침 0.
+- 작업 방식: 워크플로 25 에이전트 — 기반 → 3렌즈 검수 2회 → 화면 묶음 4개(연습·학습 / 시험 / 담임·학생 관리 / 단어장·관리 도구) 워크트리 병렬 → 통합 → 3렌즈 감사(1회 통과). 스크린샷 도구는 스크래치패드 `snap.mjs`(Playwright + SwiftShader WebGL, 학생/관리자 세션 주입).
