@@ -452,10 +452,10 @@ class Hwpx:
             lines = max(max(1, math.ceil(text_width(v, 9.5) / cw)) for v, cw in zip(row, col_w))
             need.append(lines * line_h + pad)
         avail = 84189 - 2 * 1984 - 2268 - FOOTER_H - 5200   # 쪽 높이 − 여백 − 머리말·꼬리말 − 제목줄 − 안전 여유
-        total = sum(need)
-        if total < avail:                                  # 남는 높이의 절반만 나눠 준다 — 한글이 실제 접는 줄 수가 어림보다 많아도 넘치지 않게
-            extra = (avail - total) // (2 * n)
-            need = [h + extra for h in need]
+        # 칸 높이는 '최소 높이'라 한글이 글에 맞춰 늘리므로, 어림한 총높이가 남을 때만 그 절반을 나눠 주고
+        # 넘치면 한 줄 높이만 준다 (한글이 늘린 뒤에도 쪽을 넘지 않게)
+        extra = max(0, avail - sum(need)) // (2 * n)
+        need = [line_h + pad + extra for _ in need]
         pp_cell = self._line_spacing_copy(T['p_blank'], 130)
         pp_center = self._line_spacing_copy(T['p_center'], 130)
         t = self.table(n, 5, T['full_w'], inner=(200, 200, 100, 100), outer=(0, 0, 120, 0))
