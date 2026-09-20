@@ -158,9 +158,9 @@ class Hwpx:
         tabs = hx.find('.//hh:tabProperties', HH)
         tid = max(int(e.get('id')) for e in tabs.findall('hh:tabPr', HH)) + 1
         tp = etree_sub(tabs, H + 'tabPr', id=str(tid), autoTabLeft='0', autoTabRight='0')
-        step = T['col_w'] / ncols
-        for i in range(ncols):
-            etree_sub(tp, H + 'tabItem', pos=str(int((i + 0.5) * step)), type='CENTER', leader='NONE')
+        step = (T['col_w'] - int(2 * MM)) / ncols          # 첫 칸은 왼쪽 끝, 나머지는 왼쪽 맞춤 탭
+        for i in range(1, ncols):
+            etree_sub(tp, H + 'tabItem', pos=str(int(i * step)), type='LEFT', leader='NONE')
         tabs.set('itemCnt', str(len(tabs.findall('hh:tabPr', HH))))
         prs = hx.find('.//hh:paraProperties', HH)
         new = copy.deepcopy(prs.find('hh:paraPr[@id="%s"]' % T['p_blank'], HH))
@@ -245,7 +245,7 @@ class Hwpx:
             rows = ([ct['header']] if ct.get('header') else []) + ct['rows']
             pp = self._grid_para_pr(len(rows[0]))
             for row in rows:
-                self._tab_para('\t' + '\t'.join(str(v) for v in row), pp)
+                self._tab_para('\t'.join(str(v) for v in row), pp)
             return
         ch = it.get('choices', [])
         if it.get('inline'):
