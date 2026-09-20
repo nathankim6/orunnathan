@@ -4,18 +4,18 @@
   "date": "2026-04-27",
   "totalPoints": 46.4,
   "questions": [
-    { "order": 1, "type": "내용불일치", "format": "객관식", "difficulty": "중", "points": 3.6, "passageId": "p1", "external": true, "stem": "다음 글의 내용으로 알 수 없는 것은?" },
-    { "order": 2, "type": "주제", "format": "객관식", "difficulty": "중", "points": 3.6, "passageId": "p2", "external": true, "stem": "다음 글의 주제로 가장 적절한 것은?" },
-    { "order": 3, "type": "순서", "format": "객관식", "difficulty": "중", "points": 3.4, "passageId": "p3", "external": true, "stem": "주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?" },
-    { "order": 4, "type": "빈칸", "format": "객관식", "difficulty": "중", "points": 3.5, "passageId": "p4", "external": true, "stem": "다음 빈칸에 들어갈 말로 가장 적절한 것은?" },
-    { "order": 5, "type": "빈칸", "format": "객관식", "difficulty": "중", "points": 3.5, "passageId": "p5", "external": true, "stem": "다음 빈칸에 들어갈 말로 가장 적절한 것은?" },
-    { "order": 6, "type": "빈칸", "format": "객관식", "difficulty": "하", "points": 3.3, "passageId": "p6", "external": true, "stem": "다음 빈칸에 들어갈 말로 가장 적절한 것은?" },
-    { "order": 7, "type": "요약", "format": "객관식", "difficulty": "상", "points": 3.8, "passageId": "p7", "external": true, "stem": "다음 글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?" },
-    { "order": 8, "type": "제목", "format": "객관식", "difficulty": "중", "points": 3.5, "passageId": "p8", "external": true, "stem": "다음 글의 제목으로 가장 적절한 것은?" },
-    { "order": 9, "type": "어휘", "format": "객관식", "difficulty": "상", "points": 3.8, "passageId": "p9", "external": true, "vocabPoints": ["문맥에 맞는 낱말 선택(길이/무게, 안도/통증 등 유사 개념 구분)"], "stem": "다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것만을 있는 대로 고른 것은?" },
-    { "order": 10, "type": "어법", "format": "객관식", "difficulty": "상", "points": 3.8, "passageId": "p10", "external": true, "grammarPoints": ["주어-동사 수일치", "병렬구조"], "stem": "다음 글의 밑줄 친 부분 중 어법상 틀린 것만을 있는 대로 고른 것은?" },
-    { "order": 11, "type": "어법", "format": "객관식", "difficulty": "중", "points": 3.6, "passageId": "p11", "external": false, "grammarPoints": ["단수-복수 일치", "분사(능동-수동) 구분"], "stem": "다음 글의 밑줄 친 부분 중, 어법상 틀린 것만을 있는 대로 고른 것은?" },
-    { "order": 12, "type": "어휘", "format": "객관식", "difficulty": "중", "points": 3.6, "passageId": "p12", "external": false, "vocabPoints": ["낱말 정의 매칭"], "stem": "다음 글의 밑줄 친 낱말 중 그 의미가 적절하지 않은 것은?" },
-    { "order": 13, "type": "무관문장", "format": "객관식", "difficulty": "중", "points": 3.4, "passageId": "p13", "external": false, "stem": "다음 글에서 전체 흐름과 관계 없는 문장은?" }
+    { "order": 1, "type": "내용불일치", "format": "객관식", "difficulty": "중", "points": 3.6, "passageId": "p1", "external": true, "stem": "다음 글의 내용으로 알 수 없는 것은?", "answer": "⑤" },
+    { "order": 2, "type": "주제", "format": "객관식", "difficulty": "중", "points": 3.6, "passageId": "p2", "external": true, "stem": "다음 글의 주제로 가장 적절한 것은?", "answer": "③" },
+    { "order": 3, "type": "순서", "format": "객관식", "difficulty": "중", "points": 3.4, "passageId": "p3", "external": true, "stem": "주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?", "answer": "② (B)-(A)-(C)" },
+    { "order": 4, "type": "빈칸", "format": "객관식", "difficulty": "중", "points": 3.5, "passageId": "p4", "external": true, "stem": "다음 빈칸에 들어갈 말로 가장 적절한 것은?", "answer": "③" },
+    { "order": 5, "type": "빈칸", "format": "객관식", "difficulty": "중", "points": 3.5, "passageId": "p5", "external": true, "stem": "다음 빈칸에 들어갈 말로 가장 적절한 것은?", "answer": "⑤" },
+    { "order": 6, "type": "빈칸", "format": "객관식", "difficulty": "하", "points": 3.3, "passageId": "p6", "external": true, "stem": "다음 빈칸에 들어갈 말로 가장 적절한 것은?", "answer": "④" },
+    { "order": 7, "type": "요약", "format": "객관식", "difficulty": "상", "points": 3.8, "passageId": "p7", "external": true, "stem": "다음 글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?", "answer": "①" },
+    { "order": 8, "type": "제목", "format": "객관식", "difficulty": "중", "points": 3.5, "passageId": "p8", "external": true, "stem": "다음 글의 제목으로 가장 적절한 것은?", "answer": "⑤" },
+    { "order": 9, "type": "어휘", "format": "객관식", "difficulty": "상", "points": 3.8, "passageId": "p9", "external": true, "vocabPoints": ["문맥에 맞는 낱말 선택(길이/무게, 안도/통증 등 유사 개념 구분)"], "stem": "다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것만을 있는 대로 고른 것은?", "answer": "① (a),(c)" },
+    { "order": 10, "type": "어법", "format": "객관식", "difficulty": "상", "points": 3.8, "passageId": "p10", "external": true, "grammarPoints": ["주어-동사 수일치", "병렬구조"], "stem": "다음 글의 밑줄 친 부분 중 어법상 틀린 것만을 있는 대로 고른 것은?", "answer": "② (b),(d)" },
+    { "order": 11, "type": "어법", "format": "객관식", "difficulty": "중", "points": 3.6, "passageId": "p11", "external": false, "grammarPoints": ["단수-복수 일치", "분사(능동-수동) 구분"], "stem": "다음 글의 밑줄 친 부분 중, 어법상 틀린 것만을 있는 대로 고른 것은?", "answer": "② (a),(d)" },
+    { "order": 12, "type": "어휘", "format": "객관식", "difficulty": "중", "points": 3.6, "passageId": "p12", "external": false, "vocabPoints": ["낱말 정의 매칭"], "stem": "다음 글의 밑줄 친 낱말 중 그 의미가 적절하지 않은 것은?", "answer": "④" },
+    { "order": 13, "type": "무관문장", "format": "객관식", "difficulty": "중", "points": 3.4, "passageId": "p13", "external": false, "stem": "다음 글에서 전체 흐름과 관계 없는 문장은?", "answer": "④" }
   ]
 }
