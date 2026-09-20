@@ -120,6 +120,12 @@ GitHub Pages 는 `access-control-allow-origin: *` 를 준다. 다른 사이트�
 직접 고친다. 그때 `src/` 스냅샷은 지운다 — 두 벌을 남기면 어느 쪽이 원본인지
 모르게 된다.
 
+## 동형 모의고사 HWPX 에이전트 — `.claude/skills/mock-exam-hwpx/`
+
+ZIP(기출·시험범위·학습지·지침 txt) 하나를 받아 학교 시험지 서식(HWPX)에 맞춘 동형 모의고사 3부를 만든다.
+절차는 `SKILL.md`, 도구는 `agent/`(ingest · profile · render · agent.py), 서식은 `agent/assets/exam-template.hwpx`.
+**스킬 폴더 하나가 자족적**이라 다른 저장소나 `~/.claude/skills/` 에 폴더째 복사하면 그대로 돈다. 스크립트를 폴더 밖으로 빼지 말 것.
+
 ## 구독 연결 — 로컬 브리지
 
 API 키 말고 "이 컴퓨터에 깔린 Claude Code · Codex" 로 돌리는 길이다.

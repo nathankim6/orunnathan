@@ -1,0 +1,6 @@
+python-hwpx>=6.4
+openpyxl
+olefile
+pymupdf
+pillow
+lxml

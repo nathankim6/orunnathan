@@ -5,19 +5,20 @@ description: 학교 기출 시험지·시험범위 자료(교과서 본문·어�
 
 # 동형 모의고사 에이전트 (ZIP → HWPX 3부)
 
-도구는 `tools/mockexam-agent/` 에 있다. 파일을 읽고 분류하고 시험지를 조판하는 일은 스크립트가 하고,
+도구는 이 스킬 폴더의 `agent/` 에 있다(아래 `$SKILL` 은 이 SKILL.md 가 있는 폴더 — 저장소에서는
+`.claude/skills/mock-exam-hwpx`, 개인 설치면 `~/.claude/skills/mock-exam-hwpx`). 파일을 읽고 분류하고 시험지를 조판하는 일은 스크립트가 하고,
 **분석과 문항 집필은 Claude 가 한다.** 순서를 건너뛰지 않는다.
 
 ## 0. 준비
 
 ```bash
-pip install -q python-hwpx openpyxl olefile pymupdf pillow   # 처음 한 번
+pip install -q -r $SKILL/agent/requirements.txt   # 처음 한 번
 ```
 
 ## 1. 자료 풀기·분류
 
 ```bash
-python3 tools/mockexam-agent/agent.py ingest <자료.zip> <작업폴더>
+python3 $SKILL/agent/agent.py ingest <자료.zip> <작업폴더>
 ```
 
 `manifest.json` 에 파일마다 역할이 붙는다 — `exam`(기출) · `scope`(시험범위: 교과서 본문·대화문·어휘) ·
@@ -35,7 +36,7 @@ python3 tools/mockexam-agent/agent.py ingest <자료.zip> <작업폴더>
 ## 3. 기출 형식 프로파일
 
 ```bash
-python3 tools/mockexam-agent/agent.py profile <작업폴더>      # → profile.md / profile.json
+python3 $SKILL/agent/agent.py profile <작업폴더>      # → profile.md / profile.json
 ```
 
 번호·배점·유형(어림)·묶음 지문·상자 줄 수가 표로 나온다. 이것을 **기출 원문과 대조해** 다음을 확정한다.
@@ -47,11 +48,11 @@ python3 tools/mockexam-agent/agent.py profile <작업폴더>      # → profile.
 
 결과를 `<출력폴더>/analysis.md` 로 쓴다. 표 두 개가 핵심이다 — **(가) 번호별 유형·소스 매칭표**,
 **(나) 3부의 소스 배분표**(긴 본문·짧은 본문·대화 세트·서술형이 3부에서 서로 겹치지 않게).
-견본: `tools/mockexam-agent/samples/dongyang-m1-2-mid/analysis.md`.
+견본: `$SKILL/agent/samples/dongyang-m1-2-mid/analysis.md`.
 
 ## 4. 문항 집필 — 3부, 각각 JSON 한 개
 
-형식은 `tools/mockexam-agent/README.md` 의 spec 설명을 따른다. 견본: `samples/dongyang-m1-2-mid/set1.json`.
+형식은 `$SKILL/agent/README.md` 의 spec 설명을 따른다. 견본: `samples/dongyang-m1-2-mid/set1.json`.
 
 지킬 것:
 
@@ -68,7 +69,7 @@ python3 tools/mockexam-agent/agent.py profile <작업폴더>      # → profile.
 집필이 끝나면 점검한다:
 
 ```bash
-python3 tools/mockexam-agent/agent.py check set1.json set2.json set3.json
+python3 $SKILL/agent/agent.py check set1.json set2.json set3.json
 ```
 
 배점 합·선지 수·정답 누락을 잡는다. 총점이 맞을 때까지 고친다.
@@ -76,11 +77,11 @@ python3 tools/mockexam-agent/agent.py check set1.json set2.json set3.json
 ## 5. 조판·검증·전달
 
 ```bash
-python3 tools/mockexam-agent/agent.py build set1.json set2.json set3.json -o <출력폴더>
+python3 $SKILL/agent/agent.py build set1.json set2.json set3.json -o <출력폴더>
 ```
 
 `OO중학교_O학년_O학기_OO고사_동형모의고사_N회.hwpx` 가 나온다. 판형은 **실제 학교 시험지 서식**
-`tools/mockexam-agent/assets/exam-template.hwpx` 를 열어 채우는 것이라 손대지 않는다 — 머리말(`2026학년도 2학기 중간고사`) ·
+`$SKILL/agent/assets/exam-template.hwpx` 를 열어 채우는 것이라 손대지 않는다 — 머리말(`2026학년도 2학기 중간고사`) ·
 정보표(학년·회차·과목·문항수·쪽수·출판사·학교·회차) · 안내문 · 2단 · 꼬리말(`1학년 영어 과목 · 쪽/전체 · 옳은영어 ORUN ENGLISH`) ·
 글꼴(맑은 고딕 10pt) · 문단 모양이 모두 서식의 것이다. spec 의 `year` · `publisher` 를 채우면 머리말·정보표에 들어간다.
 
@@ -88,7 +89,7 @@ HWPX 는 스키마 검증을 지나야 저장된다. **이 환경에는 한글�
 줄 바꿈·쪽 수는 한글과 다르므로, 파일을 보내고 사용자가 한글에서 본 캡처로 마무리한다.
 
 끝나면 `SendUserFile` 로 **HWPX 3개 + analysis.md** 를 보낸다(PDF 는 요청할 때만).
-저장소에 남길 때는 `tools/mockexam-agent/samples/<학교-학년-학기-고사>/` 에 spec·analysis·hwpx 를 둔다.
+저장소에 남길 때는 `$SKILL/agent/samples/<학교-학년-학기-고사>/` 에 spec·analysis·hwpx 를 둔다.
 
 ## 판형에서 이미 정해진 것 (다시 묻지 않는다)
 

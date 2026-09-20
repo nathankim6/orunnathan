@@ -15,7 +15,7 @@
 | `render.py` | 문항 JSON → HWPX(python-hwpx) 와 HTML 미리보기 |
 | `samples/` | 견본 — 동양중 1학년 2학기 중간고사 (분석서 · spec 3개 · 결과 HWPX/PDF) |
 
-에이전트의 절차(무엇을 읽고 어떻게 집필하는지)는 `.claude/skills/mock-exam-hwpx/SKILL.md`.
+에이전트의 절차(무엇을 읽고 어떻게 집필하는지)는 한 단계 위의 `SKILL.md`.
 
 ## 시험지 판형 (render.py)
 
@@ -50,8 +50,8 @@ HTML/PDF 미리보기는 같은 구성을 흉내 낸 것이라 줄 바꿈·쪽 �
 ## 확인
 
 ```bash
-python3 tools/mockexam-agent/agent.py check samples/dongyang-m1-2-mid/set*.json
-python3 tools/mockexam-agent/agent.py build samples/dongyang-m1-2-mid/set*.json -o /tmp/out
+python3 agent.py check samples/dongyang-m1-2-mid/set*.json
+python3 agent.py build samples/dongyang-m1-2-mid/set*.json -o /tmp/out
 ```
 
 HWPX 는 저장 전에 OWPML 스키마 검증을 지나고, 다시 열어 `doc.text.plain()` 으로 본문이 그대로인지 본다.
