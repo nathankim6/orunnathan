@@ -61,9 +61,9 @@ def build(specs, outdir):
 
 def _norm(t):
     import re, unicodedata
-    t = unicodedata.normalize('NFKC', t)
     t = re.sub(r'<[^>]+>', '', t)                      # <u> 등
-    t = re.sub(r'[\u24d0-\u24e9\u2460-\u2473]', '', t)  # ⓐ ①
+    t = re.sub(r'[\u24d0-\u24e9\u2460-\u2473]', ' ', t)  # ⓐ ① (NFKC 전에 떼어야 다음 단어에 붙지 않는다)
+    t = unicodedata.normalize('NFKC', t)
     t = re.sub(r'\([A-Ea-e가-바]\)|__+|\[[^\]]*\]', ' ', t)
     t = t.replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"')
     return re.sub(r'[^a-z0-9 ]', ' ', t.lower()).split()
