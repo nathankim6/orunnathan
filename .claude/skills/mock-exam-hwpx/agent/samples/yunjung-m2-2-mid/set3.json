@@ -1,728 +1,759 @@
 {
-"school": "윤중중학교",
-"grade": 2,
-"term": 2,
-"exam": "중간고사",
-"subject": "영어",
-"set": 3,
-"range": "Lesson 5~6",
-"publisher": "천재(소영순)",
-"year": 2026,
-"items": [
-{
-"no": 1,
-"points": 3,
-"stem": "자연스러운 대화가 되도록 <보기>의 ⓐ~ⓓ를 올바르게 배열한 것은?",
-"box": {
-"lines": [
-"A: Excuse me, can you tell me how to use this ticket machine?",
-"B: Okay, first, search for the city.",
-"--------------------------------------------",
-"< 보 기 >",
-"ⓐ Second, select the time and seat.",
-"ⓑ Lastly, pay and take the ticket.",
-"ⓒ I got it. What's next?",
-"ⓓ Okay. What should I do after that?",
-"--------------------------------------------",
-"A: That's easy.",
-"B: Don't forget to take the train on time.",
-"A: Thanks!"
-]
-},
-"choices": [
-"ⓐ-ⓒ-ⓑ-ⓓ",
-"ⓒ-ⓐ-ⓓ-ⓑ",
-"ⓒ-ⓑ-ⓐ-ⓓ",
-"ⓓ-ⓐ-ⓒ-ⓑ",
-"ⓓ-ⓑ-ⓒ-ⓐ"
-],
-"inline": true,
-"answer": 2,
-"explain": "다음 단계 묻기(ⓒ) → 두 번째 단계(ⓐ) → 그다음 묻기(ⓓ) → 마지막 단계(ⓑ).",
-"source": "L6 Review 1-2"
-},
-{
-"no": 2,
-"points": 4,
-"stem": "<보기>에서 어법상 올바른 문장만으로 짝지어진 것은?",
-"box": {
-"title": "< 보 기 >",
-"lines": [
-"ㄱ. I wonder how she made the cake.",
-"ㄴ. Let's watch him swimming in the pool.",
-"ㄷ. Do you know when did Jack go home?",
-"ㄹ. She asked their to be quiet.",
-"ㅁ. Sweet songs make me calm.",
-"ㅂ. What do you think he wants to eat?"
-]
-},
-"choices": [
-"ㄱ, ㄴ, ㄷ",
-"ㄱ, ㄴ, ㅁ, ㅂ",
-"ㄴ, ㄷ, ㄹ",
-"ㄷ, ㄹ, ㅁ",
-"ㄱ, ㄹ, ㅂ"
-],
-"inline": true,
-"answer": 2,
-"explain": "ㄷ when Jack went home(간접의문문 어순), ㄹ their → them(목적격).",
-"source": "학습지 Focus on Language A·B · 통합본 L6 문법"
-},
-{
-"no": 3,
-"points": 3,
-"stem": "대화의 흐름상 (A)에 가장 알맞은 것은?",
-"box": "G: We have math and English classes today.\nB: Right. Sora, which do you prefer, math or English?\nG: I prefer math to English.\nB: Why is that?\nG: __________(A)__________ How about you?\nB: I like English better. I'm not good at math.",
-"choices": [
-"Because I'm not good at math.",
-"Because math has clear answers to problems.",
-"I don't agree with you.",
-"Because English is more fun than math.",
-"I have math and science classes tomorrow."
-],
-"answer": 2,
-"explain": "수학을 더 좋아하는 이유를 묻는 말에 대한 대답.",
-"source": "L5 Listen and Talk A-1"
-},
-{
-"no": 4,
-"points": 3,
-"stem": "의미상 표현이 <u>어색한</u> 것은?",
-"choices": [
-"The bus is not faster during rush hour, so let's take the subway.",
-"I deleted my post immediately, but the copies still remain online.",
-"Wearing a helmet will keep you safe.",
-"Because the judge was fair, everyone said his decision was wrong.",
-"I prefer team sports because I like to work together as a team."
-],
-"answer": 4,
-"explain": "판사가 공정했기 때문에 모두가 결정이 틀렸다고 했다는 것은 인과가 어긋난다.",
-"source": "L5·L6 대화·본문 · 학습지 Words"
-},
-{
-"kind": "group",
-"label": "[5~6]",
-"direction": "다음 글을 읽고 물음에 답하시오.",
-"box": "Reporter: Mr. Davis. Do you like your job as a sports agent?\nMr. Davis: Yes. I love sports, and I enjoy everything about business. I think my job is perfect for me.\nReporter: Can you tell me more about your job?\nMr. Davis: When my clients have a new contract ⓐ<u>to sign</u>, I check it carefully. I do my best to make the contract fair for them. Also, I often receive phone calls from advertising companies. They want my clients in their advertisements. Then, I try to get the best deal for my clients."
-},
-{
-"no": 5,
-"points": 3,
-"stem": "Mr. Davis에 대한 설명으로 올바르지 <u>않은</u> 것은?",
-"choices": [
-"He works as a sports agent.",
-"He loves sports and enjoys business.",
-"He thinks his job is perfect for him.",
-"He receives phone calls from advertising companies.",
-"He signs new contracts instead of his clients."
-],
-"answer": 5,
-"explain": "고객이 서명할 계약서를 신중하게 확인할 뿐, 대신 서명한다는 말은 없다.",
-"source": "L5 본문 Mr. Davis"
-},
-{
-"no": 6,
-"points": 4,
-"stem": "<보기>에서 윗글의 ⓐ와 문법적으로 성격이 같은 것<u>만</u>으로 짝지어진 것은?",
-"box": {
-"title": "< 보 기 >",
-"lines": [
-"ㄱ. There's nothing <u>to eat</u>.",
-"ㄴ. I want <u>to be</u> a scientist some day.",
-"ㄷ. Can I borrow a book <u>to read</u>?",
-"ㄹ. She studied hard <u>to pass</u> the exam.",
-"ㅁ. I didn't have a chance <u>to talk</u>.",
-"ㅂ. My dream is <u>to travel</u> around the world."
-]
-},
-"choices": [
-"ㄱ, ㄴ, ㄷ",
-"ㄱ, ㄷ, ㅁ",
-"ㄴ, ㄹ, ㅂ",
-"ㄷ, ㄹ, ㅁ",
-"ㄱ, ㄷ, ㄹ, ㅁ"
-],
-"inline": true,
-"answer": 2,
-"explain": "ⓐ는 앞의 명사(contract)를 꾸미는 형용사적 용법. ㄴ·ㅂ은 명사적 용법(목적어·보어), ㄹ은 부사적 용법(목적).",
-"source": "L5 본문 · to부정사 용법(기출 6번 유형)"
-},
-{
-"kind": "group",
-"label": "[7~8]",
-"direction": "다음 글을 읽고 물음에 답하시오.",
-"box": "Last month, I received an email from an unknown name. I clicked on the link in the email, and a website showed up. I closed the website immediately, ___ⓐ___ I felt something was wrong. My computer became very slow. I asked the computer store to check my computer, ___ⓑ___ they found that someone added bad programs ___ⓒ___ the link. These programs made my computer slow."
-},
-{
-"no": 7,
-"points": 4,
-"stem": "윗글의 내용과 일치하는 것은?",
-"choices": [
-"The writer knew the person who sent the email.",
-"The writer didn't click on the link in the email.",
-"The writer kept the website open for a long time.",
-"The computer store found bad programs on the writer's computer.",
-"The writer's computer became faster after clicking the link."
-],
-"answer": 4,
-"explain": "컴퓨터 가게가 누군가 링크를 통해 나쁜 프로그램을 설치한 것을 발견했다.",
-"source": "L6 Review 2-1"
-},
-{
-"no": 8,
-"points": 3,
-"stem": "ⓐ, ⓑ, ⓒ에 알맞은 것은?",
-"choices_table": {
-"header": [
-"",
-"ⓐ",
-"ⓑ",
-"ⓒ"
-],
-"rows": [
-[
-"①",
-"and",
-"but",
-"without"
-],
-[
-"②",
-"but",
-"and",
-"through"
-],
-[
-"③",
-"but",
-"or",
-"instead of"
-],
-[
-"④",
-"so",
-"and",
-"through"
-],
-[
-"⑤",
-"because",
-"but",
-"for"
-]
-]
-},
-"answer": 2,
-"explain": "즉시 닫았지만(but) 뭔가 잘못됐다고 느낌 / 점검을 요청했고(and) 그들이 발견함 / 링크를 통해(through) 설치됨.",
-"source": "L6 Review 2-1"
-},
-{
-"no": 9,
-"points": 4,
-"stem": "어법상 옳은 것은?",
-"choices": [
-"He felt beat his heart faster.",
-"I watched the cat chasing a butterfly.",
-"We heard the timer beeps twice.",
-"They watched clouds rolls over the city.",
-"I saw the window to break by the strong wind."
-],
-"answer": 2,
-"explain": "② 「지각동사+목적어+-ing」. ① felt his heart beating ③ beeping[beep] ④ rolling[roll] ⑤ saw the window broken(수동).",
-"source": "통합본 L6 문법 오류 고치기"
-},
-{
-"kind": "group",
-"label": "[10~11]",
-"direction": "다음 글을 읽고 물음에 답하시오.",
-"box": "Reporter: I want to know ___ⓐ___ to be a sports statistician, Ms. Lee.\nMs. Lee: I wanted to be a sports statistician because I liked to analyze sports with numbers. Above all, I love ice hockey.\nReporter: I don't know much about a sports statistician. Can you explain it to me?\nMs. Lee: A sports statistician is someone ___ⓑ___ data and studies numbers about sports games. Our team is going to play against the Ice Lions this Saturday. Last week, I carefully watched the Ice Lions' games and analyzed their shots. I found that they let in 70 percent of the shots from the left side. This showed their left side was weak. Then, I shared this finding with our players. I'm happy to use my data to help our team."
-},
-{
-"no": 10,
-"points": 4,
-"stem": "윗글을 읽고 답할 수 <u>없는</u> 질문은?",
-"choices": [
-"Why did Ms. Lee want to be a sports statistician?",
-"Which sport does Ms. Lee love above all?",
-"When is Ms. Lee's team going to play against the Ice Lions?",
-"How many games did Ms. Lee watch last week?",
-"What did Ms. Lee share with her players?"
-],
-"answer": 4,
-"explain": "본 경기의 수는 나오지 않는다.",
-"source": "L5 본문 Ms. Lee"
-},
-{
-"no": 11,
-"points": 3,
-"stem": "ⓐ, ⓑ에 알맞은 것은?",
-"choices_table": {
-"header": [
-"",
-"ⓐ",
-"ⓑ"
-],
-"rows": [
-[
-"①",
-"why did you want",
-"who collect"
-],
-[
-"②",
-"why you wanted",
-"who collects"
-],
-[
-"③",
-"why wanted you",
-"which collects"
-],
-[
-"④",
-"why you wanted",
-"who collect"
-],
-[
-"⑤",
-"that you wanted",
-"whose collects"
-]
-]
-},
-"answer": 2,
-"explain": "간접의문문 「의문사+주어+동사」 / 선행사 someone(사람·단수) → who collects.",
-"source": "L5 본문 Ms. Lee · 학습지 Focus on Language B"
-},
-{
-"kind": "group",
-"label": "[12~13]",
-"direction": "다음을 읽고 물음에 답하시오.",
-"box": "Hi, I'm Bella. Last Friday, I saw my brother playing basketball after school. He was playing really well, so I took a picture of him. Then I shared it on my social media. Over the weekend, something went wrong. Someone made a ___ⓐ___ of the picture with bad comments. The copy was spread here and there, and I was so ___ⓑ___. My brother wanted me to delete the picture of him. I apologized to him, and I deleted my post ___ⓒ___. However, the copies still remain online. I want to remove them all. Please help me."
-},
-{
-"no": 12,
-"points": 3,
-"stem": "윗글의 내용과 일치하는 것은?",
-"choices": [
-"Bella saw her brother playing soccer last Friday.",
-"Bella's brother took a picture of Bella.",
-"Bella shared the picture on her social media.",
-"Bella's brother wanted Bella to keep the picture.",
-"Bella has not deleted her post yet."
-],
-"answer": 3,
-"explain": "Bella가 남동생의 농구하는 사진을 찍어 자신의 소셜 미디어에 공유했다. 남동생은 삭제를 원했고 Bella는 즉시 삭제했다.",
-"source": "L6 본문 Bella"
-},
-{
-"no": 13,
-"points": 3,
-"stem": "ⓐ, ⓑ, ⓒ에 알맞은 것은?",
-"choices_table": {
-"header": [
-"",
-"ⓐ",
-"ⓑ",
-"ⓒ"
-],
-"rows": [
-[
-"①",
-"copy",
-"embarrassed",
-"immediately"
-],
-[
-"②",
-"copy",
-"excited",
-"carefully"
-],
-[
-"③",
-"record",
-"embarrassed",
-"slowly"
-],
-[
-"④",
-"comment",
-"worried",
-"immediately"
-],
-[
-"⑤",
-"copy",
-"embarrassed",
-"later"
-]
-]
-},
-"answer": 1,
-"explain": "사진의 복사본(copy) / 나쁜 댓글이 퍼져 당황함(embarrassed) / 사과하고 즉시(immediately) 삭제.",
-"source": "L6 본문 Bella · 어휘"
-},
-{
-"kind": "group",
-"label": "[14~15]",
-"direction": "다음 글을 읽고 물음에 답하시오.",
-"box": "To: csmanager@bigdigital.com\nDear Big Digital Manager,\nI bought Bluetooth headphones from your site last month. However, music only comes out of one side, and the other side doesn't work. I don't know what the problem is or what to do. I want you ___ⓐ___ me as soon as possible. I hope to hear from you soon.\nBest,\nJun Park"
-},
-{
-"no": 14,
-"points": 3,
-"stem": "윗글의 제목으로 가장 알맞은 것은?",
-"choices": [
-"How to Choose Good Headphones",
-"Need Help with My Headphones",
-"The Best Music for Headphones",
-"Thank You for the Great Service",
-"How to Buy Things Online Safely"
-],
-"answer": 2,
-"explain": "고장 난 헤드폰에 대해 도움을 요청하는 이메일.",
-"source": "L6 Present Your Ideas (In Writing)"
-},
-{
-"no": 15,
-"points": 3,
-"stem": "ⓐ에 알맞은 것은?",
-"choices": [
-"help",
-"helping",
-"to help",
-"helped",
-"to helping"
-],
-"inline": true,
-"answer": 3,
-"explain": "「want+목적어+to부정사」: ~가 …하기를 원하다.",
-"source": "L6 Present Your Ideas · 통합본 L6 문법"
-},
-{
-"no": 16,
-"points": 3,
-"stem": "(   )에 <보기>의 ⓐ~ⓔ가 설명하는 단어를 사용할 수 <u>없는</u> 것은?",
-"box": {
-"title": "< 보 기 >",
-"lines": [
-"ⓐ to like one thing more than another",
-"ⓑ to communicate with someone by phone, email, or message",
-"ⓒ without any delay",
-"ⓓ to keep someone or something safe from harm or danger",
-"ⓔ a scientific test done to discover what happens or to learn something new"
-]
-},
-"choices": [
-"I (   ) pizza to hamburgers.",
-"If you see the copies again, please (   ) us.",
-"I closed the website (   ).",
-"To (   ) your personal information, use strong passwords.",
-"She read an interesting (   ) in the newspaper."
-],
-"answer": 5,
-"explain": "⑤에는 article(기사)이 들어간다. ① prefer ② contact ③ immediately ④ protect. ⓔ experiment(실험)는 쓸 자리가 없다.",
-"source": "L5·L6 영영풀이 · 학습지 Words"
-},
-{
-"no": 17,
-"points": 3,
-"stem": "자연스러운 대화가 되도록 <보기>의 ⓐ~ⓓ를 올바르게 배열한 것은?",
-"box": {
-"lines": [
-"W: Excuse me, how can I use this bike?",
-"M: It's simple. First, sign up for our app. Then, add your credit card.",
-"--------------------------------------------",
-"< 보 기 >",
-"ⓐ Oh, it worked.",
-"ⓑ Lastly, tag your phone on the bike.",
-"ⓒ Umm, okay. I did. What's next?",
-"ⓓ Great. Enjoy your ride.",
-"--------------------------------------------",
-"W: Thank you."
-]
-},
-"choices": [
-"ⓐ-ⓑ-ⓒ-ⓓ",
-"ⓑ-ⓒ-ⓐ-ⓓ",
-"ⓒ-ⓐ-ⓑ-ⓓ",
-"ⓒ-ⓑ-ⓐ-ⓓ",
-"ⓓ-ⓒ-ⓑ-ⓐ"
-],
-"inline": true,
-"answer": 4,
-"explain": "했다, 다음은?(ⓒ) → 마지막 단계(ⓑ) → 됐다(ⓐ) → 즐겁게 타라(ⓓ).",
-"source": "L6 Listen and Talk A-1"
-},
-{
-"kind": "group",
-"label": "[18~19]",
-"direction": "다음 글을 읽고 물음에 답하시오.",
-"box": "Reporter: Hello, Ms. Ali. Can you tell me ⓐ<u>why you became</u> a sports journalist?\nMs. Ali: Well, I've always had a passion for sports and writing. (A) Writing about sports makes me ⓑ<u>excited</u>.\nReporter: There was a big baseball game yesterday. How did you spend the day?\nMs. Ali: I arrived at the baseball park early. (B) Before the game started, I had an interview with the players. (C) After the game, I went to the press conference with other journalists. (D) I asked the players ⓒ<u>how did they feel</u> about the game. In the afternoon, I had to write an article and ⓓ<u>edit</u> it very quickly. (E) My article ⓔ<u>was posted</u> online. I love writing about sports."
-},
-{
-"no": 18,
-"points": 4,
-"stem": "ⓐ~ⓔ 중 어법상 <u>틀린</u> 것은?",
-"choices": [
-"ⓐ",
-"ⓑ",
-"ⓒ",
-"ⓓ",
-"ⓔ"
-],
-"inline": true,
-"answer": 3,
-"explain": "간접의문문은 「의문사+주어+동사」 → how they felt. ⓐ 간접의문문, ⓑ 「make+목적어+형용사」, ⓓ write and edit 병렬, ⓔ 수동태.",
-"source": "L5 본문 Ms. Ali · 학습지 Focus on Language B"
-},
-{
-"no": 19,
-"points": 3,
-"stem": "(A)~(E) 중 <보기>에 주어진 문장의 위치로 가장 적절한 곳은?",
-"box": {
-"title": "< 보 기 >",
-"lines": [
-"I took a lot of notes during the game."
-]
-},
-"choices": [
-"(A)",
-"(B)",
-"(C)",
-"(D)",
-"(E)"
-],
-"inline": true,
-"answer": 3,
-"explain": "경기 전 인터뷰 → 경기 중 메모 → 경기 후 기자 회견의 순서.",
-"source": "L5 본문 Ms. Ali"
-},
-{
-"no": 20,
-"points": 4,
-"stem": "어법상 옳은 것은?",
-"choices": [
-"I wonder where are you from.",
-"Do you know what time is it?",
-"The rule keeps our classroom cleanly.",
-"Don't make your friends angry.",
-"I don't know who did call me last night."
-],
-"answer": 4,
-"explain": "④ 「make+목적어+형용사」. ① where you are from ② what time it is ③ clean ⑤ who called me(의문사가 주어).",
-"source": "학습지 Focus on Language A·B · 통합본 L5 문법"
-},
-{
-"kind": "group",
-"label": "[21~22]",
-"direction": "다음 글을 읽고 물음에 답하시오.",
-"box": "Hi, I'm Jihun. Last month, I saw an interesting advertisement online. It said ⓐ<u>that</u> I could get a new smartphone for free. I clicked on it without ⓑ<u>thinking</u> much. Then, I filled out my information to receive the gift. However, instead of ⓒ<u>getting</u> a new smartphone, I have received useless emails and phone calls from unknown numbers. Oh, my! I just heard my phone ringing again. It makes me very ⓓ<u>upset</u>. I'm sure that someone is using my information in a bad way. I think that my personal information was shared. I want ⓔ<u>deleting</u> it. Can you help me, please?"
-},
-{
-"no": 21,
-"points": 4,
-"stem": "ⓐ~ⓔ 중 어법상 <u>틀린</u> 것은?",
-"choices": [
-"ⓐ",
-"ⓑ",
-"ⓒ",
-"ⓓ",
-"ⓔ"
-],
-"inline": true,
-"answer": 5,
-"explain": "want는 to부정사를 목적어로 취한다 → to delete. ⓑ·ⓒ 전치사 뒤 동명사, ⓓ 「make+목적어+형용사」.",
-"source": "L6 본문 Jihun"
-},
-{
-"no": 22,
-"points": 3,
-"stem": "<보기>의 질문에 가장 알맞은 답은?",
-"box": {
-"title": "< 보 기 >",
-"lines": [
-"Why did Jihun fill out his information?"
-]
-},
-"choices": [
-"To sign up for a new social media app",
-"To receive a new smartphone for free",
-"To delete his personal information",
-"To send emails to his friends",
-"To find out who called him"
-],
-"answer": 2,
-"explain": "공짜 스마트폰이라는 선물을 받기 위해 정보를 적었다.",
-"source": "L6 본문 Jihun"
-},
-{
-"kind": "group",
-"label": "[23~25]",
-"direction": "다음 글을 읽고 물음에 답하시오.",
-"box": "There was a big basketball game between the Boston Wolves and the Miami Monsters. The game was held at the Boston Sports Center on September 2. The Boston Wolves won the game by 10 points. Michael James played ⓐ<u>his</u> best game of the season against the Monsters. His perfect play made his team and his fans excited. Everyone is ____________(A)____________."
-},
-{
-"no": 23,
-"points": 4,
-"stem": "윗글의 내용과 일치하지 <u>않는</u> 것은?",
-"choices": [
-"The game was between the Boston Wolves and the Miami Monsters.",
-"The game was held on September 2.",
-"The Boston Wolves lost the game by 10 points.",
-"Michael James played his best game of the season.",
-"Michael James's play made his fans excited."
-],
-"answer": 3,
-"explain": "보스턴 울브즈가 10점 차로 이겼다.",
-"source": "L5 Present Your Ideas (In Writing)"
-},
-{
-"no": 24,
-"points": 3,
-"stem": "ⓐ<u>his</u>가 가리키는 사람은?",
-"choices": [
-"a Miami Monsters player",
-"a reporter",
-"Michael James",
-"a fan of the Wolves",
-"the coach of the Wolves"
-],
-"answer": 3,
-"explain": "Michael James가 시즌 최고의 경기를 했다.",
-"source": "L5 Present Your Ideas (In Writing)"
-},
-{
-"no": 25,
-"points": 3,
-"stem": "글의 흐름상 (A)에 가장 적절한 것은?",
-"choices": [
-"disappointed with his play",
-"looking forward to his next game",
-"worried about the Boston Sports Center",
-"angry at the Miami Monsters",
-"asking him to leave the team"
-],
-"answer": 2,
-"explain": "완벽한 플레이로 팀과 팬을 흥분시켰으므로 다음 경기를 고대한다는 흐름.",
-"source": "L5 Present Your Ideas (In Writing)"
-},
-{
-"kind": "group",
-"label": "[26~28]",
-"direction": "다음 글을 읽고 물음에 답하시오.",
-"box": "(가) I am a sports manager for a professional soccer team. I make sure everything ⓐ<u>goes</u> well and help the team succeed. My job is ⓑ<u>to give</u> the team the best chance to win. I hire great coaches, manage the office staff, talk to the media, and solve problems.\n(나) When I get to the training ground, I talk to the players first. (A) I tell them how well they are doing and encourage them. (B) I make sure they feel ⓒ<u>confidently</u> and ready for the game. (C) Next, I meet with the head coach to check that everything is on track. (D) I prefer watching movies to reading books on weekends. (E) In the afternoon, I watch the team ⓓ<u>train</u>. Watching soccer games and ⓔ<u>seeing</u> the players improve is one of the best parts of my job. I enjoy seeing everyone work together as a team."
-},
-{
-"no": 26,
-"points": 3,
-"stem": "(A)~(E) 중 글의 흐름상 전체적인 내용과 어울리지 <u>않는</u> 것은?",
-"choices": [
-"(A)",
-"(B)",
-"(C)",
-"(D)",
-"(E)"
-],
-"inline": true,
-"answer": 4,
-"explain": "(D) 주말에 영화 보기를 더 좋아한다는 문장은 스포츠 매니저의 업무 소개와 관계가 없다.",
-"source": "학습지 More Reading"
-},
-{
-"no": 27,
-"points": 3,
-"stem": "ⓐ~ⓔ 중 어법상 <u>틀린</u> 것은?",
-"choices": [
-"ⓐ",
-"ⓑ",
-"ⓒ",
-"ⓓ",
-"ⓔ"
-],
-"inline": true,
-"answer": 3,
-"explain": "feel 뒤에는 형용사 보어 → confident. ⓐ everything은 단수, ⓑ 보어 역할 to부정사, ⓓ 지각동사 watch+목적어+동사원형, ⓔ 동명사 주어.",
-"source": "학습지 More Reading"
-},
-{
-"no": 28,
-"points": 4,
-"stem": "윗글에서 답을 찾을 수 <u>없는</u> 것은?",
-"choices": [
-"What does the writer do for the team?",
-"Who does the writer talk to first at the training ground?",
-"Why does the writer meet with the head coach?",
-"How many players are on the writer's team?",
-"What does the writer do in the afternoon?"
-],
-"answer": 4,
-"explain": "선수 수는 나오지 않는다.",
-"source": "학습지 More Reading"
-},
-{
-"kind": "group",
-"label": "[29~30]",
-"direction": "다음 글을 읽고 물음에 답하시오.",
-"box": "Happy_Digital_Laundry\nBella, we removed all the copies online, but some copies may remain on personal devices. If you see the copies again, please contact us. When you share things online, ___ⓐ___. Remember that ___ⓑ___ online is easy, but removing it is hard."
-},
-{
-"no": 29,
-"points": 3,
-"stem": "ⓐ와 ⓑ에 알맞은 것은?",
-"choices_table": {
-"header": [
-"",
-"ⓐ",
-"ⓑ"
-],
-"rows": [
-[
-"①",
-"be careful",
-"share something"
-],
-[
-"②",
-"be carefully",
-"sharing something"
-],
-[
-"③",
-"be careful",
-"sharing something"
-],
-[
-"④",
-"being careful",
-"to sharing something"
-],
-[
-"⑤",
-"careful be",
-"shared something"
-]
-]
-},
-"answer": 3,
-"explain": "명령문 be+형용사(careful) / 주어 자리의 동명사 sharing.",
-"source": "L6 본문 Happy Digital Laundry"
-},
-{
-"no": 30,
-"points": 3,
-"stem": "윗글의 내용을 바르게 이해한 사람은?",
-"choices": [
-"Mia: Happy Digital Laundry couldn't remove any copies online.",
-"John: Some copies may still remain on personal devices.",
-"Jun: Bella should not contact Happy Digital Laundry again.",
-"Jay: Removing something online is easier than sharing it.",
-"Gary: Bella doesn't need to be careful when she shares things online."
-],
-"answer": 2,
-"explain": "온라인의 복사본은 모두 지웠지만 개인 기기에는 남아 있을 수 있다. 다시 보면 연락하라고 했고, 공유는 쉽지만 삭제는 어렵다.",
-"source": "L6 본문 Happy Digital Laundry"
-}
-]
+ "school": "윤중중학교",
+ "grade": 2,
+ "term": 2,
+ "exam": "중간고사",
+ "subject": "영어",
+ "range": "Lesson 5~6",
+ "publisher": "천재(소영순)",
+ "year": 2026,
+ "set": 3,
+ "items": [
+  {
+   "no": 1,
+   "points": 3,
+   "stem": "자연스러운 대화가 되도록 <보기>의 ⓐ~ⓓ를 올바르게 배열한 것은?",
+   "box": "A: Jiho, let's decide what to cook for dinner.\nB: Okay. Do you have anything in mind?\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n<보기>\nⓐ B: I don't agree with you. It's not that hard. Pizza and spaghetti are easy to make.\nⓑ A: Hmm, which do you prefer, Italian food or Korean food?\nⓒ A: Italian food? But cooking Italian food is difficult.\nⓓ B: I prefer Italian food to Korean food.\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - -\nA: Great! Then let's make them. I'll help you!",
+   "choices": [
+    "ⓑ-ⓓ-ⓒ-ⓐ",
+    "ⓑ-ⓒ-ⓓ-ⓐ",
+    "ⓓ-ⓑ-ⓐ-ⓒ",
+    "ⓑ-ⓓ-ⓐ-ⓒ",
+    "ⓒ-ⓑ-ⓓ-ⓐ"
+   ],
+   "inline": true,
+   "answer": 1,
+   "explain": "어느 음식을 더 좋아하니?(ⓑ) → 이탈리아 음식(ⓓ) → 하지만 요리가 어려워(ⓒ) → 동의 안 해, 어렵지 않아(ⓐ) → 그럼 만들자.",
+   "source": "L5 Review 1-2"
+  },
+  {
+   "no": 2,
+   "points": 4,
+   "stem": "<보기>에서 어법상 올바른 문장만으로 짝지어진 것은?",
+   "box": {
+    "title": "<보기>",
+    "lines": [
+     "ㄱ. I wonder where are you from.",
+     "ㄴ. Caffeine will keep you awake at night.",
+     "ㄷ. I don't know how this machine works.",
+     "ㄹ. Bob wants to practice me the piano.",
+     "ㅁ. Wearing a helmet will keep you safety.",
+     "ㅂ. Did you see her carrying the box by herself?"
+    ]
+   },
+   "choices": [
+    "ㄱ, ㄹ",
+    "ㄴ, ㄷ",
+    "ㄴ, ㄷ, ㅂ",
+    "ㄱ, ㅁ, ㅂ",
+    "ㄴ, ㄷ, ㄹ, ㅂ"
+   ],
+   "answer": 3,
+   "explain": "ㄱ where you are from(간접의문문 어순) ㄹ wants me to practice(want+목적어+to부정사) ㅁ safe(형용사). ㄴ keep+목적어+형용사, ㄷ 의문사+주어+동사, ㅂ 지각동사+목적어+-ing.",
+   "source": "학습지 p.10 B-1·B-2, p.8 A-4·B-5 · 통합본 L6 p.26 09, p.22 A-02"
+  },
+  {
+   "no": 3,
+   "points": 3,
+   "stem": "대화의 흐름상 (A)에 가장 알맞은 것은?",
+   "box": "B: Mom, many buses stop here.\nW: That's true. We should be careful not to take the wrong bus.\nB: Which bus do we have to take?\nW: We should take bus number 270.\nB: Okay, Mom. How long will it take to get to the museum?\nW: It'll take about 30 minutes.\nB: The name of the stop is National Science Museum, right?\nW: Yes, ______________(A)______________\nB: Oh, I got it.",
+   "choices": [
+    "don't forget to prepare your bus card.",
+    "we should take the subway instead.",
+    "I prefer the bus to the subway.",
+    "it'll take more than an hour by subway.",
+    "first, sign up for our app."
+   ],
+   "answer": 1,
+   "explain": "정류장 이름을 확인해 준 뒤 버스 카드를 준비하라는 당부가 자연스럽다.",
+   "source": "L6 Listen and Talk A-2"
+  },
+  {
+   "no": 4,
+   "points": 3,
+   "stem": "A와 B의 대화가 어색한 것은?",
+   "choices": [
+    "A: Which do you prefer, team sports or individual sports?\nB: I prefer team sports to individual sports.",
+    "A: Why is that?\nB: Because math has clear answers to problems.",
+    "A: Do you know how to cook tomato spaghetti?\nB: I don't agree with you. It's not that hard.",
+    "A: What's next?\nB: Then, mix them with tomato sauce, and add a little salt.",
+    "A: Ellen, what classes do we have in the afternoon?\nB: Let me see. We have math and science classes."
+   ],
+   "answer": 3,
+   "explain": "요리법을 아는지 물었는데 '동의하지 않는다'로 답해 어색하다. → Sure. First, cook spaghetti noodles.",
+   "source": "L5 LT-A3·A1·Review 1-1·1-2, L6 LT-C"
+  },
+  {
+   "kind": "group",
+   "label": "[5~6]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "Reporter: Mr. Davis. Do you like your job as a sports agent?",
+     "Mr. Davis: Yes. I love sports, and I enjoy everything about business. I think my job is perfect for me.",
+     "Reporter: Can you tell me more about your job?",
+     "Mr. Davis: When my clients have a new contract to sign, I check it carefully. I do my best to ⓐ<u>make the contract fair</u> for them. Also, I often receive phone calls from advertising companies. They want my clients in their advertisements. Then, I try to get the best deal for my clients."
+    ]
+   }
+  },
+  {
+   "no": 5,
+   "points": 3,
+   "stem": "Mr. Davis에 대한 설명으로 올바르지 <u>않은</u> 것은?",
+   "choices": [
+    "He is a sports agent.",
+    "He thinks his job is perfect for him.",
+    "He checks new contracts carefully.",
+    "Advertising companies want his clients in their advertisements.",
+    "He never receives phone calls from advertising companies."
+   ],
+   "answer": 5,
+   "explain": "광고 회사로부터 종종(often) 전화를 받는다.",
+   "source": "L5 본문 2대목 Mr. Davis"
+  },
+  {
+   "no": 6,
+   "points": 4,
+   "stem": "<보기>에서 윗글의 ⓐ와 문법적으로 성격이 같은 것<u>만</u>으로 짝지어진 것은?",
+   "box": {
+    "title": "<보기>",
+    "lines": [
+     "ㄱ. Wearing a helmet will keep you safe.",
+     "ㄴ. She found the book boring.",
+     "ㄷ. I make sure everything goes well.",
+     "ㄹ. Sitting under the tree kept us cool.",
+     "ㅁ. Exercise made her healthy.",
+     "ㅂ. He took a shot at the goal, but it missed."
+    ]
+   },
+   "choices": [
+    "ㄱ, ㄴ",
+    "ㄷ, ㅂ",
+    "ㄱ, ㄴ, ㄹ",
+    "ㄱ, ㄴ, ㄹ, ㅁ",
+    "ㄴ, ㄷ, ㄹ, ㅁ"
+   ],
+   "answer": 4,
+   "explain": "ⓐ는 「make+목적어+형용사」 5형식. keep/find/make+목적어+형용사인 ㄱ·ㄴ·ㄹ·ㅁ이 같다. ㄷ은 make sure(확실히 하다) 뒤에 절이 온 것, ㅂ은 3형식.",
+   "source": "학습지 p.8 A-4·B-1, p.7 예문 · 학습지 p.6·p.1 문장"
+  },
+  {
+   "kind": "group",
+   "label": "[7~8]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "remove_all_plz",
+     "(…) I apologized to him, and I deleted my post immediately. However, the copies still remain online. I want to remove them all. Please help me.",
+     "Happy_Digital_Laundry",
+     "We removed all the copies online, ____ⓐ____ some copies may remain on personal devices. ____ⓑ____ you see the copies again, please contact us. ____ⓒ____ you share things online, be careful. Remember that sharing something online is easy, but removing it is hard."
+    ]
+   }
+  },
+  {
+   "no": 7,
+   "points": 4,
+   "stem": "윗글의 내용과 일치하는 것은?",
+   "choices": [
+    "Happy Digital Laundry could not remove any copies online.",
+    "Some copies may still remain on personal devices.",
+    "Bella should not contact Happy Digital Laundry again.",
+    "Sharing something online is hard.",
+    "Removing something online is easy."
+   ],
+   "answer": 2,
+   "explain": "온라인 복사본은 모두 지웠지만 개인 기기에 남아 있을 수 있고, 다시 보면 연락하라 했으며, 공유는 쉽고 삭제는 어렵다.",
+   "source": "L6 본문 2대목 Laundry 답장 1"
+  },
+  {
+   "no": 8,
+   "points": 3,
+   "stem": "ⓐ, ⓑ, ⓒ에 알맞은 것은?",
+   "choices_table": {
+    "header": [
+     "",
+     "ⓐ",
+     "ⓑ",
+     "ⓒ"
+    ],
+    "rows": [
+     [
+      "①",
+      "but",
+      "If",
+      "When"
+     ],
+     [
+      "②",
+      "and",
+      "If",
+      "When"
+     ],
+     [
+      "③",
+      "but",
+      "Because",
+      "If"
+     ],
+     [
+      "④",
+      "so",
+      "When",
+      "Although"
+     ],
+     [
+      "⑤",
+      "but",
+      "If",
+      "Because"
+     ]
+    ]
+   },
+   "answer": 1,
+   "explain": "지웠'지만'(but) 남아 있을 수 있다. 다시 보'면'(If) 연락하라. 공유할 '때'(When) 조심하라.",
+   "source": "L6 본문 2대목 Laundry 답장 1"
+  },
+  {
+   "no": 9,
+   "points": 4,
+   "stem": "어법상 옳은 것은?",
+   "choices": [
+    "What do you advise me doing?",
+    "She saw chasing the puppy its tail.",
+    "Did he ask she to bring a camera?",
+    "The teacher didn't allow us talked during the test.",
+    "I saw him entering the classroom."
+   ],
+   "answer": 5,
+   "explain": "① to do(advise+목적어+to부정사) ② saw the puppy chasing its tail(목적어 뒤에 -ing) ③ ask her ④ to talk(allow+목적어+to부정사). ⑤ 지각동사+목적어+-ing.",
+   "source": "통합본 L6 GRAMMAR p.26 03·06·07·20 · p.22 A-05"
+  },
+  {
+   "kind": "group",
+   "label": "[10~11]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "Reporter: Hello, Ms. Ali. Can you tell me why you became a sports journalist?",
+     "Ms. Ali: Well, I've always had a passion for sports and writing. Writing about sports makes me ____ⓐ____.",
+     "Reporter: There was a big baseball game yesterday. How did you spend the day?",
+     "Ms. Ali: I arrived at the baseball park early. Before the game started, I had an interview with the players. I took a lot of notes during the game. After the game, I went to the press conference with other journalists. I asked the players how they felt about the game. In the afternoon, I had to write an article and edit it very quickly. My article ____ⓑ____ online. I love writing about sports."
+    ]
+   }
+  },
+  {
+   "no": 10,
+   "points": 4,
+   "stem": "윗글을 읽고 답할 수 <u>없는</u> 질문은?",
+   "choices": [
+    "Why did Ms. Ali become a sports journalist?",
+    "When did Ms. Ali arrive at the baseball park?",
+    "What did Ms. Ali do before the game started?",
+    "Which team won the baseball game?",
+    "Where was Ms. Ali's article posted?"
+   ],
+   "answer": 4,
+   "explain": "① 스포츠·글쓰기 열정 ② 일찍 ③ 선수 인터뷰 ⑤ 온라인. 어느 팀이 이겼는지는 나오지 않는다.",
+   "source": "L5 본문 1대목 Ms. Ali"
+  },
+  {
+   "no": 11,
+   "points": 3,
+   "stem": "ⓐ, ⓑ에 알맞은 것은?",
+   "choices_table": {
+    "header": [
+     "",
+     "ⓐ",
+     "ⓑ"
+    ],
+    "rows": [
+     [
+      "①",
+      "excited",
+      "was posted"
+     ],
+     [
+      "②",
+      "exciting",
+      "posted"
+     ],
+     [
+      "③",
+      "excited",
+      "posted"
+     ],
+     [
+      "④",
+      "excitedly",
+      "was posted"
+     ],
+     [
+      "⑤",
+      "exciting",
+      "was posted"
+     ]
+    ]
+   },
+   "answer": 1,
+   "explain": "make+목적어+형용사 — '나'는 감정을 느끼는 쪽이므로 excited. 기사는 '게시된' 것이므로 수동태 was posted.",
+   "source": "L5 본문 1대목 Ms. Ali"
+  },
+  {
+   "kind": "group",
+   "label": "[12~13]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "Last month, I received an email from an unknown name. I clicked on the link in the email, and a website showed up. I ____ⓐ____ the website immediately, but I felt something was ____ⓑ____. My computer became very ____ⓒ____. I asked the computer store to check my computer, and they found that someone added bad programs through the link. These programs made my computer slow."
+    ]
+   }
+  },
+  {
+   "no": 12,
+   "points": 3,
+   "stem": "윗글의 내용과 일치하는 것은?",
+   "choices": [
+    "The writer received an email from a friend.",
+    "The writer didn't click on the link.",
+    "The writer asked the computer store to check the computer.",
+    "The computer store found nothing.",
+    "The bad programs made the computer fast."
+   ],
+   "answer": 3,
+   "explain": "모르는 이름의 이메일이었고, 링크를 클릭했으며, 컴퓨터 가게가 나쁜 프로그램을 찾아냈고, 그 프로그램이 컴퓨터를 느리게 했다.",
+   "source": "L6 Review 2-1"
+  },
+  {
+   "no": 13,
+   "points": 3,
+   "stem": "ⓐ, ⓑ, ⓒ에 알맞은 것은?",
+   "choices_table": {
+    "header": [
+     "",
+     "ⓐ",
+     "ⓑ",
+     "ⓒ"
+    ],
+    "rows": [
+     [
+      "①",
+      "closed",
+      "wrong",
+      "slow"
+     ],
+     [
+      "②",
+      "opened",
+      "wrong",
+      "slow"
+     ],
+     [
+      "③",
+      "closed",
+      "right",
+      "fast"
+     ],
+     [
+      "④",
+      "opened",
+      "fine",
+      "fast"
+     ],
+     [
+      "⑤",
+      "closed",
+      "wrong",
+      "fast"
+     ]
+    ]
+   },
+   "answer": 1,
+   "explain": "웹사이트를 즉시 '닫았지만' 뭔가 '잘못되었다'고 느꼈고, 컴퓨터가 매우 '느려졌다'(마지막 문장 slow와 호응).",
+   "source": "L6 Review 2-1"
+  },
+  {
+   "kind": "group",
+   "label": "[14~15]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "Hello. Today, I'll introduce a special app, MuzSearch. When you want to know the title of a song, this app will help you. It's simple to use. First, open the MuzSearch app and touch the search icon. Second, press the microphone icon and wait for a while. Then the app will show the title on the screen. If you like the song, don't forget to press the heart icon. The song ____ⓐ____ to your favorites. Try it now!"
+    ]
+   }
+  },
+  {
+   "no": 14,
+   "points": 3,
+   "stem": "윗글의 제목으로 가장 알맞은 것은?",
+   "choices": [
+    "MuzSearch: An App That Finds Song Titles",
+    "How to Sing a Song Well",
+    "The History of Music Apps",
+    "Why You Should Delete MuzSearch",
+    "Many Kinds of Microphones"
+   ],
+   "answer": 1,
+   "explain": "노래 제목을 찾아 주는 앱 MuzSearch의 사용법 소개.",
+   "source": "L6 Enjoy the Clip A"
+  },
+  {
+   "no": 15,
+   "points": 3,
+   "stem": "ⓐ에 알맞은 것은?",
+   "choices": [
+    "save",
+    "saved",
+    "will save",
+    "will be saved",
+    "is saving"
+   ],
+   "inline": true,
+   "answer": 4,
+   "explain": "노래가 즐겨찾기에 '저장될' 것이므로 미래 수동태 will be saved.",
+   "source": "L6 Enjoy the Clip A"
+  },
+  {
+   "no": 16,
+   "points": 3,
+   "stem": "(   )에 <보기>의 ⓐ~ⓔ가 설명하는 단어를 사용할 수 <u>없는</u> 것은?",
+   "box": {
+    "title": "<보기>",
+    "lines": [
+     "ⓐ a notice, short film, etc. that promotes a product, service, event, etc.",
+     "ⓑ to make changes to data or text by correcting mistakes and making improvements",
+     "ⓒ the series of jobs that a person has in a particular field of work",
+     "ⓓ facts or information, especially when used to find out things or to make decisions",
+     "ⓔ an attempt to score a goal in a game"
+    ]
+   },
+   "choices": [
+    "The (      ) showed a new smartphone.",
+    "I have to (      ) some video clips.",
+    "She hopes to have a successful (      ) in music.",
+    "He took a (      ) at the goal, but it missed.",
+    "The judge made a (      ) decision."
+   ],
+   "answer": 5,
+   "explain": "① advertisement(ⓐ) ② edit(ⓑ) ③ career(ⓒ) ④ shot(ⓔ). ⑤는 fair가 들어가며 <보기>에 없다. ⓓ data는 쓰이지 않는다.",
+   "source": "학습지 p.2·p.11 크로스워드 영영풀이 · p.1 예문 1·11·6·17·12"
+  },
+  {
+   "no": 17,
+   "points": 3,
+   "stem": "자연스러운 대화가 되도록 <보기>의 ⓐ~ⓓ를 올바르게 배열한 것은?",
+   "box": "G: We have math and English classes today.\nB: Right. Sora, which do you prefer, math or English?\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n<보기>\nⓐ B: Why is that?\nⓑ G: Because math has clear answers to problems. How about you?\nⓒ G: I prefer math to English.\nⓓ B: I like English better. I'm not good at math.\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - -",
+   "choices": [
+    "ⓒ-ⓐ-ⓑ-ⓓ",
+    "ⓒ-ⓑ-ⓐ-ⓓ",
+    "ⓐ-ⓒ-ⓑ-ⓓ",
+    "ⓒ-ⓐ-ⓓ-ⓑ",
+    "ⓓ-ⓒ-ⓐ-ⓑ"
+   ],
+   "inline": true,
+   "answer": 1,
+   "explain": "어느 것을 더 좋아하니? → 수학(ⓒ) → 왜?(ⓐ) → 답이 명확해서, 너는?(ⓑ) → 나는 영어(ⓓ).",
+   "source": "L5 Listen and Talk A-1"
+  },
+  {
+   "kind": "group",
+   "label": "[18~19]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "Dear Big Digital Manager,",
+     "(A) I ⓐ<u>bought</u> Bluetooth headphones from your site last month. (B) However, music only comes out of one side, and the other side ⓑ<u>doesn't</u> work. (C) I don't know ⓒ<u>what is the problem</u> or what ⓓ<u>to do</u>. (D) I hope ⓔ<u>to hear</u> from you soon. (E)",
+     "Best,",
+     "Jun Park"
+    ]
+   }
+  },
+  {
+   "no": 18,
+   "points": 4,
+   "stem": "ⓐ~ⓔ중 어법상 <u>틀린</u> 것은?",
+   "choices": [
+    "ⓐ",
+    "ⓑ",
+    "ⓒ",
+    "ⓓ",
+    "ⓔ"
+   ],
+   "inline": true,
+   "answer": 3,
+   "explain": "know의 목적어로 쓰인 간접의문문은 「의문사+주어+동사」 → what the problem is.",
+   "source": "L6 Present Your Ideas — In Writing 이메일"
+  },
+  {
+   "no": 19,
+   "points": 3,
+   "stem": "(A)~(E) 중 <보기>에 주어진 문장의 위치로 가장 적절한 곳은?",
+   "box": {
+    "title": "<보기>",
+    "lines": [
+     "I want you to help me as soon as possible."
+    ]
+   },
+   "choices": [
+    "(A)",
+    "(B)",
+    "(C)",
+    "(D)",
+    "(E)"
+   ],
+   "inline": true,
+   "answer": 4,
+   "explain": "문제를 설명하고 어찌할지 모르겠다고 한 뒤 '빨리 도와달라'고 요청하고, 그다음 '곧 소식 듣기를 바란다'로 맺는다.",
+   "source": "L6 Present Your Ideas — In Writing 이메일"
+  },
+  {
+   "no": 20,
+   "points": 4,
+   "stem": "어법상 옳은 것은?",
+   "choices": [
+    "I wonder when will start the movie.",
+    "I don't know who did call me last night.",
+    "Tell me what day is it today.",
+    "I'm not sure if we have homework.",
+    "Do you believe why he is right?"
+   ],
+   "answer": 4,
+   "explain": "① when the movie will start ② who called me(의문사가 주어) ③ what day it is today ⑤ Why do you believe he is right?(believe류는 의문사를 맨 앞에). ④ if+주어+동사.",
+   "source": "학습지 p.10 B-3·B-4 · 통합본 L5 p.29 14번"
+  },
+  {
+   "kind": "group",
+   "label": "[21~22]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "no_more",
+     "Hi, I'm Jihun. Last month, I saw an interesting advertisement online. It said that I could get a new smartphone for free. I clicked on it without ⓐ<u>thinking</u> much. Then, I filled out my information to receive the gift. However, instead of getting a new smartphone, I have received useless emails and phone calls from unknown numbers. Oh, my! I just heard my phone ⓑ<u>to ring</u> again. It makes me very ⓒ<u>upset</u>. I'm sure that someone is using my information in a bad way. I think that my personal information ⓓ<u>was shared</u>. I want to delete it. Can you help me, please?",
+     "Happy_Digital_Laundry",
+     "We checked your online records and found the ad. Then, we asked the ad company ⓔ<u>to delete</u> your information, and they did. To protect your personal information, don't click on ads or links from unknown sources. It can be very dangerous."
+    ]
+   }
+  },
+  {
+   "no": 21,
+   "points": 4,
+   "stem": "ⓐ~ⓔ 중 어법상 <u>틀린</u> 것은?",
+   "choices": [
+    "ⓐ",
+    "ⓑ",
+    "ⓒ",
+    "ⓓ",
+    "ⓔ"
+   ],
+   "inline": true,
+   "answer": 2,
+   "explain": "지각동사 hear+목적어+-ing/동사원형 → ringing. to부정사는 쓸 수 없다. ⓒ make+목적어+형용사, ⓔ ask+목적어+to부정사.",
+   "source": "L6 본문 3·4대목"
+  },
+  {
+   "no": 22,
+   "points": 3,
+   "stem": "<보기>의 질문에 가장 알맞은 답은?",
+   "box": {
+    "title": "<보기>",
+    "lines": [
+     "What did Happy Digital Laundry do for Jihun?"
+    ]
+   },
+   "choices": [
+    "They sent him a new smartphone.",
+    "They asked the ad company to delete his information.",
+    "They called him from unknown numbers.",
+    "They clicked on the ad for him.",
+    "They filled out his information."
+   ],
+   "answer": 2,
+   "explain": "Then, we asked the ad company to delete your information, and they did.",
+   "source": "L6 본문 4대목 Laundry 답장 2"
+  },
+  {
+   "kind": "group",
+   "label": "[23~25]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "Are you worried about your digital footprint? Do you want to erase it? If you do, visit Happy Digital Laundry. We can clean your online history. Leave a message on our website, and we'll help you soon.",
+     "remove_all_plz",
+     "Hi, I'm Bella. Last Friday, I saw my brother playing basketball after school. He was playing really well, so I took a picture of him. Then I shared ⓐ<u>it</u> on my social media. Over the weekend, something went wrong. Someone made a copy of the picture with bad comments. The copy was spread here and there, and I was so embarrassed. My brother wanted me to delete the picture of him. I apologized to him, and I deleted my post immediately. ______________(A)______________ I want to remove them all. Please help me."
+    ]
+   }
+  },
+  {
+   "no": 23,
+   "points": 4,
+   "stem": "윗글의 내용과 일치하지 <u>않는</u> 것은?",
+   "choices": [
+    "Bella saw her brother playing basketball last Friday.",
+    "Bella took a picture of her brother.",
+    "Something went wrong over the weekend.",
+    "Bella's brother made a copy of the picture with bad comments.",
+    "Bella deleted her post immediately."
+   ],
+   "answer": 4,
+   "explain": "복사본을 만든 것은 남동생이 아니라 '누군가'(Someone)이다.",
+   "source": "L6 본문 1대목 Bella"
+  },
+  {
+   "no": 24,
+   "points": 3,
+   "stem": "ⓐ<u>it</u>이 가리키는 것은?",
+   "choices": [
+    "the picture of her brother",
+    "her social media",
+    "basketball",
+    "the copy",
+    "the school"
+   ],
+   "inline": true,
+   "answer": 1,
+   "explain": "남동생 사진을 찍어서 '그것'을 소셜 미디어에 공유했다.",
+   "source": "L6 본문 1대목 Bella"
+  },
+  {
+   "no": 25,
+   "points": 3,
+   "stem": "글의 흐름상 (A)에 가장 적절한 것은?",
+   "choices": [
+    "However, the copies still remain online.",
+    "So, all the copies were removed.",
+    "Then, I took another picture.",
+    "However, my brother was happy about it.",
+    "Instead, I posted it again."
+   ],
+   "answer": 1,
+   "explain": "게시물을 지웠지만(However) 복사본은 여전히 남아 있어서 '모두 없애고 싶다'로 이어진다.",
+   "source": "L6 본문 1대목 Bella"
+  },
+  {
+   "kind": "group",
+   "label": "[26~28]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "Reporter: I want to know why you ⓐ<u>wanted</u> to be a sports statistician, Ms. Lee.",
+     "Ms. Lee: I wanted to be a sports statistician because I liked ⓑ<u>analyze</u> sports with numbers. (A)<u>Above all, I love ice hockey.</u>",
+     "Reporter: I don't know much about a sports statistician. Can you explain it to me?",
+     "Ms. Lee: (B)<u>A sports statistician is someone ⓒ<u>who</u> collects data and studies numbers about sports games.</u> (C)<u>Our team is going to play against the Ice Lions this Saturday.</u> Last week, I carefully watched the Ice Lions' games and analyzed their shots. (D)<u>I prefer team sports to individual sports.</u> I found ⓓ<u>that</u> they let in 70 percent of the shots from the left side. This showed their left side was weak. (E)<u>Then, I shared this finding with our players.</u> I'm happy ⓔ<u>to use</u> my data to help our team."
+    ]
+   }
+  },
+  {
+   "no": 26,
+   "points": 3,
+   "stem": "(A)~(E) 중 글의 흐름상 전체적인 내용과 어울리지 <u>않는</u> 것은?",
+   "choices": [
+    "(A)",
+    "(B)",
+    "(C)",
+    "(D)",
+    "(E)"
+   ],
+   "inline": true,
+   "answer": 4,
+   "explain": "(D)는 팀 스포츠 선호를 말하는 대화문 문장으로, 상대 팀 슛 분석 이야기와 무관하다.",
+   "source": "L5 본문 3대목 Ms. Lee (무관 문장은 L5 LT-A3에서 가져옴 — 일부러 넣은 문장)"
+  },
+  {
+   "no": 27,
+   "points": 3,
+   "stem": "ⓐ~ⓔ 중 어법상 <u>틀린</u> 것은?",
+   "choices": [
+    "ⓐ",
+    "ⓑ",
+    "ⓒ",
+    "ⓓ",
+    "ⓔ"
+   ],
+   "inline": true,
+   "answer": 2,
+   "explain": "like의 목적어는 to부정사/동명사 → liked to analyze. ⓐ 간접의문문 why+주어+동사, ⓒ 주격 관계대명사, ⓓ 접속사 that, ⓔ to부정사(감정의 원인).",
+   "source": "L5 본문 3대목 Ms. Lee"
+  },
+  {
+   "no": 28,
+   "points": 4,
+   "stem": "윗글에서 답을 찾을 수 <u>없는</u> 것은?",
+   "choices": [
+    "Why did Ms. Lee want to be a sports statistician?",
+    "What does a sports statistician do?",
+    "When is Ms. Lee's team going to play against the Ice Lions?",
+    "How many players are on the Ice Lions?",
+    "What did Ms. Lee find about the Ice Lions' left side?"
+   ],
+   "answer": 4,
+   "explain": "① 수치로 분석하는 것을 좋아해서 ② 데이터 수집·수치 연구 ③ 이번 주 토요일 ⑤ 약하다. 선수 수는 나오지 않는다.",
+   "source": "L5 본문 3대목 Ms. Lee"
+  },
+  {
+   "kind": "group",
+   "label": "[29~30]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "There was a big basketball game between the Boston Wolves and the Miami Monsters. The game ____ⓐ____ at the Boston Sports Center on September 2. The Boston Wolves won the game by 10 points. Michael James played his best game of the season against the Monsters. His perfect play made his team and his fans ____ⓑ____. Everyone is looking forward to his next game."
+    ]
+   }
+  },
+  {
+   "no": 29,
+   "points": 3,
+   "stem": "ⓐ와 ⓑ에 알맞은 것은?",
+   "choices_table": {
+    "header": [
+     "",
+     "ⓐ",
+     "ⓑ"
+    ],
+    "rows": [
+     [
+      "①",
+      "was held",
+      "excited"
+     ],
+     [
+      "②",
+      "held",
+      "excited"
+     ],
+     [
+      "③",
+      "was held",
+      "exciting"
+     ],
+     [
+      "④",
+      "held",
+      "excitedly"
+     ],
+     [
+      "⑤",
+      "was holding",
+      "excited"
+     ]
+    ]
+   },
+   "answer": 1,
+   "explain": "경기는 '열린' 것 → 수동태 was held. make+목적어+형용사, 팀과 팬은 감정을 느끼는 쪽 → excited.",
+   "source": "L5 Present Your Ideas — Sports News"
+  },
+  {
+   "no": 30,
+   "points": 3,
+   "stem": "윗글의 내용을 바르게 이해한 사람은?",
+   "choices": [
+    "Mia: The game was a baseball game.",
+    "John: The Miami Monsters won the game.",
+    "Jun: The Boston Wolves won by 10 points.",
+    "Jay: Michael James played for the Monsters.",
+    "Gary: Nobody is interested in his next game."
+   ],
+   "answer": 3,
+   "explain": "농구 경기였고, 보스턴 울브즈가 10점 차로 이겼으며, Michael James는 몬스터즈를 '상대로' 뛰었고, 모두가 다음 경기를 고대한다.",
+   "source": "L5 Present Your Ideas — Sports News"
+  }
+ ]
 }

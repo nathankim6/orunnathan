@@ -1,77 +1,88 @@
-# 윤중중학교 2학년 2학기 중간고사 — 출제 성향 분석과 출제 설계
+# 윤중중학교 2학년 2학기 중간고사 — 출제 성향 분석과 출제 설계 (v2, 처음부터 다시)
 
-입력: 기출(26-1 2학년 기말, 스캔 6쪽) · 학교 학습지 16쪽(L5 Words/영영풀이 · 단어 복습 · Word Search · 듣기 받아쓰기 ·
-Reading 워크북 · More Reading *Life as a Sports Manager* · Focus on Language A(5형식 make/keep+O+형용사) · B(간접의문문) ·
-Crossword · 본문 받아쓰기/해석) · 교과서 범위 자료(천재 소영순 중2 Lesson 5 *Voices from the Sports Field* · Lesson 6 *Happy Digital Laundry*,
-대화문·기타 지문·어휘 xlsx) · 통합본 PDF(L5·L6 문법 해설만) · 특징 메모("올 객관식 30문항, 본문 이해력 요구 — 어법은 문법 개념+문장 적용,
-내용 일치/불일치는 세부 내용, 지칭 추론, 순서 배열").
+입력 ZIP: 기출 `윤중_26-1_2학년_기말기출문제_원본.pdf`(스캔 6쪽) · 학교 학습지 `윤중2 2학기 중간.pdf`(스캔 16쪽, L5 전용) ·
+교과서 범위 자료(천재 소영순 중2 Lesson 5 *From Your Interest to Future Jobs* — 본문 *Voices from the Sports Field* ·
+Lesson 6 *Happy Digital Laundry*; 대화문·본문·기타 지문 xlsx/hwp, 어휘 xlsx) · 통합본 PDF L5·L6(GRAMMAR 부분만 읽음) · 지침 txt(아래).
 
-## 1. 기출 형식 (그대로 따른다)
+## 0. 지침 반영 목록 (문장 단위)
 
-- **선택형 30 = 3점×20 + 4점×10 = 100점. 서술형 없음.** 4점은 2·6·7·9·10·18·20·21·23·28.
-- 배점은 발문 끝에 `(3점)` `(4점)`. 지문 묶음은 `【5~6】`처럼 앞에 두고, 단독 문항은 1~4 · 9 · 16 · 17 · 20.
-- 번호별 유형(기출 → 이번 모의고사 동일 번호에 동일 유형):
+| 지침 문장 | 반영 |
+|---|---|
+| 윤중중 특징 — 올 객관식 30문항 | 3부 모두 객관식 30, 서술형 0. 기출과 같이 3점×20 + 4점×10 = 100점 |
+| 객관식이지만 본문 이해력을 많이 요구 | 본문 세트 6묶음(5~6·7~8·10~11·21~22·23~25·26~28) + 기타 지문 4묶음(12~13·14~15·18~19·29~30) = 30문항 중 20문항이 지문 기반 |
+| 어법 → 문법 개념 + 문장 적용 | 2·9·20(문법 문장 적용) + 6(개념 판별: ⓐ와 같은 성격) + 11·15·29(지문 속 형태 표) + 18·21·27(지문 밑줄 어법). 포인트는 이번 범위 문법(5형식 make/keep/find/leave+O+형용사 · 간접의문문 · 지각동사+O+-ing · want/tell/ask/advise/allow+O+to부정사)으로만 |
+| 내용 일치/불일치 → 본문 세부 내용 정확히 파악 | 5·7·12·23·30(일치·불일치·바르게 이해한 사람) + 10·28(답할 수 없는 질문) + 22(질문의 답) — 선지가 본문 세부 사실(누가·언제·무엇을)로 갈리게 씀 |
+| 지칭 추론 | 24(ⓐit) — 3부 모두 |
+| 순서 배열 | 1·17(대화 ⓐ~ⓓ 순서) — 3부 모두, 교과서 대화문 그대로 |
+| 서술형 없음 | 없음 |
 
-| 번호 | 배점 | 유형 | 소스 |
-|---|---|---|---|
-| 1 | 3 | 대화 ⓐ~ⓓ 순서 배열 | 교과서 대화문 |
-| 2 | 4 | <보기> ㄱ~ㅂ 어법 옳은 문장만 짝짓기 | 학습지·통합본 문법 문장 |
-| 3 | 3 | 대화 흐름상 (A) | 교과서 대화문 |
-| 4 | 3 | 의미상 어색한 문장 | 접속사·연결 논리 |
-| 5~6 | 3·4 | 인물 설명 불일치 · ⓐ와 문법적 성격 같은 것만(보기 ㄱ~ㅂ) | 본문 |
-| 7~8 | 4·3 | 일치 · ⓐⓑⓒ 연결어 표 | 본문 |
-| 9 | 4 | 어법상 옳은 것 | 문법 |
-| 10~11 | 4·3 | 답할 수 없는 질문 · ⓐⓑ 표(태·형태) | 본문 |
-| 12~13 | 3·3 | 일치 · ⓐⓑⓒ 낱말 표 | 기타 지문 |
-| 14~15 | 3·3 | 제목 · ⓐ 빈칸(동사 형태) | 기타 지문 |
-| 16 | 3 | 영영풀이 ⓐ~ⓔ — 사용할 수 없는 문장 | 어휘 영영풀이·학습지 예문 |
-| 17 | 3 | 대화 ⓐ~ⓓ 순서 배열 | 교과서 대화문 |
-| 18~19 | 4·3 | ⓐ~ⓔ 어법 틀린 것 · 문장 삽입 (A)~(E) | 본문·학습지 지문 |
-| 20 | 4 | 어법상 옳은 것 | 문법 |
-| 21~22 | 4·3 | ⓐ~ⓔ 어법 틀린 것 · <보기> 질문의 답 | 본문 |
-| 23~25 | 4·3·3 | 불일치 · 지칭 추론 · 흐름상 (A) | 본문 |
-| 26~28 | 3·3·4 | 흐름상 어울리지 않는 문장 (A)~(E) · ⓐ~ⓔ 어법 · 답 못 찾는 질문 | 본문·학습지 지문 |
-| 29~30 | 3·3 | ⓐⓑ 표(문법) · 바르게 이해한 사람 | 기타 지문 |
+## 1. 표 ① 기출(26-1 2학년 기말) 문항 분석 — 형식·유형·자료 갈래만 가져온다
 
-- 판형: 학교 서식 HWPX(정보표·안내문·2단). 머리말 `2026학년도 2학기 중간고사 · 영어 · 2학년`.
+선택형 30 = 3점×20 + 4점×10 = 100점. 4점: 2·6·7·9·10·18·20·21·23·28. 서술형 없음. 배점은 발문 끝 `(3점)`/`(4점)`.
+지문 묶음은 `【5~6】` 식으로 앞에 두고, 단독 문항은 1~4·9·16·17·20.
 
-## 2. 이번 범위에서 나올 것
+| 번호 | 배점 | 유형 | 묶음 | 기출이 뽑은 자료 | 무엇을 묻나(포인트) |
+|---|---|---|---|---|---|
+| 1 | 3 | 대화 ⓐ~ⓓ 순서 배열 | 단독 | 교과서 대화문 | 앞·뒤 고정 대사 사이 4줄 |
+| 2 | 4 | <보기> ㄱ~ㅂ 어법 옳은 문장만 | 단독 | 선생님 제작·문법 예문 | 수동태(지난 범위 문법) |
+| 3 | 3 | 대화 흐름상 (A) | 단독 | 교과서 대화문 | 마지막 대사 |
+| 4 | 3 | 의미상 어색한 문장 | 단독 | 선생님 제작 | 접속사 Although 논리 |
+| 5~6 | 3·4 | 인물 설명 불일치 · ⓐ와 문법적 성격 같은 것만(보기 ㄱ~ㅂ) | 본문 | 교과서 본문 | to부정사 용법 |
+| 7~8 | 4·3 | 내용 일치 · ⓐⓑⓒ 연결어 표 | 본문 | 교과서 본문 | Although/For example/If |
+| 9 | 4 | 어법상 옳은 것 | 단독 | 문법 예문 | 현재완료 |
+| 10~11 | 4·3 | 답할 수 없는 질문 · ⓐⓑ 표(태·형태) | 본문 | 교과서 본문 | cleaned / is used |
+| 12~13 | 3·3 | 내용 일치 · ⓐⓑⓒ 낱말 표 | 기타 지문 | 교과서 기타 지문 | height/taller/shorter |
+| 14~15 | 3·3 | 제목 · ⓐ 빈칸(동사 형태) | 기타 지문 | 교과서 기타 지문 | are enjoyed |
+| 16 | 3 | 영영풀이 ⓐ~ⓔ 단어를 ( )에 쓸 수 없는 문장 | 단독 | 어휘 영영풀이 + 예문 | 보기에 없는 단어(through) |
+| 17 | 3 | 대화 ⓐ~ⓓ 순서 배열 | 단독 | 교과서 대화문 | |
+| 18~19 | 4·3 | ⓐ~ⓔ 어법 틀린 것 · <보기> 문장 삽입 (A)~(E) | 기타 지문 | 교과서 기타 지문 | books→book |
+| 20 | 4 | 어법상 옳은 것 | 단독 | 문법 예문 | so ~ that / too ~ to |
+| 21~22 | 4·3 | ⓐ~ⓔ 어법 틀린 것 · <보기> 질문의 답 | 본문 | 교과서 본문 | danced→is danced |
+| 23~25 | 4·3·3 | 불일치 · ⓐit 지칭 · 흐름상 (A) | 본문 | 교과서 본문 | |
+| 26~28 | 3·3·4 | 흐름상 어울리지 않는 문장 (A)~(E) · ⓐ~ⓔ 어법 · 답 못 찾는 질문 | 본문 | 교과서 본문 | then→that |
+| 29~30 | 3·3 | ⓐⓑ 표(문법) · 바르게 이해한 사람 | 기타 지문 | 교과서 기타 지문 | Have you heard / has been |
 
-| 영역 | 소스 | 비고 |
-|---|---|---|
-| 본문 | L5 Ms. Ali(기자) / Mr. Davis(에이전트) / Ms. Lee(통계) · L6 Bella 편지 / Laundry 답 / Jihun 편지 / Laundry 답 | 세 부분·네 부분으로 나눠 세트 |
-| 기타 지문 | L5 Enjoy the Clip(Mr. Shin) · Sports News(Wolves) · Review 2-1(P.E. teacher) · L6 MuzSearch · 헤드폰 이메일 · Review 2-1(컴퓨터) · 학습지 More Reading(Sports Manager) | 12~15 · 26~30 자리 |
-| 대화 | L5 LT-A1·A2·A3·B · Review 1-2 · L6 LT-A1·A3·B · Review 1-2 | 1·3·17 |
-| 문법 | L5 **make/keep/find+목적어+형용사**(학습지 Focus A) · **간접의문문**(의문사+주어+동사, if/whether, think류 의문사 전치 — 학습지 Focus B) · L6 **지각동사+목적어+-ing** · **want/tell/ask/advise/allow+목적어+to부정사**(통합본) | 2·6·9·11·20·27·29 |
-| 어휘 | 영영풀이(학습지 p.2 · 크로스워드 · xlsx 영영풀이) · 학습지 예문 | 16 |
+## 2. 표 ② 이번 범위 자료 목록 (이 목록 밖의 것은 넣지 않았다)
 
-메모 반영: 전 문항 객관식 30 · 총점 100(3점×20+4점×10). 어법은 개념(5형식·간접의문문·지각동사·to부정사 목적격 보어)을 학습지·통합본 문장에
-적용하는 형태(2·9·20·27)와 본문 밑줄 어법(18·21)으로 나눠 실었다. 내용 일치/불일치(5·7·12·23·30), 지칭 추론(24), 순서 배열(1·17),
-답 못 찾는 질문(10·28), 문장 삽입(19)·무관 문장(26)을 기출 번호 그대로 두었다.
+**교과서 본문(7대목)** — L5 ① Intro+Ms. Ali(기자) ② Mr. Davis(에이전트) ③ Ms. Lee(통계) / L6 ④ Laundry 안내+Bella 편지 ⑤ Laundry 답장 1 ⑥ Jihun 편지 ⑦ Laundry 답장 2
+**교과서 대화문** — L5 LT-A1(수학/영어) · A2(제주 여행 계획) · A3(팀/개인 스포츠) · B(버스/지하철) · C(티셔츠 색) · Review 1-1(수학/과학) · 1-2(이탈리아 음식) · Play with Expressions(개/고양이) / L6 LT-A1(자전거 앱) · A2(270번 버스) · A3(키오스크) · B(에어프라이어) · C(토마토 스파게티) · Review 1-2(티켓 기계)
+**교과서 기타 지문** — L5 Enjoy the Clip A(Mr. Shin 진로) · B(music-smart) · Sports News(Wolves) · Chef 일과표 · Review 2-1(P.E. teacher) / L6 Enjoy the Clip A(MuzSearch) · B(BeautifulPhoto) · 헤드폰 이메일(Jun Park) · Review 1-1(치즈 샐러드) · Review 2-1(컴퓨터 느려짐)
+**어휘** — L5·L6 어휘리스트 · 영영풀이 · 다의어 xlsx
+**학교 학습지(16쪽, L5)** — p.1 단어 20개+예문 · p.2 영영풀이 7개 A / 우리말 빈칸 B(receive, against, deal, let in, agent, above all, press conference) · p.3(1/10) 단어 복습 · p.4(2/10) Word Search · p.5(3/10) 듣기 받아쓰기(LT-A1~3·B·Clip) · p.6(4/10) Reading 워크북(Characters·Main Idea·Details·Inference) · p.7(5/10) 본문 빈칸 A·직업 연결 B · p.8(6/10) More Reading *Life as a Sports Manager* · p.9(7/10) Focus on Language A 5형식 make/keep/find/think/consider/leave+O+형용사(예문 6·해석) · p.10(8/10) 5형식 연습 A·B·C·D · p.11(9/10) Focus on Language B 간접의문문(의문사+S+V, 의문사 주어, think류 전치) · p.12(10/10) if/whether · 연습 A·B·C · p.13 Crossword 영영풀이 13개 · p.14 빈 쪽 · p.15~16 본문 받아쓰기·해석(4-1·4-2)
+**통합본 GRAMMAR** — L5: make/keep+O+형용사(find·leave 포함, 부사 X) · 간접의문문(의문사+S+V · 의문사 주어 · if/whether · think류 의문사 전치), 어법 문장 20개(p.26), 확인문제(p.28~29) / L6: 지각동사 see/hear/feel/watch/smell+O+-ing(원형·p.p.) · want/tell/ask/order/advise/allow+O+to부정사(not to), 어법 문장 20개(p.26), 확인문제(p.28~29)
 
-## 3. 3부 배분
+## 3. 표 ③ 출제 예측표 — 기출 자리마다 이번 범위로 바꿔 냈다
 
-| 번호 | 1회 | 2회 | 3회 |
-|---|---|---|---|
-| 1 | L5 LT-B(버스/지하철) | L5 LT-A2(제주 여행 계획) | L6 Review 1-2(티켓 기계) |
-| 3 | L6 LT-B(에어프라이어) | L5 LT-A3(팀/개인 스포츠) | L5 LT-A1(수학/영어) |
-| 5~6 | L5 Ali · 5형식 make | L6 Jihun · 지각동사 -ing | L5 Davis · to부정사 형용사적 용법 |
-| 7~8 | L6 Bella (Then/Over/However) | L5 Ali (Before/during/After) | L6 Review 컴퓨터 (but/and/through) |
-| 10~11 | L6 Jihun (ringing/was shared) | L6 Bella (saw ~ playing / wanted me to) | L5 Lee (why you wanted / who collects) |
-| 12~13 | L5 Mr. Shin | L6 MuzSearch | L6 Bella (copy/embarrassed/immediately) |
-| 14~15 | L5 Sports News (made) | L5 P.E. teacher (because) | L6 헤드폰 이메일 (to help) |
-| 16 | L5 영영풀이 | L6 영영풀이 | L5·L6 혼합 |
-| 17 | L6 LT-A3(키오스크) | L5 Review 1-2(이탈리아 음식) | L6 LT-A1(자전거 앱) |
-| 18~19 | 학습지 Sports Manager | L5 Lee | L5 Ali |
-| 21~22 | L5 Lee | L5 Davis | L6 Jihun |
-| 23~25 | L5 Davis (it→contract) | 학습지 Sports Manager (them→players) | L5 Sports News (his→Michael James) |
-| 26~28 | L6 헤드폰 이메일 | L6 Laundry 광고+Jihun 답 | 학습지 Sports Manager |
-| 29~30 | L6 Review 컴퓨터 (asked/made) | L5 Sports News (was held/excited) | L6 Laundry→Bella 답 (be careful/sharing) |
-| 2·9·20 | 5형식+간접 / 지각·to부정사 / 간접의문문 | 지각·to부정사 / 5형식+간접 / to부정사 | 혼합 / 지각동사 / 5형식+간접 |
+| 번호 | 기출 유형·자료 | 이번 범위 자료 | 1회 | 2회 | 3회 |
+|---|---|---|---|---|---|
+| 1 | 순서 · 대화문 | 교과서 대화문 | L5 LT-B 버스/지하철 | L5 LT-A2 제주 계획 | L5 Review 1-2 이탈리아 음식 |
+| 2 | 어법 보기 ㄱ~ㅂ · 문법 예문 | 통합본·학습지 어법 문장 | L5 p.26(5형식·간접의문문) | L6 p.26(지각동사·to부정사) | 학습지 p.8·p.10 + L6 p.26 |
+| 3 | 흐름상 (A) · 대화문 | 교과서 대화문 | L6 LT-B 에어프라이어 | L5 LT-A3 팀 스포츠 | L6 LT-A2 270번 버스 |
+| 4 | 의미상 어색 · 접속사 | A-B 대화 어색(범위 대화 표현) | prefer/agree 짝 | 사용법/prefer 짝 | 요리법/agree 짝 |
+| 5~6 | 불일치 · ⓐ 같은 성격 | 본문 | Ali · makes me excited(5형식) | Jihun · heard my phone ringing(지각동사) | Davis · make the contract fair(5형식) |
+| 7~8 | 일치 · 연결어 표 | 본문 | Bella (Then/Over/However) | Ali (Before/during/After) | 답장1 (but/If/When) |
+| 9 | 어법 옳은 것 | 통합본 어법 문장 | L6 p.26 to부정사·지각동사 | L5 p.21·26 make+O+adj | L6 p.26·22 지각동사·allow |
+| 10~11 | 답 못 함 · ⓐⓑ 표 | 본문 | 답장1 (removed/remain) | Bella (playing/was spread) | Ali (excited/was posted) |
+| 12~13 | 일치 · 낱말 표 | 기타 지문 | 학습지 p.8 Sports Manager (confident/smoothly/improve) | L5 Review 2-1 P.E. (badminton/well/perfect) | L6 Review 2-1 컴퓨터 (closed/wrong/slow) |
+| 14~15 | 제목 · ⓐ 동사 형태 | 기타 지문 | Wolves (was held) | 헤드폰 이메일 (to help) | MuzSearch (will be saved) |
+| 16 | 영영풀이 ⓐ~ⓔ | 영영풀이 + 학습지 예문 | L5 analyze/passion/client/contract/fair, 정답 receive | L6 apologize/contact/prepare/protect/immediately, 정답 spread | L5 advertisement/edit/career/data/shot, 정답 fair |
+| 17 | 순서 · 대화문 | 교과서 대화문 | L6 Review 1-2 티켓 기계 | L6 LT-A3 키오스크 | L5 LT-A1 수학/영어 |
+| 18~19 | ⓐ~ⓔ 어법 · 삽입 | 기타 지문 | MuzSearch (pressing→to press / It's simple to use.) | Mr. Shin (than→to / I'm a music-smart person.) | 헤드폰 이메일 (what is the problem→what the problem is / I want you to help me…) |
+| 20 | 어법 옳은 것 | 통합본·학습지 간접의문문 | L5 p.26·29 | L5 p.26·29 | 학습지 p.10 B + L5 p.29 |
+| 21~22 | ⓐ~ⓔ 어법 · 질문의 답 | 본문 | Davis (fairly→fair) | Lee (why did you want→why you wanted) | Jihun+답장2 (to ring→ringing) |
+| 23~25 | 불일치 · 지칭 · (A) | 본문 | Lee (it=a sports statistician / left side was weak) | Davis (it=a new contract / my job is perfect) | Bella (it=the picture / However, the copies still remain online.) |
+| 26~28 | 무관 문장 · 어법 · 답 못 함 | 본문 | Jihun+답장2 (무관: BeautifulPhoto 문장 / deleting→to delete) | 안내+Bella+답장1 (무관: 치즈 샐러드 문장 / delete→to delete) | Lee (무관: LT-A3 문장 / analyze→to analyze) |
+| 29~30 | ⓐⓑ 문법 표 · 바르게 이해 | 기타 지문 | L6 Review 2-1 컴퓨터 (to check/slow) | 학습지 p.8 Sports Manager (they are doing/improve) | Wolves (was held/excited) |
+
+자료 갈래별 문항 수(1부 기준): 교과서 본문 15(5~8·10~11·21~28) · 교과서 기타 지문 6(14~15·18~19·29~30) · 학습지 지문 2(12~13) ·
+대화문 3(1·3·17) + 대화 표현 1(4) · 문법 문장 3(2·9·20) · 어휘 영영풀이 1(16). 2·3부는 12~13/29~30 자리에서 학습지·교과서 기타 지문이 자리를 바꾼다.
 
 ## 4. 비고
 
-- 기출 6번(to부정사 용법 ㄱ~ㅂ)은 3회 6번에 같은 보기 문장으로 실었다 — 학습지·본문에 to부정사 용법 정리가 없어 기출 문장을 그대로 썼다.
-- 26~28 지문은 (A)~(E) 삽입용으로 무관 문장 한 개를 지어 넣었다(1회 "I prefer listening to music to reading books." 등). 그 외 본문 문장은 xlsx 그대로다.
-- 2회 26~28 (나)는 Laundry 가 Jihun 에게 보낸 답으로, 호칭 "Jihun," 과 마지막 문장 "We hope hearing from you again."(어법 오류 ⓔ)을 덧붙였다.
-- 그림이 필요한 유형은 기출에 없었다.
+- **4번(의미상 어색한 문장)**: 기출은 Although 논리(지난 범위 접속사)였다. 이번 범위 문법에 접속사가 없고 새 문장을 지어 넣지 않기 위해, 같은 자리에 **범위 대화문 대사로 A-B 짝을 만들어 어색한 응답**을 고르게 했다(유형 변형, 문장은 모두 교과서 대화문 그대로).
+- **26번 무관 문장**: 세 부 모두 무관 문장을 범위 안 다른 지문(L6 Clip B · L6 Review 1-1 · L5 LT-A3)에서 가져와 넣었다. `explain`·`source`에 적어 두었다.
+- **18번 1회(don't forget to press)·2회(prefer A to B)**: 어법 포인트가 문법 단원이 아니라 교과서 핵심 표현(Listen&Talk 표현)이다. 지침의 "문법 개념+문장 적용"에서 조금 비켜난 자리 — 확신 낮음.
+- **27번 3회(liked analyze)**: like+to부정사/동명사는 이번 범위 문법 항목이 아니라 기본 어법이다. 범위 본문 안에서 범위 문법으로 만들 밑줄이 마땅치 않아 둔 자리 — 확신 낮음.
+- **7~8 3회(답장1)**: 지문이 짧아 Bella 편지 끝 세 문장을 `(…)` 로 앞에 붙였다.
+- 학습지 스캔 16쪽 중 p.14는 빈 쪽. 학습지 문장(Sports Manager·예문)은 텍스트가 없어 `audit`가 걸므로 그 묶음의 `source`에 `학습지 p.N`을 적어 건너뛰게 했다. 그 밖의 `audit` 경고 6건은 ⓐ·밑줄 표시가 단어에 붙어 6-gram이 깨진 것(원문 대조 완료)이다.
+- 그림·표 문항은 기출에 없어 대체가 없다. ⓐⓑⓒ 표는 `choices_table`로 넣었다.
