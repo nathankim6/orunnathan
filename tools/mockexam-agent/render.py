@@ -62,6 +62,15 @@ def etree_sub(parent, tag, **attrs):
     return e
 
 
+def text_width(t, pt=10):
+    """10pt 글 너비 어림(HWPUNIT): 한글·원문자 1em, 라틴 0.55em, 공백 0.3em."""
+    em = pt * 100
+    w = 0
+    for ch in t:
+        w += em if ord(ch) > 0x2000 else (0.3 * em if ch == ' ' else 0.55 * em)
+    return int(w)
+
+
 def box_lines(box):
     if box is None:
         return None, []
@@ -146,21 +155,20 @@ class Hwpx:
         self.doc.headers[0].mark_dirty()
         return nid
 
-    def _grid_para_pr(self, ncols):
+    def _grid_para_pr(self, positions):
         """ⓐⓑⓒ 조합표용 문단 모양: 단 너비를 ncols 로 나눈 가운데 탭. (표는 한글이 폭·테두리를 제멋대로 그려서 쓰지 않는다)"""
         import copy
         HH = {'hh': 'http://www.hancom.co.kr/hwpml/2011/head'}
         H = '{%s}' % HH['hh']
-        key = ('grid', ncols)
+        key = ('grid', positions)
         if key in self._pp_cache:
             return self._pp_cache[key]
         hx = self.doc.headers[0].element
         tabs = hx.find('.//hh:tabProperties', HH)
         tid = max(int(e.get('id')) for e in tabs.findall('hh:tabPr', HH)) + 1
         tp = etree_sub(tabs, H + 'tabPr', id=str(tid), autoTabLeft='0', autoTabRight='0')
-        step = (T['col_w'] - int(2 * MM)) / ncols          # 첫 칸은 왼쪽 끝, 나머지는 왼쪽 맞춤 탭
-        for i in range(1, ncols):
-            etree_sub(tp, H + 'tabItem', pos=str(int(i * step)), type='LEFT', leader='NONE')
+        for x in positions:                                # 첫 칸은 왼쪽 끝, 나머지는 왼쪽 맞춤 탭
+            etree_sub(tp, H + 'tabItem', pos=str(int(x)), type='LEFT', leader='NONE')
         tabs.set('itemCnt', str(len(tabs.findall('hh:tabPr', HH))))
         prs = hx.find('.//hh:paraProperties', HH)
         new = copy.deepcopy(prs.find('hh:paraPr[@id="%s"]' % T['p_blank'], HH))
@@ -243,7 +251,13 @@ class Hwpx:
         if it.get('choices_table'):
             ct = it['choices_table']
             rows = ([ct['header']] if ct.get('header') else []) + ct['rows']
-            pp = self._grid_para_pr(len(rows[0]))
+            # 칸마다 가장 긴 글의 너비를 어림해 탭 자리를 정한다 (글자가 탭 자리를 넘으면 다음 탭으로 밀려 줄이 어긋난다)
+            widths = [max(text_width(str(r[c])) for r in rows) for c in range(len(rows[0]))]
+            pos, x = [], 0
+            for w in widths[:-1]:
+                x += max(w + int(3 * MM), int(9 * MM))
+                pos.append(x)
+            pp = self._grid_para_pr(tuple(pos))
             for row in rows:
                 self._tab_para('\t'.join(str(v) for v in row), pp)
             return
