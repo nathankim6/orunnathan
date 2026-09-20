@@ -1,34 +1,543 @@
-{"school":"동양중학교","grade":1,"term":2,"exam":"중간고사","subject":"영어","set":2,"range":"Lesson 5~6","publisher":"동아(윤정미)",
-"items":[
-{"no":1,"points":2,"stem":"다음 대화의 빈칸에 들어갈 말로 가장 적절한 것은?","box":"B: May I take food into the museum?\nW: No, you may not. ______________________\nB: How about water?\nW: Only bottled water is OK.","choices":["You must not bring any food inside.","You don't have to bring water.","You may eat anything here.","Please bring some food for me.","You must bring bottled water."],"answer":1,"explain":"No, you may not. 뒤에 금지 이유.","source":"L5 Watch and Talk A-4"},
-{"no":2,"points":4,"stem":"A와 B의 대화가 어색한 것은?","choices":["A: May I eat here?\nB: No, you may not eat inside the museum.","A: Mr. Lee, may I drink water in class?\nB: Yes, you may.","A: I need a favor. Can you please fix my bike?\nB: Sure. No problem.","A: For here or to go?\nB: For here, please.","A: Excuse me. May I touch this golden bear?\nB: Yes, you may. You must not touch anything in this room."],"answer":5,"explain":"허락(Yes, you may.) 뒤에 금지가 이어져 모순.","source":"L5 WT-A·B, Review · L6 WT-A·B"},
-{"no":3,"points":4,"stem":"주어진 우리말을 영작한 문장으로 어법상 가장 적절한 것은?","box":"나는 잘 잊어버려서 항상 메모를 한다.","choices":["I am forgetful, so I always write things down.","I am forgetful, so I always writing things down.","I am forgetting, so I always write things down.","I am forgetful, so I never write things down.","I am forgetful, because I always write things down."],"answer":1,"explain":"forgetful(형용사) + so(결과).","source":"학습지 L6 Vocabulary Advanced C-1"},
-{"no":4,"points":2,"stem":"다음 문장의 빈칸에 공통으로 들어갈 단어는?","box":"I ran ________ him, but I couldn't catch him.\nMy dog was running ________ a bike.","choices":["after","off","away","into","out"],"answer":1,"explain":"run after ~: ~을 뒤쫓다.","source":"L5 본문 · 학습지 L5 Workbook B-3"},
-{"no":5,"points":4,"stem":"대화의 빈칸에 들어갈 말로 어법상 알맞은 것은?","box":"A: Is your bag heavier than mine?\nB: No. ______________________________","choices":["Mine is heavy than yours.","Yours is heavier than mine.","Mine is more heavy than yours.","Yours is heavyer than mine.","Mine is the heavier than yours."],"answer":2,"explain":"heavy → heavier(y를 i로) + than.","source":"학습지 L5 Grammar 비교급 규칙"},
-{"no":6,"points":3,"stem":"다음 단어에 대한 영어 뜻풀이로 적절하지 않은 것은?","choices":["reduce: to make something smaller in amount or size","reuse: to use again","favor: something that you do to help someone","forget: to not remember something","delivery: the act of eating a meal in a restaurant"],"answer":5,"explain":"delivery: the act of bringing goods, letters, etc. to a particular person or place.","source":"L6 어휘 영영풀이"},
-{"no":7,"points":4,"stem":"다음은 단어와 영어 뜻풀이를 작성한 것이다. 빈칸 어디에도 들어갈 수 없는 것은?","box":"catch: to take or hold something that is ________\nfeed: to give ________ to a person or an animal\nsign: a ________ giving information, directions, a warning, etc.\nthrow: to send something through the ________ by using your arm and hand","choices":["food","moving","air","notice","wheel"],"answer":5,"explain":"moving / food / notice / air.","source":"L5 어휘 영영풀이"},
-{"no":8,"points":3,"stem":"다음 문장의 의미상 빈칸 어디에도 들어갈 수 없는 단어는?","box":"I went to the ________ and bought some bread.\nMr. Clark works as a(n) ________ at the museum. He cleans the building.\nThe news is talking about a terrible ________.\nThey are taking pictures of the crime ________.","choices":["bakery","janitor","crime","scene","height"],"answer":5,"explain":"bakery / janitor / crime / scene.","source":"학습지 L5 Workbook Vocabulary A·B"},
-{"no":9,"points":4,"stem":"글의 흐름상 ⓐ~ⓒ에 들어갈 말로 알맞은 것은?","box":{"title":"My Three Wishes","lines":["These are my three wishes. First, I want ⓐ[stay/to stay] healthy. I decided to exercise every morning. Second, I want to learn Spanish. I plan ⓑ[travel/to travel] around Spain this summer. Last, I want to take a piano lesson. I hope ⓒ[become/to become] a pianist in the future."]},"choices_table":{"header":["","ⓐ","ⓑ","ⓒ"],"rows":[["①","stay","travel","become"],["②","to stay","travel","to become"],["③","to stay","to travel","to become"],["④","stay","to travel","become"],["⑤","to stay","to travel","become"]]},"answer":3,"explain":"want·plan·hope는 모두 to부정사를 목적어로 취한다.","source":"학습지 L6 Workbook Grammar B"},
-{"no":10,"points":4,"stem":"우리말 해석에 맞는 문장을 영작할 때, 빈칸에 들어갈 말이 나머지와 다른 하나는?","choices":["There ________ a book on the table.\n탁자 위에 책이 한 권 있다.","There ________ a bank near here.\n이 근처에 은행이 있다.","There ________ not a cloud in the sky today.\n오늘 하늘에 구름 한 점 없다.","There ________ many animals in the forest.\n숲에는 많은 동물들이 있다.","There ________ water in the glass.\n유리잔에 물이 있다."],"answer":4,"explain":"many animals(복수) → are. 나머지는 is.","source":"학습지 L5 Workbook There is/are"},
-{"no":11,"points":3,"stem":"문장에서 밑줄 친 단어의 의미가 알맞지 않은 것은?","choices":["We went to the park <u>right after</u> lunch. (바로 후에)","I helped my friend, and <u>in return</u>, he helped me. (대가로)","<u>Single-use</u> plastic bags are bad for the environment. (재사용할 수 있는)","I often <u>reuse</u> plastic bottles to water my plants. (재사용하다)","He took off the <u>label</u> from the bottle. (상표)"],"answer":3,"explain":"single-use: 일회용의.","source":"학습지 L6 Vocabulary Advanced B·C"},
-{"kind":"group","label":"[12~13]","direction":"다음 대화를 읽고 물음에 답하시오.","box":"M: Everybody, look over here, please. This is Sunflowers by Van Gogh.\nG: Wow, this is my favorite painting. (A) ______________________\nM: Yes, you may, but you must not use the flash.\nG: Why not? It's a little dark in here.\nM: I'm sorry, but using the flash can damage paintings.\nG: Oh, I didn't know that.\nM: Everyone, we'll move on to Monet's paintings next.\nG: Great!"},
-{"no":12,"points":3,"stem":"위 대화의 흐름상 빈칸 (A)에 들어갈 표현으로 가장 적절한 것은?","choices":["May I take a picture of it?","Can you please turn on the light?","May I touch it?","Do I have to use the flash?","Where are Monet's paintings?"],"answer":1,"explain":"Yes, you may, but you must not use the flash. 에 어울리는 허락 요청.","source":"L5 Watch and Talk C"},
-{"no":13,"points":3,"stem":"위 대화의 내용과 일치하는 것은?","choices":["The girl doesn't like Sunflowers.","The girl may use the flash.","It is bright in the room.","Using the flash can damage paintings.","They will look at Van Gogh's paintings next."],"answer":4,"explain":"플래시는 그림을 훼손할 수 있다고 했다.","source":"L5 Watch and Talk C"},
-{"no":14,"points":4,"stem":"밑줄 친 that의 쓰임이 나머지와 다른 하나는?","choices":["I think <u>that</u> this garden is very beautiful.","I heard <u>that</u> plastic never goes away completely.","Look at <u>that</u> sign.","I learned <u>that</u> reusing is important.","I guess <u>that</u> the answer is correct."],"answer":3,"explain":"③은 지시형용사, 나머지는 접속사.","source":"L5·L6 본문 · 학습지 L6 Warm-Up B"},
-{"kind":"group","label":"[15~18]","direction":"다음 글을 읽고, 물음에 답하시오.","box":{"lines":["Every day, we ⓐ<u>produce</u> lots of waste, and the Earth (가)<u>is getting sicker and sicker</u>. Do you want to save the Earth? Then, join the zero-waste challenge, and share your stories.","<b>Challenge 01: Reduce Food Waste</b>","Olivia: My birthday was last Saturday, and my family and I (나)<u>ate out</u>. (A) (다)<u>There was lots of ⓑleftovers</u>, but we brought them home. The next day, I made a nice lunch out of them. (B) FYI, you can find great cooking ideas for leftovers on the Internet.","<b>Challenge 02: Reuse</b>","Domingo: My dog ⓒ<u>tore</u> my bag. (C) I learned that ⓓ<u>wasting</u> is important for zero-waste living. So, (라)<u>I decided fixing it and reuse it</u>. (D) I'm not very good at sewing, and (마)<u>I don't think that the bag looks perfect</u>. I guess it's all right.","<b>Challenge 04: Recycle</b>","Minsu: Yesterday, I took some plastic and glass bottles to a recycling machine near my house. (E) (바)<u>I put them into the machine one by one</u>, and I got some points ⓔ<u>in return</u>. What can I do with those points? Well, I can use them like money. Don't you think that's cool?"]}},
-{"no":15,"points":3,"stem":"윗글의 (A)~(E) 중 문맥상 주어진 문장이 들어갈 곳으로 가장 적절한 것은?","box":"I wanted to buy a new one, but I thought again.","choices":["(A)","(B)","(C)","(D)","(E)"],"inline":true,"answer":3,"explain":"가방이 찢어진 뒤, 다시 생각해 고치기로 하는 흐름 (C).","source":"L6 본문 Challenge 02"},
-{"no":16,"points":3,"stem":"밑줄 친 ⓐ~ⓔ 중 문맥상 낱말의 쓰임이 적절하지 않은 것은?","choices":["ⓐ","ⓑ","ⓒ","ⓓ","ⓔ"],"inline":true,"answer":4,"explain":"wasting → reusing (재사용이 제로 웨이스트에 중요하다).","source":"L6 본문"},
-{"no":17,"points":4,"stem":"윗글을 읽고 대답을 찾을 수 없는 질문은?","choices":["When was Olivia's birthday?","What did Olivia make out of the leftovers?","Who tore Domingo's bag?","Where did Minsu take the bottles?","How many points did Minsu get?"],"answer":5,"explain":"포인트 개수는 나오지 않는다.","source":"L6 본문"},
-{"no":18,"points":4,"stem":"밑줄 친 (가)~(바) 중 문맥상, 어법상 옳은 것을 있는 대로 고른 것은?","choices":["(가), (나)","(가), (나), (마)","(가), (나), (마), (바)","(나), (다), (라), (바)","(가), (다), (라), (마), (바)"],"answer":3,"explain":"(다) There was → There were (leftovers 복수), (라) decided fixing → decided to fix.","source":"L6 본문 · there is/are · to부정사"},
-{"no":19,"points":4,"stem":"빈칸에 들어갈 말로 알맞지 않은 것은?","box":"He ________ to quit his job.","choices":["decided","wanted","hoped","finished","planned"],"answer":4,"explain":"finish는 동명사를 목적어로 취한다.","source":"학습지 L6 Workbook Challenging A-3"},
-{"no":20,"points":4,"stem":"다음 중 밑줄 친 that을 생략할 수 없는 것은?","choices":["I know <u>that</u> he is honest.","She said <u>that</u> she was tired.","Did you see <u>that</u> movie yesterday?","We believe <u>that</u> she will win a prize.","I hope <u>that</u> you like it."],"answer":3,"explain":"③은 지시형용사 that.","source":"학습지 L6 Grammar Warm-Up B"},
-{"no":21,"points":2,"stem":"밑줄 친 말에 담긴 의도로 가장 적절한 것은?","box":"G: Dad, can you please fix my bag?\nM: Now? I'm cooking dinner.\nG: Oh, I see. Then, when can you fix it?\nM: <u>I'll do it right after dinner.</u>","choices":["거절","약속","허락","부탁","금지"],"inline":true,"answer":2,"explain":"저녁 식사 후에 바로 해 주겠다는 약속.","source":"L6 Review 2"},
-{"kind":"group","label":"[22~24]","direction":"다음 글을 읽고 물음에 답하시오.","box":{"lines":["Last Saturday, someone threw a cake at the Monalisa in the Botero Museum in Bogota, Colombia. There were four eyewitnesses. What did they say? Read the following, and find the (B) ________.","<b>Ann Jones, a visitor</b>","I was looking at the Monalisa, and someone threw a cake at the painting. I turned around and saw an old man. He was standing in front of a wheelchair. I'm about 170 cm tall, and (A)<u>그는 나보다 조금 더 컸어요.</u>","<b>Carlos Diaz, a janitor</b>","An old man with gray hair was running away, and something fell off his head. It was his wig. I ran after him, but I couldn't ⓐ<u>catch</u> him. He was faster than me. In fact, the old man was not old. He was a young man with long brown hair."]}},
-{"no":22,"points":4,"stem":"윗글의 밑줄 친 (A)를 어법상 옳은 영어 문장으로 작성한 것은?","choices":["he was little taller than me","he was a little taller than me","he was a little tall than me","he was more taller than me","he was the tallest than me"],"answer":2,"explain":"a little + 비교급 + than.","source":"L5 본문"},
-{"no":23,"points":3,"stem":"밑줄 친 ⓐ의 영어 뜻풀이로 알맞은 것은?","choices":["to take or hold something that is moving","to harm or spoil something","to give food to a person or an animal","to put your hand, finger, etc. on someone or something","to send something through the air by using your arm and hand"],"answer":1,"explain":"catch: 잡다.","source":"L5 어휘 영영풀이"},
-{"no":24,"points":3,"stem":"윗글의 (B)에 들어갈 말로 가장 적절한 것은?","choices":["visitor","criminal","owner","janitor","guard"],"answer":2,"explain":"목격자 진술을 읽고 범인을 찾으라는 말.","source":"L5 본문"},
-{"no":25,"points":4,"stem":"다음 문장 중 어법상 옳은 문장의 개수는?","box":"That movie is the best of the year.\nThey arrived the most earliest of all.\nMath is more difficult than English.\nThe blue box is the biggest of the three.\nAre there old computers on the desk?\nThere aren't much cheese on the pizza.\nHelen is the best dancer in my school.","choices":["1개","2개","3개","4개","5개"],"inline":true,"answer":5,"explain":"틀린 것: the most earliest → the earliest, There aren't much cheese → There isn't much cheese.","source":"학습지 Grammar Exercise A·B"},
-{"kind":"essay","no":"서답형1","points":5,"stem":"글을 읽고 질문에 대한 답을 글에서 찾아 8단어로 이루어진 하나의 영어 문장으로 작성하시오.","box":{"lines":["<b>Diego Perez, a guard</b>","I went to the crime scene, and there were pieces of cake all over the painting. There was also a wheelchair near the painting, and I found a cake box next to the wheelchair. The box was from Camila's Bakery.","","질문: Diego, what did you find next to the wheelchair?","답:"]},"answer":"I found a cake box next to the wheelchair.","explain":"8단어.","source":"L5 본문"},
-{"kind":"essay","no":"서답형2","points":5,"stem":"대화의 밑줄 친 우리말과 같은 뜻이 되도록 조건에 맞는 영어 문장을 작성하시오.","box":"G: Excuse me. <u>이 황금곰을 만져 봐도 될까요?</u>\nM: No, you may not. You must not touch anything in this room.\nG: OK, I understand.","condition":["may를 반드시 사용할 것","총 6단어의 한 문장으로 쓸 것"],"answer":"May I touch this golden bear?","explain":"허락 요청 May I + 동사원형 ~?","source":"L5 Watch and Talk A-2"},
-{"kind":"essay","no":"서답형3","points":5,"stem":"주어진 모든 단어를 한 번씩만 사용하여 알맞은 순서로 배열하고 우리말 뜻과 일치하는 문장을 작성하시오.","box":"Camila는 케이크를 한 개만 팔아서 그를 똑똑히 기억한다.\n( remembers / Camila / so / only one cake / clearly / sold / she / him )","answer":"Camila sold only one cake, so she remembers him clearly.","explain":"so(그래서)로 두 절 연결.","source":"L5 본문"}
-]}
+{
+"school": "동양중학교",
+"grade": 1,
+"term": 2,
+"exam": "중간고사",
+"subject": "영어",
+"set": 2,
+"range": "Lesson 5~6",
+"publisher": "동아(윤정미)",
+"year": 2026,
+"items": [
+{
+"no": 1,
+"points": 2,
+"stem": "다음 대화에서 밑줄 친 부분이 나타내는 표지판의 내용으로 가장 적절한 것은?",
+"box": "B: May I take food into the museum?\nW: No, you may not. <u>You must not bring any food inside.</u>\nB: How about water?\nW: Only bottled water is OK.",
+"choices": [
+"뛰지 마시오",
+"만지지 마시오",
+"음식물 반입 금지",
+"반려동물 출입 금지",
+"플래시 사용 금지"
+],
+"answer": 3,
+"explain": "must not bring any food inside → 음식물 반입 금지. 그림 표지판 대신 표지판의 내용을 글로 물었다.",
+"source": "L5 Watch and Talk A-4"
+},
+{
+"no": 2,
+"points": 3,
+"stem": "A와 B의 대화가 어색한 것은?",
+"choices": [
+"A: Excuse me, but you must not talk on the phone here.\nB: I'm terribly sorry. I'll turn off my phone.",
+"A: Ms. Kim, may I eat snacks in class?\nB: No, you may not. You must not eat snacks in class.",
+"A: Can you please carry this box to my car?\nB: Sure. No problem. I'm late for my class.",
+"A: Dad, can you please fix my bag?\nB: Now? I'm cooking dinner.",
+"A: May I eat here?\nB: No, you may not eat inside the museum."
+],
+"answer": 3,
+"explain": "Sure. No problem.(수락) 뒤에 수업에 늦었다는 거절의 이유가 이어져 모순. 원문은 I'm really sorry, Dad, but I'm late for my class.",
+"source": "L5 WT A-1 · WT B-2 · Review 2, L6 WT A-4(변형) · Review 2"
+},
+{
+"no": 3,
+"points": 4,
+"stem": "주어진 우리말을 영작한 문장으로 어법상 가장 적절한 것은?",
+"box": "나는 종종 플라스틱 병을 재사용하여 식물에 물을 준다.",
+"choices": [
+"I often reuse plastic bottles to water my plants.",
+"I reuse often plastic bottles to water my plants.",
+"I often reuse plastic bottles water my plants.",
+"I often reuse plastic bottles to watering my plants.",
+"I often reuse plastic bottles for water my plants."
+],
+"answer": 1,
+"explain": "빈도부사 often 은 일반동사 앞, '~하기 위해' to + 동사원형.",
+"source": "학습지 L6 Vocabulary Advanced C-3 (p.14)"
+},
+{
+"no": 4,
+"points": 2,
+"stem": "다음 문장의 빈칸에 공통으로 들어갈 단어는?",
+"box": "I'm so hungry, but there's no food at home. Let's eat ________.\nDon't throw things ________ of the window.",
+"choices": [
+"off",
+"out",
+"away",
+"after",
+"into"
+],
+"answer": 2,
+"explain": "eat out(외식하다), out of ~(~ 밖으로).",
+"source": "L6 Review 1 · 학습지 L5 Workbook B-5 (p.3)"
+},
+{
+"no": 5,
+"points": 4,
+"stem": "대화의 빈칸에 들어갈 말로 어법상 알맞은 것은?",
+"box": "A: Is Tom older than you?\nB: Yes, he is. ______________________________",
+"choices": [
+"He is oldest student of my class.",
+"He is the older student in my class.",
+"He is the oldest student in my class.",
+"He is the most old student of my class.",
+"He is the most oldest student in my class."
+],
+"answer": 3,
+"explain": "the + 최상급(oldest) + in + 집단.",
+"source": "학습지 Grammar Exercise A-3 유형 (p.11) · 비교급·최상급 표 old-older-oldest (p.5)"
+},
+{
+"no": 6,
+"points": 3,
+"stem": "다음 단어에 대한 영어 뜻풀이로 적절하지 <u>않은</u> 것은?",
+"choices": [
+"crime: illegal activities in general",
+"trash: something that you keep things in",
+"wheelchair: a chair with wheels, used by people who cannot walk",
+"favor: something that you do to help someone",
+"recycle: to use something again to make something new"
+],
+"answer": 2,
+"explain": "trash 는 things that you don't want and throw away. ②는 container 의 풀이.",
+"source": "L5·L6 어휘 영영풀이"
+},
+{
+"no": 7,
+"points": 4,
+"stem": "다음은 단어와 영어 뜻풀이를 작성한 것이다. 빈칸 어디에도 들어갈 수 <u>없는</u> 것은?",
+"box": "crime: an action that the ________ does not allow\nsteal: to take something that belongs to someone ________\nfall off: to drop to the ________ from a high object\nrun away: to leave a place or person ________ and suddenly",
+"choices": [
+"law",
+"else",
+"charge",
+"ground",
+"secretly"
+],
+"answer": 3,
+"explain": "law / else / ground / secretly. charge 는 janitor 의 풀이(in charge of)에 쓰이는 말.",
+"source": "학습지 L5 Vocabulary Advanced A (p.2)"
+},
+{
+"no": 8,
+"points": 3,
+"stem": "다음 문장의 의미상 빈칸 어디에도 들어갈 수 <u>없는</u> 단어는?",
+"box": "I went to the ________ and bought some bread.\nMr. Clark works as a(n) ________ at the museum. He cleans the building.\nThe news is talking about a terrible ________.\nThe police found the ________'s bag near the crime scene.",
+"choices": [
+"wig",
+"crime",
+"bakery",
+"janitor",
+"suspect"
+],
+"answer": 1,
+"explain": "bakery / janitor / crime / suspect. wig 은 들어갈 자리가 없다.",
+"source": "학습지 L5 Workbook A-1~3 · B-4 (p.3~4)"
+},
+{
+"no": 9,
+"points": 4,
+"stem": "글의 흐름상 ⓐ~ⓒ에 들어갈 말로 알맞은 것은?",
+"box": "Someone stole the gold rings from Mr. Brown's jewelry shop last night. There ⓐ[is/are] four suspects – John, Tim, Steve, and Mike. The criminal is Mike. This is for the following reasons. First, John is ⓑ[short/shorter] than 180 cm, so he is not the criminal. Second, Tim doesn't have blue eyes, so he is not the criminal, either. Lastly, Steve ⓒ[has/have] red hair, so he isn't the criminal.",
+"choices_table": {
+"header": [
+"",
+"ⓐ",
+"ⓑ",
+"ⓒ"
+],
+"rows": [
+[
+"①",
+"is",
+"short",
+"has"
+],
+[
+"②",
+"is",
+"shorter",
+"have"
+],
+[
+"③",
+"are",
+"short",
+"have"
+],
+[
+"④",
+"are",
+"shorter",
+"has"
+],
+[
+"⑤",
+"are",
+"shorter",
+"have"
+]
+]
+},
+"answer": 4,
+"explain": "four suspects(복수) → are, than 앞은 비교급 shorter, Steve(3인칭 단수) → has.",
+"source": "L5 기타 지문 Think and Write (Who Stole the Gold Rings?)"
+},
+{
+"no": 10,
+"points": 4,
+"stem": "우리말 해석에 맞는 문장을 영작할 때, 빈칸에 들어갈 말이 나머지와 <u>다른</u> 하나는?",
+"choices": [
+"There ________ a book on the table.\n탁자 위에 책 한 권이 있다.",
+"There ________ water in the glass.\n유리잔에 물이 있다.",
+"There ________ a ball on the chair.\n의자 위에 공 하나가 있다.",
+"There ________ two dogs under the desk.\n책상 아래에 개 두 마리가 있다.",
+"There ________ a poster on the wall.\n벽에 포스터 한 장이 있다."
+],
+"answer": 4,
+"explain": "④ two dogs(복수) → are. 나머지는 단수·셀 수 없는 명사 → is.",
+"source": "학습지 L5 Workbook There is/are A-1 · B-1~3 (p.10) · Grammar Easy B-3 (p.8)"
+},
+{
+"no": 11,
+"points": 3,
+"stem": "문장에서 밑줄 친 단어의 의미가 알맞지 <u>않은</u> 것은?",
+"choices": [
+"I <u>remember</u> my first day of school.\n기억하다",
+"The leaves turned <u>golden</u> in the autumn.\n황금빛의",
+"Bees <u>produce</u> honey from flowers.\n생산하다",
+"We should <u>reduce</u> waste.\n재활용하다",
+"The <u>environment</u> has plants, animals, and water.\n환경"
+],
+"answer": 4,
+"explain": "reduce 는 '줄이다'. 재활용하다는 recycle.",
+"source": "학습지 L5 Advanced B-2·5 (p.2) · L6 Workbook Easy B-2 (p.15) · L6 Advanced B-1·5 (p.14)"
+},
+{
+"kind": "group",
+"label": "[12~13]",
+"direction": "다음 대화를 읽고 물음에 답하시오.",
+"box": {
+"lines": [
+"G: Dad, can you please fix my bag?",
+"M: Now? (A) ____________________",
+"G: Oh, I see. Then, (B) ____________________",
+"M: I'll do it right after dinner."
+]
+}
+},
+{
+"no": 12,
+"points": 3,
+"stem": "위 대화의 흐름상 빈칸 (A), (B)에 들어갈 표현으로 가장 적절한 것은?",
+"choices_table": {
+"header": [
+"",
+"(A)",
+"(B)"
+],
+"rows": [
+[
+"①",
+"I'm cooking dinner.",
+"when can you fix it?"
+],
+[
+"②",
+"I'm cooking dinner.",
+"what are you doing?"
+],
+[
+"③",
+"Sure. No problem.",
+"when can you fix it?"
+],
+[
+"④",
+"I'm late for my class.",
+"how about water?"
+],
+[
+"⑤",
+"I'll close it right away.",
+"can I get your help?"
+]
+]
+},
+"answer": 1,
+"explain": "Now? 뒤에 지금 못 하는 이유(저녁 요리 중), Then 뒤에 언제 해 줄 수 있는지 묻는 말. 답이 right after dinner.",
+"source": "L6 Review 2"
+},
+{
+"no": 13,
+"points": 4,
+"stem": "위 대화의 내용과 일치하는 것은?",
+"choices": [
+"The girl wants her dad to fix her bike.",
+"Dad is cooking dinner now.",
+"Dad will not fix the bag.",
+"Dad will fix the bag before dinner.",
+"The girl is cooking dinner with her dad."
+],
+"answer": 2,
+"explain": "I'm cooking dinner. 가방을 저녁 식사 직후에 고쳐 준다.",
+"source": "L6 Review 2"
+},
+{
+"no": 14,
+"points": 4,
+"stem": "밑줄 친 부분의 쓰임이 나머지와 <u>다른</u> 하나는?",
+"choices": [
+"My goal is <u>to</u> learn skiing this winter.",
+"I plan <u>to</u> visit the village again next week.",
+"<u>To</u> eat breakfast is good for the health.",
+"I walked <u>to</u> my favorite restaurant with a reusable container.",
+"They decided <u>to</u> have a party for their baby."
+],
+"answer": 4,
+"explain": "④는 방향을 나타내는 전치사 to. 나머지는 명사적 용법의 to부정사(보어·목적어·주어).",
+"source": "학습지 L6 Grammar Basic A-1~4 (p.18) · L6 본문 Challenge 03"
+},
+{
+"kind": "group",
+"label": "[15~18]",
+"direction": "다음 글을 읽고, 물음에 답하시오.",
+"box": {
+"lines": [
+"Last Saturday, someone threw a cake at the Monalisa in the Botero Museum in Bogota, Colombia. (A) (가)There were four eyewitnesses. What did they say? Read the following, and find the criminal.",
+"Ann Jones, a visitor",
+"I was looking at the Monalisa, and someone threw a cake at the painting. I turned around and saw ⓐan old man. He was standing in front of a wheelchair. (B) I'm about 170 cm tall, and (나)he was a little taller than me.",
+"Carlos Diaz, a janitor",
+"An old man with gray hair was running away, and something fell off his head. (C) I ran after ⓑhim, but I couldn't catch him. (다)He was more faster than me. In fact, ⓒthe old man was not old. He was a young man with long brown hair.",
+"Diego Perez, a guard",
+"I went to the crime scene, and (라)there were pieces of cake all over the painting. (D) There was also a wheelchair near the painting, and I found a cake box next to the wheelchair. The box was from Camila's Bakery.",
+"Camila Santos, the owner of Camila's Bakery",
+"Last Friday, ⓓa young man came in. I spoke to him in Spanish, but he didn't understand ⓔme. He spoke only English. (E) We had a lot of different cakes, but (마)he just wanted the smallest one. We sold only one cake that day, so (바)I remember him clear. Oh, he had blue eyes."
+]
+}
+},
+{
+"no": 15,
+"points": 3,
+"stem": "윗글의 (A)~(E) 중 문맥상 주어진 문장이 들어갈 곳으로 가장 적절한 것은?",
+"box": "It was his wig.",
+"choices": [
+"(A)",
+"(B)",
+"(C)",
+"(D)",
+"(E)"
+],
+"inline": true,
+"answer": 3,
+"explain": "something fell off his head 바로 뒤에서 그것(It)이 가발이었다고 밝힌다 → (C).",
+"source": "L5 본문 Carlos Diaz"
+},
+{
+"no": 16,
+"points": 3,
+"stem": "밑줄 친 ⓐ~ⓔ 중 가리키는 대상이 <u>다른</u> 하나는?",
+"choices": [
+"ⓐ",
+"ⓑ",
+"ⓒ",
+"ⓓ",
+"ⓔ"
+],
+"inline": true,
+"answer": 5,
+"explain": "ⓐ~ⓓ는 케이크를 던진 범인(가발을 쓴 젊은 남자), ⓔ는 Camila Santos.",
+"source": "L5 본문"
+},
+{
+"no": 17,
+"points": 4,
+"stem": "윗글을 읽고 대답을 찾을 수 <u>없는</u> 질문은?",
+"choices": [
+"Where is the Botero Museum?",
+"What fell off the old man's head?",
+"What did Diego find next to the wheelchair?",
+"What color were the young man's eyes?",
+"How old was the young man?"
+],
+"answer": 5,
+"explain": "젊은 남자의 나이는 나오지 않는다. ① Bogota, Colombia ② his wig ③ a cake box ④ blue.",
+"source": "L5 본문"
+},
+{
+"no": 18,
+"points": 4,
+"stem": "밑줄 친 (가)~(바) 중 문맥상, 어법상 옳은 것을 있는 대로 고른 것은?",
+"choices": [
+"(가), (다)",
+"(나), (라), (바)",
+"(가), (나), (라), (마)",
+"(가), (다), (라), (마)",
+"(가), (나), (라), (마), (바)"
+],
+"answer": 3,
+"explain": "(다) fast 의 비교급은 faster — more 를 겹쳐 쓰지 않는다. (바) 동사 remember 를 꾸미는 부사 clearly. 나머지는 원문 그대로 옳다. 상자의 (다)·(바)는 어법 문항을 위해 일부러 바꾼 문장.",
+"source": "L5 본문"
+},
+{
+"no": 19,
+"points": 4,
+"stem": "빈칸에 들어갈 말로 알맞지 <u>않은</u> 것은?",
+"box": "Tom ________ to go to Vietnam.",
+"choices": [
+"decided",
+"wished",
+"hoped",
+"learned",
+"finished"
+],
+"answer": 5,
+"explain": "decide, wish, hope, learn 은 to부정사를 목적어로 취한다. finish 는 그렇지 않다.",
+"source": "학습지 L6 Workbook to부정사 A-3 (p.19) · Warm-Up A-3 동사표 (p.17)"
+},
+{
+"no": 20,
+"points": 4,
+"stem": "다음 중 밑줄 친 that을 생략할 수 <u>없는</u> 것은?",
+"choices": [
+"I believe <u>that</u> he is honest.",
+"Jiho believes <u>that</u> a positive attitude is important.",
+"Lucy thinks <u>that</u> watching movies is exciting.",
+"I don't think <u>that</u> she will talk with Minsu.",
+"Oh, I didn't know <u>that</u>. I'll close it right away."
+],
+"answer": 5,
+"explain": "⑤의 that 은 앞말(에어컨이 켜져 있다는 것)을 가리키는 대명사로 know 의 목적어라 생략할 수 없다. 나머지는 목적어절의 접속사 that.",
+"source": "학습지 L6 Warm-Up B (p.17) · Workbook 접속사 that A-3·4 · B-3 (p.20) · L6 WT A-1"
+},
+{
+"no": 21,
+"points": 2,
+"stem": "밑줄 친 말에 담긴 의도로 가장 적절한 것은?",
+"box": "W: Look. Somebody forgot to turn off the water.\nB: Again? People are so forgetful.\nW: I know. <u>Can you run over there and turn off the water?</u>\nB: Sure. No problem.",
+"choices": [
+"제안",
+"거절",
+"허락",
+"부탁",
+"금지"
+],
+"answer": 4,
+"explain": "Can you ~? 는 부탁하는 표현. Sure. No problem. 으로 수락한다.",
+"source": "L6 Watch and Talk A-3"
+},
+{
+"kind": "group",
+"label": "[22~24]",
+"direction": "다음 글을 읽고 물음에 답하시오.",
+"box": {
+"lines": [
+"Challenge 03 Say No to Single-Use Plastic",
+"Emma: I often use food delivery services, but today I didn't. Instead, I walked to my favorite restaurant with a reusable ⓐcontainer and picked up the food. (A)나는 플라스틱이 절대로 완전히 없어지지 않는다고 들었어. I didn't use any single-use plastic today. I felt good!",
+"Challenge 04 (B) ________",
+"Minsu: Yesterday, I took some plastic and glass bottles to a recycling machine near my house. I put them into the machine one by one, and I got some points in return. What can I do with those points? Well, I can use them like money. Don't you think that's cool?"
+]
+}
+},
+{
+"no": 22,
+"points": 4,
+"stem": "윗글의 밑줄 친 (A)를 어법상 옳은 영어 문장으로 작성한 것은?",
+"choices": [
+"I heard that plastic never go away completely.",
+"I heard that plastic never goes away completely.",
+"I heard plastic that never goes away completely.",
+"I heard that plastic never goes away complete.",
+"I heard that never plastic goes away completely."
+],
+"answer": 2,
+"explain": "heard + that절, 주어 plastic(3인칭 단수) → goes, 동사를 꾸미는 부사 completely.",
+"source": "L6 본문 Challenge 03"
+},
+{
+"no": 23,
+"points": 3,
+"stem": "밑줄 친 ⓐ의 영어 뜻풀이로 알맞은 것은?",
+"choices": [
+"a difficult task or problem",
+"something that you keep things in",
+"the act of bringing goods, letters, etc. to a particular person or place",
+"a piece of equipment with moving parts that uses electricity to do work",
+"things that you don't want and throw away"
+],
+"answer": 2,
+"explain": "container: 용기, 그릇. ① challenge ③ delivery ④ machine ⑤ trash.",
+"source": "L6 어휘 영영풀이"
+},
+{
+"no": 24,
+"points": 3,
+"stem": "윗글의 (B)에 들어갈 소제목으로 가장 적절한 것은?",
+"choices": [
+"Reuse",
+"Recycle",
+"Reduce Food Waste",
+"Share Your Stories",
+"Say No to Single-Use Plastic"
+],
+"answer": 2,
+"explain": "병을 재활용 기계에 넣고 포인트를 받는 이야기 → Recycle.",
+"source": "L6 본문 Challenge 04"
+},
+{
+"no": 25,
+"points": 4,
+"stem": "다음 문장 중 어법상 옳은 문장의 개수는?",
+"box": "John speaks louder than his brother.\nThis restaurant is the more expensive in town.\nThere is not a cloud in the sky today.\nAre there apples at the market?\nHe decided quit his job.\nWhat do you want had for dinner?\nI think is she a doctor.",
+"choices": [
+"1개",
+"2개",
+"3개",
+"4개",
+"5개"
+],
+"inline": true,
+"answer": 3,
+"explain": "옳은 것: louder than / There is not a cloud / Are there apples → 3개. 틀린 것: the more expensive(→ the most expensive), decided quit(→ decided to quit), want had(→ want to have), think is she(→ think (that) she is).",
+"source": "학습지 Grammar Exercise A-4·6 (p.11) · Exercise B-3·4 (p.12) · L6 Workbook Challenging A-2·3 (p.21) · 접속사 that B-2 (p.20)"
+},
+{
+"kind": "essay",
+"no": "서답형1",
+"points": 5,
+"stem": "글을 읽고 질문에 대한 답을 글에서 찾아 7단어로 이루어진 하나의 영어 문장으로 작성하시오.",
+"box": "Camila Santos, the owner of Camila's Bakery\nLast Friday, a young man came in. I spoke to him in Spanish, but he didn't understand me. He spoke only English. We had a lot of different cakes, but he just wanted the smallest one. We sold only one cake that day, so I remember him clearly. Oh, he had blue eyes.\n\n질문: Camila, why do you remember the young man clearly?",
+"answer_lines": 1,
+"answer": "We sold only one cake that day.",
+"explain": "본문 문장 그대로 7단어.",
+"source": "L5 본문 Camila Santos"
+},
+{
+"kind": "essay",
+"no": "서답형2",
+"points": 5,
+"stem": "대화의 밑줄 친 우리말과 같은 뜻이 되도록 조건에 맞는 영어 문장을 작성하시오.",
+"box": "W: Excuse me, but <u>문을 닫아 주시겠어요?</u> The air conditioner is on.\nB: Oh, I didn't know that. I'll close it right away.\nW: Thanks.",
+"condition": [
+"Please 를 반드시 사용할 것",
+"총 6단어의 한 문장으로 쓸 것"
+],
+"answer_lines": 1,
+"answer": "Can you please close the door?",
+"explain": "Can you please + 동사원형 ~? (부탁하기). 6단어.",
+"source": "L6 Watch and Talk A-1"
+},
+{
+"kind": "essay",
+"no": "서답형3",
+"points": 5,
+"stem": "주어진 모든 단어를 한 번씩만 사용하여 알맞은 순서로 배열하고 우리말 뜻과 일치하는 문장을 작성하시오.",
+"box": "사자는 세 동물 중에서 가장 나이가 많다.\n( the / is / oldest / the lion / of / the three animals )",
+"answer_lines": 1,
+"answer": "The lion is the oldest of the three animals.",
+"explain": "the + 최상급 + of + 복수 명사. 기출은 그림을 보고 배열하는 문항이나 그림 대신 우리말 뜻을 주었다.",
+"source": "학습지 L5 Grammar Easy A-3 (p.8)"
+}
+]
+}
