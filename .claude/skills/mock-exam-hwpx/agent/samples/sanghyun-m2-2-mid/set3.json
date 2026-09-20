@@ -1,0 +1,575 @@
+{
+ "school": "상현중학교",
+ "grade": 2,
+ "term": 2,
+ "exam": "중간고사",
+ "subject": "영어",
+ "set": 3,
+ "range": "Lesson 5~6",
+ "publisher": "동아(이병민)",
+ "year": 2026,
+ "items": [
+  {
+   "no": 1,
+   "points": 3,
+   "stem": "대화의 내용과 일치하는 것은?",
+   "box": "G: I’m learning Spanish these days.\nB: Wow! I didn’t know that. How’s it going?\nG: Not very well. I’m not good at Spanish.\nB: How often do you practice it?\nG: Once a week.\nB: It’s important to practice it more often.\nG: You’re right. I’ll practice it three times a week.\nB: boy, G: girl",
+   "choices": [
+    "The boy is learning Spanish these days.",
+    "The girl is good at Spanish.",
+    "The girl practices Spanish once a week now.",
+    "The boy thinks practicing once a week is enough.",
+    "The girl will practice Spanish twice a week."
+   ],
+   "answer": 3,
+   "explain": "How often ~? – Once a week.",
+   "source": "L6 Check Up B"
+  },
+  {
+   "no": 2,
+   "points": 3,
+   "stem": "어법이 맞는 문장은?",
+   "choices": [
+    "I heard someone to call my name.",
+    "She made me to wash the dishes.",
+    "We saw the little boy crossing the street.",
+    "He let me to use his phone.",
+    "They watched the sun to rise."
+   ],
+   "answer": 3,
+   "explain": "지각·사역동사의 목적격보어는 to부정사가 아니라 동사원형(지각동사는 현재분사도 가능).",
+   "source": "학습지 L6 grammar 1-B · 26-1 기말 30번 연계(사역동사)"
+  },
+  {
+   "no": 3,
+   "points": 3,
+   "stem": "대화의 흐름상 밑줄 (A)에 들어갈 말로 가장 알맞은 것은?",
+   "box": "Jake: Ms. Hong, may I come in?\nMs. Hong: Sure, Jake. What’s wrong?\nJake: I feel stressed about the exams next week.\nMs. Hong: Oh, no. (A)______________________\nJake: Almost every time I think about exams.\nMs. Hong: I understand. It’s important to manage your stress during exams.",
+   "choices": [
+    "How often do you feel this way?",
+    "What can I do to help you?",
+    "Why don’t you take a walk?",
+    "When is your exam?",
+    "How do you study for exams?"
+   ],
+   "answer": 1,
+   "explain": "Almost every time ~ 는 빈도 대답.",
+   "source": "L6 Listen and Speak 2-A"
+  },
+  {
+   "no": 4,
+   "points": 3,
+   "stem": "어법상 옳은 문장을 모두 고른 것은?",
+   "box": "ⓐ Each apple was picked carefully.\nⓑ It is hard to believe his story.\nⓒ The higher we climb, the colder it gets.\nⓓ All the furniture in the rooms are expensive.\nⓔ My teacher asked me close the door.\nⓕ The police officer made the driver stop the car.\nⓖ Every children enjoys playing outside.",
+   "choices": [
+    "ⓐ, ⓑ, ⓒ, ⓕ",
+    "ⓐ, ⓓ, ⓔ",
+    "ⓑ, ⓒ, ⓖ",
+    "ⓒ, ⓔ, ⓕ",
+    "ⓓ, ⓔ, ⓖ"
+   ],
+   "answer": 1,
+   "explain": "ⓓ furniture 는 셀 수 없는 명사 → is ⓔ asked me to close ⓖ Every child.",
+   "source": "학습지 L6 grammar 1-D · L5 grammar 2 · 26-1 기말 3번 연계(사역·5형식)"
+  },
+  {
+   "kind": "group",
+   "label": "[5~7]",
+   "direction": "다음을 읽고 물음에 답하시오.",
+   "box": "Hi, Monica! I’m Timothy from the United States. My family visited Venice three years ago and we loved it! (A) I am surprised and sad to hear your news. I want to do my part to help your city and the Earth. (B) I recently found out something interesting. The more meat we eat, the hotter our planet gets. (C) This increases greenhouse gases. Also, cows pass a lot of gas. Smelly! But this is not the worst part. (D) The gas from cows also adds to greenhouse gases. Greenhouse gases make the Earth hotter. (E) So, I’m trying to eat less meat to slow down global warming. It isn’t easy to change my eating habits, but I’m doing my best."
+  },
+  {
+   "no": 5,
+   "points": 3,
+   "stem": "윗글의 주제로 가장 적절한 것은?",
+   "choices": [
+    "Timothy’s wonderful trip to Venice",
+    "The reason Timothy is trying to eat less meat",
+    "How cows are raised on animal farms",
+    "The most popular food in the United States",
+    "Why Monica’s bakery had to close"
+   ],
+   "answer": 2,
+   "explain": "고기 소비 → 온실가스 → 지구 온난화, 그래서 고기를 덜 먹는다.",
+   "source": "L5 본문 Timothy"
+  },
+  {
+   "no": 6,
+   "points": 3,
+   "stem": "(A)~(E) 중 <보기>의 문장이 들어가기에 가장 적절한 곳은?",
+   "box": {
+    "title": "<보기>",
+    "lines": [
+     "This is because lots of trees are cut down to make animal farms."
+    ]
+   },
+   "choices": [
+    "(A)",
+    "(B)",
+    "(C)",
+    "(D)",
+    "(E)"
+   ],
+   "inline": true,
+   "answer": 3,
+   "explain": "the hotter our planet gets 의 이유 → This increases greenhouse gases 의 This.",
+   "source": "L5 본문 Timothy"
+  },
+  {
+   "no": 7,
+   "points": 3,
+   "stem": "대화의 밑줄 (A)~(E) 중 윗글과 내용이 일치하지 않는 것은?",
+   "box": "Suin: (A)<u>Timothy’s family visited Venice three years ago.</u>\nHomin: (B)<u>He was surprised and sad to hear Monica’s news.</u>\nSuin: (C)<u>He found out that eating more meat makes the planet hotter.</u>\nHomin: (D)<u>He says cows help reduce greenhouse gases.</u>\nSuin: (E)<u>Timothy is trying to eat less meat now.</u>",
+   "choices": [
+    "(A)",
+    "(B)",
+    "(C)",
+    "(D)",
+    "(E)"
+   ],
+   "inline": true,
+   "answer": 4,
+   "explain": "The gas from cows also adds to greenhouse gases.",
+   "source": "L5 본문 Timothy"
+  },
+  {
+   "no": 8,
+   "points": 3,
+   "stem": "대화를 읽고 답할 수 없는 질문은?",
+   "box": "B: My dog doesn’t have energy lately.\nG: How often do you walk your dog?\nB: I walk him twice a week.\nG: It’s important to walk your dog every day. That way, he can stay healthy.\nB: Okay, I’ll start walking him every day.\nB: boy, G: girl",
+   "choices": [
+    "What is the problem with the boy’s dog?",
+    "How often does the boy walk his dog now?",
+    "What does the girl say is important?",
+    "How old is the boy’s dog?",
+    "What will the boy do from now on?"
+   ],
+   "answer": 4,
+   "explain": "개의 나이는 언급되지 않는다.",
+   "source": "L6 Check Up A"
+  },
+  {
+   "kind": "group",
+   "label": "[9~10, 서답형 1]",
+   "direction": "다음을 읽고 물음에 답하시오.",
+   "box": "Dear Monica,\nI am Homin from Korea. I read your story about Venice. I want (A)<u>to do</u> something to slow down global warming. From now on, I’m going to walk or (B)<u>riding</u> a bike to nearby places. I’m also going to eat less meat because cows (C)<u>increases</u> greenhouse gases. These are little things, but I’ll do my part for Venice! (D)<u>It is important to do our part for Venice.</u> I wish you good luck.\nBest wishes,\nHomin"
+  },
+  {
+   "no": 9,
+   "points": 3,
+   "stem": "(A)~(D) 중 어법이 바르지 않은 것의 개수는?",
+   "choices": [
+    "1개",
+    "2개",
+    "3개",
+    "4개",
+    "5개"
+   ],
+   "inline": true,
+   "answer": 2,
+   "explain": "(B) walk or ride(be going to + 동사원형 병렬), (C) cows increase(복수). 2개.",
+   "source": "L5 My Writing"
+  },
+  {
+   "no": 10,
+   "points": 3,
+   "stem": "윗글을 쓴 목적으로 알맞은 것은?",
+   "choices": [
+    "베네치아 여행을 추천하려고",
+    "지구 온난화를 늦추기 위한 자신의 실천을 알리려고",
+    "빵집 개업을 축하하려고",
+    "3R 캠페인 참가를 요청하려고",
+    "고기 요리법을 소개하려고"
+   ],
+   "answer": 2,
+   "explain": "I want to do something to slow down global warming. From now on, ~.",
+   "source": "L5 My Writing"
+  },
+  {
+   "kind": "essay",
+   "no": "서답형 1",
+   "points": 4,
+   "stem": "밑줄 (D)를 가주어 It 없이 To부정사(구)를 주어로 하는 문장으로 다시 쓰시오.",
+   "answer_lines": 1,
+   "answer": "To do our part for Venice is important.",
+   "explain": "진주어 to부정사구를 문장 앞으로.",
+   "source": "L5 본문 · 학습지 L5 grammar 1-A"
+  },
+  {
+   "no": 11,
+   "points": 3,
+   "stem": "대화의 빈칸에 들어갈 말을 순서대로 바르게 배열한 것은?",
+   "box": {
+    "lines": [
+     "Tom: What can I do to reduce clothing waste?",
+     "Amy: ______________________",
+     "Tom: ______________________",
+     "Amy: ______________________",
+     "",
+     "(A) Okay. What else can I do?",
+     "(B) Don’t forget to donate old clothing.",
+     "(C) You can buy less clothing."
+    ]
+   },
+   "choices": [
+    "(A)-(B)-(C)",
+    "(B)-(C)-(A)",
+    "(C)-(A)-(B)",
+    "(C)-(B)-(A)",
+    "(A)-(C)-(B)"
+   ],
+   "answer": 3,
+   "explain": "방법 제안 → 다른 것 묻기 → 상기시키기.",
+   "source": "L5 Check Up C"
+  },
+  {
+   "no": 12,
+   "points": 3,
+   "stem": "(A)~(E) 중 밑줄 친 to부정사의 쓰임이 다른 하나는?",
+   "box": {
+    "lines": [
+     "(A) It is important <u>to do</u> our part for Venice.",
+     "(B) It isn’t easy <u>to change</u> my eating habits.",
+     "(C) I’m trying to eat less meat <u>to slow down</u> global warming.",
+     "(D) It is good <u>to see</u> you here.",
+     "(E) It was not easy <u>to solve</u> the puzzle."
+    ]
+   },
+   "choices": [
+    "(A)",
+    "(B)",
+    "(C)",
+    "(D)",
+    "(E)"
+   ],
+   "inline": true,
+   "answer": 3,
+   "explain": "(C)는 목적을 나타내는 부사적 용법, 나머지는 가주어 It 의 진주어(명사적 용법).",
+   "source": "L5 본문 · 학습지 L5 grammar 1 · 26-1 중간 12번 연계(to부정사 용법)"
+  },
+  {
+   "no": 13,
+   "points": 3,
+   "stem": "밑줄 친 단어의 쓰임이 의미상 어색한 문장은?",
+   "choices": [
+    "Her room is always <u>tidy</u>.",
+    "The <u>school nurse</u> gave me medicine for my headache.",
+    "I answered a <u>survey</u> about my shopping habits.",
+    "Too many <u>greenhouse gases</u> can change the climate.",
+    "The speaker <u>increased</u> his speech for the children."
+   ],
+   "answer": 5,
+   "explain": "아이들을 위해 말의 속도를 늦추었다 → slowed down.",
+   "source": "학습지 L5·L6 vocabulary 1 예문"
+  },
+  {
+   "kind": "group",
+   "label": "[14~17]",
+   "direction": "다음을 읽고 물음에 답하시오.",
+   "box": "Hello, I’m Suin from Korea. Every summer, it rains a lot here. Sometimes, we have floods and they are really (A)( scary / scared ). The situation in Venice must be scary, too. I’ve never been to Venice, but I have seen many beautiful pictures of it. I talked to my friends about the floods in your city. We wanted to help Venice, so we started the 3R campaign. The 3Rs are Recycle, Reuse, and Reduce. Now, many students at my school (B)( is / are ) doing these three things every day. (C)( It / This ) is important to do our part for Venice. (D)________________________"
+  },
+  {
+   "no": 14,
+   "points": 3,
+   "stem": "수인이 3R 캠페인을 시작한 이유는?",
+   "choices": [
+    "학교 숙제였기 때문에",
+    "베네치아를 돕고 싶어서",
+    "새 친구를 사귀기 위해서",
+    "홍수를 직접 겪지 않기 위해서",
+    "베네치아를 여행하기 위해서"
+   ],
+   "answer": 2,
+   "explain": "We wanted to help Venice, so we started the 3R campaign.",
+   "source": "L5 본문 Suin"
+  },
+  {
+   "no": 15,
+   "points": 3,
+   "stem": "(A)~(C)에 알맞은 것은?",
+   "choices_table": {
+    "header": [
+     "",
+     "(A)",
+     "(B)",
+     "(C)"
+    ],
+    "rows": [
+     [
+      "①",
+      "scary",
+      "is",
+      "It"
+     ],
+     [
+      "②",
+      "scary",
+      "are",
+      "It"
+     ],
+     [
+      "③",
+      "scary",
+      "are",
+      "This"
+     ],
+     [
+      "④",
+      "scared",
+      "is",
+      "This"
+     ],
+     [
+      "⑤",
+      "scared",
+      "are",
+      "It"
+     ]
+    ]
+   },
+   "answer": 2,
+   "explain": "floods are scary(무서운) / many students are / 가주어 It.",
+   "source": "L5 본문 · 학습지 L5 Reading"
+  },
+  {
+   "no": 16,
+   "points": 3,
+   "stem": "밑줄 (D)에 들어갈 말로 가장 적절한 것은?",
+   "choices": [
+    "Together, we can make a difference!",
+    "Money doesn’t grow on trees.",
+    "I’m not good at Spanish.",
+    "Venice is famous for its canals.",
+    "Come and feel their energy!"
+   ],
+   "answer": 1,
+   "explain": "함께 역할을 하자는 마무리.",
+   "source": "L5 본문 Suin"
+  },
+  {
+   "no": 17,
+   "points": 3,
+   "stem": "<보기>의 문장 중 윗글의 내용과 일치하는 것의 개수는?",
+   "box": {
+    "title": "<보기>",
+    "lines": [
+     "- It rains a lot in Korea every summer.",
+     "- Suin has been to Venice once.",
+     "- Suin has seen many pictures of Venice.",
+     "- Suin talked to her friends about the floods in Venice.",
+     "- The 3Rs are Recycle, Reuse, and Reduce.",
+     "- Only a few students at Suin’s school are doing the 3Rs.",
+     "- Suin thinks floods are not scary."
+    ]
+   },
+   "choices": [
+    "2개",
+    "3개",
+    "4개",
+    "5개",
+    "6개"
+   ],
+   "inline": true,
+   "answer": 3,
+   "explain": "1·3·4·5번째 일치. 4개.",
+   "source": "L5 본문 Suin"
+  },
+  {
+   "no": 18,
+   "points": 3,
+   "stem": "<보기>의 어떤 빈칸에도 들어갈 수 없는 단어는?",
+   "box": {
+    "title": "<보기>",
+    "lines": [
+     "- She is the ______ of the hockey team at school.",
+     "- The ______ of the fans filled the stadium.",
+     "- We are waiting for the ______ of the test.",
+     "- My parents always give me good ______."
+    ]
+   },
+   "choices": [
+    "captain",
+    "cheer",
+    "result",
+    "advice",
+    "halftime"
+   ],
+   "inline": true,
+   "answer": 5,
+   "explain": "captain / cheer / result / advice.",
+   "source": "학습지 L6 vocabulary 1 예문"
+  },
+  {
+   "kind": "group",
+   "label": "[19~20, 서답형 2~3]",
+   "direction": "다음을 읽고 물음에 답하시오.",
+   "box": "Health News: Meet Our New Healthcare Robot\nCome and meet Carebot, our new AI healthcare robot, in the school nurse’s office. What can Carebot do? (A)<u>It</u> can check the students’ health condition and give (B)<u>them</u> advice. Our school nurse, Ms. Kang, says, “Carebot is working hard to keep everyone healthy and safe. So, if you see Carebot, don’t be shy and say hello.”\n\nClub News\nJina, the captain of the club, said, “I can flip in the air because I trust my club members. (C)<u>When I see the crowd cheering and screaming, I feel proud.</u> Fly High is the best part of my middle school life!” (D)<u>You can watch Fly High doing their performance at the school festival next week.</u> (E)<u>여러분이 더 자주 올수록, 여러분은 더 많은 에너지를 느낄 것이다.</u>"
+  },
+  {
+   "no": 19,
+   "points": 3,
+   "stem": "<보기> 중 밑줄 (A), (B)와 지시하는 대상이 바르게 연결된 것을 모두 고른 것은?",
+   "box": {
+    "title": "<보기>",
+    "lines": [
+     "ⓐ (A) It – Carebot",
+     "ⓑ (A) It – the school nurse’s office",
+     "ⓒ (B) them – the students",
+     "ⓓ (B) them – Ms. Kang",
+     "ⓔ (B) them – health conditions"
+    ]
+   },
+   "choices": [
+    "ⓐ, ⓒ",
+    "ⓐ, ⓓ",
+    "ⓑ, ⓒ",
+    "ⓑ, ⓔ",
+    "ⓐ, ⓒ, ⓔ"
+   ],
+   "answer": 1,
+   "explain": "It = Carebot, them = the students.",
+   "source": "L6 본문 Health News"
+  },
+  {
+   "no": 20,
+   "points": 3,
+   "stem": "<보기>의 영영풀이에 해당하는 단어 중 짝이 잘못된 것은?",
+   "box": {
+    "title": "<보기>",
+    "lines": [
+     "ⓐ services that help people stay healthy or get better when sick – healthcare",
+     "ⓑ the state in which something exists – condition",
+     "ⓒ an opinion or suggestion about what someone should do – advice",
+     "ⓓ an athlete who is chosen to be the leader of a team – captain",
+     "ⓔ a large group of people who are together in one place – performance"
+    ]
+   },
+   "choices": [
+    "ⓐ",
+    "ⓑ",
+    "ⓒ",
+    "ⓓ",
+    "ⓔ"
+   ],
+   "inline": true,
+   "answer": 5,
+   "explain": "ⓔ 는 crowd.",
+   "source": "학습지 L6 vocabulary 2 영영풀이"
+  },
+  {
+   "kind": "essay",
+   "no": "서답형 2",
+   "points": 6,
+   "stem": "밑줄 (C)와 (D)를 「지각동사 + 목적어 + 동사원형」 형태를 사용한 문장으로 다시 쓰시오. (각 3점)",
+   "box": {
+    "lines": [
+     "(1) (C) → ",
+     "(2) (D) → "
+    ]
+   },
+   "answer_lines": 2,
+   "answer": "(1) When I see the crowd cheer and scream, I feel proud. (2) You can watch Fly High do their performance at the school festival next week.",
+   "explain": "지각동사 see·watch 의 목적격보어 현재분사 → 동사원형.",
+   "source": "L6 본문 · 학습지 L6 grammar 1-B"
+  },
+  {
+   "kind": "essay",
+   "no": "서답형 3",
+   "points": 4,
+   "stem": "<보기>에서 필요한 단어만 골라 (E)의 해석에 맞게 영어 문장을 완성하시오. (단, 필요한 경우 같은 단어를 여러 번 사용할 수 있음.)",
+   "box": {
+    "title": "<보기>",
+    "lines": [
+     "the, more, most, often, you, come, will, feel, energy, much, many"
+    ]
+   },
+   "answer_lines": 1,
+   "answer": "The more often you come, the more energy you will feel.",
+   "explain": "the more often ~, the more + 명사 ….",
+   "source": "학습지 L5 grammar 2-E"
+  },
+  {
+   "kind": "essay",
+   "no": "서답형 4",
+   "points": 6,
+   "stem": "<보기>의 문장을 가주어 It으로 시작하는 문장으로 바꾸어 2개 완성하시오. (각 3점)",
+   "box": {
+    "lines": [
+     "<보기>",
+     "To eat breakfast is important.",
+     "To speak English is difficult.",
+     "",
+     "(1) It ________________________________.",
+     "(2) It ________________________________."
+    ]
+   },
+   "answer_lines": 2,
+   "answer": "(1) It is important to eat breakfast. (2) It is difficult to speak English.",
+   "explain": "가주어 It + be + 형용사 + to부정사(진주어).",
+   "source": "학습지 L5 grammar 3-A"
+  },
+  {
+   "kind": "essay",
+   "no": "서답형 5",
+   "points": 4,
+   "stem": "조건에 맞게 우리말을 영어 문장으로 쓰시오.",
+   "box": {
+    "lines": [
+     "<보기> I, my friend, saw, pick up, trash, on the street",
+     "",
+     "나는 내 친구가 길가의 쓰레기를 줍는 모습을 보았다."
+    ]
+   },
+   "condition": [
+    "<보기>에 주어진 단어를 모두 사용할 것.",
+    "지각동사를 사용할 것."
+   ],
+   "answer_lines": 1,
+   "answer": "I saw my friend pick up trash on the street.",
+   "explain": "지각동사 saw + 목적어 + 동사원형(picking up 도 가능).",
+   "source": "학습지 L6 grammar 3(환경 실천 문장)"
+  },
+  {
+   "kind": "essay",
+   "no": "서답형 6",
+   "points": 4,
+   "stem": "소년이 소녀에게 재사용할 수 있는 병을 가지고 다닐 것을 상기시키는 대화문이 되도록 밑줄 (A)에 알맞은 말을 쓰시오. (4단어)",
+   "box": {
+    "lines": [
+     "B: Look at all the plastic waste!",
+     "G: Oh, no! What can I do to reduce plastic waste?",
+     "B: You can recycle plastic cups and bottles.",
+     "G: Okay. What else can I do?",
+     "B: (A)______________________ a reusable bottle.",
+     "B: boy, G: girl"
+    ]
+   },
+   "answer_lines": 1,
+   "answer": "Don’t forget to carry",
+   "explain": "상기시키기 Don’t forget to + 동사원형.",
+   "source": "L5 Listen and Speak 1-A2"
+  },
+  {
+   "kind": "essay",
+   "no": "서답형 7",
+   "points": 12,
+   "stem": "대화를 읽고 조건에 맞게 답하시오. (각 3점)",
+   "box": {
+    "lines": [
+     "Ms. Kang: Good morning, students. Today, I want to tell you something important. (A)<u>All the students must be quiet in the library.</u> (Every student)",
+     "Jinho: I understand. (B)<u>All the books on the desk look interesting.</u> (Each book)",
+     "Ms. Kang: Also, (C)<u>every student will get a money diary next week.</u> (All the students)",
+     "Jinho: Great! (D)<u>매일 용돈 기입장에 쓰는 것은 중요해요.</u>"
+    ]
+   },
+   "condition": [
+    "<조건 1> 밑줄 (A)~(C)를 괄호 안의 주어로 시작하는 문장으로 다시 쓸 것.",
+    "<조건 2> 밑줄 (D)를 가주어 it과 important, write in, money diary, every day를 사용하여 영작할 것."
+   ],
+   "answer_lines": 4,
+   "answer": "(1) Every student must be quiet in the library. (2) Each book on the desk looks interesting. (3) All the students will get a money diary next week. (4) It is important to write in a money diary every day.",
+   "explain": "each/every + 단수 동사, all + 복수 동사 / 가주어 It + to부정사.",
+   "source": "L6 Check Up W · L6 본문 Principal · 학습지 L6 grammar 1·2, L5 grammar 1"
+  }
+ ]
+}

@@ -1,0 +1,573 @@
+{
+ "school": "상현중학교",
+ "grade": 2,
+ "term": 2,
+ "exam": "중간고사",
+ "subject": "영어",
+ "set": 1,
+ "range": "Lesson 5~6",
+ "publisher": "동아(이병민)",
+ "year": 2026,
+ "items": [
+  {
+   "no": 1,
+   "points": 3,
+   "stem": "대화의 내용과 일치하는 것은?",
+   "box": "G: What are you reading, Liam?\nB: I’m reading an article about teens’ selfie habits.\nG: That’s interesting. How often do teens take selfies?\nB: It says many teens take selfies every day.\nG: Wow! I often see my friends posting their selfies on social media.\nB: The article also says it’s important to be careful about sharing selfies online.\nG: Why is that important?\nB: Because selfies can have personal information in them.\nG: Right. Anyone can see that information.\nB: Yeah. We should think twice before posting selfies.\nB: boy, G: girl",
+   "choices": [
+    "Liam is reading an article about teens’ sleeping habits.",
+    "The article says only a few teens take selfies every day.",
+    "The girl often sees her friends posting selfies on social media.",
+    "The article says sharing selfies online is always safe.",
+    "Selfies never have personal information in them."
+   ],
+   "answer": 3,
+   "explain": "I often see my friends posting their selfies on social media.",
+   "source": "L6 Listen and Speak 1-B"
+  },
+  {
+   "no": 2,
+   "points": 3,
+   "stem": "어법이 맞는 문장은?",
+   "choices": [
+    "The more you practice, the good you will do.",
+    "It is important eat breakfast every day.",
+    "The harder you study, the higher your score will be.",
+    "This is important to exercise regularly.",
+    "The more questions you ask, the more better you understand."
+   ],
+   "answer": 3,
+   "explain": "① the better ② important to eat ④ It is important ⑤ the better(이중 비교급 불가).",
+   "source": "학습지 L5 grammar 1·2"
+  },
+  {
+   "no": 3,
+   "points": 3,
+   "stem": "대화의 흐름상 밑줄 (A)에 들어갈 말로 가장 알맞은 것은?",
+   "box": "Lucy: Jake, are you throwing out that backpack?\nJake: Yeah. I don’t really use it anymore.\nLucy: But it looks new. These days, people throw out so many good items.\nJake: Right. Someone can still use my backpack. (A)______________________\nLucy: You can sell it through an online flea market.\nJake: That sounds good. I’ll give it a try.\nLucy: Great. Don’t forget to post pictures of the backpack.",
+   "choices": [
+    "What can I do to find a new owner for it?",
+    "How often do you use it?",
+    "Why don’t you throw it out?",
+    "What do you like about it?",
+    "Where did you buy the backpack?"
+   ],
+   "answer": 1,
+   "explain": "방법을 묻는 What can I do to ~? 에 You can ~ 으로 답한다.",
+   "source": "L5 Listen and Speak 2-A"
+  },
+  {
+   "no": 4,
+   "points": 3,
+   "stem": "어법상 옳은 문장을 모두 고른 것은?",
+   "box": "ⓐ I heard my friend talk on the phone.\nⓑ The man saw her to climb the hill.\nⓒ My mom made me to clean my room.\nⓓ She let him enjoy some warm cookies.\nⓔ We watched him fixing the car.\nⓕ The teacher asked us be quiet.\nⓖ Mr. Kim helped me carry the boxes.",
+   "choices": [
+    "ⓐ, ⓑ, ⓓ",
+    "ⓐ, ⓓ, ⓔ, ⓖ",
+    "ⓑ, ⓒ, ⓕ",
+    "ⓒ, ⓓ, ⓔ",
+    "ⓓ, ⓔ, ⓕ, ⓖ"
+   ],
+   "answer": 2,
+   "explain": "ⓑ saw her climb ⓒ made me clean(사역동사+원형) ⓕ asked us to be(5형식 to부정사). 지각·사역동사는 원형(진행 강조 시 -ing), help 는 원형/to 모두.",
+   "source": "학습지 L6 grammar 3-E · 26-1 기말 3·30번 연계(사역·5형식 확장)"
+  },
+  {
+   "kind": "group",
+   "label": "[5~7]",
+   "direction": "다음을 읽고 물음에 답하시오.",
+   "box": "Hello, friends! My name is Monica, and I live in Venice. (A) Have you heard of Venice? It is a beautiful city on the water in Italy. (B) Many tourists come to see them every year. (C) But now, we have a big problem. Last week, the streets were flooded. I couldn’t go to school, and my parents’ bakery had to close. (D) I had to wear tall rain boots all the time. I’m really worried. The warmer the Earth gets, the higher the water in Venice rises. (E) Venice could be underwater soon. My city needs your help!"
+  },
+  {
+   "no": 5,
+   "points": 3,
+   "stem": "윗글의 주제로 가장 적절한 것은?",
+   "choices": [
+    "The history of Venice’s canals",
+    "Monica’s worry about the floods in Venice",
+    "How to become a tourist guide in Italy",
+    "The best season to visit Venice",
+    "The bakery Monica’s parents run"
+   ],
+   "answer": 2,
+   "explain": "침수로 걱정하는 Monica 가 도움을 청하는 글.",
+   "source": "L5 본문 Monica"
+  },
+  {
+   "no": 6,
+   "points": 3,
+   "stem": "(A)~(E) 중 <보기>의 문장이 들어가기에 가장 적절한 곳은?",
+   "box": {
+    "title": "<보기>",
+    "lines": [
+     "Venice is famous for its canals and historic buildings."
+    ]
+   },
+   "choices": [
+    "(A)",
+    "(B)",
+    "(C)",
+    "(D)",
+    "(E)"
+   ],
+   "inline": true,
+   "answer": 2,
+   "explain": "them = canals and historic buildings 바로 앞.",
+   "source": "L5 본문 Monica"
+  },
+  {
+   "no": 7,
+   "points": 3,
+   "stem": "대화의 밑줄 (A)~(E) 중 윗글과 내용이 일치하지 않는 것은?",
+   "box": "Jiho: (A)<u>Monica lives in Venice, a city on the water in Italy.</u>\nMina: Right. (B)<u>Lots of tourists visit the city every year.</u>\nJiho: But she has a problem now. (C)<u>The streets were flooded last week.</u>\nMina: (D)<u>Her parents’ bakery stayed open during the flood.</u>\nJiho: And she says (E)<u>the water in Venice rises higher as the Earth gets warmer.</u>",
+   "choices": [
+    "(A)",
+    "(B)",
+    "(C)",
+    "(D)",
+    "(E)"
+   ],
+   "inline": true,
+   "answer": 4,
+   "explain": "my parents’ bakery had to close.",
+   "source": "L5 본문 Monica"
+  },
+  {
+   "no": 8,
+   "points": 3,
+   "stem": "대화를 읽고 답할 수 없는 질문은?",
+   "box": "Jake: Ms. Hong, may I come in?\nMs. Hong: Sure, Jake. What’s wrong?\nJake: I feel stressed about the exams next week.\nMs. Hong: Oh, no. How often do you feel this way?\nJake: Almost every time I think about exams.\nMs. Hong: I understand. It’s important to manage your stress during exams.\nJake: But I don’t know how. What should I do?\nMs. Hong: You can take a walk and get some fresh air. Also, you can do some stretching.\nJake: Those are great tips. I will try them.\nMs. Hong: Studying with your friends can also lower your stress.\nJake: Okay. Thank you for your advice!",
+   "choices": [
+    "Why does Jake feel stressed?",
+    "How often does Jake feel stressed?",
+    "What does Ms. Hong advise Jake to do?",
+    "When is Jake going to take a walk?",
+    "Who can Jake study with to lower his stress?"
+   ],
+   "answer": 4,
+   "explain": "산책 시점은 언급되지 않는다.",
+   "source": "L6 Listen and Speak 2-A"
+  },
+  {
+   "kind": "group",
+   "label": "[9~10, 서답형 1]",
+   "direction": "다음을 읽고 물음에 답하시오.",
+   "box": "Let’s meet Fly High, our school’s cheerleading club. The club (A)<u>started</u> from an idea of one student two years ago. Now, there are 10 girls and 6 boys in the club. Each member (B)<u>have</u> a special energy. Do you remember the recent school basketball game? After two quarters, our team was losing by 20 points. During halftime, Fly High came on the court. They performed (C)<u>wonderful</u>. They flipped in the air and made a human pyramid. Then they shouted, (F)<u>“Never give up!”</u> And guess what? Our team (D)<u>won</u> the game in the end. Jina, the captain of the club, said, “I can flip in the air because I trust my club members. (E)<u>When I see the crowd cheering and screaming, I feel proud.</u> Fly High is the best part of my middle school life!”"
+  },
+  {
+   "no": 9,
+   "points": 3,
+   "stem": "(A)~(D) 중 어법이 바르지 않은 것의 개수는?",
+   "choices": [
+    "1개",
+    "2개",
+    "3개",
+    "4개",
+    "5개"
+   ],
+   "inline": true,
+   "answer": 2,
+   "explain": "(B) Each member has (each+단수명사+단수동사), (C) performed wonderfully(부사). 2개.",
+   "source": "L6 본문 · 학습지 L6 grammar 1-A"
+  },
+  {
+   "no": 10,
+   "points": 3,
+   "stem": "밑줄 (F)와 가장 관련 있는 속담은?",
+   "choices": [
+    "티끌 모아 태산",
+    "시작이 반이다",
+    "일곱 번 넘어져도 여덟 번 일어난다",
+    "아는 것이 힘이다",
+    "소 잃고 외양간 고친다"
+   ],
+   "answer": 3,
+   "explain": "Never give up! = 포기하지 마라 → 칠전팔기.",
+   "source": "L6 본문"
+  },
+  {
+   "kind": "essay",
+   "no": "서답형 1",
+   "points": 4,
+   "stem": "밑줄 (E)를 「지각동사 + 목적어 + 동사원형」 형태를 사용한 문장으로 다시 쓰시오.",
+   "answer_lines": 1,
+   "answer": "When I see the crowd cheer and scream, I feel proud.",
+   "explain": "지각동사 see 의 목적격보어는 동사원형·현재분사 모두 가능.",
+   "source": "L6 본문 · 학습지 L6 grammar 1-B"
+  },
+  {
+   "no": 11,
+   "points": 3,
+   "stem": "대화의 빈칸에 들어갈 말을 순서대로 바르게 배열한 것은?",
+   "box": {
+    "lines": [
+     "G: Where’s my science book, Eric?",
+     "B: It’s on my desk.",
+     "G: ______________________",
+     "B: ______________________",
+     "G: ______________________",
+     "",
+     "(A) I clean it once a month.",
+     "(B) Oh, no! It’s important to keep your desk tidy.",
+     "(C) Your desk is so messy. How often do you clean it?"
+    ]
+   },
+   "choices": [
+    "(A)-(B)-(C)",
+    "(A)-(C)-(B)",
+    "(B)-(A)-(C)",
+    "(C)-(A)-(B)",
+    "(C)-(B)-(A)"
+   ],
+   "answer": 4,
+   "explain": "빈도 묻기 → 답(once a month) → 충고.",
+   "source": "L6 Listen and Speak 1-A2"
+  },
+  {
+   "no": 12,
+   "points": 3,
+   "stem": "(A)~(E) 중 밑줄 친 It의 쓰임이 다른 하나는?",
+   "box": {
+    "lines": [
+     "(A) <u>It</u> is important to do our part for Venice.",
+     "(B) <u>It</u> isn’t easy to change my eating habits.",
+     "(C) I made this bag from old jeans. <u>It</u>’s so cute.",
+     "(D) <u>It</u> is not difficult to use reusable bags.",
+     "(E) <u>It</u> is necessary to reduce the use of plastic."
+    ]
+   },
+   "choices": [
+    "(A)",
+    "(B)",
+    "(C)",
+    "(D)",
+    "(E)"
+   ],
+   "inline": true,
+   "answer": 3,
+   "explain": "(C)는 this bag 을 가리키는 대명사, 나머지는 가주어.",
+   "source": "L5 본문 · 학습지 L5 grammar 3"
+  },
+  {
+   "no": 13,
+   "points": 3,
+   "stem": "밑줄 친 단어의 쓰임이 의미상 어색한 문장은?",
+   "choices": [
+    "The <u>principal</u> of our school welcomed the new students.",
+    "She is in great <u>condition</u> because she exercises every day.",
+    "We walked by the <u>canal</u> and saw some boats.",
+    "The dark forest looked <u>tidy</u> at night.",
+    "I <u>stayed up</u> late last night to finish the book."
+   ],
+   "answer": 4,
+   "explain": "어두운 숲은 scary(무서운). tidy = 깔끔한.",
+   "source": "학습지 L5·L6 vocabulary 1 예문"
+  },
+  {
+   "kind": "group",
+   "label": "[14~17]",
+   "direction": "다음을 읽고 물음에 답하시오.",
+   "box": "Hi, Monica! I’m Timothy from the United States. My family visited Venice three years ago and we loved it! I am (A)( surprising / surprised ) and sad to hear your news. I want to do my part to help your city and the Earth. I recently found out something interesting. The more meat we eat, (B)( the hotter / the hottest ) our planet gets. This is because lots of trees (C)( cut / are cut ) down to make animal farms. This increases greenhouse gases. Also, cows pass a lot of gas. Smelly! But this is not the worst part. The gas from cows also adds to greenhouse gases. Greenhouse gases make the Earth hotter. So, I’m trying to eat less meat to slow down global warming. (D)________________________, but I’m doing my best."
+  },
+  {
+   "no": 14,
+   "points": 3,
+   "stem": "Timothy가 고기를 덜 먹으려고 노력하는 이유는?",
+   "choices": [
+    "채식이 건강에 좋기 때문에",
+    "고기 값이 너무 비싸기 때문에",
+    "지구 온난화를 늦추기 위해서",
+    "베네치아를 다시 방문하기 위해서",
+    "동물 농장을 늘리기 위해서"
+   ],
+   "answer": 3,
+   "explain": "to slow down global warming.",
+   "source": "L5 본문 Timothy"
+  },
+  {
+   "no": 15,
+   "points": 3,
+   "stem": "(A)~(C)에 알맞은 것은?",
+   "choices_table": {
+    "header": [
+     "",
+     "(A)",
+     "(B)",
+     "(C)"
+    ],
+    "rows": [
+     [
+      "①",
+      "surprising",
+      "the hotter",
+      "cut"
+     ],
+     [
+      "②",
+      "surprising",
+      "the hottest",
+      "are cut"
+     ],
+     [
+      "③",
+      "surprised",
+      "the hotter",
+      "cut"
+     ],
+     [
+      "④",
+      "surprised",
+      "the hotter",
+      "are cut"
+     ],
+     [
+      "⑤",
+      "surprised",
+      "the hottest",
+      "are cut"
+     ]
+    ]
+   },
+   "answer": 4,
+   "explain": "감정 형용사 surprised / the 비교급, the 비교급 / 수동태 are cut down.",
+   "source": "L5 본문 · 학습지 L5 Reading"
+  },
+  {
+   "no": 16,
+   "points": 3,
+   "stem": "밑줄 (D)에 들어갈 말로 가장 적절한 것은?",
+   "choices": [
+    "It isn’t easy to change my eating habits",
+    "It is exciting to eat a lot of meat",
+    "Cows are my favorite animals",
+    "I have never been to Venice",
+    "Trees are cut down to make farms"
+   ],
+   "answer": 1,
+   "explain": "but I’m doing my best 와 어울리는 것.",
+   "source": "L5 본문 Timothy"
+  },
+  {
+   "no": 17,
+   "points": 3,
+   "stem": "<보기>의 문장 중 윗글의 내용과 일치하는 것의 개수는?",
+   "box": {
+    "title": "<보기>",
+    "lines": [
+     "- Timothy has never been to Venice.",
+     "- Timothy was surprised and sad to hear Monica’s news.",
+     "- Eating more meat makes the planet hotter.",
+     "- Trees are cut down to make animal farms.",
+     "- The gas from cows reduces greenhouse gases.",
+     "- Timothy is trying to eat less meat.",
+     "- Timothy thinks changing eating habits is easy."
+    ]
+   },
+   "choices": [
+    "2개",
+    "3개",
+    "4개",
+    "5개",
+    "6개"
+   ],
+   "inline": true,
+   "answer": 3,
+   "explain": "2·3·4·6번째 일치. 4개.",
+   "source": "L5 본문 Timothy"
+  },
+  {
+   "no": 18,
+   "points": 3,
+   "stem": "<보기>의 어떤 빈칸에도 들어갈 수 없는 단어는?",
+   "box": {
+    "title": "<보기>",
+    "lines": [
+     "- Somebody ______ the news yesterday.",
+     "- Listening to music can ______ your stress.",
+     "- The company will ______ its sales next year.",
+     "- He can ______ his time very well."
+    ]
+   },
+   "choices": [
+    "spread",
+    "lower",
+    "increase",
+    "manage",
+    "donate"
+   ],
+   "inline": true,
+   "answer": 5,
+   "explain": "spread / lower / increase / manage.",
+   "source": "학습지 L6 vocabulary 1 예문"
+  },
+  {
+   "kind": "group",
+   "label": "[19~20, 서답형 2~3]",
+   "direction": "다음을 읽고 물음에 답하시오.",
+   "box": "What do you do with your money? Do you save it or spend it? We asked the following questions to 100 students from our school. Let’s look at the results. Surprisingly, the survey showed that only 15 out of 100 students had a spending plan. The survey also showed what the students spent the most money on. Food was chosen by the largest number of students. Transportation followed food. Also, 80 percent of 3rd-year students saved money, but only 30 percent of 1st-year students saved money.\n\nA Special Message from the Principal\nMoney doesn’t grow on trees. (C)<u>Planning your spending is very important!</u> Everyone needs good spending habits. Next week, (D)<u>every student will get a money diary.</u> (E)<u>더 일찍 시작할수록, 너는 더 많은 돈을 저축할 것이다.</u>"
+  },
+  {
+   "no": 19,
+   "points": 3,
+   "stem": "윗글의 내용과 일치하는 것은?",
+   "choices": [
+    "The survey was given to 15 students.",
+    "Most students had a spending plan.",
+    "Students spent the most money on transportation.",
+    "More 3rd-year students saved money than 1st-year students.",
+    "Every student got a money diary last week."
+   ],
+   "answer": 4,
+   "explain": "80 percent of 3rd-year vs 30 percent of 1st-year.",
+   "source": "L6 본문 Survey"
+  },
+  {
+   "no": 20,
+   "points": 3,
+   "stem": "<보기>의 영영풀이에 해당하는 단어 중 짝이 잘못된 것은?",
+   "box": {
+    "title": "<보기>",
+    "lines": [
+     "ⓐ a list of questions to learn what people think or feel about something – survey",
+     "ⓑ to use (money) to pay for something – spend",
+     "ⓒ the person in charge of a public school – principal",
+     "ⓓ a record or journal for writing down income, expenses, and spending habits – money diary",
+     "ⓔ to keep money instead of spending it – transportation"
+    ]
+   },
+   "choices": [
+    "ⓐ",
+    "ⓑ",
+    "ⓒ",
+    "ⓓ",
+    "ⓔ"
+   ],
+   "inline": true,
+   "answer": 5,
+   "explain": "ⓔ 는 save.",
+   "source": "학습지 L6 vocabulary 2 영영풀이"
+  },
+  {
+   "kind": "essay",
+   "no": "서답형 2",
+   "points": 6,
+   "stem": "밑줄 (C)와 (D)를 지시에 맞게 바꾸어 쓰시오. (각 3점)",
+   "box": {
+    "lines": [
+     "(1) (C) → 가주어 It으로 시작하는 문장으로",
+     "(2) (D) → All the students로 시작하는 문장으로"
+    ]
+   },
+   "answer_lines": 2,
+   "answer": "(1) It is very important to plan your spending. (2) All the students will get a money diary next week.",
+   "explain": "(1) 가주어 It + 진주어 to부정사 (2) all + 복수명사 + 복수동사.",
+   "source": "L6 본문 · 학습지 L5 grammar 1 · L6 grammar 1"
+  },
+  {
+   "kind": "essay",
+   "no": "서답형 3",
+   "points": 4,
+   "stem": "<보기>에서 필요한 단어만 골라 (E)의 해석에 맞게 영어 문장을 완성하시오. (단, 필요한 경우 같은 단어를 여러 번 사용할 수 있음.)",
+   "box": {
+    "title": "<보기>",
+    "lines": [
+     "the, early, earlier, start, you, more, most, money, save, will, much"
+    ]
+   },
+   "answer_lines": 1,
+   "answer": "The earlier you start, the more money you will save.",
+   "explain": "The 비교급 + 주어 + 동사, the 비교급 + 주어 + 동사.",
+   "source": "학습지 L5 grammar 2-D"
+  },
+  {
+   "kind": "essay",
+   "no": "서답형 4",
+   "points": 6,
+   "stem": "<보기>를 읽고 「the 비교급 ~, the 비교급 …」 문장을 2개 완성하시오. (각 3점)",
+   "box": {
+    "lines": [
+     "<보기>",
+     "You eat lots of vegetables. → You become healthy.",
+     "You exercise a lot. → Your body becomes strong.",
+     "",
+     "(1) The ______ vegetables you eat, the ______ you will become.",
+     "(2) The ______ you exercise, the ______ your body will become."
+    ]
+   },
+   "answer_lines": 2,
+   "answer": "(1) more / healthier (2) more / stronger",
+   "explain": "(1) The more vegetables you eat, the healthier you will become. (2) The more you exercise, the stronger your body will become.",
+   "source": "학습지 L5 grammar 3-B"
+  },
+  {
+   "kind": "essay",
+   "no": "서답형 5",
+   "points": 4,
+   "stem": "조건에 맞게 대화의 빈칸을 완성하시오.",
+   "box": {
+    "lines": [
+     "<보기> important, it, is, to, walk, every, day, your, dog",
+     "",
+     "B: My dog doesn’t have energy lately.",
+     "G: How often do you walk your dog?",
+     "B: I walk him twice a week.",
+     "G: ____________________________. That way, he can stay healthy.",
+     "B: Okay, I’ll start walking him every day."
+    ]
+   },
+   "condition": [
+    "<보기>에 주어진 단어를 모두 사용할 것.",
+    "가주어 it을 사용할 것."
+   ],
+   "answer_lines": 1,
+   "answer": "It is important to walk your dog every day.",
+   "explain": "가주어 It, 진주어 to walk ~.",
+   "source": "L6 Check Up A · 학습지 L5 grammar 1"
+  },
+  {
+   "kind": "essay",
+   "no": "서답형 6",
+   "points": 4,
+   "stem": "소녀가 소년에게 가족과 저녁을 얼마나 자주 먹는지 묻는 대화문이 되도록 밑줄 (A)에 알맞은 말을 쓰시오. (5단어)",
+   "box": {
+    "lines": [
+     "B: I don’t spend enough time with my family these days.",
+     "G: Hmm. (A)______________________ with your family, Minho?",
+     "B: I have dinner with my family twice a week.",
+     "G: It’s important to eat with your family more often.",
+     "B: Okay, I’ll try.",
+     "B: boy, G: girl"
+    ]
+   },
+   "answer_lines": 1,
+   "answer": "How often do you have dinner",
+   "explain": "빈도 묻기 How often do you ~?",
+   "source": "L6 Listen and Speak 1-A1"
+  },
+  {
+   "kind": "essay",
+   "no": "서답형 7",
+   "points": 12,
+   "stem": "대화를 읽고 조건에 맞게 답하시오. (각 3점)",
+   "box": {
+    "lines": [
+     "Jake: Did you go to the school festival yesterday, Hana?",
+     "Hana: Yes! (A)<u>I watched Fly High while they were performing on the stage.</u>",
+     "Jake: How was it?",
+     "Hana: It was amazing. (B)<u>I saw the members while they were flipping in the air.</u>",
+     "Jake: Wow! I want to see them, too.",
+     "Hana: (C)<u>I heard the crowd while they were shouting, “Never give up!”</u> (D)<u>관중이 더 크게 응원할수록, 그들은 더 높이 뛰었다.</u>",
+     "Jake: I’ll go next time!"
+    ]
+   },
+   "condition": [
+    "<조건 1> 밑줄 (A)~(C)를 while 없이 「지각동사 + 목적어 + 현재분사」 형태의 한 문장으로 쓸 것.",
+    "<조건 2> 밑줄 (D)를 「the 비교급 ~, the 비교급 …」 구문과 loud, cheer, high, jump를 사용하여 영작할 것. (과거시제)"
+   ],
+   "answer_lines": 4,
+   "answer": "(1) I watched Fly High performing on the stage. (2) I saw the members flipping in the air. (3) I heard the crowd shouting, “Never give up!” (4) The louder the crowd cheered, the higher they jumped.",
+   "explain": "지각동사 + 목적어 + 현재분사(진행 강조) / the 비교급, the 비교급.",
+   "source": "L6 본문 · 학습지 L6 grammar 2-C · L5 grammar 2"
+  }
+ ]
+}
