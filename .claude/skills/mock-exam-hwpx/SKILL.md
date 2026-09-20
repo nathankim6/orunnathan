@@ -12,8 +12,9 @@ description: 학교 기출 시험지·시험범위 자료(교과서 본문·어�
 ## 0. 준비
 
 ```bash
-pip install -q -r $SKILL/agent/requirements.txt   # 처음 한 번
+pip install -q -r $SKILL/agent/requirements.txt   # 처음 한 번. 안 되면 건너뛴다 — python-hwpx·olefile 은 agent/vendor 에 동봉되어 있다
 ```
+claude.ai 채팅에서 돌 때: Playwright 가 없으니 `build` 는 PDF 미리보기를 건너뛰고 HWPX·HTML 만 낸다. 그래도 된다.
 
 ## 1. 자료 풀기·분류
 
@@ -88,7 +89,7 @@ python3 $SKILL/agent/agent.py build set1.json set2.json set3.json -o <출력폴�
 HWPX 는 스키마 검증을 지나야 저장된다. **이 환경에는 한글이 없다.** `.pdf` 미리보기는 구성 확인용일 뿐
 줄 바꿈·쪽 수는 한글과 다르므로, 파일을 보내고 사용자가 한글에서 본 캡처로 마무리한다.
 
-끝나면 `SendUserFile` 로 **HWPX 3개 + analysis.md** 를 보낸다(PDF 는 요청할 때만).
+끝나면 **HWPX 3개 + analysis.md** 를 사용자에게 준다 — Claude Code 는 `SendUserFile`, claude.ai 채팅은 `/mnt/user-data/outputs/` 에 복사(PDF 는 요청할 때만).
 저장소에 남길 때는 `$SKILL/agent/samples/<학교-학년-학기-고사>/` 에 spec·analysis·hwpx 를 둔다.
 
 ## 판형에서 이미 정해진 것 (다시 묻지 않는다)

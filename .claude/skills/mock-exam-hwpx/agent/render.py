@@ -14,6 +14,11 @@ item.kind:
 BOX = "한 줄\\n두 줄" 또는 {"lines":[…], "title":"…"?}
 줄 안 표시: <u>밑줄</u> <b>굵게</b> <i>기울임</i>, 빈칸은 ______ 그대로.
 """
+import sys as _sys, os as _os
+_v = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), 'vendor')     # 동봉 라이브러리(python-hwpx·olefile) — pip 이 안 되는 환경용
+if _os.path.isdir(_v) and _v not in _sys.path:
+    _sys.path.append(_v)
+
 import html as H, json, re, sys
 from pathlib import Path
 

@@ -12,6 +12,11 @@
   exam      기출 시험지          scope   시험범위 자료(교과서 본문·대화문·어휘)
   worksheet 학교 학습지·프린트   notes   출제 성향·특징·지침 메모
 """
+import sys as _sys, os as _os
+_v = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), 'vendor')     # 동봉 라이브러리(python-hwpx·olefile) — pip 이 안 되는 환경용
+if _os.path.isdir(_v) and _v not in _sys.path:
+    _sys.path.append(_v)
+
 import json, os, re, struct, sys, zipfile, zlib
 from pathlib import Path
 

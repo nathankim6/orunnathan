@@ -7,6 +7,11 @@
 작업폴더/profile.json 과 profile.md 를 쓴다. 유형 판정은 발문의 낱말로 하는 어림이므로
 Claude 가 profile.md 를 읽고 손봐야 한다 — 이 파일은 출발점이지 정답이 아니다.
 """
+import sys as _sys, os as _os
+_v = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), 'vendor')     # 동봉 라이브러리(python-hwpx·olefile) — pip 이 안 되는 환경용
+if _os.path.isdir(_v) and _v not in _sys.path:
+    _sys.path.append(_v)
+
 import json, re, sys
 from collections import Counter, OrderedDict
 from pathlib import Path
