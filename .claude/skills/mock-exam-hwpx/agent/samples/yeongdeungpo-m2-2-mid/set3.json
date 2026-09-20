@@ -21,8 +21,14 @@
     "The box was <u>empty</u>, so I could see the cake in it."
    ],
    "answer": 5,
-   "explain": "⑤ 상자가 비어 있으면 케이크를 볼 수 없다. 원문: The box was open, so I could see the cake in it.",
-   "source": "L5 본문 도입·Tom · L6 본문 도입·첫 번째 방 (⑤만 원문의 open을 empty로 바꿈)"
+   "explain": "⑤ 원문은 Tom의 말 \"The box was open, so I could see the cake in it.\"(상자가 열려 있어서 안의 케이크를 볼 수 있었다)이다.\n상자가 '비어 있었다(empty)'면 케이크를 볼 수 없으므로 앞뒤가 모순된다. ⑤가 어색하다.\n나머지는 모두 L5·L6 본문 문장 그대로다.",
+   "source": "L5 본문 도입·Tom · L6 본문 도입·첫 번째 방 (⑤만 원문의 open을 empty로 바꿈)",
+   "wrong": [
+    "① wrapped(포장했다) the cake in a box — 자연스럽다.",
+    "② rooms that celebrated(기렸다) great people — 자연스럽다.",
+    "③ stomachache, so I stayed(머물렀다) in bed — 자연스럽다.",
+    "④ goggles were displayed(전시되었다) — 자연스럽다."
+   ]
   },
   {
    "no": 2,
@@ -38,8 +44,14 @@
    ],
    "inline": true,
    "answer": 2,
-   "explain": "sweet: 달콤한 / 상냥한 (다의어).",
-   "source": "L5 어휘 다의어 sweet"
+   "explain": "\"Chocolate is sweet and delicious.\"에서 sweet은 '달콤한', \"He is so sweet to people.\"에서 sweet은 '상냥한, 다정한'이다.\n두 뜻을 모두 가진 단어는 sweet이므로 ②이다. 본문에서는 \"Ms. Jones came with her sweet smile.\"로 쓰였다.",
+   "source": "L5 어휘 다의어 sweet",
+   "wrong": [
+    "① wise — 현명한, 초콜릿에 쓸 수 없다.",
+    "③ secret — 비밀의.",
+    "④ brave — 용감한.",
+    "⑤ exact — 정확한."
+   ]
   },
   {
    "no": 3,
@@ -53,8 +65,14 @@
     "Emily는 Fabre가 30년 넘게 곤충에 관한 많은 책들을 썼다는 것을 알게 되었다.\n⇒ Emily learned that Fabre wrote many books about insects for less than thirty years."
    ],
    "answer": 5,
-   "explain": "⑤ '~ 넘게, ~ 이상'은 more than ~. 원문: … for more than thirty years.",
-   "source": "L6 본문 첫 번째 방·두 번째 방 · L5 본문 Carol (⑤만 원문의 more를 less로 바꿈)"
+   "explain": "⑤ '30년 넘게'는 for more than thirty years이다. 원문: \"Emily learned that Fabre wrote many books about insects for more than thirty years.\" less than은 '~보다 적게'로 우리말과 반대다.\n나머지는 교과서 본문 문장 그대로다.",
+   "source": "L6 본문 첫 번째 방·두 번째 방 · L5 본문 Carol (⑤만 원문의 more를 less로 바꿈)",
+   "wrong": [
+    "① in surprise(놀라서) — 바르다.",
+    "② the exact time(정확한 시간) — 바르다.",
+    "③ Most of all(무엇보다도) — 바르다.",
+    "④ pick up(집어 들다), picked it up — 바르다."
+   ]
   },
   {
    "no": 4,
@@ -70,8 +88,14 @@
    ],
    "inline": true,
    "answer": 1,
-   "explain": "come out of ~: ~에서 나오다. (I saw Tom coming out of the kitchen.)",
-   "source": "L5 본문 Carol 표현"
+   "explain": "come out of ~: ~에서 나오다. 원문: \"I saw Tom coming out of the kitchen.\"(나는 Tom이 주방에서 나오는 것을 보았다). ① out이다.",
+   "source": "L5 본문 Carol 표현",
+   "wrong": [
+    "② into — come into는 '~로 들어가다'이고 of와 함께 쓰지 않는다.",
+    "③ off — come off of는 뜻이 맞지 않는다.",
+    "④ up — 뜻이 맞지 않는다.",
+    "⑤ away — come away of는 쓰지 않는다."
+   ]
   },
   {
    "kind": "group",
@@ -101,8 +125,14 @@
    ],
    "inline": true,
    "answer": 1,
-   "explain": "'어디에 두고 왔다'는 과거의 일 → left.",
-   "source": "L5 UC A-2"
+   "explain": "[5-6] 지문 요지: 소년이 배낭을 잃어버렸고, 농구 코트에 두고 온 것 같다고 하자 둘이 그곳으로 찾으러 가기로 한다.\n앞에서 \"Where did you last see it?\"(마지막으로 어디에서 봤니?)라고 과거의 일을 묻고 있으므로, 답도 과거형 \"I think I left it on the basketball court.\"가 맞다. leave의 과거형 left, ①이다.",
+   "source": "L5 UC A-2",
+   "wrong": [
+    "② leave — 과거의 일이므로 현재형은 맞지 않는다.",
+    "③ leaving — I 뒤에 동사가 없어 문장이 되지 않는다.",
+    "④ to leave — 문장이 되지 않는다.",
+    "⑤ leaves — 주어 I와 맞지 않고 시제도 틀렸다."
+   ]
   },
   {
    "no": 6,
@@ -116,8 +146,14 @@
     "그들은 그것을 찾으러 어디로 갈 것인가?"
    ],
    "answer": 4,
-   "explain": "잃어버린 때는 대화에 나오지 않는다. ① 배낭 ② 농구 코트 ③ 별무늬 파란색 ⑤ 농구 코트.",
-   "source": "L5 UC A-2"
+   "explain": "배낭을 '언제' 잃어버렸는지는 대화에 나오지 않는다. ④에 답할 수 없다.",
+   "source": "L5 UC A-2",
+   "wrong": [
+    "① \"I lost my backpack!\" — 배낭.",
+    "② \"I think I left it on the basketball court.\" — 농구 코트.",
+    "③ \"It's a blue backpack with a star pattern on it.\" — 별무늬 파란 배낭.",
+    "⑤ \"let's go to the basketball court and look for it.\" — 농구 코트."
+   ]
   },
   {
    "kind": "group",
@@ -146,8 +182,14 @@
     "Let's look around the classroom."
    ],
    "answer": 1,
-   "explain": "꿈을 말한 상대에게 꿈이 이루어지기를 바란다고 답한다.",
-   "source": "L6 UC A-3 (선지는 모두 교과서 대화문 문장 그대로)"
+   "explain": "[7-8] 지문 요지: Mike가 Beethoven의 음악을 듣고 있으며 미래에 그처럼 음악을 만들고 싶다고 하고, 여학생이 응원한다.\nMike가 \"I hope to make music like him in the future.\"라고 꿈을 말했으므로 여학생의 답은 \"I hope your dream comes true.\"(네 꿈이 이루어지기를 바라)가 알맞다. 교과서 대화문(L6 UC A-3) 그대로다. ①이다.",
+   "source": "L6 UC A-3 (선지는 모두 교과서 대화문 문장 그대로)",
+   "wrong": [
+    "② I'm sorry to hear that. — 나쁜 소식에 대한 답.",
+    "③ What are you interested in? — 이미 관심사를 말한 뒤이므로 어색하다.",
+    "④ I'm interested in space travel. — 상대 꿈에 대한 답이 아니다.",
+    "⑤ Let's look around the classroom. — 분실물을 찾는 상황의 말."
+   ]
   },
   {
    "no": 8,
@@ -161,8 +203,14 @@
     "여학생은 Beethoven의 음악을 듣고 있다."
    ],
    "answer": 2,
-   "explain": "① 음악을 듣고 있음 ③④ 언급 없음 ⑤ 듣는 사람은 Mike.",
-   "source": "L6 UC A-3"
+   "explain": "\"I hope to make music like him in the future.\" — Mike는 미래에 Beethoven처럼 음악을 만들고 싶어 한다. ②가 일치한다.",
+   "source": "L6 UC A-3",
+   "wrong": [
+    "① 책을 읽는 것이 아니라 음악을 듣고 있다(listening to Beethoven).",
+    "③ 여학생은 \"That sounds awesome!\"이라고 하므로 관심이 없다고 볼 수 없다.",
+    "④ 추천했다는 말은 없다.",
+    "⑤ Beethoven을 듣고 있는 사람은 Mike다."
+   ]
   },
   {
    "no": 9,
@@ -177,8 +225,14 @@
     "(D)-(B)-(A)-(C)"
    ],
    "answer": 3,
-   "explain": "고양이가 사라졌다 → (B) 유감·생김새 질문 → (A) 짧은 회색 털·파란 눈 → (D) 함께 찾아보자 → (C) 고마워.",
-   "source": "L5 Wrap Up 1 (순서배열 보기로 문장 순서만 섞음)"
+   "explain": "고양이 Bori가 사라졌다는 말에 대한 답은 (B) 유감을 표하고 생김새를 묻는 \"What does she look like?\"이다. 이어서 (A) 짧은 회색 털·파란 눈이라고 답하고, (D) 함께 찾아보자고 하고, (C) 고맙다고 끝난다.\n따라서 (B)-(A)-(D)-(C), ③이다.",
+   "source": "L5 Wrap Up 1 (순서배열 보기로 문장 순서만 섞음)",
+   "wrong": [
+    "① (A) 생김새 답이 질문 (B)보다 앞에 올 수 없다.",
+    "② (C) 고맙다는 말이 도와주겠다는 (D)보다 앞에 올 수 없다.",
+    "④ (D) 함께 찾자는 말이 생김새를 듣기 전에 오고, (A)가 뒤에 와 어색하다.",
+    "⑤ (D)가 맨 앞에 오면 유감 표현·생김새 질문의 순서가 깨진다."
+   ]
   },
   {
    "kind": "group",
@@ -206,8 +260,14 @@
     "경찰에 신고하기"
    ],
    "answer": 1,
-   "explain": "Let's find your dog together.",
-   "source": "L5 UC A-1"
+   "explain": "[10-11] 지문 요지: Kevin이 공원에서 개를 잃어버려 찾고 있고, 여학생이 생김새를 물은 뒤 함께 찾자고 한다.\n마지막 말 \"Okay. Let's find your dog together.\"(함께 네 개를 찾자) — 두 사람이 바로 할 일은 ① 함께 개 찾기다.",
+   "source": "L5 UC A-1",
+   "wrong": [
+    "② 사진은 이미 가지고 있다(Here's his picture).",
+    "③ 공원을 떠난다는 말은 없다.",
+    "④ 새 개를 산다는 말은 없다.",
+    "⑤ 경찰 이야기는 없다."
+   ]
   },
   {
    "no": 11,
@@ -221,8 +281,14 @@
     "개가 누구를 닮았는지 묻고 있다."
    ],
    "answer": 1,
-   "explain": "What does ~ look like?: 생김새를 묻는 표현. 뒤에 긴 몸·짧은 다리로 답한다.",
-   "source": "L5 UC A-1"
+   "explain": "What does ~ look like?는 '~는 어떻게 생겼니?'라고 생김새를 묻는 표현이다. 뒤에 Kevin이 \"He has a long body and short legs.\"라고 개의 생김새를 답하는 것이 근거다. ①이다.",
+   "source": "L5 UC A-1",
+   "wrong": [
+    "② 이름을 묻는 말은 What's his name?이다.",
+    "③ 있는 곳을 묻는 말은 Where is he?이다.",
+    "④ 기분을 묻는 말은 How does he feel?이다.",
+    "⑤ 닮은 사람을 묻는 것이 아니라 생김새 그 자체를 묻는다."
+   ]
   },
   {
    "no": 12,
@@ -237,8 +303,14 @@
     "That sounds awesome!"
    ],
    "answer": 1,
-   "explain": "분실물 신고를 받은 뒤 찾으면 연락하겠다는 말.",
-   "source": "L5 UC B"
+   "explain": "공원에서 우산을 잃어버렸다는 신고를 받고 생김새(노란색·꽃무늬)까지 들은 뒤이므로, 마무리로 \"I'll call you when we find it.\"(찾으면 전화드릴게요)이 알맞다. 원문(L5 UC B) 그대로다. ①이다.",
+   "source": "L5 UC B",
+   "wrong": [
+    "② I'm interested in space travel. — 관심사를 말하는 문장.",
+    "③ I hope your dream comes true. — 꿈을 응원하는 말.",
+    "④ What are you interested in? — 관심사를 묻는 말.",
+    "⑤ That sounds awesome! — 상대의 말에 감탄하는 말로 분실 상황에 맞지 않는다."
+   ]
   },
   {
    "no": 13,
@@ -253,8 +325,14 @@
     "what – cross"
    ],
    "answer": 3,
-   "explain": "ⓐ 선행사 a museum(사물) → which (학습지: She will visit a museum which opened last month.). ⓑ 지각동사 saw + 목적어 + 동사원형/현재분사 → crossing (학습지: I saw him cross the street.).",
-   "source": "학습지 p.15 Grammar Points 1 B-4 · p.16 Grammar Points 2 예문 (문장 그대로, 빈칸만)"
+   "explain": "ⓐ 선행사 a museum은 사물이고 관계대명사가 절의 주어이므로 which를 쓴다. 학습지 원문: \"She will visit a museum which opened last month.\"\nⓑ 지각동사 saw의 목적격 보어는 동사원형(cross) 또는 현재분사(crossing)이고 to부정사는 쓸 수 없다. 학습지 예문: \"I saw him cross the street.\" (현재분사 crossing도 가능)\n선지 중 둘 다 맞는 것은 which – crossing, ③이다.",
+   "source": "학습지 p.15 Grammar Points 1 B-4 · p.16 Grammar Points 2 예문 (문장 그대로, 빈칸만)",
+   "wrong": [
+    "① who — 선행사가 사물이므로 쓸 수 없다.",
+    "② to cross — 지각동사 뒤에 to부정사를 쓸 수 없다.",
+    "④ who – crossed — 둘 다 틀렸다.",
+    "⑤ what — 선행사가 있으므로 쓸 수 없다."
+   ]
   },
   {
    "no": 14,
@@ -269,8 +347,14 @@
     "박물관의 도둑에 대해 사람들에게 경고하려고"
    ],
    "answer": 1,
-   "explain": "두 가지 단서를 들어 Green 씨가 도둑이라고 추측하는 글.",
-   "source": "L5 Express My Thoughts Viewing"
+   "explain": "\"I think the person who stole the painting is Ms. Green. The first clue is her beautiful long dress. … The second clue is an earring on the floor.\" — 두 가지 단서를 들어 Ms. Green이 도둑이라고 생각하는 까닭을 설명하는 글이다. ①이다.",
+   "source": "L5 Express My Thoughts Viewing",
+   "wrong": [
+    "② 그림을 묘사하지 않는다.",
+    "③ 네 사람은 용의자로 이름만 나온다.",
+    "④ 귀걸이는 단서일 뿐 찾아 달라는 것이 아니다.",
+    "⑤ 경고가 아니라 추리(What's your guess?)를 묻는 글이다."
+   ]
   },
   {
    "no": 15,
@@ -286,8 +370,14 @@
    ],
    "inline": true,
    "answer": 1,
-   "explain": "be guided by ~: ~에 의해 인도되다. 할아버지의 지혜를 따른다는 뜻.",
-   "source": "L6 Express My Thoughts Viewing (Ruby)"
+   "explain": "be guided by ~: ~에 의해 인도되다, ~를 따르다. 원문(L6 Express My Thoughts, Ruby): \"I'm guided by his wisdom. I hope to be a wise person like him.\"\n할아버지의 지혜를 따라 시험 실수를 되풀이하지 않게 되었다는 흐름이므로 ① guided이다.",
+   "source": "L6 Express My Thoughts Viewing (Ruby)",
+   "wrong": [
+    "② decorated — 장식되다.",
+    "③ displayed — 전시되다.",
+    "④ invented — 발명되다.",
+    "⑤ celebrated — 기려지다, 흐름에 맞지 않는다."
+   ]
   },
   {
    "no": 16,
@@ -303,14 +393,20 @@
    ],
    "inline": true,
    "answer": 4,
-   "explain": "Jane Goodall을 소개하는 글에 살을 빼려고 한다는 ⓓ(L5 본문 Carol의 말)는 흐름에 맞지 않는다.",
-   "source": "L6 UC C-1 + L6 UC C 문장 (ⓓ는 L5 본문 문장을 일부러 끼워 넣음)"
+   "explain": "Jane Goodall을 소개하고 그녀처럼 동물을 연구하고 싶다는 글이다. ⓐ 야생 침팬지 연구의 첫 사람 → ⓑ 책도 씀 → ⓒ 나도 동물 행동에 관심 → ⓔ 야생에서 동물을 연구하고 돕고 싶다로 이어진다.\nⓓ \"I'm trying to lose weight these days.\"(요즘 살을 빼려고 한다)는 L5 본문 Carol의 말로 흐름과 관계가 없다.",
+   "source": "L6 UC C-1 + L6 UC C 문장 (ⓓ는 L5 본문 문장을 일부러 끼워 넣음)",
+   "wrong": [
+    "ⓐ Jane Goodall 소개 — 자연스럽다.",
+    "ⓑ 그녀의 책 — 자연스럽다.",
+    "ⓒ 글쓴이의 관심 — 자연스럽다.",
+    "ⓔ 글쓴이의 꿈 — 자연스럽다."
+   ]
   },
   {
    "no": 17,
    "points": 4,
    "stem": "우리말 뜻과 일치하도록 주어진 단어를 바르게 배열할 때 <u>네 번째</u>에 오는 단어는?",
-   "box": "Steve는 너무 천천히 걸어서 나는 그를 기다려야 했다.\n( I, slowly, wait, that, so, had to, Steve walked, for him )",
+   "box": "Steve는 너무 천천히 걸어서 나는 그를 기다려야 했다.\n( I, slowly, wait, that, so, had, to, Steve, walked, for, him )",
    "choices": [
     "so",
     "slowly",
@@ -320,8 +416,14 @@
    ],
    "inline": true,
    "answer": 2,
-   "explain": "Steve walked so slowly that I had to wait for him. → 네 번째 slowly.",
-   "source": "학습지 L6 Grammar Practice 2 A-3"
+   "explain": "바르게 배열하면 \"Steve walked so slowly that I had to wait for him.\"이다. 「so + 부사 + that + 주어 + 동사」 '너무 ~해서 …하다' 구문이다.\nSteve(1) walked(2) so(3) slowly(4)이므로 네 번째 단어는 slowly, ②이다.",
+   "source": "학습지 L6 Grammar Practice 2 A-3",
+   "wrong": [
+    "① so — 세 번째.",
+    "③ that — 다섯 번째.",
+    "④ I — 여섯 번째.",
+    "⑤ had — 일곱 번째."
+   ]
   },
   {
    "no": 18,
@@ -335,8 +437,14 @@
     "Lucy is love by the children."
    ],
    "answer": 5,
-   "explain": "⑤ 수동태는 be동사 + 과거분사 → is loved.",
-   "source": "선생님 제작 문장 · 학습지 L6 Grammar Points 1(수동태) · Grammar Points 2(so ~ that)"
+   "explain": "⑤ 수동태는 「be동사 + 과거분사」이다. love의 과거분사는 loved이므로 Lucy is loved by the children.이어야 한다.\n나머지는 be동사 + 과거분사(cleaned·stolen·fixed) 형태와 so ~ that 구문이 바르다.",
+   "source": "선생님 제작 문장 · 학습지 L6 Grammar Points 1(수동태) · Grammar Points 2(so ~ that)",
+   "wrong": [
+    "① is cleaned by them — 바르다.",
+    "② was stolen — 바르다.",
+    "③ so funny that we laughed — 바르다.",
+    "④ was fixed by her — 바르다."
+   ]
   },
   {
    "no": 19,
@@ -352,8 +460,14 @@
    ],
    "inline": true,
    "answer": 4,
-   "explain": "사역동사 made·had·let은 목적격 보어로 동사원형(clean)을 쓴다. want·tell은 to부정사가 필요하다.",
-   "source": "선생님 제작 문장 · 사역동사 확장(지침: 지각동사 → 사역동사까지)"
+   "explain": "\"Mom ______ me clean my room.\" — 목적어 me 뒤에 동사원형 clean이 왔다. 목적격 보어로 동사원형을 쓰는 것은 사역동사(make·have·let)이다.\nwant·tell은 목적격 보어로 to부정사를 쓰므로(want me to clean) 둘 다 빈칸에 들어갈 수 없다. ④이다.",
+   "source": "선생님 제작 문장 · 사역동사 확장(지침: 지각동사 → 사역동사까지)",
+   "wrong": [
+    "① made – had — 둘 다 사역동사로 가능하다.",
+    "② had – let — 둘 다 가능하다.",
+    "③ made – let — 둘 다 가능하다.",
+    "⑤ let은 가능하므로 '둘 다 안 되는' 짝이 아니다."
+   ]
   },
   {
    "no": 20,
@@ -369,8 +483,14 @@
    ],
    "inline": true,
    "answer": 5,
-   "explain": "our special rooms / an amazing journey / Brave Pilot / Insect Lover. empty는 들어갈 곳이 없다.",
-   "source": "L6 Understand Visuals (초대장)"
+   "explain": "초대장 원문: \"Come and see our special rooms. Each room will take you on an amazing journey back in time. Brave Pilot / … / Insect Lover\"\n네 빈칸에 special·amazing·pilot·lover가 들어가고, empty(빈)는 어디에도 맞지 않는다. ⑤이다.",
+   "source": "L6 Understand Visuals (초대장)",
+   "wrong": [
+    "① special — our special rooms.",
+    "② amazing — an amazing journey.",
+    "③ pilot — Brave Pilot.",
+    "④ lover — Insect Lover."
+   ]
   },
   {
    "kind": "group",
@@ -398,8 +518,14 @@
     "to communicate with someone by phone, email, or other methods"
    ],
    "answer": 1,
-   "explain": "smell: to notice something by using your nose. (② bake ③ wrap ④ lie ⑤ contact)",
-   "source": "L5 본문 Tom · L5 어휘 영영풀이 (풀이 문장 그대로)"
+   "explain": "[21-22] 지문 요지: Ms. Jones가 막내 Tom을 조사한다. Tom은 배가 아파 누워 있었고 11시 30분쯤 약을 가지러 주방에 갔을 때 상자가 열려 있어 케이크를 보았다고 한다. Ms. Jones는 거짓말한 사람이 범인이라고 말한다.\nsmell은 '냄새를 맡다'로, 영영풀이는 \"to notice something by using your nose\"이다. \"I smelled Mom baking a cake\" — 엄마가 케이크를 굽는 냄새를 맡았다는 뜻이다. ①이다.",
+   "source": "L5 본문 Tom · L5 어휘 영영풀이 (풀이 문장 그대로)",
+   "wrong": [
+    "② to cook something in an oven — bake(굽다).",
+    "③ to put paper or cloth over something — wrap(싸다).",
+    "④ to deliberately tell someone something that is not true — lie(거짓말하다).",
+    "⑤ to communicate with someone by phone, email — contact(연락하다)."
+   ]
   },
   {
    "no": 22,
@@ -414,8 +540,14 @@
    ],
    "inline": true,
    "answer": 1,
-   "explain": "배가 아파서 약을 먹으러 주방에 갔다. take medicine: 약을 먹다.",
-   "source": "L5 본문 Tom"
+   "explain": "\"But I had a stomachache, so I stayed in bed.\" 뒤에 \"I went to the kitchen to take some medicine at about 11:30.\"이 온다. 배가 아파서 약(medicine)을 가지러 주방에 간 것이다. take medicine: 약을 먹다. ①이다.",
+   "source": "L5 본문 Tom",
+   "wrong": [
+    "② dessert — 배가 아픈 사람이 디저트를 가지러 갔다는 것은 흐름에 맞지 않는다.",
+    "③ candles — 초는 엄마가 사러 나간 것이다.",
+    "④ crumbs — 부스러기는 Harry의 입가에 있던 것이다.",
+    "⑤ cookies — 배가 아픈 상황과 맞지 않는다."
+   ]
   },
   {
    "kind": "group",
@@ -443,8 +575,14 @@
    ],
    "inline": true,
    "answer": 1,
-   "explain": "그래서 디저트를 먹지 않는다 → 살을 빼려고(lose weight).",
-   "source": "L5 본문 Carol"
+   "explain": "[23-24] 지문 요지: Ms. Jones가 딸 Carol을 조사한다. Carol은 아침 내내 집에서 탐정 소설을 읽었고, 물을 마시러 주방에 갔을 때 상자 안 케이크를 볼 수 없었으며, 살을 빼는 중이라 디저트를 먹지 않는다고 한다.\n\"You know, I'm trying to lose weight these days. So, I don't eat any dessert.\" — 그래서 디저트를 먹지 않는다고 이어지므로 빈칸은 '살을 빼다' lose weight이다. ①이다.",
+   "source": "L5 본문 Carol",
+   "wrong": [
+    "② find out — 알아내다.",
+    "③ look around — 둘러보다.",
+    "④ take medicine — 약을 먹다(Tom의 말).",
+    "⑤ stay in bed — 누워 있다(Tom의 말)."
+   ]
   },
   {
    "no": 24,
@@ -458,8 +596,14 @@
     "Carol은 Harry가 주방에서 나오는 것을 보았다."
    ],
    "answer": 1,
-   "explain": "② 거실 ③ 볼 수 없었다 ④ 좋아하지 않는다 ⑤ Tom.",
-   "source": "L5 본문 Carol"
+   "explain": "\"She stayed home all morning.\" — Carol은 아침 내내 집에 있었다. ①이 일치한다.",
+   "source": "L5 본문 Carol",
+   "wrong": [
+    "② 주방이 아니라 거실(in the living room)에서 읽고 있었다.",
+    "③ 상자 안의 케이크를 볼 수 없었다(I couldn't see the cake inside the box).",
+    "④ 초콜릿 케이크를 좋아하지 않는다(I don't like chocolate cake).",
+    "⑤ Harry가 아니라 Tom이 주방에서 나오는 것을 보았다."
+   ]
   },
   {
    "no": 25,
@@ -475,8 +619,14 @@
    ],
    "inline": true,
    "answer": 5,
-   "explain": "(A) 선행사 an animal scientist(사람) → who ○. (B) Lucy가 사랑받는 것 → is loved 수동태 ○(예지 ✗). (C) 지각동사 felt + 현재분사 blowing ○. (D) 선행사 the person(사람) → who/that (본문 원문: the person who ate the cake). (E) so ~ that ○.",
-   "source": "L6 UC C · 학습지 p.21 예문 · p.16 A-4 · L5 본문 도입(who를 which로 바꿈) · 학습지 p.25 예문"
+   "explain": "(A) 선행사 an animal scientist(사람) + 주격 관계대명사 who가 맞다 → ⓐ 옳다.\n(B) Lucy는 아이들에게 '사랑받는' 쪽이고 뒤에 by the children이 있으므로 수동태 is loved가 맞다. 능동 loves로 고치면 안 된다 → ⓑ 틀리다.\n(C) 지각동사 felt의 목적격 보어로 진행 중인 동작을 나타내는 현재분사 blowing을 쓴 것이 맞다 → ⓒ 옳다.\n(D) 선행사 the person은 사람이므로 which가 아니라 who 또는 that을 써야 한다. 원문: \"the person who ate the cake\" → ⓓ 옳다.\n따라서 ⓐ,ⓒ,ⓓ, ⑤이다.",
+   "source": "L6 UC C · 학습지 p.21 예문 · p.16 A-4 · L5 본문 도입(who를 which로 바꿈) · 학습지 p.25 예문",
+   "wrong": [
+    "① ⓑ는 틀린 설명이다.",
+    "② ⓐ가 빠졌다.",
+    "③ ⓑ는 틀린 설명이고 ⓓ가 빠졌다.",
+    "④ ⓑ는 틀린 설명이다."
+   ]
   }
  ]
 }

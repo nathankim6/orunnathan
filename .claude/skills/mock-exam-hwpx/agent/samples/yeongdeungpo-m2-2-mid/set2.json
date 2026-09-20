@@ -21,8 +21,14 @@
     "She was so <u>caring</u> that she helped many people in India."
    ],
    "answer": 4,
-   "explain": "④ 살아 있는 것처럼 보일 만큼 '자세한(detailed)' 그림이어야 한다. 원문: It was so detailed that the honeybee looked alive. ordinary(평범한)는 어색하다.",
-   "source": "L6 본문 도입·첫 번째 방·두 번째 방 · L6 Express My Thoughts Write (④만 원문의 detailed를 ordinary로 바꿈)"
+   "explain": "④ 원문은 \"It was so detailed that the honeybee looked alive.\"(그림이 너무 자세해서 꿀벌이 살아 있는 것처럼 보였다)이다.\n'평범해서(ordinary)' 살아 있어 보였다는 것은 인과가 맞지 않으므로 ④가 어색하다.\n나머지는 모두 L6 본문·Express My Thoughts의 문장 그대로다.",
+   "source": "L6 본문 도입·첫 번째 방·두 번째 방 · L6 Express My Thoughts Write (④만 원문의 detailed를 ordinary로 바꿈)",
+   "wrong": [
+    "① received(받았다) an invitation — 자연스럽다.",
+    "② hanging from the ceiling(천장에 매달려) — 자연스럽다.",
+    "③ the first female(여성) pilot — 자연스럽다.",
+    "⑤ so caring(배려심 있는) that she helped — 자연스럽다."
+   ]
   },
   {
    "no": 2,
@@ -38,8 +44,14 @@
    ],
    "inline": true,
    "answer": 2,
-   "explain": "stop: 정류장 / 방문지 (다의어).",
-   "source": "L6 어휘 다의어 stop"
+   "explain": "\"We get off at the next stop.\"에서 stop은 '정류장', \"Their last stop was the famous beach.\"에서 stop은 '방문지·들르는 곳'이다.\n두 뜻을 모두 가진 단어는 stop이므로 ②이다. 본문에서는 \"Her first stop was a room …\"으로 쓰였다.",
+   "source": "L6 어휘 다의어 stop",
+   "wrong": [
+    "① step — 계단·걸음.",
+    "③ flight — 비행.",
+    "④ garage — 차고.",
+    "⑤ journey — 여행."
+   ]
   },
   {
    "no": 3,
@@ -53,8 +65,14 @@
     "그는 항상 어려움에 처한 사람들을 도우려고 노력한다.\n⇒ He always tries to help people in need."
    ],
    "answer": 4,
-   "explain": "④ '~에 맞서 싸우다'는 fight against ~. 원문: She also fought against Japan for Korea's independence.",
-   "source": "L6 본문 첫 번째 방·두 번째 방 · L6 UC A-2 · L6 Express Our Thoughts (④만 원문의 against를 for로 바꿈)"
+   "explain": "④ '~에 맞서 싸우다'는 fight against ~ 이다. 원문: \"She also fought against Japan for Korea's independence.\" fought for Japan은 '일본을 위해 싸웠다'가 되어 우리말과 반대다.\n나머지는 교과서 본문·대화문 문장 그대로다.",
+   "source": "L6 본문 첫 번째 방·두 번째 방 · L6 UC A-2 · L6 Express Our Thoughts (④만 원문의 against를 for로 바꿈)",
+   "wrong": [
+    "① give up(포기하다), achieve her dream(꿈을 이루다) — 바르다.",
+    "② be filled with ~(~로 가득 차다) — 바르다.",
+    "③ I hope your dream comes true. — 바르다.",
+    "⑤ people in need(어려움에 처한 사람들) — 바르다."
+   ]
   },
   {
    "no": 4,
@@ -70,8 +88,14 @@
    ],
    "inline": true,
    "answer": 1,
-   "explain": "can't wait to + 동사원형: 빨리 ~하고 싶다.",
-   "source": "L6 Get Ready B 표현"
+   "explain": "can't wait to + 동사원형: '빨리 ~하고 싶다'. 원문: \"I can't wait to see all the amazing things there.\"\n박물관의 멋진 것들을 어서 보고 싶다는 뜻이므로 ① wait이다.",
+   "source": "L6 Get Ready B 표현",
+   "wrong": [
+    "② hope — can't hope to see는 흐름에 맞지 않는다.",
+    "③ want — can't want는 쓰지 않는다.",
+    "④ stop — can't stop 뒤에는 -ing가 온다.",
+    "⑤ find — 뜻이 통하지 않는다."
+   ]
   },
   {
    "kind": "group",
@@ -104,8 +128,14 @@
    ],
    "inline": true,
    "answer": 1,
-   "explain": "선행사 an animal scientist(사람) + 주격 관계대명사 who.",
-   "source": "L6 UC C · 학습지 L5 Grammar Points 1"
+   "explain": "[5-6] 지문 요지: Minji가 Jane Goodall의 책을 읽으며 그녀를 롤 모델로 소개하고, 야생에서 동물을 연구하고 돕고 싶다는 꿈을 말한다.\n\"She's an animal scientist who studied chimpanzees for many years.\" — 선행사 an animal scientist는 사람이고 관계대명사가 절의 주어이므로 주격 who를 쓴다. ①이다.",
+   "source": "L6 UC C · 학습지 L5 Grammar Points 1",
+   "wrong": [
+    "② which — 선행사가 사람이므로 쓸 수 없다.",
+    "③ what — 선행사를 이미 가지고 있으므로 쓸 수 없다.",
+    "④ whose — 뒤에 명사가 와야 한다.",
+    "⑤ it — 두 문장을 이어 주지 못한다."
+   ]
   },
   {
    "no": 6,
@@ -119,8 +149,14 @@
     "Minji는 무엇을 하고 싶어 하는가?"
    ],
    "answer": 3,
-   "explain": "'many years'라고만 하고 정확한 햇수는 나오지 않는다.",
-   "source": "L6 UC C"
+   "explain": "\"She's an animal scientist who studied chimpanzees for many years.\" — '여러 해 동안'이라고만 하고 정확한 햇수는 나오지 않는다. 따라서 ③에 답할 수 없다.",
+   "source": "L6 UC C",
+   "wrong": [
+    "① \"I'm reading this book My Life with the Chimpanzees.\"",
+    "② 침팬지를 연구한 동물 과학자.",
+    "④ \"I'm very interested in animal behavior.\"",
+    "⑤ \"I want to study animals in the wild and help them, too.\""
+   ]
   },
   {
    "kind": "group",
@@ -149,8 +185,14 @@
     "Where did he hide the painting?"
    ],
    "answer": 1,
-   "explain": "뒤에 색과 손잡이(생김새)를 답하므로 생김새를 묻는 말.",
-   "source": "L5 UC A-3 (선지는 모두 교과서 대화문 문장 그대로)"
+   "explain": "[7-8] 지문 요지: 여학생이 두고 간 우산을 찾고, 남자가 생김새를 물은 뒤 우산꽂이에 넣어 두었다고 알려 준다.\n빈칸 뒤에 여학생이 \"It's green, and it has a brown handle.\"이라고 색과 손잡이를 답하므로 생김새를 묻는 \"What does it look like?\"가 알맞다. ①이다.",
+   "source": "L5 UC A-3 (선지는 모두 교과서 대화문 문장 그대로)",
+   "wrong": [
+    "② Where did you last see it? — 여학생이 이미 \"I think I left it here.\"라고 말했고, 뒤의 답도 장소가 아니다.",
+    "③ What are you interested in? — 관심사를 묻는 말.",
+    "④ When did you use it last? — 뒤의 답(생김새)과 맞지 않는다.",
+    "⑤ Where did he hide the painting? — 도둑 이야기의 말."
+   ]
   },
   {
    "no": 8,
@@ -164,8 +206,14 @@
     "우산에는 꽃무늬가 있다."
    ],
    "answer": 2,
-   "explain": "① 여기(here)에 두고 갔다고 생각함 ③④ 남자가 찾아 우산꽂이에 넣음 ⑤ 언급 없음.",
-   "source": "L5 UC A-3"
+   "explain": "\"It's green, and it has a brown handle.\" — 우산은 초록색이고 갈색 손잡이가 있다. ②가 일치한다.",
+   "source": "L5 UC A-3",
+   "wrong": [
+    "① 집이 아니라 여기(here)에 두고 갔다고 생각한다.",
+    "③ 남자는 우산을 찾아 우산꽂이에 넣었다(I found it and put it in the umbrella stand).",
+    "④ 우산꽂이에 넣은 것은 남자다.",
+    "⑤ 꽃무늬 이야기는 없다."
+   ]
   },
   {
    "no": 9,
@@ -173,15 +221,21 @@
    "stem": "주어진 문장에 이어질 대화의 순서로 가장 적절한 것은?",
    "box": "A: What are you interested in?\n\n(A) A: I hope your dream comes true.\n(B) B: I'm interested in space travel.\n(C) B: I want to be an astronaut like Neil Armstrong.\n(D) A: Oh, that sounds awesome!",
    "choices": [
-    "(B)-(C)-(D)-(A)",
+    "(A)-(B)-(C)-(D)",
     "(B)-(D)-(C)-(A)",
     "(C)-(B)-(A)-(D)",
     "(D)-(B)-(C)-(A)",
     "(D)-(C)-(A)-(B)"
    ],
    "answer": 2,
-   "explain": "무엇에 관심 있니? → (B) 우주여행 → (D) 멋지다 → (C) Armstrong 같은 우주 비행사가 되고 싶다 → (A) 꿈이 이루어지길.",
-   "source": "L6 UC B (순서배열 보기로 문장 순서만 섞음)"
+   "explain": "\"What are you interested in?\"(무엇에 관심이 있니?)에 대한 답은 (B) \"I'm interested in space travel.\"이다. 교과서 대화문(L6 UC B) 순서는 이어서 (D) \"Oh, that sounds awesome!\" → (C) \"I want to be an astronaut like Neil Armstrong.\" → (A) \"I hope your dream comes true.\"이다.\n(C)에서 꿈을 말한 뒤 (A)로 그 꿈이 이루어지기를 빌어 주며 끝나야 자연스러우므로 (B)-(D)-(C)-(A), ②이다.",
+   "source": "L6 UC B (순서배열 보기로 문장 순서만 섞음)",
+   "wrong": [
+    "① (A) 꿈이 이루어지기를 바란다는 말이 꿈을 듣기 전에 올 수 없다.",
+    "③ (C) 꿈 이야기가 관심사 답보다 앞에 오고 (A) 뒤에 (D)가 와서 어색하다.",
+    "④ (D) '멋지다'가 관심사를 듣기 전에 올 수 없다.",
+    "⑤ (D)·(C)·(A)가 관심사 답 (B)보다 앞에 올 수 없다."
+   ]
   },
   {
    "kind": "group",
@@ -196,10 +250,7 @@
      "Junho: It's black, and there's a brown bear character on the cover.",
      "Alex: When did you use it last?",
      "Junho: I turned it off before class. Then I think I put it in my backpack.",
-     "Kate: Let's look around the classroom.",
-     "(a few minutes later)",
-     "Kate: I found it! It was inside your textbook.",
-     "Junho: Oh, thank you for helping me!"
+     "Kate: Let's look around the classroom."
     ]
    }
   },
@@ -215,8 +266,14 @@
     "교과서 읽기"
    ],
    "answer": 1,
-   "explain": "Let's look around the classroom.",
-   "source": "L5 UC C"
+   "explain": "[10-11] 지문 요지: Junho가 새 스마트폰을 잃어버려 친구들에게 도움을 청하고, 생김새와 마지막으로 쓴 때를 말한 뒤 함께 교실을 둘러보기로 한다.\n대화의 마지막 말은 Kate의 \"Let's look around the classroom.\"(교실을 둘러보자)이다. 따라서 세 사람이 바로 할 일은 ① 교실 둘러보기다.",
+   "source": "L5 UC C",
+   "wrong": [
+    "② Junho가 전원을 껐다고 했으므로 전화는 소용이 없다.",
+    "③ 새 스마트폰을 사겠다는 말은 없다.",
+    "④ 배낭이 아니라 스마트폰을 찾는다.",
+    "⑤ 교과서를 읽겠다는 말은 없다."
+   ]
   },
   {
    "no": 11,
@@ -230,8 +287,14 @@
     "스마트폰을 빌려 줄 수 없다."
    ],
    "answer": 1,
-   "explain": "Kate가 전화해 보겠다고 하자 전원을 껐다고 답함 → 전화해도 찾을 수 없다.",
-   "source": "L5 UC C"
+   "explain": "Kate가 \"I'll call you.\"(전화해 볼게)라고 하자 Junho가 \"Actually, I turned it off.\"(사실 전원을 껐어)라고 답한다.\n전원이 꺼져 있으니 전화를 걸어도 벨이 울리지 않아 찾을 수 없다는 뜻이다. ①이다.",
+   "source": "L5 UC C",
+   "wrong": [
+    "② 고장 난 것이 아니라 스스로 껐다.",
+    "③ 잃어버린 것은 맞다(I can't find my new smartphone).",
+    "④ 아직 찾지 못했다.",
+    "⑤ 빌려 주는 이야기가 아니다."
+   ]
   },
   {
    "no": 12,
@@ -246,8 +309,14 @@
     "Most of all, I don't like chocolate cake."
    ],
    "answer": 1,
-   "explain": "자연사 박물관에 가는 이유 → 동물에 관심.",
-   "source": "L6 Wrap Up 1 (선지는 모두 교과서 대화문·본문 문장 그대로)"
+   "explain": "Sumin이 주말에 자연사 박물관에 간다고 한 뒤이므로, 그 까닭인 \"I'm really interested in animals.\"(동물에 관심이 많아)가 알맞다. 원문(L6 Wrap Up 1) 그대로다.",
+   "source": "L6 Wrap Up 1 (선지는 모두 교과서 대화문·본문 문장 그대로)",
+   "wrong": [
+    "② I lost my backpack! — 분실 상황의 말.",
+    "③ What does it look like? — 생김새를 묻는 말.",
+    "④ I found it and put it in the umbrella stand. — 우산 대화의 말.",
+    "⑤ Most of all, I don't like chocolate cake. — 본문 Carol의 말."
+   ]
   },
   {
    "no": 13,
@@ -262,8 +331,14 @@
     "knocking – what"
    ],
    "answer": 1,
-   "explain": "ⓐ 지각동사 heard + 목적어 + 동사원형(knock) (학습지: We heard someone knock on the door.). ⓑ so dark that ~: 너무 어두워서 ~ (학습지: The room was so dark that I couldn't see anything.).",
-   "source": "학습지 p.12 Grammar Practice 2 C-2 · p.25 Grammar Points 2 A-4 (문장 그대로, 빈칸만)"
+   "explain": "ⓐ 지각동사 heard의 목적격 보어는 동사원형(knock) 또는 현재분사이고 to부정사는 쓸 수 없다. 학습지 원문: \"We heard someone knock on the door.\"\nⓑ 「so + 형용사 + that절」 '너무 ~해서 …하다'. 학습지 원문: \"The room was so dark that I couldn't see anything.\"\n따라서 knock – that, ①이다.",
+   "source": "학습지 p.12 Grammar Practice 2 C-2 · p.25 Grammar Points 2 A-4 (문장 그대로, 빈칸만)",
+   "wrong": [
+    "② to knock — 지각동사 뒤에 to부정사를 쓸 수 없다.",
+    "③ knocked – which — 둘 다 틀렸다.",
+    "④ because — so dark와 짝을 이루지 않는다.",
+    "⑤ knocking은 가능하지만 what은 틀렸다."
+   ]
   },
   {
    "no": 14,
@@ -278,8 +353,14 @@
     "Emily에게 Dream City 여행에 함께 가자고 부탁하려고"
    ],
    "answer": 1,
-   "explain": "Special Invitation — 박물관 초대장.",
-   "source": "L6 Understand Visuals (초대장)"
+   "explain": "\"Special Invitation / Dear Emily, / Welcome to the Historia Museum! Come and see our special rooms.\" — Emily에게 보내는 Historia 박물관 초대장이다. ①이다.",
+   "source": "L6 Understand Visuals (초대장)",
+   "wrong": [
+    "② 비행기 역사는 방 이름(Brave Pilot)에만 나온다.",
+    "③ 콘서트·표 이야기는 없다.",
+    "④ 권기옥은 초대장에 나오지 않는다.",
+    "⑤ 함께 여행 가자는 부탁이 아니라 박물관 초대다."
+   ]
   },
   {
    "no": 15,
@@ -295,8 +376,14 @@
    ],
    "inline": true,
    "answer": 1,
-   "explain": "바닥에 발자국이 있고, 신발에 진흙(mud)이 묻어 있다.",
-   "source": "L5 Express Our Thoughts (Mr. Owl)"
+   "explain": "\"Oh, there are footprints on the floor. … Look at his shoes. You can see mud on them.\" — 바닥에 발자국이 있고 그의 신발에 진흙(mud)이 묻어 있다는 단서다. ①이다.",
+   "source": "L5 Express Our Thoughts (Mr. Owl)",
+   "wrong": [
+    "② crumbs — 부스러기, 발자국과 관계없다.",
+    "③ candles — 초.",
+    "④ earrings — 귀걸이는 다른 글(Ms. Green)의 단서다.",
+    "⑤ goggles — 고글."
+   ]
   },
   {
    "no": 16,
@@ -312,8 +399,14 @@
    ],
    "inline": true,
    "answer": 4,
-   "explain": "도둑의 단서를 말하는 글에 우주 비행사가 꿈이라는 ⓓ(L6 UC A-2 문장)는 흐름에 맞지 않는다.",
-   "source": "L5 Express My Thoughts Write (ⓓ는 L6 UC A-2 문장을 일부러 끼워 넣음)"
+   "explain": "Mr. Roberts가 그림 도둑이라고 생각하는 단서를 말하는 글이다. ⓐ 첫 단서는 신발 → ⓑ 진흙이 묻어 있다 → ⓒ 바닥에 발자국 → ⓔ 둘째 단서는 긴 코트로 이어진다.\nⓓ \"My dream is to become an astronaut like him.\"은 L6 대화문(Neil Armstrong)의 문장으로 도둑 이야기와 관계가 없다.",
+   "source": "L5 Express My Thoughts Write (ⓓ는 L6 UC A-2 문장을 일부러 끼워 넣음)",
+   "wrong": [
+    "ⓐ 첫 번째 단서를 제시 — 자연스럽다.",
+    "ⓑ 신발의 진흙 — 자연스럽다.",
+    "ⓒ 바닥의 발자국(진흙과 이어짐) — 자연스럽다.",
+    "ⓔ 두 번째 단서 — 자연스럽다."
+   ]
   },
   {
    "no": 17,
@@ -329,8 +422,14 @@
    ],
    "inline": true,
    "answer": 3,
-   "explain": "We heard someone knock on the door. → 네 번째 knock.",
-   "source": "학습지 L5 Grammar Practice 2 C-2"
+   "explain": "바르게 배열하면 \"We heard someone knock on the door.\"이다. 지각동사 heard + 목적어 someone + 목적격 보어 동사원형 knock 순이다.\nWe(1) heard(2) someone(3) knock(4)이므로 네 번째 단어는 knock, ③이다.",
+   "source": "학습지 L5 Grammar Practice 2 C-2",
+   "wrong": [
+    "① heard — 두 번째.",
+    "② someone — 세 번째.",
+    "④ on — 다섯 번째.",
+    "⑤ door — 일곱 번째."
+   ]
   },
   {
    "no": 18,
@@ -344,8 +443,14 @@
     "She saw a cat climbing the tree."
    ],
    "answer": 4,
-   "explain": "④ 지각동사 smelled의 목적격 보어는 동사원형/현재분사(burn/burning). to부정사는 쓸 수 없다. (학습지 원문: Nick smelled something burning in the kitchen.)",
-   "source": "학습지 p.16 Grammar Points 2 예문 4개 · C-1 고친 문장 (④만 burning을 to burn으로 바꿈)"
+   "explain": "④ 지각동사 smelled의 목적격 보어는 동사원형 또는 현재분사(burn / burning)이고 to부정사는 쓸 수 없다. 학습지 원문: \"Nick smelled something burning in the kitchen.\"\n나머지는 지각동사 + 목적어 + 동사원형/현재분사 형태가 모두 바르다.",
+   "source": "학습지 p.16 Grammar Points 2 예문 4개 · C-1 고친 문장 (④만 burning을 to burn으로 바꿈)",
+   "wrong": [
+    "① saw him cross — 바르다.",
+    "② heard a girl laughing — 바르다.",
+    "③ felt the ground shake — 바르다.",
+    "⑤ saw a cat climbing — 바르다."
+   ]
   },
   {
    "no": 19,
@@ -361,8 +466,14 @@
    ],
    "inline": true,
    "answer": 2,
-   "explain": "The cookies는 동작을 받는 쪽이므로 수동태(were baked / were made / were eaten). 능동 baked·ate는 by him과 어울리지 않는다.",
-   "source": "선생님 제작 문장 · 학습지 L6 Grammar Points 1(수동태)"
+   "explain": "\"The cookies ______ by him.\" — 주어 The cookies는 동작을 받는 쪽이고 뒤에 행위자 by him이 있으므로 수동태(were baked / were made / were eaten)가 들어가야 한다.\n능동형 baked·ate를 넣으면 '쿠키가 그에 의해 구웠다/먹었다'가 되어 문장이 성립하지 않는다. 둘 다 안 되는 짝은 ② baked – ate이다.",
+   "source": "선생님 제작 문장 · 학습지 L6 Grammar Points 1(수동태)",
+   "wrong": [
+    "① were baked – were made — 둘 다 가능하다.",
+    "③ were made – were eaten — 둘 다 가능하다.",
+    "④ were eaten은 가능하므로 '둘 다 안 되는' 짝이 아니다.",
+    "⑤ were baked는 가능하므로 '둘 다 안 되는' 짝이 아니다."
+   ]
   },
   {
    "no": 20,
@@ -378,8 +489,14 @@
    ],
    "inline": true,
    "answer": 5,
-   "explain": "She helped many people / people in need / so creative that / so kind that. ordinary는 들어갈 곳이 없다.",
-   "source": "L6 Express Our Thoughts (People Who Make a Difference)"
+   "explain": "원문(People Who Make a Difference): \"She helped many people in India.\" / \"help people in need\" / \"He was so creative that he made beautiful buildings.\" / \"She is so kind that her patients always feel comfortable.\"\n네 빈칸에 helped·need·creative·kind가 들어가고, ordinary(평범한)는 어디에도 맞지 않는다. ⑤이다.",
+   "source": "L6 Express Our Thoughts (People Who Make a Difference)",
+   "wrong": [
+    "① helped — Teresa 수녀.",
+    "② need — people in need(어려움에 처한 사람들).",
+    "③ creative — Gaudi.",
+    "④ kind — Ms. Lee."
+   ]
   },
   {
    "kind": "group",
@@ -404,8 +521,14 @@
    ],
    "inline": true,
    "answer": 1,
-   "explain": "in surprise: 놀라서.",
-   "source": "L6 본문 첫 번째 방 · L6 어휘 숙어"
+   "explain": "[21-22] 지문 요지: Emily의 첫 번째 방(Brave Pilot). 비행기 모형과 조종사 재킷·고글이 있고, 벽의 사진 속 인물은 한국 최초의 여성 비행사 권기옥이다. 그녀는 비행학교에 갈 수 없었지만 포기하지 않았고 독립을 위해 싸웠다.\nin surprise는 '놀라서'이며, 영어로는 feeling surprised이다. 고글을 쓰자 엔진 소리가 들려 놀라서 방을 둘러본 것이다. ①이다.",
+   "source": "L6 본문 첫 번째 방 · L6 어휘 숙어",
+   "wrong": [
+    "② feeling bored — 지루해서.",
+    "③ in a hurry — 서둘러.",
+    "④ with great care — 조심스럽게.",
+    "⑤ in secret — 몰래."
+   ]
   },
   {
    "no": 22,
@@ -420,8 +543,14 @@
    ],
    "inline": true,
    "answer": 1,
-   "explain": "포기하지 않고 열심히 노력했다 → didn't give up.",
-   "source": "L6 본문 첫 번째 방"
+   "explain": "\"However, Kwon Ki-ok didn't give up and worked hard to achieve her dream.\" — 여자는 비행학교에 들어갈 수 없었지만(앞 문장) '그러나(However)' 포기하지 않고 열심히 노력했다는 흐름이다. give up: 포기하다. ①이다.",
+   "source": "L6 본문 첫 번째 방",
+   "wrong": [
+    "② put on — 입다.",
+    "③ pick up — 집어 들다.",
+    "④ find out — 알아내다.",
+    "⑤ look for — 찾다."
+   ]
   },
   {
    "kind": "group",
@@ -447,8 +576,14 @@
    ],
    "inline": true,
    "answer": 1,
-   "explain": "선행사 the person(사람) + 주격 관계대명사 who.",
-   "source": "L5 본문 도입 · 학습지 L5 Grammar Points 1"
+   "explain": "[23-24] 지문 요지: 아빠 생일 케이크가 사라져 엄마가 옆집의 현명한 노부인 Ms. Jones에게 도움을 청한다. 아침에 집에 있던 사람은 Harry, Carol, Tom이다.\n\"Mom called Ms. Jones to find the person who ate the cake.\" — 선행사 the person은 사람이고 관계대명사가 절의 주어이므로 주격 who를 쓴다. ①이다.",
+   "source": "L5 본문 도입 · 학습지 L5 Grammar Points 1",
+   "wrong": [
+    "② which — 선행사가 사람이므로 쓸 수 없다.",
+    "③ what — 선행사가 있으므로 쓸 수 없다.",
+    "④ whom — 목적격이므로 주어 자리에 쓸 수 없다.",
+    "⑤ whose — 뒤에 명사가 와야 한다."
+   ]
   },
   {
    "no": 24,
@@ -462,8 +597,14 @@
     "Ms. Jones는 걱정스러운 얼굴로 찾아왔다."
    ],
    "answer": 2,
-   "explain": "① 아빠 생신 ③ 11시 ④ 옆집 ⑤ 상냥한 미소.",
-   "source": "L5 본문 도입"
+   "explain": "\"She wrapped the cake in a box and put it on the table in the kitchen.\" — 엄마는 케이크를 상자에 포장해 주방 식탁 위에 두었다. ②가 일치한다.",
+   "source": "L5 본문 도입",
+   "wrong": [
+    "① 아빠의 생신이었다(Today was Dad's birthday).",
+    "③ 11시에 초를 사러 나갔다(went out to buy candles at 11).",
+    "④ 옆집에 살았다(lived next door).",
+    "⑤ 상냥한 미소를 지으며 왔다(came with her sweet smile)."
+   ]
   },
   {
    "no": 25,
@@ -479,8 +620,14 @@
    ],
    "inline": true,
    "answer": 4,
-   "explain": "(A) 선행사 The cake(사물) → which ○. (B) She가 포장한 주체 → wrapped(능동) (본문 원문: She wrapped the cake in a box …). (C) 지각동사 heard + 동사원형 knock ○(민수 ✗). (D) 쿠키가 구워진 것 → were baked ○. (E) so ~ that ○.",
-   "source": "학습지 p.15 B-1 · L5 본문 도입(wrapped를 was wrapped로 바꿈) · 학습지 p.12 C-2 · p.21 A-1 · p.17 C-3"
+   "explain": "(A) 선행사 The cake(사물)이고 which가 관계대명사절의 주어이므로 which를 쓸 수 있다 → ⓐ 옳다.\n(B) She가 케이크를 포장한 주체이므로 능동 wrapped가 맞다. 원문: \"She wrapped the cake in a box …\" → ⓑ 옳다.\n(C) 지각동사 heard의 목적격 보어는 동사원형 knock이 맞고 to knock으로 고칠 수 없다 → ⓒ 틀리다.\n(D) 쿠키가 '구워진' 것이므로 수동 were baked가 맞다 → ⓓ 옳다.\n따라서 ⓐ,ⓑ,ⓓ, ④이다.",
+   "source": "학습지 p.15 B-1 · L5 본문 도입(wrapped를 was wrapped로 바꿈) · 학습지 p.12 C-2 · p.21 A-1 · p.17 C-3",
+   "wrong": [
+    "① ⓒ는 틀린 설명이고 ⓑ·ⓓ가 빠졌다.",
+    "② ⓐ가 빠졌다.",
+    "③ ⓒ는 틀린 설명이다.",
+    "⑤ ⓒ는 틀린 설명이고 ⓐ가 빠졌다."
+   ]
   }
  ]
 }
