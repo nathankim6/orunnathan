@@ -21,14 +21,20 @@
     "unique: 독특한"
    ],
    "answer": 4,
-   "explain": "radish는 '무'.",
+   "explain": "radish는 '무'(L5 어휘 목록 [명] 무)이다. 본문 Try the roll with radish and squid.(김밥을 무와 오징어랑 함께 먹어 보렴)에서도 '무'로 쓰였다. '감자'는 potato이므로 ④가 잘못 연결되었다.",
+   "wrong": [
+    "① squid: 오징어 — a sea animal that has a long, soft body and 10 long arms.",
+    "② emotion: 감정 — a strong feeling such as joy, anger, fear, or hate. He wanted to express his emotions.",
+    "③ shell: 껍데기 — the hard outer part of eggs, nuts, some seeds, and some animals. They look like a snail shell.",
+    "⑤ unique: 독특한 — very special or unusual. Matisse created me in a unique way."
+   ],
    "source": "L5·L6 어휘 xlsx 어휘리스트"
   },
   {
    "kind": "group",
    "label": "[2~3]",
    "direction": "다음 대화를 읽고 물음에 답하시오.",
-   "box": "Alex: Hi, Kate. What are you going to do this weekend?\nKate: I'm going to visit Jeju-do with my family.\n(A) Kate: That's a good idea. I'll visit there, too.\n(B) Junho: You should visit a horse park and ride a horse, too. It's really fun.\n(C) Junho: Oh, my grandparents live <u>there</u>. Jeju-do is so beautiful.\n(D) Kate: I'm going to see dolphins. I'll also hike Hallasan.\n(E) Kate: Really? This is my first trip to Jeju-do. I'm so excited.\nAlex: What are you going to do there?\nJunho: Jeju-do is an amazing place. Have a nice trip!"
+   "box": "Alex: Hi, Kate. What are you going to do this weekend?\nKate: I'm going to visit Jeju-do with my family.\n(A) Kate: That's a good idea. I'll visit there, too.\n(B) Junho: You should visit a horse park and ride a horse, too. It's really fun.\n(C) Junho: Oh, my grandparents live <u>there</u>. Jeju-do is so beautiful.\n(D) Alex: What are you going to do there?\n    Kate: I'm going to see dolphins. I'll also hike Hallasan.\n(E) Kate: Really? This is my first trip to Jeju-do. I'm so excited.\nJunho: Jeju-do is an amazing place. Have a nice trip!"
   },
   {
    "no": 2,
@@ -42,7 +48,13 @@
     "(E) – (D) – (C) – (A) – (B)"
    ],
    "answer": 1,
-   "explain": "조부모님이 산다(C) → 첫 여행이라 신남(E) → [Alex: 거기서 뭐 할 거니?] → 돌고래·한라산(D) → 승마 공원 권유(B) → 좋은 생각(A). 교과서 순서.",
+   "explain": "[대화 요지] Kate가 주말에 가족과 제주도에 가는데, 처음 가는 여행이라 신이 나 있다. 돌고래를 보고 한라산을 오를 계획이고, Junho는 승마 공원에 가서 말도 타 보라고 권한다.\nKate가 제주도에 간다고 하자 Junho가 조부모님이 거기 사신다고 한다(C) → Kate가 '정말? 첫 여행이라 신나'(E) → Alex가 거기서 무엇을 할 거냐고 묻고 Kate가 돌고래·한라산을 답한다(D) → Junho가 승마 공원과 말 타기를 권한다(B) → Kate가 '좋은 생각이야, 거기도 갈게'(A). 따라서 (C)–(E)–(D)–(B)–(A)인 ①이 교과서 순서다.\n(E)의 Really?는 조부모님이 산다는 말에 대한 반응이고, (A)의 That's a good idea는 (B)의 권유를 받는 말이므로 앞뒤가 정해진다.",
+   "wrong": [
+    "② (C)–(D)–(E)–(A)–(B) — Alex의 질문 없이 돌고래 이야기가 나오고, 권유(B)보다 '좋은 생각이야'(A)가 먼저 온다.",
+    "③ (D)–(C)–(E)–(B)–(A) — 어디서 무엇을 할지 묻기도 전에 돌고래 이야기부터 나온다.",
+    "④ (E)–(C)–(B)–(D)–(A) — Really?로 받을 앞말이 없다.",
+    "⑤ (E)–(D)–(C)–(A)–(B) — 권유(B)가 맨 뒤에 와 That's a good idea(A)가 받을 말이 없다."
+   ],
    "source": "L5 Understand Communication C"
   },
   {
@@ -57,7 +69,12 @@
     "Kate's school"
    ],
    "answer": 2,
-   "explain": "Kate가 제주도에 간다고 하자 Junho가 '내 조부모님이 거기(제주도) 사셔'.",
+   "explain": "Kate: I'm going to visit Jeju-do with my family. / Junho: Oh, my grandparents live there. — there(그곳에)는 바로 앞에 나온 Jeju-do를 가리킨다. Junho의 조부모님이 제주도에 사신다는 뜻이다.",
+   "wrong": [
+    "① Hallasan — Kate가 하이킹할 산으로 뒤에 나온다.",
+    "③ a horse park — Junho가 나중에 권하는 곳이다.",
+    "④ Alex's house / ⑤ Kate's school — 대화에 나오지 않는다."
+   ],
    "source": "L5 Understand Communication C"
   },
   {
@@ -73,7 +90,13 @@
     "imagine"
    ],
    "answer": 3,
-   "explain": "strange / statue / success / imagine 순. shape는 어디에도 맞지 않는다.",
+   "explain": "네 문장은 학습지 Vocabulary List(5-2·6-2)의 예문이다. She heard a strange sound.(그녀는 이상한 소리를 들었다) / There is a statue of a lion in the park.(공원에 사자 조각상이 있다) / The film was a great success.(그 영화는 큰 성공이었다) / I imagine my life in the future.(나는 미래의 내 삶을 상상한다).\nshape(모양, 형태; the form or outline of something)는 어느 빈칸에도 뜻이 통하지 않으므로 정답은 ③이다.",
+   "wrong": [
+    "① strange → 첫째 문장 a strange sound.",
+    "② statue → 둘째 문장 a statue of a lion.",
+    "④ success → 셋째 문장 a great success.",
+    "⑤ imagine → 넷째 문장 I imagine my life."
+   ],
    "source": "학습지 p.5-2·6-2 Vocabulary List 예문"
   },
   {
@@ -88,7 +111,13 @@
     "We enjoyed <u>taking</u> a walk in this park."
    ],
    "answer": 1,
-   "explain": "①은 현재진행형(be동사+현재분사). 나머지는 동명사 — ② 주어, ③ 동사의 목적어, ④ 보어, ⑤ 동사의 목적어. (학습지 5-6 문장 그대로)",
+   "explain": "동명사(동사원형-ing)는 명사처럼 주어·목적어·보어로 쓰이고, 현재진행형 「be동사+동사원형-ing」의 현재분사와 구별한다(학습지 5-6).\n① He is riding a bike.(그는 자전거를 타고 있다)는 is riding이 현재진행형이므로 riding은 현재분사다. 나머지 넷은 동명사이므로 쓰임이 다른 것은 ①이다.",
+   "wrong": [
+    "② Watching movies is fun. — 주어(단수 취급).",
+    "③ Lucy finished making a robot. — 동사 finish의 목적어.",
+    "④ Her hobby is drawing cartoons. — be동사 뒤 보어(그녀의 취미는 만화 그리기이다). '그녀가 그리고 있다'가 아니다.",
+    "⑤ We enjoyed taking a walk in this park. — 동사 enjoy의 목적어."
+   ],
    "source": "학습지 p.5-6 동명사 예문·Practice 그대로"
   },
   {
@@ -104,7 +133,11 @@
     "5개"
    ],
    "answer": 3,
-   "explain": "옳은 문장: She hopes to be ~ / I like to eat ~ / Chris started to read ~. 틀린 문장: Speaking Spanish are → is(동명사 주어는 단수), enjoyed took → taking(enjoy는 동명사 목적어). 원문은 학습지 5-6·6-6 Practice.",
+   "explain": "옳은 문장은 She hopes to be a famous pianist.(hope + to부정사), I like to eat ice cream on hot days.(like + to부정사/동명사), Chris started to read the book.(start + to부정사/동명사) 세 개이므로 정답은 ③이다.\n틀린 문장 둘 — Speaking Spanish are difficult.: 동명사구 주어는 단수 취급 → is difficult. / We enjoyed took a walk in this park.: enjoy는 동명사를 목적어로 씀 → enjoyed taking.\n(학습지 5-6 Speaking Spanish is difficult. We enjoyed taking a walk in this park. / 6-6 I like to eat ~, She hopes to be ~, Chris started to read ~)",
+   "wrong": [
+    "①·② — 옳은 문장이 셋이므로 1개·2개는 모자란다.",
+    "④·⑤ — Speaking Spanish are, enjoyed took 두 문장이 틀렸으므로 4개·5개가 될 수 없다."
+   ],
    "source": "학습지 p.5-6·6-6 Practice 문장에 오류 한 곳",
    "inline": true
   },
@@ -121,7 +154,13 @@
     "unique"
    ],
    "answer": 2,
-   "explain": "귀엽다는 말에 동의하며 '호랑이는 무섭지 않아' → 미소까지 친절하다.",
+   "explain": "[대화 요지] 그림 속 호랑이가 귀엽다고 말하며, 무섭지 않고 미소까지 친절해 보인다고 이야기한다.\nG: I think it's very cute. / B: Me, too. The tiger isn't ______. / G: Right. Even its smile is really friendly. — 귀엽다는 데 동의하고, 다음 줄에서 미소가 친절하다고 하므로 '호랑이는 무섭지(scary) 않다'가 알맞다. 교과서 원문: The tiger isn't scary.",
+   "wrong": [
+    "① cute — 바로 앞에서 귀엽다고 했으므로 '귀엽지 않다'는 모순이다.",
+    "③ friendly — 미소가 친절하다고 이어지므로 '친절하지 않다'는 모순이다.",
+    "④ peaceful — 평화롭지 않다는 말은 대화 흐름과 맞지 않는다.",
+    "⑤ unique — 독특함은 대화에 나오지 않는다."
+   ],
    "source": "L6 Understand Communication A-2"
   },
   {
@@ -136,7 +175,13 @@
     "Bill knows <u>that you play soccer well</u>."
    ],
    "answer": 3,
-   "explain": "③은 be동사 뒤 보어 역할(학습지 6-5). 나머지는 동사의 목적어 역할(학습지 6-7).",
+   "explain": "접속사 that이 이끄는 명사절은 문장에서 주어·목적어·보어 역할을 한다(학습지 6-5). ③ The important thing is that he likes you.(중요한 것은 그가 너를 좋아한다는 것이다)는 be동사 is 뒤에서 주어 The important thing을 설명하는 보어 역할이다.\n나머지 넷은 believe·hear·hope·know의 목적어 역할이므로 역할이 다른 것은 ③이다.",
+   "wrong": [
+    "① I believe that many students will love the painting. — believe의 목적어.",
+    "② She heard that they bought a new car. — heard의 목적어.",
+    "④ We hope that you have a great day. — hope의 목적어.",
+    "⑤ Bill knows that you play soccer well. — knows의 목적어."
+   ],
    "source": "학습지 p.6-5·6-7 접속사 that 문장 그대로"
   },
   {
@@ -152,7 +197,13 @@
     "exhibited – at"
    ],
    "answer": 2,
-   "explain": "painted the sea with various blue colors / at first(처음에는).",
+   "explain": "(A) The painter painted the sea of Tongyeong with various blue colors. — L5 본문 He painted the sea of Tongyeong with various blue colors.(그는 다양한 파란색으로 통영의 바다를 그렸다). 그림을 '그리다'는 paint.\n(B) People didn't like his painting style at first. — L6 본문 People didn't like this painting style at first. at first는 '처음에(는)'라는 숙어이므로 전치사는 at이다. 따라서 painted – at인 ②가 정답이다.",
+   "wrong": [
+    "① colored – in — color는 '색칠하다'로 colored my face in green처럼 쓰이나, 여기서는 (B)의 in first가 성립하지 않는다.",
+    "③ traced – on — trace(따라가다)는 바다를 그리는 뜻이 아니고 on first도 숙어가 아니다.",
+    "④ painted – for — for first는 숙어가 아니다.",
+    "⑤ exhibited – at — exhibit(전시하다)는 '바다를 다양한 파란색으로' 전시한다는 뜻이 되어 어색하다."
+   ],
    "source": "선생님 제작 문장(L5·L6 본문 어휘)"
   },
   {
@@ -168,7 +219,13 @@
     "ⓔ"
    ],
    "answer": 3,
-   "explain": "There is/are는 뒤의 주어에 수를 일치 → 복수 flowers이므로 There are many beautiful flowers in the pond. (원문 are를 is로 바꿈)",
+   "explain": "[글 요지] 부여 소개 글 — 백제문화단지에서 역사를 배우고 궁남지의 꽃을 보며 산책하라고 권한다.\nⓒ There is many beautiful flowers in the pond. → There is/are는 뒤에 오는 주어에 수를 일치시키는데(학습지 5-5), 주어 many beautiful flowers가 복수이므로 There are여야 한다. 원문: There are many beautiful flowers in the pond.",
+   "wrong": [
+    "ⓐ Then Buyeo is perfect for you. — be perfect for ~(~에 딱 맞다), 옳다.",
+    "ⓑ Visit Baekje Cultural Land and learn about ~ — 명령문 두 개를 and로 이음, 옳다.",
+    "ⓓ You can enjoy taking a walk. — enjoy + 동명사, 옳다.",
+    "ⓔ Come and enjoy Buyeo! — 명령문, 옳다."
+   ],
    "source": "L5 Express My Thoughts(Write) — Buyeo 지문에 오류 한 곳",
    "inline": true
   },
@@ -190,7 +247,13 @@
     "ⓔ"
    ],
    "answer": 4,
-   "explain": "want는 to부정사를 목적어로 쓴다 → want to see.",
+   "explain": "[대화 요지] 세 사람이 전시회 포스터 속 「별이 빛나는 밤」을 보며 감상을 나누고, 미래 박물관에서 열리는 반 고흐 전시회에 이번 주 토요일에 함께 가기로 한다.\nⓓ I want see van Gogh's paintings. → want는 to부정사를 목적어로 쓰는 동사이므로(학습지 6-6) want to see여야 한다. 원문: I want to see van Gogh's paintings.",
+   "wrong": [
+    "ⓐ I think it's beautiful. — think 뒤 that이 생략된 목적어절, 옳다.",
+    "ⓑ The colors of the night sky are amazing. — 주어 The colors(복수) + are, 옳다.",
+    "ⓒ How about going there together? — 전치사 about + 동명사, 옳다.",
+    "ⓔ We can also learn about ~ — 조동사 can + 동사원형, 옳다."
+   ],
    "source": "L6 Understand Communication C",
    "inline": true
   },
@@ -206,7 +269,13 @@
     "I can't wait!"
    ],
    "answer": 1,
-   "explain": "준호의 감상(밤하늘의 색이 놀랍다)에 동의하는 말. 선지는 모두 L5·L6 대화문 문장.",
+   "explain": "Junho: I like this painting. The colors of the night sky are amazing. / Alex: (A) — 준호가 그림에 대한 감상을 말한 뒤이므로, 그 의견에 동의하는 I think so, too.(나도 그렇게 생각해)가 알맞다. (교과서 원문) 뒤에서 Alex가 That's a great idea! I want to see van Gogh's paintings.라고 하는 것과도 어울린다.",
+   "wrong": [
+    "② I don't think so. — 반대하는 말인데 Alex는 뒤에서 반 고흐 그림을 보고 싶다고 한다.",
+    "③ It's a bit expensive for me. — 가방 값 이야기(L6 대화 A-3)로 문맥에 맞지 않는다.",
+    "④ Have a nice trip! — 여행 인사(L5)로 그림 감상과 관계없다.",
+    "⑤ I can't wait! — 아직 전시회에 가자는 말이 나오기 전이다."
+   ],
    "source": "L6 Understand Communication C"
   },
   {
@@ -221,7 +290,13 @@
     "세 사람은 이번 주 일요일에 전시회에 가기로 했다."
    ],
    "answer": 5,
-   "explain": "Let's go there this Saturday then. — 토요일에 가기로 했다.",
+   "explain": "Alex: Let's go there this Saturday then. / Minji: That sounds great. — 세 사람은 이번 주 토요일에 가기로 했다. '일요일'이라고 한 ⑤가 일치하지 않는다.",
+   "wrong": [
+    "① Look at this exhibition poster. What do you think about this painting? — 포스터 속 그림 이야기를 하고 있다.",
+    "② Alex: It's The Starry Night by Vincent van Gogh, right? — Alex는 반 고흐 작품임을 안다.",
+    "③ The van Gogh exhibition is going on at Mirae Museum. — 일치.",
+    "④ It ends on October 1st. — 일치."
+   ],
    "source": "L6 Understand Communication C"
   },
   {
@@ -243,7 +318,13 @@
     "[E]"
    ],
    "answer": 3,
-   "explain": "얼굴을 초록색으로 칠했다는 말 다음에 '걱정하지 마세요. 제 얼굴은 실제로 초록색이 아니에요.' 원문 위치 [C].",
+   "explain": "[글 요지] 그림 속의 Amélie가 남편 마티스의 미술관에서 자기 얼굴이 초록색으로 칠해진 까닭을 설명한다. 마티스는 밝고 거친 색으로 감정을 표현하고 싶어 했고, 사람들은 처음엔 야수가 그린 것 같다며 싫어했지만 그는 자기 스타일을 지켜 유명해졌다.\nMy husband, Henri Matisse, colored my face in green. [C] My face isn't actually green. — 얼굴을 초록색으로 칠했다는 말에 놀랄 독자에게 '걱정하지 마세요(Don't worry.)'라고 한 뒤 '제 얼굴은 실제로 초록색이 아니에요'라고 이어지는 것이 자연스럽다. 원문 위치는 [C]이다.",
+   "wrong": [
+    "[A] — Welcome 인사와 Look at me 사이에 '걱정하지 말라'가 올 까닭이 없다.",
+    "[B] — 아직 초록 얼굴 이야기가 나오기 전이다.",
+    "[D] — 걱정을 덜어 주는 말이 '실제로 초록색이 아니다' 뒤에 오면 순서가 뒤바뀐다.",
+    "[E] — 왜 그렇게 칠했느냐는 질문과 그 답 사이를 끊는다."
+   ],
    "source": "L6 본문 앞부분(Amélie)",
    "inline": true
   },
@@ -259,7 +340,13 @@
     "야수를 그린 화가"
    ],
    "answer": 2,
-   "explain": "My husband, Henri Matisse, colored my face in green. → 그림 속의 Amélie가 말하고 있다.",
+   "explain": "My name is Amélie. Welcome to my husband's gallery. Look at me. ... My husband, Henri Matisse, colored my face in green. — 글쓴이 'I'는 마티스의 아내 Amélie이며, 남편이 자기 얼굴을 초록색으로 칠했다고 말하는 것으로 보아 '그림 속의' Amélie가 말하고 있다(본문 제목 Pictures Talk About the Artist!).",
+   "wrong": [
+    "① Henri Matisse — My husband, Henri Matisse라고 했으므로 글쓴이는 마티스가 아니다.",
+    "③ 미술관 안내원 — my husband's gallery라고 했으므로 안내원이 아니다.",
+    "④ Matisse의 딸 — husband(남편)라고 했으므로 아내다.",
+    "⑤ 야수를 그린 화가 — 야수는 사람들이 마티스를 두고 한 말이고 글쓴이는 그려진 사람이다."
+   ],
    "source": "L6 본문 앞부분(Amélie)"
   },
   {
@@ -274,7 +361,13 @@
     "He kept his own style and never became famous."
    ],
    "answer": 2,
-   "explain": "② 원문 그대로. ① Matisse가 칠한 것은 '나(Amélie)'의 얼굴, ③ a beast, ④ Wild Beast, ⑤ finally became famous — 각각 한 단어를 바꾼 것.",
+   "explain": "② People didn't like this painting style at first.(사람들은 처음에 이런 그림 스타일을 좋아하지 않았어요)는 본문 문장 그대로이므로 일치한다.\n나머지는 낱말 하나씩을 바꾼 것이다.",
+   "wrong": [
+    "① Matisse painted his face with green colors. — 이 글에서 마티스가 초록색으로 칠한 것은 '나(Amélie)'의 얼굴(colored my face in green)이지 자기 얼굴이 아니다.",
+    "③ Some people thought that a beast painted me. — snail이 아니라 beast(야수).",
+    "④ So, he got the nickname Wild Beast. — Wild Cat이 아니라 Wild Beast.",
+    "⑤ He kept his own style and finally became famous. — never가 아니라 finally(마침내) 유명해졌다."
+   ],
    "source": "L6 본문 앞부분(Amélie)"
   },
   {
@@ -295,7 +388,12 @@
     "takes"
    ],
    "answer": 3,
-   "explain": "enjoy는 동명사를 목적어로 쓴다.",
+   "explain": "[글 요지] 통영 여행 첫날 — 중앙시장에서 충무김밥을 먹고, 오후에 이순신 공원에서 동상을 보고 해안을 산책하며 평화로운 일몰을 본다.\nThen we enjoyed (A) a walk along the coast. — enjoy는 동명사를 목적어로 쓰는 동사이므로(학습지 5-6·6-6: enjoy, finish, give up, mind) taking이 알맞다. 원문: Then we enjoyed taking a walk along the coast.(그다음에 우리는 해안을 따라 산책하는 것을 즐겼다)",
+   "wrong": [
+    "① take — enjoyed 뒤에 동사원형이 바로 올 수 없다.",
+    "② to take — enjoy는 to부정사를 목적어로 쓰지 않는다.",
+    "④ took / ⑤ takes — 과거형·3인칭 단수형은 목적어 자리에 올 수 없다."
+   ],
    "source": "L5 본문 8월 16일"
   },
   {
@@ -310,7 +408,13 @@
     "peaceful → sad"
    ],
    "answer": 1,
-   "explain": "I was excited! → Everything was really peaceful.",
+   "explain": "글 앞부분 It was the first day of my family trip to Tongyeong. I was excited!(신이 났다!)에서 시작해, 마지막 I closed my eyes. ... Everything was really peaceful.(모든 것이 정말 평화로웠다)로 끝난다. 따라서 excited → peaceful인 ①이 알맞다.",
+   "wrong": [
+    "② bored → excited — 처음에 지루했다는 말이 없다.",
+    "③ scared → happy — 무서워한 장면이 없다.",
+    "④ nervous → tired — 긴장하거나 피곤했다는 말이 없다.",
+    "⑤ peaceful → sad — 순서가 반대이고 슬픈 장면도 없다."
+   ],
    "source": "L5 본문 8월 16일"
   },
   {
@@ -325,7 +429,13 @@
     "이순신 공원에는 이순신 장군의 거대한 동상이 있었다."
    ],
    "answer": 4,
-   "explain": "Chungmu is Tongyeong's old name.",
+   "explain": "Chungmu is Tongyeong's old name.(충무는 통영의 옛 이름이다) — old name(옛 이름)이므로 '새 이름'이라고 한 ④가 일치하지 않는다.",
+   "wrong": [
+    "① I got up at six in the morning. — 일치.",
+    "② We arrived at Jungang Market at 1 p.m. — 일치.",
+    "③ Long ago, fishermen had Chungmu gimbap out at sea. — 일치.",
+    "⑤ There was a huge statue of Admiral Yi. — 일치."
+   ],
    "source": "L5 본문 8월 16일"
   },
   {
@@ -346,7 +456,12 @@
     "Or"
    ],
    "answer": 1,
-   "explain": "동피랑 다음으로 전혁림 미술관에 갔다 → 순서를 나타내는 Next.",
+   "explain": "[글 요지] 여행 둘째 날 — 동피랑 벽화 앞에서 사진을 수백 장 찍고, 전혁림 미술관에서 '색채의 마술사'의 파란 바다 그림을 즐긴다.\nEarly in the morning, we went to Dongpirang. ... (A) , we went to the Jeon Hyuck-lim Museum of Art. — 동피랑에 갔다가 '다음으로' 미술관에 간 것이므로 순서를 나타내는 Next(다음으로)가 알맞다. 원문: Next, we went to the Jeon Hyuck-lim Museum of Art.",
+   "wrong": [
+    "② However / ④ But(그러나) — 앞뒤가 반대되는 내용이 아니다.",
+    "③ Because(~때문에) — 미술관에 간 까닭을 말하는 문장이 아니다.",
+    "⑤ Or(또는) — 둘 중 하나를 고르는 문맥이 아니다."
+   ],
    "source": "L5 본문 8월 17일"
   },
   {
@@ -361,7 +476,13 @@
     "ⓔ: 이젠 안녕"
    ],
    "answer": 4,
-   "explain": "nickname은 '별명'.",
+   "explain": "ⓓ nickname은 '별명'(a name that is different from your real name but is what your family or friends call you)이다. The painter's nickname is 'The Magician of Color.'는 '그 화가의 별명은 색채의 마술사이다'라는 뜻이므로 '직업'으로 푼 ④가 알맞지 않다.",
+   "wrong": [
+    "ⓐ Early in the morning: 아침 일찍 — 옳다.",
+    "ⓑ hundreds of: 수백의 — Mom and I took hundreds of pictures.",
+    "ⓒ means: 의미하다 (mean [동] 의미하다) — 'Dong' means 'east.'",
+    "ⓔ bye for now: 이젠 안녕 — Tongyeong, bye for now!"
+   ],
    "source": "L5 본문 8월 17일"
   },
   {
@@ -376,7 +497,13 @@
     "Garam은 가족 여행이 항상 재미있다고 생각한다."
    ],
    "answer": 2,
-   "explain": "아빠는 '제발 그만! 더 이상의 사진은 안 돼!'라고 했다.",
+   "explain": "Finally, my dad said, \"Please stop! No more pictures!\"(마침내 아빠가 '제발 그만! 더 이상의 사진은 안 돼!'라고 말씀하셨다) — 아빠는 사진을 그만 찍자고 했으므로 '더 찍자고 말했다'는 ②가 일치하지 않는다.",
+   "wrong": [
+    "① There were many pretty paintings on the walls. — 일치.",
+    "③ 'Dong' means 'east.' — 일치.",
+    "④ The painter's nickname is 'The Magician of Color.' — 일치(화가는 전혁림).",
+    "⑤ Going on a family trip is always fun. — 일치."
+   ],
    "source": "L5 본문 8월 17일"
   },
   {
@@ -398,7 +525,13 @@
     "[E]"
    ],
    "answer": 1,
-   "explain": "가운데 초록 모양에서 시작한 '다음' 손가락으로 다른 모양을 따라가면 달팽이 껍데기처럼 보인다. 원문 위치 [A].",
+   "explain": "[글 요지] 마티스가 종이를 칠해 가위로 오려 붙여 만든 달팽이 작품이 자신을 소개한다. 70세에 크게 아팠지만 예술을 포기하지 않고 '종이 오리기'라는 새 예술 형태를 만들었다.\nStart from the green shape in the middle. [A] They look like a snail shell. — '가운데 초록 모양에서 시작하세요' 다음에 '그런 다음(Then) 손가락으로 다른 모양들을 따라가세요'가 오고, 그래야 They(그 모양들)가 달팽이 껍데기처럼 보인다는 말로 이어진다. 원문 위치는 [A]이다.",
+   "wrong": [
+    "[B] — 이미 달팽이라고 밝힌 뒤라 '따라가 보라'는 말이 늦다.",
+    "[C] — 마티스가 만든 방법 설명 사이를 끊는다.",
+    "[D] — 병에 걸린 이야기 앞에 관람 안내가 올 까닭이 없다.",
+    "[E] — 새 예술 형태 이야기와 관계없다."
+   ],
    "source": "L6 본문 뒷부분(snail)",
    "inline": true
   },
@@ -414,7 +547,13 @@
     "ⓔ: 둘러보다"
    ],
    "answer": 4,
-   "explain": "give up: 포기하다.",
+   "explain": "ⓓ gave up은 give up(포기하다)의 과거형이다. However, he never gave up art.는 '하지만 그는 결코 예술을 포기하지 않았다'는 뜻이므로 '계속했다'로 푼 ④가 알맞지 않다.",
+   "wrong": [
+    "ⓐ look like ~: ~처럼 보이다 — They look like a snail shell.",
+    "ⓑ cut out: 잘라내다 — cut out shapes with scissors.",
+    "ⓒ at the age of ~: ~의 나이에 — At the age of 70.",
+    "ⓔ look around ~: ~을 둘러보다 — Look around the gallery."
+   ],
    "source": "L6 본문 뒷부분(snail)"
   },
   {
@@ -429,7 +568,13 @@
     "70세 이후 Matisse의 투병 생활"
    ],
    "answer": 1,
-   "explain": "종이 모양을 합쳐 만든 달팽이(cut-outs)에 대한 글.",
+   "explain": "Yes, I'm a snail! Matisse created me in a unique way. He painted paper and cut out shapes with scissors. Then he put the shapes together and made me. ... He created a new art form. It's cut-outs. — 글 전체가 마티스가 종이 오리기로 만든 달팽이 작품(말하는 '나')에 대한 것이므로 주제는 ①이다.",
+   "wrong": [
+    "② 달팽이 껍데기의 다양한 모양 — 모양들이 껍데기처럼 보인다는 한 문장뿐이다.",
+    "③ Matisse가 초록색으로 얼굴을 칠한 이유 — 앞부분(Amélie) 글의 내용이다.",
+    "④ 미술관을 둘러보는 올바른 방법 — 마지막 문장의 권유일 뿐 주제가 아니다.",
+    "⑤ 70세 이후 Matisse의 투병 생활 — 아팠지만 포기하지 않았다는 배경 설명일 뿐이다."
+   ],
    "source": "L6 본문 뒷부분(snail)"
   }
  ]

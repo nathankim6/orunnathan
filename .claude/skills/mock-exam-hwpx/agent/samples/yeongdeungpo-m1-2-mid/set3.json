@@ -21,7 +21,13 @@
     "huge: 거친"
    ],
    "answer": 5,
-   "explain": "huge는 '거대한'. 거친은 wild.",
+   "explain": "huge는 '거대한'(very large in size or amount, 크기나 양이 매우 크거나 많은)이다. 본문 There was a huge statue of Admiral Yi.(이순신 장군의 거대한 동상이 있었다)에서 쓰였다. '거친'은 wild(bright and wild colors)이므로 ⑤가 잘못 연결되었다.",
+   "wrong": [
+    "① imagine: 상상하다 — to form a picture in your mind of something that is not real or present.",
+    "② exhibit: 전시하다 — In 1905, he exhibited paintings with bright and wild colors.",
+    "③ nap: 낮잠 — a short sleep especially during the day. They are taking a nap.",
+    "④ various: 다양한 — He painted the sea of Tongyeong with various blue colors."
+   ],
    "source": "L5·L6 어휘 xlsx 어휘리스트"
   },
   {
@@ -42,7 +48,13 @@
     "Do you like nature?"
    ],
    "answer": 1,
-   "explain": "뒤에 Kate가 제주도에서 할 일(돌고래·한라산)을 답한다. 선지는 모두 L5·L6 대화문·학습지 문장.",
+   "explain": "[대화 요지] Kate가 주말에 가족과 제주도에 가는데, 처음 가는 여행이라 신이 나 있다. 돌고래를 보고 한라산을 오를 계획이고, Junho는 승마 공원에 가서 말도 타 보라고 권한다.\nAlex: (A) / Kate: I'm going to see dolphins. I'll also hike Hallasan. — Kate가 '거기서' 할 일을 답하고 있으므로, 빈칸에는 거기서 무엇을 할 것인지 묻는 What are you going to do there?가 알맞다. (교과서 원문) be going to로 묻고 be going to로 답하는 짝이다.",
+   "wrong": [
+    "② Do you have any plans this holiday? — 이미 주말 계획(제주도 여행)을 말한 뒤라 처음 계획을 묻는 말은 어색하다.",
+    "③ What do you think about this painting? — 그림 감상(L6)으로 문맥에 없다.",
+    "④ What does this word mean? — 단어 뜻을 묻는 말(학습지 5-2)로 문맥에 없다.",
+    "⑤ Do you like nature? — 여수 소개 글의 문장으로, 뒤의 돌고래·한라산 대답과 짝이 맞지 않는다."
+   ],
    "source": "L5 Understand Communication C"
   },
   {
@@ -57,7 +69,13 @@
     "신선한 해산물 먹기"
    ],
    "answer": 5,
-   "explain": "see dolphins, hike Hallasan, visit a horse park and ride a horse. 해산물은 언급 없음.",
+   "explain": "Kate: I'm going to see dolphins. I'll also hike Hallasan. — 돌고래 보기·한라산 하이킹. Junho: You should visit a horse park and ride a horse, too. / Kate: That's a good idea. I'll visit there, too. — 승마 공원 방문·말 타기도 하기로 했다.\n신선한 해산물을 먹는 이야기는 대화에 없으므로(통영 소개 글 try fresh seafood에서 온 것) ⑤가 언급되지 않은 것이다.",
+   "wrong": [
+    "① 돌고래 보기 — I'm going to see dolphins.",
+    "② 한라산 하이킹 — I'll also hike Hallasan.",
+    "③ 승마 공원 방문 — visit a horse park ... I'll visit there, too.",
+    "④ 말 타기 — and ride a horse, too. That's a good idea."
+   ],
    "source": "L5 Understand Communication C"
   },
   {
@@ -73,7 +91,13 @@
     "emotion"
    ],
    "answer": 3,
-   "explain": "price / mean / huge / emotion 순. battle은 어디에도 맞지 않는다.",
+   "explain": "네 문장은 학습지 Vocabulary List(5-2·6-2)의 예문이다. This toy has a high price.(이 장난감은 값이 비싸다) / What does this word mean?(이 단어는 무슨 뜻이니?) / They live in a huge house.(그들은 거대한 집에 산다) / Her face didn't show any emotion.(그녀의 얼굴은 아무 감정도 보이지 않았다).\nbattle(전투, 싸움; a military fight between groups of soldiers, ships, etc.)은 어느 빈칸에도 뜻이 통하지 않으므로 정답은 ③이다.",
+   "wrong": [
+    "① price → 첫째 문장 a high price.",
+    "② mean → 둘째 문장 does this word mean.",
+    "④ huge → 셋째 문장 a huge house.",
+    "⑤ emotion → 넷째 문장 any emotion."
+   ],
    "source": "학습지 p.5-2·6-2 Vocabulary List 예문"
   },
   {
@@ -88,7 +112,13 @@
     "They talked about <u>building</u> a new school."
    ],
    "answer": 2,
-   "explain": "②는 현재진행형의 현재분사(학습지 6-2). 나머지는 동명사 — ① 동사의 목적어, ③ 주어, ④ 보어, ⑤ 전치사의 목적어(학습지 5-6).",
+   "explain": "동명사(동사원형-ing)는 명사처럼 주어·목적어·보어로 쓰이고, 현재진행형 「be동사+동사원형-ing」의 현재분사와 구별한다(학습지 5-6).\n② A snail is moving slowly.(달팽이가 천천히 움직이고 있다)는 is moving이 현재진행형이므로 moving은 현재분사다. 나머지 넷은 동명사이므로 쓰임이 다른 것은 ②이다.",
+   "wrong": [
+    "① I like going fishing with my dad. — 동사 like의 목적어.",
+    "③ Climbing the tree is dangerous. — 주어(단수 취급).",
+    "④ My good habit is getting up early. — be동사 뒤 보어(나의 좋은 습관은 일찍 일어나는 것이다). '습관이 일어나고 있다'가 아니다.",
+    "⑤ They talked about building a new school. — 전치사 about의 목적어."
+   ],
    "source": "학습지 p.5-6 동명사 예문·Practice, p.6-2 예문 그대로"
   },
   {
@@ -104,7 +134,11 @@
     "5개"
    ],
    "answer": 4,
-   "explain": "틀린 문장: Mina wants be → wants to be(want는 to부정사 목적어). 나머지 넷은 옳다(동명사 주어 단수 취급, promise/plan+to부정사). 원문은 L5 본문·기타 지문·학습지 6-7.",
+   "explain": "틀린 문장은 Mina wants be a movie star. 하나뿐이다 — want는 to부정사를 목적어로 쓰므로 wants to be(학습지 6-7: Mina wants to be a movie star.). 따라서 옳은 문장은 네 개, 정답은 ④이다.\n옳은 문장 넷 — Going on a family trip is always fun.(동명사구 주어 단수 취급, L5 본문) / They promised to fix the window.(promise + to부정사) / I plan to take a cooking class.(plan + to부정사) / Passing through them is really fun.(동명사구 주어 단수 취급, 여수 소개 글).",
+   "wrong": [
+    "①·②·③ — 옳은 문장이 넷이므로 모자란다.",
+    "⑤ 5개 — wants be는 to가 빠져 틀렸다."
+   ],
    "source": "L5 본문·Yeosu 지문·학습지 p.6-7 문장에 오류 한 곳",
    "inline": true
   },
@@ -121,7 +155,13 @@
     "good at"
    ],
    "answer": 2,
-   "explain": "전주는 비빔밥으로 '유명하다(be famous for)'.",
+   "explain": "[대화 요지] 주말에 가족과 전주에 가는 친구에게 전주가 비빔밥으로 유명하다고 알려 주고, 먹어 볼 거라고 답한다.\nG: Oh, Jeonju is ______ bibimbap. / B: Right. I'm going to try it. — 전주는 비빔밥으로 '유명하다'이므로 be famous for ~(~으로 유명하다)가 알맞다. 교과서 원문: Jeonju is famous for bibimbap. 뒤의 try it(그것을 먹어 보다)과도 이어진다.",
+   "wrong": [
+    "① perfect for — be perfect for ~는 '~에 딱 맞다'로, 전주가 비빔밥에 딱 맞다는 뜻이 되어 어색하다.",
+    "③ looking for — '~을 찾고 있는'으로 도시가 음식을 찾는다는 뜻이 된다.",
+    "④ waiting for — '~을 기다리는'으로 뜻이 통하지 않는다.",
+    "⑤ good at — '~을 잘하는'으로 뒤에 for가 아닌 at이 오며 뜻도 맞지 않는다."
+   ],
    "source": "L5 Understand Communication A-3"
   },
   {
@@ -137,7 +177,13 @@
     "<u>That</u> it snows in spring is strange."
    ],
    "answer": 3,
-   "explain": "<보기>의 that은 '그것'을 가리키는 지시대명사(L5 대화문). ③ That sounds great.(L6 대화문)도 지시대명사. ①②④는 목적어 명사절, ⑤는 주어 명사절을 이끄는 접속사(학습지 6-5·6-7).",
+   "explain": "<보기> That's a good idea.(그거 좋은 생각이야)의 That은 앞에서 Junho가 한 권유를 가리키는 지시대명사다. ③ That sounds great.(그거 좋겠다)의 That도 앞의 제안(이번 주 토요일에 가자)을 가리키는 지시대명사이므로 쓰임이 같다.\n나머지 넷은 '~라는 것'으로 해석되는 명사절을 이끄는 접속사 that이다(학습지 6-5·6-7).",
+   "wrong": [
+    "① I can't believe that she is forty years old. — believe의 목적어절(접속사).",
+    "② I know that you did your best. — know의 목적어절(접속사).",
+    "④ Do you know that Jack wrote this poem? — know의 목적어절(접속사).",
+    "⑤ That it snows in spring is strange. — 주어절(접속사). 뒤에 it snows라는 「주어+동사」가 따른다."
+   ],
    "source": "학습지 p.6-5·6-7 접속사 that 문장 + L5·L6 대화문"
   },
   {
@@ -153,7 +199,13 @@
     "paint – made"
    ],
    "answer": 1,
-   "explain": "trace the other shapes with your finger / fishermen had Chungmu gimbap(먹었다).",
+   "explain": "(A) Then trace the other shapes with your finger.(그런 다음 손가락으로 다른 모양들을 따라가세요) — L6 본문. trace는 '따라가다'(to follow the path or line of something).\n(B) Long ago, fishermen had Chungmu gimbap out at sea.(오래전에 어부들이 바다에 나가서 충무김밥을 먹었단다) — L5 본문. 여기서 have는 '먹다'(We have breakfast at 8.)의 과거형 had이다. 따라서 trace – had인 ①이 정답이다.",
+   "wrong": [
+    "② cut – took — cut은 '자르다'이고, took Chungmu gimbap은 '먹었다'가 아니다.",
+    "③ trace – got — got Chungmu gimbap은 '받았다'가 되어 원문과 다르다.",
+    "④ put – had — put the other shapes with your finger는 뜻이 통하지 않는다.",
+    "⑤ paint – made — made Chungmu gimbap(만들었다)은 원문과 다르다."
+   ],
    "source": "선생님 제작 문장(L5·L6 본문 어휘)"
   },
   {
@@ -169,7 +221,13 @@
     "ⓔ"
    ],
    "answer": 5,
-   "explain": "want는 to부정사를 목적어로 쓴다 → don't want to eat yeot. (원문 to eat을 eating으로 바꿈)",
+   "explain": "[글 요지] 김홍도 「씨름」 속 엿장수가 자신을 소개한다 — 가운데서 두 사람이 씨름하고 많은 사람이 보고 있지만, 엿은 아무도 사지 않는다.\nⓔ I think people don't want eating yeot. → want는 to부정사를 목적어로 쓰는 동사이므로(학습지 6-6) don't want to eat여야 한다. 원문: I think people don't want to eat yeot.",
+   "wrong": [
+    "ⓐ two people are competing in ssireum — 현재진행형, 옳다.",
+    "ⓑ Many people are watching them. — 복수 주어 + are watching, 옳다.",
+    "ⓒ I'm also in this painting. — 옳다.",
+    "ⓓ I'm selling yeot, but people are not buying it. — 현재진행형의 긍정·부정, 옳다."
+   ],
    "source": "L6 Express Our Thoughts(엿장수) 지문에 오류 한 곳",
    "inline": true
   },
@@ -191,7 +249,13 @@
     "ⓔ"
    ],
    "answer": 5,
-   "explain": "조동사 can 뒤에는 동사원형 → can also learn.",
+   "explain": "[대화 요지] 세 사람이 전시회 포스터 속 「별이 빛나는 밤」을 보며 감상을 나누고, 미래 박물관에서 열리는 반 고흐 전시회에 이번 주 토요일에 함께 가기로 한다.\nⓔ We can also learning about his life and art ~ → 조동사 can 뒤에는 동사원형이 와야 하므로 can also learn이어야 한다. 원문: We can also learn about his life and art in the exhibition.",
+   "wrong": [
+    "ⓐ The Starry Night by Vincent van Gogh — '~가 그린'의 by, 옳다.",
+    "ⓑ The colors of the night sky are amazing. — amazing(놀라운)은 형용사 보어, 옳다.",
+    "ⓒ How about going there together? — 전치사 about + 동명사, 옳다.",
+    "ⓓ I want to see van Gogh's paintings. — want + to부정사, 옳다."
+   ],
    "source": "L6 Understand Communication C",
    "inline": true
   },
@@ -207,7 +271,13 @@
     "Let's go there this Saturday."
    ],
    "answer": 1,
-   "explain": "그림에 대한 의견을 묻는 What do you think about ~?에 대한 답. 선지는 모두 L6 대화문 문장.",
+   "explain": "Junho: What do you think about this painting? / Minji: (A) / Alex: It's The Starry Night ~, right? — 그림에 대해 어떻게 생각하느냐는 물음에 대한 답이므로 I think it's beautiful.(나는 그것이 아름답다고 생각해)이 알맞다. (교과서 원문) 「What do you think about ~?」 — 「I think (that) ~」의 짝이다.",
+   "wrong": [
+    "② I don't think so. — 앞에 동의하거나 반대할 의견이 아직 나오지 않았다.",
+    "③ It's a bit expensive for me. — 값 이야기(L6 대화 A-3)로 그림 감상과 맞지 않는다.",
+    "④ It ends on October 1st. — 전시회 끝나는 날은 뒤에서 준호가 말한다.",
+    "⑤ Let's go there this Saturday. — 전시회 이야기가 나오기 전이다."
+   ],
    "source": "L6 Understand Communication C"
   },
   {
@@ -222,7 +292,13 @@
     "세 사람은 일요일에 전시회에 갈 것이다."
    ],
    "answer": 2,
-   "explain": "The colors of the night sky are amazing. Alex는 화가를 알고(by Vincent van Gogh, right?), 전시회는 10월 1일에 끝날 예정, 셋이 토요일에 함께 간다.",
+   "explain": "Junho: Right. I like this painting. The colors of the night sky are amazing.(밤하늘의 색들이 놀라워) — 준호가 한 말이므로 ②가 일치한다.",
+   "wrong": [
+    "① Alex: It's The Starry Night by Vincent van Gogh, right? — Alex는 화가가 반 고흐임을 안다.",
+    "③ It ends on October 1st. — 10월 1일에 '끝난다'(앞으로), 이미 끝난 것이 아니다.",
+    "④ Minji: We can also learn ~ / That sounds great. — 민지는 함께 가는 데 찬성했다.",
+    "⑤ Let's go there this Saturday then. — 일요일이 아니라 토요일이다."
+   ],
    "source": "L6 Understand Communication C"
   },
   {
@@ -243,7 +319,13 @@
     "ⓔ"
    ],
    "answer": 3,
-   "explain": "want는 to부정사를 목적어로 쓴다 → wanted to express. (원문의 to를 뺌)",
+   "explain": "[글 요지] 그림 속의 Amélie가 남편 마티스의 미술관에서 자기 얼굴이 초록색으로 칠해진 까닭을 설명한다. 마티스는 밝고 거친 색으로 감정을 표현하고 싶어 했고, 사람들은 처음엔 야수가 그린 것 같다며 싫어했지만 그는 자기 스타일을 지켜 유명해졌다.\nⓒ He wanted express his emotions ~ → want는 to부정사를 목적어로 쓰는 동사이므로(학습지 6-6) wanted to express여야 한다. 원문: He wanted to express his emotions with bright and wild colors.",
+   "wrong": [
+    "ⓐ Do you think that I'm strange? — think의 목적어절을 이끄는 접속사 that, 옳다.",
+    "ⓑ Don't worry. — 부정 명령문, 옳다.",
+    "ⓓ Some people thought that a beast painted me. — thought의 목적어절, 옳다.",
+    "ⓔ He kept his own style and finally became famous. — 과거형 동사 두 개를 and로 이음, 옳다."
+   ],
    "source": "L6 본문 앞부분(Amélie)",
    "inline": true
   },
@@ -259,7 +341,13 @@
     "야수의 이야기를 책으로 써서"
    ],
    "answer": 1,
-   "explain": "Some people thought that a beast painted me. So, he got the nickname Wild Beast.",
+   "explain": "He wanted to express his emotions with bright and wild colors. People didn't like this painting style at first. Some people thought that a beast painted me. So, he got the nickname Wild Beast. — 밝고 거친 색으로 그린 그림을 보고 어떤 사람들은 야수가 그렸다고 생각했고, 그래서 '야수'라는 별명을 얻었다. 따라서 ①이 알맞다.",
+   "wrong": [
+    "② 야수를 즐겨 그려서 — 야수를 그렸다는 말이 없다. 야수가 '그렸다'고 사람들이 생각한 것이다.",
+    "③ 미술관에서 야수를 길러서 — 본문에 없다.",
+    "④ 얼굴이 야수처럼 생겨서 — 초록색으로 칠해진 것은 Amélie의 얼굴이고, 마티스의 생김새 이야기는 없다.",
+    "⑤ 야수의 이야기를 책으로 써서 — 본문에 없다."
+   ],
    "source": "L6 본문 앞부분(Amélie)"
   },
   {
@@ -274,7 +362,13 @@
     "Wild Colors Are Popular in Modern Art"
    ],
    "answer": 1,
-   "explain": "그림 속 Amélie가 화가 Matisse에 대해 이야기하는 글 — 교과서 본문 제목. 선지는 모두 범위 자료의 제목·문장.",
+   "explain": "글쓴이는 그림 속의 Amélie이고, 그림이 화가(마티스)의 별명과 스타일에 대해 이야기하는 글이다. 따라서 제목으로는 교과서 본문 제목인 Pictures Talk About the Artist!(그림들이 예술가에 대해 이야기해요!)가 가장 알맞다.",
+   "wrong": [
+    "② Garam's Travel Diary to Tongyeong — L5 통영 여행 일기의 제목이다.",
+    "③ The Magician of Color — 전혁림의 별명(L5)이지 마티스 이야기가 아니다.",
+    "④ Bridge to the World — 교과서 코너 이름일 뿐 이 글의 내용이 아니다.",
+    "⑤ Wild Colors Are Popular in Modern Art — 학습지 예문으로, 사람들이 처음엔 싫어했다는 글 내용과 맞지 않는다."
+   ],
    "source": "L6 본문 앞부분(Amélie)"
   },
   {
@@ -296,7 +390,13 @@
     "[E]"
    ],
    "answer": 2,
-   "explain": "아빠의 권유대로 무·오징어와 함께 먹어 본 뒤 '조금 매웠지만 맛있었다'. 원문 위치 [B].",
+   "explain": "[글 요지] 통영 여행 첫날 — 중앙시장에서 충무김밥을 먹고, 오후에 이순신 공원에서 동상을 보고 해안을 산책하며 평화로운 일몰을 본다.\nDad said, \"Try the roll with radish and squid. ...\" [B] Chungmu is Tongyeong's old name. — 아빠의 권유대로 무·오징어와 함께 먹어 본 뒤 '그것은 조금 매웠지만 맛있었다(It was a bit spicy but tasty.)'가 오는 것이 자연스럽다. It은 the roll(충무김밥)을 가리킨다. 원문 위치는 [B]이다.",
+   "wrong": [
+    "[A] — 아직 무·오징어와 먹어 보라는 말이 나오기 전이라 '매웠다'의 까닭이 없다.",
+    "[C] — 충무라는 이름 설명 뒤에 맛 이야기가 오면 It이 무엇인지 흐려진다.",
+    "[D] — 이순신 공원 동상 이야기 사이에 김밥 맛이 끼어든다.",
+    "[E] — 일몰 장면에 음식 이야기가 어울리지 않는다."
+   ],
    "source": "L5 본문 8월 16일",
    "inline": true
   },
@@ -312,7 +412,13 @@
     "통영 해안의 이름"
    ],
    "answer": 1,
-   "explain": "Chungmu is Tongyeong's old name.",
+   "explain": "Chungmu is Tongyeong's old name.(충무는 통영의 옛 이름이다) — 따라서 ①이 알맞다. 그래서 통영의 김밥을 Chungmu gimbap(충무김밥)이라고 부른다.",
+   "wrong": [
+    "② 이순신 장군의 별명 — Admiral Yi에 대한 별명 이야기는 없다.",
+    "③ 중앙시장의 다른 이름 — 시장 이름이 아니라 도시의 옛 이름이다.",
+    "④ 가람이 아빠의 이름 — 본문에 없다.",
+    "⑤ 통영 해안의 이름 — 해안이 아니라 도시 통영의 옛 이름이다."
+   ],
    "source": "L5 본문 8월 16일"
   },
   {
@@ -327,7 +433,13 @@
     "In the afternoon, we went to Jungang Market."
    ],
    "answer": 5,
-   "explain": "오후에 간 곳은 Yi Sun-sin Park(중앙시장은 오후 1시에 도착). ①~④는 원문 그대로.",
+   "explain": "We arrived at Jungang Market at 1 p.m. ... In the afternoon, we went to Yi Sun-sin Park. — 오후에 간 곳은 이순신 공원이고, 중앙시장은 오후 1시에 도착한 곳이다. 따라서 ⑤가 일치하지 않는다. ①~④는 본문 문장 그대로이다.",
+   "wrong": [
+    "① There was only rice inside the roll! — 일치.",
+    "② Long ago, fishermen had Chungmu gimbap out at sea. — 일치.",
+    "③ Chungmu is Tongyeong's old name. — 일치.",
+    "④ There was a huge statue of Admiral Yi. — 일치."
+   ],
    "source": "L5 본문 8월 16일"
   },
   {
@@ -348,7 +460,13 @@
     "[D] – [A] – [B] – [C]"
    ],
    "answer": 3,
-   "explain": "동피랑 벽화(B) → 사진 수백 장·동피랑 뜻(C) → 다음으로 전혁림 미술관(A) → 그의 그림(D). 교과서 순서.",
+   "explain": "[글 요지] 여행 둘째 날 — 동피랑 벽화 앞에서 사진을 수백 장 찍고, 전혁림 미술관에서 '색채의 마술사'의 파란 바다 그림을 즐긴다.\n첫 문장 Early in the morning, we went to Dongpirang. 뒤에는 동피랑 벽의 그림과 사진 찍기 좋은 곳이라는 [B] → 그래서 사진을 수백 장 찍고, 동피랑 이름의 뜻을 설명하는 [C] → Next(다음으로) 전혁림 미술관에 간 [A] → 그(He = 전혁림)가 파란색으로 바다를 그렸다는 [D] 순서가 자연스럽다. 따라서 ③ [B]–[C]–[A]–[D]가 교과서 순서다.\n[C]의 Mom and I took hundreds of pictures.는 [B]의 the best place for taking pictures를 받고, [D]의 He는 [A]의 The painter를 받는다.",
+   "wrong": [
+    "① [A]–[D]–[B]–[C] — 동피랑에 갔다고 한 뒤 바로 '다음으로' 미술관에 가 버린다.",
+    "② [B]–[A]–[C]–[D] — 미술관에 간 뒤 다시 동피랑 사진 이야기로 돌아간다.",
+    "④ [C]–[B]–[D]–[A] — 사진을 수백 장 찍은 뒤에야 사진 찍기 좋은 곳이라고 하고, [D]의 He가 가리킬 화가가 아직 안 나왔다.",
+    "⑤ [D]–[A]–[B]–[C] — He가 누구인지 나오기 전에 그림 이야기부터 한다."
+   ],
    "source": "L5 본문 8월 17일"
   },
   {
@@ -363,7 +481,12 @@
     "takes"
    ],
    "answer": 3,
-   "explain": "전치사 for 뒤에는 동명사.",
+   "explain": "It was the best place for (A) pictures! — 전치사 for 뒤에는 동명사가 와야 하므로(학습지 5-6: 전치사의 목적어, Thank you for inviting me.) taking이 알맞다. 원문: It was the best place for taking pictures!(그곳은 사진을 찍기에 최고의 장소였다!) take a picture는 '사진을 찍다'.",
+   "wrong": [
+    "① take — 전치사 뒤에 동사원형이 올 수 없다.",
+    "② to take — 전치사 for 뒤에 to부정사는 오지 않는다.",
+    "④ took / ⑤ takes — 과거형·3인칭 단수형은 전치사의 목적어가 될 수 없다."
+   ],
    "source": "L5 본문 8월 17일"
   },
   {
@@ -378,7 +501,13 @@
     "He painted the sea of Tongyeong with various red colors."
    ],
    "answer": 2,
-   "explain": "② 원문 그대로. ① Early in the morning, ③ Dong=east·pirang=cliff, ④ Magician of Color, ⑤ blue colors — 각각 한 단어를 바꾼 것.",
+   "explain": "② There were many pretty paintings on the walls.(벽에는 많은 예쁜 그림들이 있었다)는 본문 문장 그대로이므로 일치한다.\n나머지는 낱말을 바꾼 것이다.",
+   "wrong": [
+    "① Early in the morning, we went to Dongpirang. — Late가 아니라 Early(아침 일찍).",
+    "③ 'Dong' means 'east,' and 'pirang' means 'cliff.' — 동=동쪽, 피랑=절벽. 서로 바꿔 놓았다.",
+    "④ The painter's nickname is 'The Magician of Color.' — Art가 아니라 Color.",
+    "⑤ He painted the sea of Tongyeong with various blue colors. — red가 아니라 blue."
+   ],
    "source": "L5 본문 8월 17일"
   },
   {
@@ -399,7 +528,13 @@
     "ⓔ"
    ],
    "answer": 5,
-   "explain": "want는 to부정사를 목적어로 쓴다 → want to find. (원문 to find를 finding으로 바꿈)",
+   "explain": "[글 요지] 마티스가 종이를 칠해 가위로 오려 붙여 만든 달팽이 작품이 자신을 소개한다. 70세에 크게 아팠지만 예술을 포기하지 않고 '종이 오리기'라는 새 예술 형태를 만들었다.\nⓔ Do you want finding more artworks like me? → want는 to부정사를 목적어로 쓰는 동사이므로(학습지 6-6) want to find여야 한다. 원문: Do you want to find more artworks like me?",
+   "wrong": [
+    "ⓐ Can you find me in the picture? — 조동사 can + 동사원형, 옳다.",
+    "ⓑ Start from the green shape in the middle. — 명령문, 옳다.",
+    "ⓒ They look like a snail shell. — look like ~(~처럼 보이다), 옳다.",
+    "ⓓ Matisse created me in a unique way. — 과거형 created, 옳다."
+   ],
    "source": "L6 본문 뒷부분(snail)",
    "inline": true
   },
@@ -415,7 +550,13 @@
     "사진을 수백 장 찍어 이어 붙였다."
    ],
    "answer": 1,
-   "explain": "He painted paper and cut out shapes with scissors. Then he put the shapes together and made me.",
+   "explain": "Matisse created me in a unique way. He painted paper and cut out shapes with scissors. Then he put the shapes together and made me.(그는 종이를 색칠했고 가위로 모양들을 잘라냈어요. 그런 다음 그는 그 모양들을 합쳐서 저를 만들었어요) — 따라서 ①이 알맞다. 이것이 cut-outs(종이 오리기)이다.",
+   "wrong": [
+    "② 초록색 물감으로 얼굴을 칠했다 — 앞부분(Amélie) 글의 내용이다.",
+    "③ 손가락으로 진흙을 빚었다 — 손가락은 관람객이 모양을 따라가는 데 쓰인다(with your finger).",
+    "④ 달팽이 껍데기를 주워 붙였다 — 모양이 껍데기처럼 보인다는 것이지 진짜 껍데기가 아니다.",
+    "⑤ 사진을 수백 장 찍어 이어 붙였다 — L5 통영 일기의 내용이다."
+   ],
    "source": "L6 본문 뒷부분(snail)"
   },
   {
@@ -430,7 +571,13 @@
     "He created a new art form."
    ],
    "answer": 3,
-   "explain": "At the age of 70, Matisse got very sick. — 70세. 나머지는 원문 그대로.",
+   "explain": "At the age of 70, Matisse got very sick.(70세의 나이에 마티스는 매우 아팠어요) — 17세가 아니라 70세이므로 ③이 일치하지 않는다. 나머지는 본문 문장 그대로이다.",
+   "wrong": [
+    "① They look like a snail shell. — 일치.",
+    "② He painted paper and cut out shapes with scissors. — 일치.",
+    "④ However, he never gave up art. — 일치.",
+    "⑤ He created a new art form. — 일치."
+   ],
    "source": "L6 본문 뒷부분(snail)"
   }
  ]
