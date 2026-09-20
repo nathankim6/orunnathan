@@ -439,7 +439,7 @@ class Hwpx:
         # 행마다 글이 몇 줄로 접히는지 어림해 높이를 정하고, 남는 높이는 고르게 나눠 한 쪽을 꽉 채운다
         weights = [7, 18, 6, 26, 43]
         col_w = [T['full_w'] * w / 100 - 400 for w in weights]
-        line_h = int(950 * 1.3) + 40                       # 9.5pt · 행간 130 %
+        line_h = int(950 * 1.3) + 120                      # 9.5pt · 행간 130 %
         pad = 200                                          # 위아래 안쪽 여백
         rows_txt = [['번호', '정답', '배점', '출처', '해설']]
         for it in items:
@@ -451,7 +451,7 @@ class Hwpx:
         for row in rows_txt:
             lines = max(max(1, math.ceil(text_width(v, 9.5) / cw)) for v, cw in zip(row, col_w))
             need.append(lines * line_h + pad)
-        avail = 84189 - 2 * 1984 - 2268 - FOOTER_H - 3200   # 쪽 높이 − 여백 − 머리말·꼬리말 − 제목줄
+        avail = 84189 - 2 * 1984 - 2268 - FOOTER_H - 5200   # 쪽 높이 − 여백 − 머리말·꼬리말 − 제목줄 − 안전 여유
         total = sum(need)
         if total < avail:
             extra = (avail - total) // n
