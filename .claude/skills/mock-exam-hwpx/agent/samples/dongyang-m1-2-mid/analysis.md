@@ -111,3 +111,28 @@
 - **audit 결과**: 걸린 문장은 셋 중 하나다 — ① 어법 문항을 위해 일부러 바꾼 문장((다)(라)(마)(바), ⓐ[is/are] 괄호) — explain 에 이유를 적었다. ② 서답형 질문 줄·우리말이 든 줄. ③ `ⓐan old man` 처럼 원문자를 단어에 붙인 줄 — audit 의 NFKC 정규화가 ⓐ→a 로 바꿔 6-gram 이 깨지는 도구 특성이며 문장은 원문 그대로다.
 - **확신이 낮은 문항**: 3회 12~13(L6 WT C — 기출과 같은 대화. 길이 있는 L6 대화가 이것뿐이라 빈칸·일치 포인트만 바꿨다), 1회 15(I felt good! 의 자리 (D)·(E) 가 둘 다 자연스럽다고 볼 여지 — (E) 는 Minsu 단락 첫 문장 뒤라 흐름이 끊긴다), 2회·3회 20(대명사 that 이 '생략 불가' 인 것은 맞으나 학습지에 없는 구분이라 학생에게 어렵게 느껴질 수 있음), 3회 22(우리말이 문장 중간에 끼어 (A) 뒤 쉼표 처리).
 - 기출 배점 총합이 92(23번 누락)라 100 으로 재배분했다: 2점 1·4·21, 3점 2·6·8·11·12·15·16·23·24, 4점 3·5·7·9·10·13·14·17·18·19·20·22·25, 서답형 5점 ×3.
+
+## 5. v3 문장 대조 — "문장은 자료 원문 그대로" (2026-09-20)
+
+학습지 스캔 22쪽을 `text/ws01.txt` 로 옮겨 적은 뒤(21쪽 + 빈 쪽 1, 문법 규칙표·Practice·어휘 표·영영풀이·학생 필기 정답 포함)
+`agent.py audit` 로 세 벌의 영어 문장을 전부 대조했다. 유형·자리·자료 배분(표 ③)은 그대로 두고 문장만 바꿨다.
+
+| | 원문 그대로 | 변형 | 창작 |
+|---|---|---|---|
+| 대조 전 (1회 / 2회 / 3회) | 93 / 97 / 90 | 28 / 35 / 31 | **21 / 15 / 22** |
+| 대조 후 (1회 / 2회 / 3회) | 113 / 112 / 102 | 28 / 31 / 36 | **0 / 0 / 3** |
+
+고친 자리(세 벌 공통 자리 기준):
+- **5번(대화 빈칸 어법)**: 지어 낸 "Is Yuna smarter / Is Tom older / Is Mina a better singer" 대화·선지를 버리고, 1회는 학습지 Grammar Exercise A-3(p.11) 을 발문·선지 그대로, 2회는 A-8(p.11) 의 선지 다섯 개 그대로(발문은 A-8 우리말을 대화로), 3회는 Warm-Up 예문 "Yuna is the best singer in my school."(p.7) 에 한 단어씩 손댄 선지로 바꿨다.
+- **12번 오답 표현**: "Can you please take a picture?" → L6 WT B "Can you please fix my bike?", "can I get your help?" → L6 WT C "can you please help me with this trash bag?".
+- **13번(대화 일치)**: 3인칭으로 새로 지은 선지 대신 대화 문장을 화자 표시(G:/M:/B:)와 함께 그대로 싣고, 오답은 한 단어(not · must not→must · after→before · Saturday→Sunday · Monet→Van Gogh · 화자)만 바꿨다.
+- **17번(대답을 찾을 수 없는 질문)**: 질문마다 본문 구절 6단어 이상을 그대로 품도록 다시 썼다(예: "Where did Minsu take some plastic and glass bottles to?", "How old was the young man with long brown hair?").
+- **19번(2회)**: "Tom ___ to go to Vietnam." → 학습지 p.19 A-3 문장 그대로 "When did Tom ___ to go to Vietnam?".
+- **22번(1·3회)**: 조각 문장 선지("he was a little taller than me") 를 본문 한 문장 전체("I'm about 170 cm tall, and he was a little taller than me." / "First, John is shorter than 180 cm, so he is not the criminal.") 로 늘리고 (A) 우리말도 문장 전체로.
+- **24번(1회)**: 지어 낸 3인칭 선지를 본문 문장 그대로로 바꾸고 오답은 not 하나만 뺐다("In fact, the old man was old.").
+- **서답형1 질문**: 영어 질문 세 개를 우리말 질문으로(우리말 발문은 자유). 답 문장은 본문 7단어 그대로.
+- **서답형2(2회)**: 밑줄 우리말을 "실례지만, 문을 닫아 주시겠어요?" 로 넓혀 답을 대화문 그대로 "Excuse me, but can you please close the door?"(9단어) 로.
+
+남긴 예외(창작 3, 모두 3회 9번): ⓐⓑⓒ 조합표의 행 "exercise / to travel / to become" 같은 조합 자체가 문장이 아니라
+선택지 나열이라 짝이 없다. 표 본문(My Three Wishes, 학습지 p.19) 과 정답 조합 ⑤ 는 원문 그대로다.
+"변형" 으로 남은 것은 어법 오류 심기·빈칸·한 단어 바꾼 오답 선지·화자 표시가 붙은 대화 문장뿐이다.
