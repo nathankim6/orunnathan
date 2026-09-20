@@ -21,8 +21,14 @@
     "gather – collect"
    ],
    "answer": 5,
-   "explain": "gather – collect 는 유의어(모으다), 나머지는 반의어.",
-   "source": "학습지 L5 Words 심화 B(connect↔disconnect, safe↔unsafe) · L6 Words 심화 B(save↔waste, harm↔heal) · L6 Words 기본 A(collect)"
+   "explain": "① save(아끼다)–waste(낭비하다) ② harm(해치다)–heal(치유하다) ③ connect(연결하다)–disconnect(연결을 끊다) ④ safe(안전한)–unsafe(안전하지 않은)는 모두 뜻이 반대인 반의어 쌍이다.\n⑤ gather와 collect는 둘 다 ‘모으다’라는 뜻의 유의어 쌍이므로 관계가 나머지와 다르다.",
+   "source": "학습지 L5 Words 심화 B(connect↔disconnect, safe↔unsafe) · L6 Words 심화 B(save↔waste, harm↔heal) · L6 Words 기본 A(collect)",
+   "wrong": [
+    "① save–waste: 반의어",
+    "② harm–heal: 반의어",
+    "③ connect–disconnect: 반의어",
+    "④ safe–unsafe: 반의어"
+   ]
   },
   {
    "no": 2,
@@ -34,11 +40,17 @@
     "I heard that",
     "I get it.",
     "you should also",
-    "Why don’t you"
+    "I’m interested in"
    ],
    "answer": 5,
-   "explain": "(가) What are you doing? (나) I heard that (다) I get it. (라) you should also — ⑤는 쓰이지 않는다.",
-   "source": "L6 Listen & Speak B"
+   "explain": "이메일 저장이 에너지를 쓴다는 교과서 대화(Lesson 6 Listen & Speak B)이다. (가) “I’m deleting my emails.”라고 답하므로 What are you doing?(뭐 하고 있니?)이 들어간다. (나) “I heard that storing emails uses a lot of energy.”는 ‘이메일을 저장하는 것이 에너지를 많이 쓴다고 들었어’로 들은 내용을 전하는 표현이다.\n(다) “Oh, I get it.(아, 알겠어)” 뒤에 나도 지우겠다고 하고, (라) “And you should also block spam and ads.(그리고 스팸과 광고도 차단해야 해)”로 조언한다.\n⑤ I’m interested in(~에 관심이 있다)은 어느 빈칸에도 뜻이 이어지지 않아 들어갈 수 없다.",
+   "source": "L6 Listen & Speak B",
+   "wrong": [
+    "① What are you doing? → (가)",
+    "② I heard that → (나)",
+    "③ I get it. → (다)",
+    "④ you should also → (라)"
+   ]
   },
   {
    "no": 3,
@@ -53,8 +65,14 @@
     "(B) – (A) – (C)"
    ],
    "answer": 3,
-   "explain": "직업을 택한 이유(C) → 나도 간호사가 되겠다(A) → 좋은 간호사가 되길 바란다(B).",
-   "source": "L5 Listen & Speak A-4"
+   "explain": "간호사 Mr. Kim에게 직업을 택한 이유를 묻는 교과서 대화(Lesson 5 Listen & Speak A-4)이다. “Why did you choose the job?”에 대한 답 (C) “I like helping sick people. It makes me feel proud.(아픈 사람을 돕는 것이 좋아요. 자랑스럽게 느끼게 해 줘요)”가 먼저 온다.\n이어서 (A) “That sounds great. I’ll study hard to become a nurse.”로 자신도 간호사가 되겠다고 하자 (B) “Good. I hope you become a kind and caring nurse.”로 격려하며 끝난다. 따라서 (C)–(A)–(B)이다.",
+   "source": "L5 Listen & Speak A-4",
+   "wrong": [
+    "① (A) That sounds great 은 이유를 들은 뒤에 와야 한다",
+    "② (B) 격려는 간호사가 되겠다는 말(A) 뒤에 와야 한다",
+    "④ (B) 격려가 (A) 다짐보다 앞에 올 수 없다",
+    "⑤ (B) 가 맨 앞에 오면 무엇을 Good 이라 하는지 알 수 없다"
+   ]
   },
   {
    "kind": "group",
@@ -128,8 +146,14 @@
     ]
    },
    "answer": 4,
-   "explain": "(A) to start 이하가 진주어이므로 가주어 It (B) easy 는 「for + 목적격」 (C) 목적격 me (D) ‘계속 탐구해라, 그러면 …’ → and.",
-   "source": "L5 Language Use C (Liam·Ms. Han) — It+for+to부정사·명령문, and(학습지 L5 GP-A·B)"
+   "explain": "(A) “It’s important to start planning early.”에서 It은 가주어, to start 이하가 진주어이므로 It이 맞다(That은 가주어로 쓰지 않는다).\n(B)(C) “It’s not easy for me to choose my future job.”에서 easy는 성격 형용사가 아니므로 의미상 주어는 「for + 목적격」 → for me.\n(D) “Keep exploring different things, and you’ll find your dream job.”은 ‘계속 탐색해라, 그러면 꿈의 직업을 찾을 것이다’이므로 ‘그러면’의 and이다.",
+   "source": "L5 Language Use C (Liam·Ms. Han) — It+for+to부정사·명령문, and(학습지 L5 GP-A·B)",
+   "wrong": [
+    "① (A) That 은 가주어가 아니고, (D) or 는 ‘그렇지 않으면’으로 뜻이 맞지 않는다",
+    "② (B) easy 는 성격 형용사가 아니므로 of ✗",
+    "③ (C) for 뒤에는 목적격 me",
+    "⑤ (D) or 는 ‘그렇지 않으면’으로 뜻이 맞지 않는다"
+   ]
   },
   {
    "no": 5,
@@ -143,8 +167,14 @@
     "Does Ms. Han think starting planning for the future early is important?"
    ],
    "answer": 4,
-   "explain": "Liam 이 어떤 콘텐츠를 만들고 싶은지는 대화에 없다. ① Yes ② Yes(I’m not good at it) ③ Yes(What about learning something?) ⑤ Yes(It’s important to start planning early).",
-   "source": "L5 Language Use C · 통합본 L5 대화 12(문장 원문)"
+   "explain": "① “I’m thinking about future jobs.” → Yes. ② “I’m interested in coding these days, but I’m not good at it.” → Yes. ③ “What about learning something?” → Yes. ⑤ “It’s important to start planning early.” → Yes.\n④ Liam이 어떤 콘텐츠를 만들고 싶어 하는지는 대화에 전혀 나오지 않으므로 답할 수 없다.",
+   "source": "L5 Language Use C · 통합본 L5 대화 12(문장 원문)",
+   "wrong": [
+    "① Yes, he is. 라고 답할 수 있다",
+    "② Yes, he does. 라고 답할 수 있다",
+    "③ Yes, she does. 라고 답할 수 있다",
+    "⑤ Yes, she does. 라고 답할 수 있다"
+   ]
   },
   {
    "no": 6,
@@ -160,8 +190,11 @@
    ],
    "inline": true,
    "answer": 4,
-   "explain": "옳은 것: ⓐ ⓒ ⓔ ⓕ ⓗ → 5개. ⓑ 잘하지 못함(poor at coding) ⓓ 한 분야에 집중하라가 아니라 여러 가지를 계속 탐구하라고 함 ⓖ ‘사방에, 여기저기’ ⓘ practice 의 풀이(explore: to travel to or around an area in order to learn about it).",
-   "source": "L5 Language Use C · 통합본 L5 대화 12(ⓐⓑⓓ 원문) · 통합본 L5 GRAMMAR 1·2 · L5 어휘(all over the place) · L5 영영풀이(job·explore·practice)"
+   "explain": "옳은 것: ⓐ “I’m thinking about future jobs.” ⓒ “I don’t have any special hobbies.” ⓔ 「명령문, and …」는 If you ~, …로 바꿔 쓸 수 있다. ⓕ It은 가주어, to choose 이하가 진주어이다. ⓗ job의 영영풀이는 교과서와 같다(돈을 벌기 위해 정기적으로 하는 것). → 5개.\n옳지 않은 것: ⓑ Liam은 “I’m not good at it.”이라고 했으므로 코딩을 잘한다고 생각하지 않는다. ⓓ Ms. Han은 “focus on your interests and hobbies”, “Keep exploring different things”라고 했으므로 한 분야에 집중하라는 조언이 아니다. ⓖ all over the place는 ‘사방에, 모든 곳에’이다. ⓘ ‘to do something again and again to get better at it’은 practice의 풀이이고 explore는 ‘to travel to or around an area in order to learn about it’이다.",
+   "source": "L5 Language Use C · 통합본 L5 대화 12(ⓐⓑⓓ 원문) · 통합본 L5 GRAMMAR 1·2 · L5 어휘(all over the place) · L5 영영풀이(job·explore·practice)",
+   "wrong": [
+    "① 2개, ② 3개, ③ 4개, ⑤ 6개: 옳은 것은 ⓐⓒⓔⓕⓗ 다섯 개이다"
+   ]
   },
   {
    "no": 7,
@@ -176,8 +209,14 @@
     "Although he very tired, he attended the meeting."
    ],
    "answer": 1,
-   "explain": "「Although + 주어 + 동사 ~, 주절」. ② 어순 ③ 이유 접속사 ④ 접속사 없이 두 절을 이음 ⑤ 동사 없음.",
-   "source": "통합본 L6 GRAMMAR 2 – B-01 · 학습지 L6 Grammar Point B"
+   "explain": "양보 접속사 although(비록 ~이지만)는 「Although + 주어 + 동사, 주어 + 동사」의 어순으로 쓴다. ‘그는 매우 피곤했다’ + ‘회의에 참석했다’를 이으면 Although he was very tired, he attended the meeting.이 된다.\nalthough 뒤에는 반드시 주어와 동사가 갖추어진 절이 와야 하며, 접속사 없이 두 절을 쉼표로만 이을 수 없다.",
+   "source": "통합본 L6 GRAMMAR 2 – B-01 · 학습지 L6 Grammar Point B",
+   "wrong": [
+    "② Although 뒤는 「주어 + 동사」 어순이어야 한다(was he ✗)",
+    "③ Because 는 이유이므로 ‘피곤했지만’이라는 대조의 뜻이 되지 않는다",
+    "④ 접속사 없이 쉼표로만 두 절을 이을 수 없다",
+    "⑤ although 절에 동사 was 가 빠졌다"
+   ]
   },
   {
    "kind": "group",
@@ -203,8 +242,14 @@
    ],
    "inline": true,
    "answer": 3,
-   "explain": "‘충격을 받은’ 감정을 느끼는 주어 → shocked. (A) 주격 관계대명사 (B) 명사절 접속사 (D)(E) 현재완료.",
-   "source": "L6 본문 1대목(원문 shocked) · 학습지 L6 p.6(shocking/shocked)"
+   "explain": "9월 15일 일기로, 좋아하던 바다의 장소에서 산호가 병들어 하얗게 변한 것을 보고 충격을 받았다는 내용이다.\n(C) “I was shocking.”은 글쓴이가 충격을 받은 것이므로 과거분사형 형용사 shocked를 써야 한다. shocking은 ‘충격적인’으로 충격을 주는 대상을 설명할 때 쓴다.\n(A) that은 선행사 a place를 받는 주격 관계대명사, (B) that은 saw의 목적어절을 이끄는 접속사, (D) have turned·(E) has lost는 과거의 변화가 지금까지 이어진 현재완료로 모두 옳다.",
+   "source": "L6 본문 1대목(원문 shocked) · 학습지 L6 p.6(shocking/shocked)",
+   "wrong": [
+    "① (A) that: 주격 관계대명사, 옳음",
+    "② (B) that: 목적어절 접속사, 옳음",
+    "④ (D) have turned: 현재완료(결과), 옳음",
+    "⑤ (E) has lost: 현재완료(결과), 옳음"
+   ]
   },
   {
    "no": 9,
@@ -218,8 +263,14 @@
     "글쓴이는 산호를 몹시 걱정하고 있다."
    ],
    "answer": 4,
-   "explain": "Different types of waste have harmed the corals, too. — 쓰레기도 산호에 해를 끼쳤다.",
-   "source": "L6 본문 1대목"
+   "explain": "① “This morning, I went scuba diving” ② “It was a place that was full of beautiful and colorful corals.” ③ “Because of the warm seawater, corals have turned white.” ⑤ “I’m really worried.”\n④ 글은 “Different types of waste have harmed the corals, too.”라고 했으므로 여러 종류의 쓰레기도 산호에 해를 끼쳤다. 따라서 ④는 내용과 다르다.",
+   "source": "L6 본문 1대목",
+   "wrong": [
+    "① I went scuba diving this morning 과 일치",
+    "② full of beautiful and colorful corals 와 일치",
+    "③ corals have turned white 와 일치",
+    "⑤ I’m really worried 와 일치"
+   ]
   },
   {
    "no": 10,
@@ -235,8 +286,11 @@
    ],
    "inline": true,
    "answer": 3,
-   "explain": "옳지 않은 것: ⓑ(명사절 접속사 that 은 생략 가능) ⓓ(Because 뒤에는 주어+동사) ⓖ(날씨·날짜의 비인칭 주어) ⓙ(proud 의 풀이; worried 는 unhappy because you think something bad might happen) → 4개.",
-   "source": "학습지 L6 p.6(that 관계대명사/접속사·생략·비인칭 주어·현재완료 결과) · 학습지 L6 Crossword(spot) · 학습지 L6 Words 기본 A-6(seawater) · L6 영영풀이(worried)"
+   "explain": "옳지 않은 것: ⓑ (B)that은 목적어절을 이끄는 접속사이므로 생략할 수 있다. ⓓ Because of 뒤에 명사구가 오는 것은 맞지만, 뒤에 절이 아닌 명사구 the warm seawater가 있으므로 Because(+ 주어 + 동사)로 바꿔 쓸 수 없다. ⓖ “It’s a sad day for me.”의 It은 날짜·날씨 등을 나타내는 비인칭 주어이다. ⓙ ‘feeling pleased and satisfied ~’는 proud의 풀이이고 worried는 ‘unhappy because you think something bad might happen’이다. → 4개.\n옳은 것: ⓐ 주격 관계대명사 that은 선행사가 사물이므로 which로 바꿀 수 있다. ⓒ that절은 saw의 목적어이다. ⓔ have turned는 변해서 지금도 흰 상태라는 결과 용법이다. ⓕ 과거시제 lost로 바꾸면 현재 상태와의 연결이 사라진다. ⓗ spot, ⓘ seawater의 풀이는 교과서와 같다.",
+   "source": "학습지 L6 p.6(that 관계대명사/접속사·생략·비인칭 주어·현재완료 결과) · 학습지 L6 Crossword(spot) · 학습지 L6 Words 기본 A-6(seawater) · L6 영영풀이(worried)",
+   "wrong": [
+    "① 2개, ② 3개, ④ 5개, ⑤ 6개: 옳지 않은 것은 ⓑⓓⓖⓙ 네 개이다"
+   ]
   },
   {
    "kind": "group",
@@ -264,8 +318,14 @@
     "(C) – (B) – (A)"
    ],
    "answer": 4,
-   "explain": "These skills(= basic skills) → Second, 정보 모으기(B) → 그 방법: 영상·책(C) → Finally(A).",
-   "source": "L5 본문 4대목(What Do I Have to Do Now?)"
+   "explain": "‘지금 무엇을 해야 하는가’ 대목이다. First(학교 과목에 집중) → Second(직업 정보 수집) → Finally(새로운 것을 계속 시도) 순서로 전개된다.\n주어진 글의 “the basic skills”를 (B)의 “These skills help you make good choices.”가 받고, 이어 “Second, gather information about jobs”가 온다. (C) “You can watch videos and movies, or read books about them.”의 them은 (B)의 jobs를 가리키며 정보를 모으는 방법을 말한다. 마지막으로 (A) “Finally, keep trying new things!”가 온다. 따라서 (B)–(C)–(A)이다.",
+   "source": "L5 본문 4대목(What Do I Have to Do Now?)",
+   "wrong": [
+    "① (A) Finally 는 맨 마지막에 와야 한다",
+    "② (A) Finally 가 First 바로 뒤에 올 수 없다",
+    "③ (C) them 이 가리킬 jobs 가 (B) 에 있으므로 (B) 뒤여야 한다",
+    "⑤ (C) 가 맨 앞에 오면 them 이 무엇인지 알 수 없다"
+   ]
   },
   {
    "no": 12,
@@ -279,8 +339,14 @@
     "in an original or imaginative way"
    ],
    "answer": 1,
-   "explain": "basic 기본적인. ② ability ③ path ④ activity ⑤ creatively.",
-   "source": "L5 영영풀이 · 학습지 L5 Words 기본 A-7"
+   "explain": "basic은 ‘기본적인, 기초적인’으로, 교과서 영영풀이는 ① at an early and simple level(초기의 단순한 수준에 있는)이다.\n글에서 “the basic skills for your future(미래를 위한 기본 기술)”로 쓰였다.",
+   "source": "L5 영영풀이 · 학습지 L5 Words 기본 A-7",
+   "wrong": [
+    "② the power or skill to do something → ability(능력)",
+    "③ a way to get to a place or goal → path(길, 진로)",
+    "④ something that you do for interest or pleasure → activity(활동)",
+    "⑤ in an original or imaginative way → creatively(창의적으로)"
+   ]
   },
   {
    "no": 13,
@@ -296,8 +362,14 @@
    ],
    "inline": true,
    "answer": 2,
-   "explain": "nice 는 사람의 성격·태도를 나타내는 형용사이므로 의미상 주어를 「of + 목적격」으로 써야 한다.",
-   "source": "통합본 L5 GRAMMAR 1(06) · 학습지 L5 Grammar Point A"
+   "explain": "「It is + 형용사 + for/of + 목적격 + to부정사」에서 easy, hard, impossible, necessary처럼 일의 성질을 말하는 형용사는 「for + 목적격」을 쓴다.\n② nice는 kind, polite처럼 사람의 성격·태도를 나타내는 형용사이므로 의미상 주어를 「of + 목적격」으로 써야 하며, for me와는 함께 쓸 수 없다. (It is nice of me ~)",
+   "source": "통합본 L5 GRAMMAR 1(06) · 학습지 L5 Grammar Point A",
+   "wrong": [
+    "① easy: for 와 쓴다",
+    "③ hard: for 와 쓴다",
+    "④ impossible: for 와 쓴다",
+    "⑤ necessary: for 와 쓴다"
+   ]
   },
   {
    "no": 14,
@@ -311,8 +383,14 @@
     "He felt sad, but he tried to smile.\n→ Despite he felt sad, he tried to smile."
    ],
    "answer": 1,
-   "explain": "② because 는 이유 ③ although 와 but 을 함께 쓰지 않음 ④ 어순 ⑤ despite 뒤에는 명사(구).",
-   "source": "학습지 L6 Grammar Point B – B · 통합본 L6 GRAMMAR 2"
+   "explain": "「A, but B」는 「Although A, B」로 바꿀 수 있다. Although는 ‘비록 ~이지만’의 양보 접속사로, 뒤에 「주어 + 동사」가 오고 주절에는 but을 다시 쓰지 않는다.\n① “It is cold, but she isn’t wearing a coat.” → Although it is cold, she isn’t wearing a coat.(춥지만 그녀는 코트를 입지 않고 있다)가 바르다.",
+   "source": "학습지 L6 Grammar Point B – B · 통합본 L6 GRAMMAR 2",
+   "wrong": [
+    "② Because 는 이유이므로 but 의 대조 뜻이 되지 않는다 → Although I knew ~",
+    "③ Although 절 뒤 주절에 but 을 또 쓸 수 없다",
+    "④ Although 뒤는 「주어 + 동사」 어순 → Although she is very smart",
+    "⑤ Despite 뒤에는 명사(구)가 와야 하며 절이 올 수 없다 → Although he felt sad"
+   ]
   },
   {
    "kind": "group",
@@ -339,8 +417,14 @@
    ],
    "inline": true,
    "answer": 5,
-   "explain": "ⓐ in mind ⓑ for you(의미상 주어) ⓒ a path to ⓓ proud of.",
-   "source": "L5 본문 1·2대목 · L5 어휘(have ~ in mind)"
+   "explain": "ⓐ “have a dream job in mind”(마음에 두다) → in. ⓑ “It is not easy for you to find”(의미상 주어) → for. ⓒ “a path to your future job”(~로 가는 길) → to. ⓓ “feel proud of our work”(~을 자랑스러워하다) → of.\n따라서 ⑤ at은 어느 빈칸에도 들어갈 수 없다.",
+   "source": "L5 본문 1·2대목 · L5 어휘(have ~ in mind)",
+   "wrong": [
+    "① in → ⓐ (have ~ in mind)",
+    "② for → ⓑ (for you to find)",
+    "③ to → ⓒ (a path to)",
+    "④ of → ⓓ (proud of)"
+   ]
   },
   {
    "no": 16,
@@ -354,8 +438,14 @@
     "I have thought about how to help corals."
    ],
    "answer": 3,
-   "explain": "to make money 는 ‘돈을 벌기 위해’ 목적의 부사적 용법. ③ to look for 도 목적. ① 진주어 ② 보어 ④ 형용사적 ⑤ 의문사+to부정사(명사적).",
-   "source": "통합본 L5·L6 본문 분석 · 학습지 L6 p.7(부사적 용법 목적)"
+   "explain": "“we work to make money”의 to make는 ‘돈을 벌기 위해’로 동사 work를 꾸며 목적을 나타내는 부사적 용법이다.\n③ “I’m going to post a message online to look for volunteer divers.”의 to look for도 ‘자원봉사 잠수부를 찾기 위해’라는 목적의 부사적 용법이므로 쓰임이 같다.",
+   "source": "통합본 L5·L6 본문 분석 · 학습지 L6 p.7(부사적 용법 목적)",
+   "wrong": [
+    "① to finish: 가주어 It 의 진주어(명사적 용법)",
+    "② to form: 보어(명사적 용법)",
+    "④ role to play: 명사 role 을 꾸미는 형용사적 용법",
+    "⑤ how to help: 「의문사 + to부정사」로 about 의 목적어(명사적 용법)"
+   ]
   },
   {
    "no": 17,
@@ -371,8 +461,14 @@
    ],
    "inline": true,
    "answer": 2,
-   "explain": "Although it is hard, I’m happy to help the Earth. → 6번째 happy.",
-   "source": "L6 Language Use C · 학습지 L6 Grammar Point B"
+   "explain": "모범 영작: Although it is hard, I’m happy to help the Earth. (열 단어를 모두 한 번씩 사용)\n‘비록 힘들기는 하지만’은 Although it is hard, ‘~할 수 있어 기쁘다’는 「happy + to부정사」(감정의 원인)로 쓴다. Although(1) it(2) is(3) hard(4) I’m(5) happy(6) … 이므로 여섯 번째 단어는 happy이다.",
+   "source": "L6 Language Use C · 학습지 L6 Grammar Point B",
+   "wrong": [
+    "① hard: 네 번째",
+    "③ to: 일곱 번째",
+    "④ help: 여덟 번째",
+    "⑤ I’m: 다섯 번째"
+   ]
   },
   {
    "no": 18,
@@ -386,8 +482,14 @@
     "If you don’t hurry up, you’ll be late for school.\n→ Hurry up, and you’ll be late for school."
    ],
    "answer": 2,
-   "explain": "If ~ not → 「명령문, or」. ① and ③ Exercise regularly, or ④ and ⑤ or.",
-   "source": "통합본 L5 GRAMMAR 2(04) · 학습지 L5 Grammar Point B(p.11 예문 · p.12 A-4)"
+   "explain": "If you ~, … 는 「명령문, and …」로, If you don’t ~, … 는 「명령문, or …」(그렇지 않으면)로 바꾼다.\n② “If you don’t recycle paper, more trees will be cut down.”은 If you don’t 이므로 Recycle paper, or more trees will be cut down.(종이를 재활용해라, 그렇지 않으면 더 많은 나무가 베일 것이다)이 맞다.",
+   "source": "통합본 L5 GRAMMAR 2(04) · 학습지 L5 Grammar Point B(p.11 예문 · p.12 A-4)",
+   "wrong": [
+    "① If you call 은 긍정 조건이므로 Call me later, and ~",
+    "③ If you do not 은 or 로 바꿔야 한다 → Exercise regularly, or ~",
+    "④ If you take 는 긍정 조건이므로 Take the subway, and ~",
+    "⑤ If you don’t 는 or 로 바꿔야 한다 → Hurry up, or ~"
+   ]
   },
   {
    "kind": "group",
@@ -414,8 +516,14 @@
     "For the last two weeks, my team has been put ointment on sick corals."
    ],
    "answer": 1,
-   "explain": "for + 기간 → 현재완료 계속, put 의 과거분사는 put, 주어 my team 은 단수 → has put.",
-   "source": "L6 본문 3대목 · 학습지 L6 p.7(for+기간·현재완료)"
+   "explain": "‘지난 두 주 동안 ~해 왔다’는 「for + 기간」과 함께 현재완료 「has + 과거분사」로 쓴다. put의 과거분사는 put이고, 주어 my team은 단수이므로 has를 쓴다.\n따라서 For the last two weeks, my team has put ointment on sick corals.가 바르다.",
+   "source": "L6 본문 3대목 · 학습지 L6 p.7(for+기간·현재완료)",
+   "wrong": [
+    "② put 의 과거분사는 put 이다(putted ✗)",
+    "③ the last two weeks 는 기간이므로 since 가 아니라 for",
+    "④ my team 은 단수이므로 has",
+    "⑤ has been put 은 수동태가 되어 ‘연고를 발랐다’는 뜻이 되지 않는다"
+   ]
   },
   {
    "no": 20,
@@ -430,8 +538,14 @@
    ],
    "inline": true,
    "answer": 4,
-   "explain": "look forward to 의 to 는 전치사 → 동명사 seeing. ① grow + 비교급 ② 시간 부사절은 현재시제 ③ 명사적 용법(보어) ⑤ ‘놀라움을 주는’ amazing.",
-   "source": "L6 본문 3·4대목(원문 seeing) · L6 어휘(look forward to + 동명사) · 학습지 L6 p.8"
+   "explain": "④ “I look forward to seeing the results!”에서 look forward to의 to는 전치사이므로 뒤에 동명사가 와야 한다. see → seeing.\n① “helps baby corals grow stronger”는 「help + 목적어 + 동사원형」이고 grow 뒤 보어로 형용사 비교급 stronger가 옳다. ② when 절에서는 미래의 일도 현재시제로 쓴다. ③ Our goal is to grow ~는 보어로 쓰인 to부정사이다. ⑤ amazing은 ‘놀라운’(놀라움을 주는 대상)이므로 옳다.",
+   "source": "L6 본문 3·4대목(원문 seeing) · L6 어휘(look forward to + 동명사) · 학습지 L6 p.8",
+   "wrong": [
+    "① stronger: grow 의 보어, 옳음",
+    "② are: when 절은 현재시제, 옳음",
+    "③ to grow: 보어 역할의 to부정사, 옳음",
+    "⑤ amazing: 놀라움을 주는 대상 → -ing, 옳음"
+   ]
   },
   {
    "no": 21,
@@ -445,8 +559,14 @@
     "병든 산호를 치료하는 데는 시간이 걸리지 않았다."
    ],
    "answer": 2,
-   "explain": "① 연고를 발랐고 심는 것은 앞으로의 일 ③ 보름달(full moon) ④ 수백 마리(hundreds of) ⑤ 시간이 걸렸다.",
-   "source": "L6 본문 3·4대목"
+   "explain": "② “We feed them clam parts and seaweed smoothies.”와 일치한다.\n① 지난 두 주 동안 한 일은 “put ointment on sick corals”(연고를 바른 것)이며, 심는 것은 앞으로 할 일이다(“we’ll plant them”). ③ “laid eggs during the full moon”이므로 보름달이다. ④ “hundreds of baby corals”이므로 수십이 아니라 수백 마리이다. ⑤ “it took time to heal the sick corals”이므로 시간이 걸렸다.",
+   "source": "L6 본문 3·4대목",
+   "wrong": [
+    "① 두 주 동안 한 일은 연고를 바른 것이다",
+    "③ 초승달이 아니라 보름달(full moon)이다",
+    "④ 수십이 아니라 수백 마리(hundreds of)이다",
+    "⑤ 치료하는 데 시간이 걸렸다(it took time)"
+   ]
   },
   {
    "no": 22,
@@ -460,8 +580,14 @@
     "When did some healthy corals lay eggs?"
    ],
    "answer": 4,
-   "explain": "팀에 합류한 잠수부 수는 언급되지 않는다. ① clam parts and seaweed smoothies ② when they are ready ③ to grow many healthy corals ⑤ last night, during the full moon.",
-   "source": "L6 본문 3·4대목"
+   "explain": "① “clam parts and seaweed smoothies” ② “When they are ready” ③ “to grow many healthy corals” ⑤ “Last night, ~ during the full moon”으로 답할 수 있다.\n④ 몇 명의 잠수부가 팀에 합류했는지는 글에 나오지 않으므로 답할 수 없다.",
+   "source": "L6 본문 3·4대목",
+   "wrong": [
+    "① 조개 부스러기와 해조류 스무디라고 답할 수 있다",
+    "② 준비가 되면(when they are ready)이라고 답할 수 있다",
+    "③ 건강한 산호를 많이 기르는 것이라고 답할 수 있다",
+    "⑤ 어젯밤 보름달이 뜬 동안이라고 답할 수 있다"
+   ]
   },
   {
    "kind": "group",
@@ -486,8 +612,14 @@
     "This is my favorite fishing ______."
    ],
    "answer": 1,
-   "explain": "(가) match(맞다, 어울리다). ① match(어울리다). ② mind ③ laid ④ spotted ⑤ spot.",
-   "source": "L5 본문 3대목 · L5·L6 다의어(match, mind, lay, spot)"
+   "explain": "(가)에는 “Look for jobs that match your favorite things and your abilities.”의 match(어울리다, 연결하다)가 들어간다.\nmatch는 ‘어울리다’, ‘연결하다’, ‘시합’, ‘성냥’의 뜻이 있으므로 ① The shoes match your dress.(그 신발은 네 드레스와 어울린다)가 문맥상 알맞다.",
+   "source": "L5 본문 3대목 · L5·L6 다의어(match, mind, lay, spot)",
+   "wrong": [
+    "② Do you mind if I sit here? (꺼리다)",
+    "③ She laid the baby down ~ (눕혔다)",
+    "④ I spotted him in the crowd. (발견했다)",
+    "⑤ This is my favorite fishing spot. (장소)"
+   ]
   },
   {
    "no": 24,
@@ -501,8 +633,14 @@
     "If you try to connect them to a real job, you won’t find your path."
    ],
    "answer": 1,
-   "explain": "「명령문, and …」= If + 주어 + 동사(현재) ~, 주어 + will …. 조건절에 will 을 쓰지 않는다.",
-   "source": "통합본 L5 GRAMMAR 2(본문 예문) · 학습지 L5 Grammar Point B"
+   "explain": "「명령문, and …」는 ‘~해라, 그러면 …’이므로 If you ~, …로 바꾼다. If 조건절에는 미래의 일도 현재시제를 쓴다.\n“Try to connect them to a real job, and you will find your path.” → If you try to connect them to a real job, you will find your path.(그것들을 실제 직업에 연결해 보면 너의 길을 찾을 것이다)",
+   "source": "통합본 L5 GRAMMAR 2(본문 예문) · 학습지 L5 Grammar Point B",
+   "wrong": [
+    "② and 이므로 don’t 가 들어가면 뜻이 반대가 된다",
+    "③ if 조건절에는 will 을 쓰지 않는다",
+    "④ If 로 시작하지 않았고, or 는 ‘그렇지 않으면’으로 뜻이 달라진다",
+    "⑤ 주절을 부정(won’t)하면 뜻이 반대가 된다"
+   ]
   },
   {
    "no": 25,
@@ -517,8 +655,14 @@
    ],
    "inline": true,
    "answer": 5,
-   "explain": "전치사 at 뒤에는 동명사 → thinking. ⓐ everyone 단수 ⓑ can + 동사원형 ⓒ 동명사구 두 개가 and 로 이어진 주어 → are ⓓ at + 동명사.",
-   "source": "L5 본문 3대목(원문 thinking) · 학습지 L5 p.8 노트(동명사 주어·전치사+동명사)"
+   "explain": "ⓔ “if you are good at think creatively”에서 at은 전치사이므로 뒤에 동명사가 와야 한다. think → thinking.\nⓐ everyone은 단수 취급 → has. ⓑ 조동사 can 뒤 동사원형 be. ⓒ 주어가 “liking something and being good at it”으로 두 동명사구가 and로 이어져 복수이므로 are. ⓓ “good at taking care of”의 taking은 전치사 at 뒤의 동명사로 옳다.",
+   "source": "L5 본문 3대목(원문 thinking) · 학습지 L5 p.8 노트(동명사 주어·전치사+동명사)",
+   "wrong": [
+    "① ⓐ has: everyone 단수 취급, 옳음",
+    "② ⓑ be: can 뒤 동사원형, 옳음",
+    "③ ⓒ are: 동명사구 둘이 and 로 이어진 복수 주어, 옳음",
+    "④ ⓓ taking: 전치사 at 뒤 동명사, 옳음"
+   ]
   },
   {
    "no": 26,
@@ -532,8 +676,14 @@
     "an occasion when you travel from one place to another"
    ],
    "answer": 5,
-   "explain": "① job ② producer ③ ability(abilities) ④ activity(activities) 는 글에 있고, ⑤ journey 는 없다.",
-   "source": "L5 영영풀이(job·producer·activity·journey) · 학습지 L5 Crossword(ability)"
+   "explain": "① something that a person regularly does to earn money → job(“a real job”) ② someone in charge of preparing and producing a play, film, or show → producer(“a producer”) ③ what you can do well → ability(“your abilities”) ④ something that you do for interest or pleasure → activity(“favorite activities”)는 모두 글에 있다.\n⑤ an occasion when you travel from one place to another는 journey(여정)의 풀이인데, journey는 이 글에 나오지 않는다.",
+   "source": "L5 영영풀이(job·producer·activity·journey) · 학습지 L5 Crossword(ability)",
+   "wrong": [
+    "① job: 글에 있음",
+    "② producer: 글에 있음",
+    "③ ability: 글에 있음(abilities)",
+    "④ activity: 글에 있음(activities)"
+   ]
   },
   {
    "no": 27,
@@ -548,8 +698,14 @@
     "글쓴이는 Harry Potter 시리즈를 썼다."
    ],
    "answer": 4,
-   "explain": "첫 직업은 비서였고, 영어 교사도 거친 뒤 작가가 되었다.",
-   "source": "L5 Before Reading A — 기출 27(그래프)을 글 일치로 대체"
+   "explain": "J. K. Rowling의 이야기(Lesson 5 Before Reading)이다. ① “When I was a child, I loved making up and telling stories.” ② “My first job was as a secretary” ③ “I taught English to children” ⑤ “I wrote the Harry Potter series.”\n④ 첫 직업은 비서였고 영어 교사도 했다가 그 뒤에 “I started writing stories for children”이라고 했으므로, 처음부터 작가로 일한 것이 아니다.",
+   "source": "L5 Before Reading A — 기출 27(그래프)을 글 일치로 대체",
+   "wrong": [
+    "① 이야기를 만들고 들려주기를 좋아했다와 일치",
+    "② My first job was as a secretary 와 일치",
+    "③ I taught English to children 과 일치",
+    "⑤ I wrote the Harry Potter series 와 일치"
+   ]
   },
   {
    "no": 28,
@@ -565,8 +721,11 @@
    ],
    "inline": true,
    "answer": 2,
-   "explain": "옳은 것: It is very kind of you ~ / Practice hard, and ~ / I need a chair to sit on. → 3개. 틀린 것: That → It / Hurry up / has never ridden / last year 는 현재완료와 함께 못 씀(won) / the most interesting.",
-   "source": "통합본 L5 p.26(01·19·16) · 통합본 L5 GRAMMAR 2 · 통합본 L6 p.26(01) · 학습지 L6 GP-A p.10 B-2 · 문제집 L1 GRAMMAR(형용사적 용법·최상급) — 1학기 누적"
+   "explain": "옳은 문장 3개: “It is very kind of you to give me a ride to the station.”(성격 형용사 kind + of + 목적격) / “Practice hard, and you’ll improve your skills.”(명령문, and) / “I need a chair to sit on.”(명사를 꾸미는 to부정사 형용사적 용법, 전치사 on 필요).\n틀린 문장: “That is impossible to study ~” → It is impossible(가주어 It). “Hurrying up, or ~” → Hurry up(명령문은 동사원형). “He has never ride ~” → has never ridden(과거분사). “He has won the prize last year.” → won(last year는 과거시제와 씀). “the interestest” → the most interesting(3음절 이상은 most).",
+   "source": "통합본 L5 p.26(01·19·16) · 통합본 L5 GRAMMAR 2 · 통합본 L6 p.26(01) · 학습지 L6 GP-A p.10 B-2 · 문제집 L1 GRAMMAR(형용사적 용법·최상급) — 1학기 누적",
+   "wrong": [
+    "① 2개, ③ 4개, ④ 5개, ⑤ 6개: 옳은 문장은 세 개이다"
+   ]
   }
  ]
 }
