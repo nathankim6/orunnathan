@@ -36,13 +36,13 @@
    "stem": "위 대화의 빈칸 (A)에 들어갈 말로 가장 적절한 것은?",
    "choices": [
     "What are you going to do there?",
-    "How do you go to school?",
+    "Do you have any plans this holiday?",
     "What do you think about this painting?",
-    "Where do your grandparents live?",
-    "When is your birthday?"
+    "What does this word mean?",
+    "Do you like nature?"
    ],
    "answer": 1,
-   "explain": "뒤에 Kate가 제주도에서 할 일(돌고래·한라산)을 답한다.",
+   "explain": "뒤에 Kate가 제주도에서 할 일(돌고래·한라산)을 답한다. 선지는 모두 L5·L6 대화문·학습지 문장.",
    "source": "L5 Understand Communication C"
   },
   {
@@ -81,21 +81,21 @@
    "points": 4,
    "stem": "다음 밑줄 친 부분의 쓰임이 나머지 넷과 <u>다른</u> 것은?",
    "choices": [
-    "I like <u>collecting</u> shells on the beach.",
-    "The snail is <u>moving</u> slowly on the rock.",
-    "<u>Trying</u> fresh seafood was a great experience.",
-    "Her dream is <u>becoming</u> a famous artist.",
-    "We talked about <u>visiting</u> Yeosu this holiday."
+    "I like <u>going</u> fishing with my dad.",
+    "A snail is <u>moving</u> slowly.",
+    "<u>Climbing</u> the tree is dangerous.",
+    "My good habit is <u>getting</u> up early.",
+    "They talked about <u>building</u> a new school."
    ],
    "answer": 2,
-   "explain": "②는 현재진행형의 현재분사. 나머지는 동명사(목적어·주어·보어·전치사의 목적어).",
-   "source": "선생님 제작 문장(학습지 p.5-6 동명사)"
+   "explain": "②는 현재진행형의 현재분사(학습지 6-2). 나머지는 동명사 — ① 동사의 목적어, ③ 주어, ④ 보어, ⑤ 전치사의 목적어(학습지 5-6).",
+   "source": "학습지 p.5-6 동명사 예문·Practice, p.6-2 예문 그대로"
   },
   {
    "no": 6,
    "points": 4,
    "stem": "다음 중 문법적으로 <u>옳은</u> 문장의 개수는?",
-   "box": "• Learning about history is interesting.\n• Mina planned traveling to Tongyeong.\n• The artist kept painting in his own style.\n• They promised to fix the window.\n• Passing through the huge rocks is really fun.",
+   "box": "• Going on a family trip is always fun.\n• Mina wants be a movie star.\n• They promised to fix the window.\n• I plan to take a cooking class.\n• Passing through them is really fun.",
    "choices": [
     "1개",
     "2개",
@@ -104,8 +104,8 @@
     "5개"
    ],
    "answer": 4,
-   "explain": "틀린 문장: Mina planned traveling → to travel(plan은 to부정사 목적어). 나머지 넷은 옳다(동명사 주어 단수, keep+동명사, promise+to부정사).",
-   "source": "선생님 제작 문장(학습지 p.5-6·6-6)",
+   "explain": "틀린 문장: Mina wants be → wants to be(want는 to부정사 목적어). 나머지 넷은 옳다(동명사 주어 단수 취급, promise/plan+to부정사). 원문은 L5 본문·기타 지문·학습지 6-7.",
+   "source": "L5 본문·Yeosu 지문·학습지 p.6-7 문장에 오류 한 곳",
    "inline": true
   },
   {
@@ -128,17 +128,17 @@
    "no": 8,
    "points": 4,
    "stem": "다음 중 밑줄 친 that의 쓰임이 <보기>와 <u>같은</u> 것은?",
-   "box": "<보기>  <u>That</u> is my mom's favorite painting.",
+   "box": "<보기>  <u>That</u>'s a good idea. I'll visit there, too.",
    "choices": [
     "I can't believe <u>that</u> she is forty years old.",
-    "<u>That</u> painting looks like a snail shell.",
-    "<u>That</u> is the Jeon Hyuck-lim Museum of Art.",
     "I know <u>that</u> you did your best.",
-    "Did you see <u>that</u> tiger in the painting?"
+    "<u>That</u> sounds great.",
+    "Do you know <u>that</u> Jack wrote this poem?",
+    "<u>That</u> it snows in spring is strange."
    ],
    "answer": 3,
-   "explain": "<보기>의 that은 지시대명사(저것). ③도 지시대명사. ①④는 접속사, ②⑤는 지시형용사.",
-   "source": "선생님 제작 문장(학습지 p.6-5·6-7 접속사 that)"
+   "explain": "<보기>의 that은 '그것'을 가리키는 지시대명사(L5 대화문). ③ That sounds great.(L6 대화문)도 지시대명사. ①②④는 목적어 명사절, ⑤는 주어 명사절을 이끄는 접속사(학습지 6-5·6-7).",
+   "source": "학습지 p.6-5·6-7 접속사 that 문장 + L5·L6 대화문"
   },
   {
    "no": 9,
@@ -160,7 +160,7 @@
    "no": 10,
    "points": 4,
    "stem": "다음 글의 밑줄 친 ⓐ~ⓔ 중 어법상 <u>어색한</u> 것은?",
-   "box": "<b>My Art Class</b>\nⓐ<u>There is an art class in my school.</u> ⓑ<u>I like drawing pictures of animals.</u> My favorite animal is a snail. ⓒ<u>Drawing snails are fun for me.</u> ⓓ<u>I decided to paint a snail with wild colors.</u> ⓔ<u>I hope that my teacher likes my artwork.</u>",
+   "box": "Hi! Nice to meet you. ⓐ<u>In this painting, two people are competing in ssireum in the middle.</u> ⓑ<u>Many people are watching them.</u> ⓒ<u>I'm also in this painting.</u> ⓓ<u>I'm selling yeot, but people are not buying it.</u> ⓔ<u>I think people don't want eating yeot.</u> Can you find me?",
    "choices": [
     "ⓐ",
     "ⓑ",
@@ -168,9 +168,9 @@
     "ⓓ",
     "ⓔ"
    ],
-   "answer": 3,
-   "explain": "동명사 주어는 단수 취급 → Drawing snails is fun for me.",
-   "source": "선생님 제작 글(There is/are·동명사·to부정사·that)",
+   "answer": 5,
+   "explain": "want는 to부정사를 목적어로 쓴다 → don't want to eat yeot. (원문 to eat을 eating으로 바꿈)",
+   "source": "L6 Express Our Thoughts(엿장수) 지문에 오류 한 곳",
    "inline": true
   },
   {
@@ -201,13 +201,13 @@
    "stem": "위 대화의 빈칸 (A)에 들어갈 말로 가장 적절한 것은?",
    "choices": [
     "I think it's beautiful.",
-    "I'm going to the museum.",
-    "I don't like drawing.",
+    "I don't think so.",
+    "It's a bit expensive for me.",
     "It ends on October 1st.",
     "Let's go there this Saturday."
    ],
    "answer": 1,
-   "explain": "그림에 대한 의견을 묻는 What do you think about ~?에 대한 답.",
+   "explain": "그림에 대한 의견을 묻는 What do you think about ~?에 대한 답. 선지는 모두 L6 대화문 문장.",
    "source": "L6 Understand Communication C"
   },
   {
@@ -215,14 +215,14 @@
    "points": 5,
    "stem": "위 대화의 내용과 일치하는 것은?",
    "choices": [
-    "Alex doesn't know the painter of The Starry Night.",
-    "Junho likes the colors of the night sky in the painting.",
-    "The van Gogh exhibition ended on October 1st.",
-    "Minji wants to go to the museum alone.",
-    "They are going to the exhibition on Sunday."
+    "Alex는 「별이 빛나는 밤」을 그린 화가를 모른다.",
+    "준호는 그림 속 밤하늘의 색이 놀랍다고 생각한다.",
+    "반 고흐 전시회는 10월 1일에 끝났다.",
+    "민지는 혼자 박물관에 가고 싶어 한다.",
+    "세 사람은 일요일에 전시회에 갈 것이다."
    ],
    "answer": 2,
-   "explain": "The colors of the night sky are amazing. Alex는 화가를 알고, 전시회는 10월 1일에 끝날 예정, 셋이 토요일에 함께 간다.",
+   "explain": "The colors of the night sky are amazing. Alex는 화가를 알고(by Vincent van Gogh, right?), 전시회는 10월 1일에 끝날 예정, 셋이 토요일에 함께 간다.",
    "source": "L6 Understand Communication C"
   },
   {
@@ -267,14 +267,14 @@
    "points": 5,
    "stem": "윗글의 제목으로 가장 적절한 것은?",
    "choices": [
-    "A Green Face and a New Painting Style",
-    "How to Cut Out Paper Shapes",
-    "Amélie's Trip to Paris",
-    "The History of Old Galleries",
-    "Matisse's Favorite Foods"
+    "Pictures Talk About the Artist!",
+    "Garam's Travel Diary to Tongyeong",
+    "The Magician of Color",
+    "Bridge to the World",
+    "Wild Colors Are Popular in Modern Art"
    ],
    "answer": 1,
-   "explain": "초록색 얼굴 그림과 밝고 거친 색의 새로운 화풍 이야기.",
+   "explain": "그림 속 Amélie가 화가 Matisse에 대해 이야기하는 글 — 교과서 본문 제목. 선지는 모두 범위 자료의 제목·문장.",
    "source": "L6 본문 앞부분(Amélie)"
   },
   {
@@ -318,16 +318,16 @@
   {
    "no": 19,
    "points": 5,
-   "stem": "윗글을 읽고 답할 수 <u>없는</u> 질문은?",
+   "stem": "윗글의 내용과 일치하지 <u>않는</u> 것은?",
    "choices": [
-    "What time did Garam get up?",
-    "What did Garam's family have for lunch?",
-    "How many people are in Garam's family?",
-    "Where did they go in the afternoon?",
-    "How did Garam feel at the end of the day?"
+    "There was only rice inside the roll!",
+    "Long ago, fishermen had Chungmu gimbap out at sea.",
+    "Chungmu is Tongyeong's old name.",
+    "There was a huge statue of Admiral Yi.",
+    "In the afternoon, we went to Jungang Market."
    ],
-   "answer": 3,
-   "explain": "가족의 수는 언급되지 않았다.",
+   "answer": 5,
+   "explain": "오후에 간 곳은 Yi Sun-sin Park(중앙시장은 오후 1시에 도착). ①~④는 원문 그대로.",
    "source": "L5 본문 8월 16일"
   },
   {
@@ -369,16 +369,16 @@
   {
    "no": 22,
    "points": 5,
-   "stem": "윗글을 읽고 답할 수 <u>없는</u> 질문은?",
+   "stem": "윗글의 내용과 일치하는 것은?",
    "choices": [
-    "When did they go to Dongpirang?",
-    "What does 'pirang' mean?",
-    "Who took hundreds of pictures at Dongpirang?",
-    "How many paintings are there in the museum?",
-    "What is the painter's nickname?"
+    "Late in the morning, we went to Dongpirang.",
+    "There were many pretty paintings on the walls.",
+    "'Dong' means 'cliff,' and 'pirang' means 'east.'",
+    "The painter's nickname is 'The Magician of Art.'",
+    "He painted the sea of Tongyeong with various red colors."
    ],
-   "answer": 4,
-   "explain": "미술관의 그림 수는 언급되지 않았다.",
+   "answer": 2,
+   "explain": "② 원문 그대로. ① Early in the morning, ③ Dong=east·pirang=cliff, ④ Magician of Color, ⑤ blue colors — 각각 한 단어를 바꾼 것.",
    "source": "L5 본문 8월 17일"
   },
   {
@@ -421,16 +421,16 @@
   {
    "no": 25,
    "points": 5,
-   "stem": "윗글을 읽고 답할 수 <u>없는</u> 질문은?",
+   "stem": "윗글의 내용과 일치하지 <u>않는</u> 것은?",
    "choices": [
-    "What animal is the speaker?",
-    "Where should you start to find the animal?",
-    "What did Matisse use to cut out the shapes?",
-    "How many shapes did Matisse use?",
-    "What is the name of the new art form?"
+    "They look like a snail shell.",
+    "He painted paper and cut out shapes with scissors.",
+    "At the age of 17, Matisse got very sick.",
+    "However, he never gave up art.",
+    "He created a new art form."
    ],
-   "answer": 4,
-   "explain": "모양의 개수는 언급되지 않았다.",
+   "answer": 3,
+   "explain": "At the age of 70, Matisse got very sick. — 70세. 나머지는 원문 그대로.",
    "source": "L6 본문 뒷부분(snail)"
   }
  ]

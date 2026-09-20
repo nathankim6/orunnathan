@@ -35,14 +35,14 @@
    "points": 5,
    "stem": "위 대화의 내용과 일치하는 것은?",
    "choices": [
-    "Kate is going to visit Jeju-do with her friends.",
-    "Junho's grandparents live in Jeju-do.",
-    "Kate visited Jeju-do many times before.",
-    "Kate is going to hike Hallasan with Alex.",
-    "Junho thinks riding a horse is boring."
+    "Kate는 친구들과 제주도에 갈 것이다.",
+    "Junho의 조부모님은 제주도에 사신다.",
+    "Kate는 전에 제주도에 여러 번 가 봤다.",
+    "Kate는 Alex와 한라산을 하이킹할 것이다.",
+    "Junho는 말 타기가 지루하다고 생각한다."
    ],
    "answer": 2,
-   "explain": "Junho: my grandparents live there(Jeju-do). Kate는 가족과 가고, 첫 여행이며, 승마는 정말 재미있다고 했다.",
+   "explain": "Junho: Oh, my grandparents live there(Jeju-do). Kate는 가족과 가고(with my family), 첫 여행(my first trip)이며, Junho는 승마가 정말 재미있다(It's really fun)고 했다.",
    "source": "L5 Understand Communication C"
   },
   {
@@ -63,8 +63,8 @@
   {
    "no": 4,
    "points": 3,
-   "stem": "다음 빈칸 어디에도 들어갈 수 <u>없는</u> 말은?",
-   "box": "• The lion is the king of ______s.\n• Nick ______ed his ideas clearly.\n• They had a great ______ in Boseong.\n• The ______ is very high.",
+   "stem": "다음 빈칸 어디에도 들어갈 수 <u>없는</u> 말은? (필요하면 형태를 바꿀 것)",
+   "box": "• The lion is the king of ______.\n• Nick ______ his ideas clearly.\n• They had a great ______ in Boseong.\n• The ______ is very high.",
    "choices": [
     "beast",
     "express",
@@ -73,7 +73,7 @@
     "cliff"
    ],
    "answer": 3,
-   "explain": "beasts / expressed / experience / cliff 순. trace는 어디에도 맞지 않는다.",
+   "explain": "beasts / expressed / experience / cliff 순(학습지 6-2·5-2 예문 그대로). trace는 어디에도 맞지 않는다.",
    "source": "학습지 p.5-2·6-2 Vocabulary List 예문"
   },
   {
@@ -81,21 +81,21 @@
    "points": 4,
    "stem": "다음 밑줄 친 부분의 쓰임이 나머지 넷과 <u>다른</u> 것은?",
    "choices": [
-    "My hobby is <u>taking</u> pictures of the sunset.",
-    "We enjoyed <u>walking</u> along the coast.",
-    "The fishermen are <u>having</u> Chungmu gimbap at sea.",
-    "Thank you for <u>inviting</u> me to the exhibition.",
-    "<u>Visiting</u> a horse park is really fun."
+    "His hobby is <u>riding</u> a bike.",
+    "I enjoy <u>listening</u> to music.",
+    "They are <u>collecting</u> shells on the beach.",
+    "Thank you for <u>inviting</u> me.",
+    "<u>Meeting</u> new people is exciting."
    ],
    "answer": 3,
-   "explain": "③은 be동사+-ing의 현재진행형(현재분사). 나머지는 동명사(보어·목적어·전치사의 목적어·주어).",
-   "source": "선생님 제작 문장(학습지 p.5-6 동명사)"
+   "explain": "③은 be동사+-ing의 현재진행형(현재분사). 나머지는 동명사 — ① 보어, ② 동사의 목적어, ④ 전치사의 목적어, ⑤ 주어. (학습지 5-6·6-2 문장 그대로)",
+   "source": "학습지 p.5-6 동명사 예문·Practice, p.6-2 예문 그대로"
   },
   {
    "no": 6,
    "points": 4,
    "stem": "다음 중 문법적으로 <u>옳은</u> 문장의 개수는?",
-   "box": "• Riding a horse are really fun.\n• He wants exploring the museum.\n• They enjoyed taking pictures of the wall paintings.\n• We decided to visit Buyeo this summer.\n• My sister gave up to draw cartoons.",
+   "box": "• Watching movies are fun.\n• I need cleaning my room in the morning.\n• They finished making a kite.\n• We decided to buy a new car.\n• They enjoyed to swim in the river.",
    "choices": [
     "1개",
     "2개",
@@ -104,8 +104,8 @@
     "5개"
    ],
    "answer": 2,
-   "explain": "옳은 문장: They enjoyed taking ~ / We decided to visit ~. 틀린 문장: Riding a horse are → is(동명사 주어는 단수), wants exploring → to explore, gave up to draw → drawing.",
-   "source": "선생님 제작 문장(학습지 p.5-6·6-6)",
+   "explain": "옳은 문장: They finished making a kite. / We decided to buy a new car. 틀린 문장: Watching movies are → is(동명사 주어는 단수), need cleaning → to clean(need는 to부정사 목적어), enjoyed to swim → swimming(enjoy는 동명사 목적어). 원문은 학습지 5-6·6-6 예문.",
+   "source": "학습지 p.5-6·6-6 예문·Practice 문장에 오류 한 곳",
    "inline": true
   },
   {
@@ -131,19 +131,19 @@
    "choices": [
     "I think <u>that</u> the painting is very unique.",
     "Do you know <u>that</u> Matisse created this artwork?",
-    "Look at <u>that</u> statue of Admiral Yi.",
-    "The important thing is <u>that</u> he never gave up art.",
-    "<u>That</u> she is forty years old is strange."
+    "<u>That</u>'s a great idea! I want to see van Gogh's paintings.",
+    "I know <u>that</u> you went to the concert.",
+    "<u>That</u> it snows in spring is strange."
    ],
    "answer": 3,
-   "explain": "③은 명사 statue를 꾸미는 지시형용사. 나머지는 명사절을 이끄는 접속사 that(①② 목적어, ④ 보어, ⑤ 주어).",
-   "source": "선생님 제작 문장(학습지 p.6-5·6-7 접속사 that)"
+   "explain": "③은 '그것'을 가리키는 지시대명사 that. 나머지는 명사절을 이끄는 접속사 that(①②④ 목적어, ⑤ 주어). 학습지 6-5·6-7과 교과서 L6 대화문 문장 그대로.",
+   "source": "학습지 p.6-5·6-7 접속사 that 문장 + L6 UC-C 대화문"
   },
   {
    "no": 9,
    "points": 4,
    "stem": "다음 빈칸 (A), (B)에 들어갈 단어로 알맞게 짝지은 것은?",
-   "box": "• Matisse (A)______ a new art form, cut-outs.\n• Garam (B)______ the great battle off the coast of Tongyeong.",
+   "box": "• He (A)______ a new art form.\n• I (B)______ the great battle right off the coast of Tongyeong.",
    "choices": [
     "created – imagined",
     "exhibited – arrived",
@@ -152,8 +152,8 @@
     "expressed – arrived"
    ],
    "answer": 1,
-   "explain": "Matisse가 새로운 예술 형태를 '창조했다(created)', Garam은 전투를 '상상했다(imagined)'.",
-   "source": "선생님 제작 문장(L5·L6 본문 어휘)"
+   "explain": "L6 본문 He created a new art form. / L5 본문 I imagined the great battle right off the coast of Tongyeong.",
+   "source": "L6·L5 본문 문장 그대로(빈칸)"
   },
   {
    "no": 10,
@@ -200,13 +200,13 @@
    "stem": "위 대화의 빈칸 (A)에 들어갈 말로 가장 적절한 것은?",
    "choices": [
     "It ends on October 1st.",
-    "I don't like this painting.",
-    "It's very expensive.",
-    "I can't find the museum.",
-    "Let's take a nap."
+    "I don't think so.",
+    "It's a bit expensive for me.",
+    "I can't wait!",
+    "Have a nice weekend!"
    ],
    "answer": 1,
-   "explain": "'언제 갈 수 있을까?' 뒤에 전시회가 10월 1일에 끝난다고 알려 주어야 '그럼 이번 주 토요일에 가자'로 이어진다.",
+   "explain": "'언제 갈 수 있을까?' 뒤에 전시회가 10월 1일에 끝난다고 알려 주어야 '그럼 이번 주 토요일에 가자'로 이어진다. 선지는 모두 L5·L6 대화문 문장.",
    "source": "L6 Understand Communication C"
   },
   {
@@ -290,7 +290,7 @@
     "the radish",
     "the sea",
     "Jungang Market",
-    "the statue of Admiral Yi"
+    "a huge statue of Admiral Yi"
    ],
    "answer": 1,
    "explain": "무·오징어와 함께 먹어 본 충무김밥이 조금 매웠지만 맛있었다.",
@@ -316,14 +316,14 @@
    "points": 5,
    "stem": "윗글의 내용과 일치하는 것은?",
    "choices": [
-    "Garam got up at seven in the morning.",
-    "The family arrived at Jungang Market in the morning.",
-    "There was only rice inside the roll of Chungmu gimbap.",
-    "Garam thought Chungmu gimbap was too spicy to eat.",
-    "There was a small statue of Admiral Yi in the park."
+    "There was a small statue of Admiral Yi.",
+    "Chungmu is Tongyeong's new name.",
+    "There was only rice inside the roll!",
+    "Long ago, fishermen had Chungmu gimbap at home.",
+    "We arrived at Jungang Market at 6 p.m."
    ],
    "answer": 3,
-   "explain": "6시에 일어남, 오후 1시 도착, 조금 맵지만 맛있었음, 거대한(huge) 동상.",
+   "explain": "③ 원문 그대로. ① huge(거대한) 동상, ② old name(옛 이름), ④ out at sea(바다에 나가서), ⑤ at 1 p.m.(오후 1시) — 각각 한 단어를 바꾼 것.",
    "source": "L5 본문 8월 16일"
   },
   {
@@ -368,14 +368,14 @@
    "points": 5,
    "stem": "윗글의 내용과 일치하는 것은?",
    "choices": [
-    "They went to Dongpirang in the evening.",
-    "Garam's dad took hundreds of pictures.",
+    "Early in the evening, we went to Dongpirang.",
+    "Dad and I took hundreds of pictures.",
     "'Pirang' means 'east.'",
-    "Jeon Hyuck-lim painted the sea with various blue colors.",
-    "Garam didn't like the paintings at the museum."
+    "He painted the sea of Tongyeong with various blue colors.",
+    "Going on a family trip is always boring."
    ],
    "answer": 4,
-   "explain": "아침 일찍 감, 엄마와 내가 사진을 찍음, pirang은 절벽, I enjoyed his paintings very much.",
+   "explain": "④ 원문 그대로(He = 전혁림). ① Early in the morning, ② Mom and I, ③ 'pirang' means 'cliff', ⑤ always fun — 각각 한 단어를 바꾼 것.",
    "source": "L5 본문 8월 17일"
   },
   {

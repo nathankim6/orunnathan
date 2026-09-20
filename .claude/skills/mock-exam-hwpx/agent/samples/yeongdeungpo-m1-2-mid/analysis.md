@@ -9,7 +9,7 @@
 |---|---|
 | 25문항 100점, 전 문항 5지선다 객관식이고 서술형은 0문항 | 3부 모두 객관식 25 · 서술형 0 · 3점×6 + 4점×13 + 5점×6 = 100 (기출 배점 자리 그대로) |
 | 문항 배치 구조: 긴 대화문 2개, 짧은 대화 1개, 짧은 글 1개, 독해 지문 4개 | [2~3] L5 UC-C · [11~13] L6 UC-C(긴 대화 2) / 7번(짧은 대화) / 10번(짧은 글 어법) / [14~16]·[17~19]·[20~22]·[23~25](독해 4) |
-| 학습지에 있는 내용과 별개로 선생님들이 문장을 제작하여 어법 문제 출제(학습지는 참고용) | 5·6·8·9·10번 예문은 범위 어휘·문법으로 새로 지은 문장. 학습지 문장은 4번(Vocabulary List 예문)에만 그대로 사용 |
+| 학습지에 있는 내용과 별개로 선생님들이 문장을 제작하여 어법 문제 출제(학습지는 참고용) | (v3) 새로 짓지 않았다 — 5·6·8·9·10번 예문도 학습지 Practice·예문(5-6·6-5·6-6·6-7)·교과서 본문·대화문·기타 지문 문장 그대로 쓰고, 오류 심기·빈칸만 한 군데씩 넣었다(브리프 v3 원칙: 범위 문장에 한 군데 손질이 우선) |
 | 본문 대화문 변형없음 | 대화·본문 상자는 교과서 문장 그대로. 어법 오류 문항에서 한 자리만 바꾼 것은 explain 에 원문을 적음 |
 | 어법 출제 포인트: 동명사의 역할 / 동명사vs현재분사 | 5번(동명사 vs 현재분사, 3부 모두) · 6번(동명사 주어 단수·동명사/to부정사 목적어) · 17/21/24번 빈칸(enjoy -ing, for -ing, want to) |
 | that의 쓰임(명사절vs지시 대명사) / 명사절을 목적어·주어·보어에 고루 배치, 지시대명사 vs 지시형용사 | 8번 — 1회 접속사 vs 지시형용사(주어·목적어·보어 that절 배치), 2회 that절 역할(목적어 vs 보어), 3회 지시대명사 vs 지시형용사 vs 접속사 |
@@ -85,24 +85,48 @@ L6 Bridge(밀레·마티스·피카소) · Express My Thoughts Viewing(The Siest
 | 1 | 단어–뜻 · 어휘 | 어휘 xlsx | cliff(절벽) | radish(무) | huge(거대한) |
 | 2·3 | 긴 대화 · L5 UC-C | L5 UC-C 그대로 | 일치(Junho 조부모) / 빈칸 excited | 순서 배열 / there 지칭 | 빈칸 What are you going to do there? / 언급 안 된 일 |
 | 4 | 어휘 빈칸 · 학습지 예문 | 학습지 5-2·6-2 | beast·express·experience·cliff (trace 제외) | strange·statue·success·imagine (shape 제외) | price·mean·huge·emotion (battle 제외) |
-| 5 | 동명사 vs 현재분사 · 제작 | 학습지 5-6 포인트 | are having(진행) | are drawing | is moving |
-| 6 | 옳은 문장 개수 · 제작 | 5-6·6-6 | 2개 | 3개 | 4개 |
+| 5 | 동명사 vs 현재분사 · 제작 | 학습지 5-6 예문·Practice, 6-2 예문 그대로 | They are collecting shells(진행) | He is riding a bike | A snail is moving slowly |
+| 6 | 옳은 문장 개수 · 제작 | 학습지 5-6·6-6·6-7 Practice, L5 본문·Yeosu 지문 문장에 오류 한 곳 | 2개 | 3개 | 4개 |
 | 7 | 짧은 대화 빈칸 · 대화문 | L6 UC-A / L5 UC-A | L6 A-1 nature | L6 A-2 scary | L5 A-3 famous for |
-| 8 | that 쓰임 · 제작 | 6-5·6-7 포인트 | 접속사 vs 지시형용사 | that절 목적어 vs 보어 | <보기> 지시대명사와 같은 것 |
-| 9 | 어휘 짝 (A)(B) · 제작 | 본문 어휘 | created–imagined | painted–at | trace–had |
-| 10 | 짧은 글 어법 · 제작/기타 지문 | Yeosu 지문 / 제작 글 | Yeosu: Passing through them are | My Holiday Plan: enjoy to try | My Art Class: Drawing snails are |
-| 11·12·13 | 긴 대화 · L6 UC-C | L6 UC-C 그대로 | How about go / 빈칸 It ends on October 1st. / 불일치 | want see / 빈칸 I think so, too. / 답 못 하는 질문 | can also learning / 빈칸 I think it's beautiful. / 일치 |
-| 14·15·16 | 독해 1 · L6 앞부분 | Amélie | 연결어 So / this way 의미 / 불일치 | 문장 삽입 Don't worry. / 화자 / 답 못 하는 질문 | 어법 wanted express / 별명 이유 / 제목 |
-| 17·18·19 | 독해 2 · L5 8/16 | 8월 16일 | It 지칭 / 우리말 뜻 ⓐ~ⓔ / 일치(영) | 빈칸 taking / 심경 변화 / 불일치(한) | 문장 삽입 spicy but tasty / Chungmu 설명 / 답 못 하는 질문 |
-| 20·21·22 | 독해 3 · L5 8/17 | 8월 17일 | 어법 Going … are / Dongpirang 뜻 / 일치(영) | 연결어 Next / 우리말 뜻 ⓐ~ⓔ / 불일치(한) | 순서 배열 [A]~[D] / 빈칸 taking / 답 못 하는 질문 |
-| 23·24·25 | 독해 4 · L6 뒷부분 | snail | It 지칭(cut-outs) / 빈칸 to find / 불일치(한) | 문장 삽입 trace / 우리말 뜻 ⓐ~ⓔ / 제목 | 어법 want finding / 만든 방법 / 답 못 하는 질문 |
+| 8 | that 쓰임 · 제작 | 학습지 6-5·6-7 문장 + L5·L6 대화문(That's a good idea / That sounds great) | 접속사 vs 지시대명사 | that절 목적어 vs 보어 | <보기> 지시대명사와 같은 것 |
+| 9 | 어휘 짝 (A)(B) · 제작 | L5·L6 본문 문장에 빈칸 | created–imagined | painted–at | trace–had |
+| 10 | 짧은 글 어법 · 제작/기타 지문 | 교과서 기타 지문에 오류 한 곳 | Yeosu: Passing through them are | Buyeo: There is many flowers | 엿장수(Ssireum): want eating |
+| 11·12·13 | 긴 대화 · L6 UC-C | L6 UC-C 그대로 | How about go / 빈칸 It ends on October 1st. / 불일치(한) | want see / 빈칸 I think so, too. / 불일치(한) | can also learning / 빈칸 I think it's beautiful. / 일치(한) |
+| 14·15·16 | 독해 1 · L6 앞부분 | Amélie | 연결어 So / this way 의미 / 불일치(한) | 문장 삽입 Don't worry. / 화자 / 일치(영, 한 단어 변형) | 어법 wanted express / 별명 이유 / 제목(범위 자료 제목·문장) |
+| 17·18·19 | 독해 2 · L5 8/16 | 8월 16일 | It 지칭 / 우리말 뜻 ⓐ~ⓔ / 일치(영) | 빈칸 taking / 심경 변화 / 불일치(한) | 문장 삽입 spicy but tasty / Chungmu 설명 / 불일치(영) |
+| 20·21·22 | 독해 3 · L5 8/17 | 8월 17일 | 어법 Going … are / Dongpirang 뜻 / 일치(영) | 연결어 Next / 우리말 뜻 ⓐ~ⓔ / 불일치(한) | 순서 배열 [A]~[D] / 빈칸 taking / 일치(영) |
+| 23·24·25 | 독해 4 · L6 뒷부분 | snail | It 지칭(cut-outs) / 빈칸 to find / 불일치(한) | 문장 삽입 trace / 우리말 뜻 ⓐ~ⓔ / 주제(한) | 어법 want finding / 만든 방법 / 불일치(영) |
 
-자료 갈래별 문항 수(1부): 교과서 본문 12 · 교과서 대화문 6(긴 대화 5 + 짧은 대화 1) · 학습지 예문 1 · 어휘 리스트 1 · 선생님 제작 5(5·6·8·9·10; 1회 10번은 기타 지문 Yeosu).
+자료 갈래별 문항 수(1부): 교과서 본문 12 · 교과서 대화문 6(긴 대화 5 + 짧은 대화 1) · 학습지 예문 1 · 어휘 리스트 1 · 어법·어휘 단독 5(5·6·8·9·10 — 자리는 기출의 '선생님 제작' 자리이나 v3에서는 학습지 문장·교과서 기타 지문에 오류 한 곳으로 대체).
 
 ## 비고
 
 - `audit` 가 표시한 문장은 모두 (a) 원문 그대로인데 ⓐ~ⓔ 기호가 NFKC 정규화로 다음 단어에 붙어(ⓓ→d) 대조가 빗나간 것, (b) 빈칸·오류를 일부러 넣은 문장(explain 에 원문 표기) 이다. 범위 밖 문장은 없다.
-- 기출 10번의 "My Classroom" 처럼 2·3회 10번은 선생님 제작 짧은 글(범위 문법·L5 대화문 어휘만 사용). 1회 10번은 교과서 기타 지문(Yeosu)에 오류 한 곳.
+- 10번은 세 회 모두 교과서 기타 지문(1회 Yeosu · 2회 Buyeo · 3회 엿장수)에 어법 오류 한 곳. 제작 글(My Holiday Plan · My Art Class)은 v3에서 버렸다.
 - 그림·표 문항 없음(기출에도 없음).
 - 확신 낮은 문항: 1회 14번(연결어 So — 다소 쉬움), 2회 8번(that절 보어 역할 — 학습지 6-5 예문 수준이나 중1에게 낯설 수 있음), 3회 20번(순서 배열 — 'Dong' 문장을 [C]에 묶어 [B]→[C] 단서가 약함).
 - HTML/PDF 미리보기는 1단 흉내이며 실제 판형은 HWPX(2단)로 확인해야 한다.
+
+## v3 문장 대조 (2026-09-20)
+
+학습지 24쪽을 `text/ws09.txt` 로 옮겨 적은 뒤(쪽마다 `[p.N]`, 문법 규칙·Practice·어휘표·예문·본문·학생 정답까지) `agent.py audit` 로 세 회의 모든 영어 문장을 범위 자료와 대조했다.
+
+| | 원문 그대로 | 변형 | 창작 |
+|---|---|---|---|
+| 전(v2) | 224 | 50 | **89** (1회 27 · 2회 23 · 3회 39) |
+| 후(v3) | 267 | 73 | **0** |
+
+남은 변형 73개는 전부 (a) 대화 화자 표시·<u>·(A) 기호 때문에 6-gram 이 끊긴 원문 그대로, (b) 빈칸(4·9·17·21·24번), (c) 어법 오류 심기(6·10·11·14·20·23번, explain 에 원문 표기), (d) 일치/불일치 선지의 한 단어 변형(숫자·이름·부정어·장소: 1회 19·22, 2회 16, 3회 19·22·25) 이다.
+
+고친 자리 —
+- 5번(동명사 vs 현재분사) 세 회: 학습지 5-6 예문·Practice, 6-2 예문 문장 그대로(현재진행 예문도 학습지·어휘 예문에서).
+- 6번(옳은 문장 개수) 세 회: 학습지 5-6·6-6·6-7, L5 본문·Yeosu 문장에 한 단어 오류(are/cleaning/took/be …).
+- 8번(that) 세 회: 학습지 6-5·6-7 문장 그대로, 지시대명사 that 은 L5·L6 대화문 That's a good idea / That sounds great.
+- 9번(어휘 짝) 1회: 본문 문장 He created a new art form. / I imagined the great battle … 에 빈칸.
+- 10번(짧은 글 어법) 2·3회: 제작 글 대신 교과서 기타 지문 Buyeo(There is many → are) · 엿장수(want eating → to eat).
+- 4번 1회: Nick expressed → 빈칸을 단어 전체로 두고 발문에 "필요하면 형태를 바꿀 것" 을 붙였다.
+- 대화 빈칸 선지(1·2·3회 12번, 3회 2번): 대화문·학습지 문장으로만.
+- "답할 수 없는 질문" 자리(2회 13·16, 3회 19·22·25)와 제목(2회 25, 3회 16): 질문 문장·제목은 범위 자료에 없어 **같은 자리에서 일치/불일치(영어 한 단어 변형 또는 우리말)·주제(우리말)·제목(범위 자료의 제목·문장)** 으로 바꿨다. 자료 갈래·배점·번호는 그대로.
+- 일치/불일치 영어 선지: 원문 그대로 또는 한 단어(huge→small, old→new, 1 p.m.→6 p.m., morning→evening, Mom→Dad, beast→snail, 70→17, blue→red …) 만 바꿈.
+
+남긴 예외(창작): 없음. 우리말 선지·발문은 자유(브리프).

@@ -81,21 +81,21 @@
    "points": 4,
    "stem": "다음 밑줄 친 부분의 쓰임이 나머지 넷과 <u>다른</u> 것은?",
    "choices": [
-    "The children are <u>drawing</u> the sea with blue colors.",
-    "<u>Taking</u> a nap after lunch is my habit.",
-    "She finished <u>making</u> the shapes with scissors.",
-    "His job is <u>painting</u> the walls of the temple.",
-    "How about <u>going</u> to the gallery together?"
+    "He is <u>riding</u> a bike.",
+    "<u>Watching</u> movies is fun.",
+    "Lucy finished <u>making</u> a robot.",
+    "Her hobby is <u>drawing</u> cartoons.",
+    "We enjoyed <u>taking</u> a walk in this park."
    ],
    "answer": 1,
-   "explain": "①은 현재진행형(be동사+현재분사). 나머지는 동명사(주어·목적어·보어·전치사의 목적어).",
-   "source": "선생님 제작 문장(학습지 p.5-6 동명사)"
+   "explain": "①은 현재진행형(be동사+현재분사). 나머지는 동명사 — ② 주어, ③ 동사의 목적어, ④ 보어, ⑤ 동사의 목적어. (학습지 5-6 문장 그대로)",
+   "source": "학습지 p.5-6 동명사 예문·Practice 그대로"
   },
   {
    "no": 6,
    "points": 4,
    "stem": "다음 중 문법적으로 <u>옳은</u> 문장의 개수는?",
-   "box": "• Watching the sunset were beautiful.\n• I hope to see dolphins in Jeju-do.\n• She finished to trace the shapes.\n• Do you mind opening the window?\n• Meeting new people is exciting.",
+   "box": "• Speaking Spanish are difficult.\n• She hopes to be a famous pianist.\n• We enjoyed took a walk in this park.\n• I like to eat ice cream on hot days.\n• Chris started to read the book.",
    "choices": [
     "1개",
     "2개",
@@ -104,8 +104,8 @@
     "5개"
    ],
    "answer": 3,
-   "explain": "옳은 문장: I hope to see ~ / Do you mind opening ~ / Meeting new people is exciting. 틀린 문장: Watching the sunset were → was, finished to trace → tracing.",
-   "source": "선생님 제작 문장(학습지 p.5-6·6-6)",
+   "explain": "옳은 문장: She hopes to be ~ / I like to eat ~ / Chris started to read ~. 틀린 문장: Speaking Spanish are → is(동명사 주어는 단수), enjoyed took → taking(enjoy는 동명사 목적어). 원문은 학습지 5-6·6-6 Practice.",
+   "source": "학습지 p.5-6·6-6 Practice 문장에 오류 한 곳",
    "inline": true
   },
   {
@@ -131,13 +131,13 @@
    "choices": [
     "I believe <u>that many students will love the painting</u>.",
     "She heard <u>that they bought a new car</u>.",
-    "The problem is <u>that the price is too high</u>.",
+    "The important thing is <u>that he likes you</u>.",
     "We hope <u>that you have a great day</u>.",
     "Bill knows <u>that you play soccer well</u>."
    ],
    "answer": 3,
-   "explain": "③은 be동사 뒤 보어 역할. 나머지는 동사의 목적어 역할.",
-   "source": "선생님 제작 문장(학습지 p.6-5·6-7 접속사 that)"
+   "explain": "③은 be동사 뒤 보어 역할(학습지 6-5). 나머지는 동사의 목적어 역할(학습지 6-7).",
+   "source": "학습지 p.6-5·6-7 접속사 that 문장 그대로"
   },
   {
    "no": 9,
@@ -159,7 +159,7 @@
    "no": 10,
    "points": 4,
    "stem": "다음 글의 밑줄 친 ⓐ~ⓔ 중 어법상 <u>어색한</u> 것은?",
-   "box": "<b>My Holiday Plan</b>\nHello! I'm Somi. ⓐ<u>I'm going to visit Busan this holiday.</u> ⓑ<u>There are many beautiful beaches in Busan.</u> ⓒ<u>I want to swim at Haeundae Beach.</u> ⓓ<u>I also enjoy to try fresh seafood.</u> ⓔ<u>I think that this trip will be really fun.</u> I can't wait!",
+   "box": "Welcome to Buyeo! Do you like history? ⓐ<u>Then Buyeo is perfect for you.</u> ⓑ<u>Visit Baekje Cultural Land and learn about the history of Baekje.</u> How about Gungnamji? ⓒ<u>There is many beautiful flowers in the pond.</u> ⓓ<u>You can enjoy taking a walk.</u> ⓔ<u>Come and enjoy Buyeo!</u>",
    "choices": [
     "ⓐ",
     "ⓑ",
@@ -167,9 +167,9 @@
     "ⓓ",
     "ⓔ"
    ],
-   "answer": 4,
-   "explain": "enjoy는 동명사를 목적어로 쓴다 → enjoy trying.",
-   "source": "선생님 제작 글(L5 대화문 어휘·There is/are·to부정사·동명사·that)",
+   "answer": 3,
+   "explain": "There is/are는 뒤의 주어에 수를 일치 → 복수 flowers이므로 There are many beautiful flowers in the pond. (원문 are를 is로 바꿈)",
+   "source": "L5 Express My Thoughts(Write) — Buyeo 지문에 오류 한 곳",
    "inline": true
   },
   {
@@ -201,27 +201,27 @@
    "choices": [
     "I think so, too.",
     "I don't think so.",
-    "That's too bad.",
-    "I'm not sure.",
-    "You're welcome."
+    "It's a bit expensive for me.",
+    "Have a nice trip!",
+    "I can't wait!"
    ],
    "answer": 1,
-   "explain": "준호의 감상(밤하늘의 색이 놀랍다)에 동의하는 말.",
+   "explain": "준호의 감상(밤하늘의 색이 놀랍다)에 동의하는 말. 선지는 모두 L5·L6 대화문 문장.",
    "source": "L6 Understand Communication C"
   },
   {
    "no": 13,
    "points": 5,
-   "stem": "위 대화를 읽고 답할 수 <u>없는</u> 질문은?",
+   "stem": "위 대화의 내용과 일치하지 <u>않는</u> 것은?",
    "choices": [
-    "Who painted The Starry Night?",
-    "Where is the van Gogh exhibition going on?",
-    "When does the exhibition end?",
-    "How much is the ticket for the exhibition?",
-    "When are they going to go to the exhibition?"
+    "세 사람은 전시회 포스터 속 그림에 대해 이야기하고 있다.",
+    "Alex는 그 그림이 반 고흐의 작품임을 알고 있다.",
+    "반 고흐 전시회는 미래 박물관에서 열리고 있다.",
+    "전시회는 10월 1일에 끝난다.",
+    "세 사람은 이번 주 일요일에 전시회에 가기로 했다."
    ],
-   "answer": 4,
-   "explain": "입장료는 언급되지 않았다.",
+   "answer": 5,
+   "explain": "Let's go there this Saturday then. — 토요일에 가기로 했다.",
    "source": "L6 Understand Communication C"
   },
   {
@@ -265,16 +265,16 @@
   {
    "no": 16,
    "points": 5,
-   "stem": "윗글을 읽고 답할 수 <u>없는</u> 질문은?",
+   "stem": "윗글의 내용과 일치하는 것은?",
    "choices": [
-    "Who is Amélie's husband?",
-    "What color is Amélie's face in the painting?",
-    "Why did Matisse paint Amélie in green?",
-    "How old was Matisse when he painted Amélie?",
-    "What nickname did Matisse get?"
+    "Matisse painted his face with green colors.",
+    "People didn't like this painting style at first.",
+    "Some people thought that a snail painted me.",
+    "So, he got the nickname Wild Cat.",
+    "He kept his own style and never became famous."
    ],
-   "answer": 4,
-   "explain": "그림을 그렸을 때의 나이는 언급되지 않았다.",
+   "answer": 2,
+   "explain": "② 원문 그대로. ① Matisse가 칠한 것은 '나(Amélie)'의 얼굴, ③ a beast, ④ Wild Beast, ⑤ finally became famous — 각각 한 단어를 바꾼 것.",
    "source": "L6 본문 앞부분(Amélie)"
   },
   {
@@ -420,13 +420,13 @@
   {
    "no": 25,
    "points": 5,
-   "stem": "윗글의 제목으로 가장 적절한 것은?",
+   "stem": "윗글의 주제로 가장 적절한 것은?",
    "choices": [
-    "A Snail Made of Paper Shapes",
-    "How to Draw a Green Face",
-    "Matisse's Trip to Tongyeong",
-    "Famous Gardens in France",
-    "The Life of a Real Snail"
+    "Matisse가 종이 오리기로 만든 달팽이 작품",
+    "달팽이 껍데기의 다양한 모양",
+    "Matisse가 초록색으로 얼굴을 칠한 이유",
+    "미술관을 둘러보는 올바른 방법",
+    "70세 이후 Matisse의 투병 생활"
    ],
    "answer": 1,
    "explain": "종이 모양을 합쳐 만든 달팽이(cut-outs)에 대한 글.",
