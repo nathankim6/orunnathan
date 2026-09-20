@@ -103,11 +103,11 @@
     "The advertisement said he could get a new smartphone for free.",
     "He filled out his information to receive the gift.",
     "He got a new smartphone for free.",
-    "He thinks his personal information was shared."
+    "Jihun provided his personal details to get something for free."
    ],
    "answer": 4,
-   "explain": "새 스마트폰을 받는 대신 쓸모없는 이메일과 전화만 받고 있다.",
-   "source": "L6 본문 3대목 Jihun"
+   "explain": "새 스마트폰을 받는 대신 쓸모없는 이메일과 전화만 받고 있다. ⑤는 통합본 T/F 문장(T).",
+   "source": "L6 본문 3대목 Jihun · 통합본 L6 p.38 T/F"
   },
   {
    "no": 6,
@@ -156,12 +156,12 @@
     "Ms. Ali became a sports journalist because she wanted to be famous.",
     "Ms. Ali arrived at the baseball park late.",
     "Ms. Ali asked the players how they felt about the game.",
-    "Ms. Ali wrote her article slowly in the morning.",
-    "Ms. Ali doesn't like writing about sports."
+    "Ms. Ali had enough time to write and edit her article.",
+    "Writing about sports makes Ms. Ali bored."
    ],
    "answer": 3,
-   "explain": "스포츠와 글쓰기에 대한 열정 때문에 기자가 되었고, 야구장에 일찍 도착했으며, 오후에 기사를 빠르게 썼고, 스포츠 글쓰기를 매우 좋아한다.",
-   "source": "L5 본문 1대목 Ms. Ali"
+   "explain": "스포츠와 글쓰기에 대한 열정 때문에 기자가 되었고, 야구장에 일찍 도착했으며, 기사를 매우 빠르게 써야 했고, 스포츠 글쓰기는 그녀를 신나게 한다. ④·⑤는 통합본 T/F 문장(F).",
+   "source": "L5 본문 1대목 Ms. Ali · 통합본 L5 p.38 T/F"
   },
   {
    "no": 8,
@@ -242,15 +242,15 @@
    "points": 4,
    "stem": "윗글을 읽고 답할 수 <u>없는</u> 질문은?",
    "choices": [
-    "When did Bella see her brother playing basketball?",
-    "Why did Bella take a picture of her brother?",
-    "Where did Bella share the picture?",
+    "Was Bella so impressed by her brother's basketball game that she took a picture of him?",
+    "Did Bella post a photo of her brother on her social media with bad comments?",
+    "Did Bella delete her post before the copy of the picture was spread?",
     "Who made a copy of the picture with bad comments?",
-    "What did Bella's brother want her to do?"
+    "Did Bella's brother want her to share more pictures of him playing basketball?"
    ],
    "answer": 4,
-   "explain": "① 지난 금요일 ② 정말 잘하고 있어서 ③ 자기 소셜 미디어 ⑤ 사진 삭제. 복사본을 만든 사람은 'Someone'으로만 나와 누구인지 알 수 없다.",
-   "source": "L6 본문 1대목 Bella"
+   "explain": "① 그렇다(정말 잘해서 찍었다) ② 아니다(나쁜 댓글은 남이 단 복사본) ③ 아니다(복사본이 퍼진 뒤 지웠다) ⑤ 아니다(지워 달라고 했다). 복사본을 만든 사람은 'Someone'으로만 나와 알 수 없다. ①②③⑤는 통합본 T/F·서술형 문장을 의문문으로 바꾼 것.",
+   "source": "L6 본문 1대목 Bella · 통합본 L6 p.38 T/F · 서술형 22번 · 실전모의고사 21번"
   },
   {
    "no": 11,
@@ -310,13 +310,13 @@
    "stem": "윗글의 내용과 일치하는 것은?",
    "choices": [
     "The writer taught badminton to the 2nd-year students.",
-    "The writer taught basketball this morning.",
-    "The lessons didn't go well.",
-    "The writer wrote lesson plans in the morning.",
-    "The writer teaches only one kind of sport."
+    "The writer taught basketball to the 2nd-year students this morning.",
+    "The lessons went really badly.",
+    "The writer planned for next week's classes and wrote lesson plans in the morning.",
+    "In the next class, the writer taught basketball to the 3rd-year students."
    ],
    "answer": 2,
-   "explain": "오늘 아침 2학년에게 농구, 다음 수업에 3학년에게 배드민턴을 가르쳤고, 수업은 잘 되었으며, 오후에 학습 계획안을 썼다.",
+   "explain": "오늘 아침 2학년에게 농구, 다음 수업에 3학년에게 배드민턴을 가르쳤고, 수업은 정말 잘 되었으며, 오후에 학습 계획안을 썼다. 선지는 본문 문장을 3인칭으로 옮기고 한 단어씩 바꾼 것.",
    "source": "L5 Review 2-1"
   },
   {
@@ -388,13 +388,13 @@
    "choices": [
     "Need Help with My Headphones",
     "How to Use Bluetooth Headphones",
-    "Thank You for the Great Headphones",
-    "A New Site for Music Lovers",
-    "Please Send Me a New Site"
+    "Thank You for the Fast Delivery",
+    "Recommend New Bluetooth Headphones",
+    "Cancel the Order of Headphones"
    ],
    "answer": 1,
-   "explain": "한쪽만 소리가 나는 헤드폰 문제로 도움을 요청하는 이메일이다.",
-   "source": "L6 Present Your Ideas — In Writing 이메일"
+   "explain": "한쪽만 소리가 나는 헤드폰 문제로 도움을 요청하는 이메일이다. ②~⑤는 통합본 '글의 목적' 선지 구절(사용법 설명·감사·추천·주문 취소)로 이 글과 맞지 않는다.",
+   "source": "L6 Present Your Ideas — In Writing 이메일 · 통합본 L6 p.58 25번 선지"
   },
   {
    "no": 15,
@@ -561,10 +561,10 @@
     "They score many goals in every game.",
     "They let in 70 percent of the shots from the left side.",
     "They never lose on Saturday.",
-    "They play against Ms. Lee's team every week."
+    "They let in 70 percent of the shots from the right side."
    ],
    "answer": 3,
-   "explain": "I found that they let in 70 percent of the shots from the left side.",
+   "explain": "I found that they let in 70 percent of the shots from the left side. ①~④는 학습지 p.6 Details 3의 선지, ⑤는 통합본 T/F 문장(right side, F).",
    "source": "L5 본문 3대목 · 학습지 p.4 Details 3"
   },
   {
@@ -585,15 +585,15 @@
    "points": 4,
    "stem": "윗글의 내용과 일치하지 <u>않는</u> 것은?",
    "choices": [
-    "Mr. Davis loves sports.",
-    "Mr. Davis enjoys everything about business.",
-    "Mr. Davis checks his clients' contracts carefully.",
-    "Mr. Davis often calls advertising companies first.",
-    "Mr. Davis tries to get the best deal for his clients."
+    "Mr. Davis is satisfied with his job.",
+    "Mr. Davis checks new contracts with care.",
+    "Mr. Davis wants his clients' contracts to be fair.",
+    "Mr. Davis often appears in advertisements.",
+    "Mr. Davis does his best to get good deals for his clients."
    ],
    "answer": 4,
-   "explain": "광고 회사로부터 전화를 '받는다'(receive phone calls)고 했지, 먼저 전화한다는 내용은 없다.",
-   "source": "L5 본문 2대목 Mr. Davis"
+   "explain": "광고 회사가 원하는 것은 Davis가 아니라 그의 고객(my clients)이 광고에 나오는 것이다. 선지는 통합본 p.44 확인문제·p.39 T/F 문장.",
+   "source": "L5 본문 2대목 Mr. Davis · 통합본 L5 p.44 확인문제 · p.39 T/F"
   },
   {
    "no": 24,
@@ -617,13 +617,13 @@
    "stem": "글의 흐름상 (A)에 가장 적절한 것은?",
    "choices": [
     "I think my job is perfect for me.",
-    "I don't like my job at all.",
+    "I don't know much about a sports statistician.",
     "I want to be a sports journalist.",
-    "My job makes me very upset.",
-    "I have never signed a contract."
+    "Writing about sports makes me excited.",
+    "It makes me very upset."
    ],
    "answer": 1,
-   "explain": "직업을 좋아하냐는 물음에 스포츠와 사업을 다 좋아한다고 했으니, 자기 직업이 자신에게 완벽하다는 말이 이어진다.",
+   "explain": "직업을 좋아하냐는 물음에 스포츠와 사업을 다 좋아한다고 했으니, 자기 직업이 자신에게 완벽하다는 말이 이어진다. ②·④는 Lee·Ali의 말, ⑤는 Jihun의 말.",
    "source": "L5 본문 2대목 Mr. Davis"
   },
   {
@@ -677,15 +677,15 @@
    "points": 4,
    "stem": "윗글에서 답을 찾을 수 <u>없는</u> 것은?",
    "choices": [
-    "What can Happy Digital Laundry clean?",
-    "What did Bella's brother want her to do?",
+    "Is Happy Digital Laundry's service for people who are worried about their digital footprint?",
+    "Does Happy Digital Laundry require customers to come to its office to get their help?",
     "How many copies of the picture were made?",
-    "What did Happy Digital Laundry remove?",
-    "What should you do when you share things online?"
+    "Did Bella refuse to delete the picture even after her brother asked her to do so?",
+    "Did Happy Digital Laundry completely erase every copy from all devices?"
    ],
    "answer": 3,
-   "explain": "① 온라인 기록 ② 사진 삭제 ④ 온라인의 모든 복사본 ⑤ 조심하기. 복사본 개수는 나오지 않는다.",
-   "source": "L6 본문 1·2대목"
+   "explain": "① 그렇다 ② 아니다(웹사이트에 메시지를 남기면 된다) ④ 아니다(바로 지웠다) ⑤ 아니다(개인 기기에 남을 수 있다). 복사본 개수는 나오지 않는다. ①②④⑤는 통합본 T/F 문장을 의문문으로 바꾼 것.",
+   "source": "L6 본문 1·2대목 · 통합본 L6 p.38 T/F"
   },
   {
    "kind": "group",
@@ -724,22 +724,22 @@
      [
       "③",
       "they are doing",
-      "to improve"
+      "improves"
      ],
      [
       "④",
       "are they doing",
-      "to improve"
+      "improved"
      ],
      [
       "⑤",
       "they doing",
-      "improves"
+      "to improve"
      ]
     ]
    },
    "answer": 1,
-   "explain": "tell+목적어+간접의문문(how well+주어+동사). 지각동사 see+목적어+동사원형(improve) — to부정사는 쓸 수 없다.",
+   "explain": "tell+목적어+간접의문문(how well+주어+동사) → they are doing. 지각동사 see+목적어+동사원형(improve) — to부정사·3인칭 -s·과거형은 쓸 수 없다.",
    "source": "학습지 p.6 More Reading"
   },
   {
@@ -747,14 +747,14 @@
    "points": 3,
    "stem": "윗글의 내용을 바르게 이해한 사람은?",
    "choices": [
-    "Mia: The sports manager plays soccer games for the team.",
-    "John: The sports manager talks to the head coach first at the training ground.",
-    "Jun: The sports manager hires coaches and solves problems.",
-    "Jay: The sports manager never meets the head coach.",
-    "Gary: The sports manager watches the team train in the morning."
+    "민수: The writer is a professional soccer player.",
+    "지호: The writer is a professional soccer coach.",
+    "수아: The sports manager works to help the team win.",
+    "하은: The sports manager only meets the head coach on game days.",
+    "준서: The sports manager never meets the head coach on game days."
    ],
    "answer": 3,
-   "explain": "I hire great coaches, manage the office staff, talk to the media, and solve problems. 훈련장에서는 선수들과 먼저 이야기하고, 감독과는 정기 회의를 하며, 오후에 훈련을 지켜본다.",
+   "explain": "My job is to give the team the best chance to win. 글쓴이는 선수도 코치도 아닌 매니저이고, 감독과는 정기 회의를 한다. 선지는 학습지 p.8 T/F 문장과 그 한 단어 변형.",
    "source": "학습지 p.6 More Reading"
   }
  ]

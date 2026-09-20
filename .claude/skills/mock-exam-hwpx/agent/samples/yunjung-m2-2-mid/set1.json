@@ -156,14 +156,14 @@
    "stem": "윗글의 내용과 일치하는 것은?",
    "choices": [
     "Bella's brother took a picture of her.",
-    "Bella shared the picture on her brother's social media.",
+    "Bella posted a photo of her brother on her social media with bad comments.",
     "Someone made a copy of the picture with bad comments.",
     "Bella's brother wanted her to keep the picture.",
-    "Bella deleted her post, so no copies remain online."
+    "Bella refused to delete the picture even after her brother asked her to do so."
    ],
    "answer": 3,
-   "explain": "Bella가 남동생 사진을 찍어 자기 소셜 미디어에 올렸고, 남동생은 삭제를 원했으며, 게시물을 지웠지만 복사본은 온라인에 남아 있다.",
-   "source": "L6 본문 1대목 Bella"
+   "explain": "Bella가 남동생 사진을 찍어 자기 소셜 미디어에 올렸고(나쁜 댓글은 남이 단 복사본에 있었다), 남동생은 삭제를 원했으며, Bella는 바로 게시물을 지웠다. ②·⑤는 통합본 T/F 문장(F).",
+   "source": "L6 본문 1대목 Bella · 통합본 L6 p.38 T/F 문장"
   },
   {
    "no": 8,
@@ -244,15 +244,15 @@
    "points": 4,
    "stem": "윗글을 읽고 답할 수 <u>없는</u> 질문은?",
    "choices": [
-    "What did Happy Digital Laundry remove?",
-    "Where may some copies still remain?",
-    "What should Bella do if she sees the copies again?",
+    "Did Happy Digital Laundry completely erase every copy from all devices?",
+    "Can some copies of the picture still exist on some people's phones?",
     "How long did it take to remove the copies?",
-    "What should people do when they share things online?"
+    "Does Happy Digital Laundry think that sharing something online is easy?",
+    "Does the company advise people to think carefully before uploading things online?"
    ],
-   "answer": 4,
-   "explain": "① 온라인의 모든 복사본 ② 개인 기기 ③ 연락하기 ⑤ 조심하기. 삭제에 걸린 시간은 나오지 않는다.",
-   "source": "L6 본문 2대목 Laundry 답장 1"
+   "answer": 3,
+   "explain": "① 아니다(개인 기기에 남을 수 있다) ② 그렇다 ④ 그렇다(쉽다, 지우기는 어렵다) ⑤ 그렇다(공유할 때 조심하라). 삭제에 걸린 시간은 나오지 않는다. ①·②·④·⑤는 통합본 T/F·선지 문장을 의문문으로 바꾼 것.",
+   "source": "L6 본문 2대목 Laundry 답장 1 · 통합본 L6 p.38 T/F · 실전모의고사 21번 선지"
   },
   {
    "no": 11,
@@ -315,14 +315,14 @@
    "stem": "윗글의 내용과 일치하는 것은?",
    "choices": [
     "The writer is a professional soccer player.",
-    "The writer talks to the head coach first at the training ground.",
-    "The writer never talks to the media.",
-    "The writer watches the team train in the afternoon.",
-    "The writer only meets the head coach on game days."
+    "The sports manager only meets the head coach on game days.",
+    "When I get to the training ground, I talk to the head coach first.",
+    "In the afternoon, I watch the team train.",
+    "I hire great coaches, manage the office staff, avoid the media, and solve problems."
    ],
    "answer": 4,
-   "explain": "글쓴이는 스포츠 매니저이며, 훈련장에서 선수들과 먼저 이야기하고, 언론과도 이야기하며, 감독과 정기 회의를 하고, 오후에 팀 훈련을 지켜본다.",
-   "source": "학습지 p.6 More Reading 'Life as a Sports Manager'"
+   "explain": "글쓴이는 선수가 아니라 스포츠 매니저이고, 감독과는 정기 회의를 하며, 훈련장에서는 선수들과 먼저 이야기하고, 언론과도 이야기한다. 오후에 팀 훈련을 지켜본다(원문 그대로). ①·②는 학습지 p.8 T/F 문장, ③·⑤는 본문 한 단어 변형.",
+   "source": "학습지 p.8 More Reading 'Life as a Sports Manager' · p.8 T/F 문장"
   },
   {
    "no": 13,
@@ -388,13 +388,13 @@
    "stem": "윗글의 제목으로 가장 알맞은 것은?",
    "choices": [
     "Wolves Beat Monsters!",
-    "How to Play Basketball Well",
-    "The History of the Boston Sports Center",
-    "Michael James Joins the Monsters",
-    "Many Kinds of Sports in Boston"
+    "The Boston Sports Center",
+    "His Next Game",
+    "A Perfect Play",
+    "Monsters Beat Wolves!"
    ],
    "answer": 1,
-   "explain": "울브즈가 몬스터즈를 10점 차로 이긴 경기 소식이다.",
+   "explain": "울브즈가 몬스터즈를 10점 차로 이긴 경기 소식이다. ②~④는 글에 나온 구절이지만 세부 사항이고, ⑤는 이긴 팀이 반대다.",
    "source": "L5 Present Your Ideas — Sports News"
   },
   {
@@ -558,15 +558,15 @@
     ]
    },
    "choices": [
-    "He checks it carefully.",
-    "He signs it for them.",
-    "He calls advertising companies.",
-    "He writes an article about it.",
-    "He posts it online."
+    "Mr. Davis checks new contracts with care.",
+    "Mr. Davis checks contracts quickly without much care.",
+    "Mr. Davis often appears in advertisements.",
+    "Mr. Davis doesn't pay much attention to the contracts that his clients sign.",
+    "Advertising companies want Mr. Davis to appear in their advertisements."
    ],
    "answer": 1,
-   "explain": "When my clients have a new contract to sign, I check it carefully.",
-   "source": "L5 본문 2대목 Mr. Davis"
+   "explain": "When my clients have a new contract to sign, I check it carefully. 선지는 모두 통합본 T/F·확인문제 문장.",
+   "source": "L5 본문 2대목 Mr. Davis · 통합본 L5 p.39 T/F · p.44 확인문제"
   },
   {
    "kind": "group",
@@ -587,14 +587,14 @@
    "stem": "윗글의 내용과 일치하지 <u>않는</u> 것은?",
    "choices": [
     "Ms. Lee liked to analyze sports with numbers.",
-    "Ms. Lee loves ice hockey above all.",
-    "A sports statistician collects data about sports games.",
-    "Ms. Lee's team played against the Ice Lions last week.",
+    "Ms. Lee carefully watched the Ice Lions' games last week.",
+    "The Ice Lions let in 70 percent of the shots from the left side.",
+    "Ms. Lee's team is going to play against the Ice Lions this Sunday.",
     "Ms. Lee shared her finding with her players."
    ],
    "answer": 4,
-   "explain": "아이스 라이온즈와의 경기는 이번 주 토요일 예정이고, 지난주에는 그들의 경기를 지켜보고 분석했다.",
-   "source": "L5 본문 3대목 Ms. Lee"
+   "explain": "아이스 라이온즈와의 경기는 이번 주 토요일(this Saturday)이다. ②·④는 통합본 T/F 문장.",
+   "source": "L5 본문 3대목 Ms. Lee · 통합본 L5 p.39 T/F"
   },
   {
    "no": 24,
@@ -619,12 +619,12 @@
    "choices": [
     "This showed their left side was weak.",
     "This showed their left side was strong.",
-    "This showed they never let in a shot.",
-    "This showed our team was weak.",
-    "This showed the game was canceled."
+    "This showed their right side was weak.",
+    "My article was posted online.",
+    "Writing about sports makes me excited."
    ],
    "answer": 1,
-   "explain": "왼쪽에서 온 슛의 70퍼센트를 허용했다 → 왼쪽이 약하다는 것을 보여 준다.",
+   "explain": "왼쪽에서 온 슛의 70퍼센트를 허용했다 → 왼쪽이 약하다는 것을 보여 준다. ②·③은 한 단어를 바꾼 것, ④·⑤는 Ms. Ali의 말.",
    "source": "L5 본문 3대목 Ms. Lee"
   },
   {
@@ -677,15 +677,15 @@
    "points": 4,
    "stem": "윗글에서 답을 찾을 수 <u>없는</u> 것은?",
    "choices": [
-    "What did the advertisement say?",
-    "What did Jihun do to receive the gift?",
-    "What has Jihun received instead of a new smartphone?",
-    "How much did Jihun pay for the smartphone?",
-    "What did Happy Digital Laundry ask the ad company to do?"
+    "Why did Jihun give his information to the ad company?",
+    "What kind of problem did Jihun have after clicking the ad?",
+    "How many times did the ad company share Jihun's information?",
+    "What did Happy Digital Laundry do for Jihun?",
+    "How can we protect our personal information online?"
    ],
-   "answer": 4,
-   "explain": "① 새 스마트폰 공짜 ② 정보 작성 ③ 쓸모없는 이메일·모르는 번호 전화 ⑤ 정보 삭제. 돈을 냈다는 내용은 없다.",
-   "source": "L6 본문 3·4대목"
+   "answer": 3,
+   "explain": "① 공짜 스마트폰을 받으려고 ② 쓸모없는 이메일·모르는 번호의 전화 ④ 광고 회사에 정보 삭제 요청 ⑤ 모르는 출처의 광고·링크를 누르지 않기. 정보가 몇 번 공유되었는지는 나오지 않는다. 선지는 통합본 실전모의고사 25번 문장.",
+   "source": "L6 본문 3·4대목 · 통합본 L6 p.63 실전모의고사 25번"
   },
   {
    "kind": "group",
@@ -744,14 +744,14 @@
    "points": 3,
    "stem": "윗글의 내용을 바르게 이해한 사람은?",
    "choices": [
-    "Mia: The writer received an email from a friend.",
-    "John: The writer didn't click on the link.",
-    "Jun: The writer's computer became very slow.",
-    "Jay: The computer store found nothing wrong.",
-    "Gary: The writer added the bad programs himself."
+    "민수: The writer clicked on the link in the email, and no website showed up.",
+    "지호: The writer closed the website immediately, but he felt something was right.",
+    "수아: The writer asked the computer store to check his computer, and they found that someone added bad programs through the link.",
+    "하은: The writer asked his friend to check his computer, and they found that someone added bad programs through the link.",
+    "준서: The writer asked the computer store to check his computer, and they found that nobody added bad programs through the link."
    ],
    "answer": 3,
-   "explain": "모르는 이름의 이메일이었고, 링크를 클릭했으며, 컴퓨터 가게는 누군가 나쁜 프로그램을 설치한 것을 찾아냈다.",
+   "explain": "링크를 누르자 웹사이트가 떴고(①×), 뭔가 잘못되었다고 느꼈으며(②×), 컴퓨터 가게에 점검을 맡겨 누군가 나쁜 프로그램을 심은 것을 찾아냈다(③○, ④·⑤×). 선지는 본문 문장을 3인칭으로 옮기고 한 단어씩 바꾼 것.",
    "source": "L6 Review 2-1"
   }
  ]

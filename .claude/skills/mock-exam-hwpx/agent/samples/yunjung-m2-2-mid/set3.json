@@ -59,7 +59,7 @@
    "box": "B: Mom, many buses stop here.\nW: That's true. We should be careful not to take the wrong bus.\nB: Which bus do we have to take?\nW: We should take bus number 270.\nB: Okay, Mom. How long will it take to get to the museum?\nW: It'll take about 30 minutes.\nB: The name of the stop is National Science Museum, right?\nW: Yes, ______________(A)______________\nB: Oh, I got it.",
    "choices": [
     "don't forget to prepare your bus card.",
-    "we should take the subway instead.",
+    "let's take the subway together.",
     "I prefer the bus to the subway.",
     "it'll take more than an hour by subway.",
     "first, sign up for our app."
@@ -101,15 +101,15 @@
    "points": 3,
    "stem": "Mr. Davis에 대한 설명으로 올바르지 <u>않은</u> 것은?",
    "choices": [
-    "He is a sports agent.",
-    "He thinks his job is perfect for him.",
-    "He checks new contracts carefully.",
-    "Advertising companies want his clients in their advertisements.",
-    "He never receives phone calls from advertising companies."
+    "Mr. Davis is satisfied with his job.",
+    "Mr. Davis carefully checks new contracts for his clients.",
+    "Davis tries to make contracts fair for his clients.",
+    "Advertising companies want Mr. Davis to appear in their advertisements.",
+    "Mr. Davis tries to get the best deals for his clients rather than for advertising companies."
    ],
-   "answer": 5,
-   "explain": "광고 회사로부터 종종(often) 전화를 받는다.",
-   "source": "L5 본문 2대목 Mr. Davis"
+   "answer": 4,
+   "explain": "광고 회사는 Davis가 아니라 그의 고객(my clients)이 광고에 나오기를 원한다. 선지는 통합본 T/F·확인문제 문장.",
+   "source": "L5 본문 2대목 Mr. Davis · 통합본 L5 p.39 T/F · p.57 21번"
   },
   {
    "no": 6,
@@ -155,15 +155,15 @@
    "points": 4,
    "stem": "윗글의 내용과 일치하는 것은?",
    "choices": [
-    "Happy Digital Laundry could not remove any copies online.",
+    "Happy Digital Laundry completely erased every copy from all devices.",
     "Some copies may still remain on personal devices.",
-    "Bella should not contact Happy Digital Laundry again.",
-    "Sharing something online is hard.",
-    "Removing something online is easy."
+    "Remember that sharing something online is hard, but removing it is easy.",
+    "We removed all the copies on personal devices, but some copies may remain online.",
+    "Happy Digital Laundry will contact Bella if they find more copies."
    ],
    "answer": 2,
-   "explain": "온라인 복사본은 모두 지웠지만 개인 기기에 남아 있을 수 있고, 다시 보면 연락하라 했으며, 공유는 쉽고 삭제는 어렵다.",
-   "source": "L6 본문 2대목 Laundry 답장 1"
+   "explain": "온라인 복사본은 모두 지웠지만 개인 기기에 남아 있을 수 있고(②○, ①·④×), 공유는 쉽고 삭제는 어려우며(③×), 다시 보면 Bella가 연락해야 한다(⑤×). ①·⑤는 통합본 문장, ③·④는 본문의 두 말을 맞바꾼 것.",
+   "source": "L6 본문 2대목 Laundry 답장 1 · 통합본 L6 p.38 T/F · 실전모의고사 21번"
   },
   {
    "no": 8,
@@ -246,15 +246,15 @@
    "points": 4,
    "stem": "윗글을 읽고 답할 수 <u>없는</u> 질문은?",
    "choices": [
-    "Why did Ms. Ali become a sports journalist?",
-    "When did Ms. Ali arrive at the baseball park?",
-    "What did Ms. Ali do before the game started?",
+    "Why did Ms. Ali decide to become a sports journalist?",
+    "Did Ms. Ali arrive at the baseball park after the game started?",
+    "Did Ms. Ali interview the players before the game?",
     "Which team won the baseball game?",
-    "Where was Ms. Ali's article posted?"
+    "Did Ms. Ali go to a press conference by herself after the game?"
    ],
    "answer": 4,
-   "explain": "① 스포츠·글쓰기 열정 ② 일찍 ③ 선수 인터뷰 ⑤ 온라인. 어느 팀이 이겼는지는 나오지 않는다.",
-   "source": "L5 본문 1대목 Ms. Ali"
+   "explain": "① 스포츠·글쓰기 열정 ② 아니다(일찍 도착) ③ 그렇다 ⑤ 아니다(다른 기자들과 함께). 어느 팀이 이겼는지는 나오지 않는다. ①은 학습지 p.6 질문, ②③⑤는 통합본 T/F 문장을 의문문으로 바꾼 것.",
+   "source": "L5 본문 1대목 Ms. Ali · 학습지 p.6 Details 4 · 통합본 L5 p.38 T/F"
   },
   {
    "no": 11,
@@ -313,14 +313,14 @@
    "points": 3,
    "stem": "윗글의 내용과 일치하는 것은?",
    "choices": [
-    "The writer received an email from a friend.",
-    "The writer didn't click on the link.",
-    "The writer asked the computer store to check the computer.",
-    "The computer store found nothing.",
-    "The bad programs made the computer fast."
+    "The writer clicked on the link in the email, and no website showed up.",
+    "The writer closed the website immediately, but he felt something was right.",
+    "The writer asked the computer store to check his computer, and they found that nobody added bad programs through the link.",
+    "Last month, the writer received an email from an unknown name.",
+    "The writer asked his friend to check his computer, and they found that someone added bad programs through the link."
    ],
-   "answer": 3,
-   "explain": "모르는 이름의 이메일이었고, 링크를 클릭했으며, 컴퓨터 가게가 나쁜 프로그램을 찾아냈고, 그 프로그램이 컴퓨터를 느리게 했다.",
+   "answer": 4,
+   "explain": "모르는 이름의 이메일을 받았고(④○), 링크를 누르자 웹사이트가 떴으며(①×), 뭔가 잘못되었다고 느꼈고(②×), 컴퓨터 가게가 누군가 나쁜 프로그램을 심은 것을 찾아냈다(③·⑤×). 선지는 본문 문장을 3인칭으로 옮기고 한 단어씩 바꾼 것.",
    "source": "L6 Review 2-1"
   },
   {
@@ -386,14 +386,14 @@
    "points": 3,
    "stem": "윗글의 제목으로 가장 알맞은 것은?",
    "choices": [
-    "MuzSearch: An App That Finds Song Titles",
-    "How to Sing a Song Well",
-    "The History of Music Apps",
-    "Why You Should Delete MuzSearch",
-    "Many Kinds of Microphones"
+    "A Special App, MuzSearch",
+    "Wait for a While",
+    "Press the Microphone Icon",
+    "Touch the Search Icon",
+    "Your Favorites"
    ],
    "answer": 1,
-   "explain": "노래 제목을 찾아 주는 앱 MuzSearch의 사용법 소개.",
+   "explain": "노래 제목을 찾아 주는 특별한 앱 MuzSearch를 소개하는 글이다. ②~⑤는 글에 나온 구절이지만 사용 단계의 세부 사항이다.",
    "source": "L6 Enjoy the Clip A"
   },
   {
@@ -560,15 +560,15 @@
     ]
    },
    "choices": [
-    "They sent him a new smartphone.",
-    "They asked the ad company to delete his information.",
-    "They called him from unknown numbers.",
-    "They clicked on the ad for him.",
-    "They filled out his information."
+    "Happy Digital Laundry ignored Jihun's request and took no action.",
+    "Happy Digital Laundry asked the ad company to delete his information.",
+    "Happy Digital Laundry clicked on ads or links from unknown sources.",
+    "Happy Digital Laundry requires customers to come to its office to get their help.",
+    "Happy Digital Laundry completely erased every copy from all devices."
    ],
    "answer": 2,
-   "explain": "Then, we asked the ad company to delete your information, and they did.",
-   "source": "L6 본문 4대목 Laundry 답장 2"
+   "explain": "Then, we asked the ad company to delete your information, and they did. ①·④·⑤는 통합본 T/F 문장(F), ③은 본문 당부(don't click on ads or links from unknown sources)를 바꾼 것.",
+   "source": "L6 본문 4대목 Laundry 답장 2 · 통합본 L6 p.38 T/F"
   },
   {
    "kind": "group",
@@ -588,21 +588,21 @@
    "stem": "윗글의 내용과 일치하지 <u>않는</u> 것은?",
    "choices": [
     "Bella saw her brother playing basketball last Friday.",
-    "Bella took a picture of her brother.",
+    "Bella was so impressed by her brother's basketball game that she took a picture of him.",
     "Something went wrong over the weekend.",
     "Bella's brother made a copy of the picture with bad comments.",
-    "Bella deleted her post immediately."
+    "Bella felt sorry for her brother for what happened with the picture."
    ],
    "answer": 4,
-   "explain": "복사본을 만든 것은 남동생이 아니라 '누군가'(Someone)이다.",
-   "source": "L6 본문 1대목 Bella"
+   "explain": "복사본을 만든 것은 남동생이 아니라 '누군가'(Someone)이다. ②·⑤는 통합본 T/F·선지 문장(T).",
+   "source": "L6 본문 1대목 Bella · 통합본 L6 p.38 T/F · 실전모의고사 21번"
   },
   {
    "no": 24,
    "points": 3,
    "stem": "ⓐ<u>it</u>이 가리키는 것은?",
    "choices": [
-    "the picture of her brother",
+    "the picture of him",
     "her social media",
     "basketball",
     "the copy",
@@ -619,13 +619,13 @@
    "stem": "글의 흐름상 (A)에 가장 적절한 것은?",
    "choices": [
     "However, the copies still remain online.",
-    "So, all the copies were removed.",
-    "Then, I took another picture.",
-    "However, my brother was happy about it.",
-    "Instead, I posted it again."
+    "So, the copies still remain online.",
+    "Someone made a copy of the picture with bad comments.",
+    "Over the weekend, something went wrong.",
+    "My article was posted online."
    ],
    "answer": 1,
-   "explain": "게시물을 지웠지만(However) 복사본은 여전히 남아 있어서 '모두 없애고 싶다'로 이어진다.",
+   "explain": "게시물을 지웠'지만'(However) 복사본은 여전히 남아 있어서 '모두 없애고 싶다'로 이어진다. ②는 연결어가 어긋나고, ③·④는 앞에 이미 나온 문장, ⑤는 Ms. Ali의 말.",
    "source": "L6 본문 1대목 Bella"
   },
   {
@@ -745,14 +745,14 @@
    "points": 3,
    "stem": "윗글의 내용을 바르게 이해한 사람은?",
    "choices": [
-    "Mia: The game was a baseball game.",
-    "John: The Miami Monsters won the game.",
-    "Jun: The Boston Wolves won by 10 points.",
-    "Jay: Michael James played for the Monsters.",
-    "Gary: Nobody is interested in his next game."
+    "민수: There was a big baseball game between the Boston Wolves and the Miami Monsters.",
+    "지호: The Miami Monsters won the game by 10 points.",
+    "수아: The Boston Wolves won the game by 10 points.",
+    "하은: Michael James played his best game of the season against the Wolves.",
+    "준서: Nobody is looking forward to his next game."
    ],
    "answer": 3,
-   "explain": "농구 경기였고, 보스턴 울브즈가 10점 차로 이겼으며, Michael James는 몬스터즈를 '상대로' 뛰었고, 모두가 다음 경기를 고대한다.",
+   "explain": "농구 경기였고(①×), 보스턴 울브즈가 10점 차로 이겼으며(③○, ②×), Michael James는 몬스터즈를 상대로 뛰었고(④×), 모두가 다음 경기를 고대한다(⑤×). 선지는 본문 문장 그대로와 한 단어 변형.",
    "source": "L5 Present Your Ideas — Sports News"
   }
  ]
