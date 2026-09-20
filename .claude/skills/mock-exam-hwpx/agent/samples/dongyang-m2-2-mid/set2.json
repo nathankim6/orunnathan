@@ -1,0 +1,613 @@
+{
+"school": "동양중학교",
+"grade": 2,
+"term": 2,
+"exam": "중간고사",
+"subject": "영어",
+"range": "Lesson 5~6",
+"publisher": "동아(윤정미)",
+"year": 2026,
+"set": 2,
+"items": [
+{
+"kind": "group",
+"label": "[1~5]",
+"direction": "다음 글을 읽고 물음에 답하시오.",
+"box": "Do you know Seok Hopil? His English name was Frank W. Schofield, but he loved his Korean name. It sounded similar __(A)__ his real name, and it also had a good meaning. Dr. Schofield was a Canadian doctor, and he first came to Korea in 1916 ⓐ<u>to teach medicine</u>. He wanted to teach in Korean, __(B)__ he began to learn Korean right away. ⓑ<u>He studied so hard that he was able to teach in Korean</u> after only a few years. ⓒ<u>He believed that every country has the right to be independent</u>, so he helped the Korean independence movement. On March 1, 1919, Dr. Schofield ⓓ<u>heard people to shout</u> for Korean independence in Tapgol Park. He took pictures of the event with his camera. He then wrote an article about the historic event and ⓔ<u>sent it to foreign newspapers with his pictures</u>."
+},
+{
+"no": 1,
+"points": 3,
+"stem": "윗글의 흐름상 빈칸 (A)에 들어갈 단어로 알맞은 것은?",
+"choices": [
+"at",
+"to",
+"with",
+"for",
+"of"
+],
+"inline": true,
+"answer": 2,
+"explain": "similar to ~: ~와 비슷한.",
+"source": "L6 본문 · 어휘"
+},
+{
+"no": 2,
+"points": 4,
+"stem": "윗글의 밑줄 친 ⓐ~ⓔ 중 어법상 옳지 않은 것은?",
+"choices": [
+"ⓐ",
+"ⓑ",
+"ⓒ",
+"ⓓ",
+"ⓔ"
+],
+"inline": true,
+"answer": 4,
+"explain": "지각동사 hear + 목적어 + 동사원형/-ing: heard people shouting(shout).",
+"source": "L6 본문 · 지각동사"
+},
+{
+"no": 3,
+"points": 3,
+"stem": "윗글의 흐름상 빈칸 (B)에 들어갈 말로 가장 적절한 것은?",
+"choices": [
+"but",
+"because",
+"so",
+"or",
+"though"
+],
+"inline": true,
+"answer": 3,
+"explain": "한국어로 가르치고 싶었다 → 그래서(so) 배우기 시작했다.",
+"source": "L6 본문"
+},
+{
+"no": 4,
+"points": 3,
+"stem": "윗글을 읽고 대답을 찾을 수 없는 질문은?",
+"choices": [
+"Where was Dr. Schofield from?",
+"Why did Dr. Schofield come to Korea in 1916?",
+"Why did Dr. Schofield begin to learn Korean?",
+"How many pictures did Dr. Schofield take on March 1, 1919?",
+"What did Dr. Schofield do after he took pictures of the event?"
+],
+"answer": 4,
+"explain": "사진의 수는 나오지 않는다.",
+"source": "L6 본문"
+},
+{
+"no": 5,
+"points": 3,
+"stem": "<보기>의 (A)~(D)를 윗글에서 일어난 일의 순서로 바르게 배열한 것은?",
+"box": {
+"title": "< 보 기 >",
+"lines": [
+"(A) He sent an article to foreign newspapers with his pictures.",
+"(B) He came to Korea to teach medicine.",
+"(C) He took pictures of the people in Tapgol Park.",
+"(D) He learned Korean and was able to teach in Korean."
+]
+},
+"choices": [
+"(B) - (C) - (D) - (A)",
+"(B) - (D) - (C) - (A)",
+"(B) - (D) - (A) - (C)",
+"(D) - (B) - (C) - (A)",
+"(C) - (B) - (D) - (A)"
+],
+"answer": 2,
+"explain": "1916 입국 → 한국어 습득 → 1919 사진 → 기사 송고.",
+"source": "L6 본문"
+},
+{
+"kind": "group",
+"label": "[6~7]",
+"direction": "다음 글을 읽고 물음에 답하시오.",
+"box": "The final stop of our tour today is Muswell Hill. (A) Can't see any street artworks? (B) Well, look down and look closely. Do you see the little chewing gum paintings? (C) They are by the artist Ben Wilson. Wilson is well known for painting pictures on gum that people ⓐ[drop / pick] on the street. (D) For example, the one over here is a happy birthday wish for a loved one. (E) Wilson's gum paintings are ⓑ[huge / tiny], but they give great ⓒ[pleasure / trouble] to many people."
+},
+{
+"no": 6,
+"points": 3,
+"stem": "윗글의 흐름상 다음 문장이 들어갈 가장 적절한 곳은?",
+"box": "His gum paintings often carry personal messages from people he meets on the street.",
+"choices": [
+"(A)",
+"(B)",
+"(C)",
+"(D)",
+"(E)"
+],
+"inline": true,
+"answer": 4,
+"explain": "개인적 메시지를 담는다 → For example, 생일 축하 메시지.",
+"source": "L5 본문"
+},
+{
+"no": 7,
+"points": 3,
+"stem": "윗글의 흐름상 ⓐ~ⓒ에 들어갈 단어로 바르게 짝지어진 것은?",
+"choices_table": {
+"header": [
+"",
+"ⓐ",
+"ⓑ",
+"ⓒ"
+],
+"rows": [
+[
+"①",
+"drop",
+"huge",
+"pleasure"
+],
+[
+"②",
+"drop",
+"tiny",
+"pleasure"
+],
+[
+"③",
+"drop",
+"tiny",
+"trouble"
+],
+[
+"④",
+"pick",
+"huge",
+"trouble"
+],
+[
+"⑤",
+"pick",
+"tiny",
+"pleasure"
+]
+]
+},
+"answer": 2,
+"explain": "길에 버리는(drop) 껌 / 아주 작지만(tiny) / 큰 기쁨(pleasure).",
+"source": "L5 본문 · 어휘"
+},
+{
+"no": 8,
+"points": 3,
+"stem": "다음 중 밑줄 친 that의 쓰임이 나머지와 다른 하나는?",
+"choices": [
+"The place <u>that</u> we are going to visit is Shoreditch.",
+"He likes to eat the pizza <u>that</u> his mom makes.",
+"Here are the presents <u>that</u> we sent you.",
+"I think <u>that</u> the room feels warm because of it.",
+"The song <u>that</u> I listened to yesterday was really peaceful."
+],
+"answer": 4,
+"explain": "④ 접속사 that. 나머지는 목적격 관계대명사.",
+"source": "학습지 Grammar ② 관계대명사 Practice A"
+},
+{
+"kind": "group",
+"label": "[9~10]",
+"direction": "다음 글을 읽고 물음에 답하시오.",
+"box": "The painting I want to write about is The Red Room by Henri Matisse. This painting shows a red room with a window. In the room, there are two chairs and a big table. We also see a woman who is setting the table. (A) <u>I like the red color of this painting. I think that the room feels warm because of it.</u>"
+},
+{
+"no": 9,
+"points": 3,
+"stem": "윗글의 밑줄 친 (A)에 나타난 글쓴이의 태도로 가장 적절한 것은?",
+"choices": [
+"negative",
+"positive",
+"worried",
+"bored",
+"scared"
+],
+"inline": true,
+"answer": 2,
+"explain": "붉은 색이 마음에 들고 방이 따뜻하게 느껴진다 → 긍정적.",
+"source": "L5 Think and Write"
+},
+{
+"no": 10,
+"points": 3,
+"stem": "윗글의 내용과 일치하지 않는 것은?",
+"choices": [
+"The writer wants to write about The Red Room.",
+"Henri Matisse painted The Red Room.",
+"There is a window in the red room.",
+"A woman in the painting is sitting on a chair.",
+"The writer likes the red color of the painting."
+],
+"answer": 4,
+"explain": "여자는 상을 차리고 있다.",
+"source": "L5 Think and Write"
+},
+{
+"kind": "group",
+"label": "[11~12]",
+"direction": "다음 글을 읽고 물음에 답하시오.",
+"box": "Hello, everyone. The movie I'm going to introduce today is The Song of Love. It's a movie about a pianist who loses his love for music. He moves to a small town for a new start. There, he begins teaching music to children and finds his love for music again. This movie has great music and a ⓐ<u>touching</u> story, so I strongly recommend it."
+},
+{
+"no": 11,
+"points": 3,
+"stem": "윗글의 밑줄 친 ⓐ touching의 영영풀이로 옳은 것은?",
+"choices": [
+"making you feel sad or emotional",
+"to suggest that someone or something would be good",
+"full of life and energy",
+"to become aware of something by hearing about it from somebody else",
+"a person who comes from another country"
+],
+"answer": 1,
+"explain": "touching: 감동적인.",
+"source": "L6 어휘 영영풀이"
+},
+{
+"no": 12,
+"points": 4,
+"stem": "윗글의 pianist와 가장 비슷한 경험을 한 학생은?",
+"choices": [
+"S 1: \"I stopped playing the piano because I was too busy, and I never played it again.\"",
+"S 2: \"I lost interest in drawing, but I found it again while I was teaching my little brother to draw.\"",
+"S 3: \"I moved to a big city and made many new friends there.\"",
+"S 4: \"I practiced the violin every day and won first prize in a contest.\"",
+"S 5: \"I watched a touching movie about music with my family.\"\n(*S = Student)"
+],
+"answer": 2,
+"explain": "사랑(흥미)을 잃었다가 가르치면서 되찾는다.",
+"source": "L6 Listen Up"
+},
+{
+"no": 13,
+"points": 3,
+"stem": "다음 문장들의 빈칸에 공통으로 들어갈 단어는?",
+"box": "○ He is famous _____ using only lines and dots in his paintings.\n○ Can you recommend a good sci-fi novel _____ me?",
+"choices": [
+"to",
+"for",
+"at",
+"with",
+"of"
+],
+"inline": true,
+"answer": 2,
+"explain": "be famous for / recommend A for B.",
+"source": "L5 본문 · L6 대화문"
+},
+{
+"no": 14,
+"points": 4,
+"stem": "다음 중 어법상 옳지 않은 것은?",
+"choices": [
+"The friend whom I invited to my house came on time.",
+"Do you know the man who works in this company?",
+"The song which I listened to yesterday was really peaceful.",
+"Here are the presents who we sent you.",
+"The book which I read yesterday was very interesting."
+],
+"answer": 4,
+"explain": "선행사가 사물(presents) → which/that.",
+"source": "학습지 관계대명사 Practice A"
+},
+{
+"kind": "group",
+"label": "[15~16]",
+"direction": "다음 글을 읽고 물음에 답하시오.",
+"box": "On February 28, 1919, a man came to Dr. Schofield's house.\nMan: Dr. Schofield, I have a special favor to ask you.\nDr. Schofield: What can I do for you?\nMan: Many people are going to gather tomorrow for the independence of Korea. Could you take pictures of the event and share them with the world?\nAt 2 p.m. on March 1, Dr. Schofield was hiding in a building and saw a large group of people gathering outside. He began to take pictures.\nDr. Schofield: Unbelievable! There are so many people here. I hope the world will learn about this important event through my pictures."
+},
+{
+"no": 15,
+"points": 3,
+"stem": "윗글에서 남자가 Dr. Schofield에게 부탁한 것으로 가장 적절한 것은?",
+"choices": [
+"to join the people gathering for the independence of Korea",
+"to take pictures of the event and share them with the world",
+"to hide in a building on March 1",
+"to write a letter to the Korean government",
+"to teach Korean people how to take pictures"
+],
+"answer": 2,
+"explain": "Could you take pictures of the event and share them with the world?",
+"source": "L6 본문"
+},
+{
+"no": 16,
+"points": 4,
+"stem": "윗글을 다음과 같이 요약하고자 할 때, 빈칸 ⓐ~ⓒ에 들어갈 말로 바르게 짝지어진 것은?",
+"box": "On February 28, 1919, a man asked Dr. Schofield for a ⓐ___. The next day, Dr. Schofield ⓑ___ in a building and took pictures of the people gathering for Korean ⓒ___.",
+"choices_table": {
+"header": [
+"",
+"ⓐ",
+"ⓑ",
+"ⓒ"
+],
+"rows": [
+[
+"①",
+"favor",
+"hid",
+"independence"
+],
+[
+"②",
+"favor",
+"hid",
+"medicine"
+],
+[
+"③",
+"favor",
+"stood",
+"independence"
+],
+[
+"④",
+"picture",
+"hid",
+"medicine"
+],
+[
+"⑤",
+"picture",
+"stood",
+"independence"
+]
+]
+},
+"answer": 1,
+"explain": "부탁(favor) / 숨어서(hid) / 독립(independence).",
+"source": "L6 본문"
+},
+{
+"kind": "group",
+"label": "[17~18, 서답형1]",
+"direction": "다음 글을 읽고 물음에 답하시오.",
+"box": "We are now in Finsbury Park to see a painting by Banksy, an internationally famous street artist. Banksy's artworks often (A) <u>carry</u> social messages, and the green tree you see over there is a good example. As you can see, he created a green tree by spraying green paint on a wall behind a leafless tree. (가) <u>그 나무 옆에는 분무기를 들고 있는 사람이 한 명 있습니다.</u> What message does Banksy want to give us through this painting? In many people's opinion, he is telling us that nature is having a hard time. They think he wants us to take better care of it."
+},
+{
+"no": 17,
+"points": 3,
+"stem": "윗글의 내용과 일치하는 것은?",
+"choices": [
+"Banksy's painting is in Muswell Hill.",
+"Banksy painted a green tree on a leafless tree.",
+"Banksy's artworks rarely carry social messages.",
+"Banksy made the green tree by spraying green paint on a wall.",
+"Most people think Banksy is telling us that nature is doing well."
+],
+"answer": 4,
+"explain": "by spraying green paint on a wall behind a leafless tree.",
+"source": "L5 본문"
+},
+{
+"no": 18,
+"points": 4,
+"stem": "윗글의 밑줄 친 (A) carry와 같은 의미로 carry가 쓰인 것은?",
+"choices": [
+"He is carrying a heavy box up the stairs.",
+"The bus carries about 40 people.",
+"Her songs carry messages of hope.",
+"Please carry these bags to the car.",
+"The river carries water to the sea."
+],
+"answer": 3,
+"explain": "carry: (메시지를) 지니다, 담고 있다.",
+"source": "L5 어휘"
+},
+{
+"kind": "essay",
+"no": "서답형1",
+"points": 5,
+"stem": "윗글의 밑줄 친 우리말 (가)를 <조건>에 맞춰 바르게 영작하시오.",
+"condition": [
+"다음 단어를 반드시 사용할 것 (※ 단, 필요시 단어의 형태를 변형할 것): next to, there, a person, who, hold, a sprayer",
+"주격 관계대명사 who를 사용하여 총 13단어인 문장을 작성할 것"
+],
+"answer": "Next to the tree, there is a person who is holding a sprayer.",
+"explain": "there is + 명사 + who is -ing. 13단어.",
+"source": "L5 본문 · 관계대명사"
+},
+{
+"no": 19,
+"points": 3,
+"stem": "다음 문장들의 빈칸 ⓐ~ⓒ에 들어갈 단어가 바르게 짝지어진 것은?",
+"box": "○ Look closely ⓐ___ the eyes of the three figures.\n○ ⓑ___ STIK, the three figures represent the past, present, and future.\n○ Wilson is well known ⓒ___ painting pictures on gum.",
+"choices_table": {
+"header": [
+"",
+"ⓐ",
+"ⓑ",
+"ⓒ"
+],
+"rows": [
+[
+"①",
+"at",
+"According to",
+"for"
+],
+[
+"②",
+"at",
+"Thanks to",
+"of"
+],
+[
+"③",
+"in",
+"According to",
+"of"
+],
+[
+"④",
+"to",
+"Thanks to",
+"for"
+],
+[
+"⑤",
+"for",
+"According to",
+"for"
+]
+]
+},
+"answer": 1,
+"explain": "look at / according to / be well known for.",
+"source": "L5 어휘 숙어"
+},
+{
+"no": 20,
+"points": 3,
+"stem": "다음 대화에서 A, B의 관계로 가장 적절한 것은?",
+"box": "A: What kinds of magazines do you have?\nB: We have all kinds of magazines.\nA: I'm really interested in science. Can you recommend a science magazine for me?\nB: Sure. You'll love this one, Teen's Science.",
+"choices_table": {
+"header": [
+"",
+"A",
+"B"
+],
+"rows": [
+[
+"①",
+"customer",
+"clerk"
+],
+[
+"②",
+"clerk",
+"customer"
+],
+[
+"③",
+"teacher",
+"student"
+],
+[
+"④",
+"tourist",
+"guide"
+],
+[
+"⑤",
+"doctor",
+"patient"
+]
+]
+},
+"answer": 1,
+"explain": "잡지를 찾는 손님과 추천해 주는 점원.",
+"source": "L6 Watch and Talk A-4"
+},
+{
+"kind": "group",
+"label": "[21, 서답형2]",
+"direction": "다음 대화를 읽고 물음에 답하시오.",
+"box": "G: Liam, can you please help me? I need to find some books for my homework.\nB: What kinds of books are you looking for, Somi?\nG: I'm looking for books on famous people who helped others. I need to write an essay.\nB: Who do you want to write about?\nG: I was thinking about Dr. Schweitzer, but can you recommend someone else for me?\nB: What about Audrey Hepburn?\nG: I know she was a famous actor, but what did she do to help others?\nB: <u>그녀는 특히 아이들을 위해서 많은 자원봉사를 했어.</u>\nG: Really? Then, I can write about her. Thank you!"
+},
+{
+"no": 21,
+"points": 3,
+"stem": "다음 메모에서 위 대화의 내용과 일치하지 않는 것은?",
+"box": "Somi's Homework\n① What: an essay  ② Topic: famous people who helped others\n③ Somi's first idea: Dr. Schweitzer  ④ Liam's recommendation: Audrey Hepburn\n⑤ Audrey Hepburn: a famous singer",
+"choices": [
+"①",
+"②",
+"③",
+"④",
+"⑤"
+],
+"inline": true,
+"answer": 5,
+"explain": "Audrey Hepburn은 유명한 배우(actor)였다.",
+"source": "L6 Watch and Talk C"
+},
+{
+"kind": "essay",
+"no": "서답형2",
+"points": 5,
+"stem": "위 대화의 밑줄 친 우리말을 <조건>에 맞춰 바르게 영작하시오.",
+"condition": [
+"다음 단어를 반드시 사용할 것 (※ 단, 필요시 단어의 형태를 변형할 것): do, a lot of, volunteer work, especially, for children",
+"총 10단어인 문장을 작성할 것"
+],
+"answer": "She did a lot of volunteer work, especially for children.",
+"explain": "do volunteer work. 10단어.",
+"source": "L6 Watch and Talk C"
+},
+{
+"no": 22,
+"points": 4,
+"stem": "다음 중 어법상 옳지 않은 것은?",
+"choices": [
+"I saw a large group of people gathering outside.",
+"She heard someone knocking on the door.",
+"We watched the sun rise over the sea.",
+"He felt something to move under his feet.",
+"I smelled something burning in the kitchen."
+],
+"answer": 4,
+"explain": "지각동사 feel + 목적어 + 동사원형/-ing: felt something move(moving).",
+"source": "L6 문법 지각동사"
+},
+{
+"no": 23,
+"points": 4,
+"stem": "다음 중 우리말 영작이 바르지 않은 것은?",
+"choices": [
+"나는 예전에는 커피를 좋아하지 않았지만, 지금은 매일 두 잔씩 마신다.\n→ I didn't use to like coffee, but now I drink two cups every day.",
+"이 돈은 지역 예술가들을 지원하는 데 사용될 것이다.\n→ This money will be used to support local artists.",
+"이 장소는 오래전에 서점이었나요?\n→ Did this place use to be a bookstore a long time ago?",
+"그는 아직 많은 사람들 앞에서 말하는 것에 익숙하지 않다.\n→ He isn't used to speak in front of many people yet.",
+"그 새 쇼핑몰이 지어지기 전에는 여기에 큰 공원이 있었다.\n→ There used to be a large park here before the new shopping mall was built."
+],
+"answer": 4,
+"explain": "be used to + -ing: isn't used to speaking.",
+"source": "학습지 used to Practice B"
+},
+{
+"no": 24,
+"points": 4,
+"stem": "다음 중 어법상 옳은 것은?",
+"choices": [
+"Who was the person to who you were talking on the phone just now?",
+"This is the house in that I lived.",
+"The medicine that doctors developed reduce pain quickly.",
+"The law that the government introduced protects endangered animals.",
+"I can't find the restaurant that my friend recommended it for dinner."
+],
+"answer": 4,
+"explain": "① to whom ② in which ③ reduces ⑤ it 삭제.",
+"source": "학습지 관계대명사 Practice A-6 · C"
+},
+{
+"kind": "essay",
+"no": "서답형3",
+"points": 5,
+"stem": "다음 대화의 밑줄 친 G의 우리말을 <조건>에 맞춰 바르게 영작하시오.",
+"box": "B: What kinds of movies do you like?\nG: I like action movies. Spider-Man is my favorite.\nB: Oh, I didn't see it.\nG: You didn't? <u>그것은 너무 재미있어서 나는 그것을 세 번 봤어.</u> I strongly recommend it.",
+"condition": [
+"다음 단어를 반드시 사용할 것 (※ 단, 필요시 단어의 형태를 변형할 것): fun, watch, three times",
+"so ~ that 구문을 사용하여 총 10단어인 문장을 작성할 것"
+],
+"answer": "It is so fun that I watched it three times.",
+"explain": "so + 형용사 + that + 주어 + 동사. 10단어.",
+"source": "L6 Watch and Talk A-3 · so ~ that"
+},
+{
+"kind": "essay",
+"no": "서답형4",
+"points": 5,
+"stem": "<보기>와 같이 주어진 두 문장을 한 문장으로 완성하시오.",
+"box": "< 보 기 > I know a girl. + Everyone likes her. ⇨ I know a girl whom everyone likes.\n\nThe student doesn't know the answer. + I met him yesterday.",
+"answer": "The student whom[who/that] I met yesterday doesn't know the answer.",
+"explain": "목적격 관계대명사 whom(who/that). him 은 쓰지 않는다.",
+"source": "학습지 관계대명사 Practice B-6"
+}
+]
+}
