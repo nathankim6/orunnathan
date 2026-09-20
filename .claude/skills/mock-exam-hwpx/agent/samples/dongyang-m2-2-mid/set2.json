@@ -77,15 +77,15 @@
 "points": 3,
 "stem": "윗글을 읽고 대답을 찾을 수 없는 질문은?",
 "choices": [
-"When did the man visit Dr. Schofield's house?",
-"What did the man ask Dr. Schofield to do?",
-"Where was Dr. Schofield at 2 p.m. on March 1?",
+"On February 28, 1919, who came to Dr. Schofield's house?",
+"Was Dr. Schofield asked to take pictures of an important event?",
+"On March 1, where was Dr. Schofield hiding?",
 "How many pictures did Dr. Schofield take?",
-"What did Dr. Schofield hope?"
+"Did Dr. Schofield hope the world would learn about the event?"
 ],
 "answer": 4,
-"explain": "사진을 몇 장 찍었는지는 나오지 않는다. ① 1919년 2월 28일 ② 사진을 찍어 세계에 알리기 ③ 건물 안에 숨어 있었음 ⑤ 세계가 이 사건을 알게 되기를.",
-"source": "L6 본문 1~2문단"
+"explain": "사진을 몇 장 찍었는지는 나오지 않는다. ① a man ② Yes(부탁받았다) ③ in a building ⑤ Yes. 질문은 본문·통합본 T/F 문장을 의문문으로 바꾼 것.",
+"source": "L6 본문 1~2문단 · 통합본 L6 READING T/F 01~06"
 },
 {
 "no": 5,
@@ -94,11 +94,11 @@
 "box": {
 "title": "< 보 기 >",
 "lines": [
-"(A) Dr. Schofield began to take pictures.",
-"(B) A man came to Dr. Schofield's house.",
-"(C) A large group of people gathered outside.",
-"(D) The man asked Dr. Schofield for a special favor.",
-"(E) Dr. Schofield hid in a building."
+"(A) Dr. Schofield hoped the world would learn about the event.",
+"(B) On February 28, 1919, a man came to Dr. Schofield's house.",
+"(C) He began to take pictures.",
+"(D) The man asked Dr. Schofield to take pictures of an important event.",
+"(E) Dr. Schofield was hiding in a building and saw a large group of people gathering outside."
 ]
 },
 "choices": [
@@ -109,8 +109,8 @@
 "(D) - (B) - (C) - (E) - (A)"
 ],
 "answer": 1,
-"explain": "2월 28일 남자가 찾아옴 → 부탁 → 3월 1일 건물에 숨음 → 사람들이 모임 → 사진을 찍기 시작. 보기 문장은 본문을 요약해 바꿔 쓴 것.",
-"source": "L6 본문 1~2문단"
+"explain": "2월 28일 남자가 찾아옴 → 부탁 → 3월 1일 건물에 숨어 사람들이 모이는 것을 봄 → 사진을 찍기 시작 → 세계가 알게 되기를 바람. 보기는 본문·통합본 T/F 문장 그대로.",
+"source": "L6 본문 1~2문단 · 통합본 L6 READING T/F 01·03·06"
 },
 {
 "kind": "group",
@@ -239,15 +239,15 @@
 "points": 3,
 "stem": "윗글의 내용과 일치하지 않는 것은?",
 "choices": [
-"Dr. Schofield's Korean name is Seok Hopil.",
-"His Korean name sounds similar to his English name.",
-"His Korean name has a good meaning.",
-"He helped the Korean independence movement because he was asked to by the government.",
-"After 1958, he worked hard to help poor students in Korea."
+"Seok Hopil was Frank W. Schofield's Korean name.",
+"His English name was Frank W. Schofield, but he loved his Korean name.",
+"Dr. Schofield supported the Korean independence movement because he believed every country should be independent.",
+"Dr. Schofield came back to Korea in 1920 because the Korean government invited him.",
+"For the rest of his life, he worked hard to help Koreans, especially poor students."
 ],
 "answer": 4,
-"explain": "독립운동을 도운 까닭은 모든 나라는 독립할 권리가 있다고 믿어서이다.",
-"source": "L6 After You Read"
+"explain": "한국 정부의 초청으로 돌아온 해는 1958년(What did you do after you returned to Korea in 1958?). 나머지는 본문·통합본 T/F 문장 그대로.",
+"source": "L6 After You Read · 통합본 L6 READING T/F 07·12·18"
 },
 {
 "kind": "group",
@@ -277,17 +277,17 @@
 {
 "no": 12,
 "points": 4,
-"stem": "윗글의 Banksy의 나무 그림과 같은 종류의 메시지를 담은 작품은?",
+"stem": "윗글을 읽고 Banksy의 그림에 대해 바르게 이해한 학생은?",
 "choices": [
-"a painting of a birthday cake for a friend",
-"a painting of a fish dying in a river full of trash",
-"a painting of a cute dog with big eyes",
-"a painting of a red room with two chairs and a big table",
-"a painting of three figures with only lines and dots"
+"S 1: \"Banksy is a street artist who is only famous in London.\"",
+"S 2: \"Banksy's artworks usually include social messages.\"",
+"S 3: \"The tree in Banksy's artwork actually has real leaves.\"",
+"S 4: \"The person next to the tree is holding a camera.\"",
+"S 5: \"Banksy's artwork carries only personal messages.\""
 ],
 "answer": 2,
-"explain": "Banksy의 그림은 자연이 힘든 시간을 보내고 있다는 사회적 메시지를 담는다. ②만 환경 문제를 말한다. ①은 개인적 메시지, ④ Matisse, ⑤ STIK.",
-"source": "L5 본문 2문단"
+"explain": "② Banksy's artworks often carry social messages. ① internationally famous ③ a leafless tree(잎이 없는 나무 뒤 벽에 그림) ④ holding a sprayer ⑤ social messages. 학생 발화는 통합본 L5 본문 T/F·일치 문장 그대로.",
+"source": "L5 본문 2문단 · 통합본 L5 READING T/F 09~13·일치 ⑤"
 },
 {
 "no": 13,
@@ -336,21 +336,21 @@
 "points": 3,
 "stem": "윗글의 글쓴이가 Kim Mandeok의 삶에서 배운 것으로 가장 적절한 것은?",
 "choices": [
-"Save your money for the future.",
-"Selfless love for others can change a lot of things.",
-"A successful businesswoman should sell rice.",
-"People respect those who have a lot of money.",
-"Do not give away all your money to others."
+"Everyone has the right to learn.",
+"Selfless love for others can make a big difference.",
+"Modern street art makes cities colorful and lively.",
+"People are working together to create the artworks.",
+"She did a lot of volunteer work, especially for children."
 ],
 "answer": 2,
-"explain": "selfless love for others can make a big difference(큰 변화를 만들 수 있다).",
+"explain": "From her life, I learned that selfless love for others can make a big difference. ① L6 다의어 예문 ③ L5 본문 ④ L5 Culture Project ⑤ L6 대화문(Audrey Hepburn) 문장.",
 "source": "L6 Think and Write"
 },
 {
 "no": 16,
 "points": 4,
 "stem": "윗글을 다음과 같이 요약하고자 할 때, 빈칸 ⓐ~ⓒ에 들어갈 말로 바르게 짝지어진 것은?",
-"box": "Kim Mandeok was a ⓐ___ businesswoman. When she saw many people dying from hunger, she bought ⓑ___ with all her money and gave it to the poor. Her selfless love made many people ⓒ___ her.",
+"box": "She was a ⓐ___ businesswoman. In 1795, she saw many people dying from hunger. So, she bought ⓑ___ with all her money and gave it away to poor people. Her love for others was so selfless that many people ⓒ___ her.",
 "choices_table": {
 "header": [
 "",
@@ -363,36 +363,36 @@
 "①",
 "poor",
 "rice",
-"respect"
+"respected"
 ],
 [
 "②",
 "poor",
 "land",
-"forget"
+"forgot"
 ],
 [
 "③",
 "successful",
 "rice",
-"respect"
+"respected"
 ],
 [
 "④",
 "successful",
 "land",
-"respect"
+"respected"
 ],
 [
 "⑤",
 "successful",
 "rice",
-"forget"
+"forgot"
 ]
 ]
 },
 "answer": 3,
-"explain": "a successful businesswoman / bought rice / many people respected her.",
+"explain": "a successful businesswoman / bought rice / many people respected her. 본문 문장 그대로에 빈칸을 두었다.",
 "source": "L6 Think and Write"
 },
 {
@@ -411,30 +411,30 @@
 "points": 3,
 "stem": "윗글의 내용과 일치하는 것은?",
 "choices": [
-"Frank W. Schofield didn't like his Korean name.",
-"Seok Hopil sounded similar to Dr. Schofield's real name.",
-"Dr. Schofield was an American doctor.",
-"Dr. Schofield came to Korea in 1916 to learn Korean.",
-"Dr. Schofield learned Korean slowly for many years."
+"Dr. Schofield came to Korea in 1916 to teach mathematics.",
+"Dr. Schofield could teach in Korean after only a few months.",
+"Dr. Schofield was a doctor from Canada.",
+"Seok Hopil was Frank W. Schofield's English name.",
+"Dr. Schofield began to learn Korean because he wanted to teach in English."
 ],
-"answer": 2,
-"explain": "① loved his Korean name ③ Canadian ④ to teach medicine ⑤ after only a few years.",
-"source": "L6 본문 3~4문단"
+"answer": 3,
+"explain": "① medicine ② a few years ④ Korean name ⑤ to teach in Korean. 선지는 통합본 L6 본문 T/F 문장 그대로(④⑤는 한 단어만 바꿈).",
+"source": "L6 본문 3~4문단 · 통합본 L6 READING T/F 07~11"
 },
 {
 "no": 18,
 "points": 4,
 "stem": "윗글을 읽고 Dr. Schofield에 대해 바르게 이해한 학생은?",
 "choices": [
-"S 1: \"He came to Korea to study Korean medicine.\"",
-"S 2: \"He taught medicine in English for the rest of his life.\"",
-"S 3: \"He believed that Korea had the right to be independent, so he helped its independence movement.\"",
-"S 4: \"He got a Korean name because the Korean government gave it to him.\"",
-"S 5: \"He gave up learning Korean after a few years.\""
+"S 1: \"He first came to Korea in 1916 to learn medicine.\"",
+"S 2: \"He wanted to teach in English, so he began to learn Korean right away.\"",
+"S 3: \"He believed that every country has the right to be independent, so he helped the Korean independence movement.\"",
+"S 4: \"He studied so hard that he was able to teach in Korean after only a few months.\"",
+"S 5: \"His English name was Frank W. Schofield, but he hated his Korean name.\""
 ],
 "answer": 3,
-"explain": "③ He believed that every country has the right to be independent, so he helped the Korean independence movement. ① 의학을 가르치러 옴 ② 한국어로 가르침 ④ 근거 없음 ⑤ 몇 년 만에 한국어로 가르침.",
-"source": "L6 본문 4문단"
+"explain": "③ 본문 문장 그대로. ① to teach medicine ② to teach in Korean ④ a few years ⑤ loved his Korean name — 본문 문장에서 한 단어씩 바꾼 것.",
+"source": "L6 본문 3~4문단"
 },
 {
 "kind": "essay",
@@ -567,11 +567,11 @@
 "box": {
 "title": "My Essay Plan",
 "lines": [
-"① Homework: write an essay",
-"② Topic: famous people who helped others",
-"③ My first idea: Dr. Schweitzer",
-"④ Liam's recommendation: Audrey Hepburn, a famous actor",
-"⑤ What she did: a lot of volunteer work, especially for old people"
+"① I need to find some books for my homework.",
+"② I'm looking for books on famous people who helped others.",
+"③ I was thinking about Dr. Schweitzer.",
+"④ Audrey Hepburn was a famous singer that helped others.",
+"⑤ She did a lot of volunteer work, especially for children."
 ]
 },
 "choices": [
@@ -582,9 +582,9 @@
 "⑤"
 ],
 "inline": true,
-"answer": 5,
-"explain": "especially for children(아이들을 위해). 그림·표 대신 메모 글로 물었다.",
-"source": "L6 Watch and Talk C"
+"answer": 4,
+"explain": "I know she was a famous actor(배우). 메모 문장은 대화문·통합본 L6 대화 일치 문장 그대로. 그림·표 대신 메모 글로 물었다.",
+"source": "L6 Watch and Talk C · 통합본 L6 DIALOGUES 일치 ④"
 },
 {
 "kind": "essay",
@@ -639,10 +639,10 @@
 "I love the cookies whom my mom made.",
 "This is the museum which I want to visit in London.",
 "The girl which I met in the park is Mina.",
-"That's the man about that my sister was talking."
+"This is the house in that I lived."
 ],
 "answer": 3,
-"explain": "① 사람 선행사 → whom/that ② 사물 선행사 → which/that ④ 사람 → whom/that ⑤ 전치사 뒤에는 that 불가 → about whom. ③ 사물 선행사 + which 옳다.",
+"explain": "① 사람 선행사 → whom/that ② 사물 선행사 → which/that ④ 사람 → whom/that ⑤ 전치사 뒤에는 that 불가 → in which(학습지 p.5 표). ③ 사물 선행사 + which 옳다.",
 "source": "통합본 L5 GRAMMAR 목적격 관계대명사 연습 01~07 · 학습지 p.5"
 },
 {
