@@ -13,17 +13,31 @@
    "no": 1,
    "points": 3,
    "stem": "대화의 내용과 일치하는 것은?",
-   "box": "G: Eric, I like your bag! It’s so cute.\nB: Thanks, Yena. I made it from old jeans.\nG: Really? That’s amazing!\nB: We can make new things from old things. It’s called upcycling.\nG: I’d like to try it. What can I do to start upcycling?\nB: First, you can find something you don’t need.\nG: Well, I have an old skirt at home.\nB: Good. Then think about an item you want to make.\nG: Oh, I want to make a pencil case.\nB: Perfect. And don’t forget to wash the skirt before upcycling.\nB: boy, G: girl",
+   "box": {
+    "lines": [
+     "G: Eric, I like your bag! It’s so cute.",
+     "B: Thanks, Yena. I made it from old jeans.",
+     "G: Really? That’s amazing!",
+     "B: We can make new things from old things. It’s called upcycling.",
+     "G: I’d like to try it. What can I do to start upcycling?",
+     "B: First, you can find something you don’t need.",
+     "G: Well, I have an old skirt at home.",
+     "B: Good. Then think about an item you want to make.",
+     "G: Oh, I want to make a pencil case.",
+     "B: Perfect. And don’t forget to wash the skirt before upcycling.",
+     "B: boy, G: girl"
+    ]
+   },
    "choices": [
     "Eric bought his bag at a flea market.",
     "Eric made his bag from an old skirt.",
-    "Yena wants to make a pencil case from her old skirt.",
-    "Yena should buy a new skirt before upcycling.",
+    "Yena wants to make a pencil case.",
+    "Yena should wash the skirt after upcycling.",
     "Eric doesn’t know what upcycling is."
    ],
    "answer": 3,
-   "explain": "old skirt → pencil case.",
-   "source": "L5 Listen and Speak 1-B"
+   "explain": "I want to make a pencil case. ① made it ② old jeans ④ before upcycling ⑤ Eric 이 업사이클링을 설명한다.",
+   "source": "L5 Listen & Speak 1-B (교과서 대화문)"
   },
   {
    "no": 2,
@@ -31,67 +45,82 @@
    "stem": "어법이 맞는 문장은?",
    "choices": [
     "Every students should recycle plastic bottles.",
-    "Each student use a tumbler at school.",
-    "All the children were playing outside.",
-    "Every dog love to go for a walk.",
-    "All the information are important."
+    "All the children was playing outside.",
+    "Each key opens a different door.",
+    "I heard my friend to talk on the phone.",
+    "All the furniture in the rooms are expensive."
    ],
    "answer": 3,
-   "explain": "① Every student ② uses ④ loves ⑤ is(셀 수 없는 명사).",
-   "source": "학습지 L6 grammar 1·2"
+   "explain": "① Every student ② were ④ talk/talking ⑤ is(셀 수 없는 명사). 학습지 p.43~44 문장 변형.",
+   "source": "선생님 제작 어법 문장 (학습지 p.42~44 each·every·all 수일치 · 지각동사)"
   },
   {
    "no": 3,
    "points": 3,
    "stem": "대화의 흐름상 밑줄 (A)에 들어갈 말로 가장 알맞은 것은?",
-   "box": "G: The air is terrible today.\nB: Yeah. The sky looks gray. (A)______________________\nG: We can plant more trees.\nB: Right. Trees will help clean the air.\nG: And don’t forget to ride your bike or walk to nearby places.",
+   "box": {
+    "lines": [
+     "B: I feel tired these days.",
+     "G: (A)______________________________",
+     "B: Once a week. I usually stay up late watching videos.",
+     "G: It’s important to get eight hours of sleep every night.",
+     "B: You’re right. I’ll try to go to bed earlier.",
+     "G: Great. Good sleep makes a big difference.",
+     "B: boy, G: girl"
+    ]
+   },
    "choices": [
-    "What can we do to reduce air pollution?",
-    "How often do you plant trees?",
-    "Why is the sky gray today?",
-    "What do you think of the weather?",
-    "Where can we ride a bike?"
+    "How often do you get enough sleep, Sejun?",
+    "What can I do to sleep well?",
+    "Why don’t you watch videos, Sejun?",
+    "How long have you been tired?",
+    "Do you have dinner with your family?"
    ],
    "answer": 1,
-   "explain": "We can plant more trees 는 방법 제안.",
-   "source": "L5 Listen and Speak 1-A3"
+   "explain": "Once a week. 로 답하므로 빈도를 묻는 How often ~?",
+   "source": "L6 Listen & Speak 1-A3 (교과서 대화문)"
   },
   {
    "no": 4,
    "points": 3,
    "stem": "어법상 옳은 문장을 모두 고른 것은?",
-   "box": "ⓐ It is dangerous to run on the road.\nⓑ The colder it gets, the more clothes he wears.\nⓒ It is not easy get up early.\nⓓ The more we laugh, the close we become.\nⓔ My dad advised me ride my bike slowly.\nⓕ She felt someone touching her shoulder.\nⓖ Every house on this street were painted last year.",
+   "box": "ⓐ I saw Sam laughing with his friends.\nⓑ Kelly heard someone to call her name.\nⓒ My teacher asked me close the door.\nⓓ Mr. Kim felt the ground shaking.\nⓔ The police officer made the driver stop the car.\nⓕ My dad advised me to ride my bike slowly.\nⓖ She listened to a radio DJ to read a poem.",
    "choices": [
-    "ⓐ, ⓑ, ⓕ",
-    "ⓐ, ⓒ, ⓔ",
-    "ⓑ, ⓓ, ⓖ",
-    "ⓒ, ⓓ, ⓔ",
-    "ⓑ, ⓔ, ⓕ, ⓖ"
+    "ⓐ, ⓑ, ⓓ",
+    "ⓐ, ⓓ, ⓔ, ⓕ",
+    "ⓑ, ⓒ, ⓖ",
+    "ⓒ, ⓓ, ⓕ",
+    "ⓓ, ⓔ, ⓕ, ⓖ"
    ],
-   "answer": 1,
-   "explain": "ⓒ to get up ⓓ the closer ⓔ advised me to ride(5형식) ⓖ Every house ~ was.",
-   "source": "학습지 L5 grammar 2 · L6 grammar 2-A · 26-1 기말 3번 연계"
+   "answer": 2,
+   "explain": "지각동사 + 동사원형/현재분사(ⓑ call ⓖ reading), ask/advise + to부정사(ⓒ to close), 사역 make + 동사원형.",
+   "source": "선생님 제작 어법 문장 (학습지 p.45 grammar 3-F 지각동사 + 26-1 기말 3번 5형식 연계 확장)"
   },
   {
    "kind": "group",
    "label": "[5~7]",
    "direction": "다음을 읽고 물음에 답하시오.",
-   "box": "Student Survey: Are You a Saver or a Spender?\nWhat do you do with your money? Do you save it or spend it? (A) We asked the following questions to 100 students from our school. Let’s look at the results. (B) Surprisingly, the survey showed that only 15 out of 100 students had a spending plan. (C) The survey also showed what the students spent the most money on. Food was chosen by the largest number of students. (D) Also, 80 percent of 3rd-year students saved money, but only 30 percent of 1st-year students saved money. (E)"
+   "box": {
+    "title": "Exciting Sports Day",
+    "lines": [
+     "Woori Middle School held a sports day on October 2nd at the school playground. (A) One of the biggest events was the final soccer game between Class 1 and 3. (B) All the students came to cheer for the two classes. (C) Class 3 won the game, 3 to 2. (D) The game was so exciting. (E) Everyone had a great time!"
+    ]
+   }
   },
   {
    "no": 5,
    "points": 3,
    "stem": "윗글의 주제로 가장 적절한 것은?",
    "choices": [
-    "How to make money as a student",
-    "The results of a survey on students’ money habits",
-    "The best food in the school cafeteria",
-    "Why transportation is expensive for teens",
-    "Ways for 1st-year students to save money"
+    "Tips for playing soccer well",
+    "An exciting sports day at Woori Middle School",
+    "How to become the MVP of a game",
+    "The history of Class 3",
+    "Rules of the school playground"
    ],
    "answer": 2,
-   "explain": "설문 결과 보고.",
-   "source": "L6 본문 Survey"
+   "explain": "운동회(축구 결승전)를 전하는 학교 신문 기사.",
+   "source": "L6 My Writing (교과서 기타 지문)"
   },
   {
    "no": 6,
@@ -100,7 +129,7 @@
    "box": {
     "title": "<보기>",
     "lines": [
-     "Transportation followed food."
+     "Jinwoo scored the winning goal and became the MVP of the game."
     ]
    },
    "choices": [
@@ -112,14 +141,24 @@
    ],
    "inline": true,
    "answer": 4,
-   "explain": "Food was chosen ~ 바로 뒤.",
-   "source": "L6 본문 Survey"
+   "explain": "3반이 이겼다 → 결승골을 넣은 진우가 MVP → 경기가 흥미진진했다.",
+   "source": "L6 My Writing (교과서 기타 지문)"
   },
   {
    "no": 7,
    "points": 3,
-   "stem": "대화의 밑줄 (A)~(E) 중 윗글과 내용이 일치하지 않는 것은?",
-   "box": "Semi: (A)<u>The survey was given to 100 students in our school.</u>\nJinho: (B)<u>Only 15 students had a spending plan.</u>\nSemi: Right. (C)<u>Most students spent the most money on transportation.</u>\nJinho: (D)<u>Food was chosen by the largest number of students.</u>\nSemi: And (E)<u>more 3rd-year students saved money than 1st-year students.</u>",
+   "stem": "대화의 밑줄 (A)~(E) 중 윗글과 내용이 일치하지 <u>않는</u> 것은?",
+   "box": {
+    "lines": [
+     "Hajin: Did you go to the sports day on October 2nd?",
+     "Semi: Of course! (A)<u>It was held at the school playground.</u>",
+     "Hajin: (B)<u>The final soccer game between Class 1 and 3 was one of the biggest events.</u>",
+     "Semi: Right. (C)<u>All the students came to cheer for the two classes.</u>",
+     "Hajin: (D)<u>Class 1 won the game, 3 to 2.</u>",
+     "Semi: (E)<u>Jinwoo scored the winning goal and became the MVP.</u>",
+     "Hajin: Everyone had a great time!"
+    ]
+   },
    "choices": [
     "(A)",
     "(B)",
@@ -128,36 +167,54 @@
     "(E)"
    ],
    "inline": true,
-   "answer": 3,
-   "explain": "가장 많이 쓴 것은 food.",
-   "source": "L6 본문 Survey"
+   "answer": 4,
+   "explain": "Class 3 won the game, 3 to 2. (대화는 본문을 옮겨 지은 것)",
+   "source": "L6 My Writing (교과서 기타 지문) · 대화는 선생님 제작"
   },
   {
    "no": 8,
    "points": 3,
-   "stem": "대화를 읽고 답할 수 없는 질문은?",
-   "box": "B: I feel tired these days.\nG: How often do you get enough sleep, Sejun?\nB: Once a week. I usually stay up late watching videos.\nG: It’s important to get eight hours of sleep every night.\nB: You’re right. I’ll try to go to bed earlier.\nG: Great. Good sleep makes a big difference.\nB: boy, G: girl",
+   "stem": "대화를 읽고 답할 수 <u>없는</u> 질문은?",
+   "box": {
+    "lines": [
+     "G: Brian, how about having a picnic tomorrow?",
+     "B: Sounds good! What can we do to reduce waste at the picnic?",
+     "G: We can use reusable cups.",
+     "B: Right. What else?",
+     "G: Don’t forget to bring reusable forks and spoons.",
+     "B: Sure, no problem. See you tomorrow!",
+     "B: boy, G: girl"
+    ]
+   },
    "choices": [
-    "How does Sejun feel these days?",
-    "How often does Sejun get enough sleep?",
-    "Why does Sejun stay up late?",
-    "What kind of videos does Sejun watch?",
-    "How many hours of sleep does the girl say is important?"
+    "When will they have a picnic?",
+    "What can they use to reduce waste at the picnic?",
+    "What should Brian bring?",
+    "Where will they have the picnic?",
+    "Who suggested having a picnic?"
    ],
    "answer": 4,
-   "explain": "영상의 종류는 언급되지 않는다.",
-   "source": "L6 Listen and Speak 1-A3"
+   "explain": "① tomorrow ② reusable cups ③ reusable forks and spoons ⑤ the girl. ④ 장소는 언급 없음.",
+   "source": "L5 Check Up A (교과서 대화문)"
   },
   {
    "kind": "group",
    "label": "[9~10, 서답형 1]",
    "direction": "다음을 읽고 물음에 답하시오.",
-   "box": "Hello, I’m Suin from Korea. Every summer, it (A)<u>rains</u> a lot here. Sometimes, we have floods and they are really scary. The situation in Venice must be scary, too. I’ve never (B)<u>been</u> to Venice, but I have (C)<u>saw</u> many beautiful pictures of it. I talked to my friends about the floods in your city. We wanted to help Venice, so we started the 3R campaign. The 3Rs are Recycle, Reuse, and Reduce. Now, many students at my school (D)<u>is doing</u> these three things every day. (E)<u>To do our part for Venice is important.</u> (F)<u>Together, we can make a difference!</u>"
+   "box": {
+    "title": "Student Survey: Are You a Saver or a Spender?",
+    "lines": [
+     "What do you do with your money? Do you save it or spend it? (A)<u>We asked the following questions to 100 students from our school.</u> Let’s look at the results. Surprisingly, the survey showed that only 15 out of 100 students had a spending plan. The survey also showed what the students spent the most money on. (B)<u>Food was chosen by the largest number of students.</u> Transportation followed food. Also, (C)<u>80 percent of 3rd-year students saved money, but only 30 percent of 1st-year students saved money.</u>",
+     "",
+     "A Special Message from the Principal",
+     "(F)<u>Money doesn’t grow on trees.</u> (G)<u>Planning your spending is very important!</u> (D)<u>Everyone need good spending habits.</u> Next week, (E)<u>every students will get a money diary.</u>"
+    ]
+   }
   },
   {
    "no": 9,
    "points": 3,
-   "stem": "(A)~(D) 중 어법이 바르지 않은 것의 개수는?",
+   "stem": "(A)~(E) 중 어법이 바르지 <u>않은</u> 것의 개수는?",
    "choices": [
     "1개",
     "2개",
@@ -167,33 +224,34 @@
    ],
    "inline": true,
    "answer": 2,
-   "explain": "(C) have seen(현재완료), (D) many students ~ are doing. 2개.",
-   "source": "L5 본문 Suin · 26-1 기말 현재완료 연계"
+   "explain": "(D) Everyone needs (E) every student. (B) 수동태(1학기 문법) 맞음. 일부러 바꿔 쓴 문장.",
+   "source": "L6 본문 2대목 Survey + Principal (교과서 본문) — (D)(E) 는 어법 문항용 변형"
   },
   {
    "no": 10,
    "points": 3,
-   "stem": "밑줄 (F)와 가장 관련 있는 속담은?",
+   "stem": "밑줄 (F)가 의미하는 바로 가장 알맞은 것은?",
    "choices": [
-    "백지장도 맞들면 낫다",
-    "등잔 밑이 어둡다",
-    "소 잃고 외양간 고친다",
-    "돌다리도 두들겨 보고 건너라",
-    "우물 안 개구리"
+    "Money is not easy to get, so you should spend it carefully.",
+    "Trees are more important than money.",
+    "You can make money by planting trees.",
+    "Students should not save money.",
+    "Food costs more than transportation."
    ],
    "answer": 1,
-   "explain": "함께하면 변화를 만들 수 있다 → 협력.",
-   "source": "L5 본문 Suin"
+   "explain": "돈은 저절로 생기지 않는다 → 소비를 계획하라. 기출 10번(속담) 자리를 밑줄 의미 추론으로.",
+   "source": "L6 본문 2대목 Principal (교과서 본문)"
   },
   {
    "kind": "essay",
-   "no": "서답형 1",
+   "no": "서답형1",
    "points": 4,
-   "stem": "밑줄 (E)를 가주어 It으로 시작하는 문장으로 다시 쓰시오.",
+   "stem": "밑줄 (G)를 가주어 It으로 시작하는 문장으로 바꾸어 쓰시오. (4점)",
+   "box": "→ It ____________________________________________",
    "answer_lines": 1,
-   "answer": "It is important to do our part for Venice.",
-   "explain": "긴 to부정사 주어를 뒤로 보내고 가주어 It.",
-   "source": "L5 본문 · 학습지 L5 grammar 1-A"
+   "answer": "It is very important to plan your spending.",
+   "explain": "동명사 주어를 to부정사 진주어로 바꾸고 가주어 It 을 앞에 둔다.",
+   "source": "L6 본문 2대목 Principal · 학습지 p.35 가주어 it"
   },
   {
    "no": 11,
@@ -201,89 +259,83 @@
    "stem": "대화의 빈칸에 들어갈 말을 순서대로 바르게 배열한 것은?",
    "box": {
     "lines": [
-     "G: Brian, how about having a picnic tomorrow?",
-     "B: Sounds good! ______________________",
-     "G: ______________________",
-     "B: ______________________",
-     "G: Don’t forget to bring reusable forks and spoons.",
-     "B: Sure, no problem. See you tomorrow!",
+     "G: The air is terrible today.",
+     "B: ______________________________",
+     "G: ______________________________",
+     "B: ______________________________",
+     "G: And don’t forget to ride your bike or walk to nearby places.",
+     "B: boy, G: girl",
      "",
-     "(A) Right. What else?",
-     "(B) We can use reusable cups.",
-     "(C) What can we do to reduce waste at the picnic?"
+     "(A) We can plant more trees.",
+     "(B) Right. Trees will help clean the air.",
+     "(C) Yeah. The sky looks gray. What can we do to reduce air pollution?"
     ]
    },
    "choices": [
     "(A)-(B)-(C)",
+    "(A)-(C)-(B)",
     "(B)-(A)-(C)",
-    "(B)-(C)-(A)",
     "(C)-(A)-(B)",
     "(C)-(B)-(A)"
    ],
-   "answer": 5,
-   "explain": "방법 묻기 → 제안 → 다른 것 묻기.",
-   "source": "L5 Check Up A"
+   "answer": 4,
+   "explain": "방법 묻기 → We can ~ → Right.",
+   "source": "L5 Listen & Speak 1-A3 (교과서 대화문)"
   },
   {
    "no": 12,
    "points": 3,
-   "stem": "(A)~(E) 중 밑줄 친 It의 쓰임이 다른 하나는?",
-   "box": {
-    "lines": [
-     "(A) <u>It</u> is important to eat with your family more often.",
-     "(B) <u>It</u>’s important to manage your stress during exams.",
-     "(C) <u>It</u> rains a lot here every summer.",
-     "(D) <u>It</u> is fun to experience a new culture.",
-     "(E) <u>It</u> was not easy to solve the puzzle."
-    ]
-   },
+   "stem": "어법상 <u>틀린</u> 것은?",
    "choices": [
-    "(A)",
-    "(B)",
-    "(C)",
-    "(D)",
-    "(E)"
+    "Every seat was taken at the concert.",
+    "All the lights are turned off at 11 p.m.",
+    "Each visitor will receive a gift.",
+    "All of his money were stolen.",
+    "Every house on this street was painted last year."
    ],
-   "inline": true,
-   "answer": 3,
-   "explain": "(C)는 날씨를 나타내는 비인칭 주어, 나머지는 가주어.",
-   "source": "L5·L6 본문·대화문 · 학습지 L5 grammar 1"
+   "answer": 4,
+   "explain": "money 는 셀 수 없는 명사 → All of his money was stolen. 학습지 p.43 A 문장.",
+   "source": "학습지 p.43 L6 grammar 1-A each·every·all 수일치"
   },
   {
    "no": 13,
    "points": 3,
-   "stem": "밑줄 친 단어의 쓰임이 의미상 어색한 문장은?",
+   "stem": "밑줄 친 단어의 쓰임이 의미상 <u>어색한</u> 문장은?",
    "choices": [
-    "The fans <u>screamed</u> when their team won the game.",
-    "We visited a strawberry <u>farm</u> last weekend.",
-    "He <u>recently</u> moved to a new house.",
+    "We walked by the <u>canal</u> and saw some boats.",
+    "The dark forest looked <u>scary</u> at night.",
     "I sold my old bike at the <u>flea market</u>.",
-    "The band will <u>increase</u> at the school festival."
+    "The speaker <u>increased</u> his speech for the children.",
+    "Earth is the third <u>planet</u> from the Sun."
    ],
-   "answer": 5,
-   "explain": "밴드는 perform(공연하다).",
-   "source": "학습지 L5·L6 vocabulary 1 예문"
+   "answer": 4,
+   "explain": "The speaker slowed down his speech for the children.",
+   "source": "학습지 p.33~34 L5 vocabulary 1 예문"
   },
   {
    "kind": "group",
    "label": "[14~17]",
    "direction": "다음을 읽고 물음에 답하시오.",
-   "box": "Let’s meet Fly High, our school’s cheerleading club. The club started from an idea of one student two years ago. Now, there are 10 girls and 6 boys in the club. Each member (A)( has / have ) a special energy. Do you remember the recent school basketball game? After two quarters, our team was losing by 20 points. During halftime, Fly High came on the court. They performed wonderfully. They flipped in the air and made a human pyramid. Then they shouted, “Never give up!” And guess what? Our team won the game in the end. Jina, the captain of the club, said, “I can flip in the air because I trust my club members. When I see the crowd (B)( cheering / to cheer ) and screaming, I feel proud. Fly High is the best part of my middle school life!” You can watch Fly High (C)( do / to do ) their performance at the school festival next week. (D)________________________"
+   "box": {
+    "lines": [
+     "Hello, I’m Suin from Korea. Every summer, it (A)( rain / rains ) a lot here. Sometimes, we have floods and they are really scary. The situation in Venice must be scary, too. I’ve never (B)( been / gone ) to Venice, but I have seen many beautiful pictures of it. I talked to my friends about the floods in your city. We wanted to help Venice, so we started the 3R campaign. The 3Rs are Recycle, Reuse, and Reduce. Now, many students at my school are doing these three things every day. (C)( It / That ) is important to do our part for Venice. (D)______________________!"
+    ]
+   }
   },
   {
    "no": 14,
    "points": 3,
-   "stem": "Jina가 공중에서 돌 수 있는 이유는?",
+   "stem": "수인과 친구들이 3R 캠페인을 시작한 이유는?",
    "choices": [
-    "매일 연습하기 때문에",
-    "동아리 구성원들을 믿기 때문에",
-    "관중이 응원하기 때문에",
-    "동아리의 주장이기 때문에",
-    "농구 경기에서 이겼기 때문에"
+    "학교 숙제였기 때문에",
+    "베네치아를 돕고 싶어서",
+    "한국의 홍수를 막기 위해",
+    "베네치아에 가 보기 위해",
+    "선생님이 시켜서"
    ],
    "answer": 2,
-   "explain": "because I trust my club members.",
-   "source": "L6 본문 Fly High"
+   "explain": "We wanted to help Venice, so we started the 3R campaign.",
+   "source": "L5 본문 3대목 Suin (교과서 본문)"
   },
   {
    "no": 15,
@@ -299,54 +351,54 @@
     "rows": [
      [
       "①",
-      "has",
-      "cheering",
-      "do"
+      "rain",
+      "been",
+      "It"
      ],
      [
       "②",
-      "has",
-      "to cheer",
-      "do"
+      "rain",
+      "gone",
+      "That"
      ],
      [
       "③",
-      "have",
-      "cheering",
-      "to do"
+      "rains",
+      "been",
+      "It"
      ],
      [
       "④",
-      "have",
-      "to cheer",
-      "do"
+      "rains",
+      "gone",
+      "It"
      ],
      [
       "⑤",
-      "has",
-      "cheering",
-      "to do"
+      "rains",
+      "been",
+      "That"
      ]
     ]
    },
-   "answer": 1,
-   "explain": "each + 단수동사 / 지각동사 see·watch + 목적어 + 현재분사·동사원형.",
-   "source": "L6 본문 · 학습지 L6 grammar 1"
+   "answer": 3,
+   "explain": "(A) it rains (B) have been to(경험 — 1학기 현재완료) (C) 가주어 It.",
+   "source": "L5 본문 3대목 Suin · 학습지 p.35 가주어 it"
   },
   {
    "no": 16,
    "points": 3,
    "stem": "밑줄 (D)에 들어갈 말로 가장 적절한 것은?",
    "choices": [
-    "Come and feel their energy!",
-    "Don’t forget to bring your money diary.",
-    "The club will close next week.",
-    "Please be quiet in the library.",
-    "Money doesn’t grow on trees."
+    "Together, we can make a difference",
+    "Venice could be underwater soon",
+    "I don’t like rainy days",
+    "Recycling is not important",
+    "We have never had floods in Korea"
    ],
    "answer": 1,
-   "explain": "공연 관람을 권하는 마무리.",
-   "source": "L6 본문 Fly High"
+   "explain": "우리의 역할을 하는 것이 중요 → 함께 변화를 만들 수 있다.",
+   "source": "L5 본문 3대목 Suin (교과서 본문)"
   },
   {
    "no": 17,
@@ -355,13 +407,13 @@
    "box": {
     "title": "<보기>",
     "lines": [
-     "- Fly High started two years ago.",
-     "- There are 16 members in the club.",
-     "- Our team was winning by 20 points after two quarters.",
-     "- Fly High performed during halftime.",
-     "- Our team lost the game in the end.",
-     "- Jina is the captain of Fly High.",
-     "- Fly High will perform at the school festival next week."
+     "- Suin lives in Korea.",
+     "- It rains a lot in Korea every summer.",
+     "- Suin has been to Venice many times.",
+     "- Suin has never seen pictures of Venice.",
+     "- Suin started the 3R campaign alone.",
+     "- The 3Rs are Recycle, Reuse, and Reduce.",
+     "- Many students at Suin’s school are doing the 3Rs every day."
     ]
    },
    "choices": [
@@ -372,78 +424,83 @@
     "6개"
    ],
    "inline": true,
-   "answer": 4,
-   "explain": "3·5번째만 불일치. 5개.",
-   "source": "L6 본문 Fly High"
+   "answer": 3,
+   "explain": "일치 4개. 불일치: has been to Venice many times(never been), never seen pictures(has seen), alone(with friends).",
+   "source": "L5 본문 3대목 Suin (교과서 본문)"
   },
   {
    "no": 18,
    "points": 3,
-   "stem": "<보기>의 어떤 빈칸에도 들어갈 수 없는 단어는?",
+   "stem": "<보기>의 어떤 빈칸에도 들어갈 수 <u>없는</u> 단어는?",
    "box": {
     "title": "<보기>",
     "lines": [
-     "- The water level can ______ after a huge rain.",
-     "- We should ______ the use of plastic.",
-     "- I always ______ the other side of the paper.",
-     "- We can ______ plastic cups and bottles."
+     "- The company will ________ its sales next year.",
+     "- We should ________ the use of plastic.",
+     "- I always ________ the other side of the paper.",
+     "- The water level can ________ after a huge rain."
     ]
    },
    "choices": [
-    "rise",
+    "increase",
     "reduce",
     "reuse",
-    "recycle",
-    "melt"
+    "rise",
+    "donate"
    ],
    "inline": true,
    "answer": 5,
-   "explain": "rise / reduce / reuse / recycle.",
-   "source": "학습지 L5 vocabulary 1 예문 · 대화문"
+   "explain": "increase / reduce / reuse / rise. 학습지 예문 그대로.",
+   "source": "학습지 p.33~34 L5 vocabulary 1 예문"
   },
   {
    "kind": "group",
    "label": "[19~20, 서답형 2~3]",
    "direction": "다음을 읽고 물음에 답하시오.",
-   "box": "Hello, friends! My name is Monica, and I live in Venice. Have you heard of Venice? (A)<u>It</u> is a beautiful city on the water in Italy. Venice is famous for its canals and historic buildings. Many tourists come to see (B)<u>them</u> every year. But now, we have a big problem. Last week, the streets were flooded. I couldn’t go to school, and my parents’ bakery had to close. I had to wear tall rain boots all the time. I’m really worried. (C)<u>The warmer the Earth gets, the higher the water in Venice rises.</u> Venice could be underwater soon. (D)<u>My city needs your help!</u> (E)<u>지구를 구하기 위해 우리의 역할을 하는 것은 중요하다.</u>"
+   "box": {
+    "title": "Club News: Spreading Cheer Everywhere",
+    "lines": [
+     "Let’s meet Fly High, our school’s cheerleading club. The club started from an idea of one student two years ago. Now, (F)<u>there is 10 girls and 6 boys in the club.</u> Each member has a special energy. Do you remember the recent school basketball game? After two quarters, (A)<u>our team</u> was losing by 20 points. During halftime, Fly High came on the court. (B)<u>They</u> performed wonderfully. They flipped in the air and made a human pyramid. Then they shouted, “Never give up!” And guess what? Our team won the game in the end. Jina, the captain of the club, said, “(C)<u>I</u> can flip in the air because I trust my club members. (H)<u>저는 관중들이 응원하고 소리치는 것을 볼 때 자랑스럽습니다.</u> Fly High is the best part of (D)<u>my</u> middle school life!” (G)<u>You can watch Fly High to do their performance at the school festival next week.</u> Come and feel (E)<u>their</u> energy!"
+    ]
+   }
   },
   {
    "no": 19,
    "points": 3,
-   "stem": "<보기> 중 밑줄 (A), (B)와 지시하는 대상이 바르게 연결된 것을 모두 고른 것은?",
+   "stem": "<보기> 중 밑줄 (A)~(E)와 지시하는 대상이 바르게 연결된 것을 모두 고른 것은?",
    "box": {
     "title": "<보기>",
     "lines": [
-     "ⓐ (A) It – Venice",
-     "ⓑ (A) It – Italy",
-     "ⓒ (B) them – many tourists",
-     "ⓓ (B) them – canals and historic buildings",
-     "ⓔ (B) them – rain boots"
+     "ⓐ (A) our team – Fly High",
+     "ⓑ (B) They – Fly High",
+     "ⓒ (C) I – Jina",
+     "ⓓ (D) my – Jina",
+     "ⓔ (E) their – Fly High"
     ]
    },
    "choices": [
-    "ⓐ, ⓓ",
-    "ⓐ, ⓒ",
-    "ⓑ, ⓓ",
-    "ⓑ, ⓔ",
-    "ⓐ, ⓒ, ⓔ"
+    "ⓐ, ⓑ",
+    "ⓐ, ⓒ, ⓓ",
+    "ⓑ, ⓒ, ⓔ",
+    "ⓑ, ⓒ, ⓓ, ⓔ",
+    "ⓒ, ⓓ, ⓔ"
    ],
-   "answer": 1,
-   "explain": "It = Venice, them = canals and historic buildings.",
-   "source": "L5 본문 Monica"
+   "answer": 4,
+   "explain": "(A) our team 은 학교 농구팀(20점 차로 지고 있던 팀)이지 Fly High 가 아니다.",
+   "source": "L6 본문 1대목 Fly High (교과서 본문)"
   },
   {
    "no": 20,
    "points": 3,
-   "stem": "<보기>의 영영풀이에 해당하는 단어 중 짝이 잘못된 것은?",
+   "stem": "<보기>의 영영풀이에 해당하는 단어 중 윗글에 있지 <u>않은</u> 것은?",
    "box": {
     "title": "<보기>",
     "lines": [
-     "ⓐ a narrow waterway built by people for boats or to bring water to fields – canal",
-     "ⓑ famous or important in history – historic",
-     "ⓒ a person who travels to a place for pleasure – tourist",
-     "ⓓ to cover an area with a lot of water – flood",
-     "ⓔ below the surface of water – planet"
+     "ⓐ to believe that someone or something is reliable, good, honest, etc",
+     "ⓑ the break between the two halves in sports like football and basketball",
+     "ⓒ an athlete who is chosen to be the leader of a team",
+     "ⓓ to move something down or make it less",
+     "ⓔ to turn (something) over by throwing it up in the air with a quick movement"
     ]
    },
    "choices": [
@@ -454,129 +511,128 @@
     "ⓔ"
    ],
    "inline": true,
-   "answer": 5,
-   "explain": "ⓔ 는 underwater. planet = a large, round object in space.",
-   "source": "학습지 L5 vocabulary 2 영영풀이"
+   "answer": 4,
+   "explain": "ⓐ trust ⓑ halftime ⓒ captain ⓔ flip 은 본문에 있음. ⓓ lower 는 없음.",
+   "source": "학습지 p.41 L6 vocabulary 2 영영풀이"
   },
   {
    "kind": "essay",
-   "no": "서답형 2",
+   "no": "서답형2",
    "points": 6,
-   "stem": "밑줄 (C)와 같은 형태로, 주어진 두 문장을 「the 비교급 ~, the 비교급 …」 한 문장으로 쓰시오. (각 3점)",
-   "box": {
-    "lines": [
-     "(1) The weather is cold. + Your house feels warm. → ",
-     "(2) The price is low. + Many people will buy it. → "
-    ]
-   },
-   "answer_lines": 2,
-   "answer": "(1) The colder the weather is, the warmer your house feels. (2) The lower the price is, the more people will buy it.",
-   "explain": "형용사·부사를 비교급으로 바꾸어 the 뒤에 두고 주어+동사가 따른다.",
-   "source": "학습지 L5 grammar 2-C"
+   "stem": "밑줄 (F)와 (G)를 어법에 맞게 고쳐 문장 전체를 다시 쓰시오. (6점, 각 3점)",
+   "box": "(1) (F) → ______________________________\n(2) (G) → ______________________________",
+   "answer_lines": 1,
+   "answer": "(1) Now, there are 10 girls and 6 boys in the club. (2) You can watch Fly High doing their performance at the school festival next week. (do 도 인정)",
+   "explain": "(F) there are + 복수 (G) 지각동사 watch + 목적어 + 동사원형/현재분사. 본문 문장을 일부러 틀리게 바꿔 실었다.",
+   "source": "L6 본문 1대목 Fly High · 학습지 p.42 수일치 · 지각동사"
   },
   {
    "kind": "essay",
-   "no": "서답형 3",
+   "no": "서답형3",
    "points": 4,
-   "stem": "<보기>에서 필요한 단어만 골라 (E)의 해석에 맞게 영어 문장을 완성하시오.",
+   "stem": "<보기>에서 필요한 단어만 골라 (H)의 해석에 맞게 영어 문장을 완성하시오. (단, 필요한 경우 형태를 바꿀 수 있음.) (4점)",
    "box": {
     "title": "<보기>",
     "lines": [
-     "it, is, are, important, importance, to, do, doing, our, part, save, the Earth, for"
+     "when, I, see, the crowd, cheer, scream, feel, proud, and, to, watch"
     ]
    },
    "answer_lines": 1,
-   "answer": "It is important to do our part to save the Earth.",
-   "explain": "가주어 It + 진주어 to do ~; 목적의 to save.",
-   "source": "L5 본문 · 학습지 L5 grammar 1"
+   "answer": "When I see the crowd cheering and screaming, I feel proud. (cheer and scream 도 인정)",
+   "explain": "지각동사 see + 목적어 + 현재분사/동사원형.",
+   "source": "L6 본문 1대목 Fly High (교과서 본문)"
   },
   {
    "kind": "essay",
-   "no": "서답형 4",
+   "no": "서답형4",
    "points": 6,
-   "stem": "<보기>를 읽고 주어진 주어로 시작하는 문장을 2개 완성하시오. (각 3점)",
+   "stem": "<보기>를 읽고 지각동사를 포함한 문장을 2개 완성하시오. (6점, 각 3점)",
    "box": {
+    "title": "<보기>",
     "lines": [
-     "<보기>",
-     "All the members of Fly High have a special energy.",
-     "All the members wear the same uniform.",
+     "Sam was laughing with his friends. I saw him.",
+     "Someone called Kelly’s name. Kelly heard it.",
      "",
-     "(1) Each member ________________________________.",
-     "(2) Every member ________________________________."
+     "(1) I saw ______________________ with his friends.",
+     "(2) Kelly heard ______________________."
     ]
    },
-   "answer_lines": 2,
-   "answer": "(1) Each member has a special energy. (2) Every member wears the same uniform.",
-   "explain": "each/every + 단수명사 + 단수동사.",
-   "source": "학습지 L6 grammar 1-A · D"
+   "answer_lines": 1,
+   "answer": "(1) Sam laughing (laugh) (2) someone call her name (calling)",
+   "explain": "지각동사 see/hear + 목적어 + 현재분사/동사원형. 학습지 p.45 F-2·5 문장.",
+   "source": "학습지 p.45 L6 grammar 3-F 지각동사"
   },
   {
    "kind": "essay",
-   "no": "서답형 5",
+   "no": "서답형5",
    "points": 4,
-   "stem": "조건에 맞게 대화의 빈칸을 완성하시오.",
+   "stem": "조건에 맞게 문장을 완성하시오. (4점)",
    "box": {
     "lines": [
-     "<보기> important, it, is, to, keep, your, desk, tidy",
+     "<보기> the, more, healthier, vegetables, you, eat, will, become",
      "",
-     "G: Your desk is so messy. How often do you clean it?",
-     "B: I clean it once a month.",
-     "G: Oh, no! ____________________________."
+     "Dr. Kim: First, eat lots of vegetables. ________________________________."
     ]
    },
    "condition": [
-    "<보기>에 주어진 단어를 모두 사용할 것.",
-    "가주어 it을 사용할 것."
+    "조건 1. <보기>에 주어진 단어를 모두 사용할 것.",
+    "조건 2. 「the 비교급 ~, the 비교급 …」을 사용할 것."
    ],
    "answer_lines": 1,
-   "answer": "It is important to keep your desk tidy.",
-   "explain": "가주어 It, 진주어 to keep ~.",
-   "source": "L6 Listen and Speak 1-A2 · 학습지 L5 grammar 1"
+   "answer": "The more vegetables you eat, the healthier you will become.",
+   "explain": "「the 비교급 + 주어 + 동사 ~, the 비교급 + 주어 + 동사 …」 학습지 p.37 B-(1).",
+   "source": "학습지 p.37 L5 grammar 3-B the 비교급"
   },
   {
    "kind": "essay",
-   "no": "서답형 6",
+   "no": "서답형6",
    "points": 4,
-   "stem": "소녀가 소년에게 대기 오염을 줄이기 위해 할 수 있는 일을 묻는 대화문이 되도록 밑줄 (A)에 알맞은 말을 쓸 것. (8단어)",
+   "stem": "소녀가 소년에게 책상을 얼마나 자주 청소하는지 <b>빈도를 묻는</b> 대화문이 되도록 밑줄 (A)에 알맞은 말을 쓰시오. (4점)",
    "box": {
     "lines": [
-     "G: Look at the sky! It’s gray.",
-     "B: Yeah. Air pollution is a big problem.",
-     "G: (A)______________________________?",
-     "B: Start with little things. For example, walk to nearby places.",
-     "G: Oh, that’s easy. Anything else?",
-     "B: Don’t forget to care for your plants.",
+     "G: Where’s my science book, Eric?",
+     "B: It’s on my desk.",
+     "G: Your desk is so messy. (A)________________________?",
+     "B: I clean it once a month.",
+     "G: Oh, no! It’s important to keep your desk tidy.",
+     "B: boy, G: girl",
+     "",
+     "→ (A) ________________________________?"
+    ]
+   },
+   "answer_lines": 1,
+   "answer": "How often do you clean it",
+   "explain": "빈도 묻기: How often do you ~?",
+   "source": "L6 Listen & Speak 1-A2 (교과서 대화문)"
+  },
+  {
+   "kind": "essay",
+   "no": "서답형7",
+   "points": 12,
+   "stem": "대화를 읽고 조건에 맞게 답하시오. (12점, 각 3점)",
+   "box": {
+    "lines": [
+     "G: We need to save energy to slow down global warming.",
+     "B: You’re right. (A)<u>우리가 에너지를 절약하기 위해 무엇을 할 수 있을까?</u>",
+     "G: We can use the air conditioner less often.",
+     "B: Yeah. That would save a lot of energy. (B)<u>나는 어젯밤 네가 전등을 끄는 것을 보았어.</u>",
+     "G: (C)<u>방을 나갈 때 전등을 끄는 것은 중요해.</u>",
+     "B: (D)<u>우리가 더 많은 에너지를 절약할수록, 지구는 더 시원해질 거야.</u>",
      "B: boy, G: girl"
     ]
    },
-   "answer_lines": 1,
-   "answer": "What can we do to reduce air pollution",
-   "explain": "What can we do to + 동사원형 ~?",
-   "source": "L5 Check Up B"
-  },
-  {
-   "kind": "essay",
-   "no": "서답형 7",
-   "points": 12,
-   "stem": "대화를 읽고 조건에 맞게 답하시오. (각 3점)",
-   "box": {
-    "lines": [
-     "Hajin: Did you enjoy the sports day, Minho?",
-     "Minho: Yes! (A)<u>I saw Jinwoo. He scored the winning goal.</u>",
-     "Hajin: That was amazing! (B)<u>I heard all the students. They were cheering for Class 3.</u>",
-     "Minho: Me, too. (C)<u>I felt the ground. It was shaking.</u>",
-     "Hajin: (D)<u>더 많은 학생들이 응원할수록, 선수들은 더 열심히 경기했다.</u>",
-     "Minho: Right. Everyone had a great time!"
-    ]
-   },
    "condition": [
-    "<조건 1> 밑줄 (A)~(C)의 두 문장을 지각동사를 사용하여 한 문장으로 쓸 것.",
-    "<조건 2> 밑줄 (D)를 「the 비교급 ~, the 비교급 …」 구문과 many, students, cheer, hard, players, play를 사용하여 영작할 것. (과거시제)"
+    "조건 1. 밑줄 (A)~(C)는 괄호 안의 말을 이용하여 영작할 것. (A) (what, can, do, save energy) (B) (see, turn off, the light, last night) (C) (it, important, turn off, the light, when, leave a room)",
+    "조건 2. 밑줄 (D)는 「the 비교급 ~, the 비교급 …」을 사용하여 영작할 것. (much, energy, save, cool, the Earth)",
+    "(1) (A) → ________________________________",
+    "(2) (B) → ________________________________",
+    "(3) (C) → ________________________________",
+    "(4) (D) → ________________________________"
    ],
-   "answer_lines": 4,
-   "answer": "(1) I saw Jinwoo score the winning goal. (2) I heard all the students cheering for Class 3. (3) I felt the ground shaking. (4) The more students cheered, the harder the players played.",
-   "explain": "(1) score / scoring 모두 가능 (2)(3) 진행 중이던 동작은 현재분사 (4) the more + 명사, the harder.",
-   "source": "L6 My Writing · 학습지 L6 grammar 2-C · L5 grammar 2"
+   "answer_lines": 1,
+   "answer": "(A) What can we do to save energy? (B) I saw you turn off the light last night. (turning off 도 인정) (C) It’s important to turn off the light when you leave a room. (D) The more energy we save, the cooler the Earth will be.",
+   "explain": "(A) 방법 묻기 (B) 지각동사 see + 목적어 + 동사원형/현재분사 (C) 가주어 it (D) the 비교급 ~, the 비교급 …. (B)(C)(D) 는 대화 흐름에 맞춰 지은 문장.",
+   "source": "L5 Listen & Speak 1-A1 (교과서 대화문) · 학습지 p.35 · p.44 — (B)(C)(D) 선생님 제작"
   }
  ]
 }
