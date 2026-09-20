@@ -21,6 +21,7 @@ MM = 7200 / 25.4                      # HWPUNIT per mm
 TEMPLATE = Path(__file__).resolve().parent / 'assets' / 'exam-template.hwpx'   # 실제 학교 시험지 서식
 LOGO = Path(__file__).resolve().parent / 'assets' / 'orun-logo.png'
 BRAND = '옳은영어 ORUN ENGLISH'
+BODY_FONT = '맑은 고딕'               # 발문·선지 글꼴(서식과 같게)
 BOX_FONT = '함초롬바탕'                # 지문·대화 상자 글꼴
 ROW_H = 1750                          # 정보표 한 행 높이(HWPUNIT)
 FOOTER_H = 3600                       # 꼬리말 영역 높이
@@ -103,14 +104,14 @@ class Hwpx:
         self.doc = HwpxDocument.open(str(TEMPLATE))
         self.sec = self.doc.sections[0]
         st = self.doc.styles
-        R = lambda base, **k: st.ensure_run(base_char_pr_id=base, **k)
+        st.ensure_font(BODY_FONT); st.ensure_font(BOX_FONT)      # 글꼴을 먼저 등록해야 ensure_run 이 글꼴을 구분한다
+        B = lambda **k: st.ensure_run(font=BODY_FONT, size=10, **k)
+        E = lambda **k: st.ensure_run(font=BOX_FONT, size=10, **k)
         self.cp = {
-            'base': str(T['c_body']), 'b': R(T['c_body'], bold=True), 'u': R(T['c_body'], underline=True),
-            'i': R(T['c_body'], italic=True), 'ub': R(T['c_body'], bold=True, underline=True),
-            'e': st.ensure_run(font=BOX_FONT, size=10), 'eb': st.ensure_run(font=BOX_FONT, size=10, bold=True),
-            'eu': st.ensure_run(font=BOX_FONT, size=10, underline=True), 'ei': st.ensure_run(font=BOX_FONT, size=10, italic=True),
-            'eub': st.ensure_run(font=BOX_FONT, size=10, bold=True, underline=True),
-            'small': str(T['c_small']), 'smallb': R(T['c_small'], bold=True), 'grp': str(T['c_bold']),
+            'base': B(), 'b': B(bold=True), 'u': B(underline=True), 'i': B(italic=True), 'ub': B(bold=True, underline=True),
+            'e': E(), 'eb': E(bold=True), 'eu': E(underline=True), 'ei': E(italic=True), 'eub': E(bold=True, underline=True),
+            'small': st.ensure_run(font=BODY_FONT, size=9.5), 'smallb': st.ensure_run(font=BODY_FONT, size=9.5, bold=True),
+            'grp': B(bold=True),
         }
 
     # ── 글자 모양 고르기 ──
