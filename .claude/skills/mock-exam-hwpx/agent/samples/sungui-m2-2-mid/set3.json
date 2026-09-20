@@ -1,37 +1,579 @@
-{"school":"숭의여자중학교","grade":2,"term":2,"exam":"중간고사","subject":"영어","set":3,"range":"Lesson 5~6","publisher":"YBM(박준언)","year":2026,
-"items":[
-{"no":1,"points":3,"stem":"짝지어진 단어의 관계가 나머지와 다른 것은?","choices":["heat – cool down","safe – unsafe","save – waste","connect – disconnect","path – way"],"answer":5,"explain":"path – way 는 유의어(길), 나머지는 반의어.","source":"학습지 L5 Words 심화 B(path≒way, connect↔disconnect, safe↔unsafe) · L6 Words 심화 B(save↔waste, heat↔cool down)"},
-{"no":2,"points":3,"stem":"다음 대화의 (가)~(라)에 들어갈 수 없는 표현은?","box":"A: (가) playing sports and fixing machines.\nB: (나) Type R?\nA: Yes. Pilots, engineers, police officers, and sports players are often Type R.\nB: (다) do you like?\nA: I’m interested in jobs like pilot or engineer.\nB: (라) find your dream job soon.","choices":["I’m interested in","Are you","Which of those jobs","I hope you","I’m sure that"],"answer":5,"explain":"(가) I’m interested in (나) Are you (다) Which of those jobs (라) I hope you — ⑤는 쓰이지 않는다.","source":"L5 Let’s Communicate"},
-{"no":3,"points":3,"stem":"주어진 말에 이어질 대화 (A)~(C)의 순서로 가장 알맞은 것은?","box":"A: I heard that there are more forest fires these days.\n(A) B: I get it. That sounds serious.\n(B) A: It’s because of global warming.\n(C) B: Really? Why is that happening?","choices":["(A) – (B) – (C)","(B) – (C) – (A)","(C) – (A) – (B)","(C) – (B) – (A)","(B) – (A) – (C)"],"answer":4,"explain":"왜 그런 일이?(C) → 지구 온난화 때문(B) → 알겠다, 심각하다(A).","source":"L6 Listen & Speak C"},
-{"kind":"group","label":"[4~6]","direction":"다음 대화를 읽고 물음에 답하시오.","box":{"lines":["B: Hey, Jina. What are you doing?","G: I’m deleting my emails. I (A)[deleted / have deleted] more than 100 emails since this morning.","B: Why?","G: I heard (B)[that / what] storing emails uses a lot of energy.","B: Really?","G: Yeah, using too much energy (C)[is / are] bad for the Earth.","B: Oh, I get it. I’ll delete my emails, too.","G: And you should also (D)[block / blocking] spam and ads."]}},
-{"no":4,"points":3,"stem":"(A)~(D)에 들어갈 어법에 맞는 표현으로 가장 적절한 것은?","choices_table":{"header":["","(A)","(B)","(C)","(D)"],"rows":[["①","deleted","that","is","block"],["②","deleted","what","are","blocking"],["③","have deleted","that","is","block"],["④","have deleted","what","is","block"],["⑤","have deleted","that","are","blocking"]]},"answer":3,"explain":"(A) since this morning → 현재완료 (B) heard 의 목적어인 명사절 접속사 that (C) 동명사구 주어는 단수 → is (D) should + 동사원형. ※ (A) 문장은 교과서 대화에 현재완료 문장을 하나 더한 것.","source":"L6 Listen & Speak B — 현재완료(학습지 L6 GP-A) · 명사절 that(학습지 L6 p.6) · 동명사 주어 단수(학습지 L5 p.8)"},
-{"no":5,"points":3,"stem":"위 대화를 읽고 답할 수 없는 것은?","choices":["What is Jina doing?","Why is Jina deleting her emails?","How many emails does Jina get every day?","What will the boy do?","What else should the boy block?"],"answer":3,"explain":"하루에 받는 이메일 수는 나오지 않는다. ① deleting her emails ② storing emails uses a lot of energy ④ delete his emails ⑤ spam and ads.","source":"L6 Listen & Speak B"},
-{"no":6,"points":4,"stem":"위 대화에 대한 설명 ⓐ~ⓘ 중 옳은 것의 개수는?","box":"ⓐ Jina is deleting her emails.\nⓑ Jina heard that storing emails uses a lot of energy.\nⓒ The boy is not going to delete his emails.\nⓓ Jina tells the boy to block spam and ads.\nⓔ since this morning 은 for this morning 으로 바꿔 쓸 수 있다.\nⓕ I heard that ~ 의 that 은 생략할 수 있다.\nⓖ I get it. 은 I understand. 와 바꿔 쓸 수 있다.\nⓗ delete: to remove something, such as words, pictures, or files from a document, computer, etc.\nⓘ store: to give food to a person or an animal","choices":["2개","3개","4개","5개","6개"],"inline":true,"answer":5,"explain":"옳은 것: ⓐ ⓑ ⓓ ⓕ ⓖ ⓗ → 6개. ⓒ 삭제하겠다고 함 ⓔ since + 시점, for + 기간 ⓘ feed 의 풀이(store: 저장하다).","source":"L6 Listen & Speak B · 학습지 L6 Grammar Point A(for/since) · 학습지 L6 p.6(that 생략) · 통합본 L6 대화문 11(I get it = I understand) · L6 영영풀이(delete·feed)"},
-{"no":7,"points":4,"stem":"다음 두 문장의 의미가 잘 드러나도록 현재완료를 이용하여 한 문장으로 바르게 쓴 것은?","box":"• Eddie lost his cap.  • He still can’t find it.","choices":["Eddie has lost his cap.","Eddie has lose his cap.","Eddie have lost his cap.","Eddie has been lost his cap.","Eddie lost his cap yet."],"answer":1,"explain":"과거에 잃어버려 지금도 없다 → 현재완료 결과 용법 has + p.p.(lost).","source":"통합본 L6 GRAMMAR 1 – C-02 · 학습지 L6 Grammar Point A(결과)"},
-{"kind":"group","label":"[8~10]","direction":"다음 글을 읽고 물음에 답하시오.","box":{"lines":["How Can I Find My Job?","Everyone has their own favorite activities. Try to connect them to a real job, and you will find your path. If you like (A)<u>watching</u> TV shows, you can be a producer or a writer for those shows. However, liking something and being good at it (B)<u>is</u> not the same. (C)<u>Playing</u> soccer as a job is different from playing it as a hobby. You love soccer but aren’t good at it. Then you can look for other jobs in soccer. If you are good at (D)<u>taking</u> care of people, you can become a soccer player’s manager. Or you can work as a marketer for a soccer team if you are good at (E)<u>thinking</u> creatively. Look for jobs that match your favorite things and your abilities."]}},
-{"no":8,"points":4,"stem":"윗글의 밑줄 친 (A)~(E) 중, 어법상 틀린 것은?","choices":["(A)","(B)","(C)","(D)","(E)"],"inline":true,"answer":2,"explain":"liking something 과 being good at it 두 개의 동명사구가 and 로 이어진 주어 → are. (A) like + 동명사 (C) 동명사 주어 (D)(E) 전치사 at + 동명사.","source":"L5 본문 3대목(원문 are) · 학습지 L5 p.8 노트(동명사 주어)"},
-{"no":9,"points":3,"stem":"윗글의 내용과 일치하지 않는 것은?","choices":["모두가 자신만의 좋아하는 활동이 있다.","TV 프로그램 보는 것을 좋아하면 그 프로그램의 작가가 될 수 있다.","무언가를 좋아하는 것과 잘하는 것은 같다.","사람을 돌보는 것을 잘하면 축구 선수의 매니저가 될 수 있다.","창의적으로 생각하는 것을 잘하면 축구팀의 마케터로 일할 수 있다."],"answer":3,"explain":"liking something and being good at it are not the same. — 같지 않다.","source":"L5 본문 3대목"},
-{"no":10,"points":4,"stem":"윗글에 대한 설명 ⓐ~ⓙ 중 옳지 않은 것의 개수는?","box":"ⓐ Try to connect ~ 의 to connect 는 명사적 용법(목적어)이다.\nⓑ Try to connect them to a real job, and you will find your path. 의 and 는 or 로 바꿔도 뜻이 같다.\nⓒ them 은 their own favorite activities 를 가리킨다.\nⓓ (C)Playing 은 문장의 주어 역할을 하는 동명사이다.\nⓔ is different from 은 ‘~와 같다’는 뜻이다.\nⓕ jobs that match ~ 의 that 은 주격 관계대명사로 which 로 바꿔 쓸 수 있다.\nⓖ You love soccer but aren’t good at it. 의 it 은 soccer 를 가리킨다.\nⓗ producer: someone in charge of preparing and producing a play, film, or show\nⓘ ability: the ability to do something well\nⓙ path: a way to get to a place or goal","choices":["2개","3개","4개","5개","6개"],"inline":true,"answer":2,"explain":"옳지 않은 것: ⓑ(and ‘그러면’ ↔ or ‘그렇지 않으면’) ⓔ(~와 다르다) ⓘ(skill 의 풀이; ability 는 the power or skill to do something) → 3개.","source":"학습지 L5 p.8(Reading C 노트: them·it·주어 동명사·관계대명사) · 통합본 L5 GRAMMAR 2 · L5 어휘(be different from) · L5 영영풀이(producer·ability·path) · 학습지 L5 Words 기본 A-8(skill)"},
-{"kind":"group","label":"[11~12]","direction":"다음 글을 읽고 물음에 답하시오.","box":{"lines":["Date & Time: November 7, 9:40 p.m.","For the last two weeks, my team has put (가)<u>ointment</u> on sick corals.","(A) When they are ready, we’ll plant them onto the corals in the sea. Our goal is to grow many healthy corals. I look forward to seeing the results!","(B) We also took some healthy baby corals from the sea and put them in tanks of seawater.","(C) We feed them clam parts and seaweed smoothies. This food helps baby corals grow stronger."]}},
-{"no":11,"points":3,"stem":"주어진 글에 이어질 (A)~(C)의 순서로 가장 알맞은 것은?","choices":["(A) – (B) – (C)","(B) – (A) – (C)","(B) – (C) – (A)","(C) – (A) – (B)","(C) – (B) – (A)"],"answer":3,"explain":"also 로 이어지는 아기 산호 수조(B) → 먹이(C) → 준비되면 심겠다(A).","source":"L6 본문 3대목(November 7)"},
-{"no":12,"points":3,"stem":"윗글의 (가)ointment 의 영영풀이로 가장 적절한 것은?","choices":["a soft cream used on the skin to treat a medical problem","a container for holding liquid or gas","a plant that grows in the sea","a thick, blended drink made from fruit, often mixed with juice, milk, yogurt, or ice","a type of sea animal with a shell in two parts and a soft body that can be eaten"],"answer":1,"explain":"ointment 연고. ② tank ③ seaweed ④ smoothie ⑤ clam.","source":"L6 영영풀이"},
-{"no":13,"points":4,"stem":"다음 빈칸에 Although 가 들어가기에 어색한 것은?","choices":["________ I was sad, I didn’t cry.","________ Sue studied hard, she got a low grade.","________ the light is on, there is no one in the room.","________ we are in the same class, I don’t know her well.","________ you helped me, I could finish the project successfully."],"answer":5,"explain":"⑤는 ‘네가 도와주어서 끝낼 수 있었다’는 이유 → Because. 나머지는 앞뒤가 반대되는 양보.","source":"통합본 L6 GRAMMAR 2(08) · 학습지 L6 Grammar Point B(기타 접속사와 비교)"},
-{"no":14,"points":4,"stem":"두 문장의 의미가 잘 드러나도록 현재완료 문장으로 바르게 바꾼 것은?","choices":["I started to wear glasses in 2024, and I still wear them.\n→ I have worn glasses since 2024.","Spring came, and it is spring now.\n→ Spring has came.","My parents went to Hong Kong, and they are still in Hong Kong now.\n→ My parents have been to Hong Kong.","He joined the reading club two years ago, and he is still in the club.\n→ He has been in the reading club since two years.","Eddie lost his cap, and he still can’t find it.\n→ Eddie has lost his cap yesterday."],"answer":1,"explain":"② has come ③ have gone to ④ for two years ⑤ yesterday 는 현재완료와 함께 쓸 수 없음.","source":"통합본 L6 GRAMMAR 1 – C · 학습지 L6 Grammar Point A"},
-{"kind":"group","label":"[15~16]","direction":"다음 글을 읽고 물음에 답하시오.","box":{"lines":["Date & Time: October 2, 10:00 a.m.","I have thought ( ⓐ ) how to help corals. My plan is to form a team ( ⓑ ) divers. My team can go underwater and take care of the sick corals. Many corals get sick because they don’t get good care ( ⓒ ) time. I’m sure that other divers are worried about this, too. I’m going to post a message online (가)<u>to look</u> ( ⓓ ) volunteer divers."]}},
-{"no":15,"points":3,"stem":"윗글의 빈칸 ⓐ~ⓓ에 들어갈 수 없는 것은?","choices":["about","of","in","for","at"],"inline":true,"answer":5,"explain":"ⓐ think about ⓑ a team of ⓒ in time(제때) ⓓ look for.","source":"L6 본문 2대목 · L6 어휘(in time) · L5 어휘(look for)"},
-{"no":16,"points":4,"stem":"윗글의 밑줄 친 (가)to look 과 to부정사의 쓰임이 같은 것은?","choices":["It is not easy for you to find a future job.","My plan is to form a team of divers.","First, we work to make money.","Everyone has a special role to play.","I’d like to learn the guitar."],"answer":3,"explain":"to look for ~ 는 ‘~을 찾기 위해’ 목적의 부사적 용법. ③ to make money 도 목적. ① 진주어 ② 보어 ④ 형용사적 ⑤ 명사적(목적어).","source":"학습지 L6 p.7(to look ~ 부사적 용법 목적) · 통합본 L5 본문 분석"},
-{"no":17,"points":4,"stem":"다음 우리말을 주어진 단어를 모두 한 번씩 사용하여 영작할 때, 일곱 번째에 오는 단어는?","box":"비록 비가 많이 내렸지만, 우리는 놀이공원에 갔다.\n(although, amusement, heavily, it, park, raining, the, to, was, we, went)","choices":["heavily","we","went","to","raining"],"inline":true,"answer":3,"explain":"Although it was raining heavily, we went to the amusement park. → 7번째 went.","source":"L6 Review Lounge(일기) · 학습지 L6 Grammar Point B"},
-{"no":18,"points":4,"stem":"「명령문, and/or …」를 If 로 시작하는 문장으로 어법상 바르게 바꾼 것은?","choices":["Take a rest, and you’ll feel better soon.\n→ If you take a rest, you’ll feel better soon.","Don’t run on the wet floor, or you will fall over.\n→ If you run on the wet floor, you won’t fall over.","Take an umbrella, or you will get wet.\n→ If you take an umbrella, you will get wet.","Be quiet, or you will wake up the baby.\n→ If you are quiet, you will wake up the baby.","Listen carefully to the teacher, and you will understand the lesson.\n→ If you don’t listen carefully to the teacher, you will understand the lesson."],"answer":1,"explain":"② If you run ~, you will fall over. ③ If you don’t take ~ ④ If you are not quiet ~ ⑤ If you listen ~.","source":"학습지 L5 Grammar Point B – B(p.11) · 통합본 L5 GRAMMAR 2"},
-{"kind":"group","label":"[19~22]","direction":"다음 글을 읽고 물음에 답하시오.","box":{"lines":["Date & Time: September 15, 5:30 p.m.","It’s a sad day for me. This morning, I went scuba diving at my favorite spot in the sea. It was a place ①<u>that</u> was full of beautiful and colorful corals. But today, I saw that corals were getting sick. I was ②<u>shocked</u>. (A)<u>따뜻한 바닷물 때문에 산호들이 흰색으로 변해 버렸다.</u> Different types of waste ③<u>have harmed</u> the corals, too. Now the spot has lost its colors and beauty. I’m really worried.","Date & Time: November 27, 11:30 a.m.","Last night, some healthy corals in the sea ④<u>laid</u> eggs during the full moon. This morning, hundreds of baby corals ⑤<u>was born</u> from the eggs like magic. They were cute and amazing. I hope this miracle will happen to other sick corals, too. (B)________ it took time to heal the sick corals and grow healthy ones, it was worth the hard work."]}},
-{"no":19,"points":4,"stem":"윗글의 밑줄 친 (A)를 바르게 영작한 문장은?","choices":["Because of the warm seawater, corals have turned white.","Because the warm seawater, corals have turned white.","Because of the warm seawater, corals have turn white.","Because of the warm seawater, corals has turned white.","Because of the warm seawater, corals turned into white."],"answer":1,"explain":"because of + 명사구, 현재완료(결과) have + p.p., turn + 형용사.","source":"L6 본문 1대목 · 학습지 L6 Words 기본 B(because/because of) · 학습지 L6 p.6"},
-{"no":20,"points":4,"stem":"윗글의 빈칸 (B)에 들어갈 말로 가장 적절한 것은?","choices":["Because","Although","If","When","Since"],"inline":true,"answer":2,"explain":"‘시간이 걸렸지만 가치가 있었다’ — 양보의 접속사 Although.","source":"L6 본문 4대목 · 학습지 L6 p.8(When/Although) · 학습지 L6 Grammar Point B"},
-{"no":21,"points":3,"stem":"윗글의 밑줄 친 ①~⑤ 중, 어법상 틀린 것은?","choices":["①","②","③","④","⑤"],"inline":true,"answer":5,"explain":"주어 hundreds of baby corals 는 복수 → were born. ① 주격 관계대명사 ② shocked ③ 현재완료 ④ lay 의 과거 laid(Last night 과거 시점).","source":"L6 본문 1·4대목(원문 were born) · 학습지 L6 p.8(laid/have laid·born/were born·수동태 복습)"},
-{"no":22,"points":3,"stem":"윗글을 읽고 답할 수 없는 것은?","choices":["Where did the writer go scuba diving on September 15?","Why have corals turned white?","When did some healthy corals lay eggs?","How many divers helped heal the sick corals?","How did the writer feel on September 15?"],"answer":4,"explain":"잠수부의 수는 언급되지 않는다. ① favorite spot in the sea ② because of the warm seawater ③ last night, during the full moon ⑤ sad, shocked, worried.","source":"L6 본문 1·4대목"},
-{"kind":"group","label":"[23~26]","direction":"다음 글을 읽고 물음에 답하시오.","box":{"lines":["Some of you have a dream job in (가), but others do not. It is not easy for you ⓐ<u>to find</u> a future job. But we all need to answer the question, “What do you want to be in the future?” Think about the following questions, and you will find a path to your future job.","What Do I Have to Do Now?","First, focus on your school subjects now. They give you the basic skills for your future. These skills help you ⓑ<u>make</u> good choices. Second, gather information about jobs ⓒ<u>that</u> interest you. You can watch videos and movies, or read books about them. This way, you can learn about real work in those jobs. Finally, keep ⓓ<u>trying</u> new things! Your interests can change often. It is very important for you to experience different activities. Our world keeps ⓔ<u>to change</u>, and jobs will also change. (A)<u>Keep exploring, and you’ll find your dream job soon.</u>"]}},
-{"no":23,"points":4,"stem":"윗글의 빈칸 (가)에 들어갈 단어가 아래 ①~⑤의 빈칸에 쓰였을 때, 문맥상 가장 적절한 것은?","choices":["He changed his ______ at the last moment.","There is a ______ on your shirt.","The shoes ______ your dress.","Our hen ______ an egg this morning.","We watched a soccer ______."],"answer":1,"explain":"(가) mind(have ~ in mind: ~을 마음에 두다). ① mind(마음). ② spot ③ match ④ laid ⑤ match.","source":"L5 본문 1대목 · L5 어휘(have ~ in mind) · L5·L6 다의어(mind, spot, match, lay)"},
-{"no":24,"points":3,"stem":"윗글의 밑줄 친 (A)를 If 로 시작하는 문장으로 어법상 바르게 바꾼 것은?","choices":["If you keep exploring, you’ll find your dream job soon.","If you don’t keep exploring, you’ll find your dream job soon.","Keep exploring, or you’ll find your dream job soon.","If you will keep exploring, you’ll find your dream job soon.","If you keep exploring, you won’t find your dream job soon."],"answer":1,"explain":"「명령문, and …」= If + 주어 + 동사(현재) ~, 주어 + will ….","source":"L5 본문 4대목 · 통합본 L5 GRAMMAR 2 · 학습지 L5 Grammar Point B"},
-{"no":25,"points":4,"stem":"윗글의 밑줄 친 ⓐ~ⓔ 중, 어법상 틀린 것은?","choices":["ⓐ","ⓑ","ⓒ","ⓓ","ⓔ"],"inline":true,"answer":5,"explain":"keep + 동명사(계속 ~하다) → keeps changing. ⓐ 진주어 ⓑ help + 목적어 + 동사원형 ⓒ 주격 관계대명사 ⓓ keep + 동명사.","source":"L5 본문 1·4대목(원문 changing) · 학습지 L5 p.8(keep + 동사원형-ing) · 통합본 L5 본문 분석"},
-{"no":26,"points":4,"stem":"다음 영영풀이에 해당하는 단어 중 윗글에서 찾을 수 없는 것은?","choices":["the part of you that thinks, knows, feels, and imagines things","a way to get to a place or goal","at an early and simple level","to do or feel something or learn from it","a part that someone has in an activity or situation"],"answer":5,"explain":"① mind ② path ③ basic ④ experience 는 글에 있고, ⑤ role 은 없다.","source":"L5 영영풀이(mind·path·basic·experience·role)"},
-{"no":27,"points":4,"stem":"다음 글의 내용과 일치하지 않는 것은?","box":{"title":"Divers Wanted","lines":["We want team members to help sick corals.","What to Do","• Clean up the ocean","• Put ointment on sick corals","• Grow healthy baby corals in tanks of seawater","Together, we can make the ocean healthy again!","Please send me a message if you are interested!","Follow us at @coral_help"]},"choices":["병든 산호를 도울 팀원을 구하고 있다.","해야 할 일에는 바다 청소가 포함된다.","아기 산호는 바닷물 수조에서 키운다.","관심 있는 사람은 전화로 연락해야 한다.","@coral_help 를 팔로우하면 된다."],"answer":4,"explain":"Please send me a message — 메시지를 보내라고 했다.","source":"L6 After Reading C — 기출 27(그래프)을 글 일치로 대체"},
-{"no":28,"points":4,"stem":"어법상 옳은 문장의 개수는?","box":"• It was polite of her to say thank you.\n• It is safe for them to wearing helmets.\n• Eat more vegetables, and you’ll feel better.\n• Finish your homework, you will have free time.\n• She has worked here for three years.\n• I have studied English for three years.\n• Although was she very angry, she remained calm.\n• Please let me borrow your book for a week.","choices":["2개","3개","4개","5개","6개"],"inline":true,"answer":4,"explain":"옳은 것: It was polite of her ~ / Eat more vegetables, and ~ / She has worked ~ / I have studied ~ / Please let me borrow ~ → 5개. 틀린 것: to wear / Finish your homework, and / Although she was.","source":"학습지 L5 Grammar Point A – A(p.9) · 학습지 L5 GP-B A-1 · 통합본 L5 p.26(14) · 학습지 L6 GP-A B-3 · 통합본 L6 p.26(11·16) · 문제집 L2 GRAMMAR(사역동사 let) — 1학기 누적"}
-]}
+{
+ "school": "숭의여자중학교",
+ "grade": 2,
+ "term": 2,
+ "exam": "중간고사",
+ "subject": "영어",
+ "set": 3,
+ "range": "Lesson 5~6",
+ "publisher": "YBM(박준언)",
+ "year": 2026,
+ "items": [
+  {
+   "no": 1,
+   "points": 3,
+   "stem": "짝지어진 단어의 관계가 나머지와 다른 것은?",
+   "choices": [
+    "heat – cool down",
+    "safe – unsafe",
+    "save – waste",
+    "connect – disconnect",
+    "path – way"
+   ],
+   "answer": 5,
+   "explain": "path – way 는 유의어(길), 나머지는 반의어.",
+   "source": "학습지 L5 Words 심화 B(path≒way, connect↔disconnect, safe↔unsafe) · L6 Words 심화 B(save↔waste, heat↔cool down)"
+  },
+  {
+   "no": 2,
+   "points": 3,
+   "stem": "다음 대화의 (가)~(라)에 들어갈 수 없는 표현은?",
+   "box": "A: (가) playing sports and fixing machines.\nB: (나) Type R?\nA: Yes. Pilots, engineers, police officers, and sports players are often Type R.\nB: (다) do you like?\nA: I’m interested in jobs like pilot or engineer.\nB: (라) find your dream job soon.",
+   "choices": [
+    "I’m interested in",
+    "Are you",
+    "Which of those jobs",
+    "I hope you",
+    "I’m sure that"
+   ],
+   "answer": 5,
+   "explain": "(가) I’m interested in (나) Are you (다) Which of those jobs (라) I hope you — ⑤는 쓰이지 않는다.",
+   "source": "L5 Let’s Communicate"
+  },
+  {
+   "no": 3,
+   "points": 3,
+   "stem": "주어진 말에 이어질 대화 (A)~(C)의 순서로 가장 알맞은 것은?",
+   "box": "A: I heard that there are more forest fires these days.\n(A) B: I get it. That sounds serious.\n(B) A: It’s because of global warming.\n(C) B: Really? Why is that happening?",
+   "choices": [
+    "(A) – (B) – (C)",
+    "(B) – (C) – (A)",
+    "(C) – (A) – (B)",
+    "(C) – (B) – (A)",
+    "(B) – (A) – (C)"
+   ],
+   "answer": 4,
+   "explain": "왜 그런 일이?(C) → 지구 온난화 때문(B) → 알겠다, 심각하다(A).",
+   "source": "L6 Listen & Speak C"
+  },
+  {
+   "kind": "group",
+   "label": "[4~6]",
+   "direction": "다음 대화를 읽고 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "B: Hey, Jina. What are you doing?",
+     "G: I’m deleting my emails.",
+     "B: Why?",
+     "G: I heard (A)[that / what] storing emails (B)[use / uses] a lot of energy.",
+     "B: Really?",
+     "G: Yeah, using too much energy is (C)[bad / badly] for the Earth.",
+     "B: Oh, I get it. I’ll delete my emails, too.",
+     "G: And you should also (D)[block / blocking] spam and ads."
+    ]
+   }
+  },
+  {
+   "no": 4,
+   "points": 3,
+   "stem": "(A)~(D)에 들어갈 어법에 맞는 표현으로 가장 적절한 것은?",
+   "choices_table": {
+    "header": [
+     "",
+     "(A)",
+     "(B)",
+     "(C)",
+     "(D)"
+    ],
+    "rows": [
+     [
+      "①",
+      "that",
+      "use",
+      "bad",
+      "block"
+     ],
+     [
+      "②",
+      "what",
+      "uses",
+      "bad",
+      "blocking"
+     ],
+     [
+      "③",
+      "that",
+      "uses",
+      "bad",
+      "block"
+     ],
+     [
+      "④",
+      "that",
+      "uses",
+      "badly",
+      "block"
+     ],
+     [
+      "⑤",
+      "what",
+      "use",
+      "badly",
+      "blocking"
+     ]
+    ]
+   },
+   "answer": 3,
+   "explain": "(A) heard 의 목적어인 명사절 접속사 that (B) 동명사구 주어(storing emails)는 단수 취급 → uses (C) be동사 뒤 보어는 형용사 → bad (D) should + 동사원형 → block.",
+   "source": "L6 Listen & Speak B — 동명사 주어 단수(학습지 L5 p.8) · 명사절 that(학습지 L6 p.6·7) · 보어 자리 형용사(학습지 L5 p.7) · 조동사"
+  },
+  {
+   "no": 5,
+   "points": 3,
+   "stem": "위 대화를 읽고 답할 수 없는 것은?",
+   "choices": [
+    "What is Jina doing?",
+    "Why is Jina deleting her emails?",
+    "How many emails does Jina get every day?",
+    "What will the boy do?",
+    "What does Jina tell the boy to block?"
+   ],
+   "answer": 3,
+   "explain": "하루에 받는 이메일 수는 나오지 않는다. ① deleting her emails ② storing emails uses a lot of energy ④ delete his emails ⑤ spam and ads.",
+   "source": "L6 Listen & Speak B · 통합본 L6 대화 09(질문 원문)"
+  },
+  {
+   "no": 6,
+   "points": 4,
+   "stem": "위 대화에 대한 설명 ⓐ~ⓘ 중 옳은 것의 개수는?",
+   "box": "ⓐ Jina is deleting her emails.\nⓑ Jina heard that storing emails uses a lot of energy.\nⓒ The boy is not going to delete his emails.\nⓓ The boy should also block spam and ads.\nⓔ storing emails 는 동사 heard 의 목적어 역할을 하는 동명사구이다.\nⓕ I heard that ~ 의 that 은 생략할 수 있다.\nⓖ I get it. 은 I understand. 와 바꿔 쓸 수 있다.\nⓗ delete: to remove something, such as words, pictures, or files from a document, computer, etc.\nⓘ store: to give food to a person or an animal",
+   "choices": [
+    "2개",
+    "3개",
+    "4개",
+    "5개",
+    "6개"
+   ],
+   "inline": true,
+   "answer": 5,
+   "explain": "옳은 것: ⓐ ⓑ ⓓ ⓕ ⓖ ⓗ → 6개. ⓒ 삭제하겠다고 함 ⓔ heard 의 목적어는 that 절이고, storing emails 는 그 절의 주어 ⓘ feed 의 풀이(store: 저장하다).",
+   "source": "L6 Listen & Speak B · 학습지 L6 p.6·7(that 생략) · 학습지 L5 p.8(동명사 주어) · 통합본 L6 대화문 11(I get it = I understand) · L6 영영풀이(delete·feed)"
+  },
+  {
+   "no": 7,
+   "points": 4,
+   "stem": "다음 문장의 의미가 잘 드러나도록 현재완료를 이용하여 바르게 바꿔 쓴 것은?",
+   "box": "• I lost my bicycle, and I can’t ride it now.",
+   "choices": [
+    "I have lost my bicycle, so I can’t ride it now.",
+    "I have losing my bicycle, so I can’t ride it now.",
+    "I has lost my bicycle, so I can’t ride it now.",
+    "I have been lost my bicycle, so I can’t ride it now.",
+    "I lost my bicycle yet, so I can’t ride it now."
+   ],
+   "answer": 1,
+   "explain": "과거에 잃어버려 지금도 없다 → 현재완료 결과 용법 have + p.p.(lost). ② losing ③ has ④ been 불필요 ⑤ 과거시제 + yet.",
+   "source": "학습지 L6 Grammar Point A p.10 C-3(문장 그대로) · 통합본 L6 GRAMMAR 1(결과)"
+  },
+  {
+   "kind": "group",
+   "label": "[8~10]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "How Can I Find My Job?",
+     "Everyone has their own favorite activities. Try to connect them to a real job, and you will find your path. If you like (A)<u>watching</u> TV shows, you can be a producer or a writer for those shows. However, liking something and being good at it (B)<u>is</u> not the same. (C)<u>Playing</u> soccer as a job is different from playing it as a hobby. You love soccer but aren’t good at it. Then you can look for other jobs in soccer. If you are good at (D)<u>taking</u> care of people, you can become a soccer player’s manager. Or you can work as a marketer for a soccer team if you are good at (E)<u>thinking</u> creatively. Look for jobs that match your favorite things and your abilities."
+    ]
+   }
+  },
+  {
+   "no": 8,
+   "points": 4,
+   "stem": "윗글의 밑줄 친 (A)~(E) 중, 어법상 틀린 것은?",
+   "choices": [
+    "(A)",
+    "(B)",
+    "(C)",
+    "(D)",
+    "(E)"
+   ],
+   "inline": true,
+   "answer": 2,
+   "explain": "liking something 과 being good at it 두 개의 동명사구가 and 로 이어진 주어 → are. (A) like + 동명사 (C) 동명사 주어 (D)(E) 전치사 at + 동명사.",
+   "source": "L5 본문 3대목(원문 are) · 학습지 L5 p.8 노트(동명사 주어)"
+  },
+  {
+   "no": 9,
+   "points": 3,
+   "stem": "윗글의 내용과 일치하지 않는 것은?",
+   "choices": [
+    "모두가 자신만의 좋아하는 활동이 있다.",
+    "TV 프로그램 보는 것을 좋아하면 그 프로그램의 작가가 될 수 있다.",
+    "무언가를 좋아하는 것과 잘하는 것은 같다.",
+    "사람을 돌보는 것을 잘하면 축구 선수의 매니저가 될 수 있다.",
+    "창의적으로 생각하는 것을 잘하면 축구팀의 마케터로 일할 수 있다."
+   ],
+   "answer": 3,
+   "explain": "liking something and being good at it are not the same. — 같지 않다.",
+   "source": "L5 본문 3대목"
+  },
+  {
+   "no": 10,
+   "points": 4,
+   "stem": "윗글에 대한 설명 ⓐ~ⓙ 중 옳지 않은 것의 개수는?",
+   "box": "ⓐ Try to connect ~ 의 to connect 는 명사적 용법(목적어)이다.\nⓑ Try to connect them to a real job, and you will find your path. 의 and 는 or 로 바꿔도 뜻이 같다.\nⓒ them 은 their own favorite activities 를 가리킨다.\nⓓ (C)Playing 은 문장의 주어 역할을 하는 동명사이다.\nⓔ is different from 은 ‘~와 같다’는 뜻이다.\nⓕ jobs that match ~ 의 that 은 주격 관계대명사로 which 로 바꿔 쓸 수 있다.\nⓖ You love soccer but aren’t good at it. 의 it 은 soccer 를 가리킨다.\nⓗ producer: someone in charge of preparing and producing a play, film, or show\nⓘ ability: the ability to do something well\nⓙ path: a way to get to a place or goal",
+   "choices": [
+    "2개",
+    "3개",
+    "4개",
+    "5개",
+    "6개"
+   ],
+   "inline": true,
+   "answer": 2,
+   "explain": "옳지 않은 것: ⓑ(and ‘그러면’ ↔ or ‘그렇지 않으면’) ⓔ(~와 다르다) ⓘ(skill 의 풀이; ability 는 the power or skill to do something) → 3개.",
+   "source": "학습지 L5 p.8(Reading C 노트: them·it·주어 동명사·관계대명사) · 통합본 L5 GRAMMAR 2 · L5 어휘(be different from) · L5 영영풀이(producer·ability·path) · 학습지 L5 Words 기본 A-8(skill)"
+  },
+  {
+   "kind": "group",
+   "label": "[11~12]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "Date & Time: November 7, 9:40 p.m.",
+     "For the last two weeks, my team has put (가)<u>ointment</u> on sick corals.",
+     "(A) When they are ready, we’ll plant them onto the corals in the sea. Our goal is to grow many healthy corals. I look forward to seeing the results!",
+     "(B) We also took some healthy baby corals from the sea and put them in tanks of seawater.",
+     "(C) We feed them clam parts and seaweed smoothies. This food helps baby corals grow stronger."
+    ]
+   }
+  },
+  {
+   "no": 11,
+   "points": 3,
+   "stem": "주어진 글에 이어질 (A)~(C)의 순서로 가장 알맞은 것은?",
+   "choices": [
+    "(A) – (B) – (C)",
+    "(B) – (A) – (C)",
+    "(B) – (C) – (A)",
+    "(C) – (A) – (B)",
+    "(C) – (B) – (A)"
+   ],
+   "answer": 3,
+   "explain": "also 로 이어지는 아기 산호 수조(B) → 먹이(C) → 준비되면 심겠다(A).",
+   "source": "L6 본문 3대목(November 7)"
+  },
+  {
+   "no": 12,
+   "points": 3,
+   "stem": "윗글의 (가)ointment 의 영영풀이로 가장 적절한 것은?",
+   "choices": [
+    "a soft cream used on the skin to treat a medical problem",
+    "a container for holding liquid or gas",
+    "a plant that grows in the sea",
+    "a thick, blended drink made from fruit, often mixed with juice, milk, yogurt, or ice",
+    "a type of sea animal with a shell in two parts and a soft body that can be eaten"
+   ],
+   "answer": 1,
+   "explain": "ointment 연고. ② tank ③ seaweed ④ smoothie ⑤ clam.",
+   "source": "L6 영영풀이"
+  },
+  {
+   "no": 13,
+   "points": 4,
+   "stem": "다음 빈칸에 Although 가 들어가기에 어색한 것은?",
+   "choices": [
+    "________ I was sad, I didn’t cry.",
+    "________ Sue studied hard, she got a low grade.",
+    "________ the light is on, there is no one in the room.",
+    "________ we are in the same class, I don’t know her well.",
+    "________ you helped me, I could finish the project successfully."
+   ],
+   "answer": 5,
+   "explain": "⑤는 ‘네가 도와주어서 끝낼 수 있었다’는 이유 → Because. 나머지는 앞뒤가 반대되는 양보.",
+   "source": "통합본 L6 GRAMMAR 2(08) · 학습지 L6 Grammar Point B(기타 접속사와 비교)"
+  },
+  {
+   "no": 14,
+   "points": 4,
+   "stem": "두 문장의 의미가 잘 드러나도록 현재완료 문장으로 바르게 바꾼 것은?",
+   "choices": [
+    "Spring came, and it is spring now.\n→ Spring has came.",
+    "He joined the reading club two years ago, and he is still in the club.\n→ He has been in the reading club for two years.",
+    "She bought a new smartphone last week, and she still has it.\n→ She bought a new smartphone.",
+    "My aunt went to Germany. She’s not in Korea.\n→ My aunt has went to Germany.",
+    "He won the prize last year, and he still has it.\n→ He has won the prize last year."
+   ],
+   "answer": 2,
+   "explain": "② 2년 전부터 지금까지 → 현재완료 계속 for two years. ① has come ③ 현재완료(has bought)가 아님 ④ has gone ⑤ last year 는 현재완료와 함께 쓸 수 없음.",
+   "source": "통합본 L6 GRAMMAR 1 – A(01·05) · 학습지 L6 Grammar Point A(p.9 과거 vs 현재완료 · p.10 B-2·6)"
+  },
+  {
+   "kind": "group",
+   "label": "[15~16]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "Date & Time: October 2, 10:00 a.m.",
+     "I have thought ( ⓐ ) how to help corals. My plan is to form a team ( ⓑ ) divers. My team can go underwater and take care of the sick corals. Many corals get sick because they don’t get good care ( ⓒ ) time. I’m sure that other divers are worried about this, too. I’m going to post a message online (가)<u>to look</u> ( ⓓ ) volunteer divers."
+    ]
+   }
+  },
+  {
+   "no": 15,
+   "points": 3,
+   "stem": "윗글의 빈칸 ⓐ~ⓓ에 들어갈 수 없는 것은?",
+   "choices": [
+    "about",
+    "of",
+    "in",
+    "for",
+    "at"
+   ],
+   "inline": true,
+   "answer": 5,
+   "explain": "ⓐ think about ⓑ a team of ⓒ in time(제때) ⓓ look for.",
+   "source": "L6 본문 2대목 · L6 어휘(in time) · L5 어휘(look for)"
+  },
+  {
+   "no": 16,
+   "points": 4,
+   "stem": "윗글의 밑줄 친 (가)to look 과 to부정사의 쓰임이 같은 것은?",
+   "choices": [
+    "It is not easy for you to find a future job.",
+    "My plan is to form a team of divers.",
+    "First, we work to make money.",
+    "Everyone has a special role to play.",
+    "I’d like to learn the guitar."
+   ],
+   "answer": 3,
+   "explain": "to look for ~ 는 ‘~을 찾기 위해’ 목적의 부사적 용법. ③ to make money 도 목적. ① 진주어 ② 보어 ④ 형용사적 ⑤ 명사적(목적어).",
+   "source": "학습지 L6 p.7(to look ~ 부사적 용법 목적) · 통합본 L5 본문 분석"
+  },
+  {
+   "no": 17,
+   "points": 4,
+   "stem": "다음 우리말을 주어진 단어를 모두 한 번씩 사용하여 영작할 때, 일곱 번째에 오는 단어는?",
+   "box": "비록 비가 많이 내렸지만, 우리는 놀이공원에 갔다.\n(although, amusement, heavily, it, park, raining, the, to, was, we, went)",
+   "choices": [
+    "heavily",
+    "we",
+    "went",
+    "to",
+    "raining"
+   ],
+   "inline": true,
+   "answer": 3,
+   "explain": "Although it was raining heavily, we went to the amusement park. → 7번째 went.",
+   "source": "L6 Review Lounge(일기) · 학습지 L6 Grammar Point B"
+  },
+  {
+   "no": 18,
+   "points": 4,
+   "stem": "「명령문, and/or …」를 If 로 시작하는 문장으로 어법상 바르게 바꾼 것은?",
+   "choices": [
+    "Take a rest, and you’ll feel better soon.\n→ If you take a rest, you’ll feel better soon.",
+    "Don’t run on the wet floor, or you will fall over.\n→ If you run on the wet floor, you won’t fall over.",
+    "Take an umbrella, or you will get wet.\n→ If you take an umbrella, you will get wet.",
+    "Be quiet, or you will wake up the baby.\n→ If you are quiet, you will wake up the baby.",
+    "Listen carefully to the teacher, and you will understand the lesson.\n→ If you don’t listen carefully to the teacher, you will understand the lesson."
+   ],
+   "answer": 1,
+   "explain": "② If you run ~, you will fall over. ③ If you don’t take ~ ④ If you are not quiet ~ ⑤ If you listen ~.",
+   "source": "학습지 L5 Grammar Point B – B(p.11) · 통합본 L5 GRAMMAR 2"
+  },
+  {
+   "kind": "group",
+   "label": "[19~22]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "Date & Time: September 15, 5:30 p.m.",
+     "It’s a sad day for me. This morning, I went scuba diving at my favorite spot in the sea. It was a place ①<u>that</u> was full of beautiful and colorful corals. But today, I saw that corals were getting sick. I was ②<u>shocked</u>. (A)<u>따뜻한 바닷물 때문에 산호들이 흰색으로 변해 버렸다.</u> Different types of waste ③<u>have harmed</u> the corals, too. Now the spot has lost its colors and beauty. I’m really worried.",
+     "Date & Time: November 27, 11:30 a.m.",
+     "Last night, some healthy corals in the sea ④<u>laid</u> eggs during the full moon. This morning, hundreds of baby corals ⑤<u>was born</u> from the eggs like magic. They were cute and amazing. I hope this miracle will happen to other sick corals, too. (B)________ it took time to heal the sick corals and grow healthy ones, it was worth the hard work."
+    ]
+   }
+  },
+  {
+   "no": 19,
+   "points": 4,
+   "stem": "윗글의 밑줄 친 (A)를 바르게 영작한 문장은?",
+   "choices": [
+    "Because of the warm seawater, corals have turned white.",
+    "Because the warm seawater, corals have turned white.",
+    "Because of the warm seawater, corals have turn white.",
+    "Because of the warm seawater, corals has turned white.",
+    "Because of the warm seawater, corals turned into white."
+   ],
+   "answer": 1,
+   "explain": "because of + 명사구, 현재완료(결과) have + p.p., turn + 형용사.",
+   "source": "L6 본문 1대목 · 학습지 L6 Words 기본 B(because/because of) · 학습지 L6 p.6"
+  },
+  {
+   "no": 20,
+   "points": 4,
+   "stem": "윗글의 빈칸 (B)에 들어갈 말로 가장 적절한 것은?",
+   "choices": [
+    "Because",
+    "Although",
+    "If",
+    "When",
+    "Since"
+   ],
+   "inline": true,
+   "answer": 2,
+   "explain": "‘시간이 걸렸지만 가치가 있었다’ — 양보의 접속사 Although.",
+   "source": "L6 본문 4대목 · 학습지 L6 p.8(When/Although) · 학습지 L6 Grammar Point B"
+  },
+  {
+   "no": 21,
+   "points": 3,
+   "stem": "윗글의 밑줄 친 ①~⑤ 중, 어법상 틀린 것은?",
+   "choices": [
+    "①",
+    "②",
+    "③",
+    "④",
+    "⑤"
+   ],
+   "inline": true,
+   "answer": 5,
+   "explain": "주어 hundreds of baby corals 는 복수 → were born. ① 주격 관계대명사 ② shocked ③ 현재완료 ④ lay 의 과거 laid(Last night 과거 시점).",
+   "source": "L6 본문 1·4대목(원문 were born) · 학습지 L6 p.8(laid/have laid·born/were born·수동태 복습)"
+  },
+  {
+   "no": 22,
+   "points": 3,
+   "stem": "윗글을 읽고 답할 수 없는 것은?",
+   "choices": [
+    "Why have corals turned white?",
+    "What has the spot lost?",
+    "What were born from the eggs this morning?",
+    "How many divers joined the team?",
+    "What did it take time to do?"
+   ],
+   "answer": 4,
+   "explain": "팀에 합류한 잠수부 수는 언급되지 않는다. ① because of the warm seawater ② its colors and beauty ③ hundreds of baby corals ⑤ to heal the sick corals and grow healthy ones.",
+   "source": "L6 본문 1·4대목 · 학습지 L6 Reading p.6·8 Q1·Q2(질문 원문) · 통합본 L6 25(ⓒ)"
+  },
+  {
+   "kind": "group",
+   "label": "[23~26]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "Some of you have a dream job in (가), but others do not. It is not easy for you ⓐ<u>to find</u> a future job. But we all need to answer the question, “What do you want to be in the future?” Think about the following questions, and you will find a path to your future job.",
+     "What Do I Have to Do Now?",
+     "First, focus on your school subjects now. They give you the basic skills for your future. These skills help you ⓑ<u>make</u> good choices. Second, gather information about jobs ⓒ<u>that</u> interest you. You can watch videos and movies, or read books about them. This way, you can learn about real work in those jobs. Finally, keep ⓓ<u>trying</u> new things! Your interests can change often. It is very important for you to experience different activities. Our world keeps ⓔ<u>to change</u>, and jobs will also change. (A)<u>Keep exploring, and you’ll find your dream job soon.</u>"
+    ]
+   }
+  },
+  {
+   "no": 23,
+   "points": 4,
+   "stem": "윗글의 빈칸 (가)에 들어갈 단어가 아래 ①~⑤의 빈칸에 쓰였을 때, 문맥상 가장 적절한 것은?",
+   "choices": [
+    "He changed his ______ at the last moment.",
+    "There is a ______ on your shirt.",
+    "The shoes ______ your dress.",
+    "Our hen ______ an egg this morning.",
+    "We watched a soccer ______."
+   ],
+   "answer": 1,
+   "explain": "(가) mind(have ~ in mind: ~을 마음에 두다). ① mind(마음). ② spot ③ match ④ laid ⑤ match.",
+   "source": "L5 본문 1대목 · L5 어휘(have ~ in mind) · L5·L6 다의어(mind, spot, match, lay)"
+  },
+  {
+   "no": 24,
+   "points": 3,
+   "stem": "윗글의 밑줄 친 (A)를 If 로 시작하는 문장으로 어법상 바르게 바꾼 것은?",
+   "choices": [
+    "If you keep exploring, you’ll find your dream job soon.",
+    "If you don’t keep exploring, you’ll find your dream job soon.",
+    "Keep exploring, or you’ll find your dream job soon.",
+    "If you will keep exploring, you’ll find your dream job soon.",
+    "If you keep exploring, you won’t find your dream job soon."
+   ],
+   "answer": 1,
+   "explain": "「명령문, and …」= If + 주어 + 동사(현재) ~, 주어 + will ….",
+   "source": "L5 본문 4대목 · 통합본 L5 GRAMMAR 2 · 학습지 L5 Grammar Point B"
+  },
+  {
+   "no": 25,
+   "points": 4,
+   "stem": "윗글의 밑줄 친 ⓐ~ⓔ 중, 어법상 틀린 것은?",
+   "choices": [
+    "ⓐ",
+    "ⓑ",
+    "ⓒ",
+    "ⓓ",
+    "ⓔ"
+   ],
+   "inline": true,
+   "answer": 5,
+   "explain": "keep + 동명사(계속 ~하다) → keeps changing. ⓐ 진주어 ⓑ help + 목적어 + 동사원형 ⓒ 주격 관계대명사 ⓓ keep + 동명사.",
+   "source": "L5 본문 1·4대목(원문 changing) · 학습지 L5 p.8(keep + 동사원형-ing) · 통합본 L5 본문 분석"
+  },
+  {
+   "no": 26,
+   "points": 4,
+   "stem": "다음 영영풀이에 해당하는 단어 중 윗글에서 찾을 수 없는 것은?",
+   "choices": [
+    "the part of you that thinks, knows, feels, and imagines things",
+    "a way to get to a place or goal",
+    "at an early and simple level",
+    "to do or feel something or learn from it",
+    "a part that someone has in an activity or situation"
+   ],
+   "answer": 5,
+   "explain": "① mind ② path ③ basic ④ experience 는 글에 있고, ⑤ role 은 없다.",
+   "source": "L5 영영풀이(mind·path·basic·experience·role)"
+  },
+  {
+   "no": 27,
+   "points": 4,
+   "stem": "다음 글의 내용과 일치하지 않는 것은?",
+   "box": {
+    "title": "Divers Wanted",
+    "lines": [
+     "We want team members to help sick corals.",
+     "What to Do",
+     "• Clean up the ocean",
+     "• Put ointment on sick corals",
+     "• Grow healthy baby corals in tanks of seawater",
+     "Together, we can make the ocean healthy again!",
+     "Please send me a message if you are interested!",
+     "Follow us at @coral_help"
+    ]
+   },
+   "choices": [
+    "병든 산호를 도울 팀원을 구하고 있다.",
+    "해야 할 일에는 바다 청소가 포함된다.",
+    "아기 산호는 바닷물 수조에서 키운다.",
+    "관심 있는 사람은 전화로 연락해야 한다.",
+    "@coral_help 를 팔로우하면 된다."
+   ],
+   "answer": 4,
+   "explain": "Please send me a message — 메시지를 보내라고 했다.",
+   "source": "L6 After Reading C — 기출 27(그래프)을 글 일치로 대체"
+  },
+  {
+   "no": 28,
+   "points": 4,
+   "stem": "어법상 옳은 문장의 개수는?",
+   "box": "• It was polite of her to say thank you.\n• It is safe for them to wearing helmets.\n• Eat more vegetables, and you’ll feel better.\n• Finish your homework, you will have free time.\n• She has worked here for three years.\n• I have studied English for three years.\n• Although was she very angry, she remained calm.\n• Please let me borrow your book for a week.",
+   "choices": [
+    "2개",
+    "3개",
+    "4개",
+    "5개",
+    "6개"
+   ],
+   "inline": true,
+   "answer": 4,
+   "explain": "옳은 것: It was polite of her ~ / Eat more vegetables, and ~ / She has worked ~ / I have studied ~ / Please let me borrow ~ → 5개. 틀린 것: to wear / Finish your homework, and / Although she was.",
+   "source": "학습지 L5 Grammar Point A – A(p.9) · 학습지 L5 GP-B A-1 · 통합본 L5 p.26(14) · 학습지 L6 GP-A B-3 · 통합본 L6 p.26(11·16) · 문제집 L2 GRAMMAR(사역동사 let) — 1학기 누적"
+  }
+ ]
+}
