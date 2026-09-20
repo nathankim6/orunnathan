@@ -1,33 +1,486 @@
-{"school":"영등포중학교","grade":2,"term":2,"exam":"중간고사","subject":"영어","set":2,"range":"Lesson 5~6","publisher":"천재(이상기)","year":2026,
-"items":[
-{"no":1,"points":3,"stem":"다음 중 밑줄 친 어휘의 쓰임이 문맥상 적절하지 <u>않은</u> 것은?","choices":["The <u>thief</u> stole the painting from the museum.","The sunset was so <u>ordinary</u> that everyone took pictures of it.","Please take this <u>medicine</u> after meals.","Kwon Ki-ok worked hard to <u>achieve</u> her dream.","I <u>received</u> an invitation to the party."],"answer":2,"explain":"모두가 사진을 찍을 만큼 '아름다운(beautiful)' 노을. ordinary(평범한)는 어색하다.","source":"L5·L6 어휘"},
-{"no":2,"points":4,"stem":"빈칸에 공통으로 들어갈 단어로 적절한 것은?","box":"• I'm _____ for my dog. I lost him in this park.\n• She was _____ at the picture of a woman on the wall.","choices":["looking","watching","searching","finding","seeing"],"inline":true,"answer":1,"explain":"look for ~(~을 찾다) / look at ~(~을 보다).","source":"L5 대화문 · L6 본문"},
-{"no":3,"points":4,"stem":"우리말을 영어로 옮긴 것으로 적절하지 <u>않은</u> 것은?","choices":["그녀는 옆집에 산다.\n⇒ She lives next door.","그는 배가 아파서 침대에 누워 있었다.\n⇒ He had a stomachache, so he stayed in bed.","나는 세부 사항을 듣는 것을 잘한다.\n⇒ I am good at listening to details.","당시에 여성들은 비행 학교에 들어갈 수 없었다.\n⇒ At that time, women couldn't enter to flight schools.","그녀는 수업 전에 전화를 껐다.\n⇒ She turned off her phone before class."],"answer":4,"explain":"enter 는 타동사 → enter flight schools (to 없음).","source":"L5·L6 어휘(숙어) · L6 본문"},
-{"no":4,"points":3,"stem":"빈칸에 들어갈 말로 적절한 것은?","box":"I hope your dream _____ true.","choices":["come","comes","coming","to come","came"],"inline":true,"answer":2,"explain":"hope + that절(현재시제). 주어 your dream 이 3인칭 단수 → comes true.","source":"L6 Understand Communication B"},
-{"kind":"group","label":"[5-6]","direction":"다음 대화문을 읽고, 물음에 답하시오.","box":"Junho: Minji, what are you reading?\nMinji: I'm reading this book My Life with the Chimpanzees.\nJunho: Are you interested in chimpanzees?\nMinji: Yes, I am. This book is about the life of Jane Goodall and her love for chimpanzees.\nAlex: I read the book, too. She's an animal scientist ____ⓐ____ studied chimpanzees for many years.\nMinji: You're right. She's the first person to study chimpanzees in the wild. She's my role model.\nJunho: Wow, that's great!\nMinji: Like Jane Goodall, I'm very interested in animal behavior. And I want to study animals in the wild and help them, too.\nAlex: I hope your dream comes true."},
-{"no":5,"points":4,"stem":"위 대화의 빈칸 ⓐ에 들어갈 말로 적절한 것은? (문장의 의미와 어법 모두 고려할 것)","choices":["who","which","what","whom","whose"],"inline":true,"answer":1,"explain":"선행사가 사람(an animal scientist)이고 관계대명사절의 주어 자리 → 주격 관계대명사 who.","source":"L6 Understand Communication C · 관계대명사"},
-{"no":6,"points":4,"stem":"위 대화를 읽고 답변할 수 <u>없는</u> 내용의 질문은?","choices":["What is Minji reading?","What is the book about?","Who is Minji's role model?","When did Jane Goodall first go to Africa?","What does Minji want to do in the future?"],"answer":4,"explain":"Jane Goodall 이 언제 아프리카에 갔는지는 나오지 않는다.","source":"L6 Understand Communication C"},
-{"kind":"group","label":"[7-8]","direction":"다음 대화를 읽고, 물음에 답하시오.","box":"G: Excuse me. ____ⓐ____ I think I left it here.\nM: What does it look like?\nG: It's green, and it has a brown handle.\nM: Oh, I found it and put it in the umbrella stand.\nG: Thanks a lot!\nG:Girl / M:Man"},
-{"no":7,"points":3,"stem":"위 대화의 빈칸 ⓐ에 들어갈 말로 적절한 것은?","choices":["Did you see my umbrella?","Can I borrow your umbrella?","Where can I buy an umbrella?","Do you like my umbrella?","Is it raining outside?"],"answer":1,"explain":"여기에 두고 간 것 같다며 우산을 보았는지 묻는 상황.","source":"L5 Understand Communication A-3"},
-{"no":8,"points":3,"stem":"위 대화의 내용과 일치하는 것은?","choices":["소녀는 우산을 집에 두고 왔다.","소녀의 우산은 초록색이고 갈색 손잡이가 있다.","남자는 소녀의 우산을 보지 못했다.","남자는 우산을 분실물 보관소에 맡겼다.","소녀는 새 우산을 샀다."],"answer":2,"explain":"It's green, and it has a brown handle.","source":"L5 Understand Communication A-3"},
-{"no":9,"points":5,"stem":"자연스러운 대화가 되도록 (A)~(D)를 바르게 배열한 것은?","box":"G: You look busy today.\n(A) G: I hope you become a great scientist.\n(B) B: Yes, I'm working on a project about Marie Curie. I'm interested in her work in science.\n(C) B: I want to be a scientist like her.\n(D) G: That sounds interesting!","choices":["(B) - (C) - (D) - (A)","(B) - (D) - (C) - (A)","(C) - (B) - (D) - (A)","(D) - (B) - (A) - (C)","(B) - (D) - (A) - (C)"],"answer":2,"explain":"바빠 보인다 → 프로젝트 중(B) → 흥미롭다(D) → 과학자가 되고 싶다(C) → 훌륭한 과학자가 되길(A).","source":"L6 Understand Communication A-1"},
-{"kind":"group","label":"[10-11]","direction":"다음 대화를 읽고, 물음에 답하시오.","box":"Junho: I can't find my new smartphone. Can you help me?\nKate: I'm sorry to hear that. I'll call you.\nJunho: ⓐ<u>Actually, I turned it off.</u>\nAlex: What does it look like?\nJunho: It's black, and there's a brown bear character on the cover.\nAlex: When did you use it last?\nJunho: I turned it off before class. Then I think I put it in my backpack.\nKate: Let's look around the classroom.\n(a few minutes later)\nKate: I found it! It was inside your textbook.\nJunho: Oh, thank you for helping me!"},
-{"no":10,"points":3,"stem":"위 대화의 내용으로 볼 때 Kate가 한 일로 알맞은 것은?","choices":["준호에게 전화를 걸어 스마트폰을 찾아 주었다.","교과서 안에서 준호의 스마트폰을 찾아냈다.","준호의 배낭을 대신 들어 주었다.","준호에게 새 스마트폰을 사 주었다.","준호의 스마트폰 커버에 곰 캐릭터를 그려 주었다."],"answer":2,"explain":"Kate: I found it! It was inside your textbook.","source":"L5 Understand Communication C"},
-{"no":11,"points":4,"stem":"위 대화의 밑줄 친 ⓐ의 문맥상 의미로 가장 적절한 것은?","choices":["전화를 걸어도 소용이 없다.","스마트폰이 고장 났다.","스마트폰을 새로 샀다.","전화를 받고 싶지 않다.","스마트폰을 배낭에 넣지 않았다."],"answer":1,"explain":"전화해 보겠다는 Kate 에게 전원을 꺼 두었다고 답함 → 전화가 울리지 않는다.","source":"L5 Understand Communication C"},
-{"no":12,"points":3,"stem":"대화의 빈칸에 들어갈 말로 가장 적절한 것은?","box":"B: Sumin, what are you going to do this weekend?\nG: I'm going to visit the nature museum. ______________\nB: That sounds fun!\nG: Yeah, I'm so excited.","choices":["I'm really interested in animals.","I'm sorry to hear that.","I lost my ticket yesterday.","What does it look like?","I hope you become a great scientist."],"answer":1,"explain":"자연사 박물관에 가는 이유(동물에 관심). 뒤의 That sounds fun! 과 자연스럽다.","source":"L6 Wrap Up 1"},
-{"no":13,"points":4,"stem":"빈칸 ⓐ, ⓑ에 들어갈 말로 적절하게 짝 지어진 것은?","box":"This building ____ⓐ____ about 100 years ago. When I entered it, I was ____ⓑ____ tired that I sat down on the old bench right away.","choices_table":{"header":["","ⓐ","ⓑ"],"rows":[["①","built","so"],["②","built","too"],["③","was built","very"],["④","was built","so"],["⑤","was built","too"]]},"answer":4,"explain":"건물은 '지어지는' 것 → 수동태 was built. so + 형용사 + that ~.","source":"L6 Grammar Points 1(수동태) · 2(so ~ that)"},
-{"no":14,"points":4,"stem":"글을 쓴 목적으로 가장 적절한 것은?","box":"Dear Emily,\nWelcome to the Historia Museum! Come and see our special rooms. Each room will take you on an amazing journey back in time.\nBrave Pilot / Great Adventurer / Powerful Painter / Insect Lover\nWhen: October 1st ― 30th\nWhere: Historia Museum in Dream City","choices":["To invite Emily to the museum's special rooms","To announce the closing of the museum","To sell tickets to a movie about pilots","To ask Emily to write about great people","To explain how to get to Dream City"],"answer":1,"explain":"특별 전시실을 보러 오라는 초대장.","source":"L6 Understand Visuals"},
-{"no":15,"points":4,"stem":"빈칸에 들어갈 말로 가장 적절한 것은?","box":"There was a famous painting in the museum, but it _____. I saw four people leaving the museum. They were Ms. Smith, Ms. Green, Mr. Lee, and Mr. Roberts. One of them is the thief.","choices":["disappeared","arrived","celebrated","increased","wrapped"],"inline":true,"answer":1,"explain":"그림이 사라졌고(disappeared) 네 사람 중 하나가 도둑.","source":"L5 Express My Thoughts (Viewing)"},
-{"no":16,"points":5,"stem":"글의 흐름으로 보아 <u>어색한</u> 곳은?","box":"When she opened the book, she found an old letter from Charles Darwin. ⓐ<u>It said, \"Thank you for sending me your book.</u> ⓑ<u>I truly love your work about insects.\"</u> ⓒ<u>Emily learned that Fabre wrote many books about insects for more than thirty years.</u> ⓓ<u>Fabre never liked reading or writing books.</u> ⓔ<u>His true love for nature was shown clearly in every corner of the room.</u>","choices":["ⓐ","ⓑ","ⓒ","ⓓ","ⓔ"],"inline":true,"answer":4,"explain":"30년 넘게 곤충에 관한 책을 쓴 Fabre 가 책 읽기·쓰기를 싫어했다는 문장은 흐름에 어긋난다.","source":"L6 본문"},
-{"no":17,"points":4,"stem":"우리말 뜻과 일치하도록 주어진 단어를 바르게 배열할 때 <u>네 번째</u>에 오는 단어는?","box":"그는 그 그림을 그의 긴 코트 안에 숨겼다.\n( hid, painting, He, in, the, coat, his, long )","choices":["hid","the","painting","in","his"],"inline":true,"answer":3,"explain":"He hid the painting in his long coat. → 네 번째 단어는 painting.","source":"L5 Express Our Thoughts (Create)"},
-{"no":18,"points":5,"stem":"다음 중 어법상 옳지 <u>않은</u> 것은?","choices":["The cake which smells delicious is on the table.","I felt the ground shake.","The window was broken by a strong wind.","He made me to clean the room.","The story was so funny that we laughed a lot."],"answer":4,"explain":"사역동사 make + 목적어 + 동사원형 → made me clean the room. (지각동사와 같이 to부정사를 쓰지 않는다.)","source":"학습지 문법 + 사역동사 확장"},
-{"no":19,"points":4,"stem":"빈칸에 들어갈 수 <u>없는</u> 말을 모두 고른 것은?","box":"The window _____ by the boy yesterday.","choices":["was broken, broke","broke, opened","was opened, opened","was cleaned, broke","was broken, was cleaned"],"inline":true,"answer":2,"explain":"by the boy 가 있으므로 수동태(be + p.p.)만 가능. broke·opened(능동)는 들어갈 수 없다.","source":"L6 Grammar Points 1(수동태)"},
-{"no":20,"points":5,"stem":"빈칸 어디에도 들어갈 수 <u>없는</u> 단어는? (대소문자 구별하지 않음)","box":"First, Ms. Jones spoke with Harry, the oldest son, \"Someone ate your mom's cake.\" \"What did you do this morning?\" \"I played soccer, and I came back home _____ 11.\" \"I saw the box on the table and opened it.\" \"There was a cake _____, but I didn't eat it.\" \"What did you do after that?\" \"I just went to my room.\" \"Hmm.... Then why do you have _____ around your mouth?\" \"Oh, I ate some chocolate cookies _____ I was hungry.\"","choices":["inside","whole","around","because","crumbs"],"inline":true,"answer":2,"explain":"around 11 / a cake inside / crumbs / because. whole 은 들어갈 곳이 없다.","source":"L5 본문"},
-{"kind":"group","label":"[21-22]","direction":"다음 글을 읽고, 물음에 답하시오.","box":"Emily also found an old newspaper on the desk. It read, \"At that time, women couldn't enter flight schools.\" \"However, Kwon Ki-ok ⓐ<u>didn't give up</u> and worked hard to achieve her dream.\" Kwon Ki-ok did not just fly airplanes. She also fought against Japan for Korea's ____ⓑ____. Emily was moved by the great life story of Kwon Ki-ok."},
-{"no":21,"points":4,"stem":"윗글의 밑줄 친 ⓐ의 의미와 가장 가까운 것은?","choices":["kept trying","stopped flying","got lost","went back home","took a rest"],"inline":true,"answer":1,"explain":"give up: 포기하다 → didn't give up = 계속 노력했다.","source":"L6 본문 · 어휘"},
-{"no":22,"points":4,"stem":"윗글의 빈칸 ⓑ에 들어갈 말로 가장 적절한 것은?","choices":["independence","invitation","exploration","behavior","knowledge"],"inline":true,"answer":1,"explain":"한국의 독립(independence)을 위해 일본에 맞서 싸웠다.","source":"L6 본문"},
-{"kind":"group","label":"[23-24]","direction":"다음 글을 읽고, 물음에 답하시오.","box":"Finally, Ms. Jones met Tom, the youngest son. \"Tom, you like your mom's cake, right?\" \"Yeah, I like it.\" \"Actually, I smelled Mom baking a cake in the morning.\" \"But I had a stomachache, so I stayed in bed.\" \"Did you go to the kitchen?\" \"Yes, I went to the kitchen to take some medicine at about 11:30.\" \"The box was ____ⓐ____, so I could see the cake in it.\" \"Then I closed the box.\" Ms. Jones smiled and said, \"The person who lied ate the cake.\""},
-{"no":23,"points":4,"stem":"윗글의 빈칸 ⓐ에 들어갈 말로 적절한 것은?","choices":["open","empty","closed","missing","secret"],"inline":true,"answer":1,"explain":"상자가 열려 있어서 케이크를 볼 수 있었다. 뒤에 Then I closed the box.","source":"L5 본문"},
-{"no":24,"points":5,"stem":"윗글의 내용과 일치하는 것은?","choices":["Tom은 엄마의 케이크를 좋아하지 않는다.","Tom은 아침에 엄마가 케이크를 굽는 냄새를 맡았다.","Tom은 아침 내내 축구를 했다.","Tom은 물을 마시러 주방에 갔다.","Tom은 상자를 열어 둔 채로 나왔다."],"answer":2,"explain":"I smelled Mom baking a cake in the morning. (약을 먹으러 갔고, 상자를 닫았다)","source":"L5 본문"},
-{"no":25,"points":5,"stem":"(A)~(D)에 대해 바르게 설명한 사람만을 <보기>에서 <u>모두</u> 고른 것은?","box":"Ben was sitting on the bench in the park yesterday. He saw a boy (A)<u>riding</u> a bike. Ben heard a girl (B)<u>play</u> the violin on the stage. Mr. Owl is a wise detective (C)<u>who</u> can solve any problem. The person (D)<u>which</u> stole the painting is Mr. Roberts.\n\n<보기>\nⓐ 수연 : (A)는 지각동사 saw의 목적격 보어로 현재분사가 쓰인 거니까 동사원형 ride로 바꿔 써도 돼.\nⓑ 예지 : (B)는 heard 뒤의 목적격 보어 자리라서 play를 to play로 고쳐야 해.\nⓒ 민수 : (C)의 who는 선행사 a wise detective를 꾸며 주는 주격 관계대명사로 바르게 쓰였어.\nⓓ 지현 : (D)는 선행사가 사람이니까 which를 who나 that으로 고쳐야 해.","choices":["ⓐ, ⓑ","ⓑ, ⓒ","ⓐ, ⓒ, ⓓ","ⓑ, ⓒ, ⓓ","ⓐ, ⓑ, ⓒ, ⓓ"],"answer":3,"explain":"지각동사의 목적격 보어는 동사원형/현재분사(ⓐ 맞음, ⓑ 틀림). 사람 선행사 → who/that(ⓓ 맞음).","source":"L5 Wrap Up 6 · Express Our Thoughts · 지각동사 · 관계대명사"}
-]}
+{
+ "school": "영등포중학교",
+ "grade": 2,
+ "term": 2,
+ "exam": "중간고사",
+ "subject": "영어",
+ "range": "Lesson 5~6",
+ "publisher": "천재(이상기)",
+ "year": 2026,
+ "set": 2,
+ "items": [
+  {
+   "no": 1,
+   "points": 3,
+   "stem": "다음 중 밑줄 친 어휘의 쓰임이 문맥상 적절하지 <u>않은</u> 것은?",
+   "choices": [
+    "Emily <u>received</u> an invitation from a museum.",
+    "Model airplanes were <u>hanging</u> from the ceiling.",
+    "Kwon Ki-ok was the first <u>female</u> pilot in Korea.",
+    "The drawing was so <u>ordinary</u> that the honeybee looked alive.",
+    "He is so <u>caring</u> that he helps people in need."
+   ],
+   "answer": 4,
+   "explain": "④ 살아 있는 것처럼 보일 만큼 '자세한(detailed)' 그림이어야 한다. ordinary(평범한)는 어색하다.",
+   "source": "선생님 제작 문장 · L6 어휘리스트"
+  },
+  {
+   "no": 2,
+   "points": 4,
+   "stem": "빈칸에 공통으로 들어갈 단어로 적절한 것은?",
+   "box": "• We get off at the next ______.\n• Their last ______ was the famous beach.",
+   "choices": [
+    "step",
+    "stop",
+    "flight",
+    "garage",
+    "journey"
+   ],
+   "inline": true,
+   "answer": 2,
+   "explain": "stop: 정류장 / 방문지 (다의어).",
+   "source": "L6 어휘 다의어 stop"
+  },
+  {
+   "no": 3,
+   "points": 4,
+   "stem": "우리말을 영어로 옮긴 것으로 적절하지 <u>않은</u> 것은?",
+   "choices": [
+    "그녀는 포기하지 않았다.\n⇒ She didn't give up.",
+    "그 방은 많은 책들로 가득 차 있었다.\n⇒ The room was filled with many books.",
+    "나는 네 꿈이 이루어지기를 바라.\n⇒ I hope your dream comes true.",
+    "그녀는 한국의 독립을 위해 일본에 맞서 싸웠다.\n⇒ She fought for Japan for Korea's independence.",
+    "그는 어려움에 처한 사람들을 돕는다.\n⇒ He helps people in need."
+   ],
+   "answer": 4,
+   "explain": "④ '~에 맞서 싸우다'는 fight against ~.",
+   "source": "선생님 제작 문장 · L6 숙어(give up · be filled with · come true · fight against · in need)"
+  },
+  {
+   "no": 4,
+   "points": 3,
+   "stem": "빈칸에 들어갈 말로 적절한 것은?",
+   "box": "I can't ______ to see all the amazing things there.",
+   "choices": [
+    "wait",
+    "hope",
+    "want",
+    "stop",
+    "find"
+   ],
+   "inline": true,
+   "answer": 1,
+   "explain": "can't wait to + 동사원형: 빨리 ~하고 싶다.",
+   "source": "L6 Get Ready B 표현"
+  },
+  {
+   "kind": "group",
+   "label": "[5-6]",
+   "direction": "다음 대화문을 읽고, 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "Junho: Minji, what are you reading?",
+     "Minji: I'm reading this book My Life with the Chimpanzees.",
+     "Junho: Are you interested in chimpanzees?",
+     "Minji: Yes, I am. This book is about the life of Jane Goodall and her love for chimpanzees.",
+     "Alex: I read the book, too. She's an animal scientist ____ⓐ____ studied chimpanzees for many years.",
+     "Minji: You're right. She's the first person to study chimpanzees in the wild. She's my role model.",
+     "Junho: Wow, that's great!",
+     "Minji: Like Jane Goodall, I'm very interested in animal behavior. And I want to study animals in the wild and help them, too.",
+     "Alex: I hope your dream comes true."
+    ]
+   }
+  },
+  {
+   "no": 5,
+   "points": 4,
+   "stem": "위 대화의 빈칸 ⓐ에 들어갈 말로 적절한 것은? (문장의 의미와 어법 모두 고려할 것)",
+   "choices": [
+    "who",
+    "which",
+    "what",
+    "whose",
+    "it"
+   ],
+   "inline": true,
+   "answer": 1,
+   "explain": "선행사 an animal scientist(사람) + 주격 관계대명사 who.",
+   "source": "L6 UC C · 학습지 L5 Grammar Points 1"
+  },
+  {
+   "no": 6,
+   "points": 4,
+   "stem": "위 대화를 읽고 답변할 수 <u>없는</u> 내용의 질문은?",
+   "choices": [
+    "What is Minji reading?",
+    "Who is Jane Goodall?",
+    "How many years did Jane Goodall study chimpanzees?",
+    "What is Minji interested in?",
+    "What does Minji want to do?"
+   ],
+   "answer": 3,
+   "explain": "'many years'라고만 하고 정확한 햇수는 나오지 않는다.",
+   "source": "L6 UC C"
+  },
+  {
+   "kind": "group",
+   "label": "[7-8]",
+   "direction": "다음 대화를 읽고, 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "G: Excuse me. Did you see my umbrella? I think I left it here.",
+     "M: ____ⓐ____",
+     "G: It's green, and it has a brown handle.",
+     "M: Oh, I found it and put it in the umbrella stand.",
+     "G: Thanks a lot!",
+     "G:Girl / M:Man"
+    ]
+   }
+  },
+  {
+   "no": 7,
+   "points": 3,
+   "stem": "위 대화의 빈칸 ⓐ에 들어갈 말로 적절한 것은?",
+   "choices": [
+    "What does it look like?",
+    "Where did you lose it?",
+    "What color do you like?",
+    "Why did you leave it here?",
+    "How did you find it?"
+   ],
+   "answer": 1,
+   "explain": "뒤에 색과 손잡이(생김새)를 답하므로 생김새를 묻는 말.",
+   "source": "L5 UC A-3"
+  },
+  {
+   "no": 8,
+   "points": 3,
+   "stem": "위 대화의 내용과 일치하는 것은?",
+   "choices": [
+    "여학생은 우산을 집에 두고 왔다.",
+    "우산은 초록색이고 갈색 손잡이가 있다.",
+    "남자는 우산을 찾지 못했다.",
+    "여학생은 우산을 우산꽂이에 넣었다.",
+    "우산에는 꽃무늬가 있다."
+   ],
+   "answer": 2,
+   "explain": "① 여기(here)에 두고 갔다고 생각함 ③④ 남자가 찾아 우산꽂이에 넣음 ⑤ 언급 없음.",
+   "source": "L5 UC A-3"
+  },
+  {
+   "no": 9,
+   "points": 5,
+   "stem": "주어진 문장에 이어질 대화의 순서로 가장 적절한 것은?",
+   "box": "A: What are you interested in?\n\n(A) A: I hope your dream comes true.\n(B) B: I'm interested in space travel.\n(C) B: I want to be an astronaut like Neil Armstrong.\n(D) A: Oh, that sounds awesome!",
+   "choices": [
+    "(B)-(C)-(D)-(A)",
+    "(B)-(D)-(C)-(A)",
+    "(C)-(B)-(A)-(D)",
+    "(D)-(B)-(C)-(A)",
+    "(D)-(C)-(A)-(B)"
+   ],
+   "answer": 2,
+   "explain": "무엇에 관심 있니? → (B) 우주여행 → (D) 멋지다 → (C) Armstrong 같은 우주 비행사가 되고 싶다 → (A) 꿈이 이루어지길.",
+   "source": "L6 UC B (순서배열 보기로 문장 순서만 섞음)"
+  },
+  {
+   "kind": "group",
+   "label": "[10-11]",
+   "direction": "다음 대화를 읽고, 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "Junho: I can't find my new smartphone. Can you help me?",
+     "Kate: I'm sorry to hear that. I'll call you.",
+     "Junho: ⓐ<u>Actually, I turned it off.</u>",
+     "Alex: What does it look like?",
+     "Junho: It's black, and there's a brown bear character on the cover.",
+     "Alex: When did you use it last?",
+     "Junho: I turned it off before class. Then I think I put it in my backpack.",
+     "Kate: Let's look around the classroom.",
+     "(a few minutes later)",
+     "Kate: I found it! It was inside your textbook.",
+     "Junho: Oh, thank you for helping me!"
+    ]
+   }
+  },
+  {
+   "no": 10,
+   "points": 3,
+   "stem": "위 대화의 내용으로 볼 때 세 사람이 대화 직후에 할 일로 가장 알맞은 것은?",
+   "choices": [
+    "교실 둘러보기",
+    "Junho에게 전화 걸기",
+    "새 스마트폰 사기",
+    "배낭 찾으러 가기",
+    "교과서 읽기"
+   ],
+   "answer": 1,
+   "explain": "Let's look around the classroom.",
+   "source": "L5 UC C"
+  },
+  {
+   "no": 11,
+   "points": 4,
+   "stem": "위 대화의 밑줄 친 ⓐ의 문맥상 의미로 가장 적절한 것은?",
+   "choices": [
+    "전화를 걸어도 소용이 없다.",
+    "스마트폰이 고장 났다.",
+    "스마트폰을 잃어버리지 않았다.",
+    "스마트폰을 이미 찾았다.",
+    "스마트폰을 빌려 줄 수 없다."
+   ],
+   "answer": 1,
+   "explain": "Kate가 전화해 보겠다고 하자 전원을 껐다고 답함 → 전화해도 찾을 수 없다.",
+   "source": "L5 UC C"
+  },
+  {
+   "no": 12,
+   "points": 3,
+   "stem": "대화의 빈칸에 들어갈 말로 가장 적절한 것은?",
+   "box": "B: Sumin, what are you going to do this weekend?\nG: I'm going to visit the nature museum. ______________\nB: That sounds fun!\nG: Yeah, I'm so excited.",
+   "choices": [
+    "I'm really interested in animals.",
+    "I lost my backpack.",
+    "What does it look like?",
+    "I found it in the classroom.",
+    "I don't like museums."
+   ],
+   "answer": 1,
+   "explain": "자연사 박물관에 가는 이유 → 동물에 관심.",
+   "source": "L6 Wrap Up 1"
+  },
+  {
+   "no": 13,
+   "points": 4,
+   "stem": "빈칸 ⓐ, ⓑ에 들어갈 말로 적절하게 짝 지어진 것은?",
+   "box": "Last night, I heard someone ____ⓐ____ on the door. It was so dark ____ⓑ____ I couldn't see anything.",
+   "choices": [
+    "knock – that",
+    "to knock – that",
+    "knocked – which",
+    "knock – because",
+    "knocking – what"
+   ],
+   "answer": 1,
+   "explain": "ⓐ 지각동사 heard + 목적어 + 동사원형(knock). ⓑ so dark that ~: 너무 어두워서 ~.",
+   "source": "선생님 제작 문장 · 학습지 L5 Grammar Points 2(지각동사) · L6 Grammar Points 2(so ~ that)"
+  },
+  {
+   "no": 14,
+   "points": 4,
+   "stem": "글을 쓴 목적으로 가장 적절한 것은?",
+   "box": "\"Step into history, one room at a time.\"\nSpecial Invitation\nDear Emily,\nWelcome to the Historia Museum! Come and see our special rooms. Each room will take you on an amazing journey back in time.\nBrave Pilot / Great Adventurer / Powerful Painter / Insect Lover\nWhen: October 1st ― 30th\nWhere: Historia Museum in Dream City",
+   "choices": [
+    "To invite Emily to the Historia Museum",
+    "To explain the history of airplanes",
+    "To sell tickets for a concert",
+    "To introduce Kwon Ki-ok's life",
+    "To ask Emily to join a trip to Dream City"
+   ],
+   "answer": 1,
+   "explain": "Special Invitation — 박물관 초대장.",
+   "source": "L6 Understand Visuals (초대장)"
+  },
+  {
+   "no": 15,
+   "points": 4,
+   "stem": "빈칸에 들어갈 말로 가장 적절한 것은?",
+   "box": "Hi! I'm a wise detective, Mr. Owl. I can solve any problem. Today, a famous painting in the museum disappeared. Oh, there are footprints on the floor. The person who stole the painting is Mr. Roberts. Look at his shoes. You can see ______ on them.",
+   "choices": [
+    "mud",
+    "crumbs",
+    "candles",
+    "earrings",
+    "goggles"
+   ],
+   "inline": true,
+   "answer": 1,
+   "explain": "바닥에 발자국이 있고, 신발에 진흙(mud)이 묻어 있다.",
+   "source": "L5 Express Our Thoughts (Mr. Owl)"
+  },
+  {
+   "no": 16,
+   "points": 5,
+   "stem": "글의 흐름으로 보아 <u>어색한</u> 곳은?",
+   "box": "I think the person who stole the painting is Mr. Roberts. ⓐ<u>The first clue is his shoes.</u> ⓑ<u>I see mud on them.</u> ⓒ<u>There are footprints on the floor.</u> ⓓ<u>My dream is to become an astronaut like him.</u> ⓔ<u>The second clue is his long coat.</u> I think he can hide the painting in it.",
+   "choices": [
+    "ⓐ",
+    "ⓑ",
+    "ⓒ",
+    "ⓓ",
+    "ⓔ"
+   ],
+   "inline": true,
+   "answer": 4,
+   "explain": "도둑의 단서를 말하는 글에 우주 비행사가 꿈이라는 ⓓ(L6 UC A-2 문장)는 흐름에 맞지 않는다.",
+   "source": "L5 Express My Thoughts Write (ⓓ는 L6 UC A-2 문장을 일부러 끼워 넣음)"
+  },
+  {
+   "no": 17,
+   "points": 4,
+   "stem": "우리말 뜻과 일치하도록 주어진 단어를 바르게 배열할 때 <u>네 번째</u>에 오는 단어는?",
+   "box": "우리는 누군가가 문을 두드리는 것을 들었다.\n( heard, knock, someone, on the door, we )",
+   "choices": [
+    "heard",
+    "someone",
+    "knock",
+    "on",
+    "door"
+   ],
+   "inline": true,
+   "answer": 3,
+   "explain": "We heard someone knock on the door. → 네 번째 knock.",
+   "source": "학습지 L5 Grammar Practice 2 C-2"
+  },
+  {
+   "no": 18,
+   "points": 5,
+   "stem": "다음 중 어법상 옳지 <u>않은</u> 것은?",
+   "choices": [
+    "I saw him cross the street.",
+    "They heard a girl laughing loudly.",
+    "She felt the ground shake.",
+    "Nick smelled something to burn in the kitchen.",
+    "Mom made me clean my room."
+   ],
+   "answer": 4,
+   "explain": "④ 지각동사 smelled의 목적격 보어는 동사원형/현재분사(burn/burning). to부정사는 쓸 수 없다. ⑤는 사역동사 made + 동사원형(확장).",
+   "source": "선생님 제작 문장 · 학습지 L5 Grammar Points 2 + 사역동사 확장"
+  },
+  {
+   "no": 19,
+   "points": 4,
+   "stem": "빈칸에 들어갈 수 <u>없는</u> 말끼리 짝 지어진 것은?",
+   "box": "The cookies ______ by him.",
+   "choices": [
+    "were baked – were made",
+    "baked – ate",
+    "were made – were eaten",
+    "baked – were eaten",
+    "were baked – ate"
+   ],
+   "inline": true,
+   "answer": 2,
+   "explain": "The cookies는 동작을 받는 쪽이므로 수동태(were baked / were made / were eaten). 능동 baked·ate는 by him과 어울리지 않는다.",
+   "source": "선생님 제작 문장 · 학습지 L6 Grammar Points 1(수동태)"
+  },
+  {
+   "no": 20,
+   "points": 5,
+   "stem": "빈칸 어디에도 들어갈 수 <u>없는</u> 단어는? (대소문자 구별하지 않음)",
+   "box": "People Who Make a Difference\n• Mother Teresa: She ______ many people in India.\n• Kim Dohun, Mina's Uncle: He is a police officer. He always tries to help people in ______.\n• Antoni Gaudi: He was so ______ that he made beautiful buildings.\n• Ms. Lee, Our School Nurse: She is so ______ that her patients always feel comfortable.",
+   "choices": [
+    "helped",
+    "need",
+    "creative",
+    "kind",
+    "ordinary"
+   ],
+   "inline": true,
+   "answer": 5,
+   "explain": "She helped many people / people in need / so creative that / so kind that. ordinary는 들어갈 곳이 없다.",
+   "source": "L6 Express Our Thoughts (People Who Make a Difference)"
+  },
+  {
+   "kind": "group",
+   "label": "[21-22]",
+   "direction": "다음 글을 읽고, 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "Her first stop was a room that looked like an old airplane garage. Model airplanes were hanging from the ceiling. A leather pilot jacket and goggles were displayed. When Emily put them on, she could hear the sounds of airplane engines. She looked around the room ⓐ<u>in surprise</u>. On the wall, there was a picture of a woman. She looked brave and strong. Her name was Kwon Ki-ok. She was the first female pilot in Korea. Emily also found an old newspaper on the desk. It read, \"At that time, women couldn't enter flight schools.\" \"However, Kwon Ki-ok didn't ____ⓑ____ and worked hard to achieve her dream.\" Kwon Ki-ok did not just fly airplanes. She also fought against Japan for Korea's independence. Emily was moved by the great life story of Kwon Ki-ok."
+    ]
+   }
+  },
+  {
+   "no": 21,
+   "points": 4,
+   "stem": "윗글의 밑줄 친 ⓐ의 의미와 가장 가까운 것은?",
+   "choices": [
+    "feeling surprised",
+    "feeling bored",
+    "in a hurry",
+    "with great care",
+    "in secret"
+   ],
+   "inline": true,
+   "answer": 1,
+   "explain": "in surprise: 놀라서.",
+   "source": "L6 본문 첫 번째 방 · L6 어휘 숙어"
+  },
+  {
+   "no": 22,
+   "points": 4,
+   "stem": "윗글의 빈칸 ⓑ에 들어갈 말로 가장 적절한 것은?",
+   "choices": [
+    "give up",
+    "put on",
+    "pick up",
+    "find out",
+    "look for"
+   ],
+   "inline": true,
+   "answer": 1,
+   "explain": "포기하지 않고 열심히 노력했다 → didn't give up.",
+   "source": "L6 본문 첫 번째 방"
+  },
+  {
+   "kind": "group",
+   "label": "[23-24]",
+   "direction": "다음 글을 읽고, 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "Today was Dad's birthday. As a secret gift, Mom baked him a cake. She wrapped the cake in a box and put it on the table in the kitchen. Then she went out to buy candles at 11. When she came back home one hour later, she found that the box was empty. Someone ate the whole cake!",
+     "Mom called Ms. Jones to find the person ____ⓐ____ ate the cake. Ms. Jones was a wise old lady who lived next door. Everyone in town came to her when they were in trouble. Ms. Jones came with her sweet smile. \"Don't worry!\" \"Let's find out the big eater!\" She asked Mom, \"Who was in the house this morning?\" \"My children, Harry, Carol, and Tom.\""
+    ]
+   }
+  },
+  {
+   "no": 23,
+   "points": 4,
+   "stem": "윗글의 빈칸 ⓐ에 들어갈 말로 적절한 것은?",
+   "choices": [
+    "who",
+    "which",
+    "what",
+    "whom",
+    "whose"
+   ],
+   "inline": true,
+   "answer": 1,
+   "explain": "선행사 the person(사람) + 주격 관계대명사 who.",
+   "source": "L5 본문 도입 · 학습지 L5 Grammar Points 1"
+  },
+  {
+   "no": 24,
+   "points": 5,
+   "stem": "윗글의 내용과 일치하는 것은?",
+   "choices": [
+    "오늘은 엄마의 생신이었다.",
+    "엄마는 케이크를 상자에 포장해 주방 식탁 위에 두었다.",
+    "엄마는 12시에 초를 사러 나갔다.",
+    "Ms. Jones는 마을에서 멀리 떨어진 곳에 살았다.",
+    "Ms. Jones는 걱정스러운 얼굴로 찾아왔다."
+   ],
+   "answer": 2,
+   "explain": "① 아빠 생신 ③ 11시 ④ 옆집 ⑤ 상냥한 미소.",
+   "source": "L5 본문 도입"
+  },
+  {
+   "no": 25,
+   "points": 5,
+   "stem": "(A)~(E)에 대해 바르게 설명한 사람만을 <보기>에서 <u>모두</u> 고른 것은?",
+   "box": "Yesterday, my mom baked a cake (A)<u>that</u> smelled delicious. She (B)<u>was wrapped</u> it in a box. I heard my brother (C)<u>open</u> the box. The cake (D)<u>was eaten</u> by him. Mom was (E)<u>so</u> angry <u>that</u> she called Ms. Jones.\n\n<보기>\nⓐ 수연 : (A)는 선행사 a cake가 사물이고 관계대명사절의 주어 역할이니까 that을 쓸 수 있어.\nⓑ 예지 : (B)는 She가 포장하는 동작을 직접 한 것이니까 wrapped로 고쳐야 해.\nⓒ 민수 : (C)는 지각동사 heard 뒤에 오니까 to open으로 고쳐야 해.\nⓓ 지현 : (D)는 케이크가 '먹힌' 것이니까 was eaten이 맞아.",
+   "choices": [
+    "ⓐ,ⓒ",
+    "ⓑ,ⓓ",
+    "ⓐ,ⓑ,ⓒ",
+    "ⓐ,ⓑ,ⓓ",
+    "ⓑ,ⓒ,ⓓ"
+   ],
+   "inline": true,
+   "answer": 4,
+   "explain": "(A) 선행사 a cake(사물) → that ○. (B) She가 포장한 주체 → wrapped(능동). (C) 지각동사 heard + 동사원형 open ○(민수 ✗). (D) 케이크가 먹힌 것 → was eaten ○. (E) so ~ that ○.",
+   "source": "선생님 제작 문장 · 학습지 L5 Grammar Points 1·2 · L6 Grammar Points 1·2"
+  }
+ ]
+}
