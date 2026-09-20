@@ -54,6 +54,14 @@ T = dict(
 )
 
 
+def etree_sub(parent, tag, **attrs):
+    from lxml import etree
+    e = etree.SubElement(parent, tag)
+    for k, v in attrs.items():
+        e.set(k, v)
+    return e
+
+
 def box_lines(box):
     if box is None:
         return None, []
@@ -112,6 +120,7 @@ class Hwpx:
         st.ensure_font(BODY_FONT); st.ensure_font(BOX_FONT)      # 글꼴을 먼저 등록해야 ensure_run 이 글꼴을 구분한다
         B = lambda **k: st.ensure_run(font=BODY_FONT, size=10, **k)
         E = lambda **k: st.ensure_run(font=BOX_FONT, size=10, **k)
+        self._pp_cache = {}
         self.pp_keep = self._keep_with_next_copy(T['p_blank'])   # 묶음 지시문·발문용: 다음 문단과 붙어 다님
         self.pp_keep_body = self._keep_with_next_copy(T['p_body'])
         self.cp = {
@@ -136,6 +145,45 @@ class Hwpx:
         prs.set('itemCnt', str(len(prs.findall('hh:paraPr', HH))))
         self.doc.headers[0].mark_dirty()
         return nid
+
+    def _grid_para_pr(self, ncols):
+        """ⓐⓑⓒ 조합표용 문단 모양: 단 너비를 ncols 로 나눈 가운데 탭. (표는 한글이 폭·테두리를 제멋대로 그려서 쓰지 않는다)"""
+        import copy
+        HH = {'hh': 'http://www.hancom.co.kr/hwpml/2011/head'}
+        H = '{%s}' % HH['hh']
+        key = ('grid', ncols)
+        if key in self._pp_cache:
+            return self._pp_cache[key]
+        hx = self.doc.headers[0].element
+        tabs = hx.find('.//hh:tabProperties', HH)
+        tid = max(int(e.get('id')) for e in tabs.findall('hh:tabPr', HH)) + 1
+        tp = etree_sub(tabs, H + 'tabPr', id=str(tid), autoTabLeft='0', autoTabRight='0')
+        step = T['col_w'] / ncols
+        for i in range(ncols):
+            etree_sub(tp, H + 'tabItem', pos=str(int((i + 0.5) * step)), type='CENTER', leader='NONE')
+        tabs.set('itemCnt', str(len(tabs.findall('hh:tabPr', HH))))
+        prs = hx.find('.//hh:paraProperties', HH)
+        new = copy.deepcopy(prs.find('hh:paraPr[@id="%s"]' % T['p_blank'], HH))
+        nid = max(int(e.get('id')) for e in prs.findall('hh:paraPr', HH)) + 1
+        new.set('id', str(nid)); new.set('tabPrIDRef', str(tid))
+        new.find('hh:align', HH).set('horizontal', 'LEFT')
+        prs.append(new); prs.set('itemCnt', str(len(prs.findall('hh:paraPr', HH))))
+        self.doc.headers[0].mark_dirty()
+        self._pp_cache[key] = nid
+        return nid
+
+    def _tab_para(self, text, pp):
+        """'\\t' 를 한글 탭으로 넣은 문단."""
+        from lxml import etree
+        p = self.doc.add_paragraph('', para_pr_id_ref=pp, char_pr_id_ref=self.cp['base'], include_run=False)
+        r = etree.SubElement(p.element, HP + 'run'); r.set('charPrIDRef', str(self.cp['base']))
+        t = etree.SubElement(r, HP + 't')
+        parts = text.split('\t')
+        t.text = parts[0]
+        for seg in parts[1:]:
+            tab = etree.SubElement(t, HP + 'tab'); tab.set('width', '0'); tab.set('leader', '0'); tab.set('type', '0')
+            tab.tail = seg
+        return p
 
     # ── 글자 모양 고르기 ──
     def cpid(self, f, eng=False):
@@ -195,10 +243,9 @@ class Hwpx:
         if it.get('choices_table'):
             ct = it['choices_table']
             rows = ([ct['header']] if ct.get('header') else []) + ct['rows']
-            t = self.table(len(rows), len(rows[0]), T['col_w'], inner=(150, 150, 40, 40), pp=T['p_center'], border=False)
-            for r, row in enumerate(rows):
-                for cidx, v in enumerate(row):
-                    self.para(str(v), target=t.cell(r, cidx), pp=T['p_center'])
+            pp = self._grid_para_pr(len(rows[0]))
+            for row in rows:
+                self._tab_para('\t' + '\t'.join(str(v) for v in row), pp)
             return
         ch = it.get('choices', [])
         if it.get('inline'):
