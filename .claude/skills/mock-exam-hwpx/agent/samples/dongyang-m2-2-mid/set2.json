@@ -4,37 +4,46 @@
 "term": 2,
 "exam": "중간고사",
 "subject": "영어",
+"set": 2,
 "range": "Lesson 5~6",
 "publisher": "동아(윤정미)",
 "year": 2026,
-"set": 2,
 "items": [
 {
 "kind": "group",
 "label": "[1~5]",
 "direction": "다음 글을 읽고 물음에 답하시오.",
-"box": "Do you know Seok Hopil? His English name was Frank W. Schofield, but he loved his Korean name. It sounded similar __(A)__ his real name, and it also had a good meaning. Dr. Schofield was a Canadian doctor, and he first came to Korea in 1916 ⓐ<u>to teach medicine</u>. He wanted to teach in Korean, __(B)__ he began to learn Korean right away. ⓑ<u>He studied so hard that he was able to teach in Korean</u> after only a few years. ⓒ<u>He believed that every country has the right to be independent</u>, so he helped the Korean independence movement. On March 1, 1919, Dr. Schofield ⓓ<u>heard people to shout</u> for Korean independence in Tapgol Park. He took pictures of the event with his camera. He then wrote an article about the historic event and ⓔ<u>sent it to foreign newspapers with his pictures</u>."
+"box": {
+"lines": [
+"On February 28, 1919, a man came to Dr. Schofield's house.",
+"Man: Dr. Schofield, ⓐ<u>I have a special favor asking you</u>.",
+"Dr. Schofield: What can I do for you?",
+"Man: ⓑ<u>Many people are going to gathering tomorrow</u> for the independence of Korea. Could you take pictures __(B)__ the event and ⓒ<u>share it with the world</u>?",
+"At 2 p.m. on March 1, ⓓ<u>Dr. Schofield was hiding in a building and saw a large group of people gathering outside</u>. __(A)__, he began to take pictures.",
+"Dr. Schofield: Unbelievable! ⓔ<u>There is so many people here.</u> I hope the world will learn about this important event through my pictures."
+]
+}
 },
 {
 "no": 1,
 "points": 3,
-"stem": "윗글의 흐름상 빈칸 (A)에 들어갈 단어로 알맞은 것은?",
+"stem": "윗글의 흐름상 빈칸 (A)에 들어갈 수 없는 것은?",
 "choices": [
-"at",
-"to",
-"with",
-"for",
-"of"
+"Then",
+"Soon",
+"However",
+"After that",
+"Right away"
 ],
 "inline": true,
-"answer": 2,
-"explain": "similar to ~: ~와 비슷한.",
-"source": "L6 본문 · 어휘"
+"answer": 3,
+"explain": "사람들이 모이는 것을 본 뒤 곧바로 사진을 찍기 시작한 흐름. 역접 However는 맞지 않는다. 원문은 ‘He began to take pictures.’ 앞에 연결어를 넣어 물었다.",
+"source": "L6 본문 2문단"
 },
 {
 "no": 2,
 "points": 4,
-"stem": "윗글의 밑줄 친 ⓐ~ⓔ 중 어법상 옳지 않은 것은?",
+"stem": "윗글의 밑줄 친 ⓐ~ⓔ 중 어법상 옳은 것은?",
 "choices": [
 "ⓐ",
 "ⓑ",
@@ -44,75 +53,80 @@
 ],
 "inline": true,
 "answer": 4,
-"explain": "지각동사 hear + 목적어 + 동사원형/-ing: heard people shouting(shout).",
-"source": "L6 본문 · 지각동사"
+"explain": "ⓐ favor를 꾸미는 to부정사: asking → to ask / ⓑ be going to + 동사원형: gathering → gather / ⓒ pictures를 받으므로 it → them / ⓔ There are so many people. ⓓ 지각동사 saw + 목적어 + 현재분사(gathering)로 옳다.",
+"source": "L6 본문 1~2문단 · 통합본 L6 GRAMMAR 지각동사"
 },
 {
 "no": 3,
 "points": 3,
-"stem": "윗글의 흐름상 빈칸 (B)에 들어갈 말로 가장 적절한 것은?",
+"stem": "윗글의 흐름상 빈칸 (B)에 들어갈 단어로 알맞은 것은?",
 "choices": [
-"but",
-"because",
-"so",
-"or",
-"though"
+"of",
+"to",
+"for",
+"at",
+"with"
 ],
 "inline": true,
-"answer": 3,
-"explain": "한국어로 가르치고 싶었다 → 그래서(so) 배우기 시작했다.",
-"source": "L6 본문"
+"answer": 1,
+"explain": "take a picture of: ~의 사진을 찍다.",
+"source": "L6 본문 1문단 · L6 어휘 take a picture of"
 },
 {
 "no": 4,
 "points": 3,
 "stem": "윗글을 읽고 대답을 찾을 수 없는 질문은?",
 "choices": [
-"Where was Dr. Schofield from?",
-"Why did Dr. Schofield come to Korea in 1916?",
-"Why did Dr. Schofield begin to learn Korean?",
-"How many pictures did Dr. Schofield take on March 1, 1919?",
-"What did Dr. Schofield do after he took pictures of the event?"
+"When did the man visit Dr. Schofield's house?",
+"What did the man ask Dr. Schofield to do?",
+"Where was Dr. Schofield at 2 p.m. on March 1?",
+"How many pictures did Dr. Schofield take?",
+"What did Dr. Schofield hope?"
 ],
 "answer": 4,
-"explain": "사진의 수는 나오지 않는다.",
-"source": "L6 본문"
+"explain": "사진을 몇 장 찍었는지는 나오지 않는다. ① 1919년 2월 28일 ② 사진을 찍어 세계에 알리기 ③ 건물 안에 숨어 있었음 ⑤ 세계가 이 사건을 알게 되기를.",
+"source": "L6 본문 1~2문단"
 },
 {
 "no": 5,
 "points": 3,
-"stem": "<보기>의 (A)~(D)를 윗글에서 일어난 일의 순서로 바르게 배열한 것은?",
+"stem": "<보기>의 (A)~(E)를 윗글에서 일어난 일의 순서로 바르게 배열한 것은?",
 "box": {
 "title": "< 보 기 >",
 "lines": [
-"(A) He sent an article to foreign newspapers with his pictures.",
-"(B) He came to Korea to teach medicine.",
-"(C) He took pictures of the people in Tapgol Park.",
-"(D) He learned Korean and was able to teach in Korean."
+"(A) Dr. Schofield began to take pictures.",
+"(B) A man came to Dr. Schofield's house.",
+"(C) A large group of people gathered outside.",
+"(D) The man asked Dr. Schofield for a special favor.",
+"(E) Dr. Schofield hid in a building."
 ]
 },
 "choices": [
-"(B) - (C) - (D) - (A)",
-"(B) - (D) - (C) - (A)",
-"(B) - (D) - (A) - (C)",
-"(D) - (B) - (C) - (A)",
-"(C) - (B) - (D) - (A)"
+"(B) - (D) - (E) - (C) - (A)",
+"(B) - (D) - (C) - (E) - (A)",
+"(B) - (E) - (D) - (C) - (A)",
+"(D) - (B) - (E) - (A) - (C)",
+"(D) - (B) - (C) - (E) - (A)"
 ],
-"answer": 2,
-"explain": "1916 입국 → 한국어 습득 → 1919 사진 → 기사 송고.",
-"source": "L6 본문"
+"answer": 1,
+"explain": "2월 28일 남자가 찾아옴 → 부탁 → 3월 1일 건물에 숨음 → 사람들이 모임 → 사진을 찍기 시작. 보기 문장은 본문을 요약해 바꿔 쓴 것.",
+"source": "L6 본문 1~2문단"
 },
 {
 "kind": "group",
 "label": "[6~7]",
 "direction": "다음 글을 읽고 물음에 답하시오.",
-"box": "The final stop of our tour today is Muswell Hill. (A) Can't see any street artworks? (B) Well, look down and look closely. Do you see the little chewing gum paintings? (C) They are by the artist Ben Wilson. Wilson is well known for painting pictures on gum that people ⓐ[drop / pick] on the street. (D) For example, the one over here is a happy birthday wish for a loved one. (E) Wilson's gum paintings are ⓑ[huge / tiny], but they give great ⓒ[pleasure / trouble] to many people."
+"box": {
+"lines": [
+"Modern street art comes in many different forms, and it makes cities colorful and lively. Today, we are going to see some well-known street artworks in London. The place that we are going to visit is Shoreditch. ⓐ[Poor / Rich] workers used to live in this area, but now it is one of the hippest areas in London. We can find so many great pieces of street art here. (A) Do you see the painting over there? (B) He is famous for using only ⓑ[lines / colors] and dots in his paintings of human bodies. (C) According to STIK, the three figures represent the past, present, and future of Shoreditch. (D) Which figure represents which? Well, look ⓒ[closely / quickly] at the eyes of the three figures. (E) They are just dots, but they will give you a clue."
+]
+}
 },
 {
 "no": 6,
 "points": 3,
 "stem": "윗글의 흐름상 다음 문장이 들어갈 가장 적절한 곳은?",
-"box": "His gum paintings often carry personal messages from people he meets on the street.",
+"box": "It is by the artist STIK.",
 "choices": [
 "(A)",
 "(B)",
@@ -121,9 +135,9 @@
 "(E)"
 ],
 "inline": true,
-"answer": 4,
-"explain": "개인적 메시지를 담는다 → For example, 생일 축하 메시지.",
-"source": "L5 본문"
+"answer": 2,
+"explain": "It = the painting over there. 그림을 가리킨 뒤 작가가 STIK임을 밝히고, 그다음 He(STIK)를 설명한다.",
+"source": "L5 본문 1문단"
 },
 {
 "no": 7,
@@ -139,186 +153,204 @@
 "rows": [
 [
 "①",
-"drop",
-"huge",
-"pleasure"
+"Poor",
+"lines",
+"closely"
 ],
 [
 "②",
-"drop",
-"tiny",
-"pleasure"
+"Poor",
+"lines",
+"quickly"
 ],
 [
 "③",
-"drop",
-"tiny",
-"trouble"
+"Poor",
+"colors",
+"closely"
 ],
 [
 "④",
-"pick",
-"huge",
-"trouble"
+"Rich",
+"colors",
+"quickly"
 ],
 [
 "⑤",
-"pick",
-"tiny",
-"pleasure"
+"Rich",
+"lines",
+"closely"
 ]
 ]
 },
-"answer": 2,
-"explain": "길에 버리는(drop) 껌 / 아주 작지만(tiny) / 큰 기쁨(pleasure).",
-"source": "L5 본문 · 어휘"
+"answer": 1,
+"explain": "but now it is one of the hippest areas → 예전엔 Poor workers / 선(lines)과 점(dots)만 사용 / 단서를 찾으려면 자세히(closely) 본다.",
+"source": "L5 본문 1문단"
 },
 {
 "no": 8,
 "points": 3,
-"stem": "다음 중 밑줄 친 that의 쓰임이 나머지와 다른 하나는?",
+"stem": "다음 중 밑줄 친 that의 쓰임이 다른 하나는?",
 "choices": [
 "The place <u>that</u> we are going to visit is Shoreditch.",
-"He likes to eat the pizza <u>that</u> his mom makes.",
-"Here are the presents <u>that</u> we sent you.",
-"I think <u>that</u> the room feels warm because of it.",
-"The song <u>that</u> I listened to yesterday was really peaceful."
+"The song <u>that</u> I listened to yesterday was really peaceful.",
+"The car <u>that</u> Ally drives is brand-new.",
+"He is so young <u>that</u> he can't ride the roller coaster.",
+"The girl <u>that</u> I met in the park is Mina."
 ],
 "answer": 4,
-"explain": "④ 접속사 that. 나머지는 목적격 관계대명사.",
-"source": "학습지 Grammar ② 관계대명사 Practice A"
+"explain": "④는 so ~ that 구문의 접속사 that. 나머지는 목적격 관계대명사 that.",
+"source": "L5 본문 1문단 · 학습지 p.6 Practice A-4 · 통합본 L5·L6 GRAMMAR"
 },
 {
 "kind": "group",
 "label": "[9~10]",
 "direction": "다음 글을 읽고 물음에 답하시오.",
-"box": "The painting I want to write about is The Red Room by Henri Matisse. This painting shows a red room with a window. In the room, there are two chairs and a big table. We also see a woman who is setting the table. (A) <u>I like the red color of this painting. I think that the room feels warm because of it.</u>"
+"box": {
+"lines": [
+"An Interview with Dr. Schofield",
+"Interviewer: Dr. Schofield, I hear you have a Korean name. Can you tell me about it?",
+"Dr. Schofield: It's Seok Hopil. (A) <u>I love it because it sounds similar to my English name.</u> Also, it has a good meaning.",
+"Interviewer: I'd like to know why you helped the Korean independence movement.",
+"Dr. Schofield: Well, I believe every country has the right to be independent.",
+"Interviewer: What did you do after you returned to Korea in 1958?",
+"Dr. Schofield: I worked hard to help Koreans, especially poor students."
+]
+}
 },
 {
 "no": 9,
 "points": 3,
-"stem": "윗글의 밑줄 친 (A)에 나타난 글쓴이의 태도로 가장 적절한 것은?",
+"stem": "윗글의 맥락상 밑줄 친 (A)에서 추론할 수 있는 Dr. Schofield의 심경으로 가장 적절한 것은?",
 "choices": [
-"negative",
-"positive",
-"worried",
+"pleased",
 "bored",
-"scared"
+"scared",
+"worried",
+"disappointed"
 ],
 "inline": true,
-"answer": 2,
-"explain": "붉은 색이 마음에 들고 방이 따뜻하게 느껴진다 → 긍정적.",
-"source": "L5 Think and Write"
+"answer": 1,
+"explain": "자신의 한국 이름을 사랑한다고 말하므로 pleased(기쁜).",
+"source": "L6 After You Read"
 },
 {
 "no": 10,
 "points": 3,
 "stem": "윗글의 내용과 일치하지 않는 것은?",
 "choices": [
-"The writer wants to write about The Red Room.",
-"Henri Matisse painted The Red Room.",
-"There is a window in the red room.",
-"A woman in the painting is sitting on a chair.",
-"The writer likes the red color of the painting."
+"Dr. Schofield's Korean name is Seok Hopil.",
+"His Korean name sounds similar to his English name.",
+"His Korean name has a good meaning.",
+"He helped the Korean independence movement because he was asked to by the government.",
+"After 1958, he worked hard to help poor students in Korea."
 ],
 "answer": 4,
-"explain": "여자는 상을 차리고 있다.",
-"source": "L5 Think and Write"
+"explain": "독립운동을 도운 까닭은 모든 나라는 독립할 권리가 있다고 믿어서이다.",
+"source": "L6 After You Read"
 },
 {
 "kind": "group",
 "label": "[11~12]",
 "direction": "다음 글을 읽고 물음에 답하시오.",
-"box": "Hello, everyone. The movie I'm going to introduce today is The Song of Love. It's a movie about a pianist who loses his love for music. He moves to a small town for a new start. There, he begins teaching music to children and finds his love for music again. This movie has great music and a ⓐ<u>touching</u> story, so I strongly recommend it."
+"box": {
+"lines": [
+"We are now in Finsbury Park to see a painting by Banksy, an internationally famous street artist. Banksy's artworks often carry <u>social</u> messages, and the green tree you see over there is a good example. As you can see, he created a green tree by spraying green paint on a wall behind a leafless tree. Next to the tree, there is a person who is holding a sprayer. What message does Banksy want to give us through this painting? In many people's opinion, he is telling us that nature is having a hard time. They think he wants us to take better care of it."
+]
+}
 },
 {
 "no": 11,
 "points": 3,
-"stem": "윗글의 밑줄 친 ⓐ touching의 영영풀이로 옳은 것은?",
+"stem": "윗글의 밑줄 친 social의 영영풀이로 옳은 것은?",
 "choices": [
-"making you feel sad or emotional",
-"to suggest that someone or something would be good",
-"full of life and energy",
-"to become aware of something by hearing about it from somebody else",
-"a person who comes from another country"
+"belonging or relating to one particular person",
+"relating to human society and its organization",
+"of the present or recent times",
+"following the latest fashions in music and clothes",
+"full of life and energy"
 ],
-"answer": 1,
-"explain": "touching: 감동적인.",
-"source": "L6 어휘 영영풀이"
+"answer": 2,
+"explain": "social(사회의): 인간 사회와 그 조직과 관련된. ① personal ③ modern ④ hip ⑤ lively.",
+"source": "L5 본문 2문단 · L5 어휘 영영풀이"
 },
 {
 "no": 12,
 "points": 4,
-"stem": "윗글의 pianist와 가장 비슷한 경험을 한 학생은?",
+"stem": "윗글의 Banksy의 나무 그림과 같은 종류의 메시지를 담은 작품은?",
 "choices": [
-"S 1: \"I stopped playing the piano because I was too busy, and I never played it again.\"",
-"S 2: \"I lost interest in drawing, but I found it again while I was teaching my little brother to draw.\"",
-"S 3: \"I moved to a big city and made many new friends there.\"",
-"S 4: \"I practiced the violin every day and won first prize in a contest.\"",
-"S 5: \"I watched a touching movie about music with my family.\"\n(*S = Student)"
+"a painting of a birthday cake for a friend",
+"a painting of a fish dying in a river full of trash",
+"a painting of a cute dog with big eyes",
+"a painting of a red room with two chairs and a big table",
+"a painting of three figures with only lines and dots"
 ],
 "answer": 2,
-"explain": "사랑(흥미)을 잃었다가 가르치면서 되찾는다.",
-"source": "L6 Listen Up"
+"explain": "Banksy의 그림은 자연이 힘든 시간을 보내고 있다는 사회적 메시지를 담는다. ②만 환경 문제를 말한다. ①은 개인적 메시지, ④ Matisse, ⑤ STIK.",
+"source": "L5 본문 2문단"
 },
 {
 "no": 13,
 "points": 3,
 "stem": "다음 문장들의 빈칸에 공통으로 들어갈 단어는?",
-"box": "○ He is famous _____ using only lines and dots in his paintings.\n○ Can you recommend a good sci-fi novel _____ me?",
+"box": "○ Could you take pictures _____ the event and share them with the world?\n○ In 1958, he returned to Korea at the invitation _____ the Korean government and never left again.",
 "choices": [
+"of",
 "to",
+"in",
 "for",
-"at",
-"with",
-"of"
+"with"
 ],
 "inline": true,
-"answer": 2,
-"explain": "be famous for / recommend A for B.",
-"source": "L5 본문 · L6 대화문"
+"answer": 1,
+"explain": "take a picture of(~의 사진을 찍다), at the invitation of(~의 초대로).",
+"source": "L6 본문 1·7문단 · L6 어휘 리스트"
 },
 {
 "no": 14,
 "points": 4,
 "stem": "다음 중 어법상 옳지 않은 것은?",
 "choices": [
-"The friend whom I invited to my house came on time.",
-"Do you know the man who works in this company?",
-"The song which I listened to yesterday was really peaceful.",
-"Here are the presents who we sent you.",
-"The book which I read yesterday was very interesting."
+"I was so hungry that I ate the whole cake.",
+"It was so cold that we couldn't go on a picnic.",
+"It was raining so heavily that we had to stay home.",
+"The room is dark so that I can't see anything.",
+"They talked so fast that I couldn't understand them."
 ],
 "answer": 4,
-"explain": "선행사가 사물(presents) → which/that.",
-"source": "학습지 관계대명사 Practice A"
+"explain": "‘너무 어두워서 볼 수 없다’는 so + 형용사 + that: The room is so dark that I can't see anything.",
+"source": "통합본 L6 GRAMMAR so ~ that (연습 01~07)"
 },
 {
 "kind": "group",
 "label": "[15~16]",
 "direction": "다음 글을 읽고 물음에 답하시오.",
-"box": "On February 28, 1919, a man came to Dr. Schofield's house.\nMan: Dr. Schofield, I have a special favor to ask you.\nDr. Schofield: What can I do for you?\nMan: Many people are going to gather tomorrow for the independence of Korea. Could you take pictures of the event and share them with the world?\nAt 2 p.m. on March 1, Dr. Schofield was hiding in a building and saw a large group of people gathering outside. He began to take pictures.\nDr. Schofield: Unbelievable! There are so many people here. I hope the world will learn about this important event through my pictures."
+"box": {
+"lines": [
+"Kim Mandeok was born in Jeju-do in 1739. She was a successful businesswoman. In 1795, she saw many people dying from hunger. So, she bought rice with all her money and gave it away to poor people. Her love for others was so selfless that many people respected her. From her life, I learned that selfless love for others can make a big difference."
+]
+}
 },
 {
 "no": 15,
 "points": 3,
-"stem": "윗글에서 남자가 Dr. Schofield에게 부탁한 것으로 가장 적절한 것은?",
+"stem": "윗글의 글쓴이가 Kim Mandeok의 삶에서 배운 것으로 가장 적절한 것은?",
 "choices": [
-"to join the people gathering for the independence of Korea",
-"to take pictures of the event and share them with the world",
-"to hide in a building on March 1",
-"to write a letter to the Korean government",
-"to teach Korean people how to take pictures"
+"Save your money for the future.",
+"Selfless love for others can change a lot of things.",
+"A successful businesswoman should sell rice.",
+"People respect those who have a lot of money.",
+"Do not give away all your money to others."
 ],
 "answer": 2,
-"explain": "Could you take pictures of the event and share them with the world?",
-"source": "L6 본문"
+"explain": "selfless love for others can make a big difference(큰 변화를 만들 수 있다).",
+"source": "L6 Think and Write"
 },
 {
 "no": 16,
 "points": 4,
 "stem": "윗글을 다음과 같이 요약하고자 할 때, 빈칸 ⓐ~ⓒ에 들어갈 말로 바르게 짝지어진 것은?",
-"box": "On February 28, 1919, a man asked Dr. Schofield for a ⓐ___. The next day, Dr. Schofield ⓑ___ in a building and took pictures of the people gathering for Korean ⓒ___.",
+"box": "Kim Mandeok was a ⓐ___ businesswoman. When she saw many people dying from hunger, she bought ⓑ___ with all her money and gave it to the poor. Her selfless love made many people ⓒ___ her.",
 "choices_table": {
 "header": [
 "",
@@ -329,75 +361,80 @@
 "rows": [
 [
 "①",
-"favor",
-"hid",
-"independence"
+"poor",
+"rice",
+"respect"
 ],
 [
 "②",
-"favor",
-"hid",
-"medicine"
+"poor",
+"land",
+"forget"
 ],
 [
 "③",
-"favor",
-"stood",
-"independence"
+"successful",
+"rice",
+"respect"
 ],
 [
 "④",
-"picture",
-"hid",
-"medicine"
+"successful",
+"land",
+"respect"
 ],
 [
 "⑤",
-"picture",
-"stood",
-"independence"
+"successful",
+"rice",
+"forget"
 ]
 ]
 },
-"answer": 1,
-"explain": "부탁(favor) / 숨어서(hid) / 독립(independence).",
-"source": "L6 본문"
+"answer": 3,
+"explain": "a successful businesswoman / bought rice / many people respected her.",
+"source": "L6 Think and Write"
 },
 {
 "kind": "group",
 "label": "[17~18, 서답형1]",
 "direction": "다음 글을 읽고 물음에 답하시오.",
-"box": "We are now in Finsbury Park to see a painting by Banksy, an internationally famous street artist. Banksy's artworks often (A) <u>carry</u> social messages, and the green tree you see over there is a good example. As you can see, he created a green tree by spraying green paint on a wall behind a leafless tree. (가) <u>그 나무 옆에는 분무기를 들고 있는 사람이 한 명 있습니다.</u> What message does Banksy want to give us through this painting? In many people's opinion, he is telling us that nature is having a hard time. They think he wants us to take better care of it."
+"box": {
+"lines": [
+"Do you know Seok Hopil? His English name was Frank W. Schofield, but he loved his Korean name. It sounded similar to his real name, and it also had a good meaning.",
+"Dr. Schofield was a Canadian doctor, and he first came to Korea in 1916 to teach medicine. He wanted to teach in Korean, so he began to learn Korean right away. (가) <u>그는 매우 열심히 공부해서 몇 년 만에 한국어로 가르칠 수 있게 되었다.</u> He believed that every country has the right to be independent, so he helped the Korean independence movement."
+]
+}
 },
 {
 "no": 17,
 "points": 3,
 "stem": "윗글의 내용과 일치하는 것은?",
 "choices": [
-"Banksy's painting is in Muswell Hill.",
-"Banksy painted a green tree on a leafless tree.",
-"Banksy's artworks rarely carry social messages.",
-"Banksy made the green tree by spraying green paint on a wall.",
-"Most people think Banksy is telling us that nature is doing well."
+"Frank W. Schofield didn't like his Korean name.",
+"Seok Hopil sounded similar to Dr. Schofield's real name.",
+"Dr. Schofield was an American doctor.",
+"Dr. Schofield came to Korea in 1916 to learn Korean.",
+"Dr. Schofield learned Korean slowly for many years."
 ],
-"answer": 4,
-"explain": "by spraying green paint on a wall behind a leafless tree.",
-"source": "L5 본문"
+"answer": 2,
+"explain": "① loved his Korean name ③ Canadian ④ to teach medicine ⑤ after only a few years.",
+"source": "L6 본문 3~4문단"
 },
 {
 "no": 18,
 "points": 4,
-"stem": "윗글의 밑줄 친 (A) carry와 같은 의미로 carry가 쓰인 것은?",
+"stem": "윗글을 읽고 Dr. Schofield에 대해 바르게 이해한 학생은?",
 "choices": [
-"He is carrying a heavy box up the stairs.",
-"The bus carries about 40 people.",
-"Her songs carry messages of hope.",
-"Please carry these bags to the car.",
-"The river carries water to the sea."
+"S 1: \"He came to Korea to study Korean medicine.\"",
+"S 2: \"He taught medicine in English for the rest of his life.\"",
+"S 3: \"He believed that Korea had the right to be independent, so he helped its independence movement.\"",
+"S 4: \"He got a Korean name because the Korean government gave it to him.\"",
+"S 5: \"He gave up learning Korean after a few years.\""
 ],
 "answer": 3,
-"explain": "carry: (메시지를) 지니다, 담고 있다.",
-"source": "L5 어휘"
+"explain": "③ He believed that every country has the right to be independent, so he helped the Korean independence movement. ① 의학을 가르치러 옴 ② 한국어로 가르침 ④ 근거 없음 ⑤ 몇 년 만에 한국어로 가르침.",
+"source": "L6 본문 4문단"
 },
 {
 "kind": "essay",
@@ -405,18 +442,19 @@
 "points": 5,
 "stem": "윗글의 밑줄 친 우리말 (가)를 <조건>에 맞춰 바르게 영작하시오.",
 "condition": [
-"다음 단어를 반드시 사용할 것 (※ 단, 필요시 단어의 형태를 변형할 것): next to, there, a person, who, hold, a sprayer",
-"주격 관계대명사 who를 사용하여 총 13단어인 문장을 작성할 것"
+"다음 단어를 반드시 사용할 것 (※ 단, 필요시 단어의 형태를 변형할 것): study, so, that, be able to, only a few years",
+"총 15단어인 문장을 작성할 것"
 ],
-"answer": "Next to the tree, there is a person who is holding a sprayer.",
-"explain": "there is + 명사 + who is -ing. 13단어.",
-"source": "L5 본문 · 관계대명사"
+"answer_lines": 1,
+"answer": "He studied so hard that he was able to teach in Korean after only a few years.",
+"explain": "so + 부사(hard) + that + 주어 + 동사: 매우 ~해서 …하다. 15단어.",
+"source": "L6 본문 4문단 · 통합본 L6 GRAMMAR so ~ that"
 },
 {
 "no": 19,
 "points": 3,
 "stem": "다음 문장들의 빈칸 ⓐ~ⓒ에 들어갈 단어가 바르게 짝지어진 것은?",
-"box": "○ Look closely ⓐ___ the eyes of the three figures.\n○ ⓑ___ STIK, the three figures represent the past, present, and future.\n○ Wilson is well known ⓒ___ painting pictures on gum.",
+"box": "○ He is famous ⓐ___ using only lines and dots in his paintings of human bodies.\n○ I'm really interested ⓑ___ science. Can you recommend a science magazine for me?\n○ Could you take pictures of the event and share them ⓒ___ the world?",
 "choices_table": {
 "header": [
 "",
@@ -427,45 +465,45 @@
 "rows": [
 [
 "①",
-"at",
-"According to",
-"for"
+"for",
+"in",
+"with"
 ],
 [
 "②",
+"for",
 "at",
-"Thanks to",
-"of"
+"to"
 ],
 [
 "③",
+"of",
 "in",
-"According to",
-"of"
+"to"
 ],
 [
 "④",
-"to",
-"Thanks to",
-"for"
+"with",
+"at",
+"with"
 ],
 [
 "⑤",
-"for",
-"According to",
+"with",
+"on",
 "for"
 ]
 ]
 },
 "answer": 1,
-"explain": "look at / according to / be well known for.",
-"source": "L5 어휘 숙어"
+"explain": "be famous for(~로 유명하다), be interested in(~에 관심이 있다), share A with B(A를 B와 공유하다).",
+"source": "L5 본문 1문단 · L6 Watch and Talk A-4 · L6 본문 1문단"
 },
 {
 "no": 20,
 "points": 3,
 "stem": "다음 대화에서 A, B의 관계로 가장 적절한 것은?",
-"box": "A: What kinds of magazines do you have?\nB: We have all kinds of magazines.\nA: I'm really interested in science. Can you recommend a science magazine for me?\nB: Sure. You'll love this one, Teen's Science.",
+"box": "A: Excuse me. I'm going to the National Art Museum. What's the best way to get there?\nB: You can walk. Go straight for about 500 meters and turn left. It'll be on your right.\nA: I see. How long will it take?\nB: Only about 15 minutes.\nA: Really? Thanks.",
 "choices_table": {
 "header": [
 "",
@@ -475,46 +513,67 @@
 "rows": [
 [
 "①",
+"artist",
+"visitor"
+],
+[
+"②",
+"tourist",
+"passerby"
+],
+[
+"③",
 "customer",
 "clerk"
 ],
 [
-"②",
-"clerk",
-"customer"
-],
-[
-"③",
-"teacher",
-"student"
-],
-[
 "④",
-"tourist",
-"guide"
+"student",
+"teacher"
 ],
 [
 "⑤",
-"doctor",
-"patient"
+"driver",
+"police officer"
 ]
 ]
 },
-"answer": 1,
-"explain": "잡지를 찾는 손님과 추천해 주는 점원.",
-"source": "L6 Watch and Talk A-4"
+"answer": 2,
+"explain": "길을 묻는 관광객(tourist)과 길을 알려 주는 행인(passerby).",
+"source": "L5 Watch and Talk A-4"
 },
 {
 "kind": "group",
 "label": "[21, 서답형2]",
 "direction": "다음 대화를 읽고 물음에 답하시오.",
-"box": "G: Liam, can you please help me? I need to find some books for my homework.\nB: What kinds of books are you looking for, Somi?\nG: I'm looking for books on famous people who helped others. I need to write an essay.\nB: Who do you want to write about?\nG: I was thinking about Dr. Schweitzer, but can you recommend someone else for me?\nB: What about Audrey Hepburn?\nG: I know she was a famous actor, but what did she do to help others?\nB: <u>그녀는 특히 아이들을 위해서 많은 자원봉사를 했어.</u>\nG: Really? Then, I can write about her. Thank you!"
+"box": {
+"lines": [
+"G: Liam, can you please help me? I need to find some books for my homework.",
+"B: What kinds of books are you looking for, Somi?",
+"G: I'm looking for books on famous people who helped others. I need to write an essay.",
+"B: Who do you want to write about?",
+"G: I was thinking about Dr. Schweitzer, but <u>나에게 다른 사람을 추천해 줄 수 있어?</u>",
+"B: What about Audrey Hepburn?",
+"G: I know she was a famous actor, but what did she do to help others?",
+"B: She did a lot of volunteer work, especially for children.",
+"G: Really? Then, I can write about her. Thank you!"
+]
+}
 },
 {
 "no": 21,
 "points": 3,
-"stem": "다음 메모에서 위 대화의 내용과 일치하지 않는 것은?",
-"box": "Somi's Homework\n① What: an essay  ② Topic: famous people who helped others\n③ Somi's first idea: Dr. Schweitzer  ④ Liam's recommendation: Audrey Hepburn\n⑤ Audrey Hepburn: a famous singer",
+"stem": "다음은 Somi가 대화 후에 적은 메모이다. 위 대화의 내용과 일치하지 않는 것은?",
+"box": {
+"title": "My Essay Plan",
+"lines": [
+"① Homework: write an essay",
+"② Topic: famous people who helped others",
+"③ My first idea: Dr. Schweitzer",
+"④ Liam's recommendation: Audrey Hepburn, a famous actor",
+"⑤ What she did: a lot of volunteer work, especially for old people"
+]
+},
 "choices": [
 "①",
 "②",
@@ -524,7 +583,7 @@
 ],
 "inline": true,
 "answer": 5,
-"explain": "Audrey Hepburn은 유명한 배우(actor)였다.",
+"explain": "especially for children(아이들을 위해). 그림·표 대신 메모 글로 물었다.",
 "source": "L6 Watch and Talk C"
 },
 {
@@ -533,11 +592,12 @@
 "points": 5,
 "stem": "위 대화의 밑줄 친 우리말을 <조건>에 맞춰 바르게 영작하시오.",
 "condition": [
-"다음 단어를 반드시 사용할 것 (※ 단, 필요시 단어의 형태를 변형할 것): do, a lot of, volunteer work, especially, for children",
-"총 10단어인 문장을 작성할 것"
+"다음 단어를 반드시 사용할 것: can, recommend, someone else",
+"총 7단어인 문장을 작성할 것"
 ],
-"answer": "She did a lot of volunteer work, especially for children.",
-"explain": "do volunteer work. 10단어.",
+"answer_lines": 1,
+"answer": "can you recommend someone else for me?",
+"explain": "추천을 부탁하는 표현 Can you recommend ~ for me? 7단어.",
 "source": "L6 Watch and Talk C"
 },
 {
@@ -545,69 +605,79 @@
 "points": 4,
 "stem": "다음 중 어법상 옳지 않은 것은?",
 "choices": [
-"I saw a large group of people gathering outside.",
-"She heard someone knocking on the door.",
-"We watched the sun rise over the sea.",
-"He felt something to move under his feet.",
-"I smelled something burning in the kitchen."
+"I used to skip breakfast, but now I eat breakfast every day.",
+"I didn't use to like coffee, but now I drink two cups every day.",
+"Did this place use to be a bookstore a long time ago?",
+"There used to be a large park here before the new shopping mall was built.",
+"He isn't used to speak in front of many people yet."
 ],
-"answer": 4,
-"explain": "지각동사 feel + 목적어 + 동사원형/-ing: felt something move(moving).",
-"source": "L6 문법 지각동사"
+"answer": 5,
+"explain": "‘~에 익숙하다’는 be used to + -ing: isn't used to speaking. 나머지는 used to(과거의 습관·상태)의 평서·부정·의문문.",
+"source": "학습지 p.4 Practice B-1·2·4·5·6"
 },
 {
 "no": 23,
 "points": 4,
 "stem": "다음 중 우리말 영작이 바르지 않은 것은?",
 "choices": [
-"나는 예전에는 커피를 좋아하지 않았지만, 지금은 매일 두 잔씩 마신다.\n→ I didn't use to like coffee, but now I drink two cups every day.",
-"이 돈은 지역 예술가들을 지원하는 데 사용될 것이다.\n→ This money will be used to support local artists.",
-"이 장소는 오래전에 서점이었나요?\n→ Did this place use to be a bookstore a long time ago?",
-"그는 아직 많은 사람들 앞에서 말하는 것에 익숙하지 않다.\n→ He isn't used to speak in front of many people yet.",
-"그 새 쇼핑몰이 지어지기 전에는 여기에 큰 공원이 있었다.\n→ There used to be a large park here before the new shopping mall was built."
+"나는 주말마다 테니스를 치곤 했다.\n→ I used to play tennis every weekend.",
+"정원에는 사과나무가 많이 있었다. (지금은 없음)\n→ There used to be many apple trees in the garden.",
+"나는 브로콜리를 좋아하지 않았었지만, 지금은 즐겨 먹는다.\n→ I didn't use to like broccoli, but I enjoy it now.",
+"너는 어렸을 때 축구를 하곤 했니?\n→ Did you used to play soccer when you were young?",
+"이 칼은 야채를 자르는 데 사용된다.\n→ This knife is used to cut vegetables."
 ],
 "answer": 4,
-"explain": "be used to + -ing: isn't used to speaking.",
-"source": "학습지 used to Practice B"
+"explain": "used to의 의문문은 Did + 주어 + use to + 동사원형: Did you use to play ~?",
+"source": "통합본 L5 GRAMMAR used to"
 },
 {
 "no": 24,
 "points": 4,
 "stem": "다음 중 어법상 옳은 것은?",
 "choices": [
-"Who was the person to who you were talking on the phone just now?",
-"This is the house in that I lived.",
-"The medicine that doctors developed reduce pain quickly.",
-"The law that the government introduced protects endangered animals.",
-"I can't find the restaurant that my friend recommended it for dinner."
+"Picasso is the painter which I like the most.",
+"I love the cookies whom my mom made.",
+"This is the museum which I want to visit in London.",
+"The girl which I met in the park is Mina.",
+"That's the man about that my sister was talking."
 ],
-"answer": 4,
-"explain": "① to whom ② in which ③ reduces ⑤ it 삭제.",
-"source": "학습지 관계대명사 Practice A-6 · C"
+"answer": 3,
+"explain": "① 사람 선행사 → whom/that ② 사물 선행사 → which/that ④ 사람 → whom/that ⑤ 전치사 뒤에는 that 불가 → about whom. ③ 사물 선행사 + which 옳다.",
+"source": "통합본 L5 GRAMMAR 목적격 관계대명사 연습 01~07 · 학습지 p.5"
 },
 {
 "kind": "essay",
 "no": "서답형3",
 "points": 5,
-"stem": "다음 대화의 밑줄 친 G의 우리말을 <조건>에 맞춰 바르게 영작하시오.",
-"box": "B: What kinds of movies do you like?\nG: I like action movies. Spider-Man is my favorite.\nB: Oh, I didn't see it.\nG: You didn't? <u>그것은 너무 재미있어서 나는 그것을 세 번 봤어.</u> I strongly recommend it.",
+"stem": "다음 대화의 밑줄 친 Dr. Schofield의 우리말을 <조건>에 맞춰 바르게 영작하시오.",
+"box": "Interviewer: I'd like to know why you helped the Korean independence movement.\nDr. Schofield: Well, <u>저는 모든 나라는 독립할 권리가 있다고 믿어요.</u>",
 "condition": [
-"다음 단어를 반드시 사용할 것 (※ 단, 필요시 단어의 형태를 변형할 것): fun, watch, three times",
-"so ~ that 구문을 사용하여 총 10단어인 문장을 작성할 것"
+"다음 단어를 반드시 사용할 것: believe, every country, the right, independent",
+"총 10단어인 문장을 작성할 것"
 ],
-"answer": "It is so fun that I watched it three times.",
-"explain": "so + 형용사 + that + 주어 + 동사. 10단어.",
-"source": "L6 Watch and Talk A-3 · so ~ that"
+"answer_lines": 1,
+"answer": "I believe every country has the right to be independent.",
+"explain": "believe (that) + 절, the right to + 동사원형(~할 권리). 10단어.",
+"source": "L6 After You Read"
 },
 {
 "kind": "essay",
 "no": "서답형4",
 "points": 5,
 "stem": "<보기>와 같이 주어진 두 문장을 한 문장으로 완성하시오.",
-"box": "< 보 기 > I know a girl. + Everyone likes her. ⇨ I know a girl whom everyone likes.\n\nThe student doesn't know the answer. + I met him yesterday.",
-"answer": "The student whom[who/that] I met yesterday doesn't know the answer.",
-"explain": "목적격 관계대명사 whom(who/that). him 은 쓰지 않는다.",
-"source": "학습지 관계대명사 Practice B-6"
+"box": {
+"title": "< 보 기 >",
+"lines": [
+"The book was very interesting. + I read it yesterday.",
+"⇨ The book which I read yesterday was very interesting.",
+"",
+"The story was funny. + You talked about it."
+]
+},
+"answer_lines": 1,
+"answer": "The story which[that] you talked about was funny.",
+"explain": "전치사 about의 목적어 it을 대신하는 목적격 관계대명사 which/that. (about which you talked도 가능)",
+"source": "학습지 p.5 목적어의 종류(전치사의 목적어)"
 }
 ]
 }

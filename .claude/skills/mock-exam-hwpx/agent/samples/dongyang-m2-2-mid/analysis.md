@@ -1,50 +1,110 @@
 # 동양중학교 2학년 2학기 중간고사 — 출제 성향 분석과 출제 설계
 
-입력: 기출(26-1 2학년 기말, docx) · 학교 학습지 6쪽(L5 어휘 영영풀이 · 듣기 · used to · 목적격 관계대명사) ·
-교과서 범위 자료(동아 윤정미 중2 Lesson 5 *The City as a Canvas* · Lesson 6 *Dr. Schofield, a Foreigner Who Loved Korea*) ·
-통합본 워크북 PDF(L5·L6 문법 해설) · 특징 메모("객관식 24 / 서술형 4, 서술형 대비가 핵심, 영영풀이 ≥1, 본문 이해, 조건 영작").
+입력: 기출 시험지(26-1 2학년 1학기 기말, docx) 1 · 학교 학습지(스캔 PDF 6쪽 — L5 Vocabulary ①·Listening·Grammar ① used to·Grammar ② 목적격 관계대명사) 1 ·
+교과서 범위 자료(hwp·xlsx, Lesson 5~6 대화문·본문·기타 지문·어휘) 6 · 통합본(Lesson 5·6 PDF, GRAMMAR 부분만 사용) 2 · 지침 txt 1
+교과서: 동아(윤정미) 중2 — Lesson 5 *The City as a Canvas* · Lesson 6 *Dr. Schofield, a Foreigner Who Loved Korea*
 
-## 1. 기출 형식 (그대로 따른다)
+## 0. 지침 반영 목록 (사용자 txt — 명령)
 
-- 선택형 24 = 3점×16 + 4점×8 = 80점, 서답형 4×5 = 20점. 서답형은 관련 지문·대화 바로 뒤에 `[서답형1]` 로 끼어 있다.
-- 거의 모든 문항이 **지문 묶음**이다: `[1~5]` 긴 본문(연결어 빈칸·ⓐ~ⓔ 어법·전치사 빈칸·답 못 찾는 질문·사건 순서),
-  `[6~7]`(문장 삽입·낱말 ⓐⓑⓒ), `[9~10]`(심경·불일치), `[11~12]`(영영풀이·사례 적용), `[15~16]`(조언·요약 ⓐⓑⓒ),
-  `[17~18, 서답형1]`(일치·사례·조건 영작). 단독 문항은 8(that 쓰임) · 13(공통 전치사) · 14·22·24(어법) · 19(전치사 ⓐⓑⓒ) · 20(대화 관계) · 23(영작 오류) 뿐.
-- 대화는 `[21, 서답형2]` 한 세트: 포스터/표와 대조하는 불일치 + 우리말 조건 영작.
-- 서답형: 조건(사용 단어·단어 수) 영작 3개 + 두 문장을 관계대명사로 합치기 1개.
-- 판형: 학교 서식 HWPX(정보표·안내문·2단). 이번 모의고사는 `2026학년도 2학기 중간고사 · 영어 · 2학년 · 코드 01~03`.
+| 지침 문장 | 반영 |
+|---|---|
+| 동양중 특징(객관식 24문항/ 서술형 4문항) | 객관식 24(3점×16 + 4점×8 = 80) + 서답형 4(5점×4 = 20) = 100. 기출과 같은 번호 흐름 |
+| 서술형 대비가 핵심 | 서답형 4개 모두 조건 영작·문장 완성. 서답형1 지각동사/so~that, 서답형3 be going to·that절·used to, 서답형4 목적격 관계대명사 |
+| 영영풀이 최소 1문제 이상 | 11번(매회): selfless / social / personal 영영풀이(어휘 xlsx·학습지 p.1 풀이 그대로) |
+| 본문 내용 이해 | 1~7·9~12·15~18 본문·기타 지문 세트 (일치·질문·순서·삽입·요약·적용) |
+| 조건 영작 | 서답형1·2·3 — 사용 단어 + 단어 수 조건. 서답형4 두 문장 → 한 문장 |
+| 단어·문법을 실제로 문장에 적용하는 연습 필요 | 13·19 숙어 전치사(본문 문장), 14·22·23·24 어법(학습지 Practice·통합본 예문 그대로) |
 
-## 2. 이번 범위에서 나올 것
+## 1. 표 ① 기출 문항 분석 (26-1 1학기 기말 — 형식·유형·자료 갈래만 가져온다)
 
-| 영역 | 소스 | 비고 |
-|---|---|---|
-| 본문 | L5 *Street Art in London*(Shoreditch·STIK / Banksy / Ben Wilson) · L6 *Dr. Schofield*(1919 대화 / 석호필·의학 / 3·1운동·귀국·1958) | 세 부분씩 나눠 세트로 |
-| 기타 지문 | L5 Think&Write *The Red Room* · L6 After You Read 인터뷰 · Think&Write *Kim Mandeok* · Listen Up *The Song of Love* | 짧은 세트 |
-| 대화 | L5 길 묻기(How can I get to ~? / How long will it take?) · L6 추천(What kinds of ~? / Can you recommend ~?) | 관계 추론·표 대조·영작 |
-| 문법 | L5 **used to**(vs be used to -ing) · **목적격 관계대명사**(생략, 전치사+whom/which) · L6 **so ~ that**(= too…to / enough to) · **지각동사+목적어+-ing/원형** | 학습지 Practice 문장 우선 |
-| 어휘 | 영영풀이(학습지 L5 표 31개 · xlsx 영영풀이) · 다의어 take/figure/represent/rest/right · 전치사 숙어(be famous for, according to, similar to, at the invitation of, under the watchful eye of) | 7·11·13·19 자리 |
+형식: 2단 · `1. 발문 [3점]` · 묶음 `[1~5] 다음 글을 읽고 물음에 답하시오.` 뒤에 글상자 · 서답형 `[서답형1] … [5점]` + `<조건>` + `⇨ ____`.
+배점: 3점×16 = 48, 4점×8 = 32(2·12·14·16·18·22·23·24), 서답형 5점×4 = 20 → 100.
 
-## 3. 3부 배분
+| 번호 | 배점 | 유형 | 묶음 | 기출이 뽑은 자료 | 포인트 |
+|---|---|---|---|---|---|
+| 1 | 3 | 흐름상 빈칸 (A)에 못 들어가는 연결어 | [1~5] 본문 | 교과서 본문(자전거) | Therefore/As a result 계열 vs However |
+| 2 | 4 | ⓐ~ⓔ 어법 옳은 것 | 〃 | 〃 | 수동태·부사 등 범위 문법을 심음 |
+| 3 | 3 | 빈칸 (B) 단어(전치사) | 〃 | 〃 | without |
+| 4 | 3 | 대답을 찾을 수 없는 질문 | 〃 | 〃 | 세부 내용 |
+| 5 | 3 | <보기> (A)~(E) 사건 순서 배열 | 〃 | 〃 | 요약 문장 5개 |
+| 6 | 3 | 문장 삽입 (A)~(E) | [6~7] 본문 | 교과서 본문(수정액) | 지시어 연결 |
+| 7 | 3 | ⓐ~ⓒ 어휘 짝(표) | 〃 | 〃 | 문맥 어휘 |
+| 8 | 3 | 밑줄 that 쓰임 다른 것 | 단독 | 선생님 제작 문장 | 접속사 that vs 관계대명사 |
+| 9 | 3 | 밑줄 (A)에서 심경 추론 | [9~10] 본문 | 교과서 본문(웹캠) | 심경 형용사 |
+| 10 | 3 | 내용 일치 X | 〃 | 〃 | 세부 내용 |
+| 11 | 3 | 밑줄 단어 영영풀이 | [11~12] 본문 | 교과서 본문(마케팅) | strategy |
+| 12 | 4 | 글의 개념을 적용한 사례(학생 발화) | 〃 | 〃 | 헝거 마케팅 사례 |
+| 13 | 3 | 두 문장 공통 전치사 | 단독 | 숙어 문장 | depend on / effect on |
+| 14 | 4 | 어법 틀린 것 | 단독 | 선생님 제작 문장 | 수동태(1학기 문법) |
+| 15 | 3 | 조언으로 적절한 것 | [15~16] 본문 | 교과서 본문(마케팅) | 주제 |
+| 16 | 4 | 요약문 ⓐ~ⓒ(표) | 〃 | 〃 | 요약 |
+| 17 | 3 | 내용 일치 O | [17~18, 서답형1] 본문 | 교과서 본문(마케팅) | 세부 내용 |
+| 18 | 4 | 개념 사례 적용 | 〃 | 〃 | 앵커링 효과 |
+| 서답형1 | 5 | 밑줄 우리말 (가) 조건 영작 | 〃 | 〃 | 사용 단어 + 단어 수 |
+| 19 | 3 | 세 문장 전치사 ⓐ~ⓒ(표) | 단독 | 숙어 문장 | surprised at / filled with / in |
+| 20 | 3 | 대화 A·B 관계(표) | 단독 대화 | 교과서 대화문 | clerk–customer |
+| 21 | 3 | 포스터와 대화 일치 X | [21, 서답형2] 대화 | 교과서 대화문(긴 것) | 포스터(표) → 글로 대체 |
+| 서답형2 | 5 | 대화 속 우리말 조건 영작 | 〃 | 〃 | 표현 영작 |
+| 22 | 4 | 어법 틀린 것 | 단독 | 선생님 제작 문장 | 시간·조건 부사절(1학기) |
+| 23 | 4 | 우리말 영작 바르지 않은 것 | 단독 | 선생님 제작 문장 | 조동사 수동태(1학기) |
+| 24 | 4 | 어법 옳은 것 | 단독 | 선생님 제작 문장 | 주격 관계대명사(1학기) |
+| 서답형3 | 5 | 대화 속 우리말 조건 영작 | 단독 대화 | 선생님 제작 대화 | 조건 부사절(1학기) |
+| 서답형4 | 5 | <보기>처럼 두 문장 → 한 문장 | 단독 | 선생님 제작 문장 | 관계대명사 |
 
-| | 1회 | 2회 | 3회 |
-|---|---|---|---|
-| [1~5] | L5 Shoreditch·STIK | L6 석호필·의학·독립운동 | L5 Banksy·Wilson |
-| [6~7] | L6 Kim Mandeok | L5 Ben Wilson | L6 1958 귀국 |
-| [9~10] | L5 Banksy | L5 The Red Room | L6 인터뷰 |
-| [11~12] | L6 1919 대화 | L6 Listen Up | L6 Kim Mandeok |
-| [15~16] | L6 3·1운동·귀국 | L6 1919 대화 | L5 Shoreditch·STIK |
-| [17~18, 서답형1] | L6 1958 귀국 | L5 Banksy | L6 석호필·의학 |
-| [21, 서답형2] | L5 WT-C 세빛공원 | L6 WT-C 책 추천 | L5 WT-A-1 Star Stadium |
-| 22·23·24 | used to / so~that·지각 / 관계대명사 | 지각동사 / used to / 관계대명사(전치사) | so that / 관계대명사 / 지각·used to |
-| 서답형3·4 | 추천 대화 영작 / 관계대명사 합치기 | so~that 영작 / 합치기 | 지각동사 영작 / 합치기 |
+## 2. 표 ② 이번 범위 자료 목록
 
-## 4. 2회·3회 집필 메모
+| 갈래 | 대목 |
+|---|---|
+| L5 본문 *Street Art in London* | 1문단 Shoreditch·STIK(선·점, 세 인물) · 2문단 Finsbury Park·Banksy(초록 나무, 사회적 메시지) · 3문단 Muswell Hill·Ben Wilson(껌 그림, 개인적 메시지) |
+| L5 대화문 | Watch&Talk A-1(Star Stadium) A-2(Sky Cinema) A-3(Dream Shopping Mall) A-4(National Art Museum) · B(hospital) · C(Sebit Park, Somi·Liam) · Speak Up · Talk and Play(Brooklyn Bridge) · Review 1·2 |
+| L5 기타 지문 | Think and Write(The Red Room by Matisse) · Culture Project |
+| L5 어휘 | 리스트·다의어(take·represent·figure)·영영풀이 20개 (artwork … stick) · 숙어(according to, be famous for, get off, next to, take care of 등) |
+| L6 본문 *Dr. Schofield* | 1문단(1919.2.28 남자의 부탁) · 2문단(3.1 오후 2시 숨어서 사진) · 3문단(석호필 이름) · 4문단(1916 캐나다 의사, 한국어, so~that, 독립운동) · 5문단(3.1 탑골공원 지각동사, 기사) · 6문단(감시, 1920 캐나다) · 7문단(1958 초청, 1970 안장) |
+| L6 대화문 | Watch&Talk A-1~4(책·탄산음료·영화·잡지 추천) · B · C(Somi·Liam, Audrey Hepburn) · Listen Up(The Song of Love) · Talk and Play(Morning in Venice) · Review 1·2 |
+| L6 기타 지문 | After You Read(인터뷰) · Think and Write(김만덕) · Culture Project(Nick Priest·Kay Brown·Eliot Middleton) |
+| L6 어휘 | 리스트·다의어(rest·right)·영영풀이 21개 · 숙어(take a picture of, at the invitation of, be interested in, share A with B, similar to 등) |
+| 학습지 p.1 | L5 Vocabulary ① 어휘 31개 + 영영풀이 |
+| 학습지 p.2 | Listening — Watch&Talk A-1~4·C 빈칸 |
+| 학습지 p.3 | Grammar ① used to(형태·의미·부정·의문, be used to 구별) · Practice A 1~7 |
+| 학습지 p.4 | used to Practice B 1~7(영작) · Practice C 1~10(오류 고치기) |
+| 학습지 p.5 | Grammar ② 목적격 관계대명사(종류·생략·전치사의 목적어, in which / that 불가) |
+| 학습지 p.6 | 관계대명사 Practice A 1~6 · B 1~7(영작) · C 1~12(오류 고치기) |
+| 통합본 L5 GRAMMAR | 목적격 관계대명사(예문·QUICK TEST·연습 01~07) · used to(예문·혼동 구문) |
+| 통합본 L6 GRAMMAR | 지각동사 + 목적어 + -ing/동사원형 · so ~ that (can/can't, such, so that) |
 
-- 배분표대로 썼다. 표가 같은 대목을 두 회에 쓰게 한 자리(1919 대화: 1회 [11~12] ↔ 2회 [15~16] · Shoreditch·STIK: 1회 [1~5] ↔ 3회 [15~16] · Banksy: 1회 [9~10] ↔ 2회 [17~18] · 3회 [1~5])는
-  **문항 유형을 바꾸어** 겹치지 않게 했다(빈칸·어법 ↔ 제목·요약 / 태도·불일치 ↔ 일치·다의어·영작).
-- 문법 자리(14·22·23·24)를 회마다 돌렸다 — 2회: 관계대명사(A) / 지각동사 / used to 영작(Practice B) / 관계대명사 전치사(Practice A-6·C),
-  3회: used to(Practice A·C) / so ~ that / 관계대명사 영작(Practice B) / 지각·used to 혼합. 8번은 that 접속사 vs 관계대명사(2회) · right 다의어(3회).
-- 영영풀이(11번)는 xlsx 영영풀이 그대로(touching · selfless). 사례 적용(12번)은 L6 Culture Project 인물을 선지로 썼다.
-- 서답형: 2회 = who 관계절 영작(13단어) · 자원봉사 영작(10단어) · so ~ that 영작(10단어) · Practice B-6 합치기,
-  3회 = so 접속 영작(14단어) · 지하철 안내 영작(12단어) · 지각동사 영작(6단어) · Practice B-7 합치기.
-- 메모의 "그림 유형" 은 없었다. 20번 관계 문항은 관계표(A·B 표)로 냈다.
+비교급·최상급 단원은 범위에 없다 — 본문 속 "one of the hippest areas" 만 16번 요약에 어휘로 썼다.
+
+## 3. 표 ③ 출제 예측표 (기출 번호 → 이번 범위)
+
+| 번호 | 기출 유형·자료 | 갈래 | 1회 | 2회 | 3회 |
+|---|---|---|---|---|---|
+| 1~5 | 본문 세트(연결어·ⓐ~ⓔ 어법·전치사·질문·순서) | 교과서 본문 | L6 3~4문단 (so / similar to / ⓐ 정답) | L6 1~2문단 (Then·Soon vs However / take pictures of / ⓓ 지각동사) | L6 5~7문단 (so / at the invitation of / ⓑ) |
+| 6~7 | 문장 삽입·ⓐ~ⓒ 어휘 | 교과서 본문 | L5 3문단 Wilson | L5 1문단 STIK | L5 2문단 Banksy |
+| 8 | that 쓰임 | 학습지·통합본 문장 | 관대 that ×4 + so~that | 관대 that ×4 + so~that | 관대 that ×4 + 접속사 that |
+| 9~10 | 심경·일치 X | 기타 지문 | L6 Listen Up(피아니스트) | L6 After You Read(인터뷰) | L5 Think and Write(Red Room) |
+| 11~12 | 영영풀이·사례 적용 | 기타 지문/본문 | L6 김만덕 selfless + 이타적 사례(Culture Project) | L5 Banksy social + 사회적 메시지 작품 | L5 Wilson personal + 껌 그림 메시지 |
+| 13 | 공통 전치사 | 본문 문장 | to (according to · similar to) | of (take pictures of · invitation of) | for (famous for · for the independence) |
+| 14 | 어법 틀린 것 | 학습지·통합본 | used to (학습지 p.4 C) | so~that (통합본 연습) | used to (학습지 p.3 A) |
+| 15~16 | 조언·요약 | 교과서 본문/기타 | L5 Banksy | L6 김만덕 | L5 STIK |
+| 17~18·서답형1 | 일치·학생 이해·(가) 영작 | 교과서 본문 | L6 5~7문단 · heard people shouting(10단어) | L6 3~4문단 · so hard that … able to(15단어) | L6 1~2문단 · saw … gathering outside(9단어) |
+| 19 | 전치사 ⓐ~ⓒ | 본문·대화 문장 | at / to / in | for / in / with | to / in / on |
+| 20 | A·B 관계 | 교과서 대화문 | L6 WT A-4 customer–clerk | L5 WT A-4 tourist–passerby | L6 Talk and Play friend–friend |
+| 21·서답형2 | 긴 대화 일치 X(메모) · 영작 | 교과서 대화문 | L5 WT C(세빛 공원) · What's the best way…(11단어) | L6 WT C(Audrey Hepburn) · Can you recommend someone else for me?(7) | L5 WT A-3(Dream Mall) · How long will it take by bus?(7) |
+| 22 | 어법 틀린 것 | 통합본·학습지 | 지각동사·so~that | used to (학습지 p.4 B) | 지각동사·so~that(such) |
+| 23 | 영작 틀린 것 | 학습지·통합본 | 관계대명사 (학습지 p.6 B) | used to (통합본 예문) | 지각동사·so~that (통합본 예문) |
+| 24 | 어법 옳은 것 | 학습지·통합본 | 관계대명사 (학습지 p.6 C) | 관계대명사 (통합본 연습) | 관계대명사 (학습지 p.6 A) |
+| 서답형3 | 대화 우리말 영작 | 본문 대화/기타/학습지 | L6 1문단 Man 대사 be going to gather(12) | L6 인터뷰 believe … the right to be independent(10) | 학습지 p.4 B-6 There used to be … was built(13, A 대사만 제작) |
+| 서답형4 | 두 문장 → 한 문장 | 학습지·통합본 | I like the dress which Emma is wearing. | The story which you talked about was funny. | Henri Matisse is the painter who(m) I like the most. |
+
+자료 갈래별 문항 수(회당): 교과서 본문 15(1~7·11~12 일부·15~18·서답형1) · 기타 지문 4(9~10, 11~12/15~16 일부) · 대화문 4(20·21·서답형2·서답형3) · 어휘·숙어 2(13·19) · 문법(학습지·통합본 문장) 7(8·14·22·23·24·서답형4 + 서답형3 3회).
+
+## 4. 비고
+
+- 기출 21번 포스터(표)는 글상자 안 메모 ①~⑤ 로 바꿔 같은 것을 물었다.
+- 1번 연결어 빈칸은 원문의 `, so` 를 두 문장으로 나눠 `__(A)__,` 로 만들었다(1·3회). 2회는 원문에 연결어가 없는 자리(`He began to take pictures.`) 앞에 넣어 Then/Soon/After that/Right away vs However 로 물었다 — 확신 낮음.
+- 5번 순서 배열의 보기 문장, 16번 요약문, 21번 메모는 본문을 요약해 바꿔 쓴 문장이다(audit 에 걸리는 것은 이것뿐).
+- 2회 12번·3회 12번(메시지 사례)의 선지는 범위 개념(사회적/개인적 메시지)을 적용한 제작 문장이다 — 기출 12·18번이 그런 유형.
+- 3회 서답형3 의 A 대사 한 줄은 문맥용 제작. 답 문장은 학습지 p.4 Practice B-6 그대로.
+- 3회 24번 ①(who 를 목적격으로 쓴 문장)은 구어에서 허용되나 학습지 p.5 표(사람 → whom, 전치사 뒤 whom)에 따라 오답 처리 — 해설에 적어 두었다. 확신 낮음.
+- 통합본 문법 예문의 우리말은 통합본 표기를 그대로 썼다.
+- PDF 미리보기는 Playwright 로 만든 구성 확인용이며 줄 바꿈·쪽 수는 한글과 다르다.
