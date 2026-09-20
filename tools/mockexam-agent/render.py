@@ -49,6 +49,7 @@ T = dict(
     c_small=10,     # 맑은 고딕 9.5 (안내문·정답표)
     c_cell=1,       # 맑은 고딕 10.5 굵게 (표 안)
     bf_box=2,       # 실선 0.12 mm 사방
+    bf_none=1,      # 테두리 없음 (서식이 쓰는 것)
     col_w=25441, col_gap=1276, full_w=52158,
 )
 
@@ -162,7 +163,7 @@ class Hwpx:
         return p
 
     def table(self, rows, cols, width, *, inner=(141, 141, 85, 85), outer=(0, 0, 0, 0), pp=None, border=True):
-        bf = T['bf_box'] if border else self.doc.styles.ensure_border_fill(border_color='#000000', border_width='0.12 mm', active_borders=[])
+        bf = T['bf_box'] if border else T['bf_none']
         t = self.doc.add_table(rows, cols, width=width, border_fill_id_ref=bf,
                                para_pr_id_ref=T['p_body'] if pp is None else pp)
         el = t.element
