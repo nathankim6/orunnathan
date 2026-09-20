@@ -36,8 +36,14 @@
     "We should think twice after posting selfies."
    ],
    "answer": 3,
-   "explain": "I often see my friends posting their selfies on social media. ① 소녀가 본다 ② can have ④ it’s important ⑤ before posting. 대화 문장에서 한 단어씩 바꿈.",
-   "source": "L6 Listen & Speak 1-B (교과서 대화문)"
+   "explain": "정답은 ③. 소녀(G)가 “I often see my friends posting their selfies on social media.” 라고 했으므로, 소셜 미디어에서 친구들이 셀카를 올리는 것을 자주 보는 사람은 소녀다.\n대화의 흐름: Liam(B)이 십 대 셀카 습관에 관한 기사를 읽고 있고, 기사에는 많은 십 대가 매일 셀카를 찍으며 온라인 공유에 조심해야 한다고 쓰여 있다. 그 이유는 셀카에 개인 정보가 담길 수 있고 누구나 볼 수 있기 때문이며, 그래서 올리기 전에 두 번 생각해야 한다고 맺는다.\n오답은 모두 대화 문장에서 한 단어(주어·부정어·전치사)를 바꾼 것이다.",
+   "source": "L6 Listen & Speak 1-B (교과서 대화문)",
+   "wrong": [
+    "① 소셜 미디어에서 친구들의 셀카를 자주 보는 사람은 Liam 이 아니라 소녀다.",
+    "② Selfies can have personal information — ‘가질 수 있다’ 를 never 로 뒤집었다.",
+    "④ 기사는 it’s important to be careful 이라고 했다. not important 가 아니다.",
+    "⑤ think twice before posting — 올리기 ‘전에’ 두 번 생각한다. after 가 아니다."
+   ]
   },
   {
    "no": 2,
@@ -51,8 +57,14 @@
     "This is not easy to get up early."
    ],
    "answer": 3,
-   "explain": "① important to eat ② the better ④ the higher ⑤ 가주어는 It. 학습지 L5 grammar 1·2 문장을 변형.",
-   "source": "선생님 제작 어법 문장 (학습지 p.35~37 가주어 it · the 비교급)"
+   "explain": "정답은 ③. It was difficult to solve the math problem. — 가주어 It + was + 형용사 + 진주어 to부정사구로 어법에 맞다.\n「It is + 형용사 + to부정사」 에서 It 은 가주어, to부정사구가 진주어다. 가주어 자리에는 It 만 쓰고 This·That 을 쓰지 않으며, 진주어는 반드시 to부정사 형태다.\n「The + 비교급 (+ 주어 + 동사) ~, the + 비교급 (+ 주어 + 동사) …」 는 ‘더 ~할수록 더 …하다’ 는 뜻이다. 두 자리 모두 비교급을 써야 하며, 불규칙 비교급은 good/well → better, much/many → more, little → less 다.",
+   "source": "선생님 제작 어법 문장 (학습지 p.35~37 가주어 it · the 비교급)",
+   "wrong": [
+    "① It is important eat → to eat. 진주어는 to부정사여야 한다.",
+    "② the good you will do → the better. well 의 비교급은 better 다.",
+    "④ the high your score will be → the higher. 뒤쪽도 비교급이어야 한다.",
+    "⑤ This is not easy to get up early → It is not easy ~. 가주어 자리에는 It 만 쓴다."
+   ]
   },
   {
    "no": 3,
@@ -79,8 +91,14 @@
     "How about having a picnic tomorrow?"
    ],
    "answer": 1,
-   "explain": "방법을 묻는 What can I do to ~? 에 You can ~ 으로 답한다. 오답은 범위 대화문의 다른 문장.",
-   "source": "L5 Listen & Speak 2-A (교과서 대화문)"
+   "explain": "정답은 ①. 빈칸 앞에서 Jake 가 “Someone can still use my backpack.” 이라 하고, 빈칸 뒤에서 Lucy 가 “You can sell it through an online flea market.” 이라고 방법을 알려 준다. 따라서 빈칸에는 배낭의 새 주인을 찾을 ‘방법을 묻는 말’ What can I do to find a new owner for it? 이 온다.\n방법 묻기 표현 What can I/we do to + 동사원형 ~? 에는 You can ~ / We can ~ 으로 답한다.",
+   "source": "L5 Listen & Speak 2-A (교과서 대화문)",
+   "wrong": [
+    "② 빈도를 묻는 말이라 You can sell it ~ 과 이어지지 않는다.",
+    "③ 업사이클링 시작 방법을 묻는 말로, 배낭의 새 주인 찾기와 관계없다.",
+    "④ Don’t forget to ~ 는 상기시키는 말이며 뒤에 Lucy 가 그대로 말한다.",
+    "⑤ 소풍 제안으로 대화 주제와 다르다."
+   ]
   },
   {
    "no": 4,
@@ -95,8 +113,13 @@
     "ⓓ, ⓔ, ⓕ, ⓖ"
    ],
    "answer": 2,
-   "explain": "지각동사(hear/see/watch)+목적어+동사원형/현재분사: ⓑ climb(climbing) ⓖ fall(falling). 사역동사 let+동사원형: ⓒ Let me read. ⓓ 준사역 help+동사원형(Trees will help clean the air.) ⓕ make+목적어+형용사(5형식). 원문: 학습지 p.44 E-1·2·3·8, L6 T2-B, L5 T1-A3, L5 본문.",
-   "source": "학습지 p.44 grammar 3-E 지각동사 + 범위 대화문·본문의 let/help/make 문장 (이전 시험 사역·5형식 연계)"
+   "explain": "정답은 ②(ⓐ, ⓓ, ⓔ, ⓕ).\nⓐ I heard my friend talk on the phone. — hear + 목적어 + 동사원형. ⓓ Trees will help clean the air. — help + 동사원형(준사역). ⓔ We watched him fixing the car. — watch + 목적어 + 현재분사(진행 강조). ⓕ Greenhouse gases make the Earth hotter. — make + 목적어 + 형용사(5형식).\n지각동사(see·watch·hear·listen to·smell·feel)는 「지각동사 + 목적어 + 동사원형/현재분사(-ing)」 로 쓰며, 목적격보어에 to부정사를 쓸 수 없다. 사역동사 make·let 도 「+ 목적어 + 동사원형」 이고, help 는 「+ 목적어 + 동사원형/to부정사」 를 모두 쓴다.\nⓑ saw her to climb → climb/climbing, ⓒ Let me to read → Let me read, ⓖ heard the rain to fall → fall/falling.",
+   "source": "학습지 p.44 grammar 3-E 지각동사 + 범위 대화문·본문의 let/help/make 문장 (이전 시험 사역·5형식 연계)",
+   "wrong": [
+    "ⓑ 지각동사 see 뒤 목적격보어에 to부정사를 쓸 수 없다 → saw her climb(climbing).",
+    "ⓒ 사역동사 let 은 목적격보어로 동사원형만 쓴다 → Let me read.",
+    "ⓖ hear 뒤에는 동사원형/현재분사 → heard the rain fall(falling)."
+   ]
   },
   {
    "kind": "group",
@@ -123,8 +146,14 @@
     "벼룩시장에서 자전거를 팔려고"
    ],
    "answer": 2,
-   "explain": "지구 온난화를 늦추기 위해 자신이 할 일을 Monica 에게 알리는 편지.",
-   "source": "L5 My Writing (교과서 기타 지문)"
+   "explain": "[지문 요지] 한국의 호민이 베네치아의 Monica 에게 보내는 편지다. Monica 의 이야기를 읽고 지구 온난화를 늦추기 위해 가까운 곳은 걷거나 자전거를 타고, 고기를 덜 먹겠다는 작은 실천을 약속한다.\n정답은 ②. 편지의 핵심은 “I read your story about Venice.” 뒤에 이어지는 “From now on, I’m going to walk or ride a bike to nearby places. I’m also going to eat less meat ~” 이다. 즉 지구 온난화를 늦추기 위해 자신이 앞으로 할 일을 Monica 에게 알리는 글이다.\n마지막 문장 “These are little things, but I’ll do my part for Venice!” 가 글의 목적을 다시 확인해 준다.",
+   "source": "L5 My Writing (교과서 기타 지문)",
+   "wrong": [
+    "① 운하에 대해 묻는 내용은 없다.",
+    "③ 초대하는 말은 없다.",
+    "④ 소가 온실가스를 늘린다는 것은 고기를 덜 먹는 이유로 한 번 언급될 뿐 글의 목적이 아니다.",
+    "⑤ 자전거는 타고 다니겠다는 것이지 파는 것이 아니다."
+   ]
   },
   {
    "no": 6,
@@ -145,8 +174,12 @@
    ],
    "inline": true,
    "answer": 2,
-   "explain": "이야기를 읽었다 → 무언가를 하고 싶다 → From now on 구체적 행동.",
-   "source": "L5 My Writing (교과서 기타 지문)"
+   "explain": "정답은 ②(B). 주어진 문장 “I want to do something to slow down global warming.” 은 ‘무언가를 하고 싶다’ 는 다짐이고, 그 구체적 내용이 “From now on, I’m going to walk or ride a bike ~” 부터 이어진다. 따라서 이야기를 읽었다(A 뒤 문장) → 무언가 하고 싶다 → 구체적 행동(From now on) 의 순서가 되도록 (B) 자리에 넣어야 한다.\n교과서 원문도 “I read your story about Venice. I want to do something to slow down global warming. From now on, ~” 의 순서다.",
+   "source": "L5 My Writing (교과서 기타 지문)",
+   "wrong": [
+    "(A) 아직 Monica 의 이야기를 읽었다는 말이 나오기 전이라 ‘무언가 하고 싶다’ 는 다짐이 뜬금없다.",
+    "(C)(D)(E) 이미 구체적 행동(걷기·자전거·고기 덜 먹기)이 나온 뒤라 흐름이 거꾸로 된다."
+   ]
   },
   {
    "no": 7,
@@ -174,8 +207,14 @@
    ],
    "inline": true,
    "answer": 3,
-   "explain": "eat less meat because cows increase greenhouse gases. (대화의 밑줄은 본문 문장 그대로, (C)만 한 단어 바꿈 — 기출 7번 유형)",
-   "source": "L5 My Writing (교과서 기타 지문) · 밑줄 문장은 본문 그대로"
+   "explain": "정답은 ③. 본문은 “I’m also going to eat less meat because cows increase greenhouse gases.” 인데 대화의 (C)는 eat more meat 으로 바뀌어 있다. 소가 온실가스를 늘리기 때문에 고기를 ‘덜’ 먹겠다는 것이 글의 내용이다.\n(A)(B)(D)(E)는 본문 문장을 그대로 옮긴 것이다.",
+   "source": "L5 My Writing (교과서 기타 지문) · 밑줄 문장은 본문 그대로",
+   "wrong": [
+    "(A) I read your story about Venice. — 본문 그대로.",
+    "(B) From now on, I’m going to walk or ride a bike to nearby places. — 본문 그대로.",
+    "(D) These are little things, but I’ll do my part for Venice! — 본문 그대로.",
+    "(E) I wish you good luck. — 본문 그대로."
+   ]
   },
   {
    "no": 8,
@@ -204,8 +243,14 @@
     "Jake는 몇 명의 친구와 함께 공부하는가?"
    ],
    "answer": 5,
-   "explain": "① 다음 주 시험 ② 시험 생각할 때마다 ③ 산책·스트레칭·친구와 공부 ④ next week. ⑤ 언급 없음.",
-   "source": "L6 Listen & Speak 2-A (교과서 대화문)"
+   "explain": "정답은 ⑤. Ms. Hong 이 “Studying with your friends can also lower your stress.” 라고 조언했을 뿐, 몇 명의 친구와 공부하는지는 대화에 나오지 않는다.\n나머지는 모두 답할 수 있다: ① “I feel stressed about the exams next week.” — 다음 주 시험 때문에. ② “Almost every time I think about exams.” ③ 산책하며 신선한 공기 마시기, 스트레칭, 친구와 공부하기. ④ the exams next week — 다음 주.",
+   "source": "L6 Listen & Speak 2-A (교과서 대화문)",
+   "wrong": [
+    "① 다음 주 시험 때문이라고 답할 수 있다.",
+    "② 시험을 생각할 때마다 거의 매번이라고 답할 수 있다.",
+    "③ 산책·스트레칭·친구와 공부하기라고 답할 수 있다.",
+    "④ next week 라고 답할 수 있다."
+   ]
   },
   {
    "kind": "group",
@@ -230,8 +275,12 @@
    ],
    "inline": true,
    "answer": 3,
-   "explain": "(A) it rains (수일치) (D) have seen (현재완료 — 1학기 문법 연계) (E) many students … are doing (수일치). (B)(C) 맞음. 일부러 바꿔 쓴 문장.",
-   "source": "L5 본문 3대목 Suin (교과서 본문) — (A)(D)(E) 는 어법 문항용 변형"
+   "explain": "[지문 요지] 한국의 수인이 Monica 에게 쓴 글이다. 한국도 여름마다 홍수를 겪어 베네치아의 상황이 무서울 것이라 공감하고, 친구들과 3R(Recycle·Reuse·Reduce) 캠페인을 시작했다며 함께 변화를 만들자고 한다.\n정답은 ③(3개). 틀린 것은 (A)(D)(E)다.\n(A) Every summer, it rain a lot here. → it rains. 주어 it 은 3인칭 단수이므로 현재시제 동사에 -s 를 붙인다.\n(D) I have saw many beautiful pictures of it. → have seen. 현재완료는 「have + 과거분사」 이며 see 의 과거분사는 seen 이다(1학기 문법 연계).\n(E) many students at my school is doing → are doing. 주어가 복수 many students 이므로 are.\n(B) The situation in Venice must be scary, too. 와 (C) I’ve never been to Venice 는 원문 그대로 어법에 맞다(have been to = ~에 가 본 적이 있다).",
+   "source": "L5 본문 3대목 Suin (교과서 본문) — (A)(D)(E) 는 어법 문항용 변형",
+   "wrong": [
+    "(B) must be scary — 조동사 뒤 동사원형, 어법에 맞다.",
+    "(C) I’ve never been to Venice — 현재완료 경험 용법, 어법에 맞다."
+   ]
   },
   {
    "no": 10,
@@ -245,8 +294,14 @@
     "베네치아를 돕기에는 너무 늦었다."
    ],
    "answer": 2,
-   "explain": "함께(우리의 역할을 하면) 변화를 만들 수 있다. 기출 10번(속담)은 문화 지식 문항이라 밑줄 의미 추론으로 바꿈.",
-   "source": "L5 본문 3대목 Suin (교과서 본문)"
+   "explain": "정답은 ②. 밑줄 (F) “Together, we can make a difference!” 는 바로 앞 문장 “It is important to do our part for Venice.” 와 “many students at my school are doing these three things every day.” 를 받아, 각자가 3R 같은 작은 일을 함께 실천하면 변화를 만들 수 있다는 뜻이다.\nmake a difference 는 ‘변화를 가져오다’ 라는 뜻의 단원 숙어다.",
+   "source": "L5 본문 3대목 Suin (교과서 본문)",
+   "wrong": [
+    "① Together(함께) 와 반대되는 내용이다.",
+    "③ 홍수의 무서움을 비교한 말이 아니다.",
+    "④ 캠페인을 매일 실천하고 있다고 했으므로 반대다.",
+    "⑤ 도움이 필요하다고 했지 늦었다고 하지 않았다."
+   ]
   },
   {
    "kind": "essay",
@@ -256,7 +311,7 @@
    "box": "→ ____________________________________________",
    "answer_lines": 1,
    "answer": "To do our part for Venice is important.",
-   "explain": "가주어 It 을 없애고 진주어 to부정사구를 문장 앞에 둔다. (학습지 p.35 A-1)",
+   "explain": "모범답안: To do our part for Venice is important.\n(G) “It is important to do our part for Venice.” 에서 It 은 가주어이고 진주어는 to do our part for Venice 다. 가주어를 없애고 진주어 to부정사구를 문장 맨 앞 주어 자리에 두면 된다(학습지 p.35: To keep a diary every day is hard. = It is hard to keep a diary every day.).\n채점 기준: to부정사구가 주어 자리(1점) + is important 로 동사·보어를 맞춤(1점) + 문장 전체 정확(2점). It 을 남기거나 Doing our part ~(동명사)로 쓰면 ‘to부정사구를 주어로’ 라는 조건 위반으로 감점.",
    "source": "L5 본문 3대목 Suin · 학습지 p.35 가주어 it"
   },
   {
@@ -279,14 +334,19 @@
    },
    "choices": [
     "(A)-(B)-(C)",
-    "(A)-(C)-(B)",
     "(B)-(A)-(C)",
+    "(B)-(C)-(A)",
     "(C)-(A)-(B)",
     "(C)-(B)-(A)"
    ],
-   "answer": 4,
-   "explain": "빈도 묻기 → 답 → 충고(It’s important to ~).",
-   "source": "L6 Listen & Speak 1-A1 (교과서 대화문)"
+   "answer": 3,
+   "explain": "정답은 ③ (B)-(C)-(A). 소년이 “요즘 가족과 시간을 충분히 보내지 못한다” 고 하자, 소녀가 (B) “How often do you have dinner with your family, Minho?” 로 빈도를 묻고, 소년이 (C) “I have dinner with my family twice a week.” 로 답하며, 소녀가 (A) “It’s important to eat with your family more often.” 으로 충고한다. 마지막 “Okay, I’ll try.” 는 충고에 대한 대답이다.\n빈도 묻기 How often do you ~? → 빈도 답하기(twice a week) → It’s important to ~ 로 조언하기의 흐름이다.",
+   "source": "L6 Listen & Speak 1-A1 (교과서 대화문)",
+   "wrong": [
+    "(A)가 먼저 오면 아직 빈도를 묻지도 않았는데 ‘더 자주 먹는 것이 중요하다’ 고 하게 되어 어색하다.",
+    "(C)가 먼저 오면 묻지도 않은 빈도를 답하는 셈이 된다.",
+    "(B)-(A)-(C) 는 질문 → 충고 → 답의 순서라 소녀의 질문에 답이 오지 않는다."
+   ]
   },
   {
    "no": 12,
@@ -310,8 +370,11 @@
    ],
    "inline": true,
    "answer": 2,
-   "explain": "(B) 는 Venice 를 가리키는 대명사, 나머지는 가주어 It(진주어 to부정사). 기출 12번(용법 다른 하나)의 자리. 문장은 학습지 p.35·36 · 본문 그대로.",
-   "source": "학습지 p.35~36 가주어 it · L5 본문 (교과서 본문)"
+   "explain": "정답은 ②. (B) “It is a beautiful city on the water in Italy.” 의 It 은 앞 문장의 Venice 를 가리키는 대명사다.\n(A) It is important to exercise regularly. (C) It isn’t easy to change my eating habits. (D) It was not easy to solve the puzzle. (E) It is important to do our part for Venice. 는 모두 뒤의 to부정사구가 진주어인 가주어 It 이다.\n「It is + 형용사 + to부정사」 에서 It 은 가주어, to부정사구가 진주어다. 가주어 자리에는 It 만 쓰고 This·That 을 쓰지 않으며, 진주어는 반드시 to부정사 형태다.",
+   "source": "학습지 p.35~36 가주어 it · L5 본문 (교과서 본문)",
+   "wrong": [
+    "(A)(C)(D)(E) 모두 「It + be + 형용사 + to부정사」 의 가주어 It 이다. It 을 해석하지 않고 to부정사구를 주어로 풀이한다."
+   ]
   },
   {
    "no": 13,
@@ -325,8 +388,14 @@
     "The fans <u>trusted</u> when their team won the game."
    ],
    "answer": 5,
-   "explain": "The fans screamed when their team won the game. 나머지는 학습지 예문 그대로.",
-   "source": "학습지 p.40~41 L6 vocabulary 1 예문"
+   "explain": "정답은 ⑤. trust 는 ‘신뢰하다, 믿다’ 인데 “The fans ____ when their team won the game.” 에는 ‘소리를 질렀다’ 는 scream 이 어울린다. 학습지 원문은 The fans screamed when their team won the game. 이다.\n나머지는 학습지 예문 그대로다. captain(주장: 팀의 리더로 뽑힌 선수), crowd(관중: 한곳에 모인 많은 사람), lower(낮추다: 아래로 움직이거나 줄이다), principal(교장: 학교의 책임자).",
+   "source": "학습지 p.40~41 L6 vocabulary 1 예문",
+   "wrong": [
+    "① captain — 하키 팀의 주장. 자연스럽다.",
+    "② crowd — 쇼가 끝난 뒤 관중이 박수를 쳤다. 자연스럽다.",
+    "③ lower — 음악이 스트레스를 낮춘다. 자연스럽다.",
+    "④ principal — 교장이 신입생을 환영했다. 자연스럽다."
+   ]
   },
   {
    "kind": "group",
@@ -351,8 +420,14 @@
     "지구가 더워져서"
    ],
    "answer": 2,
-   "explain": "Last week, the streets were flooded. I couldn’t go to school.",
-   "source": "L5 본문 1대목 Monica (교과서 본문)"
+   "explain": "[지문 요지] 베네치아에 사는 Monica 의 글이다. 운하와 역사적 건물로 유명한 베네치아가 지난주 거리가 침수되어 학교도 못 가고 부모님 빵집도 문을 닫았다. 지구가 더워질수록 수위가 올라 곧 물에 잠길 수 있으니 도와 달라고 호소한다.\n정답은 ②. “Last week, the streets were flooded. I couldn’t go to school, and my parents’ bakery had to close.” — 지난주 거리가 침수되어 학교에 갈 수 없었고 부모님의 빵집도 문을 닫아야 했다.",
+   "source": "L5 본문 1대목 Monica (교과서 본문)",
+   "wrong": [
+    "① 장화는 잃어버린 것이 아니라 줄곧 신어야 했다(had to wear tall rain boots all the time).",
+    "③ 빵집은 문을 닫아야 했다고만 했지 도왔다는 말은 없다.",
+    "④ 관광객은 매년 온다는 소개일 뿐 결석 이유가 아니다.",
+    "⑤ 지구 온난화는 수위 상승의 원인이지 지난주 결석의 직접 이유로 쓰이지 않았다."
+   ]
   },
   {
    "no": 15,
@@ -399,8 +474,13 @@
     ]
    },
    "answer": 4,
-   "explain": "(A) Have you heard 현재완료 (B) 수동태 were flooded (1학기 문법) (C) the 비교급 ~, the 비교급 …",
-   "source": "L5 본문 1대목 Monica · 학습지 p.35 the 비교급"
+   "explain": "정답은 ④ heard – were flooded – higher.\n(A) Have you heard of Venice? — 현재완료 「have + 과거분사」 이므로 hear 의 과거분사 heard.\n(B) the streets were flooded — 거리는 ‘침수되는’ 대상이므로 수동태 「be + 과거분사」(1학기 문법 연계). flood 는 ‘물에 잠기게 하다’ 라는 타동사다.\n(C) The warmer the Earth gets, the higher the water rises. — 「The + 비교급 (+ 주어 + 동사) ~, the + 비교급 (+ 주어 + 동사) …」 는 ‘더 ~할수록 더 …하다’ 는 뜻이다. 두 자리 모두 비교급을 써야 하며, 불규칙 비교급은 good/well → better, much/many → more, little → less 다.",
+   "source": "L5 본문 1대목 Monica · 학습지 p.35 the 비교급",
+   "wrong": [
+    "(A) hear — 현재완료에는 과거분사가 필요하다.",
+    "(B) flooded 만 쓰면 ‘거리가 (무엇을) 침수시켰다’ 는 능동이 되어 뜻이 맞지 않는다.",
+    "(C) highest — the 비교급 구문에 최상급은 쓸 수 없다."
+   ]
   },
   {
    "no": 16,
@@ -414,8 +494,14 @@
     "I’ll give it a try"
    ],
    "answer": 1,
-   "explain": "수위가 올라가면 → 곧 물에 잠길 수 있다 → 도움이 필요하다. 오답은 범위 본문·대화문의 다른 문장.",
-   "source": "L5 본문 1대목 Monica (교과서 본문)"
+   "explain": "정답은 ①. 앞 문장 “The warmer the Earth gets, the higher the water in Venice rises.” 에서 수위가 계속 오른다고 했고, 뒤 문장 “My city needs your help!” 로 도움을 청한다. 그 사이에는 그 결과인 “Venice could be underwater soon.”(베네치아가 곧 물에 잠길 수도 있다) 이 와야 자연스럽다.\ncould 는 ‘~일 수도 있다’ 는 가능성, underwater 는 ‘물속의’ 라는 단원 어휘다.",
+   "source": "L5 본문 1대목 Monica (교과서 본문)",
+   "wrong": [
+    "② 관광객이 온다는 소개는 이미 앞에 나왔고 걱정하는 흐름과 맞지 않는다.",
+    "③ Team Project 의 문장으로 ‘우리가 더 잘하겠다’ 는 다짐이라 Monica 의 호소와 어긋난다.",
+    "④ Timothy 글의 문장으로 원인 설명이지 베네치아의 위기를 말하지 않는다.",
+    "⑤ ‘한번 해 볼게’ 라는 대화문 표현이라 문맥과 무관하다."
+   ]
   },
   {
    "no": 17,
@@ -442,8 +528,13 @@
    ],
    "inline": true,
    "answer": 3,
-   "explain": "일치 4개. 불일치: Few tourists(Many), were not flooded(were flooded), didn’t have to wear(had to wear). 본문 문장에서 한 단어씩 바꿈.",
-   "source": "L5 본문 1대목 Monica (교과서 본문)"
+   "explain": "정답은 ③(4개). 일치: “Venice is famous for its canals and historic buildings.”, “Monica couldn’t go to school, and her parents’ bakery had to close.”, “The warmer the Earth gets, the higher the water in Venice rises.”, “Venice could be underwater soon.” — 네 문장은 본문 그대로다.\n불일치 세 문장은 본문에서 한 단어씩 바꾼 것이다: Few tourists(본문 Many tourists), were not flooded(본문 were flooded), didn’t have to wear(본문 had to wear).",
+   "source": "L5 본문 1대목 Monica (교과서 본문)",
+   "wrong": [
+    "- Few tourists come ~ : 본문은 Many tourists come to see them every year.",
+    "- the streets were not flooded : 본문은 were flooded.",
+    "- didn’t have to wear tall rain boots : 본문은 I had to wear tall rain boots all the time."
+   ]
   },
   {
    "no": 18,
@@ -467,8 +558,14 @@
    ],
    "inline": true,
    "answer": 5,
-   "explain": "lower / perform / spread / save. 학습지 예문 그대로.",
-   "source": "학습지 p.40~41 L6 vocabulary 1 예문"
+   "explain": "정답은 ⑤ flip. 네 빈칸은 차례로 lower(Listening to music can lower your stress. 스트레스를 낮추다), perform(The band will perform at the school festival. 공연하다), spread(Somebody spread the news yesterday. 소식을 퍼뜨리다), save(I will save money to buy a new bike. 돈을 모으다) 로 채워지며 모두 학습지 예문 그대로다.\nflip 은 ‘뒤집다, 공중에서 돌다(to turn something over with a quick movement)’ 로 어느 빈칸에도 어울리지 않는다.",
+   "source": "학습지 p.40~41 L6 vocabulary 1 예문",
+   "wrong": [
+    "① lower — 첫 번째 빈칸.",
+    "② perform — 두 번째 빈칸.",
+    "③ spread — 세 번째 빈칸(과거형도 spread).",
+    "④ save — 네 번째 빈칸."
+   ]
   },
   {
    "kind": "group",
@@ -503,8 +600,12 @@
     "ⓒ, ⓓ, ⓔ"
    ],
    "answer": 2,
-   "explain": "(B) they = Fly High, (E) their = Fly High(’s). 나머지 맞음.",
-   "source": "L6 본문 1대목 Fly High (교과서 본문)"
+   "explain": "[지문 요지] 학교 응원 동아리 Fly High 를 소개하는 교내 신문 기사다. 20점 차로 지던 농구 경기 하프타임에 Fly High 가 공연하며 “Never give up!” 을 외쳤고 결국 우리 팀이 이겼다. 주장 Jina 는 동아리원을 믿기에 공중 회전을 할 수 있다고 말한다.\n정답은 ②(ⓐ, ⓒ, ⓓ). (A) They performed wonderfully. — 코트에 나온 Fly High. (C) I trust my club members — 말하는 사람은 동아리 주장 Jina. (D) my middle school life — 역시 Jina 의 말이므로 Jina.\n(B) they shouted, “Never give up!” — 앞 문장들의 They(Fly High)가 이어지므로 our team(농구팀)이 아니다. (E) Come and feel their energy! — 공연을 보러 와서 느끼라는 것이니 Fly High 의 에너지이지 the crowd 가 아니다.",
+   "source": "L6 본문 1대목 Fly High (교과서 본문)",
+   "wrong": [
+    "ⓑ (B) they 는 Fly High. 응원 동아리가 외친 말이다.",
+    "ⓔ (E) their 는 Fly High. 관중(the crowd)의 에너지가 아니다."
+   ]
   },
   {
    "no": 20,
@@ -529,8 +630,14 @@
    ],
    "inline": true,
    "answer": 5,
-   "explain": "ⓐ quarter ⓑ flip ⓒ captain ⓓ crowd 는 본문에 있음. ⓔ principal 은 없음.",
-   "source": "학습지 p.41 L6 vocabulary 2 영영풀이"
+   "explain": "정답은 ⑤. ⓐ quarter(경기의 4분의 1 — after two quarters), ⓑ flip(뒤집다, 공중에서 돌다 — flipped in the air), ⓒ captain(팀의 리더 — the captain of the club), ⓓ crowd(한곳에 모인 많은 사람 — the crowd cheering) 은 모두 본문에 있다.\nⓔ ‘공립 학교의 책임자’ 는 principal(교장)인데 이 글에는 나오지 않는다(교장은 설문 기사 뒤 A Special Message from the Principal 에 나온다).",
+   "source": "학습지 p.41 L6 vocabulary 2 영영풀이",
+   "wrong": [
+    "ⓐ quarters — 본문에 있음.",
+    "ⓑ flipped — 본문에 있음.",
+    "ⓒ captain — 본문에 있음.",
+    "ⓓ crowd — 본문에 있음."
+   ]
   },
   {
    "kind": "essay",
@@ -540,7 +647,7 @@
    "box": "(1) (F) → ______________________________\n(2) (G) → ______________________________",
    "answer_lines": 1,
    "answer": "(1) Each member has a special energy. (2) When I see the crowd cheering and screaming, I feel proud. (cheer and scream 도 인정)",
-   "explain": "(F) each + 단수 명사 + 단수 동사. (G) 지각동사 see + 목적어 + 동사원형/현재분사. 본문 문장을 일부러 틀리게 바꿔 실었다.",
+   "explain": "모범답안: (1) Each member has a special energy. (2) When I see the crowd cheering and screaming, I feel proud. (cheer and scream 도 정답)\n(F) each·every 뒤에는 단수 명사 + 단수 동사, all 뒤에는 복수 명사 + 복수 동사를 쓴다. 다만 all 뒤에 셀 수 없는 명사(money·furniture·music 등)가 오면 단수 취급한다. Each member 는 단수이므로 have → has.\n(G) 지각동사(see·watch·hear·listen to·smell·feel)는 「지각동사 + 목적어 + 동사원형/현재분사(-ing)」 로 쓰며, 목적격보어에 to부정사를 쓸 수 없다. 사역동사 make·let 도 「+ 목적어 + 동사원형」 이고, help 는 「+ 목적어 + 동사원형/to부정사」 를 모두 쓴다. see the crowd to cheer and to scream 처럼 to부정사는 쓸 수 없으므로 cheering and screaming(또는 cheer and scream) 으로 고친다.\n채점 기준: 각 3점 — 틀린 부분을 바르게 고침(2점) + 문장 전체를 빠짐없이 옮겨 씀(1점). 문장 일부만 쓰거나 다른 곳을 잘못 바꾸면 감점.",
    "source": "L6 본문 1대목 Fly High · 학습지 p.42 each 수일치 · 지각동사"
   },
   {
@@ -556,7 +663,7 @@
    },
    "answer_lines": 1,
    "answer": "You can watch Fly High doing their performance at the school festival next week. (do 도 인정)",
-   "explain": "지각동사 watch + 목적어 + 현재분사/동사원형.",
+   "explain": "모범답안: You can watch Fly High doing their performance at the school festival next week. (doing 대신 do 도 정답)\n‘여러분은 ~가 공연하는 것을 볼 수 있습니다’ 는 「watch + 목적어(Fly High) + 현재분사/동사원형」 의 지각동사 구문이다. <보기>의 to 는 쓰지 않아야 하며(watch Fly High to do ×), their 는 한 번만 쓴다.\n채점 기준: 4점 — watch Fly High doing/do (2점) + their performance at the school festival next week 어순(1점) + You can 으로 시작(1점). to do 를 쓰면 2점 감점, 단어를 빠뜨리거나 보기에 없는 단어를 쓰면 1점씩 감점.",
    "source": "L6 본문 1대목 Fly High (교과서 본문)"
   },
   {
@@ -574,8 +681,8 @@
     ]
    },
    "answer_lines": 1,
-   "answer": "(1) heard the baby cry (crying) (2) felt the ground shake (shaking)",
-   "explain": "지각동사 + 목적어 + 동사원형/현재분사. 학습지 문장 그대로.",
+   "answer": "(1) heard their baby cry (crying) — the baby 도 인정 (2) felt the ground shake (shaking)",
+   "explain": "모범답안: (1) The parents heard their baby cry (crying) in the room. — the baby 도 정답. (2) The villagers felt the ground shake (shaking).\n지각동사(see·watch·hear·listen to·smell·feel)는 「지각동사 + 목적어 + 동사원형/현재분사(-ing)」 로 쓰며, 목적격보어에 to부정사를 쓸 수 없다. 사역동사 make·let 도 「+ 목적어 + 동사원형」 이고, help 는 「+ 목적어 + 동사원형/to부정사」 를 모두 쓴다.\n(1) hear 의 과거 heard + 목적어 their baby + cry/crying. (2) feel 의 과거 felt + 목적어 the ground + shake/shaking. 학습지 p.44 E-6·5 문장이다.\n채점 기준: 각 3점 — 지각동사를 과거형으로(1점) + 목적어(1점) + 목적격보어 동사원형/현재분사(1점). to cry·to shake 처럼 to부정사를 쓰면 0점 처리.",
    "source": "학습지 p.44 L6 grammar 3-E 지각동사 6·5번 문장 그대로"
   },
   {
@@ -599,8 +706,8 @@
     "조건 2. 가주어 it을 사용할 것."
    ],
    "answer_lines": 1,
-   "answer": "It is important to get eight hours of sleep every night.",
-   "explain": "가주어 It + is + 형용사 + to부정사(진주어).",
+   "answer": "It is important to get eight hours of sleep (every night 은 이미 주어짐)",
+   "explain": "모범답안: It is important to get eight hours of sleep (every night). — 빈칸에는 It is important to get eight hours of sleep 을 쓴다.\n「It is + 형용사 + to부정사」 에서 It 은 가주어, to부정사구가 진주어다. 가주어 자리에는 It 만 쓰고 This·That 을 쓰지 않으며, 진주어는 반드시 to부정사 형태다.\n<보기>의 아홉 단어를 모두 쓰면 “It is important to get eight hours of sleep” 이 되고, 대화 원문(L6 Topic 1 A3)도 “It’s important to get eight hours of sleep every night.” 이다.\n채점 기준: 4점 — It is important(1점) + to get(1점) + eight hours of sleep 어순(1점) + 보기 단어를 모두 빠짐없이 사용(1점). It 을 빼고 To get ~ is important 로 쓰면 조건 2 위반으로 2점 감점.",
    "source": "L6 Listen & Speak 1-A3 (교과서 대화문 그대로) · 학습지 p.35 가주어 it"
   },
   {
@@ -623,7 +730,7 @@
    },
    "answer_lines": 1,
    "answer": "What can we do to reduce air pollution",
-   "explain": "방법 묻기: What can we do to + 동사원형 ~?",
+   "explain": "모범답안: What can we do to reduce air pollution? (What can I do to reduce air pollution? 도 정답)\n소년이 “Start with little things. For example, walk to nearby places.” 라고 방법을 답하고 있으므로, 빈칸은 대기 오염을 줄이기 위한 ‘방법을 묻는 말’ 이다. 방법 묻기 표현은 What can I/we do to + 동사원형 ~? 이며, 원문 대화(L5 Check Up B)도 “What can we do to reduce air pollution?” 이다.\n채점 기준: 4점 — What can we/I do(2점) + to reduce air pollution(2점). How can we reduce air pollution? 처럼 다른 표현은 뜻은 통하지만 단원 표현이 아니므로 2점, 철자·어순 오류는 1점씩 감점.",
    "source": "L5 Check Up B (교과서 대화문)"
   },
   {
@@ -655,7 +762,7 @@
    ],
    "answer_lines": 1,
    "answer": "(A) How often do you walk your dog? (B) It’s important to walk your dog every day. (C) That way, he can stay healthy. (D) The more you exercise, the stronger your body will become.",
-   "explain": "(A) 빈도 묻기 (B) 가주어 it (C) 대화문 그대로 (D) the 비교급 ~, the 비교급 … (학습지 p.37 B-(2) 그대로).",
+   "explain": "모범답안: (A) How often do you walk your dog? (B) It’s important to walk your dog every day. (C) That way, he can stay healthy. (D) The more you exercise, the stronger your body will become.\n(A) 빈도 묻기 How often do you + 동사원형 ~? (B) 「It is + 형용사 + to부정사」 에서 It 은 가주어, to부정사구가 진주어다. 가주어 자리에는 It 만 쓰고 This·That 을 쓰지 않으며, 진주어는 반드시 to부정사 형태다. (C) That way(그런 식으로) + he can stay healthy — 대화문(L6 Check Up A) 그대로다. (D) 「The + 비교급 (+ 주어 + 동사) ~, the + 비교급 (+ 주어 + 동사) …」 는 ‘더 ~할수록 더 …하다’ 는 뜻이다. 두 자리 모두 비교급을 써야 하며, 불규칙 비교급은 good/well → better, much/many → more, little → less 다. much 의 비교급 more, strong 의 비교급 stronger 를 쓰고 ‘될 거야’ 는 will become 으로 쓴다(학습지 p.37 B-(2)).\n채점 기준: 각 3점 — 주어진 단어를 모두 쓰고(1점) 어순·시제가 맞으며(1점) 철자·관사·대소문자 오류 없음(1점). (D)에서 the 비교급 구문이 아니면 0점, more/stronger 중 하나가 원급이면 2점 감점.",
    "source": "L6 Check Up A (교과서 대화문 그대로) · 학습지 p.37 grammar 3-B the 비교급"
   }
  ]
