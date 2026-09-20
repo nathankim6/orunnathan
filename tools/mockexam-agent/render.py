@@ -21,6 +21,9 @@ MM = 7200 / 25.4                      # HWPUNIT per mm
 TEMPLATE = Path(__file__).resolve().parent / 'assets' / 'exam-template.hwpx'   # 실제 학교 시험지 서식
 LOGO = Path(__file__).resolve().parent / 'assets' / 'orun-logo.png'
 BRAND = '옳은영어 ORUN ENGLISH'
+BOX_FONT = '함초롬바탕'                # 지문·대화 상자 글꼴
+ROW_H = 1750                          # 정보표 한 행 높이(HWPUNIT)
+FOOTER_H = 3600                       # 꼬리말 영역 높이
 COPYRIGHT = '이 시험 문제의 저작권은 옳은영어(ORUN ENGLISH)에 있습니다. 무단 전송·복제·배포 시 저작권법에 의거하여 처벌될 수 있습니다.'
 NOTICES = ['○ 답안지(선택형 OMR카드)의 해당란에 인적 사항을 기재하고, 정답을 정확히 표시하시오.',
            '○ 문항에 따라 배점이 다르니, 각 물음의 끝에 표시된 배점을 참고하시오.']
@@ -104,8 +107,9 @@ class Hwpx:
         self.cp = {
             'base': str(T['c_body']), 'b': R(T['c_body'], bold=True), 'u': R(T['c_body'], underline=True),
             'i': R(T['c_body'], italic=True), 'ub': R(T['c_body'], bold=True, underline=True),
-            'e': str(T['c_eng']), 'eb': R(T['c_eng'], bold=True), 'eu': R(T['c_eng'], underline=True),
-            'ei': R(T['c_eng'], italic=True), 'eub': R(T['c_eng'], bold=True, underline=True),
+            'e': st.ensure_run(font=BOX_FONT, size=10), 'eb': st.ensure_run(font=BOX_FONT, size=10, bold=True),
+            'eu': st.ensure_run(font=BOX_FONT, size=10, underline=True), 'ei': st.ensure_run(font=BOX_FONT, size=10, italic=True),
+            'eub': st.ensure_run(font=BOX_FONT, size=10, bold=True, underline=True),
             'small': str(T['c_small']), 'smallb': R(T['c_small'], bold=True), 'grp': str(T['c_bold']),
         }
 
@@ -153,7 +157,7 @@ class Hwpx:
         title, lines = box_lines(box)
         if not lines and not title:
             return
-        t = self.table(1, 1, width or T['col_w'], inner=(200, 200, 100, 100), outer=(0, 0, 60, 120))
+        t = self.table(1, 1, width or T['col_w'], inner=(420, 420, 230, 230), outer=(0, 0, 80, 140))
         c = t.cell(0, 0)
         if title:
             self.para(f'<b>{title}</b>', target=c, eng=True)
@@ -262,15 +266,22 @@ class Hwpx:
             except Exception as e:      # 로고를 못 넣어도 시험지는 나간다
                 p2.remove(r)
                 print('logo skipped:', e, file=sys.stderr)
-        # 안내문 뒤 본문(견본 문항) 제거 — 서식의 5번째 문단부터
         for p in list(sec.findall('hp:p', NS))[3:]:
             sec.remove(p)
+        # 정보표 행 높이를 줄인다 (2268 → ROW_H)
+        tbl.element.find('hp:sz', NS).set('height', str(3 * ROW_H))
+        for tc in tbl.element.findall('.//hp:tc', NS):
+            span = int(tc.find('hp:cellSpan', NS).get('rowSpan'))
+            tc.find('hp:cellSz', NS).set('height', str(span * ROW_H))
+        # 꼬리말 두 줄이 겹치지 않게 꼬리말 영역을 넓힌다
+        sec.find('.//hp:pagePr/hp:margin', NS).set('footer', str(FOOTER_H))
 
     def build(self, spec, key=True):
         items = spec['items']
         n_mc = sum(1 for it in items if it.get('kind', 'mc') == 'mc')
         n_es = sum(1 for it in items if it.get('kind') == 'essay')
         self._fill_template(spec, n_mc, n_es)
+        self.para('', pp=T['p_blank'])
         first = True
         for it in items:
             k = it.get('kind', 'mc')
@@ -303,8 +314,16 @@ class Hwpx:
         self.doc.page.set_columns(1, paragraph=p)
         p.add_run(f"{title_of(spec)} — {subtitle_of(spec)}   정답 및 해설", char_pr_id_ref=self.cp['grp'])
         items = [it for it in spec['items'] if it.get('kind', 'mc') != 'group']
-        t = self.table(len(items) + 1, 5, T['full_w'], inner=(150, 150, 40, 40), outer=(0, 0, 150, 0))
+        n = len(items) + 1
+        row_h = max(1400, min(2600, int((84189 - 2 * 1984 - 2268 - FOOTER_H - 2200) / n)))   # 쪽 높이에서 머리·꼬리·제목을 뺀 것을 행으로 나눔
+        t = self.table(n, 5, T['full_w'], inner=(200, 200, 100, 100), outer=(0, 0, 200, 0))
         t.set_column_widths([7, 18, 6, 26, 43])
+        for r in range(n):
+            for c in range(5):
+                tc = t.cell(r, c).element
+                tc.find('hp:cellSz', NS).set('height', str(row_h))
+                tc.find('hp:subList', NS).set('vertAlign', 'CENTER')
+        t.element.find('hp:sz', NS).set('height', str(row_h * n))
         for c, h in enumerate(['번호', '정답', '배점', '출처', '해설']):
             self.para(h, cp=self.cp['smallb'], target=t.cell(0, c), pp=T['p_center'])
         for r, it in enumerate(items, 1):
