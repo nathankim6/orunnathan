@@ -23,8 +23,14 @@
    ],
    "inline": true,
    "answer": 1,
-   "explain": "버스를 더 좋아한다 → 왜 그러니?(ⓑ) → 버스가 더 빠르기 때문(ⓐ) → 동의하지 않아, 혼잡 시간엔 안 빠르다(ⓒ) → 정말?(ⓓ) → 한 시간 넘게 걸린다.",
-   "source": "L5 Listen and Talk B"
+   "explain": "Chris가 \"I prefer the bus to the subway.\"(나는 지하철보다 버스가 더 좋아)라고 한 뒤이므로, 먼저 Yunseo가 이유를 묻는 ⓑ \"Oh, why is that?\"가 온다.\n이어 Chris가 \"Because the bus is faster.\"(ⓐ)라고 이유를 말하고, Yunseo가 \"I don't agree with you. The bus is not faster during rush hour.\"(ⓒ)로 반박한다.\nChris가 \"Oh, really?\"(ⓓ)라고 되묻자 Yunseo가 \"Yeah, it'll take more than an hour.\"라고 이어 가므로 ⓑ-ⓐ-ⓒ-ⓓ가 자연스럽다.",
+   "source": "L5 Listen and Talk B",
+   "wrong": [
+    "② 반박(ⓒ)이 이유(ⓐ)보다 먼저 올 수 없다.",
+    "③ 이유(ⓐ)가 질문(ⓑ)보다 앞에 오며 ⓓ 뒤에 ⓒ가 오면 마지막 대사 Yeah 와 이어지지 않는다.",
+    "④ ⓒ 반박이 이유를 듣기 전에 나와 흐름이 맞지 않는다.",
+    "⑤ ⓓ Oh, really? 뒤에 ⓒ가 오면 마지막 Yeah 가 이어지지 않는다."
+   ]
   },
   {
    "no": 2,
@@ -49,8 +55,14 @@
     "ㄴ, ㄹ, ㅁ, ㅂ"
    ],
    "answer": 3,
-   "explain": "ㄱ happily → happy(make+목적어+형용사). ㄷ Do you know who made this cake?(의문사가 주어인 간접의문문). ㅂ what he said(간접의문문 어순). ㄴ leave+목적어+형용사, ㄹ keep+목적어+형용사, ㅁ think류 동사는 의문사를 문장 맨 앞에 둔다.",
-   "source": "통합본 L5 GRAMMAR p.26 어법 문장 01·03·04·10·15·08"
+   "explain": "「make/keep/leave + 목적어 + 형용사」에서 목적격 보어는 형용사이고, 간접의문문은 「의문사 + 주어 + 동사」 어순이다.\nㄴ \"I left the classroom dark.\"(leave+목적어+형용사), ㄹ \"This fan keeps the room cool.\"(keep+목적어+형용사), ㅁ \"Who do you think is the man?\"(think가 있으면 의문사가 문장 앞으로)은 모두 옳다.\nㄱ은 happily(부사)→happy, ㄷ은 made who → who made, ㅂ은 what did he say → what he said 로 고쳐야 한다. 따라서 ㄴ, ㄹ, ㅁ.",
+   "source": "통합본 L5 GRAMMAR p.26 어법 문장 01·03·04·10·15·08",
+   "wrong": [
+    "① ㄱ Music can make you happily → happy(보어는 형용사).",
+    "② ㄹ도 옳은 문장이므로 빠져서는 안 된다.",
+    "④ ㄱ·ㄷ·ㅂ 모두 틀린 문장이다.",
+    "⑤ ㅂ I wonder what did he say → what he said(간접의문문 어순)."
+   ]
   },
   {
    "no": 3,
@@ -65,8 +77,14 @@
     "Don't forget to take the train on time."
    ],
    "answer": 1,
-   "explain": "에어프라이어 사용법을 다 설명한 뒤 마지막 당부 — 꺼낼 때 오븐 장갑을 잊지 말라는 말이 자연스럽다.",
-   "source": "L6 Listen and Talk B"
+   "explain": "에어프라이어 사용법을 First(고구마 넣기) → Then(200°C 설정) → Lastly(20분 설정 후 시작)로 설명한 뒤, Lily가 \"Oh, it's easy.\"라고 하자 아빠가 \"Right.\" 하고 마지막 당부를 덧붙이는 자리이다.\n따라서 꺼낼 때 오븐 장갑을 끼라는 \"Don't forget to use oven gloves when you take them out.\"이 알맞다. 「Don't forget to + 동사원형」은 '~하는 것을 잊지 마'라는 당부 표현이다.",
+   "source": "L6 Listen and Talk B",
+   "wrong": [
+    "② 버스를 잘못 타지 않도록 조심하라는 말은 에어프라이어 대화와 관계없다.",
+    "③ 이미 앞에서 말한 첫 단계를 되풀이한다.",
+    "④ 토마토소스와 섞으라는 것은 스파게티 조리법 대사이다.",
+    "⑤ 기차를 제시간에 타라는 당부는 티켓 기계 대화의 대사이다."
+   ]
   },
   {
    "no": 4,
@@ -80,8 +98,14 @@
     "A: Excuse me, how can I use this bike?\nB: It's simple. First, sign up for our app."
    ],
    "answer": 4,
-   "explain": "어느 것을 더 좋아하는지 물었는데 '동의하지 않는다'로 답해 어색하다. → I prefer red to yellow. 등",
-   "source": "L5 LT-A1·A2·C, L6 LT-A1·C"
+   "explain": "\"Which do you prefer, A or B?\"는 둘 중 무엇을 더 좋아하는지 묻는 말이므로 \"I prefer A to B.\"처럼 선호를 답해야 한다.\n④에서 B는 \"I don't agree with you.\"(네 말에 동의하지 않아)라고 답했는데, 이는 상대의 의견에 반대할 때 쓰는 말이지 선호를 묻는 질문의 답이 아니다.",
+   "source": "L5 LT-A1·A2·C, L6 LT-A1·C",
+   "wrong": [
+    "① 수학과 영어 중 선호를 묻고 I prefer math to English. 로 답해 자연스럽다.",
+    "② 계획 있는 여행을 좋아하냐는 물음에 Yes, I do. 와 이유로 답한다.",
+    "③ 방법을 아느냐는 물음에 First, … 로 순서를 설명한다.",
+    "⑤ 사용법을 묻자 It's simple. First, … 로 설명한다."
+   ]
   },
   {
    "kind": "group",
@@ -109,8 +133,14 @@
     "Her article was posted online."
    ],
    "answer": 4,
-   "explain": "기자 회견에는 다른 기자들과 함께 갔다(with other journalists).",
-   "source": "L5 본문 1대목 Ms. Ali"
+   "explain": "[지문 요지] 스포츠 기자 Ms. Ali는 스포츠와 글쓰기에 열정이 있어 기자가 되었고, 야구 경기가 있던 날 경기 전 인터뷰, 경기 중 메모, 경기 후 기자회견, 오후 기사 작성까지의 하루를 이야기한다.\n본문 \"After the game, I went to the press conference with other journalists.\"에서 그녀는 경기 후 다른 기자들과 함께 기자회견에 갔다고 했다. ④의 alone(혼자)은 이와 어긋난다.",
+   "source": "L5 본문 1대목 Ms. Ali",
+   "wrong": [
+    "① I've always had a passion for sports and writing. 와 일치한다.",
+    "② Before the game started, I had an interview with the players. 와 일치한다.",
+    "③ I took a lot of notes during the game. 와 일치한다.",
+    "⑤ My article was posted online. 과 일치한다."
+   ]
   },
   {
    "no": 6,
@@ -135,8 +165,14 @@
     "ㄴ, ㄷ, ㄹ, ㅂ"
    ],
    "answer": 2,
-   "explain": "ⓐ는 「make+목적어+형용사(목적격 보어)」 5형식. ㄱ·ㄷ·ㄹ이 같다. ㄴ은 4형식(만들어 주다), ㅁ·ㅂ은 3형식(만들다/하다).",
-   "source": "통합본 L5 p.29 13번 문장 · L6 본문 · 학습지 p.1 deal 예문"
+   "explain": "ⓐ \"makes me excited\"는 「make + 목적어 + 형용사(목적격 보어)」의 5형식으로, '나를 신나게 만든다'는 뜻이다.\nㄱ made him upset(그를 속상하게), ㄷ made the lesson clear(수업을 분명하게), ㄹ made the room bright(방을 밝게)은 모두 목적어 뒤에 형용사 보어가 와 같은 구조이다.\nㄴ made the visitors a simple map 은 「make + 간접목적어 + 직접목적어」의 4형식(만들어 주다), ㅁ made a copy 와 ㅂ made a good deal 은 make가 '만들다/하다'인 3형식이다.",
+   "source": "통합본 L5 p.29 13번 문장 · L6 본문 · 학습지 p.1 deal 예문",
+   "wrong": [
+    "① ㄴ은 4형식(지도를 만들어 주었다)이다.",
+    "③ ㄴ·ㅁ·ㅂ 모두 목적격 보어가 없는 문장이다.",
+    "④ ㅁ made a copy 는 3형식이다.",
+    "⑤ ㄴ·ㅂ은 5형식이 아니다."
+   ]
   },
   {
    "kind": "group",
@@ -162,8 +198,14 @@
     "Bella refused to delete the picture even after her brother asked her to do so."
    ],
    "answer": 3,
-   "explain": "Bella가 남동생 사진을 찍어 자기 소셜 미디어에 올렸고(나쁜 댓글은 남이 단 복사본에 있었다), 남동생은 삭제를 원했으며, Bella는 바로 게시물을 지웠다. ②·⑤는 통합본 T/F 문장(F).",
-   "source": "L6 본문 1대목 Bella · 통합본 L6 p.38 T/F 문장"
+   "explain": "[지문 요지] Happy Digital Laundry는 온라인 기록을 지워 주는 곳이다. Bella는 농구하는 오빠 사진을 SNS에 올렸는데 누군가 나쁜 댓글을 단 사본을 퍼뜨렸고, 게시물을 지웠는데도 사본이 남아 있어 도움을 청한다.\n본문 \"Someone made a copy of the picture with bad comments.\"와 ③이 그대로 일치한다.",
+   "source": "L6 본문 1대목 Bella · 통합본 L6 p.38 T/F 문장",
+   "wrong": [
+    "① 사진을 찍은 사람은 Bella이다(I took a picture of him).",
+    "② Bella가 올린 사진에는 나쁜 댓글이 없었고, 나쁜 댓글은 다른 사람이 사본에 단 것이다.",
+    "④ 오빠는 사진을 지우기를 원했다(wanted me to delete the picture).",
+    "⑤ 사과하고 즉시 게시물을 지웠다(I deleted my post immediately)."
+   ]
   },
   {
    "no": 8,
@@ -210,8 +252,14 @@
     ]
    },
    "answer": 1,
-   "explain": "사진을 찍은 '그다음'(Then) 공유했고, '주말 동안'(Over the weekend) 문제가 생겼으며, 게시물을 지웠지만 '하지만'(However) 복사본은 남아 있다.",
-   "source": "L6 본문 1대목 Bella"
+   "explain": "ⓐ는 사진을 찍은 '다음에' 올렸다는 흐름이므로 Then(그러고 나서), ⓑ는 '주말 동안'을 뜻하는 Over the weekend, ⓒ는 게시물을 지웠지만 사본은 '여전히' 남아 있다는 반대 흐름이므로 However가 알맞다.\n원문: \"Then I shared it on my social media. Over the weekend, something went wrong. … However, the copies still remain online.\"",
+   "source": "L6 본문 1대목 Bella",
+   "wrong": [
+    "② ⓐ Before 는 접속사라 뒤에 절이 더 필요하고 흐름도 맞지 않는다.",
+    "③ ⓒ Because 는 '지웠기 때문에 남아 있다'가 되어 뜻이 어긋난다.",
+    "④ ⓐ After 도 접속사라 단독으로 쓸 수 없다.",
+    "⑤ ⓑ Before the weekend 는 원문과 다르고 ⓒ So 는 인과가 성립하지 않는다."
+   ]
   },
   {
    "no": 9,
@@ -225,8 +273,14 @@
     "The coach ordered the players moving faster."
    ],
    "answer": 4,
-   "explain": "① to apologize ② beep/beeping(지각동사+목적어+동사원형/-ing) ③ told him ⑤ to move(order+목적어+to부정사).",
-   "source": "통합본 L6 GRAMMAR p.26 어법 문장 01·04·11·16·18"
+   "explain": "「want/tell/order/ask + 목적어 + to부정사」와 「지각동사 + 목적어 + 동사원형/-ing」를 묻는 문제이다.\n④ \"The man told his son to turn off the lights.\"는 tell + 목적어(his son) + to부정사(to turn off)로 옳다.",
+   "source": "통합본 L6 GRAMMAR p.26 어법 문장 01·04·11·16·18",
+   "wrong": [
+    "① to apologizes → to apologize(to부정사는 동사원형).",
+    "② heard the timer beeps → beep 또는 beeping(지각동사 + 목적어 + 동사원형/-ing).",
+    "③ told he → told him(목적격).",
+    "⑤ ordered the players moving → to move(order + 목적어 + to부정사)."
+   ]
   },
   {
    "kind": "group",
@@ -251,8 +305,14 @@
     "Does the company advise people to think carefully before uploading things online?"
    ],
    "answer": 3,
-   "explain": "① 아니다(개인 기기에 남을 수 있다) ② 그렇다 ④ 그렇다(쉽다, 지우기는 어렵다) ⑤ 그렇다(공유할 때 조심하라). 삭제에 걸린 시간은 나오지 않는다. ①·②·④·⑤는 통합본 T/F·선지 문장을 의문문으로 바꾼 것.",
-   "source": "L6 본문 2대목 Laundry 답장 1 · 통합본 L6 p.38 T/F · 실전모의고사 21번 선지"
+   "explain": "[지문 요지] Happy Digital Laundry의 답장으로, 온라인 사본은 지웠지만 개인 기기에는 남아 있을 수 있으니 다시 보이면 연락하라고 하고, 온라인 공유는 쉽지만 지우기는 어렵다고 당부한다.\n③ 사본을 지우는 데 '얼마나 걸렸는지'는 글에 나오지 않는다.",
+   "source": "L6 본문 2대목 Laundry 답장 1 · 통합본 L6 p.38 T/F · 실전모의고사 21번 선지",
+   "wrong": [
+    "① some copies may remain on personal devices → 모든 기기에서 완전히 지운 것은 아니다(답: No).",
+    "② some copies may remain on personal devices 로 답할 수 있다(Yes).",
+    "④ sharing something online is easy 로 답할 수 있다(Yes).",
+    "⑤ When you share things online, be careful. 로 답할 수 있다(Yes)."
+   ]
   },
   {
    "no": 11,
@@ -293,8 +353,14 @@
     ]
    },
    "answer": 1,
-   "explain": "주어 We가 복사본을 '삭제한' 것이므로 능동 removed. 조동사 may 뒤에는 동사원형 remain.",
-   "source": "L6 본문 2대목 Laundry 답장 1"
+   "explain": "ⓐ의 주어 We는 사본을 '지운' 주체이므로 능동태 과거 removed, ⓑ는 조동사 may 뒤이므로 동사원형 remain 이 온다.\n원문: \"We removed all the copies online, but some copies may remain on personal devices.\"",
+   "source": "L6 본문 2대목 Laundry 답장 1",
+   "wrong": [
+    "② were removed 는 수동태로, '우리가 지워졌다'는 뜻이 되어 어색하다.",
+    "③ may 뒤에는 동사원형이 와야 하므로 remains 는 틀리다.",
+    "④ remain 은 자동사라 수동태 be remained 로 쓸 수 없다.",
+    "⑤ 조동사 뒤에 -ing 형은 올 수 없다."
+   ]
   },
   {
    "kind": "group",
@@ -321,8 +387,14 @@
     "I hire great coaches, manage the office staff, avoid the media, and solve problems."
    ],
    "answer": 4,
-   "explain": "글쓴이는 선수가 아니라 스포츠 매니저이고, 감독과는 정기 회의를 하며, 훈련장에서는 선수들과 먼저 이야기하고, 언론과도 이야기한다. 오후에 팀 훈련을 지켜본다(원문 그대로). ①·②는 학습지 p.8 T/F 문장, ③·⑤는 본문 한 단어 변형.",
-   "source": "학습지 p.8 More Reading 'Life as a Sports Manager' · p.8 T/F 문장"
+   "explain": "[지문 요지] 프로 축구팀 스포츠 매니저의 하루 — 코치 고용·사무 관리·언론 대응·문제 해결을 맡고, 훈련장에서 선수를 격려하고 감독과 회의하며 오후에는 훈련을 지켜본다.\n④ \"In the afternoon, I watch the team train.\"은 본문 문장 그대로이다.",
+   "source": "학습지 p.8 More Reading 'Life as a Sports Manager' · p.8 T/F 문장",
+   "wrong": [
+    "① 글쓴이는 sports manager이지 선수가 아니다.",
+    "② regular meetings(정기 회의)를 하므로 경기 날에만 만나는 것이 아니다.",
+    "③ 훈련장에 가면 players를 먼저 만난다(I talk to the players first).",
+    "⑤ 언론을 피하는 것이 아니라 talk to the media 한다."
+   ]
   },
   {
    "no": 13,
@@ -369,8 +441,14 @@
     ]
    },
    "answer": 1,
-   "explain": "선수들을 격려해 '자신감 있고' 준비되게 하고, 회의로 일이 '순조롭게' 돌아가게 하며, 선수들이 '나아지는' 것을 보는 것이 일의 가장 좋은 부분이다.",
-   "source": "학습지 p.6 More Reading"
+   "explain": "ⓐ 선수들이 '자신감 있고' 준비되게 한다 → confident, ⓑ 일이 '순조롭게' 돌아가게 정기 회의를 한다 → smoothly, ⓒ 선수들이 '향상되는' 것을 보는 것이 가장 좋은 부분 → improve.\n원문: \"I make sure they feel confident and ready for the game. … keep things running smoothly. … seeing the players improve is one of the best parts of my job.\"",
+   "source": "학습지 p.6 More Reading",
+   "wrong": [
+    "② slowly(느리게)는 일이 잘 돌아간다는 흐름에 맞지 않는다.",
+    "③ 선수를 격려하는데 worried(걱정하는)를 느끼게 한다는 것은 모순이다.",
+    "④ worried·slowly·fail 모두 긍정적 흐름과 반대이다.",
+    "⑤ 선수가 fail(실패)하는 것을 보는 것이 가장 좋은 부분일 수 없다."
+   ]
   },
   {
    "kind": "group",
@@ -394,8 +472,14 @@
     "Monsters Beat Wolves!"
    ],
    "answer": 1,
-   "explain": "울브즈가 몬스터즈를 10점 차로 이긴 경기 소식이다. ②~④는 글에 나온 구절이지만 세부 사항이고, ⑤는 이긴 팀이 반대다.",
-   "source": "L5 Present Your Ideas — Sports News"
+   "explain": "[지문 요지] Boston Wolves와 Miami Monsters의 농구 경기에서 Wolves가 10점 차로 이겼고, Michael James가 시즌 최고의 경기를 펼쳤다는 기사이다.\n핵심 문장은 \"The Boston Wolves won the game by 10 points.\"이므로 기사 제목으로는 ① 'Wolves Beat Monsters!'(울브스, 몬스터스를 꺾다)가 알맞다.",
+   "source": "L5 Present Your Ideas — Sports News",
+   "wrong": [
+    "② 경기장 이름은 세부 정보일 뿐이다.",
+    "③ 다음 경기는 마지막 문장에서 잠깐 언급될 뿐이다.",
+    "④ 한 선수의 활약은 부분 내용이다.",
+    "⑤ 이긴 팀은 Monsters가 아니라 Wolves이다."
+   ]
   },
   {
    "no": 15,
@@ -410,8 +494,14 @@
    ],
    "inline": true,
    "answer": 3,
-   "explain": "경기가 '열린' 것이므로 수동태 was held. 9월 2일 과거의 일.",
-   "source": "L5 Present Your Ideas — Sports News"
+   "explain": "경기(The game)는 '열리는' 대상이므로 수동태가 필요하고, on September 2 라는 과거 시점이므로 「was + 과거분사」 was held 가 알맞다.\n원문: \"The game was held at the Boston Sports Center on September 2.\"",
+   "source": "L5 Present Your Ideas — Sports News",
+   "wrong": [
+    "① held(능동 과거)는 경기가 무언가를 개최했다는 뜻이 되어 어색하다.",
+    "② holds 는 현재이며 능동이다.",
+    "④ was holding 은 진행형 능동으로 뜻이 맞지 않는다.",
+    "⑤ will hold 는 미래이며 능동이다."
+   ]
   },
   {
    "no": 16,
@@ -435,8 +525,14 @@
     "The judge made a (      ) decision."
    ],
    "answer": 4,
-   "explain": "① analyze(ⓐ) ② passion(ⓑ) ③ client(ⓒ) ⑤ fair(ⓔ). ④는 receive가 들어가며 <보기>에 없다. ⓓ contract는 쓰이지 않는다.",
-   "source": "학습지 p.2 영영풀이 A · p.1 예문 3·14·7·16·12"
+   "explain": "영영풀이: ⓐ '무언가의 본질이나 구조를 면밀히 연구하다' → analyze(분석하다), ⓑ '사랑·미움·분노 등의 매우 강한 감정' → passion(열정), ⓒ '변호사·의사 같은 전문가의 서비스를 이용하는 사람' → client(의뢰인), ⓓ '사람이나 회사 사이의 공식 합의' → contract(계약), ⓔ '상황에 알맞고 적절한' → fair(공정한).\n④ \"You will (      ) a package tomorrow.\"에는 receive(받다)가 들어가야 하는데 <보기>에 없다.",
+   "source": "학습지 p.2 영영풀이 A · p.1 예문 3·14·7·16·12",
+   "wrong": [
+    "① analyze the test results(결과를 분석하다).",
+    "② Her passion for dance(춤에 대한 열정).",
+    "③ met with her client(의뢰인을 만났다).",
+    "⑤ a fair decision(공정한 결정)."
+   ]
   },
   {
    "no": 17,
@@ -446,14 +542,20 @@
    "choices": [
     "ⓑ-ⓓ-ⓒ-ⓐ",
     "ⓑ-ⓒ-ⓓ-ⓐ",
-    "ⓒ-ⓓ-ⓑ-ⓐ",
+    "ⓓ-ⓒ-ⓐ-ⓑ",
     "ⓓ-ⓑ-ⓐ-ⓒ",
     "ⓑ-ⓐ-ⓓ-ⓒ"
    ],
    "inline": true,
    "answer": 1,
-   "explain": "first → 다음은?(ⓑ) → Second(ⓓ) → 그다음은?(ⓒ) → Lastly(ⓐ).",
-   "source": "L6 Review 1-2"
+   "explain": "B가 \"first, search for the city.\"라고 첫 단계를 말했으므로 A가 \"I got it. What's next?\"(ⓑ)로 다음 단계를 묻고, B가 \"Second, select the time and seat.\"(ⓓ)로 답한다.\nA가 \"Okay. What should I do after that?\"(ⓒ)라고 그다음을 묻자 B가 \"Lastly, pay and take the ticket.\"(ⓐ)로 마무리하고, A의 \"That's easy.\"로 이어진다.\n따라서 ⓑ-ⓓ-ⓒ-ⓐ.",
+   "source": "L6 Review 1-2",
+   "wrong": [
+    "② Second(ⓓ) 앞에 두 번째 질문(ⓒ)이 오면 질문이 연달아 두 번 나온다.",
+    "③ Second 단계(ⓓ)가 질문 없이 먼저 나온다.",
+    "④ Lastly(ⓐ)가 Second 바로 뒤 질문 없이 오고 ⓒ가 맨 끝에 남는다.",
+    "⑤ Lastly(ⓐ)가 Second(ⓓ)보다 먼저 온다."
+   ]
   },
   {
    "kind": "group",
@@ -461,7 +563,7 @@
    "direction": "다음 글을 읽고 물음에 답하시오.",
    "box": {
     "lines": [
-     "Hello. Today, I'll introduce a special app, MuzSearch. (A) When you want ⓐ<u>to know</u> the title of a song, this app will help you. (B) First, open the MuzSearch app and touch the search icon. (C) Second, press the microphone icon and wait ⓑ<u>for</u> a while. (D) Then the app will show the title on the screen. If you like the song, don't forget ⓒ<u>pressing</u> the heart icon. (E) The song ⓓ<u>will be saved</u> to your favorites. Try ⓔ<u>it</u> now!"
+     "Hello. Today, I'll introduce a special app, MuzSearch. (A) When you want ⓐ<u>to know</u> the title of a song, this app will help you. (B) It's simple to use. (C) Second, press the microphone icon and wait ⓑ<u>for</u> a while. (D) Then the app will show the title on the screen. If you like the song, don't forget ⓒ<u>pressing</u> the heart icon. (E) The song ⓓ<u>will be saved</u> to your favorites. Try ⓔ<u>it</u> now!"
     ]
    }
   },
@@ -478,8 +580,14 @@
    ],
    "inline": true,
    "answer": 3,
-   "explain": "don't forget to + 동사원형(~할 것을 잊지 마라) → to press.",
-   "source": "L6 Enjoy the Clip A"
+   "explain": "「forget + to부정사」는 '(앞으로) ~할 것을 잊다', 「forget + -ing」는 '(과거에) ~한 것을 잊다'이다. 하트 아이콘을 누르는 것은 앞으로 할 일이므로 \"don't forget to press the heart icon\"이어야 한다. ⓒ pressing 이 틀리다.\n나머지는 옳다: ⓐ want to know(want + to부정사), ⓑ wait for a while(잠시 기다리다), ⓓ will be saved(노래는 저장되는 대상이므로 수동), ⓔ Try it now(대명사 목적어).",
+   "source": "L6 Enjoy the Clip A",
+   "wrong": [
+    "① want + to부정사로 옳다.",
+    "② wait for 는 '~을 기다리다'로 옳다.",
+    "④ 미래 수동태 will be saved 로 옳다.",
+    "⑤ Try it 의 it 은 the app 을 가리키는 목적격으로 옳다."
+   ]
   },
   {
    "no": 19,
@@ -488,7 +596,7 @@
    "box": {
     "title": "<보기>",
     "lines": [
-     "It's simple to use."
+     "First, open the MuzSearch app and touch the search icon."
     ]
    },
    "choices": [
@@ -499,9 +607,15 @@
     "(E)"
    ],
    "inline": true,
-   "answer": 2,
-   "explain": "앱이 도움이 된다는 말 뒤, 사용법(First…)을 늘어놓기 직전에 '사용하기 간단하다'가 온다.",
-   "source": "L6 Enjoy the Clip A"
+   "answer": 3,
+   "explain": "주어진 문장 \"First, open the MuzSearch app and touch the search icon.\"은 사용법의 첫 단계이므로, \"Second, press the microphone icon …\" 바로 앞인 (C)에 와야 한다.\n원문 순서: It's simple to use. First, open the MuzSearch app and touch the search icon. Second, press the microphone icon and wait for a while.",
+   "source": "L6 Enjoy the Clip A",
+   "wrong": [
+    "① 앱을 소개하기도 전에 첫 단계가 나온다.",
+    "② 앞에 It's simple to use. 가 와야 하므로 (B)는 이르다.",
+    "④ Second 뒤에 First 가 올 수 없다.",
+    "⑤ 노래를 저장하는 마지막 단계 뒤에 첫 단계가 올 수 없다."
+   ]
   },
   {
    "no": 20,
@@ -515,8 +629,14 @@
     "I wonder how much it will cost."
    ],
    "answer": 5,
-   "explain": "① who they are ② how she did it ③ what time it is now ④ What do you think he wants to eat?(think류는 의문사를 맨 앞에). ⑤ 의문사+주어+동사 어순이 바르다.",
-   "source": "통합본 L5 GRAMMAR p.26 02·06·14·18 · p.29 10번"
+   "explain": "간접의문문은 「의문사 + 주어 + 동사」 어순이다. ⑤ \"I wonder how much it will cost.\"는 how much 뒤에 주어 it, 동사 will cost 가 와 옳다.",
+   "source": "통합본 L5 GRAMMAR p.26 02·06·14·18 · p.29 10번",
+   "wrong": [
+    "① who are they → who they are.",
+    "② how did she do it → how she did it.",
+    "③ what time is it now → what time it is now.",
+    "④ think 가 있으면 의문사가 문장 앞으로: What do you think he wants to eat?"
+   ]
   },
   {
    "kind": "group",
@@ -544,8 +664,14 @@
    ],
    "inline": true,
    "answer": 3,
-   "explain": "make+목적어+형용사: 계약을 '공정하게' 만들다 → fair. 부사 fairly는 목적격 보어로 쓸 수 없다.",
-   "source": "L5 본문 2대목 Mr. Davis"
+   "explain": "[지문 요지] 스포츠 에이전트 Mr. Davis는 스포츠와 사업을 모두 좋아하며, 고객의 계약서를 꼼꼼히 확인해 공정하게 만들고 광고 회사와 최선의 조건을 협상한다.\n「make + 목적어 + 형용사」에서 목적격 보어는 형용사여야 하므로 ⓒ fairly(부사)는 fair(공정한)로 고쳐야 한다. \"I do my best to make the contract fair for them.\"\n나머지는 옳다: ⓐ enjoy everything, ⓑ a new contract to sign(to부정사의 형용사적 용법), ⓓ want my clients in their advertisements(광고 속에), ⓔ try to get(~하려고 노력하다).",
+   "source": "L5 본문 2대목 Mr. Davis",
+   "wrong": [
+    "① everything 은 enjoy 의 목적어로 옳다.",
+    "② to sign 은 contract 를 꾸미는 to부정사로 옳다.",
+    "④ in their advertisements 는 '광고 속에'로 옳다.",
+    "⑤ try to get 은 '얻으려고 애쓰다'로 옳다."
+   ]
   },
   {
    "no": 22,
@@ -565,8 +691,14 @@
     "Advertising companies want Mr. Davis to appear in their advertisements."
    ],
    "answer": 1,
-   "explain": "When my clients have a new contract to sign, I check it carefully. 선지는 모두 통합본 T/F·확인문제 문장.",
-   "source": "L5 본문 2대목 Mr. Davis · 통합본 L5 p.39 T/F · p.44 확인문제"
+   "explain": "질문: 고객이 서명할 새 계약이 있을 때 Mr. Davis는 무엇을 하는가?\n본문 \"When my clients have a new contract to sign, I check it carefully.\"에서 그는 계약서를 '주의 깊게 확인한다'고 했으므로 ① \"Mr. Davis checks new contracts with care.\"가 답이다.",
+   "source": "L5 본문 2대목 Mr. Davis · 통합본 L5 p.39 T/F · p.44 확인문제",
+   "wrong": [
+    "② quickly without much care 는 carefully 와 반대이다.",
+    "③ 광고에 나오는 것은 Davis가 아니라 그의 clients 이다.",
+    "④ 계약에 주의를 기울이지 않는다는 것은 본문과 반대이다.",
+    "⑤ 광고 회사가 원하는 사람은 Davis의 clients 이다."
+   ]
   },
   {
    "kind": "group",
@@ -593,8 +725,14 @@
     "Ms. Lee shared her finding with her players."
    ],
    "answer": 4,
-   "explain": "아이스 라이온즈와의 경기는 이번 주 토요일(this Saturday)이다. ②·④는 통합본 T/F 문장.",
-   "source": "L5 본문 3대목 Ms. Lee · 통합본 L5 p.39 T/F"
+   "explain": "[지문 요지] 스포츠 통계 전문가 Ms. Lee는 숫자로 스포츠를 분석하는 것을 좋아해 이 일을 택했고, 상대팀 Ice Lions의 슛을 분석해 왼쪽이 약하다는 것을 찾아 선수들과 공유했다.\n본문 \"Our team is going to play against the Ice Lions this Saturday.\"에서 경기는 '토요일'이므로 ④의 this Sunday 는 틀리다.",
+   "source": "L5 본문 3대목 Ms. Lee · 통합본 L5 p.39 T/F",
+   "wrong": [
+    "① I liked to analyze sports with numbers. 와 일치한다.",
+    "② Last week, I carefully watched the Ice Lions' games 와 일치한다.",
+    "③ they let in 70 percent of the shots from the left side 와 일치한다.",
+    "⑤ I shared this finding with our players. 와 일치한다."
+   ]
   },
   {
    "no": 24,
@@ -609,8 +747,14 @@
    ],
    "inline": true,
    "answer": 2,
-   "explain": "스포츠 통계 전문가에 대해 잘 모르니 '그것'을 설명해 달라는 말.",
-   "source": "L5 본문 3대목 Ms. Lee"
+   "explain": "기자가 \"I don't know much about a sports statistician. Can you explain it to me?\"라고 했으므로 it 은 바로 앞 문장의 a sports statistician(스포츠 통계 전문가라는 직업)을 가리킨다. Ms. Lee가 이어서 \"A sports statistician is someone who …\"라고 설명하는 데서도 확인된다.",
+   "source": "L5 본문 3대목 Ms. Lee",
+   "wrong": [
+    "① ice hockey 는 Ms. Lee가 좋아하는 종목일 뿐 설명을 부탁한 대상이 아니다.",
+    "③ 기자 자신을 설명해 달라는 말이 될 수 없다.",
+    "④ the Ice Lions 는 뒤에 나오는 상대팀이다.",
+    "⑤ the data 는 아직 언급되지 않았다."
+   ]
   },
   {
    "no": 25,
@@ -624,8 +768,14 @@
     "Writing about sports makes me excited."
    ],
    "answer": 1,
-   "explain": "왼쪽에서 온 슛의 70퍼센트를 허용했다 → 왼쪽이 약하다는 것을 보여 준다. ②·③은 한 단어를 바꾼 것, ④·⑤는 Ms. Ali의 말.",
-   "source": "L5 본문 3대목 Ms. Lee"
+   "explain": "앞 문장 \"I found that they let in 70 percent of the shots from the left side.\"(왼쪽에서 온 슛의 70%를 허용)에서 얻을 결론은 '왼쪽이 약하다'는 것이다.\n원문: \"This showed their left side was weak. Then, I shared this finding with our players.\"",
+   "source": "L5 본문 3대목 Ms. Lee",
+   "wrong": [
+    "② 슛을 많이 허용했으므로 strong(강하다)은 반대이다.",
+    "③ 약한 쪽은 right 가 아니라 left 이다.",
+    "④ 기사가 올라갔다는 문장은 스포츠 기자 Ms. Ali의 말이다.",
+    "⑤ 글쓰기에 대한 문장은 Ms. Ali의 말이다."
+   ]
   },
   {
    "kind": "group",
@@ -653,8 +803,14 @@
    ],
    "inline": true,
    "answer": 3,
-   "explain": "(C)는 사진 꾸미기 앱 소개 문장으로, 개인 정보가 유출된 이야기와 무관하다.",
-   "source": "L6 본문 3·4대목 Jihun · 답장 2 (무관 문장은 L6 Enjoy the Clip B에서 가져옴 — 일부러 넣은 문장)"
+   "explain": "[지문 요지] Jihun은 무료 스마트폰 광고를 눌러 정보를 입력했다가 쓸모없는 이메일과 모르는 번호의 전화에 시달리며 개인정보 삭제를 부탁하고, Happy Digital Laundry는 광고 회사에 삭제를 요청해 처리했다고 답한다.\n(C) \"You can decorate your photos with this app.\"(이 앱으로 사진을 꾸밀 수 있다)은 앱 소개 문장으로, 광고를 눌러 개인정보가 유출된 이야기와 아무 관련이 없다.",
+   "source": "L6 본문 3·4대목 Jihun · 답장 2 (무관 문장은 L6 Enjoy the Clip B에서 가져옴 — 일부러 넣은 문장)",
+   "wrong": [
+    "① 광고 내용을 설명하는 문장으로 흐름에 맞는다.",
+    "② 정보를 입력했다는 문장으로 흐름에 맞는다.",
+    "④ 누군가 정보를 악용한다는 추측으로 흐름에 맞는다.",
+    "⑤ 세탁소가 취한 조치로 흐름에 맞는다."
+   ]
   },
   {
    "no": 27,
@@ -669,8 +825,14 @@
    ],
    "inline": true,
    "answer": 5,
-   "explain": "ask+목적어+to부정사: 광고 회사에 정보를 삭제해 '달라고 요청하다' → to delete. ⓑ 지각동사 hear+목적어+-ing, ⓒ make+목적어+형용사, ⓓ 수동태.",
-   "source": "L6 본문 3·4대목"
+   "explain": "「ask + 목적어 + to부정사」는 '~에게 …해 달라고 부탁하다'이므로 ⓔ deleting 은 to delete 여야 한다. \"we asked the ad company to delete your information\"\n나머지는 옳다: ⓐ without thinking(전치사 뒤 동명사), ⓑ heard my phone ringing(지각동사 + 목적어 + -ing), ⓒ makes me upset(make + 목적어 + 형용사), ⓓ was shared(정보는 공유되는 대상이므로 수동).",
+   "source": "L6 본문 3·4대목",
+   "wrong": [
+    "① 전치사 without 뒤에는 동명사가 온다.",
+    "② 지각동사 hear + 목적어 + 현재분사로 옳다.",
+    "③ upset 은 형용사 보어로 옳다.",
+    "④ 수동태 was shared 로 옳다."
+   ]
   },
   {
    "no": 28,
@@ -684,8 +846,14 @@
     "How can we protect our personal information online?"
    ],
    "answer": 3,
-   "explain": "① 공짜 스마트폰을 받으려고 ② 쓸모없는 이메일·모르는 번호의 전화 ④ 광고 회사에 정보 삭제 요청 ⑤ 모르는 출처의 광고·링크를 누르지 않기. 정보가 몇 번 공유되었는지는 나오지 않는다. 선지는 통합본 실전모의고사 25번 문장.",
-   "source": "L6 본문 3·4대목 · 통합본 L6 p.63 실전모의고사 25번"
+   "explain": "③ 광고 회사가 Jihun의 정보를 '몇 번' 공유했는지는 글에 나오지 않는다.",
+   "source": "L6 본문 3·4대목 · 통합본 L6 p.63 실전모의고사 25번",
+   "wrong": [
+    "① to receive the gift(선물을 받으려고) — 답할 수 있다.",
+    "② useless emails and phone calls from unknown numbers — 답할 수 있다.",
+    "④ asked the ad company to delete your information — 답할 수 있다.",
+    "⑤ don't click on ads or links from unknown sources — 답할 수 있다."
+   ]
   },
   {
    "kind": "group",
@@ -736,8 +904,14 @@
     ]
    },
    "answer": 1,
-   "explain": "ask+목적어+to부정사(점검해 달라고 요청하다) → to check. make+목적어+형용사 → slow.",
-   "source": "L6 Review 2-1"
+   "explain": "ⓐ 「ask + 목적어 + to부정사」(~에게 …해 달라고 부탁하다)이므로 to check, ⓑ 「make + 목적어 + 형용사」이므로 slow.\n원문: \"I asked the computer store to check my computer … These programs made my computer slow.\"",
+   "source": "L6 Review 2-1",
+   "wrong": [
+    "② ask 의 목적격 보어는 동사원형이 아니라 to부정사이다.",
+    "③ checking 도, 부사 slowly 도 쓸 수 없다.",
+    "④ ⓑ slowly 는 부사라 보어가 될 수 없다.",
+    "⑤ checked 는 목적격 보어 자리에 올 수 없다."
+   ]
   },
   {
    "no": 30,
@@ -751,8 +925,14 @@
     "준서: The writer asked the computer store to check his computer, and they found that nobody added bad programs through the link."
    ],
    "answer": 3,
-   "explain": "링크를 누르자 웹사이트가 떴고(①×), 뭔가 잘못되었다고 느꼈으며(②×), 컴퓨터 가게에 점검을 맡겨 누군가 나쁜 프로그램을 심은 것을 찾아냈다(③○, ④·⑤×). 선지는 본문 문장을 3인칭으로 옮기고 한 단어씩 바꾼 것.",
-   "source": "L6 Review 2-1"
+   "explain": "[지문 요지] 모르는 사람의 이메일 링크를 눌렀다가 컴퓨터가 느려졌고, 컴퓨터 가게에서 링크를 통해 나쁜 프로그램이 설치되었음을 알아냈다는 글이다.\n③ 수아의 말은 본문 \"I asked the computer store to check my computer, and they found that someone added bad programs through the link.\"와 그대로 일치한다.",
+   "source": "L6 Review 2-1",
+   "wrong": [
+    "① 민수: 링크를 누르자 a website showed up(웹사이트가 떴다).",
+    "② 지호: something was wrong(뭔가 잘못됐다)이지 right 가 아니다.",
+    "④ 하은: 친구가 아니라 the computer store 에 부탁했다.",
+    "⑤ 준서: someone added bad programs — nobody 가 아니다."
+   ]
   }
  ]
 }
