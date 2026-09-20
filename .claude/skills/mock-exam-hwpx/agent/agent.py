@@ -5,6 +5,7 @@
   python3 agent.py profile <작업폴더>                  기출 형식 프로파일(profile.md)
   python3 agent.py build   <spec.json>… -o <출력폴더>  JSON → HWPX(+ HTML·PDF 미리보기)
   python3 agent.py check   <spec.json>…                번호·배점·정답·선지 수 점검만
+  python3 agent.py audit   <작업폴더> <spec.json>…      상자(지문·대화) 영어 문장이 범위 자료 텍스트에 있는지 대조
 
 문항을 쓰는 것은 Claude 의 일이다 — .claude/skills/mock-exam-hwpx/SKILL.md 의 절차를 따른다.
 """
@@ -58,6 +59,47 @@ def build(specs, outdir):
         print('  →', outdir / f'{name}.hwpx', '(+ .html' + (', .pdf)' if can_pdf else ')'))
 
 
+def _norm(t):
+    import re, unicodedata
+    t = unicodedata.normalize('NFKC', t)
+    t = re.sub(r'<[^>]+>', '', t)                      # <u> 등
+    t = re.sub(r'[\u24d0-\u24e9\u2460-\u2473]', '', t)  # ⓐ ①
+    t = re.sub(r'\([A-Ea-e가-바]\)|__+|\[[^\]]*\]', ' ', t)
+    t = t.replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"')
+    return re.sub(r'[^a-z0-9 ]', ' ', t.lower()).split()
+
+
+def audit(workdir, specs):
+    """상자 안 영어 문장(6단어 이상)이 범위 자료(scope 역할 텍스트)에 있는지 6-gram 으로 대조한다."""
+    import re
+    man = json.loads((Path(workdir) / 'manifest.json').read_text(encoding='utf8'))
+    corpus = ' '.join(Path(f['text']).read_text(encoding='utf8') for f in man['files'] if f['role'] == 'scope' and f['text'])
+    words = _norm(corpus)
+    grams = set(' '.join(words[i:i + 6]) for i in range(len(words) - 5))
+    total_bad = 0
+    for sp in specs:
+        spec = json.loads(Path(sp).read_text(encoding='utf8'))
+        bad = []
+        for it in spec['items']:
+            box = it.get('box')
+            if not box or '학습지' in it.get('source', '') or '제작' in it.get('source', ''):
+                continue
+            lines = box.split('\n') if isinstance(box, str) else list(box.get('lines', []))
+            for ln in lines:
+                for sent in re.split(r'(?<=[.!?])\s+', ln):
+                    w = _norm(sent)
+                    if len(w) < 6 or sum(c.isascii() and c.isalpha() for c in sent) < len(sent) * 0.5:
+                        continue
+                    hit = any(' '.join(w[i:i + 6]) in grams for i in range(len(w) - 5))
+                    if not hit:
+                        bad.append((it.get('no') or it.get('label'), sent.strip()[:90]))
+        print(f"{Path(sp).name}: 범위 자료에 없는 문장 {len(bad)}개")
+        for no, sent in bad:
+            print(f"   [{no}] {sent}")
+        total_bad += len(bad)
+    return total_bad
+
+
 def main(a):
     if not a:
         sys.exit(__doc__)
@@ -70,6 +112,8 @@ def main(a):
         o = a.index('-o') if '-o' in a else None
         specs = a[1:o] if o else a[1:]
         build(specs, a[o + 1] if o else 'out')
+    elif cmd == 'audit':
+        sys.exit(1 if audit(a[1], a[2:]) else 0)
     elif cmd == 'check':
         sys.path.insert(0, str(HERE))
         import render

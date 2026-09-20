@@ -9,7 +9,7 @@
 
 | 파일 | 하는 일 |
 |---|---|
-| `agent.py` | 명령 모음 (`ingest` · `profile` · `build` · `check`) |
+| `agent.py` | 명령 모음 (`ingest` · `profile` · `check` · `audit` · `build`) — `audit` 는 지문·대화 문장이 범위 자료에 있는지 대조 |
 | `ingest.py` | ZIP 풀기(cp949 파일명 복원) · 역할 분류 · docx(글상자 포함)/xlsx/hwp/hwpx/txt 텍스트 · 스캔 PDF·사진은 쪽 그림 |
 | `profile.py` | 기출 텍스트 → 번호·배점·유형·묶음 표 |
 | `render.py` | 문항 JSON → HWPX(python-hwpx) 와 HTML 미리보기 |
