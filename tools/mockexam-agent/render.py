@@ -25,7 +25,7 @@ BODY_FONT = '맑은 고딕'               # 발문·선지 글꼴(서식과 같�
 BOX_FONT = '맑은 고딕'                # 지문·대화 상자 글꼴
 USE_LOGO = False                      # 정보표에 로고를 넣을지
 ROW_H = 1750                          # 정보표 한 행 높이(HWPUNIT)
-FOOTER_H = 4300                       # 꼬리말 영역 높이
+FOOTER_H = 3000                       # 꼬리말 영역 높이
 COPYRIGHT = '이 시험 문제의 저작권은 옳은영어(ORUN ENGLISH)에 있습니다. 무단 전송·복제·배포 시 저작권법에 의거하여 처벌될 수 있습니다.'
 NOTICES = ['○ 답안지(선택형 OMR카드)의 해당란에 인적 사항을 기재하고, 정답을 정확히 표시하시오.',
            '○ 문항에 따라 배점이 다르니, 각 물음의 끝에 표시된 배점을 참고하시오.']
@@ -41,7 +41,8 @@ T = dict(
     p_right=2,      # 오른쪽 정렬 (➡ 다음 쪽에 계속)
     p_center=6,     # 표 안 가운데
     p_header=4,     # 머리말 (아래 0.4 mm 선)
-    p_copyright=5,  # 꼬리말 저작권 줄 (위 0.4 mm 선)
+    p_footer=9,     # 꼬리말 (과목 · 쪽/전체 · 옳은영어)
+    bf_topline=4,   # 위쪽 0.4 mm 선
     c_body=0,       # 맑은 고딕 10
     c_bold=13,      # 맑은 고딕 10 굵게 (묶음 지시문)
     c_eng=8,        # 바탕 10 (영어 지문)
@@ -207,7 +208,9 @@ class Hwpx:
         self._set_text(hdr.find('.//hp:p', NS), header_of(spec))
         ftr = sec.find('.//hp:footer', NS)
         fps = ftr.findall('.//hp:p', NS)
-        self._set_text(fps[0], COPYRIGHT)
+        fps[0].getparent().remove(fps[0])          # 저작권 문구 줄은 쓰지 않는다
+        fps = ftr.findall('.//hp:p', NS)
+        fps.insert(0, None)                        # 아래 코드가 fps[1] 을 쓰므로 자리를 맞춘다
         # 꼬리말 둘째 줄: "1학년 영어 과목 <tab> n / 전체 <tab> 옳은영어" — run 을 직접 짠다
         cp = fps[1].find('hp:run', NS).get('charPrIDRef')
         for r in list(fps[1].findall('hp:run', NS)):
@@ -280,12 +283,14 @@ class Hwpx:
             tc.find('hp:cellSz', NS).set('height', str(span * ROW_H))
         HH = {'hh': 'http://www.hancom.co.kr/hwpml/2011/head', 'hc': 'http://www.hancom.co.kr/hwpml/2011/core'}
         hx = self.doc.headers[0].element
-        for pid, prev, next_, top, bottom in ((str(T['p_header']), 0, 0, 0, 200), (str(T['p_copyright']), 350, 120, 160, 100)):
+        for pid, prev, next_, top, bottom, bf in ((str(T['p_header']), 0, 0, 0, 200, None), (str(T['p_footer']), 350, 0, 160, 0, T['bf_topline'])):
             pr = hx.find('.//hh:paraPr[@id="%s"]' % pid, HH)
             pr.find('hh:margin/hc:prev', HH).set('value', str(prev))
             pr.find('hh:margin/hc:next', HH).set('value', str(next_))
             b = pr.find('hh:border', HH)
             b.set('offsetTop', str(top)); b.set('offsetBottom', str(bottom))
+            if bf is not None:
+                b.set('borderFillIDRef', str(bf))
         # 꼬리말 두 줄이 겹치지 않게 꼬리말 영역을 넓힌다
         sec.find('.//hp:pagePr/hp:margin', NS).set('footer', str(FOOTER_H))
 
@@ -446,7 +451,7 @@ def build_html(spec, key=True):
                 out.append('<div class="ans">' + ('→ ' if i == 0 else '&nbsp;&nbsp;&nbsp;') + '_' * 38 + '</div>')
         out.append('</div>')
     out.append('<div class="end">※ 수고하셨습니다.</div></div>')
-    out.append(f'<div class="ftr"><div class="c">{COPYRIGHT}</div><div class="l"><span>{spec["grade"]}학년&nbsp; {H.escape(subj)} 과목</span><span>1 / 4</span><span>{BRAND}</span></div></div><div class="frame"></div>')
+    out.append(f'<div class="ftr"><div class="l"><span>{spec["grade"]}학년&nbsp; {H.escape(subj)} 과목</span><span>1 / 4</span><span>{BRAND}</span></div></div><div class="frame"></div>')
     if key:
         ks = [it for it in items if it.get('kind', 'mc') != 'group']
         out.append(f'<div class="key"><h2>{H.escape(title_of(spec))} — {H.escape(subtitle_of(spec))} &nbsp; 정답 및 해설</h2><table><tr><th>번호</th><th>정답</th><th>배점</th><th>출처</th><th>해설</th></tr>')
