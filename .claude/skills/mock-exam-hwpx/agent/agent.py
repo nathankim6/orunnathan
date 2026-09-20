@@ -5,7 +5,7 @@
   python3 agent.py profile <작업폴더>                  기출 형식 프로파일(profile.md)
   python3 agent.py build   <spec.json>… -o <출력폴더>  JSON → HWPX(+ HTML·PDF 미리보기)
   python3 agent.py check   <spec.json>…                번호·배점·정답·선지 수 점검만
-  python3 agent.py audit   <작업폴더> <spec.json>…      상자(지문·대화) 영어 문장이 범위 자료 텍스트에 있는지 대조
+  python3 agent.py audit   <작업폴더> <spec.json>…      문항의 모든 영어 문장(상자·선지·보기)을 범위 텍스트와 대조 — 원문/변형/창작
 
 문항을 쓰는 것은 Claude 의 일이다 — .claude/skills/mock-exam-hwpx/SKILL.md 의 절차를 따른다.
 """
@@ -69,35 +69,72 @@ def _norm(t):
     return re.sub(r'[^a-z0-9 ]', ' ', t.lower()).split()
 
 
-def audit(workdir, specs):
-    """상자 안 영어 문장(6단어 이상)이 범위 자료(scope 역할 텍스트)에 있는지 6-gram 으로 대조한다."""
+def _sentences(text):
+    import re
+    out = []
+    for ln in text.splitlines():
+        for sent in re.split(r'(?<=[.!?])\s+', ln):
+            w = _norm(sent)
+            if len(w) >= 4:
+                out.append((sent.strip(), w))
+    return out
+
+
+def audit(workdir, specs, near=0.6):
+    """문항의 모든 영어 문장(상자·선지·보기·조건)이 범위 자료 텍스트(scope + worksheet 옮겨 적은 것)에 있는지 대조한다.
+    exact  = 6-gram 이 그대로 있음 / 변형 = 원문 문장과 단어 60 % 이상 겹침(어법 오류 심기 등) / 창작 = 짝이 없음."""
     import re
     man = json.loads((Path(workdir) / 'manifest.json').read_text(encoding='utf8'))
-    corpus = ' '.join(Path(f['text']).read_text(encoding='utf8') for f in man['files'] if f['role'] == 'scope' and f['text'])
+    texts = [Path(f['text']).read_text(encoding='utf8') for f in man['files'] if f['role'] in ('scope', 'worksheet') and f['text']]
+    for extra in sorted(Path(workdir).glob('text/ws*.txt')):        # 학습지를 옮겨 적은 파일
+        texts.append(extra.read_text(encoding='utf8'))
+    corpus = '\n'.join(texts)
     words = _norm(corpus)
     grams = set(' '.join(words[i:i + 6]) for i in range(len(words) - 5))
-    total_bad = 0
+    csents = _sentences(corpus)
+    total = {'exact': 0, '변형': 0, '창작': 0}
     for sp in specs:
         spec = json.loads(Path(sp).read_text(encoding='utf8'))
-        bad = []
+        rows = []
         for it in spec['items']:
+            no = it.get('no') or it.get('label')
+            cand = []
             box = it.get('box')
-            if not box or '학습지' in it.get('source', '') or '제작' in it.get('source', ''):
-                continue
-            lines = box.split('\n') if isinstance(box, str) else list(box.get('lines', []))
-            for ln in lines:
+            if box:
+                cand += box.split('\n') if isinstance(box, str) else list(box.get('lines', [])) + [box.get('title') or '']
+            for c in it.get('choices', []):
+                cand += c.split('\n')
+            if it.get('choices_table'):
+                cand += [' '.join(map(str, r)) for r in it['choices_table']['rows']]
+            cand += it.get('condition', [])
+            for ln in cand:
                 for sent in re.split(r'(?<=[.!?])\s+', ln):
                     w = _norm(sent)
-                    if len(w) < 6 or sum(c.isascii() and c.isalpha() for c in sent) < len(sent) * 0.5:
+                    if len(w) < 5 or sum(ch.isascii() and ch.isalpha() for ch in sent) < len(sent) * 0.5:
                         continue
-                    hit = any(' '.join(w[i:i + 6]) in grams for i in range(len(w) - 5))
-                    if not hit:
-                        bad.append((it.get('no') or it.get('label'), sent.strip()[:90]))
-        print(f"{Path(sp).name}: 범위 자료에 없는 문장 {len(bad)}개")
-        for no, sent in bad:
-            print(f"   [{no}] {sent}")
-        total_bad += len(bad)
-    return total_bad
+                    if any(' '.join(w[i:i + 6]) in grams for i in range(len(w) - 5)):
+                        rows.append((no, 'exact', sent, ''))
+                        continue
+                    ws = set(w)
+                    best, bs = '', 0.0
+                    for cs, cw in csents:
+                        j = len(ws & set(cw)) / len(ws | set(cw))
+                        if j > bs:
+                            best, bs = cs, j
+                    rows.append((no, '변형' if bs >= near else '창작', sent, f'{bs:.2f} ≈ {best[:80]}'))
+        c = {'exact': 0, '변형': 0, '창작': 0}
+        for r in rows:
+            c[r[1]] += 1
+            total[r[1]] += 1
+        print(f"{Path(sp).name}: 원문 그대로 {c['exact']} · 변형 {c['변형']} · 창작 {c['창작']}")
+        for no, kind, sent, note in rows:
+            if kind == '창작':
+                print(f"   [창작 {no}] {sent[:90]}   ({note})")
+        for no, kind, sent, note in rows:
+            if kind == '변형':
+                print(f"   [변형 {no}] {sent[:70]}   ({note})")
+    print(f"합계: 원문 그대로 {total['exact']} · 변형 {total['변형']} · 창작 {total['창작']}")
+    return total['창작']
 
 
 def main(a):
