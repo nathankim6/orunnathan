@@ -14,15 +14,15 @@
    "points": 3,
    "stem": "다음 중 밑줄 친 어휘의 쓰임이 문맥상 적절하지 <u>않은</u> 것은?",
    "choices": [
-    "He <u>wrapped</u> the gift in a box.",
-    "The museum had rooms that <u>celebrated</u> great people.",
-    "Tom <u>stayed</u> in bed because he had a stomachache.",
-    "The leather jacket was <u>displayed</u> on the wall.",
-    "The box was <u>empty</u>, so I could see the cake inside."
+    "She <u>wrapped</u> the cake in a box and put it on the table in the kitchen.",
+    "It had rooms that <u>celebrated</u> great people.",
+    "But I had a stomachache, so I <u>stayed</u> in bed.",
+    "A leather pilot jacket and goggles were <u>displayed</u>.",
+    "The box was <u>empty</u>, so I could see the cake in it."
    ],
    "answer": 5,
-   "explain": "⑤ 상자가 비어 있으면 케이크를 볼 수 없다. open(열려 있는)이어야 자연스럽다.",
-   "source": "선생님 제작 문장 · L5·L6 어휘리스트"
+   "explain": "⑤ 상자가 비어 있으면 케이크를 볼 수 없다. 원문: The box was open, so I could see the cake in it.",
+   "source": "L5 본문 도입·Tom · L6 본문 도입·첫 번째 방 (⑤만 원문의 open을 empty로 바꿈)"
   },
   {
    "no": 2,
@@ -49,12 +49,12 @@
     "그녀는 놀라서 방을 둘러보았다.\n⇒ She looked around the room in surprise.",
     "나는 정확한 시간은 모른다.\n⇒ I don't know the exact time.",
     "무엇보다도, 나는 초콜릿 케이크를 좋아하지 않는다.\n⇒ Most of all, I don't like chocolate cake.",
-    "그녀는 빛나는 책을 집어 들었다.\n⇒ She picked up a shining book.",
-    "그는 30년 넘게 곤충에 관한 책을 썼다.\n⇒ He wrote books about insects for less than thirty years."
+    "그녀는 그것을 집어 들었다.\n⇒ She picked it up.",
+    "Emily는 Fabre가 30년 넘게 곤충에 관한 많은 책들을 썼다는 것을 알게 되었다.\n⇒ Emily learned that Fabre wrote many books about insects for less than thirty years."
    ],
    "answer": 5,
-   "explain": "⑤ '~ 넘게, ~ 이상'은 more than ~.",
-   "source": "선생님 제작 문장 · L5·L6 숙어(look around · exact · most of all · pick up · more than)"
+   "explain": "⑤ '~ 넘게, ~ 이상'은 more than ~. 원문: … for more than thirty years.",
+   "source": "L6 본문 첫 번째 방·두 번째 방 · L5 본문 Carol (⑤만 원문의 more를 less로 바꿈)"
   },
   {
    "no": 4,
@@ -109,11 +109,11 @@
    "points": 4,
    "stem": "위 대화를 읽고 답변할 수 <u>없는</u> 내용의 질문은?",
    "choices": [
-    "What did the boy lose?",
-    "Where does the boy think he left it?",
-    "What does the backpack look like?",
-    "When did the boy lose the backpack?",
-    "Where will they go to look for it?"
+    "소년은 무엇을 잃어버렸는가?",
+    "소년은 그것을 어디에 두고 왔다고 생각하는가?",
+    "배낭은 어떻게 생겼는가?",
+    "소년은 언제 배낭을 잃어버렸는가?",
+    "그들은 그것을 찾으러 어디로 갈 것인가?"
    ],
    "answer": 4,
    "explain": "잃어버린 때는 대화에 나오지 않는다. ① 배낭 ② 농구 코트 ③ 별무늬 파란색 ⑤ 농구 코트.",
@@ -142,12 +142,12 @@
     "I hope your dream comes true.",
     "I'm sorry to hear that.",
     "What are you interested in?",
-    "I don't like his music.",
+    "I'm interested in space travel.",
     "Let's look around the classroom."
    ],
    "answer": 1,
    "explain": "꿈을 말한 상대에게 꿈이 이루어지기를 바란다고 답한다.",
-   "source": "L6 UC A-3"
+   "source": "L6 UC A-3 (선지는 모두 교과서 대화문 문장 그대로)"
   },
   {
    "no": 8,
@@ -244,17 +244,17 @@
    "no": 13,
    "points": 4,
    "stem": "빈칸 ⓐ, ⓑ에 들어갈 말로 적절하게 짝 지어진 것은?",
-   "box": "This is the book ____ⓐ____ was written by Jean-Henri Fabre. I saw him ____ⓑ____ insects in the garden.",
+   "box": "• She will visit a museum ____ⓐ____ opened last month.\n• I saw him ____ⓑ____ the street.",
    "choices": [
-    "who – study",
-    "which – to study",
-    "which – studying",
-    "who – studied",
-    "what – study"
+    "who – cross",
+    "which – to cross",
+    "which – crossing",
+    "who – crossed",
+    "what – cross"
    ],
    "answer": 3,
-   "explain": "ⓐ 선행사 the book(사물) → which. ⓑ 지각동사 saw + 목적어 + 동사원형/현재분사 → studying.",
-   "source": "선생님 제작 문장 · 학습지 L5 Grammar Points 1(주격 관계대명사) · Grammar Points 2(지각동사)"
+   "explain": "ⓐ 선행사 a museum(사물) → which (학습지: She will visit a museum which opened last month.). ⓑ 지각동사 saw + 목적어 + 동사원형/현재분사 → crossing (학습지: I saw him cross the street.).",
+   "source": "학습지 p.15 Grammar Points 1 B-4 · p.16 Grammar Points 2 예문 (문장 그대로, 빈칸만)"
   },
   {
    "no": 14,
@@ -262,11 +262,11 @@
    "stem": "글을 쓴 목적으로 가장 적절한 것은?",
    "box": "There was a famous painting in the museum, but it disappeared. I saw four people leaving the museum. They were Ms. Smith, Ms. Green, Mr. Lee, and Mr. Roberts. One of them is the thief. I think the person who stole the painting is Ms. Green. The first clue is her beautiful long dress. She could hide the painting in her dress. The second clue is an earring on the floor. She was wearing the same earring on her right ear. What's your guess?",
    "choices": [
-    "To explain why the speaker thinks Ms. Green is the thief",
-    "To describe the famous painting in the museum",
-    "To introduce the four people who visited the museum",
-    "To ask for help finding a lost earring",
-    "To warn people about thieves in museums"
+    "글쓴이가 Ms. Green을 도둑이라고 생각하는 이유를 설명하려고",
+    "박물관의 유명한 그림을 묘사하려고",
+    "박물관을 방문한 네 사람을 소개하려고",
+    "잃어버린 귀걸이를 찾는 데 도움을 요청하려고",
+    "박물관의 도둑에 대해 사람들에게 경고하려고"
    ],
    "answer": 1,
    "explain": "두 가지 단서를 들어 Green 씨가 도둑이라고 추측하는 글.",
@@ -359,7 +359,7 @@
    "no": 20,
    "points": 5,
    "stem": "빈칸 어디에도 들어갈 수 <u>없는</u> 단어는? (대소문자 구별하지 않음)",
-   "box": "Special Invitation\nDear Emily,\nWelcome to the Historia Museum! Come and see our ______ rooms. Each room will take you on an ______ journey back in time.\nBrave ______ / Great Adventurer / Powerful Painter / Insect ______\nWhen: October 1st ― 30th\nWhere: Historia Museum in Dream City",
+   "box": "Special Invitation\nDear Emily,\nWelcome to the Historia Museum! Come and see our ______ rooms. Each room will take you on an ______ journey back in time.\nBrave ______\nGreat Adventurer\nPowerful Painter\nInsect ______\nWhen: October 1st ― 30th\nWhere: Historia Museum in Dream City",
    "choices": [
     "special",
     "amazing",
@@ -389,17 +389,17 @@
   {
    "no": 21,
    "points": 4,
-   "stem": "윗글의 밑줄 친 ⓐ의 의미와 가장 가까운 것은?",
+   "stem": "윗글의 밑줄 친 ⓐ의 영영풀이로 가장 적절한 것은?",
    "choices": [
-    "noticed something by using my nose",
-    "cooked something in an oven",
-    "put paper over something to cover it",
-    "told someone something that is not true",
-    "communicated with someone by phone"
+    "to notice something by using your nose",
+    "to cook something in an oven",
+    "to put paper or cloth over something to cover it",
+    "to deliberately tell someone something that is not true",
+    "to communicate with someone by phone, email, or other methods"
    ],
    "answer": 1,
-   "explain": "smell: to notice something by using your nose.",
-   "source": "L5 본문 Tom · L5 영영풀이"
+   "explain": "smell: to notice something by using your nose. (② bake ③ wrap ④ lie ⑤ contact)",
+   "source": "L5 본문 Tom · L5 어휘 영영풀이 (풀이 문장 그대로)"
   },
   {
    "no": 22,
@@ -464,8 +464,8 @@
   {
    "no": 25,
    "points": 5,
-   "stem": "(A)~(E)에 대해 바르게 설명한 사람만을 <보기>에서 <u>모두</u> 고른 것은?",
-   "box": "Jane Goodall is an animal scientist (A)<u>who</u> studied chimpanzees for many years. Her book (B)<u>is loved</u> by many students. When I read it, I felt my heart (C)<u>beating</u> fast. I want to be a person (D)<u>which</u> helps animals in the wild. I was (E)<u>so</u> excited <u>that</u> I read the book twice.\n\n<보기>\nⓐ 수연 : (A)는 선행사가 사람이니까 who를 쓴 게 맞아.\nⓑ 예지 : (B)는 주어가 Her book이니까 능동태 loves로 고쳐야 해.\nⓒ 민수 : (C)는 지각동사 felt의 목적격 보어로 진행 중인 동작을 나타내는 현재분사를 쓴 거라 맞아.\nⓓ 지현 : (D)는 선행사 a person이 사람이니까 who나 that으로 고쳐야 해.",
+   "stem": "다음 문장 (A)~(E)에 대해 바르게 설명한 사람만을 <보기>에서 <u>모두</u> 고른 것은?",
+   "box": "(A) She's an animal scientist (A)<u>who</u> studied chimpanzees for many years.\n(B) Lucy (B)<u>is loved</u> by the children.\n(C) I felt the wind (C)<u>blowing</u> on my face.\n(D) Mom called Ms. Jones to find the person (D)<u>which</u> ate the cake.\n(E) He practiced (E)<u>so</u> hard <u>that</u> he could speak English very well.\n\n<보기>\nⓐ 수연 : (A)는 선행사 an animal scientist가 사람이니까 who를 쓴 게 맞아.\nⓑ 예지 : (B)는 주어가 Lucy니까 능동태 loves로 고쳐야 해.\nⓒ 민수 : (C)는 지각동사 felt의 목적격 보어로 진행 중인 동작을 나타내는 현재분사를 쓴 거라 맞아.\nⓓ 지현 : (D)는 선행사 the person이 사람이니까 who나 that으로 고쳐야 해.",
    "choices": [
     "ⓐ,ⓑ",
     "ⓒ,ⓓ",
@@ -475,8 +475,8 @@
    ],
    "inline": true,
    "answer": 5,
-   "explain": "(A) 선행사 an animal scientist(사람) → who ○. (B) 책이 사랑받는 것 → is loved 수동태 ○(예지 ✗). (C) 지각동사 felt + 현재분사 beating ○. (D) 선행사 a person(사람) → who/that로 고쳐야 함. (E) so ~ that ○.",
-   "source": "선생님 제작 문장 · 학습지 L5 Grammar Points 1·2 · L6 Grammar Points 1·2"
+   "explain": "(A) 선행사 an animal scientist(사람) → who ○. (B) Lucy가 사랑받는 것 → is loved 수동태 ○(예지 ✗). (C) 지각동사 felt + 현재분사 blowing ○. (D) 선행사 the person(사람) → who/that (본문 원문: the person who ate the cake). (E) so ~ that ○.",
+   "source": "L6 UC C · 학습지 p.21 예문 · p.16 A-4 · L5 본문 도입(who를 which로 바꿈) · 학습지 p.25 예문"
   }
  ]
 }

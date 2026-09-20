@@ -15,14 +15,14 @@
    "stem": "다음 중 밑줄 친 어휘의 쓰임이 문맥상 적절하지 <u>않은</u> 것은?",
    "choices": [
     "The <u>detective</u> found footprints near the door.",
-    "Please <u>contact</u> me when you find my bag.",
-    "The room was <u>empty</u>, so nobody was inside.",
-    "I have a stomachache, so I will take some <u>candles</u>.",
-    "Ms. Jones is a <u>wise</u> old lady who lives next door."
+    "You can <u>contact</u> us by phone or by email.",
+    "The sun began to <u>disappear</u> behind the mountains.",
+    "Yes, I went to the kitchen to take some <u>candles</u> at about 11:30.",
+    "Ms. Jones was a <u>wise</u> old lady who lived next door."
    ],
    "answer": 4,
-   "explain": "④ 복통이 있어 먹는 것은 약(medicine)이다. candles(초)는 어색하다.",
-   "source": "선생님 제작 문장 · L5 어휘리스트"
+   "explain": "④ 복통이 있어 주방에 가서 먹는 것은 약(medicine)이다. 원문: I went to the kitchen to take some medicine at about 11:30. candles(초)는 어색하다.",
+   "source": "학습지 p.1 Vocabulary Practice B-4·5·8 · L5 본문 Tom · L5 본문 Jones 소개 (④만 원문의 medicine을 candles로 바꿈)"
   },
   {
    "no": 2,
@@ -47,20 +47,20 @@
    "stem": "우리말을 영어로 옮긴 것으로 적절하지 <u>않은</u> 것은?",
    "choices": [
     "나는 내 개를 찾고 있어.\n⇒ I'm looking for my dog.",
-    "그녀는 요즘 살을 빼려고 노력하고 있다.\n⇒ She is trying to lose weight these days.",
-    "그는 곤경에 처했을 때 그녀에게 왔다.\n⇒ He came to her when he was in trouble.",
-    "나는 수업 전에 그것을 껐다.\n⇒ I turned it on before class.",
-    "그녀는 세부 사항을 듣는 것을 잘한다.\n⇒ She is good at listening to details."
+    "아시다시피, 저는 요즘 살을 빼려고 노력하고 있어요.\n⇒ You know, I'm trying to lose weight these days.",
+    "마을에 있는 모든 사람은 그들이 곤경에 처했을 때 그녀에게 왔다.\n⇒ Everyone in town came to her when they were in trouble.",
+    "나는 수업 전에 그것을 껐어.\n⇒ I turned it on before class.",
+    "그녀는 세부 사항을 듣는 것을 잘합니다.\n⇒ She's good at listening to details."
    ],
    "answer": 4,
-   "explain": "④ '끄다'는 turn off. turn on은 '켜다'.",
-   "source": "선생님 제작 문장 · L5 숙어(look for · lose weight · in trouble · turn off · be good at)"
+   "explain": "④ '끄다'는 turn off. 원문: I turned it off before class. turn on은 '켜다'.",
+   "source": "L5 UC A-1 · L5 본문 Carol · L5 본문 Jones 소개 · L5 UC C · L5 Get Ready B (④만 원문의 off를 on으로 바꿈)"
   },
   {
    "no": 4,
    "points": 3,
    "stem": "빈칸에 들어갈 말로 적절한 것은?",
-   "box": "I'm really interested ______ animal behavior.",
+   "box": "I'm going to visit the nature museum. I'm really interested ______ animals.",
    "choices": [
     "at",
     "in",
@@ -71,7 +71,7 @@
    "inline": true,
    "answer": 2,
    "explain": "be interested in ~: ~에 관심이 있다.",
-   "source": "L6 UC C 표현"
+   "source": "L6 Wrap Up 1 (원문 그대로, in만 빈칸)"
   },
   {
    "kind": "group",
@@ -114,11 +114,11 @@
    "points": 4,
    "stem": "위 대화를 읽고 답변할 수 <u>없는</u> 내용의 질문은?",
    "choices": [
-    "What does Junho's smartphone look like?",
-    "Where was the smartphone found?",
-    "Why did Junho turn off his smartphone?",
-    "What did Junho do with the smartphone before class?",
-    "Who found the smartphone?"
+    "Junho의 스마트폰은 어떻게 생겼는가?",
+    "스마트폰은 어디에서 발견되었는가?",
+    "Junho는 왜 스마트폰을 껐는가?",
+    "Junho는 수업 전에 스마트폰을 어떻게 했는가?",
+    "누가 스마트폰을 찾았는가?"
    ],
    "answer": 3,
    "explain": "전원을 끈 이유는 대화에 나오지 않는다. ① 검은색·갈색 곰 캐릭터 ② 교과서 안 ④ 껐다 ⑤ Kate.",
@@ -147,12 +147,12 @@
     "I hope you become a great scientist.",
     "I'm sorry to hear that.",
     "What does she look like?",
-    "I'm not interested in science.",
+    "I'm interested in space travel.",
     "Let's find your dog together."
    ],
    "answer": 1,
    "explain": "꿈을 말한 상대에게 '~하기를 바라'(I hope ~)로 답한다.",
-   "source": "L6 UC A-1"
+   "source": "L6 UC A-1 (선지는 모두 교과서 대화문 문장 그대로)"
   },
   {
    "no": 8,
@@ -240,20 +240,20 @@
    "box": "B: Yumi, what are you doing?\nG: I'm reading a book about Neil Armstrong. ______________\nB: That sounds amazing!\nG: My dream is to become an astronaut like him.\nB: I hope your dream comes true.",
    "choices": [
     "I'm interested in his journey to the moon.",
-    "I lost it in this park.",
+    "I lost him in this park.",
     "He has a long body and short legs.",
     "I'm sorry to hear that.",
     "I'll call you when we find it."
    ],
    "answer": 1,
    "explain": "책을 읽는 이유 → 관심사. 뒤에 우주 비행사가 꿈이라고 이어진다.",
-   "source": "L6 UC A-2"
+   "source": "L6 UC A-2 (선지는 모두 교과서 대화문 문장 그대로)"
   },
   {
    "no": 13,
    "points": 4,
    "stem": "빈칸 ⓐ, ⓑ에 들어갈 말로 적절하게 짝 지어진 것은?",
-   "box": "I have a friend ____ⓐ____ likes baking. Yesterday, some cookies ____ⓑ____ by her, and they tasted wonderful.",
+   "box": "• I have a friend ____ⓐ____ enjoys cooking healthy meals.\n• The cookies ____ⓑ____ by him.",
    "choices": [
     "who – baked",
     "who – were baked",
@@ -262,8 +262,8 @@
     "who – was baked"
    ],
    "answer": 2,
-   "explain": "ⓐ 선행사 a friend(사람) → who. ⓑ 주어 some cookies가 '구워진' 것(복수) → were baked.",
-   "source": "선생님 제작 문장 · 학습지 L5 Grammar Points 1(주격 관계대명사) · L6 Grammar Points 1(수동태)"
+   "explain": "ⓐ 선행사 a friend(사람) → 주격 관계대명사 who (학습지: I have a friend who enjoys cooking healthy meals.). ⓑ 주어 The cookies가 '구워진' 것(복수) → were baked (학습지: The cookies were baked by him.).",
+   "source": "학습지 p.15 Grammar Points 1 A-3 · p.21 Grammar Points 1 A-1 (문장 그대로, 빈칸만)"
   },
   {
    "no": 14,
@@ -271,11 +271,11 @@
    "stem": "글을 쓴 목적으로 가장 적절한 것은?",
    "box": "Do you have a problem? Did you lose your bag? I'm sorry to hear that, but don't worry. Just contact Ms. Jones. She has solved a lot of problems. She's good at listening to details. Her phone number is 123-456-7890. You can contact her anytime. Good luck!",
    "choices": [
-    "To advertise Ms. Jones's help for people with problems",
-    "To tell a story about a lost bag",
-    "To explain how to find a lost dog",
-    "To ask Ms. Jones for help",
-    "To report a crime to the police"
+    "문제가 있는 사람들에게 Ms. Jones의 도움을 알리려고",
+    "잃어버린 가방에 관한 이야기를 들려주려고",
+    "잃어버린 개를 찾는 방법을 설명하려고",
+    "Ms. Jones에게 도움을 요청하려고",
+    "경찰에 범죄를 신고하려고"
    ],
    "answer": 1,
    "explain": "문제가 있으면 Jones 씨에게 연락하라는 광고.",
@@ -338,14 +338,14 @@
    "stem": "다음 중 어법상 옳지 <u>않은</u> 것은?",
    "choices": [
     "I know a girl who can speak Chinese well.",
-    "This is the cake which Mom baked for Dad.",
+    "The cake which smells delicious is on the table.",
     "The alarm clock which doesn't work is mine.",
     "The houses which stands on the hill are very nice.",
-    "They found a book that had many pictures of insects."
+    "They found a book which had many pictures of insects."
    ],
    "answer": 4,
-   "explain": "④ 선행사 The houses(복수) → 관계대명사절 동사도 stand. ②는 목적격 관계대명사 which(확장).",
-   "source": "선생님 제작 문장 · 학습지 L5 Grammar Points 1 + 목적격 관계대명사 확장"
+   "explain": "④ 선행사 The houses(복수) → 관계대명사절 동사도 stand (학습지 원문: The houses which stand on the hill are very nice.).",
+   "source": "학습지 p.15 Grammar Points 1 예문·A-1·A-4·A-5·B-1 (④만 stand를 stands로 바꿈)"
   },
   {
    "no": 19,
@@ -401,15 +401,15 @@
    "points": 4,
    "stem": "윗글의 밑줄 친 ⓐ의 의미와 가장 가까운 것은?",
    "choices": [
-    "very small pieces of bread, cake, etc.",
-    "something that helps you to solve a problem",
+    "a very small piece of bread, cake, etc.",
+    "something that helps you to solve a problem or answer a question",
     "pain in your stomach",
-    "something that you eat when you are sick",
+    "something that you drink or eat when you are sick to make you feel better",
     "having nothing inside"
    ],
    "answer": 1,
-   "explain": "crumb: a very small piece of bread, cake, etc.",
-   "source": "L5 본문 Harry · L5 영영풀이"
+   "explain": "crumb: a very small piece of bread, cake, etc. (② clue ③ stomachache ④ medicine ⑤ empty)",
+   "source": "L5 본문 Harry · L5 어휘 영영풀이 (풀이 문장 그대로)"
   },
   {
    "no": 22,
@@ -471,8 +471,8 @@
   {
    "no": 25,
    "points": 5,
-   "stem": "(A)~(E)에 대해 바르게 설명한 사람만을 <보기>에서 <u>모두</u> 고른 것은?",
-   "box": "Last Sunday, I visited a museum (A)<u>which</u> celebrated great people. I saw a boy (B)<u>to read</u> an old newspaper. The room was (C)<u>filled</u> with model airplanes. A leather jacket (D)<u>was displayed</u> on the wall. I was (E)<u>so</u> moved <u>that</u> I couldn't wait to tell my friends.\n\n<보기>\nⓐ 수연 : (A)는 선행사 a museum이 사물이니까 which를 쓴 게 맞아.\nⓑ 예지 : (B)는 지각동사 saw의 목적격 보어 자리라서 read나 reading으로 고쳐야 해.\nⓒ 민수 : (C)는 방이 스스로 채우는 것이니까 filling으로 고쳐야 해.\nⓓ 지현 : (E)는 '너무 ~해서 …하다'의 so ~ that 구문이라 바르게 쓴 거야.",
+   "stem": "다음 문장 (A)~(E)에 대해 바르게 설명한 사람만을 <보기>에서 <u>모두</u> 고른 것은?",
+   "box": "(A) It had rooms (A)<u>that</u> celebrated great people.\n(B) She saw a cat (B)<u>to climb</u> the tree.\n(C) The room was (C)<u>filled</u> with many books and drawings of insects and plants.\n(D) A leather pilot jacket and goggles (D)<u>were displayed</u>.\n(E) She was (E)<u>so</u> excited <u>that</u> she could not wait to tell her friends about her adventure.\n\n<보기>\nⓐ 수연 : (A)는 선행사 rooms가 사물이고 관계대명사절의 주어 역할이니까 that을 쓴 게 맞아.\nⓑ 예지 : (B)는 지각동사 saw의 목적격 보어 자리라서 climb이나 climbing으로 고쳐야 해.\nⓒ 민수 : (C)는 방이 스스로 채우는 것이니까 filling으로 고쳐야 해.\nⓓ 지현 : (E)는 '너무 ~해서 …하다'의 so ~ that 구문이라 바르게 쓴 거야.",
    "choices": [
     "ⓐ,ⓑ",
     "ⓑ,ⓒ",
@@ -482,8 +482,8 @@
    ],
    "inline": true,
    "answer": 3,
-   "explain": "(A) 선행사 a museum(사물) → which ○. (B) 지각동사 saw + 목적어 + 동사원형/현재분사 → read/reading. (C) be filled with ~ 수동 표현으로 맞음(민수 ✗). (D) was displayed 수동태 ○. (E) so ~ that ○.",
-   "source": "선생님 제작 문장 · 학습지 L5 Grammar Points 1·2 · L6 Grammar Points 1·2"
+   "explain": "(A) 선행사 rooms(사물) + 주격 → that ○. (B) 지각동사 saw + 목적어 + 동사원형/현재분사 → climb/climbing (학습지 p.16 C-1 고쳐 쓰기 문장). (C) be filled with ~ 수동 표현으로 맞음(민수 ✗). (D) were displayed 수동태 ○. (E) so ~ that ○.",
+   "source": "L6 본문 도입·첫 번째 방·두 번째 방·결말 문장 그대로 · 학습지 p.16 Grammar Points 2 C-1(오류 문장 그대로)"
   }
  ]
 }

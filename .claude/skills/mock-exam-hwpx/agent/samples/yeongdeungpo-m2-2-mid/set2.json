@@ -16,13 +16,13 @@
    "choices": [
     "Emily <u>received</u> an invitation from a museum.",
     "Model airplanes were <u>hanging</u> from the ceiling.",
-    "Kwon Ki-ok was the first <u>female</u> pilot in Korea.",
-    "The drawing was so <u>ordinary</u> that the honeybee looked alive.",
-    "He is so <u>caring</u> that he helps people in need."
+    "She was the first <u>female</u> pilot in Korea.",
+    "It was so <u>ordinary</u> that the honeybee looked alive.",
+    "She was so <u>caring</u> that she helped many people in India."
    ],
    "answer": 4,
-   "explain": "④ 살아 있는 것처럼 보일 만큼 '자세한(detailed)' 그림이어야 한다. ordinary(평범한)는 어색하다.",
-   "source": "선생님 제작 문장 · L6 어휘리스트"
+   "explain": "④ 살아 있는 것처럼 보일 만큼 '자세한(detailed)' 그림이어야 한다. 원문: It was so detailed that the honeybee looked alive. ordinary(평범한)는 어색하다.",
+   "source": "L6 본문 도입·첫 번째 방·두 번째 방 · L6 Express My Thoughts Write (④만 원문의 detailed를 ordinary로 바꿈)"
   },
   {
    "no": 2,
@@ -46,15 +46,15 @@
    "points": 4,
    "stem": "우리말을 영어로 옮긴 것으로 적절하지 <u>않은</u> 것은?",
    "choices": [
-    "그녀는 포기하지 않았다.\n⇒ She didn't give up.",
-    "그 방은 많은 책들로 가득 차 있었다.\n⇒ The room was filled with many books.",
+    "하지만 권기옥은 포기하지 않았고 꿈을 이루기 위해 열심히 노력했다.\n⇒ However, Kwon Ki-ok didn't give up and worked hard to achieve her dream.",
+    "그 방은 많은 책들과 곤충과 식물의 그림들로 가득 차 있었다.\n⇒ The room was filled with many books and drawings of insects and plants.",
     "나는 네 꿈이 이루어지기를 바라.\n⇒ I hope your dream comes true.",
-    "그녀는 한국의 독립을 위해 일본에 맞서 싸웠다.\n⇒ She fought for Japan for Korea's independence.",
-    "그는 어려움에 처한 사람들을 돕는다.\n⇒ He helps people in need."
+    "그녀는 한국의 독립을 위해 일본에 맞서 싸우기도 했다.\n⇒ She also fought for Japan for Korea's independence.",
+    "그는 항상 어려움에 처한 사람들을 도우려고 노력한다.\n⇒ He always tries to help people in need."
    ],
    "answer": 4,
-   "explain": "④ '~에 맞서 싸우다'는 fight against ~.",
-   "source": "선생님 제작 문장 · L6 숙어(give up · be filled with · come true · fight against · in need)"
+   "explain": "④ '~에 맞서 싸우다'는 fight against ~. 원문: She also fought against Japan for Korea's independence.",
+   "source": "L6 본문 첫 번째 방·두 번째 방 · L6 UC A-2 · L6 Express Our Thoughts (④만 원문의 against를 for로 바꿈)"
   },
   {
    "no": 4,
@@ -112,11 +112,11 @@
    "points": 4,
    "stem": "위 대화를 읽고 답변할 수 <u>없는</u> 내용의 질문은?",
    "choices": [
-    "What is Minji reading?",
-    "Who is Jane Goodall?",
-    "How many years did Jane Goodall study chimpanzees?",
-    "What is Minji interested in?",
-    "What does Minji want to do?"
+    "Minji는 무엇을 읽고 있는가?",
+    "Jane Goodall은 누구인가?",
+    "Jane Goodall은 몇 년 동안 침팬지를 연구했는가?",
+    "Minji는 무엇에 관심이 있는가?",
+    "Minji는 무엇을 하고 싶어 하는가?"
    ],
    "answer": 3,
    "explain": "'many years'라고만 하고 정확한 햇수는 나오지 않는다.",
@@ -143,14 +143,14 @@
    "stem": "위 대화의 빈칸 ⓐ에 들어갈 말로 적절한 것은?",
    "choices": [
     "What does it look like?",
-    "Where did you lose it?",
-    "What color do you like?",
-    "Why did you leave it here?",
-    "How did you find it?"
+    "Where did you last see it?",
+    "What are you interested in?",
+    "When did you use it last?",
+    "Where did he hide the painting?"
    ],
    "answer": 1,
    "explain": "뒤에 색과 손잡이(생김새)를 답하므로 생김새를 묻는 말.",
-   "source": "L5 UC A-3"
+   "source": "L5 UC A-3 (선지는 모두 교과서 대화문 문장 그대로)"
   },
   {
    "no": 8,
@@ -240,20 +240,20 @@
    "box": "B: Sumin, what are you going to do this weekend?\nG: I'm going to visit the nature museum. ______________\nB: That sounds fun!\nG: Yeah, I'm so excited.",
    "choices": [
     "I'm really interested in animals.",
-    "I lost my backpack.",
+    "I lost my backpack!",
     "What does it look like?",
-    "I found it in the classroom.",
-    "I don't like museums."
+    "I found it and put it in the umbrella stand.",
+    "Most of all, I don't like chocolate cake."
    ],
    "answer": 1,
    "explain": "자연사 박물관에 가는 이유 → 동물에 관심.",
-   "source": "L6 Wrap Up 1"
+   "source": "L6 Wrap Up 1 (선지는 모두 교과서 대화문·본문 문장 그대로)"
   },
   {
    "no": 13,
    "points": 4,
    "stem": "빈칸 ⓐ, ⓑ에 들어갈 말로 적절하게 짝 지어진 것은?",
-   "box": "Last night, I heard someone ____ⓐ____ on the door. It was so dark ____ⓑ____ I couldn't see anything.",
+   "box": "• We heard someone ____ⓐ____ on the door.\n• The room was so dark ____ⓑ____ I couldn't see anything.",
    "choices": [
     "knock – that",
     "to knock – that",
@@ -262,8 +262,8 @@
     "knocking – what"
    ],
    "answer": 1,
-   "explain": "ⓐ 지각동사 heard + 목적어 + 동사원형(knock). ⓑ so dark that ~: 너무 어두워서 ~.",
-   "source": "선생님 제작 문장 · 학습지 L5 Grammar Points 2(지각동사) · L6 Grammar Points 2(so ~ that)"
+   "explain": "ⓐ 지각동사 heard + 목적어 + 동사원형(knock) (학습지: We heard someone knock on the door.). ⓑ so dark that ~: 너무 어두워서 ~ (학습지: The room was so dark that I couldn't see anything.).",
+   "source": "학습지 p.12 Grammar Practice 2 C-2 · p.25 Grammar Points 2 A-4 (문장 그대로, 빈칸만)"
   },
   {
    "no": 14,
@@ -271,11 +271,11 @@
    "stem": "글을 쓴 목적으로 가장 적절한 것은?",
    "box": "\"Step into history, one room at a time.\"\nSpecial Invitation\nDear Emily,\nWelcome to the Historia Museum! Come and see our special rooms. Each room will take you on an amazing journey back in time.\nBrave Pilot / Great Adventurer / Powerful Painter / Insect Lover\nWhen: October 1st ― 30th\nWhere: Historia Museum in Dream City",
    "choices": [
-    "To invite Emily to the Historia Museum",
-    "To explain the history of airplanes",
-    "To sell tickets for a concert",
-    "To introduce Kwon Ki-ok's life",
-    "To ask Emily to join a trip to Dream City"
+    "Emily를 Historia 박물관에 초대하려고",
+    "비행기의 역사를 설명하려고",
+    "콘서트 표를 팔려고",
+    "권기옥의 삶을 소개하려고",
+    "Emily에게 Dream City 여행에 함께 가자고 부탁하려고"
    ],
    "answer": 1,
    "explain": "Special Invitation — 박물관 초대장.",
@@ -341,11 +341,11 @@
     "They heard a girl laughing loudly.",
     "She felt the ground shake.",
     "Nick smelled something to burn in the kitchen.",
-    "Mom made me clean my room."
+    "She saw a cat climbing the tree."
    ],
    "answer": 4,
-   "explain": "④ 지각동사 smelled의 목적격 보어는 동사원형/현재분사(burn/burning). to부정사는 쓸 수 없다. ⑤는 사역동사 made + 동사원형(확장).",
-   "source": "선생님 제작 문장 · 학습지 L5 Grammar Points 2 + 사역동사 확장"
+   "explain": "④ 지각동사 smelled의 목적격 보어는 동사원형/현재분사(burn/burning). to부정사는 쓸 수 없다. (학습지 원문: Nick smelled something burning in the kitchen.)",
+   "source": "학습지 p.16 Grammar Points 2 예문 4개 · C-1 고친 문장 (④만 burning을 to burn으로 바꿈)"
   },
   {
    "no": 19,
@@ -468,8 +468,8 @@
   {
    "no": 25,
    "points": 5,
-   "stem": "(A)~(E)에 대해 바르게 설명한 사람만을 <보기>에서 <u>모두</u> 고른 것은?",
-   "box": "Yesterday, my mom baked a cake (A)<u>that</u> smelled delicious. She (B)<u>was wrapped</u> it in a box. I heard my brother (C)<u>open</u> the box. The cake (D)<u>was eaten</u> by him. Mom was (E)<u>so</u> angry <u>that</u> she called Ms. Jones.\n\n<보기>\nⓐ 수연 : (A)는 선행사 a cake가 사물이고 관계대명사절의 주어 역할이니까 that을 쓸 수 있어.\nⓑ 예지 : (B)는 She가 포장하는 동작을 직접 한 것이니까 wrapped로 고쳐야 해.\nⓒ 민수 : (C)는 지각동사 heard 뒤에 오니까 to open으로 고쳐야 해.\nⓓ 지현 : (D)는 케이크가 '먹힌' 것이니까 was eaten이 맞아.",
+   "stem": "다음 문장 (A)~(E)에 대해 바르게 설명한 사람만을 <보기>에서 <u>모두</u> 고른 것은?",
+   "box": "(A) The cake (A)<u>which</u> smells delicious is on the table.\n(B) She (B)<u>was wrapped</u> the cake in a box and put it on the table in the kitchen.\n(C) We heard someone (C)<u>knock</u> on the door.\n(D) The cookies (D)<u>were baked</u> by him.\n(E) She was (E)<u>so</u> hungry <u>that</u> she ordered two burgers.\n\n<보기>\nⓐ 수연 : (A)는 선행사 The cake가 사물이고 관계대명사절의 주어 역할이니까 which를 쓸 수 있어.\nⓑ 예지 : (B)는 She가 포장하는 동작을 직접 한 것이니까 wrapped로 고쳐야 해.\nⓒ 민수 : (C)는 지각동사 heard 뒤에 오니까 to knock으로 고쳐야 해.\nⓓ 지현 : (D)는 쿠키가 '구워진' 것이니까 were baked가 맞아.",
    "choices": [
     "ⓐ,ⓒ",
     "ⓑ,ⓓ",
@@ -479,8 +479,8 @@
    ],
    "inline": true,
    "answer": 4,
-   "explain": "(A) 선행사 a cake(사물) → that ○. (B) She가 포장한 주체 → wrapped(능동). (C) 지각동사 heard + 동사원형 open ○(민수 ✗). (D) 케이크가 먹힌 것 → was eaten ○. (E) so ~ that ○.",
-   "source": "선생님 제작 문장 · 학습지 L5 Grammar Points 1·2 · L6 Grammar Points 1·2"
+   "explain": "(A) 선행사 The cake(사물) → which ○. (B) She가 포장한 주체 → wrapped(능동) (본문 원문: She wrapped the cake in a box …). (C) 지각동사 heard + 동사원형 knock ○(민수 ✗). (D) 쿠키가 구워진 것 → were baked ○. (E) so ~ that ○.",
+   "source": "학습지 p.15 B-1 · L5 본문 도입(wrapped를 was wrapped로 바꿈) · 학습지 p.12 C-2 · p.21 A-1 · p.17 C-3"
   }
  ]
 }
