@@ -67,7 +67,7 @@ def text_width(t, pt=10):
     em = pt * 100
     w = 0
     for ch in t:
-        w += em if ord(ch) > 0x2000 else (0.3 * em if ch == ' ' else 0.55 * em)
+        w += em if ord(ch) > 0x2000 else (0.3 * em if ch == ' ' else 0.62 * em)
     return int(w)
 
 
@@ -437,7 +437,7 @@ class Hwpx:
         items = [it for it in spec['items'] if it.get('kind', 'mc') != 'group']
         n = len(items) + 1
         # 행마다 글이 몇 줄로 접히는지 어림해 높이를 정하고, 남는 높이는 고르게 나눠 한 쪽을 꽉 채운다
-        weights = [7, 18, 6, 26, 43]
+        weights = [6, 20, 5, 27, 42]
         col_w = [T['full_w'] * w / 100 - 400 for w in weights]
         line_h = int(950 * 1.3) + 120                      # 9.5pt · 행간 130 %
         pad = 200                                          # 위아래 안쪽 여백
@@ -453,13 +453,13 @@ class Hwpx:
             need.append(lines * line_h + pad)
         avail = 84189 - 2 * 1984 - 2268 - FOOTER_H - 5200   # 쪽 높이 − 여백 − 머리말·꼬리말 − 제목줄 − 안전 여유
         total = sum(need)
-        if total < avail:
-            extra = (avail - total) // n
+        if total < avail:                                  # 남는 높이의 절반만 나눠 준다 — 한글이 실제 접는 줄 수가 어림보다 많아도 넘치지 않게
+            extra = (avail - total) // (2 * n)
             need = [h + extra for h in need]
         pp_cell = self._line_spacing_copy(T['p_blank'], 130)
         pp_center = self._line_spacing_copy(T['p_center'], 130)
         t = self.table(n, 5, T['full_w'], inner=(200, 200, 100, 100), outer=(0, 0, 120, 0))
-        t.set_column_widths([7, 18, 6, 26, 43])
+        t.set_column_widths(weights)
         for r in range(n):
             for c in range(5):
                 tc = t.cell(r, c).element
