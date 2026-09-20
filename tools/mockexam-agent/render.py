@@ -17,23 +17,32 @@ BOX = "한 줄\\n두 줄" 또는 {"lines":[…], "title":"…"?}
 import html as H, json, re, sys
 from pathlib import Path
 
-FONT = '함초롬바탕'
-BODY_PT = 10
 MM = 7200 / 25.4                      # HWPUNIT per mm
-MARGIN_MM = 7                         # 상하좌우 여백
-HEAD_MM = 6                           # 머리말·꼬리말 띠 높이(여백 안쪽)
-PAGE = dict(paper_size='A4', margins_mm={'left': MARGIN_MM, 'right': MARGIN_MM, 'top': MARGIN_MM, 'bottom': MARGIN_MM,
-                                         'header': HEAD_MM, 'footer': HEAD_MM})
-COL_GAP_MM = 7
-BODY_W_MM = 210 - 2 * MARGIN_MM
-COL_W_MM = (BODY_W_MM - COL_GAP_MM) / 2
-BOX_W = int(COL_W_MM * MM) - 60                            # 한 단 너비의 상자
-FULL_W = int(BODY_W_MM * MM)
+TEMPLATE = Path(__file__).resolve().parent / 'assets' / 'exam-template.hwpx'   # 실제 학교 시험지 서식
 LOGO = Path(__file__).resolve().parent / 'assets' / 'orun-logo.png'
 BRAND = '옳은영어 ORUN ENGLISH'
+COPYRIGHT = '이 시험 문제의 저작권은 옳은영어(ORUN ENGLISH)에 있습니다. 무단 전송·복제·배포 시 저작권법에 의거하여 처벌될 수 있습니다.'
+NOTICES = ['○ 답안지(선택형 OMR카드)의 해당란에 인적 사항을 기재하고, 정답을 정확히 표시하시오.',
+           '○ 문항에 따라 배점이 다르니, 각 물음의 끝에 표시된 배점을 참고하시오.']
 CIRC = '①②③④⑤⑥⑦⑧⑨⑩'
 TOKEN = re.compile(r'(</?[ubi]>)')
 NS = {'hp': 'http://www.hancom.co.kr/hwpml/2011/paragraph'}
+HP = '{%s}' % NS['hp']
+# 서식 파일 안의 모양 id — 서식(exam-template.hwpx)을 바꾸면 여기도 맞춘다
+T = dict(
+    p_body=0,       # 발문·지문: 양쪽 정렬 160 %
+    p_choice=10,    # 선지: 내어쓰기 1276
+    p_blank=3,      # 빈 줄
+    p_right=2,      # 오른쪽 정렬 (➡ 다음 쪽에 계속)
+    p_center=6,     # 표 안 가운데
+    c_body=0,       # 맑은 고딕 10
+    c_bold=13,      # 맑은 고딕 10 굵게 (묶음 지시문)
+    c_eng=8,        # 바탕 10 (영어 지문)
+    c_small=10,     # 맑은 고딕 9.5 (안내문·정답표)
+    c_cell=1,       # 맑은 고딕 10.5 굵게 (표 안)
+    bf_box=2,       # 실선 0.12 mm 사방
+    col_w=25441, col_gap=1276, full_w=52158,
+)
 
 
 def box_lines(box):
@@ -62,6 +71,10 @@ def title_of(spec):
     return spec.get('title') or f"{spec['school']} {spec['grade']}학년 {spec['term']}학기 {spec['exam']}"
 
 
+def header_of(spec):
+    return f"{spec.get('year', 2026)}학년도 {spec['term']}학기 {spec['exam']}"
+
+
 def subtitle_of(spec):
     s = spec.get('subject', '영어')
     r = f" · {spec['range']}" if spec.get('range') else ''
@@ -79,71 +92,51 @@ def stem_no(it):
 
 # ──────────────────────────────── HWPX ────────────────────────────────
 class Hwpx:
-    """spec → HWPX. 판형: A4 · 여백 7 mm · 머리말(시험명 / 옳은영어) · 꼬리말 쪽번호 ·
-    제목 띠(제목 + 로고·반/번호/이름) · 본문 2단(실선) · 함초롬바탕 10pt · 왼쪽 정렬 130 %."""
+    """실제 학교 시험지 HWPX(assets/exam-template.hwpx)를 열어 머리말·꼬리말·정보표·안내문을 채우고
+    본문 자리에 문항을 넣는다. 글꼴·여백·단·테두리는 서식 파일의 것을 그대로 쓴다."""
 
     def __init__(self):
         from hwpx.document import HwpxDocument
-        self.doc = HwpxDocument.new()
-        self.doc.page.setup(**PAGE)
+        self.doc = HwpxDocument.open(str(TEMPLATE))
+        self.sec = self.doc.sections[0]
         st = self.doc.styles
-        R = lambda **k: st.ensure_run(font=FONT, **k)
+        R = lambda base, **k: st.ensure_run(base_char_pr_id=base, **k)
         self.cp = {
-            'base': R(size=BODY_PT), 'b': R(size=BODY_PT, bold=True), 'u': R(size=BODY_PT, underline=True),
-            'i': R(size=BODY_PT, italic=True), 'ub': R(size=BODY_PT, bold=True, underline=True),
-            'title': R(size=15, bold=True), 'sub': R(size=9), 'small': R(size=8), 'brand': R(size=8, bold=True),
-            'head': R(size=8), 'key': R(size=12, bold=True), 'tiny': R(size=3),
+            'base': str(T['c_body']), 'b': R(T['c_body'], bold=True), 'u': R(T['c_body'], underline=True),
+            'i': R(T['c_body'], italic=True), 'ub': R(T['c_body'], bold=True, underline=True),
+            'e': str(T['c_eng']), 'eb': R(T['c_eng'], bold=True), 'eu': R(T['c_eng'], underline=True),
+            'ei': R(T['c_eng'], italic=True), 'eub': R(T['c_eng'], bold=True, underline=True),
+            'small': str(T['c_small']), 'smallb': R(T['c_small'], bold=True), 'grp': str(T['c_bold']),
         }
-        self.border = st.ensure_border_fill(border_color='#000000', border_width='0.12 mm')
-        self.noborder = st.ensure_border_fill(border_color='#000000', border_width='0.12 mm', active_borders=[])
-        # 문단 모양은 시험용 문단에 만들어 두고 id 만 쓴다 (index 로 매번 찾으면 어긋난다)
-        self.pp = {}
-        for name, kw in {
-            'body': dict(alignment='LEFT', line_spacing_percent=130),
-            'cell': dict(alignment='LEFT', line_spacing_percent=125),
-            'stem': dict(alignment='LEFT', line_spacing_percent=130, spacing_before_pt=4, keep_with_next=True,
-                         indent_left_mm=4.5, first_line_indent_mm=-4.5),
-            'choice': dict(alignment='LEFT', line_spacing_percent=130, indent_left_mm=4.5, first_line_indent_mm=-4.5),
-            'choice2': dict(alignment='LEFT', line_spacing_percent=130, indent_left_mm=8, first_line_indent_mm=0),
-            'group': dict(alignment='LEFT', line_spacing_percent=130, spacing_before_pt=5, keep_with_next=True),
-            'center': dict(alignment='CENTER', line_spacing_percent=120),
-            'right': dict(alignment='RIGHT', line_spacing_percent=120),
-            'gap': dict(alignment='LEFT', line_spacing_percent=100),
-            'ans': dict(alignment='LEFT', line_spacing_percent=150, spacing_before_pt=1),
-            'head': dict(alignment='LEFT', line_spacing_percent=110,
-                         tab_stops=[{'pos_mm': BODY_W_MM, 'type': 'RIGHT'}], bottom_border=True, border_color='#000000'),
-        }.items():
-            probe = self.doc.add_paragraph('x')
-            st.apply_paragraph_format(paragraph_index=self.doc.paragraphs.index(probe), **kw)
-            self.pp[name] = probe.para_pr_id_ref
-            probe.remove()
 
-    def cpid(self, f):
-        if f.get('u') and f.get('b'):
-            return self.cp['ub']
-        return self.cp['u'] if f.get('u') else self.cp['b'] if f.get('b') else self.cp['i'] if f.get('i') else self.cp['base']
+    # ── 글자 모양 고르기 ──
+    def cpid(self, f, eng=False):
+        k = ('ub' if f.get('u') and f.get('b') else 'u' if f.get('u') else 'b' if f.get('b') else 'i' if f.get('i') else 'base')
+        if eng:
+            k = {'base': 'e', 'b': 'eb', 'u': 'eu', 'i': 'ei', 'ub': 'eub'}[k]
+        return self.cp[k]
 
-    def para(self, text='', *, cp=None, pp='body', target=None, **attrs):
-        """target 이 없으면 본문, 있으면 표 칸(첫 문단이 비어 있으면 그것을 쓴다)."""
+    # ── 문단 ──
+    def para(self, text='', *, pp=None, cp=None, eng=False, target=None, **attrs):
+        pp = T['p_body'] if pp is None else pp
         if target is None:
-            p = self.doc.add_paragraph('', char_pr_id_ref=cp or self.cp['base'], para_pr_id_ref=self.pp[pp],
-                                       include_run=False, **attrs)
+            p = self.doc.add_paragraph('', para_pr_id_ref=pp, char_pr_id_ref=cp or self.cp['base'], include_run=False, **attrs)
         else:
             first = target.paragraphs[0] if target.paragraphs else None
             if first is not None and not first.text and not first.element.xpath('.//*[local-name()="tbl" or local-name()="pic" or local-name()="ctrl"]'):
                 p = first
                 for r in list(first.element.findall('hp:run', NS)):
                     first.element.remove(r)
-                p.element.set('paraPrIDRef', str(self.pp[pp]))
+                p.element.set('paraPrIDRef', str(pp))
             else:
-                p = target.add_paragraph('', char_pr_id_ref=cp or self.cp['base'], para_pr_id_ref=self.pp[pp])
+                p = target.add_paragraph('', para_pr_id_ref=pp, char_pr_id_ref=cp or self.cp['base'])
         for t, f in (runs_of(text) if text else []):
-            p.add_run(t, char_pr_id_ref=cp if cp else self.cpid(f))
+            p.add_run(t, char_pr_id_ref=cp if cp else self.cpid(f, eng))
         return p
 
-    def table(self, rows, cols, width, *, border=True, inner=(300, 300, 120, 120), outer=(0, 0, 0, 220), pp='body'):
-        t = self.doc.add_table(rows, cols, width=width, border_fill_id_ref=self.border if border else self.noborder,
-                               para_pr_id_ref=self.pp[pp])
+    def table(self, rows, cols, width, *, inner=(141, 141, 85, 85), outer=(0, 0, 0, 0), pp=None):
+        t = self.doc.add_table(rows, cols, width=width, border_fill_id_ref=T['bf_box'],
+                               para_pr_id_ref=T['p_body'] if pp is None else pp)
         el = t.element
         for tag, v in (('hp:inMargin', inner), ('hp:outMargin', outer)):
             m = el.find(tag, NS)
@@ -153,94 +146,144 @@ class Hwpx:
         for r in range(rows):
             for c in range(cols):
                 t.cell(r, c).element.find('hp:cellSz', NS).set('height', '1000')
+                t.cell(r, c).element.find('hp:subList', NS).set('vertAlign', 'TOP')
         return t
 
-    def box(self, box, width=BOX_W):
+    def box(self, box, width=None):
         title, lines = box_lines(box)
         if not lines and not title:
             return
-        t = self.table(1, 1, width, pp='cell')
+        t = self.table(1, 1, width or T['col_w'], inner=(200, 200, 100, 100), outer=(0, 0, 60, 120))
         c = t.cell(0, 0)
-        c.element.find('hp:subList', NS).set('vertAlign', 'TOP')
-        for ln in ([f'<b>{title}</b>'] if title else []) + lines:
-            self.para(ln, target=c, pp='cell')
+        if title:
+            self.para(f'<b>{title}</b>', target=c, eng=True)
+        for ln in lines:
+            self.para(ln, target=c, eng=True)
 
     def choices(self, it):
         if it.get('choices_table'):
             ct = it['choices_table']
             rows = ([ct['header']] if ct.get('header') else []) + ct['rows']
-            t = self.table(len(rows), len(rows[0]), int(min(BOX_W, len(rows[0]) * 12 * MM)), inner=(200, 200, 60, 60),
-                           pp='center')
+            t = self.table(len(rows), len(rows[0]), int(min(T['col_w'], len(rows[0]) * 11 * MM)),
+                           inner=(150, 150, 40, 40), pp=T['p_center'])
             for r, row in enumerate(rows):
                 for cidx, v in enumerate(row):
-                    self.para(str(v), target=t.cell(r, cidx), pp='center')
+                    self.para(str(v), target=t.cell(r, cidx), pp=T['p_center'])
             return
         ch = it.get('choices', [])
         if it.get('inline'):
-            self.para('   '.join(f'{CIRC[i]} {c}' for i, c in enumerate(ch)), pp='choice')
+            self.para('　'.join(f'{CIRC[i]} {c}' for i, c in enumerate(ch)), pp=T['p_choice'])
         else:
             for i, c in enumerate(ch):
                 lines = c.split('\n')
-                self.para(f'{CIRC[i]} {lines[0]}', pp='choice')
+                self.para(f'{CIRC[i]} {lines[0]}', pp=T['p_choice'])
                 for extra in lines[1:]:
-                    self.para(extra, pp='choice2')
+                    self.para('　 ' + extra, pp=T['p_choice'])
 
-    def masthead(self, spec):
-        """제목 띠: 왼쪽 제목·부제, 오른쪽 로고 + 옳은영어 + 반/번호/이름."""
-        t = self.table(1, 2, FULL_W, border=False, inner=(120, 120, 60, 60), outer=(0, 0, 0, 150))
-        t.set_column_widths([64, 36])
-        left, right = t.cell(0, 0), t.cell(0, 1)
-        self.para(title_of(spec), cp=self.cp['title'], pp='body', target=left)
-        self.para(subtitle_of(spec), cp=self.cp['sub'], pp='body', target=left)
-        p = self.para('', pp='right', target=right)
+    # ── 서식의 머리말·꼬리말·정보표 채우기 ──
+    @staticmethod
+    def _set_text(p_el, text):
+        """문단의 첫 run 글자만 바꾸고 나머지 run 은 지운다(글자 모양 유지)."""
+        runs = p_el.findall('hp:run', NS)
+        t = runs[0].find('hp:t', NS)
+        t.text = text
+        for extra in list(t):
+            t.remove(extra)
+        for r in runs[1:]:
+            p_el.remove(r)
+
+    def _fill_template(self, spec, n_mc, n_essay):
+        from lxml import etree
+        sec = self.sec.element
+        hdr = sec.find('.//hp:header', NS)
+        self._set_text(hdr.find('.//hp:p', NS), header_of(spec))
+        ftr = sec.find('.//hp:footer', NS)
+        fps = ftr.findall('.//hp:p', NS)
+        self._set_text(fps[0], COPYRIGHT)
+        # 꼬리말 둘째 줄: "1학년 영어 과목 <tab> n / 전체 <tab> 옳은영어" — run 을 직접 짠다
+        cp = fps[1].find('hp:run', NS).get('charPrIDRef')
+        for r in list(fps[1].findall('hp:run', NS)):
+            fps[1].remove(r)
+
+        def run(text=None, ctrl=None):
+            r = etree.SubElement(fps[1], HP + 'run'); r.set('charPrIDRef', cp)
+            if ctrl is not None:
+                r.append(ctrl)
+            else:
+                t = etree.SubElement(r, HP + 't')
+                if text == '\t':
+                    tab = etree.SubElement(t, HP + 'tab'); tab.set('width', '0'); tab.set('leader', '0'); tab.set('type', '0')
+                else:
+                    t.text = text
+            return r
+
+        def autonum(kind):
+            c = etree.Element(HP + 'ctrl')
+            a = etree.SubElement(c, HP + 'autoNum'); a.set('num', '0'); a.set('numType', kind)
+            f = etree.SubElement(a, HP + 'autoNumFormat')
+            for k, v in (('type', 'DIGIT'), ('userChar', ''), ('prefixChar', ''), ('suffixChar', ''), ('supscript', '0')):
+                f.set(k, v)
+            return c
+        run(f"{spec['grade']}학년  {spec.get('subject', '영어')} 과목"); run('\t'); run(ctrl=autonum('PAGE')); run(' / ')
+        run(ctrl=autonum('TOTAL_PAGE')); run('\t'); run(BRAND)
+        # 정보표 (3×6) — 칸 주소로 채운다
+        tbl = list(self.doc.tables.all)[0]
+        cells = {(int(tc.find('hp:cellAddr', NS).get('colAddr')), int(tc.find('hp:cellAddr', NS).get('rowAddr'))): tc
+                 for tc in tbl.element.findall('.//hp:tc', NS)}
+
+        def cell_text(addr, text):
+            self._set_text(cells[addr].find('.//hp:p', NS), text)
+        cell_text((2, 0), f"{spec.get('subject', '영어')}  {spec['term']}학기  {spec['exam']}")
+        cell_text((3, 0), f"총 문항수 : {n_mc + n_essay}문항")
+        cell_text((0, 1), str(spec['grade']))
+        cell_text((1, 1), f"{spec.get('set', 1):02d}")
+        cell_text((4, 1), f"{n_mc}문항")
+        cell_text((4, 2), f"{n_essay}문항")
+        cell_text((2, 2), f"{spec['school']}  동형 모의고사 {spec.get('set', 1)}회" + (f"  ({spec['range']})" if spec.get('range') else ''))
+        # 쪽수 칸: 전체 쪽수 자동
+        pg = cells[(5, 1)].find('.//hp:p', NS)
+        self._set_text(pg, '')
+        r0 = pg.find('hp:run', NS)
+        r0.remove(r0.find('hp:t', NS)); r0.append(autonum('TOTAL_PAGE'))
+        # 로고: 정보표 왼쪽 위 '학년' 칸 대신 코드 칸 위 라벨 자리… → 시행 정보 칸 앞에 작은 로고
         if LOGO.exists():
             bid = self.doc.add_image(LOGO.read_bytes(), 'png')
-            p.add_picture(bid, width=int(7 * MM), height=int(7 * MM))
-            p.add_run('  ', char_pr_id_ref=self.cp['brand'])
-        p.add_run(BRAND, char_pr_id_ref=self.cp['brand'])
-        self.para(f"{spec['grade']}학년 (    )반 (    )번  이름 (            )", cp=self.cp['sub'], pp='right', target=right)
-        # 띠 아래 굵은 선
-        rule = self.table(1, 1, FULL_W, border=False, inner=(0, 0, 0, 0), outer=(0, 0, 0, 120))
-        self.doc.styles  # noqa
-        rule.set_cell_border_fill(0, 0, self.doc.styles.ensure_border_fill(border_color='#000000', border_width='0.4 mm',
-                                                                              active_borders=['bottom']))
-        rule.element.find('hp:sz', NS).set('height', '200')
-        rule.cell(0, 0).element.find('hp:cellSz', NS).set('height', '200')
-        self.para('', cp=self.cp['tiny'], pp='gap', target=rule.cell(0, 0))
-
-    def header_footer(self, spec):
-        from lxml import etree
-        d = self.doc
-        h = d.page.set_header(text=f"{title_of(spec)}  ·  {subtitle_of(spec)}")
-        hp = h.element.find('.//hp:p', NS)
-        hp.set('paraPrIDRef', str(self.pp['head']))
-        for r in hp.findall('hp:run', NS):
-            r.set('charPrIDRef', str(self.cp['head']))
-        t = hp.find('.//hp:t', NS)
-        tab = etree.SubElement(t, '{%s}tab' % NS['hp'])
-        tab.tail = BRAND
-        d.page.set_page_number(target='footer', align='CENTER', prefix='- ', suffix=' -')
-        f = d.sections[0].element.find('.//hp:footer', NS)
-        for pn in f.findall('.//hp:pageNum', NS):          # 쪽번호 컨트롤이 겹쳐 두 번 찍히지 않게
-            run = pn.getparent().getparent()
-            run.getparent().remove(run)
-        for r in f.findall('.//hp:run', NS):
-            r.set('charPrIDRef', str(self.cp['head']))
+            p2 = cells[(2, 2)].find('.//hp:p', NS)
+            first = p2.find('hp:run', NS)
+            r = etree.Element(HP + 'run'); r.set('charPrIDRef', first.get('charPrIDRef'))
+            p2.insert(list(p2).index(first), r)
+            try:
+                pic = list(self.doc.tables.all)[0].cell(2, 2).paragraphs[0].add_picture(bid, width=int(5.5 * MM), height=int(5.5 * MM))
+                # add_picture 는 새 run 을 끝에 붙인다 → 맨 앞으로 옮긴다
+                prun = pic.element.getparent()
+                p2.remove(prun); p2.insert(list(p2).index(r), prun)
+                p2.remove(r)
+                sp = etree.SubElement(prun, HP + 't'); sp.text = '  '
+            except Exception as e:      # 로고를 못 넣어도 시험지는 나간다
+                p2.remove(r)
+                print('logo skipped:', e, file=sys.stderr)
+        # 안내문 뒤 본문(견본 문항) 제거 — 서식의 5번째 문단부터
+        for p in list(sec.findall('hp:p', NS))[3:]:
+            sec.remove(p)
 
     def build(self, spec, key=True):
-        d = self.doc
-        self.header_footer(spec)
-        self.masthead(spec)
-        p = self.para('', cp=self.cp['tiny'], pp='gap')
-        d.page.set_columns(2, paragraph=p, same_gap=int(COL_GAP_MM * MM), separator_type='SOLID',
-                           separator_width='0.12 mm', separator_color='#000000')
-        for it in spec['items']:
+        items = spec['items']
+        n_mc = sum(1 for it in items if it.get('kind', 'mc') == 'mc')
+        n_es = sum(1 for it in items if it.get('kind') == 'essay')
+        self._fill_template(spec, n_mc, n_es)
+        first = True
+        for it in items:
             k = it.get('kind', 'mc')
             if k == 'group':
-                self.para(f"{it['label']} {it['direction']}", cp=self.cp['b'], pp='group')
+                self.para('', pp=T['p_blank'])
+                self.para(f"{it['label']} {it['direction']}", cp=self.cp['grp'], pp=T['p_blank'])
                 self.box(it.get('box'))
+                first = True
                 continue
-            self.para(f"{stem_no(it)} {it['stem']}{points_str(it)}", pp='stem')
+            if not first:
+                self.para('', pp=T['p_blank'])
+            first = False
+            self.para(f"{stem_no(it)} {it['stem']}{points_str(it)}")
             if it.get('box'):
                 self.box(it['box'])
             if k == 'mc':
@@ -249,29 +292,31 @@ class Hwpx:
                 if it.get('condition'):
                     self.box({'title': '<조건>', 'lines': it['condition']})
                 for i in range(it.get('answer_lines', 1)):
-                    self.para(('→ ' if i == 0 else '   ') + '_' * 40, pp='ans')
+                    self.para(('→ ' if i == 0 else '　 ') + '_' * 38, pp=T['p_choice'])
+        self.para('', pp=T['p_blank'])
+        self.para('※ 수고하셨습니다.', pp=T['p_right'], cp=self.cp['grp'])
         if key:
             self.answer_key(spec)
 
     def answer_key(self, spec):
-        p = self.doc.add_paragraph('', char_pr_id_ref=self.cp['key'], para_pr_id_ref=self.pp['body'],
-                                   include_run=False, pageBreak='1')
+        p = self.doc.add_paragraph('', para_pr_id_ref=T['p_blank'], char_pr_id_ref=self.cp['grp'], include_run=False, pageBreak='1')
         self.doc.page.set_columns(1, paragraph=p)
-        p.add_run(f"{title_of(spec)} — {subtitle_of(spec)}   정답 및 해설", char_pr_id_ref=self.cp['key'])
+        p.add_run(f"{title_of(spec)} — {subtitle_of(spec)}   정답 및 해설", char_pr_id_ref=self.cp['grp'])
         items = [it for it in spec['items'] if it.get('kind', 'mc') != 'group']
-        t = self.table(len(items) + 1, 5, FULL_W, inner=(200, 200, 60, 60), outer=(0, 0, 150, 0), pp='cell')
+        t = self.table(len(items) + 1, 5, T['full_w'], inner=(150, 150, 40, 40), outer=(0, 0, 150, 0))
         t.set_column_widths([7, 18, 6, 26, 43])
         for c, h in enumerate(['번호', '정답', '배점', '출처', '해설']):
-            self.para(h, cp=self.cp['b'], target=t.cell(0, c), pp='center')
+            self.para(h, cp=self.cp['smallb'], target=t.cell(0, c), pp=T['p_center'])
         for r, it in enumerate(items, 1):
             ans = it.get('answer', '')
             if isinstance(ans, int):
                 ans = CIRC[ans - 1]
             for c, v in enumerate([str(it['no']), str(ans), str(it.get('points', '')), it.get('source', ''), it.get('explain', '')]):
-                self.para(v, cp=self.cp['sub'], target=t.cell(r, c), pp='center' if c in (0, 2) else 'cell')
+                self.para(v, cp=self.cp['small'], target=t.cell(r, c), pp=T['p_center'] if c in (0, 2) else T['p_blank'])
 
     def save(self, out):
         Path(out).parent.mkdir(parents=True, exist_ok=True)
+        self.sec.remove_layout_caches()
         rep = self.doc.validate()
         if rep.issues:
             print('validate:', rep.issues[:5], file=sys.stderr)
@@ -281,33 +326,36 @@ class Hwpx:
 
 # ──────────────────────────────── HTML 미리보기 ────────────────────────────────
 CSS = """
-@page { size: A4; margin: 7mm; }
-body { font-family: 'Noto Serif KR','Noto Serif CJK KR','Nanum Myeongjo',serif; font-size: 10pt; line-height: 1.3; margin:0; color:#000 }
-.hdr { display:flex; justify-content:space-between; font-size:8pt; border-bottom:1px solid #000; padding-bottom:1px; margin-bottom:3px }
-.mast { display:flex; justify-content:space-between; align-items:flex-end; border-bottom:2.5px solid #000; padding-bottom:3px; margin-bottom:4px }
-.mast h1 { font-size:15pt; margin:0 }
-.mast .sub { font-size:9pt }
-.mast .r { text-align:right; font-size:9pt }
-.mast .r img { height:7mm; vertical-align:middle; margin-right:4px }
-.mast .r .brand { font-weight:bold; font-size:8pt }
-.cols { column-count:2; column-gap:7mm; column-rule:1px solid #000; column-fill:auto }
-.q { break-inside:avoid; margin-top:4pt }
-.q .stem { padding-left:4.5mm; text-indent:-4.5mm }
-.grp { font-weight:bold; margin-top:5pt; break-after:avoid }
-.box { border:1px solid #000; padding:1.5px 3px; margin:2px 0 3px 0; break-inside:avoid; line-height:1.25 }
+@page { size: A4; margin: 15mm 13mm 17mm 13mm; }
+body { font-family: 'Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif; font-size: 10pt; line-height: 1.6; margin:0; color:#000 }
+.eng { font-family: 'Batang','Noto Serif KR','Noto Serif CJK KR',serif }
+.hdr { font-size:13pt; font-weight:bold; border-bottom:2px solid #000; padding-bottom:2px; margin-bottom:6px }
+table.info { border-collapse:collapse; width:100%; table-layout:fixed; margin-bottom:4px; font-weight:bold; font-size:10.5pt }
+table.info td { border:1px solid #000; text-align:center; padding:1px 3px; height:7.5mm }
+table.info td.big { font-size:16pt } table.info td.t { font-size:14pt } table.info td.pg { font-size:18pt }
+table.info td.d { font-size:11pt } table.info td.d img { height:5.5mm; vertical-align:middle; margin-right:6px }
+.notice { font-size:9.5pt; line-height:1.5; padding-left:4mm; text-indent:-4mm }
+.notice.last { border-bottom:1.5px solid #000; padding-bottom:2px; margin-bottom:6px }
+.cols { column-count:2; column-gap:4.5mm; column-fill:auto }
+.q { break-inside:avoid; margin-top:10pt; text-align:justify }
+.grp { font-weight:bold; margin-top:10pt; break-after:avoid }
+.box { border:1px solid #000; padding:2px 5px; margin:2px 0 3px 0; break-inside:avoid; text-align:justify }
 .box .t { font-weight:bold }
 .ch div { padding-left:4.5mm; text-indent:-4.5mm }
 .ch div.x { padding-left:8mm; text-indent:0 }
-.ch.inline div { display:inline; margin-right:10px; padding:0; text-indent:0 }
+.ch.inline div { display:inline; margin-right:12px; padding:0; text-indent:0 }
 table.ct { border-collapse:collapse; margin:2px 0 3px; }
-table.ct td, table.ct th { border:1px solid #000; padding:0 7px; font-weight:normal; text-align:center }
+table.ct td, table.ct th { border:1px solid #000; padding:0 7px; font-weight:normal; text-align:center; line-height:1.4 }
 .ans { margin:1px 0 }
+.end { text-align:right; font-weight:bold; margin-top:10pt }
 .key { break-before:page; column-count:1 }
-.key h2 { font-size:12pt; margin:0 0 4px }
-.key table { border-collapse:collapse; width:100%; font-size:9pt; table-layout:fixed }
+.key h2 { font-size:10pt; margin:0 0 4px }
+.key table { border-collapse:collapse; width:100%; font-size:9.5pt; table-layout:fixed; line-height:1.4 }
 .key th:nth-child(1){width:7%} .key th:nth-child(2){width:18%} .key th:nth-child(3){width:6%} .key th:nth-child(4){width:26%}
 .key td, .key th { border:1px solid #000; padding:1px 4px; vertical-align:top }
-.ftr { position:fixed; bottom:0; left:0; right:0; text-align:center; font-size:8pt }
+.ftr { position:fixed; bottom:-9mm; left:0; right:0; font-size:8.5pt; font-weight:bold; border-top:2px solid #000; padding-top:2px }
+.ftr .l { display:flex; justify-content:space-between; font-size:10.5pt } .ftr .c { text-align:center }
+.frame { position:fixed; top:-11mm; bottom:-13mm; left:-5mm; right:-5mm; border:1px solid #000; pointer-events:none }
 """
 
 
@@ -322,18 +370,24 @@ def html_box(box):
     if not lines and not title:
         return ''
     body = (f'<div class="t">{inline(title)}</div>' if title else '') + ''.join(f'<div>{inline(l)}</div>' for l in lines)
-    return f'<div class="box">{body}</div>'
+    return f'<div class="box eng">{body}</div>'
 
 
 def build_html(spec, key=True):
-    out = [f'<!doctype html><meta charset="utf-8"><title>{H.escape(title_of(spec))}</title><style>{CSS}</style>']
     import base64
+    items = spec['items']
+    n_mc = sum(1 for it in items if it.get('kind', 'mc') == 'mc')
+    n_es = sum(1 for it in items if it.get('kind') == 'essay')
     logo = ('data:image/png;base64,' + base64.b64encode(LOGO.read_bytes()).decode()) if LOGO.exists() else ''
-    out.append(f'<div class="hdr"><span>{H.escape(title_of(spec))} &nbsp;·&nbsp; {H.escape(subtitle_of(spec))}</span><span>{BRAND}</span></div>')
-    out.append(f'<div class="mast"><div><h1>{H.escape(title_of(spec))}</h1><div class="sub">{H.escape(subtitle_of(spec))}</div></div>'
-               f'<div class="r"><div>{("<img src=" + chr(34) + logo + chr(34) + ">") if logo else ""}<span class="brand">{BRAND}</span></div>'
-               f'<div>{spec["grade"]}학년 (&nbsp;&nbsp;&nbsp;&nbsp;)반 (&nbsp;&nbsp;&nbsp;&nbsp;)번 &nbsp;이름 (&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</div></div></div><div class="cols">')
-    for it in spec['items']:
+    subj = spec.get('subject', '영어')
+    out = [f'<!doctype html><meta charset="utf-8"><title>{H.escape(title_of(spec))}</title><style>{CSS}</style>']
+    out.append(f'<div class="hdr">{H.escape(header_of(spec))}</div>')
+    out.append(f'<table class="info"><colgroup><col style="width:10%"><col style="width:10%"><col style="width:41%"><col style="width:14%"><col style="width:12%"><col style="width:13%"></colgroup>'
+               f'<tr><td>학년</td><td>과목<br>코드</td><td rowspan="2" class="t">{H.escape(subj)}&nbsp; {spec["term"]}학기&nbsp; {H.escape(spec["exam"])}</td><td colspan="2">총 문항수 : {n_mc + n_es}문항</td><td>쪽수</td></tr>'
+               f'<tr><td rowspan="2" class="big">{spec["grade"]}</td><td rowspan="2" class="big">{spec.get("set", 1):02d}</td><td>선&nbsp; 택&nbsp; 형</td><td>{n_mc}문항</td><td rowspan="2" class="pg">4</td></tr>'
+               f'<tr><td class="d">{("<img src=" + chr(34) + logo + chr(34) + ">") if logo else ""}{H.escape(spec["school"])}&nbsp; 동형 모의고사 {spec.get("set", 1)}회' + (f'&nbsp; ({H.escape(spec["range"])})' if spec.get('range') else '') + f'</td><td>서&nbsp; 답&nbsp; 형</td><td>{n_es}문항</td></tr></table>')
+    out.append(f'<div class="notice">{NOTICES[0]}</div><div class="notice last">{NOTICES[1]}</div><div class="cols">')
+    for it in items:
         k = it.get('kind', 'mc')
         if k == 'group':
             out.append(f'<div class="grp">{inline(it["label"] + " " + it["direction"])}</div>' + html_box(it.get('box')))
@@ -357,13 +411,14 @@ def build_html(spec, key=True):
             if it.get('condition'):
                 out.append(html_box({'title': '<조건>', 'lines': it['condition']}))
             for i in range(it.get('answer_lines', 1)):
-                out.append('<div class="ans">' + ('→ ' if i == 0 else '&nbsp;&nbsp;&nbsp;') + '_' * 40 + '</div>')
+                out.append('<div class="ans">' + ('→ ' if i == 0 else '&nbsp;&nbsp;&nbsp;') + '_' * 38 + '</div>')
         out.append('</div>')
-    out.append('</div><div class="ftr">- 1 -</div>')
+    out.append('<div class="end">※ 수고하셨습니다.</div></div>')
+    out.append(f'<div class="ftr"><div class="c">{COPYRIGHT}</div><div class="l"><span>{spec["grade"]}학년&nbsp; {H.escape(subj)} 과목</span><span>1 / 4</span><span>{BRAND}</span></div></div><div class="frame"></div>')
     if key:
-        items = [it for it in spec['items'] if it.get('kind', 'mc') != 'group']
-        out.append(f'<div class="key"><h2>정답 및 해설 — {H.escape(subtitle_of(spec))}</h2><table><tr><th>번호</th><th>정답</th><th>배점</th><th>출처</th><th>해설</th></tr>')
-        for it in items:
+        ks = [it for it in items if it.get('kind', 'mc') != 'group']
+        out.append(f'<div class="key"><h2>{H.escape(title_of(spec))} — {H.escape(subtitle_of(spec))} &nbsp; 정답 및 해설</h2><table><tr><th>번호</th><th>정답</th><th>배점</th><th>출처</th><th>해설</th></tr>')
+        for it in ks:
             ans = it.get('answer', '')
             ans = CIRC[ans - 1] if isinstance(ans, int) else ans
             out.append(f'<tr><td>{it["no"]}</td><td>{inline(str(ans))}</td><td>{it.get("points","")}</td><td>{inline(it.get("source",""))}</td><td>{inline(it.get("explain",""))}</td></tr>')
