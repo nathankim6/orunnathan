@@ -22,9 +22,10 @@ TEMPLATE = Path(__file__).resolve().parent / 'assets' / 'exam-template.hwpx'   #
 LOGO = Path(__file__).resolve().parent / 'assets' / 'orun-logo.png'
 BRAND = '옳은영어 ORUN ENGLISH'
 BODY_FONT = '맑은 고딕'               # 발문·선지 글꼴(서식과 같게)
-BOX_FONT = '함초롬바탕'                # 지문·대화 상자 글꼴
+BOX_FONT = '맑은 고딕'                # 지문·대화 상자 글꼴
+USE_LOGO = False                      # 정보표에 로고를 넣을지
 ROW_H = 1750                          # 정보표 한 행 높이(HWPUNIT)
-FOOTER_H = 3600                       # 꼬리말 영역 높이
+FOOTER_H = 4300                       # 꼬리말 영역 높이
 COPYRIGHT = '이 시험 문제의 저작권은 옳은영어(ORUN ENGLISH)에 있습니다. 무단 전송·복제·배포 시 저작권법에 의거하여 처벌될 수 있습니다.'
 NOTICES = ['○ 답안지(선택형 OMR카드)의 해당란에 인적 사항을 기재하고, 정답을 정확히 표시하시오.',
            '○ 문항에 따라 배점이 다르니, 각 물음의 끝에 표시된 배점을 참고하시오.']
@@ -39,6 +40,8 @@ T = dict(
     p_blank=3,      # 빈 줄
     p_right=2,      # 오른쪽 정렬 (➡ 다음 쪽에 계속)
     p_center=6,     # 표 안 가운데
+    p_header=4,     # 머리말 (아래 0.4 mm 선)
+    p_copyright=5,  # 꼬리말 저작권 줄 (위 0.4 mm 선)
     c_body=0,       # 맑은 고딕 10
     c_bold=13,      # 맑은 고딕 10 굵게 (묶음 지시문)
     c_eng=8,        # 바탕 10 (영어 지문)
@@ -177,13 +180,13 @@ class Hwpx:
             return
         ch = it.get('choices', [])
         if it.get('inline'):
-            self.para('　'.join(f'{CIRC[i]} {c}' for i, c in enumerate(ch)), pp=T['p_choice'])
+            self.para('　'.join(f'{CIRC[i]} {c}' for i, c in enumerate(ch)))
         else:
             for i, c in enumerate(ch):
                 lines = c.split('\n')
-                self.para(f'{CIRC[i]} {lines[0]}', pp=T['p_choice'])
+                self.para(f'{CIRC[i]} {lines[0]}')
                 for extra in lines[1:]:
-                    self.para('　 ' + extra, pp=T['p_choice'])
+                    self.para('　 ' + extra)
 
     # ── 서식의 머리말·꼬리말·정보표 채우기 ──
     @staticmethod
@@ -244,14 +247,15 @@ class Hwpx:
         cell_text((1, 1), f"{spec.get('set', 1):02d}")
         cell_text((4, 1), f"{n_mc}문항")
         cell_text((4, 2), f"{n_essay}문항")
-        cell_text((2, 2), f"{spec['school']}  동형 모의고사 {spec.get('set', 1)}회" + (f"  ({spec['range']})" if spec.get('range') else ''))
+        pub = f"{spec['publisher']}  " if spec.get('publisher') else ''
+        cell_text((2, 2), f"{pub}{spec['school']}  동형 모의고사 {spec.get('set', 1)}회" + (f"  ({spec['range']})" if spec.get('range') else ''))
         # 쪽수 칸: 전체 쪽수 자동
         pg = cells[(5, 1)].find('.//hp:p', NS)
         self._set_text(pg, '')
         r0 = pg.find('hp:run', NS)
         r0.remove(r0.find('hp:t', NS)); r0.append(autonum('TOTAL_PAGE'))
         # 로고: 정보표 왼쪽 위 '학년' 칸 대신 코드 칸 위 라벨 자리… → 시행 정보 칸 앞에 작은 로고
-        if LOGO.exists():
+        if USE_LOGO and LOGO.exists():
             bid = self.doc.add_image(LOGO.read_bytes(), 'png')
             p2 = cells[(2, 2)].find('.//hp:p', NS)
             first = p2.find('hp:run', NS)
@@ -274,6 +278,14 @@ class Hwpx:
         for tc in tbl.element.findall('.//hp:tc', NS):
             span = int(tc.find('hp:cellSpan', NS).get('rowSpan'))
             tc.find('hp:cellSz', NS).set('height', str(span * ROW_H))
+        HH = {'hh': 'http://www.hancom.co.kr/hwpml/2011/head', 'hc': 'http://www.hancom.co.kr/hwpml/2011/core'}
+        hx = self.doc.headers[0].element
+        for pid, prev, next_, top, bottom in ((str(T['p_header']), 0, 0, 0, 200), (str(T['p_copyright']), 350, 120, 160, 100)):
+            pr = hx.find('.//hh:paraPr[@id="%s"]' % pid, HH)
+            pr.find('hh:margin/hc:prev', HH).set('value', str(prev))
+            pr.find('hh:margin/hc:next', HH).set('value', str(next_))
+            b = pr.find('hh:border', HH)
+            b.set('offsetTop', str(top)); b.set('offsetBottom', str(bottom))
         # 꼬리말 두 줄이 겹치지 않게 꼬리말 영역을 넓힌다
         sec.find('.//hp:pagePr/hp:margin', NS).set('footer', str(FOOTER_H))
 

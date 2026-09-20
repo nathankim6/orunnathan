@@ -31,7 +31,7 @@ HTML/PDF 미리보기는 같은 구성을 흉내 낸 것이라 줄 바꿈·쪽 �
 ## spec JSON
 
 ```json
-{"school":"동양중학교","grade":1,"term":2,"exam":"중간고사","subject":"영어","set":1,"range":"Lesson 5~6",
+{"school":"동양중학교","grade":1,"term":2,"exam":"중간고사","subject":"영어","set":1,"range":"Lesson 5~6","publisher":"동아(윤정미)",
  "items":[
   {"no":1,"points":2,"stem":"발문","box":"상자 첫 줄\n둘째 줄","choices":["…","…","…","…","…"],
    "answer":2,"explain":"해설","source":"L5 Watch and Talk A-3"},
