@@ -143,8 +143,9 @@ class Hwpx:
             p.add_run(t, char_pr_id_ref=cp if cp else self.cpid(f, eng))
         return p
 
-    def table(self, rows, cols, width, *, inner=(141, 141, 85, 85), outer=(0, 0, 0, 0), pp=None):
-        t = self.doc.add_table(rows, cols, width=width, border_fill_id_ref=T['bf_box'],
+    def table(self, rows, cols, width, *, inner=(141, 141, 85, 85), outer=(0, 0, 0, 0), pp=None, border=True):
+        bf = T['bf_box'] if border else self.doc.styles.ensure_border_fill(border_color='#000000', border_width='0.12 mm', active_borders=[])
+        t = self.doc.add_table(rows, cols, width=width, border_fill_id_ref=bf,
                                para_pr_id_ref=T['p_body'] if pp is None else pp)
         el = t.element
         for tag, v in (('hp:inMargin', inner), ('hp:outMargin', outer)):
@@ -156,6 +157,7 @@ class Hwpx:
             for c in range(cols):
                 t.cell(r, c).element.find('hp:cellSz', NS).set('height', '1000')
                 t.cell(r, c).element.find('hp:subList', NS).set('vertAlign', 'TOP')
+                t.cell(r, c).element.set('borderFillIDRef', str(bf))
         return t
 
     def box(self, box, width=None):
@@ -173,8 +175,7 @@ class Hwpx:
         if it.get('choices_table'):
             ct = it['choices_table']
             rows = ([ct['header']] if ct.get('header') else []) + ct['rows']
-            t = self.table(len(rows), len(rows[0]), int(min(T['col_w'], len(rows[0]) * 11 * MM)),
-                           inner=(150, 150, 40, 40), pp=T['p_center'])
+            t = self.table(len(rows), len(rows[0]), T['col_w'], inner=(150, 150, 40, 40), pp=T['p_center'], border=False)
             for r, row in enumerate(rows):
                 for cidx, v in enumerate(row):
                     self.para(str(v), target=t.cell(r, cidx), pp=T['p_center'])
@@ -315,6 +316,7 @@ class Hwpx:
             self.para(f"{stem_no(it)} {it['stem']}{points_str(it)}")
             if it.get('box'):
                 self.box(it['box'])
+                self.para('', pp=T['p_blank'])
             if k == 'mc':
                 self.choices(it)
             else:
