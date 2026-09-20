@@ -1,519 +1,553 @@
 {
-"school": "윤중중학교",
-"grade": 1,
-"term": 2,
-"exam": "중간고사",
-"subject": "영어",
-"set": 2,
-"range": "Lesson 4 문법 · Lesson 5 · Lesson 6 대화문",
-"publisher": "천재(소영순)",
-"year": 2026,
-"items": [
-{
-"no": 1,
-"points": 3,
-"stem": "짝지어진 대화가 어색한 것은?",
-"choices": [
-"A: What's the matter, Bomin?\nB: I'm too nervous about tomorrow's basketball game.",
-"A: These bags look pretty. Did you make them?\nB: Yes, I made them with old jeans and shirts.",
-"A: I'm worried about my little brother. He plays video games too much.\nB: Why don't you play with him outside? That can help.",
-"A: What are you doing, Janet?\nB: I'm making a dress.",
-"A: I'm worried about Jisu. She is sick in the hospital.\nB: Then you should learn a programming language first."
-],
-"answer": 5,
-"explain": "아픈 친구가 걱정된다는 말에 '프로그래밍 언어를 먼저 배워야 한다'(L6 Review 1-2의 대답)는 어울리지 않는다.",
-"source": "L5 Listen and Talk A-3·B, Review 1-1 · L6 Listen and Talk A-2, Review 1-1·1-2"
-},
-{
-"kind": "group",
-"label": "[2~3]",
-"direction": "다음 대화를 읽고 물음에 답하시오.",
-"box": "A: Look! My robot dog can make ⓐ<u>sounds</u>.\nB: That's ⓑ<u>amazing</u>! How can it do that?\nA: I programmed it. I'm ⓒ<u>interested</u> in making robots.\nB: I want to make robots, too. What ⓓ<u>should</u> I do?\nA: Then you should ⓔ<u>forget</u> a programming language first."
-},
-{
-"no": 2,
-"points": 3,
-"stem": "대화의 내용과 일치하는 것은?",
-"choices": [
-"B made the robot dog.",
-"A's robot dog can make sounds.",
-"A is interested in making dresses.",
-"B doesn't want to make robots.",
-"A tells B to buy a robot dog first."
-],
-"answer": 2,
-"explain": "My robot dog can make sounds. ① A가 프로그램을 짰다 ③ 로봇 만들기 ④ B도 만들고 싶다 ⑤ 프로그래밍 언어를 배우라.",
-"source": "L6 Review 1-2"
-},
-{
-"no": 3,
-"points": 3,
-"stem": "밑줄 친 어휘 ⓐ~ⓔ 중 대화의 흐름상 어색한 것은?",
-"choices": [
-"ⓐ",
-"ⓑ",
-"ⓒ",
-"ⓓ",
-"ⓔ"
-],
-"inline": true,
-"answer": 5,
-"explain": "로봇을 만들려면 프로그래밍 언어를 '배워야' 한다 → learn. 원문: Then you should learn a programming language first.",
-"source": "L6 Review 1-2 (ⓔ forget 은 learn 을 일부러 바꾼 것)"
-},
-{
-"no": 4,
-"points": 3,
-"stem": "글의 내용과 일치하는 것은?",
-"box": "Hello, my worry doll. I'm worried about the talent show tomorrow. I practiced a lot, but I'm nervous. I want to sing well in front of my friends. Worry doll, please take away my worries.",
-"choices": [
-"The boy is worried about a math test.",
-"The talent show was yesterday.",
-"The boy didn't practice at all.",
-"The boy wants to sing well in front of his friends.",
-"The boy will dance at the talent show."
-],
-"answer": 4,
-"explain": "I want to sing well in front of my friends. ① 장기 자랑 ② 내일 ③ 연습을 많이 했다 ⑤ 노래.",
-"source": "L5 Enjoy the Clip B"
-},
-{
-"no": 5,
-"points": 3,
-"stem": "대화의 밑줄 친 ⓐ~ⓔ 중 흐름상 어색한 문장은?",
-"box": "B: What are you doing, Janet?\nG: ⓐ<u>I'm making a dress.</u>\nB: Making a dress? ⓑ<u>It's so cute, but it's so small.</u>\nG: Yeah. ⓒ<u>It's for my dog, Mimi.</u> ⓓ<u>I'm interested in animal clothes.</u> ⓔ<u>I want to be a movie director.</u>",
-"choices": [
-"ⓐ",
-"ⓑ",
-"ⓒ",
-"ⓓ",
-"ⓔ"
-],
-"inline": true,
-"answer": 5,
-"explain": "동물 옷에 관심이 있다면서 영화감독이 되고 싶다는 것은 모순. 원문: I want to be an animal clothes designer.",
-"source": "L6 Review 1-1 (ⓔ movie director 는 animal clothes designer 를 일부러 바꾼 것)"
-},
-{
-"kind": "group",
-"label": "[6~7, 서술형1]",
-"direction": "다음 글을 읽고 물음에 답하시오.",
-"box": "El took the last pot. It had the smallest plant with no flowers. \"I feel just like you, little plant,\" said El.\nMr. Diaz looked at El and said, \"That's an aster plant. In time, it'll grow and have beautiful flowers.\"\n\"But it's just a little green plant,\" said El. She was not so sure.\n\"(A)<u>네가 나의 백일홍 식물을 가져도 돼</u>,\" Jo said to El, \"I'll be at my grandma's all summer.\"\n\"I'll (B)<u>plant</u> my aster and your zinnia side by side,\" El said.\n\"They'll be good friends ― just like us!\" said Jo. El smiled."
-},
-{
-"kind": "essay",
-"no": "서술형1",
-"points": 4,
-"stem": "밑줄 친 (A)의 우리말과 일치하도록 영작하시오. (단, 빈칸에는 한 단어씩만 쓸 수 있음.) (각 2점)",
-"box": "→ You ________ ________ my zinnia plant",
-"answer_lines": 1,
-"answer": "can have",
-"explain": "can(허가: ~해도 된다) + have. You can have my zinnia plant.",
-"source": "L5 본문 18"
-},
-{
-"no": 6,
-"points": 3,
-"stem": "윗글을 통해 답할 수 <u>없는</u> 질문은?",
-"choices": [
-"What did El's pot have?",
-"What kind of plant was in El's pot?",
-"Where will Jo be all summer?",
-"How many flowers did Jo's zinnia have?",
-"What will El do with the aster and the zinnia?"
-],
-"answer": 4,
-"explain": "Jo의 백일홍에 핀 꽃의 수는 글에 없다. ① the smallest plant with no flowers ② an aster plant ③ at her grandma's ⑤ plant them side by side.",
-"source": "L5 본문 12~20"
-},
-{
-"no": 7,
-"points": 4,
-"stem": "윗글의 밑줄 친 (B)와 같은 의미로 쓰인 것은?",
-"choices": [
-"The <u>plant</u> is growing well.",
-"Let's <u>plant</u> a tree in the garden.",
-"That's an aster <u>plant</u>.",
-"Children water the <u>plants</u> every morning.",
-"There is a small <u>plant</u> on my desk."
-],
-"answer": 2,
-"explain": "I'll plant my aster 의 plant 는 '심다'(동사). ②만 '심다', 나머지는 '식물'(명사).",
-"source": "L5 어휘 다의어 plant (①② 어휘 자료 예문 · 나머지 제작 문장)"
-},
-{
-"kind": "group",
-"label": "[8~9]",
-"direction": "다음 글을 읽고 물음에 답하시오.",
-"box": "Do you know the yummy dish, <i>dwaejigukbap</i>, from Busan? ⓐ<u>The name itself means \"pork, soup, and rice.\"</u> ⓑ<u>It comes with various side dishes like salted shrimp, onions, noodles, <i>kimchi</i>, and garlic.</u> ⓒ<u>It started in the 1950s during the Korean War as a simple food for the rich.</u> It became more and more popular. ⓓ<u>People in Busan love eating <i>dwaejigukbap</i> because it's very tasty and filling.</u> ⓔ<u>Why don't you try <i>dwaejigukbap</i> when you visit Busan?</u> This delicious meal will not disappoint you.",
-"source": "학습지 More Reading"
-},
-{
-"no": 8,
-"points": 3,
-"stem": "밑줄 친 ⓐ~ⓔ 중 글의 흐름상 내용이 <u>어색한</u> 것은?",
-"choices": [
-"ⓐ",
-"ⓑ",
-"ⓒ",
-"ⓓ",
-"ⓔ"
-],
-"inline": true,
-"answer": 3,
-"explain": "한국전쟁 중 '가난한 사람들(the poor)'을 위한 간단한 음식으로 시작했다. the rich 는 흐름에 맞지 않는다.",
-"source": "학습지 4-9 More Reading (Busan) (ⓒ rich 는 poor 를 일부러 바꾼 것)"
-},
-{
-"no": 9,
-"points": 3,
-"stem": "윗글의 내용과 일치하는 것은?",
-"choices": [
-"돼지국밥이라는 이름은 '돼지, 국, 밥'을 뜻한다.",
-"돼지국밥은 반찬 없이 나온다.",
-"돼지국밥은 1950년대 이후 인기가 줄었다.",
-"부산 사람들은 돼지국밥이 맛이 없다고 생각한다.",
-"돼지국밥은 한국전쟁 이전에 시작되었다."
-],
-"answer": 1,
-"explain": "The name itself means \"pork, soup, and rice.\" ② 여러 반찬과 함께 ③ 점점 더 인기 ④ 아주 좋아한다 ⑤ 한국전쟁 중.",
-"source": "학습지 4-9 More Reading (Busan)"
-},
-{
-"no": 10,
-"points": 3,
-"stem": "<보기> 속 문장의 빈칸에 쓸 수 <u>없는</u> 것은?",
-"box": {
-"title": "<보기>",
-"lines": [
-"We ____________ to move to Busan."
-]
-},
-"choices": [
-"decided",
-"wanted",
-"hoped",
-"planned",
-"finished"
-],
-"inline": true,
-"answer": 5,
-"explain": "finish 는 동명사만 목적어로 취한다(finished moving). decide·want·hope·plan 은 to부정사 목적어.",
-"source": "학습지 4-7 (5) · 4-8 B-2"
-},
-{
-"kind": "group",
-"label": "[11~12, 서술형2]",
-"direction": "다음 글을 읽고 물음에 답하시오.",
-"box": "I read ⓐ<u>a book <i>The Little Prince</i></u>. In the book, a prince and a fox became good friends. The fox felt happier than before because of ⓑ<u>their</u> friendship. ⓒ<u>It</u> is the best book for me because ⓓ<u>it</u> has a touching story. After I read ⓔ<u>this book</u>, I decided to be a good friend."
-},
-{
-"no": 11,
-"points": 3,
-"stem": "밑줄 친 ⓐ~ⓔ 중 지칭하는 대상이 <u>다른</u> 하나는?",
-"choices": [
-"ⓐ",
-"ⓑ",
-"ⓒ",
-"ⓓ",
-"ⓔ"
-],
-"inline": true,
-"answer": 2,
-"explain": "ⓑ their = a prince and a fox. 나머지는 모두 책 The Little Prince.",
-"source": "L5 Present Your Ideas (In Writing S1)"
-},
-{
-"no": 12,
-"points": 4,
-"stem": "윗글의 제목으로 가장 적절한 것은?",
-"choices": [
-"How to Write a Touching Story",
-"The Best Book for Me: <i>The Little Prince</i>",
-"A Fox Who Lived Alone",
-"Why the Prince Left His Planet",
-"My Best Friend at School"
-],
-"answer": 2,
-"explain": "글쓴이가 읽은 책 '어린 왕자'가 자신에게 최고의 책인 까닭을 말하는 글.",
-"source": "L5 Present Your Ideas (In Writing S1)"
-},
-{
-"kind": "essay",
-"no": "서술형2",
-"points": 6,
-"stem": "다음은 윗글을 요약한 글이다. 빈칸에 들어갈 말을 본문에서 찾아 문장을 완성하시오. (단, 빈칸에는 한 단어씩만 쓸 수 있음.) (각 2점)",
-"box": "In <i>The Little Prince</i>, a prince and a (1)________ became good friends. The writer thinks it is the (2)________ book because it has a (3)________ story.",
-"answer_lines": 3,
-"answer": "(1) fox (2) best (3) touching",
-"explain": "a prince and a fox / the best book for me / a touching story.",
-"source": "L5 Present Your Ideas (In Writing S1)"
-},
-{
-"no": 13,
-"points": 4,
-"stem": "다음 중 어법상 옳은 문장은?",
-"choices": [
-"My uncle is wise than my brother.",
-"The front yard is prettier than the backyard.",
-"The milk is hoter than the water now.",
-"The green bag is expensivest bag in this shop.",
-"The post office is closest than the bakery."
-],
-"answer": 2,
-"explain": "pretty → prettier(y→i+er). ① wiser ③ hotter ④ the most expensive ⑤ closer.",
-"source": "학습지 5-7 A 1~6"
-},
-{
-"kind": "group",
-"label": "[14, 서술형3]",
-"direction": "다음 글을 읽고 물음에 답하시오.",
-"box": "El ⓐ______ the flowers in her garden. It was growing season. (A)<u>여름 내내, 그녀는 그것들을 돌보았다.</u>\nOn the last day of summer, Jo came to El's house. El and Jo ran to the garden and suddenly stopped. Something was DIFFERENT! There ⓑ______ flowers on the aster ... and El grew TALLER, TOO!"
-},
-{
-"kind": "essay",
-"no": "서술형3",
-"points": 5,
-"stem": "<보기>에 주어진 단어를 활용하여 밑줄 친 (A)를 한 문장의 영어로 쓰시오.",
-"box": {
-"title": "<보기>",
-"lines": [
-"all,   long,   care"
-]
-},
-"answer_lines": 2,
-"answer": "All summer long, she cared for them.",
-"explain": "all summer long(여름 내내) + care for(돌보다)의 과거형 cared for.",
-"source": "L5 본문 23"
-},
-{
-"no": 14,
-"points": 3,
-"stem": "빈칸 ⓐ, ⓑ에 들어갈 말이 알맞게 연결된 것은?",
-"choices_table": {
-"header": [
-"",
-"ⓐ",
-"ⓑ"
-],
-"rows": [
-[
-"①",
-"planted",
-"was"
-],
-[
-"②",
-"planted",
-"were"
-],
-[
-"③",
-"plants",
-"were"
-],
-[
-"④",
-"planted",
-"is"
-],
-[
-"⑤",
-"plant",
-"was"
-]
-]
-},
-"answer": 2,
-"explain": "과거의 이야기 → planted. There + were + 복수 명사(flowers).",
-"source": "L5 본문 21·27 · 학습지 5-4 (27 was/were)"
-},
-{
-"kind": "group",
-"label": "[15~17, 서술형4]",
-"direction": "다음 글을 읽고 물음에 답하시오.",
-"box": "On June 8, friends come together ⓐ<u>to</u> celebrate their friendship ― it's the Best Friends Day in the United States. (A) 1935, the US Congress officially chose this day ⓑ<u>for</u> honor the beauty of friendship. (A) the past, people used to exchange gifts and cards to express their gratitude ⓒ<u>for</u> their friends. Nowadays, this special day is getting popular, especially ⓓ<u>with</u> the rise of social media. People show the joy of friendship with their online posts and pictures.\nOn July 30, we have International Friendship Day. (A) 2011, the United Nations chose this day to celebrate the friendships ⓔ<u>between</u> people, countries, and cultures.\nPeople around the world might celebrate their friendship on different days and in different ways. However, we universally understand the value of friendship. Come together and celebrate the beauty of your friendship.",
-"source": "학습지 More Reading"
-},
-{
-"no": 15,
-"points": 3,
-"stem": "빈칸 (A)에 공통으로 쓸 수 있는 말은?",
-"choices": [
-"in",
-"on",
-"at",
-"for",
-"during"
-],
-"inline": true,
-"answer": 1,
-"explain": "In 1935 / In the past / In 2011 — 연도·시기 앞 in.",
-"source": "학습지 5-8 More Reading (Friendship)"
-},
-{
-"no": 16,
-"points": 3,
-"stem": "밑줄 친 ⓐ~ⓔ 중 그 쓰임이 적절하지 <u>않은</u> 것은?",
-"choices": [
-"ⓐ",
-"ⓑ",
-"ⓒ",
-"ⓓ",
-"ⓔ"
-],
-"inline": true,
-"answer": 2,
-"explain": "'~하기 위해'는 to + 동사원형: chose this day to honor. ⓐ to celebrate ⓒ gratitude for ⓓ with the rise ⓔ between people.",
-"source": "학습지 5-8 More Reading (Friendship) (ⓑ for 는 to 를 일부러 바꾼 것)"
-},
-{
-"no": 17,
-"points": 3,
-"stem": "윗글의 내용과 일치하지 <u>않는</u> 것은?",
-"choices": [
-"미국에서는 6월 8일에 친구들이 모여 우정을 기념한다.",
-"과거에 사람들은 선물과 카드를 주고받았다.",
-"요즘 이 특별한 날은 소셜 미디어와 함께 인기를 얻고 있다.",
-"국제 우정의 날은 1935년에 만들어졌다.",
-"사람들은 각기 다른 날과 방식으로 우정을 기념할 수 있다."
-],
-"answer": 4,
-"explain": "국제 우정의 날은 2011년 국제연합이 정했다. 1935년은 미국 의회의 '가장 친한 친구의 날'.",
-"source": "학습지 5-8 More Reading (Friendship)"
-},
-{
-"kind": "essay",
-"no": "서술형4",
-"points": 4,
-"stem": "주어진 질문에 대한 답을 윗글에서 찾아 영어로 완성하시오.",
-"box": "Q. Who chose July 30 as International Friendship Day?\n\n→ ______________________________ chose the day in 2011.",
-"answer_lines": 1,
-"answer": "The United Nations",
-"explain": "In 2011, the United Nations chose this day.",
-"source": "학습지 5-8 More Reading (Friendship)"
-},
-{
-"no": 18,
-"points": 4,
-"stem": "다음 글에서 묘사하는 내용과 일치하는 문장은?",
-"box": "There are three girls in the Kim family. Sora is younger than Mina. Yuna is older than Mina.",
-"choices": [
-"Sora is the oldest of the three.",
-"Mina is the youngest of all.",
-"Yuna is the oldest of the three girls.",
-"Mina is older than Yuna.",
-"Sora is older than Mina."
-],
-"answer": 3,
-"explain": "Yuna > Mina > Sora. Yuna 가 가장 나이가 많다.",
-"source": "학습지 5-7 B 유형 (관계 문장은 제작)"
-},
-{
-"no": 19,
-"points": 4,
-"stem": "<보기>의 문장 중 어법상 옳은 문장<u>만</u>을 있는 대로 고른 것은?",
-"box": {
-"title": "<보기>",
-"lines": [
-"ⓐ I finished reading the book.",
-"ⓑ Mom hates to make Gimbap.",
-"ⓒ Would you mind to open the door?",
-"ⓓ Burj Khalifa is the tallest building in the world.",
-"ⓔ Today's weather is badder than yesterday's.",
-"ⓕ He stopped wash the dishes."
-]
-},
-"choices": [
-"ⓐ, ⓒ",
-"ⓐ, ⓑ, ⓓ",
-"ⓑ, ⓓ, ⓔ",
-"ⓐ, ⓓ, ⓕ",
-"ⓒ, ⓔ, ⓕ"
-],
-"inline": true,
-"answer": 2,
-"explain": "ⓒ mind opening ⓔ worse ⓕ stopped washing. hate 는 to부정사·동명사 둘 다 가능.",
-"source": "학습지 4-8 E-2·C-2·E-4 · 4-7 (5) 2 · 5-7 C-3 · 5-10 13번 ⑤"
-},
-{
-"no": 20,
-"points": 3,
-"stem": "<보기>에 주어진 문장이 들어갈 위치로 적절한 것은?",
-"box": {
-"lines": [
-"<보기>  Jo grew TALLER!",
-"",
-"El and Jo were the smallest students in the class. (A) They were always together. (B) They even watered the plants together in the class because they could not reach the pots alone. (C) However, in the spring, something was DIFFERENT. (D) Jo was taller than El, so Jo could water the plants alone. (E) El felt smaller every day."
-]
-},
-"choices": [
-"(A)",
-"(B)",
-"(C)",
-"(D)",
-"(E)"
-],
-"inline": true,
-"answer": 4,
-"explain": "'무언가 달라졌다' 뒤에 Jo grew TALLER! 가 오고, 이어서 Jo was taller than El 로 이어진다.",
-"source": "L5 본문 1~7"
-},
-{
-"kind": "essay",
-"no": "서술형5",
-"points": 4,
-"stem": "<보기>에 주어진 대화가 자연스럽도록 빈칸에 알맞은 말을 넣어 대화를 완성하시오.",
-"box": {
-"title": "<보기>",
-"lines": [
-"A: ______________________________?",
-"B: I'm worried about the exam tomorrow.",
-"A: I feel the same way, but we studied hard. Let's stay positive."
-]
-},
-"condition": [
-"1) 반드시 포함되어야 할 단어: matter",
-"2) 상대방의 감정이나 상태를 묻는 표현을 사용할 것",
-"3) 3단어로 쓸 것"
-],
-"answer_lines": 1,
-"answer": "What's the matter?",
-"explain": "감정·상태 묻기: What's the matter? (What's / the / matter 3단어)",
-"source": "학습지 5-1 (5과 듣기·말하기 주요 표현 1)"
-},
-{
-"kind": "essay",
-"no": "서술형6",
-"points": 6,
-"stem": "다음은 Sue의 일기이다. 괄호 안에 주어진 동사를 알맞은 형태로 빈칸에 써넣어 글을 완성하시오. (단, 빈칸에는 한 단어씩만 쓸 수 있음.) (각 2점)",
-"box": "We arrived at Nuri Animal Center at 9. First, we fed the dogs there. Then, we (1)________ (clean) the place. Then it (2)________ (be) lunchtime. After lunch, we walked the dogs in the park. Then, we (3)________ (wash) them.",
-"answer_lines": 3,
-"answer": "(1) cleaned (2) was (3) washed",
-"explain": "과거시제 — clean-cleaned, be(it)-was, wash-washed.",
-"source": "학습지 4-6 C (그림 대신 괄호 안 동사 원형)"
-},
-{
-"kind": "essay",
-"no": "서술형7",
-"points": 6,
-"stem": "<보기>에 주어진 단어를 활용하여 교과 과목에 대한 현재 자신의 생각을 한 문장으로 영작하시오.",
-"box": {
-"title": "<보기>",
-"lines": [
-"(A) English, Math, Science, Korean, Music",
-"(B) interesting, easy, difficult, exciting"
-]
-},
-"condition": [
-"1) (A)에서 2개의 교과 과목을 선택하여 비교하는 한 문장으로 영작할 것",
-"2) (B)에서 주어진 단어 중 하나를 선택하여 자신의 생각을 표현할 것",
-"3) 문장은 5단어 이상으로 구성할 것"
-],
-"answer_lines": 2,
-"answer": "(예시) Math is more difficult than science to me. / English is easier than Korean for me.",
-"explain": "비교급 + than. -y → -ier(easier), 3음절 이상은 more + 원급.",
-"source": "학습지 5-5 Practice 5"
-}
-]
+ "school": "윤중중학교",
+ "grade": 1,
+ "term": 2,
+ "exam": "중간고사",
+ "subject": "영어",
+ "set": 2,
+ "range": "Lesson 4 문법 · Lesson 5 · Lesson 6 대화문",
+ "publisher": "천재(소영순)",
+ "year": 2026,
+ "items": [
+  {
+   "no": 1,
+   "points": 3,
+   "stem": "짝지어진 대화가 어색한 것은?",
+   "choices": [
+    "A: What's the matter, Bomin?\nB: I'm too nervous about tomorrow's basketball game.",
+    "A: These bags look pretty. Did you make them?\nB: Yes, I made them with old jeans and shirts.",
+    "A: I'm worried about my little brother. He plays video games too much.\nB: Why don't you play with him outside? That can help.",
+    "A: What are you doing, Janet?\nB: I'm making a dress.",
+    "A: I'm worried about Jisu. She is sick in the hospital.\nB: Then you should learn a programming language first."
+   ],
+   "answer": 5,
+   "explain": "아픈 친구가 걱정된다는 말에 '프로그래밍 언어를 먼저 배워야 한다'(L6 Review 1-2의 대답)는 어울리지 않는다.",
+   "source": "L5 Listen and Talk A-3·B, Review 1-1 · L6 Listen and Talk A-2, Review 1-1·1-2"
+  },
+  {
+   "kind": "group",
+   "label": "[2~3]",
+   "direction": "다음 대화를 읽고 물음에 답하시오.",
+   "box": "A: Look! My robot dog can make ⓐ<u>sounds</u>.\nB: That's ⓑ<u>amazing</u>! How can it do that?\nA: I programmed it. I'm ⓒ<u>interested</u> in making robots.\nB: I want to make robots, too. What ⓓ<u>should</u> I do?\nA: Then you should ⓔ<u>forget</u> a programming language first."
+  },
+  {
+   "no": 2,
+   "points": 3,
+   "stem": "대화의 내용과 일치하는 것은?",
+   "choices": [
+    "B가 로봇 개를 만들었다.",
+    "A의 로봇 개는 소리를 낼 수 있다.",
+    "A는 드레스 만들기에 관심이 있다.",
+    "B는 로봇을 만들고 싶어 하지 않는다.",
+    "A는 B에게 로봇 개를 먼저 사라고 말한다."
+   ],
+   "answer": 2,
+   "explain": "My robot dog can make sounds. ① I programmed it(A가 프로그램을 짰다) ③ making robots ④ I want to make robots, too ⑤ learn a programming language first. 대화 일치는 학습지 5-10 10번처럼 우리말 선지.",
+   "source": "L6 Review 1-2"
+  },
+  {
+   "no": 3,
+   "points": 3,
+   "stem": "밑줄 친 어휘 ⓐ~ⓔ 중 대화의 흐름상 어색한 것은?",
+   "choices": [
+    "ⓐ",
+    "ⓑ",
+    "ⓒ",
+    "ⓓ",
+    "ⓔ"
+   ],
+   "inline": true,
+   "answer": 5,
+   "explain": "로봇을 만들려면 프로그래밍 언어를 '배워야' 한다 → learn. 원문: Then you should learn a programming language first.",
+   "source": "L6 Review 1-2 (ⓔ forget 은 learn 을 일부러 바꾼 것)"
+  },
+  {
+   "no": 4,
+   "points": 3,
+   "stem": "윗글의 소년에 관해 일치하는 것은?",
+   "box": "Hello, my worry doll. I'm worried about the talent show tomorrow. I practiced a lot, but I'm nervous. I want to sing well in front of my friends. Worry doll, please take away my worries.",
+   "choices": [
+    "수학 시험이 걱정된다.",
+    "장기 자랑은 어제였다.",
+    "연습을 전혀 하지 않았다.",
+    "친구들 앞에서 노래를 잘 부르고 싶어 한다.",
+    "장기 자랑에서 춤을 출 것이다."
+   ],
+   "answer": 4,
+   "explain": "I want to sing well in front of my friends. ① the talent show ② tomorrow ③ I practiced a lot ⑤ sing. 1인칭 글이라 학습지 5-11 15번(Maria)처럼 우리말 선지.",
+   "source": "L5 Enjoy the Clip B"
+  },
+  {
+   "no": 5,
+   "points": 3,
+   "stem": "대화의 밑줄 친 ⓐ~ⓔ 중 흐름상 어색한 문장은?",
+   "box": "B: What are you doing, Janet?\nG: ⓐ<u>I'm making a dress.</u>\nB: Making a dress? ⓑ<u>It's so cute, but it's so small.</u>\nG: Yeah. ⓒ<u>It's for my dog, Mimi.</u> ⓓ<u>I'm interested in animal clothes.</u> ⓔ<u>I want to be a writer.</u>",
+   "choices": [
+    "ⓐ",
+    "ⓑ",
+    "ⓒ",
+    "ⓓ",
+    "ⓔ"
+   ],
+   "inline": true,
+   "answer": 5,
+   "explain": "동물 옷에 관심이 있다면서 작가가 되고 싶다는 것은 모순. 원문: I want to be an animal clothes designer. (ⓔ 는 L6 Listen and Talk C 의 문장 I want to be a writer. 를 넣은 것)",
+   "source": "L6 Review 1-1 (ⓔ 는 원문 대신 L6 Listen and Talk C 문장을 넣은 것)"
+  },
+  {
+   "kind": "group",
+   "label": "[6~7, 서술형1]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": "El took the last pot. It had the smallest plant with no flowers. \"I feel just like you, little plant,\" said El.\nMr. Diaz looked at El and said, \"That's an aster plant. In time, it'll grow and have beautiful flowers.\"\n\"But it's just a little green plant,\" said El. She was not so sure.\n\"(A)<u>네가 나의 백일홍 식물을 가져도 돼</u>,\" Jo said to El, \"I'll be at my grandma's all summer.\"\n\"I'll (B)<u>plant</u> my aster and your zinnia side by side,\" El said.\n\"They'll be good friends ― just like us!\" said Jo. El smiled."
+  },
+  {
+   "kind": "essay",
+   "no": "서술형1",
+   "points": 4,
+   "stem": "밑줄 친 (A)의 우리말과 일치하도록 영작하시오. (단, 빈칸에는 한 단어씩만 쓸 수 있음.) (각 2점)",
+   "box": "→ You ________ ________ my zinnia plant",
+   "answer_lines": 1,
+   "answer": "can have",
+   "explain": "can(허가: ~해도 된다) + have. You can have my zinnia plant.",
+   "source": "L5 본문 18"
+  },
+  {
+   "no": 6,
+   "points": 3,
+   "stem": "윗글의 내용과 일치하는 것은?",
+   "choices": [
+    "El took the first pot.",
+    "It had the biggest plant with no flowers.",
+    "El's pot had colorful flowers.",
+    "Jo got an aster plant.",
+    "\"You can have my zinnia plant,\" Jo said to El."
+   ],
+   "answer": 5,
+   "explain": "\"You can have my zinnia plant,\" Jo said to El. ① the last pot ② the smallest plant ③④ 학습지 5-4 이해점검 Q3·Q4(둘 다 F). 선지는 본문·학습지 문장 그대로·한 단어만 바꾼 것.",
+   "source": "L5 본문 12~20 · 학습지 5-4 Quiz Q3·Q4"
+  },
+  {
+   "no": 7,
+   "points": 4,
+   "stem": "윗글의 밑줄 친 (B)와 같은 의미로 쓰인 것은?",
+   "choices": [
+    "The <u>plant</u> is growing well.",
+    "That's an aster <u>plant</u>.",
+    "It had the smallest <u>plant</u> with no flowers.",
+    "Let's <u>plant</u> a tree in the garden.",
+    "What is Jo's favorite <u>plant</u>?"
+   ],
+   "answer": 4,
+   "explain": "I'll plant my aster 의 plant 는 '심다'(동사). ④만 '심다', 나머지는 '식물'(명사). 선지: L5 어휘 다의어 예문 ①④ · 본문 16·13 · 학습지 5-11 18번 ③.",
+   "source": "L5 어휘 다의어 plant · 본문 13·16 · 학습지 5-11 18번"
+  },
+  {
+   "kind": "group",
+   "label": "[8~9]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": "Do you know the yummy dish, <i>dwaejigukbap</i>, from Busan? ⓐ<u>The name itself means \"pork, soup, and rice.\"</u> ⓑ<u>It comes with various side dishes like salted shrimp, onions, noodles, <i>kimchi</i>, and garlic.</u> ⓒ<u>It started in the 1950s during the Korean War as a simple food for the rich.</u> It became more and more popular. ⓓ<u>People in Busan love eating <i>dwaejigukbap</i> because it's very tasty and filling.</u> ⓔ<u>Why don't you try <i>dwaejigukbap</i> when you visit Busan?</u> This delicious meal will not disappoint you.",
+   "source": "학습지 More Reading"
+  },
+  {
+   "no": 8,
+   "points": 3,
+   "stem": "밑줄 친 ⓐ~ⓔ 중 글의 흐름상 내용이 <u>어색한</u> 것은?",
+   "choices": [
+    "ⓐ",
+    "ⓑ",
+    "ⓒ",
+    "ⓓ",
+    "ⓔ"
+   ],
+   "inline": true,
+   "answer": 3,
+   "explain": "한국전쟁 중 '가난한 사람들(the poor)'을 위한 간단한 음식으로 시작했다. the rich 는 흐름에 맞지 않는다.",
+   "source": "학습지 4-9 More Reading (Busan) (ⓒ rich 는 poor 를 일부러 바꾼 것)"
+  },
+  {
+   "no": 9,
+   "points": 3,
+   "stem": "윗글의 내용과 일치하는 것은?",
+   "choices": [
+    "돼지국밥이라는 이름은 '돼지, 국, 밥'을 뜻한다.",
+    "돼지국밥은 반찬 없이 나온다.",
+    "돼지국밥은 1950년대 이후 인기가 줄었다.",
+    "부산 사람들은 돼지국밥이 맛이 없다고 생각한다.",
+    "돼지국밥은 한국전쟁 이전에 시작되었다."
+   ],
+   "answer": 1,
+   "explain": "The name itself means \"pork, soup, and rice.\" ② 여러 반찬과 함께 ③ 점점 더 인기 ④ 아주 좋아한다 ⑤ 한국전쟁 중.",
+   "source": "학습지 4-9 More Reading (Busan)"
+  },
+  {
+   "no": 10,
+   "points": 3,
+   "stem": "<보기> 속 문장의 빈칸에 쓸 수 <u>없는</u> 것은?",
+   "box": {
+    "title": "<보기>",
+    "lines": [
+     "We ____________ to move to Busan."
+    ]
+   },
+   "choices": [
+    "decided",
+    "wanted",
+    "hoped",
+    "planned",
+    "finished"
+   ],
+   "inline": true,
+   "answer": 5,
+   "explain": "finish 는 동명사만 목적어로 취한다(finished moving). decide·want·hope·plan 은 to부정사 목적어.",
+   "source": "학습지 4-7 (5) · 4-8 B-2"
+  },
+  {
+   "kind": "group",
+   "label": "[11~12, 서술형2]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": "I read ⓐ<u>a book <i>The Little Prince</i></u>. In the book, a prince and a fox became good friends. The fox felt happier than before because of ⓑ<u>their</u> friendship. ⓒ<u>It</u> is the best book for me because ⓓ<u>it</u> has a touching story. After I read ⓔ<u>this book</u>, I decided to be a good friend."
+  },
+  {
+   "no": 11,
+   "points": 3,
+   "stem": "밑줄 친 ⓐ~ⓔ 중 지칭하는 대상이 <u>다른</u> 하나는?",
+   "choices": [
+    "ⓐ",
+    "ⓑ",
+    "ⓒ",
+    "ⓓ",
+    "ⓔ"
+   ],
+   "inline": true,
+   "answer": 2,
+   "explain": "ⓑ their = a prince and a fox. 나머지는 모두 책 The Little Prince.",
+   "source": "L5 Present Your Ideas (In Writing S1)"
+  },
+  {
+   "no": 12,
+   "points": 4,
+   "stem": "윗글의 제목으로 가장 적절한 것은?",
+   "choices": [
+    "Growing Season",
+    "Celebrate Your Friendship",
+    "Why It Is the Best Book for Me",
+    "A Prince and a Fox Became Good Friends",
+    "I Decided to Be a Good Friend"
+   ],
+   "answer": 3,
+   "explain": "글쓴이가 읽은 책이 왜 자신에게 최고의 책(the best book for me)인지 말하는 글. ①② 범위 자료의 다른 글 제목 ④⑤ 본문 문장 그대로지만 글의 일부(책 내용·글쓴이의 결심)일 뿐이어서 제목으로는 좁다.",
+   "source": "L5 Present Your Ideas (In Writing S1)"
+  },
+  {
+   "kind": "essay",
+   "no": "서술형2",
+   "points": 6,
+   "stem": "다음은 윗글을 요약한 글이다. 빈칸에 들어갈 말을 본문에서 찾아 문장을 완성하시오. (단, 빈칸에는 한 단어씩만 쓸 수 있음.) (각 2점)",
+   "box": "In <i>The Little Prince</i>, a prince and a (1)________ became good friends. It is the (2)________ book for the writer because it has a (3)________ story.",
+   "answer_lines": 3,
+   "answer": "(1) fox (2) best (3) touching",
+   "explain": "a prince and a fox / the best book for me / a touching story.",
+   "source": "L5 Present Your Ideas (In Writing S1)"
+  },
+  {
+   "no": 13,
+   "points": 4,
+   "stem": "다음 중 어법상 옳은 문장은?",
+   "choices": [
+    "My uncle is wise than my brother.",
+    "The front yard is prettier than the backyard.",
+    "The milk is hoter than the water now.",
+    "The green bag is expensivest bag in this shop.",
+    "The post office is closest than the bakery."
+   ],
+   "answer": 2,
+   "explain": "pretty → prettier(y→i+er). ① wiser ③ hotter ④ the most expensive ⑤ closer.",
+   "source": "학습지 5-7 A 1~6"
+  },
+  {
+   "kind": "group",
+   "label": "[14, 서술형3]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": "El ⓐ______ the flowers in her garden. It was growing season. (A)<u>여름 내내, 그녀는 그것들을 돌보았다.</u>\nOn the last day of summer, Jo came to El's house. El and Jo ran to the garden and suddenly stopped. Something was DIFFERENT! There ⓑ______ flowers on the aster ... and El grew TALLER, TOO!"
+  },
+  {
+   "kind": "essay",
+   "no": "서술형3",
+   "points": 5,
+   "stem": "<보기>에 주어진 단어를 활용하여 밑줄 친 (A)를 한 문장의 영어로 쓰시오.",
+   "box": {
+    "title": "<보기>",
+    "lines": [
+     "all,   long,   care"
+    ]
+   },
+   "answer_lines": 2,
+   "answer": "All summer long, she cared for them.",
+   "explain": "all summer long(여름 내내) + care for(돌보다)의 과거형 cared for.",
+   "source": "L5 본문 23"
+  },
+  {
+   "no": 14,
+   "points": 3,
+   "stem": "빈칸 ⓐ, ⓑ에 들어갈 말이 알맞게 연결된 것은?",
+   "choices_table": {
+    "header": [
+     "",
+     "ⓐ",
+     "ⓑ"
+    ],
+    "rows": [
+     [
+      "①",
+      "planted",
+      "was"
+     ],
+     [
+      "②",
+      "planted",
+      "were"
+     ],
+     [
+      "③",
+      "plants",
+      "were"
+     ],
+     [
+      "④",
+      "planted",
+      "is"
+     ],
+     [
+      "⑤",
+      "plant",
+      "was"
+     ]
+    ]
+   },
+   "answer": 2,
+   "explain": "과거의 이야기 → planted. There + were + 복수 명사(flowers).",
+   "source": "L5 본문 21·27 · 학습지 5-4 (27 was/were)"
+  },
+  {
+   "kind": "group",
+   "label": "[15~17, 서술형4]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": "On June 8, friends come together ⓐ<u>to</u> celebrate their friendship ― it's the Best Friends Day in the United States. (A) 1935, the US Congress officially chose this day ⓑ<u>for</u> honor the beauty of friendship. (A) the past, people used to exchange gifts and cards to express their gratitude ⓒ<u>for</u> their friends. Nowadays, this special day is getting popular, especially ⓓ<u>with</u> the rise of social media. People show the joy of friendship with their online posts and pictures.\nOn July 30, we have International Friendship Day. (A) 2011, the United Nations chose this day to celebrate the friendships ⓔ<u>between</u> people, countries, and cultures.\nPeople around the world might celebrate their friendship on different days and in different ways. However, we universally understand the value of friendship. Come together and celebrate the beauty of your friendship.",
+   "source": "학습지 More Reading"
+  },
+  {
+   "no": 15,
+   "points": 3,
+   "stem": "빈칸 (A)에 공통으로 쓸 수 있는 말은?",
+   "choices": [
+    "in",
+    "on",
+    "at",
+    "for",
+    "during"
+   ],
+   "inline": true,
+   "answer": 1,
+   "explain": "In 1935 / In the past / In 2011 — 연도·시기 앞 in.",
+   "source": "학습지 5-8 More Reading (Friendship)"
+  },
+  {
+   "no": 16,
+   "points": 3,
+   "stem": "밑줄 친 ⓐ~ⓔ 중 그 쓰임이 적절하지 <u>않은</u> 것은?",
+   "choices": [
+    "ⓐ",
+    "ⓑ",
+    "ⓒ",
+    "ⓓ",
+    "ⓔ"
+   ],
+   "inline": true,
+   "answer": 2,
+   "explain": "'~하기 위해'는 to + 동사원형: chose this day to honor. ⓐ to celebrate ⓒ gratitude for ⓓ with the rise ⓔ between people.",
+   "source": "학습지 5-8 More Reading (Friendship) (ⓑ for 는 to 를 일부러 바꾼 것)"
+  },
+  {
+   "no": 17,
+   "points": 3,
+   "stem": "윗글의 내용과 일치하지 <u>않는</u> 것은?",
+   "choices": [
+    "미국에서는 6월 8일에 친구들이 모여 우정을 기념한다.",
+    "과거에 사람들은 선물과 카드를 주고받았다.",
+    "요즘 이 특별한 날은 소셜 미디어와 함께 인기를 얻고 있다.",
+    "국제 우정의 날은 1935년에 만들어졌다.",
+    "사람들은 각기 다른 날과 방식으로 우정을 기념할 수 있다."
+   ],
+   "answer": 4,
+   "explain": "국제 우정의 날은 2011년 국제연합이 정했다. 1935년은 미국 의회의 '가장 친한 친구의 날'.",
+   "source": "학습지 5-8 More Reading (Friendship)"
+  },
+  {
+   "kind": "essay",
+   "no": "서술형4",
+   "points": 4,
+   "stem": "주어진 질문에 대한 답을 윗글에서 찾아 영어로 완성하시오.",
+   "box": "Q. 7월 30일을 국제 우정의 날로 정한 것은 누구인가?\n\n→ ______________________________ chose this day in 2011.",
+   "answer_lines": 1,
+   "answer": "The United Nations",
+   "explain": "In 2011, the United Nations chose this day.",
+   "source": "학습지 5-8 More Reading (Friendship)"
+  },
+  {
+   "no": 18,
+   "points": 4,
+   "stem": "다음 글의 빈칸 (a)~(c)에 들어갈 말이 알맞게 짝지어진 것은?",
+   "box": "There are three boys in the Smith family. David is the oldest boy. He is 20 years old. He is also the (a)________ one and teaches math to his brothers. John is the tallest boy. He is now 180 cm. He is the (b)________ of the three because he always helps the others. Kevin is the youngest boy. He is 15 years old. He is the (c)________ cook of the three. Everyone in the family likes to eat Kevin's pizza.",
+   "answer": 1,
+   "explain": "형제들에게 수학을 가르친다 → the smartest, 늘 남을 돕는다 → the kindest of the three, 모두가 그의 피자를 좋아한다 → the best cook. good 의 최상급은 best(goodest ×), 셋을 비교하므로 비교급(smarter/kinder/better)이 아니다.",
+   "source": "학습지 5-7 B (Smith family 원문에 빈칸)",
+   "choices_table": {
+    "header": [
+     "",
+     "(a)",
+     "(b)",
+     "(c)"
+    ],
+    "rows": [
+     [
+      "①",
+      "smartest",
+      "kindest",
+      "best"
+     ],
+     [
+      "②",
+      "smarter",
+      "kinder",
+      "better"
+     ],
+     [
+      "③",
+      "smartest",
+      "kindest",
+      "goodest"
+     ],
+     [
+      "④",
+      "smarter",
+      "kindest",
+      "best"
+     ],
+     [
+      "⑤",
+      "smartest",
+      "kinder",
+      "best"
+     ]
+    ]
+   }
+  },
+  {
+   "no": 19,
+   "points": 4,
+   "stem": "<보기>의 문장 중 어법상 옳은 문장<u>만</u>을 있는 대로 고른 것은?",
+   "box": {
+    "title": "<보기>",
+    "lines": [
+     "ⓐ I finished reading the book.",
+     "ⓑ I don't like to eat late at night.",
+     "ⓒ Would you mind to open the door?",
+     "ⓓ Burj Khalifa is the tallest building in the world.",
+     "ⓔ Today's weather is badder than yesterday's.",
+     "ⓕ He stopped wash the dishes."
+    ]
+   },
+   "choices": [
+    "ⓐ, ⓒ",
+    "ⓐ, ⓑ, ⓓ",
+    "ⓑ, ⓓ, ⓔ",
+    "ⓐ, ⓓ, ⓕ",
+    "ⓒ, ⓔ, ⓕ"
+   ],
+   "inline": true,
+   "answer": 2,
+   "explain": "ⓒ mind opening ⓔ worse ⓕ stopped washing. like 는 to부정사·동명사 둘 다 가능(학습지 4-7 표 5).",
+   "source": "학습지 4-8 E-2·C-2·E-4 · 4-7 표 5 · 5-7 C-3 · 5-10 13번 ⑤"
+  },
+  {
+   "no": 20,
+   "points": 3,
+   "stem": "<보기>에 주어진 문장이 들어갈 위치로 적절한 것은?",
+   "box": {
+    "lines": [
+     "<보기>  Jo grew TALLER!",
+     "",
+     "El and Jo were the smallest students in the class. (A) They were always together. (B) They even watered the plants together in the class because they could not reach the pots alone. (C) However, in the spring, something was DIFFERENT. (D) Jo was taller than El, so Jo could water the plants alone. (E) El felt smaller every day."
+    ]
+   },
+   "choices": [
+    "(A)",
+    "(B)",
+    "(C)",
+    "(D)",
+    "(E)"
+   ],
+   "inline": true,
+   "answer": 4,
+   "explain": "'무언가 달라졌다' 뒤에 Jo grew TALLER! 가 오고, 이어서 Jo was taller than El 로 이어진다.",
+   "source": "L5 본문 1~7"
+  },
+  {
+   "kind": "essay",
+   "no": "서술형5",
+   "points": 4,
+   "stem": "<보기>에 주어진 대화가 자연스럽도록 빈칸에 알맞은 말을 넣어 대화를 완성하시오.",
+   "box": {
+    "title": "<보기>",
+    "lines": [
+     "A: ______________________________?",
+     "B: I'm worried about the exam tomorrow.",
+     "A: I feel the same way, but we studied hard. Let's stay positive."
+    ]
+   },
+   "condition": [
+    "1) 반드시 포함되어야 할 단어: matter",
+    "2) 상대방의 감정이나 상태를 묻는 표현을 사용할 것",
+    "3) 3단어로 쓸 것"
+   ],
+   "answer_lines": 1,
+   "answer": "What's the matter?",
+   "explain": "감정·상태 묻기: What's the matter? (What's / the / matter 3단어)",
+   "source": "학습지 5-1 (5과 듣기·말하기 주요 표현 1)"
+  },
+  {
+   "kind": "essay",
+   "no": "서술형6",
+   "points": 6,
+   "stem": "다음은 Sue의 일기이다. 괄호 안에 주어진 동사를 알맞은 형태로 빈칸에 써넣어 글을 완성하시오. (단, 빈칸에는 한 단어씩만 쓸 수 있음.) (각 2점)",
+   "box": "My friends and I went to Nuri Animal Center today. We arrived there at 9. First, we fed the dogs there. Then, we (1)________ (clean) the place. Then it (2)________ (be) lunchtime. After lunch, we walked the dogs in the park. Then, we (3)________ (wash) them.",
+   "answer_lines": 3,
+   "answer": "(1) cleaned (2) was (3) washed",
+   "explain": "과거시제 — clean-cleaned, be(it)-was, wash-washed.",
+   "source": "학습지 4-6 C (그림 대신 괄호 안 동사 원형)"
+  },
+  {
+   "kind": "essay",
+   "no": "서술형7",
+   "points": 6,
+   "stem": "<보기>에 주어진 단어를 활용하여 교과 과목에 대한 현재 자신의 생각을 한 문장으로 영작하시오.",
+   "box": {
+    "title": "<보기>",
+    "lines": [
+     "(A) English, Math, Science,",
+     "     Korean, Music",
+     "(B) interesting, easy, difficult, exciting"
+    ]
+   },
+   "condition": [
+    "1) (A)에서 2개의 교과 과목을 선택하여 비교하는 한 문장으로 영작할 것",
+    "2) (B)에서 주어진 단어 중 하나를 선택하여 자신의 생각을 표현할 것",
+    "3) 문장은 5단어 이상으로 구성할 것"
+   ],
+   "answer_lines": 2,
+   "answer": "(예시) Math is more difficult than science to me. / English is easier than Korean for me.",
+   "explain": "비교급 + than. -y → -ier(easier), 3음절 이상은 more + 원급.",
+   "source": "학습지 5-5 Practice 5"
+  }
+ ]
 }
