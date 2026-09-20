@@ -29,14 +29,14 @@
     ]
    },
    "choices": [
-    "Eric bought his bag at a flea market.",
-    "Eric made his bag from an old skirt.",
-    "Yena wants to make a pencil case.",
-    "Yena should wash the skirt after upcycling.",
-    "Eric doesn’t know what upcycling is."
+    "Eric: I made it from old shirts.",
+    "Eric: We can make new things from new things.",
+    "Yena: I have an old skirt at school.",
+    "Yena: I want to make a pencil case.",
+    "Eric: Don’t forget to wash the skirt after upcycling."
    ],
-   "answer": 3,
-   "explain": "I want to make a pencil case. ① made it ② old jeans ④ before upcycling ⑤ Eric 이 업사이클링을 설명한다.",
+   "answer": 4,
+   "explain": "Oh, I want to make a pencil case. ① old jeans ② from old things ③ at home ⑤ before upcycling. 대화 문장에서 한 단어씩 바꿈.",
    "source": "L5 Listen & Speak 1-B (교과서 대화문)"
   },
   {
@@ -71,20 +71,20 @@
    },
    "choices": [
     "How often do you get enough sleep, Sejun?",
-    "What can I do to sleep well?",
-    "Why don’t you watch videos, Sejun?",
-    "How long have you been tired?",
-    "Do you have dinner with your family?"
+    "What can I do to start upcycling?",
+    "How often do you clean it?",
+    "Why is that important?",
+    "Do you have a spending plan?"
    ],
    "answer": 1,
-   "explain": "Once a week. 로 답하므로 빈도를 묻는 How often ~?",
+   "explain": "Once a week. 로 답하므로 빈도를 묻는 How often ~? 오답은 범위 대화문·본문의 다른 문장.",
    "source": "L6 Listen & Speak 1-A3 (교과서 대화문)"
   },
   {
    "no": 4,
    "points": 3,
    "stem": "어법상 옳은 문장을 모두 고른 것은?",
-   "box": "ⓐ I saw Sam laughing with his friends.\nⓑ Kelly heard someone to call her name.\nⓒ My teacher asked me close the door.\nⓓ Mr. Kim felt the ground shaking.\nⓔ The police officer made the driver stop the car.\nⓕ My dad advised me to ride my bike slowly.\nⓖ She listened to a radio DJ to read a poem.",
+   "box": "ⓐ I saw Sam laughing with his friends.\nⓑ Kelly heard someone to call her name.\nⓒ Trees will help cleaning the air.\nⓓ Mr. Kim felt the ground shaking.\nⓔ All the letters from my old friends make me happy.\nⓕ Let me read this paper airplane.\nⓖ She listened to a radio DJ to read a poem.",
    "choices": [
     "ⓐ, ⓑ, ⓓ",
     "ⓐ, ⓓ, ⓔ, ⓕ",
@@ -93,8 +93,8 @@
     "ⓓ, ⓔ, ⓕ, ⓖ"
    ],
    "answer": 2,
-   "explain": "지각동사 + 동사원형/현재분사(ⓑ call ⓖ reading), ask/advise + to부정사(ⓒ to close), 사역 make + 동사원형.",
-   "source": "선생님 제작 어법 문장 (학습지 p.45 grammar 3-F 지각동사 + 26-1 기말 3번 5형식 연계 확장)"
+   "explain": "지각동사+목적어+동사원형/현재분사: ⓑ call(calling) ⓖ reading(read). ⓒ 준사역 help+동사원형(Trees will help clean the air.). ⓔ 5형식 make+목적어+형용사(수일치 all+복수). ⓕ 사역 let+동사원형. 원문: 학습지 p.45 F-2·3·4·5, p.43 B-12, L5 T1-A3, L6 T2-B.",
+   "source": "학습지 p.45 grammar 3-F 지각동사 · p.43 수일치 + 범위 대화문의 let/help 문장 (이전 시험 사역·5형식 연계)"
   },
   {
    "kind": "group",
@@ -112,11 +112,11 @@
    "points": 3,
    "stem": "윗글의 주제로 가장 적절한 것은?",
    "choices": [
-    "Tips for playing soccer well",
-    "An exciting sports day at Woori Middle School",
-    "How to become the MVP of a game",
-    "The history of Class 3",
-    "Rules of the school playground"
+    "축구를 잘하는 방법",
+    "우리중학교의 신나는 운동회",
+    "경기의 최우수 선수가 되는 법",
+    "3반의 역사",
+    "학교 운동장 사용 규칙"
    ],
    "answer": 2,
    "explain": "운동회(축구 결승전)를 전하는 학교 신문 기사.",
@@ -150,13 +150,12 @@
    "stem": "대화의 밑줄 (A)~(E) 중 윗글과 내용이 일치하지 <u>않는</u> 것은?",
    "box": {
     "lines": [
-     "Hajin: Did you go to the sports day on October 2nd?",
-     "Semi: Of course! (A)<u>It was held at the school playground.</u>",
-     "Hajin: (B)<u>The final soccer game between Class 1 and 3 was one of the biggest events.</u>",
-     "Semi: Right. (C)<u>All the students came to cheer for the two classes.</u>",
-     "Hajin: (D)<u>Class 1 won the game, 3 to 2.</u>",
-     "Semi: (E)<u>Jinwoo scored the winning goal and became the MVP.</u>",
-     "Hajin: Everyone had a great time!"
+     "Hajin: Do you remember? (A)<u>Woori Middle School held a sports day on October 2nd.</u>",
+     "Semi: Of course! (B)<u>One of the biggest events was the final soccer game between Class 1 and 3.</u>",
+     "Hajin: Right. (C)<u>All the students came to cheer for the two classes.</u>",
+     "Semi: (D)<u>Class 1 won the game, 3 to 2.</u>",
+     "Hajin: (E)<u>Jinwoo scored the winning goal and became the MVP of the game.</u>",
+     "Semi: Everyone had a great time!"
     ]
    },
    "choices": [
@@ -168,8 +167,8 @@
    ],
    "inline": true,
    "answer": 4,
-   "explain": "Class 3 won the game, 3 to 2. (대화는 본문을 옮겨 지은 것)",
-   "source": "L6 My Writing (교과서 기타 지문) · 대화는 선생님 제작"
+   "explain": "Class 3 won the game, 3 to 2. (대화의 밑줄은 본문 문장 그대로, (D)만 한 단어 바꿈)",
+   "source": "L6 My Writing (교과서 기타 지문) · 밑줄 문장은 본문 그대로"
   },
   {
    "no": 8,
@@ -187,11 +186,11 @@
     ]
    },
    "choices": [
-    "When will they have a picnic?",
-    "What can they use to reduce waste at the picnic?",
-    "What should Brian bring?",
-    "Where will they have the picnic?",
-    "Who suggested having a picnic?"
+    "그들은 언제 소풍을 갈 것인가?",
+    "소풍에서 쓰레기를 줄이기 위해 그들은 무엇을 사용할 수 있는가?",
+    "Brian은 무엇을 가져와야 하는가?",
+    "그들은 어디로 소풍을 갈 것인가?",
+    "누가 소풍을 가자고 제안했는가?"
    ],
    "answer": 4,
    "explain": "① tomorrow ② reusable cups ③ reusable forks and spoons ⑤ the girl. ④ 장소는 언급 없음.",
@@ -232,11 +231,11 @@
    "points": 3,
    "stem": "밑줄 (F)가 의미하는 바로 가장 알맞은 것은?",
    "choices": [
-    "Money is not easy to get, so you should spend it carefully.",
-    "Trees are more important than money.",
-    "You can make money by planting trees.",
-    "Students should not save money.",
-    "Food costs more than transportation."
+    "돈은 쉽게 얻을 수 없으니 신중하게 써야 한다.",
+    "나무가 돈보다 더 중요하다.",
+    "나무를 심어서 돈을 벌 수 있다.",
+    "학생들은 돈을 저축하지 말아야 한다.",
+    "음식이 교통보다 돈이 더 많이 든다."
    ],
    "answer": 1,
    "explain": "돈은 저절로 생기지 않는다 → 소비를 계획하라. 기출 10번(속담) 자리를 밑줄 의미 추론으로.",
@@ -259,16 +258,16 @@
    "stem": "대화의 빈칸에 들어갈 말을 순서대로 바르게 배열한 것은?",
    "box": {
     "lines": [
-     "G: The air is terrible today.",
+     "G: We need to save energy to slow down global warming.",
      "B: ______________________________",
      "G: ______________________________",
      "B: ______________________________",
-     "G: And don’t forget to ride your bike or walk to nearby places.",
+     "G: And don’t forget to turn off the light when you leave a room.",
      "B: boy, G: girl",
      "",
-     "(A) We can plant more trees.",
-     "(B) Right. Trees will help clean the air.",
-     "(C) Yeah. The sky looks gray. What can we do to reduce air pollution?"
+     "(A) We can use the air conditioner less often.",
+     "(B) Yeah. That would save a lot of energy.",
+     "(C) You’re right. What can we do to save energy?"
     ]
    },
    "choices": [
@@ -279,8 +278,8 @@
     "(C)-(B)-(A)"
    ],
    "answer": 4,
-   "explain": "방법 묻기 → We can ~ → Right.",
-   "source": "L5 Listen & Speak 1-A3 (교과서 대화문)"
+   "explain": "방법 묻기 → We can ~ → Yeah, That would save ~. (서답형 7과 자료가 겹치지 않도록 1-A1 로 바꿈)",
+   "source": "L5 Listen & Speak 1-A1 (교과서 대화문)"
   },
   {
    "no": 12,
@@ -392,12 +391,12 @@
    "choices": [
     "Together, we can make a difference",
     "Venice could be underwater soon",
-    "I don’t like rainy days",
-    "Recycling is not important",
-    "We have never had floods in Korea"
+    "We will do better from now on",
+    "Let’s follow this rule",
+    "Good sleep makes a big difference"
    ],
    "answer": 1,
-   "explain": "우리의 역할을 하는 것이 중요 → 함께 변화를 만들 수 있다.",
+   "explain": "우리의 역할을 하는 것이 중요 → 함께 변화를 만들 수 있다. 오답은 범위 본문·대화문의 다른 문장.",
    "source": "L5 본문 3대목 Suin (교과서 본문)"
   },
   {
@@ -407,13 +406,13 @@
    "box": {
     "title": "<보기>",
     "lines": [
-     "- Suin lives in Korea.",
-     "- It rains a lot in Korea every summer.",
-     "- Suin has been to Venice many times.",
-     "- Suin has never seen pictures of Venice.",
-     "- Suin started the 3R campaign alone.",
+     "- Every summer, it rains a lot in Korea.",
+     "- Sometimes, they have floods in Korea and they are really scary.",
+     "- Suin has been to Venice, and she has seen many beautiful pictures of it.",
+     "- Suin and her friends wanted to help Venice, so they started the 3R campaign.",
      "- The 3Rs are Recycle, Reuse, and Reduce.",
-     "- Many students at Suin’s school are doing the 3Rs every day."
+     "- Now, few students at Suin’s school are doing these three things every day.",
+     "- Suin thinks the situation in Venice must be scary, too."
     ]
    },
    "choices": [
@@ -424,8 +423,8 @@
     "6개"
    ],
    "inline": true,
-   "answer": 3,
-   "explain": "일치 4개. 불일치: has been to Venice many times(never been), never seen pictures(has seen), alone(with friends).",
+   "answer": 4,
+   "explain": "일치 5개. 불일치: has been to Venice(never been), few students(many students). 본문 문장에서 한 단어씩 바꿈.",
    "source": "L5 본문 3대목 Suin (교과서 본문)"
   },
   {
@@ -534,7 +533,7 @@
    "box": {
     "title": "<보기>",
     "lines": [
-     "when, I, see, the crowd, cheer, scream, feel, proud, and, to, watch"
+     "when, I, see, the crowd, cheering, screaming, feel, proud, and, to, watch"
     ]
    },
    "answer_lines": 1,
@@ -546,21 +545,20 @@
    "kind": "essay",
    "no": "서답형4",
    "points": 6,
-   "stem": "<보기>를 읽고 지각동사를 포함한 문장을 2개 완성하시오. (6점, 각 3점)",
+   "stem": "<보기>의 우리말과 일치하도록 괄호 안의 단어를 활용하여 지각동사를 포함한 문장을 완성하시오. (6점, 각 3점)",
    "box": {
     "title": "<보기>",
     "lines": [
-     "Sam was laughing with his friends. I saw him.",
-     "Someone called Kelly’s name. Kelly heard it.",
-     "",
-     "(1) I saw ______________________ with his friends.",
-     "(2) Kelly heard ______________________."
+     "(1) 나는 Sam이 그의 친구들과 웃고 있는 것을 보았다. (see, laugh)",
+     "→ I ______________________ with his friends.",
+     "(2) Kelly는 누군가 그녀의 이름을 부르는 것을 들었다. (hear, call)",
+     "→ Kelly ______________________."
     ]
    },
    "answer_lines": 1,
-   "answer": "(1) Sam laughing (laugh) (2) someone call her name (calling)",
-   "explain": "지각동사 see/hear + 목적어 + 현재분사/동사원형. 학습지 p.45 F-2·5 문장.",
-   "source": "학습지 p.45 L6 grammar 3-F 지각동사"
+   "answer": "(1) saw Sam laughing (laugh) (2) heard someone call her name (calling)",
+   "explain": "지각동사 + 목적어 + 동사원형/현재분사. 학습지 문장 그대로.",
+   "source": "학습지 p.45 L6 grammar 3-F 지각동사 2·5번 문장 그대로"
   },
   {
    "kind": "essay",
@@ -612,27 +610,30 @@
    "stem": "대화를 읽고 조건에 맞게 답하시오. (12점, 각 3점)",
    "box": {
     "lines": [
-     "G: We need to save energy to slow down global warming.",
-     "B: You’re right. (A)<u>우리가 에너지를 절약하기 위해 무엇을 할 수 있을까?</u>",
-     "G: We can use the air conditioner less often.",
-     "B: Yeah. That would save a lot of energy. (B)<u>나는 어젯밤 네가 전등을 끄는 것을 보았어.</u>",
-     "G: (C)<u>방을 나갈 때 전등을 끄는 것은 중요해.</u>",
-     "B: (D)<u>우리가 더 많은 에너지를 절약할수록, 지구는 더 시원해질 거야.</u>",
+     "G: The air is terrible today.",
+     "B: Yeah. The sky looks gray. (A)<u>우리가 대기 오염을 줄이기 위해 무엇을 할 수 있을까?</u>",
+     "G: (B)<u>우리는 나무를 더 많이 심을 수 있어.</u>",
+     "B: Right. Trees will help clean the air.",
+     "G: (C)<u>그리고 가까운 곳에는 자전거를 타거나 걸어가는 걸 잊지 마.</u>",
+     "B: Okay. (D)<u>우리가 나무를 더 많이 심을수록, 공기는 더 신선해져.</u>",
      "B: boy, G: girl"
     ]
    },
    "condition": [
-    "조건 1. 밑줄 (A)~(C)는 괄호 안의 말을 이용하여 영작할 것. (A) (what, can, do, save energy) (B) (see, turn off, the light, last night) (C) (it, important, turn off, the light, when, leave a room)",
-    "조건 2. 밑줄 (D)는 「the 비교급 ~, the 비교급 …」을 사용하여 영작할 것. (much, energy, save, cool, the Earth)",
+    "조건 1. 밑줄 (A)~(C)는 괄호 안의 말을 이용하여 영작할 것.",
+    "(A) what, can, do, reduce",
+    "(B) plant, more trees",
+    "(C) forget, ride, walk, nearby",
+    "조건 2. 밑줄 (D)는 「the 비교급 ~, the 비교급 …」과 괄호 안의 말(much, trees, plant, fresh, get)을 사용하여 영작할 것.",
     "(1) (A) → ________________________________",
     "(2) (B) → ________________________________",
     "(3) (C) → ________________________________",
     "(4) (D) → ________________________________"
    ],
    "answer_lines": 1,
-   "answer": "(A) What can we do to save energy? (B) I saw you turn off the light last night. (turning off 도 인정) (C) It’s important to turn off the light when you leave a room. (D) The more energy we save, the cooler the Earth will be.",
-   "explain": "(A) 방법 묻기 (B) 지각동사 see + 목적어 + 동사원형/현재분사 (C) 가주어 it (D) the 비교급 ~, the 비교급 …. (B)(C)(D) 는 대화 흐름에 맞춰 지은 문장.",
-   "source": "L5 Listen & Speak 1-A1 (교과서 대화문) · 학습지 p.35 · p.44 — (B)(C)(D) 선생님 제작"
+   "answer": "(A) What can we do to reduce air pollution? (B) We can plant more trees. (C) And don’t forget to ride your bike or walk to nearby places. (D) The more trees we plant, the fresher the air gets.",
+   "explain": "(A) 방법 묻기 (B)(C) 대화문 그대로 (D) the 비교급 ~, the 비교급 … (학습지 p.37 뒷면 환경 실천 문장 그대로).",
+   "source": "L5 Listen & Speak 1-A3 (교과서 대화문 그대로) · 학습지 p.37 뒷면 the 비교급 (서답형 7과 겹치던 1-A1 은 11번으로)"
   }
  ]
 }

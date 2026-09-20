@@ -29,14 +29,14 @@
     ]
    },
    "choices": [
-    "Liam is reading an article about teens’ sleeping habits.",
-    "The article says only a few teens take selfies every day.",
-    "The girl often sees her friends posting selfies on social media.",
-    "Liam thinks it is safe to share selfies online.",
-    "Selfies never have personal information in them."
+    "Liam often sees his friends posting their selfies on social media.",
+    "Selfies never have personal information in them.",
+    "The girl often sees her friends posting their selfies on social media.",
+    "The article says it’s not important to be careful about sharing selfies online.",
+    "We should think twice after posting selfies."
    ],
    "answer": 3,
-   "explain": "I often see my friends posting their selfies on social media. ① selfie habits ② many teens ④⑤ 조심해야 한다·개인 정보가 있을 수 있다.",
+   "explain": "I often see my friends posting their selfies on social media. ① 소녀가 본다 ② can have ④ it’s important ⑤ before posting. 대화 문장에서 한 단어씩 바꿈.",
    "source": "L6 Listen & Speak 1-B (교과서 대화문)"
   },
   {
@@ -74,29 +74,29 @@
    "choices": [
     "What can I do to find a new owner for it?",
     "How often do you use it?",
-    "Why don’t you throw it out?",
+    "What can I do to start upcycling?",
     "Don’t forget to post pictures of it.",
-    "What do you like about it?"
+    "How about having a picnic tomorrow?"
    ],
    "answer": 1,
-   "explain": "방법을 묻는 What can I do to ~? 에 You can ~ 으로 답한다.",
+   "explain": "방법을 묻는 What can I do to ~? 에 You can ~ 으로 답한다. 오답은 범위 대화문의 다른 문장.",
    "source": "L5 Listen & Speak 2-A (교과서 대화문)"
   },
   {
    "no": 4,
    "points": 3,
    "stem": "어법상 옳은 문장을 모두 고른 것은?",
-   "box": "ⓐ I heard my friend talk on the phone.\nⓑ The man saw her to climb the hill.\nⓒ My mom made me to clean my room.\nⓓ She let him enjoy some warm cookies.\nⓔ We watched him fixing the car.\nⓕ The teacher told us be quiet.\nⓖ Mr. Kim helped me carry the boxes.",
+   "box": "ⓐ I heard my friend talk on the phone.\nⓑ The man saw her to climb the hill.\nⓒ Let me to read this paper airplane.\nⓓ Trees will help clean the air.\nⓔ We watched him fixing the car.\nⓕ Greenhouse gases make the Earth hotter.\nⓖ Sumi and I heard the rain to fall on the tent.",
    "choices": [
     "ⓐ, ⓑ, ⓓ",
-    "ⓐ, ⓓ, ⓔ, ⓖ",
-    "ⓑ, ⓒ, ⓕ",
+    "ⓐ, ⓓ, ⓔ, ⓕ",
+    "ⓑ, ⓒ, ⓖ",
     "ⓒ, ⓓ, ⓔ",
     "ⓓ, ⓔ, ⓕ, ⓖ"
    ],
    "answer": 2,
-   "explain": "지각동사(hear/see/watch)+목적어+동사원형/현재분사, 사역동사(make/let)+동사원형, help+동사원형, tell+to부정사. ⓑ climb ⓒ clean ⓕ to be quiet.",
-   "source": "선생님 제작 어법 문장 (학습지 p.44 grammar 3-E 지각동사 + 26-1 기말 3·30번 사역·5형식 연계 확장)"
+   "explain": "지각동사(hear/see/watch)+목적어+동사원형/현재분사: ⓑ climb(climbing) ⓖ fall(falling). 사역동사 let+동사원형: ⓒ Let me read. ⓓ 준사역 help+동사원형(Trees will help clean the air.) ⓕ make+목적어+형용사(5형식). 원문: 학습지 p.44 E-1·2·3·8, L6 T2-B, L5 T1-A3, L5 본문.",
+   "source": "학습지 p.44 grammar 3-E 지각동사 + 범위 대화문·본문의 let/help/make 문장 (이전 시험 사역·5형식 연계)"
   },
   {
    "kind": "group",
@@ -116,11 +116,11 @@
    "points": 3,
    "stem": "윗글의 목적으로 가장 알맞은 것은?",
    "choices": [
-    "To ask Monica about the canals in Venice",
-    "To tell Monica what he will do to slow down global warming",
-    "To invite Monica to Korea",
-    "To explain why cows pass a lot of gas",
-    "To sell his old bike at a flea market"
+    "Monica에게 베네치아의 운하에 대해 물어보려고",
+    "Monica에게 지구 온난화를 늦추기 위해 자신이 할 일을 알리려고",
+    "Monica를 한국에 초대하려고",
+    "소가 가스를 많이 배출하는 이유를 설명하려고",
+    "벼룩시장에서 자전거를 팔려고"
    ],
    "answer": 2,
    "explain": "지구 온난화를 늦추기 위해 자신이 할 일을 Monica 에게 알리는 편지.",
@@ -154,15 +154,15 @@
    "stem": "대화의 밑줄 (A)~(E) 중 윗글과 내용이 일치하지 <u>않는</u> 것은?",
    "box": {
     "lines": [
-     "Yena: Homin, did you read Monica’s story about Venice?",
-     "Homin: Yes. (A)<u>I want to do something to slow down global warming.</u>",
-     "Yena: What will you do?",
+     "Monica: Hi, Homin.",
+     "Homin: Hi, Monica. (A)<u>I read your story about Venice.</u>",
+     "Monica: Really? What will you do?",
      "Homin: (B)<u>From now on, I’m going to walk or ride a bike to nearby places.</u>",
-     "Yena: Anything else?",
-     "Homin: (C)<u>I’m going to eat more meat because cows reduce greenhouse gases.</u>",
-     "Yena: Those are little things, but they are important.",
-     "Homin: Right. (D)<u>I’ll do my part for Venice.</u>",
-     "Yena: (E)<u>I hope Monica has good luck.</u>"
+     "Monica: Anything else?",
+     "Homin: (C)<u>I’m also going to eat more meat because cows increase greenhouse gases.</u>",
+     "Monica: That’s amazing!",
+     "Homin: (D)<u>These are little things, but I’ll do my part for Venice!</u> (E)<u>I wish you good luck.</u>",
+     "Monica: Thanks, Homin!"
     ]
    },
    "choices": [
@@ -174,8 +174,8 @@
    ],
    "inline": true,
    "answer": 3,
-   "explain": "eat less meat because cows increase greenhouse gases. (대화는 본문을 옮겨 지은 것 — 기출 7번 유형)",
-   "source": "L5 My Writing (교과서 기타 지문) · 대화는 선생님 제작"
+   "explain": "eat less meat because cows increase greenhouse gases. (대화의 밑줄은 본문 문장 그대로, (C)만 한 단어 바꿈 — 기출 7번 유형)",
+   "source": "L5 My Writing (교과서 기타 지문) · 밑줄 문장은 본문 그대로"
   },
   {
    "no": 8,
@@ -197,11 +197,11 @@
     ]
    },
    "choices": [
-    "Why does Jake feel stressed?",
-    "How often does Jake feel stressed?",
-    "What can Jake do to manage his stress?",
-    "When will Jake take the exams?",
-    "How many friends does Jake study with?"
+    "Jake는 왜 스트레스를 받는가?",
+    "Jake는 얼마나 자주 스트레스를 느끼는가?",
+    "Jake는 스트레스를 관리하기 위해 무엇을 할 수 있는가?",
+    "Jake는 언제 시험을 보는가?",
+    "Jake는 몇 명의 친구와 함께 공부하는가?"
    ],
    "answer": 5,
    "explain": "① 다음 주 시험 ② 시험 생각할 때마다 ③ 산책·스트레칭·친구와 공부 ④ next week. ⑤ 언급 없음.",
@@ -238,11 +238,11 @@
    "points": 3,
    "stem": "밑줄 (F)가 의미하는 바로 가장 알맞은 것은?",
    "choices": [
-    "Only the people in Venice can solve its problem.",
-    "Small actions by many people can change things.",
-    "Floods in Korea are scarier than the floods in Venice.",
-    "Students should stop the 3R campaign.",
-    "It is too late to help Venice."
+    "베네치아 사람들만이 그 문제를 해결할 수 있다.",
+    "많은 사람의 작은 실천이 변화를 만들 수 있다.",
+    "한국의 홍수가 베네치아의 홍수보다 더 무섭다.",
+    "학생들은 3R 캠페인을 그만두어야 한다.",
+    "베네치아를 돕기에는 너무 늦었다."
    ],
    "answer": 2,
    "explain": "함께(우리의 역할을 하면) 변화를 만들 수 있다. 기출 10번(속담)은 문화 지식 문항이라 밑줄 의미 추론으로 바꿈.",
@@ -291,8 +291,16 @@
   {
    "no": 12,
    "points": 3,
-   "stem": "(A)~(E) 중 It(it)의 쓰임이 나머지와 <u>다른</u> 하나는?",
-   "box": "Hello, Fly High members,\nThe school festival is next week. (A)<u>It</u> is important to practice every day. (B)<u>It</u> will be exciting to see the crowd cheering. Please bring your uniform and wash (C)<u>it</u> before the performance. (D)<u>It</u> is not easy to make a human pyramid, but we can do it. (E)<u>It</u> was fun to perform at the basketball game. Never give up!",
+   "stem": "(A)~(E) 중 It의 쓰임이 나머지와 <u>다른</u> 하나는?",
+   "box": {
+    "lines": [
+     "(A) <u>It</u> is important to exercise regularly.",
+     "(B) <u>It</u> is a beautiful city on the water in Italy.",
+     "(C) <u>It</u> isn’t easy to change my eating habits, but I’m doing my best.",
+     "(D) <u>It</u> was not easy to solve the puzzle.",
+     "(E) <u>It</u> is important to do our part for Venice."
+    ]
+   },
    "choices": [
     "(A)",
     "(B)",
@@ -301,9 +309,9 @@
     "(E)"
    ],
    "inline": true,
-   "answer": 3,
-   "explain": "(C) 는 uniform 을 가리키는 대명사, 나머지는 가주어 It. 기출 12번(to부정사 용법 다른 하나)의 자리.",
-   "source": "선생님 제작 안내문 (학습지 p.35 가주어 it · L6 본문 어휘)"
+   "answer": 2,
+   "explain": "(B) 는 Venice 를 가리키는 대명사, 나머지는 가주어 It(진주어 to부정사). 기출 12번(용법 다른 하나)의 자리. 문장은 학습지 p.35·36 · 본문 그대로.",
+   "source": "학습지 p.35~36 가주어 it · L5 본문 (교과서 본문)"
   },
   {
    "no": 13,
@@ -400,13 +408,13 @@
    "stem": "밑줄 (D)에 들어갈 말로 가장 적절한 것은?",
    "choices": [
     "Venice could be underwater soon",
-    "Venice will have more tourists soon",
-    "The water in Venice will go down soon",
-    "My parents’ bakery will open again soon",
-    "The Earth is getting colder"
+    "Many tourists come to see them every year",
+    "We will do better from now on",
+    "Greenhouse gases make the Earth hotter",
+    "I’ll give it a try"
    ],
    "answer": 1,
-   "explain": "수위가 올라가면 → 곧 물에 잠길 수 있다 → 도움이 필요하다.",
+   "explain": "수위가 올라가면 → 곧 물에 잠길 수 있다 → 도움이 필요하다. 오답은 범위 본문·대화문의 다른 문장.",
    "source": "L5 본문 1대목 Monica (교과서 본문)"
   },
   {
@@ -416,13 +424,13 @@
    "box": {
     "title": "<보기>",
     "lines": [
-     "- Monica lives in Venice, Italy.",
      "- Venice is famous for its canals and historic buildings.",
-     "- Few tourists visit Venice every year.",
-     "- The streets of Venice were flooded last week.",
-     "- Monica’s parents’ bakery stayed open during the flood.",
-     "- Monica had to wear tall rain boots all the time.",
-     "- The water in Venice rises higher as the Earth gets warmer."
+     "- Few tourists come to see them every year.",
+     "- Last week, the streets were not flooded.",
+     "- Monica couldn’t go to school, and her parents’ bakery had to close.",
+     "- Monica didn’t have to wear tall rain boots all the time.",
+     "- The warmer the Earth gets, the higher the water in Venice rises.",
+     "- Venice could be underwater soon."
     ]
    },
    "choices": [
@@ -433,8 +441,8 @@
     "6개"
    ],
    "inline": true,
-   "answer": 4,
-   "explain": "일치 5개. 불일치: Few tourists(Many tourists come), bakery stayed open(had to close).",
+   "answer": 3,
+   "explain": "일치 4개. 불일치: Few tourists(Many), were not flooded(were flooded), didn’t have to wear(had to wear). 본문 문장에서 한 단어씩 바꿈.",
    "source": "L5 본문 1대목 Monica (교과서 본문)"
   },
   {
@@ -555,21 +563,20 @@
    "kind": "essay",
    "no": "서답형4",
    "points": 6,
-   "stem": "<보기>를 읽고 지각동사를 포함한 문장을 2개 완성하시오. (6점, 각 3점)",
+   "stem": "<보기>의 우리말과 일치하도록 괄호 안의 단어를 활용하여 지각동사를 포함한 문장을 완성하시오. (6점, 각 3점)",
    "box": {
     "title": "<보기>",
     "lines": [
-     "The baby was crying in the room. The parents heard it.",
-     "The ground was shaking. The villagers felt it.",
-     "",
-     "(1) The parents heard ______________________ in the room.",
-     "(2) The villagers felt ______________________."
+     "(1) 그 부모는 그들의 아기가 방에서 우는 것을 들었다. (hear, cry)",
+     "→ The parents ______________________ in the room.",
+     "(2) 마을 사람들은 그 땅이 흔들리는 것을 느꼈다. (feel, shake)",
+     "→ The villagers ______________________."
     ]
    },
    "answer_lines": 1,
-   "answer": "(1) the baby crying (cry) (2) the ground shaking (shake)",
-   "explain": "지각동사 hear/feel + 목적어 + 현재분사(동사원형). 학습지 p.44 E-5·6 문장.",
-   "source": "학습지 p.44 L6 grammar 3-E 지각동사"
+   "answer": "(1) heard the baby cry (crying) (2) felt the ground shake (shaking)",
+   "explain": "지각동사 + 목적어 + 동사원형/현재분사. 학습지 문장 그대로.",
+   "source": "학습지 p.44 L6 grammar 3-E 지각동사 6·5번 문장 그대로"
   },
   {
    "kind": "essay",
@@ -580,8 +587,11 @@
     "lines": [
      "<보기> important, get, is, it, to, eight, hours, of, sleep",
      "",
-     "Sejun feels tired these days. His friend says,",
-     "“________________________________ every night.”"
+     "B: I feel tired these days.",
+     "G: How often do you get enough sleep, Sejun?",
+     "B: Once a week. I usually stay up late watching videos.",
+     "G: “________________________________ every night.”",
+     "B: boy, G: girl"
     ]
    },
    "condition": [
@@ -591,7 +601,7 @@
    "answer_lines": 1,
    "answer": "It is important to get eight hours of sleep every night.",
    "explain": "가주어 It + is + 형용사 + to부정사(진주어).",
-   "source": "L6 Listen & Speak 1-A3 · 학습지 p.35 가주어 it"
+   "source": "L6 Listen & Speak 1-A3 (교과서 대화문 그대로) · 학습지 p.35 가주어 it"
   },
   {
    "kind": "essay",
@@ -626,24 +636,27 @@
      "B: My dog doesn’t have energy lately.",
      "G: (A)<u>너는 얼마나 자주 너의 개를 산책시키니?</u>",
      "B: I walk him twice a week.",
-     "G: (B)<u>너의 개를 매일 산책시키는 것이 중요해.</u> That way, he can stay healthy.",
-     "B: Okay, I’ll start walking him every day. (C)<u>나는 어제 그가 공원에서 달리는 것을 보았어.</u>",
-     "G: Great. (D)<u>네가 그를 더 많이 산책시킬수록, 그는 더 건강해질 거야.</u>",
+     "G: (B)<u>너의 개를 매일 산책시키는 것이 중요해.</u> (C)<u>그런 식으로, 그는 건강을 유지할 수 있어.</u>",
+     "B: Okay, I’ll start walking him every day.",
+     "G: Great. 너도 같이 걸으면 좋아. (D)<u>네가 더 많이 운동할수록, 너의 몸은 더 튼튼해질 거야.</u>",
      "B: boy, G: girl"
     ]
    },
    "condition": [
-    "조건 1. 밑줄 (A)~(C)는 괄호 안의 말을 이용하여 영작할 것. (A) (how often, walk) (B) (it, important, walk, every day) (C) (see, run, in the park, yesterday)",
-    "조건 2. 밑줄 (D)는 「the 비교급 ~, the 비교급 …」을 사용하여 영작할 것. (walk, healthy)",
+    "조건 1. 밑줄 (A)~(C)는 괄호 안의 말을 이용하여 영작할 것.",
+    "(A) how often, walk",
+    "(B) important, walk, every day",
+    "(C) that way, stay healthy",
+    "조건 2. 밑줄 (D)는 「the 비교급 ~, the 비교급 …」과 괄호 안의 말(exercise, strong, become)을 사용하여 영작할 것.",
     "(1) (A) → ________________________________",
     "(2) (B) → ________________________________",
     "(3) (C) → ________________________________",
     "(4) (D) → ________________________________"
    ],
    "answer_lines": 1,
-   "answer": "(A) How often do you walk your dog? (B) It’s important to walk your dog every day. (C) I saw him running in the park yesterday. (run 도 인정) (D) The more you walk him, the healthier he will be.",
-   "explain": "(A) 빈도 묻기 (B) 가주어 it (C) 지각동사 see + 목적어 + 현재분사/동사원형 (D) the 비교급 ~, the 비교급 …. (C)(D) 는 대화 흐름에 맞춰 지은 문장.",
-   "source": "L6 Check Up A (교과서 대화문) · 학습지 p.35 · p.44 — (C)(D) 선생님 제작"
+   "answer": "(A) How often do you walk your dog? (B) It’s important to walk your dog every day. (C) That way, he can stay healthy. (D) The more you exercise, the stronger your body will become.",
+   "explain": "(A) 빈도 묻기 (B) 가주어 it (C) 대화문 그대로 (D) the 비교급 ~, the 비교급 … (학습지 p.37 B-(2) 그대로).",
+   "source": "L6 Check Up A (교과서 대화문 그대로) · 학습지 p.37 grammar 3-B the 비교급"
   }
  ]
 }

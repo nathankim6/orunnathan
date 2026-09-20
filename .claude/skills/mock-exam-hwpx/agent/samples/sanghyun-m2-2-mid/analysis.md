@@ -1,4 +1,4 @@
-# 상현중학교 2학년 2학기 중간고사 — 동형 모의고사 분석서 (v2, 처음부터 다시 씀)
+# 상현중학교 2학년 2학기 중간고사 — 동형 모의고사 분석서 (v3, 문장을 자료 원문으로 전부 대조)
 
 입력: 기출 사진 14장(pages/01~08 = 26-1 **기말** 8쪽 33문항 전부 선택형 — 문법 연계 근거로만 · pages/09~14 = 26-1 **중간** 6쪽
 27문항 = 선택 20 / 서답 7 — **이 형식을 그대로 따름**) · 학교 학습지 스캔 24쪽(pages/22) · 교과서 범위 자료 text/15~20
@@ -95,20 +95,20 @@ L5 어휘리스트 58개 · 다의어 part/save · 영영풀이 15개 / L6 어�
 | 1 | 대화 일치 · 교과서 대화문 | 긴 대화문 | L6 T1-B 셀카 | L5 T1-B 업사이클링 가방 | L6 T2-A Ms. Hong |
 | 2 | 어법 맞는 문장 · 선생님 제작 | 학습지 grammar 문장 변형 | 가주어 it · the 비교급 (p.35~37) | each/every/all · 지각동사 (p.42~44) | 가주어·the 비교급·지각동사 혼합 |
 | 3 | 대화 빈칸 (A) · 교과서 대화문 | 방법 묻기 / 빈도 묻기 | L5 T2-A 배낭 (What can I do to find a new owner) | L6 T1-A3 수면 (How often do you get enough sleep) | L5 T1-A2 플라스틱 (What can I do to reduce plastic waste) |
-| 4 | 어법 옳은 것 모두 ⓐ~ⓖ · 선생님 제작 | 학습지 p.44~45 지각동사 문장 + 기말 3·30번 사역·5형식 | hear/see/watch + make/let/help/tell | see/hear/feel/listen to + ask/advise/make | watch/smell/hear + tell/make(명사보어)/let/want |
+| 4 | 어법 옳은 것 모두 ⓐ~ⓖ · 선생님 제작 | 학습지 p.44~45 지각동사 문장 4개 + 범위 안의 사역·준사역·5형식 문장 3개(Let me read this paper airplane · Trees will help clean the air · Greenhouse gases make the Earth hotter · All the letters … make me happy) | hear/see/watch/hear + let/help/make | see/hear/feel/listen to + help/make/let | watch/smell/see/hear + make/let/help |
 | 5~7 | 주제·목적 / 문장 삽입 / 옮긴 대화 불일치 · 교과서 지문 | 교과서 기타 지문 | L5 My Writing Homin 편지 (목적 / I want to do something … 삽입 / 대화 (C) more meat) | L6 My Writing Sports Day (주제 / Jinwoo MVP 삽입 / 대화 (D) Class 1 won) | L6 Team Project Pages (주제 / This photo was taken 삽입 / 대화 (C) second place) |
 | 8 | 답할 수 없는 질문 · 교과서 대화문 | 대화문 | L6 T2-A Ms. Hong | L5 Check Up A 소풍 | L6 T1-B 셀카 |
 | 9~10, 서1 | 어법 틀린 개수 / 밑줄 의미 / 문장 전환 · 교과서 지문 | 교과서 본문 | L5-3 Suin (3개 / Together, we can make a difference / It is important to do … → To do … is important) | L6-2 Survey+Principal (2개 / Money doesn’t grow on trees / Planning … is important → It is very important to plan …) | L5-1 Monica (2개 / Venice could be underwater soon / the 비교급 → 두 문장 풀어쓰기) |
-| 11 | 대화 순서 배열 · 교과서 대화문 | 대화문 (A)~(C) | L6 T1-A1 가족 저녁 | L5 T1-A3 대기 오염 | L5 T2-A 배낭 |
-| 12 | 용법 다른 하나 · 선생님 제작 안내문 | 이번 문법 | 가주어 It vs 대명사 it (Fly High 안내문) | each/every/all 수일치 틀린 것 (p.43 A) | the 비교급·지각동사 틀린 것 (p.36·45) |
+| 11 | 대화 순서 배열 · 교과서 대화문 | 대화문 (A)~(C) | L6 T1-A1 가족 저녁 | L5 T1-A1 에너지 절약 | L5 T2-A 배낭 |
+| 12 | 용법 다른 하나 · 선생님 제작 안내문 | 이번 문법 | 가주어 It vs 대명사 It — 학습지 p.35~36·본문 문장 5개 (A)~(E) | each/every/all 수일치 틀린 것 (p.43 A) | the 비교급·지각동사 틀린 것 (p.36·45) |
 | 13 | 어휘 어색 · 학습지 예문 | 학습지 vocabulary 1 예문 | L6 p.40 (trusted → screamed) | L5 p.33 (increased → slowed down) | L6 p.40 (screamed → stayed up) |
 | 14~17 | 이유 / (A)~(C) 어법 표 / (D) 빈칸 / 일치 개수 · 교과서 본문 | 교과서 본문 | L5-1 Monica (heard / were flooded / higher · Venice could be underwater soon · 5개) | L5-3 Suin (rains / been / It · Together, we can make a difference · 4개) | L6-1 Fly High (are / cheering / doing · Never give up · 6개) |
 | 18 | 빈칸에 못 들어가는 단어 · 학습지 예문 | 학습지 vocabulary 1 예문 4문장 | L6 lower/perform/spread/save + flip | L5 increase/reduce/reuse/rise + donate | L5·L6 find/grow/manage/save + melt |
 | 19~20, 서2~3 | 지칭 ⓐ~ⓔ / 영영풀이 본문에 없는 것 / (F)(G) 전환 / (H) 보기 영작 · 교과서 본문 + 영영풀이 | 교과서 본문 + 학습지 vocabulary 2 | L6-1 Fly High (They/they/I/my/their · principal 없음 · Each member has / see the crowd cheering · watch Fly High doing) | L6-1 Fly High (our team/They/I/my/their · lower 없음 · there are / watch … doing · When I see the crowd cheering and screaming) | L5-2 Timothy (My/it/your city/This/this · canal 없음 · the hotter / It isn’t easy to change · I’m trying to eat less meat …) |
-| 서4 | 상황 읽고 문법 문장 2개 · 선생님 제작 | 학습지 p.44~45 지각동사 문장을 상황으로 | heard the baby crying / felt the ground shaking | saw Sam laughing / heard someone call her name | smelled the smoke coming / heard the rain falling |
+| 서4 | 상황 읽고 문법 문장 2개 · 선생님 제작 | 학습지 p.44~45 지각동사 문장의 우리말 + (동사 힌트) 그대로 | heard the baby cry / felt the ground shake (E-6·5) | saw Sam laughing / heard someone call her name (F-2·5) | smelled the smoke come / heard the rain fall (E-7·8) |
 | 서5 | 조건 영작 · 선생님 제작 | 대화문·학습지 문장 | 가주어 it: It is important to get eight hours of sleep every night (L6 T1-A3) | the 비교급: The more vegetables you eat, the healthier you will become (p.37) | 가주어 it: It is important to keep your desk tidy (L6 T1-A2) |
 | 서6 | 대화 (A) 기능 표현 · 교과서 대화문 | 방법 묻기 / 빈도 묻기 | L5 Check Up B (What can we do to reduce air pollution) | L6 T1-A2 (How often do you clean it) | L5 Check Up C (What can I do to reduce clothing waste) |
-| 서7 | 대화 (A)~(C) 문법 전환 + (D) 우리말 영작 · 교과서 대화문 + 선생님 제작 | 대화문 + 이번 문법 4가지 | L6 Check Up A 개 산책 (How often / It’s important to / saw him running / The more you walk him, the healthier) | L5 T1-A1 에너지 (What can we do / saw you turn off / It’s important to / The more energy we save, the cooler) | L6 T1-A3 수면 (How often / It’s important to / saw my brother go to bed / The earlier you go to bed, the more energy — p.37 B-(3)) |
+| 서7 | 대화 (A)~(C) 문법 전환 + (D) 우리말 영작 · 교과서 대화문 + 선생님 제작 | 대화문 세 줄 그대로 + (D) 학습지 the 비교급 문장 그대로 | L6 Check Up A 개 산책 (How often / It’s important to / That way, he can stay healthy / The more you exercise, the stronger — p.37 B-(2)) | L5 T1-A3 대기 오염 (What can we do / We can plant more trees / don’t forget to ride … / The more trees we plant, the fresher — p.37 뒷면) | L6 T1-A3 수면 (How often / It’s important to / I’ll try to go to bed earlier / The earlier you go to bed, the more energy — p.37 B-(3)) |
 
 ### 자료 갈래별 문항 수 (각 회)
 교과서 본문 12(9·10·서1·14~17·19·20·서2·서3) · 교과서 대화문 7(1·3·8·11·서6·서7 + 서5의 원문) · 교과서 기타 지문 3(5~7) ·
@@ -123,3 +123,34 @@ L5 어휘리스트 58개 · 다의어 part/save · 영영풀이 15개 / L6 어�
 - **확신 낮은 문항**: 1회 12번(가주어 It vs 대명사 it — 기출은 to부정사 용법이었음), 3회 서1(the 비교급 → 두 문장 풀어쓰기: 학습지 p.35 방식이지만 답의 형태가 조금 열려 있음 — 채점 기준을 "원급으로 두 문장" 으로 둠), 서7 (C)(D) 의 선생님 제작 문장(원문에는 없음).
 - 서답형 정답 인정 범위(동사원형/현재분사 둘 다)는 answer 에 함께 적었다.
 - 미리보기 PDF 는 Chromium 조판이라 정답표가 머리말과 겹쳐 보이는 쪽이 있으나 HWPX 에는 영향 없음. 1·2·3회 모두 7쪽(정답표 포함).
+
+## 5. v3 문장 대조 — "문장은 자료 원문 그대로"
+
+학습지 스캔 24쪽(pages/22)을 `text/ws22.txt` 로 옮겨 적고(쪽마다 `[p.N]`, 문법 규칙표·Practice 문장 전부·어휘 표·영영풀이·예문·학생 필기 정답까지),
+`agent.py audit` 로 세 회의 **모든 영어 문장(상자·선지·보기·조건)** 을 교과서 xlsx/hwp + ws22.txt 와 대조했다.
+
+| | 원문 그대로 | 변형 | 창작 |
+|---|---|---|---|
+| audit 전 (v2) | 279 | 74 | **117** (1회 42 · 2회 37 · 3회 38) |
+| audit 후 (v3) | 332 | 80 | **0** |
+
+남은 "변형" 80개는 전부 세 가지뿐이다 — ① 어법 오류 심기(2·4·9·15·서2: 원문 한 단어만 바꿈, explain 에 원문) ② 빈칸·괄호·기호 넣기(15·16·18 보기) ③ 일치/불일치 선지에서 원문 한 단어(부정어·숫자·장소·시점)만 바꾼 것(1·7·17). 창작 예외는 **없음**.
+
+바꾼 자리(세 회 공통):
+- **1번 일치 선지** — 대화 문장을 그대로 두고 한 단어만 바꿈. 3인칭으로 고치면 대조가 안 되는 대화(2·3회)는 `Eric: …` / `Ms. Hong: …` 처럼 화자를 붙인 인용형으로 냄.
+- **3번 (A) 오답** — 범위 대화문·본문의 다른 문장(What can I do to start upcycling? · How often do you practice it? · Do you have a spending plan? …).
+- **4번 ⓐ~ⓖ** — 지각동사 4문장은 학습지 p.44 E · p.45 F 그대로(+오류 심기). 사역·준사역·5형식은 기출 문장을 쓰지 않고 **범위 안의** 문장으로: Let me read this paper airplane(L6 T2-B) · Trees will help clean the air(L5 T1-A3) · Greenhouse gases make the Earth hotter(L5 본문) · All the letters from my old friends make me happy(학습지 p.43).
+- **5·8·10번 선지** — 주제·목적, 답할 수 없는 질문, 밑줄 의미는 그 성격상 자료에 없는 새 문장이 필요하므로 **우리말 선지**로 냄(우리말 발문·해석은 자유). 기출 5·8은 영어였고 10은 우리말 속담이었다.
+- **7번 본문을 옮긴 대화** — 밑줄 (A)~(E)는 본문 문장 그대로, 틀린 하나만 한 단어(less→more · Class 3→Class 1 · first→second). 상대 대사는 네 단어 이하 또는 범위 문장.
+- **12번(1회)** — 선생님 제작 안내문을 버리고 학습지 p.35·36 + 본문의 It 문장 5개를 (A)~(E)로 늘어놓음(가주어 It vs 대명사 It).
+- **16번 오답** — 범위 본문·대화문의 다른 문장.
+- **17번 <보기> 7문장** — 본문 문장 그대로 또는 한 단어만 바꿈(Many→Few · were flooded→were not flooded · one student→one teacher · losing→winning …). 정답 개수가 바뀐 곳: 1회 5→4개(③), 2회 4→5개(④), 3회 6→5개(④).
+- **15번(3회)** — (B) 선택지 to cheer → cheers (to do 는 (C)에만). 표 줄이 다섯 단어를 넘지 않게.
+- **19번(3회) ⓔ** — cows passing a lot of gas → cows pass a lot of gas (본문 그대로).
+- **서답형 3(2회)** 보기 단어 — cheer, scream → cheering, screaming (본문 형태) + 방해 단어 to, watch.
+- **서답형 4** — 영어 상황문 대신 **학습지 E/F 의 우리말 문장 + (동사 힌트)** 를 그대로 싣고 지각동사 문장을 완성하게 함.
+- **서답형 5** — 만든 상황문(Sejun feels tired these days …) 대신 그 대화문 세 줄을 그대로 실음.
+- **서답형 7** — (A)~(C) 는 대화문의 세 줄 그대로(빈도 묻기 · 가주어 it · 그 대화의 다른 줄), (D) 는 학습지 the 비교급 문장 그대로(p.37 B-(2)·B-(3) · p.37 뒷면 The more trees we plant …). 2회는 대화를 L5 T1-A1 → **L5 T1-A3(대기 오염)** 으로 바꾸고, 겹치지 않게 **11번을 L5 T1-A3 → L5 T1-A1** 로 맞바꿈. 조건의 단어 힌트는 각 줄 네 단어 이하.
+- **13번(2회)** — ws22.txt 에서 어휘 예문을 표제어와 다른 줄에 두어 대조가 되게 함(내용 변화 없음).
+
+문항 수·배점·번호 흐름·자료 갈래(표 ③)는 v2 그대로. `check` 통과(객관식 20 · 서술형 7 · 총점 100), `build` → out3-sanghyun2.
