@@ -22,8 +22,14 @@
     "음식물 반입 금지"
    ],
    "answer": 2,
-   "explain": "must not touch anything → 만지지 마시오. 그림 표지판 대신 표지판의 내용을 글로 물었다.",
-   "source": "L5 Watch and Talk A-2"
+   "explain": "대화에서 소녀가 May I touch this golden bear?(이 황금곰을 만져 봐도 될까요?)라고 묻자 남자가 No, you may not. You must not touch anything in this room.(이 방에서는 어떤 것도 만지면 안 됩니다.)이라고 답한다.\n밑줄 친 must not touch anything 은 '아무것도 만지지 말라'는 금지이므로 표지판의 내용은 ② 만지지 마시오 이다.\nmust not + 동사원형은 '~하면 안 된다'는 금지를 나타낸다.",
+   "source": "L5 Watch and Talk A-2",
+   "wrong": [
+    "① 뛰지 마시오 — must not run 에 해당한다(L5 WT A-3).",
+    "③ 통화하지 마시오 — must not talk on the phone 에 해당한다(L5 WT A-1).",
+    "④ 사진 촬영 금지 — 대화에 사진 이야기가 없다.",
+    "⑤ 음식물 반입 금지 — must not bring any food inside 에 해당한다(L5 WT A-4)."
+   ]
   },
   {
    "no": 2,
@@ -37,8 +43,14 @@
     "A: Can you run over there and turn off the water?\nB: Sure. No problem."
    ],
    "answer": 2,
-   "explain": "허락(Yes, you may.) 뒤에 금지(must not touch)가 이어져 모순. 원문은 No, you may not.",
-   "source": "L5 WT B-1 · WT A-2(변형) · WT A-4, L6 WT A-1 · WT A-3"
+   "explain": "②에서 B 가 Yes, you may.(네, 됩니다.)라고 허락한 뒤 곧바로 You must not touch anything in this room.(이 방에서는 어떤 것도 만지면 안 됩니다.)이라고 금지하므로 앞뒤가 모순된다.\n교과서 원문은 No, you may not. You must not touch anything in this room. 으로, 허락을 거절한 뒤 그 이유를 금지로 덧붙이는 흐름이다.\nMay I ~? 에 Yes, you may. / No, you may not. 으로 답하되 뒤에 이어지는 말과 어긋나지 않아야 한다.",
+   "source": "L5 WT B-1 · WT A-2(변형) · WT A-4, L6 WT A-1 · WT A-3",
+   "wrong": [
+    "① 수업 중 물을 마셔도 되는지 묻고 허락한다 — 자연스럽다(L5 WT B-1).",
+    "③ 음식 반입을 묻고 거절하며 이유를 덧붙인다 — 자연스럽다(L5 WT A-4).",
+    "④ 문을 닫아 달라는 부탁에 몰랐다며 바로 닫겠다고 한다 — 자연스럽다(L6 WT A-1).",
+    "⑤ 물을 잠가 달라는 부탁을 Sure. No problem. 으로 수락한다 — 자연스럽다(L6 WT A-3)."
+   ]
   },
   {
    "no": 3,
@@ -53,8 +65,14 @@
     "Would you like to having a piece of cake for dessert?"
    ],
    "answer": 3,
-   "explain": "would like + to부정사, a piece of ~(~ 한 조각).",
-   "source": "학습지 L5 Vocabulary Advanced C-4 (p.2)"
+   "explain": "'~할래?, ~하고 싶니?'는 Would you like to + 동사원형 으로 쓰고, '케이크 한 조각'은 a piece of cake 이다.\n따라서 ③ Would you like to have a piece of cake for dessert? 가 옳다(학습지 L5 Vocabulary Advanced C-4).\na piece of ~ 는 셀 수 없는 명사를 세는 표현으로 piece 앞에 a, 뒤에 of 가 모두 필요하다.",
+   "source": "학습지 L5 Vocabulary Advanced C-4 (p.2)",
+   "wrong": [
+    "① a piece cake — of 가 빠졌다.",
+    "② piece of a cake — a 의 자리가 잘못되었다(a piece of cake).",
+    "④ Would you like have — like 뒤에 to 가 빠졌다.",
+    "⑤ to having — to 뒤에는 동사원형이 온다."
+   ]
   },
   {
    "no": 4,
@@ -69,8 +87,14 @@
     "into"
    ],
    "answer": 4,
-   "explain": "run after ~: ~을 뒤쫓다.",
-   "source": "L5 본문(Carlos) · 학습지 L5 Workbook B-3 (p.4)"
+   "explain": "첫 문장 I ran ________ him, but I couldn't catch him. 은 본문(Carlos Diaz)의 I ran after him, but I couldn't catch him.(저는 그를 뒤쫓았지만 잡을 수 없었어요.)이다.\n둘째 문장 He was running ________ a bike. 는 학습지 L5 Workbook B-3 의 He was running after a bike.(그는 자전거를 뒤쫓아 달리고 있었다.)이다.\n두 문장 모두 run after ~(~을 뒤쫓다)이므로 공통으로 들어갈 말은 ④ after 이다.",
+   "source": "L5 본문(Carlos) · 학습지 L5 Workbook B-3 (p.4)",
+   "wrong": [
+    "① off — fall off(~에서 떨어지다), turn off(~을 끄다)에 쓰인다.",
+    "② out — eat out(외식하다), out of(~ 밖으로)에 쓰인다.",
+    "③ away — run away(도망가다), go away(없어지다)에 쓰인다.",
+    "⑤ into — put A into B(A 를 B 에 넣다), take ~ into(~을 …에 가지고 가다)에 쓰인다."
+   ]
   },
   {
    "no": 5,
@@ -85,8 +109,14 @@
     "He is the most tallest student in my class."
    ],
    "answer": 2,
-   "explain": "the + 최상급(tallest) + in + 집단. ① the 없음 ③ best tall ④ very 는 최상급을 꾸미지 못함 ⑤ most/-est 겹침.",
-   "source": "학습지 Grammar Exercise A-3 (p.11) 그대로"
+   "explain": "A 가 Is Minsu taller than you?(민수가 너보다 키가 크니?)라고 묻고 B 가 Yes, he is. 라고 답한 뒤 이어질 말이다.\n최상급은 「the + 최상급 + in + 장소·집단」으로 쓰므로 ② He is the tallest student in my class.(그는 우리 반에서 가장 키가 큰 학생이다.)가 옳다(학습지 Grammar Exercise A-3).\ntall 은 1음절이므로 -est 를 붙여 tallest 가 되고, 최상급 앞에는 반드시 the 를 쓴다.",
+   "source": "학습지 Grammar Exercise A-3 (p.11) 그대로",
+   "wrong": [
+    "① tallest 앞에 the 가 없다.",
+    "③ the best tall — tall 의 최상급은 tallest 이지 best tall 이 아니다.",
+    "④ very 는 최상급을 꾸미지 못한다.",
+    "⑤ most 와 -est 를 겹쳐 썼다."
+   ]
   },
   {
    "no": 6,
@@ -100,8 +130,14 @@
     "forget: to not remember something"
    ],
    "answer": 3,
-   "explain": "suspect 는 someone who is thought to be guilty of a crime. ③은 owner 의 풀이.",
-   "source": "L5·L6 어휘 영영풀이"
+   "explain": "suspect 는 '용의자'로, 영영풀이는 someone who is thought to be guilty of a crime(범죄에 책임이 있다고 여겨지는 사람)이다.\n③ someone who owns something(무언가를 소유한 사람)은 owner(주인)의 풀이이므로 알맞지 않다.\n어휘 영영풀이 sheet 에서 suspect 와 owner 의 풀이를 구별해 두어야 한다.",
+   "source": "L5·L6 어휘 영영풀이",
+   "wrong": [
+    "① bakery: 빵과 케이크를 파는 상점 — 옳다.",
+    "② feed: 사람이나 동물에게 음식을 주다(먹이를 주다) — 옳다.",
+    "④ leftover: 식사 중에 먹지 않고 남은 음식 — 옳다.",
+    "⑤ forget: 무언가를 기억하지 못하다(잊다) — 옳다."
+   ]
   },
   {
    "no": 7,
@@ -116,8 +152,14 @@
     "restaurant"
    ],
    "answer": 3,
-   "explain": "jogging / restaurant / meal / reward. needle 은 sew 의 풀이에 쓰이는 말.",
-   "source": "학습지 L6 Vocabulary Advanced A (p.14)"
+   "explain": "학습지 L6 Vocabulary Advanced A 의 영영풀이다. plog: to pick up trash while jogging(조깅하면서 쓰레기를 줍다) → jogging, eat out: to eat in a restaurant(식당에서 먹다) → restaurant, leftover: food remaining after a meal(식사 후 남은 음식) → meal, in return: as a response, exchange, or reward for something(무언가에 대한 반응·교환·보상으로) → reward.\n어디에도 들어가지 않는 말은 ③ needle 이다. needle(바늘)은 sew: to use a needle and thread ~ 의 풀이에 쓰이는 말이다.",
+   "source": "학습지 L6 Vocabulary Advanced A (p.14)",
+   "wrong": [
+    "① meal — leftover 의 빈칸.",
+    "② reward — in return 의 빈칸.",
+    "④ jogging — plog 의 빈칸.",
+    "⑤ restaurant — eat out 의 빈칸."
+   ]
   },
   {
    "no": 8,
@@ -132,8 +174,14 @@
     "environment"
    ],
    "answer": 2,
-   "explain": "reduce / sew / delivery / environment. label 은 들어갈 자리가 없다.",
-   "source": "학습지 L6 Vocabulary Advanced B (p.14)"
+   "explain": "학습지 L6 Vocabulary Advanced B 의 문장들이다. We should reduce waste.(우리는 쓰레기를 줄여야 한다.) I can sew a button on my shirt.(나는 셔츠에 단추를 달 수 있다.) The pizza delivery arrived on time.(피자 배달이 제시간에 도착했다.) The environment has plants, animals, and water.(환경에는 식물, 동물, 물이 있다.)\n따라서 reduce·sew·delivery·environment 가 쓰이고, ② label(상표)은 들어갈 자리가 없다. label 은 같은 학습지의 He took off the label from the bottle. 에 쓰인 말이다.",
+   "source": "학습지 L6 Vocabulary Advanced B (p.14)",
+   "wrong": [
+    "① sew — 둘째 문장.",
+    "③ reduce — 첫째 문장.",
+    "④ delivery — 셋째 문장.",
+    "⑤ environment — 넷째 문장."
+   ]
   },
   {
    "no": 9,
@@ -181,8 +229,14 @@
     ]
    },
    "answer": 2,
-   "explain": "a living room(단수) → is, two bedrooms(복수) → are, the ~ of all the rooms → 최상급 biggest.",
-   "source": "L5 기타 지문 Review 9 (Minho's house)"
+   "explain": "L5 Review 9 의 글(Minho's house)이다. There + be동사 는 뒤에 오는 주어에 수를 맞춘다.\nⓐ 뒤의 주어가 a living room(단수)이므로 is, ⓑ 뒤의 주어가 two bedrooms(복수)이므로 are 이다.\nⓒ It is the ________ of all the rooms.(이곳이 모든 방들 중에서 가장 크다.)는 「the + 최상급 + of + 복수」이므로 biggest 이다. 따라서 ② is – are – biggest.",
+   "source": "L5 기타 지문 Review 9 (Minho's house)",
+   "wrong": [
+    "① ⓑ two bedrooms 는 복수라 are, ⓒ of all 뒤는 최상급.",
+    "③ ⓒ the ~ of all the rooms 는 최상급 biggest.",
+    "④ ⓐ a living room 은 단수라 is, ⓑ 는 are.",
+    "⑤ ⓐ 는 is, ⓒ 는 biggest."
+   ]
   },
   {
    "no": 10,
@@ -196,8 +250,14 @@
     "There ________ a bank near here.\n이 근처에 은행이 하나 있다."
    ],
    "answer": 5,
-   "explain": "①~④는 복수 주어 → are, ⑤는 a bank(단수) → is.",
-   "source": "학습지 Grammar Exercise B-2 · B-7 (p.12)"
+   "explain": "There + be동사 문장에서 be동사는 뒤의 주어에 맞춘다(학습지 Grammar Exercise B-2·B-7).\n① pandas ② not many books ③ a lot of people ④ some students 는 모두 복수이므로 are 가 들어간다.\n⑤ There is a bank near here.(이 근처에 은행이 하나 있다.)는 a bank 가 단수이므로 is 가 들어간다. 따라서 답은 ⑤.",
+   "source": "학습지 Grammar Exercise B-2 · B-7 (p.12)",
+   "wrong": [
+    "① pandas(복수) → are.",
+    "② many books(복수) → are(There are not ~).",
+    "③ a lot of people(복수) → are.",
+    "④ some students(복수) → are."
+   ]
   },
   {
    "no": 11,
@@ -211,8 +271,14 @@
     "I want to eat one more <u>piece</u> of cheesecake.\n접시"
    ],
    "answer": 5,
-   "explain": "piece 는 '조각'. one more piece of cheesecake = 치즈케이크 한 조각 더.",
-   "source": "학습지 L5 Advanced B·C (p.2) · L5 Workbook B-2·3 (p.3) · L6 Advanced B-4 (p.14)"
+   "explain": "⑤ I want to eat one more piece of cheesecake. 는 '나는 치즈케이크를 한 조각 더 먹고 싶다.'이므로 piece 는 '조각'이지 '접시'가 아니다(학습지 L5 Workbook B-3).\n나머지 밑줄 단어의 뜻은 모두 알맞다. secret 비밀의, scene 장면, wheelchair 휠체어, label 상표.",
+   "source": "학습지 L5 Advanced B·C (p.2) · L5 Workbook B-2·3 (p.3) · L6 Advanced B-4 (p.14)",
+   "wrong": [
+    "① secret code 비밀 코드 — 옳다(학습지 L5 Advanced C-1).",
+    "② a scary scene 무서운 장면 — 옳다(L5 Advanced B-3).",
+    "③ wheelchair 휠체어 — 옳다(L5 Workbook B-2).",
+    "④ took off the label 상표를 떼어 냈다 — 옳다(L6 Advanced B-4)."
+   ]
   },
   {
    "kind": "group",
@@ -270,8 +336,14 @@
     ]
    },
    "answer": 1,
-   "explain": "Yes, you may 로 답하므로 May I ~? 로 허락을 구하는 (A). 플래시 금지에 이유를 묻는 Why not? 이 (B).",
-   "source": "L5 Watch and Talk C · 오답 ③ L6 Watch and Talk B 문장"
+   "explain": "L5 Watch and Talk C 의 박물관 대화다. (A) 뒤에 남자가 Yes, you may, but you must not use the flash.(네, 됩니다만 플래시를 사용하시면 안 됩니다.)라고 답하므로 (A)는 May I ~? 로 허락을 구하는 May I take a picture of it?(그것의 사진을 찍어도 될까요?)이다.\n(B) 뒤에 It's a little dark in here.(여기는 좀 어두운데요.)라며 플래시 금지의 이유를 묻고 남자가 그 이유를 설명하므로 (B)는 Why not?(왜 안 되나요?)이다. 따라서 ①.",
+   "source": "L5 Watch and Talk C · 오답 ③ L6 Watch and Talk B 문장",
+   "wrong": [
+    "② How about you? 는 상대의 의견을 되묻는 말로 뒤의 '어둡다'와 이어지지 않는다.",
+    "③ Can you please fix my bike? 는 부탁하는 말이라 Yes, you may 와 맞지 않는다(L6 WT B).",
+    "④ May I touch it? 뒤에 플래시 이야기가 올 수 없고, Excuse me? 는 되묻는 말이다.",
+    "⑤ Who painted it? 은 이미 Van Gogh 라고 소개했으므로 어색하다."
+   ]
   },
   {
    "no": 13,
@@ -285,8 +357,14 @@
     "M: Everyone, we'll move on to Van Gogh's paintings next."
    ],
    "answer": 4,
-   "explain": "④ 대화 문장 그대로. ① my favorite painting ② must not use the flash ③ It's a little dark in here ⑤ Monet's paintings.",
-   "source": "L5 Watch and Talk C"
+   "explain": "④ M: I'm sorry, but using the flash can damage paintings.(죄송하지만 플래시를 사용하는 것은 그림들을 훼손할 수 있습니다.)는 대화 문장 그대로다.\n나머지는 대화의 한 단어씩을 바꾸어 내용과 어긋나게 만든 것이다.",
+   "source": "L5 Watch and Talk C",
+   "wrong": [
+    "① 원문은 this is my favorite painting — not 이 없다.",
+    "② 원문은 you must not use the flash — 플래시를 써야 한다가 아니라 쓰면 안 된다.",
+    "③ 원문은 It's a little dark in here — 어둡지 않다가 아니라 좀 어둡다.",
+    "⑤ 원문은 Monet's paintings — 다음에 갈 곳은 반 고흐가 아니라 모네의 그림이다."
+   ]
   },
   {
    "no": 14,
@@ -300,8 +378,14 @@
     "I learned <u>that</u> reusing is important for zero-waste living."
    ],
    "answer": 3,
-   "explain": "③은 명사를 꾸미는 지시형용사 that. 나머지는 명사절을 이끄는 접속사 that.",
-   "source": "학습지 L6 Grammar Warm-Up B 예문 (p.17) · L5 WT A-3 · L6 본문 Challenge 02"
+   "explain": "①②④⑤의 that 은 뒤에 「주어 + 동사」절을 이끌어 think·believe·know·learned 의 목적어가 되는 접속사 that 이다(학습지 L6 Grammar Warm-Up B).\n③ Look at that sign.(저 표지판을 봐.)의 that 은 명사 sign 을 꾸미는 지시형용사 '저'이다(L5 WT A-3). 따라서 쓰임이 다른 것은 ③.",
+   "source": "학습지 L6 Grammar Warm-Up B 예문 (p.17) · L5 WT A-3 · L6 본문 Challenge 02",
+   "wrong": [
+    "① I think that the movie is interesting — 접속사(목적어절).",
+    "② I believe that he is honest — 접속사.",
+    "④ She doesn't know that I'm here — 접속사.",
+    "⑤ I learned that reusing is important ~ — 접속사(L6 본문)."
+   ]
   },
   {
    "kind": "group",
@@ -310,7 +394,7 @@
    "box": {
     "lines": [
      "Challenge 02 Reuse",
-     "Domingo: My dog tore my bag. (A) (가)I wanted to buy ⓐa new one, but I thought again. (B) (나)I learned that reusing is important for zero-waste living. So, I decided to fix ⓑit and reuse ⓒit. (다)I'm not very good at sew, and I don't think that ⓓthe bag looks perfect. I guess it's all right.",
+     "Domingo: My dog tore ⓐmy bag. (A) (가)I wanted to buy a new one, but I thought again. (B) (나)I learned that reusing is important for zero-waste living. So, I decided to fix ⓑit and reuse ⓒit. (다)I'm not very good at sew, and I don't think that ⓓthe bag looks perfect. I guess it's all right.",
      "Challenge 03 Say No to Single-Use Plastic",
      "Emma: I often use food delivery services, but today I didn't. (C) Instead, I walked to my favorite restaurant with a reusable container and picked up the food. (라)I heard that plastic never go away completely. I didn't use any single-use plastic today. (D)",
      "Challenge 04 Recycle",
@@ -332,8 +416,14 @@
    ],
    "inline": true,
    "answer": 4,
-   "explain": "일회용 플라스틱을 쓰지 않은 하루를 마친 뒤의 느낌 → Challenge 03 의 끝 (D).",
-   "source": "L6 본문 Challenge 03"
+   "explain": "주어진 문장 I felt good!(기분이 좋았어!)은 L6 본문 Challenge 03 에서 Emma 가 오늘 일회용 플라스틱을 전혀 쓰지 않았다고 말한 뒤 마무리하는 문장이다.\nI didn't use any single-use plastic today. 바로 뒤인 (D)에 들어가야 '오늘 하루의 실천 → 그 느낌'으로 자연스럽다. 따라서 ④.",
+   "source": "L6 본문 Challenge 03",
+   "wrong": [
+    "① (A) 가방이 찢어져 새것을 사고 싶었다는 대목 — 기분이 좋을 자리가 아니다.",
+    "② (B) Domingo 가 다시 생각한 뒤 이유를 말하는 자리다.",
+    "③ (C) Emma 가 배달을 안 쓴 대신 무엇을 했는지 설명이 이어지는 자리다.",
+    "⑤ (E) Minsu 의 재활용 이야기 첫머리로, Emma 의 감상이 올 수 없다."
+   ]
   },
   {
    "no": 16,
@@ -348,8 +438,14 @@
    ],
    "inline": true,
    "answer": 5,
-   "explain": "ⓐ~ⓓ는 모두 Domingo 의 가방(my bag), ⓔ는 Minsu 가 가져간 plastic and glass bottles.",
-   "source": "L6 본문 Challenge 02·04"
+   "explain": "ⓐ my bag(내 가방) ⓑ it ⓒ it ⓓ the bag 은 모두 Domingo 의 개가 찢은 가방을 가리킨다. So, I decided to fix it and reuse it.(그래서 그것을 수선해서 재사용하기로 결심했어.)의 it 이 찢어진 가방이다.\nⓔ them 은 Challenge 04 에서 Minsu 가 재활용 기계에 가져간 some plastic and glass bottles(플라스틱병과 유리병)를 가리킨다. 따라서 가리키는 대상이 다른 것은 ⑤ ⓔ.",
+   "source": "L6 본문 Challenge 02·04",
+   "wrong": [
+    "① ⓐ my bag — Domingo 의 가방.",
+    "② ⓑ it — fix it, 그 가방.",
+    "③ ⓒ it — reuse it, 그 가방.",
+    "④ ⓓ the bag — 수선한 그 가방."
+   ]
   },
   {
    "no": 17,
@@ -363,8 +459,14 @@
     "How many plastic and glass bottles did Minsu put into the machine one by one?"
    ],
    "answer": 5,
-   "explain": "병의 개수는 나오지 않는다(some plastic and glass bottles). ① reusing is important for zero-waste living ② I don't think that the bag looks perfect ③ I didn't use any single-use plastic today ④ a recycling machine near my house.",
-   "source": "L6 본문 Challenge 02~04"
+   "explain": "⑤ Minsu 가 기계에 넣은 병이 몇 개인지는 글에 나오지 않는다. 본문은 some plastic and glass bottles(플라스틱병과 유리병 몇 개)라고만 말한다.\n나머지 질문은 글에서 답을 찾을 수 있다.",
+   "source": "L6 본문 Challenge 02~04",
+   "wrong": [
+    "① I learned that reusing is important for zero-waste living. → Yes.",
+    "② I don't think that the bag looks perfect. → No.",
+    "③ I didn't use any single-use plastic today. → No.",
+    "④ to a recycling machine near my house → 집 근처 재활용 기계."
+   ]
   },
   {
    "no": 18,
@@ -378,8 +480,14 @@
     "(가), (나), (라), (마), (바)"
    ],
    "answer": 4,
-   "explain": "(다) be good at + 동명사 → sewing. (라) plastic 은 3인칭 단수 → never goes away. 나머지는 원문 그대로 옳다. 상자의 (다)·(라)는 어법 문항을 위해 일부러 바꾼 문장.",
-   "source": "L6 본문 Challenge 02~04"
+   "explain": "(가) I wanted to buy a new one — want + to부정사, one 은 a new bag 을 대신하는 대명사. 옳다.\n(나) I learned that reusing is important ~ — 접속사 that 절, 동명사 주어 reusing 에 단수 동사 is. 옳다.\n(다) I'm not very good at sew → be good at 뒤에는 동명사 sewing 이 와야 한다. 틀림.\n(라) plastic never go away → plastic 은 3인칭 단수 주어이므로 goes. 틀림.\n(마) I put them into the machine one by one — put A into B. 옳다. (바) Don't you think that's cool? — 옳다. 따라서 옳은 것은 (가), (나), (마), (바) → ④.",
+   "source": "L6 본문 Challenge 02~04",
+   "wrong": [
+    "① (마), (바)도 옳다.",
+    "② (다), (라)는 틀렸다.",
+    "③ (가)도 옳다.",
+    "⑤ (라)는 틀렸다."
+   ]
   },
   {
    "no": 19,
@@ -394,8 +502,14 @@
     "enjoyed"
    ],
    "answer": 5,
-   "explain": "plan, want, hope, decide 는 to부정사를 목적어로 취한다. enjoy 는 그렇지 않다.",
-   "source": "학습지 L6 Grammar Basic A-3 (p.18) · Warm-Up A-3 동사표 (p.17)"
+   "explain": "빈칸 뒤에 to visit(to부정사)이 온다. plan, want, hope, decide 는 to부정사를 목적어로 취하는 동사이다(학습지 L6 Grammar Warm-Up A-3 동사표).\n⑤ enjoy 는 동명사(visiting)를 목적어로 취하므로 enjoyed to visit 은 틀렸다. 원문은 I plan to visit the village again next week.(나는 다음 주에 그 마을을 다시 방문할 계획이다.)",
+   "source": "학습지 L6 Grammar Basic A-3 (p.18) · Warm-Up A-3 동사표 (p.17)",
+   "wrong": [
+    "① plan to ~ — 학습지 Basic A-3 원문.",
+    "② want to ~ — to부정사 목적어.",
+    "③ hope to ~ — to부정사 목적어.",
+    "④ decided to ~ — to부정사 목적어."
+   ]
   },
   {
    "no": 20,
@@ -409,8 +523,14 @@
     "Maria hopes <u>that</u> her grandmother will get well soon."
    ],
    "answer": 3,
-   "explain": "목적어 that절의 접속사 that 은 생략할 수 있지만, ③의 that 은 sign 을 가리키는 지시형용사라 생략할 수 없다.",
-   "source": "학습지 L6 Workbook 접속사 that A·B (p.20) · Basic B-4 (p.18) · L5 WT A-3"
+   "explain": "think·know·hope 뒤에서 목적어절을 이끄는 접속사 that 은 생략할 수 있다(학습지 L6 Grammar Warm-Up B-2).\n③ Look at that sign.(저 표지판을 봐.)의 that 은 sign 을 가리키는 지시형용사이므로 빼면 뜻이 사라진다. 따라서 생략할 수 없는 것은 ③.",
+   "source": "학습지 L6 Workbook 접속사 that A·B (p.20) · Basic B-4 (p.18) · L5 WT A-3",
+   "wrong": [
+    "① I think (that) this garden is very beautiful — 생략 가능.",
+    "② Yuna knows (that) the boys play basketball every day — 생략 가능(Workbook A-1).",
+    "④ Alex thinks (that) we should study English hard — 생략 가능.",
+    "⑤ Maria hopes (that) her grandmother will get well soon — 생략 가능."
+   ]
   },
   {
    "no": 21,
@@ -425,8 +545,14 @@
     "금지"
    ],
    "answer": 2,
-   "explain": "I'm sorry, but ~ 는 부탁을 거절하는 표현. 아빠가 다른 사람에게 부탁하겠다고 한다.",
-   "source": "L6 Watch and Talk A-4"
+   "explain": "아빠가 Can you please carry this box to my car?(이 상자를 내 차로 옮겨 줄래?)라고 부탁하자 소녀가 I'm really sorry, Dad, but I'm late for my class.(정말 죄송해요, 아빠, 그런데 제가 수업에 늦었어요.)라고 답한다.\nI'm sorry, but ~ 는 부탁을 정중히 거절하는 표현이고, 이어서 아빠가 I'll ask somebody else.(다른 사람에게 부탁할게.)라고 하므로 밑줄의 의도는 ② 거절이다.",
+   "source": "L6 Watch and Talk A-4",
+   "wrong": [
+    "① 제안 — 무언가를 하자고 권하는 말이 아니다.",
+    "③ 허락 — Yes, you may. 같은 말이 아니다.",
+    "④ 부탁 — 부탁하는 쪽은 아빠(Can you please ~?)다.",
+    "⑤ 금지 — must not 과 같은 말이 아니다."
+   ]
   },
   {
    "kind": "group",
@@ -454,8 +580,14 @@
     "I'm about 170 cm tall, and he was a little taller as me."
    ],
    "answer": 2,
-   "explain": "비교급 taller + than, '조금' a little. 원문: I'm about 170 cm tall, and he was a little taller than me.",
-   "source": "L5 본문 Ann Jones"
+   "explain": "'그는 저보다 조금 더 컸어요'는 비교급 taller + than me 로 쓰고, '조금'은 a little 로 비교급을 꾸민다.\n원문: I'm about 170 cm tall, and he was a little taller than me.(L5 본문 Ann Jones) 따라서 ②.\ntall 은 1음절이라 -er 을 붙이며, more 를 겹쳐 쓰지 않는다.",
+   "source": "L5 본문 Ann Jones",
+   "wrong": [
+    "① little tall than — 비교급이 아니고 a 도 없다.",
+    "③ more taller — more 와 -er 을 겹쳤다.",
+    "④ tallest than — 최상급은 than 과 쓰지 않는다.",
+    "⑤ taller as — 비교급 뒤에는 than 이 온다."
+   ]
   },
   {
    "no": 23,
@@ -469,8 +601,14 @@
     "a notice giving information, directions, a warning, etc."
    ],
    "answer": 3,
-   "explain": "eyewitness: 목격자. ① criminal ② suspect ④ owner ⑤ sign.",
-   "source": "L5 어휘 영영풀이"
+   "explain": "eyewitness 는 '목격자'로, 영영풀이는 ③ a person who saw something happen, for example, a crime or an accident(범죄나 사고와 같은 일이 발생하는 것을 본 사람)이다.\n본문에서 There were four eyewitnesses.(네 명의 목격자가 있었다.)라고 한 뒤 네 사람의 증언이 이어진다.",
+   "source": "L5 어휘 영영풀이",
+   "wrong": [
+    "① someone who commits a crime — criminal(범인).",
+    "② someone who is thought to be guilty of a crime — suspect(용의자).",
+    "④ someone who owns something — owner(주인).",
+    "⑤ a notice giving information, directions, a warning, etc. — sign(표지판)."
+   ]
   },
   {
    "no": 24,
@@ -484,8 +622,14 @@
     "The old man was a young man with long brown hair."
    ],
    "answer": 3,
-   "explain": "In fact, the old man was not old. → 사실 노인이 아니었다.",
-   "source": "L5 본문 Ann·Carlos"
+   "explain": "Carlos Diaz 는 In fact, the old man was not old. He was a young man with long brown hair.(사실 그 노인은 나이 든 사람이 아니었어요. 그는 긴 갈색 머리의 젊은 남자였어요.)라고 말한다.\n따라서 ③ In fact, the old man was old. 는 글의 내용과 일치하지 않는다.",
+   "source": "L5 본문 Ann·Carlos",
+   "wrong": [
+    "① Last Saturday, someone threw a cake at the Monalisa — 첫 문장 그대로.",
+    "② He was standing in front of a wheelchair — Ann 의 증언 그대로.",
+    "④ An old man with gray hair was running away, and something fell off his head — Carlos 의 증언 그대로.",
+    "⑤ He was a young man with long brown hair — Carlos 의 증언 그대로."
+   ]
   },
   {
    "no": 25,
@@ -501,18 +645,22 @@
    ],
    "inline": true,
    "answer": 4,
-   "explain": "옳은 것: heavier than / There isn't much cheese / To eat breakfast is / I know that he reads → 4개. 틀린 것: the most earliest(→ the earliest), Is there old computers(→ Are there), plan go(→ plan to go).",
-   "source": "학습지 Grammar Exercise A-1·5 (p.11) · Exercise B-3·4 (p.12) · L6 Basic A-2 (p.18) · Workbook Challenging A-1 (p.21) · Basic B-2 (p.18)"
+   "explain": "옳은 문장 4개: My backpack is heavier than your backpack.(비교급 heavier + than) / There isn't much cheese on the pizza.(셀 수 없는 cheese → isn't much) / To eat breakfast is good for the health.(to부정사 주어 + 단수 동사) / I know that he reads books in the library now.(접속사 that 절)\n틀린 문장 3개: They arrived the most earliest of all. → the earliest(most 와 -est 를 겹치지 않는다) / Is there old computers on the desk? → Are there(복수 주어) / I plan go shopping → plan to go(plan 은 to부정사 목적어)\n따라서 ④ 4개.",
+   "source": "학습지 Grammar Exercise A-1·5 (p.11) · Exercise B-3·4 (p.12) · L6 Basic A-2 (p.18) · Workbook Challenging A-1 (p.21) · Basic B-2 (p.18)",
+   "wrong": [
+    "① 1개, ② 2개, ③ 3개 — 옳은 문장을 빠뜨렸다.",
+    "⑤ 5개 — 틀린 문장을 옳다고 세었다."
+   ]
   },
   {
    "kind": "essay",
    "no": "서답형1",
    "points": 5,
-   "stem": "글을 읽고 질문에 대한 답을 글에서 찾아 7단어로 이루어진 하나의 영어 문장으로 작성하시오.",
+   "stem": "글을 읽고 질문에 대한 답을 글에서 찾아 8단어로 이루어진 하나의 영어 문장으로 작성하시오.",
    "box": "Challenge 01 Reduce Food Waste\nOlivia: My birthday was last Saturday, and my family and I ate out. There were lots of leftovers, but we brought them home. The next day, I made a nice lunch out of them. FYI, you can find great cooking ideas for leftovers on the Internet.\n\n질문: Olivia는 그다음 날 남은 음식(leftovers)으로 무엇을 했는가?",
    "answer_lines": 1,
    "answer": "I made a nice lunch out of them.",
-   "explain": "본문 문장 그대로 7단어.",
+   "explain": "모범답안: I made a nice lunch out of them. (8단어) — 본문 문장 그대로. She made a nice lunch out of them. 도 8단어로 인정한다.\n질문 '그다음 날 남은 음식으로 무엇을 했는가'의 답은 The next day, I made a nice lunch out of them.(그다음 날 나는 그것들로 맛있는 점심을 만들었어.)에 있다. make A out of B 는 'B 로 A 를 만들다'.\n채점 기준: 8단어 한 문장(The next day 를 붙이면 단어 수 초과로 감점), make 의 과거형 made, out of them(또는 out of the leftovers 는 단어 수가 맞으면 인정), 대문자·마침표.",
    "source": "L6 본문 Challenge 01"
   },
   {
@@ -527,7 +675,7 @@
    ],
    "answer_lines": 1,
    "answer": "May I take a picture of it?",
-   "explain": "May I + 동사원형 ~? (허락 구하기), take a picture of ~.",
+   "explain": "모범답안: May I take a picture of it? (7단어)\n허락을 구할 때는 May I + 동사원형 ~? 을 쓰고, '~의 사진을 찍다'는 take a picture of ~ 이다. 원문은 L5 Watch and Talk C 의 G: Wow, this is my favorite painting. May I take a picture of it? 이다.\n채점 기준: May 사용, 7단어, 동사원형 take, a picture of it 어순, 물음표. Can I ~ 는 조건 위반, take a photo of it 은 단어 수는 같으나 교과서 표현이 아니므로 감점.",
    "source": "L5 Watch and Talk C"
   },
   {
@@ -538,7 +686,7 @@
    "box": "유나는 그 소년들이 매일 농구를 한다는 것을 안다.\n( that / knows / Yuna / basketball / play / every day / the boys )",
    "answer_lines": 1,
    "answer": "Yuna knows that the boys play basketball every day.",
-   "explain": "접속사 that 이 이끄는 목적어절. 기출은 그림을 보고 배열하는 문항이나 그림 대신 우리말 뜻을 주었다.",
+   "explain": "모범답안: Yuna knows that the boys play basketball every day.\n'~라는 것을 안다'는 know + 접속사 that + 주어 + 동사 로 쓴다. that 절 안의 주어 the boys 는 복수이므로 동사는 play, 주어 Yuna 는 3인칭 단수이므로 knows 이다(학습지 L6 Workbook 접속사 that A-1).\n채점 기준: 주어진 단어를 모두 한 번씩 사용, Yuna knows 어순, that 의 위치, every day 는 문장 끝, 마침표.",
    "source": "학습지 L6 Workbook 접속사 that A-1 (p.20)"
   }
  ]
