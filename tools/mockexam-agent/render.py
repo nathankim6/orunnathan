@@ -333,7 +333,7 @@ class Hwpx:
         p.add_run(f"{title_of(spec)} — {subtitle_of(spec)}   정답 및 해설", char_pr_id_ref=self.cp['grp'])
         items = [it for it in spec['items'] if it.get('kind', 'mc') != 'group']
         n = len(items) + 1
-        row_h = max(1400, min(2600, int((84189 - 2 * 1984 - 2268 - FOOTER_H - 2200) / n)))   # 쪽 높이에서 머리·꼬리·제목을 뺀 것을 행으로 나눔
+        row_h = max(1400, min(2600, int((84189 - 2 * 1984 - 2268 - FOOTER_H - 6000) / n)))   # 쪽 높이에서 머리·꼬리·제목을 뺀 것을 행으로 나눔
         t = self.table(n, 5, T['full_w'], inner=(200, 200, 100, 100), outer=(0, 0, 200, 0))
         t.set_column_widths([7, 18, 6, 26, 43])
         for r in range(n):
