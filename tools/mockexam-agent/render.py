@@ -139,6 +139,25 @@ class Hwpx:
             'grp': B(bold=True),
         }
 
+    def _line_spacing_copy(self, base_id, percent):
+        """paraPr 를 복사해 줄 간격만 바꾼 새 id."""
+        import copy
+        HH = {'hh': 'http://www.hancom.co.kr/hwpml/2011/head'}
+        key = ('ls', base_id, percent)
+        if key in self._pp_cache:
+            return self._pp_cache[key]
+        hx = self.doc.headers[0].element
+        prs = hx.find('.//hh:paraProperties', HH)
+        new = copy.deepcopy(prs.find('hh:paraPr[@id="%s"]' % base_id, HH))
+        nid = max(int(e.get('id')) for e in prs.findall('hh:paraPr', HH)) + 1
+        new.set('id', str(nid))
+        for ls in new.iter('{%s}lineSpacing' % HH['hh']):
+            ls.set('value', str(percent))
+        prs.append(new); prs.set('itemCnt', str(len(prs.findall('hh:paraPr', HH))))
+        self.doc.headers[0].mark_dirty()
+        self._pp_cache[key] = nid
+        return nid
+
     def _keep_with_next_copy(self, base_id):
         """header.xml 의 paraPr 를 복사해 keepWithNext=1 로 만든 새 id."""
         import copy
@@ -417,23 +436,41 @@ class Hwpx:
         p.add_run(f"{title_of(spec)} — {subtitle_of(spec)}   정답 및 해설", char_pr_id_ref=self.cp['grp'])
         items = [it for it in spec['items'] if it.get('kind', 'mc') != 'group']
         n = len(items) + 1
-        row_h = max(1400, min(2600, int((84189 - 2 * 1984 - 2268 - FOOTER_H - 6000) / n)))   # 쪽 높이에서 머리·꼬리·제목을 뺀 것을 행으로 나눔
-        t = self.table(n, 5, T['full_w'], inner=(200, 200, 100, 100), outer=(0, 0, 200, 0))
+        # 행마다 글이 몇 줄로 접히는지 어림해 높이를 정하고, 남는 높이는 고르게 나눠 한 쪽을 꽉 채운다
+        weights = [7, 18, 6, 26, 43]
+        col_w = [T['full_w'] * w / 100 - 400 for w in weights]
+        line_h = int(950 * 1.3) + 40                       # 9.5pt · 행간 130 %
+        pad = 200                                          # 위아래 안쪽 여백
+        rows_txt = [['번호', '정답', '배점', '출처', '해설']]
+        for it in items:
+            ans = it.get('answer', '')
+            ans = CIRC[ans - 1] if isinstance(ans, int) else str(ans)
+            rows_txt.append([str(it['no']), ans, str(it.get('points', '')), it.get('source', ''), it.get('explain', '')])
+        import math
+        need = []
+        for row in rows_txt:
+            lines = max(max(1, math.ceil(text_width(v, 9.5) / cw)) for v, cw in zip(row, col_w))
+            need.append(lines * line_h + pad)
+        avail = 84189 - 2 * 1984 - 2268 - FOOTER_H - 3200   # 쪽 높이 − 여백 − 머리말·꼬리말 − 제목줄
+        total = sum(need)
+        if total < avail:
+            extra = (avail - total) // n
+            need = [h + extra for h in need]
+        pp_cell = self._line_spacing_copy(T['p_blank'], 130)
+        pp_center = self._line_spacing_copy(T['p_center'], 130)
+        t = self.table(n, 5, T['full_w'], inner=(200, 200, 100, 100), outer=(0, 0, 120, 0))
         t.set_column_widths([7, 18, 6, 26, 43])
         for r in range(n):
             for c in range(5):
                 tc = t.cell(r, c).element
-                tc.find('hp:cellSz', NS).set('height', str(row_h))
+                tc.find('hp:cellSz', NS).set('height', str(need[r]))
                 tc.find('hp:subList', NS).set('vertAlign', 'CENTER')
-        t.element.find('hp:sz', NS).set('height', str(row_h * n))
-        for c, h in enumerate(['번호', '정답', '배점', '출처', '해설']):
-            self.para(h, cp=self.cp['smallb'], target=t.cell(0, c), pp=T['p_center'])
-        for r, it in enumerate(items, 1):
-            ans = it.get('answer', '')
-            if isinstance(ans, int):
-                ans = CIRC[ans - 1]
-            for c, v in enumerate([str(it['no']), str(ans), str(it.get('points', '')), it.get('source', ''), it.get('explain', '')]):
-                self.para(v, cp=self.cp['small'], target=t.cell(r, c), pp=T['p_center'] if c in (0, 2) else T['p_blank'])
+        t.element.find('hp:sz', NS).set('height', str(sum(need)))
+        for c, h in enumerate(rows_txt[0]):
+            self.para(h, cp=self.cp['smallb'], target=t.cell(0, c), pp=pp_center)
+        for r, row in enumerate(rows_txt[1:], 1):
+            for c, v in enumerate(row):
+                self.para(v, cp=self.cp['small'], target=t.cell(r, c), pp=pp_center if c in (0, 2) else pp_cell)
 
     def save(self, out):
         Path(out).parent.mkdir(parents=True, exist_ok=True)
