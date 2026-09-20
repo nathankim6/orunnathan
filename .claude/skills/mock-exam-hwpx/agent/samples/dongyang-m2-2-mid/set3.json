@@ -1,675 +1,801 @@
 {
-"school": "동양중학교",
-"grade": 2,
-"term": 2,
-"exam": "중간고사",
-"subject": "영어",
-"set": 3,
-"range": "Lesson 5~6",
-"publisher": "동아(윤정미)",
-"year": 2026,
-"items": [
-{
-"kind": "group",
-"label": "[1~5]",
-"direction": "다음 글을 읽고 물음에 답하시오.",
-"box": {
-"lines": [
-"On March 1, 1919, ⓐ<u>Dr. Schofield heard people to shout for Korean independence</u> in Tapgol Park. ⓑ<u>He took pictures of the event with his camera.</u> He then wrote an article about the historic event and sent it to foreign newspapers with his pictures.",
-"ⓒ<u>Dr. Schofield's fight for Korean independence didn't stopped</u> even after the March 1st Movement. He continued to write about the terrible situation in Korea for foreign newspapers. He was under the watchful eye of the Japanese police. __(A)__, he had to go back to Canada in 1920.",
-"In 1958, he returned to Korea __(B)__ the invitation of the Korean government and never left again. For the rest of his life, ⓓ<u>he worked hardly to help Koreans</u>, especially poor students. Dr. Schofield died in April 1970, and ⓔ<u>he buried in Seoul National Cemetery</u>."
-]
-}
-},
-{
-"no": 1,
-"points": 3,
-"stem": "윗글의 흐름상 빈칸 (A)에 들어갈 수 없는 것은?",
-"choices": [
-"So",
-"Therefore",
-"As a result",
-"Consequently",
-"However"
-],
-"inline": true,
-"answer": 5,
-"explain": "일본 경찰의 감시(원인) → 캐나다로 돌아가야 했다(결과). 역접 However는 맞지 않는다. 원문은 ‘..., so he had to go back ...’.",
-"source": "L6 본문 6문단"
-},
-{
-"no": 2,
-"points": 4,
-"stem": "윗글의 밑줄 친 ⓐ~ⓔ 중 어법상 옳은 것은?",
-"choices": [
-"ⓐ",
-"ⓑ",
-"ⓒ",
-"ⓓ",
-"ⓔ"
-],
-"inline": true,
-"answer": 2,
-"explain": "ⓐ 지각동사 hear + 목적어 + 동사원형/현재분사: to shout → shout / shouting / ⓒ didn't + 동사원형: stopped → stop / ⓓ hard(열심히): hardly → hard / ⓔ 수동태: he buried → he was buried. ⓑ는 원문 그대로 옳다.",
-"source": "L6 본문 5~7문단 · 통합본 L6 GRAMMAR 지각동사"
-},
-{
-"no": 3,
-"points": 3,
-"stem": "윗글의 흐름상 빈칸 (B)에 들어갈 단어로 알맞은 것은?",
-"choices": [
-"at",
-"by",
-"for",
-"on",
-"with"
-],
-"inline": true,
-"answer": 1,
-"explain": "at the invitation of: ~의 초대로.",
-"source": "L6 본문 7문단 · L6 어휘 at the invitation of"
-},
-{
-"no": 4,
-"points": 3,
-"stem": "윗글을 읽고 대답을 찾을 수 없는 질문은?",
-"choices": [
-"Where did Dr. Schofield hear people shouting?",
-"Why did Dr. Schofield have to go back to Canada?",
-"When did Dr. Schofield return to Korea?",
-"Who did Dr. Schofield help for the rest of his life?",
-"How many articles did Dr. Schofield write for Korea's independence?"
-],
-"answer": 5,
-"explain": "기사를 몇 편 썼는지는 나오지 않는다. ① 탑골공원 ② 일본 경찰의 감시 때문 ③ 1958년 ④ 한국인들, 특히 가난한 학생들. 질문은 통합본 L6 본문 문제의 것 그대로.",
-"source": "L6 본문 5~7문단 · 통합본 L6 READING 질문"
-},
-{
-"no": 5,
-"points": 3,
-"stem": "<보기>의 (A)~(E)를 윗글에서 일어난 일의 순서로 바르게 배열한 것은?",
-"box": {
-"title": "< 보 기 >",
-"lines": [
-"(A) He returned to Korea at the invitation of the Korean government.",
-"(B) He heard people shouting for Korean independence in Tapgol Park.",
-"(C) He wrote an article about the historic event.",
-"(D) He had to go back to Canada.",
-"(E) For the rest of his life, he worked hard to help Koreans, especially poor students."
-]
-},
-"choices": [
-"(B) - (C) - (D) - (A) - (E)",
-"(B) - (D) - (C) - (A) - (E)",
-"(B) - (C) - (A) - (D) - (E)",
-"(C) - (B) - (D) - (E) - (A)",
-"(C) - (B) - (A) - (D) - (E)"
-],
-"answer": 1,
-"explain": "1919년 3월 1일 외침을 들음 → 기사를 씀 → 1920년 캐나다로 돌아감 → 1958년 초청으로 돌아옴 → 여생 동안 가난한 학생들을 도움. 보기 문장은 본문을 요약해 바꿔 쓴 것.",
-"source": "L6 본문 5~7문단"
-},
-{
-"kind": "group",
-"label": "[6~7]",
-"direction": "다음 글을 읽고 물음에 답하시오.",
-"box": {
-"lines": [
-"We are now in Finsbury Park to see a painting by Banksy, an internationally famous street artist. (A) Banksy's artworks often carry ⓐ[social / personal] messages, and the green tree you see over there is a good example. (B) As you can see, he created a green tree by spraying green paint on a wall behind a ⓑ[leafless / colorful] tree. (C) What message does Banksy want to give us through this painting? (D) In many people's opinion, he is telling us that nature is having a hard time. (E) They think he wants us to take ⓒ[better / worse] care of it."
-]
-}
-},
-{
-"no": 6,
-"points": 3,
-"stem": "윗글의 흐름상 다음 문장이 들어갈 가장 적절한 곳은?",
-"box": "Next to the tree, there is a person who is holding a sprayer.",
-"choices": [
-"(A)",
-"(B)",
-"(C)",
-"(D)",
-"(E)"
-],
-"inline": true,
-"answer": 3,
-"explain": "the tree = 앞 문장의 나무 그림. 나무를 만든 방법을 설명한 뒤 그 옆의 인물을 덧붙이고, 그다음 메시지를 묻는다.",
-"source": "L5 본문 2문단"
-},
-{
-"no": 7,
-"points": 3,
-"stem": "윗글의 흐름상 ⓐ~ⓒ에 들어갈 단어로 바르게 짝지어진 것은?",
-"choices_table": {
-"header": [
-"",
-"ⓐ",
-"ⓑ",
-"ⓒ"
-],
-"rows": [
-[
-"①",
-"social",
-"leafless",
-"better"
-],
-[
-"②",
-"social",
-"colorful",
-"worse"
-],
-[
-"③",
-"social",
-"leafless",
-"worse"
-],
-[
-"④",
-"personal",
-"colorful",
-"better"
-],
-[
-"⑤",
-"personal",
-"leafless",
-"better"
-]
-]
-},
-"answer": 1,
-"explain": "자연에 관한 사회적(social) 메시지 / 잎이 없는(leafless) 나무 뒤 벽에 초록 나무를 그림 / 자연을 더 잘(better) 돌보기를 원함.",
-"source": "L5 본문 2문단"
-},
-{
-"no": 8,
-"points": 3,
-"stem": "다음 중 밑줄 친 that의 쓰임이 다른 하나는?",
-"choices": [
-"The car <u>that</u> Ally drives is brand-new.",
-"He likes to eat the pizza <u>that</u> his mom makes.",
-"I believe <u>that</u> every country has the right to be independent.",
-"The medicine <u>that</u> doctors developed reduces pain quickly.",
-"The website <u>that</u> my cousin designed provides useful information about travel."
-],
-"answer": 3,
-"explain": "③은 believe의 목적어인 명사절을 이끄는 접속사 that. 나머지는 목적격 관계대명사 that.",
-"source": "학습지 p.5·p.6 Practice C-4·12 · 통합본 L5 GRAMMAR · L6 After You Read"
-},
-{
-"kind": "group",
-"label": "[9~10]",
-"direction": "다음 글을 읽고 물음에 답하시오.",
-"box": {
-"lines": [
-"The Red Room by Henri Matisse",
-"The painting I want to write about is The Red Room by Henri Matisse. This painting shows a red room with a window. In the room, there are two chairs and a big table. We also see a woman who is setting the table. (A) <u>I like the red color of this painting.</u> I think that the room feels warm because of it."
-]
-}
-},
-{
-"no": 9,
-"points": 3,
-"stem": "윗글의 맥락상 밑줄 친 (A)에서 추론할 수 있는 글쓴이의 심경으로 가장 적절한 것은?",
-"choices": [
-"pleased",
-"bored",
-"scared",
-"angry",
-"disappointed"
-],
-"inline": true,
-"answer": 1,
-"explain": "그림의 붉은색이 마음에 들고 방이 따뜻하게 느껴진다고 하므로 pleased(기쁜, 만족한).",
-"source": "L5 Think and Write"
-},
-{
-"no": 10,
-"points": 3,
-"stem": "윗글의 내용과 일치하지 않는 것은?",
-"choices": [
-"The painting is The Red Room by Henri Matisse.",
-"This painting shows a red room with a window.",
-"In the room, there are two chairs and a small table.",
-"We also see a woman who is setting the table.",
-"The writer likes the red color of this painting."
-],
-"answer": 3,
-"explain": "a big table(큰 탁자). 나머지는 본문 문장 그대로.",
-"source": "L5 Think and Write"
-},
-{
-"kind": "group",
-"label": "[11~12]",
-"direction": "다음 글을 읽고 물음에 답하시오.",
-"box": {
-"lines": [
-"The final stop of our tour today is Muswell Hill. Can't see any street artworks? Well, look down and look closely. Do you see the little chewing gum paintings? They are by the artist Ben Wilson. Wilson is well known for painting pictures on gum that people drop on the street. His gum paintings often carry <u>personal</u> messages from people he meets on the street. For example, the one over here is a happy birthday wish for a loved one. Wilson's gum paintings are tiny, but they give great pleasure to many people."
-]
-}
-},
-{
-"no": 11,
-"points": 3,
-"stem": "윗글의 밑줄 친 personal의 영영풀이로 옳은 것은?",
-"choices": [
-"relating to human society and its organization",
-"a state of feeling or being happy",
-"belonging or relating to one particular person",
-"being or happening at the end of a series of events, actions, etc.",
-"a very small round mark"
-],
-"answer": 3,
-"explain": "personal(개인적인): 특정한 한 사람에게 속하거나 관련된. ① social ② pleasure ④ final ⑤ dot.",
-"source": "L5 본문 3문단 · L5 어휘 영영풀이"
-},
-{
-"no": 12,
-"points": 4,
-"stem": "윗글의 Wilson의 껌 그림에 담길 메시지로 가장 알맞은 것은?",
-"choices": [
-"\"Save the earth!\"",
-"\"Stop the war.\"",
-"\"Happy 10th birthday, Jane!\"",
-"\"Recycle your bottles.\"",
-"\"Protect the forests.\""
-],
-"answer": 3,
-"explain": "Wilson의 껌 그림은 길에서 만난 사람들의 개인적인(personal) 메시지, 예를 들어 사랑하는 사람을 위한 생일 축하를 담는다. 나머지는 사회적 메시지.",
-"source": "L5 본문 3문단"
-},
-{
-"no": 13,
-"points": 3,
-"stem": "다음 문장들의 빈칸에 공통으로 들어갈 단어는?",
-"box": "○ He is famous _____ using only lines and dots in his paintings of human bodies.\n○ Many people are going to gather tomorrow _____ the independence of Korea.",
-"choices": [
-"for",
-"to",
-"of",
-"in",
-"at"
-],
-"inline": true,
-"answer": 1,
-"explain": "be famous for(~로 유명하다), for the independence of Korea(한국의 독립을 위해).",
-"source": "L5 본문 1문단 · L6 본문 1문단 · L5 어휘 be famous for"
-},
-{
-"no": 14,
-"points": 4,
-"stem": "다음 중 어법상 옳지 않은 것은?",
-"choices": [
-"Did you use to have a dog when you were young?",
-"Minho used to stay up late, but now he goes to bed early.",
-"Dictionaries are used to find difficult English words.",
-"Tom used to live in Paris before, but he doesn't live there anymore.",
-"I used to get up early every morning, so I'm never late."
-],
-"answer": 5,
-"explain": "‘매일 아침 일찍 일어나는 것에 익숙해서 늦지 않는다’(현재의 습관)이므로 be used to + -ing: I am used to getting up early. used to는 지금은 하지 않는 과거의 습관.",
-"source": "학습지 p.3 Practice A-1·2·3·4·7"
-},
-{
-"kind": "group",
-"label": "[15~16]",
-"direction": "다음 글을 읽고 물음에 답하시오.",
-"box": {
-"lines": [
-"Modern street art comes in many different forms, and it makes cities colorful and lively. Today, we are going to see some well-known street artworks in London. The place that we are going to visit is Shoreditch. Poor workers used to live in this area, but now it is one of the hippest areas in London. We can find so many great pieces of street art here. Do you see the painting over there? It is by the artist STIK. He is famous for using only lines and dots in his paintings of human bodies. According to STIK, the three figures represent the past, present, and future of Shoreditch. Which figure represents which? Well, look closely at the eyes of the three figures. They are just dots, but they will give you a clue."
-]
-}
-},
-{
-"no": 15,
-"points": 3,
-"stem": "윗글의 화자가 세 인물이 무엇을 나타내는지 알고 싶은 사람에게 하는 조언으로 가장 적절한 것은?",
-"choices": [
-"Look closely at the eyes of the three figures.",
-"Well, look down and look closely.",
-"Go straight for about 500 meters and turn left.",
-"Why don't you go by bus?",
-"Could you take pictures of the event and share them with the world?"
-],
-"answer": 1,
-"explain": "Well, look closely at the eyes of the three figures. They are just dots, but they will give you a clue. ② Muswell Hill(껌 그림) ③④ L5 대화문 ⑤ L6 본문 문장.",
-"source": "L5 본문 1문단"
-},
-{
-"no": 16,
-"points": 4,
-"stem": "윗글을 다음과 같이 요약하고자 할 때, 빈칸 ⓐ~ⓒ에 들어갈 말로 바르게 짝지어진 것은?",
-"box": "Shoreditch used to be an area that ⓐ___ people lived in, but it is now one of the ⓑ___ areas in London. The eyes of the three figures in STIK's painting were drawn as ⓒ___.",
-"choices_table": {
-"header": [
-"",
-"ⓐ",
-"ⓑ",
-"ⓒ"
-],
-"rows": [
-[
-"①",
-"poor",
-"hippest",
-"dots"
-],
-[
-"②",
-"poor",
-"poorest",
-"lines"
-],
-[
-"③",
-"poor",
-"hippest",
-"lines"
-],
-[
-"④",
-"rich",
-"hippest",
-"dots"
-],
-[
-"⑤",
-"rich",
-"poorest",
-"dots"
-]
-]
-},
-"answer": 1,
-"explain": "Poor workers used to live / one of the hippest areas / They are just dots. 요약문은 통합본 L5 본문 T/F 문장 02·03·06 을 이었다.",
-"source": "L5 본문 1문단 · 통합본 L5 READING T/F 02·03·06"
-},
-{
-"kind": "group",
-"label": "[17~18, 서답형1]",
-"direction": "다음 글을 읽고 물음에 답하시오.",
-"box": {
-"lines": [
-"On February 28, 1919, a man came to Dr. Schofield's house.",
-"Man: Dr. Schofield, I have a special favor to ask you.",
-"Dr. Schofield: What can I do for you?",
-"Man: Many people are going to gather tomorrow for the independence of Korea. Could you take pictures of the event and share them with the world?",
-"At 2 p.m. on March 1, Dr. Schofield was hiding in a building and (가) <u>밖에 많은 사람들이 모여드는 것을 보았다.</u> He began to take pictures.",
-"Dr. Schofield: Unbelievable! There are so many people here. I hope the world will learn about this important event through my pictures."
-]
-}
-},
-{
-"no": 17,
-"points": 3,
-"stem": "윗글의 내용과 일치하는 것은?",
-"choices": [
-"A man visited Dr. Schofield on March 1, 1919.",
-"The man asked Dr. Schofield to take pictures of an important event.",
-"Dr. Schofield took pictures while hiding in a car.",
-"There were only a few people at the event.",
-"He began to take pictures on February 28."
-],
-"answer": 2,
-"explain": "① February 28 ③ in a building ④ so many people ⑤ March 1. 선지는 통합본 L6 본문 T/F 문장 그대로(③⑤는 한 단어만 바꿈).",
-"source": "L6 본문 1~2문단 · 통합본 L6 READING T/F 01~05"
-},
-{
-"no": 18,
-"points": 4,
-"stem": "윗글을 읽고 Dr. Schofield에 대해 바르게 이해한 학생은?",
-"choices": [
-"S 1: \"People were going to gather for the independence of Japan.\"",
-"S 2: \"Dr. Schofield was hiding in a building and saw a small group of people gathering outside.\"",
-"S 3: \"Dr. Schofield hoped the world would learn about the event.\"",
-"S 4: \"Unbelievable! There are so few people here.\"",
-"S 5: \"On February 28, 1919, a man came to Dr. Schofield's school.\""
-],
-"answer": 3,
-"explain": "③ I hope the world will learn about this important event through my pictures. ① Korea ② a large group ④ so many people ⑤ house — 본문·통합본 T/F 문장에서 한 단어씩 바꾼 것.",
-"source": "L6 본문 1~2문단 · 통합본 L6 READING T/F 02·06"
-},
-{
-"kind": "essay",
-"no": "서답형1",
-"points": 5,
-"stem": "윗글의 밑줄 친 우리말 (가)를 <조건>에 맞춰 바르게 영작하시오.",
-"condition": [
-"다음 단어를 반드시 사용할 것 (※ 단, 필요시 단어의 형태를 변형할 것): see, a large group of, gather, outside",
-"총 9단어로 작성할 것"
-],
-"answer_lines": 1,
-"answer": "saw a large group of people gathering outside",
-"explain": "지각동사 see + 목적어 + -ing(현재분사): 사람들이 모여드는 것을 보았다. 9단어.",
-"source": "L6 본문 2문단 · 통합본 L6 GRAMMAR 지각동사"
-},
-{
-"no": 19,
-"points": 3,
-"stem": "다음 문장들의 빈칸 ⓐ~ⓒ에 들어갈 단어가 바르게 짝지어진 것은?",
-"box": "○ According ⓐ___ STIK, the three figures represent the past, present, and future of Shoreditch.\n○ Modern street art comes ⓑ___ many different forms, and it makes cities colorful and lively.\n○ He created a green tree by spraying green paint ⓒ___ a wall behind a leafless tree.",
-"choices_table": {
-"header": [
-"",
-"ⓐ",
-"ⓑ",
-"ⓒ"
-],
-"rows": [
-[
-"①",
-"to",
-"in",
-"on"
-],
-[
-"②",
-"to",
-"on",
-"in"
-],
-[
-"③",
-"for",
-"in",
-"at"
-],
-[
-"④",
-"with",
-"at",
-"on"
-],
-[
-"⑤",
-"with",
-"in",
-"in"
-]
-]
-},
-"answer": 1,
-"explain": "according to(~에 따르면), come in ~ forms(~한 형태로 존재하다), spray paint on a wall(벽에 페인트를 뿌리다).",
-"source": "L5 본문 1·2문단"
-},
-{
-"no": 20,
-"points": 3,
-"stem": "다음 대화에서 A, B의 관계로 가장 적절한 것은?",
-"box": "A: Can you recommend a restaurant for me?\nB: How about Morning in Venice?\nA: What kind of food do they have?\nB: They have Italian food. I strongly recommend their cheese pizza. It's really good.",
-"choices_table": {
-"header": [
-"",
-"A",
-"B"
-],
-"rows": [
-[
-"①",
-"cook",
-"customer"
-],
-[
-"②",
-"waiter",
-"customer"
-],
-[
-"③",
-"friend",
-"friend"
-],
-[
-"④",
-"tourist",
-"tour guide"
-],
-[
-"⑤",
-"reporter",
-"restaurant owner"
-]
-]
-},
-"answer": 3,
-"explain": "식당을 추천해 달라고 부탁하고 자기가 가 본 식당을 추천해 주는 친구 사이의 대화(Talk and Play).",
-"source": "L6 Talk and Play"
-},
-{
-"kind": "group",
-"label": "[21, 서답형2]",
-"direction": "다음 대화를 읽고 물음에 답하시오.",
-"box": {
-"lines": [
-"G: Do you need help?",
-"B: Yes. How can I get to the Dream Shopping Mall from here? Can I walk?",
-"G: You can, but it's a little far. Why don't you go by bus? Take bus No. 12.",
-"B: OK. <u>버스로 얼마나 걸릴까요?</u>",
-"G: Not very long. It'll take less than 10 minutes."
-]
-}
-},
-{
-"no": 21,
-"points": 3,
-"stem": "다음은 위 대화의 남자가 적은 메모이다. 대화의 내용과 일치하지 않는 것은?",
-"box": {
-"title": "To the Dream Shopping Mall",
-"lines": [
-"① Can I walk? — You can, but it's a little far.",
-"② Why don't you go by bus?",
-"③ Take bus No. 12.",
-"④ It will take more than 10 minutes by bus.",
-"⑤ Not very long."
-]
-},
-"choices": [
-"①",
-"②",
-"③",
-"④",
-"⑤"
-],
-"inline": true,
-"answer": 4,
-"explain": "It'll take less than 10 minutes(10분도 안 걸린다). 메모는 대화 문장 그대로, ④만 less → more. 그림·표 대신 메모 글로 물었다.",
-"source": "L5 Watch and Talk A-3 · 통합본 L5 DIALOGUES"
-},
-{
-"kind": "essay",
-"no": "서답형2",
-"points": 5,
-"stem": "위 대화의 밑줄 친 우리말을 <조건>에 맞춰 바르게 영작하시오.",
-"condition": [
-"다음 단어를 반드시 사용할 것: how long, take, by bus",
-"총 7단어인 문장을 작성할 것"
-],
-"answer_lines": 1,
-"answer": "How long will it take by bus?",
-"explain": "걸리는 시간을 묻는 표현 How long will it take ~? 7단어.",
-"source": "L5 Watch and Talk A-3"
-},
-{
-"no": 22,
-"points": 4,
-"stem": "다음 중 어법상 옳지 않은 것은?",
-"choices": [
-"Dr. Schofield heard people shouting for Korean independence.",
-"I saw a man running down the street.",
-"I was so scared that I hid under my bed.",
-"The sofa was so old that I threw it away.",
-"It was so a big dress that I couldn't wear it."
-],
-"answer": 5,
-"explain": "so 뒤에는 형용사/부사가 온다. 「a + 형용사 + 명사」 앞에는 such: It was such a big dress that ~ (또는 The dress was so big that ~).",
-"source": "통합본 L6 GRAMMAR 지각동사 · so ~ that (연습 05·10·12)"
-},
-{
-"no": 23,
-"points": 4,
-"stem": "다음 중 우리말 영작이 바르지 않은 것은?",
-"choices": [
-"나는 매일 아침 새들이 노래하는 것을 듣는다.\n→ I hear birds singing every morning.",
-"나는 누군가가 내 어깨를 만지는 것을 느꼈다.\n→ I felt someone touch my shoulder.",
-"그 영화는 너무 슬퍼서 모든 사람이 울었다.\n→ The movie was so sad that everyone cried.",
-"그는 너무 어려서 롤러코스터를 탈 수 없다.\n→ He is so young that he can ride the roller coaster.",
-"그녀는 매우 키가 커서 선반에 닿을 수 있다.\n→ She is so tall that she can reach the shelf."
-],
-"answer": 4,
-"explain": "‘탈 수 없다’이므로 so ~ that + 주어 + can't: He is so young that he can't ride the roller coaster.",
-"source": "통합본 L6 GRAMMAR 지각동사 · so ~ that"
-},
-{
-"no": 24,
-"points": 4,
-"stem": "다음 중 어법상 옳은 것은?",
-"choices": [
-"The friend who I invited to my house came on time.",
-"Here are the presents whom we sent you.",
-"Who was the person to who you were talking on the phone just now?",
-"The song which I listened to yesterday was really peaceful.",
-"I want to know the name of the boy which I met yesterday."
-],
-"answer": 4,
-"explain": "① 사람 선행사의 목적격 who도 가능하나 ② 사물 → which/that ③ 전치사 뒤에는 whom ⑤ 사람 → who(m)/that. 정답은 ④ (사물 선행사 + which).",
-"source": "학습지 p.6 Practice A-1·2·4·5·6"
-},
-{
-"kind": "essay",
-"no": "서답형3",
-"points": 5,
-"stem": "다음 대화의 밑줄 친 B의 우리말을 <조건>에 맞춰 바르게 영작하시오.",
-"box": "A: Did this place use to be a bookstore a long time ago?\nB: No. <u>그 새 쇼핑몰이 지어지기 전에는 여기에 큰 공원이 있었어.</u>",
-"condition": [
-"다음 단어를 반드시 사용할 것 (※ 단, 필요시 단어의 형태를 변형할 것): there, used to, a large park, the new shopping mall, build",
-"총 13단어인 문장을 작성할 것"
-],
-"answer_lines": 1,
-"answer": "There used to be a large park here before the new shopping mall was built.",
-"explain": "There used to be ~(예전에 ~이 있었다, 지금은 없음), before + 주어 + was built(수동태). 13단어. A의 말은 학습지 p.4 Practice B-4 문장.",
-"source": "학습지 p.4 Practice B-4·B-6"
-},
-{
-"kind": "essay",
-"no": "서답형4",
-"points": 5,
-"stem": "<보기>와 같이 주어진 두 문장을 한 문장으로 완성하시오.",
-"box": {
-"title": "< 보 기 >",
-"lines": [
-"The book was very interesting. + I read it yesterday.",
-"⇨ The book which I read yesterday was very interesting.",
-"",
-"Henri Matisse is the painter. + I like him the most."
-]
-},
-"answer_lines": 1,
-"answer": "Henri Matisse is the painter who(m)[that] I like the most.",
-"explain": "사람 선행사의 목적어 him을 대신하는 목적격 관계대명사 who(m)/that. 생략도 가능.",
-"source": "학습지 p.5 · 통합본 L5 GRAMMAR 목적격 관계대명사"
-}
-]
+ "school": "동양중학교",
+ "grade": 2,
+ "term": 2,
+ "exam": "중간고사",
+ "subject": "영어",
+ "set": 3,
+ "range": "Lesson 5~6",
+ "publisher": "동아(윤정미)",
+ "year": 2026,
+ "items": [
+  {
+   "kind": "group",
+   "label": "[1~5]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "On March 1, 1919, ⓐ<u>Dr. Schofield heard people to shout for Korean independence</u> in Tapgol Park. ⓑ<u>He took pictures of the event with his camera.</u> He then wrote an article about the historic event and sent it to foreign newspapers with his pictures.",
+     "ⓒ<u>Dr. Schofield's fight for Korean independence didn't stopped</u> even after the March 1st Movement. He continued to write about the terrible situation in Korea for foreign newspapers. He was under the watchful eye of the Japanese police. __(A)__, he had to go back to Canada in 1920.",
+     "In 1958, he returned to Korea __(B)__ the invitation of the Korean government and never left again. For the rest of his life, ⓓ<u>he worked hardly to help Koreans</u>, especially poor students. Dr. Schofield died in April 1970, and ⓔ<u>he buried in Seoul National Cemetery</u>."
+    ]
+   }
+  },
+  {
+   "no": 1,
+   "points": 3,
+   "stem": "윗글의 흐름상 빈칸 (A)에 들어갈 수 없는 것은?",
+   "choices": [
+    "So",
+    "Therefore",
+    "As a result",
+    "Consequently",
+    "However"
+   ],
+   "inline": true,
+   "answer": 5,
+   "explain": "[지문 요지] 1919년 3월 1일 탑골공원의 만세 소리를 들은 Schofield 박사는 사진과 기사를 외국 신문에 보냈고, 일본 경찰의 감시로 1920년 캐나다로 돌아갔다가 1958년 한국 정부의 초청으로 돌아와 가난한 학생들을 도우며 살다 1970년 국립묘지에 묻혔다.\n빈칸 앞 ‘He was under the watchful eye of the Japanese police.’(일본 경찰의 감시 아래 있었다)가 원인, 뒤 ‘he had to go back to Canada in 1920’(캐나다로 돌아가야 했다)이 결과이다. 원문은 ‘…, so he had to go back to Canada in 1920.’\nSo·Therefore·As a result·Consequently 는 모두 결과를 이끄는 말로 가능하고, 역접의 However 만 흐름에 맞지 않는다.",
+   "wrong": [
+    "① So / ② Therefore / ③ As a result / ④ Consequently: 원인→결과를 잇는 연결어로 모두 자연스럽다."
+   ],
+   "source": "L6 본문 6문단"
+  },
+  {
+   "no": 2,
+   "points": 4,
+   "stem": "윗글의 밑줄 친 ⓐ~ⓔ 중 어법상 옳은 것은?",
+   "choices": [
+    "ⓐ",
+    "ⓑ",
+    "ⓒ",
+    "ⓓ",
+    "ⓔ"
+   ],
+   "inline": true,
+   "answer": 2,
+   "explain": "ⓑ ‘He took pictures of the event with his camera.’ — take pictures of(~의 사진을 찍다), 과거형 took 이 바르게 쓰인 원문 그대로의 문장이다.\nⓐ 지각동사 hear 의 목적격 보어는 동사원형이나 현재분사이므로 ‘heard people shout[shouting]’. ⓒ didn't 뒤에는 동사원형이므로 ‘didn't stop’. ⓓ hardly 는 ‘거의 ~않다’는 뜻이므로 ‘열심히’는 부사 hard → ‘worked hard’. ⓔ 그가 ‘묻힌’ 것이므로 수동태 ‘he was buried’.",
+   "wrong": [
+    "ⓐ to shout → shout / shouting (지각동사 + 목적어 + 동사원형/-ing)",
+    "ⓒ didn't stopped → didn't stop (조동사 뒤 동사원형)",
+    "ⓓ hardly → hard (hardly 는 ‘거의 ~않다’)",
+    "ⓔ he buried → he was buried (수동태)"
+   ],
+   "source": "L6 본문 5~7문단 · 통합본 L6 GRAMMAR 지각동사"
+  },
+  {
+   "no": 3,
+   "points": 3,
+   "stem": "윗글의 흐름상 빈칸 (B)에 들어갈 단어로 알맞은 것은?",
+   "choices": [
+    "at",
+    "by",
+    "for",
+    "on",
+    "with"
+   ],
+   "inline": true,
+   "answer": 1,
+   "explain": "원문 ‘In 1958, he returned to Korea at the invitation of the Korean government and never left again.’(1958년 그는 한국 정부의 초청으로 한국에 돌아와 다시는 떠나지 않았다).\n‘~의 초대로’는 at the invitation of 이며 전치사 at 을 쓴다(L6 어휘 리스트).",
+   "wrong": [
+    "② by / ③ for / ④ on / ⑤ with: invitation 과 ‘~의 초대로’를 이루는 짝이 아니다."
+   ],
+   "source": "L6 본문 7문단 · L6 어휘 at the invitation of"
+  },
+  {
+   "no": 4,
+   "points": 3,
+   "stem": "윗글을 읽고 대답을 찾을 수 없는 질문은?",
+   "choices": [
+    "Where did Dr. Schofield hear people shouting?",
+    "Why did Dr. Schofield have to go back to Canada?",
+    "When did Dr. Schofield return to Korea?",
+    "Who did Dr. Schofield help for the rest of his life?",
+    "How many articles did Dr. Schofield write for Korea's independence?"
+   ],
+   "answer": 5,
+   "explain": "글에는 Schofield 박사가 기사를 몇 편 썼는지 나오지 않으므로 ⑤의 답은 찾을 수 없다.\n① ‘in Tapgol Park’ → 탑골공원. ② ‘under the watchful eye of the Japanese police, so he had to go back’ → 일본 경찰의 감시 때문. ③ ‘In 1958, he returned to Korea’ → 1958년. ④ ‘help Koreans, especially poor students’ → 한국인들, 특히 가난한 학생들.",
+   "wrong": [
+    "① 탑골공원에서 들었다고 나온다.",
+    "② 일본 경찰의 감시 때문에 돌아가야 했다고 나온다.",
+    "③ 1958년에 돌아왔다고 나온다.",
+    "④ 한국인들, 특히 가난한 학생들을 도왔다고 나온다."
+   ],
+   "source": "L6 본문 5~7문단 · 통합본 L6 READING 질문"
+  },
+  {
+   "no": 5,
+   "points": 3,
+   "stem": "<보기>의 (A)~(E)를 윗글에서 일어난 일의 순서로 바르게 배열한 것은?",
+   "box": {
+    "title": "< 보 기 >",
+    "lines": [
+     "(A) He returned to Korea at the invitation of the Korean government.",
+     "(B) He heard people shouting for Korean independence in Tapgol Park.",
+     "(C) He wrote an article about the historic event.",
+     "(D) He had to go back to Canada.",
+     "(E) For the rest of his life, he worked hard to help Koreans, especially poor students."
+    ]
+   },
+   "choices": [
+    "(B) - (C) - (D) - (A) - (E)",
+    "(B) - (D) - (C) - (A) - (E)",
+    "(B) - (C) - (A) - (D) - (E)",
+    "(C) - (B) - (D) - (E) - (A)",
+    "(C) - (B) - (A) - (D) - (E)"
+   ],
+   "answer": 1,
+   "explain": "순서대로 ‘On March 1, 1919, Dr. Schofield heard people shouting for Korean independence in Tapgol Park.’(B) → ‘He then wrote an article about the historic event’(C) → ‘he had to go back to Canada in 1920’(D) → ‘In 1958, he returned to Korea at the invitation of the Korean government’(A) → ‘For the rest of his life, he worked hard to help Koreans, especially poor students.’(E).\n따라서 (B) - (C) - (D) - (A) - (E) 인 ①이 정답이다.",
+   "wrong": [
+    "② (C)기사를 쓴 것은 1919년, (D)캐나다로 돌아간 것은 1920년이므로 C 가 먼저다.",
+    "③ (A)1958년 귀국은 (D)1920년 출국 뒤이다.",
+    "④⑤ (B)만세 소리를 들은 뒤에 (C)기사를 썼다."
+   ],
+   "source": "L6 본문 5~7문단"
+  },
+  {
+   "kind": "group",
+   "label": "[6~7]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "We are now in Finsbury Park to see a painting by Banksy, an internationally famous street artist. (A) Banksy's artworks often carry ⓐ[social / personal] messages, and the green tree you see over there is a good example. (B) As you can see, he created a green tree by spraying green paint on a wall behind a ⓑ[leafless / colorful] tree. (C) What message does Banksy want to give us through this painting? (D) In many people's opinion, he is telling us that nature is having a hard time. (E) They think he wants us to take ⓒ[better / worse] care of it."
+    ]
+   }
+  },
+  {
+   "no": 6,
+   "points": 3,
+   "stem": "윗글의 흐름상 다음 문장이 들어갈 가장 적절한 곳은?",
+   "box": "Next to the tree, there is a person who is holding a sprayer.",
+   "choices": [
+    "(A)",
+    "(B)",
+    "(C)",
+    "(D)",
+    "(E)"
+   ],
+   "inline": true,
+   "answer": 3,
+   "explain": "[지문 요지] Finsbury Park 의 Banksy 그림은 잎 없는 나무 뒤 벽에 초록 페인트를 뿌려 만든 초록 나무이며, 많은 사람은 자연이 힘든 시간을 보내고 있으니 더 잘 돌보자는 메시지로 본다.\n주어진 문장 ‘Next to the tree, there is a person who is holding a sprayer.’의 the tree 는 앞 문장에서 만든 초록 나무이다. 나무를 만든 방법(‘by spraying green paint on a wall behind a leafless tree’)을 말한 뒤 그 옆의 인물을 덧붙이고, 이어서 (C) 다음 ‘What message does Banksy want to give us through this painting?’ 으로 넘어가는 것이 자연스럽다.",
+   "wrong": [
+    "① (A)·② (B): 아직 초록 나무를 어떻게 만들었는지 설명하기 전이다.",
+    "④ (D)·⑤ (E): 이미 그림의 메시지에 대해 말하는 부분이라 그림 묘사가 끼어들면 어색하다."
+   ],
+   "source": "L5 본문 2문단"
+  },
+  {
+   "no": 7,
+   "points": 3,
+   "stem": "윗글의 흐름상 ⓐ~ⓒ에 들어갈 단어로 바르게 짝지어진 것은?",
+   "choices_table": {
+    "header": [
+     "",
+     "ⓐ",
+     "ⓑ",
+     "ⓒ"
+    ],
+    "rows": [
+     [
+      "①",
+      "social",
+      "leafless",
+      "better"
+     ],
+     [
+      "②",
+      "social",
+      "colorful",
+      "worse"
+     ],
+     [
+      "③",
+      "social",
+      "leafless",
+      "worse"
+     ],
+     [
+      "④",
+      "personal",
+      "colorful",
+      "better"
+     ],
+     [
+      "⑤",
+      "personal",
+      "leafless",
+      "better"
+     ]
+    ]
+   },
+   "answer": 1,
+   "explain": "ⓐ ‘Banksy's artworks often carry social messages’ — 자연에 대한 메시지는 사회적(social) 메시지이다. ⓑ ‘behind a leafless tree’ — 잎이 없는 나무 뒤 벽에 초록 페인트를 뿌렸다. ⓒ ‘he wants us to take better care of it’ — 자연이 힘들다고 말하므로 더 잘(better) 돌보라는 것이다.\n따라서 social - leafless - better 인 ①이 정답이다.",
+   "wrong": [
+    "② ⓑ colorful / ⓒ worse: 잎이 없는 나무였고, 더 잘 돌보라는 메시지이다.",
+    "③ ⓒ worse: ‘nature is having a hard time’ 에 이어 더 못 돌보라는 것은 어색하다.",
+    "④⑤ ⓐ personal: 개인적 메시지를 담는 것은 Wilson 의 껌 그림이다."
+   ],
+   "source": "L5 본문 2문단"
+  },
+  {
+   "no": 8,
+   "points": 3,
+   "stem": "다음 중 밑줄 친 that의 쓰임이 다른 하나는?",
+   "choices": [
+    "The car <u>that</u> Ally drives is brand-new.",
+    "He likes to eat the pizza <u>that</u> his mom makes.",
+    "I believe <u>that</u> every country has the right to be independent.",
+    "The medicine <u>that</u> doctors developed reduces pain quickly.",
+    "The website <u>that</u> my cousin designed provides useful information about travel."
+   ],
+   "answer": 3,
+   "explain": "③ ‘I believe that every country has the right to be independent.’의 that 은 believe 의 목적어인 명사절을 이끄는 접속사로, 뒤에 완전한 절이 온다(L6 After You Read).\n①②④⑤의 that 은 앞의 명사(The car, the pizza, The medicine, The website)를 꾸미는 목적격 관계대명사로, drives·makes·developed·designed 의 목적어가 빠진 절을 이끈다.",
+   "wrong": [
+    "① The car that Ally drives — 목적격 관계대명사",
+    "② the pizza that his mom makes — 목적격 관계대명사(학습지 p.5)",
+    "④ The medicine that doctors developed — 목적격 관계대명사(학습지 C-4)",
+    "⑤ The website that my cousin designed — 목적격 관계대명사(학습지 C-12)"
+   ],
+   "source": "학습지 p.5·p.6 Practice C-4·12 · 통합본 L5 GRAMMAR · L6 After You Read"
+  },
+  {
+   "kind": "group",
+   "label": "[9~10]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "The Red Room by Henri Matisse",
+     "The painting I want to write about is The Red Room by Henri Matisse. This painting shows a red room with a window. In the room, there are two chairs and a big table. We also see a woman who is setting the table. (A) <u>I like the red color of this painting.</u> I think that the room feels warm because of it."
+    ]
+   }
+  },
+  {
+   "no": 9,
+   "points": 3,
+   "stem": "윗글의 맥락상 밑줄 친 (A)에서 추론할 수 있는 글쓴이의 심경으로 가장 적절한 것은?",
+   "choices": [
+    "pleased",
+    "bored",
+    "scared",
+    "angry",
+    "disappointed"
+   ],
+   "inline": true,
+   "answer": 1,
+   "explain": "[지문 요지] 글쓴이가 소개하는 그림은 Henri Matisse 의 The Red Room 으로, 창문이 있는 붉은 방에 의자 두 개와 큰 탁자, 상을 차리는 여인이 있으며, 글쓴이는 붉은색 때문에 방이 따뜻하게 느껴져 좋아한다.\n(A) ‘I like the red color of this painting.’ — 그림의 붉은색이 마음에 든다고 하고, 이어 ‘the room feels warm because of it’ 이라고 하므로 기쁘고 만족한(pleased) 심경이다.",
+   "wrong": [
+    "② bored(지루한) / ③ scared(겁먹은) / ④ angry(화난) / ⑤ disappointed(실망한): ‘I like’ 와 어울리지 않는다."
+   ],
+   "source": "L5 Think and Write"
+  },
+  {
+   "no": 10,
+   "points": 3,
+   "stem": "윗글의 내용과 일치하지 않는 것은?",
+   "choices": [
+    "The painting is The Red Room by Henri Matisse.",
+    "This painting shows a red room with a window.",
+    "In the room, there are two chairs and a small table.",
+    "We also see a woman who is setting the table.",
+    "The writer likes the red color of this painting."
+   ],
+   "answer": 3,
+   "explain": "③ ‘In the room, there are two chairs and a small table.’ — 원문은 ‘two chairs and a big table’(큰 탁자)이므로 일치하지 않는다.\n① ‘The Red Room by Henri Matisse’, ② ‘a red room with a window’, ④ ‘a woman who is setting the table’, ⑤ ‘I like the red color of this painting.’ 은 모두 본문 그대로이다.",
+   "wrong": [
+    "① 그림 제목과 화가가 본문 그대로이다.",
+    "② 창문이 있는 붉은 방 — 본문 그대로.",
+    "④ 상을 차리는 여인 — 본문 그대로.",
+    "⑤ 글쓴이가 붉은색을 좋아한다 — 본문 그대로."
+   ],
+   "source": "L5 Think and Write"
+  },
+  {
+   "kind": "group",
+   "label": "[11~12]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "The final stop of our tour today is Muswell Hill. Can't see any street artworks? Well, look down and look closely. Do you see the little chewing gum paintings? They are by the artist Ben Wilson. Wilson is well known for painting pictures on gum that people drop on the street. His gum paintings often carry <u>personal</u> messages from people he meets on the street. For example, the one over here is a happy birthday wish for a loved one. Wilson's gum paintings are tiny, but they give great pleasure to many people."
+    ]
+   }
+  },
+  {
+   "no": 11,
+   "points": 3,
+   "stem": "윗글의 밑줄 친 personal의 영영풀이로 옳은 것은?",
+   "choices": [
+    "relating to human society and its organization",
+    "a state of feeling or being happy",
+    "belonging or relating to one particular person",
+    "being or happening at the end of a series of events, actions, etc.",
+    "a very small round mark"
+   ],
+   "answer": 3,
+   "explain": "[지문 요지] Muswell Hill 에서는 길바닥 껌 위에 그림을 그리는 Ben Wilson 의 작은 껌 그림을 볼 수 있으며, 그 그림은 거리에서 만난 사람들의 개인적인 메시지를 담아 많은 이에게 큰 기쁨을 준다.\npersonal(개인의, 개인적인)의 영영풀이는 ‘belonging or relating to one particular person’(특정한 한 사람에게 속하거나 관련된)이다. ‘His gum paintings often carry personal messages from people he meets on the street.’ — 그의 껌 그림은 거리에서 만난 사람들의 개인적인 메시지를 담는다.",
+   "wrong": [
+    "① relating to human society and its organization = social(사회의)",
+    "② a state of feeling or being happy = pleasure(기쁨)",
+    "④ being or happening at the end of a series of events = final(마지막의)",
+    "⑤ a very small round mark = dot(점)"
+   ],
+   "source": "L5 본문 3문단 · L5 어휘 영영풀이"
+  },
+  {
+   "no": 12,
+   "points": 4,
+   "stem": "윗글의 Wilson의 껌 그림에 담길 메시지로 가장 알맞은 것은?",
+   "choices": [
+    "\"Save the earth!\"",
+    "\"Stop the war.\"",
+    "\"Happy 10th birthday, Jane!\"",
+    "\"Recycle your bottles.\"",
+    "\"Protect the forests.\""
+   ],
+   "answer": 3,
+   "explain": "Wilson 의 껌 그림은 ‘personal messages from people he meets on the street’(거리에서 만난 사람들의 개인적인 메시지)를 담고, 그 예로 ‘a happy birthday wish for a loved one’(사랑하는 이를 위한 생일 축하)을 들었다.\n따라서 특정한 한 사람을 위한 생일 축하 메시지인 ③ “Happy 10th birthday, Jane!” 이 알맞다.",
+   "wrong": [
+    "① “Save the earth!” — 환경에 대한 사회적 메시지(Banksy 쪽).",
+    "② “Stop the war.” — 사회적 메시지.",
+    "④ “Recycle your bottles.” — 사회적 메시지.",
+    "⑤ “Protect the forests.” — 자연에 대한 사회적 메시지."
+   ],
+   "source": "L5 본문 3문단"
+  },
+  {
+   "no": 13,
+   "points": 3,
+   "stem": "다음 문장들의 빈칸에 공통으로 들어갈 단어는?",
+   "box": "○ He is famous _____ using only lines and dots in his paintings of human bodies.\n○ Many people are going to gather tomorrow _____ the independence of Korea.",
+   "choices": [
+    "for",
+    "to",
+    "of",
+    "in",
+    "at"
+   ],
+   "inline": true,
+   "answer": 1,
+   "explain": "첫 문장 ‘He is famous for using only lines and dots in his paintings of human bodies.’의 be famous for 는 ‘~로 유명하다’(L5 본문 1문단), 둘째 문장 ‘Many people are going to gather tomorrow for the independence of Korea.’의 for 는 ‘~을 위해’(L6 본문 1문단)이다.\n두 문장 모두 전치사 for 가 들어간다.",
+   "wrong": [
+    "② to / ③ of / ④ in / ⑤ at: famous 뒤에도, ‘한국의 독립을 위해’에도 맞지 않는다."
+   ],
+   "source": "L5 본문 1문단 · L6 본문 1문단 · L5 어휘 be famous for"
+  },
+  {
+   "no": 14,
+   "points": 4,
+   "stem": "다음 중 어법상 옳지 않은 것은?",
+   "choices": [
+    "Did you use to have a dog when you were young?",
+    "Minho used to stay up late, but now he goes to bed early.",
+    "Dictionaries are used to find difficult English words.",
+    "Tom used to live in Paris before, but he doesn't live there anymore.",
+    "I used to get up early every morning, so I'm never late."
+   ],
+   "answer": 5,
+   "explain": "⑤ ‘I used to get up early every morning, so I'm never late.’ — 뒤 절 ‘so I'm never late’(그래서 나는 절대 늦지 않는다)가 현재이므로 앞 절도 지금의 습관이어야 한다. ‘~하는 데 익숙하다’는 「be used to + -ing」이므로 ‘I am used to getting up early every morning’ 으로 고쳐야 한다(학습지 p.3 Practice A-7). used to 는 지금은 하지 않는 과거의 습관을 나타내므로 뒤 절과 모순된다.\n①은 used to 의문문, ②④는 과거의 습관·상태(but now …, anymore 와 어울림), ③은 「be used to + 동사원형」(~하는 데 사용되다)으로 모두 바르다(학습지 p.3 Practice A-1~4).",
+   "wrong": [
+    "① Did you use to have a dog — used to 의문문, 바른 문장.",
+    "② used to stay up late, but now — 과거의 습관, 바른 문장.",
+    "③ are used to find — ‘~하는 데 사용되다’, 바른 문장.",
+    "④ used to live in Paris before — 과거의 상태, 바른 문장."
+   ],
+   "source": "학습지 p.3 Practice A-1·2·3·4·7"
+  },
+  {
+   "kind": "group",
+   "label": "[15~16]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "Modern street art comes in many different forms, and it makes cities colorful and lively. Today, we are going to see some well-known street artworks in London. The place that we are going to visit is Shoreditch. Poor workers used to live in this area, but now it is one of the hippest areas in London. We can find so many great pieces of street art here. Do you see the painting over there? It is by the artist STIK. He is famous for using only lines and dots in his paintings of human bodies. According to STIK, the three figures represent the past, present, and future of Shoreditch. Which figure represents which? Well, look closely at the eyes of the three figures. They are just dots, but they will give you a clue."
+    ]
+   }
+  },
+  {
+   "no": 15,
+   "points": 3,
+   "stem": "윗글의 화자가 세 인물이 무엇을 나타내는지 알고 싶은 사람에게 하는 조언으로 가장 적절한 것은?",
+   "choices": [
+    "Look closely at the eyes of the three figures.",
+    "Well, look down and look closely.",
+    "Go straight for about 500 meters and turn left.",
+    "Why don't you go by bus?",
+    "Could you take pictures of the event and share them with the world?"
+   ],
+   "answer": 1,
+   "explain": "[지문 요지] 런던 Shoreditch 는 가난한 노동자들이 살던 곳에서 가장 힙한 지역이 되었고, 선과 점만으로 사람을 그리는 STIK 의 그림 속 세 인물은 이곳의 과거·현재·미래를 나타내며, 눈의 점이 그 단서이다.\n‘Which figure represents which? Well, look closely at the eyes of the three figures. They are just dots, but they will give you a clue.’ — 어느 인물이 무엇을 나타내는지 알고 싶으면 세 인물의 눈을 자세히 보라고 조언한다. ①이 정답이다.",
+   "wrong": [
+    "② ‘look down and look closely’ 는 Muswell Hill 의 껌 그림을 볼 때의 말이다.",
+    "③ 길 안내(L5 Watch and Talk A-4)이다.",
+    "④ 버스로 가라는 길 안내(L5 Watch and Talk A-3)이다.",
+    "⑤ Schofield 박사에게 사진을 부탁하는 말(L6 본문)이다."
+   ],
+   "source": "L5 본문 1문단"
+  },
+  {
+   "no": 16,
+   "points": 4,
+   "stem": "윗글을 다음과 같이 요약하고자 할 때, 빈칸 ⓐ~ⓒ에 들어갈 말로 바르게 짝지어진 것은?",
+   "box": "Shoreditch used to be an area that ⓐ___ people lived in, but it is now one of the ⓑ___ areas in London. The eyes of the three figures in STIK's painting were drawn as ⓒ___.",
+   "choices_table": {
+    "header": [
+     "",
+     "ⓐ",
+     "ⓑ",
+     "ⓒ"
+    ],
+    "rows": [
+     [
+      "①",
+      "poor",
+      "hippest",
+      "dots"
+     ],
+     [
+      "②",
+      "poor",
+      "poorest",
+      "lines"
+     ],
+     [
+      "③",
+      "poor",
+      "hippest",
+      "lines"
+     ],
+     [
+      "④",
+      "rich",
+      "hippest",
+      "dots"
+     ],
+     [
+      "⑤",
+      "rich",
+      "poorest",
+      "dots"
+     ]
+    ]
+   },
+   "answer": 1,
+   "explain": "ⓐ ‘Poor workers used to live in this area’ → poor. ⓑ ‘now it is one of the hippest areas in London’ → hippest. ⓒ ‘look closely at the eyes of the three figures. They are just dots’ → dots.\n따라서 poor - hippest - dots 인 ①이 정답이다.",
+   "wrong": [
+    "② ⓑ poorest / ⓒ lines: 지금은 가장 힙한 지역이고, 눈은 점이다.",
+    "③ ⓒ lines: 눈은 선이 아니라 점(dots)으로 그려졌다.",
+    "④⑤ ⓐ rich: 예전에 살던 사람들은 가난한(Poor) 노동자였다."
+   ],
+   "source": "L5 본문 1문단 · 통합본 L5 READING T/F 02·03·06"
+  },
+  {
+   "kind": "group",
+   "label": "[17~18, 서답형1]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "On February 28, 1919, a man came to Dr. Schofield's house.",
+     "Man: Dr. Schofield, I have a special favor to ask you.",
+     "Dr. Schofield: What can I do for you?",
+     "Man: Many people are going to gather tomorrow for the independence of Korea. Could you take pictures of the event and share them with the world?",
+     "At 2 p.m. on March 1, Dr. Schofield was hiding in a building and (가) <u>밖에 많은 사람들이 모여드는 것을 보았다.</u> He began to take pictures.",
+     "Dr. Schofield: Unbelievable! There are so many people here. I hope the world will learn about this important event through my pictures."
+    ]
+   }
+  },
+  {
+   "no": 17,
+   "points": 3,
+   "stem": "윗글의 내용과 일치하는 것은?",
+   "choices": [
+    "A man visited Dr. Schofield on March 1, 1919.",
+    "The man asked Dr. Schofield to take pictures of an important event.",
+    "Dr. Schofield took pictures while hiding in a car.",
+    "There were only a few people at the event.",
+    "He began to take pictures on February 28."
+   ],
+   "answer": 2,
+   "explain": "[지문 요지] 1919년 2월 28일 한 남자가 Schofield 박사에게 내일 독립을 위해 모이는 사람들의 사진을 찍어 세계에 알려 달라고 부탁했고, 3월 1일 박사는 건물에 숨어 모여드는 군중을 찍으며 세계가 이 일을 알기를 바랐다.\n②는 남자의 말 ‘Could you take pictures of the event and share them with the world?’(그 행사의 사진을 찍어 세계와 공유해 주시겠어요?)와 일치한다.",
+   "wrong": [
+    "① 남자가 찾아온 날은 March 1 이 아니라 February 28, 1919 이다.",
+    "③ 숨어 있던 곳은 car 가 아니라 a building 이다.",
+    "④ ‘There are so many people here.’ — 사람이 아주 많았다.",
+    "⑤ 사진을 찍기 시작한 날은 3월 1일 오후 2시이다."
+   ],
+   "source": "L6 본문 1~2문단 · 통합본 L6 READING T/F 01~05"
+  },
+  {
+   "no": 18,
+   "points": 4,
+   "stem": "윗글을 읽고 Dr. Schofield에 대해 바르게 이해한 학생은?",
+   "choices": [
+    "S 1: \"People were going to gather for the independence of Japan.\"",
+    "S 2: \"Dr. Schofield was hiding in a building and saw a small group of people gathering outside.\"",
+    "S 3: \"Dr. Schofield hoped the world would learn about the event.\"",
+    "S 4: \"Unbelievable! There are so few people here.\"",
+    "S 5: \"On February 28, 1919, a man came to Dr. Schofield's school.\""
+   ],
+   "answer": 3,
+   "explain": "S 3 의 말은 마지막 문장 ‘I hope the world will learn about this important event through my pictures.’(내 사진을 통해 세계가 이 중요한 사건을 알게 되기를 바란다)와 일치한다.",
+   "wrong": [
+    "S 1: the independence of Japan 이 아니라 the independence of Korea 이다.",
+    "S 2: a small group 이 아니라 a large group of people 이 모였다.",
+    "S 4: so few people 이 아니라 so many people 이다.",
+    "S 5: 찾아온 곳은 school 이 아니라 Dr. Schofield's house 이다."
+   ],
+   "source": "L6 본문 1~2문단 · 통합본 L6 READING T/F 02·06"
+  },
+  {
+   "kind": "essay",
+   "no": "서답형1",
+   "points": 5,
+   "stem": "윗글의 밑줄 친 우리말 (가)를 <조건>에 맞춰 바르게 영작하시오.",
+   "condition": [
+    "다음 단어를 반드시 사용할 것 (※ 단, 필요시 단어의 형태를 변형할 것): see, a large group of, gather, outside",
+    "총 8단어로 작성할 것 (주어는 쓰지 않는다)"
+   ],
+   "answer_lines": 1,
+   "answer": "saw a large group of people gathering outside",
+   "explain": "모범답안: saw a large group of people gathering outside (8단어)\n‘~가 …하는 것을 보았다’는 지각동사 see 의 5형식 「see + 목적어 + 현재분사(-ing)」이다. 주어 Dr. Schofield 는 앞의 ‘was hiding in a building and’ 에 이미 있으므로 동사 saw 부터 쓴다. ‘많은 사람들’은 a large group of people, ‘밖에’는 outside 를 문장 끝에 둔다. 교과서 L6 본문 2문단 원문이다.\n채점 기준: saw(1점), a large group of people(2점), gathering(동사원형 gather 허용, 1점), outside(1점). to gather 로 쓰면 1점 감점, 주어를 다시 써서 8단어를 넘기면 1점 감점.",
+   "source": "L6 본문 2문단 · 통합본 L6 GRAMMAR 지각동사"
+  },
+  {
+   "no": 19,
+   "points": 3,
+   "stem": "다음 문장들의 빈칸 ⓐ~ⓒ에 들어갈 단어가 바르게 짝지어진 것은?",
+   "box": "○ According ⓐ___ STIK, the three figures represent the past, present, and future of Shoreditch.\n○ Modern street art comes ⓑ___ many different forms, and it makes cities colorful and lively.\n○ He created a green tree by spraying green paint ⓒ___ a wall behind a leafless tree.",
+   "choices_table": {
+    "header": [
+     "",
+     "ⓐ",
+     "ⓑ",
+     "ⓒ"
+    ],
+    "rows": [
+     [
+      "①",
+      "to",
+      "in",
+      "on"
+     ],
+     [
+      "②",
+      "to",
+      "on",
+      "in"
+     ],
+     [
+      "③",
+      "for",
+      "in",
+      "at"
+     ],
+     [
+      "④",
+      "with",
+      "at",
+      "on"
+     ],
+     [
+      "⑤",
+      "with",
+      "in",
+      "in"
+     ]
+    ]
+   },
+   "answer": 1,
+   "explain": "ⓐ ‘According to STIK’ — according to(~에 따르면). ⓑ ‘Modern street art comes in many different forms’ — come in ~ forms(~한 형태로 나온다). ⓒ ‘spraying green paint on a wall’ — 벽 위에 뿌리므로 on. 모두 L5 본문 1·2문단 원문이다.\n따라서 to - in - on 인 ①이 정답이다.",
+   "wrong": [
+    "② ⓑ on / ⓒ in: come on forms, paint in a wall 은 쓰지 않는다.",
+    "③ ⓐ for: according for 는 쓰지 않는다.",
+    "④⑤ ⓐ with: according with 는 쓰지 않는다."
+   ],
+   "source": "L5 본문 1·2문단"
+  },
+  {
+   "no": 20,
+   "points": 3,
+   "stem": "다음 대화에서 A, B의 관계로 가장 적절한 것은?",
+   "box": "A: Can you recommend a restaurant for me?\nB: How about Morning in Venice?\nA: What kind of food do they have?\nB: They have Italian food. I strongly recommend their cheese pizza. It's really good.",
+   "choices_table": {
+    "header": [
+     "",
+     "A",
+     "B"
+    ],
+    "rows": [
+     [
+      "①",
+      "cook",
+      "customer"
+     ],
+     [
+      "②",
+      "waiter",
+      "customer"
+     ],
+     [
+      "③",
+      "friend",
+      "friend"
+     ],
+     [
+      "④",
+      "doctor",
+      "patient"
+     ],
+     [
+      "⑤",
+      "reporter",
+      "restaurant owner"
+     ]
+    ]
+   },
+   "answer": 3,
+   "explain": "A 가 ‘Can you recommend a restaurant for me?’(나에게 식당을 추천해 줄 수 있니?)라고 편하게 묻고, B 가 ‘How about Morning in Venice? … I strongly recommend their cheese pizza. It's really good.’ 이라고 자기가 가 본 식당을 권한다. B 가 그 식당을 ‘they/their’ 라고 부르므로 식당 관계자가 아니며, 존댓말 없이 편하게 추천을 주고받는 친구 사이의 대화이다(L6 Talk and Play).",
+   "wrong": [
+    "① 요리사·손님: B 가 식당 쪽 사람이라면 our cheese pizza 라고 했을 것이다.",
+    "② 웨이터·손님: 같은 이유로 B 는 식당 직원이 아니다.",
+    "④ 의사·환자: 건강·진료 이야기가 전혀 없다.",
+    "⑤ 기자·식당 주인: 식당 주인이라면 their 가 아니라 our 를 쓴다."
+   ],
+   "source": "L6 Talk and Play"
+  },
+  {
+   "kind": "group",
+   "label": "[21, 서답형2]",
+   "direction": "다음 대화를 읽고 물음에 답하시오.",
+   "box": {
+    "lines": [
+     "G: Do you need help?",
+     "B: Yes. How can I get to the Dream Shopping Mall from here? Can I walk?",
+     "G: You can, but it's a little far. Why don't you go by bus? Take bus No. 12.",
+     "B: OK. <u>버스로 얼마나 걸릴까요?</u>",
+     "G: Not very long. It'll take less than 10 minutes."
+    ]
+   }
+  },
+  {
+   "no": 21,
+   "points": 3,
+   "stem": "다음은 위 대화의 남자가 적은 메모이다. 대화의 내용과 일치하지 않는 것은?",
+   "box": {
+    "title": "To the Dream Shopping Mall",
+    "lines": [
+     "① Can I walk? — You can, but it's a little far.",
+     "② Why don't you go by bus?",
+     "③ Take bus No. 12.",
+     "④ It will take more than 10 minutes by bus.",
+     "⑤ Not very long."
+    ]
+   },
+   "choices": [
+    "①",
+    "②",
+    "③",
+    "④",
+    "⑤"
+   ],
+   "inline": true,
+   "answer": 4,
+   "explain": "[대화 요지] 남자가 Dream Shopping Mall 로 가는 길을 묻자 여자가 걸어가기엔 좀 멀다며 12번 버스를 타라고 하고, 버스로 10분도 안 걸린다고 알려 준다.\n④ ‘It will take more than 10 minutes by bus.’ — 대화에서는 ‘It'll take less than 10 minutes.’(10분도 안 걸린다)라고 했으므로 일치하지 않는다.",
+   "wrong": [
+    "① ‘Can I walk?’ / ‘You can, but it's a little far.’ — 대화 그대로.",
+    "② ‘Why don't you go by bus?’ — 대화 그대로.",
+    "③ ‘Take bus No. 12.’ — 대화 그대로.",
+    "⑤ ‘Not very long.’ — 대화 그대로."
+   ],
+   "source": "L5 Watch and Talk A-3 · 통합본 L5 DIALOGUES"
+  },
+  {
+   "kind": "essay",
+   "no": "서답형2",
+   "points": 5,
+   "stem": "위 대화의 밑줄 친 우리말을 <조건>에 맞춰 바르게 영작하시오.",
+   "condition": [
+    "다음 단어를 반드시 사용할 것: how long, take, by bus",
+    "총 7단어인 문장을 작성할 것"
+   ],
+   "answer_lines": 1,
+   "answer": "How long will it take by bus?",
+   "explain": "모범답안: How long will it take by bus? (7단어)\n걸리는 시간을 물을 때는 「How long will it take?」를 쓰고, ‘버스로’는 by bus 를 끝에 붙인다. 교통수단 앞에는 관사 없이 by 를 쓴다. L5 Watch and Talk A-3 의 남자 대사 원문이다.\n채점 기준: How long(1점), will it take(3점, does it take 허용), by bus(1점). by the bus 처럼 관사를 넣거나 어순이 틀리면 각 1점 감점, 7단어가 아니면 1점 감점.",
+   "source": "L5 Watch and Talk A-3"
+  },
+  {
+   "no": 22,
+   "points": 4,
+   "stem": "다음 중 어법상 옳지 않은 것은?",
+   "choices": [
+    "Dr. Schofield heard people shouting for Korean independence.",
+    "I saw a man running down the street.",
+    "I was so scared that I hid under my bed.",
+    "The sofa was so old that I threw it away.",
+    "It was so a big dress that I couldn't wear it."
+   ],
+   "answer": 5,
+   "explain": "「so ~ that」 구문에서 so 뒤에는 형용사나 부사가 온다. ⑤ ‘It was so a big dress that I couldn't wear it.’처럼 「a + 형용사 + 명사」가 오면 so 대신 such 를 써서 ‘It was such a big dress that I couldn't wear it.’ 으로 하거나, ‘The dress was so big that I couldn't wear it.’ 으로 고쳐야 한다.\n① heard people shouting(L6 본문), ② saw a man running 은 바른 지각동사 구문이고, ③ so scared that, ④ so old that 은 바른 「so + 형용사 + that」 구문이다(통합본 L6 GRAMMAR).",
+   "wrong": [
+    "① hear + 목적어 + -ing: 바른 문장.",
+    "② see + 목적어 + -ing: 바른 문장.",
+    "③ so scared that I hid — 바른 문장.",
+    "④ so old that I threw it away — 바른 문장."
+   ],
+   "source": "통합본 L6 GRAMMAR 지각동사 · so ~ that (연습 05·10·12)"
+  },
+  {
+   "no": 23,
+   "points": 4,
+   "stem": "다음 중 우리말 영작이 바르지 않은 것은?",
+   "choices": [
+    "나는 매일 아침 새들이 노래하는 것을 듣는다.\n→ I hear birds singing every morning.",
+    "나는 누군가가 내 어깨를 만지는 것을 느꼈다.\n→ I felt someone touch my shoulder.",
+    "그 영화는 너무 슬퍼서 모든 사람이 울었다.\n→ The movie was so sad that everyone cried.",
+    "그는 너무 어려서 롤러코스터를 탈 수 없다.\n→ He is so young that he can ride the roller coaster.",
+    "그녀는 매우 키가 커서 선반에 닿을 수 있다.\n→ She is so tall that she can reach the shelf."
+   ],
+   "answer": 4,
+   "explain": "④ 우리말 ‘탈 수 없다’인데 영작은 ‘he can ride the roller coaster’(탈 수 있다)로 되어 있어 뜻이 반대이다. ‘He is so young that he can't ride the roller coaster.’ 로 고쳐야 한다.\n①② 지각동사 hear/feel + 목적어 + -ing/동사원형, ③⑤ 「so + 형용사 + that + 주어 + 동사」로 우리말과 맞는 바른 영작이다(통합본 L6 GRAMMAR).",
+   "wrong": [
+    "① hear birds singing — ‘새들이 노래하는 것을 듣는다’, 바른 영작.",
+    "② felt someone touch — ‘누군가가 만지는 것을 느꼈다’, 바른 영작.",
+    "③ so sad that everyone cried — 바른 영작.",
+    "⑤ so tall that she can reach — 바른 영작."
+   ],
+   "source": "통합본 L6 GRAMMAR 지각동사 · so ~ that"
+  },
+  {
+   "no": 24,
+   "points": 4,
+   "stem": "다음 중 어법상 옳은 것은?",
+   "choices": [
+    "The friend which I invited to my house came on time.",
+    "Here are the presents whom we sent you.",
+    "Who was the person to who you were talking on the phone just now?",
+    "The song which I listened to yesterday was really peaceful.",
+    "I want to know the name of the boy which I met yesterday."
+   ],
+   "answer": 4,
+   "explain": "④ ‘The song which I listened to yesterday was really peaceful.’ — 사물 선행사 The song 에 목적격 관계대명사 which 를 써서 전치사 to 의 목적어 역할을 하게 한 바른 문장이다(학습지 p.6 Practice A-4).\n목적격 관계대명사는 선행사가 사람이면 who(m)/that, 사물이면 which/that 을 쓰고, 전치사 바로 뒤에는 whom·which 만 쓸 수 있다.",
+   "wrong": [
+    "① 사람 선행사 The friend 에 which 불가 → who(m)/that (A-2)",
+    "② 사물 선행사 the presents 에 whom 불가 → which/that (A-1)",
+    "③ 전치사 to 뒤에는 who 가 아니라 whom → to whom (A-6)",
+    "⑤ 사람 선행사 the boy 에 which 불가 → who(m)/that (A-5)"
+   ],
+   "source": "학습지 p.6 Practice A-1·2·4·5·6"
+  },
+  {
+   "kind": "essay",
+   "no": "서답형3",
+   "points": 5,
+   "stem": "다음 대화의 밑줄 친 B의 우리말을 <조건>에 맞춰 바르게 영작하시오.",
+   "box": "A: Did this place use to be a bookstore a long time ago?\nB: No. <u>그 새 쇼핑몰이 지어지기 전에는 여기에 큰 공원이 있었어.</u>",
+   "condition": [
+    "다음 단어를 반드시 사용할 것 (※ 단, 필요시 단어의 형태를 변형할 것): there, used to, a large park, the new shopping mall, build",
+    "총 15단어인 문장을 작성할 것"
+   ],
+   "answer_lines": 1,
+   "answer": "There used to be a large park here before the new shopping mall was built.",
+   "explain": "모범답안: There used to be a large park here before the new shopping mall was built. (15단어)\n‘예전에 ~이 있었다(지금은 없다)’는 「There used to be + 명사」로 나타낸다. ‘지어지기 전에’는 접속사 before 뒤에 수동태 과거 ‘the new shopping mall was built’ 를 쓴다(build → built). 학습지 p.4 Practice B-6 원문이다.\n채점 기준: There used to be(2점), a large park here(1점), before the new shopping mall was built(2점). use to·was built 누락은 각 1점 감점, 15단어가 아니면 1점 감점.",
+   "source": "학습지 p.4 Practice B-4·B-6"
+  },
+  {
+   "kind": "essay",
+   "no": "서답형4",
+   "points": 5,
+   "stem": "<보기>와 같이 주어진 두 문장을 한 문장으로 완성하시오.",
+   "box": {
+    "title": "< 보 기 >",
+    "lines": [
+     "The book was very interesting. + I read it yesterday.",
+     "⇨ The book which I read yesterday was very interesting.",
+     "",
+     "Henri Matisse is the painter. + I like him the most."
+    ]
+   },
+   "answer_lines": 1,
+   "answer": "Henri Matisse is the painter who(m)[that] I like the most.",
+   "explain": "모범답안: Henri Matisse is the painter who(m)[that] I like the most.\n두 번째 문장의 him(= the painter)이 like 의 목적어이므로, 사람 선행사 the painter 뒤에 목적격 관계대명사 who(m) 또는 that 을 쓰고 him 을 지운 뒤 ‘I like the most’ 를 잇는다. 목적격 관계대명사는 생략도 가능하다(학습지 p.5).\n채점 기준: who(m)/that(생략 포함)으로 연결(3점), him 을 지움(1점), the most 유지(1점). which 를 쓰거나 him 을 남기면 각 1점 감점.",
+   "source": "학습지 p.5 · 통합본 L5 GRAMMAR 목적격 관계대명사"
+  }
+ ]
 }
