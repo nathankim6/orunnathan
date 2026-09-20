@@ -21,8 +21,14 @@
     "A: I want to be a writer. What should I do?\nB: Then you should read many books."
    ],
    "answer": 4,
-   "explain": "속상해 보인다며 무슨 일이냐고 묻는데 '운동에 관심이 있다'(L6 Play with Expressions)는 어울리지 않는다.",
-   "source": "L6 Listen and Talk A-1·B·C, Play with Expressions · L5 Listen and Talk C, Review 1-2"
+   "explain": "정답 ④. A 가 'You look upset. What's the matter?'(속상해 보여. 무슨 일이야?) 라고 걱정을 묻는데, B 가 'I'm interested in sports.'(나는 운동에 관심이 있어.) 라고 관심사를 답하는 것은 물음과 대답이 맞지 않는다. What's the matter? 에는 I'm worried about ~ 처럼 걱정거리를 말해야 한다.",
+   "source": "L6 Listen and Talk A-1·B·C, Play with Expressions · L5 Listen and Talk C, Review 1-2",
+   "wrong": [
+    "① 친환경 자동차를 볼 수 있다는 말에 관심이 있다고 답해 자연스럽다.",
+    "② 영화를 봤냐는 물음에 안 봤다며 내용을 되묻는 흐름이 자연스럽다.",
+    "③ 무슨 일이냐는 물음에 발표가 걱정된다고 답해 자연스럽다.",
+    "⑤ 작가가 되려면 어떻게 해야 하냐는 물음에 책을 많이 읽으라고 조언해 자연스럽다."
+   ]
   },
   {
    "kind": "group",
@@ -36,14 +42,20 @@
    "stem": "대화의 내용과 일치하는 것은?",
    "choices": [
     "소녀가 앱 Eco Friends를 만들었다.",
-    "소녀는 그 앱이 지루하다고 생각한다.",
+    "소녀는 그 앱을 써 보고 싶어 하지 않는다.",
     "소녀는 앱 디자이너가 되고 싶어 한다.",
     "남자는 소녀에게 그림 그리기를 배우라고 말한다.",
     "남자는 영화감독이다."
    ],
    "answer": 3,
-   "explain": "I want to become an app designer. ① our app(남자 쪽의 앱) ② Wow, … interesting ④ collect new ideas and learn programming ⑤ 언급 없음. 대화 일치는 학습지 5-10 10번처럼 우리말 선지.",
-   "source": "L6 Listen and Talk A-3"
+   "explain": "[지문 요지] 남자가 소녀에게 자기들의 앱 Eco Friends 를 써 보라고 권하고, 소녀는 앱이 흥미롭다고 한다. 소녀가 앱 디자이너가 되고 싶다며 조언을 구하자 남자는 새 아이디어를 모으고 프로그래밍을 배우라고 답한다.\n정답 ③. 'I want to become an app designer.'(저는 앱 디자이너가 되고 싶어요.) 라는 소녀의 말과 일치한다.",
+   "source": "L6 Listen and Talk A-3",
+   "wrong": [
+    "① 'Do you want to try our app' — 앱은 남자 쪽(our app)의 것이다.",
+    "② 남자가 써 보라고 하자 소녀는 'Yes.' 라고 하며 써 보려 한다.",
+    "④ 남자는 새 아이디어를 모으고 프로그래밍을 배우라고 하지 그림 그리기를 말하지 않는다.",
+    "⑤ 남자는 앱 Eco Friends 를 만든 쪽이지 영화감독이 아니다."
+   ]
   },
   {
    "no": 3,
@@ -58,8 +70,14 @@
    ],
    "inline": true,
    "answer": 2,
-   "explain": "Wow 하고 감탄하며 칭찬하는 자리 → interesting. 원문: Wow, your app is very interesting.",
-   "source": "L6 Listen and Talk A-3 (ⓑ boring 은 interesting 을 일부러 바꾼 것)"
+   "explain": "정답 ②. 소녀는 앱을 써 보고 'Wow' 하고 감탄하며, 남자는 'Thanks.' 라고 답한다. 감탄하고 고맙다는 답을 듣는 자리이므로 칭찬하는 말이어야 한다. 원문은 'Wow, your app is very interesting.'(와, 당신의 앱은 무척 흥미롭네요.) 이므로 ⓑ boring(지루한)은 흐름에 맞지 않는다.",
+   "source": "L6 Listen and Talk A-3 (ⓑ boring 은 interesting 을 일부러 바꾼 것)",
+   "wrong": [
+    "ⓐ try — 써 보다. Do you want to try our app?",
+    "ⓒ become — ~이 되다. become an app designer.",
+    "ⓓ should — What should I do? 조언을 구하는 표현.",
+    "ⓔ collect — 모으다. collect new ideas."
+   ]
   },
   {
    "no": 4,
@@ -74,8 +92,14 @@
     "It was the biggest plant with no flowers at all."
    ],
    "answer": 3,
-   "explain": "El wanted a rose too, but Molly was quicker. ① Jo는 zinnia ② beautiful flowers ④ an aster ⑤ the smallest plant. 선지는 원문 문장 그대로·한 단어만 바꾼 것.",
-   "source": "L5 Review 2-1"
+   "explain": "[지문 요지] 학교 마지막 날, 학생들은 여름 동안 돌볼 꽃을 하나씩 집에 가져갈 수 있었다. Jo 는 백일홍, Molly 는 장미를 골랐고, 장미를 원했던 El 은 꽃이 전혀 없는 가장 작은 과꽃을 받았다.\n정답 ③. 'El wanted a rose too, but Molly was quicker.'(El 도 장미를 원했지만 Molly 가 더 빨랐다.) 와 그대로 일치한다.",
+   "source": "L5 Review 2-1",
+   "wrong": [
+    "① 'So Jo took a zinnia' — Jo 는 과꽃이 아니라 백일홍을 가져갔다.",
+    "② 'Their plants had beautiful flowers.' — Jo 와 Molly 의 식물에는 아름다운 꽃이 있었다.",
+    "④ 'El got an aster.' — El 은 백일홍이 아니라 과꽃을 받았다.",
+    "⑤ 'the smallest plant with no flowers' — 가장 큰 식물이 아니라 가장 작은 식물이었다."
+   ]
   },
   {
    "no": 5,
@@ -91,8 +115,14 @@
    ],
    "inline": true,
    "answer": 5,
-   "explain": "주말에 병문안 가자는 말에 '로봇 만들기에 관심이 있다'는 대답은 흐름에 맞지 않는다. 원문: Good idea. (ⓔ 는 L6 Review 1-2 의 문장을 넣은 것)",
-   "source": "L5 Review 1-1 (ⓔ 는 원문 Good idea. 대신 L6 Review 1-2 문장을 넣은 것)"
+   "explain": "정답 ⑤. 소년이 지수가 병원에 입원해 걱정된다고 하자 소녀가 소식을 들었다며 이번 주말에 병문안을 가자고 한다. 그 제안에 '나는 로봇 만들기에 관심이 있어'(ⓔ) 라고 답하는 것은 흐름에 맞지 않는다. 원문의 대답은 'Good idea.'(좋은 생각이야.) 이다.",
+   "source": "L5 Review 1-1 (ⓔ 는 원문 Good idea. 대신 L6 Review 1-2 문장을 넣은 것)",
+   "wrong": [
+    "ⓐ 무슨 일이냐는 물음에 걱정거리를 말해 자연스럽다.",
+    "ⓑ 걱정하는 까닭(병원에 있음)을 덧붙여 자연스럽다.",
+    "ⓒ 그 소식을 들었다는 말로 자연스럽다.",
+    "ⓓ 병문안을 가자는 제안으로 자연스럽다."
+   ]
   },
   {
    "kind": "group",
@@ -108,7 +138,7 @@
    "box": "→ El ________ ________ every day.",
    "answer_lines": 1,
    "answer": "felt smaller",
-   "explain": "feel + 형용사(비교급): felt smaller. El felt smaller every day.",
+   "explain": "모범답안: felt smaller\n'El 은 매일 더 작아지는 기분이었다' → El felt smaller every day. feel + 형용사(~한 기분이다)의 과거형 felt 에, '더 작아지는'은 비교급 smaller.\n채점 기준: 빈칸마다 2점. feel 로 쓰면(과거시제 오류) 해당 빈칸 0점, small·smallest 처럼 비교급이 아니면 0점, more small 도 0점.",
    "source": "L5 본문 6"
   },
   {
@@ -123,8 +153,14 @@
     "Why did El and Jo water the plants together?"
    ],
    "answer": 5,
-   "explain": "Because they could not reach the pots alone. 취미·나이·좋아하는 식물·반에서 가장 큰 학생은 글에 없다. 질문은 학습지 5-11 18번 그대로.",
-   "source": "L5 본문 1~7 · 학습지 5-11 18번"
+   "explain": "[지문 요지] El 과 Jo 는 반에서 가장 작은 학생들로 늘 함께였고, 혼자서는 화분에 손이 닿지 않아 함께 물을 주었다. 그런데 봄에 Jo 만 키가 자라 혼자 물을 줄 수 있게 되었고 El 은 날마다 더 작아지는 기분이었다.\n정답 ⑤. 'They even watered the plants together in the class because they could not reach the pots alone.' — 혼자서는 화분에 손이 닿지 않아서 함께 물을 주었다. 따라서 '왜 함께 물을 주었는가'에 답할 수 있다.",
+   "source": "L5 본문 1~7 · 학습지 5-11 18번",
+   "wrong": [
+    "① El 의 취미는 글에 나오지 않는다.",
+    "② 두 사람의 나이는 글에 나오지 않는다.",
+    "③ Jo 가 좋아하는 식물은 글에 나오지 않는다.",
+    "④ 둘이 가장 작은 학생이었다는 말은 있지만 반에서 가장 큰 학생이 누구인지는 없다."
+   ]
   },
   {
    "no": 7,
@@ -138,8 +174,14 @@
     "I'm going to plant roses in this <u>pot</u>."
    ],
    "answer": 3,
-   "explain": "reach the pots 의 pot 은 '화분'. ③ cooked chicken in this big pot 만 '냄비'. 선지: L5 Listen and Talk A-1 · 학습지 5-2 pot 예문 · 5-9 4번 · 본문 12.",
-   "source": "L5 어휘 pot(냄비; 화분) · Listen and Talk A-1 · 본문 12 · 학습지 5-2·5-9 4번"
+   "explain": "정답 ③. (B) 'they could not reach the pots' 의 pot 은 식물을 심는 '화분'이다. ③ 'I cooked chicken in this big pot.'(이 큰 냄비에 닭을 요리했다.) 의 pot 만 '냄비'라는 뜻으로 쓰였다.\npot 은 '냄비'와 '화분' 두 가지 뜻이 있다. cook·chicken 처럼 요리와 함께 쓰이면 냄비, flower·plant 와 함께 쓰이면 화분이다.",
+   "source": "L5 어휘 pot(냄비; 화분) · Listen and Talk A-1 · 본문 12 · 학습지 5-2·5-9 4번",
+   "wrong": [
+    "① a flower pot — 화분.",
+    "② planted beans in the pots — 콩을 심은 화분.",
+    "④ El took the last pot. — 마지막 화분.",
+    "⑤ plant roses in this pot — 장미를 심을 화분."
+   ]
   },
   {
    "kind": "group",
@@ -160,8 +202,14 @@
    ],
    "inline": true,
    "answer": 5,
-   "explain": "'그저 작은 초록 식물일 뿐'이라고 한 El 은 확신이 없었다. 원문: She was not so sure.",
-   "source": "L5 본문 12~20 (ⓔ 는 not so sure 를 so sure 로 일부러 바꾼 것)"
+   "explain": "[지문 요지] El 은 꽃 없는 가장 작은 식물이 든 마지막 화분을 받는다. Diaz 선생님은 때가 되면 꽃이 필 과꽃이라 하지만 El 은 확신하지 못하고, Jo 가 자기 백일홍을 주며 둘이 좋은 친구가 될 거라 말한다.\n정답 ⑤. El 은 선생님의 말에도 '그저 작은 초록 식물일 뿐'이라고 하며 미덥지 않아 한다. 그 뒤에 '그녀는 확신했다'(ⓔ She was so sure.) 가 오면 앞말과 모순된다. 원문은 'She was not so sure.'(그녀는 그렇게 확신하지 못했다.) 이다.",
+   "source": "L5 본문 12~20 (ⓔ 는 not so sure 를 so sure 로 일부러 바꾼 것)",
+   "wrong": [
+    "ⓐ 마지막 화분의 모습(가장 작은 식물, 꽃 없음)을 설명해 자연스럽다.",
+    "ⓑ 작은 식물에 동질감을 느끼는 El 의 말로 자연스럽다.",
+    "ⓒ 선생님이 위로하는 말로 자연스럽다.",
+    "ⓓ 선생님 말에도 미덥지 않아 하는 El 의 말로 자연스럽다."
+   ]
   },
   {
    "no": 9,
@@ -170,13 +218,19 @@
    "choices": [
     "El은 꽃이 많이 핀 화분을 가져갔다.",
     "Diaz 선생님은 그 식물이 과꽃이라고 말했다.",
-    "El은 그 식물이 곧 꽃을 피울 것이라고 확신했다.",
+    "Jo는 여름 내내 El의 집에 있을 것이다.",
     "Jo는 El에게 과꽃을 주었다.",
     "Diaz 선생님은 El에게 백일홍을 주었다."
    ],
    "answer": 2,
-   "explain": "That's an aster plant. ① 꽃이 없는 가장 작은 식물 ③ 확신하지 못했다 ④ Jo는 백일홍을 주었다 ⑤ 백일홍은 Jo의 것.",
-   "source": "L5 본문 12~20"
+   "explain": "정답 ②. 'Mr. Diaz looked at El and said, \"That's an aster plant.\"' — Diaz 선생님은 그 식물이 과꽃이라고 말했다.",
+   "source": "L5 본문 12~20",
+   "wrong": [
+    "① 'the smallest plant with no flowers' — 꽃이 없는 가장 작은 식물이었다.",
+    "③ 'I'll be at my grandma's all summer' — Jo 는 여름 내내 할머니 댁에 있을 것이다.",
+    "④ Jo 가 El 에게 준 것은 백일홍(zinnia)이다.",
+    "⑤ 백일홍을 준 사람은 Diaz 선생님이 아니라 Jo 이다."
+   ]
   },
   {
    "no": 10,
@@ -197,8 +251,14 @@
    ],
    "inline": true,
    "answer": 4,
-   "explain": "want 는 to부정사만 목적어로 취한다(wanted to go). enjoy·keep·finish·give up 은 동명사 목적어.",
-   "source": "학습지 4-7 (5) · 4-7 표 8"
+   "explain": "정답 ④. 빈칸 뒤에 동명사 going 이 있으므로 동명사를 목적어로 취하는 동사만 들어갈 수 있다. enjoy·keep·finish·give up 은 동명사를 목적어로 취하지만, want 는 to부정사만 목적어로 취한다(wanted to go).\n학습지 원문: Bill gave up going to the internet cafe. 동명사 목적어 동사 — enjoy, finish, keep, give up, mind, stop 등.",
+   "source": "학습지 4-7 (5) · 4-7 표 8",
+   "wrong": [
+    "① enjoyed going — 가는 것을 즐겼다.",
+    "② kept going — 계속 갔다.",
+    "③ finished going — 가는 것을 끝냈다.",
+    "⑤ gave up going — 가는 것을 그만두었다."
+   ]
   },
   {
    "kind": "group",
@@ -220,8 +280,14 @@
    ],
    "inline": true,
    "answer": 1,
-   "explain": "ⓐ itself = the name(이름 그 자체). ⓑ~ⓔ 는 모두 dwaejigukbap(돼지국밥).",
-   "source": "학습지 4-9 More Reading (Busan)"
+   "explain": "[지문 요지] 부산의 돼지국밥을 소개하는 글이다. 이름의 뜻, 곁들이는 반찬, 한국전쟁 때 가난한 이들의 음식으로 시작해 인기를 얻은 유래를 말하고 부산에 가면 먹어 보라고 권한다.\n정답 ①. ⓐ itself 는 바로 앞의 The name(그 이름)을 강조하는 재귀대명사로 '이름 그 자체'를 뜻한다. ⓑ It(comes with), ⓒ It(started), ⓓ it('s very tasty), ⓔ This delicious meal 은 모두 돼지국밥(dwaejigukbap)을 가리킨다.",
+   "source": "학습지 4-9 More Reading (Busan)",
+   "wrong": [
+    "ⓑ It comes with … — 돼지국밥.",
+    "ⓒ It started in the 1950s — 돼지국밥.",
+    "ⓓ it's very tasty and filling — 돼지국밥.",
+    "ⓔ This delicious meal — 돼지국밥."
+   ]
   },
   {
    "no": 12,
@@ -235,8 +301,14 @@
     "During the Korean War"
    ],
    "answer": 1,
-   "explain": "부산의 음식 돼지국밥의 이름·유래·인기를 소개하는 글(학습지 More Reading 제목 그대로). ② 단원 제목 ③④⑤ 본문 구절로 만든 오답 — 반찬·가난한 사람들·전쟁은 글의 일부일 뿐.",
-   "source": "학습지 4-9 More Reading (Busan)"
+   "explain": "정답 ①. 부산의 국 요리인 돼지국밥의 이름·반찬·유래·인기를 소개하고 먹어 보라고 권하는 글이므로 'A Delicious Soup Dish in Busan'(부산의 맛있는 국 요리)이 글 전체를 가장 잘 담는다.",
+   "source": "학습지 4-9 More Reading (Busan)",
+   "wrong": [
+    "② 여름 여행 이야기가 아니다.",
+    "③ 반찬은 한 문장에 나오는 세부 내용일 뿐이다.",
+    "④ 가난한 사람들의 음식이었다는 것은 유래의 한 부분일 뿐이다.",
+    "⑤ 한국전쟁은 시작된 때를 말할 뿐 글의 중심이 아니다."
+   ]
   },
   {
    "kind": "essay",
@@ -246,7 +318,7 @@
    "box": "• Do you know the (1)________ dish, <i>dwaejigukbap</i>, from Busan?\n• It started in the 1950s during the Korean War as a simple food for the (2)________.\n• It comes with (3)________ side dishes like salted shrimp, onions, noodles, <i>kimchi</i>, and garlic.",
    "answer_lines": 3,
    "answer": "(1) yummy (2) poor (3) various",
-   "explain": "the yummy dish / a simple food for the poor / various side dishes.",
+   "explain": "모범답안: (1) yummy (2) poor (3) various\n(1) 'Do you know the yummy dish' — 맛있는. (2) 'a simple food for the poor' — 가난한 사람들. (3) 'various side dishes' — 다양한.\n채점 기준: 빈칸마다 2점. 본문의 철자 그대로 써야 하며, (1) 에 delicious 처럼 뜻은 같아도 본문 그 자리의 단어가 아니면 0점, 철자 실수도 0점.",
    "source": "학습지 4-9 More Reading (Busan)"
   },
   {
@@ -261,8 +333,14 @@
     "Sora enjoys walk in the park."
    ],
    "answer": 3,
-   "explain": "the + 최상급(happiest) + of ~. ① better ② hotter ④ the tallest ⑤ enjoys walking.",
-   "source": "학습지 5-10 13번 · 4-8 C-1"
+   "explain": "정답 ③. 'Today is the happiest day of my life.' — happy 처럼 자음 + y 로 끝나는 형용사의 최상급은 y 를 i 로 바꾸고 -est 를 붙이며(happiest), 최상급 앞에 the 를 쓴다.\n① sing good than → sing better than (well 의 비교급은 불규칙 better). ② hoter → hotter (단모음 + 단자음은 자음을 겹쳐 씀). ④ taller mountain in the world → the tallest mountain (세상에서 가장 높은 → 최상급 + the). ⑤ enjoys walk → enjoys walking (enjoy 는 동명사 목적어).",
+   "source": "학습지 5-10 13번 · 4-8 C-1",
+   "wrong": [
+    "① good/well 의 비교급은 better.",
+    "② hot 의 비교급은 hotter.",
+    "④ in the world 와 함께 쓰이므로 the tallest.",
+    "⑤ enjoy 뒤에는 동명사 walking."
+   ]
   },
   {
    "kind": "group",
@@ -284,7 +362,7 @@
    },
    "answer_lines": 2,
    "answer": "People show the joy of friendship with their online posts and pictures.",
-   "explain": "show the joy of friendship + with their online posts and pictures.",
+   "explain": "모범답안: People show the joy of friendship with their online posts and pictures.\n'사람들은 우정의 기쁨을 보여 준다' → People show the joy of friendship, '그들의 온라인 게시물과 사진으로' → with their online posts and pictures (수단의 with).\n채점 기준: 5점. 보기 단어(show·joy·posts·pictures)를 하나라도 빠뜨리면 1점 감점, of friendship 이 빠지면 1점 감점, with 대신 by 를 쓰면 1점 감점, shows 처럼 수 일치가 틀리면 1점 감점, 어순이 크게 어긋나면 2점 감점.",
    "source": "학습지 5-8 More Reading (Friendship)"
   },
   {
@@ -326,8 +404,14 @@
     ]
    },
    "answer": 1,
-   "explain": "In 1935 → 과거형 chose(choose-chose). 앞(다른 날·다른 방식)과 반대되는 내용(그러나 보편적으로 이해) → However.",
-   "source": "학습지 5-8 More Reading (Friendship) · 4-5 불규칙 동사"
+   "explain": "정답 ①. ⓐ 'In 1935' 라는 과거의 때가 있으므로 choose 의 과거형 chose(불규칙: choose-chose)를 쓴다. ⓑ 앞에서는 '다른 날·다른 방식으로 기념할지도 모른다'고 하고 뒤에서는 '그러나 우리는 보편적으로 우정의 가치를 안다'고 하므로 반대되는 내용을 잇는 However(그러나)가 알맞다.",
+   "source": "학습지 5-8 More Reading (Friendship) · 4-5 불규칙 동사",
+   "wrong": [
+    "② choose 는 현재형이라 In 1935 와 맞지 않는다.",
+    "③ So(그래서)는 앞뒤가 반대되는 이 자리에 맞지 않는다.",
+    "④ chooses 는 현재형이고, Also(또한)도 반대 내용을 잇지 못한다.",
+    "⑤ Because(~ 때문에)는 앞뒤 관계와 맞지 않고 문장 첫머리의 접속부사로도 쓰이지 않는다."
+   ]
   },
   {
    "kind": "group",
@@ -348,8 +432,14 @@
    ],
    "inline": true,
    "answer": 2,
-   "explain": "because of their friendship(because of + 명사) / because it has a touching story(because + 절).",
-   "source": "L5 Present Your Ideas (In Writing S1) · L5 어휘 because of"
+   "explain": "정답 ②. 첫 번째 (A): 'The fox felt happier than before because of their friendship' — 뒤에 명사구(their friendship)가 오므로 because of(~ 때문에). 두 번째 (A): 'It is the best book for me because it has a touching story' — 뒤에 주어 + 동사의 절이 오므로 접속사 because(~하기 때문에). 두 자리 모두 because 가 들어간다.",
+   "source": "L5 Present Your Ideas (In Writing S1) · L5 어휘 because of",
+   "wrong": [
+    "① so(그래서)는 원인이 아니라 결과를 이끈다.",
+    "③ but(그러나)은 반대 내용을 잇는 말이라 맞지 않다.",
+    "④ when of 라는 표현은 없다.",
+    "⑤ after of 라는 표현은 없다."
+   ]
   },
   {
    "no": 16,
@@ -364,8 +454,14 @@
    ],
    "inline": true,
    "answer": 5,
-   "explain": "decide 는 to부정사를 목적어로 취한다: decided to be. ⓑ happier than ⓒ the best.",
-   "source": "L5 Present Your Ideas (In Writing S1) · 학습지 4-7 (5) (ⓔ being 은 to be 를 일부러 바꾼 것)"
+   "explain": "정답 ⑤. decide 는 to부정사를 목적어로 취하는 동사이다: I decided to be a good friend.(좋은 친구가 되기로 결심했다.) ⓔ being 은 원문의 to be 를 바꾼 것으로 쓰임이 알맞지 않다.\nⓐ became(become 의 과거형), ⓑ happier than(비교급 + than), ⓒ the best(good 의 최상급 + the), ⓓ has(주어 it 에 맞춘 단수 동사)는 모두 원문 그대로이다.",
+   "source": "L5 Present Your Ideas (In Writing S1) · 학습지 4-7 (5) (ⓔ being 은 to be 를 일부러 바꾼 것)",
+   "wrong": [
+    "ⓐ become 의 과거형 became — 과거의 이야기에 맞다.",
+    "ⓑ happy 의 비교급 happier + than — 바르다.",
+    "ⓒ good 의 최상급 best 앞에 the — 바르다.",
+    "ⓓ 3인칭 단수 주어 it 에 맞춘 has — 바르다."
+   ]
   },
   {
    "no": 17,
@@ -379,8 +475,14 @@
     "글쓴이는 좋은 친구가 되기로 결심했다."
    ],
    "answer": 4,
-   "explain": "It is the best book for me because it has a touching story. 감동적인 이야기.",
-   "source": "L5 Present Your Ideas (In Writing S1)"
+   "explain": "[지문 요지] 글쓴이가 읽은 책 '어린 왕자'를 소개하는 글이다. 왕자와 여우가 친구가 되어 여우가 더 행복해졌고, 감동적인 이야기라 최고의 책이며, 읽고 나서 좋은 친구가 되기로 결심했다.\n정답 ④. 'It is the best book for me because it has a touching story.' — 글쓴이는 이 책을 감동적인(touching) 이야기가 있는 최고의 책이라고 생각하지, 지루하다고 생각하지 않는다.",
+   "source": "L5 Present Your Ideas (In Writing S1)",
+   "wrong": [
+    "① 'I read a book The Little Prince.' 와 일치한다.",
+    "② 'a prince and a fox became good friends' 와 일치한다.",
+    "③ 'The fox felt happier than before because of their friendship.' 과 일치한다.",
+    "⑤ 'I decided to be a good friend.' 와 일치한다."
+   ]
   },
   {
    "kind": "essay",
@@ -390,7 +492,7 @@
    "box": "Q. 『어린 왕자』가 글쓴이에게 최고의 책인 까닭은 무엇인가?\n\n→ Because it ______________________________.",
    "answer_lines": 1,
    "answer": "has a touching story",
-   "explain": "It is the best book for me because it has a touching story.",
+   "explain": "모범답안: has a touching story\n'It is the best book for me because it has a touching story.' — 감동적인 이야기가 있기 때문이다. because 뒤의 동사구를 찾아 쓴다.\n채점 기준: 4점. touching 이 빠지면 2점 감점, have 로 쓰면(주어 it 과 수 불일치) 1점 감점, a 가 빠지면 1점 감점.",
    "source": "L5 Present Your Ideas (In Writing S1)"
   },
   {
@@ -399,7 +501,7 @@
    "stem": "다음 글의 빈칸 (a)~(c)에 들어갈 말이 알맞게 짝지어진 것은?",
    "box": "• Justin is 12 years old, and I am 14 years old. I am (a)________ than Justin.\n• Juha won the gold medal in the school running competition. Juha is the (b)________ student in our school.\n• There are three boys in the Smith family. David is the oldest boy. He is 20 years old. Kevin is the (c)________ boy. He is 15 years old.",
    "answer": 1,
-   "explain": "둘을 비교(than) → older, 달리기 대회 금메달 → the fastest, 20살과 15살 중 → the youngest. fast 는 1음절이므로 -est(most fast ×).",
+   "explain": "정답 ①. (a) 14살인 나와 12살인 Justin 둘을 비교하며 than 이 있으므로 비교급 older. (b) 달리기 대회에서 금메달을 땄으므로 학교에서 가장 빠른 the fastest (fast 는 1음절이므로 -est). (c) 세 형제 중 15살 Kevin 은 가장 어리므로 the youngest.\nthan 이 있으면 비교급, the ~ in/of ~ 처럼 여럿 중 하나를 고르면 최상급이다.",
    "source": "학습지 5-10 14번 (1)(2) · 5-7 B (원문에 빈칸)",
    "choices_table": {
     "header": [
@@ -440,7 +542,13 @@
       "oldest"
      ]
     ]
-   }
+   },
+   "wrong": [
+    "② (a) than 이 있으므로 최상급 oldest 가 아니라 older, (b) 학교에서 가장 빠른 학생이므로 fastest.",
+    "③ (c) 세 형제 중 가장 어리므로 younger 가 아니라 youngest.",
+    "④ (b) fast 는 1음절이라 most fast 가 아니라 fastest.",
+    "⑤ (a) 14살인 내가 12살보다 나이가 많으므로 younger 가 아니라 older, (c) 15살 Kevin 은 oldest 가 아니라 youngest."
+   ]
   },
   {
    "no": 19,
@@ -466,8 +574,14 @@
    ],
    "inline": true,
    "answer": 2,
-   "explain": "ⓑ 동명사 주어 단수 → is ⓓ smarter ⓕ the best.",
-   "source": "학습지 4-7 표 6 · 4-8 D-1 · 5-7 C-1 · 5-5 Practice 3 · 4-6 D-2 · 5-6 Practice 2"
+   "explain": "정답 ②. ⓐ 'Dad needs to buy new shoes.' — need 는 to부정사 목적어 (O). ⓒ 'Mary came earlier than Ann.' — early 의 비교급 earlier + than (O). ⓔ 'He didn't see the new English teacher.' — didn't + 동사원형 (O).\nⓑ Watching TV are → is (동명사 주어는 단수). ⓓ more smart → smarter (1음절 형용사는 -er). ⓕ goodest → the best (good 의 최상급은 불규칙 best).",
+   "source": "학습지 4-7 표 6 · 4-8 D-1 · 5-7 C-1 · 5-5 Practice 3 · 4-6 D-2 · 5-6 Practice 2",
+   "wrong": [
+    "① ⓑ 동명사 주어는 단수 취급이므로 is fun.",
+    "③ ⓑ·ⓓ·ⓕ 모두 틀린 문장이다.",
+    "④ ⓕ good 의 최상급은 best 이다.",
+    "⑤ ⓓ smart 의 비교급은 smarter 이다."
+   ]
   },
   {
    "no": 20,
@@ -489,8 +603,14 @@
    ],
    "inline": true,
    "answer": 2,
-   "explain": "친구들이 화분을 다 가져간 뒤 El 이 마지막 화분을 가져갔고, It(= the last pot) had the smallest plant 로 이어진다.",
-   "source": "L5 본문 9~16"
+   "explain": "정답 ②. 주어진 문장 'El took the last pot.'(El 은 마지막 화분을 가져갔다.) 는 친구들이 꽃이 화려한 화분을 다 가져간(They took all the pots with colorful flowers.) 뒤에 와야 하고, 그 뒤에 그 화분을 It 으로 받는 'It had the smallest plant with no flowers.' 가 이어져야 한다. 따라서 (B) 가 알맞다.",
+   "source": "L5 본문 9~16",
+   "wrong": [
+    "① (A) 에 넣으면 친구들이 화분을 가져가기 전에 El 이 마지막 화분을 가져간 것이 되어 어긋난다.",
+    "③ (C) 에 넣으면 앞 문장 'It had the smallest plant' 의 It 이 가리킬 것이 없다.",
+    "④ (D) 는 이미 El 이 식물에게 말을 건 뒤라 순서가 늦다.",
+    "⑤ (E) 는 선생님이 과꽃이라고 말한 뒤라 순서가 늦다."
+   ]
   },
   {
    "kind": "essay",
@@ -513,7 +633,7 @@
    ],
    "answer_lines": 1,
    "answer": "What should I do?",
-   "explain": "조언 구하기: What should I do? (4단어)",
+   "explain": "모범답안: What should I do?\n야구 선수가 되고 싶다는 A 의 말에 B 가 'You should practice baseball every day.'(매일 야구를 연습해야 해.) 라고 조언하므로, A 는 조언을 구하는 What should I do?(나는 어떻게 해야 할까?) 를 말해야 한다. What / should / I / do 네 단어이다.\n채점 기준: 4점. should 가 없으면 0점, 어순이 틀리면(What I should do?) 2점 감점, 4단어가 아니면 1점 감점.",
    "source": "L6 Play with Expressions"
   },
   {
@@ -524,7 +644,7 @@
    "box": "(1) John ________ (watch) a movie yesterday.\n(2) Sumi's family ________ (go) on a picnic last Sunday.\n(3) They ________ (sing) and danced for the children.",
    "answer_lines": 3,
    "answer": "(1) watched (2) went (3) sang",
-   "explain": "과거시제 — watch-watched(규칙), go-went, sing-sang(불규칙).",
+   "explain": "모범답안: (1) watched (2) went (3) sang\n(1) yesterday 가 있으므로 watch 의 과거형 watched(규칙, -ed). (2) last Sunday 가 있으므로 go 의 과거형 went(불규칙). (3) 뒤에 danced(과거형)가 이어지므로 sing 의 과거형 sang(불규칙: sing-sang-sung).\n채점 기준: 빈칸마다 2점. goed·singed 처럼 규칙형으로 잘못 쓰면 해당 빈칸 0점, sung(과거분사)도 0점.",
    "source": "학습지 4-6 B-1·4·2 (문장 그대로)"
   },
   {
@@ -547,7 +667,7 @@
    ],
    "answer_lines": 2,
    "answer": "(예시) Playing soccer is more exciting than reading books. / Cooking is easier than swimming for me.",
-   "explain": "동명사 주어(단수) + is + 비교급 + than. 3음절 이상은 more + 원급.",
+   "explain": "모범답안(예시): Playing soccer is more exciting than reading books. / Cooking is easier than swimming for me.\n(A) 에서 활동 두 개를 골라 동명사(-ing)를 주어로 두고, (B) 의 형용사를 비교급으로 바꾸어 than 으로 잇는다. easy → easier(y → i + er), exciting·difficult·interesting 은 3음절 이상이므로 more + 원급. 동명사 주어는 단수 취급하므로 동사는 is.\n채점 기준: 6점. 동명사 주어가 아니면(To cook, Cook 등) 2점 감점, 비교급 형태가 틀리면 2점 감점, than 이 없으면 2점 감점, (A)·(B) 에서 고르지 않은 단어를 쓰면 2점 감점, 5단어 미만이면 1점 감점, are 처럼 수 일치가 틀리면 1점 감점.",
    "source": "학습지 4-7 (3) 주어 역할 · 5-7 C-2"
   }
  ]
