@@ -1,0 +1,471 @@
+{
+ "school": "영등포중학교",
+ "grade": 1,
+ "term": 2,
+ "exam": "중간고사",
+ "subject": "영어",
+ "range": "Lesson 5~6",
+ "publisher": "천재(이상기)",
+ "year": 2026,
+ "set": 3,
+ "items": [
+  {
+   "no": 1,
+   "points": 3,
+   "stem": "다음 중 단어와 뜻이 <u>잘못</u> 연결된 것은?",
+   "choices": [
+    "sunset: 일몰",
+    "various: 다양한",
+    "express: 전시하다",
+    "beast: 야수",
+    "own: 자신의"
+   ],
+   "answer": 3,
+   "explain": "express는 '표현하다'. '전시하다'는 exhibit.",
+   "source": "L5·L6 어휘"
+  },
+  {
+   "kind": "group",
+   "label": "[2~3]",
+   "direction": "아래 대화문을 읽고 물음에 답하시오.",
+   "box": "Junho: Look at this exhibition poster. What do you think about this painting?\nMinji: I think it's beautiful.\nAlex: It's <i>The Starry Night</i> by Vincent van Gogh, right?\nJunho: Right. I like this painting. The colors of the night sky are amazing.\nAlex: ____________________\nJunho: Look! The van Gogh exhibition is going on at Mirae Museum. How about going there together?\nAlex: That's a great idea! I want to see van Gogh's paintings.\nMinji: We can also learn about his life and art in the exhibition.\nJunho: When can we go? It ends on October 1st.\nAlex: Let's go there this Saturday then.\nMinji: That sounds great."
+  },
+  {
+   "no": 2,
+   "points": 5,
+   "stem": "위 대화의 내용과 일치하는 것은?",
+   "choices": [
+    "The three friends are looking at a poster of <i>Sunflowers</i>.",
+    "Junho doesn't like the painting.",
+    "The van Gogh exhibition ends on October 1st.",
+    "They will go to the museum this Sunday.",
+    "Minji thinks the exhibition is boring."
+   ],
+   "answer": 3,
+   "explain": "It ends on October 1st. / 포스터는 「별이 빛나는 밤」, Junho는 그림을 좋아하고, 토요일에 가며, Minji는 That sounds great.",
+   "source": "L6 Understand Communication C"
+  },
+  {
+   "no": 3,
+   "points": 3,
+   "stem": "빈칸에 들어갈 말로 가장 적절한 것은?",
+   "choices": [
+    "I think so, too.",
+    "I don't think so.",
+    "That's too bad.",
+    "Have a good time!",
+    "Can I try some?"
+   ],
+   "answer": 1,
+   "explain": "밤하늘의 색이 놀랍다는 Junho의 의견에 동의 → I think so, too.",
+   "source": "L6 Understand Communication C"
+  },
+  {
+   "no": 4,
+   "points": 3,
+   "stem": "다음 빈칸 어디에도 들어갈 수 <u>없는</u> 말은?",
+   "box": "• Please stop this ______.\n• What does this word ______?\n• Her face didn't show any ______.\n• I usually take a ______ after lunch.",
+   "choices": [
+    "battle",
+    "mean",
+    "emotion",
+    "nap",
+    "shape"
+   ],
+   "inline": true,
+   "answer": 5,
+   "explain": "battle / mean / emotion / nap 순서. shape(모양)는 들어갈 자리가 없다.",
+   "source": "학습지 L5·L6 Vocabulary List 예문"
+  },
+  {
+   "no": 5,
+   "points": 4,
+   "stem": "다음 밑줄 친 단어의 쓰임이 나머지 4개와 <u>다른</u> 것은?",
+   "choices": [
+    "His hobby is <u>riding</u> a bike.",
+    "He is <u>riding</u> a bike now.",
+    "She is <u>drawing</u> cartoons in her room.",
+    "They are <u>collecting</u> shells on the beach.",
+    "A fisherman is <u>catching</u> fish in the sea."
+   ],
+   "answer": 1,
+   "explain": "①은 주어 His hobby를 설명하는 보어 역할의 동명사. 나머지는 「be동사+-ing」 현재진행형의 현재분사.",
+   "source": "학습지 L5 Grammar Points 2(cf.) · 선생님 제작"
+  },
+  {
+   "no": 6,
+   "points": 4,
+   "stem": "다음 중 문법적으로 옳은 문장의 개수는?",
+   "box": "• Watching movies are fun.\n• I hope that you will feel better soon.\n• My job is to teach little children.\n• Thank you for inviting me.\n• Angela will learn to bake a cake.",
+   "choices": [
+    "1개",
+    "2개",
+    "3개",
+    "4개",
+    "5개"
+   ],
+   "inline": true,
+   "answer": 4,
+   "explain": "옳은 것: I hope that ~ / My job is to teach ~ / Thank you for inviting me / will learn to bake (4개). 동명사 주어는 단수 취급 → Watching movies is fun.",
+   "source": "학습지 L5 Grammar Points 2 · L6 Grammar Points 1·2"
+  },
+  {
+   "no": 7,
+   "points": 3,
+   "stem": "다음 대화문을 읽고 빈칸에 들어갈 말을 고르시오.",
+   "box": "B: What do you think about this painting, Sora?\nG: I think it's interesting. What about you?\nB: Well, ____________________ I think this painting is scary.",
+   "choices": [
+    "I don't think so.",
+    "I think so, too.",
+    "Me, too.",
+    "That's a good idea.",
+    "Have a nice weekend!"
+   ],
+   "answer": 1,
+   "explain": "'흥미롭다'는 의견 뒤에 '이 그림은 무섭다'고 반대 의견을 말하므로 Well, I don't think so.",
+   "source": "L6 Wrap Up"
+  },
+  {
+   "no": 8,
+   "points": 4,
+   "stem": "밑줄 친 that의 쓰임이 나머지 4개와 <u>다른</u> 것은?",
+   "choices": [
+    "I can't believe <u>that</u> she is forty years old.",
+    "She heard <u>that</u> they bought a new car.",
+    "Is <u>that</u> your new bag?",
+    "The important thing is <u>that</u> you did your best.",
+    "<u>That</u> he told a lie is true."
+   ],
+   "answer": 3,
+   "explain": "③의 that은 '저것'을 뜻하는 지시대명사. 나머지는 명사절을 이끄는 접속사(①② 목적어, ④ 보어, ⑤ 주어).",
+   "source": "학습지 L6 접속사 that"
+  },
+  {
+   "no": 9,
+   "points": 4,
+   "stem": "빈칸에 들어갈 단어로 알맞게 짝지은 것은?",
+   "box": "• There was a (A)______ statue of Admiral Yi.\n• He (B)______ his own style and finally became famous.",
+   "choices": [
+    "huge – kept",
+    "tiny – gave up",
+    "huge – changed",
+    "various – kept",
+    "peaceful – lost"
+   ],
+   "inline": true,
+   "answer": 1,
+   "explain": "a huge statue of Admiral Yi(거대한 동상) / kept his own style(자신의 스타일을 지켰다).",
+   "source": "L5·L6 본문"
+  },
+  {
+   "no": 10,
+   "points": 4,
+   "stem": "밑줄 친 ⓐ~ⓔ 중 어법상 <u>어색한</u> 것은?",
+   "box": {
+    "title": "My Weekend",
+    "lines": [
+     "Hi! I'm Jinho. Let me tell you about my weekend. ⓐ<u>There are many parks near my house.</u> ⓑ<u>I enjoy riding a bike in the park with my sister.</u> ⓒ<u>Riding a bike is really fun.</u> ⓓ<u>I know that she likes it, too.</u> ⓔ<u>We hope going there again next weekend.</u>"
+    ]
+   },
+   "choices": [
+    "ⓐ",
+    "ⓑ",
+    "ⓒ",
+    "ⓓ",
+    "ⓔ"
+   ],
+   "inline": true,
+   "answer": 5,
+   "explain": "hope는 to부정사를 목적어로 쓴다 → We hope to go there again. ⓐ are+복수, ⓑ enjoy+동명사, ⓒ 동명사 주어+단수 동사, ⓓ 접속사 that은 옳다.",
+   "source": "선생님 제작(there is/are · 동명사 · that · to부정사)"
+  },
+  {
+   "kind": "group",
+   "label": "[11~13]",
+   "direction": "다음 대화를 읽고 물음에 답하시오.",
+   "box": "Alex: Hi, Kate. What are you going to do this weekend?\nKate: I'm going to visit Jeju-do with my family.\nJunho: Oh, my grandparents live <u>there</u>. Jeju-do is so beautiful.\nKate: Really? This is my first trip to Jeju-do. I'm so excited.\nAlex: ____________________\nKate: I'm going to see dolphins. I'll also hike Hallasan.\nJunho: You should visit a horse park and ride a horse, too. It's really fun.\nKate: That's a good idea. I'll visit there, too.\nJunho: Jeju-do is an amazing place. Have a nice trip!"
+  },
+  {
+   "no": 11,
+   "points": 3,
+   "stem": "위 대화의 밑줄 친 there가 가리키는 것은?",
+   "choices": [
+    "Jeju-do",
+    "Hallasan",
+    "a horse park",
+    "Kate's house",
+    "Busan"
+   ],
+   "inline": true,
+   "answer": 1,
+   "explain": "Kate가 제주도에 간다는 말에 '조부모님이 거기(제주도) 사셔'.",
+   "source": "L5 Understand Communication C"
+  },
+  {
+   "no": 12,
+   "points": 3,
+   "stem": "위 대화의 빈칸에 들어갈 말로 알맞은 것은?",
+   "choices": [
+    "What are you going to do there?",
+    "What do you think about it?",
+    "Where do you live?",
+    "How about going there together?",
+    "When did you go there?"
+   ],
+   "answer": 1,
+   "explain": "답이 '돌고래를 보고 한라산을 하이킹할 것'이므로 거기서 무엇을 할 것인지 묻는 말.",
+   "source": "L5 Understand Communication C"
+  },
+  {
+   "no": 13,
+   "points": 5,
+   "stem": "위 대화의 내용과 일치하지 <u>않는</u> 것은?",
+   "choices": [
+    "Kate는 이번이 첫 제주도 여행이다.",
+    "Kate는 가족과 함께 제주도에 간다.",
+    "Junho는 승마 공원을 추천했다.",
+    "Kate는 승마 공원에는 가지 않겠다고 했다.",
+    "Junho는 제주도가 놀라운 곳이라고 말했다."
+   ],
+   "answer": 4,
+   "explain": "That's a good idea. I'll visit there, too. → 승마 공원에도 가겠다고 했다.",
+   "source": "L5 Understand Communication C"
+  },
+  {
+   "kind": "group",
+   "label": "[14~16]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": {
+    "title": "Garam's Travel Diary",
+    "lines": [
+     "August 17th",
+     "Early in the morning, we went to Dongpirang. There were many pretty paintings on the walls. [A] It was the best place for taking pictures! Mom and I took hundreds of pictures. [B] Finally, my dad said, \"Please stop! No more pictures!\" 'Dong' means 'east,' and 'pirang' means 'cliff.' [C] Next, we went to the Jeon Hyuck-lim Museum of Art. [D] The painter's nickname is 'The Magician of Color.' He painted the sea of Tongyeong with various blue colors. [E] I enjoyed his paintings very much. What a great experience! Going on a family trip is always fun. Tongyeong, bye for now! See you next time!"
+    ]
+   }
+  },
+  {
+   "no": 14,
+   "points": 4,
+   "stem": "윗글에서 <보기>의 문장이 들어가기에 가장 <u>적절한</u> 곳은?",
+   "box": {
+    "title": "<보 기>",
+    "lines": [
+     "There is also Seopirang."
+    ]
+   },
+   "choices": [
+    "[A]",
+    "[B]",
+    "[C]",
+    "[D]",
+    "[E]"
+   ],
+   "inline": true,
+   "answer": 3,
+   "explain": "'동'은 '동쪽', '피랑'은 '절벽'이라는 설명 뒤에 '서피랑도 있다'가 자연스럽다.",
+   "source": "L5 본문 8월 17일"
+  },
+  {
+   "no": 15,
+   "points": 4,
+   "stem": "윗글의 내용과 일치하는 것은?",
+   "choices": [
+    "가람이네 가족은 오후에 동피랑에 갔다.",
+    "아빠가 사진을 수백 장 찍었다.",
+    "'동'은 '동쪽'을 의미한다.",
+    "가람이네 가족은 미술관에 가지 않았다.",
+    "가람이는 전혁림의 그림이 지루했다."
+   ],
+   "answer": 3,
+   "explain": "'Dong' means 'east.' / 아침 일찍, 엄마와 가람이가 찍음, 전혁림 미술관에 갔고, 그림을 매우 즐겼다.",
+   "source": "L5 본문 8월 17일"
+  },
+  {
+   "no": 16,
+   "points": 5,
+   "stem": "윗글의 제목으로 가장 자연스러운 것은?",
+   "choices": [
+    "A Day of Pictures and Paintings in Tongyeong",
+    "How to Take Good Pictures",
+    "The History of Seopirang",
+    "The Life of Jeon Hyuck-lim",
+    "Why Family Trips Are Boring"
+   ],
+   "answer": 1,
+   "explain": "동피랑에서 사진을 찍고 전혁림 미술관에서 그림을 본 통영 여행 둘째 날 일기.",
+   "source": "L5 본문 8월 17일"
+  },
+  {
+   "kind": "group",
+   "label": "[17~19]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": "Hi, there. Can you find me in the picture? Actually, I'm an animal. Start from the green shape in the middle. Then trace the other shapes with your finger. [A]<u>They</u> look like a snail shell. Yes, I'm a snail! Matisse created me in a unique way. He painted paper and cut out shapes with scissors. Then he put the shapes together and made me. At the age of 70, Matisse got very sick. ______, he never gave up art. He created a new art form. It's cut-outs. Do you want to find more artworks like me? Look around the gallery and explore Henri Matisse's world of art!"
+  },
+  {
+   "no": 17,
+   "points": 4,
+   "stem": "윗글에서 밑줄 친 [A]가 가리키는 것은?",
+   "choices": [
+    "the shapes",
+    "the fingers",
+    "the scissors",
+    "the paintings",
+    "the animals"
+   ],
+   "inline": true,
+   "answer": 1,
+   "explain": "앞 문장의 the green shape과 the other shapes, 즉 모양들이 달팽이 껍데기처럼 보인다.",
+   "source": "L6 본문 뒷부분"
+  },
+  {
+   "no": 18,
+   "points": 4,
+   "stem": "윗글의 빈칸에 들어갈 말로 가장 자연스러운 것은?",
+   "choices": [
+    "However",
+    "So",
+    "Then",
+    "For example",
+    "Because"
+   ],
+   "inline": true,
+   "answer": 1,
+   "explain": "매우 아팠다 ↔ 그러나 예술을 포기하지 않았다. 역접의 However.",
+   "source": "L6 본문 뒷부분"
+  },
+  {
+   "no": 19,
+   "points": 5,
+   "stem": "윗글의 내용과 일치하지 <u>않는</u> 것은?",
+   "choices": [
+    "글쓴이(화자)는 달팽이이다.",
+    "가운데의 초록색 모양부터 시작하면 된다.",
+    "마티스는 종이를 칠하고 가위로 모양을 오려 냈다.",
+    "마티스는 70세에 예술을 포기했다.",
+    "종이 오리기(cut-outs)는 마티스의 새로운 예술 형태이다."
+   ],
+   "answer": 4,
+   "explain": "However, he never gave up art. → 결코 포기하지 않았다.",
+   "source": "L6 본문 뒷부분"
+  },
+  {
+   "kind": "group",
+   "label": "[20~22]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": {
+    "title": "Garam's Travel Diary",
+    "lines": [
+     "August 16th",
+     "ⓐ<u>I got up at six in the morning.</u> It was the first day of my family trip to Tongyeong. I was excited! We arrived at Jungang Market at 1 p.m. There we had Chungmu gimbap for lunch. ⓑ<u>There was only rice inside the roll!</u> Dad said, \"Try the roll with radish and squid. Long ago, fishermen had Chungmu gimbap out at sea.\" It was a bit spicy but tasty. Chungmu is Tongyeong's old name. In the afternoon, we went to Yi Sun-sin Park. ⓒ<u>There were a huge statue of Admiral Yi.</u> I imagined the great battle right off the coast of Tongyeong. Then ⓓ<u>we enjoyed taking a walk</u> along the coast. The sunset was beautiful. I closed my eyes. ⓔ<u>I could feel</u> Admiral Yi's love for the country. Everything was really peaceful."
+    ]
+   }
+  },
+  {
+   "no": 20,
+   "points": 4,
+   "stem": "윗글의 밑줄 친 ⓐ~ⓔ 중 어법상 <u>어색한</u> 것은?",
+   "choices": [
+    "ⓐ",
+    "ⓑ",
+    "ⓒ",
+    "ⓓ",
+    "ⓔ"
+   ],
+   "inline": true,
+   "answer": 3,
+   "explain": "a huge statue는 단수 → There was a huge statue of Admiral Yi. ⓑ rice(셀 수 없는 명사)+was, ⓓ enjoy+동명사는 옳다.",
+   "source": "L5 본문 8월 16일 · there is/are"
+  },
+  {
+   "no": 21,
+   "points": 4,
+   "stem": "<보기>의 (A)~(D)를 윗글의 흐름에 맞게 순서대로 배열한 것은?",
+   "box": {
+    "title": "<보 기>",
+    "lines": [
+     "(A) Garam's family had Chungmu gimbap for lunch.",
+     "(B) Garam got up at six in the morning.",
+     "(C) Garam watched the beautiful sunset.",
+     "(D) Garam's family went to Yi Sun-sin Park."
+    ]
+   },
+   "choices": [
+    "(B) – (A) – (D) – (C)",
+    "(B) – (D) – (A) – (C)",
+    "(A) – (B) – (D) – (C)",
+    "(B) – (A) – (C) – (D)",
+    "(D) – (A) – (B) – (C)"
+   ],
+   "answer": 1,
+   "explain": "아침 6시 기상 → 점심 충무김밥 → 오후 이순신 공원 → 해안 산책 중 일몰.",
+   "source": "L5 본문 8월 16일"
+  },
+  {
+   "no": 22,
+   "points": 5,
+   "stem": "윗글의 내용과 일치하는 것은?",
+   "choices": [
+    "Garam's family arrived at Jungang Market in the morning.",
+    "Chungmu gimbap had radish inside the roll.",
+    "Chungmu is Tongyeong's old name.",
+    "Garam took a walk along the river.",
+    "Garam felt nervous in the evening."
+   ],
+   "answer": 3,
+   "explain": "Chungmu is Tongyeong's old name. / 오후 1시 도착, 롤 안에는 밥만, 해안(coast)을 따라 산책, 평화로움을 느낌.",
+   "source": "L5 본문 8월 16일"
+  },
+  {
+   "kind": "group",
+   "label": "[23~25]",
+   "direction": "다음 글을 읽고 물음에 답하시오.",
+   "box": "Hello, everyone. My name is Amélie. Welcome to my husband's gallery. Look at me. Do you think that I'm strange? My husband, Henri Matisse, ⓐ<u>colored</u> my face in green. Don't worry. My face isn't ⓑ<u>actually</u> green. Why did he paint me this way then? He wanted to ⓒ<u>express</u> his emotions with bright and wild colors. People didn't like this painting style ______. Some people thought that a beast painted me. So, he got the nickname <i>Wild Beast</i>. He ⓓ<u>kept</u> his own style and ⓔ<u>finally</u> became famous."
+  },
+  {
+   "no": 23,
+   "points": 4,
+   "stem": "윗글의 빈칸에 들어갈 말로 가장 자연스러운 것은?",
+   "choices": [
+    "at first",
+    "at last",
+    "in the middle",
+    "for example",
+    "at the age of"
+   ],
+   "inline": true,
+   "answer": 1,
+   "explain": "처음에는 좋아하지 않았지만 결국 유명해졌다는 흐름 → at first(처음에는).",
+   "source": "L6 본문 앞부분 · 어휘"
+  },
+  {
+   "no": 24,
+   "points": 4,
+   "stem": "윗글의 밑줄 친 ⓐ~ⓔ에서 우리말 뜻이 알맞지 <u>않은</u> 것은?",
+   "choices": [
+    "ⓐ: 색칠했다",
+    "ⓑ: 실제로",
+    "ⓒ: 표현하다",
+    "ⓓ: 잘라냈다",
+    "ⓔ: 마침내"
+   ],
+   "answer": 4,
+   "explain": "kept는 '지켰다, 유지했다'(keep의 과거). '잘라냈다'는 cut out.",
+   "source": "L6 본문 앞부분 · 어휘"
+  },
+  {
+   "no": 25,
+   "points": 5,
+   "stem": "윗글을 읽고 답할 수 <u>없는</u> 질문은?",
+   "choices": [
+    "Who is Amélie's husband?",
+    "What color did Matisse use for Amélie's face?",
+    "Why did Matisse paint Amélie this way?",
+    "How much did Matisse sell the painting for?",
+    "What nickname did Matisse get?"
+   ],
+   "answer": 4,
+   "explain": "그림의 판매 가격은 나오지 않는다. (앙리 마티스 / 초록색 / 감정을 표현하려고 / Wild Beast)",
+   "source": "L6 본문 앞부분"
+  }
+ ]
+}
