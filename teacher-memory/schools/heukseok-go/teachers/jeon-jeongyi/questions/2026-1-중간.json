@@ -1,0 +1,23 @@
+{
+  "examId": "2026-1-중간",
+  "examLabel": "2026학년도 1학기 중간고사 (전정이 담당분 14~28번, 윤은영 선생님과 공동 시험지)",
+  "date": "2026-04-27",
+  "totalPoints": 53.6,
+  "questions": [
+    { "order": 14, "type": "문장삽입", "format": "객관식", "difficulty": "중", "points": 3.4, "passageId": "p14", "external": false, "stem": "글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?" },
+    { "order": 15, "type": "제목", "format": "객관식", "difficulty": "중", "points": 3.6, "passageId": "p15", "external": false, "stem": "다음 글의 제목으로 가장 적절한 것은?" },
+    { "order": 16, "type": "문장삽입", "format": "객관식", "difficulty": "중", "points": 3.5, "passageId": "p16", "external": false, "stem": "글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?" },
+    { "order": 17, "type": "내용불일치", "subtype": "답 없는 질문 고르기", "format": "객관식", "difficulty": "상", "points": 3.8, "passageId": "p16", "external": false, "stem": "윗글에서 답을 찾을 수 없는 질문을 2개 고르면?" },
+    { "order": 18, "type": "어법", "format": "객관식", "difficulty": "상", "points": 3.8, "passageId": "p18", "external": false, "grammarPoints": ["관계사(전치사+관계대명사)", "병렬구조"], "stem": "밑줄 친 (a)~(e) 중에서, 어법상 틀린 부분이 있는 문장을 2개 고르면?" },
+    { "order": 19, "type": "내용불일치", "format": "객관식", "difficulty": "상", "points": 3.7, "passageId": "p18", "external": false, "stem": "윗글에서 알 수 있는 내용으로 적절하지 않은 것은?" },
+    { "order": 20, "type": "내용일치", "format": "객관식", "difficulty": "상", "points": 3.8, "passageId": "p20", "stem": "EPICAC에 관한 다음 글의 내용과 일치하는 것을 2개 고르면?" },
+    { "order": 21, "type": "심경태도", "format": "객관식", "difficulty": "중", "points": 3.4, "passageId": "p21", "stem": "밑줄 친 (a)에서 알 수 있는 Pat의 심경이나 태도로 가장 적절한 것은?" },
+    { "order": 22, "type": "함의추론", "format": "객관식", "difficulty": "중", "points": 3.5, "passageId": "p21", "stem": "밑줄 친 (b)에서 추론할 수 있는 내용으로 가장 적절한 것은?" },
+    { "order": 23, "type": "함의추론", "subtype": "밑줄 5개 해석 중 부적절 2개", "format": "객관식", "difficulty": "상", "points": 3.8, "passageId": "p23", "stem": "밑줄 친 (a)~(e) 각 문장에서 문맥상 추론할 수 있는 내용으로 적절하지 않은 것을 2개 고르면?" },
+    { "order": 24, "type": "문장삽입", "subtype": "단락 삽입", "format": "객관식", "difficulty": "하", "points": 3.3, "passageId": "p23", "stem": "글의 흐름으로 보아, 주어진 단락이 들어가기에 가장 적절한 곳은?" },
+    { "order": 25, "type": "어휘", "format": "객관식", "difficulty": "상", "points": 3.7, "passageId": "p25", "vocabPoints": ["문맥상 낱말 의미(ponder, ghost-write, groundwork, choked, out of one's head)"], "stem": "밑줄 친 (a)~(e)의 의미로 적절하지 않은 것을 2개 고르면?" },
+    { "order": 26, "type": "함의추론", "format": "객관식", "difficulty": "하", "points": 3.3, "passageId": "p25", "stem": "밑줄 친 (A)가 윗글에서 의미하는 바로 가장 적절한 것은?" },
+    { "order": 27, "type": "지칭추론", "format": "객관식", "difficulty": "하", "points": 3.3, "passageId": "p27", "stem": "밑줄 친 a modest wedding present가 윗글에서 가리키는 내용으로 가장 적절한 것은?" },
+    { "order": 28, "type": "요약", "format": "객관식", "difficulty": "상", "points": 3.7, "passageId": "p27", "stem": "윗글의 내용을 다음과 같이 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?" }
+  ]
+}
