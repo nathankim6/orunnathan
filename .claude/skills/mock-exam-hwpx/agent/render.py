@@ -477,6 +477,46 @@ class Hwpx:
             for c, v in enumerate(row):
                 self.para(v, cp=self.cp['small'], target=t.cell(r, c), pp=pp_center if c in (0, 2) else pp_cell)
 
+    def build_key_doc(self, spec):
+        """별도 해설지: 정답 한눈에 표 + 문항별 정답·배점·해설(정답 근거·오답 이유)·출처."""
+        items = [it for it in spec['items'] if it.get('kind', 'mc') != 'group']
+        n_mc = sum(1 for it in items if it.get('kind', 'mc') == 'mc')
+        n_es = len(items) - n_mc
+        self._fill_template(spec, n_mc, n_es)
+        # 정보표 제목 칸에 '정답 및 해설' 표시
+        tbl = list(self.doc.tables.all)[0]
+        cells = {(int(tc.find('hp:cellAddr', NS).get('colAddr')), int(tc.find('hp:cellAddr', NS).get('rowAddr'))): tc
+                 for tc in tbl.element.findall('.//hp:tc', NS)}
+        self._set_text(cells[(2, 0)].find('.//hp:p', NS), f"{spec.get('subject', '영어')}  {spec['term']}학기  {spec['exam']}  정답 및 해설")
+        # 안내문 뒤 2단은 서식대로. 먼저 정답 한눈에 표(1단 폭이 아니라 단 폭에 맞춤)
+        self.para('', pp=T['p_blank'])
+        self.para('<b>[정답 한눈에]</b>', pp=T['p_blank'])
+        mc = [it for it in items if it.get('kind', 'mc') == 'mc']
+        per = 5
+        rows = [mc[i:i + per] for i in range(0, len(mc), per)]
+        t = self.table(len(rows) * 2, per, T['col_w'], inner=(120, 120, 40, 40), pp=T['p_center'])
+        for r, chunk in enumerate(rows):
+            for c in range(per):
+                if c < len(chunk):
+                    it = chunk[c]
+                    ans = it['answer']
+                    self.para(f"{it['no']}번", cp=self.cp['smallb'], target=t.cell(2 * r, c), pp=T['p_center'])
+                    self.para(CIRC[ans - 1] if isinstance(ans, int) else str(ans), target=t.cell(2 * r + 1, c), pp=T['p_center'])
+        self.para('', pp=T['p_blank'])
+        for it in items:
+            ans = it.get('answer', '')
+            ans_s = CIRC[ans - 1] if isinstance(ans, int) else str(ans)
+            self.para(f"<b>{stem_no(it)} 정답 {ans_s}</b>{points_str(it)}", pp=self.pp_keep_body)
+            for ln in str(it.get('explain', '')).split('\n'):
+                if ln.strip():
+                    self.para(ln, pp=T['p_body'])
+            if it.get('wrong'):                       # 오답 이유(선택)
+                for ln in (it['wrong'] if isinstance(it['wrong'], list) else str(it['wrong']).split('\n')):
+                    self.para('· ' + ln, pp=T['p_body'])
+            if it.get('source'):
+                self.para(f"[출처] {it['source']}", cp=self.cp['small'], pp=T['p_body'])
+            self.para('', pp=T['p_blank'])
+
     def save(self, out):
         Path(out).parent.mkdir(parents=True, exist_ok=True)
         self.sec.remove_layout_caches()

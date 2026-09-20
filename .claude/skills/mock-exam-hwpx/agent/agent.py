@@ -50,13 +50,16 @@ def build(specs, outdir):
             print('  → 고친 뒤 다시 build 하세요.')
             continue
         hw = render.Hwpx()
-        hw.build(spec)
+        hw.build(spec, key=False)                 # 시험지에는 정답표를 넣지 않는다
         hw.save(outdir / f'{name}.hwpx')
+        kd = render.Hwpx()
+        kd.build_key_doc(spec)                    # 해설지는 별도 파일
+        kd.save(outdir / f'{name}_해설.hwpx')
         html = outdir / f'{name}.html'
         html.write_text(render.build_html(spec), encoding='utf8')
         if can_pdf:
             subprocess.run(['node', str(topdf), str(html.resolve()), str((outdir / f'{name}.pdf').resolve())], check=True)
-        print('  →', outdir / f'{name}.hwpx', '(+ .html' + (', .pdf)' if can_pdf else ')'))
+        print('  →', outdir / f'{name}.hwpx', '+ _해설.hwpx', '(+ .html' + (', .pdf)' if can_pdf else ')'))
 
 
 def _norm(t):
