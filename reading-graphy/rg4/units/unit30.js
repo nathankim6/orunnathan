@@ -386,9 +386,9 @@ K.push(...tab("정답 및 해설", "UNIT 30  한 세탁부의 따뜻한 마음",
 K.push(sp(150));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("독해", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("①      ", { size: 19, bold: true }),
-     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("③      ", { size: 19, bold: true }),
-     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("①", { size: 19, bold: true })], { after: 25 }),
+  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("②      ", { size: 19, bold: true }),
+     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("①      ", { size: 19, bold: true }),
+     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("③", { size: 19, bold: true })], { after: 25 }),
   p([t("04 ", { size: 19, bold: true, color: NAVY2 }), t("It symbolizes McCarty’s generous contribution to the university.", { size: 19, bold: true })], { after: 75 }),
   p([t("구문분석", { size: 16, bold: true, color: NAVY })], { after: 60 }),
   p([t("문2 ", { size: 17, bold: true, color: NAVY2 }), t("One day(M)·she(S)·wanted(△V)·so[네모]·she(S)·asked(△V)   ", { size: 17, bold: true }),

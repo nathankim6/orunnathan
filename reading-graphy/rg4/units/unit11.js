@@ -383,9 +383,9 @@ K.push(...tab("정답 및 해설", "UNIT 11  밤이면 찾아오는 악몽 속 �
 K.push(sp(150));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("독해", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("①      ", { size: 19, bold: true }),
-     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("③      ", { size: 19, bold: true }),
-     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("①", { size: 19, bold: true })], { after: 25 }),
+  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("⑤      ", { size: 19, bold: true }),
+     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("①      ", { size: 19, bold: true }),
+     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("③", { size: 19, bold: true })], { after: 25 }),
   p([t("04 ", { size: 19, bold: true, color: NAVY2 }), t("Nowadays, we use the word “nightmare” to describe any scary dream.", { size: 19, bold: true })], { after: 75 }),
   p([t("구문분석", { size: 16, bold: true, color: NAVY })], { after: 60 }),
   p([t("문2 ", { size: 17, bold: true, color: NAVY2 }), t("The word “nightmare”(S)·originated(△V)·from the Middle English word(M)   ", { size: 17, bold: true })], { after: 22 }),

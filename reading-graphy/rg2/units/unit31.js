@@ -732,9 +732,9 @@ K.push(...tab("정답 및 해설", "UNIT 31  우리 모두에게 특별한 그�
 K.push(sp(150));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("독해", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("①      ", { size: 19, bold: true }),
-     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("③      ", { size: 19, bold: true }),
-     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("①", { size: 19, bold: true })], { after: 25 }),
+  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("⑤      ", { size: 19, bold: true }),
+     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("⑤      ", { size: 19, bold: true }),
+     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("④", { size: 19, bold: true })], { after: 25 }),
   p([t("04 ", { size: 19, bold: true, color: NAVY2 }), t("Birthday celebrations feel like a very old tradition.", { size: 19, bold: true })], { after: 75 }),
   p([t("구문분석", { size: 16, bold: true, color: NAVY })], { after: 60 }),
   p([t("문5 ", { size: 17, bold: true, color: NAVY2 }), t("Before the 19th century(M)·birthday celebrations(S)·were(△V)·only for rich people or national heroes(M)   ", { size: 17, bold: true }),

@@ -393,9 +393,9 @@ K.push(...tab("정답 및 해설", "UNIT 08  밀렵꾼에서 보호자로…", C
 K.push(sp(150));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("독해", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("①      ", { size: 19, bold: true }),
-     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("③      ", { size: 19, bold: true }),
-     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("①", { size: 19, bold: true })], { after: 25 }),
+  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("②      ", { size: 19, bold: true }),
+     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("①      ", { size: 19, bold: true }),
+     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("③", { size: 19, bold: true })], { after: 25 }),
   p([t("04 ", { size: 19, bold: true, color: NAVY2 }), t("But I don’t do that anymore.", { size: 19, bold: true })], { after: 75 }),
   p([t("구문분석", { size: 16, bold: true, color: NAVY })], { after: 60 }),
   p([t("문4 ", { size: 17, bold: true, color: NAVY2 }), t("job(S)·was(△V)·to hunt~(보어)·for money(M)   ", { size: 17, bold: true }),

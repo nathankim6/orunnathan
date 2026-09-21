@@ -726,9 +726,9 @@ K.push(...tab("정답 및 해설", "UNIT 13  바늘구멍 속의 조각가", CHA
 K.push(sp(150));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("독해", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("①      ", { size: 19, bold: true }),
+  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("②      ", { size: 19, bold: true }),
      t("02 ", { size: 19, bold: true, color: NAVY2 }), t("④      ", { size: 19, bold: true }),
-     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("①", { size: 19, bold: true })], { after: 25 }),
+     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("③", { size: 19, bold: true })], { after: 25 }),
   p([t("04 ", { size: 19, bold: true, color: NAVY2 }), t("Making these tiny artworks is a big challenge.", { size: 19, bold: true })], { after: 75 }),
   p([t("구문분석", { size: 16, bold: true, color: NAVY })], { after: 60 }),
   p([t("문4 ", { size: 17, bold: true, color: NAVY2 }), t("Making these tiny artworks(S)\u00b7is(\u25b3V)\u00b7a big challenge   ", { size: 17, bold: true }),
