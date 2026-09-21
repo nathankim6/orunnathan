@@ -724,8 +724,8 @@ const H = (s) => K.push(T([W], [new TableRow({ children: [
   cel(new Paragraph({ children: [t(s, { size: 18, bold: true, color: NAVY })], spacing: { after: 0, line: 250 } }),
     { w: W, m: { top: 25, bottom: 25, left: 150, right: 0 }, b: { top: NOB, bottom: NOB, right: NOB, left: bd(12, YEL) } }),
 ] })]));
-const B = (s, last) => K.push(p([t(s, { size: 17, color: SUB })], { after: last ? 200 : 38, line: 258, indent: { left: 0 } }));
-const Hs = (s) => { K.push(sp(82)); H(s); K.push(sp(46)); };
+const B = (s, last) => K.push(p([t(s, { size: 17, color: SUB })], { after: last ? 110 : 18, line: 236, indent: { left: 0 } }));
+const Hs = (s) => { K.push(sp(40)); H(s); K.push(sp(22)); };
 
 K.push(...tab("정답 및 해설", "UNIT 16  폭풍의 눈으로 날아드는 새", CHAR, "✓"));
 K.push(sp(150));
