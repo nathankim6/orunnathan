@@ -90,7 +90,7 @@ K.push(new Paragraph({
 }));
 K.push(sp(150));
 K.push(...tab("독해", "다음 글을 읽고, 물음에 답하시오.", NAVY, "≡"));
-K.push(spF(1, 90, 0.10));
+K.push(spF(1, 36, 0.10));
 K.push(box([p(passageRuns({
   10: [t("The heavier ", { size: 19 }), t("(A) ", { size: 19, bold: true }), t("it", { size: 19, bold: true, underline: {} }),
       t(" is, the more it costs to send up there.  ", { size: 19 })],
@@ -104,7 +104,7 @@ K.push(sp(65));
  "③ Potato Concrete: A Strong, Light Material for Space",
  "④ How Astronauts Grow Potatoes in Space",
  "⑤ The Concrete Buildings We Use on Earth"].forEach(c => K.push(ch(c)));
-K.push(spF(1, 105, 0.13));
+K.push(spF(1, 42, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Sending just one brick to Mars could cost $2 million.",
@@ -112,7 +112,7 @@ K.push(sp(65));
  "③ Everything we send to space needs to be light.",
  "④ About 500 kilograms of StarCrete could be made from 25 kilograms of dried potatoes.",
  "⑤ StarCrete uses salt as a glue."].forEach(c => K.push(ch(c)));
-K.push(spF(1, 105, 0.13));
+K.push(spF(1, 42, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the concrete we use on Earth",
@@ -120,7 +120,7 @@ K.push(sp(65));
  "③ the cost of one brick",
  "④ the potato starch in StarCrete",
  "⑤ a house built on Mars"].forEach(c => K.push(ch(c)));
-K.push(spF(1, 105, 0.13));
+K.push(spF(1, 42, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
 K.push(p([t("스타크리트는 녹말을 접착제로 사용하기 때문에 독특하다.", { size: 19, bold: true })], { indent: { left: 250 }, after: 50 }));
@@ -158,7 +158,7 @@ K.push(T([4790, 220, 4790], [new TableRow({ children: [
     new Paragraph({ children: [t("as ~ as 사이에 형용사를 넣으면 '…만큼 ~한'. 앞에 twice가 붙으면 '두 배로 ~한'입니다.", { size: 15, color: SUB })], spacing: { after: 0, line: 225 } }),
   ], { w: 4790, shade: PAPER, b: { top: NOB, bottom: NOB, right: NOB, left: bd(14, AMB) }, m: { top: 74, bottom: 74, left: 170, right: 120 } }),
 ] })]));
-K.push(spF(2, 78, 0.10));
+K.push(spF(2, 31, 0.10));
 /* 구문 훈련 3문장 */
 K.push(p([t("구문 훈련", { size: 17, bold: true, color: AMB }),
   t("   새로운 문장으로 위에서 배운 구문을 해석해 보세요.", { size: 15, color: SUB })], { after: 70, line: 235 }));
@@ -168,7 +168,7 @@ K.push(p([t("구문 훈련", { size: 17, bold: true, color: AMB }),
 ].forEach(([tag, runs], i) => {
   K.push(p([t("(" + (i + 1) + ") ", { size: 17, bold: true, color: AMB }), t("[" + tag + "]  ", { size: 14, bold: true, color: FAINT }), ...runs], { after: 45, line: 250 }));
   K.push(writeField(1, 320));
-  K.push(spF(2, 39, 0.05));
+  K.push(spF(2, 20, 0.05));
 });
 
 K.push(sp(30));
@@ -195,7 +195,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
-K.push(spF(2, 56, 0.07));
+K.push(spF(2, 23, 0.07));
 
 K.push(sp(40));
 
@@ -220,7 +220,7 @@ K.push(T([W], [new TableRow({ children: [cel([
     exSeg([t("just its strength", { size: 18 })], "", FAINT, 2730),
   ] })]),
 ], { w: W, shade: PAPER, b: { top: bd(4, GOLD), bottom: bd(4, GOLD), left: bd(4, GOLD), right: bd(4, GOLD) }, m: { top: 44, bottom: 44, left: 200, right: 200 } })] })]));
-K.push(spF(2, 63, 0.06));
+K.push(spF(2, 25, 0.06));
 
 [[6, "StarCrete is unique because it uses starch as a glue."],
  [9, "Everything we send to space, like satellites or building materials, needs to be light."],
@@ -228,7 +228,7 @@ K.push(spF(2, 63, 0.06));
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
     t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
-  K.push(spF(2, 112, 0.08));
+  K.push(spF(2, 46, 0.08));
 });
 
 /* ═══════════ 3면 [DATA] STEP 1 소재·핵심어·지시어 ═══════════ */
@@ -242,7 +242,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
   new Paragraph({ children: [t("Warming Up! ", { size: 16, bold: true, color: "C3CDD6" }), t("키워드 찾기 · 플로차트 · 주제문 작성 · 요약문 완성 · 패러프레이징", { size: 16, color: "C3CDD6" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: NAVY, va: VerticalAlign.CENTER, m: { top: 175, bottom: 175, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
-K.push(spF(3, 105, 0.10));
+K.push(spF(3, 42, 0.10));
 K.push(p([t("한 줄 해석", { size: 19, bold: true, color: NAVY }),
   t("   한 문장씩 끊어, 우리말 한 줄로 해석해 보세요. 밑줄 친 지시어는 무엇을 가리키는지 생각하며!", { size: 15, color: SUB })], { after: 90, line: 245 }));
 SENT.forEach((s, i) => {
@@ -254,7 +254,7 @@ SENT.forEach((s, i) => {
       DEIXIS[n] ? DEIXIS[n] : [t(s, { size: 17 })]
     ), { after: 34, line: 250, indent: { left: 0 } }));
   K.push(writeField(1, 300));
-  K.push(spF(3, 39, 0.055));
+  K.push(spF(3, 20, 0.055));
 });
 
 /* ═══════════ 4면 [DATA] STEP 1 ═══════════ */
@@ -278,9 +278,9 @@ function stepHead(n, kr, ds) {
 }
 
 K.push(stepHead("1", "소재와 핵심어 찾기", "무엇에 관한 글인지 잡으면 절반은 읽은 것입니다."));
-K.push(spF(4, 90, 0.08));
+K.push(spF(4, 36, 0.08));
 K.push(reprint(DEIXIS));
-K.push(spF(4, 225, 0.10));
+K.push(spF(4, 92, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
@@ -288,7 +288,7 @@ K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", 
  "② 감자로 만드는 새로운 요리",
  "③ 인공위성을 우주로 보내는 비용"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
-K.push(spF(4, 150, 0.26));
+K.push(spF(4, 61, 0.26));
 
 K.push(p([t("1-2  ", { size: 18, bold: true, color: GOLD }), t("핵심어 찾기", { size: 19, bold: true }),
   t("      주제문에 반드시 들어가야 할 말 3가지에 \u25cb표 하세요. 자주 나온다고 핵심어는 아닙니다.", { size: 16, color: SUB })], { after: 100, line: 250 }));
@@ -299,7 +299,7 @@ K.push(T([1740,1740,1740,1740,1740,1740], [new TableRow({ children: KWCAND.map((
 ], { w: 1740, shade: FIELD, va: VerticalAlign.CENTER, m: { top: 240, bottom: 240, left: 40, right: 40 },
     b: { top: bd(4, FLINE), bottom: bd(4, FLINE), left: bd(4, FLINE), right: bd(4, FLINE) } })) })]));
 K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 이 글의 주인공  ② 첫 번째 장점  ③ 두 번째 장점 — 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
-K.push(spF(4, 195, 0.30));
+K.push(spF(4, 80, 0.30));
 
 K.push(p([t("1-3  ", { size: 18, bold: true, color: GOLD }), t("지시어 이해하기", { size: 19, bold: true }),
   t("      it · this · there 같은 지시어는 앞에 나온 말을 대신합니다. 한 문장 안에서도 서로 다른 것을 가리킬 수 있어요.", { size: 16, color: SUB })], { after: 60, line: 250 }));
@@ -338,7 +338,7 @@ K.push(T(aw, [
 /* ═══════════ 4면 [DATA] STEP 2 글의 흐름 잡기 ═══════════ */
 K.push(brk());
 K.push(stepHead("2", "글의 흐름 잡기", "연결어를 따라가면 글의 길이 보입니다."));
-K.push(spF(5, 97, 0.18));
+K.push(spF(5, 39, 0.18));
 
 K.push(p([t("2-1  ", { size: 18, bold: true, color: GOLD }), t("연결어 찾기", { size: 19, bold: true }),
   t("      밑줄 친 연결어가 어떤 일을 하는지, 괄호 안에서 골라 \u25cb표 하세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
@@ -360,7 +360,7 @@ K.push(T(gw, [
       { w: gw[2], shade: FIELD, b: ghd, va: VerticalAlign.CENTER, m: { top: 130, bottom: 130, left: 170, right: 80 } }),
   ] })),
 ]));
-K.push(spF(5, 255, 0.34));
+K.push(spF(5, 105, 0.34));
 
 K.push(p([t("2-2  ", { size: 18, bold: true, color: GOLD }), t("흐름 지도(Flow Chart) 완성하기", { size: 19, bold: true }),
   t("      본문은 [A]–[E] 다섯 구간으로 나뉩니다. 흐름 지도의 빈칸에 알맞은 역할을 <보기>에서 골라 쓰세요.", { size: 16, color: SUB })], { after: 100, line: 250 }));
@@ -405,7 +405,7 @@ K.push(T([1830, 212, 1830, 212, 1830, 212, 1830, 212, 1830], [new TableRow({ chi
   arrowCell(),
   flowCell("E", null, "문장 11–13", true),
 ] })]));
-K.push(spF(5, 270, 0.38));
+K.push(spF(5, 111, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
@@ -418,7 +418,7 @@ K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 �
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
 K.push(brk());
 K.push(stepHead("3", "주제문 만들기", "본문에서 재료를 찾아, 이 글의 주제문을 영어로 만듭니다."));
-K.push(spF(6, 97, 0.09));
+K.push(spF(6, 39, 0.09));
 
 K.push(p([t("3-1  ", { size: 18, bold: true, color: GOLD }), t("재료 찾기", { size: 19, bold: true }), t("      주제문의 재료는 모두 본문 안에 있습니다. 문장 번호를 따라가, 괄호 안에서 골라 \u25cb표 하세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 
@@ -443,7 +443,7 @@ K.push(T(cw, [
   matRow("2", "7", "지구의 콘크리트와 비교한 이 재료의 성질은?", ["strong", "weak"], "and 앞 자리 (장점 1)", false),
   matRow("3", "9", "우주로 보내는 것에 꼭 필요한 성질은?", ["light", "heavy"], "and 뒤 자리 (장점 2)", false),
 ]));
-K.push(spF(6, 420, 0.16));
+K.push(spF(6, 173, 0.16));
 
 K.push(p([t("3-2  ", { size: 18, bold: true, color: GOLD }), t("뼈대 채우기", { size: 19, bold: true }), t("      3-1에서 찾은 (1)~(3)을 같은 번호의 빈칸에 넣으면 주제문이 완성됩니다.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 
@@ -455,7 +455,7 @@ K.push(box([p([
   t("(3)", { size: 15, bold: true, color: GOLD }), t(" ________", { size: 19, color: NAVY2 }),
   t("  concrete made from potato starch for space missions .", { size: 19 }),
 ], { line: 640 + Math.min(220, Math.round((FT(6) || 0) * 0.025)), after: 0 })]));
-K.push(spF(6, 465, 0.15));
+K.push(spF(6, 191, 0.15));
 
 K.push(p([t("3-3  ", { size: 18, bold: true, color: GOLD }), t("주제문 완성하기", { size: 19, bold: true }), t("      이번에는 뼈대 없이 씁니다. <보기>의 네 덩어리를 순서대로 이으면 주제문이 됩니다.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 
@@ -465,7 +465,7 @@ K.push(T([W], [new TableRow({ children: [cel(
   p([t("보기   ", { size: 16, bold: true, color: NAVY2 }),
      t("ⓐ StarCrete is     ⓑ made from potato starch     ⓒ for space missions.     ⓓ a strong and light concrete", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
   { w: W, shade: COOL, b: { top: bd(4, CLINE), bottom: bd(4, CLINE), left: NOB, right: NOB }, m: { top: 150 + Math.round((FT(6) || 0) * 0.02), bottom: 150 + Math.round((FT(6) || 0) * 0.02), left: 180, right: 180 } })] })]));
-K.push(spF(6, 150, 0.05));
+K.push(spF(6, 61, 0.05));
 K.push(p([t("순서   ", { size: 17, bold: true, color: NAVY2 }),
   t("(  ⓑ  )", { size: 19 }), t("  →  (      )  →  (      )  →  (      )", { size: 19 }),
   t("      (b)가 맨 앞 — 주인공이 주어!", { size: 14, color: GOLD, bold: true })], { after: 0, align: AlignmentType.CENTER }));
@@ -473,7 +473,7 @@ K.push(p([t("순서   ", { size: 17, bold: true, color: NAVY2 }),
 /* ═══════════ 6~7면 [DATA] STEP 4 요약 · STEP 5 같은 뜻 찾기 ═══════════ */
 K.push(brk());
 K.push(reprint());
-K.push(spF(7, 127, 0.16));
+K.push(spF(7, 52, 0.16));
 K.push(stepHead("4", "요약문 완성", "핵심어로 빈칸을 채우면 글 전체가 세 문장으로 줄어듭니다."));
 K.push(sp(120));
 K.push(T([W], [new TableRow({ children: [cel(
@@ -481,7 +481,7 @@ K.push(T([W], [new TableRow({ children: [cel(
   { w: W, shade: PAPER, b: { top: bd(4, HAIR), bottom: bd(4, HAIR), left: NOB, right: NOB }, m: { top: 68, bottom: 68, left: 180, right: 180 } })] })]));
 K.push(sp(120));
 K.push(box([p([t("Scientists in the U.K. invented StarCrete, a concrete made from space dust, salt, and potato (1) ____________. It is twice as (2) ____________ as the concrete we use on Earth, and it is also very (3) ____________. So it costs (4) ____________ to send it into space, and space missions could be simpler.", { size: 19 })], { line: 425, after: 0 })]));
-K.push(spF(7, 135, 0.18));
+K.push(spF(7, 55, 0.18));
 K.push(stepHead("5", "같은 뜻 찾기", "같은 뜻, 다른 표현. 시험은 늘 바꿔서 묻습니다."));
 K.push(sp(110));
 K.push(p([t("본문 표현과 뜻이 다른 선지에 어떤 오답인지 유형을 표시하세요. 뜻이 같은 선지에는 아무 표시도 하지 않습니다.", { size: 18, bold: true })], { after: 60, line: 240 }));
@@ -519,13 +519,13 @@ pairGrid(
     opts: ["① be almost free", "② take two years to arrive", "③ need a very large amount of money"] },
   { sn: 7, main: "twice as strong as the concrete on Earth",
     opts: ["① weaker than Earth’s concrete", "② two times stronger than Earth’s concrete", "③ the same color as Earth’s concrete"] });
-K.push(spF(7, 105, 0.16));
+K.push(spF(7, 42, 0.16));
 pairGrid(
   { sn: 9, main: "needs to be light",
     opts: ["① must be made of metal", "② must not be heavy", "③ must be very heavy"] },
   { sn: 13, main: "simpler and cheaper",
     opts: ["① easier and less expensive", "② harder and more expensive", "③ longer and more famous"] });
-K.push(spF(7, 112, 0.16));
+K.push(spF(7, 46, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
   new Paragraph({ children: [
@@ -567,9 +567,9 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
   new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문으로 고교 내신에 직결되는 7가지 역량을 체계적으로 훈련합니다.", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
-K.push(spF(8, 105, 0.14));
+K.push(spF(8, 42, 0.14));
 K.push(reprint());
-K.push(spF(8, 180, 0.24));
+K.push(spF(8, 74, 0.24));
 
 /* ── R1 True / False ── */
 K.push(wbAsk("R1", "True / False · 정독 훈련", "본문의 내용과 맞으면 T, 다르면 F에 표시하세요. (근거 문장 번호를 함께 적어 보세요.)"));
@@ -595,7 +595,7 @@ K.push(T(tfw, [
       { w: tfw[2], shade: FIELD, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 100, right: 100 } }),
   ] })),
 ]));
-K.push(spF(8, 180, 0.34));
+K.push(spF(8, 74, 0.34));
 
 /* ── R2 사건 순서 잡기 ── */
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "스타크리트가 만들어진 과정 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
@@ -640,7 +640,7 @@ K.push(T(mw3, [
       { w: mw3[2], shade: GREY, b: m3b, va: VerticalAlign.CENTER, m: { top: 158 + RX9, bottom: 158 + RX9, left: 150, right: 80 } }),
   ] })),
 ]));
-K.push(spF(9, 285, 0.12));
+K.push(spF(9, 117, 0.12));
 
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
@@ -657,7 +657,7 @@ K.push(sp(130));
       new Paragraph({ children: [t("힌트  ", { size: 14, bold: true, color: NAVY2 }), t(hint, { size: 16, color: SUB })], spacing: { after: 0, line: 235 } }),
     ], { w: BODY, shade: PAPER, m: { top: 110, bottom: 110, left: 190, right: 190 } }),
   ] })]));
-  K.push(spF(9, 112, 0.075));
+  K.push(spF(9, 46, 0.075));
 });
 
 /* ── 10면 : R5 빈칸 클로즈 · R6 해석 쓰기 ── */
@@ -684,7 +684,7 @@ K.push(box([p([
   num(12), t(" Just 25 kilograms of dried potatoes could be used to produce 500 kilograms of StarCrete!  ", { size: 19 }),
   num(13), t(" Since StarCrete won’t need any additional equipment, astronauts’ missions could be simpler and", { size: 19 }), ...BL(8), t(".", { size: 19 }),
 ], { line: 465, after: 0, align: AlignmentType.JUSTIFIED })]));
-K.push(spF(10, 157, 0.24));
+K.push(spF(10, 64, 0.24));
 
 K.push(wbAsk("R6", "우리말 해석 쓰기 · 서술형 기초", "다음 문장을 우리말로 해석해 보세요."));
 K.push(sp(90));
@@ -692,11 +692,11 @@ K.push(sp(90));
  [7, "This “space concrete” is twice as strong as the concrete we use on Earth."]].forEach(([n, s], i) => {
   K.push(p([t("(" + (i + 1) + ")  ", { size: 18, bold: true, color: TEAL }), t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + s, { size: 19 })], { after: 45 }));
   K.push(writeField(1, 400));
-  K.push(spF(10, 112, 0.11));
+  K.push(spF(10, 46, 0.11));
 });
 
 /* ── R7 조건 영작 2문항 ── */
-K.push(spF(10, 45, 0.10));
+K.push(spF(10, 20, 0.10));
 K.push(wbAsk("R7", "조건 영작 · 쓰기 훈련", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(120));
 function w7block(no, ko, cond, bogi) {
@@ -705,9 +705,9 @@ function w7block(no, ko, cond, bogi) {
     p([t("조건   ", { size: 16, bold: true, color: NAVY2 }), t(cond, { size: 17, color: SUB })], { after: 42 }),
     p([t("보기   ", { size: 16, bold: true, color: NAVY2 }), t(bogi, { size: 19 })], { after: 0 }),
   ], { w: W, shade: PAPER, b: { top: bd(4, HAIR), bottom: bd(4, HAIR), left: NOB, right: NOB }, m: { top: 110, bottom: 110, left: 230, right: 230 } })] })]));
-  K.push(spF(10, 97, 0.05));
+  K.push(spF(10, 39, 0.05));
   K.push(writeField(1, 400));
-  K.push(spF(10, 172, 0.05));
+  K.push(spF(10, 70, 0.05));
 }
 w7block("1", "그것이 스타크리트가 우주 임무에 훌륭한 이유이다.",
   "단어를 추가하거나 빼지 말 것 · 대소문자와 아포스트로피에 주의할 것  (총 8단어)",
