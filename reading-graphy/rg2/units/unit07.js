@@ -789,7 +789,7 @@ Hs("STEP 4   요약문   ·   (1) noses  (2) soul  (3) life  (4) treasure");
 B("(1)은 문장 2, (2)는 문장 8, (3)은 문장 11, (4)는 문장 12에서 가져온다. 요약문이 곧 이 글의 흐름이다: 현상(1) → 믿음(2) → 이유(3) → 목적(4).", true);
 Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ②   문장 9 ③   문장 12 ①   문장 13 ①  (정답 선지는 무표시)");
 B("문장 2 are missing their noses   ① ✕ [반대] 코가 아직 있다.   ② ○ have lost their noses = 코를 잃었다.   ③ ✕ [무관] 비싸게 팔린다는 말은 없다.");
-B("문장 9 destroy the statue   ③ ○ break the statue completely = 완전히 부수다.   ① ✕ [반대] 안전하게 지킨다.   ② ✕ [무관] 파랗게 칠한다는 말은 없다.");
+B("문장 9 destroy the statue   ① ✕ [반대] 안전하게 지킨다.   ② ✕ [무관] 파랗게 칠한다는 말은 없다.   ③ ○ break the statue completely = 완전히 부수다.");
 B("문장 12 steal treasure   ① ○ take treasure that is not theirs = 남의 보물을 가져가다.   ② ✕ [반대] 남에게 준다.   ③ ✕ [무관] 지도에서 찾는다는 말은 없다.");
 B("문장 13 forever   ① ○ for all time = 영원히.   ② ✕ [반대] 잠깐 동안만.   ③ ✕ [무관] 매일 아침이라는 말은 없다.");
 B("[학습 포인트]   시험은 본문 표현을 반드시 바꿔서 묻는다. ‘반대’인지 ‘근거 없음’인지 두 갈래를 정확히 가르는 연습이 오답 제거의 힘이 된다.", true);

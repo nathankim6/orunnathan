@@ -88,7 +88,7 @@ K.push(new Paragraph({
 }));
 K.push(sp(150));
 K.push(...tab("독해", "다음 글을 읽고, 물음에 답하시오.", NAVY, "≡"));
-K.push(spF(1, 120, 0.10));
+K.push(spF(1, 49, 0.10));
 K.push(box([p(passageRuns({
   11: [t("(A) ", { size: 19, bold: true }), t("They", { size: 19, bold: true, underline: {} }),
        t(" played on the words “down to earth,” which actually means being practical, and the word “gravity.”  ", { size: 19 })],
@@ -102,7 +102,7 @@ K.push(sp(65));
  "③ How to Attract More Tourists to Small Towns",
  "④ The Science of Gravity Explained",
  "⑤ The Best Places to Eat Chocolate in the U.S."].forEach(c => K.push(ch(c)));
-K.push(spF(1, 140, 0.13));
+K.push(spF(1, 57, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① The best slogans tell a story in a few powerful words.",
@@ -110,7 +110,7 @@ K.push(sp(65));
  "③ Hershey’s slogan has been “The Sweetest Place On Earth” since 1990.",
  "④ People in Gravity, Iowa played on the words “down to earth.”",
  "⑤ Hershey is home to a large car factory."].forEach(c => K.push(ch(c)));
-K.push(spF(1, 140, 0.13));
+K.push(spF(1, 57, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) They가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the tourists visiting Hershey",
@@ -118,7 +118,7 @@ K.push(sp(65));
  "③ the workers at the chocolate factory",
  "④ the cities around the U.S.",
  "⑤ the residents of Pennsylvania"].forEach(c => K.push(ch(c)));
-K.push(spF(1, 140, 0.13));
+K.push(spF(1, 57, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
 K.push(p([t("최고의 슬로건은 몇 개의 강력한 단어로 이야기를 들려준다.", { size: 19, bold: true })], { indent: { left: 250 }, after: 50 }));
@@ -156,7 +156,7 @@ K.push(T([4790, 220, 4790], [new TableRow({ children: [
     new Paragraph({ children: [t("has+과거분사도 한 덩어리의 동사! since와 함께 ‘1990년부터 지금까지 ~였다’", { size: 15, color: SUB })], spacing: { after: 0, line: 225 } }),
   ], { w: 4790, shade: PAPER, b: { top: NOB, bottom: NOB, right: NOB, left: bd(14, AMB) }, m: { top: 74, bottom: 74, left: 170, right: 120 } }),
 ] })]));
-K.push(spF(2, 105, 0.10));
+K.push(spF(2, 42, 0.10));
 /* 구문 훈련 3문장 */
 K.push(p([t("구문 훈련", { size: 17, bold: true, color: AMB }),
   t("   새로운 문장으로 위에서 배운 구문을 해석해 보세요.", { size: 15, color: SUB })], { after: 70, line: 235 }));
@@ -166,7 +166,7 @@ K.push(p([t("구문 훈련", { size: 17, bold: true, color: AMB }),
 ].forEach(([tag, runs], i) => {
   K.push(p([t("(" + (i + 1) + ") ", { size: 17, bold: true, color: AMB }), t("[" + tag + "]  ", { size: 14, bold: true, color: FAINT }), ...runs], { after: 45, line: 250 }));
   K.push(writeField(1, 320));
-  K.push(spF(2, 52, 0.05));
+  K.push(spF(2, 21, 0.05));
 });
 
 K.push(sp(30));
@@ -193,7 +193,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
-K.push(spF(2, 75, 0.07));
+K.push(spF(2, 30, 0.07));
 
 K.push(sp(40));
 
@@ -219,7 +219,7 @@ K.push(T([W], [new TableRow({ children: [cel([
     exSeg([t("smells like chocolate", { size: 18, bold: true, color: NAVY })], "V′ 본동사", NAVY, 1630, "△"),
   ] })]),
 ], { w: W, shade: PAPER, b: { top: bd(4, GOLD), bottom: bd(4, GOLD), left: bd(4, GOLD), right: bd(4, GOLD) }, m: { top: 44, bottom: 44, left: 200, right: 200 } })] })]));
-K.push(spF(2, 85, 0.06));
+K.push(spF(2, 34, 0.06));
 
 [[4, "What residents call the city can sometimes tell more about it."],
  [5, "Some cities have used humor for unique features and attractions."],
@@ -227,7 +227,7 @@ K.push(spF(2, 85, 0.06));
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
     t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
-  K.push(spF(2, 150, 0.08));
+  K.push(spF(2, 61, 0.08));
 });
 
 /* ═══════════ 3면 [DATA] STEP 1 소재·핵심어·지시어 ═══════════ */
@@ -241,7 +241,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
   new Paragraph({ children: [t("Warming Up! ", { size: 16, bold: true, color: "C3CDD6" }), t("키워드 찾기 · 플로차트 · 주제문 작성 · 요약문 완성 · 패러프레이징", { size: 16, color: "C3CDD6" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: NAVY, va: VerticalAlign.CENTER, m: { top: 175, bottom: 175, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
-K.push(spF(3, 140, 0.10));
+K.push(spF(3, 57, 0.10));
 K.push(p([t("한 줄 해석", { size: 19, bold: true, color: NAVY }),
   t("   한 문장씩 끊어, 우리말 한 줄로 해석해 보세요. 밑줄 친 지시어는 무엇을 가리키는지 생각하며!", { size: 15, color: SUB })], { after: 90, line: 245 }));
 SENT.forEach((s, i) => {
@@ -253,7 +253,7 @@ SENT.forEach((s, i) => {
       DEIXIS[n] ? DEIXIS[n] : [t(s, { size: 17 })]
     ), { after: 34, line: 250, indent: { left: 0 } }));
   K.push(writeField(1, 300));
-  K.push(spF(3, 52, 0.055));
+  K.push(spF(3, 21, 0.055));
 });
 
 /* ═══════════ 4면 [DATA] STEP 1 ═══════════ */
@@ -277,15 +277,15 @@ function stepHead(n, kr, ds) {
 }
 
 K.push(stepHead("1", "소재와 핵심어 찾기", "무엇에 관한 글인지 잡으면 절반은 읽은 것입니다."));
-K.push(spF(4, 120, 0.08));
+K.push(spF(4, 49, 0.08));
 K.push(reprint(DEIXIS));
-K.push(spF(4, 300, 0.10));
+K.push(spF(4, 123, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 ["① 초콜릿 공장을 견학하는 방법", "② 도시의 슬로건이 보여 주는 정체성과 창의성", "③ 미국의 유명 관광지 목록"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
-K.push(spF(4, 200, 0.26));
+K.push(spF(4, 82, 0.26));
 
 K.push(p([t("1-2  ", { size: 18, bold: true, color: GOLD }), t("핵심어 찾기", { size: 19, bold: true }),
   t("      주제문에 반드시 들어가야 할 말 3가지에 \u25cb표 하세요. 자주 나온다고 핵심어는 아닙니다.", { size: 16, color: SUB })], { after: 100, line: 250 }));
@@ -296,7 +296,7 @@ K.push(T([1740,1740,1740,1740,1740,1740], [new TableRow({ children: KWCAND.map((
 ], { w: 1740, shade: FIELD, va: VerticalAlign.CENTER, m: { top: 240, bottom: 240, left: 40, right: 40 },
     b: { top: bd(4, FLINE), bottom: bd(4, FLINE), left: bd(4, FLINE), right: bd(4, FLINE) } })) })]));
 K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 이 글의 주인공  ② 슬로건이 보여 주는 것  ③ 사는 사람들의 특징 — 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
-K.push(spF(4, 260, 0.30));
+K.push(spF(4, 107, 0.30));
 
 K.push(p([t("1-3  ", { size: 18, bold: true, color: GOLD }), t("지시어 이해하기", { size: 19, bold: true }),
   t("      it · they · this 같은 지시어는 앞에 나온 말을 대신합니다. 같은 they라도 도시일 수도, 사람일 수도 있어요.", { size: 16, color: SUB })], { after: 60, line: 250 }));
@@ -335,7 +335,7 @@ K.push(T(aw, [
 /* ═══════════ 4면 [DATA] STEP 2 글의 흐름 잡기 ═══════════ */
 K.push(brk());
 K.push(stepHead("2", "글의 흐름 잡기", "연결어를 따라가면 글의 길이 보입니다."));
-K.push(spF(5, 130, 0.18));
+K.push(spF(5, 53, 0.18));
 
 K.push(p([t("2-1  ", { size: 18, bold: true, color: GOLD }), t("연결어 찾기", { size: 19, bold: true }),
   t("      밑줄 친 연결어가 어떤 일을 하는지, 괄호 안에서 골라 \u25cb표 하세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
@@ -357,7 +357,7 @@ K.push(T(gw, [
       { w: gw[2], shade: FIELD, b: ghd, va: VerticalAlign.CENTER, m: { top: 130, bottom: 130, left: 170, right: 80 } }),
   ] })),
 ]));
-K.push(spF(5, 340, 0.34));
+K.push(spF(5, 140, 0.34));
 
 K.push(p([t("2-2  ", { size: 18, bold: true, color: GOLD }), t("흐름 지도(Flow Chart) 완성하기", { size: 19, bold: true }),
   t("      본문은 [A]–[E] 다섯 구간으로 나뉩니다. 흐름 지도의 빈칸에 알맞은 역할을 <보기>에서 골라 쓰세요.", { size: 16, color: SUB })], { after: 100, line: 250 }));
@@ -402,7 +402,7 @@ K.push(T([1830, 212, 1830, 212, 1830, 212, 1830, 212, 1830], [new TableRow({ chi
   arrowCell(),
   flowCell("E", null, "문장 12", true),
 ] })]));
-K.push(spF(5, 360, 0.38));
+K.push(spF(5, 148, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
@@ -415,7 +415,7 @@ K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 �
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
 K.push(brk());
 K.push(stepHead("3", "주제문 만들기", "본문에서 재료를 찾아, 이 글의 주제문을 영어로 만듭니다."));
-K.push(spF(6, 130, 0.09));
+K.push(spF(6, 53, 0.09));
 
 K.push(p([t("3-1  ", { size: 18, bold: true, color: GOLD }), t("재료 찾기", { size: 19, bold: true }), t("      주제문의 재료는 모두 본문 안에 있습니다. 문장 번호를 따라가, 괄호 안에서 골라 \u25cb표 하세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 
@@ -440,7 +440,7 @@ K.push(T(cw, [
   matRow("2", "12", "슬로건이 보여 주는 두 가지는?", ["identities and creativity", "tourists and factories"], "show 뒤 자리 (내용)", false),
   matRow("3", "12", "그것은 누구의 것인가요?", ["the people who live there", "the visitors from other cities"], "of 뒤 자리 (주인)", false),
 ]));
-K.push(spF(6, 560, 0.16));
+K.push(spF(6, 231, 0.16));
 
 K.push(p([t("3-2  ", { size: 18, bold: true, color: GOLD }), t("뼈대 채우기", { size: 19, bold: true }), t("      3-1에서 찾은 (1)~(3)을 같은 번호의 빈칸에 넣으면 주제문이 완성됩니다.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 
@@ -452,7 +452,7 @@ K.push(box([p([
   t("(3)", { size: 15, bold: true, color: GOLD }), t(" ______________________", { size: 19, color: NAVY2 }),
   t(" .", { size: 19 }),
 ], { line: 640 + Math.min(220, Math.round((FT(6) || 0) * 0.025)), after: 0 })]));
-K.push(spF(6, 620, 0.15));
+K.push(spF(6, 255, 0.15));
 
 K.push(p([t("3-3  ", { size: 18, bold: true, color: GOLD }), t("주제문 완성하기", { size: 19, bold: true }), t("      이번에는 뼈대 없이 씁니다. <보기>의 네 덩어리를 순서대로 이으면 주제문이 됩니다.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 
@@ -462,7 +462,7 @@ K.push(T([W], [new TableRow({ children: [cel(
   p([t("보기   ", { size: 16, bold: true, color: NAVY2 }),
      t("ⓐ of the people who live there.     ⓑ show the unique identities     ⓒ and creativity     ⓓ City slogans", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
   { w: W, shade: COOL, b: { top: bd(4, CLINE), bottom: bd(4, CLINE), left: NOB, right: NOB }, m: { top: 150 + Math.round((FT(6) || 0) * 0.02), bottom: 150 + Math.round((FT(6) || 0) * 0.02), left: 180, right: 180 } })] })]));
-K.push(spF(6, 200, 0.05));
+K.push(spF(6, 82, 0.05));
 K.push(p([t("순서   ", { size: 17, bold: true, color: NAVY2 }),
   t("(  ⓒ  )", { size: 19 }), t("  →  (      )  →  (      )  →  (      )", { size: 19 }),
   t("      (c)가 맨 앞 — 주인공이 주어!", { size: 14, color: GOLD, bold: true })], { after: 0, align: AlignmentType.CENTER }));
@@ -470,7 +470,7 @@ K.push(p([t("순서   ", { size: 17, bold: true, color: NAVY2 }),
 /* ═══════════ 6~7면 [DATA] STEP 4 요약 · STEP 5 같은 뜻 찾기 ═══════════ */
 K.push(brk());
 K.push(reprint());
-K.push(spF(7, 170, 0.16));
+K.push(spF(7, 69, 0.16));
 K.push(stepHead("4", "요약문 완성", "핵심어로 빈칸을 채우면 글 전체가 세 문장으로 줄어듭니다."));
 K.push(sp(120));
 K.push(T([W], [new TableRow({ children: [cel(
@@ -478,7 +478,7 @@ K.push(T([W], [new TableRow({ children: [cel(
   { w: W, shade: PAPER, b: { top: bd(4, HAIR), bottom: bd(4, HAIR), left: NOB, right: NOB }, m: { top: 68, bottom: 68, left: 180, right: 180 } })] })]));
 K.push(sp(120));
 K.push(box([p([t("Cities use slogans to tell people who they are, and some of them use (1) ____________. Hershey calls itself the sweetest place because the whole town smells like (2) ____________, and people in Gravity play with the words “down to earth.” These slogans show the unique (3) ____________ and (4) ____________ of the people who live there.", { size: 19 })], { line: 425, after: 0 })]));
-K.push(spF(7, 180, 0.18));
+K.push(spF(7, 74, 0.18));
 K.push(stepHead("5", "같은 뜻 찾기", "같은 뜻, 다른 표현. 시험은 늘 바꿔서 묻습니다."));
 K.push(sp(110));
 K.push(p([t("본문 표현과 뜻이 다른 선지에 어떤 오답인지 유형을 표시하세요. 뜻이 같은 선지에는 아무 표시도 하지 않습니다.", { size: 18, bold: true })], { after: 60, line: 240 }));
@@ -516,13 +516,13 @@ pairGrid(
     opts: ["① need many long sentences", "② tell a story in a few strong words", "③ tell a story only to tourists"] },
   { sn: 5, main: "used humor for unique features",
     opts: ["① used jokes to show what is special", "② hid their strange features", "③ built new museums for visitors"] });
-K.push(spF(7, 140, 0.16));
+K.push(spF(7, 57, 0.16));
 pairGrid(
   { sn: 8, main: "has been Hershey’s slogan since 1990",
     opts: ["① was dropped soon after 1990", "② was written by a famous singer", "③ has been used from 1990 until now"] },
   { sn: 12, main: "show the identities of the people",
     opts: ["① hide what residents are really like", "② show how rich each city is", "③ show how residents see themselves"] });
-K.push(spF(7, 150, 0.16));
+K.push(spF(7, 61, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
   new Paragraph({ children: [
@@ -564,9 +564,9 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
   new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문으로 고교 내신에 직결되는 7가지 역량을 체계적으로 훈련합니다.", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
-K.push(spF(8, 140, 0.14));
+K.push(spF(8, 57, 0.14));
 K.push(reprint());
-K.push(spF(8, 240, 0.24));
+K.push(spF(8, 99, 0.24));
 
 /* ── R1 True / False ── */
 K.push(wbAsk("R1", "True / False · 정독 훈련", "본문의 내용과 맞으면 T, 다르면 F에 표시하세요. (근거 문장 번호를 함께 적어 보세요.)"));
@@ -592,7 +592,7 @@ K.push(T(tfw, [
       { w: tfw[2], shade: FIELD, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 100, right: 100 } }),
   ] })),
 ]));
-K.push(spF(8, 240, 0.34));
+K.push(spF(8, 99, 0.34));
 
 /* ── R2 사건 순서 잡기 ── */
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "글쓴이가 생각을 펼쳐 나가는 차례대로 ⓐ~ⓓ를 배열하세요."));
@@ -637,7 +637,7 @@ K.push(T(mw3, [
       { w: mw3[2], shade: GREY, b: m3b, va: VerticalAlign.CENTER, m: { top: 158 + RX9, bottom: 158 + RX9, left: 150, right: 80 } }),
   ] })),
 ]));
-K.push(spF(9, 380, 0.12));
+K.push(spF(9, 156, 0.12));
 
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
@@ -654,7 +654,7 @@ K.push(sp(130));
       new Paragraph({ children: [t("힌트  ", { size: 14, bold: true, color: NAVY2 }), t(hint, { size: 16, color: SUB })], spacing: { after: 0, line: 235 } }),
     ], { w: BODY, shade: PAPER, m: { top: 110, bottom: 110, left: 190, right: 190 } }),
   ] })]));
-  K.push(spF(9, 150, 0.075));
+  K.push(spF(9, 61, 0.075));
 });
 
 /* ── 10면 : R5 빈칸 클로즈 · R6 해석 쓰기 ── */
@@ -680,7 +680,7 @@ K.push(box([p([
   num(11), t(" They played on the words “down to earth,” which actually means being practical, and the word “", { size: 19 }), ...BL(6), t(".”  ", { size: 19 }),
   num(12), t(" These city slogans show the unique", { size: 19 }), ...BL(7), t("and", { size: 19 }), ...BL(8), t("of the people who live there.", { size: 19 }),
 ], { line: 465, after: 0, align: AlignmentType.JUSTIFIED })]));
-K.push(spF(10, 210, 0.24));
+K.push(spF(10, 86, 0.24));
 
 K.push(wbAsk("R6", "우리말 해석 쓰기 · 서술형 기초", "다음 문장을 우리말로 해석해 보세요."));
 K.push(sp(90));
@@ -688,11 +688,11 @@ K.push(sp(90));
  [12, "These city slogans show the identities of the people who live there."]].forEach(([n, s], i) => {
   K.push(p([t("(" + (i + 1) + ")  ", { size: 18, bold: true, color: TEAL }), t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + s, { size: 19 })], { after: 45 }));
   K.push(writeField(1, 400));
-  K.push(spF(10, 150, 0.11));
+  K.push(spF(10, 61, 0.11));
 });
 
 /* ── R7 조건 영작 2문항 ── */
-K.push(spF(10, 60, 0.10));
+K.push(spF(10, 24, 0.10));
 K.push(wbAsk("R7", "조건 영작 · 쓰기 훈련", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(120));
 function w7block(no, ko, cond, bogi) {
@@ -701,9 +701,9 @@ function w7block(no, ko, cond, bogi) {
     p([t("조건   ", { size: 16, bold: true, color: NAVY2 }), t(cond, { size: 17, color: SUB })], { after: 42 }),
     p([t("보기   ", { size: 16, bold: true, color: NAVY2 }), t(bogi, { size: 19 })], { after: 0 }),
   ], { w: W, shade: PAPER, b: { top: bd(4, HAIR), bottom: bd(4, HAIR), left: NOB, right: NOB }, m: { top: 110, bottom: 110, left: 230, right: 230 } })] })]));
-  K.push(spF(10, 130, 0.05));
+  K.push(spF(10, 53, 0.05));
   K.push(writeField(1, 400));
-  K.push(spF(10, 230, 0.05));
+  K.push(spF(10, 94, 0.05));
 }
 w7block("1", "이것은 1990년부터 허쉬의 슬로건이었다.",
   "단어를 추가하거나 빼지 말 것 · 대소문자와 마침표에 주의할 것  (총 7단어)",
@@ -721,8 +721,8 @@ const H = (s) => K.push(T([W], [new TableRow({ children: [
   cel(new Paragraph({ children: [t(s, { size: 18, bold: true, color: NAVY })], spacing: { after: 0, line: 250 } }),
     { w: W, m: { top: 25, bottom: 25, left: 150, right: 0 }, b: { top: NOB, bottom: NOB, right: NOB, left: bd(12, YEL) } }),
 ] })]));
-const B = (s, last) => K.push(p([t(s, { size: 17, color: SUB })], { after: last ? 150 : 26, line: 244, indent: { left: 0 } }));
-const Hs = (s) => { K.push(sp(56)); H(s); K.push(sp(30)); };
+const B = (s, last) => K.push(p([t(s, { size: 17, color: SUB })], { after: last ? 110 : 18, line: 236, indent: { left: 0 } }));
+const Hs = (s) => { K.push(sp(40)); H(s); K.push(sp(22)); };
 
 K.push(...tab("정답 및 해설", "UNIT 16  도시들은 왜 슬로건을 만들까?", CHAR, "✓"));
 K.push(sp(150));
@@ -782,17 +782,17 @@ B("[채점 포인트]  주인공(ⓓ)이 맨 앞, 마침표가 붙은 덩어리(
 Hs("STEP 4   요약문   ·   (1) humor  (2) chocolate  (3) identities  (4) creativity");
 B("(1)은 문장 5, (2)는 문장 9, (3)·(4)는 문장 12에서 가져온다. 요약문이 곧 이 글의 뼈대다: 슬로건의 쓰임 → 두 사례 → 결론.", true);
 Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ②   문장 5 ①   문장 8 ③   문장 12 ③  (정답 선지는 무표시)");
-B("문장 2 tell a story in a few powerful words   ② ○ 강한 단어 몇 개로 이야기를 전한다.   ① ✕ [반대] 긴 문장이 많이 필요하다.   ③ ✕ [무관] 관광객에게만 말한다는 근거는 없다.");
-B("문장 5 used humor for unique features   ② ✕ [반대] 특징을 숨겼다.   ① ○ 농담으로 특별한 점을 내세웠다.   ③ ✕ [무관] 박물관을 지었다는 말은 없다.");
+B("문장 2 tell a story in a few powerful words   ① ✕ [반대] 긴 문장이 많이 필요하다.   ② ○ 강한 단어 몇 개로 이야기를 전한다.   ③ ✕ [무관] 관광객에게만 말한다는 근거는 없다.");
+B("문장 5 used humor for unique features   ① ○ 농담으로 특별한 점을 내세웠다.   ② ✕ [반대] 특징을 숨겼다.   ③ ✕ [무관] 박물관을 지었다는 말은 없다.");
 B("문장 8 has been Hershey’s slogan since 1990   ① ✕ [반대] 곧 없어졌다.   ② ✕ [무관] 가수가 썼다는 말은 없다.   ③ ○ 1990년부터 지금까지 쓰인다.");
-B("문장 12 show the identities of the people   ③ ○ 주민들이 스스로를 어떻게 보는지 알려 준다.   ① ✕ [반대] 진짜 모습을 감춘다.   ② ✕ [무관] 도시가 얼마나 부유한지는 지문에 없다.");
+B("문장 12 show the identities of the people   ① ✕ [반대] 진짜 모습을 감춘다.   ② ✕ [무관] 도시가 얼마나 부유한지는 지문에 없다.   ③ ○ 주민들이 스스로를 어떻게 보는지 알려 준다.");
 B("[학습 포인트]  시험은 본문 표현을 반드시 바꿔서 묻는다. since 1990처럼 시간을 나타내는 말은 '지금까지 계속'인지 '그때뿐'인지를 꼭 구분하자.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 T · 5 T · 6 F · 7 F · 8 F");
-   B("1 F — 문장 11: down to earth는 '웃긴'이 아니라 '실용적인'이라는 뜻이다.  거짓 넷은 모두 한 요소(only, never, 1890, funny)만 비튼 것이다.   2 T — 문장 1.   3 T — 문장 7.   4 T — 문장 9.   5 T — 문장 11.   6 F — 문장 5: 유머를 쓴 도시들이 있다.   7 F — 문장 8: 1890년이 아니라 1990년부터다.   8 F — 문장 3: 주민이 만드는 슬로건도 있다.", true);
+   B("1 F — 문장 11: down to earth는 '웃긴'이 아니라 '실용적인'이라는 뜻이다.   2 T — 문장 1.   3 T — 문장 7.   4 T — 문장 9.   5 T — 문장 11.   6 F — 문장 5: 유머를 쓴 도시들이 있다.   7 F — 문장 8: 1890년이 아니라 1990년부터다.   8 F — 문장 3: 주민이 만드는 슬로건도 있다.  거짓 넷은 모두 한 요소(only, never, 1890, funny)만 비튼 것이다.", true);
 Hs("R2   생각의 차례   ·   (c) → (b) → (a) → (d)");
 B("ⓒ 슬로건은 도시가 자신을 알리는 말이라고 밝힌다(문장 1–2) → ⓑ 누가 왜 만드는지 설명한다(문장 3–5) → ⓐ 허쉬와 그래비티 두 사례를 든다(문장 6–11) → ⓓ 슬로건이 주민의 정체성을 보여 준다고 맺는다(문장 12). 설명문은 대개 주장 → 설명 → 예시 → 결론으로 흐른다.", true);
 Hs("R3   영영풀이   ·   1 (c) · 2 (a) · 3 (d) · 4 (f) · 5 (e) · 6 (b)");

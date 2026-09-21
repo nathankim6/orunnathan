@@ -90,7 +90,7 @@ K.push(new Paragraph({
 }));
 K.push(sp(150));
 K.push(...tab("독해", "다음 글을 읽고, 물음에 답하시오.", NAVY, "≡"));
-K.push(spF(1, 120, 0.10));
+K.push(spF(1, 20, 0.10));
 K.push(box([p(passageRuns({
   9: [t("Fortunately, the white ibis learned a way to eat ", { size: 19 }), t("(A) ", { size: 19, bold: true }), t("them", { size: 19, bold: true, underline: {} }),
       t(" safely.  ", { size: 19 })],
@@ -102,7 +102,7 @@ K.push(sp(65));
 ["① The Bin Chicken That Fights Cane Toads", "② How to Keep Trash Cans Clean",
  "③ Farming Beetles for Better Crops", "④ The Best Pet Frogs in Australia",
  "⑤ Why People Give Birds Funny Names"].forEach(c => K.push(ch(c)));
-K.push(spF(1, 140, 0.13));
+K.push(spF(1, 22, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Cane toads had many natural enemies in Australia.",
@@ -110,7 +110,7 @@ K.push(sp(65));
  "③ Cane toads were introduced to Australia in the 1930s.",
  "④ The ibises flip the toads into the air.",
  "⑤ The ibises wash the toads in water before eating."].forEach(c => K.push(ch(c)));
-K.push(spF(1, 140, 0.13));
+K.push(spF(1, 22, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the beetles damaging crops",
@@ -118,7 +118,7 @@ K.push(sp(65));
  "③ the trash cans in the city",
  "④ the farmers in Australia",
  "⑤ the native animals of Australia"].forEach(c => K.push(ch(c)));
-K.push(spF(1, 140, 0.13));
+K.push(spF(1, 22, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
 K.push(p([t("수수두꺼비는 1930년대에 호주에 도입되었다.", { size: 19, bold: true })], { indent: { left: 250 }, after: 50 }));
@@ -156,7 +156,7 @@ K.push(T([4790, 220, 4790], [new TableRow({ children: [
     new Paragraph({ children: [t("be+p.p는 '~되다'라는 뜻의 한 덩어리 동사입니다. '호주에 도입되었다'", { size: 15, color: SUB })], spacing: { after: 0, line: 225 } }),
   ], { w: 4790, shade: PAPER, b: { top: NOB, bottom: NOB, right: NOB, left: bd(14, AMB) }, m: { top: 74, bottom: 74, left: 170, right: 120 } }),
 ] })]));
-K.push(spF(2, 105, 0.10));
+K.push(spF(2, 20, 0.10));
 /* 구문 훈련 3문장 */
 K.push(p([t("구문 훈련", { size: 17, bold: true, color: AMB }),
   t("   새로운 문장으로 위에서 배운 구문을 해석해 보세요.", { size: 15, color: SUB })], { after: 70, line: 235 }));
@@ -166,7 +166,7 @@ K.push(p([t("구문 훈련", { size: 17, bold: true, color: AMB }),
 ].forEach(([tag, runs], i) => {
   K.push(p([t("(" + (i + 1) + ") ", { size: 17, bold: true, color: AMB }), t("[" + tag + "]  ", { size: 14, bold: true, color: FAINT }), ...runs], { after: 45, line: 250 }));
   K.push(writeField(1, 320));
-  K.push(spF(2, 52, 0.05));
+  K.push(spF(2, 20, 0.05));
 });
 
 K.push(sp(30));
@@ -193,7 +193,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
-K.push(spF(2, 75, 0.07));
+K.push(spF(2, 20, 0.07));
 
 K.push(sp(40));
 
@@ -220,7 +220,7 @@ K.push(T([W], [new TableRow({ children: [cel([
     exSeg([t("no natural enemies in Australia", { size: 18 })], "", FAINT, 1880),
   ] })]),
 ], { w: W, shade: PAPER, b: { top: bd(4, GOLD), bottom: bd(4, GOLD), left: bd(4, GOLD), right: bd(4, GOLD) }, m: { top: 44, bottom: 44, left: 200, right: 200 } })] })]));
-K.push(spF(2, 85, 0.06));
+K.push(spF(2, 20, 0.06));
 
 [[6, "However, these toads spread rapidly, consuming many insects."],
  [9, "Fortunately, the white ibis learned a way to eat them safely."],
@@ -228,7 +228,7 @@ K.push(spF(2, 85, 0.06));
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
     t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
-  K.push(spF(2, 150, 0.08));
+  K.push(spF(2, 24, 0.08));
 });
 
 /* ═══════════ 3면 [DATA] STEP 1 소재·핵심어·지시어 ═══════════ */
@@ -242,7 +242,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
   new Paragraph({ children: [t("Warming Up! ", { size: 16, bold: true, color: "C3CDD6" }), t("키워드 찾기 · 플로차트 · 주제문 작성 · 요약문 완성 · 패러프레이징", { size: 16, color: "C3CDD6" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: NAVY, va: VerticalAlign.CENTER, m: { top: 175, bottom: 175, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
-K.push(spF(3, 140, 0.10));
+K.push(spF(3, 22, 0.10));
 K.push(p([t("한 줄 해석", { size: 19, bold: true, color: NAVY }),
   t("   한 문장씩 끊어, 우리말 한 줄로 해석해 보세요. 밑줄 친 지시어는 무엇을 가리키는지 생각하며!", { size: 15, color: SUB })], { after: 90, line: 245 }));
 SENT.forEach((s, i) => {
@@ -254,7 +254,7 @@ SENT.forEach((s, i) => {
       DEIXIS[n] ? DEIXIS[n] : [t(s, { size: 17 })]
     ), { after: 34, line: 250, indent: { left: 0 } }));
   K.push(writeField(1, 300));
-  K.push(spF(3, 52, 0.055));
+  K.push(spF(3, 20, 0.055));
 });
 
 /* ═══════════ 4면 [DATA] STEP 1 ═══════════ */
@@ -278,9 +278,9 @@ function stepHead(n, kr, ds) {
 }
 
 K.push(stepHead("1", "소재와 핵심어 찾기", "무엇에 관한 글인지 잡으면 절반은 읽은 것입니다."));
-K.push(spF(4, 120, 0.08));
+K.push(spF(4, 20, 0.08));
 K.push(reprint(DEIXIS));
-K.push(spF(4, 300, 0.10));
+K.push(spF(4, 49, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
@@ -288,7 +288,7 @@ K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", 
  "② 호주에서 기르기 좋은 애완 개구리",
  "③ 수수두꺼비를 잡아먹는 흰따오기"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
-K.push(spF(4, 200, 0.26));
+K.push(spF(4, 32, 0.26));
 
 K.push(p([t("1-2  ", { size: 18, bold: true, color: GOLD }), t("핵심어 찾기", { size: 19, bold: true }),
   t("      주제문에 반드시 들어가야 할 말 3가지에 \u25cb표 하세요. 자주 나온다고 핵심어는 아닙니다.", { size: 16, color: SUB })], { after: 100, line: 250 }));
@@ -299,7 +299,7 @@ K.push(T([1740,1740,1740,1740,1740,1740], [new TableRow({ children: KWCAND.map((
 ], { w: 1740, shade: FIELD, va: VerticalAlign.CENTER, m: { top: 240, bottom: 240, left: 40, right: 40 },
     b: { top: bd(4, FLINE), bottom: bd(4, FLINE), left: bd(4, FLINE), right: bd(4, FLINE) } })) })]));
 K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 이 글의 주인공  ② 문제가 된 동물  ③ 주인공이 하는 일 — 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
-K.push(spF(4, 260, 0.30));
+K.push(spF(4, 42, 0.30));
 
 K.push(p([t("1-3  ", { size: 18, bold: true, color: GOLD }), t("지시어 이해하기", { size: 19, bold: true }),
   t("      it · they · them 같은 지시어는 앞에 나온 말을 대신합니다. 한 문장 안에서 서로 다른 것을 가리키기도 해요.", { size: 16, color: SUB })], { after: 60, line: 250 }));
@@ -338,7 +338,7 @@ K.push(T(aw, [
 /* ═══════════ 4면 [DATA] STEP 2 글의 흐름 잡기 ═══════════ */
 K.push(brk());
 K.push(stepHead("2", "글의 흐름 잡기", "연결어를 따라가면 글의 길이 보입니다."));
-K.push(spF(5, 130, 0.18));
+K.push(spF(5, 21, 0.18));
 
 K.push(p([t("2-1  ", { size: 18, bold: true, color: GOLD }), t("연결어 찾기", { size: 19, bold: true }),
   t("      밑줄 친 연결어가 어떤 일을 하는지, 괄호 안에서 골라 \u25cb표 하세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
@@ -360,7 +360,7 @@ K.push(T(gw, [
       { w: gw[2], shade: FIELD, b: ghd, va: VerticalAlign.CENTER, m: { top: 130, bottom: 130, left: 170, right: 80 } }),
   ] })),
 ]));
-K.push(spF(5, 340, 0.34));
+K.push(spF(5, 56, 0.34));
 
 K.push(p([t("2-2  ", { size: 18, bold: true, color: GOLD }), t("흐름 지도(Flow Chart) 완성하기", { size: 19, bold: true }),
   t("      본문은 [A]–[E] 다섯 구간으로 나뉩니다. 흐름 지도의 빈칸에 알맞은 역할을 <보기>에서 골라 쓰세요.", { size: 16, color: SUB })], { after: 100, line: 250 }));
@@ -405,7 +405,7 @@ K.push(T([1830, 212, 1830, 212, 1830, 212, 1830, 212, 1830], [new TableRow({ chi
   arrowCell(),
   flowCell("E", null, "문장 12–13", true),
 ] })]));
-K.push(spF(5, 360, 0.38));
+K.push(spF(5, 59, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
@@ -418,7 +418,7 @@ K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 �
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
 K.push(brk());
 K.push(stepHead("3", "주제문 만들기", "본문에서 재료를 찾아, 이 글의 주제문을 영어로 만듭니다."));
-K.push(spF(6, 130, 0.09));
+K.push(spF(6, 21, 0.09));
 
 K.push(p([t("3-1  ", { size: 18, bold: true, color: GOLD }), t("재료 찾기", { size: 19, bold: true }), t("      주제문의 재료는 모두 본문 안에 있습니다. 문장 번호를 따라가, 괄호 안에서 골라 \u25cb표 하세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 
@@ -443,7 +443,7 @@ K.push(T(cw, [
   matRow("2", "12", "따오기가 두꺼비 수에 하는 일은?", ["control", "raise"], "helping 뒤 자리 (하는 일)", false),
   matRow("3", "8", "이 모든 일이 벌어지는 곳은?", ["Australia", "America"], "in 뒤 자리 (장소)", false),
 ]));
-K.push(spF(6, 560, 0.16));
+K.push(spF(6, 92, 0.16));
 
 K.push(p([t("3-2  ", { size: 18, bold: true, color: GOLD }), t("뼈대 채우기", { size: 19, bold: true }), t("      3-1에서 찾은 (1)~(3)을 같은 번호의 빈칸에 넣으면 주제문이 완성됩니다.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 
@@ -456,7 +456,7 @@ K.push(box([p([
   t("(3)", { size: 15, bold: true, color: GOLD }), t(" ________", { size: 19, color: NAVY2 }),
   t(" .", { size: 19 }),
 ], { line: 640 + Math.min(220, Math.round((FT(6) || 0) * 0.025)), after: 0 })]));
-K.push(spF(6, 620, 0.15));
+K.push(spF(6, 102, 0.15));
 
 K.push(p([t("3-3  ", { size: 18, bold: true, color: GOLD }), t("주제문 완성하기", { size: 19, bold: true }), t("      이번에는 뼈대 없이 씁니다. <보기>의 네 덩어리를 순서대로 이으면 주제문이 됩니다.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 
@@ -466,7 +466,7 @@ K.push(T([W], [new TableRow({ children: [cel(
   p([t("보기   ", { size: 16, bold: true, color: NAVY2 }),
      t("ⓐ The white ibis     ⓑ the number of cane toads     ⓒ in Australia.     ⓓ is helping control", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
   { w: W, shade: COOL, b: { top: bd(4, CLINE), bottom: bd(4, CLINE), left: NOB, right: NOB }, m: { top: 150 + Math.round((FT(6) || 0) * 0.02), bottom: 150 + Math.round((FT(6) || 0) * 0.02), left: 180, right: 180 } })] })]));
-K.push(spF(6, 200, 0.05));
+K.push(spF(6, 32, 0.05));
 K.push(p([t("순서   ", { size: 17, bold: true, color: NAVY2 }),
   t("(  ⓑ  )", { size: 19 }), t("  →  (      )  →  (      )  →  (      )", { size: 19 }),
   t("      (b)가 맨 앞 — 주인공이 주어!", { size: 14, color: GOLD, bold: true })], { after: 0, align: AlignmentType.CENTER }));
@@ -474,7 +474,7 @@ K.push(p([t("순서   ", { size: 17, bold: true, color: NAVY2 }),
 /* ═══════════ 6~7면 [DATA] STEP 4 요약 · STEP 5 같은 뜻 찾기 ═══════════ */
 K.push(brk());
 K.push(reprint());
-K.push(spF(7, 170, 0.16));
+K.push(spF(7, 27, 0.16));
 K.push(stepHead("4", "요약문 완성", "핵심어로 빈칸을 채우면 글 전체가 세 문장으로 줄어듭니다."));
 K.push(sp(120));
 K.push(T([W], [new TableRow({ children: [cel(
@@ -482,7 +482,7 @@ K.push(T([W], [new TableRow({ children: [cel(
   { w: W, shade: PAPER, b: { top: bd(4, HAIR), bottom: bd(4, HAIR), left: NOB, right: NOB }, m: { top: 68, bottom: 68, left: 180, right: 180 } })] })]));
 K.push(sp(120));
 K.push(box([p([t("People call the white ibis the “bin chicken” because it searches (1) ____________ cans for food. Cane toads became a big problem in Australia because of their strong (2) ____________ . Now the ibises wash the (3) ____________ before eating them, and this helps (4) ____________ the number of cane toads.", { size: 19 })], { line: 425, after: 0 })]));
-K.push(spF(7, 180, 0.18));
+K.push(spF(7, 29, 0.18));
 K.push(stepHead("5", "같은 뜻 찾기", "같은 뜻, 다른 표현. 시험은 늘 바꿔서 묻습니다."));
 K.push(sp(110));
 K.push(p([t("본문 표현과 뜻이 다른 선지에 어떤 오답인지 유형을 표시하세요. 뜻이 같은 선지에는 아무 표시도 하지 않습니다.", { size: 18, bold: true })], { after: 60, line: 240 }));
@@ -520,13 +520,13 @@ pairGrid(
     opts: ["① give food to people kindly", "② take food quickly from people’s hands", "③ cook food for hungry people"] },
   { sn: 6, main: "these toads spread rapidly",
     opts: ["① slowly disappeared from Australia", "② grew in number very quickly", "③ changed their color in water"] });
-K.push(spF(7, 140, 0.16));
+K.push(spF(7, 22, 0.16));
 pairGrid(
   { sn: 8, main: "had no natural enemies",
     opts: ["① had many animals hunting them", "② had many baby toads every year", "③ had no animals hunting them"] },
   { sn: 9, main: "learned a way to eat them safely",
     opts: ["① became sick after eating them", "② found how to eat them without danger", "③ started to keep them as pets"] });
-K.push(spF(7, 150, 0.16));
+K.push(spF(7, 24, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
   new Paragraph({ children: [
@@ -568,9 +568,9 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
   new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문으로 고교 내신에 직결되는 7가지 역량을 체계적으로 훈련합니다.", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
-K.push(spF(8, 140, 0.14));
+K.push(spF(8, 22, 0.14));
 K.push(reprint());
-K.push(spF(8, 240, 0.24));
+K.push(spF(8, 39, 0.24));
 
 /* ── R1 True / False ── */
 K.push(wbAsk("R1", "True / False · 정독 훈련", "본문의 내용과 맞으면 T, 다르면 F에 표시하세요. (근거 문장 번호를 함께 적어 보세요.)"));
@@ -596,7 +596,7 @@ K.push(T(tfw, [
       { w: tfw[2], shade: FIELD, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 100, right: 100 } }),
   ] })),
 ]));
-K.push(spF(8, 240, 0.34));
+K.push(spF(8, 39, 0.34));
 
 /* ── R2 사건 순서 잡기 ── */
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "호주에서 일어난 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
@@ -641,7 +641,7 @@ K.push(T(mw3, [
       { w: mw3[2], shade: GREY, b: m3b, va: VerticalAlign.CENTER, m: { top: 158 + RX9, bottom: 158 + RX9, left: 150, right: 80 } }),
   ] })),
 ]));
-K.push(spF(9, 380, 0.12));
+K.push(spF(9, 62, 0.12));
 
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
@@ -658,7 +658,7 @@ K.push(sp(130));
       new Paragraph({ children: [t("힌트  ", { size: 14, bold: true, color: NAVY2 }), t(hint, { size: 16, color: SUB })], spacing: { after: 0, line: 235 } }),
     ], { w: BODY, shade: PAPER, m: { top: 110, bottom: 110, left: 190, right: 190 } }),
   ] })]));
-  K.push(spF(9, 150, 0.075));
+  K.push(spF(9, 24, 0.075));
 });
 
 /* ── 10면 : R5 빈칸 클로즈 · R6 해석 쓰기 ── */
@@ -684,7 +684,7 @@ K.push(box([p([
   num(11), t(" They then wash them in water before eating.  ", { size: 19 }),
   num(12), t(" This way, they’re helping", { size: 19 }), ...BL(8), t("the number of cane toads.", { size: 19 }),
 ], { line: 465, after: 0, align: AlignmentType.JUSTIFIED })]));
-K.push(spF(10, 210, 0.24));
+K.push(spF(10, 34, 0.24));
 
 K.push(wbAsk("R6", "우리말 해석 쓰기 · 서술형 기초", "다음 문장을 우리말로 해석해 보세요."));
 K.push(sp(90));
@@ -692,11 +692,11 @@ K.push(sp(90));
  [12, "This way, they’re helping control the number of cane toads."]].forEach(([n, s], i) => {
   K.push(p([t("(" + (i + 1) + ")  ", { size: 18, bold: true, color: TEAL }), t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + s, { size: 19 })], { after: 45 }));
   K.push(writeField(1, 400));
-  K.push(spF(10, 150, 0.11));
+  K.push(spF(10, 24, 0.11));
 });
 
 /* ── R7 조건 영작 2문항 ── */
-K.push(spF(10, 60, 0.10));
+K.push(spF(10, 20, 0.10));
 K.push(wbAsk("R7", "조건 영작 · 쓰기 훈련", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(120));
 function w7block(no, ko, cond, bogi) {
@@ -705,9 +705,9 @@ function w7block(no, ko, cond, bogi) {
     p([t("조건   ", { size: 16, bold: true, color: NAVY2 }), t(cond, { size: 17, color: SUB })], { after: 42 }),
     p([t("보기   ", { size: 16, bold: true, color: NAVY2 }), t(bogi, { size: 19 })], { after: 0 }),
   ], { w: W, shade: PAPER, b: { top: bd(4, HAIR), bottom: bd(4, HAIR), left: NOB, right: NOB }, m: { top: 110, bottom: 110, left: 230, right: 230 } })] })]));
-  K.push(spF(10, 130, 0.05));
+  K.push(spF(10, 21, 0.05));
   K.push(writeField(1, 400));
-  K.push(spF(10, 230, 0.05));
+  K.push(spF(10, 37, 0.05));
 }
 w7block("1", "다행히도, 흰따오기는 그것들을 안전하게 먹는 방법을 배웠다.",
   "단어를 추가하거나 빼지 말 것 · 대소문자와 문장부호에 주의할 것  (총 11단어)",
@@ -787,9 +787,9 @@ Hs("STEP 4   요약문   ·   (1) trash  (2) poison  (3) toads  (4) control");
 B("(1)은 문장 2의 trash, (2)는 문장 7의 poison, (3)은 문장 11의 toads, (4)는 문장 12의 control에서 가져온다. 요약문이 곧 이 글의 흐름이다: 별명 → 문제 → 해결.", true);
 Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ②   문장 6 ②   문장 8 ③   문장 9 ②  (정답 선지는 무표시)");
 B("문장 2 snatch food from people’s hands   ① ✕ [반대] 사람에게 먹이를 준다 — 정반대.   ② ○ 사람 손에서 재빨리 낚아챈다.   ③ ✕ [무관] 요리를 한다는 말은 지문에 없다.");
-B("문장 6 these toads spread rapidly   ② ○ 수가 아주 빠르게 늘었다.   ① ✕ [반대] 서서히 사라졌다 — 정반대.   ③ ✕ [무관] 색이 변했다는 말은 지문에 없다.");
-B("문장 8 had no natural enemies   ① ✕ [반대] 잡아먹는 동물이 많았다 — 정반대.   ③ ○ 잡아먹는 동물이 없었다.   ② ✕ [무관] 새끼를 많이 낳았다는 말은 이 문장에 없다.");
-B("문장 9 learned a way to eat them safely   ② ○ 위험 없이 먹는 법을 찾아냈다.   ① ✕ [반대] 먹고 나서 병이 났다 — 정반대.   ③ ✕ [무관] 애완용으로 기른다는 말은 지문에 없다.");
+B("문장 6 these toads spread rapidly   ① ✕ [반대] 서서히 사라졌다 — 정반대.   ② ○ 수가 아주 빠르게 늘었다.   ③ ✕ [무관] 색이 변했다는 말은 지문에 없다.");
+B("문장 8 had no natural enemies   ① ✕ [반대] 잡아먹는 동물이 많았다 — 정반대.   ② ✕ [무관] 새끼를 많이 낳았다는 말은 이 문장에 없다.   ③ ○ 잡아먹는 동물이 없었다.");
+B("문장 9 learned a way to eat them safely   ① ✕ [반대] 먹고 나서 병이 났다 — 정반대.   ② ○ 위험 없이 먹는 법을 찾아냈다.   ③ ✕ [무관] 애완용으로 기른다는 말은 지문에 없다.");
 B("[학습 포인트]  no는 단 한 글자로 문장을 통째로 뒤집는 말이다. no natural enemies를 '천적이 많다'로 읽으면 글 전체가 반대로 이해된다.", true);
 
 K.push(brk());

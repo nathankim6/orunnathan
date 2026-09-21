@@ -418,7 +418,7 @@ K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 F · 3 T · 4 T · 5 F · 6 F · 7 T · 8 T");
-   B("1 F — 문장 9: only in the morning이 아니라 anywhere at any time이다.   2 F — 문장 5: more가 아니라 less angry다.   3 T — 문장 8.   4 T — 문장 5.   5 F — 문장 9: increasing이 아니라 reducing stress다.  거짓 넷은 모두 한 요소(more, inside, only in the morning, increasing)만 비튼 것이다.   6 F — 문장 6: inside가 아니라 outside다.   7 T — 문장 4.   8 T — 문장 3.", true);
+   B("1 F — 문장 9: only in the morning이 아니라 anywhere at any time이다.   2 F — 문장 5: more가 아니라 less angry다.   3 T — 문장 8.   4 T — 문장 5.   5 F — 문장 9: increasing이 아니라 reducing stress다.   6 F — 문장 6: inside가 아니라 outside다.   7 T — 문장 4.   8 T — 문장 3.  거짓 넷은 모두 한 요소(more, inside, only in the morning, increasing)만 비튼 것이다.", true);
 Hs("R2   사건 순서   ·   (c) → (a) → (d) → (b)");
 B("ⓒ 스트레스를 너무 많이 느낀다(문장 1) → ⓐ 자신을 벽에 붙은 파리로 상상한다(문장 2) → ⓓ 나쁜 감정에 사로잡히는 것을 멈춘다(문장 7) → ⓑ 기분이 훨씬 나아지고 과제도 더 잘한다(문장 5, 11). 본문은 효과(문장 5)를 원리(문장 7)보다 먼저 말하지만, 실제로 일어나는 순서는 원리가 먼저다 — 서술 순서와 사건 순서를 구분하자.", true);
 K.push(sp(70));

@@ -21,7 +21,7 @@ def main(apply=False):
             nums = [s[0] for s in segs]
             if nums == sorted(nums): continue
             head = m.group(2)[:SEG.search(m.group(2)).start()]
-            body_new = head + '   '.join(a + b.strip() for a, b in sorted(segs, key=lambda s: s[0]))
+            body_new = head + '   '.join(a + ' ' + b.strip() for a, b in sorted(segs, key=lambda s: s[0]))
             out.append((m.start(2), m.end(2), body_new)); changed = True
         if not changed: continue
         n += 1

@@ -718,8 +718,8 @@ const H = (s) => K.push(T([W], [new TableRow({ children: [
   cel(new Paragraph({ children: [t(s, { size: 18, bold: true, color: NAVY })], spacing: { after: 0, line: 250 } }),
     { w: W, m: { top: 25, bottom: 25, left: 150, right: 0 }, b: { top: NOB, bottom: NOB, right: NOB, left: bd(12, YEL) } }),
 ] })]));
-const B = (s, last) => K.push(p([t(s, { size: 17, color: SUB })], { after: last ? 200 : 38, line: 258, indent: { left: 0 } }));
-const Hs = (s) => { K.push(sp(82)); H(s); K.push(sp(46)); };
+const B = (s, last) => K.push(p([t(s, { size: 17, color: SUB })], { after: last ? 110 : 18, line: 236, indent: { left: 0 } }));
+const Hs = (s) => { K.push(sp(40)); H(s); K.push(sp(22)); };
 
 K.push(...tab("정답 및 해설", "UNIT 07  나이가 들수록 좋아지는 이것", CHAR, "✓"));
 K.push(sp(150));
@@ -779,17 +779,17 @@ B("[채점 포인트]  주인공(ⓓ)이 맨 앞, 마침표가 붙은 덩어리(
 Hs("STEP 4   요약문   ·   (1) emotions  (2) calm  (3) positive  (4) emotional");
 B("(1)은 문장 4의 emotions, (2)는 문장 10의 calm, (3)은 문장 11의 positive, (4)는 문장 6의 emotional well-being에서 가져온다. 요약문이 곧 이 글의 흐름이다: 예외(1) → 이유(2) → 방향(3) → 결과(4).", true);
 Hs("STEP 5   같은 뜻 찾기   ·   문장 3 ③   문장 6 ②   문장 7 ①   문장 12 ③  (정답 선지는 무표시)");
-B("문장 3 have less energy   ③ ○ 전보다 더 피곤하다.   ① ✕ [반대] 힘이 넘친다 — 정반대.   ② ✕ [무관] 여덟 시간 잔다는 말은 지문에 없다.");
+B("문장 3 have less energy   ① ✕ [반대] 힘이 넘친다 — 정반대.   ② ✕ [무관] 여덟 시간 잔다는 말은 지문에 없다.   ③ ○ 전보다 더 피곤하다.");
 B("문장 6 fewer but more satisfying connections   ① ✕ [반대] 친구가 많아 지치게 한다 — 방향이 반대.   ② ○ 친구는 많지 않지만 더 좋은 관계다.   ③ ✕ [무관] 멀리 사는 친구 이야기는 지문에 없다.");
-B("문장 7 get less upset over negative experiences   ② ✕ [반대] 더 쉽게 화를 낸다 — 정반대.   ① ○ 나쁜 일에 그다지 흔들리지 않는다.   ③ ✕ [무관] 아무것도 기억하지 못한다는 말은 지문에 없다.");
-B("문장 12 pursue a more positive attitude   ③ ○ 더 긍정적으로 생각하려 애쓰다.   ① ✕ [반대] 희망을 포기한다 — 정반대.   ② ✕ [무관] 따뜻한 나라로 이사한다는 말은 지문에 없다.");
+B("문장 7 get less upset over negative experiences   ① ○ 나쁜 일에 그다지 흔들리지 않는다.   ② ✕ [반대] 더 쉽게 화를 낸다 — 정반대.   ③ ✕ [무관] 아무것도 기억하지 못한다는 말은 지문에 없다.");
+B("문장 12 pursue a more positive attitude   ① ✕ [반대] 희망을 포기한다 — 정반대.   ② ✕ [무관] 따뜻한 나라로 이사한다는 말은 지문에 없다.   ③ ○ 더 긍정적으로 생각하려 애쓰다.");
 B("[학습 포인트]  시험은 본문 표현을 반드시 바꿔서 묻는다. 지문을 읽을 때마다 '이 표현을 다른 말로 하면?'을 스스로 물어보자.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 T · 3 F · 4 T · 5 F · 6 T · 7 T · 8 F");
-   B("1 F — 문장 5: 50년이 아니라 20년(the past 20 years)이다.   2 T — 문장 4.   3 F — 문장 9: 생각 전에 행동하는 게 아니라 행동 전에 더 생각한다.   4 T — 문장 11.   5 F — 문장 12: 두렵게 하는 게 아니라 긍정적인 태도를 갖게 한다(inspire).  거짓 문장은 모두 딱 한 요소(50, more, act before we think, afraid)를 비튼 것이다.   6 T — 문장 1.   7 T — 문장 7.   8 F — 문장 6: 더 많은 게 아니라 더 적은(fewer) 관계다.", true);
+   B("1 F — 문장 5: 50년이 아니라 20년(the past 20 years)이다.   2 T — 문장 4.   3 F — 문장 9: 생각 전에 행동하는 게 아니라 행동 전에 더 생각한다.   4 T — 문장 11.   5 F — 문장 12: 두렵게 하는 게 아니라 긍정적인 태도를 갖게 한다(inspire).   6 T — 문장 1.   7 T — 문장 7.   8 F — 문장 6: 더 많은 게 아니라 더 적은(fewer) 관계다.  거짓 문장은 모두 딱 한 요소(50, more, act before we think, afraid)를 비튼 것이다.", true);
 Hs("R2   사건 순서   ·   (c) → (a) → (b) → (d)");
 B("ⓒ 나이가 든다(문장 9) → ⓐ 뇌가 행동 전에 더 생각하게 만든다(문장 9) → ⓑ 침착해지고 감정을 더 잘 조절한다(문장 4·10) → ⓓ 나이 듦에 더 긍정적인 태도를 갖는다(문장 12). 본문은 결과(문장 4)를 먼저 말하고 원인(문장 9)을 나중에 설명한다 — 서술 순서와 실제 순서가 다른 지점이다.", true);
 Hs("R3   영영풀이   ·   1 (c) · 2 (f) · 3 (e) · 4 (a) · 5 (b) · 6 (d)");

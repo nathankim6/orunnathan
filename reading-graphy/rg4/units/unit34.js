@@ -725,8 +725,8 @@ const H = (s) => K.push(T([W], [new TableRow({ children: [
   cel(new Paragraph({ children: [t(s, { size: 18, bold: true, color: NAVY })], spacing: { after: 0, line: 250 } }),
     { w: W, m: { top: 25, bottom: 25, left: 150, right: 0 }, b: { top: NOB, bottom: NOB, right: NOB, left: bd(12, YEL) } }),
 ] })]));
-const B = (s, last) => K.push(p([t(s, { size: 17, color: SUB })], { after: last ? 200 : 38, line: 258, indent: { left: 0 } }));
-const Hs = (s) => { K.push(sp(82)); H(s); K.push(sp(46)); };
+const B = (s, last) => K.push(p([t(s, { size: 17, color: SUB })], { after: last ? 110 : 18, line: 236, indent: { left: 0 } }));
+const Hs = (s) => { K.push(sp(40)); H(s); K.push(sp(22)); };
 
 K.push(...tab("정답 및 해설", "UNIT 34  우주에는 블랙홀, 바다에는 블루 홀", CHAR, "✓"));
 K.push(sp(150));
@@ -787,9 +787,9 @@ Hs("STEP 4   요약문   ·   (1) caves  (2) life  (3) dangerous  (4) equipment"
 B("(1)은 문장 2의 caves, (2)는 문장 4의 sea life, (3)은 문장 9의 dangerous, (4)는 문장 11의 equipment에서 가져온다. 요약문이 곧 이 글의 흐름이다.", true);
 Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ②   문장 4 ②   문장 9 ①   문장 11 ②  (정답 선지는 무표시)");
 B("문장 2 look like deep, dark circles   ① ✕ [반대] 밝고 작은 사각형 — 정반대.   ② ○ 깊고 어두운 원처럼 보인다.   ③ ✕ [무관] 냄새 이야기는 지문에 없다.");
-B("문장 4 full of different kinds of sea life   ② ○ 많은 종류의 바다 동물의 보금자리.   ① ✕ [반대] 생물이 하나도 없다.   ③ ✕ [무관] 오래된 배 이야기는 없다.");
-B("문장 9 extremely dangerous   ② ✕ [반대] 누구에게나 완전히 안전하다.   ① ○ 매우 위험하다.   ③ ✕ [무관] 비용 이야기는 지문에 없다.");
-B("문장 11 proper training and equipment are necessary   ① ✕ [반대] 준비 없이 누구나 갈 수 있다.   ③ ✕ [무관] 어린이만 참여한다는 말은 없다.   ② ○ 알맞은 기술과 도구가 필요하다.");
+B("문장 4 full of different kinds of sea life   ① ✕ [반대] 생물이 하나도 없다.   ② ○ 많은 종류의 바다 동물의 보금자리.   ③ ✕ [무관] 오래된 배 이야기는 없다.");
+B("문장 9 extremely dangerous   ① ○ 매우 위험하다.   ② ✕ [반대] 누구에게나 완전히 안전하다.   ③ ✕ [무관] 비용 이야기는 지문에 없다.");
+B("문장 11 proper training and equipment are necessary   ① ✕ [반대] 준비 없이 누구나 갈 수 있다.   ② ○ 알맞은 기술과 도구가 필요하다.   ③ ✕ [무관] 어린이만 참여한다는 말은 없다.");
 B("[학습 포인트]  시험은 본문 표현을 그대로 쓰지 않고 반드시 바꿔서 묻는다. necessary = you need it처럼 형용사를 문장으로 풀어 쓰는 연습을 하자.", true);
 
 K.push(brk());

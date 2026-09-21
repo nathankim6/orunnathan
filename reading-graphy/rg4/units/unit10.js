@@ -718,8 +718,8 @@ const H = (s) => K.push(T([W], [new TableRow({ children: [
   cel(new Paragraph({ children: [t(s, { size: 18, bold: true, color: NAVY })], spacing: { after: 0, line: 250 } }),
     { w: W, m: { top: 25, bottom: 25, left: 150, right: 0 }, b: { top: NOB, bottom: NOB, right: NOB, left: bd(12, YEL) } }),
 ] })]));
-const B = (s, last) => K.push(p([t(s, { size: 17, color: SUB })], { after: last ? 200 : 38, line: 258, indent: { left: 0 } }));
-const Hs = (s) => { K.push(sp(82)); H(s); K.push(sp(46)); };
+const B = (s, last) => K.push(p([t(s, { size: 17, color: SUB })], { after: last ? 110 : 18, line: 236, indent: { left: 0 } }));
+const Hs = (s) => { K.push(sp(40)); H(s); K.push(sp(22)); };
 
 K.push(...tab("정답 및 해설", "UNIT 10  거대한 바위 아래의 집", CHAR, "✓"));
 K.push(sp(150));
@@ -779,17 +779,17 @@ B("[채점 포인트]  콤마가 붙은 장소 덩어리(ⓓ)가 맨 앞, 마침
 Hs("STEP 4   요약문   ·   (1) rocks  (2) caves  (3) name  (4) famous");
 B("(1)은 문장 2의 rocks, (2)는 문장 4의 caves, (3)은 문장 5의 name, (4)는 문장 11의 famous에서 가져온다. 요약문이 곧 이 글의 흐름이다: 소개(1) → 유래(2) → 이름(3) → 마무리(4).", true);
 Hs("STEP 5   같은 뜻 찾기   ·   문장 1 ③   문장 4 ③   문장 7 ①   문장 11 ②  (정답 선지는 무표시)");
-B("문장 1 don’t know what is happening   ③ ○ 소식을 전혀 모른다.   ① ✕ [반대] 세상 모든 것을 안다 — 정반대.   ② ✕ [무관] 스페인 동굴에 산다는 말은 이 표현의 뜻이 아니다.");
-B("문장 4 made the natural caves bigger   ① ✕ [반대] 아무것도 없는 데서 새 집을 지었다 — 본문과 반대.   ③ ○ 이미 있던 동굴을 넓혔다.   ② ✕ [무관] 동굴을 밝게 칠했다는 말은 지문에 없다.");
-B("문장 7 tried seven times to take the town back   ② ✕ [반대] 한 번 만에 포기했다 — 정반대.   ① ○ 되찾으려고 거듭 시도했다.   ③ ✕ [무관] 마을을 팔았다는 말은 지문에 없다.");
-B("문장 11 is still famous for its delicious olives   ② ○ 맛있는 올리브로 잘 알려져 있다.   ① ✕ [반대] 이제 모두에게 잊혔다 — 정반대.   ③ ✕ [무관] 유럽에서 가장 큰 올리브라는 말은 지문에 없다.");
+B("문장 1 don’t know what is happening   ① ✕ [반대] 세상 모든 것을 안다 — 정반대.   ② ✕ [무관] 스페인 동굴에 산다는 말은 이 표현의 뜻이 아니다.   ③ ○ 소식을 전혀 모른다.");
+B("문장 4 made the natural caves bigger   ① ✕ [반대] 아무것도 없는 데서 새 집을 지었다 — 본문과 반대.   ② ✕ [무관] 동굴을 밝게 칠했다는 말은 지문에 없다.   ③ ○ 이미 있던 동굴을 넓혔다.");
+B("문장 7 tried seven times to take the town back   ① ○ 되찾으려고 거듭 시도했다.   ② ✕ [반대] 한 번 만에 포기했다 — 정반대.   ③ ✕ [무관] 마을을 팔았다는 말은 지문에 없다.");
+B("문장 11 is still famous for its delicious olives   ① ✕ [반대] 이제 모두에게 잊혔다 — 정반대.   ② ○ 맛있는 올리브로 잘 알려져 있다.   ③ ✕ [무관] 유럽에서 가장 큰 올리브라는 말은 지문에 없다.");
 B("[학습 포인트]  시험은 본문 표현을 반드시 바꿔서 묻는다. 지문을 읽을 때마다 '이 표현을 다른 말로 하면?'을 스스로 물어보자.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
 Hs("R1   True / False   ·   1 T · 2 F · 3 F · 4 T · 5 F · 6 T · 7 T · 8 F");
-   B("1 T — 문장 3.   2 F — 문장 10: 포도밭 대부분이 곤충에 파괴되었다.   3 F — 문장 11: 포도주가 아니라 올리브와 아몬드로 유명하다.  거짓 문장은 모두 딱 한 요소(brand-new, three, all, only wine)를 비튼 것이다.   4 T — 문장 2.   5 F — 문장 7: 세 번이 아니라 일곱 번(seven times)이다.   6 T — 문장 6.   7 T — 문장 8.   8 F — 문장 4: 새 집을 지은 게 아니라 동굴을 넓혔다.", true);
+   B("1 T — 문장 3.   2 F — 문장 10: 포도밭 대부분이 곤충에 파괴되었다.   3 F — 문장 11: 포도주가 아니라 올리브와 아몬드로 유명하다.   4 T — 문장 2.   5 F — 문장 7: 세 번이 아니라 일곱 번(seven times)이다.   6 T — 문장 6.   7 T — 문장 8.   8 F — 문장 4: 새 집을 지은 게 아니라 동굴을 넓혔다.  거짓 문장은 모두 딱 한 요소(brand-new, three, all, only wine)를 비튼 것이다.", true);
 Hs("R2   사건 순서   ·   (d) → (a) → (c) → (b)");
 B("ⓓ 12세기 무어인이 스페인을 침입해 마을을 세운다(문장 3) → ⓐ 15세기 가톨릭 세력이 일곱 번 되찾으려 한다(문장 7) → ⓒ 정착민들이 포도밭을 들여온다(문장 9) → ⓑ 1800년대에 곤충이 포도밭을 대부분 망가뜨린다(문장 10). 세기를 나타내는 표현이 순서의 열쇠다.", true);
 Hs("R3   영영풀이   ·   1 (c) · 2 (e) · 3 (a) · 4 (f) · 5 (b) · 6 (d)");

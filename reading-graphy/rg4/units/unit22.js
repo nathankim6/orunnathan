@@ -720,8 +720,8 @@ const H = (s) => K.push(T([W], [new TableRow({ children: [
   cel(new Paragraph({ children: [t(s, { size: 18, bold: true, color: NAVY })], spacing: { after: 0, line: 250 } }),
     { w: W, m: { top: 25, bottom: 25, left: 150, right: 0 }, b: { top: NOB, bottom: NOB, right: NOB, left: bd(12, YEL) } }),
 ] })]));
-const B = (s, last) => K.push(p([t(s, { size: 17, color: SUB })], { after: last ? 200 : 38, line: 258, indent: { left: 0 } }));
-const Hs = (s) => { K.push(sp(82)); H(s); K.push(sp(46)); };
+const B = (s, last) => K.push(p([t(s, { size: 17, color: SUB })], { after: last ? 110 : 18, line: 236, indent: { left: 0 } }));
+const Hs = (s) => { K.push(sp(40)); H(s); K.push(sp(22)); };
 
 K.push(...tab("정답 및 해설", "UNIT 22  뜨끈한 컴퓨터가 이것도 데워요", CHAR, "✓"));
 K.push(sp(150));
@@ -781,10 +781,10 @@ B("[채점 포인트]  주인공(Deep Green)이 맨 앞, 마침표가 붙은 덩
 Hs("STEP 4   요약문   ·   (1) heat  (2) pool  (3) gas  (4) win-win");
 B("(1)은 문장 2의 heat, (2)는 문장 3의 pool, (3)은 문장 8의 gas, (4)는 문장 10의 win-win에서 가져온다. 요약문이 곧 이 글의 흐름이다: 폐열(1) → 수영장(2) → 절약(3) → 평가(4).", true);
 Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ②   문장 8 ③   문장 9 ①   문장 10 ②  (정답 선지는 무표시)");
-B("문장 2 produce a lot of waste heat   ② ○ 버려지는 열을 많이 만든다.   ① ✕ [반대] 열이 거의 나지 않는다.   ③ ✕ [무관] 겨울을 위해 열을 저장한다는 말은 없다.");
-B("문장 8 gets free heat   ③ ○ 돈을 내지 않고 열을 얻는다.   ① ✕ [반대] 열에 큰돈을 낸다.   ② ✕ [무관] 다른 수영장에 열을 판다는 말은 없다.");
-B("문장 9 saves money too   ② ✕ [반대] 돈을 더 쓴다 — 정반대.   ① ○ 회사도 돈을 아낀다.   ③ ✕ [무관] 수영장에서 돈을 빌린다는 말은 없다.");
-B("문장 10 a win-win situation   ② ○ 양쪽 모두에게 좋다.   ① ✕ [반대] 한쪽에만 좋다.   ③ ✕ [무관] 대표가 즐기는 게임이라는 말은 없다.");
+B("문장 2 produce a lot of waste heat   ① ✕ [반대] 열이 거의 나지 않는다.   ② ○ 버려지는 열을 많이 만든다.   ③ ✕ [무관] 겨울을 위해 열을 저장한다는 말은 없다.");
+B("문장 8 gets free heat   ① ✕ [반대] 열에 큰돈을 낸다.   ② ✕ [무관] 다른 수영장에 열을 판다는 말은 없다.   ③ ○ 돈을 내지 않고 열을 얻는다.");
+B("문장 9 saves money too   ① ○ 회사도 돈을 아낀다.   ② ✕ [반대] 돈을 더 쓴다 — 정반대.   ③ ✕ [무관] 수영장에서 돈을 빌린다는 말은 없다.");
+B("문장 10 a win-win situation   ① ✕ [반대] 한쪽에만 좋다.   ② ○ 양쪽 모두에게 좋다.   ③ ✕ [무관] 대표가 즐기는 게임이라는 말은 없다.");
 B("[학습 포인트]  win-win처럼 뜻이 통째로 담긴 표현은 '양쪽 다 이득'으로 풀어 두면 어떤 말로 바꿔 물어도 흔들리지 않는다.", true);
 
 K.push(brk());

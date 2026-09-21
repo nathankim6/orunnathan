@@ -722,8 +722,8 @@ const H = (s) => K.push(T([W], [new TableRow({ children: [
   cel(new Paragraph({ children: [t(s, { size: 18, bold: true, color: NAVY })], spacing: { after: 0, line: 250 } }),
     { w: W, m: { top: 25, bottom: 25, left: 150, right: 0 }, b: { top: NOB, bottom: NOB, right: NOB, left: bd(12, YEL) } }),
 ] })]));
-const B = (s, last) => K.push(p([t(s, { size: 17, color: SUB })], { after: last ? 150 : 26, line: 244, indent: { left: 0 } }));
-const Hs = (s) => { K.push(sp(56)); H(s); K.push(sp(30)); };
+const B = (s, last) => K.push(p([t(s, { size: 17, color: SUB })], { after: last ? 110 : 18, line: 236, indent: { left: 0 } }));
+const Hs = (s) => { K.push(sp(40)); H(s); K.push(sp(22)); };
 
 K.push(...tab("정답 및 해설", "UNIT 01  이젠 벌도 예방접종이 필요한 시대!", CHAR, "✓"));
 K.push(sp(150));
@@ -783,17 +783,17 @@ B("[채점 포인트]  콤마가 붙은 덩어리(ⓐ)가 맨 앞, 마침표가 
 Hs("STEP 4   요약문   ·   (1) important  (2) food  (3) disease  (4) vaccine");
 B("(1)은 문장 1의 important, (2)는 문장 9의 food production, (3)은 문장 3의 disease, (4)는 문장 5의 vaccine에서 가져온다. 요약문이 곧 이 글의 흐름이다: 중요성 → 문제 → 해결.", true);
 Hs("STEP 5   같은 뜻 찾기   ·   문장 1 ①   문장 3 ①   문장 6 ②   문장 9 ①  (정답 선지는 무표시)");
-B("문장 1 help plants produce fruits and seeds   ② ✕ [반대] 씨를 못 맺게 막는다 — 정반대.   ① ○ 식물이 열매를 맺을 수 있게 해 준다.   ③ ✕ [무관] 숲에 나무를 심는다는 말은 지문에 없다.");
+B("문장 1 help plants produce fruits and seeds   ① ○ 식물이 열매를 맺을 수 있게 해 준다.   ② ✕ [반대] 씨를 못 맺게 막는다 — 정반대.   ③ ✕ [무관] 숲에 나무를 심는다는 말은 지문에 없다.");
 B("문장 3 are suffering from a bacterial disease   ① ○ 병 때문에 아프다.   ② ✕ [반대] 해마다 더 건강해진다 — 정반대.   ③ ✕ [무관] 다른 나라로 옮겨 간다는 말은 지문에 없다.");
-B("문장 6 Instead of giving the bees a shot   ① ✕ [반대] 모든 벌에게 주사를 놓는다 — 정반대.   ③ ✕ [무관] 꿀을 먹인다는 말은 지문에 없다.   ② ○ 벌에게 주사를 놓지 않고.");
-B("문장 9 they are disappearing   ② ✕ [반대] 수가 빠르게 늘고 있다 — 정반대.   ① ○ 수가 줄고 있다.   ③ ✕ [무관] 색이 변한다는 말은 지문에 없다.");
+B("문장 6 Instead of giving the bees a shot   ① ✕ [반대] 모든 벌에게 주사를 놓는다 — 정반대.   ② ○ 벌에게 주사를 놓지 않고.   ③ ✕ [무관] 꿀을 먹인다는 말은 지문에 없다.");
+B("문장 9 they are disappearing   ① ○ 수가 줄고 있다.   ② ✕ [반대] 수가 빠르게 늘고 있다 — 정반대.   ③ ✕ [무관] 색이 변한다는 말은 지문에 없다.");
 B("[학습 포인트]  Instead of ~는 '~하는 대신'이라는 뜻으로 방향을 뒤집는 말이다. 이 한 마디를 놓치면 정답과 정반대인 선지를 고르게 된다.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 F · 5 F · 6 T · 7 T · 8 F");
-   B("1 F — 문장 8: 너무 늦은 게 아니라 딱 알맞은 때(the right moment)였다.  거짓 문장은 모두 한 요소(half, a shot, wings, too late)만 비튼 것이다.   2 T — 문장 6.   3 T — 문장 1.   4 F — 문장 6: 주사를 놓는 대신 먹이에 섞는다.   5 F — 문장 2: 절반이 아니라 3분의 1(one-third)이다.   6 T — 문장 4.   7 T — 문장 9.   8 F — 문장 7: 날개가 아니라 알(eggs)로 들어간다.", true);
+   B("1 F — 문장 8: 너무 늦은 게 아니라 딱 알맞은 때(the right moment)였다.   2 T — 문장 6.   3 T — 문장 1.   4 F — 문장 6: 주사를 놓는 대신 먹이에 섞는다.   5 F — 문장 2: 절반이 아니라 3분의 1(one-third)이다.   6 T — 문장 4.   7 T — 문장 9.   8 F — 문장 7: 날개가 아니라 알(eggs)로 들어간다.  거짓 문장은 모두 한 요소(half, a shot, wings, too late)만 비튼 것이다.", true);
 Hs("R2   사건 순서   ·   (b) → (a) → (c) → (d)");
 B("ⓑ 많은 벌이 세균성 질병에 걸린다(문장 3) → ⓐ 한 회사가 백신을 개발한다(문장 5) → ⓒ 약을 여왕벌의 먹이에 섞는다(문장 6) → ⓓ 약이 알로 들어가 다른 벌을 지킨다(문장 7). '문제 → 해결 → 방법 → 결과' 순서로 읽으면 된다.", true);
 Hs("R3   영영풀이   ·   1 (e) · 2 (b) · 3 (f) · 4 (a) · 5 (c) · 6 (d)");

@@ -724,8 +724,8 @@ const H = (s) => K.push(T([W], [new TableRow({ children: [
   cel(new Paragraph({ children: [t(s, { size: 18, bold: true, color: NAVY })], spacing: { after: 0, line: 250 } }),
     { w: W, m: { top: 25, bottom: 25, left: 150, right: 0 }, b: { top: NOB, bottom: NOB, right: NOB, left: bd(12, YEL) } }),
 ] })]));
-const B = (s, last) => K.push(p([t(s, { size: 17, color: SUB })], { after: last ? 150 : 26, line: 244, indent: { left: 0 } }));
-const Hs = (s) => { K.push(sp(56)); H(s); K.push(sp(30)); };
+const B = (s, last) => K.push(p([t(s, { size: 17, color: SUB })], { after: last ? 110 : 18, line: 236, indent: { left: 0 } }));
+const Hs = (s) => { K.push(sp(40)); H(s); K.push(sp(22)); };
 
 K.push(...tab("정답 및 해설", "UNIT 19  바다 생물의 미래가 보여요", CHAR, "✓"));
 K.push(sp(150));
@@ -785,8 +785,8 @@ B("[채점 포인트]  주인공(Scientists)이 맨 앞, 마침표가 붙은 덩
 Hs("STEP 4   요약문   ·   (1) dying  (2) eDNA  (3) library  (4) protect");
 B("(1)은 문장 3의 dying, (2)는 문장 5의 eDNA, (3)은 문장 9의 library, (4)는 문장 12의 protect에서 가져온다. 요약문이 곧 이 글의 흐름이다: 문제(1) → 방법(2) → 자료(3) → 목적(4).", true);
 Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ②   문장 6 ③   문장 8 ②   문장 12 ①  (정답 선지는 무표시)");
-B("문장 2 extremely sensitive to water temperature   ② ○ 물이 얼마나 따뜻한지에 크게 반응한다.   ① ✕ [반대] 온도에 신경 쓰지 않는다.   ③ ✕ [무관] 깊은 동굴 이야기는 지문에 없다.");
-B("문장 6 without harming the corals   ③ ○ 산호를 다치게 하지 않고.   ① ✕ [반대] 산호를 부수면서.   ② ✕ [무관] 잠수부의 도움은 지문에 없다.");
+B("문장 2 extremely sensitive to water temperature   ① ✕ [반대] 온도에 신경 쓰지 않는다.   ② ○ 물이 얼마나 따뜻한지에 크게 반응한다.   ③ ✕ [무관] 깊은 동굴 이야기는 지문에 없다.");
+B("문장 6 without harming the corals   ① ✕ [반대] 산호를 부수면서.   ② ✕ [무관] 잠수부의 도움은 지문에 없다.   ③ ○ 산호를 다치게 하지 않고.");
 B("문장 8 which corals are in danger   ① ✕ [반대] 영원히 안전한 산호 — 정반대.   ② ○ 곧 죽을 수도 있는 산호.   ③ ✕ [무관] 가장 오래된 산호라는 말은 없다.");
 B("문장 12 fix damaged reefs   ① ○ 망가진 산호초를 고치다.   ② ✕ [반대] 망가진 채로 내버려 두다.   ③ ✕ [무관] 동물원으로 옮긴다는 말은 없다.");
 B("[학습 포인트]  시험은 본문 표현을 반드시 바꿔서 묻는다. in danger ↔ may die soon처럼 같은 뜻의 다른 표현을 스스로 만들어 보는 습관을 들이자.", true);

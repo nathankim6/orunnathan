@@ -720,8 +720,8 @@ const H = (s) => K.push(T([W], [new TableRow({ children: [
   cel(new Paragraph({ children: [t(s, { size: 18, bold: true, color: NAVY })], spacing: { after: 0, line: 250 } }),
     { w: W, m: { top: 25, bottom: 25, left: 150, right: 0 }, b: { top: NOB, bottom: NOB, right: NOB, left: bd(12, YEL) } }),
 ] })]));
-const B = (s, last) => K.push(p([t(s, { size: 17, color: SUB })], { after: last ? 150 : 26, line: 244, indent: { left: 0 } }));
-const Hs = (s) => { K.push(sp(56)); H(s); K.push(sp(30)); };
+const B = (s, last) => K.push(p([t(s, { size: 17, color: SUB })], { after: last ? 110 : 18, line: 236, indent: { left: 0 } }));
+const Hs = (s) => { K.push(sp(40)); H(s); K.push(sp(22)); };
 
 K.push(...tab("정답 및 해설", "UNIT 25  우주를 떠다니는 마시멜로?", CHAR, "✓"));
 K.push(sp(150));
@@ -781,7 +781,7 @@ B("[채점 포인트]  주인공(ⓑ)이 맨 앞, 마침표가 붙은 덩어리(
 Hs("STEP 4   요약문   ·   (1) light  (2) Jupiter  (3) surprise  (4) form");
 B("(1)은 문장 1의 light, (2)는 문장 3의 Jupiter, (3)은 문장 7의 surprise, (4)는 문장 8의 form에서 가져온다. 요약문이 곧 이 글의 흐름이다: 발견(1) → 크기(2) → 놀라움(3) → 이유(4).", true);
 Hs("STEP 5   같은 뜻 찾기   ·   문장 1 ③   문장 3 ①   문장 7 ②   문장 9 ③  (정답 선지는 무표시)");
-B("문장 1 as light as a marshmallow   ① ✕ [반대] 크기에 비해 아주 무겁다 — 정반대.   ③ ○ 전혀 무겁지 않다.   ② ✕ [무관] 진짜 설탕으로 만들었다는 말은 지문에 없다.");
+B("문장 1 as light as a marshmallow   ① ✕ [반대] 크기에 비해 아주 무겁다 — 정반대.   ② ✕ [무관] 진짜 설탕으로 만들었다는 말은 지문에 없다.   ③ ○ 전혀 무겁지 않다.");
 B("문장 3 a little larger than Jupiter   ① ○ 목성보다 조금 더 크다.   ② ✕ [반대] 훨씬 더 작다 — 정반대.   ③ ✕ [무관] 태양과의 거리는 지문에 없다.");
 B("문장 7 is a surprise to astronomers   ① ✕ [반대] 이미 알고 있었다 — 정반대.   ② ○ 예상하지 못했다.   ③ ✕ [무관] 이름을 지어 주었다는 말은 지문에 없다.");
 B("문장 9 Until now   ① ✕ [무관] 백 년 동안이라는 말은 지문에 없다.   ② ✕ [반대] 지금부터 — 방향이 정반대.   ③ ○ 지금 이 시점까지.");
@@ -791,7 +791,7 @@ K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 F · 3 T · 4 T · 5 T · 6 T · 7 F · 8 F");
-   B("1 F — 문장 6: sink가 아니라 뜬다(float).   2 F — 문장 3: smaller가 아니라 larger다.   3 T — 문장 4.   4 T — 문장 2.   5 T — 문장 1.   6 T — 문장 8.   7 F — 문장 9: close가 아니라 far away에서만 찾아 왔다.  거짓 문장은 모두 딱 한 단어(smaller, heavier, sink, close)를 비튼 것이다 — 그 한 단어를 찾는 것이 정독이다.   8 F — 문장 5: heavier가 아니라 lighter다.", true);
+   B("1 F — 문장 6: sink가 아니라 뜬다(float).   2 F — 문장 3: smaller가 아니라 larger다.   3 T — 문장 4.   4 T — 문장 2.   5 T — 문장 1.   6 T — 문장 8.   7 F — 문장 9: close가 아니라 far away에서만 찾아 왔다.   8 F — 문장 5: heavier가 아니라 lighter다.  거짓 문장은 모두 딱 한 단어(smaller, heavier, sink, close)를 비튼 것이다 — 그 한 단어를 찾는 것이 정독이다.", true);
 Hs("R2   사건 순서   ·   (c) → (a) → (b) → (d)");
 B("ⓒ 거대 행성은 적색왜성 곁에 못 생긴다고 믿어 왔다(문장 8, 발견 이전) → ⓐ 애리조나에서 거대 행성을 발견한다(문장 1) → ⓑ 마시멜로만큼 가볍다는 것을 알아낸다(문장 5–6) → ⓓ 행성 형성을 이해하겠다는 목표를 세운다(문장 10). 서술 순서는 ⓐ가 먼저지만 실제로는 ⓒ의 믿음이 먼저 있었다 — 그래서 이 발견이 놀라운 것이다.", true);
 Hs("R3   영영풀이   ·   1 (b) · 2 (c) · 3 (d) · 4 (f) · 5 (a) · 6 (e)");
