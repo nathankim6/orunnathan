@@ -78,25 +78,25 @@ K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Paint Pictures in Old Books",
  "② The Most Popular Colors of Today",
- "③ A Village That Grows Rare Flowers",
- "④ Why Books Were So Expensive Long Ago",
- "⑤ Bringing Back a Lost Color from the Middle Ages"].forEach(c => K.push(ch(c)));
+ "③ Bringing Back a Lost Color from the Middle Ages",
+ "④ A Village That Grows Rare Flowers",
+ "⑤ Why Books Were So Expensive Long Ago"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Folium was a purple-blue color popular in the Middle Ages.",
- "② Scientists looked into old books from the 1600s for hints.",
- "③ The color was used to paint images on the pages of books.",
+ "② The color was used to paint images on the pages of books.",
+ "③ Scientists looked into old books from the 1600s for hints.",
  "④ They discovered the plant in a village in Portugal.",
  "⑤ The scientists succeeded in recreating the color."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) that plant가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the color called folium",
- "② the old books from the 1400s",
- "③ a village in Portugal",
- "④ the scientists’ labs",
- "⑤ the plant used to make the color"].forEach(c => K.push(ch(c)));
+ "② the plant used to make the color",
+ "③ the old books from the 1400s",
+ "④ a village in Portugal",
+ "⑤ the scientists’ labs"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -248,7 +248,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 중세 시대에 책을 만드는 방법", "② 사라졌다가 되살아난 중세의 색", "③ 포르투갈의 유명한 마을"].forEach(c =>
+["① 중세 시대에 책을 만드는 방법",
+ "② 포르투갈의 유명한 마을",
+ "③ 사라졌다가 되살아난 중세의 색"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -394,22 +396,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문12 ", { size: 17, bold: true, color: NAVY2 }), t("we(S)·can enjoy(△V)·just like[네모]·people(S′)·did(△V′)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 그 편지는 우리 할머니에 의해 쓰였다  (2) 우리는 그 경기를 이기는 데 성공했다  (3) 그 문이 열렸고, 그들은 밖으로 나가는 데 성공했다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 color · lost · scientists   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 color · lost · scientists   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 F · 4 F · 5 T · 6 T · 7 T · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (d) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ⑤");
-B("이 글은 중세에 쓰이다 사라진 색 폴리움(문장 1–4)과, 과학자들이 그 색을 되살린 과정(문장 5–11)을 들려준다. 소재(사라진 색)와 결과(되살림)를 함께 담은 ⑤이 제목이다. ①·③는 책 그림·마을만 건드린 지엽적 오답, ②·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 7에서 과학자들이 살펴본 것은 1400년대의 옛 책이다. 1600년대라고 한 ②이 본문과 다르다. ①은 문장 1, ③는 문장 2, ④은 문장 9, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 중세에 쓰이다 사라진 색 폴리움(문장 1–4)과, 과학자들이 그 색을 되살린 과정(문장 5–11)을 들려준다. 소재(사라진 색)와 결과(되살림)를 함께 담은 ③이 제목이다. ①·④는 책 그림·마을만 건드린 지엽적 오답, ②·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 7에서 과학자들이 살펴본 것은 1400년대의 옛 책이다. 1600년대라고 한 ③이 본문과 다르다. ①은 문장 1, ②는 문장 2, ④은 문장 9, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) that plant는 바로 앞 문장 8의 the plant used to make the color를 가리킨다. that+명사는 '앞에 나온 바로 그 명사'라는 뜻이다 — 명사가 무엇을 찾을지 알려 준다.", true);
 Hs("독해 04   배열 영작   ·   Finally, they succeeded in recreating the color!");
 B("문장 11을 그대로 복원하는 문제다. ① Finally, 뒤의 콤마를 빠뜨리지 않는다.   ② succeed in ~ing — 전치사 in 뒤에는 recreating.   ③ 문장 끝은 느낌표.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 color · lost · scientists     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 사라졌다가 과학자들의 노력으로 되살아난 중세의 색을 소개한다. ① 책 만드는 방법도, ③ 마을 소개도 아니다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 color · lost · scientists     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 사라졌다가 과학자들의 노력으로 되살아난 중세의 색을 소개한다. ① 책 만드는 방법도, ② 마을 소개도 아니다.");
 B("1-2   ○표 할 세 단어: color(힌트① 주인공) · lost(힌트② 그 색의 상태) · scientists(힌트③ 되살린 사람들). 나머지 셋(books · plant · village)은 본문에 나오지만 과정의 세부 사항이다.");
 B("1-3   문장 4 — It은 사라진 그 색에 ○.   문장 6 — this는 색의 근원 찾기(문장 5의 일)에 ○.   문장 9 — that plant는 색을 만드는 식물에 ○.");
 B("[학습 포인트]   this·that에 명사가 붙으면(that plant) 그 명사가 곧 힌트다. 앞 문장에서 같은 명사를 찾아 화살표로 이어 두자.", true);

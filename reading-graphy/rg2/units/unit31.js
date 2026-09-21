@@ -97,10 +97,10 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① The Story of the “Happy Birthday” Song",
- "② Why Families Began to Have Fewer Kids",
- "③ How to Make a Special Birthday Cake",
- "④ The Short History of Birthday Parties",
+["① The Short History of Birthday Parties",
+ "② The Story of the “Happy Birthday” Song",
+ "③ Why Families Began to Have Fewer Kids",
+ "④ How to Make a Special Birthday Cake",
  "⑤ The Best Birthday Gifts for Your Family"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
@@ -284,7 +284,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 미국 대통령들의 생일", "② 생일 축하의 역사", "③ 생일 케이크 만드는 법"].forEach(c =>
+["① 생일 축하의 역사",
+ "② 미국 대통령들의 생일",
+ "③ 생일 케이크 만드는 법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -407,10 +409,10 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 하루 동안 겪은 일을 쓴 일기",
- "② 물건을 팔기 위해 만든 광고",
- "③ 안부를 묻고 소식을 전하는 편지",
- "④ 대상을 소개하고 사실을 알려 주는 설명문",
+["① 대상을 소개하고 사실을 알려 주는 설명문",
+ "② 하루 동안 겪은 일을 쓴 일기",
+ "③ 물건을 팔기 위해 만든 광고",
+ "④ 안부를 묻고 소식을 전하는 편지",
  "⑤ 상상 속 인물이 나오는 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
@@ -740,8 +742,8 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문12 ", { size: 17, bold: true, color: NAVY2 }), t("Even though[네모]·birthday parties(S′)·have(△V′)·they(S)·are(△V)·a big part of our lives", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 숙제를 끝낼 수 있었다  (2) 만화책을 읽는 것은 재미있다  (3) 영어를 배우는 것은 재미있고, 나는 새 친구들을 사귈 수 있었다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 birthday parties \u00b7 short history \u00b7 big part        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 \u00b7 예시 \u00b7 결과 \u00b7 ~일지라도   2-2 [B] 과거 \u00b7 [E] 마무리   2-3 ④", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 birthday parties \u00b7 short history \u00b7 big part        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 \u00b7 예시 \u00b7 결과 \u00b7 ~일지라도   2-2 [B] 과거 \u00b7 [E] 마무리   2-3 ①", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (c) → (b) → (a) → (d)  \u00b7  Birthday parties have a short history, but they are now a big part of our lives.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) heroes  (2) attention  (3) cards  (4) part        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 3 ①  문장 5 ①  문장 8 ②  문장 11 ②", { size: 19, bold: true })], { after: 150 }),
@@ -754,16 +756,16 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) This led to more birthday parties.  (2) But around the mid-19th century, things changed.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ④");
-B("이 글은 생일 축하가 100년 남짓의 짧은 역사를 지녔다는 사실(문장 3)과 그 변화 과정을 설명한다. 소재와 특징을 함께 담은 ④이 제목으로 적절하다. ①\u00b7②는 본문 일부만 건드린 지엽적 오답, ③\u00b7⑤는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ①");
+B("이 글은 생일 축하가 100년 남짓의 짧은 역사를 지녔다는 사실(문장 3)과 그 변화 과정을 설명한다. 소재와 특징을 함께 담은 ①이 제목으로 적절하다. ②\u00b7③는 본문 일부만 건드린 지엽적 오답, ④\u00b7⑤는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ①");
 B("문장 6에서 대부분의 사람들은 자기 생일이 아니라 조지 워싱턴의 생일을 기념했다고 했으므로 ①는 본문과 반대된다. ②은 문장 3, ③은 문장 5, ④은 문장 10, ⑤는 문장 11에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) this tradition은 앞의 문장 1–2가 말한 \u2018생일을 축하하는 일\u2019을 가리킨다. 문장 3은 그 축하 문화가 겨우 100년 전에 시작됐다는 뜻이므로 답은 celebrating birthdays다.", true);
 Hs("독해 04   배열 영작   ·   Birthday celebrations feel like a very old tradition.");
 B("문장 2를 그대로 복원하는 문제다. ① 주어 Birthday celebrations는 복수 — 동사는 feel.   ② feel like+명사는 \u2018~처럼 느껴지다\u2019.   ③ a very old tradition — 관사\u00b7부사\u00b7형용사 순서에 주의.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 birthday parties \u00b7 short history \u00b7 big part     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 생일 축하가 언제 어떻게 지금의 모습이 되었는지를 시간 순서로 설명한다. ① 조지 워싱턴은 예시일 뿐이고, ③ 케이크 만드는 법은 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 birthday parties \u00b7 short history \u00b7 big part     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 생일 축하가 언제 어떻게 지금의 모습이 되었는지를 시간 순서로 설명한다. ② 조지 워싱턴은 예시일 뿐이고, ③ 케이크 만드는 법은 나오지 않는다.");
 B("1-2   \u25cb표 할 세 가지: birthday parties(힌트① 주인공) \u00b7 short history(힌트② 뜻밖의 사실) \u00b7 big part(힌트③ 오늘날의 위치). 나머지 셋(candle \u00b7 George Washington \u00b7 cards)은 본문에 나오지만 변화의 사례일 뿐 주제문에는 들어가지 않는다.");
 B("1-3   문장 3 — this tradition은 \u2018생일 축하하기\u2019에 \u25cb.   문장 9 — This는 \u2018관심이 커진 것\u2019에 \u25cb (문장 8 전체를 대신한다).   문장 12 — they는 birthday parties에 \u25cb.");
 B("[학습 포인트]   문장 9의 This가 이 지문의 백미다. 지시어는 단어 하나만이 아니라 앞 문장 전체를 통째로 대신하기도 한다. 만날 때마다 화살표로 연결해 두는 습관이 고등 지칭 추론 문항으로 이어진다.", true);
@@ -771,10 +773,10 @@ B("[학습 포인트]   문장 9의 This가 이 지문의 백미다. 지시어�
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "\u2713"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 반전 / 예시 / 결과 / ~일지라도     2-2 [B] 과거 \u00b7 [E] 마무리     2-3 ④");
+Hs("STEP 2   글의 흐름   ·   2-1 반전 / 예시 / 결과 / ~일지라도     2-2 [B] 과거 \u00b7 [E] 마무리     2-3 ①");
 B("2-1   문장 3 But — 오래된 전통 같다는 앞말을 뒤집는 \u2018반전\u2019.   문장 6 For example — 앞 문장의 \u2018예시\u2019.   문장 8 so — 아이 수가 줄어든 일의 \u2018결과\u2019.   문장 12 Even though — \u2018~일지라도\u2019.");
 B("2-2   [B] 과거(문장 5–6: 19세기 이전의 생일), [E] 마무리(문장 12–13: 오늘날의 의미). 보기의 \u2018광고\u2019는 이 글에 없는 역할이다. [A] 도입 → [B] 과거 → [C] 변화 → [D] 새 풍습 → [E] 마무리 — 시간 순서로 설명하는 글의 전형이다.");
-B("2-3   정답 ④. 생일 축하라는 대상을 소개하고 그 유래와 변화를 사실 위주로 알려 주는 설명문이다. ① 하루의 일과도, ② 사라는 말도, ③ 안부 인사도, ⑤ 상상 속 인물도 없다.");
+B("2-3   정답 ①. 생일 축하라는 대상을 소개하고 그 유래와 변화를 사실 위주로 알려 주는 설명문이다. ② 하루의 일과도, ③ 사라는 말도, ④ 안부 인사도, ⑤ 상상 속 인물도 없다.");
 B("[학습 포인트]   But이 문장 3과 7에 두 번 나오는 것에 주목하자. 설명문에서 But은 \u2018지금부터가 진짜 하고 싶은 말\u2019이라는 신호다. 연결어만 표시해도 글의 지도가 그려진다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 short \u00b7 big     3-3 (c) → (b) → (a) → (d)");
 B("3-1  재료 찾기 — (2) 문장 12에서 short에 \u25cb: 100년 남짓이니 long이 아니다. (3) 문장 12에서 big에 \u25cb: 오늘날 우리 삶의 \u2018큰\u2019 부분이다. 주제문의 재료는 언제나 본문 안에 있다.");

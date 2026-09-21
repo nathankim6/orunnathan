@@ -79,8 +79,8 @@ K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Clean Dirty River Water",
  "② The Best Holidays in the United States",
- "③ Why the Chicago River Turns Green Every Year",
- "④ A Mayor Who Built a New Lake",
+ "③ A Mayor Who Built a New Lake",
+ "④ Why the Chicago River Turns Green Every Year",
  "⑤ Fun Games for St. Patrick’s Day"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
@@ -403,8 +403,8 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (d) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("이 글은 성 패트릭 데이마다 초록색이 되는 시카고 강(문장 1–2)과 그 전통이 생긴 유래(문장 3–8), 오늘의 모습(문장 9–12)을 소개한다. 소재(시카고 강)와 특징(해마다 초록색)을 담은 ③이 제목이다. ①·⑤는 폐수·명절만 건드린 지엽적 오답, ②·④는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 성 패트릭 데이마다 초록색이 되는 시카고 강(문장 1–2)과 그 전통이 생긴 유래(문장 3–8), 오늘의 모습(문장 9–12)을 소개한다. 소재(시카고 강)와 특징(해마다 초록색)을 담은 ④이 제목이다. ①·⑤는 폐수·명절만 건드린 지엽적 오답, ②·③는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ⑤");
 B("문장 5에서 시장이 처음 떠올린 것은 미시간 호수였고, 시카고 강을 물들이자고 한 사람은 문장 7의 친구다. 따라서 ⑤이 본문과 다르다. ①은 문장 2, ②는 문장 3, ③은 문장 6, ④는 문장 11에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ⑤");

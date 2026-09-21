@@ -79,9 +79,9 @@ K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Take Care of a Cute Puppy",
  "② Ways to Stop Feeling Angry",
- "③ The History of Psychology",
- "④ Foods That Make You Happy",
- "⑤ Cute Aggression: How Our Brain Balances Feelings"].forEach(c => K.push(ch(c)));
+ "③ Cute Aggression: How Our Brain Balances Feelings",
+ "④ The History of Psychology",
+ "⑤ Foods That Make You Happy"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
@@ -96,8 +96,8 @@ K.push(sp(65));
 ["① the cute puppy",
  "② the psychology class",
  "③ the aggressive act",
- "④ the joy in your brain",
- "⑤ the crying baby"].forEach(c => K.push(ch(c)));
+ "④ the crying baby",
+ "⑤ the joy in your brain"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -250,9 +250,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 귀여운 강아지를 돌보는 방법",
- "② 화를 참는 여러 가지 방법",
- "③ 귀여운 것을 볼 때 생기는 공격적인 기분"].forEach(c =>
+["① 귀여운 것을 볼 때 생기는 공격적인 기분",
+ "② 귀여운 강아지를 돌보는 방법",
+ "③ 화를 참는 여러 가지 방법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -398,22 +398,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문7 ", { size: 17, bold: true, color: NAVY2 }), t("Sometimes(M)·when[네모]·it(S′)·is(△V′)·cute aggression(S)·helps(△V)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 내 남동생은 지금 축구를 하고 있다  (2) 그 별들은 밤에 보일 수 있다  (3) 달이 빛나고 있고, 그것은 내 창문에서 보일 수 있다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 aggression · brain · balance   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 aggression · brain · balance   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 F · 4 T · 5 F · 6 T · 7 T · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ⑤");
-B("이 글은 귀여운 것을 볼 때 생기는 '귀여움 공격성'(문장 3–4)과, 그것이 큰 기쁨의 균형을 잡으려는 뇌의 작용(문장 6–9)임을 설명한다. 소재(귀여움 공격성)와 원리(뇌의 균형 잡기)를 함께 담은 ⑤이 적절하다. ①·②은 한 부분만 건드린 지엽적 오답, ③·④는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 귀여운 것을 볼 때 생기는 '귀여움 공격성'(문장 3–4)과, 그것이 큰 기쁨의 균형을 잡으려는 뇌의 작용(문장 6–9)임을 설명한다. 소재(귀여움 공격성)와 원리(뇌의 균형 잡기)를 함께 담은 ③이 적절하다. ①·②은 한 부분만 건드린 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ⑤");
 B("문장 5에서 귀여움 공격성은 정말로 누군가를 해치고 싶다는 뜻이 아니라고 했으므로, ⑤은 본문과 반대된다. ①은 문장 2, ②는 문장 1·4, ③는 문장 8, ④는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) it은 바로 앞 문장 6의 lots of joy, 곧 뇌가 감당하고 있는 큰 기쁨을 가리킨다. '그것이 너무 많을 때'가 무엇이 많다는 말인지 앞 문장에서 찾으면 된다.", true);
 Hs("독해 04   배열 영작   ·   But, we might also feel a bit aggressive.");
 B("문장 3을 그대로 복원하는 문제다. ① 첫 글자는 대문자 But과 뒤의 콤마.   ② 조동사 might 뒤의 동사는 원형 feel.   ③ a bit(약간)은 형용사 aggressive 앞에 온다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 aggression · brain · balance     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 귀여운 것을 볼 때 드는 약간 공격적인 기분과 그 이유를 설명한다. ① 강아지를 돌보는 방법이 아니고, ② 화를 참는 방법을 알려 주는 글도 아니다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 aggression · brain · balance     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 귀여운 것을 볼 때 드는 약간 공격적인 기분과 그 이유를 설명한다. ② 강아지를 돌보는 방법이 아니고, ③ 화를 참는 방법을 알려 주는 글도 아니다.");
 B("1-2   ○표 할 세 단어: aggression(힌트① 이 글이 설명하는 감정) · brain(힌트② 그 감정이 생기는 곳) · balance(힌트③ 그곳이 하는 일). 나머지 셋(puppy · psychology · bite)은 본문에 등장하지만 주제문에 들어가지 않는다 — 예시와 분야 이름일 뿐이다.");
 B("1-3   문장 4 — This feeling은 약간 공격적인 기분에 ○ (문장 3의 내용).   문장 7 — it은 큰 기쁨에 ○ (문장 6의 lots of joy).   문장 10 — this는 뒤에 나오는 말에 ○ (콜론 뒤의 설명).");
 B("[학습 포인트]   문장 10의 this처럼 콜론(:) 앞의 지시어는 뒤에 올 말을 미리 가리킨다. 지시어를 만나면 앞뿐 아니라 바로 뒤도 확인하는 습관을 들이자.", true);

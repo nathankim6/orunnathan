@@ -95,8 +95,8 @@ K.push(sp(65));
 ["① the players in the orchestra",
  "② Tim’s friends in Sweden",
  "③ people’s bodies",
- "④ the ice instruments",
- "⑤ the warmest clothes"].forEach(c => K.push(ch(c)));
+ "④ the warmest clothes",
+ "⑤ the ice instruments"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -405,7 +405,7 @@ Hs("독해 01   제목   ·   정답 ⑤");
 B("이 글은 얼음으로 만든 악기(문장 1–5)와 그 악기로 연주하는 오케스트라, 그리고 조심할 점(문장 8–10)을 소개한다. 소재(얼음 악기)와 재료(눈과 물)를 함께 담은 ⑤이 제목이다. ②·④는 옷·드럼만 건드린 지엽적 오답, ①·③는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ④");
 B("문장 5에서 팀은 얼음과 함께 눈과 물을 섞은 특별한 혼합물을 썼다고 했다. 물만 썼다는 ④은 본문과 다르다. ①은 문장 2, ②는 문장 3, ③은 문장 6, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) They는 바로 앞 문장 9의 Ice instruments를 가리킨다. 사람의 체온이나 입김에 녹는 것은 연주자가 아니라 얼음 악기다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   He loves the unique, sharp sound of ice music.");
 B("문장 7을 그대로 복원하는 문제다. ① 첫 글자는 대문자 He.   ② unique, sharp처럼 형용사 둘을 콤마로 이어 sound를 꾸민다.   ③ of ice music이 sound 뒤에 붙는다.", true);

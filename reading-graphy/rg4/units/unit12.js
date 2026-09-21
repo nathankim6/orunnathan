@@ -82,23 +82,23 @@ K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Take Care of Mice in a Lab",
  "② The History of Cancer Medicine in China",
- "③ A Tiny Battery Inside the Body That Fights Cancer",
- "④ Why Healthy Cells Need More Oxygen",
+ "③ Why Healthy Cells Need More Oxygen",
+ "④ A Tiny Battery Inside the Body That Fights Cancer",
  "⑤ Fudan University: The Best School in Shanghai"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Cancer patients get strong medicine that can cause side effects.",
- "② The battery system targets low-oxygen areas of the body.",
- "③ In two weeks, the tumor size was reduced by 90 percent in most mice.",
- "④ Cancer cells have more oxygen than healthy cells.",
+ "② Cancer cells have more oxygen than healthy cells.",
+ "③ The battery system targets low-oxygen areas of the body.",
+ "④ In two weeks, the tumor size was reduced by 90 percent in most mice.",
  "⑤ The method has not been tested on humans yet."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) It이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the strong medicine for cancer patients",
- "② the low-oxygen area of the body",
- "③ the battery system put inside the body",
+ "② the battery system put inside the body",
+ "③ the low-oxygen area of the body",
  "④ the healthy cell near a tumor",
  "⑤ the university in Shanghai"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -252,9 +252,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 실험용 쥐를 돌보는 방법",
- "② 건강한 세포가 산소를 얻는 과정",
- "③ 몸속에 넣는 배터리로 암을 줄이는 방법"].forEach(c =>
+["① 몸속에 넣는 배터리로 암을 줄이는 방법",
+ "② 실험용 쥐를 돌보는 방법",
+ "③ 건강한 세포가 산소를 얻는 과정"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -400,22 +400,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문13 ", { size: 17, bold: true, color: NAVY2 }), t("more research(S)·is required(△V)·to prepare the battery system(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 그 슬픈 영화는 나를 울게 만들었다  (2) 그 좋은 소식은 그녀를 행복하게 만들었다  (3) 그 시끄러운 음악은 그가 창문을 닫게 했고 방을 조용하게 만들었다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 battery · cancer · safer   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 battery · cancer · safer   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 F · 5 T · 6 F · 7 F · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (b) → (a) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("이 글은 몸속에 넣는 배터리 시스템이 저산소 부위를 찾아 암을 줄인다는 연구(문장 3–9)와 아직 사람에게는 쓰이지 않았다는 한계(문장 11–13)를 소개한다. 소재(배터리)와 특징(몸속에서 암과 싸움)을 함께 담은 ③이 제목으로 적절하다. ①·④는 지엽적 오답, ②·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 5에서 암세포와 그 주변은 건강한 세포보다 산소가 더 적다(less oxygen)고 했다. 더 많다는 ④이 본문과 반대된다. ①은 문장 1, ②는 문장 4, ③는 문장 9, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 몸속에 넣는 배터리 시스템이 저산소 부위를 찾아 암을 줄인다는 연구(문장 3–9)와 아직 사람에게는 쓰이지 않았다는 한계(문장 11–13)를 소개한다. 소재(배터리)와 특징(몸속에서 암과 싸움)을 함께 담은 ④이 제목으로 적절하다. ①·③는 지엽적 오답, ②·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 5에서 암세포와 그 주변은 건강한 세포보다 산소가 더 적다(less oxygen)고 했다. 더 많다는 ②이 본문과 반대된다. ①은 문장 1, ③는 문장 4, ④는 문장 9, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) It은 바로 앞 문장 3의 a battery system, 곧 몸속에 넣을 수 있는 배터리 시스템을 가리킨다. 저산소 부위를 겨냥하는 주체가 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   During the process, no other healthy cells are harmed.");
 B("문장 7을 그대로 복원하는 문제다. ① 첫 글자는 대문자 During, 뒤에 콤마.   ② no other healthy cells — 형용사의 순서에 주의한다.   ③ 수동태는 are harmed 두 단어가 한 덩어리.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 battery · cancer · safer     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 몸속에 넣는 배터리로 암을 줄이는 새로운 방법을 다룬다. ① 쥐는 실험 대상일 뿐이고, ② 산소 이야기는 배터리가 암을 찾는 근거로만 나온다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 battery · cancer · safer     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 몸속에 넣는 배터리로 암을 줄이는 새로운 방법을 다룬다. ② 쥐는 실험 대상일 뿐이고, ③ 산소 이야기는 배터리가 암을 찾는 근거로만 나온다.");
 B("1-2   ○표 할 세 단어: battery(힌트① 새로 만들어진 것) · cancer(힌트② 줄이는 것) · safer(힌트③ 기존 치료와 비교한 평가). 나머지 셋(mice · oxygen · humans)은 본문에 나오지만 주제문에는 들어가지 않는다 — 실험과 근거일 뿐이다.");
 B("1-3   문장 4 — It은 배터리 시스템에 ○ (문장 3의 그 장치).   문장 5 — their는 암세포의에 ○ (바로 앞의 Cancer cells).   문장 12 — it은 이 치료 방법에 ○ (문장 11의 This method).");
 B("[학습 포인트]   문장 4의 It과 문장 5의 their는 바로 이웃해 있지만 가리키는 것이 다르다. 지시어는 가까운 후보 둘을 놓고 수와 뜻을 함께 확인해야 한다.", true);

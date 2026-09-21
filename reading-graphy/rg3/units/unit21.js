@@ -80,23 +80,25 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Why Musical Taste Stops Changing with Age", "② The Best New Songs for Teenagers",
- "③ How to Make Special Memories with Music", "④ Easy Ways to Keep Your Brain Young",
+["① The Best New Songs for Teenagers",
+ "② How to Make Special Memories with Music",
+ "③ Why Musical Taste Stops Changing with Age",
+ "④ Easy Ways to Keep Your Brain Young",
  "⑤ How to Play Chords and Rhythms Well"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Many parents don’t like the music their children listen to.",
  "② People often start to develop their musical taste around 13 or 14.",
- "③ In their 20s, people usually change their musical taste a lot.",
- "④ Teenagers have more time to find new music.",
- "⑤ Some scientists think our brains change with age."].forEach(c => K.push(ch(c)));
+ "③ Teenagers have more time to find new music.",
+ "④ Some scientists think our brains change with age.",
+ "⑤ In their 20s, people usually change their musical taste a lot."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) This가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① listening to new songs every day",
- "② making special memories with songs",
- "③ our brains changing with age",
+["① our brains changing with age",
+ "② listening to new songs every day",
+ "③ making special memories with songs",
  "④ having more free time as a teenager",
  "⑤ liking the same music as your parents"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -400,11 +402,11 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 음악 취향이 십 대에 만들어져 나이가 들어도 잘 바뀌지 않는다는 것(문장 4–5)과 그 두 가지 이유(문장 7–10)를 설명한다. 소재와 핵심을 모두 담은 ①이 제목이다. ②·③은 지엽, ④·⑤는 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 5에서 20대가 되면 좋아하는 음악을 알게 되고 그 뒤로는 크게 바뀌지 않는다고 했다. 많이 바뀐다는 ③은 본문과 반대된다. ①은 문장 1·3, ②는 문장 4, ④는 문장 7, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 음악 취향이 십 대에 만들어져 나이가 들어도 잘 바뀌지 않는다는 것(문장 4–5)과 그 두 가지 이유(문장 7–10)를 설명한다. 소재와 핵심을 모두 담은 ③이 제목이다. ①·②은 지엽, ④·⑤는 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 5에서 20대가 되면 좋아하는 음악을 알게 되고 그 뒤로는 크게 바뀌지 않는다고 했다. 많이 바뀐다는 ⑤은 본문과 반대된다. ①은 문장 1·3, ②는 문장 4, ③는 문장 7, ④는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) This는 바로 앞 문장 9의 내용, 곧 나이가 들면서 우리 뇌가 변한다는 것을 가리킨다. 무엇이 화음과 리듬을 구별하기 어렵게 만드는지 생각하면 된다 — 지시어는 바로 앞에서 찾는다.", true);
 Hs("독해 04   배열 영작   ·   Some scientists think our brains change with age.");
 B("문장 9를 그대로 복원하는 문제다. ① 첫 글자는 대문자 Some.   ② think 뒤에 접속사 that이 생략된 문장이 온다.   ③ 주어 our brains는 복수 — change에 -s를 붙이지 않는다.", true);

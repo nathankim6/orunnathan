@@ -81,10 +81,10 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Grow a Cactus at Home",
- "② An Unwanted Guest: Cactuses in the Alps",
- "③ The Best Ski Places in Switzerland",
- "④ Why America Has Many Cactuses",
- "⑤ The Snow of the Swiss Alps"].forEach(c => K.push(ch(c)));
+ "② The Best Ski Places in Switzerland",
+ "③ Why America Has Many Cactuses",
+ "④ The Snow of the Swiss Alps",
+ "⑤ An Unwanted Guest: Cactuses in the Alps"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
@@ -96,9 +96,9 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) They가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the prickly pear cactuses",
- "② the other plants in the area",
- "③ the people in Valais",
+["① the people in Valais",
+ "② the prickly pear cactuses",
+ "③ the other plants in the area",
  "④ the farmers in America",
  "⑤ the mountains in Switzerland"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -404,11 +404,11 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (b) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ②");
-B("이 글은 미국에서 온 선인장이 발레 지역에 빠르게 퍼져 문제가 된 이야기다(문장 1·3–4·8–12). 소재와 문제를 함께 담은 ②이 제목이다. ④·⑤는 지엽적, ①·③은 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 미국에서 온 선인장이 발레 지역에 빠르게 퍼져 문제가 된 이야기다(문장 1·3–4·8–12). 소재와 문제를 함께 담은 ⑤이 제목이다. ③·④는 지엽적, ①·②은 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ⑤");
 B("문장 5에서 이 선인장은 보통 덥고 건조한 곳에 산다고 했다. 춥고 습한 곳이라는 ⑤은 본문과 반대다. ①은 문장 2, ②는 문장 4, ③는 문장 7, ④는 문장 12에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) They는 바로 앞 문장 12의 people in Valais를 가리킨다. 문제를 곧 해결하기를 바라는 쪽은 선인장이 아니라 사람들이다.", true);
 Hs("독해 04   배열 영작   ·   This cactus originally came from America.");
 B("문장 2를 그대로 복원한다. ㄱ 첫 글자는 대문자 This.   ㄴ originally(원래)는 동사 came 앞에 온다.   ㄷ '~에서 왔다'는 came from.", true);

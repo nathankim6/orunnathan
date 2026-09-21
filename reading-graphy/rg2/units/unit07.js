@@ -99,25 +99,25 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Keep Statues Safe in Museums",
- "② The Life of Pharaohs in Ancient Egypt",
- "③ Famous Museums Around the World",
- "④ How to Make a Stone Statue",
- "⑤ Why Egyptian Statues Are Missing Their Noses"].forEach(c => K.push(ch(c)));
+ "② Why Egyptian Statues Are Missing Their Noses",
+ "③ The Life of Pharaohs in Ancient Egypt",
+ "④ Famous Museums Around the World",
+ "⑤ How to Make a Stone Statue"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Egyptians believed the eyes were the source of life.",
- "② Many statues from ancient Egypt are missing their noses.",
- "③ Statues inside buildings also have broken noses.",
+["① Many statues from ancient Egypt are missing their noses.",
+ "② Statues inside buildings also have broken noses.",
+ "③ Egyptians believed the eyes were the source of life.",
  "④ In ancient Egypt, people made statues for the dead.",
  "⑤ People broke the statue’s nose before stealing treasure."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) They가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the statues in the museums",
- "② the dead in ancient Egypt",
- "③ the pharaohs of Egypt",
- "④ people who wanted to steal treasure",
+["① people who wanted to steal treasure",
+ "② the statues in the museums",
+ "③ the dead in ancient Egypt",
+ "④ the pharaohs of Egypt",
  "⑤ people who made the statues"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -285,9 +285,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 박물관에 조각상을 전시하는 방법",
- "② 파라오의 무덤 속 보물",
- "③ 코가 부서진 이집트 조각상의 비밀"].forEach(c =>
+["① 코가 부서진 이집트 조각상의 비밀",
+ "② 박물관에 조각상을 전시하는 방법",
+ "③ 파라오의 무덤 속 보물"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -411,9 +411,9 @@ K.push(spF(5, 360, 0.38));
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
 ["① 하루 일을 적은 일기",
- "② 물건을 팔기 위해 만든 광고",
- "③ 안부를 전하는 편지",
- "④ 대상을 소개하고 사실을 알려 주는 설명문",
+ "② 대상을 소개하고 사실을 알려 주는 설명문",
+ "③ 물건을 팔기 위해 만든 광고",
+ "④ 안부를 전하는 편지",
  "⑤ 상상 속 인물이 나오는 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
@@ -744,8 +744,8 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문13 ", { size: 17, bold: true, color: NAVY2 }), t("They(S)·broke(△V)·the statue’s nose·to destroy the soul forever(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 너는 제주도를 방문해 본 적 있니?  (2) 그녀는 새 자전거를 사기 위해 돈을 모았다  (3) 너는 일출을 보기 위해 산에 올라 본 적 있니?", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 nose · soul · life        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 · 만약 · 그렇다면 · 결과   2-2 [B] 의문 · [E] 해답   2-3 ④", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 nose · soul · life        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 · 만약 · 그렇다면 · 결과   2-2 [B] 의문 · [E] 해답   2-3 ②", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (d) → (c) → (a) → (b)  ·  Egyptians broke the statue’s nose to destroy the soul, the source of life.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) noses  (2) soul  (3) life  (4) treasure        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ②  문장 9 ③  문장 12 ①  문장 13 ①", { size: 19, bold: true })], { after: 150 }),
@@ -758,16 +758,16 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) Even statues inside buildings have broken noses.  (2) Egyptians believed the nose was the source of life.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ⑤");
-B("코가 없는 이집트 조각상의 까닭을 밝히는 글이다. 부식설을 반박하고(문장 3–5), 영혼과 코에 대한 믿음으로 답한다(문장 7–13). ①·②·③·④는 소재만 스친 오답이다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ①");
-B("문장 11에서 이집트인들은 ‘코’가 생명의 원천이라고 믿었다고 했으므로 eyes로 바꾼 ①가 불일치다. ②은 문장 2, ③는 5, ④은 7, ⑤는 12·13에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 01   제목   ·   정답 ②");
+B("코가 없는 이집트 조각상의 까닭을 밝히는 글이다. 부식설을 반박하고(문장 3–5), 영혼과 코에 대한 믿음으로 답한다(문장 7–13). ①·③·④·⑤는 소재만 스친 오답이다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 11에서 이집트인들은 ‘코’가 생명의 원천이라고 믿었다고 했으므로 eyes로 바꾼 ③가 불일치다. ①은 문장 2, ②는 5, ④은 7, ⑤는 12·13에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) They는 앞 문장 12의 ‘보물을 훔치려던 사람들’을 그대로 받는다. 문장 12의 they와 같은 대상 — 지시어는 바로 앞 문장에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   In ancient Egypt, people made statues for the dead.");
 B("문장 7의 복원이다. ① In ancient Egypt,가 맨 앞 — 콤마까지 한 덩어리.   ② 옛일이므로 과거형 made.   ③ ‘죽은 이들’은 the dead — for the dead 순서에 주의.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 nose · soul · life     1-3 아래 참조");
-B("1-1   정답 ③. 코가 부서진 이집트 조각상의 까닭을 밝히는 글이다. ①은 본문에 없고, ② 파라오의 보물은 마지막 장면의 배경일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 nose · soul · life     1-3 아래 참조");
+B("1-1   정답 ①. 코가 부서진 이집트 조각상의 까닭을 밝히는 글이다. ②은 본문에 없고, ③ 파라오의 보물은 마지막 장면의 배경일 뿐이다.");
 B("1-2   ○표: nose(힌트① 사라진 부분) · soul(힌트② 조각상에 깃든다고 믿은 것) · life(힌트③ 코가 그 원천). museums · treasure · corrosion은 배경·계기일 뿐이다.");
 B("1-3   문장 4 this — ‘부식이라는 설명’에 ○.   문장 9 they — someone에 ○.   문장 13 They — ‘보물 도둑들’에 ○ (문장 12의 people).");
 B("[학습 포인트]   같은 they라도 가리키는 대상이 다르다(문장 9는 영혼을 없애려는 사람, 문장 13은 보물 도둑). 지시어를 만나면 앞으로 화살표를 그어 확인하는 습관을 들이자.", true);
@@ -775,10 +775,10 @@ B("[학습 포인트]   같은 they라도 가리키는 대상이 다르다(문�
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 반전 / 만약 / 그렇다면 / 결과     2-2 [B] 의문 · [E] 해답     2-3 ④");
+Hs("STEP 2   글의 흐름   ·   2-1 반전 / 만약 / 그렇다면 / 결과     2-2 [B] 의문 · [E] 해답     2-3 ②");
 B("2-1   문장 4 However — 부식설을 뒤집는 ‘반전’.   문장 9 If — ‘만약 ~라면’의 조건.   문장 10 Then — ‘그렇다면’으로 새 질문을 연다.   문장 12 So — 믿음의 ‘결과’.");
 B("2-2   [B] 의문(문장 3–6: 부식으로는 설명이 안 되니 다른 이유가 있다), [E] 해답(문장 12–13: 코를 부순 진짜 까닭). 보기의 ‘광고’는 이 글에 없는 역할이다.");
-B("2-3   정답 ④. 고대 이집트의 관습과 믿음이라는 대상을 소개하고 사실을 알려 준다(문장 7·11). 일기·광고·편지·동화의 형식 신호는 어디에도 없다.");
+B("2-3   정답 ②. 고대 이집트의 관습과 믿음이라는 대상을 소개하고 사실을 알려 준다(문장 7·11). 일기·광고·편지·동화의 형식 신호는 어디에도 없다.");
 B("[학습 포인트]   ‘현상 → 의문 → 믿음 → 이유 → 해답’은 수수께끼를 푸는 설명문의 전형적 흐름이다. However와 Then이 그 접점을 표시해 준다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 soul · life     3-3 (d) → (c) → (a) → (b)");
 B("3-1   (2) 문장 13에서 soul에 ○ — 코를 부수며 없애려 한 것. treasure는 훔치려던 대상이다.   (3) 문장 11에서 life에 ○ — 코는 생명의 원천이다.");

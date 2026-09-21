@@ -100,24 +100,24 @@ K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① The Best Morning Walk Courses in Singapore",
  "② How to Build an Otter Park",
- "③ Why Jogging Is Good for Your Health",
- "④ How Otters Swim in the Water",
- "⑤ Cute but Dangerous: A Lesson from Wild Otters"].forEach(c => K.push(ch(c)));
+ "③ Cute but Dangerous: A Lesson from Wild Otters",
+ "④ Why Jogging Is Good for Your Health",
+ "⑤ How Otters Swim in the Water"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Steve saw about 20 furry animals near the water.",
- "② It was bright when Steve took a walk.",
- "③ A jogger stepped on an otter by accident.",
- "④ Steve climbed a tree to get away from the otters.",
- "⑤ The otters calmed down and went back to the water."].forEach(c => K.push(ch(c)));
+ "② A jogger stepped on an otter by accident.",
+ "③ Steve climbed a tree to get away from the otters.",
+ "④ The otters calmed down and went back to the water.",
+ "⑤ It was bright when Steve took a walk."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① Steve\u2019s ankles and legs",
  "② the joggers in the park",
- "③ the angry otters",
- "④ the trees near the water",
+ "③ the trees near the water",
+ "④ the angry otters",
  "⑤ the people in Singapore"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -285,8 +285,8 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 화난 수달에게 물린 남자",
- "② 싱가포르의 아침 산책 코스",
+["① 싱가포르의 아침 산책 코스",
+ "② 화난 수달에게 물린 남자",
  "③ 수달의 먹이 습관"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
@@ -410,10 +410,10 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 실제 겪은 일을 들려주는 이야기",
- "② 물건을 팔기 위해 만든 광고",
- "③ 요리 방법을 알려 주는 설명문",
- "④ 리듬을 살려 쓴 시",
+["① 물건을 팔기 위해 만든 광고",
+ "② 요리 방법을 알려 주는 설명문",
+ "③ 리듬을 살려 쓴 시",
+ "④ 실제 겪은 일을 들려주는 이야기",
  "⑤ 행사에 초대하는 초대장"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
@@ -743,8 +743,8 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("He(S)\u00b7stayed(\u25b3V)\u00b7until[네모]\u00b7otters(S\u2032)\u00b7calmed down\u00b7went back(\u25b3V\u2032)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 '미나'라는 이름의 소녀를 만났다  (2) 그는 버스를 잡기 위해 빨리 달렸다  (3) 우리는 사진을 찍기 위해 '불국사'라는 절을 방문했다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 otters · angry · careful        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 결과 · 반전 · ~까지   2-2 [B] 사고 · [E] 교훈   2-3 ①", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 otters · angry · careful        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 결과 · 반전 · ~까지   2-2 [B] 사고 · [E] 교훈   2-3 ④", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (a) → (b) → (c) → (d)  ·  Always be careful around wild animals, even if they look cute.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) cute  (2) angry  (3) tree  (4) careful        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ②  문장 5 ②  문장 9 ①  문장 12 ③", { size: 19, bold: true })], { after: 150 }),
@@ -757,16 +757,16 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) The other otters got angry and scared.  (2) Steve tried to stop them, but he couldn\u2019t.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ⑤");
-B("이 글은 수달에게 물린 남자(문장 6–9)와 그가 배운 교훈(문장 12)을 들려주는 이야기다. 소재(otters)와 교훈(cute but dangerous)을 모두 담은 ⑤이 제목으로 적절하다. ①·③은 본문의 배경(산책·조깅)만 건드린 지엽적 오답, ②·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 2에서 '아직 어둡고 조용했다(still dark and quiet)'고 했으므로, 밝았다는 ②은 본문과 반대된다. ①은 문장 3, ③는 문장 6, ④은 문장 10, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 수달에게 물린 남자(문장 6–9)와 그가 배운 교훈(문장 12)을 들려주는 이야기다. 소재(otters)와 교훈(cute but dangerous)을 모두 담은 ③이 제목으로 적절하다. ①·④은 본문의 배경(산책·조깅)만 건드린 지엽적 오답, ②·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 2에서 '아직 어둡고 조용했다(still dark and quiet)'고 했으므로, 밝았다는 ⑤은 본문과 반대된다. ①은 문장 3, ②는 문장 6, ③은 문장 10, ④는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) them은 바로 앞 문장 8에서 스티브를 물기 시작한 화난 수달들을 가리킨다. 스티브가 멈추려던 대상이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   It was still dark and quiet.");
 B("문장 2를 그대로 복원하는 문제다. ① 날씨·시간을 나타내는 문장의 주어는 It — 첫 글자는 대문자.   ② still(아직)의 위치는 was 뒤.   ③ dark and quiet — 두 형용사를 and로 잇는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 otters · angry · careful     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 산책하던 스티브가 화난 수달들에게 물린 사건과 그 교훈을 들려준다. ② 산책은 사건의 배경일 뿐이고, ③ 수달의 먹이 이야기는 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 otters · angry · careful     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 산책하던 스티브가 화난 수달들에게 물린 사건과 그 교훈을 들려준다. ① 산책은 사건의 배경일 뿐이고, ③ 수달의 먹이 이야기는 나오지 않는다.");
 B("1-2   \u25cb표 할 세 단어: otters(힌트① 주인공) · angry(힌트② 수달들의 감정) · careful(힌트③ 글쓴이의 교훈). 나머지 셋(park · jogger · water)은 본문에 등장하지만 주제문에 들어가지 않는다 — 배경과 계기일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
 B("1-3   문장 9 — them은 수달들에 \u25cb (스티브가 멈추려던 대상).   문장 11 — there는 나무 위에 \u25cb (문장 10에서 올라간 곳).   문장 12 — they는 wild animals에 \u25cb (귀여워 보여도 조심해야 할 대상).");
 B("[학습 포인트]   문장 11의 there가 이 지문의 백미다. 지시어는 사람·사물만이 아니라 장소도 대신한다(there = 문장 10의 나무 위). 지시어를 만날 때마다 '이게 뭘 가리키지?'를 확인해 화살표로 연결해 두자. 이 습관이 고등 독해의 지칭 추론 문항으로 그대로 이어진다.", true);
@@ -774,10 +774,10 @@ B("[학습 포인트]   문장 11의 there가 이 지문의 백미다. 지시어
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 때 / 결과 / 반전 / ~까지     2-2 [B] 사고 · [E] 교훈     2-3 ①");
+Hs("STEP 2   글의 흐름   ·   2-1 때 / 결과 / 반전 / ~까지     2-2 [B] 사고 · [E] 교훈     2-3 ④");
 B("2-1   문장 3 While — 걷고 있던 '때'에 수달들을 보았다.   문장 8 so — 위험하다고 생각한 원인의 '결과'로 달려들었다.   문장 9 but — 멈추려 했지만 못 했다는 '반전'.   문장 11 until — 수달들이 진정할 '때까지' 나무 위에 있었다.");
 B("2-2   [B] 사고(문장 5–6: 다가갔다가 조거가 수달을 밟는 사고가 난다), [E] 교훈(문장 12: 야생 동물을 조심하라). 보기의 '광고'는 이 글에 없는 역할이다. [A] 만남 → [B] 사고 → [C] 위기 → [D] 탈출 → [E] 교훈 — 사건이 있는 이야기 글의 전형적인 흐름이다.");
-B("2-3   정답 ①. 스티브가 실제로 겪은 사건을 시간 순서대로 들려주고 마지막에 교훈을 남기는 이야기(경험담)다. ② 광고의 신호(사라는 말·가격)가 없고, ③ 요리법·④ 시·⑤ 초대장의 형식도 아니다.");
+B("2-3   정답 ④. 스티브가 실제로 겪은 사건을 시간 순서대로 들려주고 마지막에 교훈을 남기는 이야기(경험담)다. ① 광고의 신호(사라는 말·가격)가 없고, ② 요리법·③ 시·⑤ 초대장의 형식도 아니다.");
 B("[학습 포인트]   연결어만 표시해도 글의 지도가 그려진다. While(때), so(결과), but(반전), until(끝나는 지점). 특히 이야기 글의 마지막 문장은 글쓴이가 진짜 하고 싶은 말 — 교훈의 신호다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 careful · cute     3-3 (a) → (b) → (c) → (d)");
 B("3-1  재료 찾기 — (2) 문장 12에서 careful에 \u25cb: 교훈의 핵심 태도다. scared는 수달들의 감정이지 교훈이 아니다. (3) 문장 12에서 cute에 \u25cb: even if 뒤에 놓일 겉모습이다. dark는 문장 2의 배경일 뿐. 주제문의 재료는 언제나 본문 안에 있다.");

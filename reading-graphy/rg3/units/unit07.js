@@ -408,10 +408,10 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 하루 일을 적은 일기",
- "② 친구에게 보내는 편지",
- "③ 상상으로 지어낸 동화",
- "④ 볼거리와 조건을 알려 주는 안내문",
+["① 볼거리와 조건을 알려 주는 안내문",
+ "② 하루 일을 적은 일기",
+ "③ 친구에게 보내는 편지",
+ "④ 상상으로 지어낸 동화",
  "⑤ 리듬을 살려 쓴 시"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
@@ -742,7 +742,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 병 안에 물이 충분히 있어야 한다  (2) 그 수프는 내 손을 데울 만큼 충분히 뜨거웠다  (3) 작은 글자를 읽을 만큼 충분히 밝은 빛이 있어야 한다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 Firefall · spot · time        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 반전 · 결과 · 덧붙임   2-2 [B] 시기 · [E] 준비   2-3 ④", { size: 19, bold: true })], { after: 25 }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 반전 · 결과 · 덧붙임   2-2 [B] 시기 · [E] 준비   2-3 ①", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (c) → (d) → (a)  ·  You need the right spot and the right time to enjoy the Firefall.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) burning  (2) minutes  (3) snow  (4) spot        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 1 ①  문장 4 ③  문장 5 ①  문장 8 ②", { size: 19, bold: true })], { after: 150 }),
@@ -772,10 +772,10 @@ B("[학습 포인트]   this·these가 붙으면 반드시 앞 문장에 짝이 
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 때 / 반전 / 결과 / 덧붙임     2-2 [B] 시기 · [E] 준비     2-3 ④");
+Hs("STEP 2   글의 흐름   ·   2-1 때 / 반전 / 결과 / 덧붙임     2-2 [B] 시기 · [E] 준비     2-3 ①");
 B("2-1   문장 2 During — 파이어폴이 일어나는 '때'.   문장 4 But — 아름답지만 짧다는 '반전'.   문장 5 So — 그래서 자리와 때를 맞춰야 한다는 '결과'.   문장 9 and — 맑은 하늘과 구름 없는 하늘을 '덧붙임'.");
 B("2-2   [B] 시기(문장 3: 2월에 호스테일 폭포가 파이어폴로 변한다), [E] 준비(문장 11–12: 언제 가야 하고 예약이 필요하다). 보기의 '가격'은 이 글에 없는 역할이다. 소개 → 시기 → 짧은 순간 → 조건 → 준비의 흐름이다.");
-B("2-3   정답 ④. 볼거리를 소개하고 필요한 조건과 시간을 알려 주는 안내문이다. 값이나 명령형 광고 문구가 없고, 일기·편지·동화·시의 신호도 없다.");
+B("2-3   정답 ①. 볼거리를 소개하고 필요한 조건과 시간을 알려 주는 안내문이다. 값이나 명령형 광고 문구가 없고, 일기·편지·동화·시의 신호도 없다.");
 B("[학습 포인트]   But 다음에 So가 오면 '문제 → 그래서 이렇게 하라'는 뼈대다. 이 두 연결어만 찾아도 글쓴이의 조언이 어디 있는지 보인다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 spot · time     3-3 (b) → (c) → (d) → (a)");
 B("3-1  재료 찾기 — (2) 문장 5에서 spot에 ○: '알맞은 자리'다. snow는 조건일 뿐 주제문의 자리가 아니다. (3) 문장 5에서 time에 ○: '알맞은 때'다. month는 본문에 없는 말이다.");

@@ -78,24 +78,24 @@ K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Become the King of England",
  "② The History of Paper Money in Canada",
- "③ Why Queen Elizabeth II Loved Australia",
- "④ Australia’s 5-Dollar Note Says Goodbye to the Queen",
+ "③ Australia’s 5-Dollar Note Says Goodbye to the Queen",
+ "④ Why Queen Elizabeth II Loved Australia",
  "⑤ The Best Way to Design Paper Money"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Australia will replace the Queen’s image on its 5-dollar note.",
  "② Canada, Australia, and New Zealand were once ruled by Britain.",
- "③ Queen Elizabeth II passed away in 2022.",
- "④ Australia decided to put King Charles III’s image on its 5-dollar note.",
+ "③ Australia decided to put King Charles III’s image on its 5-dollar note.",
+ "④ Queen Elizabeth II passed away in 2022.",
  "⑤ Queen Elizabeth’s image has been on Australian money since 1953."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) their가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the British monarchy",
- "② Canada, Australia, and New Zealand",
- "③ the people of Australia",
- "④ the central bank of Australia",
+["① Canada, Australia, and New Zealand",
+ "② the people of Australia",
+ "③ the central bank of Australia",
+ "④ the British monarchy",
  "⑤ the children of King Charles III"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -397,11 +397,11 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (b) → (a)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ④");
-B("이 글은 호주가 5달러 지폐에서 여왕의 초상을 바꾸기로 한 일(문장 1·8)과 그 배경·의미(문장 4–5, 10)를 다룬다. 소재와 핵심을 담은 ④이 적절하다. ②·⑤는 지엽적, ①·③는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 8에서 호주는 여왕의 초상을 찰스 3세의 초상으로 바꾸지 ‘않기로’ 결정했다. ①은 문장 1, ②는 문장 4, ③은 문장 6, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 호주가 5달러 지폐에서 여왕의 초상을 바꾸기로 한 일(문장 1·8)과 그 배경·의미(문장 4–5, 10)를 다룬다. 소재와 핵심을 담은 ③이 적절하다. ②·⑤는 지엽적, ①·④는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 8에서 호주는 여왕의 초상을 찰스 3세의 초상으로 바꾸지 ‘않기로’ 결정했다. ①은 문장 1, ②는 문장 4, ④은 문장 6, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) their는 바로 앞의 the British monarchy(영국 왕실)를 받는다. 세 나라가 왕실을 기리기 위해 ‘왕실의’ 초상을 돈에 넣은 것이므로, 주어인 these countries와 다른 대상이다.", true);
 Hs("독해 04   배열 영작   ·   The new design will better represent Australia’s history and heritage.");
 B("문장 2를 그대로 복원한다. ① 첫 글자는 대문자 The.   ② 조동사 will 뒤에는 동사원형 represent.   ③ better는 동사 앞에 놓여 ‘더 잘’이라는 뜻이 된다.", true);

@@ -97,9 +97,11 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Hot Computers, Warm Pools: A Win-Win Idea", "② How to Choose a Good Washing Machine",
- "③ The Best Swimming Pools in the U.K.", "④ Why Computers Need Cold Air",
- "⑤ A Guide to Starting Your Own Company"].forEach(c => K.push(ch(c)));
+["① How to Choose a Good Washing Machine",
+ "② The Best Swimming Pools in the U.K.",
+ "③ Why Computers Need Cold Air",
+ "④ A Guide to Starting Your Own Company",
+ "⑤ Hot Computers, Warm Pools: A Win-Win Idea"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
@@ -114,8 +116,8 @@ K.push(sp(65));
 ["① selling washing machines in Devon",
  "② building a new data center in the U.K.",
  "③ cooling the pool with cold water",
- "④ paying more money for gas",
- "⑤ using the waste heat to warm the pool"].forEach(c => K.push(ch(c)));
+ "④ using the waste heat to warm the pool",
+ "⑤ paying more money for gas"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -281,9 +283,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 세탁기 크기의 컴퓨터를 파는 가게",
- "② 당구(pool) 경기의 규칙을 알려 주는 글",
- "③ 데이터 센터의 폐열로 수영장을 데우는 이야기"].forEach(c =>
+["① 데이터 센터의 폐열로 수영장을 데우는 이야기",
+ "② 세탁기 크기의 컴퓨터를 파는 가게",
+ "③ 당구(pool) 경기의 규칙을 알려 주는 글"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -737,7 +739,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문10 ", { size: 17, bold: true, color: NAVY2 }), t("The CEO(S)·of Deep Green(M)·sees(△V)·as a win-win situation(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나무들로 둘러싸인 그 집은 매우 오래되었다  (2) 그녀는 사진을 찍기 위해 휴대전화를 쓰고 있다  (3) 그는 책을 나르기 위해 종이로 만든 가방을 쓰고 있다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 heat · pool · warm        ", { size: 19, bold: true }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 heat · pool · warm        ", { size: 19, bold: true }),
      t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 강조 · 순서 · 덧붙임 · 결과   2-2 [B] 아이디어 · [D] 효과   2-3 ①", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (c) → (d) → (a)  ·  Deep Green uses the waste heat from its data center to warm a pool.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) heat  (2) pool  (3) gas  (4) win-win        ", { size: 19, bold: true }),
@@ -751,16 +753,16 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) Even small ones produce a lot of waste heat.  (2) Deep Green saves money too, by cutting expenses on cooling its computers.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 데이터 센터가 버리는 열로 수영장을 데우는 영국의 사례(문장 3–6)와 그 효과(문장 7–9)를 소개한다. 소재와 평가(win-win)를 함께 담은 ①이 제목으로 적절하다. ③·④는 지엽적이고, ②·⑤는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 데이터 센터가 버리는 열로 수영장을 데우는 영국의 사례(문장 3–6)와 그 효과(문장 7–9)를 소개한다. 소재와 평가(win-win)를 함께 담은 ⑤이 제목으로 적절하다. ②·③는 지엽적이고, ①·④는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ②");
 B("문장 8에서 수영장은 공짜 열을 얻어 가스 소비를 62% '줄였다'. 가스비를 더 낸다는 ②가 본문과 반대된다. ①은 문장 2, ③은 문장 4, ④는 문장 5, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) it은 앞에서 설명한 방식, 곧 데이터 센터의 폐열로 수영장을 데우는 일(문장 3–7)을 가리킨다. 대표가 '모두가 이기는 상황'이라고 부른 대상이 무엇인지 생각하면 된다.", true);
 Hs("독해 04   배열 영작   ·   This smart setup helps both the pool and the data center.");
 B("문장 7을 그대로 복원하는 문제다. ① 첫 글자는 대문자 This.   ② both A and B — 짝을 이루는 표현이다.   ③ the가 pool 앞과 data center 앞에 각각 하나씩 들어간다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 heat · pool · warm     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 데이터 센터가 버리는 열로 수영장 물을 데우는 사례를 소개한다. ①은 본문에 없는 이야기이고, ②의 pool은 여기서 당구가 아니라 '수영장'이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 heat · pool · warm     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 데이터 센터가 버리는 열로 수영장 물을 데우는 사례를 소개한다. ②은 본문에 없는 이야기이고, ③의 pool은 여기서 당구가 아니라 '수영장'이다.");
 B("1-2   ○표 할 세 단어: heat(힌트① 버려지는 것) · warm(힌트② 그 열이 하는 일) · pool(힌트③ 열을 받는 곳). 나머지 셋(Devon · oil · machine)은 본문에 나오지만 주제문에는 들어가지 않는다.");
 B("1-3   문장 6 — This heat는 컴퓨터가 낸 열에 ○.   문장 8 — its는 수영장의에 ○.   문장 11 — this는 수영장 데우기, itself는 딥 그린에 ○ — 한 문장 안에서 대상이 바뀐다.");
 B("[학습 포인트]   its·itself 같은 소유격·재귀대명사도 지시어다. 주어가 누구인지 확인하면 짝이 바로 보인다(itself = 주어인 Deep Green).", true);

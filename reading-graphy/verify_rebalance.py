@@ -8,7 +8,7 @@ git 의 원본과 지금 파일을 나란히 읽어, 문항마다
 import re, subprocess, glob, os, sys, collections
 import rebalance as R
 
-BASE = 'HEAD'
+BASE = '49ea97f'   # 재배치 이전 판본
 files = sorted(glob.glob(f'{R.S}/rg*/units/unit*.js'))
 bad, checked = [], 0
 for f in files:

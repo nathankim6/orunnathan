@@ -78,22 +78,24 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① One Clock for the Moon: Why It Is Not Easy", "② Why Clocks on the Moon Run Faster",
- "③ How Long Is One Day on the Moon?", "④ How to Build a Spaceship in Europe",
+["① Why Clocks on the Moon Run Faster",
+ "② How Long Is One Day on the Moon?",
+ "③ One Clock for the Moon: Why It Is Not Easy",
+ "④ How to Build a Spaceship in Europe",
  "⑤ The Best Season to Watch the Moon"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① The ESA wants to make a special time zone for the moon.",
  "② Clocks on the moon go 56 microseconds faster each day.",
- "③ A day on the moon is the same as 29.5 Earth days.",
- "④ Right now, every moon mission uses the same time zone.",
+ "③ Right now, every moon mission uses the same time zone.",
+ "④ A day on the moon is the same as 29.5 Earth days.",
  "⑤ It is hard to know the correct time on the moon."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) they가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the clocks on the moon",
- "② the ESA and the people working on moon missions",
+["① the ESA and the people working on moon missions",
+ "② the clocks on the moon",
  "③ the 29.5 days on the moon",
  "④ the spaceships from different countries",
  "⑤ the other planets in space"].forEach(c => K.push(ch(c)));
@@ -400,11 +402,11 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (b) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 달을 위한 하나의 표준 시간대를 만들려는 시도(문장 1–5)와 그것이 쉽지 않은 이유(문장 6–10)를 소개한다. 소재와 어려움을 함께 담은 ①이 제목으로 적절하다. ②·③은 지엽적이고, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 3에서 지금은 임무마다 시간대가 '서로 다르다(different)'고 했다. 모두 같은 시간대를 쓴다는 ④가 본문과 반대된다. ①은 문장 1, ②는 문장 8, ③은 문장 9, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ②");
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 달을 위한 하나의 표준 시간대를 만들려는 시도(문장 1–5)와 그것이 쉽지 않은 이유(문장 6–10)를 소개한다. 소재와 어려움을 함께 담은 ③이 제목으로 적절하다. ①·②은 지엽적이고, ④·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 3에서 지금은 임무마다 시간대가 '서로 다르다(different)'고 했다. 모두 같은 시간대를 쓴다는 ③가 본문과 반대된다. ①은 문장 1, ②는 문장 8, ④은 문장 9, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) they는 달의 표준 시간 체계를 세우려는 쪽, 곧 문장 1–2의 ESA와 달 임무에 참여하는 사람들을 가리킨다. 시계나 우주선은 체계를 '세우는' 주체가 될 수 없다.", true);
 Hs("독해 04   배열 영작   ·   Right now, each mission’s time zone is different.");
 B("문장 3을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Right.   ② now 뒤의 콤마를 빠뜨리지 않는다.   ③ each mission’s time zone이 하나의 주어 덩어리다.", true);

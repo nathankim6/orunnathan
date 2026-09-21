@@ -79,25 +79,27 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Why Popcorn Came to Movie Theaters", "② The Best Snacks to Eat at Home",
- "③ How to Make Popcorn Quietly", "④ Life During the Great Depression",
- "⑤ Movie Tickets: Cheaper Than Ever"].forEach(c => K.push(ch(c)));
+["① The Best Snacks to Eat at Home",
+ "② How to Make Popcorn Quietly",
+ "③ Life During the Great Depression",
+ "④ Movie Tickets: Cheaper Than Ever",
+ "⑤ Why Popcorn Came to Movie Theaters"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Before 1927, movie theaters were places for high-class customers.",
  "② The theater owners didn’t like the noise of people eating popcorn.",
- "③ At that time, going to a movie was more expensive than other activities.",
- "④ During the Great Depression, many people lost their jobs.",
- "⑤ Owners allowed the sale of popcorn in the lobby of their theaters."].forEach(c => K.push(ch(c)));
+ "③ During the Great Depression, many people lost their jobs.",
+ "④ Owners allowed the sale of popcorn in the lobby of their theaters.",
+ "⑤ At that time, going to a movie was more expensive than other activities."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) they가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the moviegoers who ate popcorn",
  "② the high-class customers",
- "③ the theater owners",
- "④ the workers who lost their jobs",
- "⑤ the popcorn sellers in the lobby"].forEach(c => K.push(ch(c)));
+ "③ the workers who lost their jobs",
+ "④ the popcorn sellers in the lobby",
+ "⑤ the theater owners"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -249,7 +251,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 팝콘을 맛있게 만드는 방법", "② 극장에서 팝콘을 팔게 된 과정", "③ 대공황 시기 미국의 경제"].forEach(c =>
+["① 극장에서 팝콘을 팔게 된 과정",
+ "② 팝콘을 맛있게 만드는 방법",
+ "③ 대공황 시기 미국의 경제"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -395,22 +399,22 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("for most movie theaters(M)·popcorn(S)·is(△V)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 엄마는 내가 내 방을 치우기를 원하신다  (2) 자기 전에 책을 읽는 것은 너에게 좋다  (3) 밖에서 노는 것은 재미있지만, 아빠는 내가 먼저 공부하기를 원하신다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 popcorn · theaters · money   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 popcorn · theaters · money   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 T · 5 F · 6 F · 7 T · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (c) → (a)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 팝콘이 극장에서 금지되던 시절(문장 1–4)과 대공황을 거치며 극장의 대표 간식이 된 과정(문장 5–12)을 설명한다. 소재와 변화를 함께 담은 ①이 적절하다. ④·⑤는 지엽적 오답, ②·③은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 7에서 영화를 보러 가는 것은 다른 활동보다 더 쌌다(cheaper). 더 비쌌다고 한 ③가 본문과 반대된다. ①은 문장 2, ②는 문장 3, ④은 문장 5, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 팝콘이 극장에서 금지되던 시절(문장 1–4)과 대공황을 거치며 극장의 대표 간식이 된 과정(문장 5–12)을 설명한다. 소재와 변화를 함께 담은 ⑤이 적절하다. ③·④는 지엽적 오답, ①·②은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 7에서 영화를 보러 가는 것은 다른 활동보다 더 쌌다(cheaper). 더 비쌌다고 한 ⑤가 본문과 반대된다. ①은 문장 2, ②는 문장 3, ③은 문장 5, ④는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) they는 바로 앞 문장 3의 The theater owners를 가리킨다. 자기 극장(their theaters) 안에 팝콘을 들일지 망설인 주체가 누구인지 생각하면 된다.", true);
 Hs("독해 04   배열 영작   ·   As a result, movie theaters became popular places!");
 B("문장 8을 그대로 복원한다. ① 첫 글자는 대문자 As — result 뒤에 콤마.   ② As a result는 '그 결과'라는 한 덩어리.   ③ 느낌표까지 붙여 쓴다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 popcorn · theaters · money     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 극장에서 팝콘을 팔게 된 과정을 설명한다. ① 만드는 방법은 나오지 않고, ③ 대공황은 변화의 계기로만 등장한다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 popcorn · theaters · money     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 극장에서 팝콘을 팔게 된 과정을 설명한다. ② 만드는 방법은 나오지 않고, ③ 대공황은 변화의 계기로만 등장한다.");
 B("1-2   ○표 할 세 단어: popcorn(힌트① 주인공) · theaters(힌트② 팔리게 된 곳) · money(힌트③ 오늘날 팝콘이 하는 일). 나머지 셋(noise · jobs · lobby)은 본문에 등장하지만 주제문에 들어가지 않는다 — 이유와 세부 사항일 뿐이다.");
 B("1-3   문장 3 — they는 관객들에 ○ (팝콘을 먹는 사람들).   문장 4 — they는 극장 주인들에 ○ (문장 3의 주어).   문장 12 — It은 팝콘에 ○ (moviegoers가 좋아하는 간식).");
 B("[학습 포인트]   문장 3의 they와 문장 4의 they는 바로 이웃한 문장인데도 가리키는 것이 다르다. 지시어는 모양이 아니라 '문맥에서 누가 그 일을 하는가'로 판단해야 한다.", true);

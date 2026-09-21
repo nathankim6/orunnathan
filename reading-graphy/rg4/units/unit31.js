@@ -107,17 +107,17 @@ K.push(sp(65));
 K.push(spF(1, 105, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Sending just one brick to Mars could cost $2 million.",
- "② StarCrete is made from space dust, salt, and potato starch.",
- "③ Everything we send to space needs to be light.",
- "④ StarCrete uses salt as a glue.",
+["① StarCrete uses salt as a glue.",
+ "② Sending just one brick to Mars could cost $2 million.",
+ "③ StarCrete is made from space dust, salt, and potato starch.",
+ "④ Everything we send to space needs to be light.",
  "⑤ About 500 kilograms of StarCrete could be made from 25 kilograms of dried potatoes."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 105, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the concrete we use on Earth",
- "② the cost of one brick",
- "③ everything we send to space",
+ "② everything we send to space",
+ "③ the cost of one brick",
  "④ the potato starch in StarCrete",
  "⑤ a house built on Mars"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 105, 0.13));
@@ -285,8 +285,8 @@ K.push(spF(4, 225, 0.10));
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 ["① 감자로 만드는 새로운 요리",
- "② 인공위성을 우주로 보내는 비용",
- "③ 감자 녹말로 만든 우주 건축 재료"].forEach(c =>
+ "② 감자 녹말로 만든 우주 건축 재료",
+ "③ 인공위성을 우주로 보내는 비용"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 150, 0.26));
 
@@ -411,9 +411,9 @@ K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 �
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
 ["① 물건을 팔기 위해 만든 광고",
  "② 하루 일과를 적은 일기",
- "③ 안부를 전하는 편지",
- "④ 상상 속 인물이 등장하는 동화",
- "⑤ 새로운 재료를 소개하고 사실을 알려 주는 설명문"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
+ "③ 새로운 재료를 소개하고 사실을 알려 주는 설명문",
+ "④ 안부를 전하는 편지",
+ "⑤ 상상 속 인물이 등장하는 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
 K.push(brk());
@@ -742,8 +742,8 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문12 ", { size: 17, bold: true, color: NAVY2 }), t("25 kilograms(S)·could be used(△V)·to produce~(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 이것은 쌀과 꿀로 만든 케이크이다  (2) 내 가방은 네 것보다 두 배 무겁다  (3) 종이로 만든 그 상자는 이것보다 두 배 가볍다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 StarCrete · strong · light        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 결과 · 이유 · 반전 · 이유   2-2 [B] 소개 · [E] 전망   2-3 ⑤", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 StarCrete · strong · light        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 결과 · 이유 · 반전 · 이유   2-2 [B] 소개 · [E] 전망   2-3 ③", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (a) → (d) → (b) → (c)  ·  StarCrete is a strong and light concrete made from potato starch for space missions.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) starch  (2) strong  (3) light  (4) less        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ①  문장 7 ①  문장 9 ①  문장 13 ③", { size: 19, bold: true })], { after: 150 }),
@@ -758,14 +758,14 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ③");
 B("이 글은 감자 녹말로 만든 우주용 콘크리트 스타크리트를 소개하고(문장 3–4), 강하고 가볍다는 두 장점을 짚는다(문장 7·9). 소재와 특징을 함께 담은 ③이 적절하다. ①·⑤는 지엽적, ②·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 6에서 접착제 역할을 하는 것은 소금이 아니라 녹말(starch)이다. ①은 문장 2, ②는 문장 4, ③는 문장 9, ⑤는 문장 12에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 6에서 접착제 역할을 하는 것은 소금이 아니라 녹말(starch)이다. ②은 문장 2, ③는 문장 4, ④는 문장 9, ⑤는 문장 12에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) it은 바로 앞 문장 9의 Everything we send to space를 받는다. 무거울수록 보내는 값이 더 든다는 뜻이므로, 우주로 보내는 물건이 그 대상이다.", true);
 Hs("독해 04   배열 영작   ·   StarCrete is unique because it uses starch as a glue.");
 B("문장 6을 그대로 복원한다. ① 첫 글자는 대문자 StarCrete.   ② because 뒤에는 주어+동사(it uses)가 온다.   ③ as a glue의 관사 a를 빠뜨리지 않는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 StarCrete · strong · light     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 감자 녹말로 만든 우주 건축 재료를 소개한다. ① 요리 이야기는 나오지 않고, ② 발사 비용은 이 재료가 필요한 이유일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 StarCrete · strong · light     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 감자 녹말로 만든 우주 건축 재료를 소개한다. ① 요리 이야기는 나오지 않고, ③ 발사 비용은 이 재료가 필요한 이유일 뿐이다.");
 B("1-2   ○표 할 세 단어: StarCrete(힌트① 주인공) · strong(힌트② 첫 번째 장점) · light(힌트③ 두 번째 장점). brick · satellites · Earth는 비교와 배경으로 등장할 뿐 주제문에 들어가지 않는다.");
 B("1-3   문장 4 — It은 StarCrete에 ○ (문장 3에서 발명한 그 물질).   문장 7 — This는 스타크리트에 ○ (‘space concrete’라는 별명으로 다시 부른 것).   문장 10 — it은 보내는 물건, there는 우주에 ○.");
 B("[학습 포인트]   문장 10처럼 한 문장 안에 지시어가 둘 있으면 각각 따로 확인해야 한다. it은 물건, there는 장소를 받는다 — 지시어를 만날 때마다 화살표로 짝을 이어 두자.", true);
@@ -773,10 +773,10 @@ B("[학습 포인트]   문장 10처럼 한 문장 안에 지시어가 둘 있�
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 결과 / 이유 / 반전 / 이유     2-2 [B] 소개 · [E] 전망     2-3 ⑤");
+Hs("STEP 2   글의 흐름   ·   2-1 결과 / 이유 / 반전 / 이유     2-2 [B] 소개 · [E] 전망     2-3 ③");
 B("2-1   문장 3 That’s why — 비용이 비싼 것의 ‘결과’로 발명했다.   문장 6 because — 독특한 ‘이유’.   문장 8 But — 강도가 전부는 아니라는 ‘반전’.   문장 13 Since — 장비가 필요 없다는 ‘이유’.");
 B("2-2   [B] 소개(문장 3–5: 스타크리트의 발명과 정체), [E] 전망(문장 11–13: 우주 임무가 더 싸고 간단해진다). 보기의 ‘요리법’은 이 글에 없는 역할이다. 문제 → 소개 → 강도 → 가벼움 → 전망의 흐름이다.");
-B("2-3   정답 ⑤. 새 재료의 정체·성질·쓸모를 사실 위주로 알려 주는 설명문이다. ① 가격이나 명령문이 없어 광고가 아니고, ② 일기·③ 편지·④ 동화의 신호도 없다.");
+B("2-3   정답 ③. 새 재료의 정체·성질·쓸모를 사실 위주로 알려 주는 설명문이다. ① 가격이나 명령문이 없어 광고가 아니고, ② 일기·④ 편지·⑤ 동화의 신호도 없다.");
 B("[학습 포인트]   That’s why는 ‘그래서’, because와 Since는 ‘왜냐하면’이다. 방향이 반대인 두 신호를 구분하면 원인과 결과가 저절로 정리된다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 strong · light     3-3 (a) → (d) → (b) → (c)");
 B("3-1  재료 찾기 — (2) 문장 7에서 strong에 ○: 지구 콘크리트의 두 배라고 했다. (3) 문장 9에서 light에 ○: 우주로 보내는 것은 가벼워야 한다. weak·heavy는 본문과 반대되는 말이다.");

@@ -97,9 +97,9 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① How to Save Your Energy as You Get Older",
- "② Why Young People Learn New Skills Faster",
- "③ Getting Older: Better at Controlling Emotions",
+["① Getting Older: Better at Controlling Emotions",
+ "② How to Save Your Energy as You Get Older",
+ "③ Why Young People Learn New Skills Faster",
  "④ A Psychologist Who Studies Children’s Dreams",
  "⑤ The Best Foods for a Healthy Brain"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -107,17 +107,17 @@ K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?")
 K.push(sp(65));
 ["① When we are young, our skills improve with age and experience.",
  "② Susan Turk Charles has been studying emotions for the past 20 years.",
- "③ Older people tend to have more social connections than young people.",
- "④ Older people get less upset over negative experiences.",
- "⑤ Older people usually focus on positive things."].forEach(c => K.push(ch(c)));
+ "③ Older people get less upset over negative experiences.",
+ "④ Older people usually focus on positive things.",
+ "⑤ Older people tend to have more social connections than young people."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) This가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① reacting to things very quickly",
- "② thinking more before we act",
- "③ forgetting things more often",
- "④ having less energy than before",
- "⑤ making new social connections"].forEach(c => K.push(ch(c)));
+ "② forgetting things more often",
+ "③ having less energy than before",
+ "④ making new social connections",
+ "⑤ thinking more before we act"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -749,11 +749,11 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) This helps us to stay calm.  (2) Also, older people usually focus on positive things.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("이 글은 나이가 들면 여러 능력이 떨어지지만(문장 1–3) 감정 조절만은 오히려 좋아진다(문장 4·11)는 예외를 다룬다. 소재(나이 듦)와 특징(감정 조절)을 함께 담은 ③이 제목으로 적절하다. ①·②는 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 6에서 관계가 '더 적지만 더 만족스럽다(fewer but more satisfying)'고 했으므로, 더 많다는 ③는 본문과 반대된다. ①은 문장 1, ②은 문장 5, ④은 문장 7, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ②");
+Hs("독해 01   제목   ·   정답 ①");
+B("이 글은 나이가 들면 여러 능력이 떨어지지만(문장 1–3) 감정 조절만은 오히려 좋아진다(문장 4·11)는 예외를 다룬다. 소재(나이 듦)와 특징(감정 조절)을 함께 담은 ①이 제목으로 적절하다. ②·③는 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 6에서 관계가 '더 적지만 더 만족스럽다(fewer but more satisfying)'고 했으므로, 더 많다는 ⑤는 본문과 반대된다. ①은 문장 1, ②은 문장 5, ③은 문장 7, ④는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) This는 바로 앞 문장 9의 내용, 곧 '행동하기 전에 더 생각하게 되는 것'을 가리킨다. 지시어 this는 단어 하나만이 아니라 앞 문장 전체를 받을 수도 있다.", true);
 Hs("독해 04   배열 영작   ·   They also get less upset over negative experiences.");
 B("문장 7을 그대로 복원하는 문제다. ① 첫 글자는 대문자 They.   ② also는 일반동사 get 앞.   ③ get less upset over ~ — '~에 대해 덜 속상해하다'.", true);

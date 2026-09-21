@@ -96,24 +96,26 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Saliva: The Hidden Key to How Food Tastes", "② How to Cook Broccoli in a Tasty Way",
- "③ Why Rats Are Used in Science Labs", "④ The Best Ways to Drink More Water",
+["① How to Cook Broccoli in a Tasty Way",
+ "② Saliva: The Hidden Key to How Food Tastes",
+ "③ Why Rats Are Used in Science Labs",
+ "④ The Best Ways to Drink More Water",
  "⑤ How Much Water Is in Our Body?"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Saliva is 99 percent water.",
- "② Saliva helps us taste sweet, salty, or sour flavors.",
- "③ Researchers think our saliva works like the rats’ saliva.",
- "④ The rats’ saliva stayed the same after they ate bitter food.",
+ "② The rats’ saliva stayed the same after they ate bitter food.",
+ "③ Saliva helps us taste sweet, salty, or sour flavors.",
+ "④ Researchers think our saliva works like the rats’ saliva.",
  "⑤ Researchers want to make healthy foods taste better."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) It이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① studying saliva to make healthy foods taste better",
- "② the bitter food given to the rats",
- "③ the 99 percent water in our saliva",
- "④ eating broccoli all the time",
+["① the bitter food given to the rats",
+ "② the 99 percent water in our saliva",
+ "③ eating broccoli all the time",
+ "④ studying saliva to make healthy foods taste better",
  "⑤ the difference between rats and people"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -278,8 +280,8 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 맛을 좌우하고 변하는 침",
- "② 물을 많이 마시는 방법",
+["① 물을 많이 마시는 방법",
+ "② 맛을 좌우하고 변하는 침",
  "③ 쥐를 이용한 실험 방법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
@@ -403,9 +405,9 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 하루 일을 적은 일기",
- "② 물건을 팔기 위해 만든 광고",
- "③ 대상을 소개하고 사실을 알려 주는 설명문",
+["① 대상을 소개하고 사실을 알려 주는 설명문",
+ "② 하루 일을 적은 일기",
+ "③ 물건을 팔기 위해 만든 광고",
  "④ 안부를 전하는 편지",
  "⑤ 상상으로 지어낸 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
@@ -733,8 +735,8 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문8 ", { size: 17, bold: true, color: NAVY2 }), t("if[네모]·you(S′)·eat(△V′)·broccoli(S)·won’t taste(△V)·to you(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 엄마는 내가 방과 후에 축구하는 것을 허락하신다  (2) 그는 매일 영상을 봄으로써 중국어를 배웠다  (3) 그 앱은 사람들이 간단한 게임을 함으로써 영어를 배우게 해 준다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 saliva · changes · taste        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 양보 · 덧붙임 · 반전 · 예시   2-2 [B] 변화 · [E] 기대   2-3 ③", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 saliva · changes · taste        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 양보 · 덧붙임 · 반전 · 예시   2-2 [B] 변화 · [E] 기대   2-3 ①", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (a) → (c) → (d)  ·  Saliva changes depending on what we eat and has a big effect on taste.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) water  (2) changes  (3) rats  (4) healthy        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 1 ①  문장 2 ③  문장 5 ③  문장 9 ②", { size: 19, bold: true })], { after: 150 }),
@@ -747,16 +749,16 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) Of course, rats aren’t people.  (2) But researchers think our saliva works in a similar way.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 침이 맛을 느끼게 해 주고(문장 1–3), 먹는 것에 따라 달라진다는 사실(문장 4–8)을 설명한다. 소재(saliva)와 특징(맛을 좌우한다)을 함께 담은 ①이 제목으로 적절하다. ③·⑤는 지엽적 오답, ②·④은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 5에서 쓴 음식을 먹은 쥐들의 침은 '변했다(changed)'고 했으므로, 그대로였다는 ④는 본문과 반대된다. ①은 문장 2, ②은 문장 3, ③은 문장 7, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ②");
+B("이 글은 침이 맛을 느끼게 해 주고(문장 1–3), 먹는 것에 따라 달라진다는 사실(문장 4–8)을 설명한다. 소재(saliva)와 특징(맛을 좌우한다)을 함께 담은 ②이 제목으로 적절하다. ③·⑤는 지엽적 오답, ①·④은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 5에서 쓴 음식을 먹은 쥐들의 침은 '변했다(changed)'고 했으므로, 그대로였다는 ②는 본문과 반대된다. ①은 문장 2, ③은 문장 3, ④은 문장 7, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) It은 바로 앞 문장 9의 내용, 곧 침과 음식의 상호작용을 연구해 건강한 음식을 더 맛있게 만들려는 시도를 가리킨다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   Moreover, saliva changes depending on what we eat.");
 B("문장 4를 그대로 복원하는 문제다. ① 첫 글자는 대문자 Moreover, 뒤에 콤마.   ② 주어 saliva는 단수 — 동사는 changes.   ③ depending on 뒤에 what we eat이 이어진다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 saliva · changes · taste     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 침이 맛을 좌우하고, 먹는 것에 따라 달라진다는 이야기다. ② 물 마시기는 나오지 않고, ③ 쥐 실험은 근거로 든 한 부분일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 saliva · changes · taste     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 침이 맛을 좌우하고, 먹는 것에 따라 달라진다는 이야기다. ① 물 마시기는 나오지 않고, ③ 쥐 실험은 근거로 든 한 부분일 뿐이다.");
 B("1-2   ○표 할 세 단어: saliva(힌트① 주인공) · changes(힌트② 그것이 하는 일) · taste(힌트③ 그것이 좌우하는 것). 나머지 셋(rats · water · broccoli)은 본문에 등장하지만 주제문에 들어가지 않는다 — 근거와 예시일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
 B("1-3   문장 5 — they는 쥐들에 ○ (쓴 음식을 먹은 그 쥐들).   문장 9 — these interactions는 침과 음식에 ○ (둘 사이의 상호작용).   문장 10 — It은 건강식 연구에 ○ (문장 9의 연구 전체).");
 B("[학습 포인트]   같은 글 안에서도 지시어가 가리키는 대상은 계속 바뀐다(it=침 → they=쥐들 → It=연구). 지시어를 만날 때마다 화살표로 짝을 연결해 두는 습관이 고등 독해의 지칭 추론으로 이어진다.", true);
@@ -764,10 +766,10 @@ B("[학습 포인트]   같은 글 안에서도 지시어가 가리키는 대상
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 양보 / 덧붙임 / 반전 / 예시     2-2 [B] 변화 · [E] 기대     2-3 ③");
+Hs("STEP 2   글의 흐름   ·   2-1 양보 / 덧붙임 / 반전 / 예시     2-2 [B] 변화 · [E] 기대     2-3 ①");
 B("2-1   문장 2 Though — '99%가 물이지만'이라는 '양보'.   문장 4 Moreover — 앞의 설명에 새 사실을 '덧붙임'.   문장 7 But — 쥐는 사람이 아니라는 말 뒤의 '반전'.   문장 8 For example — 브로콜리라는 '예시'.");
 B("2-2   [B] 변화(문장 4: 먹는 것에 따라 침이 달라진다), [E] 기대(문장 9–10: 건강한 식습관으로 이어지길 바란다). 보기의 '요리법'은 이 글에 없는 역할이다. [A] 소개 → [B] 변화 → [C] 실험 → [D] 사람도 → [E] 기대 — 사실을 쌓아 가는 설명문의 전형이다.");
-B("2-3   정답 ③. 침이라는 대상을 소개하고 실험 결과라는 사실을 알려 주는 설명문이다. ① I·오늘 같은 일기의 신호가 없고, ② 가격·명령문이 없어 광고도 아니며, ④ 받는 사람도 ⑤ 지어낸 이야기도 없다.");
+B("2-3   정답 ①. 침이라는 대상을 소개하고 실험 결과라는 사실을 알려 주는 설명문이다. ② I·오늘 같은 일기의 신호가 없고, ③ 가격·명령문이 없어 광고도 아니며, ④ 받는 사람도 ⑤ 지어낸 이야기도 없다.");
 B("[학습 포인트]   설명문에서는 But과 For example이 짝을 이룰 때가 많다 — 반전으로 방향을 틀고, 예시로 못을 박는다. 연결어에 동그라미만 쳐도 글의 지도가 그려진다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 changes · effect     3-3 (b) → (a) → (c) → (d)");
 B("3-1  재료 찾기 — (2) 문장 4에서 changes에 ○: 침이 하는 일이다. stops는 본문에 없는 말이다. (3) 문장 2에서 effect에 ○: 맛에 미치는 '영향'이다. water는 침의 성분일 뿐 주제가 아니다. 주제문의 재료는 언제나 본문 안에 있다.");

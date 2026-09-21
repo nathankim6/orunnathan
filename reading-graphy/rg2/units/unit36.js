@@ -78,8 +78,8 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Octopuses Throw Things to Make Friends",
- "② How to Cook an Octopus at Home",
+["① How to Cook an Octopus at Home",
+ "② Octopuses Throw Things to Make Friends",
  "③ The Best Cameras for Sea Research",
  "④ Why the Sea Water Turns Darker",
  "⑤ Animals That Live Alone in Australia"].forEach(c => K.push(ch(c)));
@@ -96,8 +96,8 @@ K.push(ask("03", "지칭", "밑줄 친 (A) They가 가리키는 것으로 가장
 K.push(sp(65));
 ["① the scientists in Australia",
  "② the cameras under the sea",
- "③ the shells on the sea floor",
- "④ the octopuses in the experiment",
+ "③ the octopuses in the experiment",
+ "④ the shells on the sea floor",
  "⑤ the people watching the video"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -402,11 +402,11 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (d) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 문어가 일부러 물건을 던진다는 관찰(문장 3–5)에서 출발해, 그것이 관계를 맺으려는 사회적 행동임을 밝힌다(문장 11–12). 소재와 결론을 함께 담은 ①가 제목이다. ③·⑤는 카메라·호주만 건드린 지엽적 오답, ②·④은 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ②");
+B("이 글은 문어가 일부러 물건을 던진다는 관찰(문장 3–5)에서 출발해, 그것이 관계를 맺으려는 사회적 행동임을 밝힌다(문장 11–12). 소재와 결론을 함께 담은 ②가 제목이다. ③·⑤는 카메라·호주만 건드린 지엽적 오답, ①·④은 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ①");
 B("문장 4–5는 그것이 사고가 아니라 '일부러(on purpose)' 한 일이라고 못 박는다. by accident로 뒤집은 ①이 본문과 반대된다. ②은 문장 2, ③는 문장 6, ④은 문장 8, ⑤는 문장 12에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) They는 문어들을 가리킨다. 문장 3의 They는 과학자들이었지만, 다른 문어를 때린 주체는 문어다 — 같은 대명사라도 문장마다 주인이 바뀐다는 점이 이 문항의 핵심이다.", true);
 Hs("독해 04   배열 영작   ·   This behavior shows that octopuses are social animals.");
 B("문장 12를 그대로 복원하는 문제다. ① 첫 글자는 대문자 This.   ② 주어가 단수 behavior이므로 동사는 shows.   ③ that 뒤에 '주어+동사(octopuses are)'가 한 세트로 이어진다.", true);

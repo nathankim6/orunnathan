@@ -79,23 +79,23 @@ K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Raise Bunnies in South Africa",
  "② The History of Sugar Cane Farming",
- "③ Bunny Chow: A Bread Bowl Full of Curry",
- "④ The Best Restaurants in Durban",
- "⑤ How to Bake Bread at Home"].forEach(c => K.push(ch(c)));
+ "③ The Best Restaurants in Durban",
+ "④ How to Bake Bread at Home",
+ "⑤ Bunny Chow: A Bread Bowl Full of Curry"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Everyone knows exactly how Bunny Chow started.",
- "② Bunny Chow has nothing to do with bunnies.",
- "③ Bunny Chow is a bread bowl filled with curry.",
+["① Bunny Chow has nothing to do with bunnies.",
+ "② Bunny Chow is a bread bowl filled with curry.",
+ "③ Everyone knows exactly how Bunny Chow started.",
  "④ Bunny Chow started in a city called Durban.",
  "⑤ Bunny Chow is a favorite street food in South Africa today."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the bread bowl",
- "② the curry",
- "③ the sugar cane field",
+ "② the sugar cane field",
+ "③ the curry",
  "④ the city of Durban",
  "⑤ the Indian restaurant"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -249,9 +249,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 남아프리카에서 토끼를 기르는 법",
- "② 사탕수수 농장의 하루",
- "③ 카레를 담은 빵 그릇, 버니 차우"].forEach(c =>
+["① 카레를 담은 빵 그릇, 버니 차우",
+ "② 남아프리카에서 토끼를 기르는 법",
+ "③ 사탕수수 농장의 하루"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -402,22 +402,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문10 ", { size: 17, bold: true, color: NAVY2 }), t("Bunny Chow(S)·is(△V)·available·in many small take-out places ~(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 오래된 사진들로 채워진 상자를 발견했다  (2) 우리는 물을 아낄 좋은 방법이 필요하다  (3) 그녀는 버스에서 읽을 책으로 채워진 가방을 갖고 있다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 bread · curry · favorite   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 bread · curry · favorite   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 F · 4 T · 5 F · 6 T · 7 T · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("이 글은 버니 차우가 카레를 담은 빵 그릇이라는 정체(문장 1–2)와 그 유래(문장 5–8)를 소개한다. 소재와 특징을 함께 담은 ③이 적절하다. ②·④는 사탕수수·더반만 건드린 지엽적 오답, ①·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ①");
-B("문장 4에서 버니 차우가 정확히 어떻게 시작되었는지는 아무도 확실히 모른다(no one is sure)고 했다. ②은 문장 1, ③는 문장 2, ④은 문장 3, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ②");
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 버니 차우가 카레를 담은 빵 그릇이라는 정체(문장 1–2)와 그 유래(문장 5–8)를 소개한다. 소재와 특징을 함께 담은 ⑤이 적절하다. ②·③는 사탕수수·더반만 건드린 지엽적 오답, ①·④는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 4에서 버니 차우가 정확히 어떻게 시작되었는지는 아무도 확실히 모른다(no one is sure)고 했다. ①은 문장 1, ②는 문장 2, ④은 문장 3, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) it은 같은 문장 앞부분의 the curry를 가리킨다. 빵이 그릇 역할을 해 따뜻하게 지켜 준 대상이 무엇인지 생각하면 된다.", true);
 Hs("독해 04   배열 영작   ·   Today, Bunny Chow is a favorite street food in South Africa.");
 B("문장 9를 그대로 복원한다. ① 첫 글자는 대문자 Today, 뒤의 콤마를 빠뜨리지 않는다.   ② a favorite street food — 관사 a가 맨 앞.   ③ in South Africa로 문장을 맺는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 bread · curry · favorite     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 카레를 담은 빵 그릇 음식 버니 차우를 소개한다. ①은 bunny를 진짜 토끼로 읽은 오답이고, ② 사탕수수 농장은 유래 속 배경일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 bread · curry · favorite     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 카레를 담은 빵 그릇 음식 버니 차우를 소개한다. ②은 bunny를 진짜 토끼로 읽은 오답이고, ③ 사탕수수 농장은 유래 속 배경일 뿐이다.");
 B("1-2   ○표 할 세 단어: bread(힌트① 그릇이 되는 것) · curry(힌트② 담기는 것) · favorite(힌트③ 사람들의 평가). 나머지 셋(bunnies · Durban · workers)은 이름의 오해와 유래일 뿐이다.");
 B("1-3   문장 3 — This tasty dish는 버니 차우에 ○.   문장 6 — They는 인도인 노동자들에 ○.   문장 8 — it은 카레에 ○.");
 B("[학습 포인트]   문장 1의 it은 음식 전체, 문장 8의 it은 카레다. 같은 it이라도 바로 앞에서 짝을 다시 찾아야 한다.", true);

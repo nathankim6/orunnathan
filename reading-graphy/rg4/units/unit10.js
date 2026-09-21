@@ -113,11 +113,11 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) It이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the town of Setenil",
- "② the Latin word for “nothing”",
- "③ the wine made by the settlers",
- "④ the vineyard destroyed by insects",
- "⑤ the word “Bodegas”"].forEach(c => K.push(ch(c)));
+["① the word “Bodegas”",
+ "② the town of Setenil",
+ "③ the Latin word for “nothing”",
+ "④ the wine made by the settlers",
+ "⑤ the vineyard destroyed by insects"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -406,8 +406,8 @@ K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 �
 ["① 물건을 팔기 위해 만든 광고",
  "② 하루 일과를 적은 일기",
  "③ 안부를 전하는 편지",
- "④ 상상으로 지어낸 동화",
- "⑤ 마을을 소개하고 사실을 알려 주는 설명문"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
+ "④ 마을을 소개하고 사실을 알려 주는 설명문",
+ "⑤ 상상으로 지어낸 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
 K.push(brk());
@@ -736,7 +736,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 우리는 1900년에 지어진 집을 방문했다  (2) 버스를 타는 대신, 그녀는 학교까지 걸어갔다  (3) 종이로 만들어진 지도를 쓰는 대신, 우리는 휴대전화를 사용했다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 town · houses · rocks        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 반전 · 대신 · 이유   2-2 [B] 유래 · [E] 마무리   2-3 ⑤", { size: 19, bold: true })], { after: 25 }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 반전 · 대신 · 이유   2-2 [B] 유래 · [E] 마무리   2-3 ④", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (d) → (a) → (b) → (c)  ·  In a Spanish town, people really live in houses built inside rocks.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) rocks  (2) caves  (3) name  (4) famous        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 1 ③  문장 4 ③  문장 7 ①  문장 11 ②", { size: 19, bold: true })], { after: 150 }),
@@ -753,7 +753,7 @@ Hs("독해 01   제목   ·   정답 ⑤");
 B("이 글은 바위 안에 지은 집에서 사람들이 실제로 사는 스페인 마을 세테닐(문장 2–4)과 그 이름의 유래(문장 5–9)를 소개한다. 소재(마을)와 특징(바위 속 집)을 함께 담은 ⑤이 제목으로 적절하다. ①·③는 지엽적 오답, ②·④는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ⑤");
 B("문장 4에서 무어인들은 새 집을 짓는 대신(Instead of building new houses) 자연 동굴을 넓혔다. ⑤이 본문과 반대된다. ①은 문장 2, ②는 문장 3, ③는 문장 8, ④는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) It은 바로 앞 문장 8의 낱말 “Bodegas”를 가리킨다. 마을 이름에 덧붙여진 것이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   The town’s name explains the history of the town.");
 B("문장 5를 그대로 복원하는 문제다. ① 첫 글자는 대문자 The.   ② 주어 name은 단수이므로 explains.   ③ the history of the town — 소유를 나타내는 of의 자리에 주의한다.", true);
@@ -766,10 +766,10 @@ B("[학습 포인트]   지시어는 사람만이 아니라 낱말 하나도 대
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 때 / 반전 / 대신 / 이유     2-2 [B] 유래 · [E] 마무리     2-3 ⑤");
+Hs("STEP 2   글의 흐름   ·   2-1 때 / 반전 / 대신 / 이유     2-2 [B] 유래 · [E] 마무리     2-3 ④");
 B("2-1   문장 1 When — 사람들이 그렇게 물을 '때'.   문장 2 But — 말뜻과 달리 진짜로 산다는 '반전'.   문장 4 Instead of — 새로 짓는 '대신'에 동굴을 넓혔다.   문장 7 because — 이름이 그렇게 붙은 '이유'.");
 B("2-2   [B] 유래(문장 3–4: 12세기 무어인이 동굴을 넓혔다), [E] 마무리(문장 10–11: 포도밭은 사라졌지만 여전히 유명하다). 보기의 '요리법'은 이 글에 없는 역할이다. [A] 소개 → [B] 유래 → [C] 이름 ① → [D] 이름 ② → [E] 마무리.");
-B("2-3   정답 ⑤. 마을의 집·역사·이름을 사실 그대로 알려 주는 설명문이다. ①는 가격·명령문이 없어 광고가 아니고, ②은 I·Today가 없으며, ③는 Dear·안부가 없고, ④는 지어낸 인물과 사건이 없다.");
+B("2-3   정답 ④. 마을의 집·역사·이름을 사실 그대로 알려 주는 설명문이다. ①는 가격·명령문이 없어 광고가 아니고, ②은 I·Today가 없으며, ③는 Dear·안부가 없고, ⑤는 지어낸 인물과 사건이 없다.");
 B("[학습 포인트]   문장 2의 But이 이 글의 문을 연다. 관용 표현을 뒤집는 But 뒤에 진짜 소재가 나오는 것은 설명문이 즐겨 쓰는 도입 방식이다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 Spanish · houses     3-3 (d) → (a) → (b) → (c)");
 B("3-1  재료 찾기 — (2) 문장 2에서 Spanish에 ○: 마을이 있는 나라다. Latin은 문장 6의 낱말 유래일 뿐이다. (3) 문장 2에서 houses에 ○: 사람들이 사는 건물이다. caves는 그 집이 만들어진 재료 자리다.");

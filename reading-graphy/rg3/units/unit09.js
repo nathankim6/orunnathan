@@ -81,8 +81,8 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How Plastic Cards Are Made",
- "② Microplastics in Our Clothes and How to Stay Safe",
- "③ Fresh Air and Healthy Lungs",
+ "② Fresh Air and Healthy Lungs",
+ "③ Microplastics in Our Clothes and How to Stay Safe",
  "④ The Best Way to Dry Clothes Fast",
  "⑤ A Short History of Plastic Bags"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -91,16 +91,16 @@ K.push(sp(65));
 ["① Microplastics come from larger plastics that break down.",
  "② The microplastics we eat in a week are about the size of a plastic card.",
  "③ Little fibers from clothes can travel very far.",
- "④ Washing clothes at a lower temperature can reduce fibers.",
- "⑤ Clothes we wear make up about 15% of the microplastic pollution."].forEach(c => K.push(ch(c)));
+ "④ Clothes we wear make up about 15% of the microplastic pollution.",
+ "⑤ Washing clothes at a lower temperature can reduce fibers."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) They가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the clothes we wear",
  "② the foods and drinks",
- "③ the little fibers from clothes",
- "④ the people with sick lungs",
- "⑤ the eco-friendly materials"].forEach(c => K.push(ch(c)));
+ "③ the people with sick lungs",
+ "④ the eco-friendly materials",
+ "⑤ the little fibers from clothes"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -253,8 +253,8 @@ K.push(spF(4, 300, 0.10));
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 ["① 플라스틱 카드를 만드는 방법",
- "② 옷을 오래 입는 세탁 요령",
- "③ 미세 플라스틱과 나를 지키는 방법"].forEach(c =>
+ "② 미세 플라스틱과 나를 지키는 방법",
+ "③ 옷을 오래 입는 세탁 요령"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -405,22 +405,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문12 ", { size: 17, bold: true, color: NAVY2 }), t("If[네모]·you(S′)·do(△V′)·you(S)·can keep(△V)·away from yourself(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 현미로 만든 빵을 좋아한다  (2) 그는 에너지를 아끼기 위해 불을 껐다  (3) 그녀는 지구를 돕기 위해 낡은 청바지로 만든 가방을 샀다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 microplastics · clothes · safe   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 microplastics · clothes · safe   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 T · 5 F · 6 T · 7 T · 8 F", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (d) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ②");
-B("이 글은 미세 플라스틱의 가장 큰 원인이 옷이라는 사실(문장 4–6)과 나를 지키는 방법(문장 9–11)을 알려 준다. 소재와 해법을 함께 담은 ②이 적절하다. ①·③은 카드·공기만 건드린 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 4에서 옷은 미세 플라스틱 오염의 약 35%를 차지한다고 했다. 15%로 바꾼 ⑤이 본문과 다르다. ①은 문장 1, ②는 문장 2, ③는 문장 5, ④는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 미세 플라스틱의 가장 큰 원인이 옷이라는 사실(문장 4–6)과 나를 지키는 방법(문장 9–11)을 알려 준다. 소재와 해법을 함께 담은 ③이 적절하다. ①·②은 카드·공기만 건드린 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 4에서 옷은 미세 플라스틱 오염의 약 35%를 차지한다고 했다. 15%로 바꾼 ④이 본문과 다르다. ①은 문장 1, ②는 문장 2, ③는 문장 5, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) They는 바로 앞 문장 5의 little fibers를 가리킨다. 같은 문장 5의 they가 옷을 가리켰던 것과 대상이 달라지는 지점이다.", true);
 Hs("독해 04   배열 영작   ·   Microplastics are found in almost everything we eat and drink.");
 B("문장 3을 그대로 복원한다. ① 첫 글자는 대문자 Microplastics.   ② are found — 수동태는 be+p.p 한 덩어리.   ③ everything 뒤에 we eat and drink가 이어진다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 microplastics · clothes · safe     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 미세 플라스틱이 어디서 오고 어떻게 나를 지킬지 알려 준다. ① 카드는 크기를 비교한 예일 뿐이고, ② 세탁 요령은 방법 중 하나일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 microplastics · clothes · safe     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 미세 플라스틱이 어디서 오고 어떻게 나를 지킬지 알려 준다. ① 카드는 크기를 비교한 예일 뿐이고, ③ 세탁 요령은 방법 중 하나일 뿐이다.");
 B("1-2   ○표 할 세 단어: microplastics(힌트① 주인공) · clothes(힌트② 가장 큰 원인) · safe(힌트③ 글쓴이가 권하는 상태). 나머지 셋(lungs · week · fibers)은 근거와 세부 사항이다.");
 B("1-3   문장 6 — They는 작은 섬유들에 ○.   문장 12 — these things는 세 가지 방법에 ○.   문장 13 — This는 세 가지를 실천하기에 ○.");
 B("[학습 포인트]   문장 5의 they는 옷, 문장 6의 They는 섬유다. 같은 they라도 바로 앞 문장을 다시 확인해야 대상이 바뀌는 지점을 놓치지 않는다.", true);

@@ -77,25 +77,27 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Horse Bread: Why Horses Were a Baker’s Best Customer", "② How to Bake White Bread at Home",
- "③ The First Railways in England", "④ What Farmers Grew in the Middle Ages",
+["① How to Bake White Bread at Home",
+ "② Horse Bread: Why Horses Were a Baker’s Best Customer",
+ "③ The First Railways in England",
+ "④ What Farmers Grew in the Middle Ages",
  "⑤ Why People Ate 1.3 Kilograms of Bread"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① In the Middle Ages, people ate about 1.3 kilograms of bread a day.",
- "② Horse bread was expensive and hard to carry.",
- "③ Horse bread was flat and brown, unlike the white bread people ate.",
- "④ Horse bread was made by using leftovers from the bakery.",
- "⑤ The first railways opened in England in 1830."].forEach(c => K.push(ch(c)));
+ "② Horse bread was flat and brown, unlike the white bread people ate.",
+ "③ Horse bread was made by using leftovers from the bakery.",
+ "④ The first railways opened in England in 1830.",
+ "⑤ Horse bread was expensive and hard to carry."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) they가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the horses working in the country",
- "② the bakers in the Middle Ages",
- "③ the owners of the working horses",
- "④ the heavy things people carried",
- "⑤ the first railways in England"].forEach(c => K.push(ch(c)));
+["① the first railways in England",
+ "② the horses working in the country",
+ "③ the bakers in the Middle Ages",
+ "④ the owners of the working horses",
+ "⑤ the heavy things people carried"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -400,11 +402,11 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 영국의 제빵사에게 가장 큰 고객이 말이었다는 사실(문장 1–3)과, 말을 위한 특별한 빵(문장 4–7)을 소개한다. 소재(horse bread)와 특징(말이 최대 고객)을 함께 담은 ①이 제목으로 적절하다. ③·⑤는 지엽적 오답, ②·④은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 6에서 말 빵은 값이 싸고(cheap) 나르기 쉬웠다(easy to carry)고 했으므로, 비싸고 나르기 어려웠다는 ②은 본문과 반대된다. ①은 문장 2, ③은 문장 4, ④는 문장 5, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 01   제목   ·   정답 ②");
+B("이 글은 영국의 제빵사에게 가장 큰 고객이 말이었다는 사실(문장 1–3)과, 말을 위한 특별한 빵(문장 4–7)을 소개한다. 소재(horse bread)와 특징(말이 최대 고객)을 함께 담은 ②이 제목으로 적절하다. ③·⑤는 지엽적 오답, ①·④은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 6에서 말 빵은 값이 싸고(cheap) 나르기 쉬웠다(easy to carry)고 했으므로, 비싸고 나르기 어려웠다는 ⑤은 본문과 반대된다. ①은 문장 2, ②은 문장 4, ③는 문장 5, ④는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) they는 같은 문장 앞부분의 the first railways를 가리킨다. 말을 대신해 사람과 무거운 짐을 나른 주체가 무엇인지 보면 된다 — 문장 8의 they(말들)와 가리키는 대상이 다르다는 점이 함정이다.", true);
 Hs("독해 04   배열 영작   ·   It was cheap, easy to carry and also good for the horses.");
 B("문장 6을 그대로 복원하는 문제다. ① 첫 글자는 대문자 It.   ② cheap 뒤의 콤마를 빠뜨리지 않는다.   ③ easy to carry — 형용사 뒤에 to부정사가 붙는다.", true);

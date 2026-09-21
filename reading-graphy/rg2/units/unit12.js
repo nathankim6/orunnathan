@@ -90,9 +90,9 @@ K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?")
 K.push(sp(65));
 ["① Lowri sent a letter to Disney when she was 9.",
  "② Lowri’s mom shared her letter on Facebook.",
- "③ Disney ignored the letter and made no new character.",
- "④ Lowri started a campaign called #GlassesOn.",
- "⑤ Lowri also sent a letter to big tech companies like Google."].forEach(c => K.push(ch(c)));
+ "③ Lowri started a campaign called #GlassesOn.",
+ "④ Lowri also sent a letter to big tech companies like Google.",
+ "⑤ Disney ignored the letter and made no new character."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) they가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
@@ -251,8 +251,8 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 안경 쓴 캐릭터를 늘리려는 편지와 캠페인",
- "② 좋은 안경을 고르는 방법",
+["① 좋은 안경을 고르는 방법",
+ "② 안경 쓴 캐릭터를 늘리려는 편지와 캠페인",
  "③ 영국 소녀의 학교생활"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
@@ -399,7 +399,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문13 ", { size: 17, bold: true, color: NAVY2 }), t("Many people(S)·agree(△V)·and[네모]·we(S)·’ll keep(△V)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 선생님은 나에게 문을 닫아 달라고 하셨다  (2) 공원에 많은 사람들이 있었다  (3) 경비원 두 명이 있었고, 그들은 우리에게 밖에서 기다려 달라고 했다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 glasses · letter · campaign   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 glasses · letter · campaign   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 F · 5 T · 6 F · 7 F · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (b) → (c) → (d)", { size: 19, bold: true })], { after: 0 }),
@@ -407,14 +407,14 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ②");
 B("이 글은 안경 쓴 캐릭터를 늘려 달라고 디즈니에 편지를 쓴 소녀(문장 3–7)와 이모지를 위한 캠페인(문장 8–13) 이야기다. 소재(편지)와 목적(안경 쓴 캐릭터)을 함께 담은 ②이 제목으로 적절하다. ③·④은 세부만 건드린 지엽적 오답, ①·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 6에서 디즈니는 편지에 귀 기울여(listened) 미라벨이라는 캐릭터를 만들었다. 무시했다는 ③이 본문과 반대된다. ①은 문장 3, ②은 문장 5, ④은 문장 8, ⑤는 문장 12에서 확인된다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 6에서 디즈니는 편지에 귀 기울여(listened) 미라벨이라는 캐릭터를 만들었다. 무시했다는 ⑤이 본문과 반대된다. ①은 문장 3, ②은 문장 5, ③은 문장 8, ④는 문장 12에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) they는 같은 문장 앞부분의 few emojis with glasses를 가리킨다. 로리와 닮지 않았다고 한 대상이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   I also started a campaign called #GlassesOn.");
 B("문장 8을 그대로 복원하는 문제다. ① 첫 글자는 대문자 I.   ② also는 동사 started 앞자리.   ③ called #GlassesOn이 앞의 a campaign을 뒤에서 꾸민다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 glasses · letter · campaign     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 안경 쓴 캐릭터와 이모지를 늘리려 한 로리의 편지와 캠페인 이야기다. ② 안경 고르는 법은 나오지 않고, ③ 학교생활도 다루지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 glasses · letter · campaign     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 안경 쓴 캐릭터와 이모지를 늘리려 한 로리의 편지와 캠페인 이야기다. ① 안경 고르는 법은 나오지 않고, ③ 학교생활도 다루지 않는다.");
 B("1-2   ○표 할 세 단어: glasses(힌트① 로리가 늘리고 싶었던 것) · letter(힌트② 로리가 쓴 것) · campaign(힌트③ 로리가 시작한 것). 나머지 셋(Disney · Facebook · England)은 본문에 등장하지만 주제문에 들어가지 않는다 — 상대와 배경일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
 B("1-3   문장 5 — it은 나의 편지에 ○ (엄마가 페이스북에 올린 그 편지).   문장 9 — The idea는 #GlassesOn 캠페인에 ○ (문장 8의 캠페인).   문장 10 — they는 안경 낀 이모지에 ○ (같은 문장 앞부분).");
 B("[학습 포인트]   The idea처럼 'the + 명사'도 지시어 노릇을 한다. 앞 문장 전체를 한 단어로 받는 자리이니, the가 붙은 명사를 만나면 '앞의 무엇을 말하는 거지?'를 물어보자.", true);

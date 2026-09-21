@@ -82,24 +82,24 @@ K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Choose a Good Bike",
  "② The Best High Schools in America",
- "③ The Most Dangerous Roads in Colombia",
- "④ A Teenager’s Long Ride from Alaska to Argentina",
+ "③ A Teenager’s Long Ride from Alaska to Argentina",
+ "④ The Most Dangerous Roads in Colombia",
  "⑤ Reading Books About Faraway Countries"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Liam went on his adventure when he was 17 years old.",
- "② Liam’s journey was easy from start to end.",
- "③ A book about a bike trip inspired Liam.",
- "④ In Colombia, Liam even had a bike accident.",
+ "② A book about a bike trip inspired Liam.",
+ "③ In Colombia, Liam even had a bike accident.",
+ "④ Liam’s journey was easy from start to end.",
  "⑤ After 527 days, Liam reached Argentina."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) That experience가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① finishing high school in Alaska",
- "② reading a book about a long bike trip",
- "③ having a bike accident in Colombia",
- "④ traveling through 14 countries",
+ "② having a bike accident in Colombia",
+ "③ traveling through 14 countries",
+ "④ reading a book about a long bike trip",
  "⑤ meeting a famous teenager"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -252,7 +252,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 좋은 자전거를 고르고 고치는 방법", "② 알래스카에서 아르헨티나까지 자전거로 달린 10대", "③ 콜롬비아의 위험한 도로 사정"].forEach(c =>
+["① 좋은 자전거를 고르고 고치는 방법",
+ "② 콜롬비아의 위험한 도로 사정",
+ "③ 알래스카에서 아르헨티나까지 자전거로 달린 10대"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -404,22 +406,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문13 ", { size: 17, bold: true, color: NAVY2 }), t("He(S)·says(△V)·Anyone(S′)·can do(△V′)·amazing things", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 숙제를 끝낸 뒤에, TV를 보았다  (2) 너는 자전거를 아주 잘 탈 수 있다  (3) 우리는 점심을 먹은 뒤에, 축구를 할 수 있다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 bike · adventure · encourages   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 bike · adventure · encourages   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 F · 4 T · 5 T · 6 T · 7 F · 8 F", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (b) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ④");
-B("이 글은 17살 리암이 알래스카에서 아르헨티나까지 자전거로 달린 이야기다(문장 2·10). 주인공(10대)과 소재(긴 자전거 여행)를 함께 담은 ④이 정답이다. ③·⑤는 지엽적이고, ①·②은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 6에서 리암의 여정은 '전혀 쉽지 않았다(wasn’t easy at all)'고 했으므로, 처음부터 끝까지 쉬웠다는 ②은 본문과 반대된다. ①은 문장 2, ③은 문장 4–5, ④은 문장 8, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ②");
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 17살 리암이 알래스카에서 아르헨티나까지 자전거로 달린 이야기다(문장 2·10). 주인공(10대)과 소재(긴 자전거 여행)를 함께 담은 ③이 정답이다. ④·⑤는 지엽적이고, ①·②은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 6에서 리암의 여정은 '전혀 쉽지 않았다(wasn’t easy at all)'고 했으므로, 처음부터 끝까지 쉬웠다는 ④은 본문과 반대된다. ①은 문장 2, ②은 문장 4–5, ③은 문장 8, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) That experience는 바로 앞 문장 4에서 자전거 여행에 관한 책을 읽은 일을 가리킨다. that+명사는 앞 내용을 통째로 받는다 — 바로 앞 문장에서 짝을 찾자.", true);
 Hs("독해 04   배열 영작   ·   After 527 days, Liam reached Argentina.");
 B("문장 10을 그대로 복원하는 문제다. ① 첫 글자는 대문자 After.   ② days 뒤의 콤마를 빠뜨리지 않는다.   ③ reach는 뒤에 전치사 없이 바로 목적지가 온다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 bike · adventure · encourages     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 자전거로 아메리카 대륙을 종단한 10대 리암의 이야기다. ① 자전거 고르는 법은 나오지 않고, ③ 콜롬비아는 사고가 난 곳일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 bike · adventure · encourages     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 자전거로 아메리카 대륙을 종단한 10대 리암의 이야기다. ① 자전거 고르는 법은 나오지 않고, ② 콜롬비아는 사고가 난 곳일 뿐이다.");
 B("1-2   ○표 할 세 단어: bike(힌트① 타고 간 것) · adventure(힌트② 해낸 일) · encourages(힌트③ 지금 하는 일). 나머지 셋(book · Colombia · school)은 본문에 나오지만 주제문에는 들어가지 않는다.");
 B("1-3   문장 5 — That은 책을 읽은 일, him은 리암에 ○.   문장 11 — his는 리암의에 ○.   문장 12 — others는 리암이 아닌 사람들에 ○.");
 B("[학습 포인트]   문장 5가 이 지문의 백미다. 한 문장 안에서 That(사건)과 him(사람)이 서로 다른 것을 가리킨다 — 사람인지 사건인지 먼저 가르자.", true);

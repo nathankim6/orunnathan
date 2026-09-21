@@ -87,14 +87,14 @@ K.push(sp(65));
 ["① Many people plant colorful plants and flowers around their homes.",
  "② White, red, and pink flowers were studied more than green ones.",
  "③ In Australia, milkweed is an important food source for butterflies.",
- "④ Blue plants received the least research attention because they’re very rare.",
- "⑤ Ugly plants often get less attention because of their appearance."].forEach(c => K.push(ch(c)));
+ "④ Ugly plants often get less attention because of their appearance.",
+ "⑤ Blue plants received the least research attention because they’re very rare."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) those가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① colorful flowers in gardens",
- "② ugly plants in danger",
- "③ blue plants that are very rare",
+ "② blue plants that are very rare",
+ "③ ugly plants in danger",
  "④ butterflies and sun moths",
  "⑤ scientists who study plants"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -248,9 +248,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 못생겼다는 이유로 연구에서 밀려나는 식물들",
- "② 집을 꾸미는 화려한 꽃 고르기",
- "③ 호주에 사는 희귀한 나방"].forEach(c =>
+["① 집을 꾸미는 화려한 꽃 고르기",
+ "② 호주에 사는 희귀한 나방",
+ "③ 못생겼다는 이유로 연구에서 밀려나는 식물들"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -402,7 +402,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문8 ", { size: 17, bold: true, color: NAVY2 }), t("Despite their importance(M)·plants(S)·get(△V)·due to their appearance(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 이 노래는 많은 학생들에게 사랑받는다  (2) 매일 자전거를 타는 것은 너를 튼튼하게 만든다  (3) 채소를 기르는 것은 우리 과학 수업에서 가르쳐진다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 ugly · attention · role   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 ugly · attention · role   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 T · 5 T · 6 T · 7 F · 8 F", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (b) → (c) → (d)", { size: 19, bold: true })], { after: 0 }),
@@ -410,14 +410,14 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ②");
 B("이 글은 색이 예쁜 식물에 연구가 쏠리고(문장 2–4), 못생긴 식물은 중요한 역할에도 관심을 못 받는다(문장 6–8)고 지적한 뒤 연구를 촉구한다(문장 11). 소재와 주장을 함께 담은 ②이 제목이다. ①·③는 지엽적, ④·⑤는 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 4에서 파란 식물은 아주 드물어서 '가장 많은(the most)' 연구 관심을 받았다. least로 뒤집은 ④이 본문과 반대된다. ①은 문장 1, ②은 문장 3, ③는 문장 7, ⑤는 문장 8에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ②");
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 4에서 파란 식물은 아주 드물어서 '가장 많은(the most)' 연구 관심을 받았다. least로 뒤집은 ⑤이 본문과 반대된다. ①은 문장 1, ②은 문장 3, ③는 문장 7, ④는 문장 8에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) those는 바로 앞의 ugly plants를 받는다. especially those in danger는 '특히 위험에 처한 (못생긴) 식물들'이라는 뜻이다 — those는 앞에 나온 복수 명사를 대신한다.", true);
 Hs("독해 04   배열 영작   ·   White, red, and pink flowers were studied more than green and brown ones.");
 B("문장 3을 그대로 복원하는 문제다. ① 첫 글자는 대문자 White, 뒤의 콤마도 그대로.   ② 수동태 were studied — be동사+과거분사.   ③ 비교는 more than, 반복을 피한 ones로 끝난다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 ugly · attention · role     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 생김새 때문에 연구에서 밀려나는 식물을 다룬다. ② 집 꾸미기는 도입의 배경일 뿐이고, ③ 나방은 예시 속 곤충이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 ugly · attention · role     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 생김새 때문에 연구에서 밀려나는 식물을 다룬다. ① 집 꾸미기는 도입의 배경일 뿐이고, ② 나방은 예시 속 곤충이다.");
 B("1-2   ○표 할 세 단어: ugly(힌트① 주목하는 식물) · attention(힌트② 못 받는 것) · role(힌트③ 자연에서 하는 일). 나머지 셋(blue · butterflies · colors)은 본문에 나오지만 예시와 배경일 뿐이다.");
 B("1-3   문장 3 — ones는 flowers에 ○ (앞에 나온 명사의 반복을 피한 말).   문장 4 — they는 파란 식물.   문장 8 — their도, these plants도 모두 앞 문장의 못생긴 식물을 가리킨다.");
 B("[학습 포인트]   같은 their라도 문장 2에서는 과학자들을, 문장 8에서는 식물을 가리킨다. 지시어는 뜻이 아니라 '바로 앞의 자리'로 찾는 것이 원칙이다.", true);

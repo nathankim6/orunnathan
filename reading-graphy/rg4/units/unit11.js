@@ -76,8 +76,10 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Nightmares: The Word and the Creatures Behind It", "② How to Sleep Well Without Any Dreams",
- "③ The History of Steel Doors in Germany", "④ King Vanlandi: The Greatest King of Scandinavia",
+["① How to Sleep Well Without Any Dreams",
+ "② The History of Steel Doors in Germany",
+ "③ King Vanlandi: The Greatest King of Scandinavia",
+ "④ Nightmares: The Word and the Creatures Behind It",
  "⑤ Why Vampire Movies Are Popular Today"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
@@ -93,8 +95,8 @@ K.push(sp(65));
 ["① the shoes near the door",
  "② the people who are sleeping",
  "③ the keyholes in the door",
- "④ the old stories from Scandinavia",
- "⑤ the creatures that bring nightmares"].forEach(c => K.push(ch(c)));
+ "④ the creatures that bring nightmares",
+ "⑤ the old stories from Scandinavia"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -395,11 +397,11 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 ‘nightmare’라는 말이 악령을 뜻하는 mare에서 왔다는 유래(문장 2–4)와, 나쁜 꿈을 일으킨다고 여겨진 여러 문화의 존재들(문장 5–10)을 소개한다. 소재(악몽)와 특징(말의 유래·존재들)을 함께 담은 ①이 제목으로 적절하다. ③·④는 지엽적 오답, ②·⑤는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 ‘nightmare’라는 말이 악령을 뜻하는 mare에서 왔다는 유래(문장 2–4)와, 나쁜 꿈을 일으킨다고 여겨진 여러 문화의 존재들(문장 5–10)을 소개한다. 소재(악몽)와 특징(말의 유래·존재들)을 함께 담은 ④이 제목으로 적절하다. ②·③는 지엽적 오답, ①·⑤는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ④");
 B("문장 6에서 바닐란디 왕은 메어에게 죽임을 당했다(was killed by a mare). 주어와 목적어가 뒤바뀐 ④이 본문과 반대된다. ①은 문장 2, ②는 문장 3, ③는 문장 8, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) them은 바로 앞 문장 8의 악몽을 가져온다고 여겨지는 존재들을 가리킨다. 신발과 쇠붙이로 쫓으려는 대상이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   Nowadays, we use the word “nightmare” to describe any scary dream.");
 B("문장 4를 그대로 복원하는 문제다. ① 첫 글자는 대문자 Nowadays, 뒤에 콤마.   ② use the word “nightmare” — 목적어 덩어리를 붙여 둔다.   ③ '묘사하기 위해'는 to describe.", true);

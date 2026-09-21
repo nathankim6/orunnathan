@@ -108,16 +108,16 @@ K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Roman concrete buildings have survived for over 2,000 years.",
- "② Researchers noticed small white chunks in Roman concrete.",
- "③ Romans mixed lime, volcanic ash, and water at low temperatures.",
+ "② Romans mixed lime, volcanic ash, and water at low temperatures.",
+ "③ Researchers noticed small white chunks in Roman concrete.",
  "④ Lime clasts act like glue when they come into contact with water.",
  "⑤ Researchers hope their findings could help improve modern concrete."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) they가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the lime clasts",
- "② the Roman researchers",
- "③ the tiny cracks",
+["① the tiny cracks",
+ "② the lime clasts",
+ "③ the Roman researchers",
  "④ the ancient buildings",
  "⑤ the modern engineers"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -286,7 +286,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 화산재를 캐내는 방법", "② 스스로 균열을 고치는 로마 콘크리트", "③ 고대 로마의 유명한 건축가들"].forEach(c =>
+["① 화산재를 캐내는 방법",
+ "② 고대 로마의 유명한 건축가들",
+ "③ 스스로 균열을 고치는 로마 콘크리트"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -410,9 +412,9 @@ K.push(spF(5, 360, 0.38));
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
 ["① 물건을 팔기 위해 만든 광고",
- "② 과학이 밝혀낸 사실을 알려 주는 설명문",
- "③ 하루 일을 적은 일기",
- "④ 친구에게 보내는 편지",
+ "② 하루 일을 적은 일기",
+ "③ 친구에게 보내는 편지",
+ "④ 과학이 밝혀낸 사실을 알려 주는 설명문",
  "⑤ 리듬을 살려 쓴 시"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
@@ -742,8 +744,8 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("reaction(S)·happens·fixes(△V)·before[네모]·they(S′)·get(△V′)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 공원에서 '팀'이라고 불리는 소년을 만났다  (2) 그 경기를 이기기 위해, 그들은 매일 연습했다  (3) '로보'라고 불리는 장난감을 사기 위해, 그는 돈을 모았다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 concrete · self-healing · lime clasts        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 결과 · 강조 · 때 · 순서   2-2 [B] 수수께끼 · [E] 기대   2-3 ②", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 concrete · self-healing · lime clasts        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 결과 · 강조 · 때 · 순서   2-2 [B] 수수께끼 · [E] 기대   2-3 ④", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (c) → (d) → (a) → (b)  ·  Roman concrete has a self-healing ability because lime clasts fill tiny cracks.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) secret  (2) temperatures  (3) glue  (4) cracks        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ③  문장 3 ②  문장 9 ③  문장 12 ②", { size: 19, bold: true })], { after: 150 }),
@@ -758,14 +760,14 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ③");
 B("이 글은 2,000년을 버틴 로마 콘크리트의 비밀이 스스로 균열을 메우는 능력임을 밝힌다(문장 4·8–11). 소재와 특징을 모두 담은 ③이 제목으로 적절하다. ①·②은 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 5에서 로마인들은 높은 온도(high temperatures)에서 재료를 섞었다. 낮은 온도라고 한 ③가 본문과 반대된다. ①은 문장 2, ②은 문장 6, ④는 문장 9, ⑤는 문장 13에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 5에서 로마인들은 높은 온도(high temperatures)에서 재료를 섞었다. 낮은 온도라고 한 ②가 본문과 반대된다. ①은 문장 2, ③은 문장 6, ④는 문장 9, ⑤는 문장 13에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) they는 바로 앞의 the cracks를 가리킨다. 균열이 더 커지기 전에 메워진다는 뜻이다 — 문장 10의 They는 석회 덩어리지만, 이 they는 대상이 바뀌었다.", true);
 Hs("독해 04   배열 영작   ·   They fill tiny cracks and repair damage.");
 B("문장 10을 그대로 복원하는 문제다. ① 첫 글자는 대문자 They.   ② 형용사 tiny는 명사 cracks 앞에.   ③ and가 두 동사구(fill ~ / repair ~)를 잇는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 concrete · self-healing · lime clasts     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 균열을 스스로 메우는 로마 콘크리트를 다룬다. ① 화산재는 재료 중 하나일 뿐이고, ③ 뛰어난 건축가 이야기는 문장 1의 배경이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 concrete · self-healing · lime clasts     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 균열을 스스로 메우는 로마 콘크리트를 다룬다. ① 화산재는 재료 중 하나일 뿐이고, ② 뛰어난 건축가 이야기는 문장 1의 배경이다.");
 B("1-2   ○표 할 세 단어: concrete(힌트① 주인공) · self-healing(힌트② 놀라운 능력) · lime clasts(힌트③ 능력을 만드는 알갱이). 나머지 셋(Romans · buildings · researchers)은 본문에 자주 나오지만 주제문에 들어가지 않는다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
 B("1-3   문장 7 — These는 흰 덩어리들에 ○ (문장 6의 lime clasts).   문장 10 — They는 석회 덩어리들에 ○.   문장 11 — they는 작은 균열들에 ○ (바로 앞의 the cracks).");
 B("[학습 포인트]   문장 10의 They와 문장 11의 they는 모양이 같아도 가리키는 것이 다르다. 지시어는 늘 '바로 앞'에서 찾고, 수와 뜻이 맞는지 확인하는 습관을 들이자.", true);
@@ -773,10 +775,10 @@ B("[학습 포인트]   문장 10의 They와 문장 11의 they는 모양이 같�
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 결과 / 강조 / 때 / 순서     2-2 [B] 수수께끼 · [E] 기대     2-3 ②");
+Hs("STEP 2   글의 흐름   ·   2-1 결과 / 강조 / 때 / 순서     2-2 [B] 수수께끼 · [E] 기대     2-3 ④");
 B("2-1   문장 1 so — 뛰어난 기술의 '결과'로 인상적인 구조물을 만들었다.   문장 8 In fact — 앞 내용을 다시 못 박는 '강조'.   문장 9 When — 물과 닿는 '때'.   문장 11 before — 균열이 커지기 전이라는 '순서'.");
 B("2-2   [B] 수수께끼(문장 3–4: 오랜 세월 풀리지 않던 비밀을 마침내 찾아냄), [E] 기대(문장 12–13: 오늘의 결과와 현대 콘크리트에 대한 기대). 보기의 '요리법'은 이 글에 없는 역할이다. [A] 소개 → [B] 수수께끼 → [C] 발견 → [D] 원리 → [E] 기대 — 설명문의 전형적인 흐름이다.");
-B("2-3   정답 ②. 과학이 밝혀낸 사실을 차례로 알려 주는 설명문이다. ① 가격이나 명령문이 없어 광고가 아니고, ③ I·날짜, ④ Dear ~, ⑤ 운율 같은 신호도 없다.");
+B("2-3   정답 ④. 과학이 밝혀낸 사실을 차례로 알려 주는 설명문이다. ① 가격이나 명령문이 없어 광고가 아니고, ② I·날짜, ③ Dear ~, ⑤ 운율 같은 신호도 없다.");
 B("[학습 포인트]   연결어만 표시해도 글의 지도가 그려진다. so(결과), In fact(강조), When(때), before(순서). 설명문은 '무엇이 있다 → 왜 그런가 → 그래서 어떻다'로 흐른다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 self-healing · lime clasts     3-3 (c) → (d) → (a) → (b)");
 B("3-1  재료 찾기 — (2) 문장 4에서 self-healing에 ○: 연구자들이 찾아낸 비밀이다. man-made는 본문에 없는 말이다. (3) 문장 9에서 lime clasts에 ○: 물과 닿으면 접착제처럼 작용하는 알갱이다. volcanic ash는 재료 중 하나일 뿐이다.");

@@ -99,8 +99,8 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Children Who Work on Cacao Farms",
- "② Chocolate Without Cacao Beans: Better for All",
+["① Chocolate Without Cacao Beans: Better for All",
+ "② Children Who Work on Cacao Farms",
  "③ The Sweet Taste of Old Chocolate",
  "④ How to Make Barley Bread at Home",
  "⑤ The Best Chocolate Shops in the U.K."].forEach(c => K.push(ch(c)));
@@ -115,8 +115,8 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① regular chocolate made from cacao beans",
- "② the new chocolate without cacao beans",
+["① the new chocolate without cacao beans",
+ "② regular chocolate made from cacao beans",
  "③ the dark side of the chocolate industry",
  "④ a big cacao farm in a hot country",
  "⑤ barley bread from the U.K."].forEach(c => K.push(ch(c)));
@@ -284,9 +284,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 카카오빈 없이 만든 새로운 초콜릿",
- "② 카카오 농장에서 일하는 아이들",
- "③ 초콜릿 케이크 만드는 법"].forEach(c =>
+["① 카카오 농장에서 일하는 아이들",
+ "② 초콜릿 케이크 만드는 법",
+ "③ 카카오빈 없이 만든 새로운 초콜릿"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -406,8 +406,8 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 새로운 사실을 알려 주는 설명문",
- "② 물건을 팔기 위해 만든 광고",
+["① 물건을 팔기 위해 만든 광고",
+ "② 새로운 사실을 알려 주는 설명문",
  "③ 하루 일을 적은 일기",
  "④ 친구에게 보내는 편지",
  "⑤ 옛이야기를 들려주는 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
@@ -739,8 +739,8 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문13 ", { size: 17, bold: true, color: NAVY2 }), t("if[네모]·people(S′)·buy(△V′)·side(S)·might become(△V)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 이 빵은 쌀로 만들어진다  (2) 그녀는 우유를 사기 위해 가게에 갔다  (3) 이 카드는 나무를 아끼기 위해 헌 종이로 만들어진다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 chocolate · cacao · better        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 덧붙임 · 결과 · 반전 · 조건   2-2 [B] 문제 · [E] 평가   2-3 ①", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 chocolate · cacao · better        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 덧붙임 · 결과 · 반전 · 조건   2-2 [B] 문제 · [E] 평가   2-3 ②", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (a) → (b) → (c) → (d)  ·  This new chocolate without cacao beans is better for the Earth and people.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) cacao  (2) problems  (3) barley  (4) better        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 3 ②  문장 6 ③  문장 8 ②  문장 11 ①", { size: 19, bold: true })], { after: 150 }),
@@ -753,16 +753,16 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) Many people love eating chocolate.  (2) This new chocolate is better for the Earth and people.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ②");
-B("이 글은 카카오빈을 쓰지 않는 새 초콜릿(문장 7–10)과 그 장점(문장 11)을 알려 준다. 소재와 특징을 함께 담은 ②이 제목으로 적절하다. ①·③는 지엽적이고, ④·⑤는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ①");
+B("이 글은 카카오빈을 쓰지 않는 새 초콜릿(문장 7–10)과 그 장점(문장 11)을 알려 준다. 소재와 특징을 함께 담은 ①이 제목으로 적절하다. ②·③는 지엽적이고, ④·⑤는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ⑤");
 B("문장 6에서 큰 회사들은 문제를 해결하겠다고 약속만 했을 뿐 별로 바뀐 것이 없다고 했다. ①은 문장 2, ②은 문장 4, ③은 문장 8, ④는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ②");
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) it은 문장 7–11의 카카오빈 없는 새 초콜릿을 가리킨다. 사람들이 더 많이 사면 초콜릿 산업이 밝아진다는 흐름이다 — 지시어는 앞에서 찾는다.", true);
 Hs("독해 04   배열 영작   ·   It looks and tastes like regular chocolate.");
 B("문장 8을 그대로 복원한다. ㄱ 첫 글자는 대문자 It.   ㄴ looks and tastes — 동사 두 개를 and로 잇는다.   ㄷ like는 '~처럼'이라는 뜻이다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 chocolate · cacao · better     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 카카오빈 없이 만든 새 초콜릿을 소개한다. ② 아이들 이야기는 문제점의 한 예이고, ③ 케이크 만드는 법은 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 chocolate · cacao · better     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 카카오빈 없이 만든 새 초콜릿을 소개한다. ① 아이들 이야기는 문제점의 한 예이고, ② 케이크 만드는 법은 나오지 않는다.");
 B("1-2   ○표 할 세 단어: chocolate(힌트① 주인공) · cacao(힌트② 쓰지 않는 것) · better(힌트③ 평가). children · barley · expensive는 본문에 있지만 주제문에는 들어가지 않는다.");
 B("1-3   문장 5 — these cacao farms는 카카오 농장들에 ○.   문장 6 — these problems는 아동 노동과 벌목에 ○(문장 4–5).   문장 13 — it은 새로운 초콜릿에 ○.");
 B("[학습 포인트]   these problems처럼 지시어는 단어 하나가 아니라 앞 문장 전체를 받기도 한다. 지시어를 만나면 앞으로 돌아가 짝을 찾는 습관을 들이자.", true);
@@ -770,10 +770,10 @@ B("[학습 포인트]   these problems처럼 지시어는 단어 하나가 아�
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 덧붙임 / 결과 / 반전 / 조건     2-2 [B] 문제 · [E] 평가     2-3 ①");
+Hs("STEP 2   글의 흐름   ·   2-1 덧붙임 / 결과 / 반전 / 조건     2-2 [B] 문제 · [E] 평가     2-3 ②");
 B("2-1   문장 5 Plus — 문제 하나를 더 '덧붙임'.   문장 7 So — 문제의 '결과'로 새 초콜릿이 나왔다.   문장 9 However — 앞 문장과 방향이 바뀌는 '반전'.   문장 13 if — '~한다면'이라는 '조건'.");
 B("2-2   [B] 문제(문장 3–5: 아동 노동과 벌목), [E] 평가(문장 11–13: 지구와 사람에게 더 좋다). 보기의 '요리법'은 이 글에 없는 역할이다. 소개 → 문제 → 등장 → 특징 → 평가의 흐름이다.");
-B("2-3   정답 ①. 새로운 초콜릿이라는 대상을 소개하고 사실을 알려 주는 설명문이다(문장 2·10). ② 가격이나 사라는 말이 없어 광고가 아니고, ③ I나 날짜, ④ Dear, ⑤ 옛이야기의 신호도 없다.");
+B("2-3   정답 ②. 새로운 초콜릿이라는 대상을 소개하고 사실을 알려 주는 설명문이다(문장 2·10). ① 가격이나 사라는 말이 없어 광고가 아니고, ③ I나 날짜, ④ Dear, ⑤ 옛이야기의 신호도 없다.");
 B("[학습 포인트]   연결어만 표시해도 글의 지도가 그려진다. Plus(덧붙임), So(결과), However(반전), if(조건). 특히 마지막 문장의 But은 글쓴이가 진짜 하고 싶은 말의 신호다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 cacao beans · better     3-3 (a) → (b) → (c) → (d)");
 B("3-1  재료 찾기 — (2) 문장 9에서 cacao beans에 ○: 새 초콜릿이 쓰지 '않는' 재료다. barley는 대신 쓰는 재료라 자리가 다르다. (3) 문장 11에서 better에 ○: 글쓴이의 평가다.");

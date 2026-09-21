@@ -97,15 +97,17 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① A Brave Rat Who Made the World Safer", "② How to Keep a Rat as a Pet",
- "③ Soccer Fields in Cambodia", "④ The Wild Animals of Tanzania",
- "⑤ The Best Way to Find Gold"].forEach(c => K.push(ch(c)));
+["① How to Keep a Rat as a Pet",
+ "② Soccer Fields in Cambodia",
+ "③ The Wild Animals of Tanzania",
+ "④ The Best Way to Find Gold",
+ "⑤ A Brave Rat Who Made the World Safer"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Magawa helped find landmines in Cambodia for five years.",
- "② He helped clear more than 225,000 square meters of land.",
- "③ Magawa learned to find bombs in Cambodia.",
+["① Magawa learned to find bombs in Cambodia.",
+ "② Magawa helped find landmines in Cambodia for five years.",
+ "③ He helped clear more than 225,000 square meters of land.",
  "④ He was given a gold medal for his work.",
  "⑤ Magawa died at the age of 8 after retiring."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -280,9 +282,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 지뢰를 찾아낸 영웅 쥐 이야기",
- "② 애완용 쥐를 기르는 방법",
- "③ 캄보디아의 축구 경기장"].forEach(c =>
+["① 애완용 쥐를 기르는 방법",
+ "② 캄보디아의 축구 경기장",
+ "③ 지뢰를 찾아낸 영웅 쥐 이야기"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -405,9 +407,9 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 한 동물의 삶과 업적을 사실대로 전하는 글",
- "② 물건을 팔기 위해 만든 광고",
- "③ 친구에게 안부를 묻는 편지",
+["① 물건을 팔기 위해 만든 광고",
+ "② 친구에게 안부를 묻는 편지",
+ "③ 한 동물의 삶과 업적을 사실대로 전하는 글",
  "④ 요리 방법을 알려 주는 설명문",
  "⑤ 상상으로 지어낸 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
@@ -737,8 +739,8 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문10 ", { size: 17, bold: true, color: NAVY2 }), t("people(S)·said(△V)·because[네모]·he(S′)·saved(△V′)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 부산에 사는 친구가 한 명 있다  (2) 그녀는 영화를 봄으로써 중국어를 배웠다  (3) 그는 만화책을 읽음으로써 영어를 공부하는 소년이다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 rat · landmines · brave        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 순서 · 안타까움 · 이유 · 반전   2-2 [B] 훈련 · [E] 평가   2-3 ①", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 rat · landmines · brave        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 순서 · 안타까움 · 이유 · 반전   2-2 [B] 훈련 · [E] 평가   2-3 ③", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (a) → (d) → (b) → (c)  ·  Magawa was a brave rat who found landmines and saved so many lives.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) smell  (2) landmines  (3) medal  (4) brave        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 1 ①  문장 2 ③  문장 9 ①  문장 11 ③", { size: 19, bold: true })], { after: 150 }),
@@ -751,16 +753,16 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) That’s equal to 40 soccer fields!  (2) To thank him for this, he was given a gold medal.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 지뢰를 찾아낸 쥐 마가와의 활약(문장 1·5·7)과 세상을 더 안전하게 만들었다는 평가(문장 11)를 전한다. 소재(rat)와 평가(brave·safer)를 모두 담은 ①이 제목으로 적절하다. ③·④는 배경만 건드린 지엽적 오답, ②·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 2에서 마가와는 탄자니아에서 태어난 뒤 그곳에서 폭탄 찾는 법을 배웠고, 캄보디아로 옮긴 것은 그 다음이다(문장 3). ①은 문장 1, ②은 문장 5, ④는 문장 8, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 지뢰를 찾아낸 쥐 마가와의 활약(문장 1·5·7)과 세상을 더 안전하게 만들었다는 평가(문장 11)를 전한다. 소재(rat)와 평가(brave·safer)를 모두 담은 ⑤이 제목으로 적절하다. ②·③는 배경만 건드린 지엽적 오답, ①·④는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 2에서 마가와는 탄자니아에서 태어난 뒤 그곳에서 폭탄 찾는 법을 배웠고, 캄보디아로 옮긴 것은 그 다음이다(문장 3). ②은 문장 1, ③은 문장 5, ④는 문장 8, ⑤는 문장 9에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) this는 바로 앞 문장 7의 내용, 곧 100개가 넘는 지뢰와 숨은 위험물을 찾아낸 일을 가리킨다. 무엇이 고마워서 상을 주었는지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   He began his work after moving to Cambodia.");
 B("문장 3을 그대로 복원하는 문제다. ① 첫 글자는 대문자 He.   ② began his work — '일을 시작했다'가 한 덩어리.   ③ 전치사 after 뒤에는 동명사 moving.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 rat · landmines · brave     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 지뢰를 찾아내 많은 목숨을 구한 쥐 마가와의 이야기다. ② 쥐를 기르는 법은 나오지 않고, ③ 축구장은 넓이를 견주기 위한 비유일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 rat · landmines · brave     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 지뢰를 찾아내 많은 목숨을 구한 쥐 마가와의 이야기다. ① 쥐를 기르는 법은 나오지 않고, ② 축구장은 넓이를 견주기 위한 비유일 뿐이다.");
 B("1-2   ○표 할 세 단어: rat(힌트① 주인공) · landmines(힌트② 찾아낸 것) · brave(힌트③ 글쓴이의 평가). 나머지 셋(Cambodia · Tanzania · medal)은 본문에 등장하지만 배경과 보상일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
 B("1-3   문장 8 — this는 지뢰를 찾아낸 일에 ○ (문장 7의 내용).   문장 10 — him은 마가와에 ○ (훈련을 받은 쪽).   문장 11 — they는 사람들에 ○, this rat은 마가와에 ○.");
 B("[학습 포인트]   문장 11이 이 지문의 백미다. 한 문장 안에서 they(사람들)와 this brave rat(마가와)이 서로 다른 것을 가리킨다. 지시어를 만날 때마다 '이게 뭘 가리키지?'를 확인해 화살표로 연결해 두자. 이 습관이 고등 독해의 지칭 추론 문항으로 이어진다.", true);
@@ -768,10 +770,10 @@ B("[학습 포인트]   문장 11이 이 지문의 백미다. 한 문장 안에�
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 순서 / 안타까움 / 이유 / 반전     2-2 [B] 훈련 · [E] 평가     2-3 ①");
+Hs("STEP 2   글의 흐름   ·   2-1 순서 / 안타까움 / 이유 / 반전     2-2 [B] 훈련 · [E] 평가     2-3 ③");
 B("2-1   문장 2 After — 태어난 뒤에 배웠다는 '순서'.   문장 9 Unfortunately — 안타까운 소식이 온다는 신호.   문장 10 because — 큰 유산을 남겼다고 말하는 '이유'.   문장 11 but — 슬픔에서 감사로 방향이 바뀌는 '반전'.");
 B("2-2   [B] 훈련(문장 2–3: 탄자니아에서 냄새로 찾는 법을 배우고 캄보디아로 옮겨 일을 시작한다), [E] 평가(문장 10–11: 많은 목숨을 구한 용감한 쥐라는 평가). 보기의 '홍보'는 이 글에 없는 역할이다. [A] 소개 → [B] 훈련 → [C] 활약 → [D] 이별 → [E] 평가 — 한 주인공의 일생을 따라가는 흐름이다.");
-B("2-3   정답 ①. 실제로 있었던 한 동물의 삶과 업적을 사실대로 알려 주는 글이다. ② 광고의 신호(가격·사라는 말)가 없고, ③ 편지의 형식(Dear ~)도, ④ 요리법도, ⑤ 지어낸 이야기의 신호도 없다.");
+B("2-3   정답 ③. 실제로 있었던 한 동물의 삶과 업적을 사실대로 알려 주는 글이다. ① 광고의 신호(가격·사라는 말)가 없고, ② 편지의 형식(Dear ~)도, ④ 요리법도, ⑤ 지어낸 이야기의 신호도 없다.");
 B("[학습 포인트]   연결어만 표시해도 글의 지도가 그려진다. After(순서), because(이유), but(반전). 특히 마지막 문장의 but은 글쓴이가 진짜 하고 싶은 말의 신호 — 여기서 주제문의 재료(brave)가 나온다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 brave · landmines     3-3 (a) → (d) → (b) → (c)");
 B("3-1  재료 찾기 — (2) 문장 11에서 brave에 ○: 글쓴이가 마가와에게 붙인 평가다. afraid는 본문에 없는 말이다. (3) 문장 7에서 landmines에 ○: 마가와가 찾아낸 것이다. soccer fields는 넓이를 견주는 비유일 뿐. 주제문의 재료는 언제나 본문 안에 있다.");

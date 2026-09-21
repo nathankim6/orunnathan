@@ -89,16 +89,16 @@ K.push(sp(65));
 ["① Noam Oxman writes special songs to remember pets.",
  "② Noam loved animals, music, and drawings.",
  "③ The name Sympawnies comes from “symphony” and “paw.”",
- "④ Noam makes gentle music when the pet is lively.",
- "⑤ Noam thought Chubby Cat was sweet and playful."].forEach(c => K.push(ch(c)));
+ "④ Noam thought Chubby Cat was sweet and playful.",
+ "⑤ Noam makes gentle music when the pet is lively."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) The results가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the pets that Noam lost when he was young",
  "② the words “symphony” and “paw”",
  "③ the drawings sent by the pet owners",
- "④ the songs and scores made from pet photos",
- "⑤ the schools that teach music and art"].forEach(c => K.push(ch(c)));
+ "④ the schools that teach music and art",
+ "⑤ the songs and scores made from pet photos"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -250,8 +250,8 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 반려동물을 기억하는 노래를 만드는 작곡가",
- "② 반려동물 사진을 잘 찍는 방법",
+["① 반려동물 사진을 잘 찍는 방법",
+ "② 반려동물을 기억하는 노래를 만드는 작곡가",
  "③ 교향곡(symphony)의 역사"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
@@ -398,7 +398,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문13 ", { size: 17, bold: true, color: NAVY2 }), t("he(S)·made(△V)·a sweet and playful song·just like Chubby Cat(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 이 영화는 나를 행복하게 만든다  (2) 그녀는 새 자전거를 사기 위해 돈을 모았다  (3) 엄마는 내가 키가 크도록 우유를 마시게 하신다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 composer · songs · pets   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 composer · songs · pets   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 F · 4 F · 5 T · 6 T · 7 F · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (d) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
@@ -406,14 +406,14 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ①");
 B("이 글은 반려동물 사진으로 노래를 만드는 작곡가 노암 옥스먼(문장 1·6–7)과 그가 곡을 짓는 방법(문장 9–13)을 소개한다. 소재(작곡가·사진·노래)를 모두 담은 ①이 제목으로 적절하다. ②·③는 사진·단어만 건드린 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 10에서 반려동물이 활발하면(lively) 밝은 음악을, 문장 11에서 차분하면 부드러운 음악을 만든다고 했다. 둘을 뒤바꾼 ④이 본문과 다르다. ①은 문장 1, ②은 문장 4, ③는 문장 5, ⑤는 문장 12에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 10에서 반려동물이 활발하면(lively) 밝은 음악을, 문장 11에서 차분하면 부드러운 음악을 만든다고 했다. 둘을 뒤바꾼 ⑤이 본문과 다르다. ①은 문장 1, ②은 문장 4, ③는 문장 5, ④는 문장 12에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) The results는 바로 앞 문장 6–7의 내용, 곧 반려동물 사진으로 만든 노래와 그 반려동물을 꼭 닮은 악보를 함께 가리킨다. 그래서 눈과 귀 모두에게 즐겁다고 한 것이다.", true);
 Hs("독해 04   배열 영작   ·   He uses pet photos to create beautiful songs.");
 B("문장 6을 그대로 복원하는 문제다. ① 첫 글자는 대문자 He.   ② '~하기 위해'는 to+동사원형 — to create.   ③ pet photos(반려동물 사진)의 어순에 주의한다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 composer · songs · pets     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 반려동물을 기억하게 해 주는 노래를 만드는 작곡가를 소개한다. ② 사진 찍는 법은 나오지 않고, ③ 교향곡의 역사도 다루지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 composer · songs · pets     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 반려동물을 기억하게 해 주는 노래를 만드는 작곡가를 소개한다. ① 사진 찍는 법은 나오지 않고, ③ 교향곡의 역사도 다루지 않는다.");
 B("1-2   ○표 할 세 단어: composer(힌트① 이 글의 주인공) · songs(힌트② 그가 만드는 것) · pets(힌트③ 노래가 기억하게 해 주는 대상). 나머지 셋(photos · school · drawings)은 본문에 등장하지만 주제문에 들어가지 않는다 — 재료와 배경일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
 B("1-3   문장 3 — his talents는 노암의 재능에 ○ (문장 1의 작곡가 본인).   문장 8 — The results는 악보와 노래에 ○ (문장 6–7의 결과물).   문장 9 — their는 반려동물들에 ○ (their owners = 반려동물의 주인들).");
 B("[학습 포인트]   문장 2의 they는 사람들이지만 문장 9의 their는 반려동물이다. 같은 글 안에서도 가리키는 대상이 바뀌므로, 지시어를 만날 때마다 짝을 확인하자.", true);

@@ -83,15 +83,15 @@ K.push(sp(65));
 ["① When we’re anxious, we might have an upset stomach.",
  "② In a study, researchers removed good bacteria from mice’s guts.",
  "③ Fermented foods such as yogurt and kimchi can reduce anxious feelings.",
- "④ Removing the good bacteria made the mice calm and happy.",
- "⑤ The tiny bacteria in these foods help with digestion."].forEach(c => K.push(ch(c)));
+ "④ The tiny bacteria in these foods help with digestion.",
+ "⑤ Removing the good bacteria made the mice calm and happy."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) these findings가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the results of the study with mice",
- "② the names of some fermented foods",
- "③ the medicines that improve our mood",
- "④ the feelings of the researchers",
+["① the names of some fermented foods",
+ "② the medicines that improve our mood",
+ "③ the feelings of the researchers",
+ "④ the results of the study with mice",
  "⑤ the tiny bacteria in our guts"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -244,9 +244,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 장 속 좋은 박테리아가 우리 기분에 주는 영향",
- "② 집에서 요구르트를 만드는 방법",
- "③ 실험용 쥐를 기르는 방법"].forEach(c =>
+["① 집에서 요구르트를 만드는 방법",
+ "② 실험용 쥐를 기르는 방법",
+ "③ 장 속 좋은 박테리아가 우리 기분에 주는 영향"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -398,7 +398,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문10 ", { size: 17, bold: true, color: NAVY2 }), t("They(S)·think(△V)·that[네모]·bacteria(S′)·might work(△V′)·similarly(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 만화책을 읽는 것은 나를 행복하게 만든다  (2) 내 여동생은 요즘 중국어를 배우고 있다  (3) 아침을 먹는 것이 내가 수업 시간에 깨어 있도록 도와주고 있다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 bacteria · guts · feelings   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 bacteria · guts · feelings   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 T · 4 T · 5 F · 6 F · 7 F · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (d) → (b) → (a)", { size: 19, bold: true })], { after: 0 }),
@@ -406,14 +406,14 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ①");
 B("이 글은 장 속 좋은 박테리아가 우리 감정에 영향을 준다는 연구(문장 3·6·8)를 소개한다. 소재(good bacteria)와 효과(calm you down)를 함께 담은 ①이 제목으로 적절하다. ②·④는 요구르트·쥐만 건드린 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 5에서 좋은 박테리아를 없애자 쥐들은 더 스트레스를 받고 불안해졌다. calm and happy로 뒤집은 ④이 본문과 반대된다. ①은 문장 2, ②은 문장 4, ③는 문장 8, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 5에서 좋은 박테리아를 없애자 쥐들은 더 스트레스를 받고 불안해졌다. calm and happy로 뒤집은 ⑤이 본문과 반대된다. ①은 문장 2, ②은 문장 4, ③는 문장 8, ④는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) these findings는 바로 앞 문장 4–6의 쥐 실험 결과, 곧 좋은 박테리아가 스트레스와 불안을 줄였다는 발견을 가리킨다 — this/these가 붙으면 앞에서 짝을 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   This made the mice more stressed and anxious.");
 B("문장 5를 그대로 복원하는 문제다. ① 첫 글자는 대문자 This.   ② make A B(A를 B 상태로 만들다) — the mice 뒤에 상태가 온다.   ③ more stressed and anxious — 두 말을 and로 잇는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 bacteria · guts · feelings     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 장 속 작은 박테리아가 우리 기분을 바꾼다는 연구를 소개한다. ② 요구르트 만드는 법은 나오지 않고, ③ 쥐는 근거를 보여 주는 실험 대상일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 bacteria · guts · feelings     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 장 속 작은 박테리아가 우리 기분을 바꾼다는 연구를 소개한다. ① 요구르트 만드는 법은 나오지 않고, ② 쥐는 근거를 보여 주는 실험 대상일 뿐이다.");
 B("1-2   ○표 할 세 단어: bacteria(힌트① 주인공) · guts(힌트② 사는 곳) · feelings(힌트③ 영향을 주는 것). 나머지 셋(mice · yogurt · study)은 근거를 보여 주는 예일 뿐 주제문에 들어가지 않는다.");
 B("1-3   문장 6 — they는 연구자들, their는 쥐들에 ○ (한 문장 안에서 대상이 바뀐다).   문장 7 — these findings는 쥐 실험 결과.   문장 9 — these foods는 앞 문장의 발효 식품(요구르트·피클·김치).");
 B("[학습 포인트]   this/these가 붙은 지시어는 '앞에 나온 바로 그것'이라는 표지다. 문장 7의 these findings처럼 앞 세 문장을 통째로 받기도 한다.", true);

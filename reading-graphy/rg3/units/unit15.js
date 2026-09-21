@@ -79,27 +79,27 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① How to Build a Safe Apartment in California",
- "② The Best Plants to Grow in a Dry Area",
- "③ Why Goats Drink a Lot of Water",
- "④ A Guide to Football Fields in Sacramento",
- "⑤ Hungry Goats: Firefighters with Four Legs"].forEach(c => K.push(ch(c)));
+["① Hungry Goats: Firefighters with Four Legs",
+ "② How to Build a Safe Apartment in California",
+ "③ The Best Plants to Grow in a Dry Area",
+ "④ Why Goats Drink a Lot of Water",
+ "⑤ A Guide to Football Fields in Sacramento"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① A huge wildfire broke out in West Sacramento, California.",
  "② 400 hungry goats had eaten most of the dry plants in the area.",
  "③ The city let the goats out a few weeks before the fire.",
- "④ Goats use less water than firefighters.",
- "⑤ The goats ate only the plants that were not poisonous."].forEach(c => K.push(ch(c)));
+ "④ The goats ate only the plants that were not poisonous.",
+ "⑤ Goats use less water than firefighters."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) That이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the fire moving toward the building",
  "② the city letting the goats out",
  "③ the apartment building being safe",
- "④ the goats eating the dry plants every day",
- "⑤ the poisonous plants in the area"].forEach(c => K.push(ch(c)));
+ "④ the poisonous plants in the area",
+ "⑤ the goats eating the dry plants every day"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -252,8 +252,8 @@ K.push(spF(4, 300, 0.10));
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 ["① 캘리포니아의 안전한 아파트 짓기",
- "② 염소를 길러 우유를 얻는 법",
- "③ 산불을 막아 준 염소들"].forEach(c =>
+ "② 산불을 막아 준 염소들",
+ "③ 염소를 길러 우유를 얻는 법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -399,22 +399,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문5 ", { size: 17, bold: true, color: NAVY2 }), t("The goats(S)·had eaten(△V)·so[네모]·the fire(S′)·had(△V′)·nothing to burn", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 저 구름은 큰 토끼처럼 보인다  (2) 내 가방은 네 것보다 더 무겁다  (3) 이 케이크는 집처럼 보이고, 사탕보다 더 달다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 goats · weeds · fire   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 goats · weeds · fire   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 F · 4 T · 5 F · 6 T · 7 F · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (d) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ⑤");
-B("갑자기 멈춘 산불의 정체가 400마리 염소였다는 사건(문장 1–5)과 염소가 잡초 제거·화재 예방에 모두 뛰어나다는 평가(문장 10–12)를 담은 글이다. 소재와 평가를 함께 담은 ⑤이 제목이다. ③은 본문과 반대이고 ①·②·④는 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 7에서 염소는 독이 있는 식물까지(including the poisonous ones) 잘 먹는다고 했으므로, 독 없는 식물만 먹었다는 ⑤은 본문과 다르다. ①은 문장 1, ②은 문장 4–5, ③는 문장 7, ④는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 01   제목   ·   정답 ①");
+B("갑자기 멈춘 산불의 정체가 400마리 염소였다는 사건(문장 1–5)과 염소가 잡초 제거·화재 예방에 모두 뛰어나다는 평가(문장 10–12)를 담은 글이다. 소재와 평가를 함께 담은 ①이 제목이다. ④은 본문과 반대이고 ②·③·⑤는 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 7에서 염소는 독이 있는 식물까지(including the poisonous ones) 잘 먹는다고 했으므로, 독 없는 식물만 먹었다는 ④은 본문과 다르다. ①은 문장 1, ②은 문장 4–5, ③는 문장 7, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) That은 바로 앞 문장 8의 내용, 곧 염소들이 매일 마른 풀을 먹어 치운 일을 가리킨다. that은 단어 하나가 아니라 앞 문장 전체를 받을 수 있다.", true);
 Hs("독해 04   배열 영작   ·   Plus, goats use less water than firefighters.");
 B("문장 11을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Plus — 뒤의 콤마까지 함께 쓴다.   ② less water가 한 덩어리.   ③ 비교 대상 firefighters 앞에 than을 놓는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 goats · weeds · fire     1-3 아래 참조");
-B("1-1   정답 ③. 염소들이 마른 풀을 먹어 산불을 막았다는 글이다. ① 아파트는 불이 향하던 건물로 한 번 나올 뿐이고, ② 우유 이야기는 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 goats · weeds · fire     1-3 아래 참조");
+B("1-1   정답 ②. 염소들이 마른 풀을 먹어 산불을 막았다는 글이다. ① 아파트는 불이 향하던 건물로 한 번 나올 뿐이고, ③ 우유 이야기는 나오지 않는다.");
 B("1-2   ○표 할 세 단어: goats(힌트① 이 글의 주인공) · weeds(힌트② 염소가 먹어 치우는 것) · fire(힌트③ 염소가 막아 준 것). 나머지 셋(apartment · water · magic)은 본문에 나오지만 배경과 비유일 뿐이다.");
 B("1-3   문장 6 — these goats는 400마리 염소에 ○ (문장 4).   문장 7 — the poisonous ones는 독이 있는 식물에 ○ (ones = plants).   문장 9 — That은 염소가 풀을 먹은 일에 ○ (문장 8 전체).");
 B("[학습 포인트]   ones는 앞에 나온 명사를 대신하는 말이다(the poisonous ones = the poisonous plants). 지시어가 단어를 받는지, 문장 전체를 받는지 구별하는 것이 지칭 문항의 핵심이다.", true);

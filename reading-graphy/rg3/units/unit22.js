@@ -99,16 +99,16 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① The First People Who Walked on the Moon",
- "② New Spacesuits for a Return to the Moon",
- "③ How to Become a NASA Astronaut",
+ "② How to Become a NASA Astronaut",
+ "③ New Spacesuits for a Return to the Moon",
  "④ Why Spacesuits Are Always Black",
  "⑤ The Best Places to Watch the Stars"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① It has been over 50 years since people last visited the Moon.",
- "② The old suits were comfortable and fit everyone well.",
- "③ The new suits are the first redesign in 40 years.",
+ "② The new suits are the first redesign in 40 years.",
+ "③ The old suits were comfortable and fit everyone well.",
  "④ The helmet has a video camera and lights.",
  "⑤ The actual spacesuit will be white like the old one."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -116,8 +116,8 @@ K.push(ask("03", "지칭", "밑줄 친 (A) they가 가리키는 것으로 가장
 K.push(sp(65));
 ["① the astronauts on the mission",
  "② the old suits",
- "③ American men and women",
- "④ the new spacesuits",
+ "③ the new spacesuits",
+ "④ American men and women",
  "⑤ the video cameras"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -271,8 +271,8 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 달 탐사를 위한 NASA의 새 우주복",
- "② 달을 처음 밟은 사람들의 이야기",
+["① 달을 처음 밟은 사람들의 이야기",
+ "② 달 탐사를 위한 NASA의 새 우주복",
  "③ 우주에서 입는 멋진 정장(suit)의 유행"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
@@ -392,9 +392,9 @@ K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 �
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
 ["① 물건을 팔기 위해 만든 광고",
  "② 우주비행사가 쓴 하루 일기",
- "③ 새 우주복을 소개하는 설명문",
- "④ 달 여행에 초대하는 초대장",
- "⑤ 리듬을 살려 쓴 시"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
+ "③ 달 여행에 초대하는 초대장",
+ "④ 리듬을 살려 쓴 시",
+ "⑤ 새 우주복을 소개하는 설명문"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
 K.push(brk());
@@ -723,8 +723,8 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("spacesuit(S)·will be(△V)·However·just like the old one·to reflect ~ temperatures(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 이 가방은 저것보다 더 가볍고 더 싸다  (2) 그녀는 새 자전거를 사기 위해 돈을 모았다  (3) 그는 첫 기차를 잡기 위해 형보다 더 일찍 일어났다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 spacesuits · astronauts · Moon        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 대조 · 덧붙임 · 결과 · 반전   2-2 [B] 문제점 · [E] 전망   2-3 ③", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 spacesuits · astronauts · Moon        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 대조 · 덧붙임 · 결과 · 반전   2-2 [B] 문제점 · [E] 전망   2-3 ⑤", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (d) → (a) → (b) → (c)  ·  With new spacesuits, astronauts can move more easily and study the Moon better.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) Moon  (2) lighter  (3) easily  (4) white        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 5 ②  문장 7 ①  문장 11 ①  문장 12 ②", { size: 19, bold: true })], { after: 150 }),
@@ -737,16 +737,16 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) The helmet has a video camera and lights for better viewing.  (2) The old suits were hard to move in and didn’t fit everyone.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ②");
-B("이 글은 달 복귀 임무를 위해 40년 만에 새로 설계된 NASA의 우주복을 소개한다. 소재(새 우주복)와 특징(달 복귀)을 모두 담은 ②이 제목으로 적절하다. ①·④은 본문의 한 부분(과거 방문·검은 디자인)만 건드린 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 5에서 옛 우주복은 '움직이기 힘들었고 모든 사람에게 맞지 않았다'고 했으므로, 편했다는 ②는 본문과 반대된다. ①은 문장 1, ③은 문장 4, ④은 문장 9, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 달 복귀 임무를 위해 40년 만에 새로 설계된 NASA의 우주복을 소개한다. 소재(새 우주복)와 특징(달 복귀)을 모두 담은 ③이 제목으로 적절하다. ①·④은 본문의 한 부분(과거 방문·검은 디자인)만 건드린 지엽적 오답, ②·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 5에서 옛 우주복은 '움직이기 힘들었고 모든 사람에게 맞지 않았다'고 했으므로, 편했다는 ③는 본문과 반대된다. ①은 문장 1, ②은 문장 4, ④은 문장 9, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) they는 바로 앞 문장 6의 the new spacesuits를 가리킨다. '더 가볍고 유연한' 것이 무엇인지 생각하면 된다. 문장 3의 they(우주비행사들)와 다른 대상을 가리키는 점에 주의 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   This time, they will wear new spacesuits!");
 B("문장 3을 그대로 복원하는 문제다. ① 첫 글자는 대문자 This, time 뒤의 콤마를 빠뜨리지 않는다.   ② 조동사 will 뒤에는 동사원형 wear.   ③ 문장 끝은 느낌표(!)로 마무리한다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 spacesuits · astronauts · Moon     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 달 탐사를 위해 새로 만든 NASA의 우주복을 소개한다. ② 과거의 달 방문은 배경일 뿐이고, ③ suit의 다른 뜻(정장) 이야기는 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 spacesuits · astronauts · Moon     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 달 탐사를 위해 새로 만든 NASA의 우주복을 소개한다. ① 과거의 달 방문은 배경일 뿐이고, ③ suit의 다른 뜻(정장) 이야기는 나오지 않는다.");
 B("1-2   ○표 할 세 단어: spacesuits(힌트① 주인공) · astronauts(힌트② 입는 사람들) · Moon(힌트③ 다시 찾아갈 곳). 나머지 셋(helmet · camera · white)은 본문에 등장하지만 새 우주복의 세부 사항일 뿐, 주제문에는 들어가지 않는다.");
 B("1-3   문장 3 — they는 우주비행사들에 ○ (문장 2에서 달로 돌아갈 사람들).   문장 7 — they는 새 우주복들에 ○ (문장 6의 the new spacesuits).   문장 10 — its는 새 디자인에 ○ (비밀을 지키는 주인).");
 B("[학습 포인트]   문장 3의 they와 문장 7의 they가 서로 다른 것을 가리킨다 — 같은 지시어라도 대상이 바뀌는 지점이 이 지문의 백미다. they를 만날 때마다 바로 앞 문장에서 짝을 확인하는 습관이 고등 지칭 추론으로 이어진다.", true);
@@ -754,10 +754,10 @@ B("[학습 포인트]   문장 3의 they와 문장 7의 they가 서로 다른 �
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 대조 / 덧붙임 / 결과 / 반전     2-2 [B] 문제점 · [E] 전망     2-3 ③");
+Hs("STEP 2   글의 흐름   ·   2-1 대조 / 덧붙임 / 결과 / 반전     2-2 [B] 문제점 · [E] 전망     2-3 ⑤");
 B("2-1   문장 6 On the other hand — 옛 우주복의 단점과 새 우주복의 장점을 '대조'한다.   문장 7 Also — 장점을 하나 더 '덧붙인다'.   문장 8 So — 가볍고 유연해진 '결과'로 더 잘 움직인다.   문장 11 However — 검게 보이지만 실제로는 희다는 '반전'.");
 B("2-2   [B] 문제점(문장 5: 옛 우주복은 움직이기 힘들고 맞지 않았다), [E] 전망(문장 12: 더 많은 사람이 달에 가게 될 것). 보기의 '유래'는 이 글에 없는 역할이다. 소개 → 문제점 → 장점 → 색의 비밀 → 전망 — 옛것의 문제를 새것이 푸는 설명문의 흐름이다.");
-B("2-3   정답 ③. 새 우주복의 특징과 장점을 사실대로 알려 주는 설명문이다. ① 광고의 신호(사라는 말·가격·느낌표 연발)가 없고, ② 일기의 신호(I·Today·하루 일과)도 없다.");
+B("2-3   정답 ⑤. 새 우주복의 특징과 장점을 사실대로 알려 주는 설명문이다. ① 광고의 신호(사라는 말·가격·느낌표 연발)가 없고, ② 일기의 신호(I·Today·하루 일과)도 없다.");
 B("[학습 포인트]   On the other hand가 나오면 글이 둘로 나뉜다 — 앞은 옛것, 뒤는 새것. 대조 연결어는 비교 설명문의 뼈대이므로, 표시만 해도 글의 지도가 그려진다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 move · better     3-3 (d) → (a) → (b) → (c)");
 B("3-1  재료 찾기 — (2) 문장 8에서 move에 ○: 새 우주복이 가능하게 하는 동작이다. sleep은 본문에 없다. (3) 문장 8에서 better에 ○: 달 연구가 나아지는 방향이다. worse는 반대말. 주제문의 재료는 언제나 본문 안에 있다.");

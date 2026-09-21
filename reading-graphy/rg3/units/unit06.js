@@ -79,22 +79,24 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① The Shower Effect: Ideas from Everyday Moments", "② How to Save Water While Taking a Shower",
- "③ The Daily Life of 200 Writers and Scientists", "④ Easy Ways to Wash Dishes Faster",
- "⑤ Why Work Is the Best Place for New Ideas"].forEach(c => K.push(ch(c)));
+["① How to Save Water While Taking a Shower",
+ "② The Daily Life of 200 Writers and Scientists",
+ "③ Easy Ways to Wash Dishes Faster",
+ "④ Why Work Is the Best Place for New Ideas",
+ "⑤ The Shower Effect: Ideas from Everyday Moments"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① A good shower can relax both your body and your mind.",
- "② Scientists call this the “shower effect.”",
- "③ All of their best ideas came while they were at work.",
+["① All of their best ideas came while they were at work.",
+ "② A good shower can relax both your body and your mind.",
+ "③ Scientists call this the “shower effect.”",
  "④ About 200 writers and scientists recorded their ideas every day.",
  "⑤ Everyday activities take some of your attention, but not all of it."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① your attention",
- "② the shower effect",
+["① the shower effect",
+ "② your attention",
  "③ your best idea",
  "④ washing dishes",
  "⑤ the study of 200 writers"].forEach(c => K.push(ch(c)));
@@ -248,7 +250,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 물을 아끼며 샤워하는 방법", "② 일상적인 일을 할 때 떠오르는 창의적인 생각", "③ 작가와 과학자가 되는 방법"].forEach(c =>
+["① 일상적인 일을 할 때 떠오르는 창의적인 생각",
+ "② 물을 아끼며 샤워하는 방법",
+ "③ 작가와 과학자가 되는 방법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -394,22 +398,22 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("your mind(S)·starts(△V)·and[네모]·you(S)·might start(△V)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 그녀는 영어뿐만 아니라 중국어도 말할 수 있다  (2) 음악은 내가 기분이 나아지도록 돕는다  (3) 독서는 네가 새 단어뿐만 아니라 새로운 생각도 배우도록 돕는다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 ideas · creative · shower   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 ideas · creative · shower   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 T · 5 T · 6 F · 7 F · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (d) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("가장 좋은 아이디어가 샤워 같은 일상적인 일을 할 때 떠오른다는 것(문장 3–5)과 그것을 뒷받침하는 연구(문장 6–8), 그 까닭(문장 10–12)을 소개한다. ①이 정답. ③·⑤는 지엽적 오답, ②·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 8에서 최고의 아이디어 중 일부는 다른 일을 하는 동안 떠올랐다고 했으므로, 전부가 직장에서 나왔다는 ③가 본문과 반대된다. ①은 문장 1, ②는 문장 5, ④은 문장 6, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ⑤");
+B("가장 좋은 아이디어가 샤워 같은 일상적인 일을 할 때 떠오른다는 것(문장 3–5)과 그것을 뒷받침하는 연구(문장 6–8), 그 까닭(문장 10–12)을 소개한다. ⑤이 정답. ②·④는 지엽적 오답, ①·③는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 8에서 최고의 아이디어 중 일부는 다른 일을 하는 동안 떠올랐다고 했으므로, 전부가 직장에서 나왔다는 ①가 본문과 반대된다. ②은 문장 1, ③는 문장 5, ④은 문장 6, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) it은 같은 문장 앞부분의 your attention을 가리킨다. '주의력의 일부는 가져가지만 전부는 아니다'라는 뜻이다. 문장 2의 It은 샤워였다 — 같은 it이라도 가리키는 것이 다르다.", true);
 Hs("독해 04   배열 영작   ·   Most of the time, they got ideas at work.");
 B("문장 7을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Most.   ② time 뒤의 콤마를 빠뜨리지 않는다.   ③ at work(직장에서)가 문장 맨 뒤에 온다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 ideas · creative · shower     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 일상적인 일을 할 때 창의적인 생각이 떠오르는 현상을 설명한다. ① 물 절약 이야기는 없고, ③ 작가와 과학자는 연구에 참여한 사람들일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 ideas · creative · shower     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 일상적인 일을 할 때 창의적인 생각이 떠오르는 현상을 설명한다. ② 물 절약 이야기는 없고, ③ 작가와 과학자는 연구에 참여한 사람들일 뿐이다.");
 B("1-2   ○표 할 세 단어: ideas(힌트① 주인공) · creative(힌트② 어떤 생각인가) · shower(힌트③ 떠오르는 대표적인 순간). 나머지 셋(writers · dishes · work)은 본문에 나오지만 주제문에 들어가지 않는다 — 연구 참가자와 예시일 뿐이다.");
 B("1-3   문장 4 — They는 최고의 생각들에 ○ (문장 3의 our best ideas).   문장 5 — this는 일상 중 떠오름에 ○ (문장 4의 내용).   문장 10 — it은 주의력에 ○ (같은 문장의 your attention).");
 B("[학습 포인트]   문장 2의 It은 샤워, 문장 10의 it은 주의력이다. 같은 it이라도 가리키는 것이 달라지므로, 지시어를 만나면 바로 앞에서 짝을 찾아 화살표로 연결해 두자.", true);

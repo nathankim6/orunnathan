@@ -80,25 +80,25 @@ K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① The Best Flowers for a Spring Garden",
  "② How to Keep Butterflies as Pets",
- "③ Crocodiles and Their Sharp Teeth",
- "④ Why Butterflies Land on Your Skin",
+ "③ Why Butterflies Land on Your Skin",
+ "④ Crocodiles and Their Sharp Teeth",
  "⑤ How Nectar Is Made Inside Flowers"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① In the spring, we can see butterflies in gardens or parks.",
- "② Butterflies get salt from our sweat.",
- "③ Our sweat can give butterflies minerals and proteins.",
- "④ Butterflies only eat nectar from flowers.",
+["① Butterflies only eat nectar from flowers.",
+ "② In the spring, we can see butterflies in gardens or parks.",
+ "③ Butterflies get salt from our sweat.",
+ "④ Our sweat can give butterflies minerals and proteins.",
  "⑤ The Julia butterfly drinks tears from animals like crocodiles."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) this가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① eating nectar from flowers",
  "② flying in gardens and parks",
- "③ drinking tears from crocodiles",
- "④ sleeping on a flower all night",
- "⑤ landing on people’s skin"].forEach(c => K.push(ch(c)));
+ "③ landing on people’s skin",
+ "④ drinking tears from crocodiles",
+ "⑤ sleeping on a flower all night"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -249,8 +249,8 @@ K.push(spF(4, 300, 0.10));
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 ["① 봄에 정원을 예쁘게 가꾸는 방법",
- "② 소금을 적게 먹는 건강 습관",
- "③ 나비가 사람 피부에 내려앉는 이유"].forEach(c =>
+ "② 나비가 사람 피부에 내려앉는 이유",
+ "③ 소금을 적게 먹는 건강 습관"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -402,22 +402,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문10 ", { size: 17, bold: true, color: NAVY2 }), t("Some butterflies(S)·drink(△V)·tears·from animals like crocodiles(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 우리는 밤에 많은 별을 볼 수 있다  (2) 비가 올 때, 나는 집에 머문다  (3) 네가 서울에 오면, 너는 남산타워를 볼 수 있다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 butterflies · salt · sweat   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 butterflies · salt · sweat   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 T · 3 F · 4 F · 5 F · 6 F · 7 T · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (d) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ④");
-B("이 글은 나비가 우리 피부에 앉는 까닭이 땀 속 소금 때문임을 설명한다(문장 6–9). 소재(나비)와 특징(피부에 앉는 이유)을 함께 담은 ④이 정답이다. ①·⑤는 지엽적이고, ②·③은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 4–5에서 나비가 꽃꿀만 먹는다는 것은 '많은 사람들의 생각'일 뿐, 실제로는 소금 같은 다른 것도 필요하다고 했다. ①은 문장 1, ②는 문장 7, ③은 문장 8, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 나비가 우리 피부에 앉는 까닭이 땀 속 소금 때문임을 설명한다(문장 6–9). 소재(나비)와 특징(피부에 앉는 이유)을 함께 담은 ③이 정답이다. ①·⑤는 지엽적이고, ②·④은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 4–5에서 나비가 꽃꿀만 먹는다는 것은 '많은 사람들의 생각'일 뿐, 실제로는 소금 같은 다른 것도 필요하다고 했다. ②은 문장 1, ③는 문장 7, ④은 문장 8, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) this는 바로 앞 문장 2에서 나비가 우리에게 다가와 피부에 내려앉는 행동을 가리킨다. this는 단어 하나가 아니라 앞의 행동 전체를 받을 수 있다.", true);
 Hs("독해 04   배열 영작   ·   They’re actually getting salt from our sweat!");
 B("문장 7을 그대로 복원하는 문제다. ① 첫 글자는 대문자 They’re.   ② be동사+~ing가 한 덩어리 — are getting.   ③ '~에서'는 from, 마지막에 느낌표를 잊지 않는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 butterflies · salt · sweat     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 나비가 사람 피부에 앉는 이유를 설명한다. ① 정원 가꾸기는 나오지 않고, ② 소금은 나비에게 필요한 것이지 사람의 건강 이야기가 아니다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 butterflies · salt · sweat     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 나비가 사람 피부에 앉는 이유를 설명한다. ① 정원 가꾸기는 나오지 않고, ③ 소금은 나비에게 필요한 것이지 사람의 건강 이야기가 아니다.");
 B("1-2   ○표 할 세 단어: butterflies(힌트① 주인공) · salt(힌트② 그들이 찾는 것) · sweat(힌트③ 그것이 들어 있는 곳). 나머지 셋(nectar · gardens · tears)은 본문에 나오지만 주제문에는 들어가지 않는다.");
 B("1-3   문장 3 — this는 피부에 내려앉는 것에 ○.   문장 8 — Our는 사람들의, them은 나비들에 ○.   문장 11 — it은 그 나비에 ○.");
 B("[학습 포인트]   문장 8이 이 지문의 백미다. 한 문장 안에서 Our(사람)와 them(나비)이 서로 다른 쪽을 가리킨다 — 주는 쪽과 받는 쪽을 갈라 읽자.", true);

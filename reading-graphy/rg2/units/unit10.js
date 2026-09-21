@@ -99,8 +99,8 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Make Video Calls with Friends",
- "② An App That Becomes the Eyes of Blind People",
- "③ The Long History of Artificial Intelligence",
+ "② The Long History of Artificial Intelligence",
+ "③ An App That Becomes the Eyes of Blind People",
  "④ A Man Who Lost His Sight at 13",
  "⑤ Easy Jobs for Millions of Volunteers"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -114,11 +114,11 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) They가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Brian and his family",
- "② people who cannot see",
- "③ the product labels and mail",
- "④ the app’s new functions",
- "⑤ the volunteers of the app"].forEach(c => K.push(ch(c)));
+["① the volunteers of the app",
+ "② Brian and his family",
+ "③ people who cannot see",
+ "④ the product labels and mail",
+ "⑤ the app’s new functions"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -285,7 +285,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 영상 통화 앱을 만드는 방법", "② 시각장애인의 눈이 되어 주는 앱", "③ 인공지능 기술의 역사"].forEach(c =>
+["① 영상 통화 앱을 만드는 방법",
+ "② 인공지능 기술의 역사",
+ "③ 시각장애인의 눈이 되어 주는 앱"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -410,8 +412,8 @@ K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 �
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
 ["① 물건을 팔기 위해 만든 광고",
  "② 하루 있었던 일을 적은 일기",
- "③ 친구에게 안부를 전하는 편지",
- "④ 새로운 앱과 그 쓰임을 알려 주는 설명문",
+ "③ 새로운 앱과 그 쓰임을 알려 주는 설명문",
+ "④ 친구에게 안부를 전하는 편지",
  "⑤ 상상으로 지어낸 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
@@ -740,8 +742,8 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문7 ", { size: 17, bold: true, color: NAVY2 }), t("These volunteers(S)·describe(△V)·things·Brian(S′)·can’t see(△V′)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 내 남동생은 지금 설거지를 하고 있다  (2) 이 가방은 저것보다 더 싸다  (3) 그녀는 오늘 친구들보다 더 빨리 달리고 있다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 volunteers · AI · blind        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 반전 · 나열 · 덧붙임   2-2 [B] 앱 등장 · [E] 기대   2-3 ④", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 volunteers · AI · blind        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 반전 · 나열 · 덧붙임   2-2 [B] 앱 등장 · [E] 기대   2-3 ③", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (a) → (d) → (c)  ·  Volunteers and AI in Be My Eyes help blind people do more amazing things.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) blind  (2) volunteers  (3) AI  (4) lives        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 1 ③  문장 6 ②  문장 8 ②  문장 11 ②", { size: 19, bold: true })], { after: 150 }),
@@ -754,16 +756,16 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) These volunteers describe things Brian can’t see.  (2) It has more than 6 million volunteers all over the world.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ②");
-B("이 글은 앞이 보이지 않는 브라이언(문장 1–3)에게 자원봉사자와 AI가 눈이 되어 주는 앱을 소개한다(문장 4–12). 소재(앱)와 특징(시각장애인의 눈)을 함께 담은 ②이 제목으로 적절하다. ④·⑤는 세부만 건드린 지엽적 오답, ①·③은 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 앞이 보이지 않는 브라이언(문장 1–3)에게 자원봉사자와 AI가 눈이 되어 주는 앱을 소개한다(문장 4–12). 소재(앱)와 특징(시각장애인의 눈)을 함께 담은 ③이 제목으로 적절하다. ④·⑤는 세부만 건드린 지엽적 오답, ①·②은 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ③");
 B("문장 6에서 자원봉사자는 600만 명이 넘는다고 했다. 100만 명이 안 된다는 ③이 본문과 반대된다. ①은 문장 2, ②은 문장 5, ④은 문장 8, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) They는 바로 앞 문장 7의 These volunteers를 가리킨다. 같은 문장의 him은 브라이언이다 — 한 문장 안에서 주어와 목적어가 서로 다른 것을 가리키는 자리다.", true);
 Hs("독해 04   배열 영작   ·   He lost most of his sight when he was 13.");
 B("문장 2를 그대로 복원하는 문제다. ① 첫 글자는 대문자 He.   ② most of his sight — of가 두 덩어리를 잇는다.   ③ when 뒤에는 '주어+동사'(he was 13)가 온다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 volunteers · AI · blind     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 시각장애인의 눈이 되어 주는 앱을 소개한다. ① 앱 제작 방법은 나오지 않고, ③ AI는 앱에 새로 더해진 기능일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 volunteers · AI · blind     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 시각장애인의 눈이 되어 주는 앱을 소개한다. ① 앱 제작 방법은 나오지 않고, ② AI는 앱에 새로 더해진 기능일 뿐이다.");
 B("1-2   ○표 할 세 단어: volunteers(힌트① 도움을 주는 사람들) · AI(힌트② 새로 더해진 기능) · blind(힌트③ 도움을 받는 사람들). 나머지 셋(photos · calls · Brian)은 본문에 등장하지만 주제문에 들어가지 않는다 — 예시와 한 사람의 사례일 뿐이다.");
 B("1-3   문장 4 — him은 브라이언에 ○.   문장 8 — They는 자원봉사자, him은 브라이언에 ○ (한 문장, 두 대상).   문장 10 — It은 앱 Be My Eyes에 ○ (문장 9의 주어).");
 B("[학습 포인트]   문장 8처럼 한 문장 안에서 주어(They)와 목적어(him)가 서로 다른 것을 가리키는 자리가 고등 지칭 문항의 단골 재료다. 대명사를 만나면 수(단수·복수)부터 맞춰 보자.", true);
@@ -771,10 +773,10 @@ B("[학습 포인트]   문장 8처럼 한 문장 안에서 주어(They)와 목�
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 때 / 반전 / 나열 / 덧붙임     2-2 [B] 앱 등장 · [E] 기대     2-3 ④");
+Hs("STEP 2   글의 흐름   ·   2-1 때 / 반전 / 나열 / 덧붙임     2-2 [B] 앱 등장 · [E] 기대     2-3 ③");
 B("2-1   문장 2 when — 시력을 잃은 '때'를 알려 준다.   문장 4 However — 어둡던 이야기를 뒤집는 '반전'.   문장 8 or — 자원봉사자가 하는 일을 '나열'한다.   문장 12 and — 하나 더 '덧붙인다'.");
 B("2-2   [B] 앱 등장(문장 4: However와 함께 Be My Eyes가 나타난다), [E] 기대(문장 12: 삶이 나아지기를 바란다). 보기의 '가격 비교'는 이 글에 없는 역할이다. [A] 소개 → [B] 앱 등장 → [C] 쓰임 → [D] 변화 → [E] 기대 — 소개형 설명문의 전형적 흐름이다.");
-B("2-3   정답 ④. 앱의 정체와 쓰임, 새 기능을 사실 위주로 알려 주는 설명문이다. ① 가격·명령문이 없으니 광고가 아니고, ② 날짜와 '나의 하루'가 없으니 일기도, ③ Dear·받는 사람이 없으니 편지도 아니다.");
+B("2-3   정답 ③. 앱의 정체와 쓰임, 새 기능을 사실 위주로 알려 주는 설명문이다. ① 가격·명령문이 없으니 광고가 아니고, ② 날짜와 '나의 하루'가 없으니 일기도, ④ Dear·받는 사람이 없으니 편지도 아니다.");
 B("[학습 포인트]   However와 But은 글의 방향을 바꾸는 신호다. 문장 4의 However 앞뒤를 비교하면 '보이지 않는 삶'에서 '앱과 함께하는 삶'으로 이야기가 넘어간 것이 한눈에 보인다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 AI · amazing things     3-3 (b) → (a) → (d) → (c)");
 B("3-1  재료 찾기 — (2) 문장 10에서 AI에 ○: 새로 더해지는 기능의 이름이다. video calls는 이미 있던 방식일 뿐. (3) 문장 12에서 amazing things에 ○: 시각장애인이 하게 될 일이다. product labels는 자원봉사자가 읽어 주는 예시다.");

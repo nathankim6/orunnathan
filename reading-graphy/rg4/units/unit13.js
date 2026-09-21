@@ -96,24 +96,24 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① How to Win a Computer Game about Animals",
- "② The Best Hats for Sports and Study",
- "③ A Famous University in Michigan",
- "④ Watch Your Mistakes and Learn Faster",
+["① Watch Your Mistakes and Learn Faster",
+ "② How to Win a Computer Game about Animals",
+ "③ The Best Hats for Sports and Study",
+ "④ A Famous University in Michigan",
  "⑤ Why Children Need More Sleep"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 105, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① A new study shows that some kids learn faster than others.",
- "② Children with a growth mindset paid less attention to their mistakes.",
- "③ A psychologist studied 123 children aged six to eight.",
+ "② A psychologist studied 123 children aged six to eight.",
+ "③ Children with a growth mindset paid less attention to their mistakes.",
  "④ In the study, the children played a computer game to catch animals.",
  "⑤ Children with a fixed mindset tended to ignore their mistakes."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 105, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) They가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① children with a fixed mindset",
- "② children with a growth mindset",
+["① children with a growth mindset",
+ "② children with a fixed mindset",
  "③ the researchers at the university",
  "④ the special hats in the study",
  "⑤ the animals in the computer game"].forEach(c => K.push(ch(c)));
@@ -409,8 +409,8 @@ K.push(spF(5, 270, 0.38));
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
 ["① 하루 일을 적은 일기",
- "② 물건을 팔기 위해 만든 광고",
- "③ 연구 결과를 알려 주는 설명문",
+ "② 연구 결과를 알려 주는 설명문",
+ "③ 물건을 팔기 위해 만든 광고",
  "④ 안부를 전하는 편지",
  "⑤ 상상으로 지어낸 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
@@ -740,7 +740,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 매일 기타를 치는 친구가 한 명 있다  (2) 그녀는 고양이를 그리는 것을 아주 잘한다  (3) 내 옆에 앉는 그 소년은 퍼즐 푸는 것을 잘한다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 mistakes · attention · faster        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 비교 · 덧붙임 · 반전 · 조건   2-2 [B] 두 믿음 · [E] 마무리   2-3 ③", { size: 19, bold: true })], { after: 25 }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 비교 · 덧붙임 · 반전 · 조건   2-2 [B] 두 믿음 · [E] 마무리   2-3 ②", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (d) → (a) → (c)  ·  Kids who pay attention to their mistakes actually learn faster than those who don’t.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) attention  (2) mistakes  (3) ignore  (4) faster        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ②  문장 5 ②  문장 9 ②  문장 10 ②", { size: 19, bold: true })], { after: 150 }),
@@ -753,11 +753,11 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) They wore special hats that recorded their brain activity.  (2) Others believed that they can become smarter through hard work.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ④");
-B("이 글은 실수에 주의를 기울이는 아이가 더 빨리 배운다는 연구(문장 2·8·9)를 소개한다. 소재(mistakes)와 결과(learn faster)를 함께 담은 ④이 제목으로 적절하다. ①·②는 게임·모자만 건드린 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 8에서 성장 마인드셋 아이들은 실수에 '더 많은(more)' 주의를 기울였다. less로 뒤집은 ②이 본문과 반대된다. ①은 문장 2, ③은 문장 3, ④는 문장 6, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ②");
+Hs("독해 01   제목   ·   정답 ①");
+B("이 글은 실수에 주의를 기울이는 아이가 더 빨리 배운다는 연구(문장 2·8·9)를 소개한다. 소재(mistakes)와 결과(learn faster)를 함께 담은 ①이 제목으로 적절하다. ②·③는 게임·모자만 건드린 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 8에서 성장 마인드셋 아이들은 실수에 '더 많은(more)' 주의를 기울였다. less로 뒤집은 ③이 본문과 반대된다. ①은 문장 2, ②은 문장 3, ④는 문장 6, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) They는 바로 앞 문장 8의 children with a growth mindset을 가리킨다. 실수를 눈여겨본 그 아이들이 다음 시도에서 더 잘 고쳤다는 흐름이다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   In the study, the children played a computer game to catch animals.");
 B("문장 6을 그대로 복원하는 문제다. ① 문두 In the study 뒤의 콤마.   ② 주어 the children + 과거동사 played.   ③ '~하기 위한/하려고'는 to+동사원형 — to catch animals.", true);
@@ -770,10 +770,10 @@ B("[학습 포인트]   문장 4처럼 한 문장에서 they와 it이 서로 다
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 비교 / 덧붙임 / 반전 / 조건     2-2 [B] 두 믿음 · [E] 마무리     2-3 ③");
+Hs("STEP 2   글의 흐름   ·   2-1 비교 / 덧붙임 / 반전 / 조건     2-2 [B] 두 믿음 · [E] 마무리     2-3 ②");
 B("2-1   문장 2 than — 두 집단을 '비교'한다.   문장 9 also — 앞 내용에 '덧붙임'.   문장 10 On the other hand — 방향을 바꾸는 '반전'.   문장 11 if — '조건'을 건다.");
 B("2-2   [B] 두 믿음(문장 3–5: 지능은 정해져 있다 vs 자란다), [E] 마무리(문장 11: 믿으면 배운다). 보기의 '광고'는 이 글에 없는 역할이다.");
-B("2-3   정답 ③. 연구의 대상·방법·결과를 사실대로 알려 주는 설명문이다. 날짜와 I가 없어 일기가 아니고, 가격·명령문이 없어 광고도 아니다.");
+B("2-3   정답 ②. 연구의 대상·방법·결과를 사실대로 알려 주는 설명문이다. 날짜와 I가 없어 일기가 아니고, 가격·명령문이 없어 광고도 아니다.");
 B("[학습 포인트]   대조 신호(On the other hand)를 만나면 두 집단을 표로 나눠 적어 보자. 고등 독해의 대조 구조 문항이 여기서 자란다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 pay attention · faster     3-3 (b) → (d) → (a) → (c)");
 B("3-1  재료 찾기 — (2) 문장 2에서 pay attention에 ○: 아이들이 실수에 하는 행동이다. ignore는 반대편(문장 10)의 태도다. (3) faster에 ○: 연구가 밝힌 결과다.");

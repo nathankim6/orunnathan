@@ -88,18 +88,18 @@ K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① There are over 13 million colorblind Americans.",
- "② In 2017, Tennessee installed special viewfinders in 12 places.",
- "③ Blue-yellow color blindness is the most common type.",
+ "② Blue-yellow color blindness is the most common type.",
+ "③ In 2017, Tennessee installed special viewfinders in 12 places.",
  "④ Van Lew has been colorblind her whole life.",
  "⑤ In 2023, a viewfinder was installed at a park in Virginia."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the beautiful colors of fall leaves",
- "② the special viewfinders in 12 places",
- "③ the people living in Virginia",
- "④ the workers of the state of Tennessee",
- "⑤ over 13 million colorblind Americans"].forEach(c => K.push(ch(c)));
+["① over 13 million colorblind Americans",
+ "② the beautiful colors of fall leaves",
+ "③ the special viewfinders in 12 places",
+ "④ the people living in Virginia",
+ "⑤ the workers of the state of Tennessee"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -407,9 +407,9 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ③");
 B("이 글은 색맹인 사람들을 위해 테네시주가 설치한 특수 뷰파인더(문장 5–7)와, 그 덕분에 난생처음 단풍 색을 본 사람의 이야기(문장 8–10)를 소개한다. 소재(뷰파인더)와 대상(색맹)을 함께 담은 ③이 제목으로 적절하다. ①·⑤는 지엽적, ②·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 7에서 가장 흔한 유형은 적록(Red-green) 색맹이라고 했다. 청황 색맹이라고 바꾼 ③이 본문과 어긋난다. ①은 문장 4, ②는 문장 6, ④는 문장 8, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 7에서 가장 흔한 유형은 적록(Red-green) 색맹이라고 했다. 청황 색맹이라고 바꾼 ②이 본문과 어긋난다. ①은 문장 4, ③는 문장 6, ④는 문장 8, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) them은 바로 앞 문장 4의 over 13 million colorblind Americans를 가리킨다. 테네시주가 돕고 싶었던 대상이 누구인지 생각하면 된다 — 복수 지시어는 복수 명사를 받는다.", true);
 Hs("독해 04   배열 영작   ·   There are over 13 million colorblind Americans.");
 B("문장 4를 그대로 복원하는 문제다. ① 첫 글자는 대문자 There.   ② 진짜 주어 Americans가 복수이므로 are.   ③ over 13 million이 한 덩어리로 Americans 앞에 온다.", true);

@@ -88,10 +88,10 @@ K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Elephant seals spend about 7 months of the year in the sea.",
- "② Their dive naps are shorter than 20 minutes.",
- "③ Sharks and killer whales usually stay near the surface.",
- "④ They swim to the surface to find food after their nap.",
- "⑤ They sleep about ten hours a day during this time."].forEach(c => K.push(ch(c)));
+ "② They sleep about ten hours a day during this time.",
+ "③ Their dive naps are shorter than 20 minutes.",
+ "④ Sharks and killer whales usually stay near the surface.",
+ "⑤ They swim to the surface to find food after their nap."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) There가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
@@ -252,7 +252,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 상어와 범고래의 사냥법", "② 바닷속에서 짧게 잠자는 코끼리물범", "③ 물범을 집에서 기르는 방법"].forEach(c =>
+["① 바닷속에서 짧게 잠자는 코끼리물범",
+ "② 상어와 범고래의 사냥법",
+ "③ 물범을 집에서 기르는 방법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -404,7 +406,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문9 ", { size: 17, bold: true, color: NAVY2 }), t("During their dive naps(M)·elephant seals(S)·enter(△V)·with their bodies straight up(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 그 시험에 통과하기 위해, 그는 매일 밤 공부했다  (2) 나는 이 창문을 열 수 없다  (3) 별을 보기 위해 우리는 밖으로 나갔지만, 도시에서는 별을 볼 수 없다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 seals · naps · safe   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 seals · naps · safe   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 F · 5 T · 6 F · 7 T · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
@@ -412,14 +414,14 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ③");
 B("이 글은 코끼리물범이 바닷속 깊이 내려가 짧게 자는 '잠수 낮잠'(문장 4–6)과 그것이 안전을 지켜 주는 이유(문장 7–8)를 설명한다. 소재(코끼리물범의 잠)와 특징(깊이 내려가 안전하게)을 담은 ③이 제목이다. ②·⑤는 지엽적 오답, ①·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 2에서 하루에 약 두 시간만 잔다고 했으므로, 열 시간을 잔다는 ⑤는 본문과 반대된다. ①은 문장 1, ②은 문장 6, ③는 문장 8, ④는 문장 12에서 확인된다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 2에서 하루에 약 두 시간만 잔다고 했으므로, 열 시간을 잔다는 ②는 본문과 반대된다. ①은 문장 1, ③은 문장 6, ④는 문장 8, ⑤는 문장 12에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) There는 바로 앞 문장 5에서 물범들이 내려간 깊은 바닷속을 가리킨다. 지시어는 사람·사물만이 아니라 장소도 대신한다 — 바로 앞 문장에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   After their short nap, they swim to the surface to find food.");
 B("문장 12를 그대로 복원하는 문제다. ① 첫 글자는 대문자 After.   ② nap 뒤의 콤마를 빠뜨리지 않는다.   ③ to가 두 번 나온다 — to the surface(방향)와 to find(목적)를 구분한다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 seals · naps · safe     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 코끼리물범이 바닷속에서 어떻게 짧게 자는지를 설명한다. ① 상어와 범고래는 안전의 이유를 설명하는 재료일 뿐이고, ③ 기르는 방법은 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 seals · naps · safe     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 코끼리물범이 바닷속에서 어떻게 짧게 자는지를 설명한다. ② 상어와 범고래는 안전의 이유를 설명하는 재료일 뿐이고, ③ 기르는 방법은 나오지 않는다.");
 B("1-2   ○표 할 세 단어: seals(힌트① 주인공) · naps(힌트② 바다에서 하는 일) · safe(힌트③ 그렇게 해서 얻는 것). 나머지 셋(ocean · spiral · minutes)은 본문에 나오지만 주제문에 들어가지 않는다 — 장소와 모습, 숫자일 뿐이다.");
 B("1-3   문장 6 — There는 깊은 바닷속에 ○ (문장 5에서 내려간 곳).   문장 7 — These dive naps는 짧은 잠에, them은 물범들에 ○ (한 문장 안에서 가리키는 대상이 바뀐다).   문장 11 — this stage는 두 번째 단계에 ○ (문장 10의 그 단계).");
 B("[학습 포인트]   지시어는 사물뿐 아니라 때(this time)와 장소(There)도 대신한다. 만날 때마다 앞 문장으로 화살표를 그어 짝을 확인하는 습관을 들이자.", true);

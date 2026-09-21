@@ -77,10 +77,10 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Wash Your Clothes the Green Way",
- "② The Best Eco-Friendly Cars of the Year",
- "③ Why Shopping Online Is Fun",
- "④ How to Save Money at the Market",
- "⑤ Greenwashing: When Companies Only Look Green"].forEach(c => K.push(ch(c)));
+ "② Greenwashing: When Companies Only Look Green",
+ "③ The Best Eco-Friendly Cars of the Year",
+ "④ Why Shopping Online Is Fun",
+ "⑤ How to Save Money at the Market"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
@@ -95,8 +95,8 @@ K.push(sp(65));
 ["① selling more products to people",
  "② buying a new eco-friendly car",
  "③ making clothes good for the Earth",
- "④ researching the company online",
- "⑤ looking at the labels or reading the product descriptions"].forEach(c => K.push(ch(c)));
+ "④ looking at the labels or reading the product descriptions",
+ "⑤ researching the company online"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -401,12 +401,12 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (a) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ⑤");
-B("이 글은 기업들이 친환경인 척 꾸며 물건을 더 파는 ‘그린워싱’(문장 1–5)과 그것을 가려내는 방법(문장 7–10), 그리고 똑똑한 소비자가 되자는 당부(문장 11–12)를 담았다. 소재(greenwashing)와 핵심(겉만 초록)을 모두 담은 ⑤이 제목으로 적절하다. ①는 wash의 글자 뜻만 건드린 지엽적 오답, ②은 자동차 예시만 건드린 지엽적 오답이고, ③·④는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ②");
+B("이 글은 기업들이 친환경인 척 꾸며 물건을 더 파는 ‘그린워싱’(문장 1–5)과 그것을 가려내는 방법(문장 7–10), 그리고 똑똑한 소비자가 되자는 당부(문장 11–12)를 담았다. 소재(greenwashing)와 핵심(겉만 초록)을 모두 담은 ②이 제목으로 적절하다. ①는 wash의 글자 뜻만 건드린 지엽적 오답, ③은 자동차 예시만 건드린 지엽적 오답이고, ④·⑤는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ③");
 B("문장 6에서 회사가 정말 환경을 돕는지 아닌지 알아차리기는 어려울 수 있다(can be hard)고 했으므로, 항상 쉽다는 ③은 본문과 반대된다. ①은 문장 3, ②는 문장 4, ④는 문장 8–9, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
-B("(A) This는 바로 앞 문장 8의 ‘라벨을 살펴보거나 제품 설명을 읽는 것’이라는 행동 전체를 가리킨다. ④ 온라인 조사는 문장 10에서 also로 덧붙인 또 다른 방법 — This보다 뒤에 나오므로 가리킬 수 없다. 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
+B("(A) This는 바로 앞 문장 8의 ‘라벨을 살펴보거나 제품 설명을 읽는 것’이라는 행동 전체를 가리킨다. ⑤ 온라인 조사는 문장 10에서 also로 덧붙인 또 다른 방법 — This보다 뒤에 나오므로 가리킬 수 없다. 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   But there are ways to find out.");
 B("문장 7을 그대로 복원하는 문제다. ① 첫 글자는 대문자 But.   ② there are — ‘~이 있다’는 There is/are 구문, 복수 명사 ways에는 are.   ③ ways to find out — to부정사가 ways를 뒤에서 꾸민다.", true);
 Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 greenwashing · pretend · smart shoppers     1-3 아래 참조");

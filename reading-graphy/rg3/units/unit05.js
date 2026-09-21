@@ -82,8 +82,8 @@ K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Take a Better Selfie with Your Phone",
  "② The Best Zoos to Visit This Summer",
- "③ Why Social Media Is Full of Animal Pictures",
- "④ Selfies with Wild Animals Are Never Worth It",
+ "③ Selfies with Wild Animals Are Never Worth It",
+ "④ Why Social Media Is Full of Animal Pictures",
  "⑤ Safety Signs Around the World"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
@@ -254,8 +254,8 @@ K.push(spF(4, 300, 0.10));
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 ["① 셀카를 더 잘 찍는 방법",
- "② 동물원 동물들의 하루",
- "③ 야생 동물과 셀카를 찍는 일의 위험"].forEach(c =>
+ "② 야생 동물과 셀카를 찍는 일의 위험",
+ "③ 동물원 동물들의 하루"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -401,22 +401,22 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("Getting too close to animals(S)·puts(△V)·because[네모]·they(S′)·might be killed(△V′)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 친구들과 축구를 하는 것은 정말 재미있다  (2) 그 창문은 강한 바람에 깨졌다  (3) 자전거를 타는 것은 많은 학생에게 사랑받는다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 selfies · close · dangerous   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 selfies · close · dangerous   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 F · 5 T · 6 T · 7 T · 8 F", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ④");
-B("야생 동물과 셀카를 찍으려 다가가는 일이 사람에게도 동물에게도 위험하다는 것(문장 1–11)이 글의 중심이고, 문장 13이 글쓴이의 결론이다. ④이 정답. ③·⑤는 지엽적 오답, ①·②은 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ③");
+B("야생 동물과 셀카를 찍으려 다가가는 일이 사람에게도 동물에게도 위험하다는 것(문장 1–11)이 글의 중심이고, 문장 13이 글쓴이의 결론이다. ③이 정답. ④·⑤는 지엽적 오답, ①·②은 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ④");
 B("문장 8에서 위험한 동물과 찍은 셀카는 많은 '좋아요'와 댓글을 받는다고 했으므로, 거의 못 받는다는 ④이 본문과 반대된다. ①은 문장 2, ②는 문장 4, ③는 문장 10, ⑤는 문장 11에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) This는 바로 앞 문장 8의 내용, 곧 '위험한 동물과 찍은 셀카가 많은 좋아요를 받는다'를 가리킨다. 지시어는 한 단어만이 아니라 앞 문장 전체를 받을 수도 있다.", true);
 Hs("독해 04   배열 영작   ·   So, never get too close to animals for selfies.");
 B("문장 12를 그대로 복원하는 문제다. ① 첫 글자는 대문자 So, 뒤의 콤마까지.   ② 부정 명령문은 never+동사원형.   ③ too close to ~ 순서를 지킨다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 selfies · close · dangerous     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 야생 동물과 셀카를 찍는 일이 왜 위험한지를 말한다. ① 촬영 기술 이야기는 없고, ② 동물원은 위험을 못 느끼게 만드는 배경으로만 나온다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 selfies · close · dangerous     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 야생 동물과 셀카를 찍는 일이 왜 위험한지를 말한다. ① 촬영 기술 이야기는 없고, ③ 동물원은 위험을 못 느끼게 만드는 배경으로만 나온다.");
 B("1-2   ○표 할 세 단어: selfies(힌트① 사람들이 찍으려는 것) · close(힌트② 그러다 하게 되는 행동) · dangerous(힌트③ 글쓴이의 평가). 나머지 셋(zoos · Likes · signs)은 본문에 나오지만 주제문에 들어가지 않는다 — 까닭과 배경일 뿐이다.");
 B("1-3   문장 3 — This는 표지판을 무시함에 ○ (문장 2의 내용).   문장 6 — them은 야생 동물에 ○ (문장 5).   문장 9 — This는 좋아요가 많은 것에 ○ (문장 8의 내용).");
 B("[학습 포인트]   문장 3의 This와 문장 9의 This는 생김새가 같지만 가리키는 것이 다르다. This를 만나면 반드시 '바로 앞 문장'으로 돌아가 확인하자 — 고등 독해의 지칭 추론이 여기서 자란다.", true);

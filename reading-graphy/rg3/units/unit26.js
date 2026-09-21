@@ -84,18 +84,18 @@ K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Benjamin Franklin invented the lightning rod.",
- "② Metal lightning rods work well for large places like airports.",
- "③ Scientists tested a laser beam pointed at the sky.",
- "④ Earlier studies tested the idea only inside a lab.",
- "⑤ Scientists hope to make the laser device cheaper."].forEach(c => K.push(ch(c)));
+ "② Scientists tested a laser beam pointed at the sky.",
+ "③ Earlier studies tested the idea only inside a lab.",
+ "④ Scientists hope to make the laser device cheaper.",
+ "⑤ Metal lightning rods work well for large places like airports."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) they가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the metal lightning rods on buildings",
  "② the lightning strikes near airports",
- "③ the scientists testing the laser idea",
- "④ the buildings in large places",
- "⑤ the people saved by Franklin"].forEach(c => K.push(ch(c)));
+ "③ the buildings in large places",
+ "④ the people saved by Franklin",
+ "⑤ the scientists testing the laser idea"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -245,9 +245,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 피뢰침을 대신할 레이저",
- "② 벤저민 프랭클린의 생애",
- "③ 공항을 넓게 짓는 방법"].forEach(c =>
+["① 벤저민 프랭클린의 생애",
+ "② 공항을 넓게 짓는 방법",
+ "③ 피뢰침을 대신할 레이저"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -393,7 +393,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문10 ", { size: 17, bold: true, color: NAVY2 }), t("If[네모]·they(S′)·can solve(△V′)·lasers(S)·could become(△V)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 그녀는 새 자전거를 사기 위해 돈을 모았다  (2) 파란색으로 칠해진 그 상자는 내 것이다  (3) 그는 정원을 보기 위해 빨간색으로 칠해진 문을 열었다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 scientists · lasers · lightning rod   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 scientists · lasers · lightning rod   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (b) → (c) → (d)", { size: 19, bold: true })], { after: 0 }),
@@ -401,14 +401,14 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ①");
 B("이 글은 금속 피뢰침의 한계(문장 3)와, 레이저를 새로운 피뢰침으로 쓰려는 시도(문장 5–7)를 소개한다. 소재(lasers)와 특징(새로운 피뢰침)을 함께 담은 ①이 제목으로 적절하다. ②·⑤는 프랭클린·금속 막대만 건드린 지엽적 오답, ③·④은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 3에서 금속 피뢰침은 작은 구역에만 효과가 있고 공항 같은 넓은 곳에는 그렇지 않다고 했다. 잘 작동한다는 ②은 본문과 반대된다. ①은 문장 1, ③는 문장 5, ④은 문장 6, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 3에서 금속 피뢰침은 작은 구역에만 효과가 있고 공항 같은 넓은 곳에는 그렇지 않다고 했다. 잘 작동한다는 ⑤은 본문과 반대된다. ①은 문장 1, ②는 문장 5, ③은 문장 6, ④는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) they는 바로 앞 문장 5–6에서 레이저를 시험해 온 과학자들(연구자들)을 가리킨다. 밖에서 아이디어를 시도한 주체가 누구인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   Now, scientists are trying to use lasers instead.");
 B("문장 2를 그대로 복원하는 문제다. ① 첫 글자는 대문자 Now, 뒤에 콤마.   ② 진행형 are trying이 한 덩어리.   ③ try to+동사원형 — to use가 이어지고 instead가 맨 뒤에 온다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 scientists · lasers · lightning rod     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 금속 피뢰침을 대신할 레이저 피뢰침 연구를 소개한다. ② 프랭클린은 첫 문장의 배경일 뿐이고, ③ 공항은 넓은 장소의 예로 한 번 나올 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 scientists · lasers · lightning rod     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 금속 피뢰침을 대신할 레이저 피뢰침 연구를 소개한다. ① 프랭클린은 첫 문장의 배경일 뿐이고, ② 공항은 넓은 장소의 예로 한 번 나올 뿐이다.");
 B("1-2   ○표 할 세 단어: scientists(힌트① 주인공) · lasers(힌트② 새로 쓰려는 도구) · lightning rod(힌트③ 대신하려는 장치). 나머지 셋(Franklin · lab · airports)은 본문에 등장하지만 주제문에 들어가지 않는다 — 배경과 예시일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
 B("1-3   문장 6 — this는 레이저의 효과에 ○ (레이저가 번개의 경로를 바꾼다는 것).   문장 7 — they는 과학자들에 ○ (사람).   문장 10 — these problems는 남은 과제들에 ○ (문장 8–9의 넓은 지역 유도와 가격 문제).");
 B("[학습 포인트]   같은 they라도 문장 3에서는 금속 피뢰침(사물), 문장 7에서는 과학자들(사람)을 가리킨다. 대명사를 만나면 앞 문장에서 수와 성격이 맞는 짝을 반드시 확인하자.", true);

@@ -102,14 +102,14 @@ K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① A Fishing Trip to Canada and Greenland",
  "② Christmas Foods Around the World",
- "③ Cod: A Special Food in Portuguese Culture",
- "④ How to Stay Healthy by Eating Fish",
- "⑤ Table Manners in Portugal"].forEach(c => K.push(ch(c)));
+ "③ How to Stay Healthy by Eating Fish",
+ "④ Table Manners in Portugal",
+ "⑤ Cod: A Special Food in Portuguese Culture"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Nowadays, most of the cod in Portugal comes from England.",
- "② People in Portugal eat more than 100,000 tons of cod every year.",
+["① People in Portugal eat more than 100,000 tons of cod every year.",
+ "② Nowadays, most of the cod in Portugal comes from England.",
  "③ Portugal traded salt for codfish with England in the 1300s.",
  "④ In the 1930s, Portuguese fishermen went to Canada and Greenland.",
  "⑤ Portuguese people love having cod on Christmas Eve."].forEach(c => K.push(ch(c)));
@@ -117,8 +117,8 @@ K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the salt from England",
- "② the cod",
- "③ the great taste",
+ "② the great taste",
+ "③ the cod",
  "④ the whole world",
  "⑤ a Christmas gift"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -288,8 +288,8 @@ K.push(spF(4, 300, 0.10));
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 ["① 한국의 도시 '대구' 여행",
- "② 캐나다와 그린란드의 어부들",
- "③ 포르투갈 사람들의 대구(cod) 사랑"].forEach(c =>
+ "② 포르투갈 사람들의 대구(cod) 사랑",
+ "③ 캐나다와 그린란드의 어부들"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -415,8 +415,8 @@ K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 �
 ["① 하루 일을 기록한 일기",
  "② 물건을 팔기 위해 만든 광고",
  "③ 안부를 묻는 편지",
- "④ 상상의 인물이 나오는 동화",
- "⑤ 대상을 소개하고 사실을 알려 주는 설명문"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
+ "④ 대상을 소개하고 사실을 알려 주는 설명문",
+ "⑤ 상상의 인물이 나오는 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
 K.push(brk());
@@ -747,8 +747,8 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문12 ", { size: 17, bold: true, color: NAVY2 }), t("Portuguese people(S)·have enjoyed(△V)·cod dishes·for a long time(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 책을 읽기 위해 도서관에 갔다  (2) 축구를 하는 것은 아주 재미있다  (3) 열심히 공부하는 것은 시험에 통과하기 위해 중요하다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 cod · love · culture        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 현재 · 이유 묻기 · 반전   2-2 [B] 유래 · [D] 문화   2-3 ⑤", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 cod · love · culture        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 현재 · 이유 묻기 · 반전   2-2 [B] 유래 · [D] 문화   2-3 ④", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (c) → (b) → (a) → (d)  ·  People in Portugal love cod because it is a big part of Portuguese culture.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) love  (2) Norway  (3) taste  (4) culture        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ③  문장 6 ③  문장 9 ②  문장 14 ①", { size: 19, bold: true })], { after: 150 }),
@@ -761,16 +761,16 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) Portuguese people have enjoyed cod dishes for a long time.  (2) Well, one reason is that it tastes great.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("이 글은 포르투갈 사람들이 대구를 얼마나 많이 먹는지(문장 2·4), 그리고 그 사랑이 맛을 넘어 문화가 된 이유(문장 10–13)를 알려 준다. 소재(cod)와 특징(문화)을 함께 담은 ③이 제목으로 적절하다. ①·②는 지엽적이고 ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ①");
-B("문장 7에서 오늘날 포르투갈 사람들이 먹는 대구는 대부분 노르웨이(Norway)에서 온다고 했으므로, England라고 한 ①이 본문과 다르다. ②은 문장 2, ③은 문장 5, ④는 문장 6, ⑤는 문장 13에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ②");
-B("(A) it은 문장 8의 물음 ‘왜 그렇게 대구를 좋아할까?’에 대한 답의 주어다. 맛이 훌륭한 것은 대구이므로 ② the cod가 정답이다. 지시어는 바로 앞 문장에서 찾는 것이 원칙이다.", true);
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 포르투갈 사람들이 대구를 얼마나 많이 먹는지(문장 2·4), 그리고 그 사랑이 맛을 넘어 문화가 된 이유(문장 10–13)를 알려 준다. 소재(cod)와 특징(문화)을 함께 담은 ⑤이 제목으로 적절하다. ①·②는 지엽적이고 ③·④는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 7에서 오늘날 포르투갈 사람들이 먹는 대구는 대부분 노르웨이(Norway)에서 온다고 했으므로, England라고 한 ②이 본문과 다르다. ①은 문장 2, ③은 문장 5, ④는 문장 6, ⑤는 문장 13에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
+B("(A) it은 문장 8의 물음 ‘왜 그렇게 대구를 좋아할까?’에 대한 답의 주어다. 맛이 훌륭한 것은 대구이므로 ③ the cod가 정답이다. 지시어는 바로 앞 문장에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   In Portugal, people really love to eat cod.");
 B("문장 1을 그대로 복원하는 문제다. ① 장소를 나타내는 In Portugal,이 맨 앞 — 첫 글자는 대문자이고 뒤에 콤마.   ② really는 love 바로 앞.   ③ ‘먹는 것을 좋아하다’는 love to eat.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 cod · love · culture     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 포르투갈 사람들이 대구를 얼마나 사랑하는지, 그 사랑이 어디서 왔는지를 다룬다. ① 한국의 도시 대구는 말장난일 뿐이고, ② 어부들은 문장 6의 배경일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 cod · love · culture     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 포르투갈 사람들이 대구를 얼마나 사랑하는지, 그 사랑이 어디서 왔는지를 다룬다. ① 한국의 도시 대구는 말장난일 뿐이고, ③ 어부들은 문장 6의 배경일 뿐이다.");
 B("1-2   ○표 할 세 단어: cod(힌트① 이 글의 주인공) · love(힌트② 사람들의 마음) · culture(힌트③ 사랑의 진짜 이유). salt · fishermen · Norway는 본문에 나오지만 유래와 경로를 설명하는 곁가지다.");
 B("1-3   문장 4 — It은 ‘먹는 대구의 양’에 ○ (문장 2의 10만 톤).   문장 9 — it은 cod (대구)에 ○.   문장 14 — It은 ‘이브의 대구 식사’에 ○ (문장 13의 그 식사).");
 B("[학습 포인트]   같은 It이라도 가리키는 것이 다르다. 문장 4의 It은 ‘양’, 문장 14의 It은 ‘식사’다. 지시어를 만나면 앞으로 화살표를 그어 대상을 확인하는 습관이 고등 지칭 추론 문항으로 그대로 이어진다.", true);
@@ -778,10 +778,10 @@ B("[학습 포인트]   같은 It이라도 가리키는 것이 다르다. 문장
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 때 / 현재 / 이유 묻기 / 반전     2-2 [B] 유래 · [D] 문화     2-3 ⑤");
+Hs("STEP 2   글의 흐름   ·   2-1 때 / 현재 / 이유 묻기 / 반전     2-2 [B] 유래 · [D] 문화     2-3 ④");
 B("2-1   문장 5 when — 소금과 대구를 맞바꾸던 ‘때’.   문장 7 Nowadays — 옛날과 대비되는 ‘현재’.   문장 8 Why — ‘이유’를 묻는 말.   문장 10 But — 맛이 전부가 아니라는 ‘반전’.");
 B("2-2   [B] 유래(문장 5–7: 1300년대 교환에서 오늘날 노르웨이산까지), [D] 문화(문장 10–12: 맛을 넘어선 문화). 보기의 ‘문제점’은 이 글에 없는 역할이다. 소개 → 유래 → 맛 → 문화 → 마무리의 흐름이다.");
-B("2-3   정답 ⑤. 대구라는 대상을 소개하고 수치·역사·이유를 사실대로 알려 주는 설명문이다. ① 일기의 날짜, ② 광고의 가격, ③ 편지의 인사말, ④ 동화의 상상 인물이 모두 없다.");
+B("2-3   정답 ④. 대구라는 대상을 소개하고 수치·역사·이유를 사실대로 알려 주는 설명문이다. ① 일기의 날짜, ② 광고의 가격, ③ 편지의 인사말, ⑤ 동화의 상상 인물이 모두 없다.");
 B("[학습 포인트]   Why로 묻고 one reason ... But ...으로 답하는 구조는 설명문의 단골이다. 물음표가 나오면 그 뒤에서 답을 찾고, But 뒤가 글쓴이의 진짜 하고 싶은 말임을 기억하자.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 love · culture     3-3 (c) → (b) → (a) → (d)");
 B("3-1  재료 찾기 — (2) 문장 1에서 love에 ○: 사람들의 마음이다. catch는 문장 6의 행동일 뿐이다. (3) 문장 11에서 culture에 ○: 대구 먹기가 큰 부분을 차지하는 것이다. taste는 여러 이유 중 하나다.");

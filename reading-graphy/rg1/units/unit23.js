@@ -82,16 +82,18 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Two Fires and the Start of LEGO Bricks", "② How to Make Wooden Chairs and Ladders",
- "③ The History of Plastic in Denmark", "④ The Most Popular Toys of Today",
+["① How to Make Wooden Chairs and Ladders",
+ "② The History of Plastic in Denmark",
+ "③ The Most Popular Toys of Today",
+ "④ Two Fires and the Start of LEGO Bricks",
  "⑤ How to Open Your Own Shop"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Ole Kirk Christiansen lived in Denmark.",
- "② Ole made furniture like chairs and ladders.",
- "③ Ole renamed his company “LEGO.”",
- "④ After the fire in 1924, Ole gave up making things.",
+["① After the fire in 1924, Ole gave up making things.",
+ "② Ole Kirk Christiansen lived in Denmark.",
+ "③ Ole made furniture like chairs and ladders.",
+ "④ Ole renamed his company “LEGO.”",
  "⑤ Ole made his first plastic toy in 1949."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) this가 가리키는 것으로 가장 적절한 것은?"));
@@ -252,8 +254,8 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 두 번의 화재를 이겨 낸 레고의 시작",
- "② 덴마크에서 가구를 만드는 방법",
+["① 덴마크에서 가구를 만드는 방법",
+ "② 두 번의 화재를 이겨 낸 레고의 시작",
  "③ 불을 안전하게 끄는 방법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
@@ -400,22 +402,22 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("문12 ", { size: 17, bold: true, color: NAVY2 }), t("in 1946(M)·Ole(S)·bought(△V)·to make toys~(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 만화책 읽는 것을 아주 좋아한다  (2) 이 가방은 저것보다 덜 비싸다  (3) 그녀는 걷는 것을 즐기는데, 그것이 달리기보다 덜 힘들기 때문이다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 fire · chance · LEGO   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 fire · chance · LEGO   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 F · 5 F · 6 T · 7 F · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (d) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("가게를 태운 1924년 화재(문장 4)와 공장을 태운 1942년 화재(문장 9)를 새로운 기회로 바꾼 올레의 이야기이며, 그 끝에 레고 블록이 태어난다(문장 15). 두 번의 화재와 결말을 함께 담은 ①이 제목으로 적절하다. ②·③은 한 부분만 건드린 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 5–6에서 올레는 화재를 새로운 기회로 보고 더 큰 작업장을 지었다고 했으므로, 포기했다는 ④은 본문과 반대된다. ①은 문장 1, ②는 문장 3, ③는 문장 7, ⑤는 문장 13에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ④");
+B("가게를 태운 1924년 화재(문장 4)와 공장을 태운 1942년 화재(문장 9)를 새로운 기회로 바꾼 올레의 이야기이며, 그 끝에 레고 블록이 태어난다(문장 15). 두 번의 화재와 결말을 함께 담은 ④이 제목으로 적절하다. ①·②은 한 부분만 건드린 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 5–6에서 올레는 화재를 새로운 기회로 보고 더 큰 작업장을 지었다고 했으므로, 포기했다는 ①은 본문과 반대된다. ②은 문장 1, ③는 문장 3, ④는 문장 7, ⑤는 문장 13에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) this는 바로 앞 문장 9의 화재, 곧 공장을 태워 버린 1942년의 불을 가리킨다. 문장 5의 this는 1924년 가게 화재였다 — 같은 this라도 가리키는 것이 다르다.", true);
 Hs("독해 04   배열 영작   ·   But Ole saw this as a new chance.");
 B("문장 5를 그대로 복원하는 문제다. ① 첫 글자는 대문자 But.   ② 'A를 B로 보다'는 see A as B — saw this as ~ 순서.   ③ a new chance 앞의 관사 a를 빠뜨리지 않는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 fire · chance · LEGO     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 두 번의 화재를 이겨 내고 레고 블록이 시작된 과정을 소개한다. ② 가구 만드는 법은 나오지 않고, ③ 불을 끄는 방법 이야기도 아니다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 fire · chance · LEGO     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 두 번의 화재를 이겨 내고 레고 블록이 시작된 과정을 소개한다. ① 가구 만드는 법은 나오지 않고, ③ 불을 끄는 방법 이야기도 아니다.");
 B("1-2   ○표 할 세 단어: fire(힌트① 두 번 덮친 일) · chance(힌트② 올레가 그것을 본 방식) · LEGO(힌트③ 결국 태어난 것). 나머지 셋(wood · furniture · plastic)은 본문에 나오지만 과정의 재료일 뿐이다.");
 B("1-3   문장 10 — this는 1942년 공장 화재에 ○ (문장 9).   문장 11 — it은 plastic에 ○ (덜 비쌌던 그 재료).   문장 14 — It은 첫 플라스틱 장난감에 ○ (문장 13).", true);
 

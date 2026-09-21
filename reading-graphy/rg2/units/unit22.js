@@ -109,9 +109,9 @@ K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?")
 K.push(sp(65));
 ["① 412 Food Rescue works to prevent food waste.",
  "② The group gives the food to people who really need it.",
- "③ The volunteers deliver the food for the group.",
- "④ You will also be able to help people in need.",
- "⑤ 412 Food Rescue collects leftover food from schools and hospitals."].forEach(c => K.push(ch(c)));
+ "③ 412 Food Rescue collects leftover food from schools and hospitals.",
+ "④ The volunteers deliver the food for the group.",
+ "⑤ You will also be able to help people in need."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) They가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
@@ -284,8 +284,8 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 남은 음식을 모아 나누는 단체",
- "② 여름 방학에 여행하는 방법",
+["① 여름 방학에 여행하는 방법",
+ "② 남은 음식을 모아 나누는 단체",
  "③ 식당에서 음식을 주문하는 법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
@@ -411,9 +411,9 @@ K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 �
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
 ["① 하루 일과를 적은 일기",
  "② 요리 방법을 알려 주는 설명문",
- "③ 함께할 사람을 모으는 모집 광고",
- "④ 리듬을 살려 쓴 시",
- "⑤ 친구에게 안부를 전하는 편지"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
+ "③ 리듬을 살려 쓴 시",
+ "④ 친구에게 안부를 전하는 편지",
+ "⑤ 함께할 사람을 모으는 모집 광고"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
 K.push(brk());
@@ -743,8 +743,8 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문12 ", { size: 17, bold: true, color: NAVY2 }), t("You(S)·will be able to help(△V)·people in need", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 축구를 하고 있는 저 소년을 봐라  (2) 너는 곧 수영할 수 있게 될 것이다  (3) 무대에서 노래하는 그 소녀는 우승할 수 있을 것이다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 food · hungry · goal        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 순서 · 반전 · 결과 · 덧붙임   2-2 [B] 목표 · [D] 일손   2-3 ③", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 food · hungry · goal        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 순서 · 반전 · 결과 · 덧붙임   2-2 [B] 목표 · [D] 일손   2-3 ⑤", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (d) → (a) → (c)  ·  Our goal is to make sure food goes to people who are hungry.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) waste  (2) hungry  (3) volunteers  (4) join        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 5 ②  문장 7 ③  문장 9 ③  문장 12 ③", { size: 19, bold: true })], { after: 150 }),
@@ -759,14 +759,14 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ⑤");
 B("이 글은 남은 음식을 모아 전하는 412 푸드 레스큐를 소개하고(문장 5–8) 자원봉사자를 모으는(문장 9–13) 글이다. 소재와 목적을 담은 ⑤이 적절하다. ①·④는 지엽적 오답, ②·③은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 7에서 남은 음식을 모으는 곳은 가게·식당·농장이다. 학교와 병원으로 바꾼 ⑤은 본문과 다르다. ①은 문장 5, ②는 문장 8, ③은 문장 10, ④는 문장 12에서 확인된다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 7에서 남은 음식을 모으는 곳은 가게·식당·농장이다. 학교와 병원으로 바꾼 ③은 본문과 다르다. ①은 문장 5, ②는 문장 8, ④은 문장 10, ⑤는 문장 12에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) They는 바로 앞 문장 9의 our amazing volunteers를 가리킨다. 음식을 배달해 주는 사람들이 누구인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   Then, we give this food to people who really need it.");
 B("문장 8을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Then, 뒤에 콤마.   ② give A to B의 순서.   ③ people who really need it — who 뒤에 설명이 이어진다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 food · hungry · goal     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 남은 음식을 모아 배고픈 사람들에게 전하는 단체를 소개하고 함께할 사람을 모은다. ② 여행 이야기는 나오지 않고, ③ 주문 방법도 다루지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 food · hungry · goal     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 남은 음식을 모아 배고픈 사람들에게 전하는 단체를 소개하고 함께할 사람을 모은다. ① 여행 이야기는 나오지 않고, ③ 주문 방법도 다루지 않는다.");
 B("1-2   ○표 할 세 단어: food(힌트① 다루는 것) · hungry(힌트② 음식이 갈 사람들) · goal(힌트③ 이루려는 것). 나머지 셋(stores · summer · farms)은 장소와 배경일 뿐이다.");
 B("1-3   문장 9 — this work는 남은 음식 나르기에 ○ (문장 7–8의 일).   문장 10 — They는 자원봉사자들, us는 우리 단체에 ○.   문장 12 — You는 이 글을 읽는 사람에 ○.");
 B("[학습 포인트]   문장 10의 They와 us는 한 문장 안에서 서로 다른 대상을 가리킨다. 주어와 목적어를 각각 앞 문장에서 찾아 연결하는 습관이 고등 지칭 추론으로 이어진다.", true);
@@ -774,10 +774,10 @@ B("[학습 포인트]   문장 10의 They와 us는 한 문장 안에서 서로 �
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 순서 / 반전 / 결과 / 덧붙임     2-2 [B] 목표 · [D] 일손     2-3 ③");
+Hs("STEP 2   글의 흐름   ·   2-1 순서 / 반전 / 결과 / 덧붙임     2-2 [B] 목표 · [D] 일손     2-3 ⑤");
 B("2-1   문장 8 Then — 음식을 모은 다음의 '순서'.   문장 9 But — 우리만으로는 안 된다는 '반전'.   문장 11 So — 앞 내용을 받은 '결과'로 함께하자고 권한다.   문장 12 also — 너도 도울 수 있다는 '덧붙임'.");
 B("2-2   [B] 목표(문장 5–6: 우리가 누구이고 무엇을 이루려는지), [D] 일손(문장 9–10: 자원봉사자가 음식을 배달한다). 보기의 '요리법'은 이 글에 없는 역할이다. [A] 초대 → [B] 목표 → [C] 하는 일 → [D] 일손 → [E] 권유 — 사람을 모으는 글의 전형적인 흐름이다.");
-B("2-3   정답 ③. 단체를 소개하고 함께하자고 권하는 모집 광고다. 명령문(Join us, come and join)과 느낌표가 그 신호다. ① 일기의 날짜와 하루, ② 요리법, ④ 시의 리듬, ⑤ 편지의 Dear ~ 형식이 없다.");
+B("2-3   정답 ⑤. 단체를 소개하고 함께하자고 권하는 모집 광고다. 명령문(Join us, come and join)과 느낌표가 그 신호다. ① 일기의 날짜와 하루, ② 요리법, ③ 시의 리듬, ④ 편지의 Dear ~ 형식이 없다.");
 B("[학습 포인트]   Then(순서) · But(반전) · So(결과) · also(덧붙임) 네 신호만 표시해도 글의 지도가 그려진다. 특히 마지막 부분의 So는 글쓴이가 진짜 하고 싶은 말로 이어진다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 goal · hungry     3-3 (b) → (d) → (a) → (c)");
 B("3-1  재료 찾기 — (2) 문장 6에서 goal에 ○: 이 단체가 이루려는 것이다. party는 본문에 없다. (3) 문장 6에서 hungry에 ○: 음식이 가야 할 사람들의 상태다. happy는 반대 방향이다. 주제문의 재료는 언제나 본문 안에 있다.");

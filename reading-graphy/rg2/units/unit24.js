@@ -79,17 +79,17 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① How to Watch the Moon with a Telescope",
- "② The Life of Dinosaurs in Wyoming",
- "③ Craters: Not Only on the Moon but Also on Earth",
+["① Craters: Not Only on the Moon but Also on Earth",
+ "② How to Watch the Moon with a Telescope",
+ "③ The Life of Dinosaurs in Wyoming",
  "④ Why Plants Need Rain and Wind",
  "⑤ How Scientists Became Famous in 2022"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① The Earth has a thick atmosphere that protects it from space rocks.",
- "② The Moon has weather and many plants.",
- "③ The Moon doesn’t have an atmosphere.",
+ "② The Moon doesn’t have an atmosphere.",
+ "③ The Moon has weather and many plants.",
  "④ On Earth, rain, wind, and plants help to erase craters.",
  "⑤ Scientists found huge craters in Wyoming in 2022."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -405,10 +405,10 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("이 글은 크레이터가 달에만 있는 것이 아니라 지구에도 있다는 사실(문장 1)과 달에 더 많아 보이는 까닭(문장 3–8), 지구에서 발견된 아주 오래된 크레이터(문장 9–12)를 설명한다. 소재(크레이터)와 핵심(달과 지구 둘 다)을 담은 ③이 적절하다. ②·④은 지엽적, ①·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 7에서 달에는 날씨도 식물도 없다고 했다. 달에 날씨와 식물이 많다고 뒤집은 ②이 본문과 반대된다. ①은 문장 3, ③은 문장 4, ④는 문장 6, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ①");
+B("이 글은 크레이터가 달에만 있는 것이 아니라 지구에도 있다는 사실(문장 1)과 달에 더 많아 보이는 까닭(문장 3–8), 지구에서 발견된 아주 오래된 크레이터(문장 9–12)를 설명한다. 소재(크레이터)와 핵심(달과 지구 둘 다)을 담은 ①이 적절하다. ③·④은 지엽적, ②·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 7에서 달에는 날씨도 식물도 없다고 했다. 달에 날씨와 식물이 많다고 뒤집은 ③이 본문과 반대된다. ①은 문장 3, ②은 문장 4, ④는 문장 6, ⑤는 문장 9에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) it은 앞에 나온 a crater를 가리킨다. 오랫동안 그 자리에 남아 있는 것은 우주 암석이 아니라 그 암석이 만든 자국(크레이터)이다 — 수와 뜻을 함께 따져야 함정을 피한다.", true);
 Hs("독해 04   배열 영작   ·   But the Moon doesn’t have weather or plants.");

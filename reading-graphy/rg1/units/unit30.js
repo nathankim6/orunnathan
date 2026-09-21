@@ -87,9 +87,9 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Riding a motorcycle is more dangerous than driving a car.",
- "② Many injuries from serious accidents happen to the lower body.",
- "③ The airbag jeans are made from the weakest denim in the world.",
+["① The airbag jeans are made from the weakest denim in the world.",
+ "② Riding a motorcycle is more dangerous than driving a car.",
+ "③ Many injuries from serious accidents happen to the lower body.",
  "④ The airbags blow up when a rider falls off his motorcycle.",
  "⑤ Riders can use the airbag jeans many times."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -97,8 +97,8 @@ K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장
 K.push(sp(65));
 ["① their motorcycles",
  "② regular pants",
- "③ the knees and hips",
- "④ the airbag jeans",
+ "③ the airbag jeans",
+ "④ the knees and hips",
  "⑤ serious accidents"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -404,9 +404,9 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ④");
 B("이 글은 오토바이 사고에서 몸을 지켜 주는 에어백 청바지(문장 3·6–10)와 일반 바지처럼 편안하다는 장점(문장 11–12)을 소개한다. 소재(에어백 청바지)와 특징(안전하고 편안함)을 담은 ④이 제목이다. ②·⑤는 지엽적 오답, ①·③는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 7에서 이 청바지는 세계에서 가장 튼튼한(strongest) 데님으로 만들어진다. 가장 약한 데님이라고 한 ③이 본문과 반대된다. ①은 문장 1, ②는 문장 4, ④는 문장 9, ⑤는 문장 12에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 7에서 이 청바지는 세계에서 가장 튼튼한(strongest) 데님으로 만들어진다. 가장 약한 데님이라고 한 ①이 본문과 반대된다. ②은 문장 1, ③는 문장 4, ④는 문장 9, ⑤는 문장 12에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) them은 앞에서 계속 이야기해 온 에어백 청바지를 가리킨다. 여러 번 다시 쓸 수 있는 것이 무엇인지 생각하면 된다 — 지시어는 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   These airbags protect the rider from getting hurt.");
 B("문장 10을 그대로 복원하는 문제다. ① 첫 글자는 대문자 These.   ② 주어가 복수이므로 동사는 protect.   ③ protect A from B(‘A를 B로부터 지키다’)의 from 자리를 지킨다.", true);

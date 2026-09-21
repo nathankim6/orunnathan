@@ -99,22 +99,22 @@ K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Grow Moss at Home",
  "② The Real Mice of Iceland and Alaska",
- "③ Moss Balls That Move Together on Ice",
- "④ Why Glaciers Melt in Summer",
- "⑤ The History of Animal Herds"].forEach(c => K.push(ch(c)));
+ "③ Why Glaciers Melt in Summer",
+ "④ The History of Animal Herds",
+ "⑤ Moss Balls That Move Together on Ice"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① The moss balls move because of the wind.",
- "② Glacier mice are not real mice but small balls of moss.",
+["① Glacier mice are not real mice but small balls of moss.",
+ "② The moss balls move because of the wind.",
  "③ The moss balls can be found in places like Iceland and Alaska.",
  "④ The moss balls can survive on glaciers for six years or more.",
  "⑤ Scientists haven’t found a clear answer yet."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the moss balls",
- "② the scientists",
+["① the scientists",
+ "② the moss balls",
  "③ the glaciers in Iceland",
  "④ real mice on the ice",
  "⑤ the animals in a herd"].forEach(c => K.push(ch(c)));
@@ -408,8 +408,8 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 새로 밝혀진 사실을 알려 주는 설명문",
- "② 하루의 일을 적은 일기",
+["① 하루의 일을 적은 일기",
+ "② 새로 밝혀진 사실을 알려 주는 설명문",
  "③ 물건을 팔기 위해 만든 광고",
  "④ 상상으로 지어낸 동화",
  "⑤ 친구에게 보내는 편지"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
@@ -741,7 +741,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 오랜 친구를 만나서 기뻤다  (2) 밤하늘에서 많은 별을 볼 수 있다  (3) 그는 그 문이 쉽게 열릴 수 있다는 말을 듣고 반가웠다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 moss · move · mystery        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 이유 · 때 · 반전 · 덧붙임   2-2 [B] 발견 · [E] 마무리   2-3 ①", { size: 19, bold: true })], { after: 25 }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 이유 · 때 · 반전 · 덧붙임   2-2 [B] 발견 · [E] 마무리   2-3 ②", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (a) → (d) → (c)  ·  The moss balls move together across the ice, and it is still a mystery.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) moss  (2) move  (3) sun  (4) mystery        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ①  문장 4 ③  문장 7 ②  문장 10 ①", { size: 19, bold: true })], { after: 150 }),
@@ -754,11 +754,11 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) It’s a mousy mossy mystery.  (2) Have you ever heard of glacier mice?", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("이 글은 빙하 위 이끼 공이 무리처럼 함께 움직인다는 사실(문장 8–9)과 그 까닭이 아직 밝혀지지 않았다는 점(문장 10–11)을 소개한다. 소재와 특징을 함께 담은 ③이 적절하다. ②·④는 쥐·빙하만 건드린 지엽적 오답, ①·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ①");
-B("문장 5에서 이끼 공을 움직이게 하는 것은 바람이 아니라 해(the sun)다. ②은 문장 2, ③는 문장 3, ④는 문장 7, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 빙하 위 이끼 공이 무리처럼 함께 움직인다는 사실(문장 8–9)과 그 까닭이 아직 밝혀지지 않았다는 점(문장 10–11)을 소개한다. 소재와 특징을 함께 담은 ⑤이 적절하다. ②·③는 쥐·빙하만 건드린 지엽적 오답, ①·④는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 5에서 이끼 공을 움직이게 하는 것은 바람이 아니라 해(the sun)다. ①은 문장 2, ③는 문장 3, ④는 문장 7, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) them은 앞 문장 4의 the moss balls를 가리킨다. 같은 문장의 They는 과학자들이므로, 한 문장 안에서 대상이 바뀌는 것에 주의한다.", true);
 Hs("독해 04   배열 영작   ·   But the researchers noticed something strange about the movement.");
 B("문장 8을 그대로 복원한다. ① 첫 글자는 대문자 But.   ② something strange — 형용사가 뒤에서 꾸민다.   ③ about the movement로 문장을 맺는다.", true);
@@ -771,10 +771,10 @@ B("[학습 포인트]   한 문장 안의 They와 them이 서로 다른 것을 �
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 이유 / 때 / 반전 / 덧붙임     2-2 [B] 발견 · [E] 마무리     2-3 ①");
+Hs("STEP 2   글의 흐름   ·   2-1 이유 / 때 / 반전 / 덧붙임     2-2 [B] 발견 · [E] 마무리     2-3 ②");
 B("2-1   문장 5 because of — 움직임의 '이유'가 해다.   문장 6 when — 얼음이 녹는 '때'.   문장 8 But — 예상 밖의 사실로 방향이 바뀌는 '반전'.   문장 9 and — 함께 움직인 데다 방향까지 바꿨다는 '덧붙임'.");
 B("2-2   [B] 발견(문장 4–5: 움직인다는 사실과 그 원인), [E] 마무리(문장 10–11: 아직 답이 없는 수수께끼). 보기의 '사용법'은 이 글에 없는 역할이다. 소개 → 발견 → 관찰 → 이상한 점 → 마무리의 흐름이다.");
-B("2-3   정답 ①. 과학자들이 밝혀낸 사실과 아직 모르는 점을 알려 주는 설명문이다. 일기의 I·날짜도, 광고의 가격·명령문도, 동화의 등장인물도 없다.");
+B("2-3   정답 ②. 과학자들이 밝혀낸 사실과 아직 모르는 점을 알려 주는 설명문이다. 일기의 I·날짜도, 광고의 가격·명령문도, 동화의 등장인물도 없다.");
 B("[학습 포인트]   설명문에서 마지막 But 뒤 문장은 글쓴이가 가장 하고 싶은 말이다. 문장 8의 But이 이 글의 진짜 주제로 가는 문이다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 together · mystery     3-3 (b) → (a) → (d) → (c)");
 B("3-1  재료 찾기 — (2) 문장 9에서 together에 ○: 함께 움직였다는 것이 핵심이다. alone은 본문과 반대다. (3) 문장 11에서 mystery에 ○: 글쓴이의 평가다. answer는 아직 찾지 못했다.");

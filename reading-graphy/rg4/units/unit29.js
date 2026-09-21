@@ -79,24 +79,26 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Sounds on Mars Are Different from Ours", "② How Far Mars Is from the Earth",
- "③ How NASA Builds Its Space Robots", "④ What Carbon Dioxide Is Made Of",
+["① How Far Mars Is from the Earth",
+ "② Sounds on Mars Are Different from Ours",
+ "③ How NASA Builds Its Space Robots",
+ "④ What Carbon Dioxide Is Made Of",
  "⑤ The Best Instruments for an Orchestra"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① The Perseverance rover has recorded sounds on Mars since 2021.",
- "② On Earth, sound travels at a speed of 343 meters per second.",
- "③ Mars’ thin atmosphere is mostly carbon dioxide.",
- "④ On Mars, you would hear the violins before the double bass.",
- "⑤ Sound travels faster on Mars than on Earth."].forEach(c => K.push(ch(c)));
+["① Sound travels faster on Mars than on Earth.",
+ "② The Perseverance rover has recorded sounds on Mars since 2021.",
+ "③ On Earth, sound travels at a speed of 343 meters per second.",
+ "④ Mars’ thin atmosphere is mostly carbon dioxide.",
+ "⑤ On Mars, you would hear the violins before the double bass."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the planet Mars",
- "② the Perseverance rover",
- "③ the thin atmosphere",
- "④ sound",
+["① sound",
+ "② the planet Mars",
+ "③ the Perseverance rover",
+ "④ the thin atmosphere",
  "⑤ an orchestra on Mars"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -247,9 +249,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 화성에서 소리가 지구와 다르게 들리는 이유",
- "② 오케스트라 악기의 종류",
- "③ NASA 우주 로봇을 만드는 방법"].forEach(c =>
+["① 오케스트라 악기의 종류",
+ "② NASA 우주 로봇을 만드는 방법",
+ "③ 화성에서 소리가 지구와 다르게 들리는 이유"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -395,22 +397,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("This(S)·means(△V)·they(S′)·wouldn’t be able to create(△V′)·as[네모]·they do(S′V′)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 맥스라는 이름의 개가 있다  (2) 만약 내게 차가 있다면, 나는 학교까지 운전해 갈 텐데  (3) 만약 내게 나비라는 고양이가 있다면, 어디든 데려갈 텐데", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 sound · speed · Mars   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 sound · speed · Mars   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 T · 4 F · 5 T · 6 T · 7 F · 8 F", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (c) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("화성에서 녹음한 소리를 분석해 보니 소리의 속도와 높낮이가 지구와 달랐다는 글이다(문장 4–11). 소재(화성의 소리)와 특징(지구와 다름)을 함께 담은 ①이 적절하다. ②·④는 거리·기체만 건드린 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 4와 6에서 화성의 소리 속도는 초속 약 240미터로 지구(343미터)보다 '느리다'고 했으므로 ⑤은 본문과 반대된다. ①은 문장 1, ②는 문장 5, ③는 문장 7, ④는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 01   제목   ·   정답 ②");
+B("화성에서 녹음한 소리를 분석해 보니 소리의 속도와 높낮이가 지구와 달랐다는 글이다(문장 4–11). 소재(화성의 소리)와 특징(지구와 다름)을 함께 담은 ②이 적절하다. ①·④는 거리·기체만 건드린 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 4와 6에서 화성의 소리 속도는 초속 약 240미터로 지구(343미터)보다 '느리다'고 했으므로 ①은 본문과 반대된다. ②은 문장 1, ③는 문장 5, ④는 문장 7, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) it은 앞 문장 5의 sound를 가리킨다. On Earth, sound travels ~ / On Mars, it travels ~ 로 같은 구조가 이어지므로 자리만 봐도 짝이 보인다.", true);
 Hs("독해 04   배열 영작   ·   On Earth, sound travels at a speed of 343 meters per second.");
 B("문장 5를 그대로 복원하는 문제다. ㄱ 첫 글자는 대문자 On, Earth 뒤의 콤마를 잊지 않는다.   ㄴ 주어 sound는 단수 — travels.   ㄷ at a speed of ~는 '~의 속도로'라는 한 덩어리다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 sound · speed · Mars     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 화성에서 소리가 지구와 다르게 들리는 까닭을 설명한다. ② 오케스트라는 차이를 설명하기 위한 예시일 뿐이고, ③ 로봇을 만드는 방법은 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 sound · speed · Mars     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 화성에서 소리가 지구와 다르게 들리는 까닭을 설명한다. ① 오케스트라는 차이를 설명하기 위한 예시일 뿐이고, ② 로봇을 만드는 방법은 나오지 않는다.");
 B("1-2   ○표 할 세 단어: sound(힌트① 이 글의 주인공) · speed(힌트② 지구와 달라지는 것) · Mars(힌트③ 그 일이 일어나는 곳). 나머지 셋(rover · Earth · orchestra)은 자주 나오지만 도구·비교 대상·예시일 뿐이다 — 빈도가 기준이 아니다.");
 B("1-3   문장 6 — it은 소리에 ○ (문장 5의 sound).   문장 8 — their는 어떤 사람의에 ○ (someone의 목소리).   문장 11 — they는 악기들에 ○ (문장 10의 바이올린과 더블베이스).");
 B("[학습 포인트]   같은 글 안에서도 they가 받는 것은 바뀐다. 문장 9의 They는 과학자들이지만 문장 11의 they는 악기들이다. 단수/복수와 바로 앞 문장, 이 두 가지를 확인하는 습관이 지칭 문항을 잡는다.", true);

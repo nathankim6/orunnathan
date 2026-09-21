@@ -78,15 +78,17 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Jeff Koons: Making People Happy with Art", "② How to Fix a Broken Sculpture",
- "③ The Best Toys to Buy for Children", "④ A Short History of the Museum of Modern Art",
- "⑤ How to Clean a Stainless Steel Pot"].forEach(c => K.push(ch(c)));
+["① How to Fix a Broken Sculpture",
+ "② The Best Toys to Buy for Children",
+ "③ A Short History of the Museum of Modern Art",
+ "④ How to Clean a Stainless Steel Pot",
+ "⑤ Jeff Koons: Making People Happy with Art"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① A visitor accidentally broke “Balloon Dog (Blue).”",
- "② The stainless steel rabbit stands 140 centimeters tall.",
- "③ Koons likes to use everyday things such as toys in his art.",
+ "② Koons likes to use everyday things such as toys in his art.",
+ "③ The stainless steel rabbit stands 140 centimeters tall.",
  "④ Koons moved to New York after finishing art school in 1976.",
  "⑤ The “Rabbit” was sold for $91.1 million."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -249,8 +251,8 @@ K.push(spF(4, 300, 0.10));
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 ["① 풍선으로 인형을 만드는 방법",
- "② 미술관에서 작품을 지키는 방법",
- "③ 사람들을 행복하게 하려 한 예술가"].forEach(c =>
+ "② 사람들을 행복하게 하려 한 예술가",
+ "③ 미술관에서 작품을 지키는 방법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -396,22 +398,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문6 ", { size: 17, bold: true, color: NAVY2 }), t("His art(S)·was(△V)·during this time(M)·fun", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 그 창문은 내 남동생에 의해 깨졌다  (2) 나는 방과 후에 그림 그리는 것을 좋아한다  (3) 그 케이크는 우리 엄마가 만들었고, 나는 그것을 매일 먹는 것을 좋아한다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 Koons · art · happy   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 Koons · art · happy   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 T · 4 F · 5 F · 6 T · 7 T · 8 F", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (d) → (a)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 일상의 물건으로 작품을 만든 예술가 제프 쿤스(문장 3–6)와, 예술이 사람들을 행복하게 해야 한다는 그의 믿음(문장 7·10)을 소개한다. 주인공과 그 믿음을 함께 담은 ①이 제목으로 적절하다. ②·④는 지엽적, ③·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 9에서 그 조각은 104센티미터 높이로 서 있다고 했다. 140센티미터라고 바꾼 ②가 본문과 어긋난다. ①은 문장 1, ③는 문장 4, ④은 문장 5, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 일상의 물건으로 작품을 만든 예술가 제프 쿤스(문장 3–6)와, 예술이 사람들을 행복하게 해야 한다는 그의 믿음(문장 7·10)을 소개한다. 주인공과 그 믿음을 함께 담은 ⑤이 제목으로 적절하다. ①·③는 지엽적, ②·④는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 9에서 그 조각은 104센티미터 높이로 서 있다고 했다. 140센티미터라고 바꾼 ③가 본문과 어긋난다. ①은 문장 1, ②는 문장 4, ④은 문장 5, ⑤는 문장 11에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) It은 바로 앞 문장 8–10에서 계속 이야기해 온 스테인리스 강철 토끼, 곧 “Rabbit”을 가리킨다. 9,110만 달러에 팔린 작품이 무엇인지 생각하면 된다.", true);
 Hs("독해 04   배열 영작   ·   It wasn’t made of real balloons!");
 B("문장 2를 그대로 복원하는 문제다. ① 첫 글자는 대문자 It.   ② 수동태의 부정은 wasn’t made — 한 덩어리로 붙여 쓴다.   ③ 마지막 느낌표를 빠뜨리지 않는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 Koons · art · happy     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 예술로 사람들을 행복하게 하려 한 제프 쿤스를 소개한다. ① 풍선 인형 만들기는 나오지 않고, ② 작품 파손은 글을 여는 계기일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 Koons · art · happy     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 예술로 사람들을 행복하게 하려 한 제프 쿤스를 소개한다. ① 풍선 인형 만들기는 나오지 않고, ③ 작품 파손은 글을 여는 계기일 뿐이다.");
 B("1-2   ○표 할 세 단어: Koons(힌트① 주인공) · art(힌트② 그가 만드는 것) · happy(힌트③ 그가 바란 모습). 나머지 셋(balloons · rabbit · mirror)은 작품과 소재의 예일 뿐 주제문에는 들어가지 않는다.");
 B("1-3   문장 7 — them은 사람들에 ○ (앞의 people).   문장 9 — that은 장난감에 ○ (앞의 a toy).   문장 10 — this는 거울 같은 표면에 ○ (앞 내용 전체).");
 B("[학습 포인트]   문장 10의 this처럼 지시어는 단어 하나가 아니라 앞 문장의 내용 전체를 받기도 한다. '무엇이 사람들을 그렇게 만드는가?'를 물으면 답이 보인다.", true);

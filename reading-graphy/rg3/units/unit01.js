@@ -102,13 +102,13 @@ K.push(sp(65));
 ["① The Lives of Botticelli and da Vinci",
  "② Why Oil Paint Changes Color as It Dries",
  "③ Delicious Egg Dishes for Breakfast",
- "④ How to Draw Animals Well",
- "⑤ Egg Yolk: A Secret Guard for Old Paintings"].forEach(c => K.push(ch(c)));
+ "④ Egg Yolk: A Secret Guard for Old Paintings",
+ "⑤ How to Draw Animals Well"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Famous artists like Botticelli used egg yolk in their paint.",
- "② Mixing egg yolk with oil paints makes the paint thinner.",
+["① Mixing egg yolk with oil paints makes the paint thinner.",
+ "② Famous artists like Botticelli used egg yolk in their paint.",
  "③ Oil paint by itself changes color as it dries.",
  "④ Egg yolk protected the paint from water.",
  "⑤ The paintings with the paint mix lasted a long time."].forEach(c => K.push(ch(c)));
@@ -116,10 +116,10 @@ K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① many people long ago",
- "② the oil paints",
- "③ the great paintings",
- "④ the art museums",
- "⑤ the famous artists"].forEach(c => K.push(ch(c)));
+ "② the famous artists",
+ "③ the oil paints",
+ "④ the great paintings",
+ "⑤ the art museums"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -739,11 +739,11 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) It protected the paint from water.  (2) As a result, the art stayed in good condition.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ⑤");
-B("옛 화가들이 유화 물감에 달걀노른자를 섞은 이유(문장 5–11)와 그 중요성(문장 12–13)을 설명하는 글이다. 소재(egg yolk)와 역할(guard)을 담은 ⑤이 제목으로 적절하다. ①·②는 본문의 일부(화가·변색)만 건드린 지엽적 오답, ③·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 6에서 노른자를 섞으면 물감이 더 걸쭉해진다(thicker)고 했으므로, 묽어진다(thinner)는 ②는 본문과 반대된다. ①은 문장 2–3, ③은 문장 5, ④은 문장 10, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 01   제목   ·   정답 ④");
+B("옛 화가들이 유화 물감에 달걀노른자를 섞은 이유(문장 5–11)와 그 중요성(문장 12–13)을 설명하는 글이다. 소재(egg yolk)와 역할(guard)을 담은 ④이 제목으로 적절하다. ①·②는 본문의 일부(화가·변색)만 건드린 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 6에서 노른자를 섞으면 물감이 더 걸쭉해진다(thicker)고 했으므로, 묽어진다(thinner)는 ①는 본문과 반대된다. ②은 문장 2–3, ③은 문장 5, ④은 문장 10, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) them은 바로 앞 문장 2–3의 유명 화가들을 가리킨다. 노른자를 물감에 넣은 주체가 누구인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   They used egg yolk in their paint.");
 B("문장 3을 그대로 복원하는 문제다. ① 주어 They의 첫 글자는 대문자.   ② egg yolk — 두 단어가 한 덩어리.   ③ in their paint — 소유격 their를 빠뜨리지 않는다.", true);

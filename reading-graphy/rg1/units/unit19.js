@@ -102,24 +102,24 @@ K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① White Noise: A Sound from a Fan",
  "② The Sound of Rain and Waves on a Beach",
- "③ Three Colors of Noise That Calm You Down",
- "④ How to Make Your Room Quiet",
+ "③ How to Make Your Room Quiet",
+ "④ Three Colors of Noise That Calm You Down",
  "⑤ The Best Ways to Study for a Test"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① All three sounds have a calming effect.",
  "② White noise is the most well-known of the three.",
- "③ Pink noise uses higher sounds than white noise.",
- "④ Pink noise sounds like rain or waves on a beach.",
+ "③ Pink noise sounds like rain or waves on a beach.",
+ "④ Pink noise uses higher sounds than white noise.",
  "⑤ Brown noise could help improve your thinking skills."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) It이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① white noise",
- "② brown noise",
- "③ the sound of a fan",
- "④ pink noise",
+["① pink noise",
+ "② white noise",
+ "③ brown noise",
+ "④ the sound of a fan",
  "⑤ a waterfall in nature"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -284,7 +284,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 무지개의 색이 생기는 이유", "② 소음의 종류를 부르는 색깔 이름", "③ 선풍기와 청소기 고르는 법"].forEach(c =>
+["① 소음의 종류를 부르는 색깔 이름",
+ "② 무지개의 색이 생기는 이유",
+ "③ 선풍기와 청소기 고르는 법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -407,8 +409,8 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 물건을 팔기 위해 만든 광고",
- "② 대상을 소개하고 사실을 알려 주는 설명문",
+["① 대상을 소개하고 사실을 알려 주는 설명문",
+ "② 물건을 팔기 위해 만든 광고",
  "③ 하루 일을 적은 일기",
  "④ 친구에게 보내는 편지",
  "⑤ 옛날이야기를 들려주는 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
@@ -743,8 +745,8 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("It(S)·’s(△V)·because[네모]·it(S′)·sounds(△V′)·like nature(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 신선한 공기를 마시려고 창문을 열었다  (2) 이것은 그 공원에서 가장 큰 나무이다  (3) 우리는 바다를 보려고 가장 높은 언덕에 올라갔다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 color · noise · calming        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 · 결과 · 이유 · 마무리   2-2 [B] 공통점 · [E] 브라운 소음   2-3 ②", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 color · noise · calming        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 · 결과 · 이유 · 마무리   2-2 [B] 공통점 · [E] 브라운 소음   2-3 ①", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (a) → (d) → (b) → (c)  ·  We use color to describe three types of noise with a calming effect.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) color  (2) calming  (3) lower  (4) deepest        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 4 ①  문장 6 ②  문장 9 ①  문장 12 ①", { size: 19, bold: true })], { after: 150 }),
@@ -757,16 +759,16 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) All these three sounds have a calming effect.  (2) It could help improve your thinking skills.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("이 글은 소음에 색 이름을 붙여 세 가지를 구분하고(문장 1–3), 세 소리 모두 진정 효과가 있다고 말한다(문장 4). 소재(세 가지 색 소음)와 특징(진정 효과)을 함께 담은 ③이 제목으로 적절하다. ①·②는 한 종류의 예만 담은 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 9에서 핑크 소음은 백색 소음보다 '더 낮은(lower)' 소리를 쓴다고 했으므로, 더 높다는 ③는 본문과 반대된다. ①은 문장 4, ②은 문장 6, ④은 문장 10, ⑤는 문장 14에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 소음에 색 이름을 붙여 세 가지를 구분하고(문장 1–3), 세 소리 모두 진정 효과가 있다고 말한다(문장 4). 소재(세 가지 색 소음)와 특징(진정 효과)을 함께 담은 ④이 제목으로 적절하다. ①·②는 한 종류의 예만 담은 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 9에서 핑크 소음은 백색 소음보다 '더 낮은(lower)' 소리를 쓴다고 했으므로, 더 높다는 ④는 본문과 반대된다. ①은 문장 4, ②은 문장 6, ③은 문장 10, ⑤는 문장 14에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) It은 문장 9부터 주인공이 된 핑크 소음을 가리킨다. 바로 앞 문장 10의 It도 같은 대상이다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   White noise is the most well-known.");
 B("문장 6을 그대로 복원하는 문제다. ① 첫 글자는 대문자 White.   ② 최상급은 the most well-known이 한 덩어리.   ③ 마침표를 빠뜨리지 않는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 color · noise · calming     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 백색·핑크·브라운처럼 색 이름으로 부르는 소음을 소개한다. ① 무지개 이야기는 나오지 않고, ③ 선풍기·청소기는 백색 소음의 예일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 color · noise · calming     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 백색·핑크·브라운처럼 색 이름으로 부르는 소음을 소개한다. ② 무지개 이야기는 나오지 않고, ③ 선풍기·청소기는 백색 소음의 예일 뿐이다.");
 B("1-2   ○표 할 세 단어: color(힌트① 소리를 구분하는 방법) · noise(힌트② 이 글의 주인공) · calming(힌트③ 세 소리의 공통 효과). 나머지 셋(fan · rain · waterfall)은 본문에 나오지만 예시일 뿐이다.");
 B("1-3   문장 7 — this는 white noise에 ○ (문장 6의 백색 소음).   문장 11 — It은 pink noise에 ○.   문장 13 — It은 brown noise에 ○ (문장 12에서 주인공이 바뀌었다).");
 B("[학습 포인트]   같은 It이라도 문장 11에서는 핑크 소음, 문장 13에서는 브라운 소음이다. 문단이 바뀌면 주인공도 바뀐다 — It을 만나면 그 문단의 첫 문장을 확인하자.", true);
@@ -774,10 +776,10 @@ B("[학습 포인트]   같은 It이라도 문장 11에서는 핑크 소음, 문
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 반전 / 결과 / 이유 / 마무리     2-2 [B] 공통점 · [E] 브라운 소음     2-3 ②");
+Hs("STEP 2   글의 흐름   ·   2-1 반전 / 결과 / 이유 / 마무리     2-2 [B] 공통점 · [E] 브라운 소음     2-3 ①");
 B("2-1   문장 3 But — 아는 것(백색)에서 모르는 것(핑크·브라운)으로 방향을 바꾸는 '반전'.   문장 8 so — 다른 소리를 덮어 주는 '결과'로 집중할 수 있다.   문장 11 because — 자연 소리 같다는 '이유'.   문장 15 So — 글을 정리하며 독자에게 되묻는 '마무리'.");
 B("2-2   [B] 공통점(문장 4–5: 세 소리 모두 진정 효과가 있다는 공통점과 질문), [E] 브라운 소음(문장 12–15: 가장 깊은 소리 소개와 마무리 질문). 보기의 '만드는 법'은 이 글에 없는 역할이다. [A] 소개 → [B] 공통점 → [C] 백색 → [D] 핑크 → [E] 브라운 — 하나씩 차례로 소개하는 설명문의 전형적인 흐름이다.");
-B("2-3   정답 ②. 세 가지 소음이라는 대상을 소개하고 사실을 알려 주는 설명문이다 — 현재시제로 대상의 이름과 특징이 이어진다(문장 6·9·12). ① 가격이나 명령문이 없어 광고가 아니고, ③ I·Today가 없어 일기도, ④ 받는 사람이 없어 편지도, ⑤ 등장인물과 사건이 없어 동화도 아니다.");
+B("2-3   정답 ①. 세 가지 소음이라는 대상을 소개하고 사실을 알려 주는 설명문이다 — 현재시제로 대상의 이름과 특징이 이어진다(문장 6·9·12). ② 가격이나 명령문이 없어 광고가 아니고, ③ I·Today가 없어 일기도, ④ 받는 사람이 없어 편지도, ⑤ 등장인물과 사건이 없어 동화도 아니다.");
 B("[학습 포인트]   연결어만 표시해도 글의 지도가 그려진다. But(반전) · so(결과) · because(이유). 설명문은 '소개 → 공통점 → 하나씩 차례로'가 기본 뼈대다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 color · calming     3-3 (a) → (d) → (b) → (c)");
 B("3-1  재료 찾기 — (2) 문장 1에서 color에 ○: 소음을 설명할 때 쓰는 도구다. shape는 본문에 없다. (3) 문장 4에서 calming에 ○: 세 소리의 공통 효과다. boring은 반대 방향의 말이다. 주제문의 재료는 언제나 본문 안에 있다.");

@@ -81,22 +81,22 @@ K.push(sp(65));
 ["① Why French People Eat Bread Every Meal",
  "② Six Billion Baguettes: A Sales Record",
  "③ How to Bake Bread at Home",
- "④ Baguettes in Danger: Saving Traditional Bakeries",
- "⑤ The Rise of Big Supermarkets in Europe"].forEach(c => K.push(ch(c)));
+ "④ The Rise of Big Supermarkets in Europe",
+ "⑤ Baguettes in Danger: Saving Traditional Bakeries"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① A baguette is a long, thin type of bread from France.",
- "② Six billion baguettes are sold in France every year.",
- "③ Most of the small bakeries that closed were in the countryside.",
- "④ UNESCO added baguette know-how to its Intangible Cultural Heritage list.",
- "⑤ Since 1970, France has gained 400 traditional bakeries each year."].forEach(c => K.push(ch(c)));
+ "② Since 1970, France has gained 400 traditional bakeries each year.",
+ "③ Six billion baguettes are sold in France every year.",
+ "④ Most of the small bakeries that closed were in the countryside.",
+ "⑤ UNESCO added baguette know-how to its Intangible Cultural Heritage list."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the French people at every meal",
- "② the traditional bakeries in France",
- "③ the fresh baguettes in the morning",
+ "② the fresh baguettes in the morning",
+ "③ the traditional bakeries in France",
  "④ the big supermarkets and stores",
  "⑤ the baguette-baking skills"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -250,9 +250,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 바게트를 맛있게 굽는 방법",
- "② 프랑스 대형 슈퍼마켓의 성장",
- "③ 사라지는 프랑스 전통 빵집과 그 보호"].forEach(c =>
+["① 사라지는 프랑스 전통 빵집과 그 보호",
+ "② 바게트를 맛있게 굽는 방법",
+ "③ 프랑스 대형 슈퍼마켓의 성장"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -398,22 +398,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("This(S)·will help keep(△V)·such traditions and knowledge·for a long time(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 책상 위에 많은 책이 있었다  (2) 친구들과 축구를 하는 것은 재미있다  (3) 그 방에 100명이 있었다는 것은 믿기 어려웠다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 baguette · bakeries · protect   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 baguette · bakeries · protect   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 T · 5 F · 6 T · 7 T · 8 F", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (c) → (a)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ④");
-B("이 글은 프랑스의 상징인 바게트(문장 1–4)와 해마다 사라지는 전통 빵집(문장 6–8), 그리고 유네스코의 보호(문장 9–11)를 소개한다. 소재와 문제를 함께 담은 ④이 적절하다. ①·②은 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 6에서 프랑스는 해마다 전통 빵집 400개를 잃었다(has lost). 얻었다고 한 ⑤이 본문과 반대된다. ①은 문장 1, ②는 문장 3, ③는 문장 7, ④는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ②");
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 프랑스의 상징인 바게트(문장 1–4)와 해마다 사라지는 전통 빵집(문장 6–8), 그리고 유네스코의 보호(문장 9–11)를 소개한다. 소재와 문제를 함께 담은 ⑤이 적절하다. ①·②은 지엽적 오답, ③·④는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 6에서 프랑스는 해마다 전통 빵집 400개를 잃었다(has lost). 얻었다고 한 ②이 본문과 반대된다. ①은 문장 1, ③는 문장 3, ④는 문장 7, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) them은 바로 앞의 many traditional bakeries를 가리킨다. '그것들 각각이 고유한 바게트 굽기 기술을 가졌다'는 뜻이다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   However, since 1970, France has lost 400 traditional bakeries each year.");
 B("문장 6을 그대로 복원한다. ① 첫 글자는 대문자 However — 뒤에 콤마.   ② since 1970, 뒤에도 콤마.   ③ has lost는 현재완료 한 덩어리.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 baguette · bakeries · protect     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 사라지는 전통 빵집과 그것을 지키려는 노력을 다룬다. ① 굽는 방법은 나오지 않고, ② 대형 마트는 빵집이 문 닫는 원인으로만 등장한다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 baguette · bakeries · protect     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 사라지는 전통 빵집과 그것을 지키려는 노력을 다룬다. ② 굽는 방법은 나오지 않고, ③ 대형 마트는 빵집이 문 닫는 원인으로만 등장한다.");
 B("1-2   ○표 할 세 단어: baguette(힌트① 주인공) · bakeries(힌트② 사라지고 있는 것) · protect(힌트③ 유네스코가 하려는 일). 나머지 셋(France · supermarkets · morning)은 본문에 등장하지만 주제문에 들어가지 않는다 — 배경과 원인일 뿐이다.");
 B("1-3   문장 5 — them은 전통 빵집들에 ○ (앞의 many traditional bakeries).   문장 10 — They는 유네스코에 ○ (문장 9의 주어).   문장 11 — This는 목록에 올린 일에 ○ (문장 10의 내용 전체).");
 B("[학습 포인트]   문장 11의 This처럼 지시어는 단어 하나가 아니라 앞 문장 전체를 받기도 한다. This/These가 나오면 '앞 문장 전체일 수도 있다'를 먼저 의심하자.", true);

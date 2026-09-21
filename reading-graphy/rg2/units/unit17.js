@@ -82,25 +82,25 @@ K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Turn Tea Leaves into Powder",
  "② The Best Coffee Shops in Ancient China",
- "③ Why a Picture Disappears in 20 Minutes",
- "④ Chabaixi: Latte Art from Ancient China",
+ "③ Chabaixi: Latte Art from Ancient China",
+ "④ Why a Picture Disappears in 20 Minutes",
  "⑤ How to Draw Bamboo and Mountains"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Latte art is a creative way to decorate coffee using milk.",
  "② Chabaixi means \u201ca hundred tricks with tea.\u201d",
- "③ Chabaixi uses milk instead of water to make the designs.",
- "④ Artists first turned tea leaves into powder.",
+ "③ Artists first turned tea leaves into powder.",
+ "④ Chabaixi uses milk instead of water to make the designs.",
  "⑤ The picture disappears in just 20 minutes."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the tea in the cup",
- "② the special spoon",
- "③ the picture on top",
- "④ the tea powder",
- "⑤ the clear water"].forEach(c => K.push(ch(c)));
+ "② the clear water",
+ "③ the special spoon",
+ "④ the picture on top",
+ "⑤ the tea powder"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -406,11 +406,11 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ④");
-B("현대의 라테 아트(문장 1–3)로 문을 열고, 수천 년 전 중국의 차 예술 차바이시(문장 4–9)와 그 차이(문장 10–13)를 설명한다. 소재와 특징을 함께 담은 ④가 제목으로 적절하다. ①·③은 지엽적 오답, ②·⑤는 본문에 근거가 없다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 11에서 차바이시는 우유 대신 맑은 물(clear water instead of milk)을 쓴다고 했다. 우유와 물을 뒤바꾼 ③이 본문과 반대다. ①은 문장 3, ②은 문장 6, ④는 문장 7, ⑤는 문장 13에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 01   제목   ·   정답 ③");
+B("현대의 라테 아트(문장 1–3)로 문을 열고, 수천 년 전 중국의 차 예술 차바이시(문장 4–9)와 그 차이(문장 10–13)를 설명한다. 소재와 특징을 함께 담은 ③가 제목으로 적절하다. ①·④은 지엽적 오답, ②·⑤는 본문에 근거가 없다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 11에서 차바이시는 우유 대신 맑은 물(clear water instead of milk)을 쓴다고 했다. 우유와 물을 뒤바꾼 ④이 본문과 반대다. ①은 문장 3, ②은 문장 6, ③는 문장 7, ⑤는 문장 13에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) it은 같은 문장 앞부분의 the water, 곧 문장 11의 맑은 물이다. 차에 닿아 하얗게 변하면서 무늬가 생기는 것이 바로 이 물이다.", true);
 Hs("독해 04   배열 영작   ·   The ancient Chinese tea art was called Chabaixi.");
 B("문장 5를 그대로 복원한다. ① 첫 글자는 대문자 The.   ② ancient Chinese tea art — 꾸미는 말들이 명사 art 앞에 줄줄이 붙는다.   ③ was called가 한 덩어리(수동태).", true);

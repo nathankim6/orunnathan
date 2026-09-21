@@ -79,9 +79,9 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Whistle Loudly and Clearly",
- "② Talking with Whistles Around the World",
- "③ The Beautiful Islands of Spain",
- "④ Spanish Vowels and Consonants",
+ "② The Beautiful Islands of Spain",
+ "③ Spanish Vowels and Consonants",
+ "④ Talking with Whistles Around the World",
  "⑤ The Best Way to Climb High Mountains"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
@@ -248,7 +248,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 스페인 카나리아 제도의 관광 명소", "② 언어처럼 쓰이는 휘파람", "③ 휘파람을 잘 부는 방법"].forEach(c =>
+["① 언어처럼 쓰이는 휘파람",
+ "② 스페인 카나리아 제도의 관광 명소",
+ "③ 휘파람을 잘 부는 방법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -394,22 +396,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("It(S)·shows(△V)·that[네모]·people(S′)·can understand(△V′)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 코코라는 이름의 개가 한 마리 있다  (2) 그녀는 질문을 하기 위해 손을 들었다  (3) 우리는 도시를 보기 위해 남산이라는 언덕에 올랐다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 whistles · language · communicate   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 whistles · language · communicate   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 F · 5 F · 6 F · 7 T · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ②");
-B("이 글은 세계 여러 문화가 휘파람을 언어로 쓴다는 사실(문장 1–2)과 두 가지 예(문장 3–9), 그리고 말 없이도 통한다는 평가(문장 10–11)를 소개한다. 소재와 핵심을 모두 담은 ②이 제목이다. ③·④는 지엽, ①·⑤는 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 세계 여러 문화가 휘파람을 언어로 쓴다는 사실(문장 1–2)과 두 가지 예(문장 3–9), 그리고 말 없이도 통한다는 평가(문장 10–11)를 소개한다. 소재와 핵심을 모두 담은 ④이 제목이다. ②·③는 지엽, ①·⑤는 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ⑤");
 B("문장 5에서 스페인어 모음 다섯 개를 대신하는 것은 휘파람 두 개이고, 자음용 휘파람이 네 개다. 숫자를 뒤바꾼 ⑤이 본문과 어긋난다. ①은 문장 1, ②는 문장 2, ③는 문장 7, ④는 문장 9에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) those는 앞에 나온 복수 명사 cultures를 대신한다. '숲이나 산 같은 곳에 있는 those'이므로 그런 곳의 문화들을 가리킨다 — 복수 지시어는 복수 명사를 받는다.", true);
 Hs("독해 04   배열 영작   ·   Whistling is an interesting way to communicate.");
 B("문장 10을 그대로 복원하는 문제다. ① 동명사 Whistling이 주어 — 첫 글자는 대문자.   ② 동명사 주어는 단수 취급이라 동사는 is.   ③ way to communicate — to부정사가 뒤에서 way를 꾸민다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 whistles · language · communicate     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 휘파람이 하나의 언어로 쓰인다는 것을 여러 예로 보여 준다. ① 관광 명소를 소개하는 글이 아니고, ③ 휘파람 부는 요령도 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 whistles · language · communicate     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 휘파람이 하나의 언어로 쓰인다는 것을 여러 예로 보여 준다. ② 관광 명소를 소개하는 글이 아니고, ③ 휘파람 부는 요령도 나오지 않는다.");
 B("1-2   ○표 할 세 단어: whistles(힌트① 이 글의 주인공) · language(힌트② 그것이 쓰이는 방식) · communicate(힌트③ 그것으로 하는 일). 나머지 셋(mountains · Spain · vowels)은 본문에 등장하지만 배경과 예일 뿐이다.");
 B("1-3   문장 6 — they는 휘파람들에 ○ (앞의 the whistles).   문장 8 — They는 흐몽 사람들에 ○ (문장 7의 the Hmong people).   문장 11 — It은 휘파람 불기에 ○ (문장 10의 Whistling).");
 B("[학습 포인트]   같은 they라도 문장 6에서는 휘파람을, 문장 8에서는 사람을 가리킨다. 지시어는 '바로 앞의 복수 명사'를 찾는 것이 원칙이니, 문장을 건너뛰지 말고 한 칸씩 되짚어 보자.", true);

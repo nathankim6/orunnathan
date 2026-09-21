@@ -101,8 +101,8 @@ K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① The Best Camping Food in Australia",
  "② How to Cook a Big Crab at Home",
- "③ Robber Crabs: Watch Out and Respect Them",
- "④ Beautiful Beaches of Christmas Island",
+ "③ Beautiful Beaches of Christmas Island",
+ "④ Robber Crabs: Watch Out and Respect Them",
  "⑤ How to Set Up a Tent Quickly"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
@@ -110,16 +110,16 @@ K.push(sp(65));
 ["① Christmas Island is famous for its beautiful nature.",
  "② Robber crabs have a strong sense of smell.",
  "③ Smart campers hang their food in trees.",
- "④ The people on the island look after these crabs.",
- "⑤ The robber crabs often hurt people."].forEach(c => K.push(ch(c)));
+ "④ The robber crabs often hurt people.",
+ "⑤ The people on the island look after these crabs."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) They가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the robber crabs",
  "② the people on the island",
- "③ smart campers",
- "④ the trees near the tents",
- "⑤ the cooking spots"].forEach(c => K.push(ch(c)));
+ "③ the trees near the tents",
+ "④ the cooking spots",
+ "⑤ smart campers"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -285,9 +285,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 크리스마스섬의 도둑게와 캠핑 조심하기",
- "② 텐트를 빨리 치는 방법",
- "③ 게를 맛있게 요리하는 방법"].forEach(c =>
+["① 텐트를 빨리 치는 방법",
+ "② 게를 맛있게 요리하는 방법",
+ "③ 크리스마스섬의 도둑게와 캠핑 조심하기"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -410,11 +410,11 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 물건을 팔기 위해 만든 광고",
- "② 하루 일과를 적은 일기",
- "③ 친구에게 보내는 편지",
- "④ 옛이야기를 들려주는 동화",
- "⑤ 섬과 동물을 알려 주는 설명문"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
+["① 섬과 동물을 알려 주는 설명문",
+ "② 물건을 팔기 위해 만든 광고",
+ "③ 하루 일과를 적은 일기",
+ "④ 친구에게 보내는 편지",
+ "⑤ 옛이야기를 들려주는 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
 K.push(brk());
@@ -744,8 +744,8 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문14 ", { size: 17, bold: true, color: NAVY2 }), t("The people(S)·on the island(M)·look after·treat(△V)·with respect(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 우리 정원에는 큰 나무가 한 그루 있다  (2) 나는 우리 선생님이 쓰신 책을 읽었다  (3) 우리 마을에는 ‘반려동물’이라 불리는 동물이 많이 있다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 crabs · island · respect        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 덧붙임 · 반전 · 때 · 순서   2-2 [B] 문제 · [E] 존중   2-3 ⑤", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 crabs · island · respect        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 덧붙임 · 반전 · 때 · 순서   2-2 [B] 문제 · [E] 존중   2-3 ①", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (c) → (b) → (d) → (a)  ·  The people on the island look after these crabs and treat them with respect.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) smell  (2) hurt  (3) trees  (4) respect        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 3 ②  문장 4 ③  문장 8 ②  문장 14 ①", { size: 19, bold: true })], { after: 150 }),
@@ -758,16 +758,16 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) These crabs have a strong sense of smell.  (2) Then, the crabs won’t come near the tents at night.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("이 글은 크리스마스섬의 도둑게를 소개하며 조심할 점(문장 3–6)과 섬사람들의 존중(문장 13–14)을 함께 전한다. 소재와 태도를 담은 ③이 제목으로 알맞다. ④·⑤는 지엽적이고, ①·②은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 8에서 게들은 사람을 해치지 않는다(don’t hurt people)고 했다. 자주 해친다는 ⑤은 본문과 반대다. ①은 문장 2, ②는 문장 4, ③는 문장 9, ④는 문장 14에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 크리스마스섬의 도둑게를 소개하며 조심할 점(문장 3–6)과 섬사람들의 존중(문장 13–14)을 함께 전한다. 소재와 태도를 담은 ④이 제목으로 알맞다. ③·⑤는 지엽적이고, ①·②은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 8에서 게들은 사람을 해치지 않는다(don’t hurt people)고 했다. 자주 해친다는 ④은 본문과 반대다. ①은 문장 2, ②는 문장 4, ③는 문장 9, ⑤는 문장 14에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) They는 바로 앞 문장 9의 주어 Smart campers를 받는다. 텐트를 요리 자리에서 멀리 치는 쪽은 게가 아니라 캠핑객이다.", true);
 Hs("독해 04   배열 영작   ·   Smart campers usually hang their food in trees.");
 B("문장 9를 그대로 복원하는 문제다. ① 첫 글자는 대문자 Smart.   ② usually는 일반동사 hang 앞에 온다.   ③ in trees로 문장을 마친다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 crabs · island · respect     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 크리스마스섬의 도둑게와 캠핑할 때 주의할 점을 알려 준다. ② 텐트 치는 법과 ③ 요리법은 이 글의 중심이 아니다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 crabs · island · respect     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 크리스마스섬의 도둑게와 캠핑할 때 주의할 점을 알려 준다. ① 텐트 치는 법과 ② 요리법은 이 글의 중심이 아니다.");
 B("1-2   ○표 할 세 단어: crabs(힌트① 주인공 동물) · island(힌트② 사는 곳) · respect(힌트③ 섬사람들의 태도). camping · food · tents는 본문에 나오지만 주제문에는 들어가지 않는다.");
 B("1-3   문장 8 — They는 도둑게들에 ○ (문장 4–5).   문장 10 — They는 똑똑한 캠핑객들에 ○ (문장 9).   문장 14 — them은 these crabs에 ○.");
 B("[학습 포인트]   같은 They라도 문장 8은 게, 문장 10은 캠핑객이다. 지시어를 만나면 바로 앞 문장의 주어를 확인하고 화살표로 연결해 두자.", true);
@@ -775,10 +775,10 @@ B("[학습 포인트]   같은 They라도 문장 8은 게, 문장 10은 캠핑�
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 덧붙임 / 반전 / 때 / 순서     2-2 [B] 문제 · [E] 존중     2-3 ⑤");
+Hs("STEP 2   글의 흐름   ·   2-1 덧붙임 / 반전 / 때 / 순서     2-2 [B] 문제 · [E] 존중     2-3 ①");
 B("2-1   문장 2 and — 아름다운 자연에 캠핑 인기를 '덧붙임'.   문장 3 But — 좋은 이야기에서 조심할 점으로 '반전'.   문장 6 When — 요리를 시작하는 '때'.   문장 11 Then — 그렇게 하면 생기는 다음 일, '순서'.");
 B("2-2   [B] 문제(문장 3–5: 음식을 가져가는 도둑게), [E] 존중(문장 12–14: 먹지 않고 돌본다). 보기의 '요리법'은 이 글에 없는 역할이다.");
-B("2-3   정답 ⑤. 섬과 게에 대한 사실을 알려 주는 설명문이다. ① 가격·명령문이 없어 광고가 아니고, ② I·날짜, ③ Dear ~, ④ 옛이야기의 형식도 없다.");
+B("2-3   정답 ①. 섬과 게에 대한 사실을 알려 주는 설명문이다. ② 가격·명령문이 없어 광고가 아니고, ③ I·날짜, ④ Dear ~, ⑤ 옛이야기의 형식도 없다.");
 B("[학습 포인트]   But이 두 번 나오는 글이다(문장 3·7). 방향이 바뀌는 자리를 표시하면 '좋다 → 조심 → 안심'의 흐름이 한눈에 보인다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 look after · respect     3-3 (c) → (b) → (d) → (a)");
 B("3-1  재료 찾기 — (2) 문장 14에서 look after에 ○: 섬사람들이 하는 일이다. catch는 오히려 문장 13과 반대다. (3) respect에 ○: 섬사람들의 태도다. fear는 본문에 없다.");

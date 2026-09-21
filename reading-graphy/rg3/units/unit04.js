@@ -99,18 +99,18 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① How Malaria Spreads Around the World",
- "② The Beautiful Nature of Greenland",
- "③ The Country Where Mosquitoes Cannot Live",
+["① The Country Where Mosquitoes Cannot Live",
+ "② How Malaria Spreads Around the World",
+ "③ The Beautiful Nature of Greenland",
  "④ Why Summer in Norway Is So Short",
  "⑤ Easy Ways to Keep Mosquitoes Out of Your House"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Mosquitoes are insects that can spread diseases like malaria.",
- "② Mosquitoes cannot be found in Greenland or Norway.",
- "③ Mosquitoes kill about 725,000 people every year.",
- "④ In other countries, mosquitoes hide under the ice in the winter.",
+ "② Mosquitoes kill about 725,000 people every year.",
+ "③ In other countries, mosquitoes hide under the ice in the winter.",
+ "④ Mosquitoes cannot be found in Greenland or Norway.",
  "⑤ In Iceland, the temperature changes too quickly for mosquitoes."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) this가 가리키는 것으로 가장 적절한 것은?"));
@@ -286,8 +286,8 @@ K.push(spF(4, 300, 0.10));
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 ["① 세상에서 가장 위험한 동물들의 목록",
- "② 말라리아를 치료하는 새로운 방법",
- "③ 아이슬란드에 모기가 살지 않는 까닭"].forEach(c =>
+ "② 아이슬란드에 모기가 살지 않는 까닭",
+ "③ 말라리아를 치료하는 새로운 방법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -744,7 +744,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("the temperature(S)·changes(△V)·for mosquitoes(M)·too quickly to hide(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 바이올린을 켤 수 있는 친구가 있다  (2) 그 수프는 너무 뜨거워서 먹을 수 없었다  (3) 그는 너무 커서 들고 다닐 수 없는 가방을 샀다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 mosquitoes · Iceland · temperature        ", { size: 19, bold: true }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 mosquitoes · Iceland · temperature        ", { size: 19, bold: true }),
      t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 · 이유 · 반전 · 조건   2-2 [B] 예외 · [E] 제안   2-3 ③", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (c) → (a) → (b) → (d)  ·  Mosquitoes can’t survive in Iceland because the temperature changes too quickly for them.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) dangerous  (2) cold  (3) temperature  (4) bites        ", { size: 19, bold: true }),
@@ -758,16 +758,16 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) They kill about 725,000 people per year.  (2) You can enjoy the beautiful nature and won’t get any mosquito bites.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("모기가 세상에서 가장 위험한 동물이지만(문장 1–4) 아이슬란드에서는 살지 못한다는 것(문장 5–11)이 글의 중심이다. 소재와 특징을 함께 담은 ③이 정답. ①·⑤는 지엽적 오답, ②·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 8에서 모기는 그린란드와 노르웨이 같은 다른 추운 나라에서는 쉽게 발견된다고 했으므로, 찾을 수 없다는 ②이 본문과 반대된다. ①은 문장 3, ③는 문장 4, ④는 문장 10, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ①");
+B("모기가 세상에서 가장 위험한 동물이지만(문장 1–4) 아이슬란드에서는 살지 못한다는 것(문장 5–11)이 글의 중심이다. 소재와 특징을 함께 담은 ①이 정답. ②·⑤는 지엽적 오답, ③·④는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 8에서 모기는 그린란드와 노르웨이 같은 다른 추운 나라에서는 쉽게 발견된다고 했으므로, 찾을 수 없다는 ④이 본문과 반대된다. ①은 문장 3, ②는 문장 4, ③는 문장 10, ⑤는 문장 11에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) this는 바로 앞 문장 6의 내용, 곧 '모기가 아이슬란드에서 살아남을 수 없다'를 가리킨다. 지시어는 한 단어만이 아니라 앞 문장 전체를 받을 수도 있다.", true);
 Hs("독해 04   배열 영작   ·   But people in Iceland don’t have to worry about them!");
 B("문장 5를 그대로 복원하는 문제다. ① 첫 글자는 대문자 But.   ② people in Iceland — 전치사구가 주어 뒤에 붙는다.   ③ don’t have to 뒤에는 동사원형 worry.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 mosquitoes · Iceland · temperature     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 아이슬란드에 모기가 살지 않는 까닭을 설명한다. ① 위험한 동물 목록은 도입일 뿐이고, ② 말라리아 치료법은 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 mosquitoes · Iceland · temperature     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 아이슬란드에 모기가 살지 않는 까닭을 설명한다. ① 위험한 동물 목록은 도입일 뿐이고, ③ 말라리아 치료법은 나오지 않는다.");
 B("1-2   ○표 할 세 단어: mosquitoes(힌트① 주인공) · Iceland(힌트② 살지 못하는 곳) · temperature(힌트③ 그 까닭). 나머지 셋(malaria · Norway · summer)은 본문에 나오지만 주제문에 들어가지 않는다 — 예시와 비교 대상일 뿐이다.");
 B("1-3   문장 6 — there는 아이슬란드에서에 ○ (문장 5의 그 나라).   문장 7 — this는 모기가 없는 것에 ○ (문장 6의 내용).   문장 9 — those countries는 그린란드·노르웨이에 ○ (문장 8).");
 B("[학습 포인트]   there는 장소를, this는 앞 문장 전체를 받는다. 지시어를 만나면 '이게 뭘 가리키지?'를 확인해 화살표로 이어 두자 — 고등 독해의 지칭 추론이 여기서 자란다.", true);

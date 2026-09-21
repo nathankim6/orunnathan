@@ -88,18 +88,18 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Elvis was fixing his boat when the weather changed.",
- "② After 24 days, Elvis saw a plane and sent a signal.",
- "③ Elvis mixed ketchup and seasonings with rainwater.",
- "④ Heinz gave Elvis a new boat.",
- "⑤ When the navy rescued Elvis, he was very sick."].forEach(c => K.push(ch(c)));
+["① When the navy rescued Elvis, he was very sick.",
+ "② Elvis was fixing his boat when the weather changed.",
+ "③ After 24 days, Elvis saw a plane and sent a signal.",
+ "④ Elvis mixed ketchup and seasonings with rainwater.",
+ "⑤ Heinz gave Elvis a new boat."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the navy ship",
- "② the bottle of ketchup",
- "③ Elvis’ broken boat",
- "④ the signal Elvis sent",
+ "② the signal Elvis sent",
+ "③ the bottle of ketchup",
+ "④ Elvis’ broken boat",
  "⑤ the rainwater"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -252,7 +252,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 케첩으로 만드는 맛있는 요리", "② 케첩 덕분에 살아남은 남자의 생존 이야기", "③ 카리브해를 지키는 해군 구조대"].forEach(c =>
+["① 케첩으로 만드는 맛있는 요리",
+ "② 카리브해를 지키는 해군 구조대",
+ "③ 케첩 덕분에 살아남은 남자의 생존 이야기"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -404,7 +406,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문13 ", { size: 17, bold: true, color: NAVY2 }), t("Thanks to ~ story(M)·Elvis(S)·got(△V)·from the ketchup company(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 8시에 책을 읽고 있었다  (2) 그녀는 제주도를 방문하고 싶어 한다  (3) 그는 친구를 만나고 싶어서 기다리고 있었다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 ketchup · survived · boat   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 ketchup · survived · boat   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 T · 5 F · 6 F · 7 T · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
@@ -412,14 +414,14 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ⑤");
 B("이 글은 바다에서 길을 잃은 엘비스가 케첩과 빗물로 24일을 버텨 살아남은 이야기다(문장 5·8–10). 소재(케첩)와 특징(그 덕분에 살아남음)을 함께 담은 ⑤이 정답이다. ①·④는 지엽적이고, ②·③은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 7에서 해군이 구조했을 때 엘비스는 건강 상태가 좋았다(in good health)고 했으므로, 몹시 아팠다는 ⑤은 본문과 반대된다. ①은 문장 1–2, ②은 문장 5, ③은 문장 8–9, ④는 문장 12–13에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 7에서 해군이 구조했을 때 엘비스는 건강 상태가 좋았다(in good health)고 했으므로, 몹시 아팠다는 ①은 본문과 반대된다. ②은 문장 1–2, ③은 문장 5, ④은 문장 8–9, ⑤는 문장 12–13에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) it은 바로 앞 문장 5에서 엘비스가 거울로 보낸 신호(a signal)를 가리킨다. 비행기에 탄 사람들이 알아챈 것이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   Poor Elvis was lost in the Caribbean Sea!");
 B("문장 4를 그대로 복원하는 문제다. ① 첫 글자는 대문자 Poor.   ② be lost가 '길을 잃다'라는 한 덩어리.   ③ Caribbean Sea는 바다 이름이라 대문자로 쓴다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 ketchup · survived · boat     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 케첩 덕분에 살아남은 엘비스의 이야기다. ① 요리법은 나오지 않고, ③ 해군은 그를 구조한 사람들일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 ketchup · survived · boat     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 케첩 덕분에 살아남은 엘비스의 이야기다. ① 요리법은 나오지 않고, ② 해군은 그를 구조한 사람들일 뿐이다.");
 B("1-2   ○표 할 세 단어: ketchup(힌트① 그를 살린 음식) · survived(힌트② 그가 해낸 일) · boat(힌트③ 마지막에 얻은 것). 나머지 셋(mirror · navy · plane)은 본문에 나오지만 주제문에는 들어가지 않는다.");
 B("1-3   문장 6 — it은 엘비스가 보낸 신호에 ○.   문장 9 — them은 케첩과 양념, it은 그것을 섞은 물에 ○.   문장 12 — They는 케첩 회사 하인즈에 ○.");
 B("[학습 포인트]   문장 9가 이 지문의 백미다. 한 문장 안에서 them(재료)과 it(섞은 물)이 서로 다른 것을 가리킨다 — 수(단수·복수)가 첫 번째 단서다.", true);

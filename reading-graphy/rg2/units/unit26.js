@@ -98,8 +98,8 @@ K.push(sp(65));
 ["① the lake under the poles",
  "② the country of Norway",
  "③ the big ice mountain",
- "④ the hotel",
- "⑤ the waste from the hotel"].forEach(c => K.push(ch(c)));
+ "④ the waste from the hotel",
+ "⑤ the hotel"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -409,7 +409,7 @@ Hs("독해 01   제목   ·   정답 ②");
 B("이 글은 쓰는 것보다 더 많은 에너지를 만드는 호텔(문장 3–4)과 그 방법(문장 6–10), 그리고 그곳에서 배울 것(문장 11)을 소개한다. 소재(호텔)와 특징(스스로 에너지를 만든다)을 함께 담은 ②이 제목으로 적절하다. ④·⑤는 본문의 한 부분만 건드린 지엽적 오답, ①·③은 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ①");
 B("문장 4에서 이 호텔은 쓰는 것보다 더 많은 에너지를 만든다고 했으므로, 반대로 말한 ①가 본문과 어긋난다. ②은 문장 2, ③은 문장 6, ④는 문장 8, ⑤는 문장 12에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) It은 앞 문장 8의 The hotel을 가리킨다. 물을 정화하고 쓰레기를 재활용하는 주체가 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   The hotel will use sunlight to get energy.");
 B("문장 8을 그대로 복원하는 문제다. ① 첫 글자는 대문자 The.   ② will 뒤의 동사는 원형 use.   ③ '~하기 위해'는 to+동사원형 — to get energy가 맨 뒤.", true);

@@ -82,16 +82,16 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Make a Phone Call in the U.K.",
- "② The History of British Telephones",
- "③ Why Books Are Cheaper in Libraries",
- "④ Old Phone Boxes with New Jobs",
+ "② Old Phone Boxes with New Jobs",
+ "③ The History of British Telephones",
+ "④ Why Books Are Cheaper in Libraries",
  "⑤ A Machine That Stops All Heart Attacks"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Phone boxes are hard to find and have no electricity.",
- "② People in the U.K. don’t use red phone boxes for calls now.",
- "③ Some phone boxes have special machines called defibrillators.",
+["① People in the U.K. don’t use red phone boxes for calls now.",
+ "② Some phone boxes have special machines called defibrillators.",
+ "③ Phone boxes are hard to find and have no electricity.",
  "④ In the Martin Gallery, people can borrow books and enjoy the artwork.",
  "⑤ The money collected goes to Cancer Research UK."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -253,7 +253,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 영국에서 전화를 거는 방법", "② 오래된 빨간 전화박스의 새로운 쓰임", "③ 심장병을 치료하는 방법"].forEach(c =>
+["① 영국에서 전화를 거는 방법",
+ "② 심장병을 치료하는 방법",
+ "③ 오래된 빨간 전화박스의 새로운 쓰임"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -399,22 +401,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문15 ", { size: 17, bold: true, color: NAVY2 }), t("The money collected(S)·goes(△V)·to an organization called ~(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 책상 위에 많은 책이 있다  (2) 나는 코코라는 이름의 개가 있다  (3) 우리 집 근처에 그린 힐이라는 공원이 있다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 boxes · old · uses   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 boxes · old · uses   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 T · 5 F · 6 T · 7 F · 8 F", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ④");
-B("이 글은 통화에는 더 이상 쓰이지 않는 영국의 빨간 전화박스(문장 1–3)가 미니 의료 센터(문장 5–8)와 미니 도서관(문장 9–15)으로 다시 쓰이는 모습을 소개한다. 소재와 특징을 함께 담은 ④이 제목이다. ③·⑤는 책값·기계만 건드린 지엽적 오답, ①·②는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ①");
-B("문장 8에서 전화박스는 찾기 쉽고 전기도 들어와서 기계를 두기에 완벽하다고 했다. 따라서 ①이 본문과 반대된다. ②은 문장 2, ③는 문장 6, ④은 문장 13, ⑤는 문장 15에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ②");
+B("이 글은 통화에는 더 이상 쓰이지 않는 영국의 빨간 전화박스(문장 1–3)가 미니 의료 센터(문장 5–8)와 미니 도서관(문장 9–15)으로 다시 쓰이는 모습을 소개한다. 소재와 특징을 함께 담은 ②이 제목이다. ④·⑤는 책값·기계만 건드린 지엽적 오답, ①·③는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 8에서 전화박스는 찾기 쉽고 전기도 들어와서 기계를 두기에 완벽하다고 했다. 따라서 ③이 본문과 반대된다. ①은 문장 2, ②는 문장 6, ④은 문장 13, ⑤는 문장 15에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) they는 앞에 나온 people, 곧 심장마비가 온 사람들을 가리킨다. 심장마비가 오는 쪽은 기계가 아니라 사람이다 — 한 문장 안에서도 가리키는 대상이 바뀐다.", true);
 Hs("독해 04   배열 영작   ·   Lots of phone boxes turned into small libraries.");
 B("문장 10을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Lots.   ② Lots of ~는 '많은 ~'이라는 한 덩어리.   ③ turn into ~는 '~으로 바뀌다' — into를 빠뜨리지 않는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 boxes · old · uses     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 오래된 빨간 전화박스의 새로운 쓰임을 소개한다. ① 전화 거는 방법은 오히려 사라진 쓰임이고, ③ 심장병 치료법은 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 boxes · old · uses     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 오래된 빨간 전화박스의 새로운 쓰임을 소개한다. ① 전화 거는 방법은 오히려 사라진 쓰임이고, ② 심장병 치료법은 나오지 않는다.");
 B("1-2   ○표 할 세 단어: boxes(힌트① 주인공) · old(힌트② 전화박스의 상태) · uses(힌트③ 사람들이 찾아낸 것). 나머지 셋(calls · machines · donation)은 본문에 나오지만 세부 사항이다.");
 B("1-3   문장 7 — they는 사람들에 ○ (기계가 아니다).   문장 8 — they는 전화박스들에 ○.   문장 11 — This는 전화박스가 작은 도서관이 된 것에 ○.");
 B("[학습 포인트]   문장 7과 8의 they는 각각 다른 것을 가리킨다. they를 만나면 '누가/무엇이 이 동작을 하지?'를 물어 앞 문장에서 짝을 찾자.", true);

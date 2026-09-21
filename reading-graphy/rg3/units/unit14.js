@@ -82,22 +82,22 @@ K.push(sp(65));
 ["① How to Fix a Broken Phone at Home",
  "② The Best Drawers for Small Items",
  "③ Why Europeans Buy Many Electronic Items",
- "④ How Gold and Silver Are Found in Mines",
- "⑤ Don\u2019t Throw It Away: E-waste Is a Treasure"].forEach(c => K.push(ch(c)));
+ "④ Don\u2019t Throw It Away: E-waste Is a Treasure",
+ "⑤ How Gold and Silver Are Found in Mines"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Many households in Europe keep unused electronic items.",
- "② Out of 74 electronic items in a household, 13 aren\u2019t used anymore.",
- "③ E-waste includes anything with plugs, cords, and electronic parts.",
- "④ The metals in e-waste can be reused to make batteries.",
- "⑤ E-waste is exactly the same as regular trash."].forEach(c => K.push(ch(c)));
+["① E-waste is exactly the same as regular trash.",
+ "② Many households in Europe keep unused electronic items.",
+ "③ Out of 74 electronic items in a household, 13 aren\u2019t used anymore.",
+ "④ E-waste includes anything with plugs, cords, and electronic parts.",
+ "⑤ The metals in e-waste can be reused to make batteries."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) These가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the unused items in a drawer",
- "② the electric cars and solar panels",
- "③ the valuable metals in e-waste",
+ "② the valuable metals in e-waste",
+ "③ the electric cars and solar panels",
  "④ the local recycling centers",
  "⑤ the plugs and cords"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -405,11 +405,11 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (d) → (c) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ⑤");
-B("안 쓰는 전자제품이 전자 폐기물이 된다는 소개(문장 1–7)에 이어, 그 안에 값진 금속이 들어 있으니 재활용 센터로 가져가라고 권한다(문장 8–12). 소재와 평가를 모두 담은 ⑤이 제목이다. ③은 지엽적이고 ①·②·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 8에서 전자 폐기물은 일반 쓰레기 '그 이상(more than)'이라고 했으므로, 똑같다고 한 ⑤이 본문과 반대된다. ①은 문장 2, ②은 문장 3, ③는 문장 7, ④는 문장 9–10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 01   제목   ·   정답 ④");
+B("안 쓰는 전자제품이 전자 폐기물이 된다는 소개(문장 1–7)에 이어, 그 안에 값진 금속이 들어 있으니 재활용 센터로 가져가라고 권한다(문장 8–12). 소재와 평가를 모두 담은 ④이 제목이다. ③은 지엽적이고 ①·②·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 8에서 전자 폐기물은 일반 쓰레기 '그 이상(more than)'이라고 했으므로, 똑같다고 한 ①이 본문과 반대된다. ②은 문장 2, ③은 문장 3, ④는 문장 7, ⑤는 문장 9–10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) These는 바로 앞 문장 9의 valuable metals(금·은·구리)를 가리킨다. 배터리로 다시 만들어지는 것이 무엇인지 생각하면 된다 — 복수형 These는 복수 명사를 받는다.", true);
 Hs("독해 04   배열 영작   ·   But, e-waste is more than regular trash.");
 B("문장 8을 그대로 복원하는 문제다. ① 첫 글자는 대문자 But — 뒤의 콤마까지 함께 쓴다.   ② more than이 한 덩어리로 '~보다 더한'.   ③ regular trash가 비교 대상으로 맨 뒤.", true);

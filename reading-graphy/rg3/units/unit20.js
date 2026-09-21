@@ -85,8 +85,8 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① The average American eats nearly 14 kilograms of French fries each year.",
- "② The name “French fries” comes from the country France.",
+["① The name “French fries” comes from the country France.",
+ "② The average American eats nearly 14 kilograms of French fries each year.",
  "③ People in Namur enjoyed eating fried fish.",
  "④ In 1680, a very cold winter made the local river freeze.",
  "⑤ “Frenching” means cutting food into thin pieces."].forEach(c => K.push(ch(c)));
@@ -95,8 +95,8 @@ K.push(ask("03", "지칭", "밑줄 친 (A) they가 가리키는 것으로 가장
 K.push(sp(65));
 ["① the people of France",
  "② the fish in the river",
- "③ the people of Belgium",
- "④ the potatoes in Namur",
+ "③ the potatoes in Namur",
+ "④ the people of Belgium",
  "⑤ the cooks in Paris"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -248,7 +248,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 벨기에 사람들이 생선을 튀기는 법", "② 프렌치프라이의 탄생지와 이름의 유래", "③ 프랑스에서 인기 있는 감자 요리"].forEach(c =>
+["① 프렌치프라이의 탄생지와 이름의 유래",
+ "② 벨기에 사람들이 생선을 튀기는 법",
+ "③ 프랑스에서 인기 있는 감자 요리"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -394,7 +396,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문10 ", { size: 17, bold: true, color: NAVY2 }), t("The name(S)·comes(△V)·from how they are prepared(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 내 여동생은 만화책 읽는 것을 즐긴다  (2) 우리는 학교까지 걸어가기로 결정했다  (3) 그는 축구하는 것을 즐겨서, 그 팀에 들어가기로 결정했다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 fries · Belgium · name   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 fries · Belgium · name   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 F · 5 T · 6 T · 7 F · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (c) → (a)", { size: 19, bold: true })], { after: 0 }),
@@ -402,14 +404,14 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ①");
 B("이 글은 프렌치프라이가 프랑스가 아니라 벨기에에서 처음 만들어졌다는 이야기(문장 4–8)와, 그 이름이 조리법에서 왔다는 설명(문장 10–12)을 담고 있다. 소재와 핵심(어디서 왔는가)을 모두 담은 ①이 제목이다. ②·③은 지엽, ④·⑤는 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 10에서 이름은 '어디서 발명되었는가'가 아니라 '어떻게 손질되는가'에서 왔다고 했다. 나라 이름에서 왔다는 ②는 본문과 반대된다. ①은 문장 2, ③는 문장 5, ④은 문장 6, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 10에서 이름은 '어디서 발명되었는가'가 아니라 '어떻게 손질되는가'에서 왔다고 했다. 나라 이름에서 왔다는 ①는 본문과 반대된다. ②은 문장 2, ③는 문장 5, ④은 문장 6, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) they는 같은 문장의 주어인 Belgium, 곧 벨기에 사람들을 가리킨다. 뒤의 them이 French fries이므로 한 문장 안에서 they와 them이 서로 다른 것을 가리킨다는 점에 주의한다.", true);
 Hs("독해 04   배열 영작   ·   This historical story supports that they were made in Belgium.");
 B("문장 8을 그대로 복원하는 문제다. ① 첫 글자는 대문자 This.   ② supports 뒤에 접속사 that이 온다.   ③ were made — '만들어졌다'는 be+p.p 한 덩어리.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 fries · Belgium · name     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 프렌치프라이가 어디서 태어났고 그 이름이 어디서 왔는지를 알려 준다. ① 생선 튀김은 유래를 설명하는 배경이고, ③ 프랑스 요리 이야기는 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 fries · Belgium · name     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 프렌치프라이가 어디서 태어났고 그 이름이 어디서 왔는지를 알려 준다. ② 생선 튀김은 유래를 설명하는 배경이고, ③ 프랑스 요리 이야기는 나오지 않는다.");
 B("1-2   ○표 할 세 단어: fries(힌트① 이 글의 주인공) · Belgium(힌트② 처음 만들어진 곳) · name(힌트③ 뒤에 밝혀지는 것). 나머지 셋(fish · winter · France)은 본문에 등장하지만 배경과 오해일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
 B("1-3   문장 4 — they는 벨기에 사람들에 ○ (앞의 주어 Belgium).   문장 7 — They는 나뮈르 사람들에 ○ (문장 5의 그 사람들).   문장 10 — they는 French fries에 ○ (손질되는 대상).");
 B("[학습 포인트]   문장 4가 이 지문의 백미다. 한 문장 안에서 they(벨기에 사람들)와 them(프렌치프라이)이 서로 다른 것을 가리킨다. 지시어는 앞에서 찾되, 단수·복수와 '누가 무엇을 했는가'를 함께 따져야 한다.", true);

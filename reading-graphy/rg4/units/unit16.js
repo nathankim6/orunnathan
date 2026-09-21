@@ -105,19 +105,19 @@ K.push(sp(65));
 K.push(spF(1, 57, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① The best slogans tell a story in a few powerful words.",
- "② Some slogans are created by residents of the city.",
- "③ Hershey’s slogan has been “The Sweetest Place On Earth” since 1990.",
- "④ People in Gravity, Iowa played on the words “down to earth.”",
- "⑤ Hershey is home to a large car factory."].forEach(c => K.push(ch(c)));
+["① Hershey is home to a large car factory.",
+ "② The best slogans tell a story in a few powerful words.",
+ "③ Some slogans are created by residents of the city.",
+ "④ Hershey’s slogan has been “The Sweetest Place On Earth” since 1990.",
+ "⑤ People in Gravity, Iowa played on the words “down to earth.”"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 57, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) They가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the tourists visiting Hershey",
- "② the people in Gravity, Iowa",
- "③ the workers at the chocolate factory",
- "④ the cities around the U.S.",
- "⑤ the residents of Pennsylvania"].forEach(c => K.push(ch(c)));
+ "② the workers at the chocolate factory",
+ "③ the cities around the U.S.",
+ "④ the residents of Pennsylvania",
+ "⑤ the people in Gravity, Iowa"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 57, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -283,7 +283,9 @@ K.push(spF(4, 123, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 초콜릿 공장을 견학하는 방법", "② 도시의 슬로건이 보여 주는 정체성과 창의성", "③ 미국의 유명 관광지 목록"].forEach(c =>
+["① 도시의 슬로건이 보여 주는 정체성과 창의성",
+ "② 초콜릿 공장을 견학하는 방법",
+ "③ 미국의 유명 관광지 목록"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 82, 0.26));
 
@@ -407,9 +409,9 @@ K.push(spF(5, 148, 0.38));
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
 ["① 하루 일을 적은 일기",
- "② 예를 들어 대상을 소개하는 설명문",
- "③ 물건을 팔기 위해 만든 광고",
- "④ 안부를 전하는 편지",
+ "② 물건을 팔기 위해 만든 광고",
+ "③ 안부를 전하는 편지",
+ "④ 예를 들어 대상을 소개하는 설명문",
  "⑤ 상상으로 지어낸 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
@@ -738,8 +740,8 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문12 ", { size: 17, bold: true, color: NAVY2 }), t("slogans(S)·show(△V)·identities and creativity·of the people ~(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 이 그림은 내 남동생이 그렸다  (2) 나는 2019년부터 이 마을에 살아 왔다  (3) 그 공원은 여러 해 동안 아이들에게 사랑받아 왔다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 slogans · identities · creativity        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 대조 · ~부터 · 덧붙임 · 조건   2-2 [B] 만드는 사람 · [E] 마무리   2-3 ②", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 slogans · identities · creativity        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 대조 · ~부터 · 덧붙임 · 조건   2-2 [B] 만드는 사람 · [E] 마무리   2-3 ④", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (d) → (b) → (c) → (a)  ·  City slogans show the identities of the people who live there.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) humor  (2) chocolate  (3) identities  (4) creativity        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ②  문장 5 ①  문장 8 ③  문장 12 ③", { size: 19, bold: true })], { after: 150 }),
@@ -754,14 +756,14 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ②");
 B("이 글은 도시 슬로건이 무엇을 하는지 설명하고(문장 1–5) 두 사례를 든 뒤(문장 6–11) 슬로건이 주민의 정체성과 창의성을 보여 준다고 맺는다(문장 12). ②이 소재와 주제를 함께 담았다. ①·③는 지엽적, ④·⑤는 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 9에서 허쉬에 있는 것은 자동차 공장이 아니라 초콜릿 공장이다. car로 바꾼 ⑤가 본문과 다르다. ①은 문장 2, ②은 문장 3, ③는 문장 7–8, ④는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ②");
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 9에서 허쉬에 있는 것은 자동차 공장이 아니라 초콜릿 공장이다. car로 바꾼 ①가 본문과 다르다. ②은 문장 2, ③은 문장 3, ④는 문장 7–8, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) They는 바로 앞 문장 10의 People in Gravity, Iowa를 가리킨다. 그 주민들이 down to earth와 gravity라는 말을 가지고 말놀이를 한 것이다 — 지시어는 바로 앞에서 찾는다.", true);
 Hs("독해 04   배열 영작   ·   The best slogans tell a story in a few powerful words.");
 B("문장 2를 그대로 복원하는 문제다. ① 첫 글자는 대문자 The.   ② 주어 The best slogans는 복수 — 동사 tell.   ③ in a few powerful words가 뒤에 붙는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 slogans · identities · creativity     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 도시 슬로건이 그 도시와 주민을 어떻게 드러내는지 설명한다. ① 공장 견학과 ③ 관광지 목록은 예시의 일부일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 slogans · identities · creativity     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 도시 슬로건이 그 도시와 주민을 어떻게 드러내는지 설명한다. ② 공장 견학과 ③ 관광지 목록은 예시의 일부일 뿐이다.");
 B("1-2   ○표 할 세 단어: slogans(힌트① 주인공) · identities(힌트② 보여 주는 것) · creativity(힌트③ 사람들의 특징). 나머지 셋(chocolate · tourists · factory)은 예시와 배경일 뿐이다.");
 B("1-3   문장 4 — it은 the city에 ○.   문장 8 — This는 앞 문장의 허쉬 슬로건에 ○.   문장 12 — These slogans는 앞에서 소개한 슬로건들, there는 그 도시들에 ○.");
 B("[학습 포인트]   같은 they라도 문장 1에서는 도시를, 문장 11에서는 사람을 가리킨다. 지시어는 뜻이 아니라 '바로 앞의 자리'로 찾는 것이 원칙이다.", true);
@@ -769,10 +771,10 @@ B("[학습 포인트]   같은 they라도 문장 1에서는 도시를, 문장 11
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 대조 / ~부터 / 덧붙임 / 조건     2-2 [B] 만드는 사람 · [E] 마무리     2-3 ②");
+Hs("STEP 2   글의 흐름   ·   2-1 대조 / ~부터 / 덧붙임 / 조건     2-2 [B] 만드는 사람 · [E] 마무리     2-3 ④");
 B("2-1   문장 3 while — 시청이 만든 슬로건과 주민이 만든 슬로건을 '대조'.   문장 8 since — 1990년'부터' 지금까지.   문장 9 and — 정보를 '덧붙임'.   문장 10 If — '조건'을 거는 말놀이다.");
 B("2-2   [B] 만드는 사람(문장 3–5: 시청이 만드나, 주민이 만드나), [E] 마무리(문장 12: 슬로건은 주민의 정체성을 보여 준다). 보기의 '요리법'은 이 글에 없는 역할이다.");
-B("2-3   정답 ②. 슬로건이 무엇인지 설명하고 허쉬와 그래비티를 예로 든 설명문이다. 가격·명령문이 없어 광고가 아니고, 날짜와 I가 없어 일기도 아니다.");
+B("2-3   정답 ④. 슬로건이 무엇인지 설명하고 허쉬와 그래비티를 예로 든 설명문이다. 가격·명령문이 없어 광고가 아니고, 날짜와 I가 없어 일기도 아니다.");
 B("[학습 포인트]   설명문에서 예시(For instance, Here are ~)가 나오면 그 앞 문장이 곧 주장이다. 예시를 읽기 전에 앞 문장을 다시 확인하는 습관을 들이자.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 identities and creativity · the people who live there     3-3 (d) → (b) → (c) → (a)");
 B("3-1  재료 찾기 — (2) 문장 12에서 identities and creativity에 ○: 슬로건이 보여 주는 두 가지다. (3) the people who live there에 ○: 그 정체성의 주인이다. 관광객이 아니라 '사는 사람'이라는 점이 핵심이다.");

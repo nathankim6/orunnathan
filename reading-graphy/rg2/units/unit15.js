@@ -81,24 +81,24 @@ K.push(sp(65));
 ["① How to Make a Pole Slippery",
  "② The Best Prizes You Can Buy in Indonesia",
  "③ A Short History of the Netherlands",
- "④ Traditional Foods for a Summer Holiday",
- "⑤ A Game You Cannot Win Alone: Panjat Pinang"].forEach(c => K.push(ch(c)));
+ "④ A Game You Cannot Win Alone: Panjat Pinang",
+ "⑤ Traditional Foods for a Summer Holiday"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Panjat Pinang takes place every August 17th.",
- "② People climb up greased poles to reach the prizes.",
- "③ People can climb the tall poles alone.",
+["① People can climb the tall poles alone.",
+ "② Panjat Pinang takes place every August 17th.",
+ "③ People climb up greased poles to reach the prizes.",
  "④ There are prizes like bicycles and bags of sugar at the top.",
  "⑤ Panjat Pinang teaches the importance of teamwork."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the prizes at the top",
- "② friends and family",
- "③ bags of sugar",
- "④ women and children",
- "⑤ the greased poles"].forEach(c => K.push(ch(c)));
+["① the greased poles",
+ "② the prizes at the top",
+ "③ friends and family",
+ "④ bags of sugar",
+ "⑤ women and children"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -250,7 +250,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 기둥 꼭대기에 걸리는 상품의 종류", "② 함께 기둥을 오르는 인도네시아의 놀이", "③ 네덜란드에서 시작된 전통 운동 경기"].forEach(c =>
+["① 기둥 꼭대기에 걸리는 상품의 종류",
+ "② 네덜란드에서 시작된 전통 운동 경기",
+ "③ 함께 기둥을 오르는 인도네시아의 놀이"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -396,22 +398,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문10 ", { size: 17, bold: true, color: NAVY2 }), t("Panjat Pinang(S)\u00b7teaches(\u25b3V)\u00b7people\u00b7the importance of teamwork and cooperation", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 공원에 큰 나무가 한 그루 있다  (2) 일찍 일어나는 것은 쉽지 않다  (3) 눈이 많이 있어서, 빨리 걷는 것은 힘들다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 teamwork · Independence · importance   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 teamwork · Independence · importance   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 T · 5 T · 6 F · 7 T · 8 F", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (d) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ⑤");
-B("기름칠한 기둥은 혼자 오를 수 없어(문장 4) 친구와 가족이 팀을 이뤄야 하고(문장 5–6), 이 놀이는 팀워크의 중요성을 가르친다(문장 10). 소재와 핵심 특징을 함께 담은 ⑤이 제목으로 적절하다. ①·②는 지엽적이고, ③·④는 본문에 근거가 없다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 4에서 기둥은 미끄럽고 높아서 혼자 오르는 것이 가능하지 않다고 했다. 혼자 오를 수 있다고 한 ③가 본문과 반대다. ①은 문장 2, ②은 문장 3, ④은 문장 7, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 01   제목   ·   정답 ④");
+B("기름칠한 기둥은 혼자 오를 수 없어(문장 4) 친구와 가족이 팀을 이뤄야 하고(문장 5–6), 이 놀이는 팀워크의 중요성을 가르친다(문장 10). 소재와 핵심 특징을 함께 담은 ④이 제목으로 적절하다. ①·②는 지엽적이고, ③·⑤는 본문에 근거가 없다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 4에서 기둥은 미끄럽고 높아서 혼자 오르는 것이 가능하지 않다고 했다. 혼자 오를 수 있다고 한 ①가 본문과 반대다. ②은 문장 2, ③은 문장 3, ④은 문장 7, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) them은 같은 문장 앞부분의 the poles를 가리킨다. 복수 지시어는 복수 명사를 받는다 — '미끄럽고 높은 그것들'을 혼자 오를 수 없다는 뜻이다.", true);
 Hs("독해 04   배열 영작   ·   Panjat Pinang teaches people the importance of teamwork and cooperation.");
 B("문장 10을 그대로 복원한다. ① 놀이 이름 Panjat Pinang이 주어.   ② teaches + 사람(people) + 사물(the importance) 순서.   ③ the importance of A and B — of 뒤에 두 낱말이 and로 묶인다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 teamwork · Independence · importance     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 함께 기둥을 오르는 인도네시아의 놀이를 소개한다. ① 상품은 놀이의 한 요소일 뿐이고, ③ 네덜란드는 독립의 상대일 뿐 놀이가 시작된 곳이 아니다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 teamwork · Independence · importance     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 함께 기둥을 오르는 인도네시아의 놀이를 소개한다. ① 상품은 놀이의 한 요소일 뿐이고, ② 네덜란드는 독립의 상대일 뿐 놀이가 시작된 곳이 아니다.");
 B("1-2   \u25cb표 할 세 단어: Independence(힌트① 이 놀이가 기념하는 것) · teamwork(힌트② 기둥을 오르는 데 꼭 필요한 것) · importance(힌트③ 글쓴이가 강조하는 것). 나머지 셋(poles · sugar · Netherlands)은 본문에 나오지만 주제문에는 들어가지 않는 배경과 세부 사항이다.");
 B("1-3   문장 4 — them은 기둥들에 \u25cb (같은 문장의 the poles).   문장 6 — They는 친구와 가족에 \u25cb (문장 5의 Friends and family).   문장 11 — It은 판자트 피낭에 \u25cb (글 전체의 주인공).", true);
 B("[학습 포인트]   문장 4의 them(기둥)과 문장 6의 They(사람)는 생김새가 비슷해도 가리키는 것이 다르다. 지시어는 앞 문장에서 수와 뜻이 맞는 짝을 매번 새로 찾아야 한다.", true);

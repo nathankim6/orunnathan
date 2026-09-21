@@ -100,9 +100,9 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① The Biggest Airport in the World",
- "② The Airport That Appears Only Once a Year",
- "③ How to Build a Control Tower",
- "④ Why Cars Are Better Than Jets",
+ "② How to Build a Control Tower",
+ "③ Why Cars Are Better Than Jets",
+ "④ The Airport That Appears Only Once a Year",
  "⑤ The History of Music Festivals"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
@@ -117,8 +117,8 @@ K.push(ask("03", "지칭", "밑줄 친 (A) they가 가리키는 것으로 가장
 K.push(sp(65));
 ["① the small jets in the desert",
  "② the workers at the airport",
- "③ the artists at the festival",
- "④ the visitors who come in cars",
+ "③ the visitors who come in cars",
+ "④ the artists at the festival",
  "⑤ the people living in Nevada"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -758,11 +758,11 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) This airport only has a simple runway.  (2) That’s why they need an airport.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ②");
-B("이 글은 1년에 한 주만 나타났다 사라지는 특별한 공항(문장 1–5)과 그 이유인 버닝맨 축제(문장 7–12)를 소개한다. 소재(공항)와 특징(1년에 한 번)을 모두 담은 ②이 제목이다. ④·⑤는 자동차·축제만 건드린 지엽적 오답, ①·③는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 1년에 한 주만 나타났다 사라지는 특별한 공항(문장 1–5)과 그 이유인 버닝맨 축제(문장 7–12)를 소개한다. 소재(공항)와 특징(1년에 한 번)을 모두 담은 ④이 제목이다. ③·⑤는 자동차·축제만 건드린 지엽적 오답, ①·②는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ①");
 B("문장 4에서 이 공항에는 큰 건물도 관제탑도 없다고 했으므로 ①은 본문과 반대된다. ②은 문장 1, ③는 문장 7, ④은 문장 9, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) they는 같은 문장 앞부분의 Some visitors, 곧 차를 타고 오는 방문객들을 가리킨다. 교통 체증에 갇히는 것은 차로 오는 사람들이다 — 지시어는 바로 앞에서 찾는다.", true);
 Hs("독해 04   배열 영작   ·   It only shows up for one week every year.");
 B("문장 2를 그대로 복원하는 문제다. ① 첫 글자는 대문자 It.   ② only는 동사 shows 앞자리.   ③ show up(나타나다)은 한 덩어리, 주어가 It이므로 shows.", true);

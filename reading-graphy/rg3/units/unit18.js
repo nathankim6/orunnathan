@@ -80,9 +80,9 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① The Tastiest Seafood Dishes in New York",
- "② Tiny Cleaners of the Hudson River",
- "③ How to Build a House Under the Sea",
- "④ Why the Hudson River Became Dirty",
+ "② How to Build a House Under the Sea",
+ "③ Why the Hudson River Became Dirty",
+ "④ Tiny Cleaners of the Hudson River",
  "⑤ The Best Time to Visit New York City"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
@@ -95,10 +95,10 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the oysters in the river",
- "② the people in New York City",
- "③ the underwater homes",
- "④ the harmful things in the water",
+["① the harmful things in the water",
+ "② the oysters in the river",
+ "③ the people in New York City",
+ "④ the underwater homes",
  "⑤ the sea animals that returned"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -404,11 +404,11 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ②");
-B("먹거리로만 알던 굴이 허드슨강에서 물을 걸러 내고(문장 7–9) 암초를 만들어 생태계를 되살린다(문장 10–12)는 글이다. 소재와 평가를 함께 담은 ②이 제목이다. ①·④는 지엽적이고 ③·⑤는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ④");
+B("먹거리로만 알던 굴이 허드슨강에서 물을 걸러 내고(문장 7–9) 암초를 만들어 생태계를 되살린다(문장 10–12)는 글이다. 소재와 평가를 함께 담은 ④이 제목이다. ①·③는 지엽적이고 ②·⑤는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ①");
 B("문장 9에서 물이 덜 오염된다(less polluted)고 했고 문장 12에서도 생태계가 더 건강해진다고 했으므로, 더 오염된다는 ①은 본문과 반대된다. ②은 문장 2, ③은 문장 5, ④는 문장 8, ⑤는 문장 12에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) them은 같은 문장 앞부분의 harmful things를 가리킨다. 굴이 강바닥에 남겨 두는 것이 무엇인지 생각하면 된다 — 문장 2의 they(굴)와 헷갈리지 않아야 한다.", true);
 Hs("독해 04   배열 영작   ·   Oysters have a special way of cleaning up.");
 B("문장 7을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Oysters — 복수 주어이므로 have.   ② a special way가 한 덩어리.   ③ 전치사 of 뒤에는 동사원형+ing — cleaning up.", true);

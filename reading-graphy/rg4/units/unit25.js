@@ -99,22 +99,22 @@ K.push(sp(65));
 ["① Jupiter: The Biggest Planet in Space",
  "② Why Red Dwarf Stars Shine Red",
  "③ How to Count 1,300 Earths",
- "④ The History of Marshmallow Candy",
- "⑤ A Giant Planet as Light as a Marshmallow"].forEach(c => K.push(ch(c)));
+ "④ A Giant Planet as Light as a Marshmallow",
+ "⑤ The History of Marshmallow Candy"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① The planet is a little smaller than Jupiter.",
- "② Astronomers in Arizona found the giant planet.",
- "③ TOI-3757 b is about 580 light years from us.",
+["① Astronomers in Arizona found the giant planet.",
+ "② TOI-3757 b is about 580 light years from us.",
+ "③ The planet is a little smaller than Jupiter.",
  "④ The planet is much lighter than Jupiter.",
  "⑤ Astronomers thought giant planets hardly formed around red dwarf stars."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) this “marshmallow”가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① a real marshmallow candy",
- "② the giant planet TOI-3757 b",
- "③ a red dwarf star",
+ "② a red dwarf star",
+ "③ the giant planet TOI-3757 b",
  "④ the planet Jupiter",
  "⑤ a huge bathtub of water"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -281,9 +281,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 마시멜로처럼 가벼운 거대 행성의 발견",
- "② 마시멜로를 만드는 방법",
- "③ 목성의 크기와 위성들"].forEach(c =>
+["① 마시멜로를 만드는 방법",
+ "② 목성의 크기와 위성들",
+ "③ 마시멜로처럼 가벼운 거대 행성의 발견"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -737,7 +737,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문9 ", { size: 17, bold: true, color: NAVY2 }), t("Until now(M)·astronomers(S)·have been able to find(△V)·far away~stars(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 내 가방은 큰 바위만큼 무겁다  (2) 그 수프는 너무 뜨거워서 나는 그것을 먹을 수 없었다  (3) 그 강아지는 내 신발만큼 작고, 너무 귀여워서 모두가 미소 짓는다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 planet · light · surprise        ", { size: 19, bold: true }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 planet · light · surprise        ", { size: 19, bold: true }),
      t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 바꿔 말하기 · 양보 · 결과 · 이유   2-2 [B] 크기 · [E] 목표   2-3 ②", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (a) → (c) → (d)  ·  The giant planet as light as a marshmallow is a surprise to astronomers.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) light  (2) Jupiter  (3) surprise  (4) form        ", { size: 19, bold: true }),
@@ -751,16 +751,16 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) It’s so big that it’s a little larger than Jupiter.  (2) Even though this planet is as big as Jupiter, it’s much lighter.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ⑤");
-B("마시멜로만큼 가벼운 거대 행성의 발견(문장 1–6)과 그것이 놀라운 이유(문장 7–10)를 알리는 글이다. 소재(거대 행성)와 특징(마시멜로처럼 가볍다)을 담은 ⑤이 적절하다. ①·③는 비교 대상과 숫자만 건드린 지엽적 오답, ②·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ①");
-B("문장 3에서 이 행성은 목성보다 '조금 더 크다(a little larger)'고 했으므로, 더 작다는 ①은 본문과 반대된다. ②은 문장 1, ③는 문장 2, ④는 문장 5, ⑤는 문장 8에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ②");
+Hs("독해 01   제목   ·   정답 ④");
+B("마시멜로만큼 가벼운 거대 행성의 발견(문장 1–6)과 그것이 놀라운 이유(문장 7–10)를 알리는 글이다. 소재(거대 행성)와 특징(마시멜로처럼 가볍다)을 담은 ④이 적절하다. ①·③는 비교 대상과 숫자만 건드린 지엽적 오답, ②·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 3에서 이 행성은 목성보다 '조금 더 크다(a little larger)'고 했으므로, 더 작다는 ③은 본문과 반대된다. ①은 문장 1, ②는 문장 2, ④는 문장 5, ⑤는 문장 8에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) this “marshmallow”는 문장 1–2에서 소개한 거대 행성 TOI-3757 b를 가리킨다. 따옴표가 붙은 별명이지 진짜 과자가 아니다 — this+명사는 앞에 나온 것을 다시 부르는 신호다.", true);
 Hs("독해 04   배열 영작   ·   It’s so light that it would float in a huge bathtub of water!");
 B("문장 6을 그대로 복원하는 문제다. ㄱ 첫 글자는 대문자 It’s.   ㄴ so + 형용사 + that + 결과 문장의 순서를 지킨다.   ㄷ 조동사 would 뒤에는 동사원형 float.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 planet · light · surprise     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 마시멜로처럼 가벼운 거대 행성의 발견을 다룬다. ② 마시멜로는 가벼움을 견주기 위한 비유일 뿐이고, ③ 목성은 크기를 견주는 대상일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 planet · light · surprise     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 마시멜로처럼 가벼운 거대 행성의 발견을 다룬다. ① 마시멜로는 가벼움을 견주기 위한 비유일 뿐이고, ② 목성은 크기를 견주는 대상일 뿐이다.");
 B("1-2   ○표 할 세 단어: planet(힌트① 주인공) · light(힌트② 그 놀라운 상태) · surprise(힌트③ 천문학자들의 반응). 나머지 셋(Jupiter · water · Arizona)은 본문에 나오지만 주제문에는 들어가지 않는다 — 비교 대상과 배경일 뿐이다.");
 B("1-3   문장 4 — this “marshmallow”는 TOI-3757 b에 ○.   문장 8 — they는 천문학자들에 ○.   문장 10 — their는 천문학자들의에 ○ (목표의 주인).");
 B("[학습 포인트]   같은 글 안에서도 지시어가 가리키는 대상은 바뀐다. 문장 3의 It은 행성을, 문장 8의 they는 천문학자들을 받는다 — 앞 문장에서 짝을 찾아 화살표로 이어 두자.", true);

@@ -79,25 +79,25 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Fly a Helicopter Safely",
- "② The History of Roman Roads in Britain",
- "③ Why 3D Printers Are So Popular",
- "④ The Best Places to Visit in the Jungle",
- "⑤ Lidar: Finding the Past Without Digging"].forEach(c => K.push(ch(c)));
+ "② Lidar: Finding the Past Without Digging",
+ "③ The History of Roman Roads in Britain",
+ "④ Why 3D Printers Are So Popular",
+ "⑤ The Best Places to Visit in the Jungle"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Lidar sends laser beams from a helicopter down to the ground.",
  "② Lidar measures how long the beams take to bounce back.",
- "③ Before Lidar, ancient sites took years to dig up.",
- "④ An archaeologist in the U.K. used Lidar data to find Roman roads.",
- "⑤ Lidar cannot see through trees."].forEach(c => K.push(ch(c)));
+ "③ Lidar cannot see through trees.",
+ "④ Before Lidar, ancient sites took years to dig up.",
+ "⑤ An archaeologist in the U.K. used Lidar data to find Roman roads."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) This가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① digging up ancient sites by hand",
  "② flying a helicopter over the jungle",
- "③ finding Roman roads in the U.K.",
- "④ measuring how long the beams take to come back",
+ "③ measuring how long the beams take to come back",
+ "④ finding Roman roads in the U.K.",
  "⑤ cutting down trees in a forest"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -401,11 +401,11 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (d) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ⑤");
-B("이 글은 라이다가 땅을 파지 않고도 숨겨진 유적을 찾아낸다는 점(문장 6–7·10)과 그것이 과거의 이야기를 찾는 가장 좋은 방법이라는 평가(문장 11)를 전한다. ⑤이 적절하다. ②·④는 지엽적, ①·③는 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 5에서 라이다는 나무를 뚫고 볼 수 있다(see through trees)고 했으므로 ⑤은 본문과 반대된다. ①은 문장 2, ②는 문장 3, ③는 문장 8, ④는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 01   제목   ·   정답 ②");
+B("이 글은 라이다가 땅을 파지 않고도 숨겨진 유적을 찾아낸다는 점(문장 6–7·10)과 그것이 과거의 이야기를 찾는 가장 좋은 방법이라는 평가(문장 11)를 전한다. ②이 적절하다. ③·⑤는 지엽적, ①·④는 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 5에서 라이다는 나무를 뚫고 볼 수 있다(see through trees)고 했으므로 ③은 본문과 반대된다. ①은 문장 2, ②는 문장 3, ④는 문장 8, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) This는 바로 앞 문장 3의 내용, 곧 빔이 되돌아오는 데 걸리는 시간을 재는 일을 받는다. 지시어 This는 단어가 아니라 앞 문장 전체를 받을 수 있다.", true);
 Hs("독해 04   배열 영작   ·   Before Lidar, ancient sites took years to dig up.");
 B("문장 8을 그대로 복원한다. ① 첫 글자는 대문자 Before, Lidar 뒤 콤마를 잊지 않는다.   ② 동사는 과거형 took.   ③ '파내는 데'는 to dig up.", true);

@@ -79,8 +79,10 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Why Women in Old Europe Wore Masks", "② How to Make a Velvet Hat at Home",
- "③ The Best Ways to Ride a Horse", "④ Sunlight and Healthy Skin Today",
+["① How to Make a Velvet Hat at Home",
+ "② The Best Ways to Ride a Horse",
+ "③ Sunlight and Healthy Skin Today",
+ "④ Why Women in Old Europe Wore Masks",
  "⑤ Famous Markets and Churches in London"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
@@ -95,8 +97,8 @@ K.push(ask("03", "지칭", "밑줄 친 (A) It이 가리키는 것으로 가장 �
 K.push(sp(65));
 ["① wearing a black velvet mask",
  "② traveling on horseback",
- "③ working outside all day",
- "④ having pale skin",
+ "③ having pale skin",
+ "④ working outside all day",
  "⑤ visiting the market alone"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -403,11 +405,11 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 16세기 유럽 여성들이 왜 가면을 썼는지(문장 3–4), 어떤 가면이었는지(문장 7–8), 그리고 가면이 무엇을 주었는지(문장 10–12)를 설명한다. 대상과 이유를 함께 담은 ①이 제목으로 적절하다. ③·⑤는 지엽적, ②·④는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 16세기 유럽 여성들이 왜 가면을 썼는지(문장 3–4), 어떤 가면이었는지(문장 7–8), 그리고 가면이 무엇을 주었는지(문장 10–12)를 설명한다. 대상과 이유를 함께 담은 ④이 제목으로 적절하다. ②·⑤는 지엽적, ①·③는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ②");
 B("문장 7에서 최초의 가면은 검은 벨벳(black velvet)으로 만들어졌다고 했다. 흰 비단이라고 바꾼 ②이 본문과 어긋난다. ①은 문장 3, ③는 문장 4, ④는 문장 8, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) It은 바로 앞 문장 4의 having pale skin, 곧 '창백한 피부를 가진 것'을 가리킨다. 무엇이 바깥에서 일하지 않음을 보여 주었는지 생각하면 된다.", true);
 Hs("독해 04   배열 영작   ·   In London and Paris, stylish women started wearing masks.");
 B("문장 6을 그대로 복원하는 문제다. ① 첫 글자는 대문자 In.   ② Paris 뒤의 콤마를 빠뜨리지 않는다.   ③ start 뒤에는 wearing(~ing)이 온다.", true);

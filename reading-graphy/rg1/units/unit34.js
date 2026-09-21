@@ -97,8 +97,8 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Make a New Calendar at School",
- "② Ethiopia’s Special Way of Counting Days and Time",
- "③ The Best Time to Travel to Ethiopia",
+ "② The Best Time to Travel to Ethiopia",
+ "③ Ethiopia’s Special Way of Counting Days and Time",
  "④ Why the 13th Month Has Six Days",
  "⑤ How to Meet Friends at 10 O’clock"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -408,8 +408,8 @@ K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 �
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
 ["① 여행을 다녀와서 쓴 일기",
  "② 친구에게 안부를 전하는 편지",
- "③ 상품을 사라고 권하는 광고",
- "④ 다른 나라의 문화를 알려 주는 설명문",
+ "③ 다른 나라의 문화를 알려 주는 설명문",
+ "④ 상품을 사라고 권하는 광고",
  "⑤ 상상으로 지어낸 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
@@ -739,7 +739,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 이것은 돈을 아끼는 좋은 방법이다  (2) 너는 오늘 점심을 가져올 필요가 없다  (3) 너는 실수하는 것을 걱정할 필요가 없다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 Ethiopia · special · counting        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 결과 · 덧붙임 · 설명 · 조건   2-2 [B] 달력 · [D] 시간   2-3 ④", { size: 19, bold: true })], { after: 25 }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 결과 · 덧붙임 · 설명 · 조건   2-2 [B] 달력 · [D] 시간   2-3 ③", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (a) → (b) → (d) → (c)  ·  In Ethiopia, people have a special way of counting days and time.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) months  (2) days  (3) hours  (4) afternoon        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ②  문장 6 ③  문장 8 ②  문장 11 ①", { size: 19, bold: true })], { after: 150 }),
@@ -752,8 +752,8 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) The first 12 months each have 30 days.  (2) They divide the day into two parts, each with 12 hours.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ②");
-B("이 글은 에티오피아의 특별한 달력(문장 2–6)과 시간 세는 방법(문장 7–11)을 함께 소개한다. 두 가지를 모두 담은 ②이 제목이다. ④·⑤는 13월·약속 시간만 건드린 지엽적 오답, ①·③는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 에티오피아의 특별한 달력(문장 2–6)과 시간 세는 방법(문장 7–11)을 함께 소개한다. 두 가지를 모두 담은 ③이 제목이다. ④·⑤는 13월·약속 시간만 건드린 지엽적 오답, ①·②는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ④");
 B("문장 5에서 13번째 달은 5일이나 6일만 있다고 했으므로 ④은 본문과 다르다. ①은 문장 2, ②는 문장 3, ③은 문장 8, ⑤는 문장 9에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ②");
@@ -769,10 +769,10 @@ B("[학습 포인트]   문장 11의 they는 a friend 한 사람을 받는다. �
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 결과 / 덧붙임 / 설명 / 조건     2-2 [B] 달력 · [D] 시간     2-3 ④");
+Hs("STEP 2   글의 흐름   ·   2-1 결과 / 덧붙임 / 설명 / 조건     2-2 [B] 달력 · [D] 시간     2-3 ③");
 B("2-1   문장 6 So — 앞의 달력 구조가 낳은 '결과'.   문장 7 as well — 달력에 시간 이야기를 '덧붙임'.   문장 10 This means that — 앞 내용을 다시 풀어 주는 '설명'.   문장 11 if — '만약 ~라면'의 '조건'.");
 B("2-2   [B] 달력(문장 2–3: 13개월과 30일), [D] 시간(문장 7–9: 하루를 둘로 나누고 6시부터 센다). 보기의 '날씨'는 이 글에 없는 역할이다. 소개 → 달력 → 13번째 달 → 시간 → 마무리, 두 가지를 나란히 설명하는 글이다.");
-B("2-3   정답 ④. 다른 나라의 문화를 사실 그대로 알려 주는 설명문이다. ① I나 날짜가 없어 일기가 아니고, ② 받는 사람이 없어 편지도, ③ 가격·명령문이 없어 광고도, ⑤ 지어낸 이야기도 아니다.");
+B("2-3   정답 ③. 다른 나라의 문화를 사실 그대로 알려 주는 설명문이다. ① I나 날짜가 없어 일기가 아니고, ② 받는 사람이 없어 편지도, ④ 가격·명령문이 없어 광고도, ⑤ 지어낸 이야기도 아니다.");
 B("[학습 포인트]   as well, also 같은 말은 '이야기가 하나 더 있다'는 신호다. 이 신호를 만나면 글이 두 덩어리로 나뉜다고 생각하자.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 special · days and time     3-3 (a) → (b) → (d) → (c)");
 B("3-1  재료 찾기 — (2) 문장 1에서 special에 ○: 글쓴이의 평가다. boring(지루한)은 본문에 없다. (3) 문장 1에서 days and time에 ○: 세는 대상 두 가지다. day and night는 본문에 없는 말이다.");

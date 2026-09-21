@@ -99,27 +99,27 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① The Happy Return of the Puffins",
- "② The Beautiful Ocean of the North Atlantic",
- "③ Fewer Tourists in the U.K.",
- "④ How to Take Care of Pet Birds",
+["① The Beautiful Ocean of the North Atlantic",
+ "② Fewer Tourists in the U.K.",
+ "③ How to Take Care of Pet Birds",
+ "④ The Happy Return of the Puffins",
  "⑤ Famous Foods in Maine, the U.S."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Puffins live near the ocean in the North Atlantic.",
  "② Puffins are friendly birds and aren’t afraid of people.",
- "③ There were more tourists in the U.K. during the pandemic.",
- "④ Steve Kress made a better home for puffins in nature.",
- "⑤ Puffins were removed from the endangered species list in December 2020."].forEach(c => K.push(ch(c)));
+ "③ Steve Kress made a better home for puffins in nature.",
+ "④ Puffins were removed from the endangered species list in December 2020.",
+ "⑤ There were more tourists in the U.K. during the pandemic."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the real puffins",
  "② the people in the U.S.",
  "③ the baby puffins",
- "④ Steve Kress’s friends",
- "⑤ the fake puffins"].forEach(c => K.push(ch(c)));
+ "④ the fake puffins",
+ "⑤ Steve Kress’s friends"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -286,9 +286,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 북대서양의 바다 환경",
- "② 영국과 미국의 관광객",
- "③ 멸종 위기에서 돌아온 퍼핀"].forEach(c =>
+["① 멸종 위기에서 돌아온 퍼핀",
+ "② 북대서양의 바다 환경",
+ "③ 영국과 미국의 관광객"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -407,9 +407,9 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 물건을 팔기 위해 만든 광고",
- "② 글쓴이의 하루를 적은 일기",
- "③ 동물을 소개하고 사실을 알려 주는 설명문",
+["① 동물을 소개하고 사실을 알려 주는 설명문",
+ "② 물건을 팔기 위해 만든 광고",
+ "③ 글쓴이의 하루를 적은 일기",
  "④ 안부를 전하는 편지",
  "⑤ 상상 속 인물이 나오는 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
@@ -740,8 +740,8 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("During the COVID-19 pandemic~(M)·there were(△V)·fewer tourists(S)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 부산에 사는 친구가 있다  (2) 도서관에는 많은 책이 있다  (3) 공원에는 축구를 하는 두 소년이 있다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 puffins · endangered · more        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 결과 · 반전 · 이유 · 결과   2-2 [B] 위기 · [E] 결과   2-3 ③", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 puffins · endangered · more        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 결과 · 반전 · 이유 · 결과   2-2 [B] 위기 · [E] 결과   2-3 ①", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (a) → (b) → (c) → (d)  ·  Puffins were once an endangered species, but now there are more puffins than before.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) endangered  (2) home  (3) babies  (4) more        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ③  문장 4 ③  문장 7 ①  문장 13 ③", { size: 19, bold: true })], { after: 150 }),
@@ -754,16 +754,16 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) Puffins are very friendly, so they aren’t afraid of people.  (2) So the puffins could have more babies.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 한때 멸종 위기종이었던 퍼핀(문장 4)이 스티브 크레스의 노력과 팬데믹을 거쳐 되살아난 과정(문장 10·13)을 소개한다. 소재(puffins)와 특징(행복한 귀환)을 담은 ①이 제목으로 적절하다. ②·③는 배경·세부만 건드린 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 11에서 팬데믹 동안 관광객이 더 적었다(fewer tourists)고 했으므로, 더 많았다는 ③이 본문과 반대된다. ①은 문장 1, ②은 문장 2, ④는 문장 7, ⑤는 문장 13에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 한때 멸종 위기종이었던 퍼핀(문장 4)이 스티브 크레스의 노력과 팬데믹을 거쳐 되살아난 과정(문장 10·13)을 소개한다. 소재(puffins)와 특징(행복한 귀환)을 담은 ④이 제목으로 적절하다. ①·②는 배경·세부만 건드린 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 11에서 팬데믹 동안 관광객이 더 적었다(fewer tourists)고 했으므로, 더 많았다는 ⑤이 본문과 반대된다. ①은 문장 1, ②은 문장 2, ③는 문장 7, ④는 문장 13에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) them은 같은 문장 앞부분의 fake puffins를 가리킨다. 진짜 퍼핀들이 친구로 여길 대상은 스티브가 세워 둔 가짜 퍼핀이다. 문장 3의 them(퍼핀들)과 같은 단어지만 다른 것을 가리킨다는 점에 주의한다.", true);
 Hs("독해 04   배열 영작   ·   He made a better home for them in nature.");
 B("문장 7을 그대로 복원하는 문제다. ① 첫 글자는 대문자 He.   ② a better home — 관사+비교급+명사의 어순.   ③ for them(그들을 위한) 뒤에 in nature(자연에)가 온다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 puffins · endangered · more     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 멸종 위기에서 벗어나 되살아난 퍼핀을 소개한다. ① 바다는 퍼핀이 사는 배경일 뿐이고, ② 관광객은 회복 과정의 한 장면일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 puffins · endangered · more     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 멸종 위기에서 벗어나 되살아난 퍼핀을 소개한다. ② 바다는 퍼핀이 사는 배경일 뿐이고, ③ 관광객은 회복 과정의 한 장면일 뿐이다.");
 B("1-2   ○표 할 세 단어: puffins(힌트① 주인공) · endangered(힌트② 한때의 위기) · more(힌트③ 지금 달라진 수). 나머지 셋(ocean · tourists · fake)은 본문에 등장하지만 주제문에 들어가지 않는다 — 배경과 수단일 뿐이다.");
 B("1-3   문장 5 — this는 지구 온난화에 ○ (앞의 '지구와 바다가 따뜻해지는 것'을 통째로 받는다).   문장 8 — them은 fake puffins에 ○ (진짜 퍼핀들이 친구로 여길 대상).   문장 9 — This effort는 스티브의 노력에 ○ (집 만들기+가짜 퍼핀).");
 B("[학습 포인트]   문장 8의 them이 이 지문의 백미다. 문장 3의 them은 퍼핀을, 문장 8의 them은 가짜 퍼핀을 가리킨다 — 같은 단어라도 대상이 바뀐다. 지시어를 만날 때마다 '이게 뭘 가리키지?'를 확인하는 습관이 고등 지칭 추론으로 이어진다.", true);
@@ -771,10 +771,10 @@ B("[학습 포인트]   문장 8의 them이 이 지문의 백미다. 문장 3의
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 결과 / 반전 / 이유 / 결과     2-2 [B] 위기 · [E] 결과     2-3 ③");
+Hs("STEP 2   글의 흐름   ·   2-1 결과 / 반전 / 이유 / 결과     2-2 [B] 위기 · [E] 결과     2-3 ①");
 B("2-1   문장 2 so — 친근하다는 앞 내용의 '결과'로 사람을 무서워하지 않는다.   문장 4 But — 사랑받는 새라는 흐름이 위기로 꺾이는 '반전'.   문장 8 because — 가짜 퍼핀을 쓴 '이유'.   문장 13 As a result — 회복의 '결과'로 목록에서 빠졌다.");
 B("2-2   [B] 위기(문장 4–5: 멸종 위기와 온난화), [E] 결과(문장 13: 목록 제외). 보기의 '유래'는 이 글에 없는 역할이다. [A] 소개 → [B] 위기 → [C] 노력 → [D] 회복 → [E] 결과 — 위기 극복형 설명문의 전형적인 흐름이다.");
-B("2-3   정답 ③. 퍼핀이라는 대상을 소개하고 사실을 알려 주는 설명문이다. There are(문장 10) 같은 표현과 사실 나열이 신호다. ① 광고의 신호(사라는 말·가격)가 없고, ② 일기·④ 편지·⑤ 동화의 형식도 아니다.");
+B("2-3   정답 ①. 퍼핀이라는 대상을 소개하고 사실을 알려 주는 설명문이다. There are(문장 10) 같은 표현과 사실 나열이 신호다. ② 광고의 신호(사라는 말·가격)가 없고, ③ 일기·④ 편지·⑤ 동화의 형식도 아니다.");
 B("[학습 포인트]   문장 4의 But이 이 글의 축이다. 소개(사랑받는 새) 뒤의 But은 글이 진짜 하려는 이야기(위기와 회복)의 신호다. once(한때)와 Now(지금)의 대비도 함께 표시해 두자.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 endangered · more     3-3 (a) → (b) → (c) → (d)");
 B("3-1  재료 찾기 — (2) 문장 4에서 endangered에 ○: 한때의 위기다. friendly는 문장 2의 성격일 뿐 위기가 아니다. (3) 문장 10에서 more에 ○: 지금 달라진 수다. fewer는 문장 11의 관광객 이야기다. 주제문의 재료는 언제나 본문 안에 있다.");

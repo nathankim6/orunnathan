@@ -82,10 +82,10 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Grow Pumpkins for Cooking",
- "② A Pumpkin Big Enough to Ride On",
- "③ The Longest River in America",
- "④ A Farmer’s Busy Life in Nebraska",
- "⑤ The Best Kayak for a River Trip"].forEach(c => K.push(ch(c)));
+ "② The Longest River in America",
+ "③ A Farmer’s Busy Life in Nebraska",
+ "④ The Best Kayak for a River Trip",
+ "⑤ A Pumpkin Big Enough to Ride On"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
@@ -98,9 +98,9 @@ K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) one이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① a small kayak",
- "② a river in Nebraska",
- "③ a wooden boat",
- "④ a super big pumpkin",
+ "② a super big pumpkin",
+ "③ a river in Nebraska",
+ "④ a wooden boat",
  "⑤ a long paddle"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -250,9 +250,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 네브래스카 농부들의 호박 요리법",
- "② 카약으로 미주리강을 건너는 방법",
- "③ 거대 호박으로 보트를 만들어 강을 여행한 사람"].forEach(c =>
+["① 거대 호박으로 보트를 만들어 강을 여행한 사람",
+ "② 네브래스카 농부들의 호박 요리법",
+ "③ 카약으로 미주리강을 건너는 방법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -398,22 +398,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문14 ", { size: 17, bold: true, color: NAVY2 }), t("In the end(M)·he(S)·traveled(△V)·in his pumpkin boat(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 내 여동생은 그림 그리는 것을 좋아한다  (2) 나는 신선한 공기를 마시려고 창문을 열었다  (3) 그는 건강을 지키기 위해 달리는 것을 좋아한다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 pumpkin · boat · traveled   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 pumpkin · boat · traveled   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 T · 4 T · 5 F · 6 F · 7 F · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (c) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ②");
-B("이 글은 듀에인이 10년 만에 기른 거대 호박으로 보트를 만들어 강을 여행한 이야기다(문장 3·8·14). 소재(호박)와 특징(타고 다닐 만큼 크다)을 함께 담은 ②이 정답이다. ①·④은 지엽적이고, ③·⑤는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 듀에인이 10년 만에 기른 거대 호박으로 보트를 만들어 강을 여행한 이야기다(문장 3·8·14). 소재(호박)와 특징(타고 다닐 만큼 크다)을 함께 담은 ⑤이 정답이다. ①·③은 지엽적이고, ②·④는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ⑤");
 B("문장 7에서 그 호박은 380킬로그램이 넘게(over 380 kilograms) 나갔다고 했으므로, 100킬로그램이 안 된다는 ⑤은 본문과 반대된다. ①은 문장 1, ②은 문장 4, ③은 문장 10, ④는 문장 14에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) one은 앞 문장 4의 big pumpkins를 대신하는 말로, '아주 큰 호박 하나'를 뜻한다. one은 앞에 나온 명사를 대신하는 대명사다 — 바로 앞 문장에서 짝을 찾자.", true);
 Hs("독해 04   배열 영작   ·   Then, he took paddles from his kayak.");
 B("문장 10을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Then.   ② Then 뒤의 콤마를 빠뜨리지 않는다.   ③ take의 과거형은 took.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 pumpkin · boat · traveled     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 거대 호박으로 보트를 만들어 강을 여행한 듀에인의 이야기다. ① 요리 이야기는 나오지 않고, ② 카약은 노를 가져온 곳일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 pumpkin · boat · traveled     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 거대 호박으로 보트를 만들어 강을 여행한 듀에인의 이야기다. ② 요리 이야기는 나오지 않고, ③ 카약은 노를 가져온 곳일 뿐이다.");
 B("1-2   ○표 할 세 단어: pumpkin(힌트① 그가 기른 것) · boat(힌트② 그것으로 만든 것) · traveled(힌트③ 그가 한 일). 나머지 셋(farmer · kayak · waves)은 본문에 나오지만 주제문에는 들어가지 않는다.");
 B("1-3   문장 5 — one은 아주 큰 호박에 ○ (문장 4의 big pumpkins를 대신한다).   문장 7 — It은 그 커다란 호박에 ○.   문장 8 — it은 호박으로 만든 보트에 ○.");
 B("[학습 포인트]   문장 8이 이 지문의 백미다. 같은 문장 안에서 his pumpkin이 a boat로 바뀌고, 뒤의 it은 그 보트를 가리킨다 — 지시어를 만나면 늘 '지금 무엇을?'을 확인하자.", true);

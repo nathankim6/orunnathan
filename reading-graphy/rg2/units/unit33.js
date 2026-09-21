@@ -79,25 +79,25 @@ K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Make Better Nets for Fishing",
  "② The Cleanest Water in Brazil",
- "③ Fishers and Dolphins: Friends Who Help Each Other",
- "④ Why Dolphins Live in Cold Seas",
+ "③ Why Dolphins Live in Cold Seas",
+ "④ Fishers and Dolphins: Friends Who Help Each Other",
  "⑤ Scientists Who Study Fish Farms"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① The water in Laguna is not clear.",
- "② The dolphins help the fishers with a special dive.",
- "③ The dolphins sometimes take fish from the fishers’ nets.",
- "④ Polluted water is harming the dolphins.",
- "⑤ When they work together, the fishers catch fewer fish."].forEach(c => K.push(ch(c)));
+ "② When they work together, the fishers catch fewer fish.",
+ "③ The dolphins help the fishers with a special dive.",
+ "④ The dolphins sometimes take fish from the fishers’ nets.",
+ "⑤ Polluted water is harming the dolphins."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) It이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the water in Laguna",
  "② the fishers’ net",
- "③ the scientists’ study",
- "④ a group of wild fish",
- "⑤ the dolphins’ special dive"].forEach(c => K.push(ch(c)));
+ "③ the dolphins’ special dive",
+ "④ the scientists’ study",
+ "⑤ a group of wild fish"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -249,8 +249,8 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 브라질의 깨끗한 바닷물",
- "② 어부와 야생 돌고래의 협력",
+["① 어부와 야생 돌고래의 협력",
+ "② 브라질의 깨끗한 바닷물",
  "③ 돌고래를 훈련시키는 방법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
@@ -397,22 +397,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문12 ", { size: 17, bold: true, color: NAVY2 }), t("This friendship(S)\u00b7shows(\u25b3V)\u00b7that(접속사)\u00b7animals and humans(S\u2032)\u00b7can help(\u25b3V\u2032)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 우리 엄마는 저녁 후에 내가 밖에서 놀게 해 주신다  (2) 작년보다 더 적은 학생들이 있다  (3) 전보다 규칙이 더 적어서, 아빠는 내가 늦게까지 안 자게 해 주신다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 fishers · dolphins · friendship   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 fishers · dolphins · friendship   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 T · 5 F · 6 F · 7 T · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (b) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("이 글은 라구나의 어부와 야생 돌고래가 서로 돕는 관계를 소개하고(문장 1–6), 그 우정이 동물과 사람이 서로 도울 수 있음을 보여 준다고 맺는다(문장 12). 소재와 평가를 모두 담은 ③이 제목이다. ②·⑤는 물·과학자만 건드린 지엽적 오답, ①·④은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 6에서 함께 일할 때 어부들은 물고기를 '더 많이(more)' 잡는다. fewer로 뒤집은 ⑤가 본문과 반대된다. ①은 문장 2, ②은 문장 3, ③은 문장 7, ④는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 라구나의 어부와 야생 돌고래가 서로 돕는 관계를 소개하고(문장 1–6), 그 우정이 동물과 사람이 서로 도울 수 있음을 보여 준다고 맺는다(문장 12). 소재와 평가를 모두 담은 ④이 제목이다. ②·⑤는 물·과학자만 건드린 지엽적 오답, ①·③은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 6에서 함께 일할 때 어부들은 물고기를 '더 많이(more)' 잡는다. fewer로 뒤집은 ②가 본문과 반대된다. ①은 문장 2, ③은 문장 3, ④은 문장 7, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) It은 바로 앞 문장 3의 a special dive를 가리킨다. 단수 It이 받을 수 있는 단수 명사는 앞 문장에서 the dolphins가 아니라 a special dive뿐이다 — 수 일치가 첫 단서다.", true);
 Hs("독해 04   배열 영작   ·   When the fishers and dolphins work together, the fishers catch more fish.");
 B("문장 6을 그대로 복원하는 문제다. ① 첫 글자는 대문자 When.   ② together, 뒤의 쉼표가 종속절의 끝을 알린다.   ③ the fishers가 두 번, the도 두 번 쓰인다 — 보기의 같은 단어를 빠뜨리지 않는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 fishers · dolphins · friendship     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 어부와 야생 돌고래가 함께 물고기를 잡는 관계를 다룬다. ① 물은 오히려 맑지 않고(문장 2), ③ 훈련시킨다는 말은 어디에도 없다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 fishers · dolphins · friendship     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 어부와 야생 돌고래가 함께 물고기를 잡는 관계를 다룬다. ② 물은 오히려 맑지 않고(문장 2), ③ 훈련시킨다는 말은 어디에도 없다.");
 B("1-2   \u25cb표 할 세 단어: fishers(힌트① 물고기를 잡는 사람들) · dolphins(힌트② 그들을 돕는 동물) · friendship(힌트③ 둘 사이의 관계). 나머지 셋(nets · Brazil · water)은 본문에 등장하지만 주제문에 들어가지 않는다 — 도구와 배경일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
 B("1-3   문장 3 — them은 어부들에 \u25cb (돌고래가 돕는 대상).   문장 4 — It은 특별한 잠수에 \u25cb (문장 3의 a special dive).   문장 11 — they는 더 많은 사람들에 \u25cb (앞의 more people).");
 B("[학습 포인트]   문장 11의 they는 돌고래가 아니라 more people이다. 같은 글 안에서도 they가 가리키는 대상은 바뀐다 — 대명사를 만나면 늘 바로 앞 문장부터 다시 확인하자.", true);

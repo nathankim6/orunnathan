@@ -105,18 +105,18 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Scientists tracked the birds\u2019 flight paths for only one year.",
- "② Shearwaters are birds that live near the ocean.",
- "③ Most birds fly away from big storms.",
+["① Shearwaters are birds that live near the ocean.",
+ "② Most birds fly away from big storms.",
+ "③ Scientists tracked the birds\u2019 flight paths for only one year.",
  "④ Some shearwaters stayed near the storm\u2019s center for up to eight hours.",
  "⑤ Some shearwaters fly around the storm\u2019s edges to move faster."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) this가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① flying around the storm\u2019s edges",
- "② flying straight into the storm\u2019s center",
- "③ staying near the land during storms",
- "④ tracking the birds\u2019 flight paths for 11 years",
+ "② staying near the land during storms",
+ "③ tracking the birds\u2019 flight paths for 11 years",
+ "④ flying straight into the storm\u2019s center",
  "⑤ eating more food before a storm"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -409,8 +409,8 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 동물의 행동을 사실대로 알려 주는 설명문",
- "② 물건을 팔기 위해 만든 광고",
+["① 물건을 팔기 위해 만든 광고",
+ "② 동물의 행동을 사실대로 알려 주는 설명문",
  "③ 하루 일을 기록한 일기",
  "④ 친구에게 안부를 전하는 편지",
  "⑤ 리듬을 살려 쓴 시"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
@@ -742,7 +742,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 우리는 동물원을 방문할 계획이 있다  (2) 오늘 오후에 비가 올지도 모른다  (3) 그녀는 자전거를 고칠 좋은 방법을 알고 있을지도 모른다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 shearwaters · storm · trick        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 대조 · 이유 · 한편 · 덧붙임   2-2 [B] 놀라운 관찰 · [E] 마무리   2-3 ①", { size: 19, bold: true })], { after: 25 }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 대조 · 이유 · 한편 · 덧붙임   2-2 [B] 놀라운 관찰 · [E] 마무리   2-3 ②", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (c) → (d) → (a) → (b)  ·  Flying into a storm’s center is a smart trick that only shearwaters know.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) storms  (2) edges  (3) center  (4) energy        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 3 ③  문장 5 ②  문장 6 ①  문장 9 ③", { size: 19, bold: true })], { after: 150 }),
@@ -757,9 +757,9 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ②");
 B("대부분의 새와 달리 폭풍 속으로 날아드는 슴새의 행동(문장 1–6)과 11년 추적으로 밝혀진 두 가지 비행법·이유(문장 7–12)를 소개한다. 소재와 평가를 함께 담은 ②이 제목이다. ①은 지엽적이고 ③·④는 무관, ⑤는 본문과 반대다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ①");
-B("문장 7에서 과학자들은 11년 동안 비행 경로를 추적했다고 했으므로, 1년뿐이라는 ①은 본문과 다르다. ②은 문장 1, ③은 문장 3, ④는 문장 4–5, ⑤는 문장 8–9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ②");
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 7에서 과학자들은 11년 동안 비행 경로를 추적했다고 했으므로, 1년뿐이라는 ③은 본문과 다르다. ①은 문장 1, ②은 문장 3, ④는 문장 4–5, ⑤는 문장 8–9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) this는 바로 앞 문장 10의 행동, 곧 폭풍의 중심으로 곧장 날아드는 것을 가리킨다. 뒤에 이어지는 '에너지를 아끼려고'가 그 행동의 이유다.", true);
 Hs("독해 04   배열 영작   ·   Shearwaters are birds that live near the ocean.");
 B("문장 1을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Shearwaters — 복수 주어이므로 are.   ② birds 뒤에 that이 와서 뒤의 설명을 잇는다.   ③ near the ocean이 한 덩어리로 맨 뒤.", true);
@@ -772,10 +772,10 @@ B("[학습 포인트]   같은 there라도 문장 5에서는 폭풍의 눈, 문�
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 대조 / 이유 / 한편 / 덧붙임     2-2 [B] 놀라운 관찰 · [E] 마무리     2-3 ①");
+Hs("STEP 2   글의 흐름   ·   2-1 대조 / 이유 / 한편 / 덧붙임     2-2 [B] 놀라운 관찰 · [E] 마무리     2-3 ②");
 B("2-1   문장 3 While — 다른 새들과 슴새를 맞세우는 '대조'.   문장 6 because — 놀라운 '이유'.   문장 10 Meanwhile — 앞의 무리와 다른 무리를 잇는 '한편'.   문장 11 and — 이유를 하나 더 잇는 '덧붙임'.");
 B("2-2   [B] 놀라운 관찰(문장 4–6: 눈 근처에서 여덟 시간을 머무는 모습), [E] 마무리(문장 11–12: 이유와 평가). 보기의 '광고'는 이 글에 없는 역할이다. [A] 소개 → [B] 놀라운 관찰 → [C] 연구 → [D] 두 갈래 → [E] 마무리.");
-B("2-3   정답 ①. 슴새라는 동물의 행동과 과학자들의 관찰 결과를 사실대로 알려 주는 설명문이다. ② 가격이나 사라는 말이 없고, ③·④·⑤의 형식적 신호(날짜·Dear·행갈이)도 없다.");
+B("2-3   정답 ②. 슴새라는 동물의 행동과 과학자들의 관찰 결과를 사실대로 알려 주는 설명문이다. ① 가격이나 사라는 말이 없고, ③·④·⑤의 형식적 신호(날짜·Dear·행갈이)도 없다.");
 B("[학습 포인트]   대조의 While과 한편의 Meanwhile은 '둘을 나란히 놓는다'는 점이 같다. 이런 말이 보이면 무엇과 무엇이 갈리는지부터 표시해 두자.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 center · trick     3-3 (c) → (d) → (a) → (b)");
 B("3-1  재료 찾기 — (2) 문장 4에서 center에 ○: 슴새가 향하는 폭풍의 한가운데다. edges는 다른 무리가 도는 가장자리다. (3) 문장 12에서 trick에 ○: 글쓴이의 평가가 담긴 말이다. danger는 문장 11의 세부 사항일 뿐이다.");

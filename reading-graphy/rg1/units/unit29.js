@@ -85,16 +85,16 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Make Gummy Candies at Home",
- "② The History of Chocolate in America",
- "③ Foods That Cause Allergies",
- "④ Wanted: A Candy Taste Tester",
+ "② Wanted: A Candy Taste Tester",
+ "③ The History of Chocolate in America",
+ "④ Foods That Cause Allergies",
  "⑤ The Best Part-Time Jobs for Students"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Testers can earn $13 an hour.",
- "② The company is looking for people to try new candies.",
- "③ Testers will taste the candies and share their thoughts.",
+["① The company is looking for people to try new candies.",
+ "② Testers will taste the candies and share their thoughts.",
+ "③ Testers can earn $13 an hour.",
  "④ Anyone with a sweet tooth for candy can apply.",
  "⑤ You must be 18 years or older to apply."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -255,7 +255,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 사탕을 만드는 방법", "② 사탕 맛을 보는 사람을 뽑는 광고", "③ 미국의 음식 알레르기 안내"].forEach(c =>
+["① 사탕 맛을 보는 사람을 뽑는 광고",
+ "② 사탕을 만드는 방법",
+ "③ 미국의 음식 알레르기 안내"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -407,22 +409,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문16 ", { size: 17, bold: true, color: NAVY2 }), t("To apply(M)·send(△V)·us·an email·by February 15(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 내 여동생은 지금 책을 읽고 있다  (2) 너는 자전거를 탈 때 헬멧을 써야 한다  (3) 그가 밖에서 기다리고 있으니, 너는 지금 가야 한다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 candy · tester · apply   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 candy · tester · apply   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 T · 4 F · 5 F · 6 T · 7 T · 8 F", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (b) → (a) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ④");
-B("이 글은 사탕 맛을 보는 사람을 뽑는다는 구인 광고다. 하는 일(문장 9–11)과 지원 자격(문장 13–15), 지원 방법(문장 16)이 차례로 나온다. 소재와 목적을 함께 담은 ④이 제목이다. ③·⑤는 지엽적 오답, ①·②은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ①");
-B("문장 11에서 시급은 30달러다. 13달러라고 한 ①이 본문과 다르다. ②은 문장 6, ③는 문장 9, ④는 문장 13, ⑤는 문장 14에서 확인된다. 광고문은 숫자가 곧 정답의 자리다.", true);
+Hs("독해 01   제목   ·   정답 ②");
+B("이 글은 사탕 맛을 보는 사람을 뽑는다는 구인 광고다. 하는 일(문장 9–11)과 지원 자격(문장 13–15), 지원 방법(문장 16)이 차례로 나온다. 소재와 목적을 함께 담은 ②이 제목이다. ④·⑤는 지엽적 오답, ①·③은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 11에서 시급은 30달러다. 13달러라고 한 ③이 본문과 다르다. ①은 문장 6, ②는 문장 9, ④는 문장 13, ⑤는 문장 14에서 확인된다. 광고문은 숫자가 곧 정답의 자리다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) them은 같은 문장 앞부분의 new candies를 가리킨다. 맛과 느낌, 냄새를 말해 줄 대상이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   Our company is looking for people to try new candies.");
 B("문장 6을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Our.   ② is looking이 한 덩어리의 진행형 동사.   ③ look for(찾다)의 for를 빠뜨리지 않는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 candy · tester · apply     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 사탕 맛을 보는 사람을 구한다는 광고다. ① 만드는 방법은 나오지 않고, ③ 알레르기는 지원 자격의 한 조건일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 candy · tester · apply     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 사탕 맛을 보는 사람을 구한다는 광고다. ② 만드는 방법은 나오지 않고, ③ 알레르기는 지원 자격의 한 조건일 뿐이다.");
 B("1-2   ○표 할 세 단어: candy(힌트① 광고가 다루는 것) · tester(힌트② 뽑으려는 사람) · apply(힌트③ 해야 하는 일). 나머지 셋(chocolate · hour · allergies)은 본문에 나오지만 광고의 요지는 아니다 — 예시와 조건일 뿐이다.");
 B("1-3   문장 5 — we는 회사에, you는 이 광고를 읽는 사람에 ○ (한 문장 안에서 가리키는 대상이 바뀐다).   문장 9 — them은 새 사탕들에 ○.   문장 16 — us는 Candy House에 ○ (광고를 낸 쪽).");
 B("[학습 포인트]   광고문에서 we는 언제나 광고를 낸 쪽, you는 읽는 쪽이다. 이 둘을 구분하는 순간 조건과 혜택이 누구의 것인지가 또렷해진다.", true);

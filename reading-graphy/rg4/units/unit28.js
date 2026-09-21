@@ -99,8 +99,8 @@ K.push(sp(65));
 ["① Rare Animals of Trindade Island",
  "② The Best Boat Trips in Brazil",
  "③ Why Some Rocks Look Blue-Green",
- "④ Plastic Rocks: A New Mark of Human Impact",
- "⑤ How to Recycle Old Fishing Nets"].forEach(c => K.push(ch(c)));
+ "④ How to Recycle Old Fishing Nets",
+ "⑤ Plastic Rocks: A New Mark of Human Impact"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 57, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
@@ -112,10 +112,10 @@ K.push(sp(65));
 K.push(spF(1, 57, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the strange blue-green rocks",
- "② the rare animals on the island",
- "③ the fishing nets and bottles",
- "④ the people living on the island",
+["① the rare animals on the island",
+ "② the fishing nets and bottles",
+ "③ the people living on the island",
+ "④ the strange blue-green rocks",
  "⑤ the ocean currents around Brazil"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 57, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -282,9 +282,9 @@ K.push(spF(4, 123, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 브라질로 가는 배 여행 코스",
- "② 바위의 색이 변하는 이유",
- "③ 외딴 섬에서 발견된 플라스틱 암석"].forEach(c =>
+["① 외딴 섬에서 발견된 플라스틱 암석",
+ "② 브라질로 가는 배 여행 코스",
+ "③ 바위의 색이 변하는 이유"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 82, 0.26));
 
@@ -738,7 +738,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문7 ", { size: 17, bold: true, color: NAVY2 }), t("Under the hot sun(M)·this plastic(S)·melted·stuck(△V)·to the beach(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 책상 위에 많은 책이 있다  (2) 이것은 고양이가 아니라 작은 개다  (3) 우리 학교 근처에는 공원이 아니라 큰 도서관이 있다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 rocks · evidence · human        ", { size: 19, bold: true }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 rocks · evidence · human        ", { size: 19, bold: true }),
      t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 · 순서 · 예시 · 나열   2-2 [B] 발견 · [E] 의미   2-3 ⑤", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (a) → (b) → (c) → (d)  ·  These plastic rocks are evidence of how human actions are changing natural processes.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) remote  (2) plastic  (3) melted  (4) evidence        ", { size: 19, bold: true }),
@@ -752,16 +752,16 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) The island is home to rare animals and a place with almost no humans.  (2) She was curious about them and took some back to her lab.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ④");
-B("외딴 섬에서 발견된 파란 초록빛 돌이 사실은 플라스틱과 자연 암석이 섞인 것이었고(문장 3–7), 그것이 인간의 영향을 보여 준다(문장 8–10)는 글이다. 소재와 의미를 함께 담은 ④이 적절하다. ①·③는 섬·색만 건드린 지엽적 오답, ②·⑤는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ⑤");
+B("외딴 섬에서 발견된 파란 초록빛 돌이 사실은 플라스틱과 자연 암석이 섞인 것이었고(문장 3–7), 그것이 인간의 영향을 보여 준다(문장 8–10)는 글이다. 소재와 의미를 함께 담은 ⑤이 적절하다. ①·③는 섬·색만 건드린 지엽적 오답, ②·④는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ④");
 B("문장 5에서 이 돌들은 '평범한 돌이 아니라(weren’t ordinary rocks)' 자연 암석과 플라스틱 쓰레기가 섞인 것이라고 했으므로 ④는 본문과 반대된다. ①은 문장 1, ②는 문장 2, ③은 문장 3, ⑤는 문장 6에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) them은 바로 앞 문장 3의 strange blue-green rocks를 가리킨다. 산토스가 궁금해하며 실험실로 가져간 것이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   Santos’s discovery shows human impact on even remote areas.");
 B("문장 8을 그대로 복원하는 문제다. ㄱ 첫 글자는 대문자 Santos’s.   ㄴ 주어가 단수이므로 동사는 shows.   ㄷ even은 remote 앞에 놓여 '~에까지'를 강조한다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 rocks · evidence · human     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 외딴 섬에서 발견된 플라스틱 암석과 그 의미를 다룬다. ① 배 여행은 섬이 얼마나 먼지 보여 주는 배경일 뿐이고, ② 색이 변하는 원리를 설명하지는 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 rocks · evidence · human     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 외딴 섬에서 발견된 플라스틱 암석과 그 의미를 다룬다. ② 배 여행은 섬이 얼마나 먼지 보여 주는 배경일 뿐이고, ③ 색이 변하는 원리를 설명하지는 않는다.");
 B("1-2   ○표 할 세 단어: rocks(힌트① 산토스가 발견한 것) · evidence(힌트② 그것이 지닌 의미) · human(힌트③ 자연을 바꾸는 주체). 나머지 셋(Brazil · bottles · island)은 본문에 나오지만 주제문에는 들어가지 않는다.");
 B("1-3   문장 4 — them은 이상한 바위들에 ○.   문장 7 — this plastic은 플라스틱 쓰레기에 ○ (문장 6의 그물·병).   문장 10 — They는 plastic rocks에 ○ (문장 9의 그 돌들).");
 B("[학습 포인트]   지시어는 장소도 대신한다(문장 3 there = 트린다지 섬). this+명사는 '앞에서 말한 바로 그것'이라는 신호이니, 만날 때마다 앞으로 화살표를 그어 두자.", true);

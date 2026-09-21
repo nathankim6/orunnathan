@@ -76,24 +76,24 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Win a Talent Show",
- "② Twins Days: Fun and Science Together",
- "③ The History of Ohio’s Small Towns",
- "④ Why Twins Look So Different",
- "⑤ The Best Way to Take Group Photos"].forEach(c => K.push(ch(c)));
+ "② The History of Ohio’s Small Towns",
+ "③ Why Twins Look So Different",
+ "④ The Best Way to Take Group Photos",
+ "⑤ Twins Days: Fun and Science Together"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Twins Days takes place in Twinsburg, Ohio.",
  "② The town is named after two twin brothers.",
  "③ During the festival, twins dress the same.",
- "④ Twins volunteer for studies about genetics and aging.",
- "⑤ The festival began in 1976 with 3,000 pairs of twins."].forEach(c => K.push(ch(c)));
+ "④ The festival began in 1976 with 3,000 pairs of twins.",
+ "⑤ Twins volunteer for studies about genetics and aging."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) They가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the twins in the large tent",
- "② the visitors at the parade",
- "③ the scientists",
+ "② the scientists",
+ "③ the visitors at the parade",
  "④ the twin brothers who made the town",
  "⑤ the organizers of the festival"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -247,8 +247,8 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 재미와 과학 연구가 함께 있는 쌍둥이 축제",
- "② 오하이오주 여행 코스 소개",
+["① 오하이오주 여행 코스 소개",
+ "② 재미와 과학 연구가 함께 있는 쌍둥이 축제",
  "③ 쌍둥이 이름을 짓는 방법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
@@ -395,22 +395,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문9 ", { size: 17, bold: true, color: NAVY2 }), t("Although[네모]·they(S′)·may line up(△V′)·twins(S)·enjoy(△V)·the rewards", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 나를 웃게 만드는 책을 좋아한다  (2) 이 거리는 어느 유명한 화가의 이름을 따서 지어졌다  (3) 그 왕의 이름을 따서 지어진 공원은 아주 오래되었다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 twins · fun · research   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 twins · fun · research   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 T · 3 T · 4 F · 5 F · 6 T · 7 F · 8 F", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (b) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ②");
-B("이 글은 쌍둥이 축제의 즐거움(문장 5–6)과 그 축제가 과학 연구의 기회이기도 하다는 점(문장 7–11)을 함께 소개한다. 두 축을 모두 담은 ②이 제목으로 적절하다. ①·③는 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 4에서 축제는 1976년에 단 36쌍으로 시작했다. 3,000쌍은 지금 모이는 규모(문장 2)다. 숫자를 바꿔 놓은 ⑤이 본문과 다르다. ①은 문장 1, ②은 문장 3, ③는 문장 5, ④는 문장 8에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 쌍둥이 축제의 즐거움(문장 5–6)과 그 축제가 과학 연구의 기회이기도 하다는 점(문장 7–11)을 함께 소개한다. 두 축을 모두 담은 ⑤이 제목으로 적절하다. ①·②는 지엽적 오답, ③·④는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 4에서 축제는 1976년에 단 36쌍으로 시작했다. 3,000쌍은 지금 모이는 규모(문장 2)다. 숫자를 바꿔 놓은 ④이 본문과 다르다. ①은 문장 1, ②은 문장 3, ③는 문장 5, ⑤는 문장 8에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) They는 바로 앞 문장 10의 The scientists를 가리킨다. 네 시간 만에 일 년치 정보를 얻는 쪽은 자료를 모으는 과학자들이다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   They join contests, parades, talent shows, and group photos.");
 B("문장 6을 그대로 복원하는 문제다. ① 첫 글자는 대문자 They.   ② 나열되는 항목 사이의 콤마를 빠뜨리지 않는다.   ③ 마지막 항목 앞에는 and가 온다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 twins · fun · research     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 쌍둥이 축제가 재미이면서 동시에 과학 연구의 기회라고 말한다. ② 여행 코스나 ③ 이름 짓기는 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 twins · fun · research     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 쌍둥이 축제가 재미이면서 동시에 과학 연구의 기회라고 말한다. ① 여행 코스나 ③ 이름 짓기는 나오지 않는다.");
 B("1-2   ○표 할 세 단어: twins(힌트① 주인공) · fun(힌트② 축제에서 누리는 것) · research(힌트③ 또 다른 의미). 나머지 셋(parades · tent · Ohio)은 활동과 장소일 뿐 주제문에 들어가지 않는다.");
 B("1-3   문장 9 — they는 쌍둥이들에 ○.   문장 10 — this inefficient process는 줄 서서 참여하는 과정에 ○.   문장 11 — They는 과학자들에 ○ (문장 10의 주어).");
 B("[학습 포인트]   같은 they라도 문장 9에서는 쌍둥이, 문장 11에서는 과학자를 가리킨다. 지시어는 뜻이 아니라 '바로 앞의 자리'로 찾는 것이 원칙이다.", true);

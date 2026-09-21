@@ -101,16 +101,16 @@ K.push(sp(65));
 ["① Why Babies Cry at Night",
  "② How Sheep Live on a Farm",
  "③ The Colors of Our Skin",
- "④ Brown Fat: The Fat That Burns Calories",
- "⑤ A Diet Plan for Losing Weight"].forEach(c => K.push(ch(c)));
+ "④ A Diet Plan for Losing Weight",
+ "⑤ Brown Fat: The Fat That Burns Calories"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① White fat looks white or yellowish under our skin.",
- "② Brown fat is usually found in newborn babies.",
- "③ Scientists injected fat sheep with brown fat.",
- "④ The sheep lost weight and became healthier.",
- "⑤ We gain more brown fat as we grow up."].forEach(c => K.push(ch(c)));
+ "② We gain more brown fat as we grow up.",
+ "③ Brown fat is usually found in newborn babies.",
+ "④ Scientists injected fat sheep with brown fat.",
+ "⑤ The sheep lost weight and became healthier."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) It이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
@@ -285,7 +285,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 아기의 목과 어깨를 살피는 법", "② 칼로리를 태우는 갈색 지방", "③ 양을 건강하게 기르는 방법"].forEach(c =>
+["① 칼로리를 태우는 갈색 지방",
+ "② 아기의 목과 어깨를 살피는 법",
+ "③ 양을 건강하게 기르는 방법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -408,8 +410,8 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 몸의 원리를 알려 주는 설명문",
- "② 약을 파는 광고",
+["① 약을 파는 광고",
+ "② 몸의 원리를 알려 주는 설명문",
  "③ 하루를 기록한 일기",
  "④ 의사에게 보내는 편지",
  "⑤ 상상으로 지어낸 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
@@ -740,8 +742,8 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("With this information(M)·the scientists(S)·hope(△V)·to develop~(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 이 꽃은 장미라고 불린다  (2) 나는 다시 시도할 기회가 필요하다  (3) 이 수업은 친구를 사귀는 아주 좋은 방법이라고 불린다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 brown fat · calories · medicine        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 이유 · ~할 때 · 반전 · 덧붙임   2-2 [B] 갈색 지방 · [E] 기대   2-3 ①", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 brown fat · calories · medicine        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 이유 · ~할 때 · 반전 · 덧붙임   2-2 [B] 갈색 지방 · [E] 기대   2-3 ②", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (d) → (c) → (a)  ·  Brown fat burns calories, so scientists hope to develop a new medicine.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) brown  (2) calories  (3) sheep  (4) medicine        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 5 ②  문장 6 ②  문장 10 ②  문장 11 ③", { size: 19, bold: true })], { after: 150 }),
@@ -754,16 +756,16 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) Another type is called brown fat, and it’s brown.  (2) This can sometimes cause problems for our health.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ④");
-B("이 글은 칼로리를 태워 몸을 덥히는 갈색 지방(문장 3–5)과 그것을 늘리려는 연구(문장 8–12)를 설명한다. 소재(갈색 지방)와 특징(칼로리를 태운다)을 함께 담은 ④이 제목으로 적절하다. ②·⑤는 실험과 체중만 건드린 지엽적 오답, ①·③는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 6에서 자라면서 갈색 지방은 대부분 잃고 흰 지방이 늘어난다고 했으므로, 갈색 지방이 늘어난다는 ⑤은 본문과 반대된다. ①은 문장 2, ②는 문장 4, ③는 문장 9, ④는 문장 10에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 칼로리를 태워 몸을 덥히는 갈색 지방(문장 3–5)과 그것을 늘리려는 연구(문장 8–12)를 설명한다. 소재(갈색 지방)와 특징(칼로리를 태운다)을 함께 담은 ⑤이 제목으로 적절하다. ②·④는 실험과 체중만 건드린 지엽적 오답, ①·③는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 6에서 자라면서 갈색 지방은 대부분 잃고 흰 지방이 늘어난다고 했으므로, 갈색 지방이 늘어난다는 ②은 본문과 반대된다. ①은 문장 2, ③는 문장 4, ④는 문장 9, ⑤는 문장 10에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) It은 바로 앞 문장 9의 실험, 곧 양에게 갈색 지방을 주사한 일을 가리킨다. 양이 살이 빠지고 건강해진 것이 무엇 덕분인지 생각하면 된다.", true);
 Hs("독해 04   배열 영작   ·   Our bodies have different types of fat.");
 B("문장 1을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Our.   ② 주어 bodies가 복수이므로 동사는 have.   ③ different types of fat — of 뒤에 fat이 온다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 brown fat · calories · medicine     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 칼로리를 태우는 갈색 지방과 그것을 이용하려는 연구를 다룬다. ① 아기 이야기는 갈색 지방이 있는 자리를 알려 줄 뿐이고, ③ 양은 실험 대상일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 brown fat · calories · medicine     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 칼로리를 태우는 갈색 지방과 그것을 이용하려는 연구를 다룬다. ② 아기 이야기는 갈색 지방이 있는 자리를 알려 줄 뿐이고, ③ 양은 실험 대상일 뿐이다.");
 B("1-2   ○표 할 세 단어: brown fat(힌트① 주인공) · calories(힌트② 그것이 태우는 것) · medicine(힌트③ 과학자들이 만들려는 것). 나머지 셋(sheep · skin · babies)은 본문에 등장하지만 주제문에 들어가지 않는다 — 예시와 배경일 뿐이다.");
 B("1-3   문장 4 — It은 갈색 지방에 ○ (문장 3에서 새로 소개한 지방).   문장 7 — This는 갈색 지방이 줄어드는 것에 ○ (문장 6의 내용).   문장 9 — them은 뚱뚱한 양들에 ○.");
 B("[학습 포인트]   문장 2의 it은 흰 지방, 문장 4의 It은 갈색 지방이다. 같은 it이라도 바로 앞 문장이 무엇을 말했는지에 따라 가리키는 것이 바뀐다.", true);
@@ -771,10 +773,10 @@ B("[학습 포인트]   문장 2의 it은 흰 지방, 문장 4의 It은 갈색 �
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 이유 / ~할 때 / 반전 / 덧붙임     2-2 [B] 갈색 지방 · [E] 기대     2-3 ①");
+Hs("STEP 2   글의 흐름   ·   2-1 이유 / ~할 때 / 반전 / 덧붙임     2-2 [B] 갈색 지방 · [E] 기대     2-3 ②");
 B("2-1   문장 5 because — 갈색 지방이 중요한 '이유'.   문장 6 As — 우리가 자라는 '때'를 나타낸다.   문장 8 But — 문제 뒤에 해결책이 나오는 '반전'.   문장 10 and — 살이 빠진 데다 건강해졌다는 '덧붙임'.");
 B("2-2   [B] 갈색 지방(문장 3–4: 두 번째 지방의 정체와 있는 자리), [E] 기대(문장 10–12: 실험 결과와 앞으로의 바람). 보기의 '운동법'은 이 글에 없는 역할이다. [A] 소개 → [B] 갈색 지방 → [C] 쓰임과 변화 → [D] 실험 → [E] 기대.");
-B("2-3   정답 ①. 몸속 지방의 종류와 원리를 사실대로 알려 주는 설명문이다. ② 광고의 신호(가격·사라는 말)가 없고, ③ 일기의 I·오늘도, ④ 편지의 Dear도, ⑤ 동화의 등장인물도 없다.");
+B("2-3   정답 ②. 몸속 지방의 종류와 원리를 사실대로 알려 주는 설명문이다. ① 광고의 신호(가격·사라는 말)가 없고, ③ 일기의 I·오늘도, ④ 편지의 Dear도, ⑤ 동화의 등장인물도 없다.");
 B("[학습 포인트]   설명문에서 But이 나오면 그 뒤가 글의 무게중심이다. 문장 8의 But 뒤부터 '문제'에서 '해결'로 방향이 바뀐다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 calories · medicine     3-3 (b) → (d) → (c) → (a)");
 B("3-1  재료 찾기 — (2) 문장 5에서 calories에 ○: 갈색 지방이 태우는 대상이다. weight는 양이 줄인 것이지 태우는 대상이 아니다. (3) 문장 11에서 medicine에 ○: 과학자들이 만들려는 것이다. experiment는 이미 한 일이다.");

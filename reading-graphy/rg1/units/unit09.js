@@ -79,16 +79,16 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① How Butterflies Fly with Big Wings",
- "② The Best Grass for Healthy Cows",
- "③ Eyes on Cows’ Butts: A Smart Way to Stay Safe",
+["① Eyes on Cows’ Butts: A Smart Way to Stay Safe",
+ "② How Butterflies Fly with Big Wings",
+ "③ The Best Grass for Healthy Cows",
  "④ Why Lions and Leopards Live in Africa",
  "⑤ How to Paint a Picture of Animals"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① The scientists got this idea from birds.",
- "② In Botswana, cows eat grass among wild animals.",
+["① In Botswana, cows eat grass among wild animals.",
+ "② The scientists got this idea from birds.",
  "③ Scientists found a smart way to keep the cows safe.",
  "④ Lions and leopards sneak up when they hunt.",
  "⑤ Some butterflies have fake eyes on their wings."].forEach(c => K.push(ch(c)));
@@ -97,9 +97,9 @@ K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장
 K.push(sp(65));
 ["① the cows’ enemies like lions",
  "② the wings of the butterflies",
- "③ the fake eyes on the body",
- "④ the farmers in Botswana",
- "⑤ the green grass in the field"].forEach(c => K.push(ch(c)));
+ "③ the farmers in Botswana",
+ "④ the green grass in the field",
+ "⑤ the fake eyes on the body"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -251,8 +251,8 @@ K.push(spF(4, 300, 0.10));
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 ["① 나비 날개에 있는 무늬",
- "② 소가 좋아하는 풀의 종류",
- "③ 소를 지키려고 엉덩이에 그린 눈"].forEach(c =>
+ "② 소를 지키려고 엉덩이에 그린 눈",
+ "③ 소가 좋아하는 풀의 종류"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -398,22 +398,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("Since[네모]·cows(S′)·aren’t born(△V′)·farmers(S)·can draw(△V)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 소파 위에 고양이 두 마리가 있다  (2) 나는 버스에서 읽을 책이 필요하다  (3) 영어를 배울 좋은 방법이 하나 있다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 cows · eyes · safe   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 cows · eyes · safe   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 F · 4 F · 5 T · 6 T · 7 F · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("이 글은 소를 지키려고 엉덩이에 눈을 그리는 방법(문장 4–5)과 그 원리(문장 6–7)를 알려 준다. 소재와 목적을 함께 담은 ③이 제목으로 알맞다. ①·④는 지엽적, ②·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ①");
-B("문장 8에서 과학자들은 이 생각을 나비(butterflies)에게서 얻었다고 했다. 새에게서 얻었다는 ①는 본문과 다르다. ②은 문장 1, ③는 문장 4, ④은 문장 6, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 01   제목   ·   정답 ①");
+B("이 글은 소를 지키려고 엉덩이에 눈을 그리는 방법(문장 4–5)과 그 원리(문장 6–7)를 알려 준다. 소재와 목적을 함께 담은 ①이 제목으로 알맞다. ②·④는 지엽적, ③·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 8에서 과학자들은 이 생각을 나비(butterflies)에게서 얻었다고 했다. 새에게서 얻었다는 ②는 본문과 다르다. ①은 문장 1, ③는 문장 4, ④은 문장 6, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) them은 문장 9–10의 fake eyes를 가리킨다. 소는 가짜 눈을 가지고 태어나지 않으니 사람이 그려 준다는 흐름이다.", true);
 Hs("독해 04   배열 영작   ·   The scientists got this idea from butterflies.");
 B("문장 8을 그대로 복원한다. ㄱ 첫 글자는 대문자 The.   ㄴ got 뒤에 this idea가 온다.   ㄷ '~에게서'는 from.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 cows · eyes · safe     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 소를 안전하게 지키려고 엉덩이에 눈을 그리는 방법을 소개한다. ① 나비는 아이디어의 출처일 뿐이고, ② 풀의 종류는 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 cows · eyes · safe     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 소를 안전하게 지키려고 엉덩이에 눈을 그리는 방법을 소개한다. ① 나비는 아이디어의 출처일 뿐이고, ③ 풀의 종류는 나오지 않는다.");
 B("1-2   ○표 할 세 단어: cows(힌트① 지켜야 할 동물) · eyes(힌트② 그리는 것) · safe(힌트③ 만드는 상태). butterflies · lions · grass는 본문에 있지만 주제문에는 들어가지 않는다.");
 B("1-3   문장 7 — them은 사자와 표범에 ○(소가 보는 대상).   문장 8 — this idea는 엉덩이에 눈 그리기에 ○(문장 5).   문장 11 — them은 가짜 눈에 ○(문장 9–10).");
 B("[학습 포인트]   같은 them이라도 문장 7에서는 사자와 표범, 문장 11에서는 가짜 눈이다. 지시어는 자리마다 짝이 다르니 만날 때마다 앞에서 확인하자.", true);

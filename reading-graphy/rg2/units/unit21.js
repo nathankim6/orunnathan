@@ -82,8 +82,8 @@ K.push(sp(65));
 ["① How to Cut a Big Rock into a Chair",
  "② The Daily Life of King Edward I",
  "③ The Best Castles to Visit in the U.K.",
- "④ How Heavy Is 125 Kilograms?",
- "⑤ The Stone of Destiny: A Symbol of Scottish History"].forEach(c => K.push(ch(c)));
+ "④ The Stone of Destiny: A Symbol of Scottish History",
+ "⑤ How Heavy Is 125 Kilograms?"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
@@ -402,8 +402,8 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (d) → (a)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ⑤");
-B("이 글은 영국 왕의 대관식에 쓰인 운명의 돌(문장 1·3–4)과 그 돌이 스코틀랜드로 돌아오기까지의 역사(문장 5–9)를 소개한다. 소재(돌)와 특징(스코틀랜드 역사의 상징)을 함께 담은 ⑤이 적절하다. ②·④는 왕·무게만 건드린 지엽적 오답, ①·③는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 영국 왕의 대관식에 쓰인 운명의 돌(문장 1·3–4)과 그 돌이 스코틀랜드로 돌아오기까지의 역사(문장 5–9)를 소개한다. 소재(돌)와 특징(스코틀랜드 역사의 상징)을 함께 담은 ④이 적절하다. ②·⑤는 왕·무게만 건드린 지엽적 오답, ①·③는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ①");
 B("문장 9에서 영국 정부는 그 돌을 잉글랜드가 아니라 스코틀랜드에 돌려주었다. 돌아간 곳을 바꾼 ①가 본문과 다르다. ②은 문장 2, ③는 문장 4, ④은 문장 5, ⑤는 문장 12에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ①");

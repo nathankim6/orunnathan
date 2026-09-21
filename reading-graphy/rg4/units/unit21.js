@@ -87,8 +87,8 @@ K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① In the hot summer, air conditioners consume a lot of electricity.",
- "② A windcatcher is located on the roof of the house.",
- "③ A windcatcher raises the temperature inside a building.",
+ "② A windcatcher raises the temperature inside a building.",
+ "③ A windcatcher is located on the roof of the house.",
  "④ A windcatcher looks like a tall chimney with open sides.",
  "⑤ The exact origin of windcatchers is not clear."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -250,8 +250,8 @@ K.push(spF(4, 300, 0.10));
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 ["① 야구에서 포수(catcher)가 맡은 역할",
- "② 3,000년 전 고대 이집트 미술 이야기",
- "③ 전기 없이 집을 시원하게 하는 이란의 장치"].forEach(c =>
+ "② 전기 없이 집을 시원하게 하는 이란의 장치",
+ "③ 3,000년 전 고대 이집트 미술 이야기"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -397,7 +397,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문7 ", { size: 17, bold: true, color: NAVY2 }), t("It(S)·catches·sends(△V)·and[네모]·from high above(M)·into the house below(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 우리는 남산타워라고 알려진 탑을 방문했다  (2) 그 도서관은 우리 학교 근처에 있다  (3) 시청이라고 알려진 그 건물은 중심가에 있다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 windcatcher · cooling · symbol   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 windcatcher · cooling · symbol   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 F · 4 T · 5 F · 6 T · 7 T · 8 F", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (c) → (a)", { size: 19, bold: true })], { after: 0 }),
@@ -405,14 +405,14 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ④");
 B("이 글은 전기 없이 집을 식히는 이란의 전통 장치 윈드캐처(문장 2)의 생김새와 작동 방식(문장 5–9), 오래된 유래(문장 10–11)를 소개한다. 소재와 특징을 함께 담은 ④이 제목으로 적절하다. ③·⑤는 지엽적이고, ①·②은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 9에서 윈드캐처는 건물 안 온도를 8°C에서 12°C까지 '낮춘다(reduce)'고 했다. 온도를 올린다는 ③가 본문과 반대된다. ①은 문장 1, ②은 문장 5, ④는 문장 6, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 9에서 윈드캐처는 건물 안 온도를 8°C에서 12°C까지 '낮춘다(reduce)'고 했다. 온도를 올린다는 ②가 본문과 반대된다. ①은 문장 1, ③은 문장 5, ④는 문장 6, ⑤는 문장 10에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) this는 바로 앞 문장 7–8의 내용, 곧 위에서 바람을 받아 찬 공기를 집 안으로 내려보내고 더운 공기를 반대쪽으로 밀어내는 작용을 가리킨다. 지시어는 단어 하나가 아니라 앞 문장 전체를 받기도 한다.", true);
 Hs("독해 04   배열 영작   ·   It looks like a tall chimney with open sides around.");
 B("문장 6을 그대로 복원하는 문제다. ① 첫 글자는 대문자 It.   ② look like ~ = '~처럼 보이다'로 두 단어가 붙어 다닌다.   ③ with open sides around가 chimney를 뒤에서 꾸민다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 windcatcher · cooling · symbol     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 전기가 필요 없는 이란의 전통 냉방 장치를 소개한다. ①의 catcher는 여기서 야구 포수가 아니라 '바람을 붙잡는 것'이고, ② 이집트 미술은 유래를 말할 때 잠깐 나올 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 windcatcher · cooling · symbol     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 전기가 필요 없는 이란의 전통 냉방 장치를 소개한다. ①의 catcher는 여기서 야구 포수가 아니라 '바람을 붙잡는 것'이고, ③ 이집트 미술은 유래를 말할 때 잠깐 나올 뿐이다.");
 B("1-2   ○표 할 세 단어: windcatcher(힌트① 주인공) · cooling(힌트② 하는 일) · symbol(힌트③ 이란에서의 자리). 나머지 셋(chimney · Egyptian · temple)은 본문에 나오지만 주제문에는 들어가지 않는다.");
 B("1-3   문장 7 — It은 윈드캐처에 ○.   문장 8 — This는 찬 공기를 내려보내는 일에 ○ (앞 문장 전체).   문장 10 — they는 윈드캐처들에 ○ (복수형 they는 복수 명사를 받는다).");
 B("[학습 포인트]   this·that은 단어 하나가 아니라 앞 문장 전체를 받을 수 있다. 지시어를 만나면 먼저 수(단수·복수)를 맞춰 보고, 단수인데 짝이 없으면 앞 문장 전체를 넣어 보자.", true);

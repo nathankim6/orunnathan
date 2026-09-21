@@ -79,8 +79,10 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① How to Build a Spaceship with a Camera", "② NASA\u2019s Test: Changing an Asteroid\u2019s Path",
- "③ Dimorphos: An Asteroid with Two Moons", "④ The 10 Months of a Space Trip",
+["① How to Build a Spaceship with a Camera",
+ "② Dimorphos: An Asteroid with Two Moons",
+ "③ The 10 Months of a Space Trip",
+ "④ NASA\u2019s Test: Changing an Asteroid\u2019s Path",
  "⑤ Why People Love Space Movies"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
@@ -402,8 +404,8 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (d) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ②");
-B("이 글은 소행성 충돌이 실제로 가능한지 묻고(문장 3), NASA가 DART 실험으로 소행성의 궤도를 바꾼 일(문장 4–9)을 소개한다. 소재와 결과를 함께 담은 ②이 제목으로 적절하다. ①·④은 세부 사항만 담은 지엽적 오답, ③·⑤는 본문에 근거가 없다.", true);
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 소행성 충돌이 실제로 가능한지 묻고(문장 3), NASA가 DART 실험으로 소행성의 궤도를 바꾼 일(문장 4–9)을 소개한다. 소재와 결과를 함께 담은 ④이 제목으로 적절하다. ①·③은 세부 사항만 담은 지엽적 오답, ②·⑤는 본문에 근거가 없다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ②");
 B("문장 7에서 우주선은 디모르포스를 10개월(10 months) 동안 따라갔다. 이를 '10일'로 바꾼 ②가 본문과 다르다. ①은 문장 4, ③은 문장 6, ④은 문장 9, ⑤는 문장 11에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ②");

@@ -87,17 +87,17 @@ K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?")
 K.push(sp(65));
 ["① Some plants can make sounds like popping popcorn.",
  "② Scientists studied tomato plants with special microphones.",
- "③ Plants normally make 50 popping sounds each hour.",
- "④ Stressed plants made 30 to 50 popping sounds in an hour.",
+ "③ Stressed plants made 30 to 50 popping sounds in an hour.",
+ "④ Plants normally make 50 popping sounds each hour.",
  "⑤ Making sounds is their way of reacting to stress."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) They가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① tomato plants",
- "② scientists",
- "③ special microphones",
- "④ the quietest sounds",
- "⑤ popping sounds"].forEach(c => K.push(ch(c)));
+ "② special microphones",
+ "③ the quietest sounds",
+ "④ popping sounds",
+ "⑤ scientists"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -403,9 +403,9 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ④");
 B("식물이 아주 작은 소리를 내고(문장 2–4), 스트레스를 받으면 그 소리가 30–50번으로 늘어나며(문장 7), 그것이 의사소통은 아니라는 것(문장 9–10)이 글의 뼈대다. 소재와 조건을 함께 담은 ④이 제목으로 적절하다. ②·⑤는 지엽적, ①·③는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 4에서 식물은 평소에 한 시간에 '한 번'의 작은 톡 소리를 낸다. 50번은 스트레스를 받았을 때의 수치(문장 7)이므로 ③이 본문과 다르다. ①은 문장 2, ②는 문장 6, ④은 문장 7, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ②");
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 4에서 식물은 평소에 한 시간에 '한 번'의 작은 톡 소리를 낸다. 50번은 스트레스를 받았을 때의 수치(문장 7)이므로 ④이 본문과 다르다. ①은 문장 2, ②는 문장 6, ③은 문장 7, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) They는 바로 앞 문장 5의 scientists를 가리킨다. 토마토 식물을 '연구한' 쪽이 누구인지 보면 된다 — 뒤의 tomato plants는 연구 대상이지 주어가 아니다.", true);
 Hs("독해 04   배열 영작   ·   This shows that plants react to stress, just like we do.");
 B("문장 8을 그대로 복원한다. ① 첫 글자는 대문자 This.   ② shows 뒤의 that은 '~라는 것을'을 이끄는 접속사.   ③ stress 뒤의 콤마와 마지막 마침표를 빠뜨리지 않는다.", true);

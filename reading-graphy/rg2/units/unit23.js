@@ -79,10 +79,10 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Make Cocoa Powder at Home",
- "② Chocolate Snow: A Sweet Accident in a Small Town",
- "③ The Best Chocolate Factories in Europe",
- "④ Why Strong Winds Are Dangerous",
- "⑤ How to Clean Streets After Snow"].forEach(c => K.push(ch(c)));
+ "② The Best Chocolate Factories in Europe",
+ "③ Why Strong Winds Are Dangerous",
+ "④ How to Clean Streets After Snow",
+ "⑤ Chocolate Snow: A Sweet Accident in a Small Town"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
@@ -95,10 +95,10 @@ K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the cocoa powder in the air",
- "② the strong wind on that day",
- "③ the chocolate factory in the town",
- "④ the air system of the factory",
- "⑤ the snow that fell in winter"].forEach(c => K.push(ch(c)));
+ "② the chocolate factory in the town",
+ "③ the air system of the factory",
+ "④ the snow that fell in winter",
+ "⑤ the strong wind on that day"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -404,11 +404,11 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ②");
-B("이 글은 스위스 올텐 마을에 코코아 가루가 눈처럼 내린 사고(문장 1–7)와 그것을 오히려 반긴 마을 사람들(문장 8–11)을 들려준다. 소재(초콜릿 눈)와 성격(달콤한 사고)을 모두 담은 ②이 제목으로 적절하다. ①·⑤는 코코아·청소만 건드린 지엽적 오답, ③·④은 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 스위스 올텐 마을에 코코아 가루가 눈처럼 내린 사고(문장 1–7)와 그것을 오히려 반긴 마을 사람들(문장 8–11)을 들려준다. 소재(초콜릿 눈)와 성격(달콤한 사고)을 모두 담은 ⑤이 제목으로 적절하다. ①·④는 코코아·청소만 건드린 지엽적 오답, ②·③은 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ②");
 B("문장 8에서 공장은 이 초콜릿 눈이 전혀 해롭지 않다(wasn’t harmful at all)고 알렸다. 위험하다고 뒤집은 ②이 본문과 반대된다. ①은 문장 1–2, ③은 문장 3, ④는 문장 4, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ②");
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) it은 같은 문장 앞부분의 a strong wind를 가리킨다. 코코아 가루를 마을 곳곳에 퍼뜨린 것이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   Cars, houses, and streets all got covered in cocoa powder.");
 B("문장 7을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Cars, 나열에는 콤마를 찍는다.   ② 세 가지를 잇는 and의 자리에 주의한다.   ③ got covered in — '~로 덮였다'가 한 덩어리다.", true);

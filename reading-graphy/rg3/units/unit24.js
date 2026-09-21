@@ -81,22 +81,22 @@ K.push(sp(65));
 ["① How to Make Ice Cream at Home",
  "② The Best Desserts for Dinner Parties",
  "③ Famous People of the 19th Century",
- "④ How Fridges Changed Modern Kitchens",
- "⑤ Why Fancy Ice Cream Molds Disappeared"].forEach(c => K.push(ch(c)));
+ "④ Why Fancy Ice Cream Molds Disappeared",
+ "⑤ How Fridges Changed Modern Kitchens"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Molded ice creams were enjoyed by everybody.",
- "② In the late 19th century, people made ice cream in fun shapes.",
- "③ The ingredients for the ice cream were expensive.",
- "④ In the early 20th century, ice cream cones and bars were introduced.",
+["① In the late 19th century, people made ice cream in fun shapes.",
+ "② The ingredients for the ice cream were expensive.",
+ "③ In the early 20th century, ice cream cones and bars were introduced.",
+ "④ Molded ice creams were enjoyed by everybody.",
  "⑤ New fridge technology made ice cream cheaper."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the special metal molds",
- "② wealthy people at dinner parties",
- "③ ice cream cones and bars",
+ "② ice cream cones and bars",
+ "③ wealthy people at dinner parties",
  "④ expensive restaurants in the city",
  "⑤ fancy-shaped desserts of the 19th century"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -401,11 +401,11 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (b) → (c) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ⑤");
-B("이 글은 19세기 말의 화려한 모양 아이스크림(문장 1–2)이 비싸고 손이 많이 가 부자들만 즐겼고(문장 3–6), 콘·바와 냉장 기술이 나오면서 사라졌다(문장 7–11)고 설명한다. 소재와 결말을 모두 담은 ⑤이 제목이다. ②·③는 지엽, ①·④는 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ①");
-B("문장 3에서 틀로 찍은 아이스크림은 '모두를 위한 것이 아니었다'고 했고, 문장 6에서 주로 부유한 사람들이 즐겼다고 했다. 모두가 즐겼다는 ①는 본문과 반대된다. ②은 문장 1, ③은 문장 4, ④는 문장 7, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 19세기 말의 화려한 모양 아이스크림(문장 1–2)이 비싸고 손이 많이 가 부자들만 즐겼고(문장 3–6), 콘·바와 냉장 기술이 나오면서 사라졌다(문장 7–11)고 설명한다. 소재와 결말을 모두 담은 ④이 제목이다. ②·③는 지엽, ①·⑤는 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 3에서 틀로 찍은 아이스크림은 '모두를 위한 것이 아니었다'고 했고, 문장 6에서 주로 부유한 사람들이 즐겼다고 했다. 모두가 즐겼다는 ④는 본문과 반대된다. ①은 문장 1, ②은 문장 4, ③는 문장 7, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) them은 바로 앞 문장 7에 나온 ice cream cones and bars를 가리킨다. 먹고 치우기가 더 쉬웠던 것이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   However, molded ice creams weren’t for everybody.");
 B("문장 3을 그대로 복원하는 문제다. ① 첫 글자는 대문자 However, 뒤에 콤마를 찍는다.   ② molded가 뒤의 명사 ice creams를 꾸민다.   ③ weren’t — 주어가 복수이고 시제는 과거.", true);

@@ -88,16 +88,16 @@ K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?")
 K.push(sp(65));
 ["① Doctors transplanted a pig’s heart into a person for the first time.",
  "② David Bennett’s heart was too weak for a human heart transplant.",
- "③ The doctors used special pigs whose genes were partly changed.",
- "④ In the past, doctors tried to use animal hearts and succeeded.",
+ "③ In the past, doctors tried to use animal hearts and succeeded.",
+ "④ The doctors used special pigs whose genes were partly changed.",
  "⑤ David passed away 60 days after he received the new heart."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) their가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the doctors’",
  "② David Bennett’s",
- "③ the special pigs’",
- "④ the human patients’",
+ "③ the human patients’",
+ "④ the special pigs’",
  "⑤ the hospitals’"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -250,9 +250,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 돼지를 기르는 농장의 하루",
- "② 유전자를 바꾸는 기술의 역사",
- "③ 사람에게 돼지 심장을 이식한 첫 시도"].forEach(c =>
+["① 사람에게 돼지 심장을 이식한 첫 시도",
+ "② 돼지를 기르는 농장의 하루",
+ "③ 유전자를 바꾸는 기술의 역사"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -398,7 +398,7 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("They(S)·hope(△V)·that[네모]·they(S′)·can use(△V′)·to help ~(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 그 상자는 너무 무거워서 나는 그것을 들 수 없었다  (2) 나는 바이올린을 아주 잘 켜는 소녀를 안다  (3) 내 옆에 앉은 소년은 너무 친절해서 자기 점심을 나눠 주었다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 heart · transplant · information   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 heart · transplant · information   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 F · 5 F · 6 F · 7 T · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (b) → (d)", { size: 19, bold: true })], { after: 0 }),
@@ -406,14 +406,14 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ④");
 B("이 글은 사람에게 돼지 심장을 처음 이식한 시도(문장 1–7)와 그 결과, 그리고 남은 의미(문장 8–11)를 전한다. 소재와 의의를 함께 담은 ④이 적절하다. ③·⑤는 지엽적 오답, ①·②은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 5에서 과거의 시도들은 성공하지 못했다(didn’t succeed). 성공했다고 한 ④이 본문과 반대된다. ①은 문장 1, ②는 문장 3, ③는 문장 6, ⑤는 문장 8에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 5에서 과거의 시도들은 성공하지 못했다(didn’t succeed). 성공했다고 한 ③이 본문과 반대된다. ①은 문장 1, ②는 문장 3, ④는 문장 6, ⑤는 문장 8에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) their는 앞의 special pigs를 가리킨다. 사람 몸에서 더 잘 작동해야 하는 것은 돼지의 장기이므로, 같은 문장의 주어 doctors가 아니다.", true);
 Hs("독해 04   배열 영작   ·   However, David passed away 60 days later.");
 B("문장 8을 그대로 복원한다. ① 첫 글자는 대문자 However — 뒤에 콤마.   ② pass away는 '세상을 떠나다'라는 한 덩어리.   ③ 60 days later가 문장 끝에 온다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 heart · transplant · information     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 사람에게 돼지 심장을 처음 이식한 시도를 소개한다. ① 농장 이야기는 나오지 않고, ② 유전자 조작은 이 시도를 위한 준비 단계로만 등장한다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 heart · transplant · information     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 사람에게 돼지 심장을 처음 이식한 시도를 소개한다. ② 농장 이야기는 나오지 않고, ③ 유전자 조작은 이 시도를 위한 준비 단계로만 등장한다.");
 B("1-2   ○표 할 세 단어: heart(힌트① 사람에게 옮겨진 것) · transplant(힌트② 의사들이 한 일) · information(힌트③ 실패에도 남은 것). 나머지 셋(genes · doctors · David)은 본문에 등장하지만 주제문에 들어가지 않는다 — 방법과 등장인물일 뿐이다.");
 B("1-3   문장 4 — That은 심장이 약했던 것에 ○ (문장 3의 내용 전체).   문장 6 — their는 특별한 돼지들의에 ○.   문장 7 — these special pigs는 유전자를 바꾼 돼지에 ○ (문장 6의 그 돼지들).");
 B("[학습 포인트]   문장 6의 their는 같은 문장 주어(doctors)가 아니라 바로 앞의 pigs를 받는다. 지시어는 자리가 아니라 뜻으로 짝을 찾아야 한다.", true);

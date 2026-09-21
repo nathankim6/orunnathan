@@ -84,17 +84,17 @@ K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Learn the Danish Language",
  "② The Best Schools in Northern Europe",
- "③ The Magic Danish Word for Small Worries",
- "④ Why Students Lose Their Favorite Pens",
- "⑤ Buttons That Teachers Push in Class"].forEach(c => K.push(ch(c)));
+ "③ Why Students Lose Their Favorite Pens",
+ "④ Buttons That Teachers Push in Class",
+ "⑤ The Magic Danish Word for Small Worries"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Denmark is one of the happiest countries in the world.",
- "② The word “pyt” sounds like “pit” in English.",
- "③ Teachers in Denmark have a “pyt” button.",
- "④ We can also use the word “pyt” in our lives.",
- "⑤ Danish people say “pyt” only when very big problems happen."].forEach(c => K.push(ch(c)));
+ "② Danish people say “pyt” only when very big problems happen.",
+ "③ The word “pyt” sounds like “pit” in English.",
+ "④ Teachers in Denmark have a “pyt” button.",
+ "⑤ We can also use the word “pyt” in our lives."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) This가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
@@ -254,9 +254,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 덴마크의 학교 시설 소개",
- "② 영어와 덴마크어의 발음 차이",
- "③ 걱정을 줄여 주는 덴마크의 마법 단어"].forEach(c =>
+["① 걱정을 줄여 주는 덴마크의 마법 단어",
+ "② 덴마크의 학교 시설 소개",
+ "③ 영어와 덴마크어의 발음 차이"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -408,22 +408,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문13 ", { size: 17, bold: true, color: NAVY2 }), t("We(S)·can use(△V)·the word “pyt”·in our lives(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 서울은 한국에서 가장 큰 도시들 중 하나이다  (2) 나는 첫 기차를 타기 위해 일찍 일어났다  (3) 그녀는 사진을 찍기 위해 일본에서 가장 오래된 절들 중 하나를 방문했다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 word · worry · happy   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 word · worry · happy   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 T · 5 F · 6 F · 7 T · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (b) → (a) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("이 글은 작은 일에 걱정하지 않게 해 주는 덴마크의 한 단어 ‘pyt’(문장 3–8)와 그 쓰임(문장 9–12)을 소개한다. 소재(덴마크의 마법 단어)와 특징(작은 걱정을 덜어 줌)을 함께 담은 ③이 제목이다. ④·⑤는 지엽적 오답, ①·②은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 6·8에서 ‘pyt’는 작은 일(small things)이 어긋났을 때 쓰는 말이다. 아주 큰 문제일 때만 쓴다는 ⑤은 본문과 반대된다. ①은 문장 1, ②는 문장 4, ③는 문장 10, ④는 문장 13에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 작은 일에 걱정하지 않게 해 주는 덴마크의 한 단어 ‘pyt’(문장 3–8)와 그 쓰임(문장 9–12)을 소개한다. 소재(덴마크의 마법 단어)와 특징(작은 걱정을 덜어 줌)을 함께 담은 ⑤이 제목이다. ③·④는 지엽적 오답, ①·②은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 6·8에서 ‘pyt’는 작은 일(small things)이 어긋났을 때 쓰는 말이다. 아주 큰 문제일 때만 쓴다는 ②은 본문과 반대된다. ①은 문장 1, ③는 문장 4, ④는 문장 10, ⑤는 문장 13에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) This는 바로 앞 문장 11에서 선생님이 ‘pyt’ 버튼을 누르는 일을 가리킨다. 그 일이 학생을 편안하게 해 준다는 뜻이다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   Teachers in Denmark have a “pyt” button.");
 B("문장 10을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Teachers.   ② in Denmark가 주어를 뒤에서 꾸민다.   ③ 주어가 복수이므로 동사는 have.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 word · worry · happy     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 작은 걱정을 덜어 주는 덴마크의 단어 ‘pyt’를 소개한다. ① 학교는 그 단어를 쓰는 한 장소일 뿐이고, ② 발음 비교는 단어를 설명하는 재료일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 word · worry · happy     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 작은 걱정을 덜어 주는 덴마크의 단어 ‘pyt’를 소개한다. ② 학교는 그 단어를 쓰는 한 장소일 뿐이고, ③ 발음 비교는 단어를 설명하는 재료일 뿐이다.");
 B("1-2   ○표 할 세 단어: word(힌트① 덴마크 사람들이 쓰는 것) · worry(힌트② 이 말이 줄여 주는 것) · happy(힌트③ 그래서 얻는 기분). 나머지 셋(school · button · teacher)은 본문에 나오지만 주제문에 들어가지 않는다 — 쓰임을 보여 주는 예일 뿐이다.");
 B("1-3   문장 4 — It은 단어 pyt에 ○ (문장 3의 그 말).   문장 8 — This word는 pyt에, them은 덴마크 사람들에 ○ (한 문장 안에서 가리키는 대상이 바뀐다).   문장 12 — This는 버튼을 누른 일에 ○ (문장 11의 그 일).");
 B("[학습 포인트]   this·these가 붙으면 반드시 앞 문장에 짝이 있다. 문장 8처럼 지시어가 둘이면 각각 화살표를 그어 확인하는 습관을 들이자.", true);

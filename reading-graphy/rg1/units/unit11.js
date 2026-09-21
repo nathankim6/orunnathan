@@ -81,17 +81,17 @@ K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① The Best Lemonade Recipe for Summer",
  "② How to Grow Lemon Trees at Home",
- "③ Careful with Lemons: They Can Burn Your Skin",
- "④ Cool Drinks for Hot Summer Days",
- "⑤ Why Towels Are Good for Cleaning"].forEach(c => K.push(ch(c)));
+ "③ Cool Drinks for Hot Summer Days",
+ "④ Why Towels Are Good for Cleaning",
+ "⑤ Careful with Lemons: They Can Burn Your Skin"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Lemon juice can burn our skin in the sun.",
- "② A sunburn can never turn into a rash.",
- "③ After squeezing lemons, we should wash our hands well.",
- "④ You can take care of a sunburn from lemon juice at home.",
- "⑤ A cool, wet towel helps your itchiness and pain."].forEach(c => K.push(ch(c)));
+ "② After squeezing lemons, we should wash our hands well.",
+ "③ You can take care of a sunburn from lemon juice at home.",
+ "④ A cool, wet towel helps your itchiness and pain.",
+ "⑤ A sunburn can never turn into a rash."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) This가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
@@ -403,10 +403,10 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (b) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("이 글은 레몬즙이 햇볕에서 피부를 태울 수 있다는 경고(문장 2–3·6)와 그 대처법(문장 9–12)을 알려 준다. 소재와 경고를 함께 담은 ③이 제목이다. ①·④는 지엽적, ②·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 7에서 화상이 심하면 발진으로 번질 수도 있다고 했다. 절대 그렇지 않다는 ②은 본문과 반대다. ①은 문장 3, ③는 문장 5, ④는 문장 9, ⑤는 문장 11–12에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 레몬즙이 햇볕에서 피부를 태울 수 있다는 경고(문장 2–3·6)와 그 대처법(문장 9–12)을 알려 준다. 소재와 경고를 함께 담은 ⑤이 제목이다. ①·③는 지엽적, ②·④는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 7에서 화상이 심하면 발진으로 번질 수도 있다고 했다. 절대 그렇지 않다는 ⑤은 본문과 반대다. ①은 문장 3, ②는 문장 5, ③는 문장 9, ④는 문장 11–12에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) This는 바로 앞 문장 11의 행동, 곧 차고 젖은 수건을 피부에 올리는 일을 가리킨다. This는 앞 문장 전체를 받을 수 있다.", true);
 Hs("독해 04   배열 영작   ·   We squeeze lemons to make lemonade.");

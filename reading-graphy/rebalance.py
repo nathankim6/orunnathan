@@ -51,12 +51,18 @@ def load(path):
     return src, i
 
 def plan_targets(rows, seed):
-    """현재 위치와 무관하게, 각 자리에 고르게 떨어지도록 목표 위치를 배분한다."""
+    """각 자리에 고르게 떨어지도록 목표 위치를 배분한다.
+
+    책 단위로 나누어 배분한다 — 학생은 보통 한 권만 쓰므로, 전체가 고르더라도
+    한 권 안에서 한 자리에 몰리면 그 권은 여전히 찍을 수 있다.
+    """
     by_n = collections.defaultdict(list)
-    for idx, r in enumerate(rows): by_n[r['n']].append(idx)
+    for idx, r in enumerate(rows):
+        book = r['f'].rsplit('/units/', 1)[0].rsplit('/', 1)[-1]
+        by_n[(book, r['n'])].append(idx)
     targets = {}
     rnd = random.Random(seed)
-    for n, idxs in by_n.items():
+    for (book, n), idxs in sorted(by_n.items()):
         pool = [(k % n) + 1 for k in range(len(idxs))]
         rnd.shuffle(pool)
         for idx, t in zip(idxs, pool): targets[idx] = t

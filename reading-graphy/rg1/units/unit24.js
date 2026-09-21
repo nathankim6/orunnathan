@@ -79,10 +79,10 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① How to Move to a New City",
- "② Gold Paint on the Cracks",
- "③ The Price of Gold in Japan",
- "④ A Broken Bowl and a New Start for Noah",
+["① A Broken Bowl and a New Start for Noah",
+ "② How to Move to a New City",
+ "③ Gold Paint on the Cracks",
+ "④ The Price of Gold in Japan",
  "⑤ Mr. Sato’s Favorite Foods"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
@@ -97,9 +97,9 @@ K.push(ask("03", "지칭", "밑줄 친 (A) him이 가리키는 것으로 가장 
 K.push(sp(65));
 ["① Mr. Sato",
  "② Noah’s mom",
- "③ the broken bowl",
- "④ a new neighbor",
- "⑤ Noah"].forEach(c => K.push(ch(c)));
+ "③ Noah",
+ "④ the broken bowl",
+ "⑤ a new neighbor"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -251,9 +251,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 새 도시로 이사 가는 방법",
- "② 금으로 장신구를 만드는 방법",
- "③ 깨진 그릇을 고치며 노아가 배운 것"].forEach(c =>
+["① 깨진 그릇을 고치며 노아가 배운 것",
+ "② 새 도시로 이사 가는 방법",
+ "③ 금으로 장신구를 만드는 방법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -399,22 +399,22 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("문12 ", { size: 17, bold: true, color: NAVY2 }), t("He(S)·learned(△V)·that[네모]·things(S′)·might break(△V′)·they(S′)·can be fixed(△V′)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 그녀는 영화를 봄으로써 영어를 배웠다  (2) 우리 아빠는 나에게 자전거 타는 법을 알려 주셨다  (3) 그는 쌀가루를 사용해서 빵 만드는 법을 나에게 가르쳐 주었다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 break · fixed · better   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 break · fixed · better   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 F · 4 T · 5 T · 6 F · 7 F · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ④");
-B("이사 뒤 슬퍼하던 노아가 엄마의 그릇을 깨뜨리고(문장 1–2), 이웃 사토 씨가 킨츠기로 그것을 더 아름답게 고쳐 주면서 새로운 시작을 느낀다(문장 9–11). 소재(깨진 그릇)와 주제(새로운 시작)를 함께 담은 ④이 제목으로 적절하다. ①·②은 한 부분만 건드린 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ①");
+B("이사 뒤 슬퍼하던 노아가 엄마의 그릇을 깨뜨리고(문장 1–2), 이웃 사토 씨가 킨츠기로 그것을 더 아름답게 고쳐 주면서 새로운 시작을 느낀다(문장 9–11). 소재(깨진 그릇)와 주제(새로운 시작)를 함께 담은 ①이 제목으로 적절하다. ②·③은 한 부분만 건드린 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ⑤");
 B("문장 2에서 노아는 실수로(accidentally) 그릇을 깨뜨렸으므로, 일부러(on purpose) 깨뜨렸다는 ⑤는 본문과 반대된다. ①은 문장 1, ②은 문장 5, ③는 문장 7–8, ④는 문장 9–10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) him은 앞 문장 2–3에서 그릇을 깨고 마음이 안 좋았던 노아를 가리킨다. 사토 씨는 him을 '본' 사람이므로 him이 될 수 없다 — 문장의 주어와 목적어를 갈라 보는 것이 요령이다.", true);
 Hs("독해 04   배열 영작   ·   Then he painted gold on the cracks.");
 B("문장 8을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Then.   ② paint A on B 순서 — gold가 먼저, on the cracks가 뒤.   ③ 마침표를 빠뜨리지 않는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 break · fixed · better     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 깨진 그릇을 함께 고치면서 노아가 배운 것을 들려준다. ① 이사는 사건의 배경일 뿐이고, ② 장신구 만드는 법은 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 break · fixed · better     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 깨진 그릇을 함께 고치면서 노아가 배운 것을 들려준다. ② 이사는 사건의 배경일 뿐이고, ③ 장신구 만드는 법은 나오지 않는다.");
 B("1-2   ○표 할 세 단어: break(힌트① 물건에 일어날 수 있는 일) · fixed(힌트② 그다음에 할 수 있는 일) · better(힌트③ 그래서 되는 상태). 나머지 셋(bowl · gold · city)은 본문에 나오지만 소품과 배경이다.");
 B("1-3   문장 4 — him은 Noah에 ○ (문장 2–3의 주인공).   문장 9 — it은 the bowl에 ○ (고친 바로 그 그릇).   문장 12 — they는 things에 ○ (깨질 수 있는 물건들).", true);
 

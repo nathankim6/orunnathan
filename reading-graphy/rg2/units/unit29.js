@@ -81,9 +81,9 @@ K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Buy a House in Paris",
  "② The History of French Towers",
- "③ Gustave Eiffel’s Childhood",
- "④ The Best View Points in Paris",
- "⑤ The Secret Apartment in the Eiffel Tower"].forEach(c => K.push(ch(c)));
+ "③ The Secret Apartment in the Eiffel Tower",
+ "④ Gustave Eiffel’s Childhood",
+ "⑤ The Best View Points in Paris"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
@@ -97,9 +97,9 @@ K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 �
 K.push(sp(65));
 ["① the Eiffel Tower itself",
  "② the money from the people",
- "③ the special window",
- "④ the city of Paris",
- "⑤ the apartment on the top floor"].forEach(c => K.push(ch(c)));
+ "③ the apartment on the top floor",
+ "④ the special window",
+ "⑤ the city of Paris"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -252,8 +252,8 @@ K.push(spF(4, 300, 0.10));
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 ["① 파리에서 집을 빌리는 방법",
- "② 에펠탑 꼭대기의 비밀 아파트",
- "③ 에펠탑을 짓는 데 쓰인 재료"].forEach(c =>
+ "② 에펠탑을 짓는 데 쓰인 재료",
+ "③ 에펠탑 꼭대기의 비밀 아파트"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -399,22 +399,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("you(S)·can’t go(△V)·but[네모]·you(S′)·can look(△V′)·through a special window(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 언젠가 파리를 방문하고 싶다  (2) 그 좋은 소식은 우리 엄마를 아주 행복하게 만들었다  (3) 그녀는 자기 방을 더 편안하게 만들고 싶어 한다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 apartment · secret · interesting   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 apartment · secret · interesting   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 F · 5 T · 6 F · 7 T · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ⑤");
-B("이 글은 에펠탑 꼭대기에 숨어 있는 비밀 아파트(문장 3–5)와 에펠이 그곳을 아무에게도 빌려주지 않은 이야기(문장 7–9), 그리고 오늘날의 모습(문장 10–12)을 들려준다. 소재(에펠탑)와 특징(비밀 아파트)을 함께 담은 ⑤이 적절하다. ②·④는 배경만 건드린 지엽적 오답, ①·③는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 에펠탑 꼭대기에 숨어 있는 비밀 아파트(문장 3–5)와 에펠이 그곳을 아무에게도 빌려주지 않은 이야기(문장 7–9), 그리고 오늘날의 모습(문장 10–12)을 들려준다. 소재(에펠탑)와 특징(비밀 아파트)을 함께 담은 ③이 적절하다. ②·⑤는 배경만 건드린 지엽적 오답, ①·④는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ③");
 B("문장 8에서 사람들이 많은 돈을 제안했지만 에펠은 거절했다(he said no)고 했으므로, 부자들에게 빌려주었다는 ③은 본문과 반대된다. ①은 문장 4, ②는 문장 5, ④는 문장 10, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) it은 앞에서 계속 이야기해 온 꼭대기 층의 아파트를 가리킨다(문장 5·7). 에펠이 자기만의 특별한 공간으로 남겨 두고 싶어 한 것이 무엇인지 생각하면 된다.", true);
 Hs("독해 04   배열 영작   ·   There is a secret apartment at the top of the tower!");
 B("문장 3을 그대로 복원하는 문제다. ① 첫 글자는 대문자 There.   ② There is 뒤의 명사(a secret apartment)가 진짜 주어.   ③ at the top of the tower — 위치를 나타내는 말이 맨 뒤에 온다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 apartment · secret · interesting     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 에펠탑 꼭대기의 비밀 아파트를 소개한다. ① 집을 빌리는 방법은 나오지 않고(오히려 빌려주지 않았다), ③ 탑을 짓는 재료 이야기도 없다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 apartment · secret · interesting     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 에펠탑 꼭대기의 비밀 아파트를 소개한다. ① 집을 빌리는 방법은 나오지 않고(오히려 빌려주지 않았다), ② 탑을 짓는 재료 이야기도 없다.");
 B("1-2   ○표 할 세 단어: apartment(힌트① 탑 꼭대기에 있는 것) · secret(힌트② 그것의 특징) · interesting(힌트③ 글쓴이의 평가). 나머지 셋(tourists · money · window)은 본문에 등장하지만 주제문에 들어가지 않는다 — 배경과 세부일 뿐이다.");
 B("1-3   문장 6 — It은 꼭대기 층 아파트에 ○ (문장 5의 그 아파트).   문장 8 — They는 빌리려는 사람들에 ○ (문장 7의 Many people).   문장 11 — it은 그 아파트에 ○ (창문은 들여다보는 도구다).");
 B("[학습 포인트]   문장 4의 it은 탑, 문장 6의 It은 아파트다. 같은 it이라도 바로 앞 문장이 무엇을 말했는지에 따라 가리키는 것이 바뀐다.", true);

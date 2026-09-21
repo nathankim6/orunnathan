@@ -89,15 +89,15 @@ K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?")
 K.push(sp(65));
 ["① Sophia’s family was on a trip to South Dakota.",
  "② Sophia spent most of the time on her phone on the way.",
- "③ Tony showed Sophia pictures of Ally’s trip to Florida.",
- "④ Their dad stopped the car to fix the flat tire.",
- "⑤ Sophia lifted her phone to take pictures of the bison."].forEach(c => K.push(ch(c)));
+ "③ Their dad stopped the car to fix the flat tire.",
+ "④ Sophia lifted her phone to take pictures of the bison.",
+ "⑤ Tony showed Sophia pictures of Ally’s trip to Florida."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) that이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① a large group of bison",
- "② the flat tire on the car",
- "③ Sophia’s new phone",
+["① the flat tire on the car",
+ "② Sophia’s new phone",
+ "③ a large group of bison",
  "④ Ally’s trip to Florida",
  "⑤ the state of South Dakota"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -251,9 +251,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 뜻밖의 모험이 된 가족 여행",
- "② 미국에서 가장 지루한 주 소개",
- "③ 자동차 타이어를 고치는 방법"].forEach(c =>
+["① 미국에서 가장 지루한 주 소개",
+ "② 자동차 타이어를 고치는 방법",
+ "③ 뜻밖의 모험이 된 가족 여행"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -399,7 +399,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("She(S)·lifted(△V)·quickly(M)·to take pictures(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 부산은 한국에서 가장 큰 도시들 중 하나이다  (2) 나는 신선한 공기를 마시기 위해 창문을 열었다  (3) 우리는 사진을 찍기 위해 한국에서 가장 오래된 절들 중 하나를 방문했다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 trip · boring · adventure   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 trip · boring · adventure   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 T · 5 T · 6 T · 7 F · 8 F", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (c) → (b)", { size: 19, bold: true })], { after: 0 }),
@@ -407,14 +407,14 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ④");
 B("지루할 거라 여겼던 가족 여행(문장 2)이 들소 무리를 만나 뜻밖의 모험으로 바뀌는(문장 9–12) 이야기다. 소재(가족 여행)와 특징(뜻밖의 모험)을 함께 담은 ④이 제목으로 적절하다. ②·⑤는 세부 사항만 건드린 지엽적 오답, ①·③은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 5에서 사진을 보여 준 쪽은 소피아이고, 본 쪽이 토니다. 주어와 목적어가 뒤바뀐 ③가 본문과 반대된다. ①은 문장 1, ②은 문장 3, ④은 문장 7–8, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 5에서 사진을 보여 준 쪽은 소피아이고, 본 쪽이 토니다. 주어와 목적어가 뒤바뀐 ⑤가 본문과 반대된다. ①은 문장 1, ②은 문장 3, ③은 문장 7–8, ④는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) that은 바로 앞 문장 9에서 지나가던 큰 들소 무리를 가리킨다. 소피아가 보고 놀란 대상이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   She quickly lifted her phone to take pictures.");
 B("문장 11을 그대로 복원하는 문제다. ① 첫 글자는 대문자 She.   ② quickly는 동사 lifted 바로 앞자리.   ③ '~하기 위해'는 to take pictures — to+동사원형.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 trip · boring · adventure     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 지루할 줄 알았던 가족 여행이 뜻밖의 모험이 되는 과정을 들려준다. ② 지루한 주 이야기는 배경일 뿐이고, ③ 타이어 고치는 방법은 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 trip · boring · adventure     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 지루할 줄 알았던 가족 여행이 뜻밖의 모험이 되는 과정을 들려준다. ① 지루한 주 이야기는 배경일 뿐이고, ② 타이어 고치는 방법은 나오지 않는다.");
 B("1-2   ○표 할 세 단어: trip(힌트① 이 글의 소재) · boring(힌트② 소피아의 예상) · adventure(힌트③ 실제로 벌어진 일). 나머지 셋(phone · bison · Florida)은 본문에 등장하지만 주제문에 들어가지 않는다 — 배경과 소품일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
 B("1-3   문장 5 — him은 토니에 ○ (문장 4에서 물어본 오빠).   문장 8 — I는 아빠에 ○ (따옴표 안에서 말하고 있는 사람).   문장 10 — that은 들소 무리에 ○ (문장 9에서 본 것).");
 B("[학습 포인트]   따옴표 안의 I는 글쓴이가 아니라 그 말을 하는 사람이다. 대화가 나오면 '지금 말하는 사람이 누구지?'부터 확인하는 습관을 들이자.", true);

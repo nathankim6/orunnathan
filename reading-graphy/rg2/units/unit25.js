@@ -108,8 +108,8 @@ K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?")
 K.push(sp(65));
 ["① Rio de Janeiro is a city in Brazil, South America.",
  "② In Portuguese, Janeiro means “January.”",
- "③ People from Portugal arrived at a wide bay in 1502.",
- "④ There is a big river in the middle of Rio de Janeiro.",
+ "③ There is a big river in the middle of Rio de Janeiro.",
+ "④ People from Portugal arrived at a wide bay in 1502.",
  "⑤ Brazil was ruled by Portugal for over 300 years."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
@@ -286,8 +286,8 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 작은 오해에서 생긴 도시 이름",
- "② 포르투갈어로 배우는 달 이름",
+["① 포르투갈어로 배우는 달 이름",
+ "② 작은 오해에서 생긴 도시 이름",
  "③ 남아메리카에서 가장 긴 강"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
@@ -413,9 +413,9 @@ K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 �
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
 ["① 여행 상품을 파는 광고",
  "② 하루 일과를 적은 일기",
- "③ 도시 이름의 유래를 알려 주는 설명문",
- "④ 친구에게 보내는 편지",
- "⑤ 상상으로 지어낸 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
+ "③ 친구에게 보내는 편지",
+ "④ 상상으로 지어낸 동화",
+ "⑤ 도시 이름의 유래를 알려 주는 설명문"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
 K.push(brk());
@@ -744,8 +744,8 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문9 ", { size: 17, bold: true, color: NAVY2 }), t("Since[네모]·it(S′)·was(△V′)·they(S)·decided(△V)·in Portuguese(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 우리 마을에는 서점이 없다  (2) 그 창문은 내 남동생에 의해 깨졌다  (3) 편지가 한 통 있는데, 그것은 나의 이모가 썼다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 name · mistake · stayed        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 결과 · 반전 · 이유 · 그때부터   2-2 [B] 이름 뜻 · [E] 마무리   2-3 ③", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 name · mistake · stayed        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 결과 · 반전 · 이유 · 그때부터   2-2 [B] 이름 뜻 · [E] 마무리   2-3 ⑤", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (d) → (c) → (a) → (b)  ·  Rio de Janeiro got its name by mistake, but the name stayed the same.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) river  (2) mistake  (3) name  (4) same        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 5 ②  문장 8 ③  문장 10 ②  문장 11 ③", { size: 19, bold: true })], { after: 150 }),
@@ -760,14 +760,14 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ⑤");
 B("이 글은 강이 없는데도 '1월의 강'이라는 이름을 갖게 된 도시(문장 5–6)와 그 유래(문장 7–9)를 들려준다. 소재(도시 이름)와 특징(작은 오해)을 함께 담은 ⑤이 제목으로 적절하다. ②·④는 본문의 한 부분만 건드린 지엽적 오답, ①·③은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 5에서 리우데자네이루에는 실제로 강이 없다고 했으므로, 큰 강이 있다는 ④는 본문과 반대된다. ①은 문장 1, ②은 문장 3, ③은 문장 7, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 5에서 리우데자네이루에는 실제로 강이 없다고 했으므로, 큰 강이 있다는 ③는 본문과 반대된다. ①은 문장 1, ②은 문장 3, ④은 문장 7, ⑤는 문장 10에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) it은 바로 앞 문장 7의 a wide bay(넓은 만)를 가리킨다. 포르투갈 사람들이 강이라고 잘못 본 대상이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   Since then, Brazil was ruled by Portugal for over 300 years.");
 B("문장 10을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Since.   ② then 뒤의 콤마를 빠뜨리지 않는다.   ③ was ruled by — 수동태는 be동사+과거분사가 한 덩어리.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 name · mistake · stayed     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 작은 오해에서 생긴 리우데자네이루의 이름을 설명한다. ② 포르투갈어 낱말은 이름을 풀이하는 재료일 뿐이고, ③ 강 이야기는 '강이 없다'는 사실로만 나온다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 name · mistake · stayed     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 작은 오해에서 생긴 리우데자네이루의 이름을 설명한다. ① 포르투갈어 낱말은 이름을 풀이하는 재료일 뿐이고, ③ 강 이야기는 '강이 없다'는 사실로만 나온다.");
 B("1-2   ○표 할 세 단어: name(힌트① 도시가 얻은 것) · mistake(힌트② 이름이 생긴 계기) · stayed(힌트③ 그 뒤 이름에 일어난 일). 나머지 셋(river · culture · Portugal)은 본문에 등장하지만 주제문에 들어가지 않는다 — 배경과 예시일 뿐이다.");
 B("1-3   문장 8 — They는 포르투갈인, it은 넓은 만에 ○ (한 문장 안에서 가리키는 대상이 바뀐다).   문장 10 — then은 1502년 그 뒤에 ○.   문장 11 — It은 브라질에 ○ (도시가 아니라 나라가 독립했다).");
 B("[학습 포인트]   같은 It이라도 문장 2에서는 도시를, 문장 11에서는 나라를 가리킨다. 지시어를 만나면 앞 문장으로 화살표를 그어 짝을 확인하는 습관을 들이자.", true);
@@ -775,10 +775,10 @@ B("[학습 포인트]   같은 It이라도 문장 2에서는 도시를, 문장 1
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 결과 / 반전 / 이유 / 그때부터     2-2 [B] 이름 뜻 · [E] 마무리     2-3 ③");
+Hs("STEP 2   글의 흐름   ·   2-1 결과 / 반전 / 이유 / 그때부터     2-2 [B] 이름 뜻 · [E] 마무리     2-3 ⑤");
 B("2-1   문장 4 So — 앞의 뜻풀이에서 나온 '결과'.   문장 5 But — 그런데 강이 없다는 '반전'.   문장 9 Since — 1월이었다는 '이유'로 그렇게 불렀다.   문장 10 Since then — '그때부터' 이어진 시간을 나타낸다.");
 B("2-2   [B] 이름 뜻(문장 3–5: 이름의 뜻을 풀고 강이 없다는 모순을 던진다), [E] 마무리(문장 10–12: 그 뒤의 역사와 정리). 보기의 '요리법'은 이 글에 없는 역할이다. [A] 소개 → [B] 이름 뜻 → [C] 의문 → [D] 유래 → [E] 마무리 — 유래를 설명하는 글의 전형적인 흐름이다.");
-B("2-3   정답 ③. 도시 이름이 어떻게 생겼는지 사실을 알려 주는 설명문이다. ① 광고의 신호(사라는 말·가격)가 없고, ② 일기의 I·오늘도, ④ 편지의 Dear도, ⑤ 동화의 상상 속 인물도 없다.");
+B("2-3   정답 ⑤. 도시 이름이 어떻게 생겼는지 사실을 알려 주는 설명문이다. ① 광고의 신호(사라는 말·가격)가 없고, ② 일기의 I·오늘도, ③ 편지의 Dear도, ④ 동화의 상상 속 인물도 없다.");
 B("[학습 포인트]   연결어만 표시해도 글의 지도가 그려진다. So(결과), But(반전), Since(이유·시점). 특히 But 뒤에는 글쓴이가 진짜 하고 싶은 말이 온다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 mistake · stayed     3-3 (d) → (c) → (a) → (b)");
 B("3-1  재료 찾기 — (2) 문장 8에서 mistake에 ○: 이름이 생긴 계기다. river는 잘못 본 대상일 뿐 계기가 아니다. (3) 문장 11에서 stayed에 ○: 이름이 그대로였다는 결과다. changed는 본문과 반대다.");

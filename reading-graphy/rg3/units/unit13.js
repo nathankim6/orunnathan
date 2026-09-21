@@ -96,9 +96,9 @@ K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How Needles Are Made in a Factory",
  "② The Long History of the Mona Lisa",
- "③ Artists Who Use a Microscope Every Day",
- "④ The Best Way to Protect Wild Animals",
- "⑤ Tiny Art with a Big Message"].forEach(c => K.push(ch(c)));
+ "③ Tiny Art with a Big Message",
+ "④ Artists Who Use a Microscope Every Day",
+ "⑤ The Best Way to Protect Wild Animals"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
@@ -111,9 +111,9 @@ K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the small tools",
- "② the needles",
- "③ his fingers",
- "④ the tiny sculptures",
+ "② the tiny sculptures",
+ "③ the needles",
+ "④ his fingers",
  "⑤ the famous paintings"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -281,7 +281,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 바늘을 만드는 공장의 하루", "② 바늘구멍에 들어가는 초소형 조각", "③ 모나리자 그림의 역사"].forEach(c =>
+["① 바늘을 만드는 공장의 하루",
+ "② 모나리자 그림의 역사",
+ "③ 바늘구멍에 들어가는 초소형 조각"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -734,7 +736,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문9 ", { size: 17, bold: true, color: NAVY2 }), t("His tiny work(S)\u00b7makes(\u25b3V)\u00b7that[네모]\u00b7the smallest things(S\u2032)\u00b7can have(\u25b3V\u2032)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 자전거를 타는 것은 좋은 운동이다  (2) 나는 신선한 공기를 마시기 위해 창문을 열었다  (3) 식물을 기르는 것은 재미있어서, 나는 물을 주려고 일찍 일어난다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 artworks · tiny · impact        ", { size: 19, bold: true }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 artworks · tiny · impact        ", { size: 19, bold: true }),
      t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 · 결과 · 순서 · 이유   2-2 [B] 제작 과정 · [E] 마무리   2-3 ④", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (c) → (d) → (b) → (a)  ·  Wigan\u2019s tiny artworks show that even the smallest things can have a big impact.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) needle  (2) microscope  (3) message  (4) smallest        ", { size: 19, bold: true }),
@@ -748,16 +750,16 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) Wigan\u2019s small artwork has an important message.  (2) He reminds us that our world is in trouble.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ⑤");
-B("바늘구멍에 들어갈 만큼 작은 조각(문장 1–3)과 그 안에 담긴 메시지(문장 7–9)를 함께 소개하는 글이다. 소재와 평가를 모두 담은 ⑤이 제목이다. ①\u00b7④는 본문과 무관하고, ②\u00b7③은 소재의 일부(모나리자·현미경)만 건드린 지엽적 오답이다.", true);
+Hs("독해 01   제목   ·   정답 ③");
+B("바늘구멍에 들어갈 만큼 작은 조각(문장 1–3)과 그 안에 담긴 메시지(문장 7–9)를 함께 소개하는 글이다. 소재와 평가를 모두 담은 ③이 제목이다. ①\u00b7⑤는 본문과 무관하고, ②\u00b7④은 소재의 일부(모나리자·현미경)만 건드린 지엽적 오답이다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ①");
 B("문장 6에서 위건은 붓이 아니라 속눈썹(an eyelash)으로 색을 칠한다고 했으므로 ①이 본문과 다르다. ②은 문장 1, ③은 문장 3, ④는 문장 5, ⑤는 문장 8에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) them은 앞 문장 4의 these tiny artworks, 곧 아주 작은 조각들을 가리킨다. 또렷이 보려고 현미경을 들이대는 대상이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   Making these tiny artworks is a big challenge.");
 B("문장 4를 그대로 복원하는 문제다. ① '~하는 것은'은 동사원형+ing로 시작 — 첫 글자는 대문자 Making.   ② 동명사 주어는 단수 취급이므로 is.   ③ a big challenge — 관사 a를 빠뜨리지 않는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 artworks · tiny · impact     1-3 아래 참조");
-B("1-1   정답 ②. 바늘구멍에 들어가는 초소형 조각과 그 의미를 소개하는 글이다. ① 바늘은 도구일 뿐 공장 이야기는 없고, ③ 모나리자는 조각의 소재로 한 번 언급될 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 artworks · tiny · impact     1-3 아래 참조");
+B("1-1   정답 ③. 바늘구멍에 들어가는 초소형 조각과 그 의미를 소개하는 글이다. ① 바늘은 도구일 뿐 공장 이야기는 없고, ② 모나리자는 조각의 소재로 한 번 언급될 뿐이다.");
 B("1-2   \u25cb표 할 세 단어: artworks(힌트① 위건이 만드는 것) · tiny(힌트② 작품의 크기) · impact(힌트③ 글쓴이의 평가). 나머지 셋(needle · microscope · eyelash)은 본문에 나오지만 도구일 뿐 주제문에 들어가지 않는다.");
 B("1-3   문장 5 — them은 조각 작품들에 \u25cb (문장 4의 tiny artworks).   문장 8 — He는 위건, us는 우리 모두에 \u25cb.   문장 9 — His는 위건의에 \u25cb.");
 B("[학습 포인트]   문장 8은 한 문장 안에서 가리키는 대상이 바뀐다 — He(위건)와 us(글을 읽는 우리). 지시어를 만나면 수(단수·복수)와 사람인지 사물인지를 먼저 확인하는 습관을 들이자.", true);

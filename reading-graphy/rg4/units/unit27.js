@@ -77,18 +77,18 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① The History of Bone Marrow Transplants",
- "② How to Keep Your Bathroom Clean",
- "③ Foods That Make Your Gut Happy",
- "④ A New Treatment Using Healthy Bacteria",
+["① A New Treatment Using Healthy Bacteria",
+ "② The History of Bone Marrow Transplants",
+ "③ How to Keep Your Bathroom Clean",
+ "④ Foods That Make Your Gut Happy",
  "⑤ Why Australia Has the Best Hospitals"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Scientists in Australia are testing “poo” to help people with blood cancer.",
- "② A bone marrow transplant never causes a side effect.",
- "③ The method puts healthy bacteria into a sick person’s gut.",
- "④ The treatment is aimed at patients who have had bone marrow transplants.",
+ "② The method puts healthy bacteria into a sick person’s gut.",
+ "③ The treatment is aimed at patients who have had bone marrow transplants.",
+ "④ A bone marrow transplant never causes a side effect.",
  "⑤ The new treatment could help patients without weakening their immune system."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
@@ -400,10 +400,10 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (b) → (d) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ④");
-B("건강한 사람의 대변에서 얻은 세균을 환자의 장에 넣는 새 치료법(문장 1–4)과 그 대상·기대(문장 5–10)를 소개하는 글이다. 소재와 방법을 함께 담은 ④이 적절하다. ①·③는 이식·장만 건드린 지엽적 오답, ②·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 6에서 골수 이식은 '때때로 심각한 부작용을 일으킬 수 있다'고 했으므로, 절대 부작용이 없다는 ②는 본문과 반대된다. ①은 문장 1, ③는 문장 3, ④은 문장 5, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ①");
+B("건강한 사람의 대변에서 얻은 세균을 환자의 장에 넣는 새 치료법(문장 1–4)과 그 대상·기대(문장 5–10)를 소개하는 글이다. 소재와 방법을 함께 담은 ①이 적절하다. ②·④는 이식·장만 건드린 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 6에서 골수 이식은 '때때로 심각한 부작용을 일으킬 수 있다'고 했으므로, 절대 부작용이 없다는 ④는 본문과 반대된다. ①은 문장 1, ②는 문장 3, ③은 문장 5, ⑤는 문장 9에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) them은 같은 문장 앞부분의 healthy bacteria를 가리킨다. 복수형 them은 복수 명사를 받는다는 수 일치가 첫 번째 단서다.", true);
 Hs("독해 04   배열 영작   ·   This can improve a person’s immune system and help fight diseases.");

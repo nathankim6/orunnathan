@@ -98,25 +98,25 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① How Black Holes Are Born in Space",
- "② The Deepest Sea in the World",
- "③ Why Sawfish Are Disappearing",
- "④ Blue Holes: Rich in Life but Dangerous to Explore",
+["① Blue Holes: Rich in Life but Dangerous to Explore",
+ "② How Black Holes Are Born in Space",
+ "③ The Deepest Sea in the World",
+ "④ Why Sawfish Are Disappearing",
  "⑤ New Submarines for Deep-Sea Travel"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Blue holes are underwater caves in the sea.",
- "② The deepest blue hole is about 300 meters deep.",
- "③ Submarines can easily be sent down into the blue holes.",
+["① Submarines can easily be sent down into the blue holes.",
+ "② Blue holes are underwater caves in the sea.",
+ "③ The deepest blue hole is about 300 meters deep.",
  "④ Scientists once found two dead smalltooth sawfish in a blue hole.",
  "⑤ More than 100 divers have died in one of the blue holes."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) That이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① sending submarines down to the sea",
- "② finding an endangered species",
- "③ entering the blue holes in person",
+ "② entering the blue holes in person",
+ "③ finding an endangered species",
  "④ measuring the depth of the sea",
  "⑤ studying sea levels thousands of years ago"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -756,11 +756,11 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) That can be extremely dangerous.  (2) Since submarines cannot be sent down, explorers must enter the blue holes.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ④");
-B("이 글은 블루 홀이 바다 생물로 가득한 연구 가치가 큰 곳이면서(문장 4–6) 탐험이 매우 위험하다는 점(문장 8–10)을 나란히 전한다. 두 축을 모두 담은 ④이 적절하다. ②·③는 지엽적, ①·⑤는 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 8에서 잠수함은 내려보낼 수 없다고 했으므로 ③는 본문과 반대된다. ①은 문장 2, ②는 문장 3, ④은 문장 5, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 01   제목   ·   정답 ①");
+B("이 글은 블루 홀이 바다 생물로 가득한 연구 가치가 큰 곳이면서(문장 4–6) 탐험이 매우 위험하다는 점(문장 8–10)을 나란히 전한다. 두 축을 모두 담은 ①이 적절하다. ③·④는 지엽적, ②·⑤는 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 8에서 잠수함은 내려보낼 수 없다고 했으므로 ①는 본문과 반대된다. ②은 문장 2, ③는 문장 3, ④은 문장 5, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) That은 바로 앞 문장 8의 내용, 곧 탐험가가 블루 홀에 직접 들어가야 한다는 것을 받는다. 지시어 That은 단어가 아니라 앞 문장 전체를 받을 수 있다.", true);
 Hs("독해 04   배열 영작   ·   The deepest one is about 300 meters deep!");
 B("문장 3을 그대로 복원한다. ① 첫 글자는 대문자 The.   ② 최상급 deepest 앞에는 The.   ③ one은 앞에 나온 blue hole을 대신하는 말이다.", true);

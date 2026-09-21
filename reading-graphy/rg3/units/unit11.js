@@ -79,9 +79,9 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① How to Treat Kidney Cancer",
- "② The Best Hospitals in Scotland",
- "③ Twin Sisters Who Feel the Same Pain",
+["① Twin Sisters Who Feel the Same Pain",
+ "② How to Treat Kidney Cancer",
+ "③ The Best Hospitals in Scotland",
  "④ Easy Ways to Lose Weight",
  "⑤ How to Make New Friends"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -89,16 +89,16 @@ K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?")
 K.push(sp(65));
 ["① Sophie and Megan are twin sisters from Scotland.",
  "② Megan has stomach pain and back pain.",
- "③ Megan got the same kidney cancer as Sophie.",
- "④ The doctors found nothing wrong with Megan.",
+ "③ The doctors found nothing wrong with Megan.",
+ "④ Megan got the same kidney cancer as Sophie.",
  "⑤ People can feel the same pain as others even if they aren’t hurt."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) they가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the doctors",
- "② Megan and Sophie",
- "③ the many tests",
- "④ Sophie’s close friends",
+["① Megan and Sophie",
+ "② the many tests",
+ "③ Sophie’s close friends",
+ "④ the doctors",
  "⑤ people with sympathy pain"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -409,11 +409,11 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("이 글은 소피만 아픈데도 메건이 같은 통증을 느낀 일(문장 2–5)과 그것이 '공감 통증'이라는 설명(문장 8–12)을 들려준다. 소재와 특징을 함께 담은 ③이 적절하다. ①·④는 암·체중만 건드린 지엽적 오답, ②·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 3에서 메건은 이 병을 앓은 적이 한 번도 없다고 했다. 같은 암에 걸렸다는 ③는 본문과 반대된다. ①은 문장 1, ②은 문장 4, ④는 문장 5, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ①");
+B("이 글은 소피만 아픈데도 메건이 같은 통증을 느낀 일(문장 2–5)과 그것이 '공감 통증'이라는 설명(문장 8–12)을 들려준다. 소재와 특징을 함께 담은 ①이 적절하다. ②·④는 암·체중만 건드린 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 3에서 메건은 이 병을 앓은 적이 한 번도 없다고 했다. 같은 암에 걸렸다는 ④는 본문과 반대된다. ①은 문장 1, ②은 문장 4, ③는 문장 5, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) they는 같은 문장 앞부분의 The doctors를 가리킨다. 검사를 한 쪽이 누구인지 보면 된다 — 뒤의 her는 검사를 받은 메건이다.", true);
 Hs("독해 04   배열 영작   ·   We don’t know why this pain happens.");
 B("문장 11을 그대로 복원한다. ① 첫 글자는 대문자 We.   ② don’t의 아포스트로피를 빠뜨리지 않는다.   ③ why 뒤는 '주어+동사' 순서 — this pain happens.", true);

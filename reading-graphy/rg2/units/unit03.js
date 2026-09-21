@@ -76,8 +76,8 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Ride a Motorcycle Safely",
- "② The Hard Life of a Computer Scientist",
- "③ EyeHarp: Playing Music with Your Eyes",
+ "② EyeHarp: Playing Music with Your Eyes",
+ "③ The Hard Life of a Computer Scientist",
  "④ Why Practice Makes Perfect",
  "⑤ The Long History of Musical Instruments"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -85,8 +85,8 @@ K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?")
 K.push(sp(65));
 ["① Zacharias is a musician and computer scientist.",
  "② Zacharias\u2019s friend had a motorcycle accident in 2010.",
- "③ You need no time or practice to play music with EyeHarp.",
- "④ EyeHarp shows a colorful circle on the computer screen.",
+ "③ EyeHarp shows a colorful circle on the computer screen.",
+ "④ You need no time or practice to play music with EyeHarp.",
  "⑤ The program follows your eyes and plays the right sound."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) him이 가리키는 것으로 가장 적절한 것은?"));
@@ -399,10 +399,10 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (b) → (d) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("이 글은 눈의 움직임만으로 음악을 연주하게 해 주는 프로그램 EyeHarp의 탄생(문장 3–6)과 작동 방식(문장 7–8), 그 가치(문장 11–12)를 소개한다. 소재(EyeHarp)와 핵심(눈으로 연주)을 모두 담은 ③이 제목으로 적절하다. ①는 계기가 된 사고만 건드린 지엽적 오답, ②\u00b7④\u00b7⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 10에서 음악을 잘 연주하려면 시간과 연습이 필요하다(It takes time and practice)고 했으므로, 연습이 필요 없다는 ③은 본문과 반대된다. ①은 문장 3, ②은 문장 4, ④는 문장 7, ⑤는 문장 8에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ②");
+B("이 글은 눈의 움직임만으로 음악을 연주하게 해 주는 프로그램 EyeHarp의 탄생(문장 3–6)과 작동 방식(문장 7–8), 그 가치(문장 11–12)를 소개한다. 소재(EyeHarp)와 핵심(눈으로 연주)을 모두 담은 ②이 제목으로 적절하다. ①는 계기가 된 사고만 건드린 지엽적 오답, ③\u00b7④\u00b7⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 10에서 음악을 잘 연주하려면 시간과 연습이 필요하다(It takes time and practice)고 했으므로, 연습이 필요 없다는 ④은 본문과 반대된다. ①은 문장 3, ②은 문장 4, ③는 문장 7, ⑤는 문장 8에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) him은 문장 4–5의 오토바이 사고로 팔을 움직일 수 없게 된 Zacharias의 음악가 친구를 가리킨다. Zacharias가 누구를 위해 EyeHarp를 만들기로 했는지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   EyeHarp is just like other instruments.");

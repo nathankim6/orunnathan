@@ -103,15 +103,15 @@ K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Referees use red and yellow cards when players break the rules.",
- "② The white card is for people who show good behavior.",
- "③ Catarina Campos used the white card for the first time.",
- "④ Medical staff from only one team went to help the sick person.",
+ "② Medical staff from only one team went to help the sick person.",
+ "③ The white card is for people who show good behavior.",
+ "④ Catarina Campos used the white card for the first time.",
  "⑤ FIFA hasn’t approved the white card yet."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the medical staff from both teams",
- "② the players on the field",
+["① the players on the field",
+ "② the medical staff from both teams",
  "③ the people in the crowd",
  "④ the two team coaches",
  "⑤ the referees in Portugal"].forEach(c => K.push(ch(c)));
@@ -396,10 +396,10 @@ K.push(spF(5, 360, 0.38));
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
 ["① 물건을 팔기 위해 만든 광고",
- "② 하루 일을 기록한 일기",
- "③ 안부를 전하는 편지",
- "④ 리듬을 살려 쓴 시",
- "⑤ 새로운 것을 소개하고 사실을 알려 주는 설명문"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
+ "② 새로운 것을 소개하고 사실을 알려 주는 설명문",
+ "③ 하루 일을 기록한 일기",
+ "④ 안부를 전하는 편지",
+ "⑤ 리듬을 살려 쓴 시"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
 K.push(brk());
@@ -727,7 +727,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 우리 집 근처에 큰 공원이 있다  (2) 나는 아직 숙제를 끝내지 못했다  (3) 마을에 새 도서관이 있지만, 나는 아직 그곳에 가 보지 못했다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 white card · medical staff · good behavior        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 결과 · 반전 · 덧붙임   2-2 [B] 쓰임 · [E] 질문   2-3 ⑤", { size: 19, bold: true })], { after: 25 }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 결과 · 반전 · 덧붙임   2-2 [B] 쓰임 · [E] 질문   2-3 ②", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (d) → (c) → (a)  ·  The white card is for players, coaches, or medical staff who show good behavior.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) white  (2) behavior  (3) Portugal  (4) approved        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 1 ①  문장 6 ②  문장 7 ②  문장 8 ②", { size: 19, bold: true })], { after: 150 }),
@@ -742,9 +742,9 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ①");
 B("이 글은 좋은 행동에 주는 흰 카드(문장 2–3)와 그것이 처음 쓰인 이야기(문장 4–7)를 소개한다. 소재와 특징을 모두 담은 ①이 제목으로 적절하다. ②·③는 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 6에서 양 팀(both teams)의 의료진이 도우러 갔다고 했으므로, 한 팀만 갔다는 ④이 본문과 다르다. ①은 문장 1, ②은 문장 3, ③는 문장 4, ⑤는 문장 8에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 6에서 양 팀(both teams)의 의료진이 도우러 갔다고 했으므로, 한 팀만 갔다는 ②이 본문과 다르다. ①은 문장 1, ③은 문장 3, ④는 문장 4, ⑤는 문장 8에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) them은 문장 6에서 도우러 간 양 팀의 의료진을 가리킨다. 같은 문장의 she(심판)와는 다른 대상이다.", true);
 Hs("독해 04   배열 영작");
 B("문장 9를 그대로 복원하는 문제다. ① 첫 단어 Only는 대문자.   ② is using — 진행형은 be+~ing 한 덩어리.   ③ right now(바로 지금)는 문장 끝에 놓는다.", true);
@@ -757,10 +757,10 @@ B("[학습 포인트]   문장 7에서는 she(심판)와 them(의료진)이 한 
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 때 / 결과 / 반전 / 덧붙임     2-2 [B] 쓰임 · [E] 질문     2-3 ⑤");
+Hs("STEP 2   글의 흐름   ·   2-1 때 / 결과 / 반전 / 덧붙임     2-2 [B] 쓰임 · [E] 질문     2-3 ②");
 B("2-1   문장 1 when — 규칙을 지키지 않을 '때' 카드를 쓴다.   문장 7 so — 감동한 '결과'로 카드를 주었다.   문장 8 But — 아직 승인되지 않았다는 '반전'.   문장 10 and — 두 질문을 나란히 '덧붙임'.");
 B("2-2   [B] 쓰임(문장 3: 누구에게 주는 카드인가), [E] 질문(문장 10: 독자에게 묻는 마무리). 보기의 '광고'는 이 글에 없는 역할이다. [A] 소개 → [B] 쓰임 → [C] 첫 사용 → [D] 한계 → [E] 질문 — 새것을 소개하는 설명문의 전형적인 흐름이다.");
-B("2-3   정답 ⑤. 새로운 것(흰 카드)을 소개하고 사실을 알려 주는 설명문이다(문장 1–3의 현재시제, 대상의 이름과 쓰임). ① 광고의 신호(가격·사라는 말)가 없고, ② 일기·③ 편지·④ 시의 형식도 아니다.");
+B("2-3   정답 ②. 새로운 것(흰 카드)을 소개하고 사실을 알려 주는 설명문이다(문장 1–3의 현재시제, 대상의 이름과 쓰임). ① 광고의 신호(가격·사라는 말)가 없고, ③ 일기·④ 편지·⑤ 시의 형식도 아니다.");
 B("[학습 포인트]   마무리의 질문(문장 10)은 글쓴이가 독자를 생각에 초대하는 장치다. 설명문 끝의 물음표를 만나면 '나라면 어떻게 답할까?'까지 생각해 보자.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 good · medical staff     3-3 (b) → (d) → (c) → (a)");
 B("3-1  재료 찾기 — (2) 문장 3에서 good에 ○: 카드를 주는 까닭이 되는 행동의 성격이다. quick은 문장 7 의료진의 반응일 뿐. (3) 문장 3에서 medical staff에 ○: referees는 카드를 '주는' 쪽이지 받는 쪽이 아니다.");

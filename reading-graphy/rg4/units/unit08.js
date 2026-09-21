@@ -87,8 +87,8 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① When we go to space, our DNA can change.",
- "② The blood samples were kept frozen for two years.",
+["① The blood samples were kept frozen for two years.",
+ "② When we go to space, our DNA can change.",
  "③ Researchers examined the blood of 14 astronauts.",
  "④ The researchers found changes in all 14 astronauts.",
  "⑤ Several nations are working on sending astronauts to Mars."].forEach(c => K.push(ch(c)));
@@ -98,8 +98,8 @@ K.push(sp(65));
 ["① the researchers who studied the blood",
  "② the changes in the DNA",
  "③ the nations planning to go to Mars",
- "④ the astronauts in the study",
- "⑤ the blood samples kept frozen"].forEach(c => K.push(ch(c)));
+ "④ the blood samples kept frozen",
+ "⑤ the astronauts in the study"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -250,9 +250,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 우주여행이 DNA에 남기는 위험",
- "② 우주비행사의 혈액을 보관하는 방법",
- "③ 암을 치료하는 새로운 약"].forEach(c =>
+["① 우주비행사의 혈액을 보관하는 방법",
+ "② 암을 치료하는 새로운 약",
+ "③ 우주여행이 DNA에 남기는 위험"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -398,7 +398,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("nations(S)·are working(△V)·and[네모]·countries(S)·are preparing(△V)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 그 창문은 강한 바람에 의해 깨졌다  (2) 시험에 합격하기 위해, 그는 매일 밤 공부했다  (3) 경기에서 이기기 위해, 그 팀은 유명한 코치에게 훈련받았다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 space · DNA · cancer   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 space · DNA · cancer   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 F · 5 F · 6 T · 7 T · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (d) → (b) → (a)", { size: 19, bold: true })], { after: 0 }),
@@ -406,14 +406,14 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ⑤");
 B("이 글은 우주여행이 우주비행사의 DNA를 바꾸고(문장 1–2·8) 암 가능성을 조금 높일 수 있다(문장 3·9)는 연구를 소개한다. 소재(우주여행)와 특징(DNA에 남는 위험)을 함께 담은 ⑤이 제목으로 적절하다. ①·②은 지엽적 오답, ③·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 6에서 혈액 샘플은 2년이 아니라 20년 동안 냉동 보관되었다. ②이 본문과 어긋난다. ①은 문장 2, ③는 문장 4, ④는 문장 7, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 6에서 혈액 샘플은 2년이 아니라 20년 동안 냉동 보관되었다. ①이 본문과 어긋난다. ②은 문장 2, ③는 문장 4, ④는 문장 7, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) they는 같은 문장 앞부분의 astronauts를 가리킨다. 암에 걸릴 작은 가능성이 있는 쪽은 연구자가 아니라 우주비행사다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   This might increase the chances of getting cancer.");
 B("문장 3을 그대로 복원하는 문제다. ① 첫 글자는 대문자 This.   ② 조동사 might 뒤에는 동사원형 increase.   ③ the chances of getting ~ — 전치사 of 뒤에는 동명사.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 space · DNA · cancer     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 우주여행이 DNA를 바꿔 암 가능성을 높일 수 있다는 연구를 다룬다. ② 혈액 보관은 연구 과정의 일부일 뿐이고, ③ 암 치료제 이야기는 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 space · DNA · cancer     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 우주여행이 DNA를 바꿔 암 가능성을 높일 수 있다는 연구를 다룬다. ① 혈액 보관은 연구 과정의 일부일 뿐이고, ② 암 치료제 이야기는 나오지 않는다.");
 B("1-2   ○표 할 세 단어: space(힌트① 이 글의 무대) · DNA(힌트② 변하는 것) · cancer(힌트③ 걱정되는 결과). 나머지 셋(blood · Mars · frozen)은 본문에 나오지만 주제문에는 들어가지 않는다 — 연구 방법과 배경일 뿐이다.");
 B("1-3   문장 7 — they는 연구자들에 ○ (연구를 수행한 쪽).   문장 8 — its는 우주의에 ○ (극한 환경을 가진 것은 space).   문장 9 — they는 우주비행사들에 ○ (암에 걸릴 수 있는 쪽).");
 B("[학습 포인트]   문장 7의 they와 문장 9의 they는 같은 단어지만 가리키는 대상이 다르다. 지시어는 모양이 아니라 '문장 안에서 무슨 일을 하는가'로 찾아야 한다.", true);

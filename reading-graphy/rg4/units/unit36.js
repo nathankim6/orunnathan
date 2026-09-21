@@ -79,9 +79,9 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① The Best Zombie Movies of the Year",
- "② Why Mice Are Used in Science Labs",
- "③ How the Brain Makes New Cells",
- "④ Zombie Cells in Our Body and How to Remove Them",
+ "② Zombie Cells in Our Body and How to Remove Them",
+ "③ Why Mice Are Used in Science Labs",
+ "④ How the Brain Makes New Cells",
  "⑤ Foods That Help You Live Longer"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
@@ -89,15 +89,15 @@ K.push(sp(65));
 ["① Aging cells stop dividing but don’t die.",
  "② Zombie cells increase as we get older.",
  "③ Before, this method was only tested on mice.",
- "④ Scientists did an experiment with young children.",
- "⑤ Researchers are mapping these zombie cells, including in the brain."].forEach(c => K.push(ch(c)));
+ "④ Researchers are mapping these zombie cells, including in the brain.",
+ "⑤ Scientists did an experiment with young children."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① testing new medicine on mice",
  "② mapping the cells in the brain",
- "③ growing and dividing normally",
- "④ removing aging cells with medicine",
+ "③ removing aging cells with medicine",
+ "④ growing and dividing normally",
  "⑤ getting older every year"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -400,11 +400,11 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (c) → (a)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ④");
-B("이 글은 죽지 않는 노화 세포(문장 2–6)와 그것을 약으로 없애려는 연구(문장 7–11)를 소개한다. 소재와 핵심을 함께 담은 ④이 적절하다. ②·⑤는 지엽적이거나 부분만 건드렸고, ①·③는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 7에서 실험 대상은 어린이가 아니라 노인들(elderly people)이다. ①은 문장 4, ②는 문장 6, ③는 문장 8, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 01   제목   ·   정답 ②");
+B("이 글은 죽지 않는 노화 세포(문장 2–6)와 그것을 약으로 없애려는 연구(문장 7–11)를 소개한다. 소재와 핵심을 함께 담은 ②이 적절하다. ③·⑤는 지엽적이거나 부분만 건드렸고, ①·④는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 7에서 실험 대상은 어린이가 아니라 노인들(elderly people)이다. ①은 문장 4, ②는 문장 6, ③는 문장 8, ④는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) it은 앞 문장 7–8의 this method, 곧 약으로 노화 세포를 제거하는 방법을 받는다. 쥐에게만 시험되던 그 방법이 사람에게도 통한다는 뜻이다.", true);
 Hs("독해 04   배열 영작   ·   Our bodies have something similar called aging cells.");
 B("문장 2를 그대로 복원한다. ① 첫 글자는 대문자 Our.   ② similar가 something을 뒤에서 꾸민다(-thing 뒤의 형용사).   ③ called 이하가 그 말을 다시 뒤에서 꾸민다.", true);

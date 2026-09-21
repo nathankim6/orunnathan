@@ -79,9 +79,9 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① How to Choose Good Diapers for Babies",
- "② The Long History of British Roads",
- "③ Old Diapers Become New Roads",
+["① Old Diapers Become New Roads",
+ "② How to Choose Good Diapers for Babies",
+ "③ The Long History of British Roads",
  "④ Why Babies Need Soft Clothes",
  "⑤ Famous Places to Visit in Wales"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -95,10 +95,10 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) It이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the idea of fixing roads with recycled diapers",
- "② the problem of diaper waste in the U.K.",
- "③ the plan to build more roads in Wales",
- "④ a new way to wash dirty diapers",
+["① the problem of diaper waste in the U.K.",
+ "② the plan to build more roads in Wales",
+ "③ a new way to wash dirty diapers",
+ "④ the idea of fixing roads with recycled diapers",
  "⑤ a sticky material called bitumen"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -252,7 +252,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 아기 기저귀를 고르는 방법", "② 기저귀로 도로를 고치는 아이디어", "③ 영국의 쓰레기 문제"].forEach(c =>
+["① 아기 기저귀를 고르는 방법",
+ "② 영국의 쓰레기 문제",
+ "③ 기저귀로 도로를 고치는 아이디어"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -398,22 +400,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("This last step(S)·keeps(△V)·from falling apart(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 교실은 매일 청소된다  (2) 나는 코코라고 불리는 개를 기른다  (3) ‘히어로’라고 불리는 그 노래는 많은 사람에게 사랑받는다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 diapers · roads · recycled   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 diapers · roads · recycled   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 F · 5 T · 6 F · 7 F · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (c) → (a)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("이 글은 버려지는 기저귀를 재활용해 웨일스의 도로를 보수한다는 놀라운 아이디어(문장 2·5)와 그 과정(문장 8–11)을 소개한다. 소재(기저귀)와 특징(도로가 된다)을 모두 담은 ③이 제목으로 적절하다. ①·④는 기저귀·아기만 건드린 지엽적 오답, ②·⑤는 도로의 역사·여행지로 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ①");
+B("이 글은 버려지는 기저귀를 재활용해 웨일스의 도로를 보수한다는 놀라운 아이디어(문장 2·5)와 그 과정(문장 8–11)을 소개한다. 소재(기저귀)와 특징(도로가 된다)을 모두 담은 ①이 제목으로 적절하다. ②·④는 기저귀·아기만 건드린 지엽적 오답, ③·⑤는 도로의 역사·여행지로 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ①");
 B("문장 8에서 기저귀는 먼저 작은 조각으로 잘리고 세척된다(are cut into small pieces and washed)고 했으므로, 자르지도 씻지도 않고 쓴다는 ①는 본문과 반대된다. ②은 문장 3, ③는 문장 4, ④은 문장 5, ⑤는 문장 12에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
-B("(A) It은 문장 12의 this idea, 곧 재활용 기저귀로 도로를 고치는 아이디어를 가리킨다. 전 세계로 퍼질 수 있는 것이 무엇인지 생각하면 된다. ② 쓰레기 문제나 ⑤ 비투멘은 퍼져 나간다는 서술과 어울리지 않는다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
+B("(A) It은 문장 12의 this idea, 곧 재활용 기저귀로 도로를 고치는 아이디어를 가리킨다. 전 세계로 퍼질 수 있는 것이 무엇인지 생각하면 된다. ① 쓰레기 문제나 ⑤ 비투멘은 퍼져 나간다는 서술과 어울리지 않는다.", true);
 Hs("독해 04   배열 영작   ·   Diapers can take 500 years to break down.");
 B("문장 4를 그대로 복원하는 문제다. ① 첫 글자는 대문자 Diapers.   ② can take — 조동사+동사원형은 한 덩어리.   ③ take 500 years to break down — ‘분해되는 데 500년이 걸리다’의 어순.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 diapers · roads · recycled     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 기저귀로 도로를 고치는 창의적인 아이디어를 소개한다. ① 기저귀 고르는 법은 나오지 않고, ③ 쓰레기 문제는 이 아이디어가 등장한 배경일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 diapers · roads · recycled     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 기저귀로 도로를 고치는 창의적인 아이디어를 소개한다. ① 기저귀 고르는 법은 나오지 않고, ② 쓰레기 문제는 이 아이디어가 등장한 배경일 뿐이다.");
 B("1-2   ○표 할 세 단어: diapers(힌트① 놀라운 재료) · roads(힌트② 재료가 쓰이는 곳) · recycled(힌트③ 재료가 처리된 방식). 나머지 셋(bitumen · waste · the U.K.)은 본문에 등장하지만 주제문에 들어가지 않는다 — 공정의 세부, 배경, 장소일 뿐이다. 빈도가 아니라 ‘주제문에 없으면 말이 안 되는 말’을 고르는 것이 기준이다.");
 B("1-3   문장 5 — this problem은 기저귀 쓰레기 문제에 ○ (문장 3–4에서 설명한 그 문제).   문장 9 — they는 기저귀들에 ○ (문장 8에서 잘리고 세척된 그것들).   문장 14 — It은 이 아이디어에 ○ (문장 12의 this idea, 전 세계로 퍼질 수 있는 것).");
 B("[학습 포인트]   예시로 보여 준 문장 3의 this가 이 지문의 백미다. 지시어는 단어 하나만이 아니라 앞 절의 내용 전체(기저귀 30억 개가 버려진다는 사실)도 받는다. this problem·this idea처럼 this+명사는 뒤의 명사가 ‘무엇을 찾을지’ 알려 주는 힌트다 — 명사를 먼저 읽고 앞에서 짝을 찾자.", true);

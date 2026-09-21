@@ -99,25 +99,27 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① The Bin Chicken That Fights Cane Toads", "② How to Keep Trash Cans Clean",
- "③ Farming Beetles for Better Crops", "④ The Best Pet Frogs in Australia",
+["① How to Keep Trash Cans Clean",
+ "② Farming Beetles for Better Crops",
+ "③ The Best Pet Frogs in Australia",
+ "④ The Bin Chicken That Fights Cane Toads",
  "⑤ Why People Give Birds Funny Names"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 22, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Cane toads had many natural enemies in Australia.",
- "② People nicknamed the white ibis the “bin chicken.”",
- "③ Cane toads were introduced to Australia in the 1930s.",
+["① People nicknamed the white ibis the “bin chicken.”",
+ "② Cane toads were introduced to Australia in the 1930s.",
+ "③ Cane toads had many natural enemies in Australia.",
  "④ The ibises flip the toads into the air.",
  "⑤ The ibises wash the toads in water before eating."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 22, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the beetles damaging crops",
- "② the cane toads",
- "③ the trash cans in the city",
- "④ the farmers in Australia",
- "⑤ the native animals of Australia"].forEach(c => K.push(ch(c)));
+ "② the trash cans in the city",
+ "③ the farmers in Australia",
+ "④ the native animals of Australia",
+ "⑤ the cane toads"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 22, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -409,8 +411,8 @@ K.push(spF(5, 59, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 물건을 팔기 위해 만든 광고",
- "② 대상을 소개하고 사실을 알려 주는 설명문",
+["① 대상을 소개하고 사실을 알려 주는 설명문",
+ "② 물건을 팔기 위해 만든 광고",
  "③ 하루 일을 적은 일기",
  "④ 안부를 전하는 편지",
  "⑤ 상상으로 지어낸 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
@@ -743,7 +745,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 코코라는 이름의 고양이가 있다  (2) 그 편지는 내 친구에 의해 쓰였다  (3) “Small Star”라고 불리는 책이 많은 아이들에게 읽혔다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 ibis · toads · control        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 이유 · 반전 · 덧붙임 · 순서   2-2 [C] 문제 · [E] 마무리   2-3 ②", { size: 19, bold: true })], { after: 25 }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 이유 · 반전 · 덧붙임 · 순서   2-2 [C] 문제 · [E] 마무리   2-3 ①", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (a) → (d) → (b) → (c)  ·  The white ibis is helping control the number of cane toads in Australia.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) trash  (2) poison  (3) toads  (4) control        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ②  문장 6 ②  문장 8 ③  문장 9 ②", { size: 19, bold: true })], { after: 150 }),
@@ -756,11 +758,11 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) Fortunately, the white ibis learned a way to eat them safely.  (2) They then wash them in water before eating.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 쓰레기통을 뒤져 ‘빈 치킨’이라 불리던 흰따오기(문장 1–2)가 골칫거리인 수수두꺼비를 안전하게 잡아먹어 그 수를 줄인다는 이야기다(문장 9–13). 주인공과 하는 일을 함께 담은 ①이 제목으로 적절하다. ②·⑤는 지엽적, ③·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ①");
-B("문장 8에서 수수두꺼비는 호주에 천적이 없었기(no natural enemies) 때문에 위협이 되었다고 했다. 천적이 많았다는 ①이 본문과 반대된다. ②은 문장 2, ③는 문장 4, ④는 문장 10, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ②");
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 쓰레기통을 뒤져 ‘빈 치킨’이라 불리던 흰따오기(문장 1–2)가 골칫거리인 수수두꺼비를 안전하게 잡아먹어 그 수를 줄인다는 이야기다(문장 9–13). 주인공과 하는 일을 함께 담은 ④이 제목으로 적절하다. ①·⑤는 지엽적, ②·③는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 8에서 수수두꺼비는 호주에 천적이 없었기(no natural enemies) 때문에 위협이 되었다고 했다. 천적이 많았다는 ③이 본문과 반대된다. ①은 문장 2, ②는 문장 4, ④는 문장 10, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) them은 앞 문장 6–8에서 계속 이야기해 온 cane toads를 가리킨다. 흰따오기가 안전하게 먹는 법을 배운 대상이 무엇인지 생각하면 된다 — 복수 지시어는 복수 명사를 받는다.", true);
 Hs("독해 04   배열 영작   ·   Cane toads were introduced to Australia in the 1930s.");
 B("문장 4를 그대로 복원하는 문제다. ① 첫 글자는 대문자 Cane.   ② 수동태 were introduced가 한 덩어리.   ③ in the 1930s — 연대 앞의 the를 빠뜨리지 않는다.", true);
@@ -773,10 +775,10 @@ B("[학습 포인트]   문장 11이 이 지문의 백미다. 한 문장 안의 
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 이유 / 반전 / 덧붙임 / 순서     2-2 [C] 문제 · [E] 마무리     2-3 ②");
+Hs("STEP 2   글의 흐름   ·   2-1 이유 / 반전 / 덧붙임 / 순서     2-2 [C] 문제 · [E] 마무리     2-3 ①");
 B("2-1   문장 2 because — 별명이 붙은 '이유'.   문장 3 But — 나쁜 새에서 도움이 되는 새로 방향을 바꾸는 '반전'.   문장 7 Moreover — 피해를 하나 더 얹는 '덧붙임'.   문장 11 then — 뒤집은 다음의 '순서'.");
 B("2-2   [C] 문제(문장 6–8: 빠른 번식과 강한 독으로 토종 동물을 위협한다), [E] 마무리(문장 12–13: 두꺼비 수를 줄이는 데 도움이 된다). 보기의 '광고'는 이 글에 없는 역할이다.");
-B("2-3   정답 ②. 흰따오기와 수수두꺼비라는 대상을 소개하고 사실을 알려 주는 설명문이다. ① 가격·명령문이 없어 광고가 아니고, ③ I나 날짜가 없어 일기도 아니다.");
+B("2-3   정답 ①. 흰따오기와 수수두꺼비라는 대상을 소개하고 사실을 알려 주는 설명문이다. ② 가격·명령문이 없어 광고가 아니고, ③ I나 날짜가 없어 일기도 아니다.");
 B("[학습 포인트]   문장 3의 But이 글 전체의 방향을 바꾼다. 마무리 직전이 아니라 도입부의 But은 '이제부터 진짜 이야기'라는 신호다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 control · Australia     3-3 (a) → (d) → (b) → (c)");
 B("3-1  재료 찾기 — (2) 문장 12에서 control에 ○: 따오기가 두꺼비 수에 하는 일이다. raise(늘리다)는 정반대. (3) 문장 8에서 Australia에 ○: 이 모든 일이 벌어지는 곳이다.");

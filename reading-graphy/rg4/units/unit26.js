@@ -93,8 +93,8 @@ K.push(ask("03", "지칭", "밑줄 친 (A) This가 가리키는 것으로 가장
 K.push(sp(65));
 ["① letting the soil rest for a long time",
  "② comparing carrots from different years",
- "③ growing too much food in the same soil",
- "④ a farming method that adds minerals",
+ "③ a farming method that adds minerals",
+ "④ growing too much food in the same soil",
  "⑤ changing the types of plants to grow"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -247,9 +247,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 당근을 크게 키우는 방법",
- "② 20세기 초의 농업 역사",
- "③ 농작물의 영양소가 줄어든 이유와 해결책"].forEach(c =>
+["① 농작물의 영양소가 줄어든 이유와 해결책",
+ "② 당근을 크게 키우는 방법",
+ "③ 20세기 초의 농업 역사"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -395,7 +395,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문8 ", { size: 17, bold: true, color: NAVY2 }), t("To fix this problem(M)·the first thing to do(S)·is(△V)·to let the soil rest", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 매일 책을 읽는 것은 너를 더 똑똑하게 만든다  (2) 비는 우리가 밖에서 노는 것을 어렵게 만들었다  (3) 밤늦게 먹는 것은 잠드는 것을 어렵게 만든다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 nutrient · soil · rest   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 nutrient · soil · rest   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
@@ -405,12 +405,12 @@ Hs("독해 01   제목   ·   정답 ①");
 B("오늘날 과일·채소의 영양소가 줄었다는 현상(문장 1–2), 그 두 가지 이유(문장 4–7), 해결책(문장 8–10)을 차례로 설명한 글이다. 소재와 초점을 함께 담은 ①이 적절하다. ②·④는 당근·흙만 건드린 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ④");
 B("문장 6에서 같은 흙에 너무 많이 기르면 흙을 '상하게 한다(damage)'고 했으므로, 더 좋아진다는 ④는 본문과 반대된다. ①은 문장 1, ②는 문장 2, ③은 문장 4, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) This는 바로 앞 문장 6의 내용, 곧 같은 흙에서 너무 많은 작물을 길러 흙이 상하는 일을 가리킨다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   Also, farmers should avoid a farming method that takes away minerals.");
 B("문장 9를 그대로 복원하는 문제다. ㄱ 첫 글자는 대문자 Also, 뒤의 콤마를 잊지 않는다.   ㄴ 조동사 should 뒤에는 동사원형 avoid.   ㄷ that 이하가 앞의 method를 꾸민다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 nutrient · soil · rest     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 농작물의 영양소가 줄어든 이유와 그 해결책을 설명한다. ① 당근은 비교를 위한 예시일 뿐이고, ② 농업의 역사를 다루지는 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 nutrient · soil · rest     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 농작물의 영양소가 줄어든 이유와 그 해결책을 설명한다. ② 당근은 비교를 위한 예시일 뿐이고, ③ 농업의 역사를 다루지는 않는다.");
 B("1-2   ○표 할 세 단어: nutrient(힌트① 이 글이 걱정하는 것) · soil(힌트② 원인이 있는 곳) · rest(힌트③ 글쓴이의 해결책). 나머지 셋(carrot · century · minerals)은 본문에 나오지만 주제문에는 들어가지 않는다 — 예시와 배경일 뿐이다.");
 B("1-3   문장 5 — their는 식물들의에 ○ (plants가 스스로 만드는 영양소).   문장 7 — This는 흙이 상하는 것에 ○ (문장 6의 내용).   문장 8 — this problem은 영양소가 줄어든 것에 ○ (글 전체의 문제).");
 B("[학습 포인트]   지시어가 단어 하나를 받을 때도 있고(문장 2 one = a carrot), 앞 문장 전체를 받을 때도 있다(문장 7 This). this+명사는 '앞에서 말한 그것'이라는 신호이니, 만날 때마다 앞으로 화살표를 그어 두자.", true);
