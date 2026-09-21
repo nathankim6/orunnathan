@@ -32,3 +32,6 @@ reading-graphy/__pycache__/
 reading-graphy/*/assets/fonts/
 reading-graphy/*/assets/icons/
 reading-graphy/*/assets/logos/
+
+# 날짜를 붙인 배포용 사본 — 원본은 reading-graphy/out/ 에 있다
+reading-graphy/send/
