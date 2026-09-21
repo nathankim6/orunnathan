@@ -83,7 +83,11 @@ def mark_step2(pg, label, val):
     return n
 
 def _empty_parens(pg, ymin, ymax, same_y=None):
-    """비어 있는 괄호 칸만 왼쪽부터 돌려준다(미리 채워진 칸은 건너뛴다)."""
+    """비어 있는 괄호 칸만 왼쪽부터 돌려준다(미리 채워진 칸은 건너뛴다).
+
+    한 줄에 여러 칸이 함께 추출되는 판본이 있어, 줄 단위로 못 찾으면
+    낱말 단위의 '(' 와 ')' 짝으로 칸을 되살린다.
+    """
     out = []
     for x0, y0, x1, y1, t in pg.lines:
         if same_y is not None and abs(y0 - same_y) > 6: continue
@@ -92,7 +96,22 @@ def _empty_parens(pg, ymin, ymax, same_y=None):
         if re.fullmatch(r'[→\s]*\(\s+\)[→\s]*', tt) and '(' in tt:
             lead = 9.6 if tt.startswith('→') else 0.0   # 앞의 화살표 폭만큼 밀어 준다
             out.append((x0 + lead, y0, x1, y1))
-    out.sort(key=lambda r: r[0])
+    if out:
+        out.sort(key=lambda r: r[0])
+        return out
+    # 낱말 단위 복구 — '(' 와 그 뒤 첫 ')' 사이를 한 칸으로 본다
+    opens, closes = [], []
+    for x0, y0, x1, y1, w, *_ in pg.words:
+        if not (ymin <= y0 <= ymax): continue
+        if same_y is not None and abs(y0 - same_y) > 6: continue
+        if w.strip() == '(': opens.append((x0, y0, x1, y1))
+        elif w.strip() == ')': closes.append((x0, y0, x1, y1))
+    for ox0, oy0, ox1, oy1 in sorted(opens):
+        m = [c for c in closes if c[0] > ox1 and abs(c[1] - oy0) < 4]
+        if not m: continue
+        c = min(m)
+        out.append((ox0, oy0, c[2], max(oy1, c[3])))
+    out.sort(key=lambda r: (round(r[1]), r[0]))
     return out
 
 def mark_step3(pg, label, val):
@@ -101,7 +120,9 @@ def mark_step3(pg, label, val):
     if not m: return 0
     picks = re.findall(r'\(([a-e])\)', m.group(1))
     sent = m.group(2).strip()
-    line = pg.line_starting('순서', ymin=600)
+    # 답란의 높이는 유닛마다 다르다 — 3-3 머리글 아래에서 찾는다
+    h33 = pg.line_starting('3-3', xmax=90)
+    line = pg.line_starting('순서', ymin=(h33[1] if h33 else 300))
     if not line: return 0
     cells = _empty_parens(pg, 0, 1e9, same_y=line[1])
     n = 0
