@@ -14,4 +14,5 @@ python3 fix_step5_order.py --apply  # 번호만 바뀌고 차례가 남는다
 python3 fix_panel.py --apply        # 요약 패널은 라벨·값이 나뉘어 있어 따로 맞춘다
 python3 audit_consistency.py        # 패널·해설이 어긋나면 교사용이 틀린 곳에 표시한다
 python3 verify_endtoend.py
+python3 audit_empty.py              # 라벨만 있고 답이 빠진 항목
 python3 audit_visible.py

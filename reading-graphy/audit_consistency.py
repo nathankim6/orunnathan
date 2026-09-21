@@ -12,8 +12,10 @@ CIR = R.CIR
 def panel_answers(key):
     """요약 패널의 '01 ①' 꼴 표기를 읽는다 — 라벨 런과 값 런이 나뉘어 있다."""
     out = {}
-    for m in re.finditer(r't\("(0[1-4]|1-1|2-3)\s*"[^)]*\),\s*t\("\s*([①-⑤])', key):
+    for m in re.finditer(r't\("(0[1-3]|1-1|2-3)\s*"[^)]*\),\s*t\("\s*([①-⑤])', key):
         out.setdefault(m.group(1), m.group(2))
+    m = re.search(r't\("04\s*"[^)]*\),\s*t\("((?:[^"\\]|\\.)*)"', key)   # 04 는 문장형 답
+    if m: out['04'] = m.group(1).strip()
     for lbl, pat in (('R1', r't\("R1 "[^)]*\),\s*t\("((?:[^"\\]|\\.)*)"'),
                      ('R2', r't\("R2 "[^)]*\),\s*t\("((?:[^"\\]|\\.)*)"')):
         m = re.search(pat, key)
@@ -27,9 +29,10 @@ def detail_answers(key):
                      ('02', r'독해\s*02[^·]*·\s*정답\s*([①-⑤])'),
                      ('03', r'독해\s*03[^·]*·\s*정답\s*([①-⑤])'),
                      ('1-1', r'Hs\("STEP 1[^"]*1-1\s*([①-⑤])'),
-                     ('2-3', r'Hs\("STEP 2[^"]*2-3\s*([①-⑤])')):
+                     ('2-3', r'Hs\("STEP 2[^"]*2-3\s*([①-⑤])'),
+                     ('04', r'Hs\("독해 04[^·]*·\s*((?:[^"\\]|\\.)*)"\)')):
         m = re.search(pat, key)
-        if m: out[lbl] = m.group(1)
+        if m: out[lbl] = m.group(1).strip()
     for lbl in ('R1', 'R2'):
         hs = [h for h in re.findall(r'Hs\("((?:[^"\\]|\\.)*)"\)', key) if h.startswith(lbl + ' ')]
         if hs and '·' in hs[0]:
