@@ -77,24 +77,26 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Why Today’s Vegetables Have Fewer Nutrients", "② How to Grow the Biggest Carrot",
- "③ The Best Vitamins for Children", "④ Which Soil Is Best for Flowers?",
- "⑤ A Short History of the 20th Century"].forEach(c => K.push(ch(c)));
+["① How to Grow the Biggest Carrot",
+ "② The Best Vitamins for Children",
+ "③ Which Soil Is Best for Flowers?",
+ "④ A Short History of the 20th Century",
+ "⑤ Why Today’s Vegetables Have Fewer Nutrients"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① The levels of vitamins and minerals in fruits and vegetables have reduced.",
- "② Today’s carrot has lower nutrient levels than a carrot from 70 years ago.",
- "③ Farmers today focus on growing lots of food quickly.",
- "④ Growing too much food in the same soil makes the soil better.",
+["① Growing too much food in the same soil makes the soil better.",
+ "② The levels of vitamins and minerals in fruits and vegetables have reduced.",
+ "③ Today’s carrot has lower nutrient levels than a carrot from 70 years ago.",
+ "④ Farmers today focus on growing lots of food quickly.",
  "⑤ Changing the types of plants to grow can help the next crops."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) This가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① letting the soil rest for a long time",
  "② comparing carrots from different years",
- "③ a farming method that adds minerals",
- "④ growing too much food in the same soil",
+ "③ growing too much food in the same soil",
+ "④ a farming method that adds minerals",
  "⑤ changing the types of plants to grow"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -355,9 +357,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "농작물에 일어
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Today’s fruits and vegetables have lower nutrient levels.",
-      "ⓑ Farmers let the soil rest and change the types of plants.",
-      "ⓒ The soil is damaged and plants can’t get enough nutrients.",
-      "ⓓ Farmers grow too much food in the same soil."]
+      "ⓑ Farmers grow too much food in the same soil.",
+      "ⓒ Farmers let the soil rest and change the types of plants.",
+      "ⓓ The soil is damaged and plants can’t get enough nutrients."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -398,14 +400,14 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 nutrient · soil · rest   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 T", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("오늘날 과일·채소의 영양소가 줄었다는 현상(문장 1–2), 그 두 가지 이유(문장 4–7), 해결책(문장 8–10)을 차례로 설명한 글이다. 소재와 초점을 함께 담은 ①이 적절하다. ②·④는 당근·흙만 건드린 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 6에서 같은 흙에 너무 많이 기르면 흙을 '상하게 한다(damage)'고 했으므로, 더 좋아진다는 ④는 본문과 반대된다. ①은 문장 1, ②는 문장 2, ③은 문장 4, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 01   제목   ·   정답 ⑤");
+B("오늘날 과일·채소의 영양소가 줄었다는 현상(문장 1–2), 그 두 가지 이유(문장 4–7), 해결책(문장 8–10)을 차례로 설명한 글이다. 소재와 초점을 함께 담은 ⑤이 적절하다. ①·③는 당근·흙만 건드린 지엽적 오답, ②·④는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 6에서 같은 흙에 너무 많이 기르면 흙을 '상하게 한다(damage)'고 했으므로, 더 좋아진다는 ①는 본문과 반대된다. ②은 문장 1, ③는 문장 2, ④은 문장 4, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) This는 바로 앞 문장 6의 내용, 곧 같은 흙에서 너무 많은 작물을 길러 흙이 상하는 일을 가리킨다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   Also, farmers should avoid a farming method that takes away minerals.");
 B("문장 9를 그대로 복원하는 문제다. ㄱ 첫 글자는 대문자 Also, 뒤의 콤마를 잊지 않는다.   ㄴ 조동사 should 뒤에는 동사원형 avoid.   ㄷ that 이하가 앞의 method를 꾸민다.", true);
@@ -421,8 +423,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 T");
    B("1 F — 문장 8: 물을 더 주는 게 아니라 흙을 쉬게 하는 것이다.   2 F — 문장 5: 언제나 얻는 게 아니라 충분히 얻지 못한다(can’t).   3 T — 문장 1.   4 F — 문장 2: higher가 아니라 lower다.   5 T — 문장 6.   6 F — 문장 10: worse가 아니라 better다.   7 T — 문장 4.   8 T — 문장 9.  거짓 문장은 모두 딱 한 요소(higher, always, water, worse)를 비튼 것이다 — 그 한 단어를 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (d) → (c) → (a) → (b)");
-B("ⓓ 농부들이 같은 흙에서 너무 많이 기른다(문장 6) → ⓒ 흙이 상하고 식물이 영양소를 못 얻는다(문장 5–7) → ⓐ 오늘날 과일·채소의 영양소가 낮아진다(문장 1–2) → ⓑ 흙을 쉬게 하고 작물을 바꾼다(문장 8–10). 글은 결과(ⓐ)를 먼저 말하고 원인을 뒤에 설명한다 — 서술 순서와 실제 순서가 다른 지점이 바로 여기다.", true);
+Hs("R2   사건 순서   ·   (b) → (d) → (a) → (c)");
+B("ⓑ 농부들이 같은 흙에서 너무 많이 기른다(문장 6) → ⓓ 흙이 상하고 식물이 영양소를 못 얻는다(문장 5–7) → ⓐ 오늘날 과일·채소의 영양소가 낮아진다(문장 1–2) → ⓒ 흙을 쉬게 하고 작물을 바꾼다(문장 8–10). 글은 결과(ⓐ)를 먼저 말하고 원인을 뒤에 설명한다 — 서술 순서와 실제 순서가 다른 지점이 바로 여기다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

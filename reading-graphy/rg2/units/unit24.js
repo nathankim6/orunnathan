@@ -79,24 +79,24 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Craters: Not Only on the Moon but Also on Earth",
- "② How to Watch the Moon with a Telescope",
- "③ The Life of Dinosaurs in Wyoming",
- "④ Why Plants Need Rain and Wind",
- "⑤ How Scientists Became Famous in 2022"].forEach(c => K.push(ch(c)));
+["① How to Watch the Moon with a Telescope",
+ "② The Life of Dinosaurs in Wyoming",
+ "③ Why Plants Need Rain and Wind",
+ "④ How Scientists Became Famous in 2022",
+ "⑤ Craters: Not Only on the Moon but Also on Earth"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① The Earth has a thick atmosphere that protects it from space rocks.",
- "② The Moon doesn’t have an atmosphere.",
- "③ The Moon has weather and many plants.",
+["① The Moon has weather and many plants.",
+ "② The Earth has a thick atmosphere that protects it from space rocks.",
+ "③ The Moon doesn’t have an atmosphere.",
  "④ On Earth, rain, wind, and plants help to erase craters.",
  "⑤ Scientists found huge craters in Wyoming in 2022."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the space rock from the sky",
- "② the crater that the space rock makes",
+["① the crater that the space rock makes",
+ "② the space rock from the sky",
  "③ the atmosphere of the Moon",
  "④ the weather on the Earth",
  "⑤ the plant that grows on the Moon"].forEach(c => K.push(ch(c)));
@@ -360,8 +360,8 @@ K.push(sp(120));
 K.push(box([
   ...["ⓐ Rain, wind, and plants slowly erase the crater.",
       "ⓑ The space rock makes a crater.",
-      "ⓒ Scientists find very old craters in Wyoming.",
-      "ⓓ A space rock hits the ground of the Earth."]
+      "ⓒ A space rock hits the ground of the Earth.",
+      "ⓓ Scientists find very old craters in Wyoming."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -402,14 +402,14 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 craters · Moon · Earth   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 F · 4 T · 5 T · 6 T · 7 F · 8 T", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (b) → (a) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 크레이터가 달에만 있는 것이 아니라 지구에도 있다는 사실(문장 1)과 달에 더 많아 보이는 까닭(문장 3–8), 지구에서 발견된 아주 오래된 크레이터(문장 9–12)를 설명한다. 소재(크레이터)와 핵심(달과 지구 둘 다)을 담은 ①이 적절하다. ③·④은 지엽적, ②·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 7에서 달에는 날씨도 식물도 없다고 했다. 달에 날씨와 식물이 많다고 뒤집은 ③이 본문과 반대된다. ①은 문장 3, ②은 문장 4, ④는 문장 6, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ②");
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 크레이터가 달에만 있는 것이 아니라 지구에도 있다는 사실(문장 1)과 달에 더 많아 보이는 까닭(문장 3–8), 지구에서 발견된 아주 오래된 크레이터(문장 9–12)를 설명한다. 소재(크레이터)와 핵심(달과 지구 둘 다)을 담은 ⑤이 적절하다. ②·③은 지엽적, ①·④는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 7에서 달에는 날씨도 식물도 없다고 했다. 달에 날씨와 식물이 많다고 뒤집은 ①이 본문과 반대된다. ②은 문장 3, ③은 문장 4, ④는 문장 6, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) it은 앞에 나온 a crater를 가리킨다. 오랫동안 그 자리에 남아 있는 것은 우주 암석이 아니라 그 암석이 만든 자국(크레이터)이다 — 수와 뜻을 함께 따져야 함정을 피한다.", true);
 Hs("독해 04   배열 영작   ·   But the Moon doesn’t have weather or plants.");
 B("문장 7을 그대로 복원하는 문제다. ① 첫 글자는 대문자 But.   ② doesn’t 뒤에는 동사원형 have.   ③ 부정문에서 '~도 …도 없다'는 A or B로 잇는다.", true);
@@ -425,8 +425,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 F · 3 F · 4 T · 5 T · 6 T · 7 F · 8 T");
    B("1 F — 문장 12: 지구의 땅은 많이 변해서 크레이터가 대개 사라진다.   2 F — 문장 4: 달에는 대기가 아예 없다.   3 F — 문장 7: 달에는 날씨도 식물도 없다.   4 T — 문장 9.   5 T — 문장 6.   6 T — 문장 1.   7 F — 문장 10: 280년이 아니라 약 2억 8천만(280 million) 년이다.   8 T — 문장 3.  거짓 문장은 모두 딱 한 요소(thicker, a lot of, million, never)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (d) → (b) → (a) → (c)");
-B("ⓓ 우주 암석이 지구 땅에 부딪힌다(문장 5·8) → ⓑ 그 암석이 크레이터를 만든다(문장 8) → ⓐ 비·바람·식물이 크레이터를 천천히 지운다(문장 6) → ⓒ 과학자들이 아주 오래된 크레이터를 발견한다(문장 9). 본문은 지우는 힘(문장 6)을 만들어지는 과정(문장 8)보다 먼저 말한다 — 서술 순서와 사건 순서가 갈리는 지점이다.", true);
+Hs("R2   사건 순서   ·   (c) → (b) → (a) → (d)");
+B("ⓒ 우주 암석이 지구 땅에 부딪힌다(문장 5·8) → ⓑ 그 암석이 크레이터를 만든다(문장 8) → ⓐ 비·바람·식물이 크레이터를 천천히 지운다(문장 6) → ⓓ 과학자들이 아주 오래된 크레이터를 발견한다(문장 9). 본문은 지우는 힘(문장 6)을 만들어지는 과정(문장 8)보다 먼저 말한다 — 서술 순서와 사건 순서가 갈리는 지점이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

@@ -81,26 +81,26 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Take a Good Wedding Photo",
- "② Why Old Photos Have No Smiles",
- "③ The First Camera in the World",
- "④ Famous Painters of the 19th Century",
+ "② The First Camera in the World",
+ "③ Famous Painters of the 19th Century",
+ "④ Why Old Photos Have No Smiles",
  "⑤ The Best Way to Keep a Big Smile"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Before cameras, big smiles were common in paintings.",
- "② Most people didn’t smile in photos in the late 18th century.",
- "③ Taking a picture took much longer than it does today.",
+["① Most people didn’t smile in photos in the late 18th century.",
+ "② Taking a picture took much longer than it does today.",
+ "③ Before cameras, big smiles were common in paintings.",
  "④ People had to sit very still for a long time.",
  "⑤ The tradition slowly began to change later."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) this tradition이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① taking pictures only at weddings",
- "② painting pictures instead of photos",
- "③ sitting very still for 20 minutes",
- "④ inventing a new kind of camera",
- "⑤ not showing big smiles in pictures"].forEach(c => K.push(ch(c)));
+ "② not showing big smiles in pictures",
+ "③ painting pictures instead of photos",
+ "④ sitting very still for 20 minutes",
+ "⑤ inventing a new kind of camera"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -251,9 +251,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 결혼식 사진을 잘 찍는 방법",
- "② 그림을 잘 그리는 방법",
- "③ 옛날 사진 속 사람들이 웃지 않은 이유"].forEach(c =>
+["① 옛날 사진 속 사람들이 웃지 않은 이유",
+ "② 결혼식 사진을 잘 찍는 방법",
+ "③ 그림을 잘 그리는 방법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -360,8 +360,8 @@ K.push(sp(120));
 K.push(box([
   ...["ⓐ Cameras were invented, and people continued the tradition.",
       "ⓑ People sat very still for about 20 minutes for one picture.",
-      "ⓒ People painted pictures to remember special moments.",
-      "ⓓ The tradition slowly began to change."]
+      "ⓒ The tradition slowly began to change.",
+      "ⓓ People painted pictures to remember special moments."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -399,22 +399,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문13 ", { size: 17, bold: true, color: NAVY2 }), t("the tradition(S)·began(△V)·and[네모]·smiles(S)·became(△V)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 자전거를 타는 것은 쉽다  (2) 그녀는 우유를 사기 위해 가게에 갔다  (3) 새 자전거를 사기 위해 돈을 모으는 것은 중요하다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 smile · photos · tradition   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 smile · photos · tradition   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 T · 3 F · 4 F · 5 F · 6 F · 7 T · 8 T", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (b) → (d)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ②");
-B("이 글은 18~19세기 사진 속 사람들이 왜 웃지 않았는지를 긴 촬영 시간(문장 3–5)과 옛 전통(문장 8–11)으로 설명한다. 소재와 이유를 함께 담은 ②이 제목으로 알맞다. ③·④는 지엽적이고, ①·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ①");
-B("문장 8에서 그림 속 큰 미소는 흔하지 않았다(weren’t common)고 했다. 흔했다는 ①는 본문과 반대다. ②은 문장 1, ③는 문장 3, ④은 문장 5, ⑤는 문장 13에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 18~19세기 사진 속 사람들이 왜 웃지 않았는지를 긴 촬영 시간(문장 3–5)과 옛 전통(문장 8–11)으로 설명한다. 소재와 이유를 함께 담은 ④이 제목으로 알맞다. ②·③는 지엽적이고, ①·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 8에서 그림 속 큰 미소는 흔하지 않았다(weren’t common)고 했다. 흔했다는 ③는 본문과 반대다. ①은 문장 1, ②는 문장 3, ④은 문장 5, ⑤는 문장 13에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) this tradition은 바로 앞 문장 8–9의 내용, 곧 '큰 미소를 보이지 않는 것'을 가리킨다. this+명사는 앞 내용 전체를 한 번에 받을 수 있다.", true);
 Hs("독해 04   배열 영작   ·   In these paintings, big smiles weren’t common.");
 B("문장 8을 그대로 복원하는 문제다. ① 첫 글자는 대문자 In.   ② paintings 뒤의 콤마를 빠뜨리지 않는다.   ③ 주어가 복수(big smiles)이므로 weren’t.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 smile · photos · tradition     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 옛날 사진에서 사람들이 웃지 않은 까닭을 설명한다. ① 결혼식은 문장 2의 예시일 뿐이고, ② 그림 그리는 방법은 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 smile · photos · tradition     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 옛날 사진에서 사람들이 웃지 않은 까닭을 설명한다. ② 결혼식은 문장 2의 예시일 뿐이고, ③ 그림 그리는 방법은 나오지 않는다.");
 B("1-2   ○표 할 세 단어: smile(힌트① 하지 않은 것) · photos(힌트② 그 일이 일어난 자리) · tradition(힌트③ 이어 가게 한 것). weddings · minutes · paintings는 본문에 나오지만 주제문에는 들어가지 않는다.");
 B("1-3   문장 8 — these paintings는 카메라 이전 그림에 ○ (문장 7).   문장 10 — this tradition은 크게 웃지 않기에 ○ (문장 8–9).   문장 11 — They는 카메라 쓴 사람들에 ○ (문장 10).");
 B("[학습 포인트]   this/these가 붙으면 반드시 앞 문장에 짝이 있다. 특히 this tradition처럼 앞 내용 전체를 한 단어로 묶는 말에 표시해 두자.", true);
@@ -425,8 +425,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 T · 2 T · 3 F · 4 F · 5 F · 6 F · 7 T · 8 T");
    B("1 T — 문장 1.   2 T — 문장 3–4.   3 F — 문장 5: 자유롭게 움직인 게 아니라 아주 가만히 앉아 있어야 했다.   4 F — 문장 2: 결혼식 같은 즐거운 자리에서도 웃지 않았다.   5 F — 문장 13: 전통은 천천히 바뀌기 시작했다.   6 F — 문장 9: 적절하다가 아니라 적절하지 않다고 믿었다.   7 T — 문장 7.   8 T — 문장 11.  거짓 문장은 모두 한 요소(smiled a lot, freely, was, never)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (c) → (a) → (b) → (d)");
-B("ⓒ 카메라 이전에 그림으로 순간을 남긴다(문장 7) → ⓐ 카메라가 발명되고 전통이 이어진다(문장 10) → ⓑ 사진 한 장에 20분씩 가만히 앉아 있는다(문장 3–5) → ⓓ 전통이 천천히 바뀐다(문장 13). 본문은 촬영 시간을 먼저 들려주지만 실제로는 그림의 시대가 더 앞이다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
+Hs("R2   사건 순서   ·   (d) → (a) → (b) → (c)");
+B("ⓓ 카메라 이전에 그림으로 순간을 남긴다(문장 7) → ⓐ 카메라가 발명되고 전통이 이어진다(문장 10) → ⓑ 사진 한 장에 20분씩 가만히 앉아 있는다(문장 3–5) → ⓒ 전통이 천천히 바뀐다(문장 13). 본문은 촬영 시간을 먼저 들려주지만 실제로는 그림의 시대가 더 앞이다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

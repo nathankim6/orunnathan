@@ -106,8 +106,8 @@ K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?")
 K.push(sp(65));
 ["① Astronomers in Arizona found the giant planet.",
  "② TOI-3757 b is about 580 light years from us.",
- "③ The planet is a little smaller than Jupiter.",
- "④ The planet is much lighter than Jupiter.",
+ "③ The planet is much lighter than Jupiter.",
+ "④ The planet is a little smaller than Jupiter.",
  "⑤ Astronomers thought giant planets hardly formed around red dwarf stars."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) this “marshmallow”가 가리키는 것으로 가장 적절한 것은?"));
@@ -282,8 +282,8 @@ K.push(spF(4, 300, 0.10));
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 ["① 마시멜로를 만드는 방법",
- "② 목성의 크기와 위성들",
- "③ 마시멜로처럼 가벼운 거대 행성의 발견"].forEach(c =>
+ "② 마시멜로처럼 가벼운 거대 행성의 발견",
+ "③ 목성의 크기와 위성들"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -514,15 +514,15 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 1, main: "as light as a marshmallow",
-    opts: ["① very heavy for its size", "② made of real sugar", "③ not heavy at all"] },
+    opts: ["① not heavy at all", "② very heavy for its size", "③ made of real sugar"] },
   { sn: 3, main: "a little larger than Jupiter",
     opts: ["① a bit bigger than Jupiter", "② much smaller than Jupiter", "③ closer to the sun"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 7, main: "is a surprise to astronomers",
-    opts: ["① astronomers already knew it", "② astronomers did not expect it", "③ astronomers gave it a name"] },
+    opts: ["① astronomers already knew it", "② astronomers gave it a name", "③ astronomers did not expect it"] },
   { sn: 9, main: "Until now",
-    opts: ["① for one hundred years", "② from now on", "③ up to this time"] });
+    opts: ["① for one hundred years", "② up to this time", "③ from now on"] });
 K.push(spF(7, 150, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -601,8 +601,8 @@ K.push(sp(120));
 K.push(box([
   ...["ⓐ Astronomers in Arizona found a giant planet.",
       "ⓑ They found that the planet was as light as a marshmallow.",
-      "ⓒ Astronomers thought giant planets could not form around red dwarf stars.",
-      "ⓓ They set a goal to understand how planets form."]
+      "ⓒ They set a goal to understand how planets form.",
+      "ⓓ Astronomers thought giant planets could not form around red dwarf stars."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -644,8 +644,8 @@ K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다.
 K.push(sp(130));
 [["문장 2", [t("This planet ", { size: 19 }), t("( are  /  is )", { size: 19, bold: true, color: NAVY }), t(" floating in space far away.", { size: 19 })], "주어 This planet은 단수예요."],
  ["문장 6", [t("It’s so light that it ", { size: 19 }), t("( would float  /  would floats )", { size: 19, bold: true, color: NAVY }), t(" in a bathtub.", { size: 19 })], "조동사 뒤에는 언제나 동사원형!"],
- ["문장 7", [t("", { size: 19 }), t("( Discover  /  To discover )", { size: 19, bold: true, color: NAVY }), t(" TOI-3757 b is a surprise to astronomers.", { size: 19 })], "주어 자리에는 to+동사원형이 올 수 있어요."],
- ["문장 10", [t("", { size: 19 }), t("( Find  /  Finding )", { size: 19, bold: true, color: NAVY }), t(" more such systems is part of their goal.", { size: 19 })], "동명사(~ing)도 주어가 될 수 있어요."],
+ ["문장 7", [t("", { size: 19 }), t("( To discover  /  Discover )", { size: 19, bold: true, color: NAVY }), t(" TOI-3757 b is a surprise to astronomers.", { size: 19 })], "주어 자리에는 to+동사원형이 올 수 있어요."],
+ ["문장 10", [t("", { size: 19 }), t("( Finding  /  Find )", { size: 19, bold: true, color: NAVY }), t(" more such systems is part of their goal.", { size: 19 })], "동명사(~ing)도 주어가 될 수 있어요."],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
     cel(new Paragraph({ children: [t("(" + (i + 1) + ")", { size: 16, bold: true, color: "FFFFFF" })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 210 } }),
@@ -737,14 +737,14 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문9 ", { size: 17, bold: true, color: NAVY2 }), t("Until now(M)·astronomers(S)·have been able to find(△V)·far away~stars(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 내 가방은 큰 바위만큼 무겁다  (2) 그 수프는 너무 뜨거워서 나는 그것을 먹을 수 없었다  (3) 그 강아지는 내 신발만큼 작고, 너무 귀여워서 모두가 미소 짓는다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 planet · light · surprise        ", { size: 19, bold: true }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 planet · light · surprise        ", { size: 19, bold: true }),
      t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 바꿔 말하기 · 양보 · 결과 · 이유   2-2 [B] 크기 · [E] 목표   2-3 ②", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (a) → (c) → (d)  ·  The giant planet as light as a marshmallow is a surprise to astronomers.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) light  (2) Jupiter  (3) surprise  (4) form        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 1 ③  문장 3 ①  문장 7 ②  문장 9 ③", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 1 ①  문장 3 ①  문장 7 ③  문장 9 ②", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 T · 5 T · 6 T · 7 F · 8 F", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (b) → (d)", { size: 19, bold: true })], { after: 25 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (b) → (c)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(b) · 2(c) · 3(d) · 4(f) · 5(a) · 6(e)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) is  (2) would float  (3) To discover  (4) Finding", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) light (2) floating (3) larger (4) fit (5) lighter (6) float (7) discover (8) goal", { size: 19, bold: true })], { after: 25 }),
@@ -753,14 +753,14 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ④");
 B("마시멜로만큼 가벼운 거대 행성의 발견(문장 1–6)과 그것이 놀라운 이유(문장 7–10)를 알리는 글이다. 소재(거대 행성)와 특징(마시멜로처럼 가볍다)을 담은 ④이 적절하다. ①·③는 비교 대상과 숫자만 건드린 지엽적 오답, ②·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 3에서 이 행성은 목성보다 '조금 더 크다(a little larger)'고 했으므로, 더 작다는 ③은 본문과 반대된다. ①은 문장 1, ②는 문장 2, ④는 문장 5, ⑤는 문장 8에서 확인된다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 3에서 이 행성은 목성보다 '조금 더 크다(a little larger)'고 했으므로, 더 작다는 ④은 본문과 반대된다. ①은 문장 1, ②는 문장 2, ③는 문장 5, ⑤는 문장 8에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) this “marshmallow”는 문장 1–2에서 소개한 거대 행성 TOI-3757 b를 가리킨다. 따옴표가 붙은 별명이지 진짜 과자가 아니다 — this+명사는 앞에 나온 것을 다시 부르는 신호다.", true);
 Hs("독해 04   배열 영작   ·   It’s so light that it would float in a huge bathtub of water!");
 B("문장 6을 그대로 복원하는 문제다. ㄱ 첫 글자는 대문자 It’s.   ㄴ so + 형용사 + that + 결과 문장의 순서를 지킨다.   ㄷ 조동사 would 뒤에는 동사원형 float.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 planet · light · surprise     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 마시멜로처럼 가벼운 거대 행성의 발견을 다룬다. ① 마시멜로는 가벼움을 견주기 위한 비유일 뿐이고, ② 목성은 크기를 견주는 대상일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 planet · light · surprise     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 마시멜로처럼 가벼운 거대 행성의 발견을 다룬다. ① 마시멜로는 가벼움을 견주기 위한 비유일 뿐이고, ③ 목성은 크기를 견주는 대상일 뿐이다.");
 B("1-2   ○표 할 세 단어: planet(힌트① 주인공) · light(힌트② 그 놀라운 상태) · surprise(힌트③ 천문학자들의 반응). 나머지 셋(Jupiter · water · Arizona)은 본문에 나오지만 주제문에는 들어가지 않는다 — 비교 대상과 배경일 뿐이다.");
 B("1-3   문장 4 — this “marshmallow”는 TOI-3757 b에 ○.   문장 8 — they는 천문학자들에 ○.   문장 10 — their는 천문학자들의에 ○ (목표의 주인).");
 B("[학습 포인트]   같은 글 안에서도 지시어가 가리키는 대상은 바뀐다. 문장 3의 It은 행성을, 문장 8의 they는 천문학자들을 받는다 — 앞 문장에서 짝을 찾아 화살표로 이어 두자.", true);
@@ -780,11 +780,11 @@ B("3-3  정답 순서 — ⓑ The giant planet → ⓐ as light as a marshmallow
 B("[채점 포인트]  주인공(ⓑ)이 맨 앞, 마침표가 붙은 덩어리(ⓓ)가 맨 뒤 — 이 두 자리만 잡으면 가운데는 뜻으로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) light  (2) Jupiter  (3) surprise  (4) form");
 B("(1)은 문장 1의 light, (2)는 문장 3의 Jupiter, (3)은 문장 7의 surprise, (4)는 문장 8의 form에서 가져온다. 요약문이 곧 이 글의 흐름이다: 발견(1) → 크기(2) → 놀라움(3) → 이유(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 1 ③   문장 3 ①   문장 7 ②   문장 9 ③  (정답 선지는 무표시)");
-B("문장 1 as light as a marshmallow   ① ✕ [반대] 크기에 비해 아주 무겁다 — 정반대.   ② ✕ [무관] 진짜 설탕으로 만들었다는 말은 지문에 없다.   ③ ○ 전혀 무겁지 않다.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 1 ①   문장 3 ①   문장 7 ③   문장 9 ②  (정답 선지는 무표시)");
+B("문장 1 as light as a marshmallow   ① ○ 전혀 무겁지 않다.   ② ✕ [반대] 크기에 비해 아주 무겁다 — 정반대.   ③ ✕ [무관] 진짜 설탕으로 만들었다는 말은 지문에 없다.");
 B("문장 3 a little larger than Jupiter   ① ○ 목성보다 조금 더 크다.   ② ✕ [반대] 훨씬 더 작다 — 정반대.   ③ ✕ [무관] 태양과의 거리는 지문에 없다.");
-B("문장 7 is a surprise to astronomers   ① ✕ [반대] 이미 알고 있었다 — 정반대.   ② ○ 예상하지 못했다.   ③ ✕ [무관] 이름을 지어 주었다는 말은 지문에 없다.");
-B("문장 9 Until now   ① ✕ [무관] 백 년 동안이라는 말은 지문에 없다.   ② ✕ [반대] 지금부터 — 방향이 정반대.   ③ ○ 지금 이 시점까지.");
+B("문장 7 is a surprise to astronomers   ① ✕ [반대] 이미 알고 있었다 — 정반대.   ② ✕ [무관] 이름을 지어 주었다는 말은 지문에 없다.   ③ ○ 예상하지 못했다.");
+B("문장 9 Until now   ① ✕ [무관] 백 년 동안이라는 말은 지문에 없다.   ② ○ 지금 이 시점까지.   ③ ✕ [반대] 지금부터 — 방향이 정반대.");
 B("[학습 포인트]  시험은 본문 표현을 그대로 쓰지 않고 반드시 바꿔서 묻는다. '이 표현을 다른 말로 하면?'을 스스로 물어보자. 지금은 반대/무관 두 갈래를 정확히 가르는 것이 먼저다.", true);
 
 K.push(brk());
@@ -792,8 +792,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 F · 3 T · 4 T · 5 T · 6 T · 7 F · 8 F");
    B("1 F — 문장 6: sink가 아니라 뜬다(float).   2 F — 문장 3: smaller가 아니라 larger다.   3 T — 문장 4.   4 T — 문장 2.   5 T — 문장 1.   6 T — 문장 8.   7 F — 문장 9: close가 아니라 far away에서만 찾아 왔다.   8 F — 문장 5: heavier가 아니라 lighter다.  거짓 문장은 모두 딱 한 단어(smaller, heavier, sink, close)를 비튼 것이다 — 그 한 단어를 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (c) → (a) → (b) → (d)");
-B("ⓒ 거대 행성은 적색왜성 곁에 못 생긴다고 믿어 왔다(문장 8, 발견 이전) → ⓐ 애리조나에서 거대 행성을 발견한다(문장 1) → ⓑ 마시멜로만큼 가볍다는 것을 알아낸다(문장 5–6) → ⓓ 행성 형성을 이해하겠다는 목표를 세운다(문장 10). 서술 순서는 ⓐ가 먼저지만 실제로는 ⓒ의 믿음이 먼저 있었다 — 그래서 이 발견이 놀라운 것이다.", true);
+Hs("R2   사건 순서   ·   (d) → (a) → (b) → (c)");
+B("ⓓ 거대 행성은 적색왜성 곁에 못 생긴다고 믿어 왔다(문장 8, 발견 이전) → ⓐ 애리조나에서 거대 행성을 발견한다(문장 1) → ⓑ 마시멜로만큼 가볍다는 것을 알아낸다(문장 5–6) → ⓒ 행성 형성을 이해하겠다는 목표를 세운다(문장 10). 서술 순서는 ⓐ가 먼저지만 실제로는 ⓓ의 믿음이 먼저 있었다 — 그래서 이 발견이 놀라운 것이다.", true);
 Hs("R3   영영풀이   ·   1 (b) · 2 (c) · 3 (d) · 4 (f) · 5 (a) · 6 (e)");
 B("astronomer = 별과 행성을 연구하는 사람 · float = 물 위나 공중에 떠 있다 · huge = 아주아주 큰 · fit = 어떤 공간에 알맞게 들어가다 · discover = 처음으로 찾아내다 · goal = 이루고자 하는 것.", true);
 Hs("R4   어법 기초   ·   (1) is  (2) would float  (3) To discover  (4) Finding");

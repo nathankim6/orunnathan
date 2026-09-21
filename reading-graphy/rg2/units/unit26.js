@@ -87,19 +87,19 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Svart Hotel uses more energy than it makes.",
- "② Norway works really hard to protect the environment.",
- "③ The hotel will be built on tall poles above a lake.",
- "④ The hotel will use sunlight to get energy.",
- "⑤ You can see the amazing aurora lights in winter."].forEach(c => K.push(ch(c)));
+["① Norway works really hard to protect the environment.",
+ "② The hotel will be built on tall poles above a lake.",
+ "③ The hotel will use sunlight to get energy.",
+ "④ You can see the amazing aurora lights in winter.",
+ "⑤ Svart Hotel uses more energy than it makes."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) It이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the lake under the poles",
  "② the country of Norway",
  "③ the big ice mountain",
- "④ the waste from the hotel",
- "⑤ the hotel"].forEach(c => K.push(ch(c)));
+ "④ the hotel",
+ "⑤ the waste from the hotel"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -251,9 +251,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 쓰는 것보다 많은 에너지를 만드는 호텔",
- "② 노르웨이의 겨울 스포츠",
- "③ 빙하가 만들어지는 과정"].forEach(c =>
+["① 노르웨이의 겨울 스포츠",
+ "② 빙하가 만들어지는 과정",
+ "③ 쓰는 것보다 많은 에너지를 만드는 호텔"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -358,10 +358,10 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "스바르트 호텔에 관한 일 ⓐ~ⓓ를 일어나는 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ The hotel will use sunlight to get energy.",
-      "ⓑ The hotel will be built on tall poles above a lake.",
-      "ⓒ You stay at the hotel and learn how to protect our planet.",
-      "ⓓ Norway starts building a special hotel called Svart Hotel."]
+  ...["ⓐ Norway starts building a special hotel called Svart Hotel.",
+      "ⓑ The hotel will use sunlight to get energy.",
+      "ⓒ The hotel will be built on tall poles above a lake.",
+      "ⓓ You stay at the hotel and learn how to protect our planet."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -399,22 +399,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문12 ", { size: 17, bold: true, color: NAVY2 }), t("you(S)·can enjoy(△V)·and[네모]·see(△V)·especially in winter(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 코코라고 불리는 개를 키운다  (2) 새 도서관이 내년에 지어질 것이다  (3) 그린 힐이라고 불리는 공원이 우리 학교 근처에 지어질 것이다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 energy · protect · planet   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 energy · protect · planet   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 T · 4 T · 5 F · 6 T · 7 F · 8 F", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (b) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ②");
 B("이 글은 쓰는 것보다 더 많은 에너지를 만드는 호텔(문장 3–4)과 그 방법(문장 6–10), 그리고 그곳에서 배울 것(문장 11)을 소개한다. 소재(호텔)와 특징(스스로 에너지를 만든다)을 함께 담은 ②이 제목으로 적절하다. ④·⑤는 본문의 한 부분만 건드린 지엽적 오답, ①·③은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ①");
-B("문장 4에서 이 호텔은 쓰는 것보다 더 많은 에너지를 만든다고 했으므로, 반대로 말한 ①가 본문과 어긋난다. ②은 문장 2, ③은 문장 6, ④는 문장 8, ⑤는 문장 12에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 4에서 이 호텔은 쓰는 것보다 더 많은 에너지를 만든다고 했으므로, 반대로 말한 ⑤가 본문과 어긋난다. ①은 문장 2, ②은 문장 6, ③는 문장 8, ④는 문장 12에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) It은 앞 문장 8의 The hotel을 가리킨다. 물을 정화하고 쓰레기를 재활용하는 주체가 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   The hotel will use sunlight to get energy.");
 B("문장 8을 그대로 복원하는 문제다. ① 첫 글자는 대문자 The.   ② will 뒤의 동사는 원형 use.   ③ '~하기 위해'는 to+동사원형 — to get energy가 맨 뒤.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 energy · protect · planet     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 쓰는 것보다 많은 에너지를 만드는 스바르트 호텔을 소개한다. ② 겨울 스포츠 이야기는 나오지 않고, ③ 빙하는 호텔이 있는 곳을 설명하는 배경일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 energy · protect · planet     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 쓰는 것보다 많은 에너지를 만드는 스바르트 호텔을 소개한다. ① 겨울 스포츠 이야기는 나오지 않고, ② 빙하는 호텔이 있는 곳을 설명하는 배경일 뿐이다.");
 B("1-2   ○표 할 세 단어: energy(힌트① 이 호텔이 만드는 것) · protect(힌트② 이 호텔이 하는 일) · planet(힌트③ 지켜야 할 대상). 나머지 셋(winter · lake · aurora)은 본문에 등장하지만 주제문에 들어가지 않는다 — 위치와 볼거리일 뿐이다.");
 B("1-3   문장 4 — it은 그 호텔에 ○ (앞의 This hotel을 다시 받는다).   문장 7 — This way는 기둥 위에 짓는 것에 ○ (문장 6의 방법).   문장 11 — this hotel은 Svart Hotel에 ○.");
 B("[학습 포인트]   This way처럼 지시어는 단어 하나가 아니라 앞 문장 전체(방법·내용)를 받기도 한다. this/these를 만나면 앞 문장에서 짝을 찾는 습관을 들이자.", true);
@@ -425,8 +425,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 T · 5 F · 6 T · 7 F · 8 F");
    B("1 T — 문장 9.   2 F — 문장 6: 호수 아래(under)가 아니라 호수 위(above) 기둥 위에 지어진다.   3 T — 문장 8.   4 T — 문장 5.   5 F — 문장 10: 일부가 아니라 모든 것(Everything)이 친환경이다.   6 T — 문장 2.   7 F — 문장 12: 여름이 아니라 겨울이다.   8 F — 문장 4: 쓰는 양보다 만드는 양이 더 많다(뒤바뀜).  거짓 문장은 모두 딱 한 요소를 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (d) → (b) → (a) → (c)");
-B("ⓓ 노르웨이가 특별한 호텔을 짓기 시작한다(문장 3) → ⓑ 호수 위 높은 기둥 위에 지어진다(문장 6) → ⓐ 햇빛으로 에너지를 얻는다(문장 8) → ⓒ 손님이 머물며 지구를 지키는 법을 배운다(문장 11). 아직 짓는 중인 건물이라 will이 계속 나온다 — 미래의 일을 순서대로 따라가는 것이 핵심이다.", true);
+Hs("R2   사건 순서   ·   (a) → (c) → (b) → (d)");
+B("ⓐ 노르웨이가 특별한 호텔을 짓기 시작한다(문장 3) → ⓒ 호수 위 높은 기둥 위에 지어진다(문장 6) → ⓑ 햇빛으로 에너지를 얻는다(문장 8) → ⓓ 손님이 머물며 지구를 지키는 법을 배운다(문장 11). 아직 짓는 중인 건물이라 will이 계속 나온다 — 미래의 일을 순서대로 따라가는 것이 핵심이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

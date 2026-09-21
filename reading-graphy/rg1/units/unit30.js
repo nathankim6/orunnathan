@@ -87,19 +87,19 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① The airbag jeans are made from the weakest denim in the world.",
- "② Riding a motorcycle is more dangerous than driving a car.",
- "③ Many injuries from serious accidents happen to the lower body.",
- "④ The airbags blow up when a rider falls off his motorcycle.",
- "⑤ Riders can use the airbag jeans many times."].forEach(c => K.push(ch(c)));
+["① Riding a motorcycle is more dangerous than driving a car.",
+ "② Many injuries from serious accidents happen to the lower body.",
+ "③ The airbags blow up when a rider falls off his motorcycle.",
+ "④ Riders can use the airbag jeans many times.",
+ "⑤ The airbag jeans are made from the weakest denim in the world."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① their motorcycles",
  "② regular pants",
- "③ the airbag jeans",
- "④ the knees and hips",
- "⑤ serious accidents"].forEach(c => K.push(ch(c)));
+ "③ the knees and hips",
+ "④ serious accidents",
+ "⑤ the airbag jeans"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -357,8 +357,8 @@ K.push(sp(120));
 K.push(box([
   ...["ⓐ The airbags blow up right away.",
       "ⓑ The rider uses the same jeans again later.",
-      "ⓒ The rider falls off his motorcycle.",
-      "ⓓ A rider puts on the airbag jeans."]
+      "ⓒ A rider puts on the airbag jeans.",
+      "ⓓ The rider falls off his motorcycle."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -399,14 +399,14 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 jeans · safe · comfortable   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 F · 4 T · 5 F · 6 T · 7 T · 8 F", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (d) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ④");
 B("이 글은 오토바이 사고에서 몸을 지켜 주는 에어백 청바지(문장 3·6–10)와 일반 바지처럼 편안하다는 장점(문장 11–12)을 소개한다. 소재(에어백 청바지)와 특징(안전하고 편안함)을 담은 ④이 제목이다. ②·⑤는 지엽적 오답, ①·③는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ①");
-B("문장 7에서 이 청바지는 세계에서 가장 튼튼한(strongest) 데님으로 만들어진다. 가장 약한 데님이라고 한 ①이 본문과 반대된다. ②은 문장 1, ③는 문장 4, ④는 문장 9, ⑤는 문장 12에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 7에서 이 청바지는 세계에서 가장 튼튼한(strongest) 데님으로 만들어진다. 가장 약한 데님이라고 한 ⑤이 본문과 반대된다. ①은 문장 1, ②는 문장 4, ③는 문장 9, ④는 문장 12에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) them은 앞에서 계속 이야기해 온 에어백 청바지를 가리킨다. 여러 번 다시 쓸 수 있는 것이 무엇인지 생각하면 된다 — 지시어는 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   These airbags protect the rider from getting hurt.");
 B("문장 10을 그대로 복원하는 문제다. ① 첫 글자는 대문자 These.   ② 주어가 복수이므로 동사는 protect.   ③ protect A from B(‘A를 B로부터 지키다’)의 from 자리를 지킨다.", true);
@@ -422,8 +422,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 T · 2 F · 3 F · 4 T · 5 F · 6 T · 7 T · 8 F");
    B("1 T — 문장 5.   2 F — 문장 12: 한 번이 아니라 여러 번 쓸 수 있다.   3 F — 문장 11: 일반 바지만큼 편안하다.   4 T — 문장 6.   5 F — 문장 4: 상체(upper)가 아니라 하체(lower body)에 부상이 많다.   6 T — 문장 9.   7 T — 문장 1.   8 F — 문장 7: 가장 약한(weakest)이 아니라 가장 튼튼한(strongest) 데님이다.  거짓 문장은 모두 딱 한 요소(upper, weakest, heavier, only one time)를 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (d) → (c) → (a) → (b)");
-B("ⓓ 라이더가 에어백 청바지를 입는다 → ⓒ 오토바이에서 떨어진다(문장 9) → ⓐ 에어백이 곧바로 부풀어 오른다(문장 9) → ⓑ 나중에 같은 청바지를 다시 쓴다(문장 12). '여러 번 쓸 수 있다'는 마지막 문장이 곧 마지막 단계라는 것을 잡아내는 것이 핵심이다.", true);
+Hs("R2   사건 순서   ·   (c) → (d) → (a) → (b)");
+B("ⓒ 라이더가 에어백 청바지를 입는다 → ⓓ 오토바이에서 떨어진다(문장 9) → ⓐ 에어백이 곧바로 부풀어 오른다(문장 9) → ⓑ 나중에 같은 청바지를 다시 쓴다(문장 12). '여러 번 쓸 수 있다'는 마지막 문장이 곧 마지막 단계라는 것을 잡아내는 것이 핵심이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

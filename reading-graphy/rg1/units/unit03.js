@@ -82,14 +82,14 @@ K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Fix an Old Boat at Sea",
  "② The Best Recipes with Ketchup",
- "③ A Fun Family Trip to the Caribbean",
- "④ How the Navy Trains New Sailors",
- "⑤ Saved by a Bottle of Ketchup"].forEach(c => K.push(ch(c)));
+ "③ Saved by a Bottle of Ketchup",
+ "④ A Fun Family Trip to the Caribbean",
+ "⑤ How the Navy Trains New Sailors"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① When the navy rescued Elvis, he was very sick.",
- "② Elvis was fixing his boat when the weather changed.",
+["① Elvis was fixing his boat when the weather changed.",
+ "② When the navy rescued Elvis, he was very sick.",
  "③ After 24 days, Elvis saw a plane and sent a signal.",
  "④ Elvis mixed ketchup and seasonings with rainwater.",
  "⑤ Heinz gave Elvis a new boat."].forEach(c => K.push(ch(c)));
@@ -412,10 +412,10 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ⑤");
-B("이 글은 바다에서 길을 잃은 엘비스가 케첩과 빗물로 24일을 버텨 살아남은 이야기다(문장 5·8–10). 소재(케첩)와 특징(그 덕분에 살아남음)을 함께 담은 ⑤이 정답이다. ①·④는 지엽적이고, ②·③은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ①");
-B("문장 7에서 해군이 구조했을 때 엘비스는 건강 상태가 좋았다(in good health)고 했으므로, 몹시 아팠다는 ①은 본문과 반대된다. ②은 문장 1–2, ③은 문장 5, ④은 문장 8–9, ⑤는 문장 12–13에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 바다에서 길을 잃은 엘비스가 케첩과 빗물로 24일을 버텨 살아남은 이야기다(문장 5·8–10). 소재(케첩)와 특징(그 덕분에 살아남음)을 함께 담은 ③이 정답이다. ①·⑤는 지엽적이고, ②·④은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 7에서 해군이 구조했을 때 엘비스는 건강 상태가 좋았다(in good health)고 했으므로, 몹시 아팠다는 ②은 본문과 반대된다. ①은 문장 1–2, ③은 문장 5, ④은 문장 8–9, ⑤는 문장 12–13에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) it은 바로 앞 문장 5에서 엘비스가 거울로 보낸 신호(a signal)를 가리킨다. 비행기에 탄 사람들이 알아챈 것이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   Poor Elvis was lost in the Caribbean Sea!");

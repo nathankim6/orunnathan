@@ -81,8 +81,8 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① How to Bake Cookies with Sesame and Miso",
- "② Fortune Cookies: Japanese Roots, American Favorite",
+["① Fortune Cookies: Japanese Roots, American Favorite",
+ "② How to Bake Cookies with Sesame and Miso",
  "③ The History of Chinese Restaurants in Kyoto",
  "④ Why Americans Do Not Eat Raw Fish",
  "⑤ The Best Desserts to Serve After Dinner"].forEach(c => K.push(ch(c)));
@@ -90,9 +90,9 @@ K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Diners receive fortune cookies after meals in many Chinese restaurants.",
- "② The 1870s cookie was larger than today’s fortune cookies.",
- "③ Japanese people started Chinese restaurants in the U.S.",
- "④ Fortune cookies actually came from China.",
+ "② Fortune cookies actually came from China.",
+ "③ The 1870s cookie was larger than today’s fortune cookies.",
+ "④ Japanese people started Chinese restaurants in the U.S.",
  "⑤ Billions of fortune cookies are produced every year."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) they가 가리키는 것으로 가장 적절한 것은?"));
@@ -100,8 +100,8 @@ K.push(sp(65));
 ["① the Americans who liked raw fish",
  "② the fortune cookies made near Kyoto",
  "③ the diners in Chinese restaurants",
- "④ the cooks who invented vanilla",
- "⑤ the Japanese people who moved to the U.S."].forEach(c => K.push(ch(c)));
+ "④ the Japanese people who moved to the U.S.",
+ "⑤ the cooks who invented vanilla"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -253,9 +253,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 포춘 쿠키의 진짜 유래와 오늘의 자리",
- "② 참깨와 미소로 쿠키를 만드는 법",
- "③ 중국 식당에서 파는 여러 요리"].forEach(c =>
+["① 참깨와 미소로 쿠키를 만드는 법",
+ "② 중국 식당에서 파는 여러 요리",
+ "③ 포춘 쿠키의 진짜 유래와 오늘의 자리"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -360,10 +360,10 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "포춘 쿠키에게 일어난 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ A cookie known as “tsujiura senbei” was made near Kyoto.",
-      "ⓑ Japanese people moved to the U.S. and introduced the cookies.",
-      "ⓒ The recipe changed to suit American tastes.",
-      "ⓓ Japanese people started Chinese restaurants in the U.S."]
+  ...["ⓐ Japanese people moved to the U.S. and introduced the cookies.",
+      "ⓑ The recipe changed to suit American tastes.",
+      "ⓒ Japanese people started Chinese restaurants in the U.S.",
+      "ⓓ A cookie known as “tsujiura senbei” was made near Kyoto."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -401,22 +401,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문12 ", { size: 17, bold: true, color: NAVY2 }), t("Today(M)·billions of fortune cookies(S)·are produced(△V)·every year(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 '어린 왕자'라고 알려진 책을 읽었다  (2) 지난주에 날씨가 더 추워졌다  (3) '바둑'이라고 알려진 게임이 한국에서 더 인기 있어졌다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 cookies · Japan · culture   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 cookies · Japan · culture   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 T · 4 F · 5 F · 6 T · 7 T · 8 F", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (b) → (d) → (c)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (c) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ②");
-B("이 글은 포춘 쿠키가 사실 일본에서 왔지만(문장 3–4) 미국 문화 속 중요한 후식이 되었다(문장 12–14)는 이야기다. 소재(포춘 쿠키)와 특징(일본 유래·미국의 사랑)을 함께 담은 ②이 제목으로 적절하다. ①·③은 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 3에서 포춘 쿠키는 중국이 아니라 실제로는 일본에서 왔다(actually from Japan)고 했다. ④가 본문과 반대된다. ①은 문장 2, ②은 문장 5–6, ③는 문장 9, ⑤는 문장 12에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 01   제목   ·   정답 ①");
+B("이 글은 포춘 쿠키가 사실 일본에서 왔지만(문장 3–4) 미국 문화 속 중요한 후식이 되었다(문장 12–14)는 이야기다. 소재(포춘 쿠키)와 특징(일본 유래·미국의 사랑)을 함께 담은 ①이 제목으로 적절하다. ②·③은 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 3에서 포춘 쿠키는 중국이 아니라 실제로는 일본에서 왔다(actually from Japan)고 했다. ②가 본문과 반대된다. ①은 문장 2, ③은 문장 5–6, ④는 문장 9, ⑤는 문장 12에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) they는 같은 문장 앞부분의 Japanese people을 가리킨다. 쿠키를 미국에 들여온 주체가 누구인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   The cookie remains important in American culture.");
 B("문장 13을 그대로 복원하는 문제다. ① 첫 글자는 대문자 The.   ② 주어가 단수이므로 remains에 -s.   ③ remain 뒤에는 형용사 important가 온다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 cookies · Japan · culture     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 포춘 쿠키의 진짜 유래와 오늘의 자리를 소개한다. ② 만드는 법은 나오지 않고, ③ 중국 식당은 배경일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 cookies · Japan · culture     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 포춘 쿠키의 진짜 유래와 오늘의 자리를 소개한다. ① 만드는 법은 나오지 않고, ② 중국 식당은 배경일 뿐이다.");
 B("1-2   ○표 할 세 단어: cookies(힌트① 주인공) · Japan(힌트② 진짜 출신지) · culture(힌트③ 지금 자리 잡은 곳). 나머지 셋(sesame · dessert · restaurants)은 본문에 나오지만 주제문에는 들어가지 않는다 — 재료와 배경일 뿐이다.");
 B("1-3   문장 6 — It은 1870년대 쿠키에 ○ (문장 4–5의 그 쿠키).   문장 7 — they는 일본 사람들에 ○ (미국으로 이주한 사람들).   문장 11 — They는 포춘 쿠키에 ○ (문장 10의 그 쿠키들).");
 B("[학습 포인트]   같은 they라도 문장 7에서는 사람을, 문장 11에서는 쿠키를 가리킨다. 지시어는 모양이 아니라 앞 문장의 짝으로 찾아야 한다.", true);
@@ -427,8 +427,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 F · 6 T · 7 T · 8 F");
    B("1 T — 문장 10.   2 F — 문장 12: 소수가 아니라 수십억 개(billions)가 생산된다.   3 T — 문장 1.   4 F — 문장 8: 좋아한 게 아니라 좋아하지 않았다(didn’t like).   5 F — 문장 3: 중국이 아니라 일본(Japan)에서 왔다.   6 T — 문장 4.   7 T — 문장 7.   8 F — 문장 6: 더 작은 게 아니라 더 컸다(larger).  거짓 문장은 모두 딱 한 요소(China, smaller, loved, only a few)를 비튼 것이다 — 그 한 요소를 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (a) → (b) → (d) → (c)");
-B("ⓐ 1870년대 교토 근처에서 ‘쓰지우라 센베이’가 만들어진다(문장 4) → ⓑ 1900년대에 일본 사람들이 미국으로 건너가 쿠키를 소개한다(문장 7) → ⓓ 일본 식당 대신 중국 식당을 연다(문장 9) → ⓒ 미국인 입맛에 맞게 조리법이 바뀐다(문장 10). 본문은 오늘의 모습(문장 1–3)을 먼저 보여 준 뒤 유래로 거슬러 올라간다 — 서술 순서와 실제 순서가 다른 지점이다.", true);
+Hs("R2   사건 순서   ·   (d) → (a) → (c) → (b)");
+B("ⓓ 1870년대 교토 근처에서 ‘쓰지우라 센베이’가 만들어진다(문장 4) → ⓐ 1900년대에 일본 사람들이 미국으로 건너가 쿠키를 소개한다(문장 7) → ⓒ 일본 식당 대신 중국 식당을 연다(문장 9) → ⓑ 미국인 입맛에 맞게 조리법이 바뀐다(문장 10). 본문은 오늘의 모습(문장 1–3)을 먼저 보여 준 뒤 유래로 거슬러 올라간다 — 서술 순서와 실제 순서가 다른 지점이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

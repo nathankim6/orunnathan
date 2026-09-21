@@ -79,8 +79,8 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Hungry Goats: Firefighters with Four Legs",
- "② How to Build a Safe Apartment in California",
+["① How to Build a Safe Apartment in California",
+ "② Hungry Goats: Firefighters with Four Legs",
  "③ The Best Plants to Grow in a Dry Area",
  "④ Why Goats Drink a Lot of Water",
  "⑤ A Guide to Football Fields in Sacramento"].forEach(c => K.push(ch(c)));
@@ -98,8 +98,8 @@ K.push(sp(65));
 ["① the fire moving toward the building",
  "② the city letting the goats out",
  "③ the apartment building being safe",
- "④ the poisonous plants in the area",
- "⑤ the goats eating the dry plants every day"].forEach(c => K.push(ch(c)));
+ "④ the goats eating the dry plants every day",
+ "⑤ the poisonous plants in the area"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -405,11 +405,11 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (d) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("갑자기 멈춘 산불의 정체가 400마리 염소였다는 사건(문장 1–5)과 염소가 잡초 제거·화재 예방에 모두 뛰어나다는 평가(문장 10–12)를 담은 글이다. 소재와 평가를 함께 담은 ①이 제목이다. ④은 본문과 반대이고 ②·③·⑤는 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ②");
+B("갑자기 멈춘 산불의 정체가 400마리 염소였다는 사건(문장 1–5)과 염소가 잡초 제거·화재 예방에 모두 뛰어나다는 평가(문장 10–12)를 담은 글이다. 소재와 평가를 함께 담은 ②이 제목이다. ④은 본문과 반대이고 ①·③·⑤는 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ④");
 B("문장 7에서 염소는 독이 있는 식물까지(including the poisonous ones) 잘 먹는다고 했으므로, 독 없는 식물만 먹었다는 ④은 본문과 다르다. ①은 문장 1, ②은 문장 4–5, ③는 문장 7, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) That은 바로 앞 문장 8의 내용, 곧 염소들이 매일 마른 풀을 먹어 치운 일을 가리킨다. that은 단어 하나가 아니라 앞 문장 전체를 받을 수 있다.", true);
 Hs("독해 04   배열 영작   ·   Plus, goats use less water than firefighters.");
 B("문장 11을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Plus — 뒤의 콤마까지 함께 쓴다.   ② less water가 한 덩어리.   ③ 비교 대상 firefighters 앞에 than을 놓는다.", true);

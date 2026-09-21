@@ -80,24 +80,24 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Make Paper and Ink at Home",
- "② Why Old Books Have a Special Smell",
- "③ The Best Coffee Shops in Town",
- "④ How to Keep Books from Turning Yellow",
- "⑤ Let’s Read More Books Every Day"].forEach(c => K.push(ch(c)));
+ "② The Best Coffee Shops in Town",
+ "③ How to Keep Books from Turning Yellow",
+ "④ Let’s Read More Books Every Day",
+ "⑤ Why Old Books Have a Special Smell"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① The special smell of old books comes from a chemical.",
- "② Paper, ink, and glue are used to make books.",
- "③ Many people said old books smelled like chocolate or coffee.",
- "④ Books today use paper with less lignin.",
- "⑤ Lignin breaks down when a book gets newer."].forEach(c => K.push(ch(c)));
+ "② Lignin breaks down when a book gets newer.",
+ "③ Paper, ink, and glue are used to make books.",
+ "④ Many people said old books smelled like chocolate or coffee.",
+ "⑤ Books today use paper with less lignin."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) It이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the library",
- "② lignin",
- "③ the glue in a book",
+ "② the glue in a book",
+ "③ lignin",
  "④ a cup of coffee",
  "⑤ the study about smells"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -357,8 +357,8 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "책과 냄새에 일어나는 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ Paper, ink, and glue are used to make a book.",
-      "ⓑ Lignin breaks down and makes a unique smell.",
+  ...["ⓐ Lignin breaks down and makes a unique smell.",
+      "ⓑ Paper, ink, and glue are used to make a book.",
       "ⓒ Books today use paper with less lignin.",
       "ⓓ The book slowly gets older on a shelf."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
@@ -401,14 +401,14 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 lignin · smell · paper   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 T · 4 T · 5 T · 6 F · 7 F · 8 F", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (d) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ②");
-B("이 글은 오래된 책 특유의 냄새가 리그닌이라는 화학 물질 때문임을 설명한다(문장 2·6). 소재와 이유를 함께 담은 ②이 제목으로 알맞다. ①·④는 지엽적이고, ③·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 6에서 리그닌은 책이 더 오래될 때(gets older) 분해된다고 했다. 새것이 될 때라는 ⑤은 본문과 반대다. ①은 문장 1–2, ②는 문장 3, ③는 문장 7, ④는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ②");
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 오래된 책 특유의 냄새가 리그닌이라는 화학 물질 때문임을 설명한다(문장 2·6). 소재와 이유를 함께 담은 ⑤이 제목으로 알맞다. ①·③는 지엽적이고, ②·④는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 6에서 리그닌은 책이 더 오래될 때(gets older) 분해된다고 했다. 새것이 될 때라는 ②은 본문과 반대다. ①은 문장 1–2, ③는 문장 3, ④는 문장 7, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) It은 바로 앞 문장 9의 주어 lignin을 그대로 받는다. 좋은 냄새만 내는 게 아니라 책장을 노랗게도 만든다는 흐름이다.", true);
 Hs("독해 04   배열 영작   ·   So, books today use paper with less lignin.");
 B("문장 11을 그대로 복원하는 문제다. ① 첫 글자는 대문자 So, 뒤에 콤마.   ② books today가 한 덩어리 주어.   ③ with less lignin이 paper를 뒤에서 꾸민다.", true);
@@ -424,8 +424,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 T · 5 T · 6 F · 7 F · 8 F");
    B("1 T — 문장 7.   2 F — 문장 8: 초콜릿과 커피에도 들어 있다.   3 T — 문장 1.   4 T — 문장 10.   5 T — 문장 3.   6 F — 문장 6: 새것이 될 때가 아니라 더 오래될 때다.   7 F — 문장 2: 풀이 아니라 리그닌 때문이다.   8 F — 문장 11: 더 많은 게 아니라 더 적은 리그닌이다.  거짓 문장은 모두 한 요소(glue, newer, not, more)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (a) → (d) → (b) → (c)");
-B("ⓐ 종이·잉크·풀로 책을 만든다(문장 3) → ⓓ 책이 서가에서 천천히 오래된다(문장 6) → ⓑ 리그닌이 분해되며 독특한 냄새를 만든다(문장 6) → ⓒ 오늘날의 책은 리그닌이 적은 종이를 쓴다(문장 11). 본문은 냄새 이야기를 먼저 꺼내지만, 실제 순서는 만들기 → 오래되기 → 냄새다.", true);
+Hs("R2   사건 순서   ·   (b) → (d) → (a) → (c)");
+B("ⓑ 종이·잉크·풀로 책을 만든다(문장 3) → ⓓ 책이 서가에서 천천히 오래된다(문장 6) → ⓐ 리그닌이 분해되며 독특한 냄새를 만든다(문장 6) → ⓒ 오늘날의 책은 리그닌이 적은 종이를 쓴다(문장 11). 본문은 냄새 이야기를 먼저 꺼내지만, 실제 순서는 만들기 → 오래되기 → 냄새다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

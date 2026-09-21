@@ -80,17 +80,17 @@ K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How Sunlight Becomes Electricity",
  "② The Best Lakes for Swimming in Summer",
- "③ Floating Solar Panels: A Good Idea, But Not Perfect",
- "④ Why Lake Water Evaporates So Fast",
+ "③ Why Lake Water Evaporates So Fast",
+ "④ Floating Solar Panels: A Good Idea, But Not Perfect",
  "⑤ How to Save Money on Your Electricity Bill"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Most solar panels are on land.",
  "② Floating panels are placed on platforms fixed to the bottom of lakes.",
- "③ Floating panels can save water by reducing evaporation.",
- "④ Too many solar panels could harm the plants and animals in the water.",
- "⑤ Floating panels cost about 25% less than land panels."].forEach(c => K.push(ch(c)));
+ "③ Floating panels cost about 25% less than land panels.",
+ "④ Floating panels can save water by reducing evaporation.",
+ "⑤ Too many solar panels could harm the plants and animals in the water."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) They가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
@@ -250,8 +250,8 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 호수를 깨끗하게 지키는 법",
- "② 물 위에 띄우는 태양광 패널",
+["① 물 위에 띄우는 태양광 패널",
+ "② 호수를 깨끗하게 지키는 법",
  "③ 햇빛이 전기가 되는 원리"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
@@ -357,9 +357,9 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "물 위 태양광을 둘러싼 일 ⓐ~ⓓ를 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ Most solar panels are built on land.",
-      "ⓑ Scientists say each lake’s water should be studied.",
-      "ⓒ People try putting floating panels on water.",
+  ...["ⓐ Scientists say each lake’s water should be studied.",
+      "ⓑ People try putting floating panels on water.",
+      "ⓒ Most solar panels are built on land.",
       "ⓓ People find both benefits and problems with them."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -398,22 +398,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("scientists(S)·say(△V)·it(S′)·is(△V′)·to study~(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 젓가락은 국수를 먹는 데 사용된다  (2) 그녀는 설거지를 함으로써 엄마를 도왔다  (3) 물은 수도꼭지를 잠금으로써 절약된다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 solar panels · floating · benefits   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 solar panels · floating · benefits   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 F · 5 T · 6 T · 7 T · 8 F", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (d) → (b)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (b) → (d) → (a)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("이 글은 물 위에 띄우는 태양광 패널의 이점(문장 5–8)과 아직 남은 문제(문장 9–11)를 함께 소개한다. 소재(floating solar panels)와 평가(좋은 생각이지만 완벽하지 않다)를 함께 담은 ③이 제목으로 적절하다. ①·④은 지엽적 오답, ②·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 4에서 물 위 패널은 땅 위 패널보다 약 25% '더 비싸다(more)'고 했으므로, 더 싸다는 ⑤는 본문과 반대된다. ①은 문장 2, ②은 문장 3, ③은 문장 7, ④는 문장 10에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 물 위에 띄우는 태양광 패널의 이점(문장 5–8)과 아직 남은 문제(문장 9–11)를 함께 소개한다. 소재(floating solar panels)와 평가(좋은 생각이지만 완벽하지 않다)를 함께 담은 ④이 제목으로 적절하다. ①·③은 지엽적 오답, ②·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 4에서 물 위 패널은 땅 위 패널보다 약 25% '더 비싸다(more)'고 했으므로, 더 싸다는 ③는 본문과 반대된다. ①은 문장 2, ②은 문장 3, ④은 문장 7, ⑤는 문장 10에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) They는 바로 앞 문장 2의 floating solar panels를 가리킨다. 호수 바닥에 고정된 구조물 위에 놓이는 것이 무엇인지 생각하면 된다 — 문장 2의 them(태양광 패널 전체)과는 범위가 다르다.", true);
 Hs("독해 04   배열 영작   ·   Solar panels are used to turn sunlight into electricity.");
 B("문장 1을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Solar.   ② 수동태 are used가 한 덩어리.   ③ turn A into B — '~을 …으로 바꾸다'의 into 자리에 주의한다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 solar panels · floating · benefits     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 물 위에 띄우는 태양광 패널을 소개한다. ① 호수 관리법이 아니고, ③ 발전 원리는 첫 문장의 배경일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 solar panels · floating · benefits     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 물 위에 띄우는 태양광 패널을 소개한다. ② 호수 관리법이 아니고, ③ 발전 원리는 첫 문장의 배경일 뿐이다.");
 B("1-2   ○표 할 세 단어: solar panels(힌트① 주인공) · floating(힌트② 놓이는 방식) · benefits(힌트③ 비싸도 좋다고 보는 이유). 나머지 셋(lakes · evaporation · electricity)은 본문에 등장하지만 주제문에 들어가지 않는다 — 장소와 세부 사항이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
 B("1-3   문장 3 — They는 물 위의 패널에 ○ (문장 2의 floating solar panels).   문장 6 — these solar panels는 떠 있는 패널에 ○.   문장 11 — these panels도 떠 있는 패널에 ○.");
 B("[학습 포인트]   문장 2의 them은 태양광 패널 전체지만, 그 뒤의 They·these panels는 '물 위에 뜬 패널'만 가리킨다. 지시어가 나올 때마다 가리키는 범위가 좁아졌는지 확인하는 습관을 들이자.", true);
@@ -424,8 +424,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 T · 3 F · 4 F · 5 T · 6 T · 7 T · 8 F");
    B("1 F — 문장 4: 25% 더 싼 게 아니라 더 비싸다(more).   2 T — 문장 1.   3 F — 문장 11: 중요하지 않다가 아니라 중요하다(important)고 말한다.   4 F — 문장 7: 증발을 늘려서가 아니라 줄여서(reducing) 물을 아낀다.   5 T — 문장 6.   6 T — 문장 3.   7 T — 문장 10.   8 F — 문장 2: 물 위가 아니라 대부분 땅(land) 위에 있다.  거짓 문장은 모두 딱 한 요소(water, less, increasing, not)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (a) → (c) → (d) → (b)");
-B("ⓐ 태양광 패널이 대부분 땅 위에 세워진다(문장 2) → ⓒ 최근 사람들이 물 위에 패널을 띄워 본다(문장 2) → ⓓ 이점과 문제점이 함께 드러난다(문장 5–10) → ⓑ 과학자들이 호수마다 물에 미칠 영향을 연구해야 한다고 말한다(문장 11). 한 문장 안에 '예전(land)'과 '최근(recently)'이 함께 있으므로, 시간 표시어를 놓치지 않는 것이 핵심이다.", true);
+Hs("R2   사건 순서   ·   (c) → (b) → (d) → (a)");
+B("ⓒ 태양광 패널이 대부분 땅 위에 세워진다(문장 2) → ⓑ 최근 사람들이 물 위에 패널을 띄워 본다(문장 2) → ⓓ 이점과 문제점이 함께 드러난다(문장 5–10) → ⓐ 과학자들이 호수마다 물에 미칠 영향을 연구해야 한다고 말한다(문장 11). 한 문장 안에 '예전(land)'과 '최근(recently)'이 함께 있으므로, 시간 표시어를 놓치지 않는 것이 핵심이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

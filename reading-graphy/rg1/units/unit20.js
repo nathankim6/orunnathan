@@ -82,16 +82,16 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① A Funny Fall: Lisa’s Story from Summer Camp",
- "② How to Wear a Chicken Costume",
- "③ The Rules of a Costume Relay Race",
+["① How to Wear a Chicken Costume",
+ "② The Rules of a Costume Relay Race",
+ "③ A Funny Fall: Lisa’s Story from Summer Camp",
  "④ The Best Summer Camps in the Country",
  "⑤ How to Clean Muddy Clothes at Home"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Lisa is having a lot of fun at summer camp.",
- "② Lisa was angry because everyone laughed at her.",
+["① Lisa was angry because everyone laughed at her.",
+ "② Lisa is having a lot of fun at summer camp.",
  "③ In the race, the runners took off the costumes for the next person.",
  "④ Lisa had to wear a chicken costume on her turn.",
  "⑤ Lisa made lots of new friends at camp."].forEach(c => K.push(ch(c)));
@@ -101,8 +101,8 @@ K.push(sp(65));
 ["① the costume relay race",
  "② the big mud puddle",
  "③ the chicken costume",
- "④ the name “Muddy Chicken”",
- "⑤ Lisa’s summer camp"].forEach(c => K.push(ch(c)));
+ "④ Lisa’s summer camp",
+ "⑤ the name “Muddy Chicken”"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -255,8 +255,8 @@ K.push(spF(4, 300, 0.10));
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 ["① 닭 요리를 맛있게 만드는 방법",
- "② 캠프에서 겪은 일을 전하는 리사의 편지",
- "③ 의상 릴레이 경주의 규칙"].forEach(c =>
+ "② 의상 릴레이 경주의 규칙",
+ "③ 캠프에서 겪은 일을 전하는 리사의 편지"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -361,9 +361,9 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "리사에게 일어난 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ Lisa had to wear a chicken costume.",
-      "ⓑ Lisa fell into a big mud puddle.",
-      "ⓒ Lisa’s friends gave her the name “Muddy Chicken.”",
+  ...["ⓐ Lisa fell into a big mud puddle.",
+      "ⓑ Lisa’s friends gave her the name “Muddy Chicken.”",
+      "ⓒ Lisa had to wear a chicken costume.",
       "ⓓ Lisa tripped over the chicken feet."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -402,22 +402,22 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("문13 ", { size: 17, bold: true, color: NAVY2 }), t("Camp(S)·has been(△V 한 덩어리)·and[네모]·I(S′)·made(△V′)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 그녀는 자기 방에서 책을 읽고 있다  (2) 나는 어제 내 방을 청소해야 했다  (3) 그는 버스를 잡아야 했기 때문에 빨리 달리고 있다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 camp · mud · great   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 camp · mud · great   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 F · 4 T · 5 T · 6 T · 7 F · 8 F", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (d) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (d) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("리사가 캠프에서 닭 의상을 입고 달리다 진흙 웅덩이에 빠진 일(문장 6–8)과, 그래도 캠프가 아주 좋다는 마음(문장 13)을 전하는 편지다. 사건과 글쓴이를 함께 담은 ①이 제목으로 적절하다. ②·③은 경주의 한 부분만 건드린 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 9에서 모두가 많이 웃었고 리사도 함께 웃었다(including me)고 했으므로, 화가 났다는 ②는 본문과 반대된다. ①은 문장 2, ③는 문장 5, ④은 문장 6, ⑤는 문장 13에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 01   제목   ·   정답 ③");
+B("리사가 캠프에서 닭 의상을 입고 달리다 진흙 웅덩이에 빠진 일(문장 6–8)과, 그래도 캠프가 아주 좋다는 마음(문장 13)을 전하는 편지다. 사건과 글쓴이를 함께 담은 ③이 제목으로 적절하다. ①·②은 경주의 한 부분만 건드린 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 9에서 모두가 많이 웃었고 리사도 함께 웃었다(including me)고 했으므로, 화가 났다는 ①는 본문과 반대된다. ②은 문장 2, ③는 문장 5, ④은 문장 6, ⑤는 문장 13에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) it은 바로 앞에 나온 별명 “Muddy Chicken”을 가리킨다. 친구들이 붙여 준 그 이름이 그저 재미있는 농담일 뿐이라는 뜻이다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   I fell into a big mud puddle!");
 B("문장 8을 그대로 복원하는 문제다. ① 첫 글자는 대문자 I.   ② fall의 과거형은 fell.   ③ into 뒤에 a big mud puddle 순서로 놓고, 느낌표를 빠뜨리지 않는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 camp · mud · great     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 여름 캠프에서 겪은 일을 부모님께 전하는 리사의 편지다. ① 닭은 의상 이름일 뿐 요리 이야기가 아니고, ③ 경주 규칙은 사건의 배경일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 camp · mud · great     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 여름 캠프에서 겪은 일을 부모님께 전하는 리사의 편지다. ① 닭은 의상 이름일 뿐 요리 이야기가 아니고, ② 경주 규칙은 사건의 배경일 뿐이다.");
 B("1-2   ○표 할 세 단어: camp(힌트① 리사가 있는 곳) · mud(힌트② 리사가 빠진 것) · great(힌트③ 캠프에 대한 평가). 나머지 셋(costume · chicken · friends)은 본문에 나오지만 사건의 소품과 배경이다.");
 B("1-3   문장 7 — the chicken feet는 닭 의상의 발에 ○ (문장 6의 그 의상).   문장 12 — it은 Muddy Chicken에 ○ (친구들이 붙인 별명).   문장 14 — you both는 엄마와 아빠에 ○ (문장 1의 받는 사람).", true);
 
@@ -427,8 +427,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 T · 2 F · 3 F · 4 T · 5 T · 6 T · 7 F · 8 F");
    B("1 T — 문장 12.   2 F — 문장 9: 아무도 웃지 않은 게 아니라 모두가(Everyone) 웃었다.   3 F — 문장 3: 지난주가 아니라 어제(yesterday) 있었던 일이다.   4 T — 문장 4.   5 T — 문장 2.   6 T — 문장 7–8.   7 F — 문장 6: 괴물이 아니라 닭(chicken) 의상이다.   8 F — 문장 13: 한 명이 아니라 새 친구를 많이(lots of) 사귀었다.  거짓 문장은 모두 본문에서 딱 한 요소(last week, monster, Nobody, only one)를 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (a) → (d) → (b) → (c)");
-B("ⓐ 리사가 닭 의상을 입는다(문장 6) → ⓓ 닭 발에 걸려 넘어진다(문장 7) → ⓑ 진흙 웅덩이에 빠진다(문장 8) → ⓒ 친구들이 “Muddy Chicken”이라는 별명을 붙인다(문장 12). 이 편지는 일이 일어난 순서 그대로 쓰였으므로, 문장 번호를 따라가면 순서가 보인다.", true);
+Hs("R2   사건 순서   ·   (c) → (d) → (a) → (b)");
+B("ⓒ 리사가 닭 의상을 입는다(문장 6) → ⓓ 닭 발에 걸려 넘어진다(문장 7) → ⓐ 진흙 웅덩이에 빠진다(문장 8) → ⓑ 친구들이 “Muddy Chicken”이라는 별명을 붙인다(문장 12). 이 편지는 일이 일어난 순서 그대로 쓰였으므로, 문장 번호를 따라가면 순서가 보인다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

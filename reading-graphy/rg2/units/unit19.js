@@ -100,18 +100,18 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① A Village That Has to Move Because of Climate Change",
- "② The Beautiful Winter Weather of Alaska",
- "③ How to Build Safe Houses on Frozen Land",
- "④ Fun Things to Do in the Arctic",
+["① The Beautiful Winter Weather of Alaska",
+ "② How to Build Safe Houses on Frozen Land",
+ "③ Fun Things to Do in the Arctic",
+ "④ A Village That Has to Move Because of Climate Change",
  "⑤ Why People Love Village Life"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Newtok is a small village on the west coast of Alaska.",
  "② Permafrost is a kind of soil that stays frozen all the time.",
- "③ Houses in Newtok shake when people walk inside them.",
- "④ The people of Newtok feel only sad about the move.",
+ "③ The people of Newtok feel only sad about the move.",
+ "④ Houses in Newtok shake when people walk inside them.",
  "⑤ More villages might be like Newtok in the future."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
@@ -277,8 +277,8 @@ K.push(spF(4, 300, 0.10));
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 ["① 알래스카의 춥고 아름다운 날씨",
- "② 기후 변화로 이사해야 하는 마을",
- "③ 영구 동토층에 사는 동물들"].forEach(c =>
+ "② 영구 동토층에 사는 동물들",
+ "③ 기후 변화로 이사해야 하는 마을"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -397,11 +397,11 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 한 마을의 문제를 알려 주는 설명문",
- "② 여행지를 소개하는 광고",
- "③ 글쓴이의 하루를 적은 일기",
- "④ 친구에게 보내는 편지",
- "⑤ 상상 속 인물이 나오는 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
+["① 여행지를 소개하는 광고",
+ "② 글쓴이의 하루를 적은 일기",
+ "③ 친구에게 보내는 편지",
+ "④ 상상 속 인물이 나오는 동화",
+ "⑤ 한 마을의 문제를 알려 주는 설명문"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
 K.push(brk());
@@ -504,7 +504,7 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 3, main: "is facing a big problem",
-    opts: ["① is enjoying a quiet life", "② is famous for its food", "③ has a big problem to solve"] },
+    opts: ["① has a big problem to solve", "② is enjoying a quiet life", "③ is famous for its food"] },
   { sn: 5, main: "stays frozen all the time",
     opts: ["① melts away every summer", "② is always hard with ice", "③ is good for growing rice"] });
 K.push(spF(7, 140, 0.16));
@@ -512,7 +512,7 @@ pairGrid(
   { sn: 11, main: "has to move to a safer place",
     opts: ["① can stay where it is now", "② wants to build a big bridge", "③ must leave for a less dangerous place"] },
   { sn: 12, main: "feel both sad and relieved",
-    opts: ["① have two feelings at the same time", "② feel nothing special about it", "③ are angry at the tourists"] });
+    opts: ["① feel nothing special about it", "② are angry at the tourists", "③ have two feelings at the same time"] });
 K.push(spF(7, 150, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -634,7 +634,7 @@ K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다.
 K.push(sp(130));
 [["문장 5", [t("It’s a kind of soil that ", { size: 19 }), t("( stays  /  stay )", { size: 19, bold: true, color: NAVY }), t(" frozen all the time.", { size: 19 })], "that(=soil, 단수) 뒤에 오는 동사의 형태는?"],
  ["문장 7", [t("But, the weather ", { size: 19 }), t("( is getting  /  getting )", { size: 19, bold: true, color: NAVY }), t(" warmer very fast.", { size: 19 })], "진행형은 be+~ing — 한 덩어리의 동사예요."],
- ["문장 10", [t("Houses in Newtok ", { size: 19 }), t("( shake  /  shakes )", { size: 19, bold: true, color: NAVY }), t(" when people walk inside them.", { size: 19 })], "주어 Houses(복수)에 맞는 동사 형태는?"],
+ ["문장 10", [t("Houses in Newtok ", { size: 19 }), t("( shakes  /  shake )", { size: 19, bold: true, color: NAVY }), t(" when people walk inside them.", { size: 19 })], "주어 Houses(복수)에 맞는 동사 형태는?"],
  ["문장 11", [t("Newtok ", { size: 19 }), t("( has to  /  have to )", { size: 19, bold: true, color: NAVY }), t(" move to a safer place.", { size: 19 })], "주어 Newtok(3인칭 단수)에 맞는 형태는?"],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
@@ -731,11 +731,11 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문13 ", { size: 17, bold: true, color: NAVY2 }), t("Newtok(S)·became(△V)·to move(M)·because of climate change(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 그녀는 '나비'라고 불리는 고양이를 기른다  (2) 그는 오늘 숙제를 끝내야 한다  (3) 나는 매일 '해피'라고 불리는 개를 산책시켜야 한다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 Newtok · move · climate change        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 이유 · 반전 · 때 · 결과   2-2 [B] 땅의 특징 · [E] 경고   2-3 ①", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 Newtok · move · climate change        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 이유 · 반전 · 때 · 결과   2-2 [B] 땅의 특징 · [E] 경고   2-3 ⑤", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (d) → (e) → (a) → (c) → (b)  ·  Newtok became one of the first villages to move because of climate change.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) frozen  (2) warmer  (3) melting  (4) move        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 3 ③  문장 5 ②  문장 11 ③  문장 12 ①", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 3 ①  문장 5 ②  문장 11 ③  문장 12 ③", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 T · 5 T · 6 T · 7 F · 8 F", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (d) → (b) → (a)", { size: 19, bold: true })], { after: 25 }),
@@ -745,16 +745,16 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) Newtok is a small village in the Arctic area.  (2) The people of Newtok feel both sad and relieved about it.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 기후 변화로 이사해야 하는 마을 뉴톡을 소개한다(문장 3·11·13). 소재와 특징을 모두 담은 ①이 제목으로 적절하다. ②·③는 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 12에서 사람들은 '슬프면서도 안도한다(both sad and relieved)'고 했으므로 ④은 본문과 다르다. ①은 문장 1–2, ②은 문장 5, ③는 문장 10, ⑤는 문장 14에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 기후 변화로 이사해야 하는 마을 뉴톡을 소개한다(문장 3·11·13). 소재와 특징을 모두 담은 ④이 제목으로 적절하다. ①·②는 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 12에서 사람들은 '슬프면서도 안도한다(both sad and relieved)'고 했으므로 ③은 본문과 다르다. ①은 문장 1–2, ②은 문장 5, ④는 문장 10, ⑤는 문장 14에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) them은 같은 문장 앞부분의 houses in Newtok을 가리킨다. 사람들이 그 '안에서' 걷는 것이 무엇인지 생각하면 된다 — 복수 them은 복수 명사를 받는다.", true);
 Hs("독해 04   배열 영작");
 B("문장 7을 그대로 복원하는 문제다. ① 첫 단어는 대문자 But, 바로 뒤에 콤마.   ② 진행형 is getting — be+~ing 한 덩어리.   ③ getting warmer — '점점 더 따뜻해지는'.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 Newtok · move · climate change     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 기후 변화 때문에 이사해야 하는 마을 뉴톡의 이야기다. ① 날씨는 배경일 뿐이고, ③ 동토층의 동물 이야기는 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 Newtok · move · climate change     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 기후 변화 때문에 이사해야 하는 마을 뉴톡의 이야기다. ① 날씨는 배경일 뿐이고, ② 동토층의 동물 이야기는 나오지 않는다.");
 B("1-2   ○표 할 세 단어: Newtok(힌트① 주인공) · move(힌트② 할 일) · climate change(힌트③ 원인). 나머지 셋(permafrost · Alaska · houses)은 설명 재료일 뿐이다.");
 B("1-3   문장 5 — It은 permafrost에 ○.   문장 8 — This는 따뜻해지는 날씨에 ○ (문장 7).   문장 10 — them은 houses에 ○.");
 B("[학습 포인트]   문장 2의 It(뉴톡)과 문장 5의 It(영구 동토층)은 같은 단어지만 가리키는 것이 다르다. 지시어마다 '무엇을 받는가'를 새로 확인하자.", true);
@@ -762,10 +762,10 @@ B("[학습 포인트]   문장 2의 It(뉴톡)과 문장 5의 It(영구 동토�
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 이유 / 반전 / 때 / 결과     2-2 [B] 땅의 특징 · [E] 경고     2-3 ①");
+Hs("STEP 2   글의 흐름   ·   2-1 이유 / 반전 / 때 / 결과     2-2 [B] 땅의 특징 · [E] 경고     2-3 ⑤");
 B("2-1   문장 3 Because of — 뉴톡이 문제를 겪는 '이유'.   문장 7 But — 오랫동안 녹지 않던 땅에 대한 '반전'.   문장 9 When — 동토층이 녹는 '때'.   문장 11 That’s why — 그래서 이사해야 한다는 '결과'.");
 B("2-2   [B] 땅의 특징(문장 4–6: 늘 얼어 있는 영구 동토층), [E] 경고(문장 13–14: 더 많은 마을이 그렇게 될지도). 보기의 '유래'는 이 글에 없는 역할이다. [A] 소개 → [B] 특징 → [C] 위기 → [D] 결정 → [E] 경고 — 문제를 다루는 설명문의 흐름이다.");
-B("2-3   정답 ①. 뉴톡이라는 마을의 사실을 알려 주는 설명문이다(현재시제, 대상의 이름과 특징). ② 광고의 신호(사라는 말·가격)가 없고, ③ 일기·④ 편지·⑤ 동화의 형식도 아니다.");
+B("2-3   정답 ⑤. 뉴톡이라는 마을의 사실을 알려 주는 설명문이다(현재시제, 대상의 이름과 특징). ① 광고의 신호(사라는 말·가격)가 없고, ② 일기·③ 편지·④ 동화의 형식도 아니다.");
 B("[학습 포인트]   문장 7의 But이 이 글의 방향을 바꾼다 — 녹지 않던 땅이 녹기 시작하는 지점. 반전 연결어 뒤에 글의 진짜 문제가 온다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 move · climate change     3-3 (d) → (e) → (a) → (c) → (b)");
 B("3-1  재료 찾기 — (2) 문장 11에서 move에 ○: 마을이 해야 하는 일이다. stay는 본문과 반대 방향. (3) 문장 13에서 climate change에 ○: 이사의 원인이다. cold weather는 문장 6의 사실일 뿐 원인이 아니다.");
@@ -774,11 +774,11 @@ B("3-3  정답 순서 — ⓓ Newtok → ⓔ became → ⓐ one of the first vil
 B("[채점 포인트]  주인공(ⓓ)이 주어로 맨 앞, 마침표가 붙은 덩어리(ⓑ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) frozen  (2) warmer  (3) melting  (4) move");
 B("(1)은 문장 5의 frozen, (2)는 문장 7의 warmer, (3)은 문장 8의 melt(→ melting), (4)는 문장 11의 move에서 가져온다. 요약문이 곧 이 글의 흐름이다: 언 땅(1) → 따뜻해짐(2) → 녹음(3) → 이사(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 3 ③   문장 5 ②   문장 11 ③   문장 12 ①  (정답 선지는 무표시)");
-B("문장 3 is facing a big problem   ① ✕ [반대] 조용한 삶을 즐긴다 — 정반대.   ② ✕ [무관] 음식으로 유명하다는 말은 지문에 없다.   ③ ○ 풀어야 할 큰 문제가 있다.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 3 ①   문장 5 ②   문장 11 ③   문장 12 ③  (정답 선지는 무표시)");
+B("문장 3 is facing a big problem   ① ○ 풀어야 할 큰 문제가 있다.   ② ✕ [반대] 조용한 삶을 즐긴다 — 정반대.   ③ ✕ [무관] 음식으로 유명하다는 말은 지문에 없다.");
 B("문장 5 stays frozen all the time   ① ✕ [반대] 여름마다 녹아 없어진다 — 정반대.   ② ○ 늘 얼음처럼 단단하다.   ③ ✕ [무관] 벼농사 이야기는 지문에 없다.");
 B("문장 11 has to move to a safer place   ① ✕ [반대] 지금 자리에 머물 수 있다 — 정반대.   ② ✕ [무관] 다리를 짓는다는 말은 지문에 없다.   ③ ○ 덜 위험한 곳으로 떠나야 한다.");
-B("문장 12 feel both sad and relieved   ① ○ 두 감정을 동시에 느낀다.   ② ✕ [반대] 아무 감정이 없다 — 정반대.   ③ ✕ [무관] 관광객 이야기는 지문에 없다.");
+B("문장 12 feel both sad and relieved   ① ✕ [반대] 아무 감정이 없다 — 정반대.   ② ✕ [무관] 관광객 이야기는 지문에 없다.   ③ ○ 두 감정을 동시에 느낀다.");
 B("[학습 포인트]  시험은 본문 표현을 그대로 쓰지 않고 반드시 바꿔서 묻는다. both A and B(두 감정)처럼 수·방향이 담긴 표현은 바꿔 말해도 그 정보가 남아 있는지 확인하자.", true);
 
 K.push(brk());

@@ -82,24 +82,24 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Draw Thick Black Lines",
- "② Kohl: Ancient Egypt’s Makeup for Healthy Eyes",
- "③ Zinc Oxide: A Powerful Sunblock Today",
- "④ The Weather of the Egyptian Desert",
+ "② Zinc Oxide: A Powerful Sunblock Today",
+ "③ The Weather of the Egyptian Desert",
+ "④ Kohl: Ancient Egypt’s Makeup for Healthy Eyes",
  "⑤ Why People Love Magic Stories"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Egyptians drew black lines just to look good.",
- "② In Ancient Egypt, both men and women used kohl.",
- "③ The makeup protected their eyes from the sun and the wind.",
- "④ Zinc oxide is a powerful natural sunblock.",
+["① In Ancient Egypt, both men and women used kohl.",
+ "② The makeup protected their eyes from the sun and the wind.",
+ "③ Zinc oxide is a powerful natural sunblock.",
+ "④ Egyptians drew black lines just to look good.",
  "⑤ Neem helps fight harmful germs."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) It이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① neem",
- "② kohl",
- "③ zinc oxide",
+["① kohl",
+ "② zinc oxide",
+ "③ neem",
  "④ the desert wind",
  "⑤ the bright sun"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -250,8 +250,8 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 고대 이집트의 눈 화장 '콜'과 그 목적",
- "② 사막에 모래바람이 부는 이유",
+["① 사막에 모래바람이 부는 이유",
+ "② 고대 이집트의 눈 화장 '콜'과 그 목적",
  "③ 요즘 유행하는 아이라이너 그리는 법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
@@ -358,8 +358,8 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "ⓐ~ⓓ를 실제�
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Recent studies found special ingredients in kohl.",
-      "ⓑ People in Ancient Egypt drew black lines around their eyes.",
-      "ⓒ People back then believed kohl was magical.",
+      "ⓑ People back then believed kohl was magical.",
+      "ⓒ People in Ancient Egypt drew black lines around their eyes.",
       "ⓓ Now we know that kohl really helped their eyes."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -398,22 +398,22 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("문10 ", { size: 17, bold: true, color: NAVY2 }), t("One(S)·is(△V)·a powerful natural sunblock(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 우리는 비빔밥이라고 불리는 한국 음식을 먹었다  (2) 내 남동생과 나는 둘 다 축구를 좋아한다  (3) 남자아이와 여자아이 둘 다 피구라고 불리는 게임을 한다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 kohl · protected · health   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 kohl · protected · health   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 T · 3 F · 4 F · 5 F · 6 F · 7 T · 8 T", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (a) → (d)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (b) → (a) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ②");
-B("이 글은 고대 이집트 사람들이 쓴 눈 화장 콜(문장 2–3)이 예뻐 보이려는 것이 아니라 눈 건강을 위한 것이었다고 말한다(문장 4–6). 소재(콜)와 특징(눈 건강)을 함께 담은 ②이 제목으로 적절하다. ①·③은 한 부분만 건드린 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ①");
-B("문장 4–5에서 그저 예뻐 보이려고 한 것이 아니라 주로 눈 건강을 위한 것이었다고 했으므로 ①는 본문과 반대된다. ②은 문장 3, ③은 문장 6, ④는 문장 10, ⑤는 문장 11–12에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 고대 이집트 사람들이 쓴 눈 화장 콜(문장 2–3)이 예뻐 보이려는 것이 아니라 눈 건강을 위한 것이었다고 말한다(문장 4–6). 소재(콜)와 특징(눈 건강)을 함께 담은 ④이 제목으로 적절하다. ①·②은 한 부분만 건드린 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 4–5에서 그저 예뻐 보이려고 한 것이 아니라 주로 눈 건강을 위한 것이었다고 했으므로 ④는 본문과 반대된다. ①은 문장 3, ②은 문장 6, ③는 문장 10, ⑤는 문장 11–12에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) It은 바로 앞 문장 11의 neem을 가리킨다. 문장 10에서는 One이 zinc oxide를, 문장 12에서는 It이 neem을 받는다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   It was mostly for their eye health.");
 B("문장 5를 그대로 복원하는 문제다. ① 첫 글자는 대문자 It.   ② mostly(주로)는 was 뒤.   ③ for their eye health를 한 덩어리로 이어 쓴다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 kohl · protected · health     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 고대 이집트의 눈 화장 콜과 그것을 쓴 진짜 이유를 소개한다. ② 모래바람은 배경일 뿐이고, ③ 요즘 화장법 이야기는 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 kohl · protected · health     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 고대 이집트의 눈 화장 콜과 그것을 쓴 진짜 이유를 소개한다. ① 모래바람은 배경일 뿐이고, ③ 요즘 화장법 이야기는 나오지 않는다.");
 B("1-2   ○표 할 세 단어: kohl(힌트① 이집트 사람들이 쓴 것) · protected(힌트② 눈에 해 준 일) · health(힌트③ 진짜 목적). 나머지 셋(lines · sun · germs)은 본문에 나오지만 설명의 세부일 뿐이다.");
 B("1-3   문장 5 — It은 눈 화장을 한 일에 ○ (문장 3–4의 그 행동).   문장 7 — These things는 햇빛과 모래바람에 ○ (문장 6의 두 가지).   문장 12 — It은 neem에 ○ (문장 11에서 대상이 바뀌었다).", true);
 
@@ -423,8 +423,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 T · 2 T · 3 F · 4 F · 5 F · 6 F · 7 T · 8 T");
    B("1 T — 문장 5.   2 T — 문장 3.   3 F — 문장 10: 약한 게 아니라 강력한(powerful) 자외선 차단제다.   4 F — 문장 6: 밝은 달이 아니라 밝은 해(sun)다.   5 F — 문장 3: 여자만이 아니라 남자와 여자 둘 다(Both men and women)다.   6 F — 문장 12: 세균을 강하게 하는 게 아니라 물리치도록(fight) 돕는다.   7 T — 문장 1.   8 T — 문장 9.  거짓 문장은 모두 본문에서 딱 한 요소(only women, moon, weak, stronger)를 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (c) → (a) → (d)");
-B("ⓑ 고대 이집트 사람들이 눈 둘레에 검은 선을 그린다(문장 3) → ⓒ 그때 사람들은 콜이 마법 같다고 믿었다(문장 13) → ⓐ 최근 연구가 콜의 특별한 성분을 밝혀낸다(문장 9) → ⓓ 이제 우리는 콜이 정말 도움이 되었음을 안다(문장 14). 글은 연구(문장 9)를 옛사람들의 믿음(문장 13)보다 먼저 서술했지만, 실제 시간 순서는 다르다 — 서술 순서와 사건 순서를 구분하는 것이 핵심이다.", true);
+Hs("R2   사건 순서   ·   (c) → (b) → (a) → (d)");
+B("ⓒ 고대 이집트 사람들이 눈 둘레에 검은 선을 그린다(문장 3) → ⓑ 그때 사람들은 콜이 마법 같다고 믿었다(문장 13) → ⓐ 최근 연구가 콜의 특별한 성분을 밝혀낸다(문장 9) → ⓓ 이제 우리는 콜이 정말 도움이 되었음을 안다(문장 14). 글은 연구(문장 9)를 옛사람들의 믿음(문장 13)보다 먼저 서술했지만, 실제 시간 순서는 다르다 — 서술 순서와 사건 순서를 구분하는 것이 핵심이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

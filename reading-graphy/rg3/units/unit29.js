@@ -78,16 +78,16 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① How to Build a Better Telescope",
- "② Why the Night Sky Is Getting Brighter",
+["① Why the Night Sky Is Getting Brighter",
+ "② How to Build a Better Telescope",
  "③ The Best Cities for a Night Walk",
  "④ How Many Satellites Are in Space?",
  "⑤ Children Who Love Watching the Moon"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① More cities around the world are using lights.",
- "② Satellites make it easier for astronomers to make new discoveries.",
+["① Satellites make it easier for astronomers to make new discoveries.",
+ "② More cities around the world are using lights.",
  "③ Too many satellites near Earth are another cause of light pollution.",
  "④ The average night sky got brighter by 9.6% per year.",
  "⑤ A child who could see 250 stars will only see 100 stars later."].forEach(c => K.push(ch(c)));
@@ -96,9 +96,9 @@ K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장
 K.push(sp(65));
 ["① the satellites near Earth",
  "② the lights in big cities",
- "③ the stars in the night sky",
- "④ the pictures of the night sky",
- "⑤ the astronomers"].forEach(c => K.push(ch(c)));
+ "③ the astronomers",
+ "④ the stars in the night sky",
+ "⑤ the pictures of the night sky"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -250,8 +250,8 @@ K.push(spF(4, 300, 0.10));
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 ["① 더 좋은 망원경을 만드는 법",
- "② 지구 둘레를 도는 위성의 수",
- "③ 밤하늘을 밝히는 빛 공해"].forEach(c =>
+ "② 밤하늘을 밝히는 빛 공해",
+ "③ 지구 둘레를 도는 위성의 수"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -357,9 +357,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "밤하늘이 밝아
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Satellites near Earth add their brightness to city lights.",
-      "ⓑ More cities around the world start using lights.",
-      "ⓒ The night sky becomes brighter and brighter.",
-      "ⓓ A child sees only 100 stars instead of 250."]
+      "ⓑ The night sky becomes brighter and brighter.",
+      "ⓒ A child sees only 100 stars instead of 250.",
+      "ⓓ More cities around the world start using lights."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -397,22 +397,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("If[네모]·a child(S′)·is born(△V′)·that child(S)·will see(△V)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 내 여동생은 지금 숙제를 하고 있다  (2) 책상 위에 많은 책이 있다  (3) 고양이 한 마리가 있는데, 그것은 내 침대에서 자고 있다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 light pollution · satellites · night sky   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 light pollution · satellites · night sky   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 F · 4 T · 5 T · 6 F · 7 F · 8 T", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (c) → (d)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ②");
-B("이 글은 도시 조명과 위성이 함께 만드는 빛 공해(문장 2–7)와, 그래서 밤하늘이 점점 밝아진다는 사실(문장 8–11)을 설명한다. 소재(빛 공해)와 특징(밤하늘이 밝아진다)을 함께 담은 ②이 제목으로 적절하다. ④·⑤는 지엽적 오답, ①·③은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 5–6에서 위성은 천문학자의 사진을 망쳐 새로운 발견을 어렵게 만든다고 했다. 더 쉬워진다는 ②는 본문과 반대된다. ①은 문장 2, ③은 문장 4, ④은 문장 9, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 01   제목   ·   정답 ①");
+B("이 글은 도시 조명과 위성이 함께 만드는 빛 공해(문장 2–7)와, 그래서 밤하늘이 점점 밝아진다는 사실(문장 8–11)을 설명한다. 소재(빛 공해)와 특징(밤하늘이 밝아진다)을 함께 담은 ①이 제목으로 적절하다. ④·⑤는 지엽적 오답, ②·③은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 5–6에서 위성은 천문학자의 사진을 망쳐 새로운 발견을 어렵게 만든다고 했다. 더 쉬워진다는 ①는 본문과 반대된다. ②은 문장 2, ③은 문장 4, ④은 문장 9, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) them은 앞 문장 5의 astronomers를 가리킨다. 같은 문장의 this는 '위성이 사진을 망친다'는 앞 내용이고, 발견을 하기 어려운 쪽은 사람 — 천문학자다.", true);
 Hs("독해 04   배열 영작   ·   It is becoming a big problem.");
 B("문장 3을 그대로 복원하는 문제다. ① 첫 글자는 대문자 It.   ② 진행형 is becoming이 한 덩어리.   ③ a big problem — 관사 a를 빠뜨리지 않는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 light pollution · satellites · night sky     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 도시 불빛과 위성이 만드는 빛 공해를 설명한다. ① 망원경 이야기는 나오지 않고, ② 위성의 수는 원인의 한 부분일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 light pollution · satellites · night sky     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 도시 불빛과 위성이 만드는 빛 공해를 설명한다. ① 망원경 이야기는 나오지 않고, ③ 위성의 수는 원인의 한 부분일 뿐이다.");
 B("1-2   ○표 할 세 단어: light pollution(힌트① 이 글이 다루는 문제) · satellites(힌트② 새로 더해진 원인) · night sky(힌트③ 점점 밝아지는 곳). 나머지 셋(stars · astronomers · child)은 본문에 등장하지만 주제문에 들어가지 않는다 — 결과와 예시일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
 B("1-3   문장 5 — They는 위성들에 ○ (문장 4의 satellites).   문장 6 — them은 천문학자들에 ○ (사람).   문장 8 — This는 위성의 밝기가 도시 빛에 더해진다는 앞 문장 전체에 ○.");
 B("[학습 포인트]   문장 8의 This처럼 지시어는 단어가 아니라 '앞 문장 전체'를 받기도 한다. This/That이 나오면 '이게 어느 문장을 통째로 받는지'를 화살표로 표시해 두자.", true);
@@ -423,8 +423,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 T · 2 F · 3 F · 4 T · 5 T · 6 F · 7 F · 8 T");
    B("1 T — 문장 7.   2 F — 문장 5: 사진을 더 선명하게가 아니라 망친다(mess up).   3 F — 문장 8: 더 어둡게가 아니라 더 밝게(brighter) 만든다.   4 T — 문장 1.   5 T — 문장 9.   6 F — 문장 11: 500개가 아니라 100개만 보게 된다.   7 F — 문장 2: 더 적은(fewer) 도시가 아니라 더 많은(more) 도시가 조명을 쓴다.   8 T — 문장 4.  거짓 문장은 모두 딱 한 요소(fewer, clearer, darker, 500)만 비튼 것이다.", true);
-Hs("R2   원인과 결과의 순서   ·   (b) → (a) → (c) → (d)");
-B("ⓑ 더 많은 도시가 조명을 쓰기 시작한다(문장 2) → ⓐ 위성의 밝기가 도시 불빛에 더해진다(문장 7) → ⓒ 밤하늘이 점점 밝아진다(문장 8–9) → ⓓ 아이가 250개 대신 100개의 별만 보게 된다(문장 11). 원인 둘이 쌓여 결과가 되고, 마지막 예시가 그 결과를 눈에 보이게 만든다 — 설명문은 이렇게 원인에서 결과로 흐른다.", true);
+Hs("R2   원인과 결과의 순서   ·   (d) → (a) → (b) → (c)");
+B("ⓓ 더 많은 도시가 조명을 쓰기 시작한다(문장 2) → ⓐ 위성의 밝기가 도시 불빛에 더해진다(문장 7) → ⓑ 밤하늘이 점점 밝아진다(문장 8–9) → ⓒ 아이가 250개 대신 100개의 별만 보게 된다(문장 11). 원인 둘이 쌓여 결과가 되고, 마지막 예시가 그 결과를 눈에 보이게 만든다 — 설명문은 이렇게 원인에서 결과로 흐른다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

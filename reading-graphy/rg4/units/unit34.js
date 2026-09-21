@@ -98,16 +98,16 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Blue Holes: Rich in Life but Dangerous to Explore",
- "② How Black Holes Are Born in Space",
- "③ The Deepest Sea in the World",
- "④ Why Sawfish Are Disappearing",
+["① How Black Holes Are Born in Space",
+ "② The Deepest Sea in the World",
+ "③ Why Sawfish Are Disappearing",
+ "④ Blue Holes: Rich in Life but Dangerous to Explore",
  "⑤ New Submarines for Deep-Sea Travel"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Submarines can easily be sent down into the blue holes.",
- "② Blue holes are underwater caves in the sea.",
+["① Blue holes are underwater caves in the sea.",
+ "② Submarines can easily be sent down into the blue holes.",
  "③ The deepest blue hole is about 300 meters deep.",
  "④ Scientists once found two dead smalltooth sawfish in a blue hole.",
  "⑤ More than 100 divers have died in one of the blue holes."].forEach(c => K.push(ch(c)));
@@ -115,10 +115,10 @@ K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) That이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① sending submarines down to the sea",
- "② entering the blue holes in person",
- "③ finding an endangered species",
- "④ measuring the depth of the sea",
- "⑤ studying sea levels thousands of years ago"].forEach(c => K.push(ch(c)));
+ "② finding an endangered species",
+ "③ measuring the depth of the sea",
+ "④ studying sea levels thousands of years ago",
+ "⑤ entering the blue holes in person"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -411,8 +411,8 @@ K.push(spF(5, 360, 0.38));
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
 ["① 물건을 팔기 위해 만든 광고",
- "② 자연 현상을 소개하고 사실을 알려 주는 설명문",
- "③ 하루의 일을 적은 일기",
+ "② 하루의 일을 적은 일기",
+ "③ 자연 현상을 소개하고 사실을 알려 주는 설명문",
  "④ 안부를 전하는 편지",
  "⑤ 주인공이 모험을 떠나는 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
@@ -517,15 +517,15 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 2, main: "look like deep, dark circles",
-    opts: ["① look like bright, small squares", "② seem like deep and dark circles", "③ smell like salty water"] },
+    opts: ["① look like bright, small squares", "② smell like salty water", "③ seem like deep and dark circles"] },
   { sn: 4, main: "full of different kinds of sea life",
     opts: ["① empty of any living things", "② home to many kinds of sea animals", "③ full of old ships"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 9, main: "extremely dangerous",
-    opts: ["① very risky", "② perfectly safe for anyone", "③ very expensive"] },
+    opts: ["① perfectly safe for anyone", "② very expensive", "③ very risky"] },
   { sn: 11, main: "proper training and equipment are necessary",
-    opts: ["① anyone can go without preparing", "② you need the right skills and tools", "③ only children can join"] });
+    opts: ["① you need the right skills and tools", "② anyone can go without preparing", "③ only children can join"] });
 K.push(spF(7, 150, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -602,10 +602,10 @@ K.push(spF(8, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "블루 홀에 얽힌 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ Sea levels were much lower than they are today.",
-      "ⓑ Scientists discovered two dead sawfish in a blue hole.",
-      "ⓒ Blue holes were formed as deep underwater caves.",
-      "ⓓ Explorers had to enter the holes themselves."]
+  ...["ⓐ Scientists discovered two dead sawfish in a blue hole.",
+      "ⓑ Blue holes were formed as deep underwater caves.",
+      "ⓒ Explorers had to enter the holes themselves.",
+      "ⓓ Sea levels were much lower than they are today."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -645,7 +645,7 @@ K.push(spF(9, 380, 0.12));
 
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
-[["문장 2", [t("Blue holes ", { size: 19 }), t("( is  /  are )", { size: 19, bold: true, color: NAVY }), t(" underwater caves in the sea.", { size: 19 })], "주어가 복수일 때 be동사는 무엇일까요?"],
+[["문장 2", [t("Blue holes ", { size: 19 }), t("( are  /  is )", { size: 19, bold: true, color: NAVY }), t(" underwater caves in the sea.", { size: 19 })], "주어가 복수일 때 be동사는 무엇일까요?"],
  ["문장 5", [t("Scientists once ", { size: 19 }), t("( discovered  /  discover )", { size: 19, bold: true, color: NAVY }), t(" two dead sawfish there.", { size: 19 })], "once(예전에)와 어울리는 시제를 고르세요."],
  ["문장 8", [t("Submarines cannot ", { size: 19 }), t("( are  /  be )", { size: 19, bold: true, color: NAVY }), t(" sent down.", { size: 19 })], "조동사(cannot) 뒤에는 동사원형이 옵니다."],
  ["문장 11", [t("Proper training and equipment ", { size: 19 }), t("( are  /  is )", { size: 19, bold: true, color: NAVY }), t(" necessary.", { size: 19 })], "A and B가 주어면 복수로 봅니다."],
@@ -743,24 +743,24 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 드럼을 치는 소년을 안다  (2) 우리는 좋은 자리를 잡기 위해 일찍 왔다  (3) 그녀는 여행을 준비하기 위해 스페인어를 가르쳐 주는 책을 샀다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 blue holes · sea life · dangerous        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 이유 · 덧붙임 · 예시 · 결과   2-2 [B] 생물 · [E] 마무리   2-3 ②", { size: 19, bold: true })], { after: 25 }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 이유 · 덧붙임 · 예시 · 결과   2-2 [B] 생물 · [E] 마무리   2-3 ③", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (a) → (c) → (d) → (b)  ·  Blue holes are full of sea life, but they are dangerous to explore.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) caves  (2) life  (3) dangerous  (4) equipment        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ②  문장 4 ②  문장 9 ①  문장 11 ②", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ③  문장 4 ②  문장 9 ③  문장 11 ①", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 F · 4 T · 5 T · 6 F · 7 T · 8 F", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (d) → (b)", { size: 19, bold: true })], { after: 25 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (c) → (a)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(e) · 2(b) · 3(a) · 4(f) · 5(c) · 6(d)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) are  (2) discovered  (3) be  (4) are", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) caves (2) deepest (3) interested (4) endangered (5) formed (6) dangerous (7) divers (8) equipment", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) That can be extremely dangerous.  (2) Since submarines cannot be sent down, explorers must enter the blue holes.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 블루 홀이 바다 생물로 가득한 연구 가치가 큰 곳이면서(문장 4–6) 탐험이 매우 위험하다는 점(문장 8–10)을 나란히 전한다. 두 축을 모두 담은 ①이 적절하다. ③·④는 지엽적, ②·⑤는 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ①");
-B("문장 8에서 잠수함은 내려보낼 수 없다고 했으므로 ①는 본문과 반대된다. ②은 문장 2, ③는 문장 3, ④은 문장 5, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ②");
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 블루 홀이 바다 생물로 가득한 연구 가치가 큰 곳이면서(문장 4–6) 탐험이 매우 위험하다는 점(문장 8–10)을 나란히 전한다. 두 축을 모두 담은 ④이 적절하다. ②·③는 지엽적, ①·⑤는 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 8에서 잠수함은 내려보낼 수 없다고 했으므로 ②는 본문과 반대된다. ①은 문장 2, ③는 문장 3, ④은 문장 5, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) That은 바로 앞 문장 8의 내용, 곧 탐험가가 블루 홀에 직접 들어가야 한다는 것을 받는다. 지시어 That은 단어가 아니라 앞 문장 전체를 받을 수 있다.", true);
 Hs("독해 04   배열 영작   ·   The deepest one is about 300 meters deep!");
 B("문장 3을 그대로 복원한다. ① 첫 글자는 대문자 The.   ② 최상급 deepest 앞에는 The.   ③ one은 앞에 나온 blue hole을 대신하는 말이다.", true);
@@ -773,10 +773,10 @@ B("[학습 포인트]   문장 9의 That처럼 지시어는 앞 문장 ‘전체
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 이유 / 덧붙임 / 예시 / 결과     2-2 [B] 생물 · [E] 마무리     2-3 ②");
+Hs("STEP 2   글의 흐름   ·   2-1 이유 / 덧붙임 / 예시 / 결과     2-2 [B] 생물 · [E] 마무리     2-3 ③");
 B("2-1   문장 4 because — 과학자들이 관심을 갖는 ‘이유’.   문장 6 In addition — 가치를 하나 더 ‘덧붙임’.   문장 10 For example — 위험함을 보여 주는 ‘예시’.   문장 11 Therefore — 그래서 필요한 것을 말하는 ‘결과’.");
 B("2-2   [B] 생물(문장 4–5: 바다 생물로 가득하다), [E] 마무리(문장 11–12: 훈련과 장비가 필요하고 가장 덜 연구된 곳이다). 보기의 ‘광고’는 이 글에 없는 역할이다. 소개 → 생물 → 기록 → 위험 → 마무리의 흐름이다.");
-B("2-3   정답 ②. 블루 홀이라는 자연 현상의 정체·가치·위험을 사실 위주로 알려 주는 설명문이다. ① 가격이나 명령문이 없고, ③ 일기·④ 편지·⑤ 동화의 신호도 없다.");
+B("2-3   정답 ③. 블루 홀이라는 자연 현상의 정체·가치·위험을 사실 위주로 알려 주는 설명문이다. ① 가격이나 명령문이 없고, ② 일기·④ 편지·⑤ 동화의 신호도 없다.");
 B("[학습 포인트]   For example 뒤의 숫자(100명)는 예시일 뿐 주제가 아니다. 예시는 앞 문장을 뒷받침하는 근거로 읽자.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 sea life · dangerous     3-3 (a) → (c) → (d) → (b)");
 B("3-1  재료 찾기 — (2) 문장 4에서 sea life에 ○: 블루 홀이 가득 품은 것이다. fresh water는 본문에 없다. (3) 문장 9에서 dangerous에 ○: 탐험에 대한 평가다. easy는 정반대다.");
@@ -785,11 +785,11 @@ B("3-3  정답 순서 — ⓐ Blue holes → ⓒ are full of → ⓓ sea life, �
 B("[채점 포인트]  주인공(ⓐ)이 맨 앞, 마침표가 붙은 덩어리(ⓑ)가 맨 뒤 — 콤마가 붙은 ⓓ는 but 앞자리라는 표시다.", true);
 Hs("STEP 4   요약문   ·   (1) caves  (2) life  (3) dangerous  (4) equipment");
 B("(1)은 문장 2의 caves, (2)는 문장 4의 sea life, (3)은 문장 9의 dangerous, (4)는 문장 11의 equipment에서 가져온다. 요약문이 곧 이 글의 흐름이다.", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ②   문장 4 ②   문장 9 ①   문장 11 ②  (정답 선지는 무표시)");
-B("문장 2 look like deep, dark circles   ① ✕ [반대] 밝고 작은 사각형 — 정반대.   ② ○ 깊고 어두운 원처럼 보인다.   ③ ✕ [무관] 냄새 이야기는 지문에 없다.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ③   문장 4 ②   문장 9 ③   문장 11 ①  (정답 선지는 무표시)");
+B("문장 2 look like deep, dark circles   ① ✕ [반대] 밝고 작은 사각형 — 정반대.   ② ✕ [무관] 냄새 이야기는 지문에 없다.   ③ ○ 깊고 어두운 원처럼 보인다.");
 B("문장 4 full of different kinds of sea life   ① ✕ [반대] 생물이 하나도 없다.   ② ○ 많은 종류의 바다 동물의 보금자리.   ③ ✕ [무관] 오래된 배 이야기는 없다.");
-B("문장 9 extremely dangerous   ① ○ 매우 위험하다.   ② ✕ [반대] 누구에게나 완전히 안전하다.   ③ ✕ [무관] 비용 이야기는 지문에 없다.");
-B("문장 11 proper training and equipment are necessary   ① ✕ [반대] 준비 없이 누구나 갈 수 있다.   ② ○ 알맞은 기술과 도구가 필요하다.   ③ ✕ [무관] 어린이만 참여한다는 말은 없다.");
+B("문장 9 extremely dangerous   ① ✕ [반대] 누구에게나 완전히 안전하다.   ② ✕ [무관] 비용 이야기는 지문에 없다.   ③ ○ 매우 위험하다.");
+B("문장 11 proper training and equipment are necessary   ① ○ 알맞은 기술과 도구가 필요하다.   ② ✕ [반대] 준비 없이 누구나 갈 수 있다.   ③ ✕ [무관] 어린이만 참여한다는 말은 없다.");
 B("[학습 포인트]  시험은 본문 표현을 그대로 쓰지 않고 반드시 바꿔서 묻는다. necessary = you need it처럼 형용사를 문장으로 풀어 쓰는 연습을 하자.", true);
 
 K.push(brk());
@@ -797,8 +797,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 T · 2 F · 3 F · 4 T · 5 T · 6 F · 7 T · 8 F");
    B("1 T — 문장 4.   2 F — 문장 5: 살아 있는 게 아니라 죽은(dead) 톱상어였다.   3 F — 문장 12: 가장 많이가 아니라 가장 적게(least) 연구된 곳이다.   4 T — 문장 2.   5 T — 문장 10.   6 F — 문장 8: 잠수함은 내려보낼 수 없다.   7 T — 문장 7.   8 F — 문장 3: 300센티미터가 아니라 300미터(meters)다.", true);
-Hs("R2   사건 순서   ·   (a) → (c) → (d) → (b)");
-B("ⓐ 해수면이 지금보다 훨씬 낮았다(문장 7) → ⓒ 그때 블루 홀이 깊은 동굴로 만들어졌다(문장 7) → ⓓ 잠수함을 못 쓰니 탐험가가 직접 들어간다(문장 8) → ⓑ 그 안에서 죽은 톱상어를 발견한다(문장 5). 발견(문장 5)이 먼저 서술되지만 실제로는 가장 나중의 일이다.", true);
+Hs("R2   사건 순서   ·   (d) → (b) → (c) → (a)");
+B("ⓓ 해수면이 지금보다 훨씬 낮았다(문장 7) → ⓑ 그때 블루 홀이 깊은 동굴로 만들어졌다(문장 7) → ⓒ 잠수함을 못 쓰니 탐험가가 직접 들어간다(문장 8) → ⓐ 그 안에서 죽은 톱상어를 발견한다(문장 5). 발견(문장 5)이 먼저 서술되지만 실제로는 가장 나중의 일이다.", true);
 Hs("R3   영영풀이   ·   1 (e) · 2 (b) · 3 (a) · 4 (f) · 5 (c) · 6 (d)");
 B("cave = 땅이나 물속의 큰 구멍 · endangered = 영원히 사라질 위험에 처한 · explorer = 새로운 곳을 알아보러 다니는 사람 · proper = 그 목적에 알맞은 · necessary = 꼭 있어야 하는 · wonder = 사람들이 보고 싶어 하는 놀라운 것.", true);
 Hs("R4   어법 기초   ·   (1) are  (2) discovered  (3) be  (4) are");

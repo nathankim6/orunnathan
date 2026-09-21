@@ -25,7 +25,7 @@ def main(apply=False):
         ans = re.findall(r'문장\s*(\d+)\s*([①-⑩])', hm.group(1))
         if len(ans) != len(items): miss += 1; continue
         amap = {sn: CIR.index(c) for sn, c in ans}
-        edits, remaps = [], {}
+        edits, remaps, picked = [], {}, []
         for m in items:
             sn = m.group(1)
             if sn not in amap: miss += 1; break
@@ -35,6 +35,9 @@ def main(apply=False):
             texts = [o[1:].strip() for o in opts]
             before[CIR[cur]] += 1
             tgt = rnd.randrange(len(texts))
+            if len(picked) >= 2 and picked[-1] == picked[-2] == tgt:   # 세 번 잇달아 같은 자리 금지
+                tgt = (tgt + 1 + rnd.randrange(len(texts) - 1)) % len(texts)
+            picked.append(tgt)
             after[CIR[tgt]] += 1
             rest = [t for k, t in enumerate(texts) if k != cur]
             new_texts = rest[:tgt] + [texts[cur]] + rest[tgt:]

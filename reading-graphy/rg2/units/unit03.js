@@ -83,10 +83,10 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Zacharias is a musician and computer scientist.",
- "② Zacharias\u2019s friend had a motorcycle accident in 2010.",
- "③ EyeHarp shows a colorful circle on the computer screen.",
- "④ You need no time or practice to play music with EyeHarp.",
+["① You need no time or practice to play music with EyeHarp.",
+ "② Zacharias is a musician and computer scientist.",
+ "③ Zacharias\u2019s friend had a motorcycle accident in 2010.",
+ "④ EyeHarp shows a colorful circle on the computer screen.",
  "⑤ The program follows your eyes and plays the right sound."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) him이 가리키는 것으로 가장 적절한 것은?"));
@@ -352,8 +352,8 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "EyeHarp의 탄생과 사용 과정 ⓐ~ⓓ를 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ His friend had a bad motorcycle accident.",
-      "ⓑ Zacharias decided to create EyeHarp.",
+  ...["ⓐ Zacharias decided to create EyeHarp.",
+      "ⓑ His friend had a bad motorcycle accident.",
       "ⓒ The program plays the right sound for you.",
       "ⓓ You look at a specific color on the screen."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
@@ -396,13 +396,13 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 EyeHarp · eyes · music   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 F · 5 T · 6 T · 7 F · 8 F", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (b) → (d) → (c)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (d) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ②");
 B("이 글은 눈의 움직임만으로 음악을 연주하게 해 주는 프로그램 EyeHarp의 탄생(문장 3–6)과 작동 방식(문장 7–8), 그 가치(문장 11–12)를 소개한다. 소재(EyeHarp)와 핵심(눈으로 연주)을 모두 담은 ②이 제목으로 적절하다. ①는 계기가 된 사고만 건드린 지엽적 오답, ③\u00b7④\u00b7⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 10에서 음악을 잘 연주하려면 시간과 연습이 필요하다(It takes time and practice)고 했으므로, 연습이 필요 없다는 ④은 본문과 반대된다. ①은 문장 3, ②은 문장 4, ③는 문장 7, ⑤는 문장 8에서 확인된다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 10에서 음악을 잘 연주하려면 시간과 연습이 필요하다(It takes time and practice)고 했으므로, 연습이 필요 없다는 ①은 본문과 반대된다. ②은 문장 3, ③은 문장 4, ④는 문장 7, ⑤는 문장 8에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) him은 문장 4–5의 오토바이 사고로 팔을 움직일 수 없게 된 Zacharias의 음악가 친구를 가리킨다. Zacharias가 누구를 위해 EyeHarp를 만들기로 했는지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   EyeHarp is just like other instruments.");
@@ -419,8 +419,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 F · 5 T · 6 T · 7 F · 8 F");
    B("1 F — 문장 4: 자동차가 아니라 오토바이(motorcycle) 사고다.   2 T — 문장 7.   3 T — 문장 3.   4 F — 문장 11: 음악가만이 아니라 모든 사람(everyone)에게다.   5 T — 문장 10.   6 T — 문장 5.   7 F — 문장 6: 사서 준 게 아니라 만들기로(create) 했다.   8 F — 문장 8: 손이 아니라 눈(eyes)을 따라간다.  거짓 문장은 모두 본문에서 딱 한 요소(car, bought, hands, only to musicians)를 비튼 것이다 — 그 한 단어를 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (a) → (b) → (d) → (c)");
-B("ⓐ 친구가 심한 오토바이 사고를 당한다(문장 4) → ⓑ Zacharias가 EyeHarp를 만들기로 결심한다(문장 6) → ⓓ 화면의 특정 색을 바라본다(문장 8 앞부분) → ⓒ 프로그램이 알맞은 소리를 연주해 준다(문장 8 뒷부분). 탄생 이야기(ⓐ→ⓑ)가 먼저, 사용 과정(ⓓ→ⓒ)이 나중이다 — 원인과 결과, 그리고 사용 순서를 나누어 읽는 것이 핵심이다.", true);
+Hs("R2   사건 순서   ·   (b) → (a) → (d) → (c)");
+B("ⓑ 친구가 심한 오토바이 사고를 당한다(문장 4) → ⓐ Zacharias가 EyeHarp를 만들기로 결심한다(문장 6) → ⓓ 화면의 특정 색을 바라본다(문장 8 앞부분) → ⓒ 프로그램이 알맞은 소리를 연주해 준다(문장 8 뒷부분). 탄생 이야기(ⓑ→ⓐ)가 먼저, 사용 과정(ⓓ→ⓒ)이 나중이다 — 원인과 결과, 그리고 사용 순서를 나누어 읽는 것이 핵심이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

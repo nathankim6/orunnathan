@@ -80,15 +80,15 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① The Greek Hero Who Loved Music",
- "② Tying Yourself Up: The Ulysses Contract",
- "③ How to Write a Good School Report",
+ "② How to Write a Good School Report",
+ "③ Tying Yourself Up: The Ulysses Contract",
  "④ Why the Sirens’ Songs Sank Many Ships",
  "⑤ The History of Greek Ships"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Ulysses had his own ears filled with wax.",
- "② The professor created three groups of students.",
+["① The professor created three groups of students.",
+ "② Ulysses had his own ears filled with wax.",
  "③ One group could turn in their reports anytime.",
  "④ Most of the third group set their own deadlines.",
  "⑤ Ulysses contracts help us improve self-control."].forEach(c => K.push(ch(c)));
@@ -98,8 +98,8 @@ K.push(sp(65));
 ["① the strict deadlines of the first group",
  "② the reports of the second group",
  "③ the Greek sailors on the ship",
- "④ the professors at the university",
- "⑤ the students in the third group"].forEach(c => K.push(ch(c)));
+ "④ the students in the third group",
+ "⑤ the professors at the university"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -251,9 +251,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 미리 자신을 묶어 두는 자기 통제 방법",
- "② 그리스 신화 속 사이렌의 노래 실력",
- "③ 부동산 계약서(contract)를 쓰는 요령"].forEach(c =>
+["① 그리스 신화 속 사이렌의 노래 실력",
+ "② 부동산 계약서(contract)를 쓰는 요령",
+ "③ 미리 자신을 묶어 두는 자기 통제 방법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -405,22 +405,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("The “present Ulysses”(S)·was·made(△V)·and[네모]·for the “future Ulysses”(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 첫 기차를 타기 위해 일찍 일어났다  (2) 이 꽃은 장미라고 불린다  (3) 이 개는 맥스라고 불리는데, 공을 잡으려고 빨리 달린다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 contract · self-control · goals   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 contract · self-control · goals   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 T · 3 F · 4 T · 5 F · 6 F · 7 F · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (c) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ②");
-B("이 글은 스스로 마감을 정한 학생들의 실험(문장 1–5)과 자신을 배에 묶은 율리시스의 이야기(문장 8–11)를 통해 '율리시스 계약'이라는 자기 통제 방법을 소개한다. ②이 제목으로 적절하다. ①·④는 지엽적이고, ③·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ①");
-B("문장 10에서 밀랍으로 귀를 막은 것은 율리시스 자신이 아니라 선원들(his sailors’ ears)이다. 율리시스는 자신을 배에 묶게 했다. ②은 문장 2, ③은 문장 3, ④는 문장 5, ⑤는 문장 12에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 스스로 마감을 정한 학생들의 실험(문장 1–5)과 자신을 배에 묶은 율리시스의 이야기(문장 8–11)를 통해 '율리시스 계약'이라는 자기 통제 방법을 소개한다. ③이 제목으로 적절하다. ①·④는 지엽적이고, ②·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 10에서 밀랍으로 귀를 막은 것은 율리시스 자신이 아니라 선원들(his sailors’ ears)이다. 율리시스는 자신을 배에 묶게 했다. ①은 문장 2, ③은 문장 3, ④는 문장 5, ⑤는 문장 12에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) they는 바로 앞의 most of the third group, 곧 마감을 스스로 고른 세 번째 집단 학생들을 가리킨다. 자신이 게을러질 수 있다는 것을 안 사람이 누구인지 생각하면 된다.", true);
 Hs("독해 04   배열 영작   ·   Ulysses didn’t want his people to be in danger.");
 B("문장 9를 그대로 복원하는 문제다. ① 첫 글자는 대문자 Ulysses.   ② want+목적어+to부정사 = '~가 …하기를 바라다'.   ③ be in danger가 한 덩어리로 붙어 다닌다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 contract · self-control · goals     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 미래의 자신을 위해 현재의 자신이 미리 장치를 걸어 두는 방법을 소개한다. ② 사이렌은 유래를 설명하는 예이고, ③의 contract는 여기서 부동산 계약서가 아니다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 contract · self-control · goals     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 미래의 자신을 위해 현재의 자신이 미리 장치를 걸어 두는 방법을 소개한다. ① 사이렌은 유래를 설명하는 예이고, ②의 contract는 여기서 부동산 계약서가 아니다.");
 B("1-2   ○표 할 세 단어: contract(힌트① 방법의 이름) · self-control(힌트② 기르는 힘) · goals(힌트③ 이루는 것). 나머지 셋(Sirens · wax · professor)은 본문에 나오지만 주제문에는 들어가지 않는다 — 이야기와 실험의 소품일 뿐이다.");
 B("1-3   문장 7 — It은 율리시스 계약에 ○.   문장 8 — their songs는 사이렌의, their ships는 선원들의에 ○ (한 문장 안에서 대상이 바뀐다).   문장 9 — his people은 율리시스의 선원들에 ○.");
 B("[학습 포인트]   같은 their라도 앞뒤 문맥에 따라 주인이 달라진다. 노래를 부르는 쪽은 사이렌, 가라앉는 배는 선원들의 것 — 뜻이 통하는 쪽으로 짝을 맞춰 보자.", true);

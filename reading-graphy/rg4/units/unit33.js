@@ -78,17 +78,19 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① The Ozone Layer Is Healing: A Big Win for the World", "② How Sunlight Helps Plants Grow",
- "③ New Ways to Treat Skin Cancer", "④ Antarctica: The Coldest Place on Earth",
+["① The Ozone Layer Is Healing: A Big Win for the World",
+ "② How Sunlight Helps Plants Grow",
+ "③ New Ways to Treat Skin Cancer",
+ "④ Antarctica: The Coldest Place on Earth",
  "⑤ Chemicals That Make Crops Grow Faster"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① The ozone layer protects us from the sun’s harmful rays.",
- "② The ozone layer was destroyed by pollution.",
- "③ Countries around the world signed the Montreal Protocol in 1987.",
- "④ Healing the ozone hole has been saving two million people from skin cancer every year.",
- "⑤ The ozone layer is expected to be as healthy as it was in 1980 by the year 2026."].forEach(c => K.push(ch(c)));
+["① The ozone layer is expected to be as healthy as it was in 1980 by the year 2026.",
+ "② The ozone layer protects us from the sun’s harmful rays.",
+ "③ The ozone layer was destroyed by pollution.",
+ "④ Countries around the world signed the Montreal Protocol in 1987.",
+ "⑤ Healing the ozone hole has been saving two million people from skin cancer every year."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) It이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
@@ -402,8 +404,8 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ①");
 B("이 글은 오염으로 파괴됐던 오존층이 회복 중이라는 사실(문장 3–4)과 그것이 인류의 큰 환경 승리라는 평가(문장 9–10)를 전한다. 소재와 평가를 함께 담은 ①이 적절하다. ③·④는 지엽적, ②·⑤는 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 8에서 1980년 수준으로 돌아가는 시점은 2026년이 아니라 2066년이다. ①은 문장 2, ②는 문장 3, ③은 문장 5, ④는 문장 11에서 확인된다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 8에서 1980년 수준으로 돌아가는 시점은 2026년이 아니라 2066년이다. ②은 문장 2, ③는 문장 3, ④은 문장 5, ⑤는 문장 11에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) It은 바로 앞 문장 5의 the Montreal Protocol을 받는다. 뒤에 an agreement(협정)라는 설명이 이어지므로 오존층이 아니라 협정을 가리킨다.", true);
 Hs("독해 04   배열 영작   ·   In 1987, countries around the world signed the Montreal Protocol.");

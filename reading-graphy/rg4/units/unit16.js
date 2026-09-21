@@ -97,17 +97,17 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① The History of the Hershey Chocolate Factory",
- "② City Slogans: A Few Words That Tell Who You Are",
+["① City Slogans: A Few Words That Tell Who You Are",
+ "② The History of the Hershey Chocolate Factory",
  "③ How to Attract More Tourists to Small Towns",
  "④ The Science of Gravity Explained",
  "⑤ The Best Places to Eat Chocolate in the U.S."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 57, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Hershey is home to a large car factory.",
- "② The best slogans tell a story in a few powerful words.",
- "③ Some slogans are created by residents of the city.",
+["① The best slogans tell a story in a few powerful words.",
+ "② Some slogans are created by residents of the city.",
+ "③ Hershey is home to a large car factory.",
  "④ Hershey’s slogan has been “The Sweetest Place On Earth” since 1990.",
  "⑤ People in Gravity, Iowa played on the words “down to earth.”"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 57, 0.13));
@@ -116,8 +116,8 @@ K.push(sp(65));
 ["① the tourists visiting Hershey",
  "② the workers at the chocolate factory",
  "③ the cities around the U.S.",
- "④ the residents of Pennsylvania",
- "⑤ the people in Gravity, Iowa"].forEach(c => K.push(ch(c)));
+ "④ the people in Gravity, Iowa",
+ "⑤ the residents of Pennsylvania"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 57, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -283,9 +283,9 @@ K.push(spF(4, 123, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 도시의 슬로건이 보여 주는 정체성과 창의성",
- "② 초콜릿 공장을 견학하는 방법",
- "③ 미국의 유명 관광지 목록"].forEach(c =>
+["① 초콜릿 공장을 견학하는 방법",
+ "② 미국의 유명 관광지 목록",
+ "③ 도시의 슬로건이 보여 주는 정체성과 창의성"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 82, 0.26));
 
@@ -517,13 +517,13 @@ pairGrid(
   { sn: 2, main: "tell a story in a few powerful words",
     opts: ["① need many long sentences", "② tell a story in a few strong words", "③ tell a story only to tourists"] },
   { sn: 5, main: "used humor for unique features",
-    opts: ["① used jokes to show what is special", "② hid their strange features", "③ built new museums for visitors"] });
+    opts: ["① hid their strange features", "② built new museums for visitors", "③ used jokes to show what is special"] });
 K.push(spF(7, 57, 0.16));
 pairGrid(
   { sn: 8, main: "has been Hershey’s slogan since 1990",
-    opts: ["① was dropped soon after 1990", "② was written by a famous singer", "③ has been used from 1990 until now"] },
+    opts: ["① has been used from 1990 until now", "② was dropped soon after 1990", "③ was written by a famous singer"] },
   { sn: 12, main: "show the identities of the people",
-    opts: ["① hide what residents are really like", "② show how rich each city is", "③ show how residents see themselves"] });
+    opts: ["① hide what residents are really like", "② show how residents see themselves", "③ show how rich each city is"] });
 K.push(spF(7, 61, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -643,10 +643,10 @@ K.push(spF(9, 156, 0.12));
 
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
-[["문장 1", [t("Cities ", { size: 19 }), t("( use  /  uses )", { size: 19, bold: true, color: NAVY }), t(" slogans to tell others about who they are.", { size: 19 })], "주어 Cities는 복수예요."],
- ["문장 3", [t("Some slogans ", { size: 19 }), t("( are created  /  create )", { size: 19, bold: true, color: NAVY }), t(" by the city.", { size: 19 })], "슬로건은 만들어지는 쪽 — 수동태!"],
- ["문장 8", [t("This ", { size: 19 }), t("( has been  /  have been )", { size: 19, bold: true, color: NAVY }), t(" Hershey’s slogan since 1990.", { size: 19 })], "주어 This는 단수예요."],
- ["문장 9", [t("Hershey ", { size: 19 }), t("( are  /  is )", { size: 19, bold: true, color: NAVY }), t(" home to the Hershey chocolate factory.", { size: 19 })], "도시 이름 하나는 단수 취급!"],
+[["문장 1", [t("Cities ", { size: 19 }), t("( uses  /  use )", { size: 19, bold: true, color: NAVY }), t(" slogans to tell others about who they are.", { size: 19 })], "주어 Cities는 복수예요."],
+ ["문장 3", [t("Some slogans ", { size: 19 }), t("( create  /  are created )", { size: 19, bold: true, color: NAVY }), t(" by the city.", { size: 19 })], "슬로건은 만들어지는 쪽 — 수동태!"],
+ ["문장 8", [t("This ", { size: 19 }), t("( have been  /  has been )", { size: 19, bold: true, color: NAVY }), t(" Hershey’s slogan since 1990.", { size: 19 })], "주어 This는 단수예요."],
+ ["문장 9", [t("Hershey ", { size: 19 }), t("( is  /  are )", { size: 19, bold: true, color: NAVY }), t(" home to the Hershey chocolate factory.", { size: 19 })], "도시 이름 하나는 단수 취급!"],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
     cel(new Paragraph({ children: [t("(" + (i + 1) + ")", { size: 16, bold: true, color: "FFFFFF" })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 210 } }),
@@ -740,11 +740,11 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문12 ", { size: 17, bold: true, color: NAVY2 }), t("slogans(S)·show(△V)·identities and creativity·of the people ~(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 이 그림은 내 남동생이 그렸다  (2) 나는 2019년부터 이 마을에 살아 왔다  (3) 그 공원은 여러 해 동안 아이들에게 사랑받아 왔다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 slogans · identities · creativity        ", { size: 19, bold: true }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 slogans · identities · creativity        ", { size: 19, bold: true }),
      t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 대조 · ~부터 · 덧붙임 · 조건   2-2 [B] 만드는 사람 · [E] 마무리   2-3 ④", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (d) → (b) → (c) → (a)  ·  City slogans show the identities of the people who live there.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) humor  (2) chocolate  (3) identities  (4) creativity        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ②  문장 5 ①  문장 8 ③  문장 12 ③", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ②  문장 5 ③  문장 8 ①  문장 12 ②", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 T · 5 T · 6 F · 7 F · 8 F", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (b) → (a) → (d)", { size: 19, bold: true })], { after: 25 }),
@@ -754,16 +754,16 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) This has been Hershey’s slogan since 1990.  (2) Cities use slogans to tell others about who they are.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ②");
-B("이 글은 도시 슬로건이 무엇을 하는지 설명하고(문장 1–5) 두 사례를 든 뒤(문장 6–11) 슬로건이 주민의 정체성과 창의성을 보여 준다고 맺는다(문장 12). ②이 소재와 주제를 함께 담았다. ①·③는 지엽적, ④·⑤는 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ①");
-B("문장 9에서 허쉬에 있는 것은 자동차 공장이 아니라 초콜릿 공장이다. car로 바꾼 ①가 본문과 다르다. ②은 문장 2, ③은 문장 3, ④는 문장 7–8, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 01   제목   ·   정답 ①");
+B("이 글은 도시 슬로건이 무엇을 하는지 설명하고(문장 1–5) 두 사례를 든 뒤(문장 6–11) 슬로건이 주민의 정체성과 창의성을 보여 준다고 맺는다(문장 12). ①이 소재와 주제를 함께 담았다. ②·③는 지엽적, ④·⑤는 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 9에서 허쉬에 있는 것은 자동차 공장이 아니라 초콜릿 공장이다. car로 바꾼 ③가 본문과 다르다. ①은 문장 2, ②은 문장 3, ④는 문장 7–8, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) They는 바로 앞 문장 10의 People in Gravity, Iowa를 가리킨다. 그 주민들이 down to earth와 gravity라는 말을 가지고 말놀이를 한 것이다 — 지시어는 바로 앞에서 찾는다.", true);
 Hs("독해 04   배열 영작   ·   The best slogans tell a story in a few powerful words.");
 B("문장 2를 그대로 복원하는 문제다. ① 첫 글자는 대문자 The.   ② 주어 The best slogans는 복수 — 동사 tell.   ③ in a few powerful words가 뒤에 붙는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 slogans · identities · creativity     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 도시 슬로건이 그 도시와 주민을 어떻게 드러내는지 설명한다. ② 공장 견학과 ③ 관광지 목록은 예시의 일부일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 slogans · identities · creativity     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 도시 슬로건이 그 도시와 주민을 어떻게 드러내는지 설명한다. ① 공장 견학과 ② 관광지 목록은 예시의 일부일 뿐이다.");
 B("1-2   ○표 할 세 단어: slogans(힌트① 주인공) · identities(힌트② 보여 주는 것) · creativity(힌트③ 사람들의 특징). 나머지 셋(chocolate · tourists · factory)은 예시와 배경일 뿐이다.");
 B("1-3   문장 4 — it은 the city에 ○.   문장 8 — This는 앞 문장의 허쉬 슬로건에 ○.   문장 12 — These slogans는 앞에서 소개한 슬로건들, there는 그 도시들에 ○.");
 B("[학습 포인트]   같은 they라도 문장 1에서는 도시를, 문장 11에서는 사람을 가리킨다. 지시어는 뜻이 아니라 '바로 앞의 자리'로 찾는 것이 원칙이다.", true);
@@ -783,11 +783,11 @@ B("3-3  정답 순서 — ⓓ City slogans → ⓑ show the unique identities �
 B("[채점 포인트]  주인공(ⓓ)이 맨 앞, 마침표가 붙은 덩어리(ⓐ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) humor  (2) chocolate  (3) identities  (4) creativity");
 B("(1)은 문장 5, (2)는 문장 9, (3)·(4)는 문장 12에서 가져온다. 요약문이 곧 이 글의 뼈대다: 슬로건의 쓰임 → 두 사례 → 결론.", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ②   문장 5 ①   문장 8 ③   문장 12 ③  (정답 선지는 무표시)");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ②   문장 5 ③   문장 8 ①   문장 12 ②  (정답 선지는 무표시)");
 B("문장 2 tell a story in a few powerful words   ① ✕ [반대] 긴 문장이 많이 필요하다.   ② ○ 강한 단어 몇 개로 이야기를 전한다.   ③ ✕ [무관] 관광객에게만 말한다는 근거는 없다.");
-B("문장 5 used humor for unique features   ① ○ 농담으로 특별한 점을 내세웠다.   ② ✕ [반대] 특징을 숨겼다.   ③ ✕ [무관] 박물관을 지었다는 말은 없다.");
-B("문장 8 has been Hershey’s slogan since 1990   ① ✕ [반대] 곧 없어졌다.   ② ✕ [무관] 가수가 썼다는 말은 없다.   ③ ○ 1990년부터 지금까지 쓰인다.");
-B("문장 12 show the identities of the people   ① ✕ [반대] 진짜 모습을 감춘다.   ② ✕ [무관] 도시가 얼마나 부유한지는 지문에 없다.   ③ ○ 주민들이 스스로를 어떻게 보는지 알려 준다.");
+B("문장 5 used humor for unique features   ① ✕ [반대] 특징을 숨겼다.   ② ✕ [무관] 박물관을 지었다는 말은 없다.   ③ ○ 농담으로 특별한 점을 내세웠다.");
+B("문장 8 has been Hershey’s slogan since 1990   ① ○ 1990년부터 지금까지 쓰인다.   ② ✕ [반대] 곧 없어졌다.   ③ ✕ [무관] 가수가 썼다는 말은 없다.");
+B("문장 12 show the identities of the people   ① ✕ [반대] 진짜 모습을 감춘다.   ② ○ 주민들이 스스로를 어떻게 보는지 알려 준다.   ③ ✕ [무관] 도시가 얼마나 부유한지는 지문에 없다.");
 B("[학습 포인트]  시험은 본문 표현을 반드시 바꿔서 묻는다. since 1990처럼 시간을 나타내는 말은 '지금까지 계속'인지 '그때뿐'인지를 꼭 구분하자.", true);
 
 K.push(brk());

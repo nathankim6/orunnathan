@@ -91,15 +91,15 @@ K.push(sp(65));
 ["① Some people naturally dance better than others.",
  "② A team of scientists recently discovered special genes.",
  "③ Our sense of rhythm makes us musical.",
- "④ Only a few genes help us keep rhythm.",
- "⑤ Our sense of rhythm is linked to walking and breathing."].forEach(c => K.push(ch(c)));
+ "④ Our sense of rhythm is linked to walking and breathing.",
+ "⑤ Only a few genes help us keep rhythm."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) They가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① a team of scientists",
- "② everyday activities",
- "③ your hands and feet",
- "④ your genes",
+ "② your genes",
+ "③ everyday activities",
+ "④ your hands and feet",
  "⑤ people who dance well"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -251,8 +251,8 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 노래의 박자를 세는 방법",
- "② 유전자에서 오는 리듬 감각",
+["① 유전자에서 오는 리듬 감각",
+ "② 노래의 박자를 세는 방법",
  "③ 과학자들이 유전자를 발견한 과정"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
@@ -360,8 +360,8 @@ K.push(sp(120));
 K.push(box([
   ...["ⓐ Scientists discovered special genes for rhythm.",
       "ⓑ Our sense of rhythm is also linked to walking and breathing.",
-      "ⓒ Some people naturally dance better than others.",
-      "ⓓ Our sense of rhythm makes us musical."]
+      "ⓒ Our sense of rhythm makes us musical.",
+      "ⓓ Some people naturally dance better than others."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -399,22 +399,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문12 ", { size: 17, bold: true, color: NAVY2 }), t("when[네모]·you(S′)·’re dancing(△V′)·think(△V)·of your genes(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 책상 위에 많은 책들이 있다  (2) 내 여동생은 내가 방을 청소하는 것을 돕는다  (3) 새로운 노래들이 있고, 그것들은 우리가 더 잘 춤추도록 돕는다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 genes · rhythm · everyday   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 genes · rhythm · everyday   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 T · 3 F · 4 F · 5 T · 6 F · 7 T · 8 F", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (d) → (b)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (c) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ①");
 B("이 글은 리듬 감각이 유전자에서 온다는 연구(문장 3–7)와 그 감각이 일상에도 이어진다는 사실(문장 10–13)을 알려 준다. 소재(리듬 감각)와 핵심(유전자에서 온다)을 함께 담은 ①이 제목으로 적절하다. ②·⑤는 춤·박수만 건드린 지엽적 오답, ③·④은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 7에서 리듬을 지키도록 돕는 유전자는 수백 개(hundreds of genes)라고 했다. 몇 개뿐이라는 ④이 본문과 반대된다. ①은 문장 2, ②은 문장 3–4, ③은 문장 9, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 7에서 리듬을 지키도록 돕는 유전자는 수백 개(hundreds of genes)라고 했다. 몇 개뿐이라는 ⑤이 본문과 반대된다. ①은 문장 2, ②은 문장 3–4, ③은 문장 9, ④는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) They는 바로 앞 문장 12의 your genes를 가리킨다. 문장 4의 They(과학자 팀)와 철자는 같지만 가리키는 대상이 다르다 — 지시어는 늘 바로 앞에서 짝을 찾아야 한다.", true);
 Hs("독해 04   배열 영작   ·   This sense of rhythm makes us musical.");
 B("문장 9를 그대로 복원하는 문제다. ① 첫 글자는 대문자 This.   ② sense of rhythm — of가 두 명사를 잇는다.   ③ makes us musical — '우리를 ~하게 만들다'는 makes + 목적어 + 형용사.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 genes · rhythm · everyday     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 리듬 감각이 유전자에서 온다는 이야기다. ① 박자를 세는 방법은 나오지 않고, ③ 발견 과정은 근거로 쓰인 한 부분일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 genes · rhythm · everyday     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 리듬 감각이 유전자에서 온다는 이야기다. ② 박자를 세는 방법은 나오지 않고, ③ 발견 과정은 근거로 쓰인 한 부분일 뿐이다.");
 B("1-2   ○표 할 세 단어: genes(힌트① 리듬 감각이 오는 곳) · rhythm(힌트② 이 글의 소재) · everyday(힌트③ 리듬이 쓰이는 범위). 나머지 셋(scientists · music · hands)은 본문에 등장하지만 주제문에 들어가지 않는다 — 연구자와 예시일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
 B("1-3   문장 4 — They는 과학자 팀에 ○ (문장 3의 A team of scientists).   문장 11 — It은 리듬 감각에 ○ (문장 10의 our sense of rhythm).   문장 13 — They는 유전자에 ○ (문장 12의 your genes).");
 B("[학습 포인트]   같은 They가 문장 4에서는 과학자를, 문장 13에서는 유전자를 가리킨다. 지시어는 단어가 아니라 자리로 읽는 것 — 만날 때마다 바로 앞 문장에서 짝을 찾아 화살표로 이어 두자.", true);
@@ -425,8 +425,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 T · 2 T · 3 F · 4 F · 5 T · 6 F · 7 T · 8 F");
    B("1 T — 문장 2.   2 T — 문장 9.   3 F — 문장 10: 춤에만 중요한 것이 아니다(isn’t only).   4 F — 문장 4: 오래전이 아니라 최근에(recently) 발견했다.   5 T — 문장 5.   6 F — 문장 7: 열 개가 아니라 수백 개(hundreds)다.   7 T — 문장 3.   8 F — 문장 11: 걷기와 무관한 게 아니라 걷기·숨쉬기와 연결되어(linked) 있다.  거짓 문장은 모두 본문에서 딱 한 요소(long ago, only ten, only, nothing to do)를 비튼 것이다 — 그 한 부분을 찾는 것이 정독이다.", true);
-Hs("R2   글의 전개 순서   ·   (c) → (a) → (d) → (b)");
-B("ⓒ 어떤 사람이 더 잘 춘다는 현상(문장 2) → ⓐ 과학자들이 리듬 유전자를 발견(문장 4) → ⓓ 리듬 감각이 우리를 음악적으로 만든다(문장 9) → ⓑ 리듬 감각은 걷기·숨쉬기와도 이어진다(문장 11). 설명문은 '현상 → 원인 → 의미 → 확장' 순으로 흐른다 — 이 순서가 곧 글의 뼈대다.", true);
+Hs("R2   글의 전개 순서   ·   (d) → (a) → (c) → (b)");
+B("ⓓ 어떤 사람이 더 잘 춘다는 현상(문장 2) → ⓐ 과학자들이 리듬 유전자를 발견(문장 4) → ⓒ 리듬 감각이 우리를 음악적으로 만든다(문장 9) → ⓑ 리듬 감각은 걷기·숨쉬기와도 이어진다(문장 11). 설명문은 '현상 → 원인 → 의미 → 확장' 순으로 흐른다 — 이 순서가 곧 글의 뼈대다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

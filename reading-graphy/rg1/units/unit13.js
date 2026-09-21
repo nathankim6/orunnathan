@@ -100,24 +100,24 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Make a Warm Coat at Home",
- "② Warm Clothes on Lamp Poles for People in Need",
- "③ The Coldest City in Canada",
+ "② The Coldest City in Canada",
+ "③ Warm Clothes on Lamp Poles for People in Need",
  "④ A Lady Who Lost Her Winter Coat",
  "⑤ Fun Winter Sports in Halifax"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① The little notes said that the coats were lost.",
- "② People in Halifax saw coats tied to the poles of street lamps.",
- "③ Tara works to help the homeless during the cold winter.",
+["① People in Halifax saw coats tied to the poles of street lamps.",
+ "② Tara works to help the homeless during the cold winter.",
+ "③ The little notes said that the coats were lost.",
  "④ Tara asks local children to come and help her.",
  "⑤ The warm clothes are for anyone who needs help."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) me가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the little note on the coat",
- "② the nice lady named Tara",
- "③ the warm coat on the lamp pole",
+["① the warm coat on the lamp pole",
+ "② the little note on the coat",
+ "③ the nice lady named Tara",
  "④ one of the local children",
  "⑤ the street lamp in the city"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -286,9 +286,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 캐나다의 추운 겨울 날씨",
- "② 코트를 잃어버린 사람들",
- "③ 가로등 기둥에 옷을 묶어 나누는 활동"].forEach(c =>
+["① 가로등 기둥에 옷을 묶어 나누는 활동",
+ "② 캐나다의 추운 겨울 날씨",
+ "③ 코트를 잃어버린 사람들"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -414,8 +414,8 @@ K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 �
 ["① 물건을 팔기 위해 만든 광고",
  "② 하루 일과를 적은 일기",
  "③ 친구에게 보내는 편지",
- "④ 리듬을 살려 쓴 시",
- "⑤ 실제 있는 활동을 알려 주는 설명문"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
+ "④ 실제 있는 활동을 알려 주는 설명문",
+ "⑤ 리듬을 살려 쓴 시"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
 K.push(brk());
@@ -647,7 +647,7 @@ K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다.
 K.push(sp(130));
 [["문장 5", [t("There ", { size: 19 }), t("( is  /  are )", { size: 19, bold: true, color: NAVY }), t(" a nice lady behind these notes.", { size: 19 })], "뒤에 오는 주어가 하나인지 여럿인지 보세요."],
  ["문장 7", [t("She ", { size: 19 }), t("( loves  /  love )", { size: 19, bold: true, color: NAVY }), t(" helping people.", { size: 19 })], "주어 She는 3인칭 단수 — 동사에 -s!"],
- ["문장 11", [t("Together, they ", { size: 19 }), t("( tie  /  ties )", { size: 19, bold: true, color: NAVY }), t(" warm clothes on lamp poles.", { size: 19 })], "주어 they(복수)에 맞는 동사 형태는?"],
+ ["문장 11", [t("Together, they ", { size: 19 }), t("( ties  /  tie )", { size: 19, bold: true, color: NAVY }), t(" warm clothes on lamp poles.", { size: 19 })], "주어 they(복수)에 맞는 동사 형태는?"],
  ["문장 14", [t("Helping others in need ", { size: 19 }), t("( are  /  is )", { size: 19, bold: true, color: NAVY }), t(" important for the community.", { size: 19 })], "동명사 주어는 한 덩어리 — 단수로 봅니다."],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
@@ -744,8 +744,8 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문14 ", { size: 17, bold: true, color: NAVY2 }), t("Helping others in need(S)·is(△V)·for the community(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 빨간 리본으로 묶인 상자를 발견했다  (2) 매일 책을 읽는 것은 재미있다  (3) 엄마가 요리한 음식을 먹는 것은 언제나 좋다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 helping · important · community        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 · 결과 · 순서 · 순서   2-2 [B] 쪽지 · [E] 교훈   2-3 ⑤", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 helping · important · community        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 · 결과 · 순서 · 순서   2-2 [B] 쪽지 · [E] 교훈   2-3 ④", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (c) → (d) → (a)  ·  Helping others in need is important for the community.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) notes  (2) warm  (3) children  (4) community        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 1 ①  문장 7 ③  문장 12 ①  문장 14 ②", { size: 19, bold: true })], { after: 150 }),
@@ -758,16 +758,16 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) Together, they tie warm clothes on lamp poles.  (2) Then, she asks local children to come and help her.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ②");
-B("이 글은 가로등 기둥에 묶인 따뜻한 옷(문장 1)과 그것을 준비한 타라의 활동(문장 8–11)을 소개한다. 소재와 목적을 함께 담은 ②이 제목으로 알맞다. ③·④는 지엽적이고, ①·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ①");
-B("문장 4의 쪽지는 '나는 잃어버린 게 아니에요(I’m not lost!)'라고 말한다. 코트가 분실물이라는 ①는 본문과 반대다. ②은 문장 1, ③은 문장 8, ④는 문장 10, ⑤는 문장 12에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 가로등 기둥에 묶인 따뜻한 옷(문장 1)과 그것을 준비한 타라의 활동(문장 8–11)을 소개한다. 소재와 목적을 함께 담은 ③이 제목으로 알맞다. ②·④는 지엽적이고, ①·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 4의 쪽지는 '나는 잃어버린 게 아니에요(I’m not lost!)'라고 말한다. 코트가 분실물이라는 ③는 본문과 반대다. ①은 문장 1, ②은 문장 8, ④는 문장 10, ⑤는 문장 12에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) me는 쪽지가 달린 그 옷이 스스로 말하는 것이다. '추우면 나를 가져가 따뜻하게 지내라'고 했으므로, 기둥에 묶인 따뜻한 코트를 가리킨다.", true);
 Hs("독해 04   배열 영작   ·   These clothes are for anyone who needs help.");
 B("문장 12를 그대로 복원하는 문제다. ① 첫 글자는 대문자 These.   ② 주어가 복수이므로 are.   ③ anyone 뒤에 who needs help가 이어진다 — needs의 -s에 주의.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 helping · important · community     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 가로등 기둥에 옷을 묶어 필요한 사람이 가져가게 하는 활동을 소개한다. ① 겨울 날씨와 ② 코트 분실은 배경과 오해일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 helping · important · community     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 가로등 기둥에 옷을 묶어 필요한 사람이 가져가게 하는 활동을 소개한다. ② 겨울 날씨와 ③ 코트 분실은 배경과 오해일 뿐이다.");
 B("1-2   ○표 할 세 단어: helping(힌트① 행동) · important(힌트② 글쓴이의 평가) · community(힌트③ 이로운 곳). coats · winter · children은 본문에 나오지만 주제문에는 들어가지 않는다.");
 B("1-3   문장 5 — these notes는 코트의 쪽지에 ○ (문장 3–4의 그 쪽지).   문장 11 — they는 타라와 아이들에 ○ (문장 10).   문장 12 — These clothes는 따뜻한 옷에 ○ (문장 11).");
 B("[학습 포인트]   같은 they라도 문장 2는 핼리팩스 사람들, 문장 11은 타라와 아이들이다. 지시어를 만나면 앞 문장에서 짝을 찾아 화살표로 연결해 두자.", true);
@@ -775,10 +775,10 @@ B("[학습 포인트]   같은 they라도 문장 2는 핼리팩스 사람들, �
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 반전 / 결과 / 순서 / 순서     2-2 [B] 쪽지 · [E] 교훈     2-3 ⑤");
+Hs("STEP 2   글의 흐름   ·   2-1 반전 / 결과 / 순서 / 순서     2-2 [B] 쪽지 · [E] 교훈     2-3 ④");
 B("2-1   문장 3 But — 두고 간 옷인 줄 알았다가 쪽지를 발견하는 '반전'.   문장 8 So — 사람 돕기를 좋아해서 생긴 '결과'.   문장 9 First와 문장 10 Then — 활동의 '순서'를 알려 준다.");
 B("2-2   [B] 쪽지(문장 4: 옷에 달린 쪽지의 내용), [E] 교훈(문장 12–14: 누구나 가져가도 되고, 남을 돕는 일은 공동체에 중요하다). 보기의 '광고'는 이 글에 없는 역할이다.");
-B("2-3   정답 ⑤. 실제 있는 활동을 사실대로 알려 주는 글이다. ① 가격이나 사라는 말이 없어 광고가 아니고, ② I·날짜, ③ Dear ~, ④ 시의 형식도 보이지 않는다.");
+B("2-3   정답 ④. 실제 있는 활동을 사실대로 알려 주는 글이다. ① 가격이나 사라는 말이 없어 광고가 아니고, ② I·날짜, ③ Dear ~, ⑤ 시의 형식도 보이지 않는다.");
 B("[학습 포인트]   First와 Then이 보이면 순서를 설명하는 대목이다. 번호를 매기며 읽으면 활동의 단계가 그대로 정리된다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 important · the community     3-3 (b) → (c) → (d) → (a)");
 B("3-1  재료 찾기 — (2) 문장 14에서 important에 ○: 글쓴이의 평가다. difficult는 본문에 없다. (3) the community에 ○: 그 행동이 이로운 곳이다. the school도 본문에 없다.");

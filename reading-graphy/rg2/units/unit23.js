@@ -94,11 +94,11 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the cocoa powder in the air",
- "② the chocolate factory in the town",
- "③ the air system of the factory",
- "④ the snow that fell in winter",
- "⑤ the strong wind on that day"].forEach(c => K.push(ch(c)));
+["① the strong wind on that day",
+ "② the cocoa powder in the air",
+ "③ the chocolate factory in the town",
+ "④ the air system of the factory",
+ "⑤ the snow that fell in winter"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -251,8 +251,8 @@ K.push(spF(4, 300, 0.10));
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 ["① 초콜릿을 맛있게 만드는 방법",
- "② 눈이 많이 내리는 나라들",
- "③ 마을에 코코아 가루가 눈처럼 내린 일"].forEach(c =>
+ "② 마을에 코코아 가루가 눈처럼 내린 일",
+ "③ 눈이 많이 내리는 나라들"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -398,7 +398,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문9 ", { size: 17, bold: true, color: NAVY2 }), t("They(S)·fixed·offered(△V)·to clean up the cocoa powder(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 내가 일어났을 때 비가 오고 있었다  (2) 선생님은 우리에게 시험이 쉬웠다고 말씀하셨다  (3) 그녀는 나에게 자기 남동생이 자고 있다고 말했다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 cocoa · snow · loved   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 cocoa · snow · loved   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 T · 4 F · 5 F · 6 F · 7 T · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
@@ -408,12 +408,12 @@ Hs("독해 01   제목   ·   정답 ⑤");
 B("이 글은 스위스 올텐 마을에 코코아 가루가 눈처럼 내린 사고(문장 1–7)와 그것을 오히려 반긴 마을 사람들(문장 8–11)을 들려준다. 소재(초콜릿 눈)와 성격(달콤한 사고)을 모두 담은 ⑤이 제목으로 적절하다. ①·④는 코코아·청소만 건드린 지엽적 오답, ②·③은 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ②");
 B("문장 8에서 공장은 이 초콜릿 눈이 전혀 해롭지 않다(wasn’t harmful at all)고 알렸다. 위험하다고 뒤집은 ②이 본문과 반대된다. ①은 문장 1–2, ③은 문장 3, ④는 문장 4, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) it은 같은 문장 앞부분의 a strong wind를 가리킨다. 코코아 가루를 마을 곳곳에 퍼뜨린 것이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   Cars, houses, and streets all got covered in cocoa powder.");
 B("문장 7을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Cars, 나열에는 콤마를 찍는다.   ② 세 가지를 잇는 and의 자리에 주의한다.   ③ got covered in — '~로 덮였다'가 한 덩어리다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 cocoa · snow · loved     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 마을에 코코아 가루가 눈처럼 내린 일을 들려준다. ① 초콜릿 만드는 법은 나오지 않고, ② 진짜 눈이 내리는 나라 이야기도 아니다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 cocoa · snow · loved     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 마을에 코코아 가루가 눈처럼 내린 일을 들려준다. ① 초콜릿 만드는 법은 나오지 않고, ③ 진짜 눈이 내리는 나라 이야기도 아니다.");
 B("1-2   ○표 할 세 단어: cocoa(힌트① 하늘에서 내린 것) · snow(힌트② 그것이 내린 모습) · loved(힌트③ 마을 사람들의 반응). 나머지 셋(factory · wind · cars)은 본문에 등장하지만 주제문에 들어가지 않는다 — 원인과 배경일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
 B("1-3   문장 4 — its는 공장의에 ○ (문장 3의 그 초콜릿 공장).   문장 6 — it은 강한 바람에 ○ (같은 문장 앞의 a strong wind).   문장 9 — They는 공장 사람들에 ○ (문장 8의 The factory).");
 B("[학습 포인트]   문장 3의 This는 단어 하나가 아니라 앞 문장 전체(코코아가 내린 일)를 받는다. 문장 6의 it은 바람, 문장 9의 They는 공장 — 가리키는 대상이 계속 바뀌므로 만날 때마다 확인하자.", true);

@@ -4,7 +4,7 @@
 보기에 붙은 기호만 다시 매기므로, 정답이 가리키는 '글'은 그대로다.
 정답 순서·해설·요약 패널의 기호를 같은 표로 함께 바꾼다.
 """
-import re, glob, os, sys, random, collections
+import re, glob, os, sys, random, collections, json
 import rebalance as R
 
 CIRA = 'ⓐⓑⓒⓓⓔⓕ'
@@ -31,6 +31,20 @@ def parse_order(s):
     m = ORDER.search(s)
     return [c for c in re.findall(r'\(([a-f])\)', m.group(0))] if m else None
 
+PLAN = {}
+def pick(name, f, n, rnd):
+    """이웃한 세 유닛이 같은 자리를 잇지 않도록 고른다."""
+    bk = f.rsplit('/units/', 1)[0].rsplit('/', 1)[-1]
+    hist = PLAN.setdefault((name, bk), [])
+    cand = [k for k in range(n) if not (len(hist) >= 2 and hist[-1] == hist[-2] == k)]
+    # 개수도 고르게 — 지금까지 가장 적게 쓴 자리를 우선한다
+    cnt = collections.Counter(hist)
+    least = min(cnt.get(k, 0) for k in cand)
+    cand = [k for k in cand if cnt.get(k, 0) == least]
+    t = rnd.choice(cand)
+    hist.append(t)
+    return t
+
 def main(apply=False):
     files = sorted(glob.glob(f'{R.S}/rg*/units/unit*.js'))
     rnd = random.Random(777)
@@ -53,7 +67,7 @@ def main(apply=False):
             if max(idx) >= n: continue
             chrono = [texts[k] for k in idx]                       # 실제(정답) 차례의 글
             before[name][order[0]] += 1
-            tgt = rnd.randrange(n)                                 # 첫 정답 기호를 이 자리로
+            tgt = pick(name, f, n, rnd)                             # 첫 정답 기호를 이 자리로
             rest = [t for t in texts if t != chrono[0]]
             new_texts = rest[:tgt] + [chrono[0]] + rest[tgt:]
             if new_texts == texts:

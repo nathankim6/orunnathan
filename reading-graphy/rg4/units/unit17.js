@@ -78,21 +78,21 @@ K.push(sp(65));
 ["① How to Win a Talent Show",
  "② The History of Ohio’s Small Towns",
  "③ Why Twins Look So Different",
- "④ The Best Way to Take Group Photos",
- "⑤ Twins Days: Fun and Science Together"].forEach(c => K.push(ch(c)));
+ "④ Twins Days: Fun and Science Together",
+ "⑤ The Best Way to Take Group Photos"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Twins Days takes place in Twinsburg, Ohio.",
  "② The town is named after two twin brothers.",
  "③ During the festival, twins dress the same.",
- "④ The festival began in 1976 with 3,000 pairs of twins.",
- "⑤ Twins volunteer for studies about genetics and aging."].forEach(c => K.push(ch(c)));
+ "④ Twins volunteer for studies about genetics and aging.",
+ "⑤ The festival began in 1976 with 3,000 pairs of twins."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) They가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the twins in the large tent",
- "② the scientists",
+["① the scientists",
+ "② the twins in the large tent",
  "③ the visitors at the parade",
  "④ the twin brothers who made the town",
  "⑤ the organizers of the festival"].forEach(c => K.push(ch(c)));
@@ -354,8 +354,8 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "트윈스버그와 축제에 일어난 일 ⓐ~ⓓ를 실제 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ Twin brothers helped make the town, and it was named after them.",
-      "ⓑ Twins join contests, parades, and talent shows.",
+  ...["ⓐ Twins join contests, parades, and talent shows.",
+      "ⓑ Twin brothers helped make the town, and it was named after them.",
       "ⓒ The festival began with just 36 pairs of twins in 1976.",
       "ⓓ Scientists collect valuable data from twins in a large tent."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
@@ -398,14 +398,14 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 twins · fun · research   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 T · 3 T · 4 F · 5 F · 6 T · 7 F · 8 F", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (b) → (d)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (a) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ⑤");
-B("이 글은 쌍둥이 축제의 즐거움(문장 5–6)과 그 축제가 과학 연구의 기회이기도 하다는 점(문장 7–11)을 함께 소개한다. 두 축을 모두 담은 ⑤이 제목으로 적절하다. ①·②는 지엽적 오답, ③·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 4에서 축제는 1976년에 단 36쌍으로 시작했다. 3,000쌍은 지금 모이는 규모(문장 2)다. 숫자를 바꿔 놓은 ④이 본문과 다르다. ①은 문장 1, ②은 문장 3, ③는 문장 5, ⑤는 문장 8에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ②");
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 쌍둥이 축제의 즐거움(문장 5–6)과 그 축제가 과학 연구의 기회이기도 하다는 점(문장 7–11)을 함께 소개한다. 두 축을 모두 담은 ④이 제목으로 적절하다. ①·②는 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 4에서 축제는 1976년에 단 36쌍으로 시작했다. 3,000쌍은 지금 모이는 규모(문장 2)다. 숫자를 바꿔 놓은 ⑤이 본문과 다르다. ①은 문장 1, ②은 문장 3, ③는 문장 5, ④는 문장 8에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) They는 바로 앞 문장 10의 The scientists를 가리킨다. 네 시간 만에 일 년치 정보를 얻는 쪽은 자료를 모으는 과학자들이다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   They join contests, parades, talent shows, and group photos.");
 B("문장 6을 그대로 복원하는 문제다. ① 첫 글자는 대문자 They.   ② 나열되는 항목 사이의 콤마를 빠뜨리지 않는다.   ③ 마지막 항목 앞에는 and가 온다.", true);
@@ -421,8 +421,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 T · 2 T · 3 T · 4 F · 5 F · 6 T · 7 F · 8 F");
    B("1 T — 문장 2.   2 T — 문장 8.   3 T — 문장 1.   4 F — 문장 3: 자매(sisters)가 아니라 쌍둥이 형제(brothers)다.   5 F — 문장 9: 오래 줄을 서도 보람을 즐긴다.   6 T — 문장 4.   7 F — 문장 11: 나흘이 아니라 단 네 시간이다.   8 F — 문장 5: 다른 옷이 아니라 똑같은 옷을 입는다.  거짓 넷은 모두 한 요소(sisters, different, hate, days)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (a) → (c) → (b) → (d)");
-B("ⓐ 쌍둥이 형제가 마을을 세우고 마을에 그 이름이 붙는다(문장 3) → ⓒ 1976년에 36쌍으로 축제가 시작된다(문장 4) → ⓑ 오늘의 축제에서 대회와 퍼레이드가 열린다(문장 5–6) → ⓓ 큰 천막에서 과학자들이 자료를 모은다(문장 8–10). 글은 축제 소개(문장 1–2)부터 시작하지만 실제 사건은 마을의 유래가 가장 먼저다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
+Hs("R2   사건 순서   ·   (b) → (c) → (a) → (d)");
+B("ⓑ 쌍둥이 형제가 마을을 세우고 마을에 그 이름이 붙는다(문장 3) → ⓒ 1976년에 36쌍으로 축제가 시작된다(문장 4) → ⓐ 오늘의 축제에서 대회와 퍼레이드가 열린다(문장 5–6) → ⓓ 큰 천막에서 과학자들이 자료를 모은다(문장 8–10). 글은 축제 소개(문장 1–2)부터 시작하지만 실제 사건은 마을의 유래가 가장 먼저다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

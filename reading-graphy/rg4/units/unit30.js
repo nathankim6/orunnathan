@@ -79,24 +79,24 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Save Money in a Small Town",
- "② Why Doing Laundry Is Hard Work",
- "③ A Laundry Lady’s Great Gift to Students",
+ "② A Laundry Lady’s Great Gift to Students",
+ "③ Why Doing Laundry Is Hard Work",
  "④ The History of Mississippi Universities",
  "⑤ Ten Coins and a Magic Tree"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① McCarty spent her whole life doing laundry and saved more than $250,000.",
- "② McCarty gave six coins to her cousins.",
+["① McCarty gave six coins to her cousins.",
+ "② McCarty spent her whole life doing laundry and saved more than $250,000.",
  "③ The banker gave her 10 coins and asked her to divide them.",
  "④ She donated $150,000 to the University of Southern Mississippi.",
  "⑤ The group’s symbol is a tree with six coins on its branches."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① African American students",
- "② McCarty’s cousins",
- "③ the ten coins",
+["① McCarty’s cousins",
+ "② the ten coins",
+ "③ African American students",
  "④ the bankers in the small town",
  "⑤ the branches of the tree"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -248,8 +248,8 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 평생 모은 돈을 학생들에게 기부한 여성",
- "② 세탁 일을 잘하는 방법",
+["① 세탁 일을 잘하는 방법",
+ "② 평생 모은 돈을 학생들에게 기부한 여성",
  "③ 미시시피 대학교의 역사"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
@@ -396,22 +396,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문9 ", { size: 17, bold: true, color: NAVY2 }), t("Today(M)·those who donate(S)·are(△V)·part of a group(보어)·known as~(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 아침 내내 방을 청소하며 보냈다  (2) 엄마는 나에게 설거지를 해 달라고 부탁하셨다  (3) 그녀는 한 시간을 나를 가르치며 보냈고, 매일 연습하라고 부탁했다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 McCarty · donate · education   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 McCarty · donate · education   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 F · 5 F · 6 T · 7 T · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("평생 남의 빨래를 하며 모은 돈을 대학의 흑인 학생들에게 기부한 매카티의 이야기다(문장 1–8). 주인공과 그 행동을 함께 담은 ③이 적절하다. ①·②은 저축·세탁만 건드린 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 4에서 사촌들에게 간 것은 세 개이고, 남은 여섯 개가 대학으로 갔다. 사촌에게 여섯 개를 주었다는 ②은 본문과 다르다. ①은 문장 1, ③는 문장 3, ④는 문장 5, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ②");
+B("평생 남의 빨래를 하며 모은 돈을 대학의 흑인 학생들에게 기부한 매카티의 이야기다(문장 1–8). 주인공과 그 행동을 함께 담은 ②이 적절하다. ①·③은 저축·세탁만 건드린 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 4에서 사촌들에게 간 것은 세 개이고, 남은 여섯 개가 대학으로 갔다. 사촌에게 여섯 개를 주었다는 ①은 본문과 다르다. ②은 문장 1, ③는 문장 3, ④는 문장 5, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) them은 바로 앞 문장 5의 African American students를 가리킨다. 매카티가 교육받기를 바란 대상이 누구인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   It symbolizes McCarty’s generous contribution to the university.");
 B("문장 11을 그대로 복원하는 문제다. ㄱ 첫 글자는 대문자 It.   ㄴ 주어가 단수이므로 동사는 symbolizes.   ㄷ contribution to ~는 '~에 대한 기부'라는 한 덩어리다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 McCarty · donate · education     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 평생 모은 돈을 대학에 기부한 매카티를 소개한다. ② 세탁은 그녀의 직업이라는 배경일 뿐이고, ③ 대학의 역사는 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 McCarty · donate · education     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 평생 모은 돈을 대학에 기부한 매카티를 소개한다. ① 세탁은 그녀의 직업이라는 배경일 뿐이고, ③ 대학의 역사는 나오지 않는다.");
 B("1-2   ○표 할 세 단어: McCarty(힌트① 이 글의 주인공) · donate(힌트② 그녀가 한 일) · education(힌트③ 학생들에게 준 기회). 나머지 셋(coins · laundry · banker)은 본문에 나오지만 주제문에는 들어가지 않는다 — 방법과 배경일 뿐이다.");
 B("1-3   문장 6 — them은 흑인 학생들에 ○ (문장 5의 대상).   문장 8 — They도 그 학생들에 ○.   문장 11 — It은 나무 상징에 ○ (문장 10의 상징물).");
 B("[학습 포인트]   따옴표 안의 지시어는 말하는 사람의 눈으로 읽어야 한다. 문장 6·8의 them·They는 매카티가 바라보는 '그 학생들'이다. 인용문을 만나면 '누가, 누구에게' 하는 말인지부터 확인하자.", true);

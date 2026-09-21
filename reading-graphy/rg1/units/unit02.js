@@ -81,11 +81,11 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① How to Grow Pumpkins for Cooking",
- "② The Longest River in America",
- "③ A Farmer’s Busy Life in Nebraska",
- "④ The Best Kayak for a River Trip",
- "⑤ A Pumpkin Big Enough to Ride On"].forEach(c => K.push(ch(c)));
+["① A Pumpkin Big Enough to Ride On",
+ "② How to Grow Pumpkins for Cooking",
+ "③ The Longest River in America",
+ "④ A Farmer’s Busy Life in Nebraska",
+ "⑤ The Best Kayak for a River Trip"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
@@ -359,8 +359,8 @@ K.push(sp(120));
 K.push(box([
   ...["ⓐ He cut the pumpkin’s top off and made space inside.",
       "ⓑ He traveled more than 61 kilometers on the river.",
-      "ⓒ He took paddles from his kayak.",
-      "ⓓ Duane grew a super big pumpkin."]
+      "ⓒ Duane grew a super big pumpkin.",
+      "ⓓ He took paddles from his kayak."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -401,11 +401,11 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 pumpkin · boat · traveled   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 T · 4 T · 5 F · 6 F · 7 F · 8 T", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (c) → (b)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (d) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ⑤");
-B("이 글은 듀에인이 10년 만에 기른 거대 호박으로 보트를 만들어 강을 여행한 이야기다(문장 3·8·14). 소재(호박)와 특징(타고 다닐 만큼 크다)을 함께 담은 ⑤이 정답이다. ①·③은 지엽적이고, ②·④는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ①");
+B("이 글은 듀에인이 10년 만에 기른 거대 호박으로 보트를 만들어 강을 여행한 이야기다(문장 3·8·14). 소재(호박)와 특징(타고 다닐 만큼 크다)을 함께 담은 ①이 정답이다. ②·④은 지엽적이고, ③·⑤는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ⑤");
 B("문장 7에서 그 호박은 380킬로그램이 넘게(over 380 kilograms) 나갔다고 했으므로, 100킬로그램이 안 된다는 ⑤은 본문과 반대된다. ①은 문장 1, ②은 문장 4, ③은 문장 10, ④는 문장 14에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ②");
@@ -423,8 +423,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 T · 5 F · 6 F · 7 F · 8 T");
    B("1 T — 문장 6.   2 F — 문장 11: 쉽지 않았다(wasn’t easy).   3 T — 문장 12.   4 T — 문장 1.   5 F — 문장 7: 100킬로그램 미만이 아니라 380킬로그램이 넘는다.   6 F — 문장 13: 멈추지 않았다(didn’t stop).   7 F — 문장 4: 10일이 아니라 거의 10년(years)이다.   8 T — 문장 10.  거짓 문장은 모두 한 요소(days, less than 100, easy, stopped)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (d) → (a) → (c) → (b)");
-B("ⓓ 아주 큰 호박을 길렀다(문장 5) → ⓐ 호박 윗부분을 잘라 앉을 공간을 만들었다(문장 9) → ⓒ 카약에서 노를 가져왔다(문장 10) → ⓑ 61킬로미터가 넘게 여행했다(문장 14). 문장 3은 결말을 미리 알려 주는 '맛보기'다 — 서술 순서와 사건 순서가 다른 지점이니 문장 번호만 믿지 말자.", true);
+Hs("R2   사건 순서   ·   (c) → (a) → (d) → (b)");
+B("ⓒ 아주 큰 호박을 길렀다(문장 5) → ⓐ 호박 윗부분을 잘라 앉을 공간을 만들었다(문장 9) → ⓓ 카약에서 노를 가져왔다(문장 10) → ⓑ 61킬로미터가 넘게 여행했다(문장 14). 문장 3은 결말을 미리 알려 주는 '맛보기'다 — 서술 순서와 사건 순서가 다른 지점이니 문장 번호만 믿지 말자.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

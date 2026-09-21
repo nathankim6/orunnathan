@@ -97,26 +97,26 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① The Short History of Birthday Parties",
- "② The Story of the “Happy Birthday” Song",
- "③ Why Families Began to Have Fewer Kids",
- "④ How to Make a Special Birthday Cake",
- "⑤ The Best Birthday Gifts for Your Family"].forEach(c => K.push(ch(c)));
+["① The Story of the “Happy Birthday” Song",
+ "② Why Families Began to Have Fewer Kids",
+ "③ How to Make a Special Birthday Cake",
+ "④ The Best Birthday Gifts for Your Family",
+ "⑤ The Short History of Birthday Parties"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① In the past, most people celebrated their own birthdays.",
- "② People started the birthday tradition around 100 years ago.",
- "③ Long ago, birthday celebrations were only for rich people or national heroes.",
- "④ Families started to put a big candle in the middle of the cake.",
- "⑤ By the end of the 19th century, giving birthday cards became common."].forEach(c => K.push(ch(c)));
+["① People started the birthday tradition around 100 years ago.",
+ "② Long ago, birthday celebrations were only for rich people or national heroes.",
+ "③ Families started to put a big candle in the middle of the cake.",
+ "④ By the end of the 19th century, giving birthday cards became common.",
+ "⑤ In the past, most people celebrated their own birthdays."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) this tradition이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① writing birthday songs",
  "② giving birthday cards",
- "③ celebrating birthdays",
- "④ putting a candle on the cake",
+ "③ putting a candle on the cake",
+ "④ celebrating birthdays",
  "⑤ becoming a national hero"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -284,9 +284,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 생일 축하의 역사",
- "② 미국 대통령들의 생일",
- "③ 생일 케이크 만드는 법"].forEach(c =>
+["① 미국 대통령들의 생일",
+ "② 생일 케이크 만드는 법",
+ "③ 생일 축하의 역사"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -516,15 +516,15 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 3, main: "only started this tradition around 100 years ago",
-    opts: ["① began it only about a century ago", "② have kept it for thousands of years", "③ learned it from another country"] },
+    opts: ["① have kept it for thousands of years", "② learned it from another country", "③ began it only about a century ago"] },
   { sn: 5, main: "only for rich people or national heroes",
-    opts: ["① just for the wealthy or the famous", "② for everyone in the country", "③ only for children under ten"] });
+    opts: ["① for everyone in the country", "② just for the wealthy or the famous", "③ only for children under ten"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 8, main: "each kid was able to get more attention",
-    opts: ["① every child received less care", "② each child could get more care", "③ each child had to work harder"] },
+    opts: ["① each child could get more care", "② every child received less care", "③ each child had to work harder"] },
   { sn: 11, main: "giving birthday cards also became common",
-    opts: ["① card giving almost disappeared", "② sending cards grew popular too", "③ cards became very expensive"] });
+    opts: ["① sending cards grew popular too", "② card giving almost disappeared", "③ cards became very expensive"] });
 K.push(spF(7, 150, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -601,9 +601,9 @@ K.push(spF(8, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "생일 축하의 역사에서 일어난 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ Families began to have fewer kids.",
-      "ⓑ Giving birthday cards became common.",
-      "ⓒ Birthday celebrations were only for rich people or national heroes.",
+  ...["ⓐ Birthday celebrations were only for rich people or national heroes.",
+      "ⓑ Families began to have fewer kids.",
+      "ⓒ Giving birthday cards became common.",
       "ⓓ Families started to put a big candle in the middle of the cake."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -644,10 +644,10 @@ K.push(spF(9, 380, 0.12));
 
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
-[["문장 2", [t("Birthday celebrations ", { size: 19 }), t("( feels  /  feel )", { size: 19, bold: true, color: NAVY }), t(" like a very old tradition.", { size: 19 })], "주어 celebrations(복수)에 맞는 동사 형태는?"],
+[["문장 2", [t("Birthday celebrations ", { size: 19 }), t("( feel  /  feels )", { size: 19, bold: true, color: NAVY }), t(" like a very old tradition.", { size: 19 })], "주어 celebrations(복수)에 맞는 동사 형태는?"],
  ["문장 8", [t("Each kid ", { size: 19 }), t("( were  /  was )", { size: 19, bold: true, color: NAVY }), t(" able to get more attention.", { size: 19 })], "each+단수 명사는 하나로 세는 말이에요."],
- ["문장 10", [t("Families started ", { size: 19 }), t("( to put  /  put )", { size: 19, bold: true, color: NAVY }), t(" a big candle in the middle of the cake.", { size: 19 })], "start 뒤에는 to+동사원형이 올 수 있어요."],
- ["문장 11", [t("", { size: 19 }), t("( Give  /  Giving )", { size: 19, bold: true, color: NAVY }), t(" birthday cards also became common.", { size: 19 })], "주어 자리에는 동사원형이 아니라 동사+ing!"],
+ ["문장 10", [t("Families started ", { size: 19 }), t("( put  /  to put )", { size: 19, bold: true, color: NAVY }), t(" a big candle in the middle of the cake.", { size: 19 })], "start 뒤에는 to+동사원형이 올 수 있어요."],
+ ["문장 11", [t("", { size: 19 }), t("( Giving  /  Give )", { size: 19, bold: true, color: NAVY }), t(" birthday cards also became common.", { size: 19 })], "주어 자리에는 동사원형이 아니라 동사+ing!"],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
     cel(new Paragraph({ children: [t("(" + (i + 1) + ")", { size: 16, bold: true, color: "FFFFFF" })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 210 } }),
@@ -742,30 +742,30 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문12 ", { size: 17, bold: true, color: NAVY2 }), t("Even though[네모]·birthday parties(S′)·have(△V′)·they(S)·are(△V)·a big part of our lives", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 숙제를 끝낼 수 있었다  (2) 만화책을 읽는 것은 재미있다  (3) 영어를 배우는 것은 재미있고, 나는 새 친구들을 사귈 수 있었다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 birthday parties \u00b7 short history \u00b7 big part        ", { size: 19, bold: true }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 birthday parties \u00b7 short history \u00b7 big part        ", { size: 19, bold: true }),
      t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 \u00b7 예시 \u00b7 결과 \u00b7 ~일지라도   2-2 [B] 과거 \u00b7 [E] 마무리   2-3 ①", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (c) → (b) → (a) → (d)  \u00b7  Birthday parties have a short history, but they are now a big part of our lives.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) heroes  (2) attention  (3) cards  (4) part        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 3 ①  문장 5 ①  문장 8 ②  문장 11 ②", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 3 ③  문장 5 ②  문장 8 ①  문장 11 ①", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 T · 3 T · 4 T · 5 F · 6 F · 7 F · 8 F", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (d) → (b)", { size: 19, bold: true })], { after: 25 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (b) → (d) → (c)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(e) \u00b7 2(a) \u00b7 3(d) \u00b7 4(f) \u00b7 5(c) \u00b7 6(b)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) feel  (2) was  (3) to put  (4) Giving", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) tradition (2) celebrate (3) heroes (4) attention (5) candle (6) cards (7) history (8) part", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) This led to more birthday parties.  (2) But around the mid-19th century, things changed.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 생일 축하가 100년 남짓의 짧은 역사를 지녔다는 사실(문장 3)과 그 변화 과정을 설명한다. 소재와 특징을 함께 담은 ①이 제목으로 적절하다. ②\u00b7③는 본문 일부만 건드린 지엽적 오답, ④\u00b7⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ①");
-B("문장 6에서 대부분의 사람들은 자기 생일이 아니라 조지 워싱턴의 생일을 기념했다고 했으므로 ①는 본문과 반대된다. ②은 문장 3, ③은 문장 5, ④은 문장 10, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 생일 축하가 100년 남짓의 짧은 역사를 지녔다는 사실(문장 3)과 그 변화 과정을 설명한다. 소재와 특징을 함께 담은 ⑤이 제목으로 적절하다. ①\u00b7②는 본문 일부만 건드린 지엽적 오답, ③\u00b7④는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 6에서 대부분의 사람들은 자기 생일이 아니라 조지 워싱턴의 생일을 기념했다고 했으므로 ⑤는 본문과 반대된다. ①은 문장 3, ②은 문장 5, ③은 문장 10, ④는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) this tradition은 앞의 문장 1–2가 말한 \u2018생일을 축하하는 일\u2019을 가리킨다. 문장 3은 그 축하 문화가 겨우 100년 전에 시작됐다는 뜻이므로 답은 celebrating birthdays다.", true);
 Hs("독해 04   배열 영작   ·   Birthday celebrations feel like a very old tradition.");
 B("문장 2를 그대로 복원하는 문제다. ① 주어 Birthday celebrations는 복수 — 동사는 feel.   ② feel like+명사는 \u2018~처럼 느껴지다\u2019.   ③ a very old tradition — 관사\u00b7부사\u00b7형용사 순서에 주의.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 birthday parties \u00b7 short history \u00b7 big part     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 생일 축하가 언제 어떻게 지금의 모습이 되었는지를 시간 순서로 설명한다. ② 조지 워싱턴은 예시일 뿐이고, ③ 케이크 만드는 법은 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 birthday parties \u00b7 short history \u00b7 big part     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 생일 축하가 언제 어떻게 지금의 모습이 되었는지를 시간 순서로 설명한다. ① 조지 워싱턴은 예시일 뿐이고, ② 케이크 만드는 법은 나오지 않는다.");
 B("1-2   \u25cb표 할 세 가지: birthday parties(힌트① 주인공) \u00b7 short history(힌트② 뜻밖의 사실) \u00b7 big part(힌트③ 오늘날의 위치). 나머지 셋(candle \u00b7 George Washington \u00b7 cards)은 본문에 나오지만 변화의 사례일 뿐 주제문에는 들어가지 않는다.");
 B("1-3   문장 3 — this tradition은 \u2018생일 축하하기\u2019에 \u25cb.   문장 9 — This는 \u2018관심이 커진 것\u2019에 \u25cb (문장 8 전체를 대신한다).   문장 12 — they는 birthday parties에 \u25cb.");
 B("[학습 포인트]   문장 9의 This가 이 지문의 백미다. 지시어는 단어 하나만이 아니라 앞 문장 전체를 통째로 대신하기도 한다. 만날 때마다 화살표로 연결해 두는 습관이 고등 지칭 추론 문항으로 이어진다.", true);
@@ -785,11 +785,11 @@ B("3-3  정답 순서 — ⓒ birthday parties have → ⓑ a short history, →
 B("[채점 포인트]  주어 덩어리(ⓒ)가 맨 앞, 마침표가 붙은 덩어리(ⓓ)가 맨 뒤 — 이 두 자리만 잡으면 콤마로 끝나는 ⓑ과 but으로 시작하는 ⓐ의 순서는 저절로 정해진다.", true);
 Hs("STEP 4   요약문   ·   (1) heroes  (2) attention  (3) cards  (4) part");
 B("(1)은 문장 5의 heroes, (2)는 문장 8의 attention, (3)은 문장 11의 cards, (4)는 문장 12의 part에서 가져온다. 요약문이 곧 이 글의 흐름이다: 과거(1) → 변화(2) → 새 풍습(3) → 오늘(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 3 ①   문장 5 ①   문장 8 ②   문장 11 ②  (정답 선지는 무표시)");
-B("문장 3 only started this tradition around 100 years ago   ① \u25cb 겨우 한 세기쯤 전에 시작했다.   ② \u2715 [반대] 수천 년간 이어 왔다 — 정반대.   ③ \u2715 [무관] 다른 나라에서 배웠다는 말은 없다.");
-B("문장 5 only for rich people or national heroes   ② \u2715 [반대] 나라의 모든 사람을 위한 것 — 정반대.   ① \u25cb 부유하거나 유명한 사람들만.   ③ \u2715 [무관] 열 살 미만 아이라는 말은 지문에 없다.");
-B("문장 8 each kid was able to get more attention   ① \u2715 [반대] 아이마다 보살핌이 줄었다 — 정반대.   ② \u25cb 아이마다 더 많은 보살핌을 받을 수 있었다.   ③ \u2715 [무관] 더 열심히 일했다는 말은 없다.");
-B("문장 11 giving birthday cards also became common   ② \u25cb 카드를 보내는 일도 널리 퍼졌다.   ① \u2715 [반대] 거의 사라졌다 — 정반대.   ③ \u2715 [무관] 카드값이 비싸졌다는 말은 지문에 없다.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 3 ③   문장 5 ②   문장 8 ①   문장 11 ①  (정답 선지는 무표시)");
+B("문장 3 only started this tradition around 100 years ago   ③ \u25cb 겨우 한 세기쯤 전에 시작했다.   ① \u2715 [반대] 수천 년간 이어 왔다 — 정반대.   ② \u2715 [무관] 다른 나라에서 배웠다는 말은 없다.");
+B("문장 5 only for rich people or national heroes   ① \u2715 [반대] 나라의 모든 사람을 위한 것 — 정반대.   ② \u25cb 부유하거나 유명한 사람들만.   ③ \u2715 [무관] 열 살 미만 아이라는 말은 지문에 없다.");
+B("문장 8 each kid was able to get more attention   ② \u2715 [반대] 아이마다 보살핌이 줄었다 — 정반대.   ① \u25cb 아이마다 더 많은 보살핌을 받을 수 있었다.   ③ \u2715 [무관] 더 열심히 일했다는 말은 없다.");
+B("문장 11 giving birthday cards also became common   ① \u25cb 카드를 보내는 일도 널리 퍼졌다.   ② \u2715 [반대] 거의 사라졌다 — 정반대.   ③ \u2715 [무관] 카드값이 비싸졌다는 말은 지문에 없다.");
 B("[학습 포인트]  시험은 본문 표현을 그대로 쓰지 않고 반드시 바꿔서 묻는다. become common → grow popular, was able to → could처럼 \u2018같은 뜻 다른 말\u2019을 스스로 만들어 보는 연습이 곧 대비다.", true);
 
 K.push(brk());
@@ -797,8 +797,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 \u00b7 전문 해석", CH
 K.push(sp(190));
 Hs("R1   True / False   ·   1 T · 2 T · 3 T · 4 T · 5 F · 6 F · 7 F · 8 F");
    B("1 T — 문장 7\u00b78.   2 T — 문장 10.   3 T — 문장 1.   4 T — 문장 5.   5 F — 문장 11: 19세기 초가 아니라 19세기 말이다.   6 F — 문장 3: 1,000년이 아니라 약 100년 전이다.   7 F — 문장 8: 관심이 줄어든 것이 아니라 더 많아졌다.   8 F — 문장 6: 자기 생일이 아니라 조지 워싱턴의 생일을 기념했다.  거짓 문장은 모두 딱 한 요소(1,000년 \u00b7 their own \u00b7 less \u00b7 start)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (c) → (a) → (d) → (b)");
-B("ⓒ 부자와 국가적 영웅만 생일을 기념했다(문장 5, 19세기 이전) → ⓐ 가족의 아이 수가 줄었다(문장 8, 19세기 중반) → ⓓ 케이크 한가운데 큰 초를 꽂기 시작했다(문장 10) → ⓑ 생일 카드가 흔해졌다(문장 11, 19세기 말). 이 글은 시간 순서 그대로 서술되어 있다.", true);
+Hs("R2   사건 순서   ·   (a) → (b) → (d) → (c)");
+B("ⓐ 부자와 국가적 영웅만 생일을 기념했다(문장 5, 19세기 이전) → ⓑ 가족의 아이 수가 줄었다(문장 8, 19세기 중반) → ⓓ 케이크 한가운데 큰 초를 꽂기 시작했다(문장 10) → ⓒ 생일 카드가 흔해졌다(문장 11, 19세기 말). 이 글은 시간 순서 그대로 서술되어 있다.", true);
 Hs("R3   영영풀이   ·   1 (e) \u00b7 2 (a) \u00b7 3 (d) \u00b7 4 (f) \u00b7 5 (c) \u00b7 6 (b)");
 B("celebrate = 중요한 날을 특별하게 보내다 \u00b7 tradition = 오래 이어 온 방식 \u00b7 hero = 많은 사람이 우러르는 사람 \u00b7 attention = 지켜보고 마음 쓰는 일 \u00b7 common = 흔한 \u00b7 lead to = ~을 일으키다.", true);
 Hs("R4   어법 기초   ·   (1) feel  (2) was  (3) to put  (4) Giving");

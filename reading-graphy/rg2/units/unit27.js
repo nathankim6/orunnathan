@@ -79,26 +79,26 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① How Whales Talk to Each Other",
- "② Drones: Helpers That Save Animals",
+["① Drones: Helpers That Save Animals",
+ "② How Whales Talk to Each Other",
  "③ The Best Way to Take Photos",
  "④ A Trip to the Jungle in Brazil",
  "⑤ Counting Penguins in the South Atlantic"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① SnotBot flies above whales in the ocean.",
- "② The snot helps scientists learn about the whale’s health.",
- "③ In Brazil, a drone takes pictures of monkeys in the jungle.",
- "④ Finding the monkeys became much harder for scientists.",
+["① Finding the monkeys became much harder for scientists.",
+ "② SnotBot flies above whales in the ocean.",
+ "③ The snot helps scientists learn about the whale’s health.",
+ "④ In Brazil, a drone takes pictures of monkeys in the jungle.",
  "⑤ A different drone counts the number of penguins."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) They가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① scientists",
- "② whales",
- "③ monkeys",
- "④ drones",
+ "② drones",
+ "③ whales",
+ "④ monkeys",
  "⑤ penguins"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -359,9 +359,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "스낫봇이 하는
 K.push(sp(120));
 K.push(box([
   ...["ⓐ SnotBot collects the snot in the air.",
-      "ⓑ A whale blows snot out into the air.",
-      "ⓒ Scientists learn about the whale’s health.",
-      "ⓓ SnotBot flies above the whales in the ocean."]
+      "ⓑ SnotBot flies above the whales in the ocean.",
+      "ⓒ A whale blows snot out into the air.",
+      "ⓓ Scientists learn about the whale’s health."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -402,14 +402,14 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 drones · animals · helpers   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 F · 4 T · 5 T · 6 F · 7 F · 8 T", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (a) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ②");
-B("이 글은 고래(문장 2–5)·원숭이(문장 6–8)·펭귄(문장 9–10)을 돕는 드론들을 차례로 소개하고, 마지막에 드론이 동물을 구하는 소중한 도우미라고 평가한다(문장 11–12). 소재(드론)와 평가(동물을 구하는 도우미)를 함께 담은 ②이 적절하다. ④·⑤는 예시 하나만 건드린 지엽적 오답, ①·③은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 8에서 드론 덕분에 원숭이를 찾는 일이 훨씬 쉬워졌다(much easier)고 했으므로, 더 어려워졌다는 ④는 본문과 반대된다. ①은 문장 3, ②는 문장 5, ③은 문장 6–7, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 01   제목   ·   정답 ①");
+B("이 글은 고래(문장 2–5)·원숭이(문장 6–8)·펭귄(문장 9–10)을 돕는 드론들을 차례로 소개하고, 마지막에 드론이 동물을 구하는 소중한 도우미라고 평가한다(문장 11–12). 소재(드론)와 평가(동물을 구하는 도우미)를 함께 담은 ①이 적절하다. ④·⑤는 예시 하나만 건드린 지엽적 오답, ②·③은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 8에서 드론 덕분에 원숭이를 찾는 일이 훨씬 쉬워졌다(much easier)고 했으므로, 더 어려워졌다는 ①는 본문과 반대된다. ②은 문장 3, ③는 문장 5, ④은 문장 6–7, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) They는 바로 앞 문장 11의 drones를 가리킨다. '재미로만 있는 게 아니다'라고 한 대상이 무엇인지 보면 된다 — 복수 지시어는 복수 명사를 받는다는 것이 첫 단서다.", true);
 Hs("독해 04   배열 영작   ·   This robot flies above whales in the ocean.");
 B("문장 3을 그대로 복원하는 문제다. ① 첫 글자는 대문자 This.   ② 주어가 단수이므로 동사는 flies.   ③ above whales → in the ocean 순서로 장소를 넓혀 간다.", true);
@@ -425,8 +425,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 T · 2 F · 3 F · 4 T · 5 T · 6 F · 7 F · 8 T");
    B("1 T — 문장 7.   2 F — 문장 11: 재미로만 쓰는 것이 아니다.   3 F — 문장 3: 원숭이가 아니라 고래(whales) 위를 난다.   4 T — 문장 5.   5 T — 문장 1.   6 F — 문장 8: 더 어렵게(harder)가 아니라 훨씬 쉽게(easier) 만든다.   7 F — 문장 2·6·9: 한 종류가 아니라 여러 드론이 서로 다른 일을 한다.   8 T — 문장 9.  거짓 문장은 모두 딱 한 요소를 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (d) → (b) → (a) → (c)");
-B("ⓓ 스낫봇이 바다 위 고래들 위로 난다(문장 3) → ⓑ 고래가 공중으로 콧물을 뿜는다(문장 4) → ⓐ 스낫봇이 그 콧물을 받아 모은다(문장 4) → ⓒ 과학자들이 고래의 건강을 알아낸다(문장 5). 문장 4 한 문장 안에 두 단계(ⓑ·ⓐ)가 들어 있다 — When이 이끄는 부분이 먼저다.", true);
+Hs("R2   사건 순서   ·   (b) → (c) → (a) → (d)");
+B("ⓑ 스낫봇이 바다 위 고래들 위로 난다(문장 3) → ⓒ 고래가 공중으로 콧물을 뿜는다(문장 4) → ⓐ 스낫봇이 그 콧물을 받아 모은다(문장 4) → ⓓ 과학자들이 고래의 건강을 알아낸다(문장 5). 문장 4 한 문장 안에 두 단계(ⓒ·ⓐ)가 들어 있다 — When이 이끄는 부분이 먼저다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

@@ -80,9 +80,9 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① How to Take a Better Selfie with Your Phone",
- "② The Best Zoos to Visit This Summer",
- "③ Selfies with Wild Animals Are Never Worth It",
+["① Selfies with Wild Animals Are Never Worth It",
+ "② How to Take a Better Selfie with Your Phone",
+ "③ The Best Zoos to Visit This Summer",
  "④ Why Social Media Is Full of Animal Pictures",
  "⑤ Safety Signs Around the World"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -96,9 +96,9 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) This가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① that posting selfies with dangerous animals gets lots of Likes",
- "② that signs for safety are everywhere",
- "③ that animals in zoos seem less real and dangerous",
+["① that signs for safety are everywhere",
+ "② that animals in zoos seem less real and dangerous",
+ "③ that posting selfies with dangerous animals gets lots of Likes",
  "④ that some people were killed by animals",
  "⑤ that a selfie is not more important than our lives"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -360,10 +360,10 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "야생 동물 셀카가 위험으로 이어지는 과정 ⓐ~ⓓ을 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ People post the selfies and get lots of Likes.",
-      "ⓑ Some people are attacked or killed by animals.",
-      "ⓒ People get closer and closer to wild animals.",
-      "ⓓ People ignore the signs for safety."]
+  ...["ⓐ People ignore the signs for safety.",
+      "ⓑ People post the selfies and get lots of Likes.",
+      "ⓒ Some people are attacked or killed by animals.",
+      "ⓓ People get closer and closer to wild animals."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -404,14 +404,14 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 selfies · close · dangerous   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 F · 5 T · 6 T · 7 T · 8 F", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (d) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("야생 동물과 셀카를 찍으려 다가가는 일이 사람에게도 동물에게도 위험하다는 것(문장 1–11)이 글의 중심이고, 문장 13이 글쓴이의 결론이다. ③이 정답. ④·⑤는 지엽적 오답, ①·②은 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ①");
+B("야생 동물과 셀카를 찍으려 다가가는 일이 사람에게도 동물에게도 위험하다는 것(문장 1–11)이 글의 중심이고, 문장 13이 글쓴이의 결론이다. ①이 정답. ④·⑤는 지엽적 오답, ②·③은 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ④");
 B("문장 8에서 위험한 동물과 찍은 셀카는 많은 '좋아요'와 댓글을 받는다고 했으므로, 거의 못 받는다는 ④이 본문과 반대된다. ①은 문장 2, ②는 문장 4, ③는 문장 10, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) This는 바로 앞 문장 8의 내용, 곧 '위험한 동물과 찍은 셀카가 많은 좋아요를 받는다'를 가리킨다. 지시어는 한 단어만이 아니라 앞 문장 전체를 받을 수도 있다.", true);
 Hs("독해 04   배열 영작   ·   So, never get too close to animals for selfies.");
 B("문장 12를 그대로 복원하는 문제다. ① 첫 글자는 대문자 So, 뒤의 콤마까지.   ② 부정 명령문은 never+동사원형.   ③ too close to ~ 순서를 지킨다.", true);
@@ -427,8 +427,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 F · 3 T · 4 F · 5 T · 6 T · 7 T · 8 F");
    B("1 F — 문장 7: 작은 역할이 아니라 큰 역할(a big role)이다.   2 F — 문장 10: 실제로 공격당하거나 목숨을 잃은 사람들이 있었다.   3 T — 문장 2.   4 F — 문장 4: 절대 공격하지 않는 게 아니라 언제든 공격할 수 있다(could attack).   5 T — 문장 5.   6 T — 문장 8.   7 T — 문장 11.   8 F — 문장 13: 셀카가 더 중요한 게 아니라 결코 더 중요하지 않다(never).  거짓 문장은 모두 딱 한 요소만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (d) → (c) → (a) → (b)");
-B("ⓓ 안전 표지판을 무시한다(문장 2) → ⓒ 야생 동물에게 점점 더 가까이 간다(문장 1·6) → ⓐ 셀카를 올려 많은 좋아요를 받는다(문장 8) → ⓑ 실제로 공격당하거나 목숨을 잃는다(문장 10). 본문은 위험(문장 3)을 먼저 말하고 까닭을 나중에 밝히므로, 서술 순서와 실제 일이 벌어지는 순서가 같지 않다.", true);
+Hs("R2   사건 순서   ·   (a) → (d) → (b) → (c)");
+B("ⓐ 안전 표지판을 무시한다(문장 2) → ⓓ 야생 동물에게 점점 더 가까이 간다(문장 1·6) → ⓑ 셀카를 올려 많은 좋아요를 받는다(문장 8) → ⓒ 실제로 공격당하거나 목숨을 잃는다(문장 10). 본문은 위험(문장 3)을 먼저 말하고 까닭을 나중에 밝히므로, 서술 순서와 실제 일이 벌어지는 순서가 같지 않다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

@@ -77,17 +77,17 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① How to Raise Bunnies in South Africa",
- "② The History of Sugar Cane Farming",
- "③ The Best Restaurants in Durban",
- "④ How to Bake Bread at Home",
- "⑤ Bunny Chow: A Bread Bowl Full of Curry"].forEach(c => K.push(ch(c)));
+["① Bunny Chow: A Bread Bowl Full of Curry",
+ "② How to Raise Bunnies in South Africa",
+ "③ The History of Sugar Cane Farming",
+ "④ The Best Restaurants in Durban",
+ "⑤ How to Bake Bread at Home"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Bunny Chow has nothing to do with bunnies.",
- "② Bunny Chow is a bread bowl filled with curry.",
- "③ Everyone knows exactly how Bunny Chow started.",
+["① Everyone knows exactly how Bunny Chow started.",
+ "② Bunny Chow has nothing to do with bunnies.",
+ "③ Bunny Chow is a bread bowl filled with curry.",
  "④ Bunny Chow started in a city called Durban.",
  "⑤ Bunny Chow is a favorite street food in South Africa today."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -249,9 +249,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 카레를 담은 빵 그릇, 버니 차우",
- "② 남아프리카에서 토끼를 기르는 법",
- "③ 사탕수수 농장의 하루"].forEach(c =>
+["① 남아프리카에서 토끼를 기르는 법",
+ "② 사탕수수 농장의 하루",
+ "③ 카레를 담은 빵 그릇, 버니 차우"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -362,8 +362,8 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "버니 차우가 생겨난 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ They hollowed out a loaf of bread and filled it with curry.",
-      "ⓑ Indian workers came to South Africa to work in sugar cane fields.",
+  ...["ⓐ Indian workers came to South Africa to work in sugar cane fields.",
+      "ⓑ They hollowed out a loaf of bread and filled it with curry.",
       "ⓒ Bunny Chow became a favorite street food in South Africa.",
       "ⓓ The workers wanted an easy way to carry their lunch."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
@@ -402,22 +402,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문10 ", { size: 17, bold: true, color: NAVY2 }), t("Bunny Chow(S)·is(△V)·available·in many small take-out places ~(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 오래된 사진들로 채워진 상자를 발견했다  (2) 우리는 물을 아낄 좋은 방법이 필요하다  (3) 그녀는 버스에서 읽을 책으로 채워진 가방을 갖고 있다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 bread · curry · favorite   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 bread · curry · favorite   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 F · 4 T · 5 F · 6 T · 7 T · 8 T", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (d) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ⑤");
-B("이 글은 버니 차우가 카레를 담은 빵 그릇이라는 정체(문장 1–2)와 그 유래(문장 5–8)를 소개한다. 소재와 특징을 함께 담은 ⑤이 적절하다. ②·③는 사탕수수·더반만 건드린 지엽적 오답, ①·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 4에서 버니 차우가 정확히 어떻게 시작되었는지는 아무도 확실히 모른다(no one is sure)고 했다. ①은 문장 1, ②는 문장 2, ④은 문장 3, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ①");
+B("이 글은 버니 차우가 카레를 담은 빵 그릇이라는 정체(문장 1–2)와 그 유래(문장 5–8)를 소개한다. 소재와 특징을 함께 담은 ①이 적절하다. ③·④는 사탕수수·더반만 건드린 지엽적 오답, ②·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 4에서 버니 차우가 정확히 어떻게 시작되었는지는 아무도 확실히 모른다(no one is sure)고 했다. ②은 문장 1, ③는 문장 2, ④은 문장 3, ⑤는 문장 9에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) it은 같은 문장 앞부분의 the curry를 가리킨다. 빵이 그릇 역할을 해 따뜻하게 지켜 준 대상이 무엇인지 생각하면 된다.", true);
 Hs("독해 04   배열 영작   ·   Today, Bunny Chow is a favorite street food in South Africa.");
 B("문장 9를 그대로 복원한다. ① 첫 글자는 대문자 Today, 뒤의 콤마를 빠뜨리지 않는다.   ② a favorite street food — 관사 a가 맨 앞.   ③ in South Africa로 문장을 맺는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 bread · curry · favorite     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 카레를 담은 빵 그릇 음식 버니 차우를 소개한다. ②은 bunny를 진짜 토끼로 읽은 오답이고, ③ 사탕수수 농장은 유래 속 배경일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 bread · curry · favorite     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 카레를 담은 빵 그릇 음식 버니 차우를 소개한다. ①은 bunny를 진짜 토끼로 읽은 오답이고, ② 사탕수수 농장은 유래 속 배경일 뿐이다.");
 B("1-2   ○표 할 세 단어: bread(힌트① 그릇이 되는 것) · curry(힌트② 담기는 것) · favorite(힌트③ 사람들의 평가). 나머지 셋(bunnies · Durban · workers)은 이름의 오해와 유래일 뿐이다.");
 B("1-3   문장 3 — This tasty dish는 버니 차우에 ○.   문장 6 — They는 인도인 노동자들에 ○.   문장 8 — it은 카레에 ○.");
 B("[학습 포인트]   문장 1의 it은 음식 전체, 문장 8의 it은 카레다. 같은 it이라도 바로 앞에서 짝을 다시 찾아야 한다.", true);
@@ -427,8 +427,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 F · 3 F · 4 T · 5 F · 6 T · 7 T · 8 T");
    B("1 F — 문장 4: 모두가 아는 것이 아니라 아무도 확실히 모른다.   2 F — 문장 10: 찾기 어려운 것이 아니라 전국 곳곳에서 살 수 있다.   3 F — 문장 2: 수프(soup)가 아니라 카레(curry)다.   4 T — 문장 1.   5 F — 문장 5: 벼농사(rice)가 아니라 사탕수수(sugar cane) 밭이다.   6 T — 문장 4.   7 T — 문장 8.   8 T — 문장 3.  거짓 문장은 모두 한 요소(soup, Everyone, rice, hard to find)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (d) → (a) → (c)");
-B("ⓑ 인도인 노동자들이 사탕수수 밭 일을 하러 남아프리카에 온다(문장 5) → ⓓ 점심을 나를 쉬운 방법을 찾는다(문장 6) → ⓐ 빵 속을 파내 카레를 채운다(문장 7) → ⓒ 인기 있는 길거리 음식이 된다(문장 9). 글은 오늘의 모습(문장 2)을 먼저 보여 준 뒤 유래로 돌아가므로, 서술 순서와 사건 순서가 다르다.", true);
+Hs("R2   사건 순서   ·   (a) → (d) → (b) → (c)");
+B("ⓐ 인도인 노동자들이 사탕수수 밭 일을 하러 남아프리카에 온다(문장 5) → ⓓ 점심을 나를 쉬운 방법을 찾는다(문장 6) → ⓑ 빵 속을 파내 카레를 채운다(문장 7) → ⓒ 인기 있는 길거리 음식이 된다(문장 9). 글은 오늘의 모습(문장 2)을 먼저 보여 준 뒤 유래로 돌아가므로, 서술 순서와 사건 순서가 다르다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

@@ -79,9 +79,9 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Drawing Pictures with an Old Typewriter",
- "② How AI Makes Art Today",
- "③ The Long History of the Typewriter",
+["① How AI Makes Art Today",
+ "② The Long History of the Typewriter",
+ "③ Drawing Pictures with an Old Typewriter",
  "④ How to Draw Buildings Quickly",
  "⑤ Famous Faces in Modern Painting"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -89,16 +89,16 @@ K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?")
 K.push(sp(65));
 ["① James Cook likes doing things in a traditional way.",
  "② James makes pictures of buildings, landscapes, and faces.",
- "③ One picture takes him only a few minutes.",
- "④ He uses the brackets to draw a curvy line.",
+ "③ He uses the brackets to draw a curvy line.",
+ "④ One picture takes him only a few minutes.",
  "⑤ He believes that some technologies never die."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) him이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① an old typewriter",
- "② an artist who uses AI",
- "③ a famous person in a picture",
- "④ James Cook",
+ "② James Cook",
+ "③ an artist who uses AI",
+ "④ a famous person in a picture",
  "⑤ a curvy line on the paper"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -358,9 +358,9 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "제임스가 그림을 만드는 과정 ⓐ~ⓓ를 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ He types letters, numbers, and marks to shape an image.",
-      "ⓑ Four or five days later, one picture is finished.",
-      "ⓒ James chooses a building or a face to make a picture of.",
+  ...["ⓐ James chooses a building or a face to make a picture of.",
+      "ⓑ He types letters, numbers, and marks to shape an image.",
+      "ⓒ Four or five days later, one picture is finished.",
       "ⓓ He sits down in front of an old typewriter."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -402,14 +402,14 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 typewriter · art · amazing   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 T · 5 T · 6 F · 7 T · 8 F", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (d) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (d) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 AI가 아니라 낡은 타자기로 그림을 만드는 제임스 쿡을 소개한다(문장 2–3·6). 도구와 결과를 함께 담은 ①이 제목으로 알맞다. ②·③은 지엽적이고, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 9에서 그림 한 장에 나흘에서 닷새가 걸린다고 했다. 몇 분이면 된다는 ③는 본문과 반대다. ①은 문장 2, ②는 문장 4, ④은 문장 7, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 AI가 아니라 낡은 타자기로 그림을 만드는 제임스 쿡을 소개한다(문장 2–3·6). 도구와 결과를 함께 담은 ③이 제목으로 알맞다. ①·②은 지엽적이고, ④·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 9에서 그림 한 장에 나흘에서 닷새가 걸린다고 했다. 몇 분이면 된다는 ④는 본문과 반대다. ①은 문장 2, ②는 문장 4, ③은 문장 7, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) him은 그림을 만드는 사람, 곧 제임스 쿡이다. take + 사람 + 시간은 '~에게 …의 시간이 걸리다'라는 뜻이다.", true);
 Hs("독해 04   배열 영작   ·   He uses an old machine called a typewriter.");
 B("문장 3을 그대로 복원하는 문제다. ① 첫 글자는 대문자 He.   ② 주어가 3인칭 단수이므로 uses.   ③ called 이하가 machine을 뒤에서 꾸민다.", true);
@@ -425,8 +425,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 T · 3 F · 4 T · 5 T · 6 F · 7 T · 8 F");
    B("1 F — 문장 2: 현대적인 방식이 아니라 전통적인 방식이다.   2 T — 문장 4.   3 F — 문장 7: 직선이 아니라 곡선을 그린다.   4 T — 문장 1.   5 T — 문장 11.   6 F — 문장 9: 몇 분이 아니라 나흘에서 닷새가 걸린다.   7 T — 문장 3.   8 F — 문장 12: 쓸모없다가 아니라 놀라운 예술을 만들 수 있다는 것이다.  거짓 문장은 모두 한 요소(modern, straight, minutes, useless)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (c) → (d) → (a) → (b)");
-B("ⓒ 그릴 대상을 고른다(문장 4) → ⓓ 오래된 타자기 앞에 앉는다(문장 3) → ⓐ 글자·숫자·기호를 쳐서 이미지를 만든다(문장 6) → ⓑ 나흘에서 닷새 뒤에 한 장이 완성된다(문장 9). 본문은 도구를 먼저 소개하지만, 실제 작업은 무엇을 그릴지 정하는 데서 시작한다.", true);
+Hs("R2   사건 순서   ·   (a) → (d) → (b) → (c)");
+B("ⓐ 그릴 대상을 고른다(문장 4) → ⓓ 오래된 타자기 앞에 앉는다(문장 3) → ⓑ 글자·숫자·기호를 쳐서 이미지를 만든다(문장 6) → ⓒ 나흘에서 닷새 뒤에 한 장이 완성된다(문장 9). 본문은 도구를 먼저 소개하지만, 실제 작업은 무엇을 그릴지 정하는 데서 시작한다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

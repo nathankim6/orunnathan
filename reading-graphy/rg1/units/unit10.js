@@ -99,8 +99,8 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Write a Good Email",
- "② The Biggest Libraries in the World",
- "③ Clean Your Inbox, Save Our Planet",
+ "② Clean Your Inbox, Save Our Planet",
+ "③ The Biggest Libraries in the World",
  "④ Why Computers Need Light Bulbs",
  "⑤ The People Who Work in Data Centers"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -109,15 +109,15 @@ K.push(sp(65));
 ["① Many people don’t clean their inbox often.",
  "② All the information on the internet is stored in data centers.",
  "③ Storing lots of emails means that these centers use more energy.",
- "④ Data centers use little power because they are turned off at night.",
- "⑤ Deleting your old emails can save energy."].forEach(c => K.push(ch(c)));
+ "④ Deleting your old emails can save energy.",
+ "⑤ Data centers use little power because they are turned off at night."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the emails in your inbox",
  "② the computers in a school library",
- "③ the data centers",
- "④ the people who send emails",
+ "③ the people who send emails",
+ "④ the data centers",
  "⑤ the light bulbs in a room"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -285,8 +285,8 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 이메일을 빨리 쓰는 방법",
- "② 오래된 이메일 지우기와 지구 지키기",
+["① 오래된 이메일 지우기와 지구 지키기",
+ "② 이메일을 빨리 쓰는 방법",
  "③ 도서관에서 책을 빌리는 방법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
@@ -407,9 +407,9 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 사실을 알려 주고 실천을 권하는 설명문",
- "② 물건을 팔기 위해 만든 광고",
- "③ 하루 일을 적은 일기",
+["① 물건을 팔기 위해 만든 광고",
+ "② 하루 일을 적은 일기",
+ "③ 사실을 알려 주고 실천을 권하는 설명문",
  "④ 친구에게 보내는 편지",
  "⑤ 옛이야기를 들려주는 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
@@ -644,9 +644,9 @@ K.push(spF(9, 380, 0.12));
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
 [["문장 1", [t("How many emails ", { size: 19 }), t("( does  /  do )", { size: 19, bold: true, color: NAVY }), t(" you have in your inbox?", { size: 19 })], "주어가 you일 때 쓰는 조동사는?"],
- ["문장 8", [t("These data centers ", { size: 19 }), t("( uses  /  use )", { size: 19, bold: true, color: NAVY }), t(" a lot of power.", { size: 19 })], "주어 centers는 복수예요."],
- ["문장 9", [t("( Storing  /  Store )", { size: 19, bold: true, color: NAVY }), t(" lots of emails means more energy.", { size: 19 })], "주어 자리에는 동사+ing!"],
- ["문장 10", [t("If you delete your old emails, you ", { size: 19 }), t("( can saves  /  can save )", { size: 19, bold: true, color: NAVY }), t(" energy.", { size: 19 })], "조동사 can 뒤에는 동사원형이에요."],
+ ["문장 8", [t("These data centers ", { size: 19 }), t("( use  /  uses )", { size: 19, bold: true, color: NAVY }), t(" a lot of power.", { size: 19 })], "주어 centers는 복수예요."],
+ ["문장 9", [t("( Store  /  Storing )", { size: 19, bold: true, color: NAVY }), t(" lots of emails means more energy.", { size: 19 })], "주어 자리에는 동사+ing!"],
+ ["문장 10", [t("If you delete your old emails, you ", { size: 19 }), t("( can save  /  can saves )", { size: 19, bold: true, color: NAVY }), t(" energy.", { size: 19 })], "조동사 can 뒤에는 동사원형이에요."],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
     cel(new Paragraph({ children: [t("(" + (i + 1) + ")", { size: 16, bold: true, color: "FFFFFF" })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 210 } }),
@@ -740,8 +740,8 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문12 ", { size: 17, bold: true, color: NAVY2 }), t("if[네모]·you(S′)·want(△V′)·start(△V, 명령문)·by cleaning your inbox(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 책을 읽는 것은 재미있다  (2) 이 편지는 영어로 쓰여 있다  (3) 식물을 기르는 법은 과학 시간에 배운다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 emails · energy · planet        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 · 때 · 이유 · 결과   2-2 [B] 예고 · [E] 해결   2-3 ①", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 emails · energy · planet        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 · 때 · 이유 · 결과   2-2 [B] 예고 · [E] 해결   2-3 ③", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (d) → (a) → (c)  ·  If you delete your old emails, you can save energy and help our planet.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) centers  (2) power  (3) delete  (4) inbox        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 3 ②  문장 7 ①  문장 8 ②  문장 10 ②", { size: 19, bold: true })], { after: 150 }),
@@ -754,16 +754,16 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) Many people don’t for various reasons.  (2) Storing lots of emails means that these centers use more energy.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("이 글은 데이터 센터가 전기를 많이 쓴다는 사실(문장 6–9)과, 오래된 메일을 지우면 에너지를 아낄 수 있다는 실천(문장 10–12)을 알려 준다. 소재와 목적을 함께 담은 ③이 제목이다. ②·⑤는 지엽적, ①·④는 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 8에서 데이터 센터는 늘 켜져 있어서 전기를 많이 쓴다고 했다. 꺼져 있어 전기를 적게 쓴다는 ④은 본문과 반대다. ①은 문장 3, ②는 문장 6, ③는 문장 9, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 01   제목   ·   정답 ②");
+B("이 글은 데이터 센터가 전기를 많이 쓴다는 사실(문장 6–9)과, 오래된 메일을 지우면 에너지를 아낄 수 있다는 실천(문장 10–12)을 알려 준다. 소재와 목적을 함께 담은 ②이 제목이다. ③·⑤는 지엽적, ①·④는 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 8에서 데이터 센터는 늘 켜져 있어서 전기를 많이 쓴다고 했다. 꺼져 있어 전기를 적게 쓴다는 ⑤은 본문과 반대다. ①은 문장 3, ②는 문장 6, ③는 문장 9, ④는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) them은 바로 앞 문장 6의 data centers를 가리킨다. 복수 them은 복수 명사를 받는다는 것이 첫 단서다.", true);
 Hs("독해 04   배열 영작   ·   Think of them as huge libraries for computers.");
 B("문장 7을 그대로 복원한다. ㄱ 명령문이므로 동사 Think가 맨 앞.   ㄴ think of A as B — '~을 …라고 생각하다'.   ㄷ for computers가 맨 뒤.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 emails · energy · planet     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 오래된 이메일을 지우면 지구에 도움이 된다는 이야기다. ① 메일 쓰는 방법은 나오지 않고, ③ 도서관은 데이터 센터를 설명하는 비유일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 emails · energy · planet     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 오래된 이메일을 지우면 지구에 도움이 된다는 이야기다. ② 메일 쓰는 방법은 나오지 않고, ③ 도서관은 데이터 센터를 설명하는 비유일 뿐이다.");
 B("1-2   ○표 할 세 단어: emails(힌트① 지우는 것) · energy(힌트② 아끼는 것) · planet(힌트③ 돕는 대상). libraries · inbox · computers는 본문에 있지만 주제문에는 들어가지 않는다.");
 B("1-3   문장 5 — how는 지구를 돕는 방법에 ○(문장 4의 내용).   문장 7 — them은 데이터 센터들에 ○.   문장 8 — they도 데이터 센터들에 ○.");
 B("[학습 포인트]   how처럼 지시어는 단어 하나가 아니라 앞 문장의 내용 전체를 대신하기도 한다. 지시어를 만나면 앞으로 돌아가 짝을 확인하는 습관을 들이자.", true);
@@ -771,10 +771,10 @@ B("[학습 포인트]   how처럼 지시어는 단어 하나가 아니라 앞 �
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 반전 / 때 / 이유 / 결과     2-2 [B] 예고 · [E] 해결     2-3 ①");
+Hs("STEP 2   글의 흐름   ·   2-1 반전 / 때 / 이유 / 결과     2-2 [B] 예고 · [E] 해결     2-3 ③");
 B("2-1   문장 4 But — 질문에서 새 이야기로 바뀌는 '반전'.   문장 6 When — 인터넷을 쓸 '때'.   문장 8 because — 전기를 많이 쓰는 '이유'.   문장 12 So — 앞의 설명에서 나온 '결과'(권유).");
 B("2-2   [B] 예고(문장 4–5: 어떻게 돕는지 알아보자), [E] 해결(문장 10–12: 지우면 에너지가 절약된다). 보기의 '광고'는 이 글에 없는 역할이다. 질문 → 예고 → 설명 → 문제 → 해결의 흐름이다.");
-B("2-3   정답 ①. 데이터 센터라는 사실을 알려 주고 마지막에 실천을 권하는 설명문이다(문장 6·12). ② 가격이나 사라는 말이 없어 광고가 아니고, ③ 날짜·④ Dear·⑤ 옛이야기의 신호도 없다.");
+B("2-3   정답 ③. 데이터 센터라는 사실을 알려 주고 마지막에 실천을 권하는 설명문이다(문장 6·12). ① 가격이나 사라는 말이 없어 광고가 아니고, ② 날짜·④ Dear·⑤ 옛이야기의 신호도 없다.");
 B("[학습 포인트]   연결어만 표시해도 글의 지도가 그려진다. But(반전), When(때), because(이유), So(결과). 특히 마지막 So 문장은 글쓴이가 진짜 하고 싶은 말이다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 energy · our planet     3-3 (b) → (d) → (a) → (c)");
 B("3-1  재료 찾기 — (2) 문장 10에서 energy에 ○: 지우면 아끼는 것은 돈이 아니라 에너지다. (3) 문장 12에서 our planet에 ○: 이 글이 돕자고 하는 대상이다.");

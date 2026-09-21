@@ -100,26 +100,26 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① Why Turtles Live Longer Than Sharks",
- "② David W. Johnson: A Famous Teacher",
- "③ The Best Way to Win an Argument",
- "④ Five Animal Styles of Handling Conflicts",
+ "② Five Animal Styles of Handling Conflicts",
+ "③ David W. Johnson: A Famous Teacher",
+ "④ The Best Way to Win an Argument",
  "⑤ How Animals Solve Problems in Nature"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Johnson categorized five styles of dealing with conflicts.",
- "② Turtles give up their own goals and relationships.",
- "③ Teddy bears give up their goals to keep their relationships.",
- "④ Owls try to find a solution everyone is happy with.",
- "⑤ Sharks care a lot about other people’s needs."].forEach(c => K.push(ch(c)));
+ "② Sharks care a lot about other people’s needs.",
+ "③ Turtles give up their own goals and relationships.",
+ "④ Teddy bears give up their goals to keep their relationships.",
+ "⑤ Owls try to find a solution everyone is happy with."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) theirs가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① other people’s goals",
- "② the foxes’ own goals",
- "③ the turtles’ relationships",
- "④ the sharks’ needs",
- "⑤ the owls’ solutions"].forEach(c => K.push(ch(c)));
+["① the foxes’ own goals",
+ "② the turtles’ relationships",
+ "③ the sharks’ needs",
+ "④ the owls’ solutions",
+ "⑤ other people’s goals"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -413,9 +413,9 @@ K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 �
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
 ["① 하루 일을 적은 일기",
  "② 물건을 팔기 위해 만든 광고",
- "③ 안부를 전하는 편지",
- "④ 상상으로 지어낸 동화",
- "⑤ 대상을 나누어 설명하는 설명문"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
+ "③ 대상을 나누어 설명하는 설명문",
+ "④ 안부를 전하는 편지",
+ "⑤ 상상으로 지어낸 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
 K.push(brk());
@@ -518,13 +518,13 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 4, main: "run away from problems",
-    opts: ["① avoid dealing with problems", "② face problems bravely", "③ solve problems very quickly"] },
+    opts: ["① face problems bravely", "② avoid dealing with problems", "③ solve problems very quickly"] },
   { sn: 6, main: "want to win at any cost",
-    opts: ["① try to win no matter what", "② give up winning easily", "③ enjoy playing games together"] });
+    opts: ["① give up winning easily", "② enjoy playing games together", "③ try to win no matter what"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 8, main: "persuade others to give up some",
-    opts: ["① talk others into letting some go", "② force others to keep all of them", "③ pay others for their goals"] },
+    opts: ["① force others to keep all of them", "② talk others into letting some go", "③ pay others for their goals"] },
   { sn: 12, main: "make the relationship last longer",
     opts: ["① end the relationship sooner", "② keep the relationship going longer", "③ make new friends very quickly"] });
 K.push(spF(7, 150, 0.16));
@@ -603,8 +603,8 @@ K.push(spF(8, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "이 글이 이야기를 펼쳐 가는 순서대로 ⓐ~ⓓ를 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ Johnson categorized five conflict styles.",
-      "ⓑ Johnson studied how people handle problems.",
+  ...["ⓐ Johnson studied how people handle problems.",
+      "ⓑ Johnson categorized five conflict styles.",
       "ⓒ The five animal styles are explained one by one.",
       "ⓓ The writer says understanding each style is important."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
@@ -646,7 +646,7 @@ K.push(spF(9, 380, 0.12));
 
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
-[["문장 4", [t("Turtles ", { size: 19 }), t("( runs  /  run )", { size: 19, bold: true, color: NAVY }), t(" away from problems.", { size: 19 })], "주어 Turtles(복수)에 맞는 동사 형태는?"],
+[["문장 4", [t("Turtles ", { size: 19 }), t("( run  /  runs )", { size: 19, bold: true, color: NAVY }), t(" away from problems.", { size: 19 })], "주어 Turtles(복수)에 맞는 동사 형태는?"],
  ["문장 6", [t("Sharks want ", { size: 19 }), t("( winning  /  to win )", { size: 19, bold: true, color: NAVY }), t(" at any cost.", { size: 19 })], "want 뒤에는 to+동사원형이 옵니다."],
  ["문장 11", [t("Everyone ", { size: 19 }), t("( have  /  has )", { size: 19, bold: true, color: NAVY }), t(" their unique ways of solving conflicts.", { size: 19 })], "Everyone은 단수 취급이에요."],
  ["문장 13", [t("( Understanding  /  Understand )", { size: 19, bold: true, color: NAVY }), t(" each person’s style is important.", { size: 19 })], "주어 자리에는 ~ing(동명사)가 옵니다."],
@@ -745,24 +745,24 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 첫 기차를 타기 위해 일찍 일어났다  (2) 만화책을 읽는 것은 재미있다  (3) 자전거를 사기 위해 돈을 모으는 것은 쉽지 않다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 conflicts · styles · relationships        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 선택 · 양보 · 덧붙임 · 결과   2-2 [B] 회피와 공격 · [E] 마무리   2-3 ⑤", { size: 19, bold: true })], { after: 25 }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 선택 · 양보 · 덧붙임 · 결과   2-2 [B] 회피와 공격 · [E] 마무리   2-3 ③", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (d) → (c) → (a) → (b)  ·  Everyone has their unique ways of solving conflicts, and these styles can influence relationships.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) conflicts  (2) five  (3) styles  (4) relationships        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 4 ①  문장 6 ①  문장 8 ①  문장 12 ②", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 4 ②  문장 6 ③  문장 8 ②  문장 12 ②", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 T · 3 T · 4 F · 5 F · 6 F · 7 T · 8 F", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (c) → (d)", { size: 19, bold: true })], { after: 25 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (b) → (c) → (d)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(d) · 2(f) · 3(a) · 4(c) · 5(b) · 6(e)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) run  (2) to win  (3) has  (4) Understanding", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) handle (2) styles (3) goals (4) win (5) relationships (6) sacrifice (7) solution (8) influence", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) He categorized five styles that people use to deal with conflicts with others.  (2) Sharks want to win at any cost and don’t care about others’ needs.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ④");
-B("이 글은 존슨이 분류한 다섯 가지 갈등 대처 방식(문장 3–10)과 그 방식이 관계에 미치는 영향(문장 11–13)을 설명한다. 소재(다섯 동물 유형)와 특징(갈등 대처)을 함께 담은 ④이 제목으로 적절하다. ②·③은 지엽적 오답, ①·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 6에서 상어는 다른 사람의 필요를 신경 쓰지 않는다(don’t care)고 했으므로, 많이 신경 쓴다는 ⑤는 본문과 반대된다. ①은 문장 3, ②은 문장 5, ③은 문장 7, ④는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ②");
+B("이 글은 존슨이 분류한 다섯 가지 갈등 대처 방식(문장 3–10)과 그 방식이 관계에 미치는 영향(문장 11–13)을 설명한다. 소재(다섯 동물 유형)와 특징(갈등 대처)을 함께 담은 ②이 제목으로 적절하다. ③·④은 지엽적 오답, ①·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 6에서 상어는 다른 사람의 필요를 신경 쓰지 않는다(don’t care)고 했으므로, 많이 신경 쓴다는 ②는 본문과 반대된다. ①은 문장 3, ③은 문장 5, ④은 문장 7, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) theirs는 앞의 others를 받아 '다른 사람들의 목표'를 뜻한다. give up some of theirs = 그들의 목표 중 일부를 포기하다 — 소유대명사는 '누구의 것'인지를 앞에서 찾아야 한다.", true);
 Hs("독해 04   배열 영작   ·   They give up their own goals and relationships.");
 B("문장 5를 그대로 복원하는 문제다. ① 첫 글자는 대문자 They.   ② give up이 한 덩어리의 동사.   ③ their own goals and relationships — and로 두 명사를 잇는다.", true);
@@ -775,10 +775,10 @@ B("[학습 포인트]   같은 They라도 문장 5에서는 거북, 문장 10에
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 선택 / 양보 / 덧붙임 / 결과     2-2 [B] 회피와 공격 · [E] 마무리     2-3 ⑤");
+Hs("STEP 2   글의 흐름   ·   2-1 선택 / 양보 / 덧붙임 / 결과     2-2 [B] 회피와 공격 · [E] 마무리     2-3 ③");
 B("2-1   문장 8 or — 여우가 택할 수 있는 두 가지 중 하나라는 '선택'.   문장 10 even if — 시간이 걸리더라도라는 '양보'.   문장 11 and — 앞 내용에 새 사실을 잇는 '덧붙임'.   문장 13 That’s why — 앞의 내용 때문이라는 '결과'.");
 B("2-2   [B] 회피와 공격(문장 4–6: 거북과 상어), [E] 마무리(문장 11–13: 방식이 관계를 좌우한다). 보기의 '실험 결과'는 이 글에 없는 역할이다. [A] 소개 → [B] 회피와 공격 → [C] 양보와 절충 → [D] 협력 → [E] 마무리 — 유형을 차례로 나열하는 설명문의 전형이다.");
-B("2-3   정답 ⑤. 다섯 유형을 하나씩 나누어 설명하고 마지막에 의미를 정리하는 설명문이다. ① I·오늘 같은 일기의 신호가 없고, ② 가격·명령문이 없어 광고도 아니며, ③ 받는 사람도 ④ 지어낸 이야기도 없다.");
+B("2-3   정답 ③. 다섯 유형을 하나씩 나누어 설명하고 마지막에 의미를 정리하는 설명문이다. ① I·오늘 같은 일기의 신호가 없고, ② 가격·명령문이 없어 광고도 아니며, ④ 받는 사람도 ⑤ 지어낸 이야기도 없다.");
 B("[학습 포인트]   유형을 나열하는 글은 이름(The Turtle, The Shark…)이 곧 소제목이다. 이름 옆에 '목표 / 관계' 두 글자만 적어 두면 다섯 유형이 한눈에 정리된다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 unique · relationships     3-3 (d) → (c) → (a) → (b)");
 B("3-1  재료 찾기 — (2) 문장 11에서 unique에 ○: 사람마다 방식이 다르다는 말이다. same은 정반대다. (3) 문장 11에서 relationships에 ○: 이 방식들이 영향을 주는 대상이다. problems는 문장 1의 말일 뿐이다.");
@@ -787,10 +787,10 @@ B("3-3  정답 순서 — ⓓ Everyone has their unique ways → ⓒ of solving 
 B("[채점 포인트]  주어 덩어리(ⓓ)가 맨 앞, 마침표가 붙은 덩어리(ⓑ)가 맨 뒤 — and 앞뒤로 두 개의 주어·동사가 있다는 것만 보면 순서가 잡힌다.", true);
 Hs("STEP 4   요약문   ·   (1) conflicts  (2) five  (3) styles  (4) relationships");
 B("(1)은 문장 3의 conflicts, (2)는 문장 3의 five, (3)은 문장 11의 styles, (4)는 문장 11의 relationships에서 가져온다. 요약문이 곧 이 글의 흐름이다: 연구(1) → 분류(2) → 유형(3) → 영향(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 4 ①   문장 6 ①   문장 8 ①   문장 12 ②  (정답 선지는 무표시)");
-B("문장 4 run away from problems   ① ○ 문제를 다루기를 피한다.   ② ✕ [반대] 문제와 용감히 맞선다 — 정반대.   ③ ✕ [무관] 아주 빨리 해결한다는 말은 지문에 없다.");
-B("문장 6 want to win at any cost   ① ○ 무슨 일이 있어도 이기려 한다.   ② ✕ [반대] 이기는 것을 쉽게 포기한다 — 정반대.   ③ ✕ [무관] 함께 게임을 즐긴다는 말은 지문에 없다.");
-B("문장 8 persuade others to give up some   ① ○ 설득해 일부를 내려놓게 한다.   ② ✕ [반대] 전부 지키게 강요한다 — 정반대.   ③ ✕ [무관] 목표에 돈을 준다는 말은 지문에 없다.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 4 ②   문장 6 ③   문장 8 ②   문장 12 ②  (정답 선지는 무표시)");
+B("문장 4 run away from problems   ① ✕ [반대] 문제와 용감히 맞선다 — 정반대.   ② ○ 문제를 다루기를 피한다.   ③ ✕ [무관] 아주 빨리 해결한다는 말은 지문에 없다.");
+B("문장 6 want to win at any cost   ① ✕ [반대] 이기는 것을 쉽게 포기한다 — 정반대.   ② ✕ [무관] 함께 게임을 즐긴다는 말은 지문에 없다.   ③ ○ 무슨 일이 있어도 이기려 한다.");
+B("문장 8 persuade others to give up some   ① ✕ [반대] 전부 지키게 강요한다 — 정반대.   ② ○ 설득해 일부를 내려놓게 한다.   ③ ✕ [무관] 목표에 돈을 준다는 말은 지문에 없다.");
 B("문장 12 make the relationship last longer   ① ✕ [반대] 관계를 더 빨리 끝낸다 — 정반대.   ② ○ 관계를 더 오래 이어 간다.   ③ ✕ [무관] 새 친구를 빨리 사귄다는 말은 지문에 없다.");
 B("[학습 포인트]  시험은 본문 표현을 그대로 쓰지 않고 반드시 바꿔서 묻는다. 지문을 읽을 때마다 '이 표현을 다른 말로 하면?'을 스스로 물어보자. 지금은 반대/무관 두 갈래를 정확히 가르는 것이 먼저다.", true);
 
@@ -799,8 +799,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 T · 2 T · 3 T · 4 F · 5 F · 6 F · 7 T · 8 F");
    B("1 T — 문장 7.   2 T — 문장 10.   3 T — 문장 5.   4 F — 문장 3: 네 가지가 아니라 다섯 가지(five) 방식이다.   5 F — 문장 6: 신경 쓰는 게 아니라 신경 쓰지 않는다(don’t care).   6 F — 문장 9: 혼자가 아니라 함께(together) 협력한다.   7 T — 문장 1.   8 F — 문장 13: 중요하지 않은 게 아니라 중요하다(important).  거짓 문장은 모두 딱 한 요소(four, care, alone, not)만 비튼 것이다.", true);
-Hs("R2   전개 순서   ·   (b) → (a) → (c) → (d)");
-B("ⓑ 존슨이 사람들이 문제를 다루는 방식을 연구한다(문장 1) → ⓐ 다섯 가지 방식으로 분류한다(문장 3) → ⓒ 다섯 동물 유형을 하나씩 설명한다(문장 4–10) → ⓓ 각자의 방식을 이해하는 것이 중요하다고 마무리한다(문장 13). 설명문은 사건이 아니라 '설명이 쌓이는 순서'를 따라간다.", true);
+Hs("R2   전개 순서   ·   (a) → (b) → (c) → (d)");
+B("ⓐ 존슨이 사람들이 문제를 다루는 방식을 연구한다(문장 1) → ⓑ 다섯 가지 방식으로 분류한다(문장 3) → ⓒ 다섯 동물 유형을 하나씩 설명한다(문장 4–10) → ⓓ 각자의 방식을 이해하는 것이 중요하다고 마무리한다(문장 13). 설명문은 사건이 아니라 '설명이 쌓이는 순서'를 따라간다.", true);
 Hs("R3   영영풀이   ·   1 (d) · 2 (f) · 3 (a) · 4 (c) · 5 (b) · 6 (e)");
 B("conflict = 사람들 사이의 강한 의견 충돌(갈등) · goal = 하고 싶거나 얻고 싶은 것(목표) · sacrifice = 중요한 것을 포기하다(희생하다) · persuade = 하도록 동의하게 만들다(설득하다) · solution = 문제를 푸는 방법(해결책) · influence = 일이 되어 가는 모습을 바꾸다(영향을 주다).", true);
 Hs("R4   어법 기초   ·   (1) run  (2) to win  (3) has  (4) Understanding");

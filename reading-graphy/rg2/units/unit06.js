@@ -79,26 +79,26 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Old Diapers Become New Roads",
- "② How to Choose Good Diapers for Babies",
- "③ The Long History of British Roads",
- "④ Why Babies Need Soft Clothes",
- "⑤ Famous Places to Visit in Wales"].forEach(c => K.push(ch(c)));
+["① How to Choose Good Diapers for Babies",
+ "② The Long History of British Roads",
+ "③ Why Babies Need Soft Clothes",
+ "④ Famous Places to Visit in Wales",
+ "⑤ Old Diapers Become New Roads"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① The diapers are used without being cut or washed.",
- "② About three billion diapers are thrown away in the U.K. each year.",
- "③ Diapers can take 500 years to break down.",
- "④ People use recycled diapers to fix the roads in Wales.",
+["① About three billion diapers are thrown away in the U.K. each year.",
+ "② Diapers can take 500 years to break down.",
+ "③ People use recycled diapers to fix the roads in Wales.",
+ "④ The diapers are used without being cut or washed.",
  "⑤ For now, only the U.K. is testing this idea."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) It이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the problem of diaper waste in the U.K.",
- "② the plan to build more roads in Wales",
- "③ a new way to wash dirty diapers",
- "④ the idea of fixing roads with recycled diapers",
+["① the idea of fixing roads with recycled diapers",
+ "② the problem of diaper waste in the U.K.",
+ "③ the plan to build more roads in Wales",
+ "④ a new way to wash dirty diapers",
  "⑤ a sticky material called bitumen"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -359,10 +359,10 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "기저귀가 도로의 일부가 되기까지의 과정 ⓐ~ⓓ를 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ The pieces are added to a sticky material, bitumen.",
-      "ⓑ The diapers are cut into small pieces and washed.",
-      "ⓒ The diapers turn into small, soft pieces.",
-      "ⓓ People throw away billions of diapers."]
+  ...["ⓐ People throw away billions of diapers.",
+      "ⓑ The pieces are added to a sticky material, bitumen.",
+      "ⓒ The diapers are cut into small pieces and washed.",
+      "ⓓ The diapers turn into small, soft pieces."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -403,15 +403,15 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 diapers · roads · recycled   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 F · 5 T · 6 F · 7 F · 8 T", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (c) → (a)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (d) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 버려지는 기저귀를 재활용해 웨일스의 도로를 보수한다는 놀라운 아이디어(문장 2·5)와 그 과정(문장 8–11)을 소개한다. 소재(기저귀)와 특징(도로가 된다)을 모두 담은 ①이 제목으로 적절하다. ②·④는 기저귀·아기만 건드린 지엽적 오답, ③·⑤는 도로의 역사·여행지로 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ①");
-B("문장 8에서 기저귀는 먼저 작은 조각으로 잘리고 세척된다(are cut into small pieces and washed)고 했으므로, 자르지도 씻지도 않고 쓴다는 ①는 본문과 반대된다. ②은 문장 3, ③는 문장 4, ④은 문장 5, ⑤는 문장 12에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
-B("(A) It은 문장 12의 this idea, 곧 재활용 기저귀로 도로를 고치는 아이디어를 가리킨다. 전 세계로 퍼질 수 있는 것이 무엇인지 생각하면 된다. ① 쓰레기 문제나 ⑤ 비투멘은 퍼져 나간다는 서술과 어울리지 않는다.", true);
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 버려지는 기저귀를 재활용해 웨일스의 도로를 보수한다는 놀라운 아이디어(문장 2·5)와 그 과정(문장 8–11)을 소개한다. 소재(기저귀)와 특징(도로가 된다)을 모두 담은 ⑤이 제목으로 적절하다. ①·③는 기저귀·아기만 건드린 지엽적 오답, ②·④는 도로의 역사·여행지로 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 8에서 기저귀는 먼저 작은 조각으로 잘리고 세척된다(are cut into small pieces and washed)고 했으므로, 자르지도 씻지도 않고 쓴다는 ④는 본문과 반대된다. ①은 문장 3, ②는 문장 4, ③은 문장 5, ⑤는 문장 12에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ①");
+B("(A) It은 문장 12의 this idea, 곧 재활용 기저귀로 도로를 고치는 아이디어를 가리킨다. 전 세계로 퍼질 수 있는 것이 무엇인지 생각하면 된다. ② 쓰레기 문제나 ⑤ 비투멘은 퍼져 나간다는 서술과 어울리지 않는다.", true);
 Hs("독해 04   배열 영작   ·   Diapers can take 500 years to break down.");
 B("문장 4를 그대로 복원하는 문제다. ① 첫 글자는 대문자 Diapers.   ② can take — 조동사+동사원형은 한 덩어리.   ③ take 500 years to break down — ‘분해되는 데 500년이 걸리다’의 어순.", true);
 Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 diapers · roads · recycled     1-3 아래 참조");
@@ -426,8 +426,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 F · 5 T · 6 F · 7 F · 8 T");
    B("1 F — 문장 5: 다리가 아니라 도로(roads)를 고친다.   2 T — 문장 4.   3 T — 문장 2.   4 F — 문장 10: 플라스틱이 아니라 비투멘(bitumen)이라는 재료다.   5 T — 문장 11.   6 F — 문장 3: 300만 개(million)가 아니라 30억 개(billion)다.   7 F — 문장 12: 지금은 영국만(only the U.K.) 시험하고 있다.   8 T — 문장 8.  거짓 문장은 모두 본문에서 딱 한 요소(million, bridges, plastic, many countries)를 비튼 것이다 — 그 한 단어를 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (d) → (b) → (c) → (a)");
-B("ⓓ 수십억 개의 기저귀가 버려진다(문장 3) → ⓑ 기저귀를 작은 조각으로 잘라 세척한다(문장 8) → ⓒ 여러 단계를 거쳐 작고 부드러운 조각으로 변한다(문장 9) → ⓐ 조각들을 끈적한 비투멘에 첨가한다(문장 10). First → Then → Finally라는 순서 연결어가 그대로 과정의 지도가 된다 — 과정을 설명하는 글은 연결어만 따라가면 순서가 보인다.", true);
+Hs("R2   사건 순서   ·   (a) → (c) → (d) → (b)");
+B("ⓐ 수십억 개의 기저귀가 버려진다(문장 3) → ⓒ 기저귀를 작은 조각으로 잘라 세척한다(문장 8) → ⓓ 여러 단계를 거쳐 작고 부드러운 조각으로 변한다(문장 9) → ⓑ 조각들을 끈적한 비투멘에 첨가한다(문장 10). First → Then → Finally라는 순서 연결어가 그대로 과정의 지도가 된다 — 과정을 설명하는 글은 연결어만 따라가면 순서가 보인다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

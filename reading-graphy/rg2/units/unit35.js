@@ -89,9 +89,9 @@ K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?")
 K.push(sp(65));
 ["① Mammals usually grow fast when they are young.",
  "② The T. rex gained around 15 to 20 kg per week.",
- "③ Scientists studied the bones of 11 different types of dinosaurs.",
- "④ One newly discovered dinosaur didn’t reach its full size until its 30s or 40s.",
- "⑤ All dinosaurs grew quickly when they were young."].forEach(c => K.push(ch(c)));
+ "③ All dinosaurs grew quickly when they were young.",
+ "④ Scientists studied the bones of 11 different types of dinosaurs.",
+ "⑤ One newly discovered dinosaur didn’t reach its full size until its 30s or 40s."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) they가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
@@ -251,9 +251,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 나무의 나이테를 세는 방법",
- "② 티라노사우루스의 사냥 방법",
- "③ 공룡 뼈의 나이테로 알아낸 성장"].forEach(c =>
+["① 공룡 뼈의 나이테로 알아낸 성장",
+ "② 나무의 나이테를 세는 방법",
+ "③ 티라노사우루스의 사냥 방법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -399,7 +399,7 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문12 ", { size: 17, bold: true, color: NAVY2 }), t("others(S)\u00b7that reach a similar size(M)\u00b7took(\u25b3V)\u00b7in order to grow(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 이 지도는 내가 길을 찾도록 도와준다  (2) 그녀는 자전거를 사기 위해 돈을 모았다  (3) 우리 선생님은 우리가 시험에 붙기 위해 열심히 공부하도록 도와주신다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 bones · rings · grow   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 bones · rings · grow   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 F · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (d) → (b)", { size: 19, bold: true })], { after: 0 }),
@@ -407,14 +407,14 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ③");
 B("이 글은 공룡 뼈에도 나이테가 있고(문장 8), 그 나이테가 공룡의 성장을 알려 준다는 것(문장 9–12)을 설명한다. 소재와 역할을 함께 담은 ③가 제목이다. ①·⑤은 크기·사람 아기만 건드린 지엽적 오답, ②·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 11–12에서 빨리 자란 것은 T. rex 같은 '일부(Some)'이고, 다른 공룡들은 더 오래 걸렸다. '모든(All)'으로 바꾼 ⑤이 본문과 반대된다. ①은 문장 1, ②은 문장 5, ③는 문장 7, ④는 문장 14에서 확인된다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 11–12에서 빨리 자란 것은 T. rex 같은 '일부(Some)'이고, 다른 공룡들은 더 오래 걸렸다. '모든(All)'으로 바꾼 ③이 본문과 반대된다. ①은 문장 1, ②은 문장 5, ④는 문장 7, ⑤는 문장 14에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) they는 문장 4의 Scientists를 가리킨다. 문장 2의 they는 포유류였지만 같은 they가 여기서는 과학자로 바뀌었다 — '확신하지 못했다'라는 말은 사람만 할 수 있다는 점도 단서다.", true);
 Hs("독해 04   배열 영작   ·   Just like tree rings, dinosaur bones also have rings.");
 B("문장 8을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Just.   ② rings, 뒤의 쉼표가 앞부분(비교의 M)의 끝을 알린다.   ③ rings가 두 번 나온다 — 보기의 같은 단어를 빠뜨리지 않는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 bones · rings · grow     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 공룡 뼈의 나이테로 공룡의 성장을 알아낸 이야기다. ① 나무 나이테는 비교 대상일 뿐이고, ② 사냥 이야기는 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 bones · rings · grow     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 공룡 뼈의 나이테로 공룡의 성장을 알아낸 이야기다. ② 나무 나이테는 비교 대상일 뿐이고, ③ 사냥 이야기는 나오지 않는다.");
 B("1-2   \u25cb표 할 세 단어: bones(힌트① 과학자들이 연구한 것) · rings(힌트② 그 안에서 발견한 것) · grow(힌트③ 그것이 알려 주는 것). 나머지 셋(mammals · scientists · size)은 본문에 등장하지만 주제문에 들어가지 않는다 — 비교 대상과 연구자일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
 B("1-3   문장 4 — it은 티라노사우루스에 \u25cb (같은 문장의 T. rex).   문장 6 — they는 과학자들에 \u25cb (문장 4의 Scientists).   문장 14 — it은 새로 발견된 공룡에 \u25cb (문장 13의 a newly discovered dinosaur).");
 B("[학습 포인트]   같은 they가 문장 2에서는 포유류, 문장 6에서는 과학자를 가리킨다. 대명사는 자리마다 주인이 바뀐다 — 만날 때마다 바로 앞 문장에서 짝을 다시 찾자.", true);

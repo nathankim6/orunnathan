@@ -34,16 +34,26 @@ def main(apply=False):
         got = r4_items(src)
         if not got: continue
         picks, opts = got
-        edits = []
+        edits = []; wants = []
         for pk, (st, en, o1, o2) in zip(picks, opts):
             if pk == o1: pos = '앞칸'
             elif pk == o2: pos = '뒤칸'
             else: before['대조실패'] += 1; continue
             before[pos] += 1
             want = rnd.choice(['앞칸', '뒤칸'])
+            wants.append(want)
             after[want] += 1
             if want != pos:
                 edits.append((st, en, f'( {o2}  /  {o1} )'))
+        # 네 문항이 모두 같은 칸이면 한 문항을 뒤집는다 — 펼치면 바로 보이는 꼴이다
+        if wants and len(set(wants)) == 1 and len(wants) >= 3:
+            k = rnd.randrange(len(wants))
+            flip = '뒤칸' if wants[k] == '앞칸' else '앞칸'
+            after[wants[k]] -= 1; after[flip] += 1
+            st, en, o1, o2 = opts[k]
+            same = [e for e in edits if e[0] == st]
+            if same: edits = [e for e in edits if e[0] != st]
+            else: edits.append((st, en, f'( {o2}  /  {o1} )'))
         if edits and apply:
             for st, en, rep in sorted(edits, reverse=True):
                 src = src[:st] + rep + src[en:]

@@ -100,9 +100,9 @@ K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Collect Water and Soil Safely",
  "② Water Temperature: The Only Problem for Fish",
- "③ eDNA: A New Way to Watch and Save Coral Reefs",
- "④ Popular Diving Spots Around the World",
- "⑤ How to Build a Library in Your Town"].forEach(c => K.push(ch(c)));
+ "③ Popular Diving Spots Around the World",
+ "④ How to Build a Library in Your Town",
+ "⑤ eDNA: A New Way to Watch and Save Coral Reefs"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
@@ -286,8 +286,8 @@ K.push(spF(4, 300, 0.10));
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 ["① 바닷물의 온도를 재는 여러 방법",
- "② 도서관에서 DNA 자료를 빌리는 법",
- "③ eDNA로 산호초를 살피고 지키는 과학"].forEach(c =>
+ "② eDNA로 산호초를 살피고 지키는 과학",
+ "③ 도서관에서 DNA 자료를 빌리는 법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -518,15 +518,15 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 2, main: "extremely sensitive to water temperature",
-    opts: ["① ignores water temperature", "② reacts strongly to water warmth", "③ can live only in deep caves"] },
+    opts: ["① ignores water temperature", "② can live only in deep caves", "③ reacts strongly to water warmth"] },
   { sn: 6, main: "without harming the corals",
-    opts: ["① by breaking the corals", "② with the help of divers", "③ without hurting the corals"] });
+    opts: ["① without hurting the corals", "② by breaking the corals", "③ with the help of divers"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 8, main: "which corals are in danger",
     opts: ["① which corals are safe forever", "② which corals may die soon", "③ which corals are the oldest"] },
   { sn: 12, main: "fix damaged reefs",
-    opts: ["① repair the broken reefs", "② leave the broken reefs alone", "③ move the reefs to a zoo"] });
+    opts: ["① leave the broken reefs alone", "② move the reefs to a zoo", "③ repair the broken reefs"] });
 K.push(spF(7, 150, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -603,10 +603,10 @@ K.push(spF(8, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "산호초를 지키는 과정 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ The warmer water makes many corals die.",
-      "ⓑ Scientists put the DNA information into a large library.",
-      "ⓒ Scientists collect water or soil near the reefs.",
-      "ⓓ Scientists monitor the reefs and fix damaged ones."]
+  ...["ⓐ Scientists put the DNA information into a large library.",
+      "ⓑ Scientists collect water or soil near the reefs.",
+      "ⓒ Scientists monitor the reefs and fix damaged ones.",
+      "ⓓ The warmer water makes many corals die."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -648,7 +648,7 @@ K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다.
 K.push(sp(130));
 [["문장 1", [t("Coral reefs ", { size: 19 }), t("( is  /  are )", { size: 19, bold: true, color: NAVY }), t(" struggling because of climate change.", { size: 19 })], "주어 Coral reefs는 복수예요."],
  ["문장 4", [t("Scientists ", { size: 19 }), t("( has  /  have )", { size: 19, bold: true, color: NAVY }), t(" discovered new techniques.", { size: 19 })], "have+과거분사의 have도 주어에 맞춰요."],
- ["문장 6", [t("They collect water or soil ", { size: 19 }), t("( learn  /  to learn )", { size: 19, bold: true, color: NAVY }), t(" about the sea life.", { size: 19 })], "'~하기 위해'는 to+동사원형!"],
+ ["문장 6", [t("They collect water or soil ", { size: 19 }), t("( to learn  /  learn )", { size: 19, bold: true, color: NAVY }), t(" about the sea life.", { size: 19 })], "'~하기 위해'는 to+동사원형!"],
  ["문장 12", [t("This means they ", { size: 19 }), t("( can fixes  /  can fix )", { size: 19, bold: true, color: NAVY }), t(" damaged reefs.", { size: 19 })], "조동사 can 뒤에는 동사원형이 와요."],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
@@ -743,30 +743,30 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문10 ", { size: 17, bold: true, color: NAVY2 }), t("This DNA library(S)·will help(△V)·to monitor them easily(M)·in the future(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 내 여동생은 숙제를 끝냈다  (2) 나는 새 자전거를 사기 위해 돈을 모았다  (3) 우리는 신선한 공기를 마시기 위해 창문을 열었다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 eDNA · monitor · protect        ", { size: 19, bold: true }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 eDNA · monitor · protect        ", { size: 19, bold: true }),
      t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 이유 · 반전 · 결과 · 반전   2-2 [B] 해결책 · [D] 자료 모으기   2-3 ①", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (a) → (b) → (c) → (d)  ·  Scientists use eDNA to monitor coral reefs and protect the life depending on them.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) dying  (2) eDNA  (3) library  (4) protect        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ②  문장 6 ③  문장 8 ②  문장 12 ①", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ③  문장 6 ①  문장 8 ②  문장 12 ③", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 F · 5 T · 6 F · 7 F · 8 T", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (b) → (d)", { size: 19, bold: true })], { after: 25 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (a) → (c)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(d) · 2(f) · 3(a) · 4(c) · 5(e) · 6(b)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) are  (2) have  (3) to learn  (4) can fix", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) climate (2) sensitive (3) dying (4) techniques (5) harming (6) condition (7) library (8) monitor", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) This method gives a clear view of a reef’s condition.  (2) So, many of them around the world are dying.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("이 글은 기후 변화로 죽어 가는 산호초(문장 1–3)를 eDNA로 살피고 지키려는 과학을 소개한다. 소재와 방법을 함께 담은 ③이 제목으로 적절하다. ①·②는 지엽적이고, ④·⑤는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 기후 변화로 죽어 가는 산호초(문장 1–3)를 eDNA로 살피고 지키려는 과학을 소개한다. 소재와 방법을 함께 담은 ⑤이 제목으로 적절하다. ①·②는 지엽적이고, ③·④는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ⑤");
 B("문장 6에서 물과 흙을 모으는 일은 '산호를 해치지 않고(without harming the corals)' 이루어진다. 해친다고 한 ⑤이 본문과 반대된다. ①은 문장 1, ②은 문장 2, ③는 문장 6, ④는 문장 9에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) them은 바로 앞 문장 9의 various coral reefs를 가리킨다. DNA 자료실이 앞으로 쉽게 관찰하게 해 줄 대상이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   They’re creating a large DNA library from various coral reefs.");
 B("문장 9를 그대로 복원하는 문제다. ① 첫 글자는 대문자 They’re.   ② a large DNA library — 관사 a를 빠뜨리지 않는다.   ③ from 뒤에 various coral reefs가 이어진다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 eDNA · monitor · protect     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 eDNA로 산호초의 상태를 살피고 지키려는 과학을 소개한다. ① 물 온도는 문제의 원인일 뿐이고, ②의 library는 '도서관'이 아니라 DNA 자료실이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 eDNA · monitor · protect     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 eDNA로 산호초의 상태를 살피고 지키려는 과학을 소개한다. ① 물 온도는 문제의 원인일 뿐이고, ③의 library는 '도서관'이 아니라 DNA 자료실이다.");
 B("1-2   ○표 할 세 단어: eDNA(힌트① 새 도구) · monitor(힌트② 그 도구로 하는 일) · protect(힌트③ 최종 목적). 나머지 셋(soil · species · temperature)은 본문에 나오지만 주제문에는 들어가지 않는다.");
 B("1-3   문장 7 — This method는 eDNA 방법에 ○.   문장 11 — It은 DNA 자료실에 ○ (문장 9–10의 그 library).   문장 12 — they는 과학자들, them은 산호초들에 ○.");
 B("[학습 포인트]   한 문장 안에서도 they와 them이 서로 다른 것을 가리킬 수 있다. 지시어를 만나면 수(단수·복수)를 먼저 맞춰 보고 바로 앞 문장에서 짝을 찾자.", true);
@@ -786,11 +786,11 @@ B("3-3  정답 순서 — ⓐ Scientists use eDNA → ⓑ to monitor coral reefs
 B("[채점 포인트]  주인공(Scientists)이 맨 앞, 마침표가 붙은 덩어리(ⓓ)가 맨 뒤 — 두 자리만 잡으면 to와 and가 순서를 알려 준다.", true);
 Hs("STEP 4   요약문   ·   (1) dying  (2) eDNA  (3) library  (4) protect");
 B("(1)은 문장 3의 dying, (2)는 문장 5의 eDNA, (3)은 문장 9의 library, (4)는 문장 12의 protect에서 가져온다. 요약문이 곧 이 글의 흐름이다: 문제(1) → 방법(2) → 자료(3) → 목적(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ②   문장 6 ③   문장 8 ②   문장 12 ①  (정답 선지는 무표시)");
-B("문장 2 extremely sensitive to water temperature   ① ✕ [반대] 온도에 신경 쓰지 않는다.   ② ○ 물이 얼마나 따뜻한지에 크게 반응한다.   ③ ✕ [무관] 깊은 동굴 이야기는 지문에 없다.");
-B("문장 6 without harming the corals   ① ✕ [반대] 산호를 부수면서.   ② ✕ [무관] 잠수부의 도움은 지문에 없다.   ③ ○ 산호를 다치게 하지 않고.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ③   문장 6 ①   문장 8 ②   문장 12 ③  (정답 선지는 무표시)");
+B("문장 2 extremely sensitive to water temperature   ① ✕ [반대] 온도에 신경 쓰지 않는다.   ② ✕ [무관] 깊은 동굴 이야기는 지문에 없다.   ③ ○ 물이 얼마나 따뜻한지에 크게 반응한다.");
+B("문장 6 without harming the corals   ① ○ 산호를 다치게 하지 않고.   ② ✕ [반대] 산호를 부수면서.   ③ ✕ [무관] 잠수부의 도움은 지문에 없다.");
 B("문장 8 which corals are in danger   ① ✕ [반대] 영원히 안전한 산호 — 정반대.   ② ○ 곧 죽을 수도 있는 산호.   ③ ✕ [무관] 가장 오래된 산호라는 말은 없다.");
-B("문장 12 fix damaged reefs   ① ○ 망가진 산호초를 고치다.   ② ✕ [반대] 망가진 채로 내버려 두다.   ③ ✕ [무관] 동물원으로 옮긴다는 말은 없다.");
+B("문장 12 fix damaged reefs   ① ✕ [반대] 망가진 채로 내버려 두다.   ② ✕ [무관] 동물원으로 옮긴다는 말은 없다.   ③ ○ 망가진 산호초를 고치다.");
 B("[학습 포인트]  시험은 본문 표현을 반드시 바꿔서 묻는다. in danger ↔ may die soon처럼 같은 뜻의 다른 표현을 스스로 만들어 보는 습관을 들이자.", true);
 
 K.push(brk());
@@ -798,8 +798,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 F · 5 T · 6 F · 7 F · 8 T");
    B("1 F — 문장 2: not이 붙어 뜻이 뒤집혔다(산호는 온도에 매우 민감하다).   2 T — 문장 10.   3 T — 문장 6.   4 F — 문장 6: far from이 아니라 near(가까이)이다.   5 T — 문장 2.   6 F — 문장 11: beautiful이 아니라 threatened(위협받는) 종을 알려 준다.   7 F — 문장 9: small이 아니라 large(큰) 자료실이다.   8 T — 문장 1.", true);
-Hs("R2   사건 순서   ·   (a) → (c) → (b) → (d)");
-B("ⓐ 더워진 물 때문에 산호가 죽는다(문장 2–3) → ⓒ 과학자들이 산호초 근처의 물과 흙을 모은다(문장 6) → ⓑ 모은 정보를 큰 DNA 자료실에 넣는다(문장 9) → ⓓ 산호초를 관찰하고 손상된 곳을 고친다(문장 10–12).", true);
+Hs("R2   사건 순서   ·   (d) → (b) → (a) → (c)");
+B("ⓓ 더워진 물 때문에 산호가 죽는다(문장 2–3) → ⓑ 과학자들이 산호초 근처의 물과 흙을 모은다(문장 6) → ⓐ 모은 정보를 큰 DNA 자료실에 넣는다(문장 9) → ⓒ 산호초를 관찰하고 손상된 곳을 고친다(문장 10–12).", true);
 Hs("R3   영영풀이   ·   1 (d) · 2 (f) · 3 (a) · 4 (c) · 5 (e) · 6 (b)");
 B("sensitive = 작은 변화에도 쉽게 반응하는 · discover = 처음으로 찾아내다 · collect = 여럿을 모아 한곳에 두다 · harm = 다치게 하거나 망가뜨리다 · monitor = 오랫동안 주의 깊게 지켜보다 · threatened = 사라질 위험에 놓인.", true);
 Hs("R4   어법 기초   ·   (1) are  (2) have  (3) to learn  (4) can fix");

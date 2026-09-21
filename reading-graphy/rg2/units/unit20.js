@@ -80,25 +80,27 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① A Composer Who Turns Pet Photos into Songs", "② How to Take Better Photos of Your Cat",
- "③ The History of the Word “Symphony”", "④ The Best Music Schools for Young People",
+["① How to Take Better Photos of Your Cat",
+ "② A Composer Who Turns Pet Photos into Songs",
+ "③ The History of the Word “Symphony”",
+ "④ The Best Music Schools for Young People",
  "⑤ How to Train a Lively Dog at Home"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Noam Oxman writes special songs to remember pets.",
- "② Noam loved animals, music, and drawings.",
- "③ The name Sympawnies comes from “symphony” and “paw.”",
- "④ Noam thought Chubby Cat was sweet and playful.",
- "⑤ Noam makes gentle music when the pet is lively."].forEach(c => K.push(ch(c)));
+["① Noam makes gentle music when the pet is lively.",
+ "② Noam Oxman writes special songs to remember pets.",
+ "③ Noam loved animals, music, and drawings.",
+ "④ The name Sympawnies comes from “symphony” and “paw.”",
+ "⑤ Noam thought Chubby Cat was sweet and playful."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) The results가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the pets that Noam lost when he was young",
- "② the words “symphony” and “paw”",
- "③ the drawings sent by the pet owners",
- "④ the schools that teach music and art",
- "⑤ the songs and scores made from pet photos"].forEach(c => K.push(ch(c)));
+["① the songs and scores made from pet photos",
+ "② the pets that Noam lost when he was young",
+ "③ the words “symphony” and “paw”",
+ "④ the drawings sent by the pet owners",
+ "⑤ the schools that teach music and art"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -357,10 +359,10 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "노암이 노래를 만드는 과정 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ Noam finished school and wanted to use his talents.",
-      "ⓑ He learns about a pet from its owner.",
-      "ⓒ He makes a song that looks like the pet.",
-      "ⓓ He started the project Sympawnies."]
+  ...["ⓐ He learns about a pet from its owner.",
+      "ⓑ He makes a song that looks like the pet.",
+      "ⓒ He started the project Sympawnies.",
+      "ⓓ Noam finished school and wanted to use his talents."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -401,14 +403,14 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 composer · songs · pets   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 F · 4 F · 5 T · 6 T · 7 F · 8 T", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (d) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 반려동물 사진으로 노래를 만드는 작곡가 노암 옥스먼(문장 1·6–7)과 그가 곡을 짓는 방법(문장 9–13)을 소개한다. 소재(작곡가·사진·노래)를 모두 담은 ①이 제목으로 적절하다. ②·③는 사진·단어만 건드린 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 10에서 반려동물이 활발하면(lively) 밝은 음악을, 문장 11에서 차분하면 부드러운 음악을 만든다고 했다. 둘을 뒤바꾼 ⑤이 본문과 다르다. ①은 문장 1, ②은 문장 4, ③는 문장 5, ④는 문장 12에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 01   제목   ·   정답 ②");
+B("이 글은 반려동물 사진으로 노래를 만드는 작곡가 노암 옥스먼(문장 1·6–7)과 그가 곡을 짓는 방법(문장 9–13)을 소개한다. 소재(작곡가·사진·노래)를 모두 담은 ②이 제목으로 적절하다. ①·③는 사진·단어만 건드린 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 10에서 반려동물이 활발하면(lively) 밝은 음악을, 문장 11에서 차분하면 부드러운 음악을 만든다고 했다. 둘을 뒤바꾼 ①이 본문과 다르다. ②은 문장 1, ③은 문장 4, ④는 문장 5, ⑤는 문장 12에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) The results는 바로 앞 문장 6–7의 내용, 곧 반려동물 사진으로 만든 노래와 그 반려동물을 꼭 닮은 악보를 함께 가리킨다. 그래서 눈과 귀 모두에게 즐겁다고 한 것이다.", true);
 Hs("독해 04   배열 영작   ·   He uses pet photos to create beautiful songs.");
 B("문장 6을 그대로 복원하는 문제다. ① 첫 글자는 대문자 He.   ② '~하기 위해'는 to+동사원형 — to create.   ③ pet photos(반려동물 사진)의 어순에 주의한다.", true);
@@ -424,8 +426,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 T · 2 F · 3 F · 4 F · 5 T · 6 T · 7 F · 8 T");
    B("1 T — 문장 6.   2 F — 문장 12: 개가 아니라 고양이(cat)다.   3 F — 문장 11: 신나는 음악이 아니라 부드러운(gentle) 음악이다.   4 F — 문장 4: 싫어한 게 아니라 좋아했다(loved).   5 T — 문장 5.   6 T — 문장 1.   7 F — 문장 7: 주인이 아니라 반려동물(pets)을 닮았다.   8 T — 문장 9.  거짓 문장은 모두 본문에서 딱 한 요소(hated, owners, exciting, dog)를 비튼 것이다 — 그 한 단어를 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (a) → (d) → (b) → (c)");
-B("ⓐ 학교를 마치고 재능을 쓸 길을 찾는다(문장 3) → ⓓ 프로젝트 Sympawnies를 시작한다(문장 5) → ⓑ 주인에게서 반려동물에 대해 배운다(문장 9) → ⓒ 반려동물을 닮은 노래를 만든다(문장 6–7). 본문은 작곡(문장 6–7)을 먼저 이야기하지만, 문장 9의 Before composing이 실제 순서를 알려 준다 — 서술 순서와 사건 순서는 다를 수 있다.", true);
+Hs("R2   사건 순서   ·   (d) → (c) → (a) → (b)");
+B("ⓓ 학교를 마치고 재능을 쓸 길을 찾는다(문장 3) → ⓒ 프로젝트 Sympawnies를 시작한다(문장 5) → ⓐ 주인에게서 반려동물에 대해 배운다(문장 9) → ⓑ 반려동물을 닮은 노래를 만든다(문장 6–7). 본문은 작곡(문장 6–7)을 먼저 이야기하지만, 문장 9의 Before composing이 실제 순서를 알려 준다 — 서술 순서와 사건 순서는 다를 수 있다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

@@ -77,25 +77,27 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Lasers: A New Kind of Lightning Rod", "② The Life of Benjamin Franklin",
- "③ Why Airports Are Built Far from Cities", "④ How to Make a Cheaper Laser Toy",
- "⑤ Metal Rods: The Only Way to Stop Lightning"].forEach(c => K.push(ch(c)));
+["① The Life of Benjamin Franklin",
+ "② Why Airports Are Built Far from Cities",
+ "③ How to Make a Cheaper Laser Toy",
+ "④ Metal Rods: The Only Way to Stop Lightning",
+ "⑤ Lasers: A New Kind of Lightning Rod"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Benjamin Franklin invented the lightning rod.",
  "② Scientists tested a laser beam pointed at the sky.",
- "③ Earlier studies tested the idea only inside a lab.",
- "④ Scientists hope to make the laser device cheaper.",
- "⑤ Metal lightning rods work well for large places like airports."].forEach(c => K.push(ch(c)));
+ "③ Metal lightning rods work well for large places like airports.",
+ "④ Earlier studies tested the idea only inside a lab.",
+ "⑤ Scientists hope to make the laser device cheaper."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) they가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the metal lightning rods on buildings",
- "② the lightning strikes near airports",
- "③ the buildings in large places",
- "④ the people saved by Franklin",
- "⑤ the scientists testing the laser idea"].forEach(c => K.push(ch(c)));
+["① the scientists testing the laser idea",
+ "② the metal lightning rods on buildings",
+ "③ the lightning strikes near airports",
+ "④ the buildings in large places",
+ "⑤ the people saved by Franklin"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -352,8 +354,8 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "레이저 피뢰침 연구의 단계 ⓐ~ⓓ를 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ Franklin invented the metal lightning rod.",
-      "ⓑ Some studies tested lasers only inside a lab.",
+  ...["ⓐ Some studies tested lasers only inside a lab.",
+      "ⓑ Franklin invented the metal lightning rod.",
       "ⓒ Scientists tried the laser idea outside.",
       "ⓓ Scientists want to guide lightning across broad areas."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
@@ -396,14 +398,14 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 scientists · lasers · lightning rod   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (b) → (c) → (d)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (c) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 금속 피뢰침의 한계(문장 3)와, 레이저를 새로운 피뢰침으로 쓰려는 시도(문장 5–7)를 소개한다. 소재(lasers)와 특징(새로운 피뢰침)을 함께 담은 ①이 제목으로 적절하다. ②·⑤는 프랭클린·금속 막대만 건드린 지엽적 오답, ③·④은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 3에서 금속 피뢰침은 작은 구역에만 효과가 있고 공항 같은 넓은 곳에는 그렇지 않다고 했다. 잘 작동한다는 ⑤은 본문과 반대된다. ①은 문장 1, ②는 문장 5, ③은 문장 6, ④는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 금속 피뢰침의 한계(문장 3)와, 레이저를 새로운 피뢰침으로 쓰려는 시도(문장 5–7)를 소개한다. 소재(lasers)와 특징(새로운 피뢰침)을 함께 담은 ⑤이 제목으로 적절하다. ①·④는 프랭클린·금속 막대만 건드린 지엽적 오답, ②·③은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 3에서 금속 피뢰침은 작은 구역에만 효과가 있고 공항 같은 넓은 곳에는 그렇지 않다고 했다. 잘 작동한다는 ③은 본문과 반대된다. ①은 문장 1, ②는 문장 5, ④은 문장 6, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) they는 바로 앞 문장 5–6에서 레이저를 시험해 온 과학자들(연구자들)을 가리킨다. 밖에서 아이디어를 시도한 주체가 누구인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   Now, scientists are trying to use lasers instead.");
 B("문장 2를 그대로 복원하는 문제다. ① 첫 글자는 대문자 Now, 뒤에 콤마.   ② 진행형 are trying이 한 덩어리.   ③ try to+동사원형 — to use가 이어지고 instead가 맨 뒤에 온다.", true);
@@ -419,8 +421,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
    B("1 F — 문장 5: 땅이 아니라 하늘(sky)을 향한 빔이다.   2 T — 문장 4.   3 T — 문장 1.   4 F — 문장 3: 넓은 곳이 아니라 작은 구역(small areas)에만 효과가 있다.   5 T — 문장 8.   6 F — 문장 7: 색(color)이 아니라 경로(path)를 바꾸었다.   7 T — 문장 6.   8 F — 문장 9: 더 비싸게가 아니라 더 싸게(cheaper) 만들기를 바란다.  거짓 문장은 모두 딱 한 요소(large places, ground, color, more expensive)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (a) → (b) → (c) → (d)");
-B("ⓐ 프랭클린이 금속 피뢰침을 발명한다(문장 1) → ⓑ 몇몇 연구가 실험실 안에서만 레이저를 시험한다(문장 6) → ⓒ 과학자들이 밖에서 아이디어를 시도한다(문장 7) → ⓓ 넓은 지역으로 번개를 유도하려 한다(문장 8, 앞으로의 계획). 문장 6의 Before와 문장 7의 Recently, 문장 8의 Next가 시간의 이정표다 — 서술 순서가 아니라 시간 표시어를 따라가야 한다.", true);
+Hs("R2   사건 순서   ·   (b) → (a) → (c) → (d)");
+B("ⓑ 프랭클린이 금속 피뢰침을 발명한다(문장 1) → ⓐ 몇몇 연구가 실험실 안에서만 레이저를 시험한다(문장 6) → ⓒ 과학자들이 밖에서 아이디어를 시도한다(문장 7) → ⓓ 넓은 지역으로 번개를 유도하려 한다(문장 8, 앞으로의 계획). 문장 6의 Before와 문장 7의 Recently, 문장 8의 Next가 시간의 이정표다 — 서술 순서가 아니라 시간 표시어를 따라가야 한다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

@@ -99,16 +99,16 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Climb Horsetail Fall",
- "② Firefall: A Few Minutes of Fire on Water",
- "③ The Best Hotels near Yosemite",
- "④ Why Snow Melts in Winter",
+ "② The Best Hotels near Yosemite",
+ "③ Why Snow Melts in Winter",
+ "④ Firefall: A Few Minutes of Fire on Water",
  "⑤ How Firefighters Save a Forest"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① The Firefall can be seen at Yosemite National Park in California.",
- "② The Horsetail Fall turns into the Firefall in February.",
- "③ The burning orange glow lasts for several hours.",
+["① The burning orange glow lasts for several hours.",
+ "② The Firefall can be seen at Yosemite National Park in California.",
+ "③ The Horsetail Fall turns into the Firefall in February.",
  "④ Clear and cloudless skies are necessary for the Firefall.",
  "⑤ You need a reservation to enter the park."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -283,9 +283,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 산불을 끄는 소방관들의 이야기",
- "② 2월에 내리는 눈의 양",
- "③ 요세미티의 파이어폴과 관람 조건"].forEach(c =>
+["① 요세미티의 파이어폴과 관람 조건",
+ "② 산불을 끄는 소방관들의 이야기",
+ "③ 2월에 내리는 눈의 양"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -408,10 +408,10 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 볼거리와 조건을 알려 주는 안내문",
- "② 하루 일을 적은 일기",
- "③ 친구에게 보내는 편지",
- "④ 상상으로 지어낸 동화",
+["① 하루 일을 적은 일기",
+ "② 친구에게 보내는 편지",
+ "③ 상상으로 지어낸 동화",
+ "④ 볼거리와 조건을 알려 주는 안내문",
  "⑤ 리듬을 살려 쓴 시"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
@@ -516,15 +516,15 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 1, main: "Don’t miss out on",
-    opts: ["① be sure not to miss it", "② forget all about it", "③ pay a lot of money for it"] },
+    opts: ["① forget all about it", "② pay a lot of money for it", "③ be sure not to miss it"] },
   { sn: 4, main: "only lasts for a few minutes",
-    opts: ["① goes on all day long", "② happens once every month", "③ continues for a very short time"] });
+    opts: ["① goes on all day long", "② continues for a very short time", "③ happens once every month"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 5, main: "in the right spot at the right time",
     opts: ["① in the correct place at the correct time", "② anywhere and anytime", "③ with a very big camera"] },
   { sn: 8, main: "warm enough to melt the snow",
-    opts: ["① so cold that the snow stays hard", "② warm enough to turn snow into water", "③ hot enough to burn the trees"] });
+    opts: ["① so cold that the snow stays hard", "② hot enough to burn the trees", "③ warm enough to turn snow into water"] });
 K.push(spF(7, 150, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -603,8 +603,8 @@ K.push(sp(120));
 K.push(box([
   ...["ⓐ You watch the burning orange glow for a few minutes.",
       "ⓑ You check the snow, the weather, and the sky.",
-      "ⓒ You make a reservation for entrance to the park.",
-      "ⓓ You find the right spot before sunset."]
+      "ⓒ You find the right spot before sunset.",
+      "ⓓ You make a reservation for entrance to the park."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -646,8 +646,8 @@ K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다.
 K.push(sp(130));
 [["문장 7", [t("There ", { size: 19 }), t("( must be  /  must is )", { size: 19, bold: true, color: NAVY }), t(" enough snow.", { size: 19 })], "조동사(must) 뒤에는 동사원형이 옵니다."],
  ["문장 9", [t("Clear and cloudless skies ", { size: 19 }), t("( are  /  is )", { size: 19, bold: true, color: NAVY }), t(" necessary.", { size: 19 })], "주어 skies는 복수예요."],
- ["문장 10", [t("The Sun ", { size: 19 }), t("( has  /  have )", { size: 19, bold: true, color: NAVY }), t(" to hit the waterfall at the right angle.", { size: 19 })], "주어가 3인칭 단수일 때의 형태는?"],
- ["문장 5", [t("You need ", { size: 19 }), t("( to be  /  being )", { size: 19, bold: true, color: NAVY }), t(" in the right spot.", { size: 19 })], "need 뒤에는 to+동사원형!"],
+ ["문장 10", [t("The Sun ", { size: 19 }), t("( have  /  has )", { size: 19, bold: true, color: NAVY }), t(" to hit the waterfall at the right angle.", { size: 19 })], "주어가 3인칭 단수일 때의 형태는?"],
+ ["문장 5", [t("You need ", { size: 19 }), t("( being  /  to be )", { size: 19, bold: true, color: NAVY }), t(" in the right spot.", { size: 19 })], "need 뒤에는 to+동사원형!"],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
     cel(new Paragraph({ children: [t("(" + (i + 1) + ")", { size: 16, bold: true, color: "FFFFFF" })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 210 } }),
@@ -741,30 +741,30 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문10 ", { size: 17, bold: true, color: NAVY2 }), t("The Sun(S)·has to hit(△V)·at the right angle(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 병 안에 물이 충분히 있어야 한다  (2) 그 수프는 내 손을 데울 만큼 충분히 뜨거웠다  (3) 작은 글자를 읽을 만큼 충분히 밝은 빛이 있어야 한다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 Firefall · spot · time        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 반전 · 결과 · 덧붙임   2-2 [B] 시기 · [E] 준비   2-3 ①", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 Firefall · spot · time        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 반전 · 결과 · 덧붙임   2-2 [B] 시기 · [E] 준비   2-3 ④", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (c) → (d) → (a)  ·  You need the right spot and the right time to enjoy the Firefall.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) burning  (2) minutes  (3) snow  (4) spot        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 1 ①  문장 4 ③  문장 5 ①  문장 8 ②", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 1 ③  문장 4 ②  문장 5 ①  문장 8 ③", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 T · 4 F · 5 F · 6 T · 7 F · 8 T", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (b) → (d) → (a)", { size: 19, bold: true })], { after: 25 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (c) → (a)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(b) · 2(d) · 3(c) · 4(f) · 5(e) · 6(a)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) must be  (2) are  (3) has  (4) to be", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) glow (2) waterfall (3) February (4) minutes (5) spot (6) snow (7) melt (8) necessary", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) There must be enough snow.  (2) Make a reservation for entrance to the park.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ②");
-B("이 글은 요세미티의 파이어폴이 어떤 장면인지(문장 1–3)와 몇 분밖에 지속되지 않는다는 점(문장 4–5)을 알려 준다. 소재와 특징을 함께 담은 ②이 제목으로 적절하다. ①·④는 폭포·눈만 건드린 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 4에서 주황빛은 몇 시간이 아니라 '몇 분(a few minutes)' 동안만 지속된다고 했다. ①은 문장 1, ②는 문장 3, ④는 문장 9, ⑤는 문장 12에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 요세미티의 파이어폴이 어떤 장면인지(문장 1–3)와 몇 분밖에 지속되지 않는다는 점(문장 4–5)을 알려 준다. 소재와 특징을 함께 담은 ④이 제목으로 적절하다. ①·③는 폭포·눈만 건드린 지엽적 오답, ②·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 4에서 주황빛은 몇 시간이 아니라 '몇 분(a few minutes)' 동안만 지속된다고 했다. ②은 문장 1, ③는 문장 3, ④는 문장 9, ⑤는 문장 12에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) this는 앞 문장 3–4에서 말한 '불타는 듯한 주황빛 장면'을 가리킨다. 그것을 제대로 즐기려면 자리와 때를 맞춰야 한다는 흐름이다.", true);
 Hs("독해 04   배열 영작   ·   Clear and cloudless skies are necessary.");
 B("문장 9를 그대로 복원한다. ① 첫 글자는 대문자 Clear.   ② 형용사 둘을 and로 잇는다.   ③ 주어 skies가 복수이므로 are.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 Firefall · spot · time     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 파이어폴이라는 장면과 그것을 보기 위한 조건을 알려 준다. ①은 fire를 '산불'로 잘못 읽은 것이고, ② 눈은 조건 중 하나일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 Firefall · spot · time     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 파이어폴이라는 장면과 그것을 보기 위한 조건을 알려 준다. ②은 fire를 '산불'로 잘못 읽은 것이고, ③ 눈은 조건 중 하나일 뿐이다.");
 B("1-2   ○표 할 세 단어: Firefall(힌트① 주인공) · spot(힌트② 맞춰야 할 자리) · time(힌트③ 맞춰야 할 때). 나머지 셋(snow · February · waterfall)은 본문에 나오지만 조건과 배경일 뿐이다.");
 B("1-3   문장 4 — this burning orange glow는 문장 3의 주황빛에 ○.   문장 5 — this는 파이어폴 보기에 ○.   문장 8 — the snow는 문장 7의 눈에 ○.");
 B("[학습 포인트]   this·these가 붙으면 반드시 앞 문장에 짝이 있다. 짝을 찾아 화살표로 이어 두는 습관이 지칭 추론 문항의 힘이 된다.", true);
@@ -772,10 +772,10 @@ B("[학습 포인트]   this·these가 붙으면 반드시 앞 문장에 짝이 
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 때 / 반전 / 결과 / 덧붙임     2-2 [B] 시기 · [E] 준비     2-3 ①");
+Hs("STEP 2   글의 흐름   ·   2-1 때 / 반전 / 결과 / 덧붙임     2-2 [B] 시기 · [E] 준비     2-3 ④");
 B("2-1   문장 2 During — 파이어폴이 일어나는 '때'.   문장 4 But — 아름답지만 짧다는 '반전'.   문장 5 So — 그래서 자리와 때를 맞춰야 한다는 '결과'.   문장 9 and — 맑은 하늘과 구름 없는 하늘을 '덧붙임'.");
 B("2-2   [B] 시기(문장 3: 2월에 호스테일 폭포가 파이어폴로 변한다), [E] 준비(문장 11–12: 언제 가야 하고 예약이 필요하다). 보기의 '가격'은 이 글에 없는 역할이다. 소개 → 시기 → 짧은 순간 → 조건 → 준비의 흐름이다.");
-B("2-3   정답 ①. 볼거리를 소개하고 필요한 조건과 시간을 알려 주는 안내문이다. 값이나 명령형 광고 문구가 없고, 일기·편지·동화·시의 신호도 없다.");
+B("2-3   정답 ④. 볼거리를 소개하고 필요한 조건과 시간을 알려 주는 안내문이다. 값이나 명령형 광고 문구가 없고, 일기·편지·동화·시의 신호도 없다.");
 B("[학습 포인트]   But 다음에 So가 오면 '문제 → 그래서 이렇게 하라'는 뼈대다. 이 두 연결어만 찾아도 글쓴이의 조언이 어디 있는지 보인다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 spot · time     3-3 (b) → (c) → (d) → (a)");
 B("3-1  재료 찾기 — (2) 문장 5에서 spot에 ○: '알맞은 자리'다. snow는 조건일 뿐 주제문의 자리가 아니다. (3) 문장 5에서 time에 ○: '알맞은 때'다. month는 본문에 없는 말이다.");
@@ -784,11 +784,11 @@ B("3-3  정답 순서 — ⓑ You need → ⓒ the right spot → ⓓ and the ri
 B("[채점 포인트]  주어(ⓑ)가 맨 앞, 마침표가 붙은 덩어리(ⓐ)가 맨 뒤 — 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) burning  (2) minutes  (3) snow  (4) spot");
 B("(1)은 문장 3의 burning, (2)는 문장 4의 minutes, (3)은 문장 7의 snow, (4)는 문장 5의 spot에서 가져온다. 요약문이 곧 이 글의 흐름이다: 장면 → 짧음 → 조건 → 조언.", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 1 ①   문장 4 ③   문장 5 ①   문장 8 ②  (정답 선지는 무표시)");
-B("문장 1 Don’t miss out on   ① ○ 놓치지 말라는 뜻.   ② ✕ [반대] 완전히 잊으라는 말 — 정반대.   ③ ✕ [무관] 돈을 많이 내라는 말은 지문에 없다.");
-B("문장 4 only lasts for a few minutes   ① ✕ [반대] 하루 종일 계속된다 — 정반대.   ② ✕ [무관] 매달 한 번이라는 말은 지문에 없다.   ③ ○ 아주 짧게 이어진다.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 1 ③   문장 4 ②   문장 5 ①   문장 8 ③  (정답 선지는 무표시)");
+B("문장 1 Don’t miss out on   ① ✕ [반대] 완전히 잊으라는 말 — 정반대.   ② ✕ [무관] 돈을 많이 내라는 말은 지문에 없다.   ③ ○ 놓치지 말라는 뜻.");
+B("문장 4 only lasts for a few minutes   ① ✕ [반대] 하루 종일 계속된다 — 정반대.   ② ○ 아주 짧게 이어진다.   ③ ✕ [무관] 매달 한 번이라는 말은 지문에 없다.");
 B("문장 5 in the right spot at the right time   ① ○ 알맞은 장소, 알맞은 시각.   ② ✕ [반대] 아무 데서나 아무 때나 — 정반대.   ③ ✕ [무관] 큰 카메라 이야기는 지문에 없다.");
-B("문장 8 warm enough to melt the snow   ① ✕ [반대] 눈이 얼어붙을 만큼 춥다 — 정반대.   ② ○ 눈을 물로 바꿀 만큼 따뜻하다.   ③ ✕ [무관] 나무를 태운다는 말은 지문에 없다.");
+B("문장 8 warm enough to melt the snow   ① ✕ [반대] 눈이 얼어붙을 만큼 춥다 — 정반대.   ② ✕ [무관] 나무를 태운다는 말은 지문에 없다.   ③ ○ 눈을 물로 바꿀 만큼 따뜻하다.");
 B("[학습 포인트]  시험은 본문 표현을 반드시 바꿔서 묻는다. 읽을 때마다 '이 말을 다른 말로 하면?'을 스스로 물어보자.", true);
 
 K.push(brk());
@@ -796,8 +796,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 F · 6 T · 7 F · 8 T");
    B("1 T — 문장 1.   2 F — 문장 8: 눈을 얼리는(freeze) 것이 아니라 녹일(melt) 만큼 따뜻해야 한다.   3 T — 문장 9.   4 F — 문장 12: 예약 없이는 들어갈 수 없다.   5 F — 문장 4: 몇 시간(hours)이 아니라 몇 분(minutes)이다.   6 T — 문장 2.   7 F — 문장 3: 7월이 아니라 2월이다.   8 T — 문장 7.  거짓 문장은 모두 한 요소(July, hours, cold, without)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (c) → (b) → (d) → (a)");
-B("ⓒ 공원 입장 예약을 한다(문장 12) → ⓑ 눈·기온·하늘을 확인한다(문장 7–9) → ⓓ 해 지기 전에 알맞은 자리를 잡는다(문장 5·11) → ⓐ 몇 분간 주황빛을 본다(문장 4). 예약은 본문 맨 마지막에 적혀 있지만 실제로는 가장 먼저 해야 하는 일이다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
+Hs("R2   사건 순서   ·   (d) → (b) → (c) → (a)");
+B("ⓓ 공원 입장 예약을 한다(문장 12) → ⓑ 눈·기온·하늘을 확인한다(문장 7–9) → ⓒ 해 지기 전에 알맞은 자리를 잡는다(문장 5·11) → ⓐ 몇 분간 주황빛을 본다(문장 4). 예약은 본문 맨 마지막에 적혀 있지만 실제로는 가장 먼저 해야 하는 일이다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
 Hs("R3   영영풀이   ·   1 (b) · 2 (d) · 3 (c) · 4 (f) · 5 (e) · 6 (a)");
 B("glow = 부드럽고 따뜻한 빛 · melt = 얼음이나 눈이 물로 바뀌다 · necessary = 꼭 필요한 · spot = (작은) 자리·장소 · reservation = 자리를 미리 잡아 두는 약속 · sunset = 해가 지는 때.", true);
 Hs("R4   어법 기초   ·   (1) must be  (2) are  (3) has  (4) to be");

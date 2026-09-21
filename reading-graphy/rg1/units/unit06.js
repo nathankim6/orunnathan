@@ -79,8 +79,8 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① The Best Flowers for a Spring Garden",
- "② How to Keep Butterflies as Pets",
- "③ Why Butterflies Land on Your Skin",
+ "② Why Butterflies Land on Your Skin",
+ "③ How to Keep Butterflies as Pets",
  "④ Crocodiles and Their Sharp Teeth",
  "⑤ How Nectar Is Made Inside Flowers"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -94,9 +94,9 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) this가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① eating nectar from flowers",
- "② flying in gardens and parks",
- "③ landing on people’s skin",
+["① landing on people’s skin",
+ "② eating nectar from flowers",
+ "③ flying in gardens and parks",
  "④ drinking tears from crocodiles",
  "⑤ sleeping on a flower all night"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -362,8 +362,8 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "나비에게 일어
 K.push(sp(120));
 K.push(box([
   ...["ⓐ The butterfly gets salt from the person’s sweat.",
-      "ⓑ The butterfly uses the salt and minerals for reproduction.",
-      "ⓒ A butterfly comes close to a person in the park.",
+      "ⓑ A butterfly comes close to a person in the park.",
+      "ⓒ The butterfly uses the salt and minerals for reproduction.",
       "ⓓ The butterfly lands on the person’s skin."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -405,14 +405,14 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 butterflies · salt · sweat   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 T · 3 F · 4 F · 5 F · 6 F · 7 T · 8 T", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (d) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("이 글은 나비가 우리 피부에 앉는 까닭이 땀 속 소금 때문임을 설명한다(문장 6–9). 소재(나비)와 특징(피부에 앉는 이유)을 함께 담은 ③이 정답이다. ①·⑤는 지엽적이고, ②·④은 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ②");
+B("이 글은 나비가 우리 피부에 앉는 까닭이 땀 속 소금 때문임을 설명한다(문장 6–9). 소재(나비)와 특징(피부에 앉는 이유)을 함께 담은 ②이 정답이다. ①·⑤는 지엽적이고, ③·④은 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ①");
 B("문장 4–5에서 나비가 꽃꿀만 먹는다는 것은 '많은 사람들의 생각'일 뿐, 실제로는 소금 같은 다른 것도 필요하다고 했다. ②은 문장 1, ③는 문장 7, ④은 문장 8, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) this는 바로 앞 문장 2에서 나비가 우리에게 다가와 피부에 내려앉는 행동을 가리킨다. this는 단어 하나가 아니라 앞의 행동 전체를 받을 수 있다.", true);
 Hs("독해 04   배열 영작   ·   They’re actually getting salt from our sweat!");
 B("문장 7을 그대로 복원하는 문제다. ① 첫 글자는 대문자 They’re.   ② be동사+~ing가 한 덩어리 — are getting.   ③ '~에서'는 from, 마지막에 느낌표를 잊지 않는다.", true);
@@ -427,8 +427,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 T · 2 T · 3 F · 4 F · 5 F · 6 F · 7 T · 8 T");
    B("1 T — 문장 1.   2 T — 문장 10.   3 F — 문장 2: 결코 앉지 않는 게 아니라 가끔 피부에 앉는다.   4 F — 문장 7: 설탕이 아니라 소금(salt)을 얻는다.   5 F — 문장 9: 잠자기 위해서가 아니라 번식(reproduction)을 위해서다.   6 F — 문장 6: 그냥 쉬는 것이 아니다.   7 T — 문장 8.   8 T — 문장 4.  거짓 문장은 모두 한 요소만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (c) → (d) → (a) → (b)");
-B("ⓒ 나비가 사람에게 다가온다(문장 2) → ⓓ 피부에 내려앉는다(문장 2) → ⓐ 땀에서 소금을 얻는다(문장 7) → ⓑ 그 소금과 미네랄을 번식에 쓴다(문장 9). 본문은 '앉는다'는 행동(문장 2)을 먼저 보여 주고 그 이유(문장 7–9)를 뒤에 설명한다 — 서술 순서와 실제 순서가 다른 지점이다.", true);
+Hs("R2   사건 순서   ·   (b) → (d) → (a) → (c)");
+B("ⓑ 나비가 사람에게 다가온다(문장 2) → ⓓ 피부에 내려앉는다(문장 2) → ⓐ 땀에서 소금을 얻는다(문장 7) → ⓒ 그 소금과 미네랄을 번식에 쓴다(문장 9). 본문은 '앉는다'는 행동(문장 2)을 먼저 보여 주고 그 이유(문장 7–9)를 뒤에 설명한다 — 서술 순서와 실제 순서가 다른 지점이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

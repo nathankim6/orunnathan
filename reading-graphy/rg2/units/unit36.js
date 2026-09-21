@@ -79,16 +79,16 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Cook an Octopus at Home",
- "② Octopuses Throw Things to Make Friends",
- "③ The Best Cameras for Sea Research",
+ "② The Best Cameras for Sea Research",
+ "③ Octopuses Throw Things to Make Friends",
  "④ Why the Sea Water Turns Darker",
  "⑤ Animals That Live Alone in Australia"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① The octopuses threw shells at each other by accident.",
- "② Scientists in Australia watched 10 octopuses for 24 hours.",
- "③ When the octopuses were angry, their skin turned darker.",
+["① Scientists in Australia watched 10 octopuses for 24 hours.",
+ "② When the octopuses were angry, their skin turned darker.",
+ "③ The octopuses threw shells at each other by accident.",
  "④ The octopuses copied each other’s throwing actions.",
  "⑤ This behavior shows that octopuses are social animals."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -96,8 +96,8 @@ K.push(ask("03", "지칭", "밑줄 친 (A) They가 가리키는 것으로 가장
 K.push(sp(65));
 ["① the scientists in Australia",
  "② the cameras under the sea",
- "③ the octopuses in the experiment",
- "④ the shells on the sea floor",
+ "③ the shells on the sea floor",
+ "④ the octopuses in the experiment",
  "⑤ the people watching the video"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -355,9 +355,9 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "실험에서 일어난 일 ⓐ~ⓓ를 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ The octopuses threw shells at each other.",
-      "ⓑ Scientists learned that octopuses are social animals.",
-      "ⓒ Scientists watched 10 octopuses with cameras.",
+  ...["ⓐ Scientists watched 10 octopuses with cameras.",
+      "ⓑ The octopuses threw shells at each other.",
+      "ⓒ Scientists learned that octopuses are social animals.",
       "ⓓ The octopuses got angry and their skin turned darker."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -399,14 +399,14 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 octopuses · throwing · social   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 F · 5 T · 6 F · 7 F · 8 T", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (d) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (d) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ②");
-B("이 글은 문어가 일부러 물건을 던진다는 관찰(문장 3–5)에서 출발해, 그것이 관계를 맺으려는 사회적 행동임을 밝힌다(문장 11–12). 소재와 결론을 함께 담은 ②가 제목이다. ③·⑤는 카메라·호주만 건드린 지엽적 오답, ①·④은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ①");
-B("문장 4–5는 그것이 사고가 아니라 '일부러(on purpose)' 한 일이라고 못 박는다. by accident로 뒤집은 ①이 본문과 반대된다. ②은 문장 2, ③는 문장 6, ④은 문장 8, ⑤는 문장 12에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 문어가 일부러 물건을 던진다는 관찰(문장 3–5)에서 출발해, 그것이 관계를 맺으려는 사회적 행동임을 밝힌다(문장 11–12). 소재와 결론을 함께 담은 ③가 제목이다. ②·⑤는 카메라·호주만 건드린 지엽적 오답, ①·④은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 4–5는 그것이 사고가 아니라 '일부러(on purpose)' 한 일이라고 못 박는다. by accident로 뒤집은 ③이 본문과 반대된다. ①은 문장 2, ②는 문장 6, ④은 문장 8, ⑤는 문장 12에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) They는 문어들을 가리킨다. 문장 3의 They는 과학자들이었지만, 다른 문어를 때린 주체는 문어다 — 같은 대명사라도 문장마다 주인이 바뀐다는 점이 이 문항의 핵심이다.", true);
 Hs("독해 04   배열 영작   ·   This behavior shows that octopuses are social animals.");
 B("문장 12를 그대로 복원하는 문제다. ① 첫 글자는 대문자 This.   ② 주어가 단수 behavior이므로 동사는 shows.   ③ that 뒤에 '주어+동사(octopuses are)'가 한 세트로 이어진다.", true);
@@ -422,8 +422,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 F · 5 T · 6 F · 7 F · 8 T");
    B("1 F — 문장 2: minutes가 아니라 24 hours다.   2 T — 문장 11.   3 T — 문장 8.   4 F — 문장 12: 혼자 사는 게 아니라 사회적 동물이다.   5 T — 문장 5.   6 F — 문장 6: lighter가 아니라 darker다.   7 F — 문장 9: 도망친 게 아니라 똑같이 따라 했다.   8 T — 문장 1.  거짓 넷은 모두 한 요소(minutes, lighter, ran away, live alone)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (c) → (d) → (a) → (b)");
-B("ⓒ 과학자들이 카메라로 문어 10마리를 관찰한다(문장 2) → ⓓ 문어들이 화가 나 피부가 어두워진다(문장 6) → ⓐ 문어들이 서로에게 껍데기를 던진다(문장 3, 7) → ⓑ 과학자들이 문어가 사회적 동물임을 알아낸다(문장 12). 본문은 던지기(문장 3)를 화남(문장 6)보다 먼저 서술하지만, 실제로는 화가 나야 더 잘 던진다 — 서술 순서와 사건 순서를 구분하자.", true);
+Hs("R2   사건 순서   ·   (a) → (d) → (b) → (c)");
+B("ⓐ 과학자들이 카메라로 문어 10마리를 관찰한다(문장 2) → ⓓ 문어들이 화가 나 피부가 어두워진다(문장 6) → ⓑ 문어들이 서로에게 껍데기를 던진다(문장 3, 7) → ⓒ 과학자들이 문어가 사회적 동물임을 알아낸다(문장 12). 본문은 던지기(문장 3)를 화남(문장 6)보다 먼저 서술하지만, 실제로는 화가 나야 더 잘 던진다 — 서술 순서와 사건 순서를 구분하자.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

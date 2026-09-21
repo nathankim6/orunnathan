@@ -81,8 +81,8 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Choose a Good Bike",
- "② The Best High Schools in America",
- "③ A Teenager’s Long Ride from Alaska to Argentina",
+ "② A Teenager’s Long Ride from Alaska to Argentina",
+ "③ The Best High Schools in America",
  "④ The Most Dangerous Roads in Colombia",
  "⑤ Reading Books About Faraway Countries"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -412,8 +412,8 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (b) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("이 글은 17살 리암이 알래스카에서 아르헨티나까지 자전거로 달린 이야기다(문장 2·10). 주인공(10대)과 소재(긴 자전거 여행)를 함께 담은 ③이 정답이다. ④·⑤는 지엽적이고, ①·②은 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ②");
+B("이 글은 17살 리암이 알래스카에서 아르헨티나까지 자전거로 달린 이야기다(문장 2·10). 주인공(10대)과 소재(긴 자전거 여행)를 함께 담은 ②이 정답이다. ④·⑤는 지엽적이고, ①·③은 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ④");
 B("문장 6에서 리암의 여정은 '전혀 쉽지 않았다(wasn’t easy at all)'고 했으므로, 처음부터 끝까지 쉬웠다는 ④은 본문과 반대된다. ①은 문장 2, ②은 문장 4–5, ③은 문장 8, ⑤는 문장 10에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ④");

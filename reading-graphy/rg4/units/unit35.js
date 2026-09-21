@@ -79,8 +79,8 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Fly a Helicopter Safely",
- "② Lidar: Finding the Past Without Digging",
- "③ The History of Roman Roads in Britain",
+ "② The History of Roman Roads in Britain",
+ "③ Lidar: Finding the Past Without Digging",
  "④ Why 3D Printers Are So Popular",
  "⑤ The Best Places to Visit in the Jungle"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -88,15 +88,15 @@ K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?")
 K.push(sp(65));
 ["① Lidar sends laser beams from a helicopter down to the ground.",
  "② Lidar measures how long the beams take to bounce back.",
- "③ Lidar cannot see through trees.",
- "④ Before Lidar, ancient sites took years to dig up.",
- "⑤ An archaeologist in the U.K. used Lidar data to find Roman roads."].forEach(c => K.push(ch(c)));
+ "③ Before Lidar, ancient sites took years to dig up.",
+ "④ An archaeologist in the U.K. used Lidar data to find Roman roads.",
+ "⑤ Lidar cannot see through trees."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) This가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① digging up ancient sites by hand",
- "② flying a helicopter over the jungle",
- "③ measuring how long the beams take to come back",
+["① measuring how long the beams take to come back",
+ "② digging up ancient sites by hand",
+ "③ flying a helicopter over the jungle",
  "④ finding Roman roads in the U.K.",
  "⑤ cutting down trees in a forest"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -354,9 +354,9 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "라이다가 작동하는 과정 ⓐ~ⓓ를 일어나는 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ It measures how long the beams take to bounce back.",
-      "ⓑ Scientists discover ancient roads without digging.",
-      "ⓒ Lidar sends laser beams down to the ground.",
+  ...["ⓐ Lidar sends laser beams down to the ground.",
+      "ⓑ It measures how long the beams take to bounce back.",
+      "ⓒ Scientists discover ancient roads without digging.",
       "ⓓ Detailed 3D maps are created fast."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -398,14 +398,14 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 Lidar · 3D maps · history   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 T", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (d) → (b)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (b) → (d) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ②");
-B("이 글은 라이다가 땅을 파지 않고도 숨겨진 유적을 찾아낸다는 점(문장 6–7·10)과 그것이 과거의 이야기를 찾는 가장 좋은 방법이라는 평가(문장 11)를 전한다. ②이 적절하다. ③·⑤는 지엽적, ①·④는 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 5에서 라이다는 나무를 뚫고 볼 수 있다(see through trees)고 했으므로 ③은 본문과 반대된다. ①은 문장 2, ②는 문장 3, ④는 문장 8, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 라이다가 땅을 파지 않고도 숨겨진 유적을 찾아낸다는 점(문장 6–7·10)과 그것이 과거의 이야기를 찾는 가장 좋은 방법이라는 평가(문장 11)를 전한다. ③이 적절하다. ②·⑤는 지엽적, ①·④는 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 5에서 라이다는 나무를 뚫고 볼 수 있다(see through trees)고 했으므로 ⑤은 본문과 반대된다. ①은 문장 2, ②는 문장 3, ③는 문장 8, ④는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) This는 바로 앞 문장 3의 내용, 곧 빔이 되돌아오는 데 걸리는 시간을 재는 일을 받는다. 지시어 This는 단어가 아니라 앞 문장 전체를 받을 수 있다.", true);
 Hs("독해 04   배열 영작   ·   Before Lidar, ancient sites took years to dig up.");
 B("문장 8을 그대로 복원한다. ① 첫 글자는 대문자 Before, Lidar 뒤 콤마를 잊지 않는다.   ② 동사는 과거형 took.   ③ '파내는 데'는 to dig up.", true);
@@ -421,8 +421,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 T");
    B("1 F — 문장 3: 무게가 아니라 되돌아오는 데 걸리는 시간(how long)을 잰다.   2 F — 문장 10: 며칠이 아니라 수 세기(centuries) 동안 숨겨져 있었다.   3 T — 문장 2.   4 F — 문장 9: 몇 년이 아니라 하루도 안 걸린다.   5 T — 문장 10.   6 F — 문장 5: 나무를 뚫고 볼 수 있다.   7 T — 문장 7.   8 T — 문장 4.", true);
-Hs("R2   사건 순서   ·   (c) → (a) → (d) → (b)");
-B("ⓒ 헬리콥터에서 레이저 빔을 땅으로 쏜다(문장 2) → ⓐ 빔이 되돌아오는 시간을 잰다(문장 3) → ⓓ 상세한 3D 지도가 빠르게 만들어진다(문장 4) → ⓑ 땅을 파지 않고 고대의 길을 발견한다(문장 6·10). 과정 글은 동사의 순서가 곧 시간의 순서다.", true);
+Hs("R2   사건 순서   ·   (a) → (b) → (d) → (c)");
+B("ⓐ 헬리콥터에서 레이저 빔을 땅으로 쏜다(문장 2) → ⓑ 빔이 되돌아오는 시간을 잰다(문장 3) → ⓓ 상세한 3D 지도가 빠르게 만들어진다(문장 4) → ⓒ 땅을 파지 않고 고대의 길을 발견한다(문장 6·10). 과정 글은 동사의 순서가 곧 시간의 순서다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

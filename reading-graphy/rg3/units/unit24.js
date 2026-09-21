@@ -81,16 +81,16 @@ K.push(sp(65));
 ["① How to Make Ice Cream at Home",
  "② The Best Desserts for Dinner Parties",
  "③ Famous People of the 19th Century",
- "④ Why Fancy Ice Cream Molds Disappeared",
- "⑤ How Fridges Changed Modern Kitchens"].forEach(c => K.push(ch(c)));
+ "④ How Fridges Changed Modern Kitchens",
+ "⑤ Why Fancy Ice Cream Molds Disappeared"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① In the late 19th century, people made ice cream in fun shapes.",
  "② The ingredients for the ice cream were expensive.",
  "③ In the early 20th century, ice cream cones and bars were introduced.",
- "④ Molded ice creams were enjoyed by everybody.",
- "⑤ New fridge technology made ice cream cheaper."].forEach(c => K.push(ch(c)));
+ "④ New fridge technology made ice cream cheaper.",
+ "⑤ Molded ice creams were enjoyed by everybody."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
@@ -248,8 +248,8 @@ K.push(spF(4, 300, 0.10));
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 ["① 아이스크림을 집에서 만드는 방법",
- "② 19세기 부자들의 만찬 파티",
- "③ 모양 아이스크림이 사라진 이유"].forEach(c =>
+ "② 모양 아이스크림이 사라진 이유",
+ "③ 19세기 부자들의 만찬 파티"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -354,10 +354,10 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "아이스크림을 둘러싼 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ People made ice cream in fun shapes with metal molds.",
-      "ⓑ Ice cream cones and bars were introduced.",
-      "ⓒ New fridge technology made ice cream cheaper.",
-      "ⓓ The fancy molds became a part of history."]
+  ...["ⓐ Ice cream cones and bars were introduced.",
+      "ⓑ New fridge technology made ice cream cheaper.",
+      "ⓒ The fancy molds became a part of history.",
+      "ⓓ People made ice cream in fun shapes with metal molds."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -395,22 +395,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("That(S)·is(△V)·why[네모]·these molds(S′)·became(△V′)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 우리 엄마는 내가 내 방을 청소하기를 원하신다  (2) 이 노래는 많은 학생들에게 사랑받는다  (3) 선생님은 우리가 모두에게 사랑받는 노래를 부르기를 원하셨다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 molds · wealthy · history   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 molds · wealthy · history   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 F · 4 F · 5 T · 6 T · 7 F · 8 T", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (b) → (c) → (d)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ④");
-B("이 글은 19세기 말의 화려한 모양 아이스크림(문장 1–2)이 비싸고 손이 많이 가 부자들만 즐겼고(문장 3–6), 콘·바와 냉장 기술이 나오면서 사라졌다(문장 7–11)고 설명한다. 소재와 결말을 모두 담은 ④이 제목이다. ②·③는 지엽, ①·⑤는 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 3에서 틀로 찍은 아이스크림은 '모두를 위한 것이 아니었다'고 했고, 문장 6에서 주로 부유한 사람들이 즐겼다고 했다. 모두가 즐겼다는 ④는 본문과 반대된다. ①은 문장 1, ②은 문장 4, ③는 문장 7, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 19세기 말의 화려한 모양 아이스크림(문장 1–2)이 비싸고 손이 많이 가 부자들만 즐겼고(문장 3–6), 콘·바와 냉장 기술이 나오면서 사라졌다(문장 7–11)고 설명한다. 소재와 결말을 모두 담은 ⑤이 제목이다. ②·③는 지엽, ①·④는 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 3에서 틀로 찍은 아이스크림은 '모두를 위한 것이 아니었다'고 했고, 문장 6에서 주로 부유한 사람들이 즐겼다고 했다. 모두가 즐겼다는 ⑤는 본문과 반대된다. ①은 문장 1, ②은 문장 4, ③는 문장 7, ④는 문장 9에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) them은 바로 앞 문장 7에 나온 ice cream cones and bars를 가리킨다. 먹고 치우기가 더 쉬웠던 것이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   However, molded ice creams weren’t for everybody.");
 B("문장 3을 그대로 복원하는 문제다. ① 첫 글자는 대문자 However, 뒤에 콤마를 찍는다.   ② molded가 뒤의 명사 ice creams를 꾸민다.   ③ weren’t — 주어가 복수이고 시제는 과거.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 molds · wealthy · history     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 화려한 모양의 아이스크림이 왜 만들어졌고 왜 사라졌는지를 설명한다. ① 만드는 방법을 알려 주는 글이 아니고, ② 저녁 파티는 배경일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 molds · wealthy · history     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 화려한 모양의 아이스크림이 왜 만들어졌고 왜 사라졌는지를 설명한다. ① 만드는 방법을 알려 주는 글이 아니고, ③ 저녁 파티는 배경일 뿐이다.");
 B("1-2   ○표 할 세 단어: molds(힌트① 이 글의 주인공) · wealthy(힌트② 그것을 즐긴 사람들) · history(힌트③ 마지막에 그것이 된 것). 나머지 셋(turkeys · flowers · fridge)은 본문에 등장하지만 예와 계기일 뿐이다.");
 B("1-3   문장 5 — it은 아이스크림에 ○ (녹지 않게 지켜야 할 것).   문장 6 — these desserts는 모양 아이스크림에 ○ (문장 1–2의 그것).   문장 8 — them은 콘과 바에 ○ (문장 7에 새로 나온 것).");
 B("[학습 포인트]   문장 6의 these desserts와 문장 8의 them은 서로 다른 것을 가리킨다. 새로운 것이 등장한 뒤의 지시어는 대상이 바뀌었을 수 있으니, 바로 앞 문장을 반드시 확인하자.", true);
@@ -421,8 +421,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 T · 2 F · 3 F · 4 F · 5 T · 6 T · 7 F · 8 T");
    B("1 T — 문장 4.   2 F — 문장 10–11: 오늘도 만드는 것이 아니라 그 틀은 역사의 일부가 되었다.   3 F — 문장 7: 19세기 말이 아니라 20세기 초에 나왔다.   4 F — 문장 2: 나무 틀이 아니라 금속(metal) 틀이다.   5 T — 문장 9.   6 T — 문장 1.   7 F — 문장 5: 쉬웠던 것이 아니라 쉽지 않았다.   8 T — 문장 6.  거짓 문장은 모두 딱 한 요소(wooden, easy, late 19th century, still)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (a) → (b) → (c) → (d)");
-B("ⓐ 사람들이 금속 틀로 재미있는 모양의 아이스크림을 만든다(문장 1–2) → ⓑ 20세기 초에 콘과 바가 나온다(문장 7) → ⓒ 새 냉장 기술이 아이스크림을 더 싸게 만든다(문장 9) → ⓓ 화려한 틀이 역사의 일부가 된다(문장 11). 이 글은 시간 순서대로 흐르므로 문장 번호를 따라가면 순서가 보인다.", true);
+Hs("R2   사건 순서   ·   (d) → (a) → (b) → (c)");
+B("ⓓ 사람들이 금속 틀로 재미있는 모양의 아이스크림을 만든다(문장 1–2) → ⓐ 20세기 초에 콘과 바가 나온다(문장 7) → ⓑ 새 냉장 기술이 아이스크림을 더 싸게 만든다(문장 9) → ⓒ 화려한 틀이 역사의 일부가 된다(문장 11). 이 글은 시간 순서대로 흐르므로 문장 번호를 따라가면 순서가 보인다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

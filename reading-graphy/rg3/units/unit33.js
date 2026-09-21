@@ -82,16 +82,16 @@ K.push(sp(65));
 ["① The Best Snacks to Eat at Home",
  "② How to Make Popcorn Quietly",
  "③ Life During the Great Depression",
- "④ Movie Tickets: Cheaper Than Ever",
- "⑤ Why Popcorn Came to Movie Theaters"].forEach(c => K.push(ch(c)));
+ "④ Why Popcorn Came to Movie Theaters",
+ "⑤ Movie Tickets: Cheaper Than Ever"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Before 1927, movie theaters were places for high-class customers.",
- "② The theater owners didn’t like the noise of people eating popcorn.",
- "③ During the Great Depression, many people lost their jobs.",
- "④ Owners allowed the sale of popcorn in the lobby of their theaters.",
- "⑤ At that time, going to a movie was more expensive than other activities."].forEach(c => K.push(ch(c)));
+ "② At that time, going to a movie was more expensive than other activities.",
+ "③ The theater owners didn’t like the noise of people eating popcorn.",
+ "④ During the Great Depression, many people lost their jobs.",
+ "⑤ Owners allowed the sale of popcorn in the lobby of their theaters."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) they가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
@@ -405,10 +405,10 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (c) → (a)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ⑤");
-B("이 글은 팝콘이 극장에서 금지되던 시절(문장 1–4)과 대공황을 거치며 극장의 대표 간식이 된 과정(문장 5–12)을 설명한다. 소재와 변화를 함께 담은 ⑤이 적절하다. ③·④는 지엽적 오답, ①·②은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 7에서 영화를 보러 가는 것은 다른 활동보다 더 쌌다(cheaper). 더 비쌌다고 한 ⑤가 본문과 반대된다. ①은 문장 2, ②는 문장 3, ③은 문장 5, ④는 문장 10에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 팝콘이 극장에서 금지되던 시절(문장 1–4)과 대공황을 거치며 극장의 대표 간식이 된 과정(문장 5–12)을 설명한다. 소재와 변화를 함께 담은 ④이 적절하다. ③·⑤는 지엽적 오답, ①·②은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 7에서 영화를 보러 가는 것은 다른 활동보다 더 쌌다(cheaper). 더 비쌌다고 한 ②가 본문과 반대된다. ①은 문장 2, ③는 문장 3, ④은 문장 5, ⑤는 문장 10에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) they는 바로 앞 문장 3의 The theater owners를 가리킨다. 자기 극장(their theaters) 안에 팝콘을 들일지 망설인 주체가 누구인지 생각하면 된다.", true);
 Hs("독해 04   배열 영작   ·   As a result, movie theaters became popular places!");

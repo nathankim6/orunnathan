@@ -99,25 +99,25 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① A Smelly but Special Food from Iceland",
- "② How to Catch a Greenland Shark",
- "③ The Best Places to Visit in Iceland",
+["① How to Catch a Greenland Shark",
+ "② The Best Places to Visit in Iceland",
+ "③ A Smelly but Special Food from Iceland",
  "④ Why Ammonia Is Used in Cleaning",
  "⑤ Foods You Can Eat Right Away"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Hákarl is a national dish of Iceland.",
- "② Icelanders ferment and dry the shark meat.",
- "③ People hang the meat outside for four to five months.",
- "④ You can eat the fresh shark meat right away with no problem.",
+["① You can eat the fresh shark meat right away with no problem.",
+ "② Hákarl is a national dish of Iceland.",
+ "③ Icelanders ferment and dry the shark meat.",
+ "④ People hang the meat outside for four to five months.",
  "⑤ Some people say Hákarl smells like ammonia."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) This가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① eating the shark meat right away",
- "② cleaning the boxes for several weeks",
- "③ fermenting and drying out the shark meat",
+["① fermenting and drying out the shark meat",
+ "② eating the shark meat right away",
+ "③ cleaning the boxes for several weeks",
  "④ the strong smell of ammonia",
  "⑤ the national dish of Iceland"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -287,9 +287,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 냄새는 강해도 특별한 아이슬란드 음식",
- "② 그린란드 상어라는 동물 소개",
- "③ 음식을 상자에 보관하는 방법"].forEach(c =>
+["① 그린란드 상어라는 동물 소개",
+ "② 음식을 상자에 보관하는 방법",
+ "③ 냄새는 강해도 특별한 아이슬란드 음식"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -412,11 +412,11 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 식당을 홍보하는 광고",
- "② 하루 일과를 적은 일기",
- "③ 친구에게 보내는 편지",
- "④ 상상으로 지어낸 동화",
- "⑤ 음식과 그 만드는 법을 알려 주는 설명문"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
+["① 음식과 그 만드는 법을 알려 주는 설명문",
+ "② 식당을 홍보하는 광고",
+ "③ 하루 일과를 적은 일기",
+ "④ 친구에게 보내는 편지",
+ "⑤ 상상으로 지어낸 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
 K.push(brk());
@@ -605,8 +605,8 @@ K.push(spF(8, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "하칼을 만드는 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ People clean the fresh shark meat.",
-      "ⓑ People put the shark meat in boxes for several weeks.",
+  ...["ⓐ People put the shark meat in boxes for several weeks.",
+      "ⓑ People clean the fresh shark meat.",
       "ⓒ The harmful things are gone, and the meat is ready.",
       "ⓓ They hang the meat outside to dry for four to five months."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
@@ -650,7 +650,7 @@ K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다.
 K.push(sp(130));
 [["문장 2", [t("It ", { size: 19 }), t("( is  /  are )", { size: 19, bold: true, color: NAVY }), t(" made from the Greenland shark.", { size: 19 })], "주어 It은 하나(단수)예요. be동사는 무엇일까요?"],
  ["문장 4", [t("The shark ", { size: 19 }), t("( has  /  have )", { size: 19, bold: true, color: NAVY }), t(" harmful things in its body.", { size: 19 })], "주어가 3인칭 단수일 때 have는 어떻게 바뀔까요?"],
- ["문장 8", [t("They hang the meat outside ", { size: 19 }), t("( to dry  /  dried )", { size: 19, bold: true, color: NAVY }), t(" for four to five months.", { size: 19 })], "'말리기 위해'는 to+동사원형!"],
+ ["문장 8", [t("They hang the meat outside ", { size: 19 }), t("( dried  /  to dry )", { size: 19, bold: true, color: NAVY }), t(" for four to five months.", { size: 19 })], "'말리기 위해'는 to+동사원형!"],
  ["문장 13", [t("They ", { size: 19 }), t("( is  /  are )", { size: 19, bold: true, color: NAVY }), t(" proud of it and love their tradition.", { size: 19 })], "주어 They(복수)에 맞는 be동사를 고르세요."],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
@@ -746,30 +746,30 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문8 ", { size: 17, bold: true, color: NAVY2 }), t("Then(M)·they(S)·hang(△V)·to dry(M)·for four to five months(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 이 빵은 쌀로 만들어진다  (2) 그 경기를 이기기 위해, 우리는 매일 연습했다  (3) 피자를 만들기 위해 우리는 치즈를 썼는데, 그것은 우유로 만들어진다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 Hákarl · smells · special        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 · 결과 · 순서 · ~이지만   2-2 [B] 문제점 · [E] 마무리   2-3 ⑤", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 Hákarl · smells · special        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 · 결과 · 순서 · ~이지만   2-2 [B] 문제점 · [E] 마무리   2-3 ①", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (c) → (d) → (a) → (b)  ·  Although it smells strong, Hákarl is a very special food for Icelanders.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) harmful  (2) months  (3) smell  (4) special        ", { size: 19, bold: true }),
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 3 ③  문장 5 ①  문장 10 ②  문장 12 ①", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 F · 5 T · 6 T · 7 F · 8 T", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (b) → (d) → (c)", { size: 19, bold: true })], { after: 25 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (d) → (c)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(b) · 2(e) · 3(f) · 4(a) · 5(d) · 6(c)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) is  (2) has  (3) to dry  (4) are", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) dish (2) sick (3) harmful (4) ferment (5) hang (6) smell (7) special (8) proud", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) The shark has harmful things in its body.  (2) They’re proud of it and love their tradition.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("냄새는 강하지만(문장 9–11) 아이슬란드 사람들에게는 특별한 음식(문장 12–13)이라는 것이 이 글의 요지다. 소재(아이슬란드 음식)와 특징(지독한 냄새·특별함)을 함께 담은 ①이 제목이다. ②·⑤는 지엽적 오답, ③·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 3에서 상어 고기를 바로 먹으면 아플 수 있다고 했으므로, 문제없이 바로 먹을 수 있다는 ④는 본문과 반대된다. ①은 문장 1, ②은 문장 5, ③는 문장 8, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 01   제목   ·   정답 ③");
+B("냄새는 강하지만(문장 9–11) 아이슬란드 사람들에게는 특별한 음식(문장 12–13)이라는 것이 이 글의 요지다. 소재(아이슬란드 음식)와 특징(지독한 냄새·특별함)을 함께 담은 ③이 제목이다. ①·⑤는 지엽적 오답, ②·④는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 3에서 상어 고기를 바로 먹으면 아플 수 있다고 했으므로, 문제없이 바로 먹을 수 있다는 ①는 본문과 반대된다. ②은 문장 1, ③은 문장 5, ④는 문장 8, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) This는 바로 앞 문장 5의 '발효시키고 말리는 일'을 가리킨다. 그 일이 해로운 것을 없애 준다는 뜻이다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   So, Icelanders ferment and dry out the shark meat.");
 B("문장 5를 그대로 복원하는 문제다. ① 첫 글자는 대문자 So, 뒤의 콤마도 그대로.   ② 동사 두 개(ferment, dry out)를 and로 잇는다.   ③ dry out은 두 단어가 한 덩어리.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 Hákarl · smells · special     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 냄새는 강해도 아이슬란드 사람들이 아끼는 음식 하칼을 소개한다. ② 상어는 재료일 뿐이고, ③ 상자는 만드는 과정의 한 부분이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 Hákarl · smells · special     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 냄새는 강해도 아이슬란드 사람들이 아끼는 음식 하칼을 소개한다. ① 상어는 재료일 뿐이고, ② 상자는 만드는 과정의 한 부분이다.");
 B("1-2   ○표 할 세 단어: Hákarl(힌트① 주인공) · smells(힌트② 지금 상태) · special(힌트③ 아이슬란드 사람들의 평가). 나머지 셋(shark · boxes · ammonia)은 본문에 자주 나오지만 주제문에 들어가지 않는다 — 재료와 과정, 예시일 뿐이다.");
 B("1-3   문장 6 — This는 발효와 건조에 ○ (문장 5의 그 일).   문장 11 — this는 냄새에, it은 하칼에 ○ (한 문장 안에서 가리키는 대상이 바뀐다).   문장 13 — They는 아이슬란드인에 ○.");
 B("[학습 포인트]   문장 11처럼 한 문장에 지시어가 둘이면 각각 짝이 다를 수 있다. 지시어를 만날 때마다 앞 문장으로 화살표를 그어 확인하는 습관이 고등 지칭 추론으로 이어진다.", true);
@@ -777,10 +777,10 @@ B("[학습 포인트]   문장 11처럼 한 문장에 지시어가 둘이면 각
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 반전 / 결과 / 순서 / ~이지만     2-2 [B] 문제점 · [E] 마무리     2-3 ⑤");
+Hs("STEP 2   글의 흐름   ·   2-1 반전 / 결과 / 순서 / ~이지만     2-2 [B] 문제점 · [E] 마무리     2-3 ①");
 B("2-1   문장 3 But — 국민 음식이라더니 바로 먹으면 아프다는 '반전'.   문장 5 So — 해로운 것이 있다는 원인의 '결과'로 발효시킨다.   문장 8 Then — 상자에 넣은 다음의 '순서'.   문장 12 Although — 냄새는 강'하지만'이라는 양보.");
 B("2-2   [B] 문제점(문장 3–4: 바로 먹으면 아프다, 해로운 것이 있다), [E] 마무리(문장 10–13: 호불호가 갈려도 특별한 전통 음식이다). 보기의 '가격 안내'는 이 글에 없는 역할이다. [A] 소개 → [B] 문제점 → [C] 해결 → [D] 만드는 법 → [E] 마무리의 흐름이다.");
-B("2-3   정답 ⑤. 하칼이 무엇이고 어떻게 만드는지 사실을 알려 주는 설명문이다. ① 광고의 신호(사라는 말·가격)가 없고, ② 일기의 I·오늘도, ③ 편지의 Dear도, ④ 동화의 상상 속 인물도 없다.");
+B("2-3   정답 ①. 하칼이 무엇이고 어떻게 만드는지 사실을 알려 주는 설명문이다. ② 광고의 신호(사라는 말·가격)가 없고, ③ 일기의 I·오늘도, ④ 편지의 Dear도, ⑤ 동화의 상상 속 인물도 없다.");
 B("[학습 포인트]   연결어만 표시해도 글의 지도가 그려진다. But(반전), So(결과), Then(순서), Although(~이지만). 특히 마지막의 Although 뒤에 글쓴이가 진짜 하고 싶은 말이 온다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 strong · special     3-3 (c) → (d) → (a) → (b)");
 B("3-1  재료 찾기 — (2) 문장 12에서 strong에 ○: 냄새의 상태다. sweet는 본문과 반대다. (3) 문장 12에서 special에 ○: 아이슬란드 사람들의 평가다. cheap(값싼)은 본문에 없는 말이다.");
@@ -801,8 +801,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 F · 3 T · 4 F · 5 T · 6 T · 7 F · 8 T");
    B("1 F — 문장 13: 자랑스러워한다.   2 F — 문장 2: 고래(whale)가 아니라 상어(shark)로 만든다.   3 T — 문장 7.   4 F — 문장 5: 삶는(boil) 것이 아니라 발효시키고 말린다.   5 T — 문장 3.   6 T — 문장 1.   7 F — 문장 8: 4~5일(days)이 아니라 4~5달(months)이다.   8 T — 문장 10.  거짓 문장은 모두 딱 한 요소(whale, boil, days, not proud)를 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (a) → (b) → (d) → (c)");
-B("ⓐ 상어 고기를 손질한다(문장 7) → ⓑ 상자에 넣어 여러 주 둔다(문장 7) → ⓓ 바깥에 걸어 4~5달 말린다(문장 8) → ⓒ 해로운 것이 사라지고 먹을 준비가 된다(문장 9). ⓒ의 내용은 문장 6에서 먼저 서술되지만, 실제로는 맨 마지막에 일어나는 일이다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
+Hs("R2   사건 순서   ·   (b) → (a) → (d) → (c)");
+B("ⓑ 상어 고기를 손질한다(문장 7) → ⓐ 상자에 넣어 여러 주 둔다(문장 7) → ⓓ 바깥에 걸어 4~5달 말린다(문장 8) → ⓒ 해로운 것이 사라지고 먹을 준비가 된다(문장 9). ⓒ의 내용은 문장 6에서 먼저 서술되지만, 실제로는 맨 마지막에 일어나는 일이다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
 Hs("R3   영영풀이   ·   1 (b) · 2 (e) · 3 (f) · 4 (a) · 5 (d) · 6 (c)");
 B("dish = 특별한 방법으로 만든 요리 · harmful = 사람을 아프게 하거나 다치게 하는 · ferment = 오래 두고 먹도록 음식을 천천히 변하게 하다 · hang = 위에 걸어 두다 · ready = 이제 쓰거나 먹을 수 있는 · proud = 자기가 가진 것을 자랑스러워하는.", true);
 Hs("R4   어법 기초   ·   (1) is  (2) has  (3) to dry  (4) are");

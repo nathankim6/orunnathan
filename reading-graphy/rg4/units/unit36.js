@@ -88,15 +88,15 @@ K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?")
 K.push(sp(65));
 ["① Aging cells stop dividing but don’t die.",
  "② Zombie cells increase as we get older.",
- "③ Before, this method was only tested on mice.",
- "④ Researchers are mapping these zombie cells, including in the brain.",
- "⑤ Scientists did an experiment with young children."].forEach(c => K.push(ch(c)));
+ "③ Scientists did an experiment with young children.",
+ "④ Before, this method was only tested on mice.",
+ "⑤ Researchers are mapping these zombie cells, including in the brain."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① testing new medicine on mice",
- "② mapping the cells in the brain",
- "③ removing aging cells with medicine",
+["① removing aging cells with medicine",
+ "② testing new medicine on mice",
+ "③ mapping the cells in the brain",
  "④ growing and dividing normally",
  "⑤ getting older every year"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -248,7 +248,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 영화에 나오는 좀비 이야기", "② 몸속 노화 세포와 그것을 없애려는 연구", "③ 쥐를 이용한 동물 실험의 역사"].forEach(c =>
+["① 영화에 나오는 좀비 이야기",
+ "② 쥐를 이용한 동물 실험의 역사",
+ "③ 몸속 노화 세포와 그것을 없애려는 연구"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -355,8 +357,8 @@ K.push(sp(120));
 K.push(box([
   ...["ⓐ Researchers began mapping the cells throughout the body.",
       "ⓑ Scientists did an experiment with elderly people.",
-      "ⓒ They learned that the medicine works on humans, too.",
-      "ⓓ Scientists tested the method on mice."]
+      "ⓒ Scientists tested the method on mice.",
+      "ⓓ They learned that the medicine works on humans, too."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -394,22 +396,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문9 ", { size: 17, bold: true, color: NAVY2 }), t("Recently(M)·researchers(S)·are mapping(△V)·throughout the body(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 맥스라고 불리는 개를 기른다  (2) 너는 일찍 일어남으로써 시간을 아낄 수 있다  (3) 우리는 함께 힘을 모아 '퍼즐 킹'이라는 게임을 끝냈다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 zombie cells · remove · healthier   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 zombie cells · remove · healthier   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 T · 5 T · 6 T · 7 F · 8 F", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (c) → (a)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (b) → (d) → (a)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ②");
 B("이 글은 죽지 않는 노화 세포(문장 2–6)와 그것을 약으로 없애려는 연구(문장 7–11)를 소개한다. 소재와 핵심을 함께 담은 ②이 적절하다. ③·⑤는 지엽적이거나 부분만 건드렸고, ①·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 7에서 실험 대상은 어린이가 아니라 노인들(elderly people)이다. ①은 문장 4, ②는 문장 6, ③는 문장 8, ④는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 7에서 실험 대상은 어린이가 아니라 노인들(elderly people)이다. ①은 문장 4, ②는 문장 6, ④는 문장 8, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) it은 앞 문장 7–8의 this method, 곧 약으로 노화 세포를 제거하는 방법을 받는다. 쥐에게만 시험되던 그 방법이 사람에게도 통한다는 뜻이다.", true);
 Hs("독해 04   배열 영작   ·   Our bodies have something similar called aging cells.");
 B("문장 2를 그대로 복원한다. ① 첫 글자는 대문자 Our.   ② similar가 something을 뒤에서 꾸민다(-thing 뒤의 형용사).   ③ called 이하가 그 말을 다시 뒤에서 꾸민다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 zombie cells · remove · healthier     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 몸속 노화 세포와 그것을 없애려는 연구를 다룬다. ① 좀비는 비유로만 쓰였고, ③ 쥐 실험은 연구 과정의 한 대목일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 zombie cells · remove · healthier     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 몸속 노화 세포와 그것을 없애려는 연구를 다룬다. ① 좀비는 비유로만 쓰였고, ② 쥐 실험은 연구 과정의 한 대목일 뿐이다.");
 B("1-2   ○표 할 세 단어: zombie cells(힌트① 주인공) · remove(힌트② 과학자들이 하려는 일) · healthier(힌트③ 목표). mice · brain · medicine은 과정과 도구일 뿐 주제문에 들어가지 않는다.");
 B("1-3   문장 4 — they는 노화 세포에 ○ (문장 3의 aging cells).   문장 8 — it은 약으로 없애기에 ○ (문장 7–8의 this method).   문장 10 — them은 좀비 세포에 ○, 같은 문장의 They는 연구자들이다.");
 B("[학습 포인트]   문장 10의 They(연구자들)와 them(좀비 세포)은 한 문장 안에서 서로 다른 것을 가리킨다. 주어 자리와 목적어 자리의 지시어는 따로 확인하는 습관을 들이자.", true);
@@ -420,8 +422,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 F · 3 T · 4 T · 5 T · 6 T · 7 F · 8 F");
    B("1 F — 문장 8: 사람이 아니라 쥐(mice)에게 먼저 시험했다.   2 F — 문장 11: 늘리는 게 아니라 이해하고 관리해 건강을 돕는 것이 목표다.   3 T — 문장 9.   4 T — 문장 1–2.   5 T — 문장 4.   6 T — 문장 7.   7 F — 문장 6: 줄어드는 게 아니라 늘어난다(increase).   8 F — 문장 3: 정상 세포는 자라고 분열한다(divide).", true);
-Hs("R2   사건 순서   ·   (d) → (b) → (c) → (a)");
-B("ⓓ 이 방법을 쥐에게만 시험했다(문장 8의 Before) → ⓑ 미국의 한 클리닉에서 노인들을 대상으로 실험했다(문장 7) → ⓒ 사람에게도 효과가 있음을 알게 되었다(문장 8) → ⓐ 최근 몸 전체의 세포 지도를 만들고 있다(문장 9). 글은 최근 실험(문장 7)을 먼저 말하고 Before로 과거를 되짚는다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
+Hs("R2   사건 순서   ·   (c) → (b) → (d) → (a)");
+B("ⓒ 이 방법을 쥐에게만 시험했다(문장 8의 Before) → ⓑ 미국의 한 클리닉에서 노인들을 대상으로 실험했다(문장 7) → ⓓ 사람에게도 효과가 있음을 알게 되었다(문장 8) → ⓐ 최근 몸 전체의 세포 지도를 만들고 있다(문장 9). 글은 최근 실험(문장 7)을 먼저 말하고 Before로 과거를 되짚는다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

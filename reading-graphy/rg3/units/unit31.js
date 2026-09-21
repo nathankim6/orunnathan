@@ -99,24 +99,24 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Why the Ancient Romans Were Great Builders",
- "② How to Mix Lime, Ash, and Water",
- "③ Roman Concrete’s Secret: It Heals Itself",
+["① Roman Concrete’s Secret: It Heals Itself",
+ "② Why the Ancient Romans Were Great Builders",
+ "③ How to Mix Lime, Ash, and Water",
  "④ The Best Ways to Repair Modern Roads",
  "⑤ Where Volcanic Ash Comes From"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Roman concrete buildings have survived for over 2,000 years.",
- "② Romans mixed lime, volcanic ash, and water at low temperatures.",
- "③ Researchers noticed small white chunks in Roman concrete.",
- "④ Lime clasts act like glue when they come into contact with water.",
- "⑤ Researchers hope their findings could help improve modern concrete."].forEach(c => K.push(ch(c)));
+ "② Researchers noticed small white chunks in Roman concrete.",
+ "③ Lime clasts act like glue when they come into contact with water.",
+ "④ Researchers hope their findings could help improve modern concrete.",
+ "⑤ Romans mixed lime, volcanic ash, and water at low temperatures."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) they가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the tiny cracks",
- "② the lime clasts",
+["① the lime clasts",
+ "② the tiny cracks",
  "③ the Roman researchers",
  "④ the ancient buildings",
  "⑤ the modern engineers"].forEach(c => K.push(ch(c)));
@@ -414,8 +414,8 @@ K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 �
 ["① 물건을 팔기 위해 만든 광고",
  "② 하루 일을 적은 일기",
  "③ 친구에게 보내는 편지",
- "④ 과학이 밝혀낸 사실을 알려 주는 설명문",
- "⑤ 리듬을 살려 쓴 시"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
+ "④ 리듬을 살려 쓴 시",
+ "⑤ 과학이 밝혀낸 사실을 알려 주는 설명문"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
 K.push(brk());
@@ -520,11 +520,11 @@ pairGrid(
   { sn: 2, main: "have survived for over 2,000 years",
     opts: ["① were built only 200 years ago", "② are made of glass and steel", "③ have lasted more than 2,000 years"] },
   { sn: 3, main: "figure out the mystery",
-    opts: ["① forget the question", "② understand the puzzle", "③ sell the old buildings"] });
+    opts: ["① understand the puzzle", "② forget the question", "③ sell the old buildings"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 9, main: "act like glue",
-    opts: ["① break things apart", "② change color in the sun", "③ stick things together"] },
+    opts: ["① stick things together", "② break things apart", "③ change color in the sun"] },
   { sn: 12, main: "remain in good condition",
     opts: ["① have fallen down completely", "② are still in good shape", "③ are open to visitors every day"] });
 K.push(spF(7, 150, 0.16));
@@ -603,9 +603,9 @@ K.push(spF(8, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "로마 콘크리트를 둘러싼 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ Researchers noticed small white lime clasts.",
-      "ⓑ Researchers found the secret of self-healing concrete.",
-      "ⓒ Romans mixed lime, ash, and water at high temperatures.",
+  ...["ⓐ Romans mixed lime, ash, and water at high temperatures.",
+      "ⓑ Researchers noticed small white lime clasts.",
+      "ⓒ Researchers found the secret of self-healing concrete.",
       "ⓓ Water touched the clasts, and they filled the cracks."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -646,10 +646,10 @@ K.push(spF(9, 380, 0.12));
 
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
-[["문장 2", [t("Their concrete buildings ", { size: 19 }), t("( have  /  has )", { size: 19, bold: true, color: NAVY }), t(" survived for over 2,000 years.", { size: 19 })], "주어 buildings는 복수예요."],
+[["문장 2", [t("Their concrete buildings ", { size: 19 }), t("( has  /  have )", { size: 19, bold: true, color: NAVY }), t(" survived for over 2,000 years.", { size: 19 })], "주어 buildings는 복수예요."],
  ["문장 5", [t("To make their concrete, Romans ", { size: 19 }), t("( mixing  /  mixed )", { size: 19, bold: true, color: NAVY }), t(" lime and water.", { size: 19 })], "문장에는 본동사가 반드시 하나 필요해요."],
- ["문장 9", [t("When lime clasts touch water, they ", { size: 19 }), t("( acts  /  act )", { size: 19, bold: true, color: NAVY }), t(" like glue.", { size: 19 })], "주어 they(복수)에 맞는 동사 형태는?"],
- ["문장 11", [t("This reaction ", { size: 19 }), t("( happens  /  happen )", { size: 19, bold: true, color: NAVY }), t(" naturally.", { size: 19 })], "3인칭 단수 주어 뒤 현재형 동사에는?"],
+ ["문장 9", [t("When lime clasts touch water, they ", { size: 19 }), t("( act  /  acts )", { size: 19, bold: true, color: NAVY }), t(" like glue.", { size: 19 })], "주어 they(복수)에 맞는 동사 형태는?"],
+ ["문장 11", [t("This reaction ", { size: 19 }), t("( happen  /  happens )", { size: 19, bold: true, color: NAVY }), t(" naturally.", { size: 19 })], "3인칭 단수 주어 뒤 현재형 동사에는?"],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
     cel(new Paragraph({ children: [t("(" + (i + 1) + ")", { size: 16, bold: true, color: "FFFFFF" })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 210 } }),
@@ -745,24 +745,24 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 공원에서 '팀'이라고 불리는 소년을 만났다  (2) 그 경기를 이기기 위해, 그들은 매일 연습했다  (3) '로보'라고 불리는 장난감을 사기 위해, 그는 돈을 모았다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 concrete · self-healing · lime clasts        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 결과 · 강조 · 때 · 순서   2-2 [B] 수수께끼 · [E] 기대   2-3 ④", { size: 19, bold: true })], { after: 25 }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 결과 · 강조 · 때 · 순서   2-2 [B] 수수께끼 · [E] 기대   2-3 ⑤", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (c) → (d) → (a) → (b)  ·  Roman concrete has a self-healing ability because lime clasts fill tiny cracks.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) secret  (2) temperatures  (3) glue  (4) cracks        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ③  문장 3 ②  문장 9 ③  문장 12 ②", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ③  문장 3 ①  문장 9 ①  문장 12 ②", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 F · 4 T · 5 F · 6 T · 7 T · 8 F", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (d) → (a) → (b)", { size: 19, bold: true })], { after: 25 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (d) → (b) → (c)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(c) · 2(a) · 3(e) · 4(f) · 5(b) · 6(d)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) have  (2) mixed  (3) act  (4) happens", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) structures (2) survived (3) mystery (4) secret (5) chunks (6) glue (7) cracks (8) improve", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) Their concrete buildings have survived for over 2,000 years.  (2) This explains why ancient Roman buildings remain in good condition today.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("이 글은 2,000년을 버틴 로마 콘크리트의 비밀이 스스로 균열을 메우는 능력임을 밝힌다(문장 4·8–11). 소재와 특징을 모두 담은 ③이 제목으로 적절하다. ①·②은 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 5에서 로마인들은 높은 온도(high temperatures)에서 재료를 섞었다. 낮은 온도라고 한 ②가 본문과 반대된다. ①은 문장 2, ③은 문장 6, ④는 문장 9, ⑤는 문장 13에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ①");
+B("이 글은 2,000년을 버틴 로마 콘크리트의 비밀이 스스로 균열을 메우는 능력임을 밝힌다(문장 4·8–11). 소재와 특징을 모두 담은 ①이 제목으로 적절하다. ②·③은 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 5에서 로마인들은 높은 온도(high temperatures)에서 재료를 섞었다. 낮은 온도라고 한 ⑤가 본문과 반대된다. ①은 문장 2, ②은 문장 6, ③는 문장 9, ④는 문장 13에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) they는 바로 앞의 the cracks를 가리킨다. 균열이 더 커지기 전에 메워진다는 뜻이다 — 문장 10의 They는 석회 덩어리지만, 이 they는 대상이 바뀌었다.", true);
 Hs("독해 04   배열 영작   ·   They fill tiny cracks and repair damage.");
 B("문장 10을 그대로 복원하는 문제다. ① 첫 글자는 대문자 They.   ② 형용사 tiny는 명사 cracks 앞에.   ③ and가 두 동사구(fill ~ / repair ~)를 잇는다.", true);
@@ -775,10 +775,10 @@ B("[학습 포인트]   문장 10의 They와 문장 11의 they는 모양이 같�
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 결과 / 강조 / 때 / 순서     2-2 [B] 수수께끼 · [E] 기대     2-3 ④");
+Hs("STEP 2   글의 흐름   ·   2-1 결과 / 강조 / 때 / 순서     2-2 [B] 수수께끼 · [E] 기대     2-3 ⑤");
 B("2-1   문장 1 so — 뛰어난 기술의 '결과'로 인상적인 구조물을 만들었다.   문장 8 In fact — 앞 내용을 다시 못 박는 '강조'.   문장 9 When — 물과 닿는 '때'.   문장 11 before — 균열이 커지기 전이라는 '순서'.");
 B("2-2   [B] 수수께끼(문장 3–4: 오랜 세월 풀리지 않던 비밀을 마침내 찾아냄), [E] 기대(문장 12–13: 오늘의 결과와 현대 콘크리트에 대한 기대). 보기의 '요리법'은 이 글에 없는 역할이다. [A] 소개 → [B] 수수께끼 → [C] 발견 → [D] 원리 → [E] 기대 — 설명문의 전형적인 흐름이다.");
-B("2-3   정답 ④. 과학이 밝혀낸 사실을 차례로 알려 주는 설명문이다. ① 가격이나 명령문이 없어 광고가 아니고, ② I·날짜, ③ Dear ~, ⑤ 운율 같은 신호도 없다.");
+B("2-3   정답 ⑤. 과학이 밝혀낸 사실을 차례로 알려 주는 설명문이다. ① 가격이나 명령문이 없어 광고가 아니고, ② I·날짜, ③ Dear ~, ④ 운율 같은 신호도 없다.");
 B("[학습 포인트]   연결어만 표시해도 글의 지도가 그려진다. so(결과), In fact(강조), When(때), before(순서). 설명문은 '무엇이 있다 → 왜 그런가 → 그래서 어떻다'로 흐른다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 self-healing · lime clasts     3-3 (c) → (d) → (a) → (b)");
 B("3-1  재료 찾기 — (2) 문장 4에서 self-healing에 ○: 연구자들이 찾아낸 비밀이다. man-made는 본문에 없는 말이다. (3) 문장 9에서 lime clasts에 ○: 물과 닿으면 접착제처럼 작용하는 알갱이다. volcanic ash는 재료 중 하나일 뿐이다.");
@@ -787,10 +787,10 @@ B("3-3  정답 순서 — ⓒ Roman concrete has → ⓓ a self-healing ability 
 B("[채점 포인트]  주인공이 주어이므로 ⓒ가 맨 앞, 마침표가 붙은 덩어리(ⓑ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) secret  (2) temperatures  (3) glue  (4) cracks");
 B("(1)은 문장 4의 secret, (2)는 문장 5의 temperatures, (3)은 문장 9의 glue, (4)는 문장 10의 cracks에서 가져온다. 요약문이 곧 이 글의 흐름이다: 수수께끼(1) → 제조법(2) → 원리(3) → 결과(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ③   문장 3 ②   문장 9 ③   문장 12 ②  (정답 선지는 무표시)");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ③   문장 3 ①   문장 9 ①   문장 12 ②  (정답 선지는 무표시)");
 B("문장 2 have survived for over 2,000 years   ① ✕ [반대] 200년밖에 안 됐다 — 정반대.   ② ✕ [무관] 유리와 강철로 만들었다는 말은 지문에 없다.   ③ ○ 2,000년 넘게 이어져 왔다.");
-B("문장 3 figure out the mystery   ① ✕ [반대] 질문을 잊다 — 정반대.   ② ○ understand the puzzle = 수수께끼를 이해하다.   ③ ✕ [무관] 옛 건물을 판다는 말은 지문에 없다.");
-B("문장 9 act like glue   ① ✕ [반대] 부수어 떼어 놓는다 — 정반대.   ② ✕ [무관] 햇빛에 색이 변한다는 말은 지문에 없다.   ③ ○ stick things together = 붙여 준다.");
+B("문장 3 figure out the mystery   ① ○ understand the puzzle = 수수께끼를 이해하다.   ② ✕ [반대] 질문을 잊다 — 정반대.   ③ ✕ [무관] 옛 건물을 판다는 말은 지문에 없다.");
+B("문장 9 act like glue   ① ○ stick things together = 붙여 준다.   ② ✕ [반대] 부수어 떼어 놓는다 — 정반대.   ③ ✕ [무관] 햇빛에 색이 변한다는 말은 지문에 없다.");
 B("문장 12 remain in good condition   ① ✕ [반대] 완전히 무너졌다 — 정반대.   ② ○ 여전히 상태가 좋다.   ③ ✕ [무관] 매일 개방한다는 말은 지문에 없다.");
 B("[학습 포인트]  시험은 본문 표현을 그대로 쓰지 않고 반드시 바꿔서 묻는다. 지문을 읽을 때마다 '이 표현을 다른 말로 하면?'을 스스로 물어보자. 지금은 반대/무관 두 갈래를 정확히 가르는 것이 먼저다.", true);
 
@@ -799,8 +799,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 T · 2 F · 3 F · 4 T · 5 F · 6 T · 7 T · 8 F");
    B("1 T — 문장 6.   2 F — 문장 13: 유리(glass)가 아니라 현대 콘크리트를 개선하려는 것이다.   3 F — 문장 11: 느리게(slowly)가 아니라 빠르게(quickly) 일어난다.   4 T — 문장 10.   5 F — 문장 5: 낮은(low) 온도가 아니라 높은(high) 온도에서 섞었다.   6 T — 문장 12.   7 T — 문장 2.   8 F — 문장 9: 페인트(paint)가 아니라 접착제(glue)처럼 작용한다.  거짓 문장은 모두 본문에서 딱 한 요소(low, paint, slowly, glass)를 비튼 것이다 — 그 한 단어를 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (c) → (d) → (a) → (b)");
-B("ⓒ 로마인들이 재료를 높은 온도에서 섞는다(문장 5) → ⓓ 물이 닿아 석회 덩어리가 균열을 메운다(문장 9–10) → ⓐ 연구자들이 흰 덩어리를 발견한다(문장 6) → ⓑ 연구자들이 자가 치유의 비밀을 밝힌다(문장 4). 글은 ⓑ를 문장 4에서 가장 먼저 말하지만 실제로는 가장 나중의 일이다 — 서술 순서와 사건 순서가 다른 지점이 이 문항의 핵심이다.", true);
+Hs("R2   사건 순서   ·   (a) → (d) → (b) → (c)");
+B("ⓐ 로마인들이 재료를 높은 온도에서 섞는다(문장 5) → ⓓ 물이 닿아 석회 덩어리가 균열을 메운다(문장 9–10) → ⓑ 연구자들이 흰 덩어리를 발견한다(문장 6) → ⓒ 연구자들이 자가 치유의 비밀을 밝힌다(문장 4). 글은 ⓒ를 문장 4에서 가장 먼저 말하지만 실제로는 가장 나중의 일이다 — 서술 순서와 사건 순서가 다른 지점이 이 문항의 핵심이다.", true);
 Hs("R3   영영풀이   ·   1 (c) · 2 (a) · 3 (e) · 4 (f) · 5 (b) · 6 (d)");
 B("ancient = 아주 오래전의, 고대의 · survive = 오랫동안 살아남다 · mystery = 사람들이 설명하지 못하는 것 · notice = 보고 알아차리다 · crack = 갈라진 작은 틈 · repair = 망가진 것을 다시 고치다.", true);
 Hs("R4   어법 기초   ·   (1) have  (2) mixed  (3) act  (4) happens");

@@ -77,8 +77,8 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① A New Treatment Using Healthy Bacteria",
- "② The History of Bone Marrow Transplants",
+["① The History of Bone Marrow Transplants",
+ "② A New Treatment Using Healthy Bacteria",
  "③ How to Keep Your Bathroom Clean",
  "④ Foods That Make Your Gut Happy",
  "⑤ Why Australia Has the Best Hospitals"].forEach(c => K.push(ch(c)));
@@ -93,9 +93,9 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① sick people with blood cancer",
- "② scientists in Australia",
- "③ healthy bacteria from a healthy person",
+["① healthy bacteria from a healthy person",
+ "② sick people with blood cancer",
+ "③ scientists in Australia",
  "④ bone marrow transplants",
  "⑤ serious side effects"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -248,7 +248,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 화장실을 깨끗이 쓰는 방법", "② 건강한 세균으로 암 환자를 돕는 새 치료법", "③ 호주 병원의 시설 소개"].forEach(c =>
+["① 화장실을 깨끗이 쓰는 방법",
+ "② 호주 병원의 시설 소개",
+ "③ 건강한 세균으로 암 환자를 돕는 새 치료법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -394,22 +396,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문10 ", { size: 17, bold: true, color: NAVY2 }), t("The scientists(S)·have been working(△V)·so that[네모]·they(S′)·can make(△V′)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 축구를 하고 자전거 타는 것을 즐긴다  (2) 나는 바이올린을 연주하는 소년을 안다  (3) 나는 노래하고 춤추는 것을 즐기는 소녀를 만났다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 bacteria · treatment · patients   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 bacteria · treatment · patients   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 T · 4 F · 5 F · 6 T · 7 F · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (b) → (d) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("건강한 사람의 대변에서 얻은 세균을 환자의 장에 넣는 새 치료법(문장 1–4)과 그 대상·기대(문장 5–10)를 소개하는 글이다. 소재와 방법을 함께 담은 ①이 적절하다. ②·④는 이식·장만 건드린 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ②");
+B("건강한 사람의 대변에서 얻은 세균을 환자의 장에 넣는 새 치료법(문장 1–4)과 그 대상·기대(문장 5–10)를 소개하는 글이다. 소재와 방법을 함께 담은 ②이 적절하다. ①·④는 이식·장만 건드린 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ④");
 B("문장 6에서 골수 이식은 '때때로 심각한 부작용을 일으킬 수 있다'고 했으므로, 절대 부작용이 없다는 ④는 본문과 반대된다. ①은 문장 1, ②는 문장 3, ③은 문장 5, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) them은 같은 문장 앞부분의 healthy bacteria를 가리킨다. 복수형 them은 복수 명사를 받는다는 수 일치가 첫 번째 단서다.", true);
 Hs("독해 04   배열 영작   ·   This can improve a person’s immune system and help fight diseases.");
 B("문장 4를 그대로 복원하는 문제다. ㄱ 첫 글자는 대문자 This.   ㄴ 조동사 can 뒤에는 동사원형 improve.   ㄷ and가 improve와 help 두 동사를 잇는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 bacteria · treatment · patients     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 건강한 세균을 옮겨 암 환자를 돕는 새 치료법을 소개한다. ① 화장실 청소 이야기가 아니고, ③ 호주는 연구가 이루어지는 장소일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 bacteria · treatment · patients     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 건강한 세균을 옮겨 암 환자를 돕는 새 치료법을 소개한다. ① 화장실 청소 이야기가 아니고, ② 호주는 연구가 이루어지는 장소일 뿐이다.");
 B("1-2   ○표 할 세 단어: bacteria(힌트① 치료에 쓰이는 것) · treatment(힌트② 새로 시험 중인 것) · patients(힌트③ 도움을 받을 사람들). 나머지 셋(Australia · hospital · transplant)은 본문에 나오지만 주제문에는 들어가지 않는다.");
 B("1-3   문장 3 — them은 건강한 세균에 ○.   문장 6 — it은 골수 이식에 ○ (Although 앞의 그 이식).   문장 9 — their는 환자들의에 ○ (these patients의 면역 체계).");
 B("[학습 포인트]   같은 글에서도 지시어가 받는 것은 계속 바뀐다. 문장 3의 them은 세균을, 문장 6의 it은 이식을, 문장 9의 their는 환자들을 받는다. 단수/복수와 바로 앞 문장, 이 두 가지만 확인하면 대부분 풀린다.", true);

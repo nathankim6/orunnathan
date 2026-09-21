@@ -96,23 +96,25 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① A New White Card for Good Behavior in Soccer", "② The History of Red and Yellow Cards",
- "③ A Famous Soccer Game in Portugal", "④ How to Become a Soccer Referee",
+["① A New White Card for Good Behavior in Soccer",
+ "② The History of Red and Yellow Cards",
+ "③ A Famous Soccer Game in Portugal",
+ "④ How to Become a Soccer Referee",
  "⑤ The Best Soccer Players in the World"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Referees use red and yellow cards when players break the rules.",
- "② Medical staff from only one team went to help the sick person.",
- "③ The white card is for people who show good behavior.",
- "④ Catarina Campos used the white card for the first time.",
+ "② The white card is for people who show good behavior.",
+ "③ Catarina Campos used the white card for the first time.",
+ "④ Medical staff from only one team went to help the sick person.",
  "⑤ FIFA hasn’t approved the white card yet."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the players on the field",
- "② the medical staff from both teams",
- "③ the people in the crowd",
+ "② the people in the crowd",
+ "③ the medical staff from both teams",
  "④ the two team coaches",
  "⑤ the referees in Portugal"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -271,8 +273,8 @@ K.push(spF(4, 300, 0.10));
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 ["① 선수에게 벌을 주는 레드 카드와 옐로 카드",
- "② 포르투갈의 유명한 축구 경기",
- "③ 좋은 행동에 주는 새로운 흰 카드"].forEach(c =>
+ "② 좋은 행동에 주는 새로운 흰 카드",
+ "③ 포르투갈의 유명한 축구 경기"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -395,8 +397,8 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 물건을 팔기 위해 만든 광고",
- "② 새로운 것을 소개하고 사실을 알려 주는 설명문",
+["① 새로운 것을 소개하고 사실을 알려 주는 설명문",
+ "② 물건을 팔기 위해 만든 광고",
  "③ 하루 일을 기록한 일기",
  "④ 안부를 전하는 편지",
  "⑤ 리듬을 살려 쓴 시"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
@@ -503,15 +505,15 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 1, main: "don’t follow the rules",
-    opts: ["① break the rules", "② keep the rules well", "③ make new rules for the game"] },
+    opts: ["① keep the rules well", "② break the rules", "③ make new rules for the game"] },
   { sn: 6, main: "quickly went to help",
-    opts: ["① was late to help", "② hurried to help the person", "③ sold tickets to the crowd"] });
+    opts: ["① was late to help", "② sold tickets to the crowd", "③ hurried to help the person"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 7, main: "was moved by their quick response",
     opts: ["① was angry at their slow action", "② was touched by their fast action", "③ was tired after the long game"] },
   { sn: 8, main: "hasn’t approved ~ yet",
-    opts: ["① has already said OK to it", "② hasn’t said yes to it yet", "③ has made a new soccer team"] });
+    opts: ["① has already said OK to it", "② has made a new soccer team", "③ hasn’t said yes to it yet"] });
 K.push(spF(7, 150, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -633,7 +635,7 @@ K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다.
 K.push(sp(130));
 [["문장 1", [t("Referees use cards when players ", { size: 19 }), t("( doesn’t  /  don’t )", { size: 19, bold: true, color: NAVY }), t(" follow the rules.", { size: 19 })], "주어 players(복수)에 맞는 형태를 고르세요."],
  ["문장 2", [t("But now, ", { size: 19 }), t("( there are  /  there’s )", { size: 19, bold: true, color: NAVY }), t(" a new white card!", { size: 19 })], "뒤에 오는 명사 a new white card는 단수예요."],
- ["문장 6", [t("Medical staff from both teams quickly ", { size: 19 }), t("( go  /  went )", { size: 19, bold: true, color: NAVY }), t(" to help.", { size: 19 })], "got sick(과거)과 어울리는 시제를 고르세요."],
+ ["문장 6", [t("Medical staff from both teams quickly ", { size: 19 }), t("( went  /  go )", { size: 19, bold: true, color: NAVY }), t(" to help.", { size: 19 })], "got sick(과거)과 어울리는 시제를 고르세요."],
  ["문장 9", [t("Only Portugal ", { size: 19 }), t("( is  /  are )", { size: 19, bold: true, color: NAVY }), t(" using white cards right now.", { size: 19 })], "주어 Portugal은 하나의 나라 — 단수예요."],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
@@ -726,11 +728,11 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문9 ", { size: 17, bold: true, color: NAVY2 }), t("Portugal(S)·is using(△V)·in soccer·right now(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 우리 집 근처에 큰 공원이 있다  (2) 나는 아직 숙제를 끝내지 못했다  (3) 마을에 새 도서관이 있지만, 나는 아직 그곳에 가 보지 못했다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 white card · medical staff · good behavior        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 결과 · 반전 · 덧붙임   2-2 [B] 쓰임 · [E] 질문   2-3 ②", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 white card · medical staff · good behavior        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 결과 · 반전 · 덧붙임   2-2 [B] 쓰임 · [E] 질문   2-3 ①", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (d) → (c) → (a)  ·  The white card is for players, coaches, or medical staff who show good behavior.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) white  (2) behavior  (3) Portugal  (4) approved        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 1 ①  문장 6 ②  문장 7 ②  문장 8 ②", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 1 ②  문장 6 ③  문장 7 ②  문장 8 ③", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 T · 3 T · 4 F · 5 F · 6 T · 7 F · 8 F", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (d) → (b)", { size: 19, bold: true })], { after: 25 }),
@@ -742,14 +744,14 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ①");
 B("이 글은 좋은 행동에 주는 흰 카드(문장 2–3)와 그것이 처음 쓰인 이야기(문장 4–7)를 소개한다. 소재와 특징을 모두 담은 ①이 제목으로 적절하다. ②·③는 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 6에서 양 팀(both teams)의 의료진이 도우러 갔다고 했으므로, 한 팀만 갔다는 ②이 본문과 다르다. ①은 문장 1, ③은 문장 3, ④는 문장 4, ⑤는 문장 8에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ②");
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 6에서 양 팀(both teams)의 의료진이 도우러 갔다고 했으므로, 한 팀만 갔다는 ④이 본문과 다르다. ①은 문장 1, ②은 문장 3, ③는 문장 4, ⑤는 문장 8에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) them은 문장 6에서 도우러 간 양 팀의 의료진을 가리킨다. 같은 문장의 she(심판)와는 다른 대상이다.", true);
 Hs("독해 04   배열 영작");
 B("문장 9를 그대로 복원하는 문제다. ① 첫 단어 Only는 대문자.   ② is using — 진행형은 be+~ing 한 덩어리.   ③ right now(바로 지금)는 문장 끝에 놓는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 · 1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 좋은 행동에 주는 새 흰 카드를 소개한다. ① 레드·옐로 카드는 도입부의 배경이고, ② 경기는 흰 카드가 처음 쓰인 무대일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 · 1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 좋은 행동에 주는 새 흰 카드를 소개한다. ① 레드·옐로 카드는 도입부의 배경이고, ③ 경기는 흰 카드가 처음 쓰인 무대일 뿐이다.");
 B("1-2   ○표 할 세 단어: white card(힌트①) · medical staff(힌트②) · good behavior(힌트③). 나머지 셋(referee · Portugal · FIFA)은 배경일 뿐이다.");
 B("1-3   문장 5 — It은 the white card에 ○.   문장 7 — she는 심판, them은 의료진에 ○ (대상이 다르다!).   문장 10 — it은 흰 카드 사용에 ○.");
 B("[학습 포인트]   문장 7에서는 she(심판)와 them(의료진)이 한 문장 안에서 다른 대상을 가리킨다. '누가 누구에게?'를 확인하는 습관이 고등 지칭 추론으로 이어진다.", true);
@@ -757,10 +759,10 @@ B("[학습 포인트]   문장 7에서는 she(심판)와 them(의료진)이 한 
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 때 / 결과 / 반전 / 덧붙임     2-2 [B] 쓰임 · [E] 질문     2-3 ②");
+Hs("STEP 2   글의 흐름   ·   2-1 때 / 결과 / 반전 / 덧붙임     2-2 [B] 쓰임 · [E] 질문     2-3 ①");
 B("2-1   문장 1 when — 규칙을 지키지 않을 '때' 카드를 쓴다.   문장 7 so — 감동한 '결과'로 카드를 주었다.   문장 8 But — 아직 승인되지 않았다는 '반전'.   문장 10 and — 두 질문을 나란히 '덧붙임'.");
 B("2-2   [B] 쓰임(문장 3: 누구에게 주는 카드인가), [E] 질문(문장 10: 독자에게 묻는 마무리). 보기의 '광고'는 이 글에 없는 역할이다. [A] 소개 → [B] 쓰임 → [C] 첫 사용 → [D] 한계 → [E] 질문 — 새것을 소개하는 설명문의 전형적인 흐름이다.");
-B("2-3   정답 ②. 새로운 것(흰 카드)을 소개하고 사실을 알려 주는 설명문이다(문장 1–3의 현재시제, 대상의 이름과 쓰임). ① 광고의 신호(가격·사라는 말)가 없고, ③ 일기·④ 편지·⑤ 시의 형식도 아니다.");
+B("2-3   정답 ①. 새로운 것(흰 카드)을 소개하고 사실을 알려 주는 설명문이다(문장 1–3의 현재시제, 대상의 이름과 쓰임). ② 광고의 신호(가격·사라는 말)가 없고, ③ 일기·④ 편지·⑤ 시의 형식도 아니다.");
 B("[학습 포인트]   마무리의 질문(문장 10)은 글쓴이가 독자를 생각에 초대하는 장치다. 설명문 끝의 물음표를 만나면 '나라면 어떻게 답할까?'까지 생각해 보자.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 good · medical staff     3-3 (b) → (d) → (c) → (a)");
 B("3-1  재료 찾기 — (2) 문장 3에서 good에 ○: 카드를 주는 까닭이 되는 행동의 성격이다. quick은 문장 7 의료진의 반응일 뿐. (3) 문장 3에서 medical staff에 ○: referees는 카드를 '주는' 쪽이지 받는 쪽이 아니다.");
@@ -769,11 +771,11 @@ B("3-3  정답 순서 — ⓑ The white card is for → ⓓ players, coaches, or
 B("[채점 포인트]  주인공 The white card(ⓑ)가 주어로 맨 앞, 마침표가 붙은 덩어리(ⓐ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) white  (2) behavior  (3) Portugal  (4) approved");
 B("(1)은 문장 2의 white, (2)는 문장 3의 behavior, (3)은 문장 4의 Portugal, (4)는 문장 8의 approved에서 가져온다. 요약문이 곧 이 글의 흐름이다: 새 카드(1) → 쓰임(2) → 첫 사용(3) → 한계(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 1 ①   문장 6 ②   문장 7 ②   문장 8 ②  (정답 선지는 무표시)");
-B("문장 1 don’t follow the rules   ① ○ break the rules = 규칙을 어기다.   ② ✕ [반대] 규칙을 잘 지킨다 — 정반대.   ③ ✕ [무관] 새 규칙을 만든다는 말은 지문에 없다.");
-B("문장 6 quickly went to help   ① ✕ [반대] 늦게 갔다 — 정반대.   ② ○ hurried to help = 서둘러 도우러 갔다.   ③ ✕ [무관] 표를 팔았다는 말은 지문에 없다.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 1 ②   문장 6 ③   문장 7 ②   문장 8 ③  (정답 선지는 무표시)");
+B("문장 1 don’t follow the rules   ① ✕ [반대] 규칙을 잘 지킨다 — 정반대.   ② ○ break the rules = 규칙을 어기다.   ③ ✕ [무관] 새 규칙을 만든다는 말은 지문에 없다.");
+B("문장 6 quickly went to help   ① ✕ [반대] 늦게 갔다 — 정반대.   ② ✕ [무관] 표를 팔았다는 말은 지문에 없다.   ③ ○ hurried to help = 서둘러 도우러 갔다.");
 B("문장 7 was moved by their quick response   ① ✕ [반대] 느린 행동에 화가 났다 — 정반대.   ② ○ was touched by their fast action = 빠른 행동에 감동했다.   ③ ✕ [무관] 피곤했다는 말은 지문에 없다.");
-B("문장 8 hasn’t approved ~ yet   ① ✕ [반대] 이미 승인했다 — 정반대.   ② ○ 아직 허락하지 않았다.   ③ ✕ [무관] 새 팀을 만들었다는 말은 지문에 없다.");
+B("문장 8 hasn’t approved ~ yet   ① ✕ [반대] 이미 승인했다 — 정반대.   ② ✕ [무관] 새 팀을 만들었다는 말은 지문에 없다.   ③ ○ 아직 허락하지 않았다.");
 B("[학습 포인트]  시험은 본문 표현을 그대로 쓰지 않고 반드시 바꿔서 묻는다. don’t follow = break, quickly = hurried처럼 짝을 지어 두자. 지금은 반대/무관 두 갈래를 정확히 가르는 것이 먼저다.", true);
 
 K.push(brk());

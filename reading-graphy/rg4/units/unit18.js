@@ -79,24 +79,24 @@ K.push(sp(65));
 ["① How to Wrap a Mummy in Bandages",
  "② The Longest River in the World",
  "③ New Technology for Studying Mummies",
- "④ Dangerous Reptiles of Modern Egypt",
- "⑤ Crocodile Mummies: Gifts for an Egyptian God"].forEach(c => K.push(ch(c)));
+ "④ Crocodile Mummies: Gifts for an Egyptian God",
+ "⑤ Dangerous Reptiles of Modern Egypt"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① The crocodile mummies were wrapped in bandages like most mummies.",
- "② Experts found ten crocodile mummies near the Nile River.",
- "③ In ancient Egypt, animal mummies were made as offerings for the gods.",
+["① Experts found ten crocodile mummies near the Nile River.",
+ "② In ancient Egypt, animal mummies were made as offerings for the gods.",
+ "③ The crocodile mummies were wrapped in bandages like most mummies.",
  "④ Sobek was often shown with a crocodile head.",
  "⑤ Ancient Egyptians asked Sobek for good soil for their crops."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the crocodile mummies",
- "② the ancient Egyptians",
- "③ the gods of the Nile",
- "④ the researchers in Egypt",
- "⑤ the dangerous reptiles"].forEach(c => K.push(ch(c)));
+ "② the gods of the Nile",
+ "③ the researchers in Egypt",
+ "④ the dangerous reptiles",
+ "⑤ the ancient Egyptians"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -247,8 +247,8 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 고대의 악어 사냥 방법",
- "② 신에게 바친 제물이었던 악어 미라",
+["① 신에게 바친 제물이었던 악어 미라",
+ "② 고대의 악어 사냥 방법",
  "③ 이집트 나일강의 지리"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
@@ -361,8 +361,8 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "고대와 오늘에
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Ancient Egyptians made crocodile mummies as offerings to Sobek.",
-      "ⓑ Ancient Egyptians asked Sobek for good soil and safety.",
-      "ⓒ Experts recently found ten crocodile mummies near the Nile.",
+      "ⓑ Experts recently found ten crocodile mummies near the Nile.",
+      "ⓒ Ancient Egyptians asked Sobek for good soil and safety.",
       "ⓓ Researchers studied the mummies right away without special technology."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -401,22 +401,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("This discovery(S)·gives(△V)·us·a new understanding·of the religion(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 이 쿠키들은 우리 부엌에서 만들어진다  (2) 공원에서 자전거를 타는 것은 재미있다  (3) 화려한 종이에 싸인 선물을 열어 보는 것은 재미있다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 mummies · offerings · gods   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 mummies · offerings · gods   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 F · 5 F · 6 T · 7 F · 8 T", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (c) → (d)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (b) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ⑤");
-B("이 글은 나일강에서 발견된 악어 미라(문장 1–4)가 소베크 신에게 바친 제물이었을 것이라고 설명한다(문장 5–10). 소재(악어 미라)와 정체(신을 위한 선물)를 함께 담은 ⑤이 제목이다. ①·③는 지엽적, ②·④는 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ①");
-B("문장 3에서 대부분의 미라는 붕대에 싸이지만 이 악어들은 그렇지 않았다(weren’t). 붕대에 싸였다고 한 ①가 본문과 반대된다. ②은 문장 1, ③은 문장 5, ④는 문장 7, ⑤는 문장 8에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ②");
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 나일강에서 발견된 악어 미라(문장 1–4)가 소베크 신에게 바친 제물이었을 것이라고 설명한다(문장 5–10). 소재(악어 미라)와 정체(신을 위한 선물)를 함께 담은 ④이 제목이다. ①·③는 지엽적, ②·⑤는 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 3에서 대부분의 미라는 붕대에 싸이지만 이 악어들은 그렇지 않았다(weren’t). 붕대에 싸였다고 한 ③가 본문과 반대된다. ①은 문장 1, ②은 문장 5, ④는 문장 7, ⑤는 문장 8에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) them은 앞의 Ancient Egyptians를 가리킨다. 좋은 흙을 달라고 빌고, 위험한 파충류로부터 지켜 달라고 빈 쪽이 곧 그들 자신이다 — their crops의 주인이 누구인지 보면 된다.", true);
 Hs("독해 04   배열 영작   ·   Sobek was often shown with a crocodile head.");
 B("문장 7을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Sobek.   ② 수동태 was shown — 그 사이에 often이 들어간다.   ③ with a crocodile head로 끝난다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 mummies · offerings · gods     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 악어 미라가 신에게 바친 제물이었다는 점을 밝힌다. ① 사냥 방법이나 ③ 나일강의 지리는 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 mummies · offerings · gods     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 악어 미라가 신에게 바친 제물이었다는 점을 밝힌다. ② 사냥 방법이나 ③ 나일강의 지리는 나오지 않는다.");
 B("1-2   ○표 할 세 단어: mummies(힌트① 주인공) · offerings(힌트② 정체) · gods(힌트③ 누구를 위한 것). 나머지 셋(bandages · Nile · soil)은 상태와 배경을 보여 주는 세부 사항일 뿐이다.");
 B("1-3   문장 4 — This는 붕대가 없다는 사실, them은 악어들에 ○ (한 문장 안에서 대상이 바뀐다).   문장 8 — them은 고대 이집트인들.   문장 9 — him은 소베크.");
 B("[학습 포인트]   문장 4처럼 This가 앞 문장 전체를 받고, 같은 문장의 them은 사물을 받는 경우가 있다. 지시어를 만날 때마다 화살표로 연결해 두자.", true);
@@ -427,8 +427,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 F · 5 F · 6 T · 7 F · 8 T");
    B("1 F — 문장 4: 특별한 기술 없이 바로 연구할 수 있었다.   2 T — 문장 8.   3 T — 문장 1.   4 F — 문장 7: 사자가 아니라 악어 머리다.   5 F — 문장 9: 무언가를 바쳐야 한다고 믿었다.   6 T — 문장 2.   7 F — 문장 3: 이 악어들은 붕대에 싸여 있지 않았다.   8 T — 문장 5.  거짓 넷은 모두 한 요소(wrapped, needed, lion, without giving)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (a) → (c) → (d)");
-B("ⓑ 고대 이집트인들이 소베크에게 좋은 흙과 안전을 빈다(문장 8) → ⓐ 그 부탁의 대가로 악어 미라를 제물로 만든다(문장 9–10) → ⓒ 최근 전문가들이 나일강 근처에서 그 미라들을 발견한다(문장 1) → ⓓ 붕대가 없어 곧바로 연구한다(문장 4). 글은 발견부터 이야기하지만 실제 사건은 고대가 먼저다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
+Hs("R2   사건 순서   ·   (c) → (a) → (b) → (d)");
+B("ⓒ 고대 이집트인들이 소베크에게 좋은 흙과 안전을 빈다(문장 8) → ⓐ 그 부탁의 대가로 악어 미라를 제물로 만든다(문장 9–10) → ⓑ 최근 전문가들이 나일강 근처에서 그 미라들을 발견한다(문장 1) → ⓓ 붕대가 없어 곧바로 연구한다(문장 4). 글은 발견부터 이야기하지만 실제 사건은 고대가 먼저다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

@@ -100,8 +100,8 @@ K.push(sp(65));
 ["① How to Choose a Good Washing Machine",
  "② The Best Swimming Pools in the U.K.",
  "③ Why Computers Need Cold Air",
- "④ A Guide to Starting Your Own Company",
- "⑤ Hot Computers, Warm Pools: A Win-Win Idea"].forEach(c => K.push(ch(c)));
+ "④ Hot Computers, Warm Pools: A Win-Win Idea",
+ "⑤ A Guide to Starting Your Own Company"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
@@ -115,8 +115,8 @@ K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 �
 K.push(sp(65));
 ["① selling washing machines in Devon",
  "② building a new data center in the U.K.",
- "③ cooling the pool with cold water",
- "④ using the waste heat to warm the pool",
+ "③ using the waste heat to warm the pool",
+ "④ cooling the pool with cold water",
  "⑤ paying more money for gas"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -408,9 +408,9 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 새로운 기술 사례를 알려 주는 설명문",
- "② 수영장 회원을 모으는 광고",
- "③ 하루 일과를 적은 일기",
+["① 수영장 회원을 모으는 광고",
+ "② 하루 일과를 적은 일기",
+ "③ 새로운 기술 사례를 알려 주는 설명문",
  "④ 회사에 보내는 편지",
  "⑤ 상상으로 지어낸 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
@@ -515,7 +515,7 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 2, main: "produce a lot of waste heat",
-    opts: ["① make almost no heat at all", "② make much heat that is thrown away", "③ save heat for the winter"] },
+    opts: ["① make almost no heat at all", "② save heat for the winter", "③ make much heat that is thrown away"] },
   { sn: 8, main: "gets free heat",
     opts: ["① pays a lot of money for heat", "② sells heat to other pools", "③ gets heat without paying"] });
 K.push(spF(7, 140, 0.16));
@@ -523,7 +523,7 @@ pairGrid(
   { sn: 9, main: "saves money too",
     opts: ["① also keeps its money", "② also spends more money", "③ borrows money from the pool"] },
   { sn: 10, main: "a win-win situation",
-    opts: ["① good for only one side", "② good for both sides", "③ a game the CEO enjoys"] });
+    opts: ["① good for both sides", "② good for only one side", "③ a game the CEO enjoys"] });
 K.push(spF(7, 150, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -643,7 +643,7 @@ K.push(spF(9, 380, 0.12));
 
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
-[["문장 1", [t("Data centers ", { size: 19 }), t("( is  /  are )", { size: 19, bold: true, color: NAVY }), t(" places where computers store information.", { size: 19 })], "주어 Data centers는 복수예요."],
+[["문장 1", [t("Data centers ", { size: 19 }), t("( are  /  is )", { size: 19, bold: true, color: NAVY }), t(" places where computers store information.", { size: 19 })], "주어 Data centers는 복수예요."],
  ["문장 2", [t("Even small ones ", { size: 19 }), t("( produces  /  produce )", { size: 19, bold: true, color: NAVY }), t(" a lot of waste heat.", { size: 19 })], "ones(복수)에 맞는 동사 형태는?"],
  ["문장 3", [t("Deep Green is using the waste heat ", { size: 19 }), t("( warm  /  to warm )", { size: 19, bold: true, color: NAVY }), t(" a pool.", { size: 19 })], "'~하기 위해'는 to+동사원형!"],
  ["문장 11", [t("Deep Green ", { size: 19 }), t("( plans  /  plan )", { size: 19, bold: true, color: NAVY }), t(" to do this for more pools.", { size: 19 })], "주어가 3인칭 단수면 동사에 -s!"],
@@ -740,10 +740,10 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나무들로 둘러싸인 그 집은 매우 오래되었다  (2) 그녀는 사진을 찍기 위해 휴대전화를 쓰고 있다  (3) 그는 책을 나르기 위해 종이로 만든 가방을 쓰고 있다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 heat · pool · warm        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 강조 · 순서 · 덧붙임 · 결과   2-2 [B] 아이디어 · [D] 효과   2-3 ①", { size: 19, bold: true })], { after: 25 }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 강조 · 순서 · 덧붙임 · 결과   2-2 [B] 아이디어 · [D] 효과   2-3 ③", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (c) → (d) → (a)  ·  Deep Green uses the waste heat from its data center to warm a pool.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) heat  (2) pool  (3) gas  (4) win-win        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ②  문장 8 ③  문장 9 ①  문장 10 ②", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ③  문장 8 ③  문장 9 ①  문장 10 ①", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 T · 5 T · 6 F · 7 F · 8 F", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (a) → (c)", { size: 19, bold: true })], { after: 25 }),
@@ -753,11 +753,11 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) Even small ones produce a lot of waste heat.  (2) Deep Green saves money too, by cutting expenses on cooling its computers.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ⑤");
-B("이 글은 데이터 센터가 버리는 열로 수영장을 데우는 영국의 사례(문장 3–6)와 그 효과(문장 7–9)를 소개한다. 소재와 평가(win-win)를 함께 담은 ⑤이 제목으로 적절하다. ②·③는 지엽적이고, ①·④는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 데이터 센터가 버리는 열로 수영장을 데우는 영국의 사례(문장 3–6)와 그 효과(문장 7–9)를 소개한다. 소재와 평가(win-win)를 함께 담은 ④이 제목으로 적절하다. ②·③는 지엽적이고, ①·⑤는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ②");
 B("문장 8에서 수영장은 공짜 열을 얻어 가스 소비를 62% '줄였다'. 가스비를 더 낸다는 ②가 본문과 반대된다. ①은 문장 2, ③은 문장 4, ④는 문장 5, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) it은 앞에서 설명한 방식, 곧 데이터 센터의 폐열로 수영장을 데우는 일(문장 3–7)을 가리킨다. 대표가 '모두가 이기는 상황'이라고 부른 대상이 무엇인지 생각하면 된다.", true);
 Hs("독해 04   배열 영작   ·   This smart setup helps both the pool and the data center.");
 B("문장 7을 그대로 복원하는 문제다. ① 첫 글자는 대문자 This.   ② both A and B — 짝을 이루는 표현이다.   ③ the가 pool 앞과 data center 앞에 각각 하나씩 들어간다.", true);
@@ -770,10 +770,10 @@ B("[학습 포인트]   its·itself 같은 소유격·재귀대명사도 지시�
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 강조 / 순서 / 덧붙임 / 결과     2-2 [B] 아이디어 · [D] 효과     2-3 ①");
+Hs("STEP 2   글의 흐름   ·   2-1 강조 / 순서 / 덧붙임 / 결과     2-2 [B] 아이디어 · [D] 효과     2-3 ③");
 B("2-1   문장 2 Even — 작은 것조차 그렇다는 '강조'.   문장 6 then — 그다음에 일어나는 일이라는 '순서'.   문장 9 too — 수영장뿐 아니라 회사도 이득이라는 '덧붙임'.   문장 11 so ~ that — 아주 좋아서 생긴 '결과'.");
 B("2-2   [B] 아이디어(문장 3–4: 폐열로 수영장을 데우는 발상과 설치), [D] 효과(문장 7–9: 가스비 62% 절감과 냉각비 절약). 보기의 '요리법'은 이 글에 없는 역할이다. [A] 배경 → [B] 아이디어 → [C] 방법 → [D] 효과 → [E] 평가.");
-B("2-3   정답 ①. 새로운 기술이 어떻게 쓰이는지 사실을 알려 주는 설명문이다(문장 4–6). ② 가격·명령문이 없어 광고가 아니고, ③ I나 날짜가 없어 일기도 아니다.");
+B("2-3   정답 ③. 새로운 기술이 어떻게 쓰이는지 사실을 알려 주는 설명문이다(문장 4–6). ① 가격·명령문이 없어 광고가 아니고, ② I나 날짜가 없어 일기도 아니다.");
 B("[학습 포인트]   배경 → 아이디어 → 방법 → 효과 → 평가는 기술 소개 글의 기본 골격이다. 숫자(62%)는 효과 구간에 나온다는 것도 기억해 두자.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 waste heat · warm     3-3 (b) → (c) → (d) → (a)");
 B("3-1  재료 찾기 — (2) 문장 3에서 waste heat에 ○: 회사가 가져다 쓰는 재료다. cold air는 본문에 없다. (3) 문장 3에서 warm에 ○: 그 열로 수영장을 '데운다'. cool은 반대 방향이다.");
@@ -782,11 +782,11 @@ B("3-3  정답 순서 — ⓑ Deep Green uses → ⓒ the waste heat → ⓓ fro
 B("[채점 포인트]  주인공(Deep Green)이 맨 앞, 마침표가 붙은 덩어리(ⓐ)가 맨 뒤 — 두 자리만 잡으면 from과 to가 순서를 알려 준다.", true);
 Hs("STEP 4   요약문   ·   (1) heat  (2) pool  (3) gas  (4) win-win");
 B("(1)은 문장 2의 heat, (2)는 문장 3의 pool, (3)은 문장 8의 gas, (4)는 문장 10의 win-win에서 가져온다. 요약문이 곧 이 글의 흐름이다: 폐열(1) → 수영장(2) → 절약(3) → 평가(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ②   문장 8 ③   문장 9 ①   문장 10 ②  (정답 선지는 무표시)");
-B("문장 2 produce a lot of waste heat   ① ✕ [반대] 열이 거의 나지 않는다.   ② ○ 버려지는 열을 많이 만든다.   ③ ✕ [무관] 겨울을 위해 열을 저장한다는 말은 없다.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ③   문장 8 ③   문장 9 ①   문장 10 ①  (정답 선지는 무표시)");
+B("문장 2 produce a lot of waste heat   ① ✕ [반대] 열이 거의 나지 않는다.   ② ✕ [무관] 겨울을 위해 열을 저장한다는 말은 없다.   ③ ○ 버려지는 열을 많이 만든다.");
 B("문장 8 gets free heat   ① ✕ [반대] 열에 큰돈을 낸다.   ② ✕ [무관] 다른 수영장에 열을 판다는 말은 없다.   ③ ○ 돈을 내지 않고 열을 얻는다.");
 B("문장 9 saves money too   ① ○ 회사도 돈을 아낀다.   ② ✕ [반대] 돈을 더 쓴다 — 정반대.   ③ ✕ [무관] 수영장에서 돈을 빌린다는 말은 없다.");
-B("문장 10 a win-win situation   ① ✕ [반대] 한쪽에만 좋다.   ② ○ 양쪽 모두에게 좋다.   ③ ✕ [무관] 대표가 즐기는 게임이라는 말은 없다.");
+B("문장 10 a win-win situation   ① ○ 양쪽 모두에게 좋다.   ② ✕ [반대] 한쪽에만 좋다.   ③ ✕ [무관] 대표가 즐기는 게임이라는 말은 없다.");
 B("[학습 포인트]  win-win처럼 뜻이 통째로 담긴 표현은 '양쪽 다 이득'으로 풀어 두면 어떤 말로 바꿔 물어도 흔들리지 않는다.", true);
 
 K.push(brk());

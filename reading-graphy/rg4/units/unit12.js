@@ -80,26 +80,26 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① How to Take Care of Mice in a Lab",
- "② The History of Cancer Medicine in China",
- "③ Why Healthy Cells Need More Oxygen",
- "④ A Tiny Battery Inside the Body That Fights Cancer",
+["① A Tiny Battery Inside the Body That Fights Cancer",
+ "② How to Take Care of Mice in a Lab",
+ "③ The History of Cancer Medicine in China",
+ "④ Why Healthy Cells Need More Oxygen",
  "⑤ Fudan University: The Best School in Shanghai"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Cancer patients get strong medicine that can cause side effects.",
- "② Cancer cells have more oxygen than healthy cells.",
- "③ The battery system targets low-oxygen areas of the body.",
- "④ In two weeks, the tumor size was reduced by 90 percent in most mice.",
+ "② The battery system targets low-oxygen areas of the body.",
+ "③ In two weeks, the tumor size was reduced by 90 percent in most mice.",
+ "④ Cancer cells have more oxygen than healthy cells.",
  "⑤ The method has not been tested on humans yet."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) It이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the strong medicine for cancer patients",
- "② the battery system put inside the body",
- "③ the low-oxygen area of the body",
- "④ the healthy cell near a tumor",
+ "② the low-oxygen area of the body",
+ "③ the healthy cell near a tumor",
+ "④ the battery system put inside the body",
  "⑤ the university in Shanghai"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -359,9 +359,9 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "배터리 시스템이 하는 일 ⓐ~ⓓ를 실제로 일어나는 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ The battery uses the medicine to make the cancer smaller.",
-      "ⓑ The battery finds a low-oxygen area where cancer grows.",
-      "ⓒ Scientists developed a battery system for the body.",
+  ...["ⓐ Scientists developed a battery system for the body.",
+      "ⓑ The battery uses the medicine to make the cancer smaller.",
+      "ⓒ The battery finds a low-oxygen area where cancer grows.",
       "ⓓ Scientists tested the system on mice, and the tumors got smaller."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -403,14 +403,14 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 battery · cancer · safer   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 F · 5 T · 6 F · 7 F · 8 T", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (b) → (a) → (d)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (b) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ④");
-B("이 글은 몸속에 넣는 배터리 시스템이 저산소 부위를 찾아 암을 줄인다는 연구(문장 3–9)와 아직 사람에게는 쓰이지 않았다는 한계(문장 11–13)를 소개한다. 소재(배터리)와 특징(몸속에서 암과 싸움)을 함께 담은 ④이 제목으로 적절하다. ①·③는 지엽적 오답, ②·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 5에서 암세포와 그 주변은 건강한 세포보다 산소가 더 적다(less oxygen)고 했다. 더 많다는 ②이 본문과 반대된다. ①은 문장 1, ③는 문장 4, ④는 문장 9, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ②");
+Hs("독해 01   제목   ·   정답 ①");
+B("이 글은 몸속에 넣는 배터리 시스템이 저산소 부위를 찾아 암을 줄인다는 연구(문장 3–9)와 아직 사람에게는 쓰이지 않았다는 한계(문장 11–13)를 소개한다. 소재(배터리)와 특징(몸속에서 암과 싸움)을 함께 담은 ①이 제목으로 적절하다. ②·④는 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 5에서 암세포와 그 주변은 건강한 세포보다 산소가 더 적다(less oxygen)고 했다. 더 많다는 ④이 본문과 반대된다. ①은 문장 1, ②는 문장 4, ③는 문장 9, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) It은 바로 앞 문장 3의 a battery system, 곧 몸속에 넣을 수 있는 배터리 시스템을 가리킨다. 저산소 부위를 겨냥하는 주체가 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   During the process, no other healthy cells are harmed.");
 B("문장 7을 그대로 복원하는 문제다. ① 첫 글자는 대문자 During, 뒤에 콤마.   ② no other healthy cells — 형용사의 순서에 주의한다.   ③ 수동태는 are harmed 두 단어가 한 덩어리.", true);
@@ -426,8 +426,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 F · 5 T · 6 F · 7 F · 8 T");
    B("1 F — 문장 9: 종양이 커진 게 아니라 90퍼센트 줄었다(reduced).   2 T — 문장 5.   3 T — 문장 2·3.   4 F — 문장 7: 많은 세포가 해를 입는 게 아니라 어떤 건강한 세포도 해를 입지 않는다.   5 T — 문장 8.   6 F — 문장 4: 산소가 많은 곳이 아니라 적은 곳(low-oxygen)을 겨냥한다.   7 F — 문장 11: 이미 쓰이는 게 아니라 아직 사람에게 시험되지 않았다.   8 T — 문장 1.  거짓 문장은 모두 딱 한 요소(high-oxygen, many, grew, already)를 비튼 것이다 — 그 한 요소를 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (c) → (b) → (a) → (d)");
-B("ⓒ 과학자들이 몸속에 넣는 배터리 시스템을 개발한다(문장 3) → ⓑ 배터리가 암이 자라는 저산소 부위를 찾는다(문장 4·6) → ⓐ 약을 써서 암을 더 작게 만든다(문장 6) → ⓓ 쥐에게 시험해 종양이 줄어드는 것을 확인한다(문장 8·9). 본문은 장치의 원리(문장 4–7)를 먼저 설명하고 실험(문장 8–9)을 뒤에 붙인다.", true);
+Hs("R2   사건 순서   ·   (a) → (c) → (b) → (d)");
+B("ⓐ 과학자들이 몸속에 넣는 배터리 시스템을 개발한다(문장 3) → ⓒ 배터리가 암이 자라는 저산소 부위를 찾는다(문장 4·6) → ⓑ 약을 써서 암을 더 작게 만든다(문장 6) → ⓓ 쥐에게 시험해 종양이 줄어드는 것을 확인한다(문장 8·9). 본문은 장치의 원리(문장 4–7)를 먼저 설명하고 실험(문장 8–9)을 뒤에 붙인다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

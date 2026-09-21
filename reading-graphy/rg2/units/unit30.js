@@ -77,9 +77,9 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① How to Take Care of a Cute Puppy",
- "② Ways to Stop Feeling Angry",
- "③ Cute Aggression: How Our Brain Balances Feelings",
+["① Cute Aggression: How Our Brain Balances Feelings",
+ "② How to Take Care of a Cute Puppy",
+ "③ Ways to Stop Feeling Angry",
  "④ The History of Psychology",
  "⑤ Foods That Make You Happy"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -87,9 +87,9 @@ K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?")
 K.push(sp(65));
 ["① When we see something very cute, we usually want to care for it.",
  "② The feeling of wanting to squeeze something cute is called cute aggression.",
- "③ Our brain tries to balance out a strong feeling with the opposite.",
- "④ Cute aggression helps you calm down.",
- "⑤ Cute aggression means you really want to hurt someone."].forEach(c => K.push(ch(c)));
+ "③ Cute aggression means you really want to hurt someone.",
+ "④ Our brain tries to balance out a strong feeling with the opposite.",
+ "⑤ Cute aggression helps you calm down."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
@@ -358,9 +358,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "귀여운 것을 �
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Your brain balances the joy with a bit of aggression.",
-      "ⓑ Your brain is dealing with lots of joy.",
-      "ⓒ You calm down after the strong feelings.",
-      "ⓓ You see a very cute puppy or baby."]
+      "ⓑ You see a very cute puppy or baby.",
+      "ⓒ Your brain is dealing with lots of joy.",
+      "ⓓ You calm down after the strong feelings."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -401,13 +401,13 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 aggression · brain · balance   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 F · 4 T · 5 F · 6 T · 7 T · 8 T", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (a) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("이 글은 귀여운 것을 볼 때 생기는 '귀여움 공격성'(문장 3–4)과, 그것이 큰 기쁨의 균형을 잡으려는 뇌의 작용(문장 6–9)임을 설명한다. 소재(귀여움 공격성)와 원리(뇌의 균형 잡기)를 함께 담은 ③이 적절하다. ①·②은 한 부분만 건드린 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 5에서 귀여움 공격성은 정말로 누군가를 해치고 싶다는 뜻이 아니라고 했으므로, ⑤은 본문과 반대된다. ①은 문장 2, ②는 문장 1·4, ③는 문장 8, ④는 문장 10에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ①");
+B("이 글은 귀여운 것을 볼 때 생기는 '귀여움 공격성'(문장 3–4)과, 그것이 큰 기쁨의 균형을 잡으려는 뇌의 작용(문장 6–9)임을 설명한다. 소재(귀여움 공격성)와 원리(뇌의 균형 잡기)를 함께 담은 ①이 적절하다. ②·③은 한 부분만 건드린 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 5에서 귀여움 공격성은 정말로 누군가를 해치고 싶다는 뜻이 아니라고 했으므로, ③은 본문과 반대된다. ①은 문장 2, ②는 문장 1·4, ④는 문장 8, ⑤는 문장 10에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) it은 바로 앞 문장 6의 lots of joy, 곧 뇌가 감당하고 있는 큰 기쁨을 가리킨다. '그것이 너무 많을 때'가 무엇이 많다는 말인지 앞 문장에서 찾으면 된다.", true);
 Hs("독해 04   배열 영작   ·   But, we might also feel a bit aggressive.");
@@ -424,8 +424,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 F · 3 F · 4 T · 5 F · 6 T · 7 T · 8 T");
    B("1 F — 문장 8: 같은 감정이 아니라 반대되는 감정(the opposite)으로 균형을 잡는다.   2 F — 문장 10: 행복한 감정이 넘친 뒤(after)이지 그 전이 아니다.   3 F — 문장 10: 더 흥분하게가 아니라 진정하도록 돕는다.   4 T — 문장 2.   5 F — 문장 5: 정말로 해치고 싶다는 뜻이 아니다.   6 T — 문장 1·4.   7 T — 문장 6.   8 T — 문장 9.  거짓 문장은 모두 딱 한 요소를 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (d) → (b) → (a) → (c)");
-B("ⓓ 아주 귀여운 강아지나 아기를 본다(문장 1–2) → ⓑ 뇌가 큰 기쁨을 감당한다(문장 6) → ⓐ 뇌가 약간의 공격성으로 그 기쁨의 균형을 잡는다(문장 7–8) → ⓒ 강한 감정이 가라앉는다(문장 10). 글은 감정의 이름을 먼저 소개하고 원리를 나중에 설명하지만, 실제로는 이 순서로 일어난다.", true);
+Hs("R2   사건 순서   ·   (b) → (c) → (a) → (d)");
+B("ⓑ 아주 귀여운 강아지나 아기를 본다(문장 1–2) → ⓒ 뇌가 큰 기쁨을 감당한다(문장 6) → ⓐ 뇌가 약간의 공격성으로 그 기쁨의 균형을 잡는다(문장 7–8) → ⓓ 강한 감정이 가라앉는다(문장 10). 글은 감정의 이름을 먼저 소개하고 원리를 나중에 설명하지만, 실제로는 이 순서로 일어난다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

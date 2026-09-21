@@ -85,11 +85,11 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① The Chicago River has turned green for over 60 years.",
- "② In the 1960s, the city used green dye to trace wastewater.",
- "③ Green is the special color for St. Patrick’s Day.",
- "④ The river keeps its green color for only a few hours.",
- "⑤ The mayor first thought of dyeing the Chicago River."].forEach(c => K.push(ch(c)));
+["① The mayor first thought of dyeing the Chicago River.",
+ "② The Chicago River has turned green for over 60 years.",
+ "③ In the 1960s, the city used green dye to trace wastewater.",
+ "④ Green is the special color for St. Patrick’s Day.",
+ "⑤ The river keeps its green color for only a few hours."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
@@ -250,8 +250,8 @@ K.push(spF(4, 300, 0.10));
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 ["① 더러운 강물을 깨끗하게 만드는 방법",
- "② 시카고에서 열리는 음식 축제",
- "③ 성 패트릭 데이에 초록색이 되는 강"].forEach(c =>
+ "② 성 패트릭 데이에 초록색이 되는 강",
+ "③ 시카고에서 열리는 음식 축제"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -357,8 +357,8 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "초록 강 전통�
 K.push(sp(120));
 K.push(box([
   ...["ⓐ The mayor thought of dyeing Lake Michigan green.",
-      "ⓑ The city used green dye to find wastewater.",
-      "ⓒ People put orange powder into the river every year.",
+      "ⓑ People put orange powder into the river every year.",
+      "ⓒ The city used green dye to find wastewater.",
       "ⓓ His close friend suggested dyeing the Chicago River."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -397,22 +397,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("The river(S)·keeps(△V)·its green color·for only a few hours(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 길을 찾기 위해 지도를 사용한다  (2) 내 언니는 해변에 가는 것을 제안했다  (3) 그는 시간을 아끼기 위해 자전거를 타자고 제안했다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 river · green · tradition   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 river · green · tradition   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 F · 4 T · 5 F · 6 T · 7 F · 8 T", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (d) → (c)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (d) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ④");
 B("이 글은 성 패트릭 데이마다 초록색이 되는 시카고 강(문장 1–2)과 그 전통이 생긴 유래(문장 3–8), 오늘의 모습(문장 9–12)을 소개한다. 소재(시카고 강)와 특징(해마다 초록색)을 담은 ④이 제목이다. ①·⑤는 폐수·명절만 건드린 지엽적 오답, ②·③는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 5에서 시장이 처음 떠올린 것은 미시간 호수였고, 시카고 강을 물들이자고 한 사람은 문장 7의 친구다. 따라서 ⑤이 본문과 다르다. ①은 문장 2, ②는 문장 3, ③은 문장 6, ④는 문장 11에서 확인된다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 5에서 시장이 처음 떠올린 것은 미시간 호수였고, 시카고 강을 물들이자고 한 사람은 문장 7의 친구다. 따라서 ①이 본문과 다르다. ②은 문장 2, ③는 문장 3, ④은 문장 6, ⑤는 문장 11에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) it은 같은 문장 앞부분의 the water, 곧 강물을 가리킨다. 초록색으로 변하는 것은 가루가 아니라 가루가 닿은 물이다 — 한 문장 안에서도 가리키는 대상이 바뀐다.", true);
 Hs("독해 04   배열 영작   ·   The river keeps its green color for only a few hours.");
 B("문장 11을 그대로 복원하는 문제다. ① 첫 글자는 대문자 The.   ② its green color — 소유격 its 뒤에 색을 나타내는 말이 온다.   ③ for only a few hours가 기간을 나타내며 맨 뒤에 붙는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 river · green · tradition     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 성 패트릭 데이마다 초록색으로 변하는 시카고 강을 소개한다. ① 폐수 추적은 유래의 한 장면일 뿐이고, ② 음식 축제 이야기는 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 river · green · tradition     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 성 패트릭 데이마다 초록색으로 변하는 시카고 강을 소개한다. ① 폐수 추적은 유래의 한 장면일 뿐이고, ③ 음식 축제 이야기는 나오지 않는다.");
 B("1-2   ○표 할 세 단어: river(힌트① 주인공) · green(힌트② 강이 변하는 색) · tradition(힌트③ 60년 넘게 이어진 것). 나머지 셋(powder · mayor · holiday)은 본문에 나오지만 세부 사항이다.");
 B("1-3   문장 6 — That은 미시간 호수 염색(문장 5의 생각)에 ○.   문장 10 — it은 the water(강물)에 ○.   문장 11 — its는 the river’s(강의)에 ○.");
 B("[학습 포인트]   That은 단어 하나가 아니라 앞 문장 전체를 받을 수 있다. 지시어를 만나면 앞 문장을 통째로 되짚어 보자.", true);
@@ -423,8 +423,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 T · 2 F · 3 F · 4 T · 5 F · 6 T · 7 F · 8 T");
    B("1 T — 문장 6.   2 F — 문장 11: 한 달이 아니라 단 몇 시간이다.   3 F — 문장 7: 친구가 제안한 것은 미시간 호수가 아니라 시카고 강이다.   4 T — 문장 3.   5 F — 문장 2: 30년이 아니라 60년이 넘었다.   6 T — 문장 9.   7 F — 문장 4: 파란 물이 아니라 초록 물(green water)을 보았다.   8 T — 문장 1.  거짓 문장은 모두 한 요소(30, blue, Lake Michigan, a whole month)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (a) → (d) → (c)");
-B("ⓑ 시가 폐수를 찾으려고 초록 염료를 쓴다(문장 3) → ⓐ 시장이 미시간 호수를 물들일 생각을 한다(문장 5) → ⓓ 친구가 시카고 강을 제안한다(문장 7) → ⓒ 지금은 해마다 강에 오렌지색 가루를 넣는다(문장 9). 본문은 오늘의 모습(문장 1–2)을 먼저 보여 준 뒤 유래로 돌아간다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
+Hs("R2   사건 순서   ·   (c) → (a) → (d) → (b)");
+B("ⓒ 시가 폐수를 찾으려고 초록 염료를 쓴다(문장 3) → ⓐ 시장이 미시간 호수를 물들일 생각을 한다(문장 5) → ⓓ 친구가 시카고 강을 제안한다(문장 7) → ⓑ 지금은 해마다 강에 오렌지색 가루를 넣는다(문장 9). 본문은 오늘의 모습(문장 1–2)을 먼저 보여 준 뒤 유래로 돌아간다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

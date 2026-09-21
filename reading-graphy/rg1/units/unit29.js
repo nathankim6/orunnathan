@@ -85,25 +85,25 @@ K.push(sp(190));
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① How to Make Gummy Candies at Home",
- "② Wanted: A Candy Taste Tester",
- "③ The History of Chocolate in America",
- "④ Foods That Cause Allergies",
- "⑤ The Best Part-Time Jobs for Students"].forEach(c => K.push(ch(c)));
+ "② The History of Chocolate in America",
+ "③ Foods That Cause Allergies",
+ "④ The Best Part-Time Jobs for Students",
+ "⑤ Wanted: A Candy Taste Tester"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① The company is looking for people to try new candies.",
  "② Testers will taste the candies and share their thoughts.",
- "③ Testers can earn $13 an hour.",
- "④ Anyone with a sweet tooth for candy can apply.",
+ "③ Anyone with a sweet tooth for candy can apply.",
+ "④ Testers can earn $13 an hour.",
  "⑤ You must be 18 years or older to apply."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the new candies",
- "② the company workers",
- "③ the other taste testers",
- "④ food allergies",
+["① the company workers",
+ "② the other taste testers",
+ "③ food allergies",
+ "④ the new candies",
  "⑤ full-time jobs"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -368,9 +368,9 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "이 일자리에 지원하는 과정 ⓐ~ⓓ를 일어나는 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ You send an email to Candy House by February 15.",
-      "ⓑ You read the job details and check the rules.",
-      "ⓒ You find this candy taste tester ad.",
+  ...["ⓐ You find this candy taste tester ad.",
+      "ⓑ You send an email to Candy House by February 15.",
+      "ⓒ You read the job details and check the rules.",
       "ⓓ You taste new candies and share your thoughts."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -412,14 +412,14 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 candy · tester · apply   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 T · 4 F · 5 F · 6 T · 7 T · 8 F", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (b) → (a) → (d)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (b) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ②");
-B("이 글은 사탕 맛을 보는 사람을 뽑는다는 구인 광고다. 하는 일(문장 9–11)과 지원 자격(문장 13–15), 지원 방법(문장 16)이 차례로 나온다. 소재와 목적을 함께 담은 ②이 제목이다. ④·⑤는 지엽적 오답, ①·③은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 11에서 시급은 30달러다. 13달러라고 한 ③이 본문과 다르다. ①은 문장 6, ②는 문장 9, ④는 문장 13, ⑤는 문장 14에서 확인된다. 광고문은 숫자가 곧 정답의 자리다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 사탕 맛을 보는 사람을 뽑는다는 구인 광고다. 하는 일(문장 9–11)과 지원 자격(문장 13–15), 지원 방법(문장 16)이 차례로 나온다. 소재와 목적을 함께 담은 ⑤이 제목이다. ③·④는 지엽적 오답, ①·②은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 11에서 시급은 30달러다. 13달러라고 한 ④이 본문과 다르다. ①은 문장 6, ②는 문장 9, ③는 문장 13, ⑤는 문장 14에서 확인된다. 광고문은 숫자가 곧 정답의 자리다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) them은 같은 문장 앞부분의 new candies를 가리킨다. 맛과 느낌, 냄새를 말해 줄 대상이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   Our company is looking for people to try new candies.");
 B("문장 6을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Our.   ② is looking이 한 덩어리의 진행형 동사.   ③ look for(찾다)의 for를 빠뜨리지 않는다.", true);
@@ -435,8 +435,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 F · 6 T · 7 T · 8 F");
    B("1 T — 문장 1·7.   2 F — 문장 10: 전일제만이 아니라 시간제도 고를 수 있다.   3 T — 문장 14.   4 F — 문장 14: 캐나다가 아니라 미국에 살아야 한다.   5 F — 문장 15: 음식 알레르기가 있으면 지원할 수 없다.   6 T — 문장 11.   7 T — 문장 9.   8 F — 문장 2·13: 단것을 싫어하는 사람이 아니라 좋아하는 사람을 찾는다.  거짓 문장은 모두 딱 한 요소(hate, only, Canada, can also)를 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (c) → (b) → (a) → (d)");
-B("ⓒ 이 구인 광고를 발견한다(문장 1) → ⓑ 하는 일과 지원 조건을 읽는다(문장 8–15) → ⓐ 2월 15일까지 이메일을 보낸다(문장 16) → ⓓ 새 사탕을 맛보고 생각을 말한다(문장 9). 본문은 '하는 일'을 앞에, '지원 방법'을 맨 뒤에 두지만, 실제로는 지원한 뒤에야 맛보는 일이 시작된다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
+Hs("R2   사건 순서   ·   (a) → (c) → (b) → (d)");
+B("ⓐ 이 구인 광고를 발견한다(문장 1) → ⓒ 하는 일과 지원 조건을 읽는다(문장 8–15) → ⓑ 2월 15일까지 이메일을 보낸다(문장 16) → ⓓ 새 사탕을 맛보고 생각을 말한다(문장 9). 본문은 '하는 일'을 앞에, '지원 방법'을 맨 뒤에 두지만, 실제로는 지원한 뒤에야 맛보는 일이 시작된다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

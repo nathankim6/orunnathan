@@ -79,10 +79,10 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① The Tastiest Seafood Dishes in New York",
- "② How to Build a House Under the Sea",
- "③ Why the Hudson River Became Dirty",
- "④ Tiny Cleaners of the Hudson River",
+["① Tiny Cleaners of the Hudson River",
+ "② The Tastiest Seafood Dishes in New York",
+ "③ How to Build a House Under the Sea",
+ "④ Why the Hudson River Became Dirty",
  "⑤ The Best Time to Visit New York City"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
@@ -95,10 +95,10 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the harmful things in the water",
- "② the oysters in the river",
- "③ the people in New York City",
- "④ the underwater homes",
+["① the oysters in the river",
+ "② the people in New York City",
+ "③ the underwater homes",
+ "④ the harmful things in the water",
  "⑤ the sea animals that returned"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -250,9 +250,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 강물을 깨끗하게 만드는 굴",
- "② 뉴욕의 해산물 요리법",
- "③ 허드슨강의 다리 건설 이야기"].forEach(c =>
+["① 뉴욕의 해산물 요리법",
+ "② 허드슨강의 다리 건설 이야기",
+ "③ 강물을 깨끗하게 만드는 굴"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -398,22 +398,22 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("These oyster reefs(S)·provide(△V)·places(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 내 언니는 숙제를 끝냈다  (2) 이것은 돈을 아끼는 좋은 방법이다  (3) 그는 집에서 빵을 만드는 방법을 찾아냈다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 oysters · cleaner · reefs   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 oysters · cleaner · reefs   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 T · 3 T · 4 F · 5 F · 6 F · 7 T · 8 F", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ④");
-B("먹거리로만 알던 굴이 허드슨강에서 물을 걸러 내고(문장 7–9) 암초를 만들어 생태계를 되살린다(문장 10–12)는 글이다. 소재와 평가를 함께 담은 ④이 제목이다. ①·③는 지엽적이고 ②·⑤는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ①");
+B("먹거리로만 알던 굴이 허드슨강에서 물을 걸러 내고(문장 7–9) 암초를 만들어 생태계를 되살린다(문장 10–12)는 글이다. 소재와 평가를 함께 담은 ①이 제목이다. ②·④는 지엽적이고 ③·⑤는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ①");
 B("문장 9에서 물이 덜 오염된다(less polluted)고 했고 문장 12에서도 생태계가 더 건강해진다고 했으므로, 더 오염된다는 ①은 본문과 반대된다. ②은 문장 2, ③은 문장 5, ④는 문장 8, ⑤는 문장 12에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) them은 같은 문장 앞부분의 harmful things를 가리킨다. 굴이 강바닥에 남겨 두는 것이 무엇인지 생각하면 된다 — 문장 2의 they(굴)와 헷갈리지 않아야 한다.", true);
 Hs("독해 04   배열 영작   ·   Oysters have a special way of cleaning up.");
 B("문장 7을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Oysters — 복수 주어이므로 have.   ② a special way가 한 덩어리.   ③ 전치사 of 뒤에는 동사원형+ing — cleaning up.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 oysters · cleaner · reefs     1-3 아래 참조");
-B("1-1   정답 ①. 굴이 허드슨강 물을 깨끗하게 하고 생태계를 살린다는 글이다. ② 해산물은 첫 문장의 통념일 뿐이고, ③ 다리 건설 이야기는 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 oysters · cleaner · reefs     1-3 아래 참조");
+B("1-1   정답 ③. 굴이 허드슨강 물을 깨끗하게 하고 생태계를 살린다는 글이다. ① 해산물은 첫 문장의 통념일 뿐이고, ② 다리 건설 이야기는 나오지 않는다.");
 B("1-2   ○표 할 세 단어: oysters(힌트① 주인공) · cleaner(힌트② 강물의 변화) · reefs(힌트③ 굴이 만들어 주는 것). 나머지 셋(seafood · million · bottom)은 본문에 나오지만 통념과 세부 수치일 뿐이다.");
 B("1-3   문장 6 — this는 굴이 물을 맑게 하는 일에 ○ (문장 5).   문장 8 — them은 해로운 것들에 ○ (같은 문장의 harmful things).   문장 11 — These oyster reefs는 굴이 만든 암초에 ○ (문장 10).");
 B("[학습 포인트]   문장 2의 they는 굴, 문장 8의 them은 해로운 것들이다. 같은 인칭대명사라도 가리키는 대상이 바뀌므로, 만날 때마다 바로 앞에서 짝을 확인해야 한다.", true);

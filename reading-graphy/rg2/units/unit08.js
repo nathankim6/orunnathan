@@ -87,19 +87,19 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Sophia’s family was on a trip to South Dakota.",
- "② Sophia spent most of the time on her phone on the way.",
- "③ Their dad stopped the car to fix the flat tire.",
- "④ Sophia lifted her phone to take pictures of the bison.",
- "⑤ Tony showed Sophia pictures of Ally’s trip to Florida."].forEach(c => K.push(ch(c)));
+["① Tony showed Sophia pictures of Ally’s trip to Florida.",
+ "② Sophia’s family was on a trip to South Dakota.",
+ "③ Sophia spent most of the time on her phone on the way.",
+ "④ Their dad stopped the car to fix the flat tire.",
+ "⑤ Sophia lifted her phone to take pictures of the bison."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) that이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the flat tire on the car",
  "② Sophia’s new phone",
- "③ a large group of bison",
- "④ Ally’s trip to Florida",
- "⑤ the state of South Dakota"].forEach(c => K.push(ch(c)));
+ "③ Ally’s trip to Florida",
+ "④ the state of South Dakota",
+ "⑤ a large group of bison"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -359,9 +359,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "소피아의 가족
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Their car got a flat tire.",
-      "ⓑ Sophia lifted her phone to take pictures of the bison.",
-      "ⓒ A large group of bison passed by.",
-      "ⓓ Sophia showed Tony pictures of Ally’s trip."]
+      "ⓑ Sophia showed Tony pictures of Ally’s trip.",
+      "ⓒ Sophia lifted her phone to take pictures of the bison.",
+      "ⓓ A large group of bison passed by."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -402,14 +402,14 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 trip · boring · adventure   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 T · 5 T · 6 T · 7 F · 8 F", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (c) → (b)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (d) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ④");
 B("지루할 거라 여겼던 가족 여행(문장 2)이 들소 무리를 만나 뜻밖의 모험으로 바뀌는(문장 9–12) 이야기다. 소재(가족 여행)와 특징(뜻밖의 모험)을 함께 담은 ④이 제목으로 적절하다. ②·⑤는 세부 사항만 건드린 지엽적 오답, ①·③은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 5에서 사진을 보여 준 쪽은 소피아이고, 본 쪽이 토니다. 주어와 목적어가 뒤바뀐 ⑤가 본문과 반대된다. ①은 문장 1, ②은 문장 3, ③은 문장 7–8, ④는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 5에서 사진을 보여 준 쪽은 소피아이고, 본 쪽이 토니다. 주어와 목적어가 뒤바뀐 ①가 본문과 반대된다. ②은 문장 1, ③은 문장 3, ④은 문장 7–8, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) that은 바로 앞 문장 9에서 지나가던 큰 들소 무리를 가리킨다. 소피아가 보고 놀란 대상이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   She quickly lifted her phone to take pictures.");
 B("문장 11을 그대로 복원하는 문제다. ① 첫 글자는 대문자 She.   ② quickly는 동사 lifted 바로 앞자리.   ③ '~하기 위해'는 to take pictures — to+동사원형.", true);
@@ -425,8 +425,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 T · 3 F · 4 T · 5 T · 6 T · 7 F · 8 F");
    B("1 F — 문장 2: 신날 거라고가 아니라 지루할 거라고(boring) 생각했다.   2 T — 문장 3.   3 F — 문장 8: 내리라는 게 아니라 차 안에 안전하게 있으라고(Stay safe) 했다.   4 T — 문장 7.   5 T — 문장 6.   6 T — 문장 1.   7 F — 문장 5: 텍사스가 아니라 플로리다(Florida)다.   8 F — 문장 9: 작은 무리가 아니라 큰(large) 무리다.  거짓 문장은 모두 본문에서 딱 한 요소(exciting, Texas, get out, small)를 비튼 것이다 — 그 한 단어를 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (d) → (a) → (c) → (b)");
-B("ⓓ 소피아가 토니에게 앨리의 여행 사진을 보여 준다(문장 5) → ⓐ 차 타이어가 펑크 난다(문장 7) → ⓒ 큰 들소 무리가 지나간다(문장 9) → ⓑ 소피아가 휴대폰을 들어 사진을 찍는다(문장 11). 이 글은 사건이 일어난 순서 그대로 서술된 이야기이므로, 문장 번호를 따라가면 순서가 그대로 보인다.", true);
+Hs("R2   사건 순서   ·   (b) → (a) → (d) → (c)");
+B("ⓑ 소피아가 토니에게 앨리의 여행 사진을 보여 준다(문장 5) → ⓐ 차 타이어가 펑크 난다(문장 7) → ⓓ 큰 들소 무리가 지나간다(문장 9) → ⓒ 소피아가 휴대폰을 들어 사진을 찍는다(문장 11). 이 글은 사건이 일어난 순서 그대로 서술된 이야기이므로, 문장 번호를 따라가면 순서가 그대로 보인다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

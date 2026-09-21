@@ -4,7 +4,7 @@
 선지 배열을 다시 늘어놓고 ①②③… 을 다시 붙인 뒤, 정답 패널과 해설 속
 선지 번호까지 같은 표로 바꾼다. 지문·조판·해설 문장은 건드리지 않는다.
 """
-import re, glob, os, sys, random, collections
+import re, glob, os, sys, random, collections, json
 
 S = os.path.dirname(os.path.abspath(__file__))
 CIR = '①②③④⑤⑥⑦⑧⑨⑩'
@@ -102,6 +102,17 @@ def main(apply=False):
             rows.append(dict(f=f, cur=cur, n=len(fo[2])))
         assert rows, f'{name}: 한 건도 못 읽음'
         targets = plan_targets(rows, seed=abs(hash(name)) % 9973)
+        # plan.json 이 있으면 그 배분표를 따른다 — 눈에 띄는 패턴을 피하도록 미리 짠 표다
+        if os.path.exists(f'{S}/plan.json'):
+            book_plan = json.load(open(f'{S}/plan.json', encoding='utf-8'))
+            seen = collections.Counter()
+            for idx, r in enumerate(rows):
+                bk = r['f'].rsplit('/units/', 1)[0].rsplit('/', 1)[-1]
+                pk = {'독해01': '01', '독해02': '02', '독해03': '03'}.get(name, name)
+                seq = book_plan.get(bk, {}).get(pk)
+                if seq is None: continue
+                targets[idx] = seq[seen[bk]]
+                seen[bk] += 1
         for idx, r in enumerate(rows):
             before[name][r['cur']] += 1
             after[name][targets[idx]] += 1

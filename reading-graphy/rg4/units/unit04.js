@@ -102,15 +102,15 @@ K.push(sp(65));
 ["① How to Keep Trash Cans Clean",
  "② Farming Beetles for Better Crops",
  "③ The Best Pet Frogs in Australia",
- "④ The Bin Chicken That Fights Cane Toads",
- "⑤ Why People Give Birds Funny Names"].forEach(c => K.push(ch(c)));
+ "④ Why People Give Birds Funny Names",
+ "⑤ The Bin Chicken That Fights Cane Toads"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 22, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① People nicknamed the white ibis the “bin chicken.”",
  "② Cane toads were introduced to Australia in the 1930s.",
- "③ Cane toads had many natural enemies in Australia.",
- "④ The ibises flip the toads into the air.",
+ "③ The ibises flip the toads into the air.",
+ "④ Cane toads had many natural enemies in Australia.",
  "⑤ The ibises wash the toads in water before eating."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 22, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
@@ -118,8 +118,8 @@ K.push(sp(65));
 ["① the beetles damaging crops",
  "② the trash cans in the city",
  "③ the farmers in Australia",
- "④ the native animals of Australia",
- "⑤ the cane toads"].forEach(c => K.push(ch(c)));
+ "④ the cane toads",
+ "⑤ the native animals of Australia"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 22, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -287,8 +287,8 @@ K.push(spF(4, 49, 0.10));
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
 ["① 쓰레기통을 뒤지는 새의 습관",
- "② 호주에서 기르기 좋은 애완 개구리",
- "③ 수수두꺼비를 잡아먹는 흰따오기"].forEach(c =>
+ "② 수수두꺼비를 잡아먹는 흰따오기",
+ "③ 호주에서 기르기 좋은 애완 개구리"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 32, 0.26));
 
@@ -411,10 +411,10 @@ K.push(spF(5, 59, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 대상을 소개하고 사실을 알려 주는 설명문",
- "② 물건을 팔기 위해 만든 광고",
- "③ 하루 일을 적은 일기",
- "④ 안부를 전하는 편지",
+["① 물건을 팔기 위해 만든 광고",
+ "② 하루 일을 적은 일기",
+ "③ 안부를 전하는 편지",
+ "④ 대상을 소개하고 사실을 알려 주는 설명문",
  "⑤ 상상으로 지어낸 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
@@ -519,15 +519,15 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 2, main: "snatch food from people’s hands",
-    opts: ["① give food to people kindly", "② take food quickly from people’s hands", "③ cook food for hungry people"] },
+    opts: ["① take food quickly from people’s hands", "② give food to people kindly", "③ cook food for hungry people"] },
   { sn: 6, main: "these toads spread rapidly",
-    opts: ["① slowly disappeared from Australia", "② grew in number very quickly", "③ changed their color in water"] });
+    opts: ["① slowly disappeared from Australia", "② changed their color in water", "③ grew in number very quickly"] });
 K.push(spF(7, 22, 0.16));
 pairGrid(
   { sn: 8, main: "had no natural enemies",
     opts: ["① had many animals hunting them", "② had many baby toads every year", "③ had no animals hunting them"] },
   { sn: 9, main: "learned a way to eat them safely",
-    opts: ["① became sick after eating them", "② found how to eat them without danger", "③ started to keep them as pets"] });
+    opts: ["① found how to eat them without danger", "② became sick after eating them", "③ started to keep them as pets"] });
 K.push(spF(7, 24, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -647,10 +647,10 @@ K.push(spF(9, 62, 0.12));
 
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
-[["문장 1", [t("In Australia, there ", { size: 19 }), t("( are  /  is )", { size: 19, bold: true, color: NAVY }), t(" a bird called the white ibis.", { size: 19 })], "뒤에 오는 a bird가 진짜 주어예요."],
+[["문장 1", [t("In Australia, there ", { size: 19 }), t("( is  /  are )", { size: 19, bold: true, color: NAVY }), t(" a bird called the white ibis.", { size: 19 })], "뒤에 오는 a bird가 진짜 주어예요."],
  ["문장 4", [t("Cane toads ", { size: 19 }), t("( were  /  was )", { size: 19, bold: true, color: NAVY }), t(" introduced to Australia.", { size: 19 })], "주어 Cane toads는 복수예요."],
  ["문장 8", [t("They became a threat because they ", { size: 19 }), t("( had  /  have )", { size: 19, bold: true, color: NAVY }), t(" no natural enemies.", { size: 19 })], "became(과거)과 시제를 맞추세요."],
- ["문장 11", [t("They then wash them in water before ", { size: 19 }), t("( eating  /  eat )", { size: 19, bold: true, color: NAVY }), t(".", { size: 19 })], "전치사 before 뒤에는 ~ing!"],
+ ["문장 11", [t("They then wash them in water before ", { size: 19 }), t("( eat  /  eating )", { size: 19, bold: true, color: NAVY }), t(".", { size: 19 })], "전치사 before 뒤에는 ~ing!"],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
     cel(new Paragraph({ children: [t("(" + (i + 1) + ")", { size: 16, bold: true, color: "FFFFFF" })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 210 } }),
@@ -744,11 +744,11 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문12 ", { size: 17, bold: true, color: NAVY2 }), t("they(S)·are helping(△V)·This way(M)·control the number~", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 코코라는 이름의 고양이가 있다  (2) 그 편지는 내 친구에 의해 쓰였다  (3) “Small Star”라고 불리는 책이 많은 아이들에게 읽혔다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 ibis · toads · control        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 이유 · 반전 · 덧붙임 · 순서   2-2 [C] 문제 · [E] 마무리   2-3 ①", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 ibis · toads · control        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 이유 · 반전 · 덧붙임 · 순서   2-2 [C] 문제 · [E] 마무리   2-3 ④", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (a) → (d) → (b) → (c)  ·  The white ibis is helping control the number of cane toads in Australia.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) trash  (2) poison  (3) toads  (4) control        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ②  문장 6 ②  문장 8 ③  문장 9 ②", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ①  문장 6 ③  문장 8 ③  문장 9 ①", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 T · 4 T · 5 T · 6 F · 7 F · 8 F", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (a) → (d)", { size: 19, bold: true })], { after: 25 }),
@@ -758,16 +758,16 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) Fortunately, the white ibis learned a way to eat them safely.  (2) They then wash them in water before eating.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ④");
-B("이 글은 쓰레기통을 뒤져 ‘빈 치킨’이라 불리던 흰따오기(문장 1–2)가 골칫거리인 수수두꺼비를 안전하게 잡아먹어 그 수를 줄인다는 이야기다(문장 9–13). 주인공과 하는 일을 함께 담은 ④이 제목으로 적절하다. ①·⑤는 지엽적, ②·③는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 8에서 수수두꺼비는 호주에 천적이 없었기(no natural enemies) 때문에 위협이 되었다고 했다. 천적이 많았다는 ③이 본문과 반대된다. ①은 문장 2, ②는 문장 4, ④는 문장 10, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 쓰레기통을 뒤져 ‘빈 치킨’이라 불리던 흰따오기(문장 1–2)가 골칫거리인 수수두꺼비를 안전하게 잡아먹어 그 수를 줄인다는 이야기다(문장 9–13). 주인공과 하는 일을 함께 담은 ⑤이 제목으로 적절하다. ①·④는 지엽적, ②·③는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 8에서 수수두꺼비는 호주에 천적이 없었기(no natural enemies) 때문에 위협이 되었다고 했다. 천적이 많았다는 ④이 본문과 반대된다. ①은 문장 2, ②는 문장 4, ③는 문장 10, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) them은 앞 문장 6–8에서 계속 이야기해 온 cane toads를 가리킨다. 흰따오기가 안전하게 먹는 법을 배운 대상이 무엇인지 생각하면 된다 — 복수 지시어는 복수 명사를 받는다.", true);
 Hs("독해 04   배열 영작   ·   Cane toads were introduced to Australia in the 1930s.");
 B("문장 4를 그대로 복원하는 문제다. ① 첫 글자는 대문자 Cane.   ② 수동태 were introduced가 한 덩어리.   ③ in the 1930s — 연대 앞의 the를 빠뜨리지 않는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 ibis · toads · control     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 수수두꺼비를 안전하게 먹는 법을 익힌 흰따오기를 소개한다. ① 쓰레기통 습관은 별명의 유래일 뿐이고, ② 애완 개구리 이야기는 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 ibis · toads · control     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 수수두꺼비를 안전하게 먹는 법을 익힌 흰따오기를 소개한다. ① 쓰레기통 습관은 별명의 유래일 뿐이고, ③ 애완 개구리 이야기는 나오지 않는다.");
 B("1-2   ○표 할 세 단어: ibis(힌트① 주인공) · toads(힌트② 문제가 된 동물) · control(힌트③ 주인공이 하는 일). 나머지 셋(beetles · poison · trash)은 배경과 세부일 뿐 주제문에는 들어가지 않는다.");
 B("1-3   문장 5 — they는 수수두꺼비에 ○ (농부들이 기대한 대상).   문장 9 — them은 수수두꺼비에 ○.   문장 11 — They는 흰따오기, them은 수수두꺼비에 ○.");
 B("[학습 포인트]   문장 11이 이 지문의 백미다. 한 문장 안의 They와 them이 서로 다른 것을 가리킨다 — 주어 자리와 목적어 자리를 따로 확인하는 습관을 들이자.", true);
@@ -775,10 +775,10 @@ B("[학습 포인트]   문장 11이 이 지문의 백미다. 한 문장 안의 
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 이유 / 반전 / 덧붙임 / 순서     2-2 [C] 문제 · [E] 마무리     2-3 ①");
+Hs("STEP 2   글의 흐름   ·   2-1 이유 / 반전 / 덧붙임 / 순서     2-2 [C] 문제 · [E] 마무리     2-3 ④");
 B("2-1   문장 2 because — 별명이 붙은 '이유'.   문장 3 But — 나쁜 새에서 도움이 되는 새로 방향을 바꾸는 '반전'.   문장 7 Moreover — 피해를 하나 더 얹는 '덧붙임'.   문장 11 then — 뒤집은 다음의 '순서'.");
 B("2-2   [C] 문제(문장 6–8: 빠른 번식과 강한 독으로 토종 동물을 위협한다), [E] 마무리(문장 12–13: 두꺼비 수를 줄이는 데 도움이 된다). 보기의 '광고'는 이 글에 없는 역할이다.");
-B("2-3   정답 ①. 흰따오기와 수수두꺼비라는 대상을 소개하고 사실을 알려 주는 설명문이다. ② 가격·명령문이 없어 광고가 아니고, ③ I나 날짜가 없어 일기도 아니다.");
+B("2-3   정답 ④. 흰따오기와 수수두꺼비라는 대상을 소개하고 사실을 알려 주는 설명문이다. ① 가격·명령문이 없어 광고가 아니고, ② I나 날짜가 없어 일기도 아니다.");
 B("[학습 포인트]   문장 3의 But이 글 전체의 방향을 바꾼다. 마무리 직전이 아니라 도입부의 But은 '이제부터 진짜 이야기'라는 신호다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 control · Australia     3-3 (a) → (d) → (b) → (c)");
 B("3-1  재료 찾기 — (2) 문장 12에서 control에 ○: 따오기가 두꺼비 수에 하는 일이다. raise(늘리다)는 정반대. (3) 문장 8에서 Australia에 ○: 이 모든 일이 벌어지는 곳이다.");
@@ -787,11 +787,11 @@ B("3-3  정답 순서 — ⓐ The white ibis → ⓓ is helping control → ⓑ 
 B("[채점 포인트]  주인공(ⓐ)이 맨 앞, 마침표가 붙은 덩어리(ⓒ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) trash  (2) poison  (3) toads  (4) control");
 B("(1)은 문장 2의 trash, (2)는 문장 7의 poison, (3)은 문장 11의 toads, (4)는 문장 12의 control에서 가져온다. 요약문이 곧 이 글의 흐름이다: 별명 → 문제 → 해결.", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ②   문장 6 ②   문장 8 ③   문장 9 ②  (정답 선지는 무표시)");
-B("문장 2 snatch food from people’s hands   ① ✕ [반대] 사람에게 먹이를 준다 — 정반대.   ② ○ 사람 손에서 재빨리 낚아챈다.   ③ ✕ [무관] 요리를 한다는 말은 지문에 없다.");
-B("문장 6 these toads spread rapidly   ① ✕ [반대] 서서히 사라졌다 — 정반대.   ② ○ 수가 아주 빠르게 늘었다.   ③ ✕ [무관] 색이 변했다는 말은 지문에 없다.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ①   문장 6 ③   문장 8 ③   문장 9 ①  (정답 선지는 무표시)");
+B("문장 2 snatch food from people’s hands   ① ○ 사람 손에서 재빨리 낚아챈다.   ② ✕ [반대] 사람에게 먹이를 준다 — 정반대.   ③ ✕ [무관] 요리를 한다는 말은 지문에 없다.");
+B("문장 6 these toads spread rapidly   ① ✕ [반대] 서서히 사라졌다 — 정반대.   ② ✕ [무관] 색이 변했다는 말은 지문에 없다.   ③ ○ 수가 아주 빠르게 늘었다.");
 B("문장 8 had no natural enemies   ① ✕ [반대] 잡아먹는 동물이 많았다 — 정반대.   ② ✕ [무관] 새끼를 많이 낳았다는 말은 이 문장에 없다.   ③ ○ 잡아먹는 동물이 없었다.");
-B("문장 9 learned a way to eat them safely   ① ✕ [반대] 먹고 나서 병이 났다 — 정반대.   ② ○ 위험 없이 먹는 법을 찾아냈다.   ③ ✕ [무관] 애완용으로 기른다는 말은 지문에 없다.");
+B("문장 9 learned a way to eat them safely   ① ○ 위험 없이 먹는 법을 찾아냈다.   ② ✕ [반대] 먹고 나서 병이 났다 — 정반대.   ③ ✕ [무관] 애완용으로 기른다는 말은 지문에 없다.");
 B("[학습 포인트]  no는 단 한 글자로 문장을 통째로 뒤집는 말이다. no natural enemies를 '천적이 많다'로 읽으면 글 전체가 반대로 이해된다.", true);
 
 K.push(brk());

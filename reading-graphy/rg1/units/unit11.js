@@ -81,25 +81,25 @@ K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① The Best Lemonade Recipe for Summer",
  "② How to Grow Lemon Trees at Home",
- "③ Cool Drinks for Hot Summer Days",
- "④ Why Towels Are Good for Cleaning",
- "⑤ Careful with Lemons: They Can Burn Your Skin"].forEach(c => K.push(ch(c)));
+ "③ Careful with Lemons: They Can Burn Your Skin",
+ "④ Cool Drinks for Hot Summer Days",
+ "⑤ Why Towels Are Good for Cleaning"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Lemon juice can burn our skin in the sun.",
- "② After squeezing lemons, we should wash our hands well.",
- "③ You can take care of a sunburn from lemon juice at home.",
- "④ A cool, wet towel helps your itchiness and pain.",
- "⑤ A sunburn can never turn into a rash."].forEach(c => K.push(ch(c)));
+ "② A sunburn can never turn into a rash.",
+ "③ After squeezing lemons, we should wash our hands well.",
+ "④ You can take care of a sunburn from lemon juice at home.",
+ "⑤ A cool, wet towel helps your itchiness and pain."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) This가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① drinking cold lemonade in the sun",
  "② squeezing lemons for lemonade",
  "③ getting a sunburn from lemon juice",
- "④ washing your hands with hot water",
- "⑤ putting a cool, wet towel on your skin"].forEach(c => K.push(ch(c)));
+ "④ putting a cool, wet towel on your skin",
+ "⑤ washing your hands with hot water"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -251,7 +251,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 여름에 시원한 레모네이드 만드는 법", "② 레몬즙이 햇볕에서 일으키는 피부 화상", "③ 레몬 나무를 기르는 방법"].forEach(c =>
+["① 여름에 시원한 레모네이드 만드는 법",
+ "② 레몬 나무를 기르는 방법",
+ "③ 레몬즙이 햇볕에서 일으키는 피부 화상"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -356,8 +358,8 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "레모네이드를 만들 때 일어나는 일 ⓐ~ⓓ를 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ You squeeze lemons to make lemonade.",
-      "ⓑ You wash the area with mild soap and water.",
+  ...["ⓐ You wash the area with mild soap and water.",
+      "ⓑ You squeeze lemons to make lemonade.",
       "ⓒ You go out in the sun and get a sunburn.",
       "ⓓ You put a cool, wet towel on your skin."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
@@ -397,22 +399,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문7 ", { size: 17, bold: true, color: NAVY2 }), t("sunburn(S)·can turn into(△V)·if[네모]·it(S′)·is(△V′)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 방과 후에 축구하는 것을 좋아한다  (2) 저녁 먹기 전에 창문을 닫아라  (3) 노래하는 것을 좋아한다면, 우리 동아리에 들어와!", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 lemon · careful · skin   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 lemon · careful · skin   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 T · 5 F · 6 F · 7 T · 8 F", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (b) → (d)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (a) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ⑤");
-B("이 글은 레몬즙이 햇볕에서 피부를 태울 수 있다는 경고(문장 2–3·6)와 그 대처법(문장 9–12)을 알려 준다. 소재와 경고를 함께 담은 ⑤이 제목이다. ①·③는 지엽적, ②·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ⑤");
-B("문장 7에서 화상이 심하면 발진으로 번질 수도 있다고 했다. 절대 그렇지 않다는 ⑤은 본문과 반대다. ①은 문장 3, ②는 문장 5, ③는 문장 9, ④는 문장 11–12에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 레몬즙이 햇볕에서 피부를 태울 수 있다는 경고(문장 2–3·6)와 그 대처법(문장 9–12)을 알려 준다. 소재와 경고를 함께 담은 ③이 제목이다. ①·④는 지엽적, ②·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 7에서 화상이 심하면 발진으로 번질 수도 있다고 했다. 절대 그렇지 않다는 ②은 본문과 반대다. ①은 문장 3, ③는 문장 5, ④는 문장 9, ⑤는 문장 11–12에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) This는 바로 앞 문장 11의 행동, 곧 차고 젖은 수건을 피부에 올리는 일을 가리킨다. This는 앞 문장 전체를 받을 수 있다.", true);
 Hs("독해 04   배열 영작   ·   We squeeze lemons to make lemonade.");
 B("문장 4를 그대로 복원한다. ㄱ 첫 글자는 대문자 We.   ㄴ '~하기 위해'는 to+동사원형 to make.   ㄷ 마지막은 lemonade.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 lemon · careful · skin     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 레몬즙이 햇볕에서 피부를 태우는 일과 그 대처를 알려 준다. ① 만드는 법은 한 문장뿐이고, ③ 나무 기르기는 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 lemon · careful · skin     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 레몬즙이 햇볕에서 피부를 태우는 일과 그 대처를 알려 준다. ① 만드는 법은 한 문장뿐이고, ② 나무 기르기는 나오지 않는다.");
 B("1-2   ○표 할 세 단어: lemon(힌트① 조심할 것) · careful(힌트② 강조하는 태도) · skin(힌트③ 다치는 곳). lemonade · towel · soap는 본문에 있지만 주제문에는 들어가지 않는다.");
 B("1-3   문장 7 — it은 햇볕 화상에 ○(앞의 The sunburn).   문장 9 — it도 햇볕 화상에 ○(집에서 돌볼 대상).   문장 12 — This는 찬 수건 올리기에 ○(문장 11).");
 B("[학습 포인트]   This·it은 단어 하나만이 아니라 앞 문장의 행동 전체를 대신하기도 한다. 문장 5의 this도 '레몬을 짜는 일'이었다.", true);
@@ -423,8 +425,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 T · 5 F · 6 F · 7 T · 8 F");
    B("1 F — 문장 11: 뜨거운(hot) 수건이 아니라 차고 젖은(cool, wet) 수건이다.   2 T — 문장 4.   3 T — 문장 1.   4 T — 문장 10.   5 F — 문장 9: 병원이 아니라 집에서 돌볼 수 있다.   6 F — 문장 5: 짜기 전(before)이 아니라 짠 뒤(after)에 씻는다.   7 T — 문장 7.   8 F — 문장 3: 비(rain)가 아니라 햇볕(sun)에서 탄다.", true);
-Hs("R2   사건 순서   ·   (a) → (c) → (b) → (d)");
-B("ⓐ 레모네이드를 만들려고 레몬을 짠다(문장 4) → ⓒ 손을 안 씻고 햇볕에 나가 화상을 입는다(문장 6) → ⓑ 순한 비누와 물로 그 부위를 씻는다(문장 10) → ⓓ 차고 젖은 수건을 얹는다(문장 11). 원인에서 대처로 이어지는 순서다.", true);
+Hs("R2   사건 순서   ·   (b) → (c) → (a) → (d)");
+B("ⓑ 레모네이드를 만들려고 레몬을 짠다(문장 4) → ⓒ 손을 안 씻고 햇볕에 나가 화상을 입는다(문장 6) → ⓐ 순한 비누와 물로 그 부위를 씻는다(문장 10) → ⓓ 차고 젖은 수건을 얹는다(문장 11). 원인에서 대처로 이어지는 순서다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

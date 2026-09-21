@@ -85,8 +85,8 @@ K.push(sp(65));
 ["① How to Make Wooden Chairs and Ladders",
  "② The History of Plastic in Denmark",
  "③ The Most Popular Toys of Today",
- "④ Two Fires and the Start of LEGO Bricks",
- "⑤ How to Open Your Own Shop"].forEach(c => K.push(ch(c)));
+ "④ How to Open Your Own Shop",
+ "⑤ Two Fires and the Start of LEGO Bricks"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
@@ -99,8 +99,8 @@ K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) this가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the shop he opened in 1916",
- "② the fire that burned down his factory",
- "③ the wooden toys he made",
+ "② the wooden toys he made",
+ "③ the fire that burned down his factory",
  "④ the machine for plastic toys",
  "⑤ the name “LEGO”"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -408,11 +408,11 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (d) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ④");
-B("가게를 태운 1924년 화재(문장 4)와 공장을 태운 1942년 화재(문장 9)를 새로운 기회로 바꾼 올레의 이야기이며, 그 끝에 레고 블록이 태어난다(문장 15). 두 번의 화재와 결말을 함께 담은 ④이 제목으로 적절하다. ①·②은 한 부분만 건드린 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ⑤");
+B("가게를 태운 1924년 화재(문장 4)와 공장을 태운 1942년 화재(문장 9)를 새로운 기회로 바꾼 올레의 이야기이며, 그 끝에 레고 블록이 태어난다(문장 15). 두 번의 화재와 결말을 함께 담은 ⑤이 제목으로 적절하다. ①·②은 한 부분만 건드린 지엽적 오답, ③·④는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ①");
 B("문장 5–6에서 올레는 화재를 새로운 기회로 보고 더 큰 작업장을 지었다고 했으므로, 포기했다는 ①은 본문과 반대된다. ②은 문장 1, ③는 문장 3, ④는 문장 7, ⑤는 문장 13에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ②");
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) this는 바로 앞 문장 9의 화재, 곧 공장을 태워 버린 1942년의 불을 가리킨다. 문장 5의 this는 1924년 가게 화재였다 — 같은 this라도 가리키는 것이 다르다.", true);
 Hs("독해 04   배열 영작   ·   But Ole saw this as a new chance.");
 B("문장 5를 그대로 복원하는 문제다. ① 첫 글자는 대문자 But.   ② 'A를 B로 보다'는 see A as B — saw this as ~ 순서.   ③ a new chance 앞의 관사 a를 빠뜨리지 않는다.", true);

@@ -76,17 +76,17 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① How to Become the King of England",
- "② The History of Paper Money in Canada",
- "③ Australia’s 5-Dollar Note Says Goodbye to the Queen",
+["① Australia’s 5-Dollar Note Says Goodbye to the Queen",
+ "② How to Become the King of England",
+ "③ The History of Paper Money in Canada",
  "④ Why Queen Elizabeth II Loved Australia",
  "⑤ The Best Way to Design Paper Money"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Australia will replace the Queen’s image on its 5-dollar note.",
- "② Canada, Australia, and New Zealand were once ruled by Britain.",
- "③ Australia decided to put King Charles III’s image on its 5-dollar note.",
+ "② Australia decided to put King Charles III’s image on its 5-dollar note.",
+ "③ Canada, Australia, and New Zealand were once ruled by Britain.",
  "④ Queen Elizabeth II passed away in 2022.",
  "⑤ Queen Elizabeth’s image has been on Australian money since 1953."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -95,8 +95,8 @@ K.push(sp(65));
 ["① Canada, Australia, and New Zealand",
  "② the people of Australia",
  "③ the central bank of Australia",
- "④ the British monarchy",
- "⑤ the children of King Charles III"].forEach(c => K.push(ch(c)));
+ "④ the children of King Charles III",
+ "⑤ the British monarchy"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -245,7 +245,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 여왕이 남긴 편지와 쪽지", "② 호주 5달러 지폐 속 초상이 바뀌는 일", "③ 영국 왕실의 왕위 계승 순서"].forEach(c =>
+["① 여왕이 남긴 편지와 쪽지",
+ "② 영국 왕실의 왕위 계승 순서",
+ "③ 호주 5달러 지폐 속 초상이 바뀌는 일"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -351,9 +353,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "호주 지폐를 �
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Australia decided to change its 5-dollar note.",
-      "ⓑ Queen Elizabeth II passed away and her son became king.",
-      "ⓒ Queen Elizabeth’s image went on Australian money in 1953.",
-      "ⓓ Britain ruled Canada, Australia, and New Zealand."]
+      "ⓑ Britain ruled Canada, Australia, and New Zealand.",
+      "ⓒ Queen Elizabeth II passed away and her son became king.",
+      "ⓓ Queen Elizabeth’s image went on Australian money in 1953."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -391,22 +393,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문10 ", { size: 17, bold: true, color: NAVY2 }), t("But[네모]·it(S)·could be(△V)·to be more independent~(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 이 노래는 많은 학생들에게 사랑받았다  (2) 그녀는 설거지를 함으로써 엄마를 돕는다  (3) 그 케이크는 달걀과 우유를 섞어 미나에 의해 만들어졌다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 Australia · image · identity   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 Australia · image · identity   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 T · 5 T · 6 F · 7 F · 8 T", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (b) → (a)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (c) → (a)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ③");
-B("이 글은 호주가 5달러 지폐에서 여왕의 초상을 바꾸기로 한 일(문장 1·8)과 그 배경·의미(문장 4–5, 10)를 다룬다. 소재와 핵심을 담은 ③이 적절하다. ②·⑤는 지엽적, ①·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 8에서 호주는 여왕의 초상을 찰스 3세의 초상으로 바꾸지 ‘않기로’ 결정했다. ①은 문장 1, ②는 문장 4, ④은 문장 6, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 01   제목   ·   정답 ①");
+B("이 글은 호주가 5달러 지폐에서 여왕의 초상을 바꾸기로 한 일(문장 1·8)과 그 배경·의미(문장 4–5, 10)를 다룬다. 소재와 핵심을 담은 ①이 적절하다. ③·⑤는 지엽적, ②·④는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 8에서 호주는 여왕의 초상을 찰스 3세의 초상으로 바꾸지 ‘않기로’ 결정했다. ①은 문장 1, ③는 문장 4, ④은 문장 6, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) their는 바로 앞의 the British monarchy(영국 왕실)를 받는다. 세 나라가 왕실을 기리기 위해 ‘왕실의’ 초상을 돈에 넣은 것이므로, 주어인 these countries와 다른 대상이다.", true);
 Hs("독해 04   배열 영작   ·   The new design will better represent Australia’s history and heritage.");
 B("문장 2를 그대로 복원한다. ① 첫 글자는 대문자 The.   ② 조동사 will 뒤에는 동사원형 represent.   ③ better는 동사 앞에 놓여 ‘더 잘’이라는 뜻이 된다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 Australia · image · identity     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 호주 5달러 지폐 속 초상이 바뀌는 일을 다룬다. ① note를 ‘쪽지’로 읽으면 안 되고, ③ 왕위 계승은 배경으로만 나온다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 Australia · image · identity     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 호주 5달러 지폐 속 초상이 바뀌는 일을 다룬다. ① note를 ‘쪽지’로 읽으면 안 되고, ② 왕위 계승은 배경으로만 나온다.");
 B("1-2   ○표 할 세 단어: Australia(힌트① 주인공 나라) · image(힌트② 지폐에서 바뀌는 것) · identity(힌트③ 변화가 보여 주려는 것). Britain · king · tradition은 배경일 뿐 주제문에 들어가지 않는다.");
 B("1-3   문장 5 — their는 영국 왕실에 ○ (돈에 실린 초상의 주인).   문장 6 — this tradition은 왕실 초상을 넣기에 ○ (문장 5의 그 관습).   문장 10 — it은 새 지폐 디자인에 ○ (문장 9의 a new money design).");
 B("[학습 포인트]   한 문장 안에서도 지시어가 가리키는 대상은 바뀐다. 문장 5의 these countries는 세 나라, their는 영국 왕실이다 — 주어와 소유격을 따로 확인하는 습관을 들이자.", true);
@@ -417,8 +419,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 T · 3 F · 4 T · 5 T · 6 F · 7 F · 8 T");
    B("1 F — 문장 6: 2012년이 아니라 2022년이다.   2 T — 문장 7.   3 F — 문장 8: 찰스 3세의 초상으로 바꾸지 않기로 했다.   4 T — 문장 9.   5 T — 문장 1.   6 F — 문장 9: 작은 변화가 아니라 큰 변화(a big change)다.   7 F — 문장 2: 영국이 아니라 호주(Australia’s)의 역사와 유산이다.   8 T — 문장 4.", true);
-Hs("R2   사건 순서   ·   (d) → (c) → (b) → (a)");
-B("ⓓ 영국이 세 나라를 지배한다(문장 4) → ⓒ 1953년부터 여왕의 초상이 호주 돈에 실린다(문장 9) → ⓑ 2022년 여왕이 세상을 떠나고 아들이 왕이 된다(문장 6–7) → ⓐ 호주가 지폐를 바꾸기로 한다(문장 1). 글은 결정(문장 1)부터 말했지만 실제 순서는 정반대다 — 서술 순서와 사건 순서를 구분하자.", true);
+Hs("R2   사건 순서   ·   (b) → (d) → (c) → (a)");
+B("ⓑ 영국이 세 나라를 지배한다(문장 4) → ⓓ 1953년부터 여왕의 초상이 호주 돈에 실린다(문장 9) → ⓒ 2022년 여왕이 세상을 떠나고 아들이 왕이 된다(문장 6–7) → ⓐ 호주가 지폐를 바꾸기로 한다(문장 1). 글은 결정(문장 1)부터 말했지만 실제 순서는 정반대다 — 서술 순서와 사건 순서를 구분하자.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

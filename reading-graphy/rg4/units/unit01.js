@@ -104,8 +104,8 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① The bees get the vaccine through a shot.",
- "② Honeybees help plants produce fruits and seeds.",
+["① Honeybees help plants produce fruits and seeds.",
+ "② The bees get the vaccine through a shot.",
  "③ A bacterial disease can destroy large bee families.",
  "④ The medicine goes into the queen’s eggs when she eats it.",
  "⑤ Bees are disappearing due to climate change and pesticides."].forEach(c => K.push(ch(c)));
@@ -113,8 +113,8 @@ K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the bacterial disease",
- "② one of the queen bee’s eggs",
- "③ the medicine in the queen bee’s food",
+ "② the medicine in the queen bee’s food",
+ "③ one of the queen bee’s eggs",
  "④ the food crops in the U.S.",
  "⑤ the honey from the bees"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -408,9 +408,9 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 물건을 팔기 위해 만든 광고",
- "② 하루 일을 적은 일기",
- "③ 사실을 알려 주는 설명문",
+["① 사실을 알려 주는 설명문",
+ "② 물건을 팔기 위해 만든 광고",
+ "③ 하루 일을 적은 일기",
  "④ 안부를 전하는 편지",
  "⑤ 상상으로 지어낸 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
@@ -516,15 +516,15 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 1, main: "help plants produce fruits and seeds",
-    opts: ["① make plants able to grow fruits", "② stop plants from making seeds", "③ plant new trees in a forest"] },
+    opts: ["① stop plants from making seeds", "② plant new trees in a forest", "③ make plants able to grow fruits"] },
   { sn: 3, main: "are suffering from a bacterial disease",
-    opts: ["① are getting sick because of a disease", "② are getting healthier every year", "③ are moving to a new country"] });
+    opts: ["① are getting healthier every year", "② are getting sick because of a disease", "③ are moving to a new country"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 6, main: "Instead of giving the bees a shot",
-    opts: ["① by giving every bee a shot", "② without giving the bees a shot", "③ after feeding the bees some honey"] },
+    opts: ["① by giving every bee a shot", "② after feeding the bees some honey", "③ without giving the bees a shot"] },
   { sn: 9, main: "they are disappearing",
-    opts: ["① their number is going down", "② their number is growing fast", "③ they are changing their color"] });
+    opts: ["① their number is growing fast", "② their number is going down", "③ they are changing their color"] });
 K.push(spF(7, 150, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -602,9 +602,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "꿀벌에게 일어
 K.push(sp(120));
 K.push(box([
   ...["ⓐ A company developed a vaccine for the bees.",
-      "ⓑ Many bees started suffering from a bacterial disease.",
-      "ⓒ The medicine was mixed into the queen bee’s food.",
-      "ⓓ The medicine went into her eggs and protected other bees."]
+      "ⓑ The medicine was mixed into the queen bee’s food.",
+      "ⓒ The medicine went into her eggs and protected other bees.",
+      "ⓓ Many bees started suffering from a bacterial disease."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -645,7 +645,7 @@ K.push(spF(9, 380, 0.12));
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
 [["문장 1", [t("Honeybees ", { size: 19 }), t("( is  /  are )", { size: 19, bold: true, color: NAVY }), t(" important insects.", { size: 19 })], "주어 Honeybees는 복수예요."],
- ["문장 4", [t("This disease can ", { size: 19 }), t("( destroys  /  destroy )", { size: 19, bold: true, color: NAVY }), t(" large bee families.", { size: 19 })], "조동사 can 뒤에는 어떤 형태가 올까요?"],
+ ["문장 4", [t("This disease can ", { size: 19 }), t("( destroy  /  destroys )", { size: 19, bold: true, color: NAVY }), t(" large bee families.", { size: 19 })], "조동사 can 뒤에는 어떤 형태가 올까요?"],
  ["문장 5", [t("A company developed a vaccine ", { size: 19 }), t("( to protect  /  protect )", { size: 19, bold: true, color: NAVY }), t(" the bees.", { size: 19 })], "'~하기 위해'는 to+동사원형!"],
  ["문장 7", [t("When the queen ", { size: 19 }), t("( eats  /  eat )", { size: 19, bold: true, color: NAVY }), t(" it, the medicine goes into her eggs.", { size: 19 })], "the queen은 3인칭 단수예요."],
 ].forEach(([n, runs, hint], i) => {
@@ -740,13 +740,13 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 그녀는 새 자전거를 사기 위해 돈을 모았다  (2) 이 빵은 우리 엄마에 의해 만들어진다  (3) 그 편지들은 제시간에 도착하기 위해 일찍 보내진다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 bees · vaccine · important        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 이유 · 반전 · 결과 · 때   2-2 [B] 문제 · [E] 마무리   2-3 ③", { size: 19, bold: true })], { after: 25 }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 이유 · 반전 · 결과 · 때   2-2 [B] 문제 · [E] 마무리   2-3 ①", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (a) → (d) → (b) → (c)  ·  Thanks to the vaccine, more bees can continue their important work of spreading pollen.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) important  (2) food  (3) disease  (4) vaccine        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 1 ①  문장 3 ①  문장 6 ②  문장 9 ①", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 1 ③  문장 3 ②  문장 6 ③  문장 9 ②", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 F · 5 F · 6 T · 7 T · 8 F", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (c) → (d)", { size: 19, bold: true })], { after: 25 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (b) → (c)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(e) · 2(b) · 3(f) · 4(a) · 5(c) · 6(d)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) are  (2) destroy  (3) to protect  (4) eats", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) insects (2) disease (3) destroy (4) vaccine (5) shot (6) eggs (7) disappearing (8) pollen", { size: 19, bold: true })], { after: 25 }),
@@ -755,9 +755,9 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ①");
 B("이 글은 세균성 질병에 걸린 꿀벌(문장 3–4)과 그들을 지키기 위해 개발된 백신(문장 5–7)을 소개한다. 소재(honeybees)와 핵심(vaccine)을 함께 담은 ①이 제목으로 적절하다. ③·⑤는 지엽적, ②·④은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ①");
-B("문장 6에서 벌에게 주사를 놓는 대신(Instead of giving the bees a shot) 약을 여왕벌의 먹이에 섞는다고 했다. 주사로 맞힌다는 ①가 본문과 반대다. ②은 문장 1, ③은 문장 4, ④은 문장 7, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ③");
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 6에서 벌에게 주사를 놓는 대신(Instead of giving the bees a shot) 약을 여왕벌의 먹이에 섞는다고 했다. 주사로 맞힌다는 ②가 본문과 반대다. ①은 문장 1, ③은 문장 4, ④은 문장 7, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) it은 바로 앞 문장 6의 the medicine, 곧 여왕벌의 먹이에 섞인 그 약을 가리킨다. 여왕벌이 먹는 것이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   However, many bees are suffering from a bacterial disease.");
 B("문장 3을 그대로 복원하는 문제다. ① 첫 글자는 대문자 However — 뒤의 콤마도 함께.   ② 진행형은 are suffering.   ③ suffer from ~ — '~로 고통받다'의 from 자리를 지킨다.", true);
@@ -770,10 +770,10 @@ B("[학습 포인트]   문장 7이 이 지문의 백미다. 한 문장 안에�
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 이유 / 반전 / 결과 / 때     2-2 [B] 문제 · [E] 마무리     2-3 ③");
+Hs("STEP 2   글의 흐름   ·   2-1 이유 / 반전 / 결과 / 때     2-2 [B] 문제 · [E] 마무리     2-3 ①");
 B("2-1   문장 1 because — 벌이 중요한 '이유'.   문장 3 However — 방향을 바꾸는 '반전'.   문장 5 So — 병이 퍼진 '결과'로 백신을 만들었다.   문장 7 When — 여왕벌이 약을 먹는 '때'.");
 B("2-2   [B] 문제(문장 3–4: 세균성 질병이 벌 가족을 무너뜨린다), [E] 마무리(문장 10: 더 많은 벌이 일을 이어 갈 수 있다). 보기의 '요리법'은 이 글에 없는 역할이다.");
-B("2-3   정답 ③. 꿀벌과 백신이라는 대상을 소개하고 사실을 알려 주는 설명문이다. ① 가격·명령문이 없어 광고가 아니고, ② I나 날짜가 없어 일기도 아니다.");
+B("2-3   정답 ①. 꿀벌과 백신이라는 대상을 소개하고 사실을 알려 주는 설명문이다. ② 가격·명령문이 없어 광고가 아니고, ③ I나 날짜가 없어 일기도 아니다.");
 B("[학습 포인트]   However와 So만 표시해도 '문제 → 해결'의 뼈대가 드러난다. 설명문은 이 두 신호를 따라가면 절반은 읽은 것이다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 important · spreading     3-3 (a) → (d) → (b) → (c)");
 B("3-1  재료 찾기 — (2) 문장 10에서 important에 ○: 벌의 일에 대한 글쓴이의 평가다. (3) spreading에 ○: 벌은 꽃가루를 '퍼뜨린다'. 주제문의 재료는 언제나 본문 안에 있다.");
@@ -782,11 +782,11 @@ B("3-3  정답 순서 — ⓐ Thanks to the vaccine, → ⓓ more bees can conti
 B("[채점 포인트]  콤마가 붙은 덩어리(ⓐ)가 맨 앞, 마침표가 붙은 덩어리(ⓒ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) important  (2) food  (3) disease  (4) vaccine");
 B("(1)은 문장 1의 important, (2)는 문장 9의 food production, (3)은 문장 3의 disease, (4)는 문장 5의 vaccine에서 가져온다. 요약문이 곧 이 글의 흐름이다: 중요성 → 문제 → 해결.", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 1 ①   문장 3 ①   문장 6 ②   문장 9 ①  (정답 선지는 무표시)");
-B("문장 1 help plants produce fruits and seeds   ① ○ 식물이 열매를 맺을 수 있게 해 준다.   ② ✕ [반대] 씨를 못 맺게 막는다 — 정반대.   ③ ✕ [무관] 숲에 나무를 심는다는 말은 지문에 없다.");
-B("문장 3 are suffering from a bacterial disease   ① ○ 병 때문에 아프다.   ② ✕ [반대] 해마다 더 건강해진다 — 정반대.   ③ ✕ [무관] 다른 나라로 옮겨 간다는 말은 지문에 없다.");
-B("문장 6 Instead of giving the bees a shot   ① ✕ [반대] 모든 벌에게 주사를 놓는다 — 정반대.   ② ○ 벌에게 주사를 놓지 않고.   ③ ✕ [무관] 꿀을 먹인다는 말은 지문에 없다.");
-B("문장 9 they are disappearing   ① ○ 수가 줄고 있다.   ② ✕ [반대] 수가 빠르게 늘고 있다 — 정반대.   ③ ✕ [무관] 색이 변한다는 말은 지문에 없다.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 1 ③   문장 3 ②   문장 6 ③   문장 9 ②  (정답 선지는 무표시)");
+B("문장 1 help plants produce fruits and seeds   ① ✕ [반대] 씨를 못 맺게 막는다 — 정반대.   ② ✕ [무관] 숲에 나무를 심는다는 말은 지문에 없다.   ③ ○ 식물이 열매를 맺을 수 있게 해 준다.");
+B("문장 3 are suffering from a bacterial disease   ① ✕ [반대] 해마다 더 건강해진다 — 정반대.   ② ○ 병 때문에 아프다.   ③ ✕ [무관] 다른 나라로 옮겨 간다는 말은 지문에 없다.");
+B("문장 6 Instead of giving the bees a shot   ① ✕ [반대] 모든 벌에게 주사를 놓는다 — 정반대.   ② ✕ [무관] 꿀을 먹인다는 말은 지문에 없다.   ③ ○ 벌에게 주사를 놓지 않고.");
+B("문장 9 they are disappearing   ① ✕ [반대] 수가 빠르게 늘고 있다 — 정반대.   ② ○ 수가 줄고 있다.   ③ ✕ [무관] 색이 변한다는 말은 지문에 없다.");
 B("[학습 포인트]  Instead of ~는 '~하는 대신'이라는 뜻으로 방향을 뒤집는 말이다. 이 한 마디를 놓치면 정답과 정반대인 선지를 고르게 된다.", true);
 
 K.push(brk());
@@ -794,8 +794,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 F · 5 F · 6 T · 7 T · 8 F");
    B("1 F — 문장 8: 너무 늦은 게 아니라 딱 알맞은 때(the right moment)였다.   2 T — 문장 6.   3 T — 문장 1.   4 F — 문장 6: 주사를 놓는 대신 먹이에 섞는다.   5 F — 문장 2: 절반이 아니라 3분의 1(one-third)이다.   6 T — 문장 4.   7 T — 문장 9.   8 F — 문장 7: 날개가 아니라 알(eggs)로 들어간다.  거짓 문장은 모두 한 요소(half, a shot, wings, too late)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (a) → (c) → (d)");
-B("ⓑ 많은 벌이 세균성 질병에 걸린다(문장 3) → ⓐ 한 회사가 백신을 개발한다(문장 5) → ⓒ 약을 여왕벌의 먹이에 섞는다(문장 6) → ⓓ 약이 알로 들어가 다른 벌을 지킨다(문장 7). '문제 → 해결 → 방법 → 결과' 순서로 읽으면 된다.", true);
+Hs("R2   사건 순서   ·   (d) → (a) → (b) → (c)");
+B("ⓓ 많은 벌이 세균성 질병에 걸린다(문장 3) → ⓐ 한 회사가 백신을 개발한다(문장 5) → ⓑ 약을 여왕벌의 먹이에 섞는다(문장 6) → ⓒ 약이 알로 들어가 다른 벌을 지킨다(문장 7). '문제 → 해결 → 방법 → 결과' 순서로 읽으면 된다.", true);
 Hs("R3   영영풀이   ·   1 (e) · 2 (b) · 3 (f) · 4 (a) · 5 (c) · 6 (d)");
 B("insect = 다리가 여섯 개인 작은 동물 · destroy = 완전히 부수다 · vaccine = 병에 걸리지 않게 해 주는 약 · mix = 둘 이상을 한데 섞다 · disappear = 사라져서 보이지 않다 · spread = 여러 곳으로 퍼뜨리다.", true);
 Hs("R4   어법 기초   ·   (1) are  (2) destroy  (3) to protect  (4) eats");

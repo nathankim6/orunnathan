@@ -79,10 +79,10 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① How to Build a Spaceship with a Camera",
- "② Dimorphos: An Asteroid with Two Moons",
- "③ The 10 Months of a Space Trip",
- "④ NASA\u2019s Test: Changing an Asteroid\u2019s Path",
+["① NASA\u2019s Test: Changing an Asteroid\u2019s Path",
+ "② How to Build a Spaceship with a Camera",
+ "③ Dimorphos: An Asteroid with Two Moons",
+ "④ The 10 Months of a Space Trip",
  "⑤ Why People Love Space Movies"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
@@ -96,9 +96,9 @@ K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① the camera on the spaceship",
- "② the spaceship NASA built",
- "③ the asteroid Dimorphos",
- "④ the path of an asteroid",
+ "② the asteroid Dimorphos",
+ "③ the path of an asteroid",
+ "④ the spaceship NASA built",
  "⑤ a movie about the Earth"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -357,9 +357,9 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "DART 실험의 과정 ⓐ~ⓓ를 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ NASA wanted to see if hitting an asteroid could change its path.",
-      "ⓑ The spaceship crashed into Dimorphos and changed its path.",
-      "ⓒ NASA built a spaceship and sent it into space.",
+  ...["ⓐ The spaceship crashed into Dimorphos and changed its path.",
+      "ⓑ NASA built a spaceship and sent it into space.",
+      "ⓒ NASA wanted to see if hitting an asteroid could change its path.",
       "ⓓ The spaceship followed Dimorphos for 10 months."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -401,14 +401,14 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 asteroid · orbit · ready   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 F · 5 T · 6 T · 7 T · 8 F", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (d) → (b)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (b) → (d) → (a)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ④");
-B("이 글은 소행성 충돌이 실제로 가능한지 묻고(문장 3), NASA가 DART 실험으로 소행성의 궤도를 바꾼 일(문장 4–9)을 소개한다. 소재와 결과를 함께 담은 ④이 제목으로 적절하다. ①·③은 세부 사항만 담은 지엽적 오답, ②·⑤는 본문에 근거가 없다.", true);
+Hs("독해 01   제목   ·   정답 ①");
+B("이 글은 소행성 충돌이 실제로 가능한지 묻고(문장 3), NASA가 DART 실험으로 소행성의 궤도를 바꾼 일(문장 4–9)을 소개한다. 소재와 결과를 함께 담은 ①이 제목으로 적절하다. ②·④은 세부 사항만 담은 지엽적 오답, ③·⑤는 본문에 근거가 없다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ②");
 B("문장 7에서 우주선은 디모르포스를 10개월(10 months) 동안 따라갔다. 이를 '10일'로 바꾼 ②가 본문과 다르다. ①은 문장 4, ③은 문장 6, ④은 문장 9, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ②");
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) it은 같은 문장 앞부분의 a spaceship을 가리킨다. NASA가 만들어 우주로 보낸 것이 무엇인지 보면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   In 2022, NASA did an experiment called DART.");
 B("문장 4를 그대로 복원하는 문제다. ① 첫 글자는 대문자 In.   ② In 2022 뒤의 콤마를 빠뜨리지 않는다.   ③ an experiment called DART — called 이하가 앞의 명사를 꾸민다.", true);
@@ -424,8 +424,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 T · 3 F · 4 F · 5 T · 6 T · 7 T · 8 F");
    B("1 F — 문장 8: 천천히가 아니라 아주 빠르게(fast) 충돌했다.   2 T — 문장 4.   3 F — 문장 6: 카메라 없이가 아니라 카메라가 달린(with) 우주선이다.   4 F — 문장 7: 10일이 아니라 10개월(months)이다.   5 T — 문장 10.   6 T — 문장 7.   7 T — 문장 1.   8 F — 문장 11: 연구를 멈춘 것이 아니라 여전히(still) 연구 중이다.  거짓 문장은 모두 한 요소(without, days, slowly, stopped)만 비튼 것이다 — 그 한 단어를 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (a) → (c) → (d) → (b)");
-B("ⓐ 소행성을 때리면 궤도가 바뀌는지 확인하려 한다(문장 5) → ⓒ 우주선을 만들어 우주로 보낸다(문장 6) → ⓓ 우주선이 디모르포스를 10개월 따라간다(문장 7) → ⓑ 우주선이 충돌해 궤도를 바꾼다(문장 8). 목표 → 준비 → 추적 → 실행의 네 단계다 — 실험 글은 이 순서를 따라 읽으면 흐름이 잡힌다.", true);
+Hs("R2   사건 순서   ·   (c) → (b) → (d) → (a)");
+B("ⓒ 소행성을 때리면 궤도가 바뀌는지 확인하려 한다(문장 5) → ⓑ 우주선을 만들어 우주로 보낸다(문장 6) → ⓓ 우주선이 디모르포스를 10개월 따라간다(문장 7) → ⓐ 우주선이 충돌해 궤도를 바꾼다(문장 8). 목표 → 준비 → 추적 → 실행의 네 단계다 — 실험 글은 이 순서를 따라 읽으면 흐름이 잡힌다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

@@ -78,18 +78,18 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Pickleball: A Fun, Easy Sport for All Ages",
- "② A Paddle and a Plastic Ball with Holes",
- "③ Why Pickleball Courts Are So Small",
- "④ How to Make Pickles at Home",
+["① A Paddle and a Plastic Ball with Holes",
+ "② Why Pickleball Courts Are So Small",
+ "③ How to Make Pickles at Home",
+ "④ Pickleball: A Fun, Easy Sport for All Ages",
  "⑤ The Long History of Tennis and Badminton"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Pickleball mixes ping-pong, tennis, and badminton.",
- "② A pickleball court is bigger than a tennis court.",
- "③ Pickleball is easy to learn and gentle on the body.",
- "④ In the past, pickleball was mostly enjoyed by the elderly.",
+ "② Pickleball is easy to learn and gentle on the body.",
+ "③ In the past, pickleball was mostly enjoyed by the elderly.",
+ "④ A pickleball court is bigger than a tennis court.",
  "⑤ The number of players under 24 is increasing fast."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) This가 가리키는 것으로 가장 적절한 것은?"));
@@ -250,8 +250,8 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 모든 나이가 즐기는 새 운동 피클볼",
- "② 테니스 코트를 넓게 만드는 방법",
+["① 테니스 코트를 넓게 만드는 방법",
+ "② 모든 나이가 즐기는 새 운동 피클볼",
  "③ 오이로 피클을 담그는 방법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
@@ -358,9 +358,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "피클볼에 일어
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Pickleball became popular among older people.",
-      "ⓑ A new game mixed ping-pong, tennis, and badminton.",
-      "ⓒ Young people started picking up the paddle too.",
-      "ⓓ Almost half of the players were under 55."]
+      "ⓑ Young people started picking up the paddle too.",
+      "ⓒ Almost half of the players were under 55.",
+      "ⓓ A new game mixed ping-pong, tennis, and badminton."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -398,22 +398,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문9 ", { size: 17, bold: true, color: NAVY2 }), t("half of the players(S)·were(△V)·and[네모]·the number(S)·is increasing(△V)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 코코라고 불리는 개를 키운다  (2) 그 케이크는 우리 엄마에 의해 만들어졌다  (3) '봄'이라는 노래가 아이들에 의해 불렸다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 pickleball · easy · ages   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 pickleball · easy · ages   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 T · 3 T · 4 F · 5 F · 6 F · 7 T · 8 F", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (c) → (d)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("탁구·테니스·배드민턴을 섞은 피클볼(문장 2)이 배우기 쉽고 모든 나이가 즐기는 운동(문장 5–11)이라는 것이 글의 중심이다. 소재와 특징을 함께 담은 ①이 정답. ②·③은 장비·코트만 건드린 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 4에서 피클볼 코트는 테니스 코트의 4분의 1 크기라고 했으므로, 더 크다는 ②가 본문과 반대된다. ①은 문장 2, ③은 문장 5, ④는 문장 7, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ④");
+B("탁구·테니스·배드민턴을 섞은 피클볼(문장 2)이 배우기 쉽고 모든 나이가 즐기는 운동(문장 5–11)이라는 것이 글의 중심이다. 소재와 특징을 함께 담은 ④이 정답. ①·②은 장비·코트만 건드린 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 4에서 피클볼 코트는 테니스 코트의 4분의 1 크기라고 했으므로, 더 크다는 ④가 본문과 반대된다. ①은 문장 2, ②은 문장 5, ③는 문장 7, ⑤는 문장 9에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) This는 바로 앞 문장 5의 내용, 곧 '배우기 쉽고 몸에 부담이 적다'를 가리킨다. 지시어는 한 단어만이 아니라 앞 문장 전체를 받을 수도 있다.", true);
 Hs("독해 04   배열 영작   ·   But now, young people are picking up the paddle too!");
 B("문장 8을 그대로 복원하는 문제다. ① 첫 글자는 대문자 But.   ② now 뒤의 콤마를 빠뜨리지 않는다.   ③ too!가 문장 끝에 온다 — 느낌표까지 한 덩어리.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 pickleball · easy · ages     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 모든 나이가 즐기는 새 운동 피클볼을 소개한다. ② 코트 이야기는 특징의 하나일 뿐이고, ③ 오이 피클은 이름만 비슷한 다른 뜻이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 pickleball · easy · ages     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 모든 나이가 즐기는 새 운동 피클볼을 소개한다. ① 코트 이야기는 특징의 하나일 뿐이고, ③ 오이 피클은 이름만 비슷한 다른 뜻이다.");
 B("1-2   ○표 할 세 단어: pickleball(힌트① 주인공) · easy(힌트② 인기의 이유) · ages(힌트③ 누구까지 즐기는가). 나머지 셋(paddle · joints · tennis)은 본문에 나오지만 주제문에 들어가지 않는다 — 장비와 비교 대상일 뿐이다.");
 B("1-3   문장 3 — it은 플라스틱 공에 ○ (구멍이 뚫려 있는 그 공).   문장 6 — This는 쉽고 몸에 편한 점에 ○ (문장 5의 내용).   문장 11 — this amazing sport는 피클볼에 ○.");
 B("[학습 포인트]   문장 2의 It은 피클볼, 문장 3의 it은 공이다. 같은 it이라도 가리키는 것이 달라진다 — 지시어를 만나면 바로 앞에서 짝을 찾아 화살표로 연결해 두자.", true);
@@ -424,8 +424,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 T · 2 T · 3 T · 4 F · 5 F · 6 F · 7 T · 8 F");
    B("1 T — 문장 6.   2 T — 문장 4.   3 T — 문장 9.   4 F — 문장 3: 둥근 라켓이 아니라 네모난(square) 라켓이다.   5 F — 문장 7: 어린아이가 아니라 노인들(the elderly)이 즐겼다.   6 F — 문장 9: 줄어드는 게 아니라 빠르게 늘고 있다(increasing).   7 T — 문장 2.   8 F — 문장 5: 배우기 어려운 게 아니라 쉽다(easy).  거짓 문장은 모두 딱 한 요소(round, hard, young children, going down)를 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (a) → (c) → (d)");
-B("ⓑ 세 종목을 섞은 새 경기가 생긴다(문장 2) → ⓐ 노인들 사이에서 인기를 얻는다(문장 7) → ⓒ 젊은 사람들도 라켓을 잡는다(문장 8) → ⓓ 최근 선수의 절반이 55세 미만이 된다(문장 9). In the past → But now → Recently라는 시간 표지가 순서를 그대로 알려 준다 — 이 글은 서술 순서와 시간 순서가 같다.", true);
+Hs("R2   사건 순서   ·   (d) → (a) → (b) → (c)");
+B("ⓓ 세 종목을 섞은 새 경기가 생긴다(문장 2) → ⓐ 노인들 사이에서 인기를 얻는다(문장 7) → ⓑ 젊은 사람들도 라켓을 잡는다(문장 8) → ⓒ 최근 선수의 절반이 55세 미만이 된다(문장 9). In the past → But now → Recently라는 시간 표지가 순서를 그대로 알려 준다 — 이 글은 서술 순서와 시간 순서가 같다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

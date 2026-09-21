@@ -102,8 +102,8 @@ K.push(sp(65));
 ["① The Best Camping Food in Australia",
  "② How to Cook a Big Crab at Home",
  "③ Beautiful Beaches of Christmas Island",
- "④ Robber Crabs: Watch Out and Respect Them",
- "⑤ How to Set Up a Tent Quickly"].forEach(c => K.push(ch(c)));
+ "④ How to Set Up a Tent Quickly",
+ "⑤ Robber Crabs: Watch Out and Respect Them"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
@@ -117,9 +117,9 @@ K.push(ask("03", "지칭", "밑줄 친 (A) They가 가리키는 것으로 가장
 K.push(sp(65));
 ["① the robber crabs",
  "② the people on the island",
- "③ the trees near the tents",
- "④ the cooking spots",
- "⑤ smart campers"].forEach(c => K.push(ch(c)));
+ "③ smart campers",
+ "④ the trees near the tents",
+ "⑤ the cooking spots"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -602,9 +602,9 @@ K.push(spF(8, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "캠핑장에서 일어나는 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ Campers start cooking near their tents.",
-      "ⓑ The crabs smell the food and quickly gather around.",
-      "ⓒ Smart campers hang their food in trees.",
+  ...["ⓐ The crabs smell the food and quickly gather around.",
+      "ⓑ Smart campers hang their food in trees.",
+      "ⓒ Campers start cooking near their tents.",
       "ⓓ The crabs don’t come near the tents at night."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -646,9 +646,9 @@ K.push(spF(9, 380, 0.12));
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
 [["문장 1", [t("In Australia, there ", { size: 19 }), t("( are  /  is )", { size: 19, bold: true, color: NAVY }), t(" an amazing place called Christmas Island.", { size: 19 })], "뒤에 오는 주어가 하나인지 여럿인지 보세요."],
- ["문장 2", [t("Many people love ", { size: 19 }), t("( camp  /  camping )", { size: 19, bold: true, color: NAVY }), t(" there.", { size: 19 })], "love 뒤에는 ~ing 또는 to+동사원형!"],
+ ["문장 2", [t("Many people love ", { size: 19 }), t("( camping  /  camp )", { size: 19, bold: true, color: NAVY }), t(" there.", { size: 19 })], "love 뒤에는 ~ing 또는 to+동사원형!"],
  ["문장 4", [t("These crabs ", { size: 19 }), t("( have  /  has )", { size: 19, bold: true, color: NAVY }), t(" a strong sense of smell.", { size: 19 })], "주어 These crabs는 복수예요."],
- ["문장 6", [t("When people start cooking, the crabs ", { size: 19 }), t("( smell  /  smells )", { size: 19, bold: true, color: NAVY }), t(" the food.", { size: 19 })], "주어 the crabs(복수)에 맞는 동사 형태는?"],
+ ["문장 6", [t("When people start cooking, the crabs ", { size: 19 }), t("( smells  /  smell )", { size: 19, bold: true, color: NAVY }), t(" the food.", { size: 19 })], "주어 the crabs(복수)에 맞는 동사 형태는?"],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
     cel(new Paragraph({ children: [t("(" + (i + 1) + ")", { size: 16, bold: true, color: "FFFFFF" })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 210 } }),
@@ -751,18 +751,18 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 3 ②  문장 4 ③  문장 8 ②  문장 14 ①", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 F · 5 F · 6 F · 7 T · 8 T", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (b) → (c) → (d)", { size: 19, bold: true })], { after: 25 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (b) → (d)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(c) · 2(a) · 3(e) · 4(f) · 5(b) · 6(d)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) is  (2) camping  (3) have  (4) smell", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) nature (2) crabs (3) smell (4) hurt (5) hang (6) tents (7) eating (8) respect", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) These crabs have a strong sense of smell.  (2) Then, the crabs won’t come near the tents at night.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ④");
-B("이 글은 크리스마스섬의 도둑게를 소개하며 조심할 점(문장 3–6)과 섬사람들의 존중(문장 13–14)을 함께 전한다. 소재와 태도를 담은 ④이 제목으로 알맞다. ③·⑤는 지엽적이고, ①·②은 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 크리스마스섬의 도둑게를 소개하며 조심할 점(문장 3–6)과 섬사람들의 존중(문장 13–14)을 함께 전한다. 소재와 태도를 담은 ⑤이 제목으로 알맞다. ③·④는 지엽적이고, ①·②은 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ④");
 B("문장 8에서 게들은 사람을 해치지 않는다(don’t hurt people)고 했다. 자주 해친다는 ④은 본문과 반대다. ①은 문장 2, ②는 문장 4, ③는 문장 9, ⑤는 문장 14에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) They는 바로 앞 문장 9의 주어 Smart campers를 받는다. 텐트를 요리 자리에서 멀리 치는 쪽은 게가 아니라 캠핑객이다.", true);
 Hs("독해 04   배열 영작   ·   Smart campers usually hang their food in trees.");
 B("문장 9를 그대로 복원하는 문제다. ① 첫 글자는 대문자 Smart.   ② usually는 일반동사 hang 앞에 온다.   ③ in trees로 문장을 마친다.", true);
@@ -799,8 +799,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 F · 5 F · 6 F · 7 T · 8 T");
    B("1 F — 문장 4: 약한 게 아니라 뛰어난 후각이다.   2 T — 문장 13.   3 T — 문장 5.   4 F — 문장 10: 요리 자리 옆이 아니라 멀리 떨어진 곳에 친다.   5 F — 문장 14: 잡아먹는 게 아니라 돌본다.   6 F — 문장 8: 사람을 해치지 않는다.   7 T — 문장 9.   8 T — 문장 1.  거짓 문장은 모두 한 요소(weak, often hurt, next to, catch)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (a) → (b) → (c) → (d)");
-B("ⓐ 캠핑객이 요리를 시작한다(문장 6) → ⓑ 게들이 냄새를 맡고 모여든다(문장 6) → ⓒ 똑똑한 캠핑객은 음식을 나무에 매단다(문장 9) → ⓓ 밤에 게가 텐트에 오지 않는다(문장 11). 문제가 먼저, 해결이 뒤 — 설명문의 전형적인 차례다.", true);
+Hs("R2   사건 순서   ·   (c) → (a) → (b) → (d)");
+B("ⓒ 캠핑객이 요리를 시작한다(문장 6) → ⓐ 게들이 냄새를 맡고 모여든다(문장 6) → ⓑ 똑똑한 캠핑객은 음식을 나무에 매단다(문장 9) → ⓓ 밤에 게가 텐트에 오지 않는다(문장 11). 문제가 먼저, 해결이 뒤 — 설명문의 전형적인 차례다.", true);
 Hs("R3   영영풀이   ·   1 (c) · 2 (a) · 3 (e) · 4 (f) · 5 (b) · 6 (d)");
 B("island = 물로 둘러싸인 땅 · huge = 아주아주 큰 · gather = 한곳에 모이다 · hang = 바닥에 닿지 않게 매달다 · spot = 어떤 일이 일어나는 자리 · respect = 누군가를 아끼는 마음.", true);
 Hs("R4   어법 기초   ·   (1) is  (2) camping  (3) have  (4) smell");

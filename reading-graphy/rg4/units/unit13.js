@@ -96,24 +96,24 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Watch Your Mistakes and Learn Faster",
- "② How to Win a Computer Game about Animals",
- "③ The Best Hats for Sports and Study",
- "④ A Famous University in Michigan",
+["① How to Win a Computer Game about Animals",
+ "② The Best Hats for Sports and Study",
+ "③ A Famous University in Michigan",
+ "④ Watch Your Mistakes and Learn Faster",
  "⑤ Why Children Need More Sleep"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 105, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① A new study shows that some kids learn faster than others.",
  "② A psychologist studied 123 children aged six to eight.",
- "③ Children with a growth mindset paid less attention to their mistakes.",
- "④ In the study, the children played a computer game to catch animals.",
- "⑤ Children with a fixed mindset tended to ignore their mistakes."].forEach(c => K.push(ch(c)));
+ "③ In the study, the children played a computer game to catch animals.",
+ "④ Children with a fixed mindset tended to ignore their mistakes.",
+ "⑤ Children with a growth mindset paid less attention to their mistakes."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 105, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) They가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① children with a growth mindset",
- "② children with a fixed mindset",
+["① children with a fixed mindset",
+ "② children with a growth mindset",
  "③ the researchers at the university",
  "④ the special hats in the study",
  "⑤ the animals in the computer game"].forEach(c => K.push(ch(c)));
@@ -283,9 +283,9 @@ K.push(spF(4, 225, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 실수에 주의를 기울이는 아이가 더 빨리 배운다는 연구",
- "② 컴퓨터 게임을 잘하는 방법",
- "③ 뇌 활동을 기록하는 특수 모자"].forEach(c =>
+["① 컴퓨터 게임을 잘하는 방법",
+ "② 뇌 활동을 기록하는 특수 모자",
+ "③ 실수에 주의를 기울이는 아이가 더 빨리 배운다는 연구"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 150, 0.26));
 
@@ -517,13 +517,13 @@ pairGrid(
   { sn: 2, main: "pay attention to their mistakes",
     opts: ["① pay no attention to their mistakes", "② look carefully at their mistakes", "③ write down their mistakes"] },
   { sn: 5, main: "become smarter through hard work",
-    opts: ["① stay the same no matter what", "② get smarter by working hard", "③ become smarter by sleeping more"] });
+    opts: ["① stay the same no matter what", "② become smarter by sleeping more", "③ get smarter by working hard"] });
 K.push(spF(7, 105, 0.16));
 pairGrid(
   { sn: 9, main: "better at correcting their mistakes",
     opts: ["① worse at fixing their mistakes", "② more able to fix their mistakes", "③ faster at finishing the game"] },
   { sn: 10, main: "tended to ignore their mistakes",
-    opts: ["① always studied mistakes closely", "② usually ignored their mistakes", "③ hid their mistakes from teachers"] });
+    opts: ["① usually ignored their mistakes", "② always studied mistakes closely", "③ hid their mistakes from teachers"] });
 K.push(spF(7, 112, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -644,7 +644,7 @@ K.push(spF(9, 285, 0.12));
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
 [["문장 2", [t("kids ", { size: 19 }), t("who ( pay  /  pays )", { size: 19, bold: true, color: NAVY }), t(" attention to their mistakes", { size: 19 })], "선행사 kids는 복수예요."],
- ["문장 7", [t("They wore special hats that ", { size: 19 }), t("( recording  /  recorded )", { size: 19, bold: true, color: NAVY }), t(" their brain activity.", { size: 19 })], "wore와 시제를 맞추세요."],
+ ["문장 7", [t("They wore special hats that ", { size: 19 }), t("( recorded  /  recording )", { size: 19, bold: true, color: NAVY }), t(" their brain activity.", { size: 19 })], "wore와 시제를 맞추세요."],
  ["문장 9", [t("They were also better at ", { size: 19 }), t("( correcting  /  correct )", { size: 19, bold: true, color: NAVY }), t(" their mistakes.", { size: 19 })], "전치사 at 뒤의 동사 형태는?"],
  ["문장 11", [t("If you believe you ", { size: 19 }), t("( can gets  /  can get )", { size: 19, bold: true, color: NAVY }), t(" smarter, ...", { size: 19 })], "조동사 can 뒤에는 동사원형!"],
 ].forEach(([n, runs, hint], i) => {
@@ -739,11 +739,11 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문8 ", { size: 17, bold: true, color: NAVY2 }), t("results(S)·showed(△V)·that[네모]·children(S′)·paid(△V′)·more attention(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 매일 기타를 치는 친구가 한 명 있다  (2) 그녀는 고양이를 그리는 것을 아주 잘한다  (3) 내 옆에 앉는 그 소년은 퍼즐 푸는 것을 잘한다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 mistakes · attention · faster        ", { size: 19, bold: true }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 mistakes · attention · faster        ", { size: 19, bold: true }),
      t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 비교 · 덧붙임 · 반전 · 조건   2-2 [B] 두 믿음 · [E] 마무리   2-3 ②", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (d) → (a) → (c)  ·  Kids who pay attention to their mistakes actually learn faster than those who don’t.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) attention  (2) mistakes  (3) ignore  (4) faster        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ②  문장 5 ②  문장 9 ②  문장 10 ②", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ②  문장 5 ③  문장 9 ②  문장 10 ①", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 T · 3 F · 4 F · 5 F · 6 F · 7 T · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (b) → (d)", { size: 19, bold: true })], { after: 25 }),
@@ -753,16 +753,16 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) They wore special hats that recorded their brain activity.  (2) Others believed that they can become smarter through hard work.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 실수에 주의를 기울이는 아이가 더 빨리 배운다는 연구(문장 2·8·9)를 소개한다. 소재(mistakes)와 결과(learn faster)를 함께 담은 ①이 제목으로 적절하다. ②·③는 게임·모자만 건드린 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 8에서 성장 마인드셋 아이들은 실수에 '더 많은(more)' 주의를 기울였다. less로 뒤집은 ③이 본문과 반대된다. ①은 문장 2, ②은 문장 3, ④는 문장 6, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 실수에 주의를 기울이는 아이가 더 빨리 배운다는 연구(문장 2·8·9)를 소개한다. 소재(mistakes)와 결과(learn faster)를 함께 담은 ④이 제목으로 적절하다. ①·②는 게임·모자만 건드린 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 8에서 성장 마인드셋 아이들은 실수에 '더 많은(more)' 주의를 기울였다. less로 뒤집은 ⑤이 본문과 반대된다. ①은 문장 2, ②은 문장 3, ③는 문장 6, ④는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) They는 바로 앞 문장 8의 children with a growth mindset을 가리킨다. 실수를 눈여겨본 그 아이들이 다음 시도에서 더 잘 고쳤다는 흐름이다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   In the study, the children played a computer game to catch animals.");
 B("문장 6을 그대로 복원하는 문제다. ① 문두 In the study 뒤의 콤마.   ② 주어 the children + 과거동사 played.   ③ '~하기 위한/하려고'는 to+동사원형 — to catch animals.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 mistakes · attention · faster     1-3 아래 참조");
-B("1-1   정답 ①. 실수를 대하는 태도가 배우는 속도를 바꾼다는 연구다. ② 게임과 ③ 모자는 실험 도구일 뿐 소재가 아니다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 mistakes · attention · faster     1-3 아래 참조");
+B("1-1   정답 ③. 실수를 대하는 태도가 배우는 속도를 바꾼다는 연구다. ① 게임과 ② 모자는 실험 도구일 뿐 소재가 아니다.");
 B("1-2   ○표 할 세 단어: mistakes(힌트① 핵심 대상) · attention(힌트② 아이들이 하는 것) · faster(힌트③ 연구가 밝힌 결과). hats · animals · game은 실험 장치일 뿐 주제문에 들어가지 않는다.");
 B("1-3   문장 4 — they는 아이들, it은 지능 수준에 ○ (한 문장 안에서 대상이 바뀐다).   문장 7 — They는 연구 속 아이들.   문장 9 — They는 문장 8의 성장 마인드셋 아이들.");
 B("[학습 포인트]   문장 4처럼 한 문장에서 they와 it이 서로 다른 것을 받는 자리가 시험에 나온다. 수 일치(they=복수, it=단수)가 첫 단서다.", true);
@@ -782,11 +782,11 @@ B("3-3  정답 순서 — ⓑ Kids who pay attention → ⓓ to their mistakes �
 B("[채점 포인트]  주인공(Kids)이 맨 앞, 마침표가 붙은 덩어리(ⓒ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) attention  (2) mistakes  (3) ignore  (4) faster");
 B("(1)·(2)는 문장 8, (3)은 문장 10, (4)는 문장 2에서 가져온다. 요약문이 곧 이 글의 뼈대다: 실험(모자와 게임) → 두 집단의 차이 → 결론.", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ②   문장 5 ②   문장 9 ②   문장 10 ②  (정답 선지는 무표시)");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ②   문장 5 ③   문장 9 ②   문장 10 ①  (정답 선지는 무표시)");
 B("문장 2 pay attention to their mistakes   ① ✕ [반대] 전혀 주의하지 않는다.   ② ○ 실수를 주의 깊게 살펴본다.   ③ ✕ [무관] 받아 적는다는 말은 없다.");
-B("문장 5 become smarter through hard work   ① ✕ [반대] 무슨 일이 있어도 그대로다.   ② ○ 열심히 해서 더 똑똑해진다.   ③ ✕ [무관] 잠은 지문에 없다.");
+B("문장 5 become smarter through hard work   ① ✕ [반대] 무슨 일이 있어도 그대로다.   ② ✕ [무관] 잠은 지문에 없다.   ③ ○ 열심히 해서 더 똑똑해진다.");
 B("문장 9 better at correcting their mistakes   ① ✕ [반대] 더 못 고친다.   ② ○ 실수를 더 잘 바로잡는다.   ③ ✕ [무관] 게임을 빨리 끝낸다는 말은 없다.");
-B("문장 10 tended to ignore their mistakes   ① ✕ [반대] 늘 자세히 살폈다.   ② ○ 대개 실수에 주의를 두지 않았다.   ③ ✕ [무관] 선생님에게 숨겼다는 말은 없다.");
+B("문장 10 tended to ignore their mistakes   ① ○ 대개 실수에 주의를 두지 않았다.   ② ✕ [반대] 늘 자세히 살폈다.   ③ ✕ [무관] 선생님에게 숨겼다는 말은 없다.");
 B("[학습 포인트]  시험은 본문 표현을 반드시 바꿔서 묻는다. pay attention ↔ ignore처럼 짝이 되는 표현을 함께 묶어 외워 두자.", true);
 
 K.push(brk());

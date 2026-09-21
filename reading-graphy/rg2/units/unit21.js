@@ -82,22 +82,22 @@ K.push(sp(65));
 ["① How to Cut a Big Rock into a Chair",
  "② The Daily Life of King Edward I",
  "③ The Best Castles to Visit in the U.K.",
- "④ The Stone of Destiny: A Symbol of Scottish History",
- "⑤ How Heavy Is 125 Kilograms?"].forEach(c => K.push(ch(c)));
+ "④ How Heavy Is 125 Kilograms?",
+ "⑤ The Stone of Destiny: A Symbol of Scottish History"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① In 1996, the British government returned the stone to England.",
- "② The Stone of Destiny weighs about 125 kilograms.",
- "③ The stone was originally used to crown Scottish kings.",
+["① The Stone of Destiny weighs about 125 kilograms.",
+ "② The stone was originally used to crown Scottish kings.",
+ "③ In 1996, the British government returned the stone to England.",
  "④ An English king named Edward I took the stone from Scotland.",
  "⑤ You can see the stone at Edinburgh Castle in Scotland."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) they가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the Scottish people",
- "② the English kings and queens",
- "③ the stones in Edinburgh Castle",
+["① the English kings and queens",
+ "② the stones in Edinburgh Castle",
+ "③ the Scottish people",
  "④ the ceremonies for new kings",
  "⑤ the people in the British government"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -355,8 +355,8 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "운명의 돌에 일어난 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ The British government returned the stone to Scotland.",
-      "ⓑ Scottish kings were crowned with the stone.",
+  ...["ⓐ Scottish kings were crowned with the stone.",
+      "ⓑ The British government returned the stone to Scotland.",
       "ⓒ An English king took the stone from Scotland.",
       "ⓓ The Scottish people wanted the stone back."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
@@ -399,14 +399,14 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 stone · ceremonies · important   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 T · 5 T · 6 F · 7 T · 8 F", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (d) → (a)", { size: 19, bold: true })], { after: 0 }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (d) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ④");
-B("이 글은 영국 왕의 대관식에 쓰인 운명의 돌(문장 1·3–4)과 그 돌이 스코틀랜드로 돌아오기까지의 역사(문장 5–9)를 소개한다. 소재(돌)와 특징(스코틀랜드 역사의 상징)을 함께 담은 ④이 적절하다. ②·⑤는 왕·무게만 건드린 지엽적 오답, ①·③는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ①");
-B("문장 9에서 영국 정부는 그 돌을 잉글랜드가 아니라 스코틀랜드에 돌려주었다. 돌아간 곳을 바꾼 ①가 본문과 다르다. ②은 문장 2, ③는 문장 4, ④은 문장 5, ⑤는 문장 12에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 영국 왕의 대관식에 쓰인 운명의 돌(문장 1·3–4)과 그 돌이 스코틀랜드로 돌아오기까지의 역사(문장 5–9)를 소개한다. 소재(돌)와 특징(스코틀랜드 역사의 상징)을 함께 담은 ⑤이 적절하다. ②·④는 왕·무게만 건드린 지엽적 오답, ①·③는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 9에서 영국 정부는 그 돌을 잉글랜드가 아니라 스코틀랜드에 돌려주었다. 돌아간 곳을 바꾼 ③가 본문과 다르다. ①은 문장 2, ②는 문장 4, ④은 문장 5, ⑤는 문장 12에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) they는 바로 앞 문장 6의 the Scottish people을 가리킨다. 왕이 힘을 과시하려고 돌을 가져간 일에 슬퍼하고 화를 낸 쪽이 누구인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   Now, you can see the stone at Edinburgh Castle in Scotland.");
 B("문장 12를 그대로 복원하는 문제다. ① 첫 글자는 대문자 Now, 바로 뒤에 콤마를 찍는다.   ② 조동사 can 뒤에는 동사원형 see.   ③ 장소는 at Edinburgh Castle in Scotland 순서로 잇는다.", true);
@@ -422,8 +422,8 @@ K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, 
 K.push(sp(190));
 Hs("R1   True / False   ·   1 F · 2 T · 3 F · 4 T · 5 T · 6 F · 7 T · 8 F");
    B("1 F — 문장 4: 잉글랜드가 아니라 스코틀랜드(Scottish) 왕들이다.   2 T — 문장 8.   3 F — 문장 10: 화가 난 게 아니라 행복했다(happy).   4 T — 문장 2.   5 T — 문장 9.   6 F — 문장 7: 행복한 게 아니라 슬프고 화가 났다(sad and angry).   7 T — 문장 5.   8 F — 문장 12: 런던의 박물관이 아니라 스코틀랜드의 에든버러 성이다.  거짓 문장은 모두 딱 한 요소(English, happy, angry, London)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (c) → (d) → (a)");
-B("ⓑ 스코틀랜드 왕들이 그 돌로 왕관을 받는다(문장 4) → ⓒ 1296년 잉글랜드 왕이 돌을 가져간다(문장 5) → ⓓ 스코틀랜드 사람들이 돌려받기를 바란다(문장 8) → ⓐ 1996년 영국 정부가 돌을 돌려준다(문장 9). 본문은 지금의 쓰임(문장 3)을 먼저 말한 뒤 문장 4에서 유래로 되돌아간다 — 서술 순서와 사건 순서가 갈리는 지점이다.", true);
+Hs("R2   사건 순서   ·   (a) → (c) → (d) → (b)");
+B("ⓐ 스코틀랜드 왕들이 그 돌로 왕관을 받는다(문장 4) → ⓒ 1296년 잉글랜드 왕이 돌을 가져간다(문장 5) → ⓓ 스코틀랜드 사람들이 돌려받기를 바란다(문장 8) → ⓑ 1996년 영국 정부가 돌을 돌려준다(문장 9). 본문은 지금의 쓰임(문장 3)을 먼저 말한 뒤 문장 4에서 유래로 되돌아간다 — 서술 순서와 사건 순서가 갈리는 지점이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

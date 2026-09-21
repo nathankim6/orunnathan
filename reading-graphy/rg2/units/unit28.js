@@ -117,8 +117,8 @@ K.push(sp(65));
 ["① the white fat under the skin",
  "② eating much less food",
  "③ a new medicine for humans",
- "④ the babies’ necks and shoulders",
- "⑤ injecting the sheep with brown fat"].forEach(c => K.push(ch(c)));
+ "④ injecting the sheep with brown fat",
+ "⑤ the babies’ necks and shoulders"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -517,7 +517,7 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 5, main: "burns lots of calories",
-    opts: ["① saves energy in the body", "② uses up a lot of energy", "③ adds more fat to the body"] },
+    opts: ["① uses up a lot of energy", "② saves energy in the body", "③ adds more fat to the body"] },
   { sn: 6, main: "lose most of our brown fat",
     opts: ["① it grows more and more", "② most of it goes away", "③ it turns into muscle"] });
 K.push(spF(7, 140, 0.16));
@@ -646,8 +646,8 @@ K.push(spF(9, 380, 0.12));
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
 [["문장 1", [t("Our bodies ", { size: 19 }), t("( have  /  has )", { size: 19, bold: true, color: NAVY }), t(" different types of fat.", { size: 19 })], "주어 bodies는 복수예요."],
- ["문장 2", [t("One type ", { size: 19 }), t("( is  /  are )", { size: 19, bold: true, color: NAVY }), t(" called white fat.", { size: 19 })], "주어가 하나(단수)일 때 be동사는?"],
- ["문장 5", [t("Brown fat burns lots of calories and ", { size: 19 }), t("( keeps  /  keep )", { size: 19, bold: true, color: NAVY }), t(" us warm.", { size: 19 })], "and 앞뒤의 동사 모양을 맞추세요."],
+ ["문장 2", [t("One type ", { size: 19 }), t("( are  /  is )", { size: 19, bold: true, color: NAVY }), t(" called white fat.", { size: 19 })], "주어가 하나(단수)일 때 be동사는?"],
+ ["문장 5", [t("Brown fat burns lots of calories and ", { size: 19 }), t("( keep  /  keeps )", { size: 19, bold: true, color: NAVY }), t(" us warm.", { size: 19 })], "and 앞뒤의 동사 모양을 맞추세요."],
  ["문장 9", [t("They did an experiment by ", { size: 19 }), t("( inject  /  injecting )", { size: 19, bold: true, color: NAVY }), t(" them with brown fat.", { size: 19 })], "전치사 by 뒤에는 동사에 -ing!"],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
@@ -746,7 +746,7 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 이유 · ~할 때 · 반전 · 덧붙임   2-2 [B] 갈색 지방 · [E] 기대   2-3 ②", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (d) → (c) → (a)  ·  Brown fat burns calories, so scientists hope to develop a new medicine.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) brown  (2) calories  (3) sheep  (4) medicine        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 5 ②  문장 6 ②  문장 10 ②  문장 11 ③", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 5 ①  문장 6 ②  문장 10 ②  문장 11 ③", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 F · 5 F · 6 T · 7 T · 8 F", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 25 }),
@@ -760,7 +760,7 @@ Hs("독해 01   제목   ·   정답 ⑤");
 B("이 글은 칼로리를 태워 몸을 덥히는 갈색 지방(문장 3–5)과 그것을 늘리려는 연구(문장 8–12)를 설명한다. 소재(갈색 지방)와 특징(칼로리를 태운다)을 함께 담은 ⑤이 제목으로 적절하다. ②·④는 실험과 체중만 건드린 지엽적 오답, ①·③는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ②");
 B("문장 6에서 자라면서 갈색 지방은 대부분 잃고 흰 지방이 늘어난다고 했으므로, 갈색 지방이 늘어난다는 ②은 본문과 반대된다. ①은 문장 2, ③는 문장 4, ④는 문장 9, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) It은 바로 앞 문장 9의 실험, 곧 양에게 갈색 지방을 주사한 일을 가리킨다. 양이 살이 빠지고 건강해진 것이 무엇 덕분인지 생각하면 된다.", true);
 Hs("독해 04   배열 영작   ·   Our bodies have different types of fat.");
 B("문장 1을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Our.   ② 주어 bodies가 복수이므로 동사는 have.   ③ different types of fat — of 뒤에 fat이 온다.", true);
@@ -785,8 +785,8 @@ B("3-3  정답 순서 — ⓑ Brown fat → ⓓ burns calories, → ⓒ so scien
 B("[채점 포인트]  주인공(Brown fat)이 맨 앞, 마침표가 붙은 덩어리가 맨 뒤 — so 앞뒤로 원인과 결과가 나뉜다.", true);
 Hs("STEP 4   요약문   ·   (1) brown  (2) calories  (3) sheep  (4) medicine");
 B("(1)은 문장 3의 brown, (2)는 문장 5의 calories, (3)은 문장 9의 sheep, (4)는 문장 11의 medicine에서 가져온다. 요약문이 곧 이 글의 흐름이다: 정체(1) → 역할(2) → 실험(3) → 기대(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 5 ②   문장 6 ②   문장 10 ②   문장 11 ③  (정답 선지는 무표시)");
-B("문장 5 burns lots of calories   ① ✕ [반대] 에너지를 아껴 둔다 — 흰 지방이 하는 일이다.   ② ○ 에너지를 많이 써 버린다.   ③ ✕ [무관] 지방을 더 늘린다는 말은 지문에 없다.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 5 ①   문장 6 ②   문장 10 ②   문장 11 ③  (정답 선지는 무표시)");
+B("문장 5 burns lots of calories   ① ○ 에너지를 많이 써 버린다.   ② ✕ [반대] 에너지를 아껴 둔다 — 흰 지방이 하는 일이다.   ③ ✕ [무관] 지방을 더 늘린다는 말은 지문에 없다.");
 B("문장 6 lose most of our brown fat   ① ✕ [반대] 점점 더 많아진다 — 정반대.   ② ○ 대부분 사라진다.   ③ ✕ [무관] 근육으로 바뀐다는 말은 지문에 없다.");
 B("문장 10 lose weight and become healthier   ① ✕ [반대] 더 무겁고 약해졌다 — 정반대.   ② ○ 가벼워지고 건강해졌다.   ③ ✕ [무관] 아무것도 먹지 않았다는 말은 지문에 없다.");
 B("문장 11 hope to develop a similar medicine   ① ✕ [반대] 약 만들기를 포기했다 — 정반대.   ② ✕ [무관] 약을 팔았다는 말은 지문에 없다(아직 만들지도 못했다).   ③ ○ 비슷한 약을 만들고 싶어 한다.");

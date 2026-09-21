@@ -98,24 +98,24 @@ K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
 ["① Rare Animals of Trindade Island",
  "② The Best Boat Trips in Brazil",
- "③ Why Some Rocks Look Blue-Green",
- "④ How to Recycle Old Fishing Nets",
- "⑤ Plastic Rocks: A New Mark of Human Impact"].forEach(c => K.push(ch(c)));
+ "③ Plastic Rocks: A New Mark of Human Impact",
+ "④ Why Some Rocks Look Blue-Green",
+ "⑤ How to Recycle Old Fishing Nets"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 57, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Trindade island needs a three- or four-day boat trip off the coast of Brazil.",
- "② The island is home to rare animals.",
- "③ Santos found strange blue-green rocks on the island in 2019.",
- "④ The blue-green rocks were ordinary rocks made only of natural material.",
+ "② The blue-green rocks were ordinary rocks made only of natural material.",
+ "③ The island is home to rare animals.",
+ "④ Santos found strange blue-green rocks on the island in 2019.",
  "⑤ Ocean currents carried plastic trash to the island."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 57, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the rare animals on the island",
- "② the fishing nets and bottles",
- "③ the people living on the island",
- "④ the strange blue-green rocks",
+["① the strange blue-green rocks",
+ "② the rare animals on the island",
+ "③ the fishing nets and bottles",
+ "④ the people living on the island",
  "⑤ the ocean currents around Brazil"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 57, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -515,15 +515,15 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 2, main: "a place with almost no humans",
-    opts: ["① a place full of people", "② a place with many factories", "③ a place where few people live"] },
+    opts: ["① a place full of people", "② a place where few people live", "③ a place with many factories"] },
   { sn: 4, main: "was curious about them",
-    opts: ["① had no interest in them", "② was afraid of them", "③ wanted to know more about them"] });
+    opts: ["① wanted to know more about them", "② had no interest in them", "③ was afraid of them"] });
 K.push(spF(7, 57, 0.16));
 pairGrid(
   { sn: 5, main: "weren’t ordinary rocks",
-    opts: ["① were very expensive rocks", "② were common rocks like others", "③ were not normal rocks"] },
+    opts: ["① were very expensive rocks", "② were not normal rocks", "③ were common rocks like others"] },
   { sn: 8, main: "shows human impact on remote areas",
-    opts: ["① proves people affect faraway places", "② shows people never change nature", "③ shows animals move far away"] });
+    opts: ["① shows people never change nature", "② shows animals move far away", "③ proves people affect faraway places"] });
 K.push(spF(7, 61, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -644,9 +644,9 @@ K.push(spF(9, 156, 0.12));
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
 [["문장 1", [t("", { size: 19 }), t("( There are  /  There is )", { size: 19, bold: true, color: NAVY }), t(" few places on Earth as remote as this island.", { size: 19 })], "There 뒤의 명사가 진짜 주어예요."],
- ["문장 2", [t("The island ", { size: 19 }), t("( are  /  is )", { size: 19, bold: true, color: NAVY }), t(" home to rare animals.", { size: 19 })], "주어 The island는 단수예요."],
- ["문장 4", [t("She was curious about ", { size: 19 }), t("( them  /  they )", { size: 19, bold: true, color: NAVY }), t(" and took some back.", { size: 19 })], "전치사 뒤에는 목적격이 옵니다."],
- ["문장 7", [t("Under the hot sun, this plastic ", { size: 19 }), t("( melted  /  melt )", { size: 19, bold: true, color: NAVY }), t(" and stuck to the beach.", { size: 19 })], "뒤의 stuck과 시제를 맞추세요."],
+ ["문장 2", [t("The island ", { size: 19 }), t("( is  /  are )", { size: 19, bold: true, color: NAVY }), t(" home to rare animals.", { size: 19 })], "주어 The island는 단수예요."],
+ ["문장 4", [t("She was curious about ", { size: 19 }), t("( they  /  them )", { size: 19, bold: true, color: NAVY }), t(" and took some back.", { size: 19 })], "전치사 뒤에는 목적격이 옵니다."],
+ ["문장 7", [t("Under the hot sun, this plastic ", { size: 19 }), t("( melt  /  melted )", { size: 19, bold: true, color: NAVY }), t(" and stuck to the beach.", { size: 19 })], "뒤의 stuck과 시제를 맞추세요."],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
     cel(new Paragraph({ children: [t("(" + (i + 1) + ")", { size: 16, bold: true, color: "FFFFFF" })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 210 } }),
@@ -742,7 +742,7 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 · 순서 · 예시 · 나열   2-2 [B] 발견 · [E] 의미   2-3 ⑤", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (a) → (b) → (c) → (d)  ·  These plastic rocks are evidence of how human actions are changing natural processes.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) remote  (2) plastic  (3) melted  (4) evidence        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ③  문장 4 ③  문장 5 ③  문장 8 ①", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ②  문장 4 ①  문장 5 ②  문장 8 ③", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 F · 5 T · 6 T · 7 F · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (b) → (d) → (a)", { size: 19, bold: true })], { after: 25 }),
@@ -752,11 +752,11 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) The island is home to rare animals and a place with almost no humans.  (2) She was curious about them and took some back to her lab.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ⑤");
-B("외딴 섬에서 발견된 파란 초록빛 돌이 사실은 플라스틱과 자연 암석이 섞인 것이었고(문장 3–7), 그것이 인간의 영향을 보여 준다(문장 8–10)는 글이다. 소재와 의미를 함께 담은 ⑤이 적절하다. ①·③는 섬·색만 건드린 지엽적 오답, ②·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 5에서 이 돌들은 '평범한 돌이 아니라(weren’t ordinary rocks)' 자연 암석과 플라스틱 쓰레기가 섞인 것이라고 했으므로 ④는 본문과 반대된다. ①은 문장 1, ②는 문장 2, ③은 문장 3, ⑤는 문장 6에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ④");
+Hs("독해 01   제목   ·   정답 ③");
+B("외딴 섬에서 발견된 파란 초록빛 돌이 사실은 플라스틱과 자연 암석이 섞인 것이었고(문장 3–7), 그것이 인간의 영향을 보여 준다(문장 8–10)는 글이다. 소재와 의미를 함께 담은 ③이 적절하다. ①·④는 섬·색만 건드린 지엽적 오답, ②·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 5에서 이 돌들은 '평범한 돌이 아니라(weren’t ordinary rocks)' 자연 암석과 플라스틱 쓰레기가 섞인 것이라고 했으므로 ②는 본문과 반대된다. ①은 문장 1, ③는 문장 2, ④은 문장 3, ⑤는 문장 6에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) them은 바로 앞 문장 3의 strange blue-green rocks를 가리킨다. 산토스가 궁금해하며 실험실로 가져간 것이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   Santos’s discovery shows human impact on even remote areas.");
 B("문장 8을 그대로 복원하는 문제다. ㄱ 첫 글자는 대문자 Santos’s.   ㄴ 주어가 단수이므로 동사는 shows.   ㄷ even은 remote 앞에 놓여 '~에까지'를 강조한다.", true);
@@ -781,11 +781,11 @@ B("3-3  정답 순서 — ⓐ These plastic rocks → ⓑ are evidence of → �
 B("[채점 포인트]  주인공(ⓐ)이 맨 앞, 마침표가 붙은 덩어리(ⓓ)가 맨 뒤 — 이 두 자리만 잡으면 가운데는 뜻으로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) remote  (2) plastic  (3) melted  (4) evidence");
 B("(1)은 문장 1의 remote, (2)는 문장 5의 plastic, (3)은 문장 7의 melted, (4)는 문장 9의 evidence에서 가져온다. 요약문이 곧 이 글의 흐름이다: 외딴 섬(1) → 플라스틱(2) → 녹아 굳음(3) → 증거(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ③   문장 4 ③   문장 5 ③   문장 8 ①  (정답 선지는 무표시)");
-B("문장 2 a place with almost no humans   ① ✕ [반대] 사람으로 가득하다 — 정반대.   ② ✕ [무관] 공장이 많다는 말은 지문에 없다.   ③ ○ 사는 사람이 거의 없다.");
-B("문장 4 was curious about them   ① ✕ [반대] 관심이 없었다 — 정반대.   ② ✕ [무관] 무서워했다는 말은 지문에 없다.   ③ ○ 더 알고 싶어 했다.");
-B("문장 5 weren’t ordinary rocks   ① ✕ [무관] 아주 비싼 돌이라는 말은 지문에 없다.   ② ✕ [반대] 흔한 돌이었다 — 정반대.   ③ ○ 평범한 돌이 아니었다.");
-B("문장 8 shows human impact on remote areas   ① ○ 사람이 먼 곳에도 영향을 준다는 것을 보여 준다.   ② ✕ [반대] 자연을 전혀 바꾸지 않는다 — 정반대.   ③ ✕ [무관] 동물의 이동은 지문에 없다.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ②   문장 4 ①   문장 5 ②   문장 8 ③  (정답 선지는 무표시)");
+B("문장 2 a place with almost no humans   ① ✕ [반대] 사람으로 가득하다 — 정반대.   ② ○ 사는 사람이 거의 없다.   ③ ✕ [무관] 공장이 많다는 말은 지문에 없다.");
+B("문장 4 was curious about them   ① ○ 더 알고 싶어 했다.   ② ✕ [반대] 관심이 없었다 — 정반대.   ③ ✕ [무관] 무서워했다는 말은 지문에 없다.");
+B("문장 5 weren’t ordinary rocks   ① ✕ [무관] 아주 비싼 돌이라는 말은 지문에 없다.   ② ○ 평범한 돌이 아니었다.   ③ ✕ [반대] 흔한 돌이었다 — 정반대.");
+B("문장 8 shows human impact on remote areas   ① ✕ [반대] 자연을 전혀 바꾸지 않는다 — 정반대.   ② ✕ [무관] 동물의 이동은 지문에 없다.   ③ ○ 사람이 먼 곳에도 영향을 준다는 것을 보여 준다.");
 B("[학습 포인트]  시험은 본문 표현을 그대로 쓰지 않고 반드시 바꿔서 묻는다. '이 표현을 다른 말로 하면?'을 스스로 물어보자. 지금은 반대/무관 두 갈래를 정확히 가르는 것이 먼저다.", true);
 
 K.push(brk());

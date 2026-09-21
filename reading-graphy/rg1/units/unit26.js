@@ -91,8 +91,8 @@ K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Denmark is one of the happiest countries in the world.",
- "② Danish people say “pyt” only when very big problems happen.",
- "③ The word “pyt” sounds like “pit” in English.",
+ "② The word “pyt” sounds like “pit” in English.",
+ "③ Danish people say “pyt” only when very big problems happen.",
  "④ Teachers in Denmark have a “pyt” button.",
  "⑤ We can also use the word “pyt” in our lives."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -101,8 +101,8 @@ K.push(sp(65));
 ["① losing a game at school",
  "② finding a favorite pen",
  "③ the Danish word for “never mind”",
- "④ the happiest country in the world",
- "⑤ pushing the “pyt” button"].forEach(c => K.push(ch(c)));
+ "④ pushing the “pyt” button",
+ "⑤ the happiest country in the world"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -416,9 +416,9 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ⑤");
 B("이 글은 작은 일에 걱정하지 않게 해 주는 덴마크의 한 단어 ‘pyt’(문장 3–8)와 그 쓰임(문장 9–12)을 소개한다. 소재(덴마크의 마법 단어)와 특징(작은 걱정을 덜어 줌)을 함께 담은 ⑤이 제목이다. ③·④는 지엽적 오답, ①·②은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 6·8에서 ‘pyt’는 작은 일(small things)이 어긋났을 때 쓰는 말이다. 아주 큰 문제일 때만 쓴다는 ②은 본문과 반대된다. ①은 문장 1, ③는 문장 4, ④는 문장 10, ⑤는 문장 13에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ⑤");
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 6·8에서 ‘pyt’는 작은 일(small things)이 어긋났을 때 쓰는 말이다. 아주 큰 문제일 때만 쓴다는 ③은 본문과 반대된다. ①은 문장 1, ②는 문장 4, ④는 문장 10, ⑤는 문장 13에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) This는 바로 앞 문장 11에서 선생님이 ‘pyt’ 버튼을 누르는 일을 가리킨다. 그 일이 학생을 편안하게 해 준다는 뜻이다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   Teachers in Denmark have a “pyt” button.");
 B("문장 10을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Teachers.   ② in Denmark가 주어를 뒤에서 꾸민다.   ③ 주어가 복수이므로 동사는 have.", true);
