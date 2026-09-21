@@ -76,9 +76,11 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Greenwashing: When Companies Only Look Green", "② How to Wash Your Clothes the Green Way",
- "③ The Best Eco-Friendly Cars of the Year", "④ Why Shopping Online Is Fun",
- "⑤ How to Save Money at the Market"].forEach(c => K.push(ch(c)));
+["① How to Wash Your Clothes the Green Way",
+ "② The Best Eco-Friendly Cars of the Year",
+ "③ Why Shopping Online Is Fun",
+ "④ How to Save Money at the Market",
+ "⑤ Greenwashing: When Companies Only Look Green"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
@@ -90,11 +92,11 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) This가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① looking at the labels or reading the product descriptions",
- "② selling more products to people",
- "③ buying a new eco-friendly car",
- "④ making clothes good for the Earth",
- "⑤ researching the company online"].forEach(c => K.push(ch(c)));
+["① selling more products to people",
+ "② buying a new eco-friendly car",
+ "③ making clothes good for the Earth",
+ "④ researching the company online",
+ "⑤ looking at the labels or reading the product descriptions"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -330,15 +332,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "“Greenwashing” may sound like a nice word, but it’s actually not.",
     "Companies use greenwashing to sell fewer products.",
-    "A car company might say that their cars don’t pollute much.",
-    "Fashion companies’ clothes are always good for the Earth.",
-    "It can be hard to tell if a company is really helping the environment.",
-    "There is no way to find out the truth.",
     "You can research the company online.",
+    "There is no way to find out the truth.",
+    "Fashion companies’ clothes are always good for the Earth.",
     "It’s important to choose things that only look good for the environment.",
-  ].map((s, i) => new TableRow({ children: [
+    "It can be hard to tell if a company is really helping the environment.",
+    "A car company might say that their cars don’t pollute much.",
+    "“Greenwashing” may sound like a nice word, but it’s actually not."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -396,16 +397,16 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 greenwashing · pretend · smart shoppers   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 F · 5 F · 6 T · 7 T · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (a) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 기업들이 친환경인 척 꾸며 물건을 더 파는 ‘그린워싱’(문장 1–5)과 그것을 가려내는 방법(문장 7–10), 그리고 똑똑한 소비자가 되자는 당부(문장 11–12)를 담았다. 소재(greenwashing)와 핵심(겉만 초록)을 모두 담은 ①이 제목으로 적절하다. ②는 wash의 글자 뜻만 건드린 지엽적 오답, ③은 자동차 예시만 건드린 지엽적 오답이고, ④·⑤는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 기업들이 친환경인 척 꾸며 물건을 더 파는 ‘그린워싱’(문장 1–5)과 그것을 가려내는 방법(문장 7–10), 그리고 똑똑한 소비자가 되자는 당부(문장 11–12)를 담았다. 소재(greenwashing)와 핵심(겉만 초록)을 모두 담은 ⑤이 제목으로 적절하다. ①는 wash의 글자 뜻만 건드린 지엽적 오답, ②은 자동차 예시만 건드린 지엽적 오답이고, ③·④는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ③");
 B("문장 6에서 회사가 정말 환경을 돕는지 아닌지 알아차리기는 어려울 수 있다(can be hard)고 했으므로, 항상 쉽다는 ③은 본문과 반대된다. ①은 문장 3, ②는 문장 4, ④는 문장 8–9, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
-B("(A) This는 바로 앞 문장 8의 ‘라벨을 살펴보거나 제품 설명을 읽는 것’이라는 행동 전체를 가리킨다. ⑤ 온라인 조사는 문장 10에서 also로 덧붙인 또 다른 방법 — This보다 뒤에 나오므로 가리킬 수 없다. 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
+B("(A) This는 바로 앞 문장 8의 ‘라벨을 살펴보거나 제품 설명을 읽는 것’이라는 행동 전체를 가리킨다. ④ 온라인 조사는 문장 10에서 also로 덧붙인 또 다른 방법 — This보다 뒤에 나오므로 가리킬 수 없다. 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   But there are ways to find out.");
 B("문장 7을 그대로 복원하는 문제다. ① 첫 글자는 대문자 But.   ② there are — ‘~이 있다’는 There is/are 구문, 복수 명사 ways에는 are.   ③ ways to find out — to부정사가 ways를 뒤에서 꾸민다.", true);
 Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 greenwashing · pretend · smart shoppers     1-3 아래 참조");
@@ -418,8 +419,8 @@ B("[학습 포인트]   문장 9의 This가 이 지문의 백미다. 지시어�
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 2.   2 F — 문장 3: 더 적게가 아니라 더 많이(more) 팔기 위해서다.   3 T — 문장 4.   4 F — 문장 5: 항상 좋은 것은 아니다(not always).   5 T — 문장 6.   6 F — 문장 7: 알아낼 방법들이 있다(there are ways).   7 T — 문장 10.   8 F — 문장 12: 겉보기가 아니라 실제로(actually) 좋은 것을 골라야 한다.  거짓 문장은 모두 본문에서 딱 한 요소(fewer, always, no way, only look)를 비튼 것이다 — 그 한 단어를 찾는 것이 정독이다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 F · 4 F · 5 F · 6 T · 7 T · 8 T");
+   B("1 F — 문장 3: 더 적게가 아니라 더 많이(more) 팔기 위해서다.   2 T — 문장 10.   3 F — 문장 7: 알아낼 방법들이 있다(there are ways).   4 F — 문장 5: 항상 좋은 것은 아니다(not always).   5 F — 문장 12: 겉보기가 아니라 실제로(actually) 좋은 것을 골라야 한다.  거짓 문장은 모두 본문에서 딱 한 요소(fewer, always, no way, only look)를 비튼 것이다 — 그 한 단어를 찾는 것이 정독이다.   6 T — 문장 6.   7 T — 문장 4.   8 T — 문장 2.", true);
 Hs("R2   사건 순서   ·   (b) → (c) → (a) → (d)");
 B("ⓑ ‘그린워싱’이라는 단어를 소개한다(문장 1–3) → ⓒ 자동차·패션 회사의 예시를 든다(문장 4–5) → ⓐ 진실을 확인하는 방법을 알려 준다(문장 7–10) → ⓓ 똑똑한 소비자가 되자고 당부한다(문장 11–12). 이 글은 사건이 아니라 설명의 순서를 따라간다: 뜻 → 예시 → 방법 → 당부 — 설명문의 전형적인 짜임이다.", true);
 K.push(sp(70));

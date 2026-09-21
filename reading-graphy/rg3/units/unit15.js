@@ -79,25 +79,27 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["\u2460 Hungry Goats: Firefighters with Four Legs", "\u2461 How to Build a Safe Apartment in California",
- "\u2462 The Best Plants to Grow in a Dry Area", "\u2463 Why Goats Drink a Lot of Water",
- "\u2464 A Guide to Football Fields in Sacramento"].forEach(c => K.push(ch(c)));
+["① How to Build a Safe Apartment in California",
+ "② The Best Plants to Grow in a Dry Area",
+ "③ Why Goats Drink a Lot of Water",
+ "④ A Guide to Football Fields in Sacramento",
+ "⑤ Hungry Goats: Firefighters with Four Legs"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["\u2460 A huge wildfire broke out in West Sacramento, California.",
- "\u2461 400 hungry goats had eaten most of the dry plants in the area.",
- "\u2462 The city let the goats out a few weeks before the fire.",
- "\u2463 The goats ate only the plants that were not poisonous.",
- "\u2464 Goats use less water than firefighters."].forEach(c => K.push(ch(c)));
+["① A huge wildfire broke out in West Sacramento, California.",
+ "② 400 hungry goats had eaten most of the dry plants in the area.",
+ "③ The city let the goats out a few weeks before the fire.",
+ "④ Goats use less water than firefighters.",
+ "⑤ The goats ate only the plants that were not poisonous."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) That이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["\u2460 the goats eating the dry plants every day",
- "\u2461 the fire moving toward the building",
- "\u2462 the city letting the goats out",
- "\u2463 the apartment building being safe",
- "\u2464 the poisonous plants in the area"].forEach(c => K.push(ch(c)));
+["① the fire moving toward the building",
+ "② the city letting the goats out",
+ "③ the apartment building being safe",
+ "④ the goats eating the dry plants every day",
+ "⑤ the poisonous plants in the area"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -144,7 +146,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -157,7 +159,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -194,7 +196,7 @@ K.push(spF(2, 85, 0.06));
  [5, "The goats had eaten most of the dry plants in the area, so the fire had nothing to burn and stopped."],
  [12, "Goats might be the heroes we need!"]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -249,7 +251,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["\u2460 캘리포니아의 안전한 아파트 짓기", "\u2461 산불을 막아 준 염소들", "\u2462 염소를 길러 우유를 얻는 법"].forEach(c =>
+["① 캘리포니아의 안전한 아파트 짓기",
+ "② 염소를 길러 우유를 얻는 법",
+ "③ 산불을 막아 준 염소들"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -261,7 +265,7 @@ K.push(T([1740,1740,1740,1740,1740,1740], [new TableRow({ children: KWCAND.map((
   new Paragraph({ children: [t(ko, { size: 14, color: SUB })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 190 } }),
 ], { w: 1740, shade: FIELD, va: VerticalAlign.CENTER, m: { top: 240, bottom: 240, left: 40, right: 40 },
     b: { top: bd(4, FLINE), bottom: bd(4, FLINE), left: bd(4, FLINE), right: bd(4, FLINE) } })) })]));
-K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("\u2460 이 글의 주인공  \u2461 염소가 먹어 치우는 것  \u2462 염소가 막아 준 것 \u2014 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
+K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 이 글의 주인공  ② 염소가 먹어 치우는 것  ③ 염소가 막아 준 것 — 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
 K.push(spF(4, 260, 0.30));
 
 K.push(p([t("1-3  ", { size: 18, bold: true, color: GOLD }), t("지시어 이해하기", { size: 19, bold: true }),
@@ -270,7 +274,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -317,7 +321,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -332,15 +336,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "A huge wildfire broke out in West Sacramento, California.",
-    "The fire was moving fast toward a school building.",
     "400 hungry goats saved the day.",
-    "The goats had eaten most of the dry plants in the area.",
-    "The city let the goats out a few days before the fire.",
     "Goats cannot eat poisonous plants.",
-    "The goats ate dry plants covering an area as large as two football fields.",
+    "The fire was moving fast toward a school building.",
+    "A huge wildfire broke out in West Sacramento, California.",
+    "The city let the goats out a few days before the fire.",
+    "The goats had eaten most of the dry plants in the area.",
     "Goats use more water than firefighters.",
-  ].map((s, i) => new TableRow({ children: [
+    "The goats ate dry plants covering an area as large as two football fields."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -355,10 +358,10 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "염소와 산불에 관한 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["\u24D0 A huge wildfire broke out near the building.",
-      "\u24D1 The city let the goats out to remove weeds.",
-      "\u24D2 The fire stopped because it had nothing to burn.",
-      "\u24D3 The goats ate the dry plants in the area."]
+  ...["ⓐ A huge wildfire broke out near the building.",
+      "ⓑ The fire stopped because it had nothing to burn.",
+      "ⓒ The city let the goats out to remove weeds.",
+      "ⓓ The goats ate the dry plants in the area."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -396,22 +399,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문5 ", { size: 17, bold: true, color: NAVY2 }), t("The goats(S)·had eaten(△V)·so[네모]·the fire(S′)·had(△V′)·nothing to burn", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 저 구름은 큰 토끼처럼 보인다  (2) 내 가방은 네 것보다 더 무겁다  (3) 이 케이크는 집처럼 보이고, 사탕보다 더 달다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 goats · weeds · fire   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 goats · weeds · fire   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4T · 5F · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 F · 4 T · 5 F · 6 T · 7 F · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (d) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("갑자기 멈춘 산불의 정체가 400마리 염소였다는 사건(문장 1–5)과 염소가 잡초 제거·화재 예방에 모두 뛰어나다는 평가(문장 10–12)를 담은 글이다. 소재와 평가를 함께 담은 ①이 제목이다. ④은 본문과 반대이고 ②·③·⑤는 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 7에서 염소는 독이 있는 식물까지(including the poisonous ones) 잘 먹는다고 했으므로, 독 없는 식물만 먹었다는 ④은 본문과 다르다. ①은 문장 1, ②은 문장 4–5, ③는 문장 7, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ⑤");
+B("갑자기 멈춘 산불의 정체가 400마리 염소였다는 사건(문장 1–5)과 염소가 잡초 제거·화재 예방에 모두 뛰어나다는 평가(문장 10–12)를 담은 글이다. 소재와 평가를 함께 담은 ⑤이 제목이다. ③은 본문과 반대이고 ①·②·④는 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 7에서 염소는 독이 있는 식물까지(including the poisonous ones) 잘 먹는다고 했으므로, 독 없는 식물만 먹었다는 ⑤은 본문과 다르다. ①은 문장 1, ②은 문장 4–5, ③는 문장 7, ④는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) That은 바로 앞 문장 8의 내용, 곧 염소들이 매일 마른 풀을 먹어 치운 일을 가리킨다. that은 단어 하나가 아니라 앞 문장 전체를 받을 수 있다.", true);
 Hs("독해 04   배열 영작   ·   Plus, goats use less water than firefighters.");
 B("문장 11을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Plus — 뒤의 콤마까지 함께 쓴다.   ② less water가 한 덩어리.   ③ 비교 대상 firefighters 앞에 than을 놓는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 goats · weeds · fire     1-3 아래 참조");
-B("1-1   정답 ②. 염소들이 마른 풀을 먹어 산불을 막았다는 글이다. ① 아파트는 불이 향하던 건물로 한 번 나올 뿐이고, ③ 우유 이야기는 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 goats · weeds · fire     1-3 아래 참조");
+B("1-1   정답 ③. 염소들이 마른 풀을 먹어 산불을 막았다는 글이다. ① 아파트는 불이 향하던 건물로 한 번 나올 뿐이고, ② 우유 이야기는 나오지 않는다.");
 B("1-2   ○표 할 세 단어: goats(힌트① 이 글의 주인공) · weeds(힌트② 염소가 먹어 치우는 것) · fire(힌트③ 염소가 막아 준 것). 나머지 셋(apartment · water · magic)은 본문에 나오지만 배경과 비유일 뿐이다.");
 B("1-3   문장 6 — these goats는 400마리 염소에 ○ (문장 4).   문장 7 — the poisonous ones는 독이 있는 식물에 ○ (ones = plants).   문장 9 — That은 염소가 풀을 먹은 일에 ○ (문장 8 전체).");
 B("[학습 포인트]   ones는 앞에 나온 명사를 대신하는 말이다(the poisonous ones = the poisonous plants). 지시어가 단어를 받는지, 문장 전체를 받는지 구별하는 것이 지칭 문항의 핵심이다.", true);
@@ -419,10 +422,10 @@ B("[학습 포인트]   ones는 앞에 나온 명사를 대신하는 말이다(t
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 T · 5 F · 6 F · 7 T · 8 F");
-B("1 T — 문장 1.   2 F — 문장 2: 학교(school)가 아니라 아파트 건물이다.   3 T — 문장 4.   4 T — 문장 5.   5 F — 문장 7: 며칠(days) 전이 아니라 몇 주(weeks) 전이다.   6 F — 문장 7: 독이 있는 식물까지 잘 먹는다.   7 T — 문장 8.   8 F — 문장 11: 더 많이(more)가 아니라 더 적게(less) 쓴다.  거짓 넷은 모두 한 요소만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (d) → (a) → (c)");
-B("ⓑ 시에서 잡초를 없애려고 염소를 풀어놓는다(문장 7) → ⓓ 염소들이 마른 풀을 먹어 치운다(문장 8) → ⓐ 산불이 난다(문장 1) → ⓒ 탈 것이 없어 불이 멈춘다(문장 5). 본문은 산불을 먼저 말하지만, 실제로는 염소가 몇 주 전에 먼저 왔다 — 서술 순서와 사건 순서가 어긋나는 지점이다.", true);
+Hs("R1   True / False   ·   1 T · 2 F · 3 F · 4 T · 5 F · 6 T · 7 F · 8 T");
+   B("1 T — 문장 4.   2 F — 문장 7: 독이 있는 식물까지 잘 먹는다.   3 F — 문장 2: 학교(school)가 아니라 아파트 건물이다.   4 T — 문장 1.   5 F — 문장 7: 며칠(days) 전이 아니라 몇 주(weeks) 전이다.   6 T — 문장 5.   7 F — 문장 11: 더 많이(more)가 아니라 더 적게(less) 쓴다.  거짓 넷은 모두 한 요소만 비튼 것이다.   8 T — 문장 8.", true);
+Hs("R2   사건 순서   ·   (c) → (d) → (a) → (b)");
+B("ⓒ 시에서 잡초를 없애려고 염소를 풀어놓는다(문장 7) → ⓓ 염소들이 마른 풀을 먹어 치운다(문장 8) → ⓐ 산불이 난다(문장 1) → ⓑ 탈 것이 없어 불이 멈춘다(문장 5). 본문은 산불을 먼저 말하지만, 실제로는 염소가 몇 주 전에 먼저 왔다 — 서술 순서와 사건 순서가 어긋나는 지점이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

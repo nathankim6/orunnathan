@@ -98,25 +98,27 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① A City Named by a Small Mistake", "② The Longest Rivers in South America",
- "③ Portuguese Words for the Months", "④ How to Travel in Brazil Cheaply",
- "⑤ Why Brazil Became Independent"].forEach(c => K.push(ch(c)));
+["① The Longest Rivers in South America",
+ "② Portuguese Words for the Months",
+ "③ How to Travel in Brazil Cheaply",
+ "④ Why Brazil Became Independent",
+ "⑤ A City Named by a Small Mistake"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Rio de Janeiro is a city in Brazil, South America.",
  "② In Portuguese, Janeiro means “January.”",
- "③ There is a big river in the middle of Rio de Janeiro.",
- "④ People from Portugal arrived at a wide bay in 1502.",
+ "③ People from Portugal arrived at a wide bay in 1502.",
+ "④ There is a big river in the middle of Rio de Janeiro.",
  "⑤ Brazil was ruled by Portugal for over 300 years."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the wide bay",
- "② the city of Rio de Janeiro",
- "③ the country of Portugal",
- "④ the month of January",
- "⑤ the name of the city"].forEach(c => K.push(ch(c)));
+["① the city of Rio de Janeiro",
+ "② the country of Portugal",
+ "③ the month of January",
+ "④ the name of the city",
+ "⑤ the wide bay"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -175,7 +177,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -189,7 +191,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -226,7 +228,7 @@ K.push(spF(2, 85, 0.06));
  [9, "Since it was January, they decided to call the place “Rio de Janeiro” in Portuguese."],
  [10, "Since then, Brazil was ruled by Portugal for over 300 years."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -284,7 +286,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 포르투갈어로 배우는 달 이름", "② 작은 오해에서 생긴 도시 이름", "③ 남아메리카에서 가장 긴 강"].forEach(c =>
+["① 작은 오해에서 생긴 도시 이름",
+ "② 포르투갈어로 배우는 달 이름",
+ "③ 남아메리카에서 가장 긴 강"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -305,7 +309,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 1950, 7350];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -407,9 +411,9 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 도시 이름의 유래를 알려 주는 설명문",
- "② 여행 상품을 파는 광고",
- "③ 하루 일과를 적은 일기",
+["① 여행 상품을 파는 광고",
+ "② 하루 일과를 적은 일기",
+ "③ 도시 이름의 유래를 알려 주는 설명문",
  "④ 친구에게 보내는 편지",
  "⑤ 상상으로 지어낸 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
@@ -462,7 +466,7 @@ K.push(p([t("조건 ", { size: 16, bold: true, color: GOLD }),
   t("덩어리의 순서를 괄호에 쓰세요. 덩어리 안의 단어는 바꾸지 않습니다.", { size: 16, color: SUB })], { after: 100, line: 250 }));
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("보기   ", { size: 16, bold: true, color: NAVY2 }),
-     t("ⓐ but the name     ⓑ Rio de Janeiro got     ⓒ stayed the same.     ⓓ its name by mistake,", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
+     t("ⓐ but the name     ⓑ stayed the same.     ⓒ its name by mistake,     ⓓ Rio de Janeiro got", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
   { w: W, shade: COOL, b: { top: bd(4, CLINE), bottom: bd(4, CLINE), left: NOB, right: NOB }, m: { top: 150 + Math.round((FT(6) || 0) * 0.02), bottom: 150 + Math.round((FT(6) || 0) * 0.02), left: 180, right: 180 } })] })]));
 K.push(spF(6, 200, 0.05));
 K.push(p([t("순서   ", { size: 17, bold: true, color: NAVY2 }),
@@ -517,13 +521,13 @@ pairGrid(
   { sn: 5, main: "there isn’t actually a river",
     opts: ["① a big river runs through the city", "② no river is really there", "③ the river is very short"] },
   { sn: 8, main: "by mistake",
-    opts: ["① not on purpose", "② on purpose", "③ with the help of a map"] });
+    opts: ["① on purpose", "② with the help of a map", "③ not on purpose"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 10, main: "was ruled by Portugal",
-    opts: ["① Brazil ruled Portugal", "② Brazil sold coffee to Portugal", "③ Portugal was in control of Brazil"] },
+    opts: ["① Brazil ruled Portugal", "② Portugal was in control of Brazil", "③ Brazil sold coffee to Portugal"] },
   { sn: 11, main: "stayed the same",
-    opts: ["① changed into a new one", "② did not change", "③ became much longer"] });
+    opts: ["① changed into a new one", "② became much longer", "③ did not change"] });
 K.push(spF(7, 150, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -578,15 +582,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Rio de Janeiro is a city in Brazil, South America.",
-    "In Portuguese, Rio means “January.”",
-    "There isn’t actually a river in Rio de Janeiro.",
-    "People from Portugal arrived at a wide bay in 1502.",
     "They thought the bay was a lake by mistake.",
-    "They called the place “Rio de Janeiro” because it was January.",
+    "People from Portugal arrived at a wide bay in 1502.",
+    "Rio de Janeiro is a city in Brazil, South America.",
     "Brazil was ruled by Spain for over 300 years.",
-    "After Brazil became independent, the city changed its name.",
-  ].map((s, i) => new TableRow({ children: [
+    "There isn’t actually a river in Rio de Janeiro.",
+    "In Portuguese, Rio means “January.”",
+    "They called the place “Rio de Janeiro” because it was January.",
+    "After Brazil became independent, the city changed its name."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -601,8 +604,8 @@ K.push(spF(8, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "리우데자네이루의 이름에 얽힌 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ Brazil became independent, but the name stayed the same.",
-      "ⓑ People from Portugal arrived at a wide bay.",
+  ...["ⓐ People from Portugal arrived at a wide bay.",
+      "ⓑ Brazil became independent, but the name stayed the same.",
       "ⓒ Portugal ruled Brazil for over 300 years.",
       "ⓓ They called the place “Rio de Janeiro.”"]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
@@ -644,10 +647,10 @@ K.push(spF(9, 380, 0.12));
 
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
-[["문장 1", [t("Rio de Janeiro ", { size: 19 }), t("( is  /  are )", { size: 19, bold: true, color: NAVY }), t(" a city in Brazil, South America.", { size: 19 })], "주어가 하나(단수)일 때 be동사는 무엇일까요?"],
- ["문장 5", [t("But there ", { size: 19 }), t("( isn’t  /  aren’t )", { size: 19, bold: true, color: NAVY }), t(" actually a river in Rio de Janeiro!", { size: 19 })], "there 뒤의 명사(a river)가 진짜 주어예요."],
- ["문장 8", [t("They thought it ", { size: 19 }), t("( was  /  is )", { size: 19, bold: true, color: NAVY }), t(" a river by mistake!", { size: 19 })], "thought(과거)와 어울리는 시제를 고르세요."],
- ["문장 10", [t("Brazil ", { size: 19 }), t("( was ruled  /  ruled )", { size: 19, bold: true, color: NAVY }), t(" by Portugal for over 300 years.", { size: 19 })], "'지배를 받았다'는 be동사+과거분사!"],
+[["문장 1", [t("Rio de Janeiro ", { size: 19 }), t("( are  /  is )", { size: 19, bold: true, color: NAVY }), t(" a city in Brazil, South America.", { size: 19 })], "주어가 하나(단수)일 때 be동사는 무엇일까요?"],
+ ["문장 5", [t("But there ", { size: 19 }), t("( aren’t  /  isn’t )", { size: 19, bold: true, color: NAVY }), t(" actually a river in Rio de Janeiro!", { size: 19 })], "there 뒤의 명사(a river)가 진짜 주어예요."],
+ ["문장 8", [t("They thought it ", { size: 19 }), t("( is  /  was )", { size: 19, bold: true, color: NAVY }), t(" a river by mistake!", { size: 19 })], "thought(과거)와 어울리는 시제를 고르세요."],
+ ["문장 10", [t("Brazil ", { size: 19 }), t("( ruled  /  was ruled )", { size: 19, bold: true, color: NAVY }), t(" by Portugal for over 300 years.", { size: 19 })], "'지배를 받았다'는 be동사+과거분사!"],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
     cel(new Paragraph({ children: [t("(" + (i + 1) + ")", { size: 16, bold: true, color: "FFFFFF" })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 210 } }),
@@ -741,30 +744,30 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문9 ", { size: 17, bold: true, color: NAVY2 }), t("Since[네모]·it(S′)·was(△V′)·they(S)·decided(△V)·in Portuguese(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 우리 마을에는 서점이 없다  (2) 그 창문은 내 남동생에 의해 깨졌다  (3) 편지가 한 통 있는데, 그것은 나의 이모가 썼다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 name · mistake · stayed        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 결과 · 반전 · 이유 · 그때부터   2-2 [B] 이름 뜻 · [E] 마무리   2-3 ①", { size: 19, bold: true })], { after: 25 }),
-  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (d) → (a) → (c)  ·  Rio de Janeiro got its name by mistake, but the name stayed the same.", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 name · mistake · stayed        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 결과 · 반전 · 이유 · 그때부터   2-2 [B] 이름 뜻 · [E] 마무리   2-3 ③", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (d) → (c) → (a) → (b)  ·  Rio de Janeiro got its name by mistake, but the name stayed the same.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) river  (2) mistake  (3) name  (4) same        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 5 ②  문장 8 ①  문장 10 ③  문장 11 ②", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 5 ②  문장 8 ③  문장 10 ②  문장 11 ③", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4T · 5F · 6T · 7F · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (c) → (a)", { size: 19, bold: true })], { after: 25 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (d) → (c) → (b)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(c) · 2(a) · 3(d) · 4(f) · 5(e) · 6(b)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) is  (2) isn’t  (3) was  (4) was ruled", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) famous (2) river (3) name (4) arrived (5) mistake (6) ruled (7) independent (8) stayed", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) They thought it was a river by mistake!  (2) How did the city get its name?", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 강이 없는데도 '1월의 강'이라는 이름을 갖게 된 도시(문장 5–6)와 그 유래(문장 7–9)를 들려준다. 소재(도시 이름)와 특징(작은 오해)을 함께 담은 ①이 제목으로 적절하다. ③·⑤는 본문의 한 부분만 건드린 지엽적 오답, ②·④은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 5에서 리우데자네이루에는 실제로 강이 없다고 했으므로, 큰 강이 있다는 ③는 본문과 반대된다. ①은 문장 1, ②은 문장 3, ④은 문장 7, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 강이 없는데도 '1월의 강'이라는 이름을 갖게 된 도시(문장 5–6)와 그 유래(문장 7–9)를 들려준다. 소재(도시 이름)와 특징(작은 오해)을 함께 담은 ⑤이 제목으로 적절하다. ②·④는 본문의 한 부분만 건드린 지엽적 오답, ①·③은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 5에서 리우데자네이루에는 실제로 강이 없다고 했으므로, 큰 강이 있다는 ④는 본문과 반대된다. ①은 문장 1, ②은 문장 3, ③은 문장 7, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) it은 바로 앞 문장 7의 a wide bay(넓은 만)를 가리킨다. 포르투갈 사람들이 강이라고 잘못 본 대상이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   Since then, Brazil was ruled by Portugal for over 300 years.");
 B("문장 10을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Since.   ② then 뒤의 콤마를 빠뜨리지 않는다.   ③ was ruled by — 수동태는 be동사+과거분사가 한 덩어리.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 name · mistake · stayed     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 작은 오해에서 생긴 리우데자네이루의 이름을 설명한다. ① 포르투갈어 낱말은 이름을 풀이하는 재료일 뿐이고, ③ 강 이야기는 '강이 없다'는 사실로만 나온다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 name · mistake · stayed     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 작은 오해에서 생긴 리우데자네이루의 이름을 설명한다. ② 포르투갈어 낱말은 이름을 풀이하는 재료일 뿐이고, ③ 강 이야기는 '강이 없다'는 사실로만 나온다.");
 B("1-2   ○표 할 세 단어: name(힌트① 도시가 얻은 것) · mistake(힌트② 이름이 생긴 계기) · stayed(힌트③ 그 뒤 이름에 일어난 일). 나머지 셋(river · culture · Portugal)은 본문에 등장하지만 주제문에 들어가지 않는다 — 배경과 예시일 뿐이다.");
 B("1-3   문장 8 — They는 포르투갈인, it은 넓은 만에 ○ (한 문장 안에서 가리키는 대상이 바뀐다).   문장 10 — then은 1502년 그 뒤에 ○.   문장 11 — It은 브라질에 ○ (도시가 아니라 나라가 독립했다).");
 B("[학습 포인트]   같은 It이라도 문장 2에서는 도시를, 문장 11에서는 나라를 가리킨다. 지시어를 만나면 앞 문장으로 화살표를 그어 짝을 확인하는 습관을 들이자.", true);
@@ -772,32 +775,32 @@ B("[학습 포인트]   같은 It이라도 문장 2에서는 도시를, 문장 1
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 결과 / 반전 / 이유 / 그때부터     2-2 [B] 이름 뜻 · [E] 마무리     2-3 ①");
+Hs("STEP 2   글의 흐름   ·   2-1 결과 / 반전 / 이유 / 그때부터     2-2 [B] 이름 뜻 · [E] 마무리     2-3 ③");
 B("2-1   문장 4 So — 앞의 뜻풀이에서 나온 '결과'.   문장 5 But — 그런데 강이 없다는 '반전'.   문장 9 Since — 1월이었다는 '이유'로 그렇게 불렀다.   문장 10 Since then — '그때부터' 이어진 시간을 나타낸다.");
 B("2-2   [B] 이름 뜻(문장 3–5: 이름의 뜻을 풀고 강이 없다는 모순을 던진다), [E] 마무리(문장 10–12: 그 뒤의 역사와 정리). 보기의 '요리법'은 이 글에 없는 역할이다. [A] 소개 → [B] 이름 뜻 → [C] 의문 → [D] 유래 → [E] 마무리 — 유래를 설명하는 글의 전형적인 흐름이다.");
-B("2-3   정답 ①. 도시 이름이 어떻게 생겼는지 사실을 알려 주는 설명문이다. ② 광고의 신호(사라는 말·가격)가 없고, ③ 일기의 I·오늘도, ④ 편지의 Dear도, ⑤ 동화의 상상 속 인물도 없다.");
+B("2-3   정답 ③. 도시 이름이 어떻게 생겼는지 사실을 알려 주는 설명문이다. ① 광고의 신호(사라는 말·가격)가 없고, ② 일기의 I·오늘도, ④ 편지의 Dear도, ⑤ 동화의 상상 속 인물도 없다.");
 B("[학습 포인트]   연결어만 표시해도 글의 지도가 그려진다. So(결과), But(반전), Since(이유·시점). 특히 But 뒤에는 글쓴이가 진짜 하고 싶은 말이 온다.", true);
-Hs("STEP 3   주제문 만들기   ·   3-1 mistake · stayed     3-3 (b) → (d) → (a) → (c)");
+Hs("STEP 3   주제문 만들기   ·   3-1 mistake · stayed     3-3 (d) → (c) → (a) → (b)");
 B("3-1  재료 찾기 — (2) 문장 8에서 mistake에 ○: 이름이 생긴 계기다. river는 잘못 본 대상일 뿐 계기가 아니다. (3) 문장 11에서 stayed에 ○: 이름이 그대로였다는 결과다. changed는 본문과 반대다.");
 B("3-2  뼈대 채우기 — (1) name  (2) mistake  (3) stayed.  넣으면 Rio de Janeiro got its name by mistake, but the name stayed the same.가 완성된다.");
-B("3-3  정답 순서 — ⓑ Rio de Janeiro got → ⓓ its name by mistake, → ⓐ but the name → ⓒ stayed the same.");
+B("3-3  정답 순서 — ⓓ Rio de Janeiro got → ⓒ its name by mistake, → ⓐ but the name → ⓑ stayed the same.");
 B("[채점 포인트]  주인공(도시 이름)이 맨 앞, 마침표가 붙은 덩어리가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) river  (2) mistake  (3) name  (4) same");
 B("(1)은 문장 5의 river, (2)는 문장 8의 mistake, (3)은 문장 6의 name, (4)는 문장 11의 same에서 가져온다. 요약문이 곧 이 글의 흐름이다: 모순(1) → 오해(2) → 이름(3) → 그대로(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 5 ②   문장 8 ①   문장 10 ③   문장 11 ②  (정답 선지는 무표시)");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 5 ②   문장 8 ③   문장 10 ②   문장 11 ③  (정답 선지는 무표시)");
 B("문장 5 there isn’t actually a river   ① ✕ [반대] 큰 강이 도시를 지난다 — 정반대.   ② ○ 강이 정말 없다.   ③ ✕ [무관] 강이 짧다는 말은 지문에 없다.");
-B("문장 8 by mistake   ① ○ not on purpose = 일부러가 아니라 실수로.   ② ✕ [반대] 일부러 그랬다 — 정반대.   ③ ✕ [무관] 지도를 썼다는 말은 지문에 없다.");
-B("문장 10 was ruled by Portugal   ① ✕ [반대] 브라질이 포르투갈을 지배했다 — 주어와 목적어가 뒤바뀐 정반대.   ② ✕ [무관] 커피 무역 이야기는 지문에 없다.   ③ ○ 포르투갈이 브라질을 지배했다.");
-B("문장 11 stayed the same   ① ✕ [반대] 새 이름으로 바뀌었다 — 정반대.   ② ○ 바뀌지 않았다.   ③ ✕ [무관] 이름이 길어졌다는 말은 지문에 없다.");
+B("문장 8 by mistake   ③ ○ not on purpose = 일부러가 아니라 실수로.   ① ✕ [반대] 일부러 그랬다 — 정반대.   ② ✕ [무관] 지도를 썼다는 말은 지문에 없다.");
+B("문장 10 was ruled by Portugal   ① ✕ [반대] 브라질이 포르투갈을 지배했다 — 주어와 목적어가 뒤바뀐 정반대.   ③ ✕ [무관] 커피 무역 이야기는 지문에 없다.   ② ○ 포르투갈이 브라질을 지배했다.");
+B("문장 11 stayed the same   ① ✕ [반대] 새 이름으로 바뀌었다 — 정반대.   ③ ○ 바뀌지 않았다.   ② ✕ [무관] 이름이 길어졌다는 말은 지문에 없다.");
 B("[학습 포인트]  수동태는 뒤집어 묻기 좋은 표현이다. 'A was ruled by B'를 만나면 누가 하는 쪽이고 누가 당하는 쪽인지 화살표로 표시해 두자.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 T · 5 F · 6 T · 7 F · 8 F");
-B("1 T — 문장 1.   2 F — 문장 3: Rio는 January가 아니라 river다.   3 T — 문장 5.   4 T — 문장 7.   5 F — 문장 8: 호수(lake)가 아니라 강(river)이라고 착각했다.   6 T — 문장 9.   7 F — 문장 10: 스페인이 아니라 포르투갈의 지배를 받았다.   8 F — 문장 11: 독립한 뒤에도 이름은 그대로였다.  거짓 문장은 모두 딱 한 요소(January, lake, Spain, changed)를 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (d) → (c) → (a)");
-B("ⓑ 포르투갈 사람들이 넓은 만에 도착한다(문장 7) → ⓓ 그곳을 'Rio de Janeiro'라고 부른다(문장 9) → ⓒ 포르투갈이 300년 넘게 브라질을 지배한다(문장 10) → ⓐ 브라질이 독립하지만 이름은 그대로다(문장 11). 이 글은 이름의 뜻(문장 3–5)을 먼저 말하고 유래를 나중에 밝히지만, 사건 자체는 문장 7–11의 순서 그대로다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
+   B("1 F — 문장 8: 호수(lake)가 아니라 강(river)이라고 착각했다.   2 T — 문장 7.   3 T — 문장 1.   4 F — 문장 10: 스페인이 아니라 포르투갈의 지배를 받았다.   5 T — 문장 5.   6 F — 문장 3: Rio는 January가 아니라 river다.   7 T — 문장 9.   8 F — 문장 11: 독립한 뒤에도 이름은 그대로였다.  거짓 문장은 모두 딱 한 요소(January, lake, Spain, changed)를 비튼 것이다.", true);
+Hs("R2   사건 순서   ·   (a) → (d) → (c) → (b)");
+B("ⓐ 포르투갈 사람들이 넓은 만에 도착한다(문장 7) → ⓓ 그곳을 'Rio de Janeiro'라고 부른다(문장 9) → ⓒ 포르투갈이 300년 넘게 브라질을 지배한다(문장 10) → ⓑ 브라질이 독립하지만 이름은 그대로다(문장 11). 이 글은 이름의 뜻(문장 3–5)을 먼저 말하고 유래를 나중에 밝히지만, 사건 자체는 문장 7–11의 순서 그대로다.", true);
 Hs("R3   영영풀이   ·   1 (c) · 2 (a) · 3 (d) · 4 (f) · 5 (e) · 6 (b)");
 B("famous = 많은 사람에게 알려진 · arrive = 어떤 곳에 닿다 · bay = 육지가 감싼 바다의 한 부분(만) · mistake = 그러려고 한 것이 아닌데 잘못한 일 · rule = 한 나라를 다스리다 · independent = 남의 지배에서 벗어난.", true);
 Hs("R4   어법 기초   ·   (1) is  (2) isn’t  (3) was  (4) was ruled");

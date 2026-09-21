@@ -80,8 +80,10 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① A Girl’s Letters for More Characters with Glasses", "② How to Choose the Right Glasses for You",
- "③ The Story of the Movie Encanto", "④ Fun Ways to Use Emojis Every Day",
+["① How to Choose the Right Glasses for You",
+ "② A Girl’s Letters for More Characters with Glasses",
+ "③ The Story of the Movie Encanto",
+ "④ Fun Ways to Use Emojis Every Day",
  "⑤ The Best Schools in England"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
@@ -145,7 +147,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -158,7 +160,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -194,7 +196,7 @@ K.push(spF(2, 85, 0.06));
  [11, "So, I wrote a letter to the Unicode Consortium to ask for more emojis with glasses."],
  [13, "Many people agree with me now, and we’ll keep trying!"]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -249,7 +251,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 좋은 안경을 고르는 방법", "② 안경 쓴 캐릭터를 늘리려는 편지와 캠페인", "③ 영국 소녀의 학교생활"].forEach(c =>
+["① 안경 쓴 캐릭터를 늘리려는 편지와 캠페인",
+ "② 좋은 안경을 고르는 방법",
+ "③ 영국 소녀의 학교생활"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -270,7 +274,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -317,7 +321,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -332,15 +336,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Lowri is from England and wears glasses.",
+    "Lowri wrote a letter only to Disney and to no other company.",
+    "Lowri started a campaign called #GlassesOn.",
+    "Disney created the character Mirabel in the movie Encanto.",
+    "There were many emojis with glasses at that time.",
     "Lowri sent a letter to Disney when she was 9.",
     "Lowri’s dad shared her letter on Facebook.",
-    "Disney created the character Mirabel in the movie Encanto.",
     "The movie Encanto was a huge failure.",
-    "Lowri started a campaign called #GlassesOn.",
-    "There were many emojis with glasses at that time.",
-    "Lowri wrote a letter only to Disney and to no other company.",
-  ].map((s, i) => new TableRow({ children: [
+    "Lowri is from England and wears glasses."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -355,8 +358,8 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "로리에게 일어난 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ Disney created the character Mirabel.",
-      "ⓑ Lowri sent a letter to Disney at the age of 9.",
+  ...["ⓐ Lowri sent a letter to Disney at the age of 9.",
+      "ⓑ Disney created the character Mirabel.",
       "ⓒ Lowri’s mom looked for an emoji for her.",
       "ⓓ Lowri wrote a letter to the Unicode Consortium."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
@@ -396,22 +399,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문13 ", { size: 17, bold: true, color: NAVY2 }), t("Many people(S)·agree(△V)·and[네모]·we(S)·’ll keep(△V)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 선생님은 나에게 문을 닫아 달라고 하셨다  (2) 공원에 많은 사람들이 있었다  (3) 경비원 두 명이 있었고, 그들은 우리에게 밖에서 기다려 달라고 했다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 glasses · letter · campaign   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 glasses · letter · campaign   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2T · 3F · 4T · 5F · 6T · 7F · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (c) → (d)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 F · 5 T · 6 F · 7 F · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (b) → (c) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 안경 쓴 캐릭터를 늘려 달라고 디즈니에 편지를 쓴 소녀(문장 3–7)와 이모지를 위한 캠페인(문장 8–13) 이야기다. 소재(편지)와 목적(안경 쓴 캐릭터)을 함께 담은 ①이 제목으로 적절하다. ③·④은 세부만 건드린 지엽적 오답, ②·⑤는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ②");
+B("이 글은 안경 쓴 캐릭터를 늘려 달라고 디즈니에 편지를 쓴 소녀(문장 3–7)와 이모지를 위한 캠페인(문장 8–13) 이야기다. 소재(편지)와 목적(안경 쓴 캐릭터)을 함께 담은 ②이 제목으로 적절하다. ③·④은 세부만 건드린 지엽적 오답, ①·⑤는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ③");
 B("문장 6에서 디즈니는 편지에 귀 기울여(listened) 미라벨이라는 캐릭터를 만들었다. 무시했다는 ③이 본문과 반대된다. ①은 문장 3, ②은 문장 5, ④은 문장 8, ⑤는 문장 12에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) they는 같은 문장 앞부분의 few emojis with glasses를 가리킨다. 로리와 닮지 않았다고 한 대상이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   I also started a campaign called #GlassesOn.");
 B("문장 8을 그대로 복원하는 문제다. ① 첫 글자는 대문자 I.   ② also는 동사 started 앞자리.   ③ called #GlassesOn이 앞의 a campaign을 뒤에서 꾸민다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 glasses · letter · campaign     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 안경 쓴 캐릭터와 이모지를 늘리려 한 로리의 편지와 캠페인 이야기다. ① 안경 고르는 법은 나오지 않고, ③ 학교생활도 다루지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 glasses · letter · campaign     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 안경 쓴 캐릭터와 이모지를 늘리려 한 로리의 편지와 캠페인 이야기다. ② 안경 고르는 법은 나오지 않고, ③ 학교생활도 다루지 않는다.");
 B("1-2   ○표 할 세 단어: glasses(힌트① 로리가 늘리고 싶었던 것) · letter(힌트② 로리가 쓴 것) · campaign(힌트③ 로리가 시작한 것). 나머지 셋(Disney · Facebook · England)은 본문에 등장하지만 주제문에 들어가지 않는다 — 상대와 배경일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
 B("1-3   문장 5 — it은 나의 편지에 ○ (엄마가 페이스북에 올린 그 편지).   문장 9 — The idea는 #GlassesOn 캠페인에 ○ (문장 8의 캠페인).   문장 10 — they는 안경 낀 이모지에 ○ (같은 문장 앞부분).");
 B("[학습 포인트]   The idea처럼 'the + 명사'도 지시어 노릇을 한다. 앞 문장 전체를 한 단어로 받는 자리이니, the가 붙은 명사를 만나면 '앞의 무엇을 말하는 거지?'를 물어보자.", true);
@@ -420,10 +423,10 @@ B("[학습 포인트]   The idea처럼 'the + 명사'도 지시어 노릇을 한
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 T · 3 F · 4 T · 5 F · 6 T · 7 F · 8 F");
-B("1 T — 문장 1–2.   2 T — 문장 3.   3 F — 문장 5: 아빠가 아니라 엄마(mom)가 올렸다.   4 T — 문장 6.   5 F — 문장 7: 실패가 아니라 큰 성공(success)이었다.   6 T — 문장 8.   7 F — 문장 10: 많았던 게 아니라 거의 없었다(few).   8 F — 문장 11–12: 디즈니뿐 아니라 유니코드 협회와 구글에도 보냈다.  거짓 문장은 모두 딱 한 요소(dad, failure, many, only)를 비튼 것이다 — 그 한 부분을 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (b) → (a) → (c) → (d)");
-B("ⓑ 아홉 살에 디즈니에 편지를 보낸다(문장 3) → ⓐ 디즈니가 미라벨을 만든다(문장 6) → ⓒ 엄마가 로리를 닮은 이모지를 찾아본다(문장 9) → ⓓ 로리가 유니코드 협회에 편지를 쓴다(문장 11). 이 글은 '편지 → 결과'가 두 번 반복되는 구조다 — 같은 흐름이 두 번 나온다는 것을 알아채면 이야기가 한눈에 들어온다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 F · 5 T · 6 F · 7 F · 8 T");
+   B("1 F — 문장 11–12: 디즈니뿐 아니라 유니코드 협회와 구글에도 보냈다.  거짓 문장은 모두 딱 한 요소(dad, failure, many, only)를 비튼 것이다 — 그 한 부분을 찾는 것이 정독이다.   2 T — 문장 8.   3 T — 문장 6.   4 F — 문장 10: 많았던 게 아니라 거의 없었다(few).   5 T — 문장 3.   6 F — 문장 5: 아빠가 아니라 엄마(mom)가 올렸다.   7 F — 문장 7: 실패가 아니라 큰 성공(success)이었다.   8 T — 문장 1–2.", true);
+Hs("R2   사건 순서   ·   (a) → (b) → (c) → (d)");
+B("ⓐ 아홉 살에 디즈니에 편지를 보낸다(문장 3) → ⓑ 디즈니가 미라벨을 만든다(문장 6) → ⓒ 엄마가 로리를 닮은 이모지를 찾아본다(문장 9) → ⓓ 로리가 유니코드 협회에 편지를 쓴다(문장 11). 이 글은 '편지 → 결과'가 두 번 반복되는 구조다 — 같은 흐름이 두 번 나온다는 것을 알아채면 이야기가 한눈에 들어온다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

@@ -78,22 +78,24 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Chocolate Snow: A Sweet Accident in a Small Town", "② How to Make Cocoa Powder at Home",
- "③ The Best Chocolate Factories in Europe", "④ Why Strong Winds Are Dangerous",
+["① How to Make Cocoa Powder at Home",
+ "② Chocolate Snow: A Sweet Accident in a Small Town",
+ "③ The Best Chocolate Factories in Europe",
+ "④ Why Strong Winds Are Dangerous",
  "⑤ How to Clean Streets After Snow"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Cocoa powder fell from the sky in the town of Olten.",
- "② The chocolate snow started at a chocolate factory in the town.",
- "③ The factory had a problem with its air system.",
- "④ The factory said that the chocolate snow was dangerous.",
+ "② The factory said that the chocolate snow was dangerous.",
+ "③ The chocolate snow started at a chocolate factory in the town.",
+ "④ The factory had a problem with its air system.",
  "⑤ The people in the town loved this happening."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the strong wind on that day",
- "② the cocoa powder in the air",
+["① the cocoa powder in the air",
+ "② the strong wind on that day",
  "③ the chocolate factory in the town",
  "④ the air system of the factory",
  "⑤ the snow that fell in winter"].forEach(c => K.push(ch(c)));
@@ -143,7 +145,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -156,7 +158,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -193,7 +195,7 @@ K.push(spF(2, 85, 0.06));
  [6, "On that day, a strong wind was blowing, so it spread the cocoa powder all over the town."],
  [9, "They fixed the air system and offered to clean up the cocoa powder."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -248,7 +250,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 초콜릿을 맛있게 만드는 방법", "② 마을에 코코아 가루가 눈처럼 내린 일", "③ 눈이 많이 내리는 나라들"].forEach(c =>
+["① 초콜릿을 맛있게 만드는 방법",
+ "② 눈이 많이 내리는 나라들",
+ "③ 마을에 코코아 가루가 눈처럼 내린 일"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -269,7 +273,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2050, 7250];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -316,7 +320,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -332,14 +336,13 @@ K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
     "Cocoa powder fell from the sky in the town of Olten.",
-    "The chocolate snow started at a bakery in the town.",
-    "The factory had a problem with its air system.",
-    "On that day, there was no wind at all.",
-    "Cars, houses, and streets got covered in cocoa powder.",
     "The factory said the chocolate snow was very harmful.",
     "The factory offered to clean up the cocoa powder.",
+    "The chocolate snow started at a bakery in the town.",
+    "On that day, there was no wind at all.",
     "The people in the town hated this happening.",
-  ].map((s, i) => new TableRow({ children: [
+    "The factory had a problem with its air system.",
+    "Cars, houses, and streets got covered in cocoa powder."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -355,9 +358,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "올텐 마을에 �
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Cocoa powder fell on cars, houses, and streets.",
-      "ⓑ The factory had a problem with its air system.",
-      "ⓒ The factory fixed the air system.",
-      "ⓓ A strong wind spread the cocoa powder."]
+      "ⓑ The factory fixed the air system.",
+      "ⓒ A strong wind spread the cocoa powder.",
+      "ⓓ The factory had a problem with its air system."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -385,9 +388,9 @@ K.push(...tab("정답 및 해설", "UNIT 23  초콜릿 눈이 내린다면…", 
 K.push(sp(150));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("독해", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("\u2460      ", { size: 19, bold: true }),
-     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("\u2463      ", { size: 19, bold: true }),
-     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("\u2460", { size: 19, bold: true })], { after: 25 }),
+  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("①      ", { size: 19, bold: true }),
+     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("④      ", { size: 19, bold: true }),
+     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("①", { size: 19, bold: true })], { after: 25 }),
   p([t("04 ", { size: 19, bold: true, color: NAVY2 }), t("Cars, houses, and streets all got covered in cocoa powder.", { size: 19, bold: true })], { after: 75 }),
   p([t("구문분석", { size: 16, bold: true, color: NAVY })], { after: 60 }),
   p([t("문2 ", { size: 17, bold: true, color: NAVY2 }), t("Cocoa powder(S)·began(△V)·from the sky like snow(M)   ", { size: 17, bold: true }),
@@ -395,22 +398,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문9 ", { size: 17, bold: true, color: NAVY2 }), t("They(S)·fixed·offered(△V)·to clean up the cocoa powder(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 내가 일어났을 때 비가 오고 있었다  (2) 선생님은 우리에게 시험이 쉬웠다고 말씀하셨다  (3) 그녀는 나에게 자기 남동생이 자고 있다고 말했다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 cocoa · snow · loved   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 cocoa · snow · loved   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 T · 4 F · 5 F · 6 F · 7 T · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 \u2460");
-B("이 글은 스위스 올텐 마을에 코코아 가루가 눈처럼 내린 사고(문장 1–7)와 그것을 오히려 반긴 마을 사람들(문장 8–11)을 들려준다. 소재(초콜릿 눈)와 성격(달콤한 사고)을 모두 담은 ①이 제목으로 적절하다. ②·⑤는 코코아·청소만 건드린 지엽적 오답, ③·④은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 \u2463");
-B("문장 8에서 공장은 이 초콜릿 눈이 전혀 해롭지 않다(wasn’t harmful at all)고 알렸다. 위험하다고 뒤집은 ④이 본문과 반대된다. ①은 문장 1–2, ②은 문장 3, ③는 문장 4, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 \u2460");
+Hs("독해 01   제목   ·   정답 ②");
+B("이 글은 스위스 올텐 마을에 코코아 가루가 눈처럼 내린 사고(문장 1–7)와 그것을 오히려 반긴 마을 사람들(문장 8–11)을 들려준다. 소재(초콜릿 눈)와 성격(달콤한 사고)을 모두 담은 ②이 제목으로 적절하다. ①·⑤는 코코아·청소만 건드린 지엽적 오답, ③·④은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 8에서 공장은 이 초콜릿 눈이 전혀 해롭지 않다(wasn’t harmful at all)고 알렸다. 위험하다고 뒤집은 ②이 본문과 반대된다. ①은 문장 1–2, ③은 문장 3, ④는 문장 4, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) it은 같은 문장 앞부분의 a strong wind를 가리킨다. 코코아 가루를 마을 곳곳에 퍼뜨린 것이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   Cars, houses, and streets all got covered in cocoa powder.");
 B("문장 7을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Cars, 나열에는 콤마를 찍는다.   ② 세 가지를 잇는 and의 자리에 주의한다.   ③ got covered in — '~로 덮였다'가 한 덩어리다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 cocoa · snow · loved     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 마을에 코코아 가루가 눈처럼 내린 일을 들려준다. ① 초콜릿 만드는 법은 나오지 않고, ③ 진짜 눈이 내리는 나라 이야기도 아니다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 cocoa · snow · loved     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 마을에 코코아 가루가 눈처럼 내린 일을 들려준다. ① 초콜릿 만드는 법은 나오지 않고, ② 진짜 눈이 내리는 나라 이야기도 아니다.");
 B("1-2   ○표 할 세 단어: cocoa(힌트① 하늘에서 내린 것) · snow(힌트② 그것이 내린 모습) · loved(힌트③ 마을 사람들의 반응). 나머지 셋(factory · wind · cars)은 본문에 등장하지만 주제문에 들어가지 않는다 — 원인과 배경일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
 B("1-3   문장 4 — its는 공장의에 ○ (문장 3의 그 초콜릿 공장).   문장 6 — it은 강한 바람에 ○ (같은 문장 앞의 a strong wind).   문장 9 — They는 공장 사람들에 ○ (문장 8의 The factory).");
 B("[학습 포인트]   문장 3의 This는 단어 하나가 아니라 앞 문장 전체(코코아가 내린 일)를 받는다. 문장 6의 it은 바람, 문장 9의 They는 공장 — 가리키는 대상이 계속 바뀌므로 만날 때마다 확인하자.", true);
@@ -419,10 +422,10 @@ B("[학습 포인트]   문장 3의 This는 단어 하나가 아니라 앞 문�
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 1–2.   2 F — 문장 3: 빵집이 아니라 초콜릿 공장(factory)에서 시작됐다.   3 T — 문장 4.   4 F — 문장 6: 바람이 없던 게 아니라 강한 바람이 불고 있었다.   5 T — 문장 7.   6 F — 문장 8: 아주 해롭다가 아니라 전혀 해롭지 않다(wasn’t harmful)고 했다.   7 T — 문장 9.   8 F — 문장 10: 싫어한 게 아니라 아주 좋아했다(loved).  거짓 문장은 모두 딱 한 요소(bakery, no wind, harmful, hated)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (d) → (a) → (c)");
-B("ⓑ 공장의 환기 장치에 문제가 생긴다(문장 4) → ⓓ 강한 바람이 코코아 가루를 퍼뜨린다(문장 6) → ⓐ 자동차와 집과 거리가 코코아로 덮인다(문장 7) → ⓒ 공장이 환기 장치를 고친다(문장 9). 본문은 문장 1–2에서 결과(초콜릿 눈)를 먼저 말하고 문장 3–5에서 원인으로 되돌아간다 — 서술 순서와 사건 순서가 갈리는 지점이다.", true);
+Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 F · 6 F · 7 T · 8 T");
+   B("1 T — 문장 1–2.   2 F — 문장 8: 아주 해롭다가 아니라 전혀 해롭지 않다(wasn’t harmful)고 했다.   3 T — 문장 9.   4 F — 문장 3: 빵집이 아니라 초콜릿 공장(factory)에서 시작됐다.   5 F — 문장 6: 바람이 없던 게 아니라 강한 바람이 불고 있었다.   6 F — 문장 10: 싫어한 게 아니라 아주 좋아했다(loved).  거짓 문장은 모두 딱 한 요소(bakery, no wind, harmful, hated)만 비튼 것이다.   7 T — 문장 4.   8 T — 문장 7.", true);
+Hs("R2   사건 순서   ·   (d) → (c) → (a) → (b)");
+B("ⓓ 공장의 환기 장치에 문제가 생긴다(문장 4) → ⓒ 강한 바람이 코코아 가루를 퍼뜨린다(문장 6) → ⓐ 자동차와 집과 거리가 코코아로 덮인다(문장 7) → ⓑ 공장이 환기 장치를 고친다(문장 9). 본문은 문장 1–2에서 결과(초콜릿 눈)를 먼저 말하고 문장 3–5에서 원인으로 되돌아간다 — 서술 순서와 사건 순서가 갈리는 지점이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

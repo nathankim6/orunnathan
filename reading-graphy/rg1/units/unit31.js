@@ -99,24 +99,26 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① The Airport That Appears Only Once a Year", "② The Biggest Airport in the World",
- "③ How to Build a Control Tower", "④ Why Cars Are Better Than Jets",
+["① The Biggest Airport in the World",
+ "② The Airport That Appears Only Once a Year",
+ "③ How to Build a Control Tower",
+ "④ Why Cars Are Better Than Jets",
  "⑤ The History of Music Festivals"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Black Rock City Airport is in the desert of Nevada, U.S.",
- "② The airport has big buildings and a control tower.",
+["① The airport has big buildings and a control tower.",
+ "② Black Rock City Airport is in the desert of Nevada, U.S.",
  "③ The airport started because of the festival “Burning Man.”",
  "④ About 70,000 people come to join the festival.",
  "⑤ Some people fly to the desert with small jets."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) they가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the visitors who come in cars",
- "② the small jets in the desert",
- "③ the workers at the airport",
- "④ the artists at the festival",
+["① the small jets in the desert",
+ "② the workers at the airport",
+ "③ the artists at the festival",
+ "④ the visitors who come in cars",
  "⑤ the people living in Nevada"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -176,7 +178,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -190,7 +192,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -225,7 +227,7 @@ K.push(spF(2, 85, 0.06));
  [9, "About 70,000 people from all over the world come to join."],
  [10, "Some visitors come in cars, but they can get stuck in heavy traffic."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -283,7 +285,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 축제에서 열리는 미술 전시", "② 1년에 한 번만 나타나는 특별한 공항", "③ 사막을 여행하는 방법"].forEach(c =>
+["① 축제에서 열리는 미술 전시",
+ "② 사막을 여행하는 방법",
+ "③ 1년에 한 번만 나타나는 특별한 공항"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -304,7 +308,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 1950, 7350];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -406,9 +410,9 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 특별한 공항을 소개하는 설명문",
- "② 물건을 팔기 위해 만든 광고",
- "③ 하루 있었던 일을 적은 일기",
+["① 물건을 팔기 위해 만든 광고",
+ "② 하루 있었던 일을 적은 일기",
+ "③ 특별한 공항을 소개하는 설명문",
  "④ 안부를 전하는 편지",
  "⑤ 상상으로 지어낸 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
@@ -460,7 +464,7 @@ K.push(p([t("조건 ", { size: 16, bold: true, color: GOLD }),
   t("덩어리의 순서를 괄호에 쓰세요. 덩어리 안의 단어는 바꾸지 않습니다.", { size: 16, color: SUB })], { after: 100, line: 250 }));
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("보기   ", { size: 16, bold: true, color: NAVY2 }),
-     t("ⓐ is a special airport     ⓑ the Burning Man festival.     ⓒ Black Rock City Airport     ⓓ only for", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
+     t("ⓐ is a special airport     ⓑ Black Rock City Airport     ⓒ the Burning Man festival.     ⓓ only for", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
   { w: W, shade: COOL, b: { top: bd(4, CLINE), bottom: bd(4, CLINE), left: NOB, right: NOB }, m: { top: 150 + Math.round((FT(6) || 0) * 0.02), bottom: 150 + Math.round((FT(6) || 0) * 0.02), left: 180, right: 180 } })] })]));
 K.push(spF(6, 200, 0.05));
 K.push(p([t("순서   ", { size: 17, bold: true, color: NAVY2 }),
@@ -513,7 +517,7 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 2, main: "only shows up for one week every year",
-    opts: ["① appears for just seven days each year", "② stays open all through the year", "③ moves to a new city every year"] },
+    opts: ["① stays open all through the year", "② appears for just seven days each year", "③ moves to a new city every year"] },
   { sn: 4, main: "doesn’t have big buildings or a control tower",
     opts: ["① has many tall buildings", "② has no big buildings or towers", "③ has a large shopping mall"] });
 K.push(spF(7, 140, 0.16));
@@ -521,7 +525,7 @@ pairGrid(
   { sn: 10, main: "can get stuck in heavy traffic",
     opts: ["① can drive with no cars on the road", "② can be caught in a long line of cars", "③ can lose their car keys"] },
   { sn: 13, main: "disappears like magic",
-    opts: ["① goes away as if by magic", "② stays in the same place forever", "③ becomes a magic school"] });
+    opts: ["① stays in the same place forever", "② goes away as if by magic", "③ becomes a magic school"] });
 K.push(spF(7, 150, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -576,15 +580,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Black Rock City Airport is in the desert of Nevada, U.S.",
-    "The airport shows up for one month every year.",
-    "The airport doesn’t have big buildings or a control tower.",
-    "This airport has many long runways.",
-    "The festival called “Burning Man” is a festival of art, music, and culture.",
-    "About 7,000 people from all over the world come to join.",
-    "Some people fly to the desert with small jets.",
     "The airport stays in the desert after the festival.",
-  ].map((s, i) => new TableRow({ children: [
+    "The festival called “Burning Man” is a festival of art, music, and culture.",
+    "This airport has many long runways.",
+    "Black Rock City Airport is in the desert of Nevada, U.S.",
+    "The airport doesn’t have big buildings or a control tower.",
+    "The airport shows up for one month every year.",
+    "About 7,000 people from all over the world come to join.",
+    "Some people fly to the desert with small jets."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -599,9 +602,9 @@ K.push(spF(8, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "블랙록 시티 공항에 얽힌 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ The airport disappears when the festival is over.",
-      "ⓑ About 70,000 people come to the desert for the festival.",
-      "ⓒ The Burning Man festival started in the desert.",
+  ...["ⓐ The Burning Man festival started in the desert.",
+      "ⓑ The airport disappears when the festival is over.",
+      "ⓒ About 70,000 people come to the desert for the festival.",
       "ⓓ Some people fly to the desert with small jets."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -644,7 +647,7 @@ K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다.
 K.push(sp(130));
 [["문장 2", [t("It only ", { size: 19 }), t("( shows  /  show )", { size: 19, bold: true, color: NAVY }), t(" up for one week every year.", { size: 19 })], "주어 It은 3인칭 단수예요."],
  ["문장 4", [t("Unlike other airports, it ", { size: 19 }), t("( doesn’t  /  don’t )", { size: 19, bold: true, color: NAVY }), t(" have big buildings.", { size: 19 })], "주어가 it일 때 쓰는 부정형은?"],
- ["문장 9", [t("About 70,000 people ", { size: 19 }), t("( come  /  comes )", { size: 19, bold: true, color: NAVY }), t(" to join.", { size: 19 })], "people은 복수로 취급해요."],
+ ["문장 9", [t("About 70,000 people ", { size: 19 }), t("( comes  /  come )", { size: 19, bold: true, color: NAVY }), t(" to join.", { size: 19 })], "people은 복수로 취급해요."],
  ["문장 13", [t("When the festival ", { size: 19 }), t("( is  /  are )", { size: 19, bold: true, color: NAVY }), t(" over, the airport disappears.", { size: 19 })], "주어 the festival은 단수예요."],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
@@ -741,30 +744,30 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문10 ", { size: 17, bold: true, color: NAVY2 }), t("visitors(S)·come(△V)·but[네모]·they(S)·can get(△V)·in heavy traffic(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 '그린 데이즈'라는 책을 읽었다  (2) 그녀는 친구들을 만나기 위해 공원에 갔다  (3) 우리는 공연을 보기 위해 '스타 하우스'라는 집을 방문했다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 airport · special · festival        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 이유 · 반전 · 결과 · 때   2-2 [B] 특징 · [D] 이유   2-3 ①", { size: 19, bold: true })], { after: 25 }),
-  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (c) → (a) → (d) → (b)  ·  Black Rock City Airport is a special airport only for the Burning Man festival.", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 airport · special · festival        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 이유 · 반전 · 결과 · 때   2-2 [B] 특징 · [D] 이유   2-3 ③", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (a) → (d) → (c)  ·  Black Rock City Airport is a special airport only for the Burning Man festival.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) week  (2) runway  (3) festival  (4) jets        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ①  문장 4 ②  문장 10 ②  문장 13 ①", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ②  문장 4 ②  문장 10 ②  문장 13 ②", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (b) → (d) → (a)", { size: 19, bold: true })], { after: 25 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 T · 5 T · 6 F · 7 F · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (d) → (b)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(d) · 2(e) · 3(b) · 4(f) · 5(a) · 6(c)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) shows  (2) doesn’t  (3) come  (4) is", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) week (2) runway (3) festival (4) culture (5) join (6) traffic (7) jets (8) disappears", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) This airport only has a simple runway.  (2) That’s why they need an airport.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 1년에 한 주만 나타났다 사라지는 특별한 공항(문장 1–5)과 그 이유인 버닝맨 축제(문장 7–12)를 소개한다. 소재(공항)와 특징(1년에 한 번)을 모두 담은 ①이 제목이다. ④·⑤는 자동차·축제만 건드린 지엽적 오답, ②·③는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 4에서 이 공항에는 큰 건물도 관제탑도 없다고 했으므로 ②은 본문과 반대된다. ①은 문장 1, ③는 문장 7, ④은 문장 9, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ②");
+B("이 글은 1년에 한 주만 나타났다 사라지는 특별한 공항(문장 1–5)과 그 이유인 버닝맨 축제(문장 7–12)를 소개한다. 소재(공항)와 특징(1년에 한 번)을 모두 담은 ②이 제목이다. ④·⑤는 자동차·축제만 건드린 지엽적 오답, ①·③는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 4에서 이 공항에는 큰 건물도 관제탑도 없다고 했으므로 ①은 본문과 반대된다. ②은 문장 1, ③는 문장 7, ④은 문장 9, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) they는 같은 문장 앞부분의 Some visitors, 곧 차를 타고 오는 방문객들을 가리킨다. 교통 체증에 갇히는 것은 차로 오는 사람들이다 — 지시어는 바로 앞에서 찾는다.", true);
 Hs("독해 04   배열 영작   ·   It only shows up for one week every year.");
 B("문장 2를 그대로 복원하는 문제다. ① 첫 글자는 대문자 It.   ② only는 동사 shows 앞자리.   ③ show up(나타나다)은 한 덩어리, 주어가 It이므로 shows.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 airport · special · festival     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 1년에 한 번만 나타나는 특별한 공항을 소개한다. ① 미술 전시는 축제의 한 부분일 뿐이고, ③ 사막 여행법은 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 airport · special · festival     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 1년에 한 번만 나타나는 특별한 공항을 소개한다. ① 미술 전시는 축제의 한 부분일 뿐이고, ② 사막 여행법은 나오지 않는다.");
 B("1-2   ○표 할 세 단어: airport(힌트① 주인공) · special(힌트② 글쓴이의 평가) · festival(힌트③ 공항이 생긴 이유). 나머지 셋(desert · traffic · jets)은 본문에 나오지만 배경과 세부 사항일 뿐이다.");
 B("1-3   문장 5 — This airport는 블랙록 시티 공항에 ○.   문장 10 — they는 차로 온 방문객들에 ○.   문장 12 — they는 축제에 오는 사람들에 ○ (제트기를 탄 그 사람들).");
 B("[학습 포인트]   같은 they라도 가리키는 대상이 달라질 수 있다. 지시어를 만나면 바로 앞 문장에서 짝을 찾아 화살표로 이어 두자.", true);
@@ -772,32 +775,32 @@ B("[학습 포인트]   같은 they라도 가리키는 대상이 달라질 수 �
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 이유 / 반전 / 결과 / 때     2-2 [B] 특징 · [D] 이유     2-3 ①");
+Hs("STEP 2   글의 흐름   ·   2-1 이유 / 반전 / 결과 / 때     2-2 [B] 특징 · [D] 이유     2-3 ③");
 B("2-1   문장 7 because of — 공항이 생긴 '이유'.   문장 10 but — 차로 오면 막힌다는 '반전'.   문장 11 So — 그래서 제트기로 온다는 '결과'.   문장 13 When — 축제가 끝나는 '때'.");
 B("2-2   [B] 특징(문장 4–5: 큰 건물도 관제탑도 없고 활주로 하나뿐), [D] 이유(문장 9–12: 사람이 몰려 길이 막히니 비행기가 필요하다). 보기의 '가격'은 이 글에 없는 역할이다. 소개 → 특징 → 유래 → 이유 → 마무리, 소개형 설명문의 전형적인 흐름이다.");
-B("2-3   정답 ①. 있는 사실을 알려 주며 대상을 소개하는 설명문이다. ② 광고의 신호(가격·사라는 말)가 없고, ③ I·날짜가 없어 일기도 아니며, ④ 받는 사람이 없어 편지도, ⑤ 지어낸 이야기도 아니다.");
+B("2-3   정답 ③. 있는 사실을 알려 주며 대상을 소개하는 설명문이다. ① 광고의 신호(가격·사라는 말)가 없고, ② I·날짜가 없어 일기도 아니며, ④ 받는 사람이 없어 편지도, ⑤ 지어낸 이야기도 아니다.");
 B("[학습 포인트]   because of(이유) → So(결과)는 짝으로 다닌다. 두 신호만 표시해도 글의 뼈대가 잡힌다.", true);
-Hs("STEP 3   주제문 만들기   ·   3-1 special · Burning Man     3-3 (c) → (a) → (d) → (b)");
+Hs("STEP 3   주제문 만들기   ·   3-1 special · Burning Man     3-3 (b) → (a) → (d) → (c)");
 B("3-1  재료 찾기 — (2) 문장 1에서 special에 ○: 글쓴이의 평가다. busy(바쁜)는 본문에 없다. (3) 문장 7에서 Burning Man에 ○: 공항이 생긴 이유가 된 축제 이름이다. 주제문의 재료는 언제나 본문 안에 있다.");
 B("3-2  뼈대 채우기 — (1) Black Rock City Airport  (2) special  (3) Burning Man.  넣으면 Black Rock City Airport is a special airport only for the Burning Man festival.이 된다.");
-B("3-3  정답 순서 — ⓒ Black Rock City Airport → ⓐ is a special airport → ⓓ only for → ⓑ the Burning Man festival.");
-B("[채점 포인트]  주인공(공항 이름)이 주어이므로 ⓒ가 맨 앞, 마침표가 붙은 덩어리 ⓑ이 맨 뒤다 — 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
+B("3-3  정답 순서 — ⓑ Black Rock City Airport → ⓐ is a special airport → ⓓ only for → ⓒ the Burning Man festival.");
+B("[채점 포인트]  주인공(공항 이름)이 주어이므로 ⓑ가 맨 앞, 마침표가 붙은 덩어리 ⓒ이 맨 뒤다 — 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) week  (2) runway  (3) festival  (4) jets");
 B("(1)은 문장 2의 week, (2)는 문장 5의 runway, (3)은 문장 7–8의 festival, (4)는 문장 11의 jets에서 가져온다. 요약문이 곧 이 글의 흐름이다: 특별함(1) → 생김새(2) → 이유(3) → 해결(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ①   문장 4 ②   문장 10 ②   문장 13 ①  (정답 선지는 무표시)");
-B("문장 2 only shows up for one week every year   ① ○ 해마다 딱 7일만 나타난다.   ② ✕ [반대] 1년 내내 열려 있다 — 정반대.   ③ ✕ [무관] 도시를 옮긴다는 말은 지문에 없다.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ②   문장 4 ②   문장 10 ②   문장 13 ②  (정답 선지는 무표시)");
+B("문장 2 only shows up for one week every year   ② ○ 해마다 딱 7일만 나타난다.   ① ✕ [반대] 1년 내내 열려 있다 — 정반대.   ③ ✕ [무관] 도시를 옮긴다는 말은 지문에 없다.");
 B("문장 4 doesn’t have big buildings or a control tower   ① ✕ [반대] 높은 건물이 많다 — 정반대.   ② ○ 큰 건물도 탑도 없다.   ③ ✕ [무관] 쇼핑몰은 지문에 없다.");
 B("문장 10 can get stuck in heavy traffic   ① ✕ [반대] 차 없는 길을 달린다 — 정반대.   ② ○ 긴 차량 행렬에 갇힐 수 있다.   ③ ✕ [무관] 차 열쇠를 잃는다는 말은 지문에 없다.");
-B("문장 13 disappears like magic   ① ○ 마법처럼 사라진다.   ② ✕ [반대] 그 자리에 영원히 남는다 — 정반대.   ③ ✕ [무관] 마법 학교가 된다는 말은 지문에 없다.");
+B("문장 13 disappears like magic   ② ○ 마법처럼 사라진다.   ① ✕ [반대] 그 자리에 영원히 남는다 — 정반대.   ③ ✕ [무관] 마법 학교가 된다는 말은 지문에 없다.");
 B("[학습 포인트]  시험은 본문 표현을 반드시 바꿔서 묻는다. 읽을 때마다 '이 말을 다른 말로 하면?'을 스스로 물어보자.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 1.   2 F — 문장 2: 한 달(month)이 아니라 한 주(week)다.   3 T — 문장 4.   4 F — 문장 5: 활주로가 많은(many) 게 아니라 단순한 활주로 하나뿐이다.   5 T — 문장 7–8.   6 F — 문장 9: 7,000명이 아니라 약 70,000명이다.   7 T — 문장 11.   8 F — 문장 13: 남아 있는 게 아니라 사라진다.  거짓 문장은 모두 한 요소(month, many, 7,000, stays)만 비튼 것이다 — 그 한 곳을 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (c) → (b) → (d) → (a)");
-B("ⓒ 사막에서 버닝맨 축제가 시작된다(문장 7) → ⓑ 7만 명이 축제를 즐기러 사막으로 온다(문장 9) → ⓓ 일부는 작은 제트기로 날아온다(문장 11) → ⓐ 축제가 끝나면 공항이 사라진다(문장 13). 본문은 공항의 모습(문장 1–5)을 먼저 말하고 유래(문장 7)를 나중에 말한다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 F · 4 T · 5 T · 6 F · 7 F · 8 T");
+   B("1 F — 문장 13: 남아 있는 게 아니라 사라진다.  거짓 문장은 모두 한 요소(month, many, 7,000, stays)만 비튼 것이다 — 그 한 곳을 찾는 것이 정독이다.   2 T — 문장 7–8.   3 F — 문장 5: 활주로가 많은(many) 게 아니라 단순한 활주로 하나뿐이다.   4 T — 문장 1.   5 T — 문장 4.   6 F — 문장 2: 한 달(month)이 아니라 한 주(week)다.   7 F — 문장 9: 7,000명이 아니라 약 70,000명이다.   8 T — 문장 11.", true);
+Hs("R2   사건 순서   ·   (a) → (c) → (d) → (b)");
+B("ⓐ 사막에서 버닝맨 축제가 시작된다(문장 7) → ⓒ 7만 명이 축제를 즐기러 사막으로 온다(문장 9) → ⓓ 일부는 작은 제트기로 날아온다(문장 11) → ⓑ 축제가 끝나면 공항이 사라진다(문장 13). 본문은 공항의 모습(문장 1–5)을 먼저 말하고 유래(문장 7)를 나중에 말한다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
 Hs("R3   영영풀이   ·   1 (d) · 2 (e) · 3 (b) · 4 (f) · 5 (a) · 6 (c)");
 B("desert = 모래가 많은 아주 건조한 곳 · disappear = 사라져 보이지 않게 되다 · runway = 비행기를 위한 길고 평평한 길 · culture = 한 집단의 생활 방식 · join = 다른 사람들과 함께하다 · adventure = 신나고 새로운 경험.", true);
 Hs("R4   어법 기초   ·   (1) shows  (2) doesn’t  (3) come  (4) is");

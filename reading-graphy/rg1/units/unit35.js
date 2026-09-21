@@ -81,24 +81,26 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Old Phone Boxes with New Jobs", "② How to Make a Phone Call in the U.K.",
- "③ The History of British Telephones", "④ Why Books Are Cheaper in Libraries",
+["① How to Make a Phone Call in the U.K.",
+ "② The History of British Telephones",
+ "③ Why Books Are Cheaper in Libraries",
+ "④ Old Phone Boxes with New Jobs",
  "⑤ A Machine That Stops All Heart Attacks"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① People in the U.K. don’t use red phone boxes for calls now.",
- "② Some phone boxes have special machines called defibrillators.",
- "③ Phone boxes are hard to find and have no electricity.",
+["① Phone boxes are hard to find and have no electricity.",
+ "② People in the U.K. don’t use red phone boxes for calls now.",
+ "③ Some phone boxes have special machines called defibrillators.",
  "④ In the Martin Gallery, people can borrow books and enjoy the artwork.",
  "⑤ The money collected goes to Cancer Research UK."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) they가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the people with a heart attack",
- "② the special machines",
- "③ the red phone boxes",
- "④ the small libraries",
+["① the special machines",
+ "② the red phone boxes",
+ "③ the small libraries",
+ "④ the people with a heart attack",
  "⑤ the books in the gallery"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -146,7 +148,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -159,7 +161,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -196,7 +198,7 @@ K.push(spF(2, 85, 0.06));
  [13, "In this phone box, people can borrow books and enjoy the artwork."],
  [15, "The money collected goes to an organization called Cancer Research UK."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -272,7 +274,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -319,7 +321,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -334,15 +336,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "In the U.K., there are many red phone boxes.",
-    "People in the U.K. still use the red phone boxes for calls.",
-    "Some phone boxes have special machines called defibrillators.",
     "Defibrillators help people when they break a leg.",
+    "In the Martin Gallery, people can borrow books and enjoy the artwork.",
+    "In the U.K., there are many red phone boxes.",
     "Phone boxes are easy to find and have electricity.",
     "Only two phone boxes turned into small libraries.",
-    "In the Martin Gallery, people can borrow books and enjoy the artwork.",
-    "The money collected goes to a school in London.",
-  ].map((s, i) => new TableRow({ children: [
+    "Some phone boxes have special machines called defibrillators.",
+    "People in the U.K. still use the red phone boxes for calls.",
+    "The money collected goes to a school in London."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -358,9 +359,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "전화박스에 일
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Some phone boxes became mini medical centers.",
-      "ⓑ People stopped using phone boxes for calls.",
-      "ⓒ Lots of phone boxes turned into small libraries.",
-      "ⓓ The donation money goes to Cancer Research UK."]
+      "ⓑ Lots of phone boxes turned into small libraries.",
+      "ⓒ The donation money goes to Cancer Research UK.",
+      "ⓓ People stopped using phone boxes for calls."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -400,15 +401,15 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 boxes · old · uses   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (c) → (d)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 T · 5 F · 6 T · 7 F · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 통화에는 더 이상 쓰이지 않는 영국의 빨간 전화박스(문장 1–3)가 미니 의료 센터(문장 5–8)와 미니 도서관(문장 9–15)으로 다시 쓰이는 모습을 소개한다. 소재와 특징을 함께 담은 ①이 제목이다. ④·⑤는 책값·기계만 건드린 지엽적 오답, ②·③는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 8에서 전화박스는 찾기 쉽고 전기도 들어와서 기계를 두기에 완벽하다고 했다. 따라서 ③이 본문과 반대된다. ①은 문장 2, ②는 문장 6, ④은 문장 13, ⑤는 문장 15에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 통화에는 더 이상 쓰이지 않는 영국의 빨간 전화박스(문장 1–3)가 미니 의료 센터(문장 5–8)와 미니 도서관(문장 9–15)으로 다시 쓰이는 모습을 소개한다. 소재와 특징을 함께 담은 ④이 제목이다. ③·⑤는 책값·기계만 건드린 지엽적 오답, ①·②는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 8에서 전화박스는 찾기 쉽고 전기도 들어와서 기계를 두기에 완벽하다고 했다. 따라서 ①이 본문과 반대된다. ②은 문장 2, ③는 문장 6, ④은 문장 13, ⑤는 문장 15에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) they는 앞에 나온 people, 곧 심장마비가 온 사람들을 가리킨다. 심장마비가 오는 쪽은 기계가 아니라 사람이다 — 한 문장 안에서도 가리키는 대상이 바뀐다.", true);
 Hs("독해 04   배열 영작   ·   Lots of phone boxes turned into small libraries.");
 B("문장 10을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Lots.   ② Lots of ~는 '많은 ~'이라는 한 덩어리.   ③ turn into ~는 '~으로 바뀌다' — into를 빠뜨리지 않는다.", true);
@@ -422,10 +423,10 @@ B("[학습 포인트]   문장 7과 8의 they는 각각 다른 것을 가리킨�
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 1.   2 F — 문장 2: 지금은 통화에 쓰지 않는다.   3 T — 문장 6.   4 F — 문장 7: 다리가 부러졌을 때가 아니라 심장마비가 왔을 때다.   5 T — 문장 8.   6 F — 문장 10: 두 개가 아니라 많은(Lots of) 전화박스가 도서관이 되었다.   7 T — 문장 13.   8 F — 문장 15: 런던의 학교가 아니라 Cancer Research UK라는 단체로 간다.  거짓 문장은 모두 한 요소(still use, break a leg, Only two, a school)만 비튼 것이다.", true);
-Hs("R2   순서 잡기   ·   (b) → (a) → (c) → (d)");
-B("ⓑ 사람들이 통화에 전화박스를 쓰지 않게 된다(문장 2) → ⓐ 일부는 미니 의료 센터가 된다(문장 5–6) → ⓒ 많은 전화박스가 작은 도서관이 된다(문장 9–10) → ⓓ 책값으로 모인 돈이 단체로 간다(문장 15). 쓰임이 사라진 뒤에 새 쓰임이 생겼다는 순서가 이 글의 뼈대다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 T · 5 F · 6 T · 7 F · 8 F");
+   B("1 F — 문장 7: 다리가 부러졌을 때가 아니라 심장마비가 왔을 때다.   2 T — 문장 13.   3 T — 문장 1.   4 T — 문장 8.   5 F — 문장 10: 두 개가 아니라 많은(Lots of) 전화박스가 도서관이 되었다.   6 T — 문장 6.   7 F — 문장 2: 지금은 통화에 쓰지 않는다.   8 F — 문장 15: 런던의 학교가 아니라 Cancer Research UK라는 단체로 간다.  거짓 문장은 모두 한 요소(still use, break a leg, Only two, a school)만 비튼 것이다.", true);
+Hs("R2   순서 잡기   ·   (d) → (a) → (b) → (c)");
+B("ⓓ 사람들이 통화에 전화박스를 쓰지 않게 된다(문장 2) → ⓐ 일부는 미니 의료 센터가 된다(문장 5–6) → ⓑ 많은 전화박스가 작은 도서관이 된다(문장 9–10) → ⓒ 책값으로 모인 돈이 단체로 간다(문장 15). 쓰임이 사라진 뒤에 새 쓰임이 생겼다는 순서가 이 글의 뼈대다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

@@ -99,25 +99,27 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Egg Yolk: A Secret Guard for Old Paintings", "② The Lives of Botticelli and da Vinci",
- "③ Why Oil Paint Changes Color as It Dries", "④ Delicious Egg Dishes for Breakfast",
- "⑤ How to Draw Animals Well"].forEach(c => K.push(ch(c)));
+["① The Lives of Botticelli and da Vinci",
+ "② Why Oil Paint Changes Color as It Dries",
+ "③ Delicious Egg Dishes for Breakfast",
+ "④ How to Draw Animals Well",
+ "⑤ Egg Yolk: A Secret Guard for Old Paintings"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Famous artists like Botticelli used egg yolk in their paint.",
- "② Oil paint by itself changes color as it dries.",
- "③ Mixing egg yolk with oil paints makes the paint thinner.",
+ "② Mixing egg yolk with oil paints makes the paint thinner.",
+ "③ Oil paint by itself changes color as it dries.",
  "④ Egg yolk protected the paint from water.",
  "⑤ The paintings with the paint mix lasted a long time."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the famous artists",
- "② many people long ago",
- "③ the oil paints",
- "④ the great paintings",
- "⑤ the art museums"].forEach(c => K.push(ch(c)));
+["① many people long ago",
+ "② the oil paints",
+ "③ the great paintings",
+ "④ the art museums",
+ "⑤ the famous artists"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -390,8 +392,8 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 대상을 소개하고 사실을 알려 주는 설명문",
- "② 하루 일을 기록한 일기",
+["① 하루 일을 기록한 일기",
+ "② 대상을 소개하고 사실을 알려 주는 설명문",
  "③ 물건을 팔기 위해 만든 광고",
  "④ 상상의 이야기를 들려주는 동화",
  "⑤ 자기 의견을 내세우는 주장 글"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
@@ -444,7 +446,7 @@ K.push(p([t("조건 ", { size: 16, bold: true, color: GOLD }),
   t("덩어리의 순서를 괄호에 쓰세요. 덩어리 안의 단어는 바꾸지 않습니다.", { size: 16, color: SUB })], { after: 100, line: 250 }));
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("보기   ", { size: 16, bold: true, color: NAVY2 }),
-     t("ⓐ in art history     ⓑ was important     ⓒ Egg yolk     ⓓ because it protected the paint.", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
+     t("ⓐ in art history     ⓑ Egg yolk     ⓒ was important     ⓓ because it protected the paint.", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
   { w: W, shade: COOL, b: { top: bd(4, CLINE), bottom: bd(4, CLINE), left: NOB, right: NOB }, m: { top: 150 + Math.round((FT(6) || 0) * 0.02), bottom: 150 + Math.round((FT(6) || 0) * 0.02), left: 180, right: 180 } })] })]));
 K.push(spF(6, 200, 0.05));
 K.push(p([t("순서   ", { size: 17, bold: true, color: NAVY2 }),
@@ -499,13 +501,13 @@ pairGrid(
   { sn: 2, main: "used something different",
     opts: ["① used a new kind of material", "② used the same thing as others", "③ sold their old paintings"] },
   { sn: 8, main: "stayed in good condition",
-    opts: ["① got worse very quickly", "② remained nice, without damage", "③ moved to a big museum"] });
+    opts: ["① got worse very quickly", "② moved to a big museum", "③ remained nice, without damage"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 9, main: "acted as a guard",
-    opts: ["① worked to keep it safe", "② tried to hurt the paint", "③ made the paint expensive"] },
+    opts: ["① tried to hurt the paint", "② made the paint expensive", "③ worked to keep it safe"] },
   { sn: 11, main: "lasted a long time",
-    opts: ["① disappeared very soon", "② cost a lot of money", "③ stayed for many, many years"] });
+    opts: ["① disappeared very soon", "② stayed for many, many years", "③ cost a lot of money"] });
 K.push(spF(7, 150, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -560,15 +562,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Long ago, many people used oil paints in their paintings.",
-    "Famous artists like Botticelli used milk in their paint.",
-    "Oil paint by itself keeps its color as it dries.",
     "Mixing egg yolk with oil paints makes the paint thicker.",
+    "The paintings with egg yolk lasted a long time.",
     "Egg yolk helped the paint not crack or wrinkle.",
+    "Oil paint by itself keeps its color as it dries.",
     "Egg yolk protected the paint from fire.",
     "The paint mix turned yellow quickly over time.",
-    "The paintings with egg yolk lasted a long time.",
-  ].map((s, i) => new TableRow({ children: [
+    "Long ago, many people used oil paints in their paintings.",
+    "Famous artists like Botticelli used milk in their paint."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -585,8 +586,8 @@ K.push(sp(120));
 K.push(box([
   ...["ⓐ The paint didn’t crack or wrinkle.",
       "ⓑ The paintings stayed in good condition for a long time.",
-      "ⓒ Artists mixed egg yolk with their oil paints.",
-      "ⓓ The paint became thicker."]
+      "ⓒ The paint became thicker.",
+      "ⓓ Artists mixed egg yolk with their oil paints."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -627,9 +628,9 @@ K.push(spF(9, 380, 0.12));
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
 [["문장 1", [t("Long ago, many people ", { size: 19 }), t("( used  /  use )", { size: 19, bold: true, color: NAVY }), t(" oil paints in their paintings.", { size: 19 })], "Long ago(옛날에)와 어울리는 시제를 고르세요."],
- ["문장 3", [t("They used egg yolk in ", { size: 19 }), t("( their  /  theirs )", { size: 19, bold: true, color: NAVY }), t(" paint.", { size: 19 })], "뒤에 명사 paint가 있어요 — 소유격!"],
+ ["문장 3", [t("They used egg yolk in ", { size: 19 }), t("( theirs  /  their )", { size: 19, bold: true, color: NAVY }), t(" paint.", { size: 19 })], "뒤에 명사 paint가 있어요 — 소유격!"],
  ["문장 5", [t("Oil paint by itself ", { size: 19 }), t("( changes  /  change )", { size: 19, bold: true, color: NAVY }), t(" color as it dries.", { size: 19 })], "주어 Oil paint는 단수 — 동사에 -s!"],
- ["문장 13", [t("We might not ", { size: 19 }), t("( have  /  has )", { size: 19, bold: true, color: NAVY }), t(" the chance to see the paintings.", { size: 19 })], "조동사 might 뒤에는 동사원형!"],
+ ["문장 13", [t("We might not ", { size: 19 }), t("( has  /  have )", { size: 19, bold: true, color: NAVY }), t(" the chance to see the paintings.", { size: 19 })], "조동사 might 뒤에는 동사원형!"],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
     cel(new Paragraph({ children: [t("(" + (i + 1) + ")", { size: 16, bold: true, color: "FFFFFF" })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 210 } }),
@@ -725,24 +726,24 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 네가 이 버튼을 누르면, 문이 열린다  (2) 그녀는 지금 도서관에 있을지도 모른다  (3) 내일 비가 오면, 우리는 집에 머무를지도 모른다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 egg yolk · protected · important        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 · 조건 · 결과 · 덧붙임   2-2 [B] 문제점 · [E] 마무리   2-3 ①", { size: 19, bold: true })], { after: 25 }),
-  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (c) → (b) → (a) → (d)  ·  Egg yolk was important in art history because it protected the paint.", { size: 19, bold: true })], { after: 25 }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 · 조건 · 결과 · 덧붙임   2-2 [B] 문제점 · [E] 마무리   2-3 ②", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (c) → (a) → (d)  ·  Egg yolk was important in art history because it protected the paint.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) yolk  (2) thicker  (3) protected  (4) lasted        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ①  문장 8 ②  문장 9 ①  문장 11 ③", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ①  문장 8 ③  문장 9 ③  문장 11 ②", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3F · 4T · 5T · 6F · 7F · 8T        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (d) → (a) → (b)", { size: 19, bold: true })], { after: 25 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 T · 3 T · 4 F · 5 F · 6 F · 7 T · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(c) · 2(e) · 3(a) · 4(b) · 5(f) · 6(d)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) used  (2) their  (3) changes  (4) have", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) yolk (2) mix (3) thicker (4) crack (5) condition (6) guard (7) protected (8) important", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) It protected the paint from water.  (2) As a result, the art stayed in good condition.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("옛 화가들이 유화 물감에 달걀노른자를 섞은 이유(문장 5–11)와 그 중요성(문장 12–13)을 설명하는 글이다. 소재(egg yolk)와 역할(guard)을 담은 ①이 제목으로 적절하다. ②·③는 본문의 일부(화가·변색)만 건드린 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 6에서 노른자를 섞으면 물감이 더 걸쭉해진다(thicker)고 했으므로, 묽어진다(thinner)는 ③는 본문과 반대된다. ①은 문장 2–3, ②은 문장 5, ④은 문장 10, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ⑤");
+B("옛 화가들이 유화 물감에 달걀노른자를 섞은 이유(문장 5–11)와 그 중요성(문장 12–13)을 설명하는 글이다. 소재(egg yolk)와 역할(guard)을 담은 ⑤이 제목으로 적절하다. ①·②는 본문의 일부(화가·변색)만 건드린 지엽적 오답, ③·④는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 6에서 노른자를 섞으면 물감이 더 걸쭉해진다(thicker)고 했으므로, 묽어진다(thinner)는 ②는 본문과 반대된다. ①은 문장 2–3, ③은 문장 5, ④은 문장 10, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) them은 바로 앞 문장 2–3의 유명 화가들을 가리킨다. 노른자를 물감에 넣은 주체가 누구인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   They used egg yolk in their paint.");
 B("문장 3을 그대로 복원하는 문제다. ① 주어 They의 첫 글자는 대문자.   ② egg yolk — 두 단어가 한 덩어리.   ③ in their paint — 소유격 their를 빠뜨리지 않는다.", true);
@@ -755,32 +756,32 @@ B("[학습 포인트]   같은 it라도 문장 5의 it는 유화 물감을, 문�
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 반전 / 조건 / 결과 / 덧붙임     2-2 [B] 문제점 · [E] 마무리     2-3 ①");
+Hs("STEP 2   글의 흐름   ·   2-1 반전 / 조건 / 결과 / 덧붙임     2-2 [B] 문제점 · [E] 마무리     2-3 ②");
 B("2-1   문장 2 But — 많은 사람들과 달리 유명 화가들은 달랐다는 '반전'.   문장 6 if — 노른자를 섞으면이라는 '조건'.   문장 8 As a result — 갈라지지 않아 보존됐다는 '결과'.   문장 9 Also — 두 번째 효과를 더하는 '덧붙임'.");
 B("2-2   [B] 문제점(문장 5: 유화 물감만의 약점 — 변색과 주름), [E] 마무리(문장 12–13: 노른자의 중요성 정리). 보기의 '유래'는 이 글에 없는 역할이다. [A] 소개 → [B] 문제점 → [C]·[D] 해결의 효과 → [E] 마무리 — 문제와 해결이 있는 설명문의 흐름이다.");
-B("2-3   정답 ①. 현재시제로 대상(노른자)의 특징과 사실을 알려 주는 설명문이다. ② 일기의 신호(I·날짜)가 없고, ③ 사라는 말·가격이 없으니 광고도 아니며, ④ 동화·⑤ 주장 글의 형식도 아니다.");
+B("2-3   정답 ②. 현재시제로 대상(노른자)의 특징과 사실을 알려 주는 설명문이다. ① 일기의 신호(I·날짜)가 없고, ③ 사라는 말·가격이 없으니 광고도 아니며, ④ 동화·⑤ 주장 글의 형식도 아니다.");
 B("[학습 포인트]   연결어만 표시해도 글의 지도가 그려진다. But(반전), if(조건), As a result(결과), Also(덧붙임). 특히 '문제 → 해결의 효과' 짝은 설명문 흐름의 단골이다.", true);
-Hs("STEP 3   주제문 만들기   ·   3-1 important · protected     3-3 (c) → (b) → (a) → (d)");
+Hs("STEP 3   주제문 만들기   ·   3-1 important · protected     3-3 (b) → (c) → (a) → (d)");
 B("3-1  재료 찾기 — (2) 문장 12에서 important에 ○: 글쓴이의 평가다. yellow는 문장 11의 세부 사실일 뿐. (3) 문장 10에서 protected에 ○: 주인공이 한 일이다. changed는 문장 5의 '문제'였다. 주제문의 재료는 언제나 본문 안에 있다.");
 B("3-2  뼈대 채우기 — (1) Egg yolk  (2) important  (3) protected.  넣으면 Egg yolk was important in art history because it protected the paint.가 완성된다.");
-B("3-3  정답 순서 — ⓒ Egg yolk → ⓑ was important → ⓐ in art history → ⓓ because it protected the paint.");
-B("[채점 포인트]  주인공 덩어리(ⓒ)가 주어로 맨 앞, 마침표가 붙은 덩어리(ⓓ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
+B("3-3  정답 순서 — ⓑ Egg yolk → ⓒ was important → ⓐ in art history → ⓓ because it protected the paint.");
+B("[채점 포인트]  주인공 덩어리(ⓑ)가 주어로 맨 앞, 마침표가 붙은 덩어리(ⓓ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) yolk  (2) thicker  (3) protected  (4) lasted");
 B("(1)은 문장 3의 yolk, (2)는 문장 6의 thicker, (3)은 문장 10의 protected, (4)는 문장 11의 lasted에서 가져온다. 요약문이 곧 이 글의 흐름이다: 섞기(1) → 변화(2) → 보호(3) → 보존(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ①   문장 8 ②   문장 9 ①   문장 11 ③  (정답 선지는 무표시)");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ①   문장 8 ③   문장 9 ③   문장 11 ②  (정답 선지는 무표시)");
 B("문장 2 used something different   ① ○ 새로운 종류의 재료를 썼다.   ② ✕ [반대] 남들과 같은 것을 썼다 — 정반대.   ③ ✕ [무관] 그림을 팔았다는 말은 지문에 없다.");
-B("문장 8 stayed in good condition   ① ✕ [반대] 금방 나빠졌다 — 정반대.   ② ○ 손상 없이 좋은 상태로 남았다.   ③ ✕ [무관] 박물관으로 옮겼다는 말은 지문에 없다.");
-B("문장 9 acted as a guard   ① ○ 안전하게 지키는 일을 했다.   ② ✕ [반대] 물감을 해치려 했다 — 정반대.   ③ ✕ [무관] 값을 비싸게 만들었다는 말은 지문에 없다.");
-B("문장 11 lasted a long time   ① ✕ [반대] 금방 사라졌다 — 정반대.   ② ✕ [무관] 값 이야기는 지문에 없다.   ③ ○ 아주 여러 해 동안 남았다.");
+B("문장 8 stayed in good condition   ① ✕ [반대] 금방 나빠졌다 — 정반대.   ③ ○ 손상 없이 좋은 상태로 남았다.   ② ✕ [무관] 박물관으로 옮겼다는 말은 지문에 없다.");
+B("문장 9 acted as a guard   ③ ○ 안전하게 지키는 일을 했다.   ① ✕ [반대] 물감을 해치려 했다 — 정반대.   ② ✕ [무관] 값을 비싸게 만들었다는 말은 지문에 없다.");
+B("문장 11 lasted a long time   ① ✕ [반대] 금방 사라졌다 — 정반대.   ③ ✕ [무관] 값 이야기는 지문에 없다.   ② ○ 아주 여러 해 동안 남았다.");
 B("[학습 포인트]  시험은 본문 표현을 그대로 쓰지 않고 반드시 바꿔서 묻는다. 지문을 읽을 때마다 '이 표현을 다른 말로 하면?'을 스스로 물어보자. 지금은 반대/무관 두 갈래를 정확히 가르는 것이 먼저다.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 F · 4 T · 5 T · 6 F · 7 F · 8 T");
-B("1 T — 문장 1.   2 F — 문장 3: 우유가 아니라 달걀노른자(egg yolk)다.   3 F — 문장 5: 색을 지키는 게 아니라 변한다(changes).   4 T — 문장 6.   5 T — 문장 7.   6 F — 문장 10: 불이 아니라 물(water)로부터 보호했다.   7 F — 문장 11: 누렇게 변하지 않았다(didn’t turn yellow).   8 T — 문장 11.  거짓 문장은 모두 본문에서 딱 한 요소(milk, keeps, fire, turned)를 비튼 것이다 — 그 한 단어를 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (c) → (d) → (a) → (b)");
-B("ⓒ 화가들이 노른자를 유화 물감에 섞는다(문장 6) → ⓓ 물감이 걸쭉해진다(문장 6) → ⓐ 물감이 갈라지거나 주름지지 않는다(문장 7) → ⓑ 그림이 좋은 상태로 오래 남는다(문장 8·11). 원인에서 결과로 이어지는 사슬을 따라가면 순서가 보인다.", true);
+Hs("R1   True / False   ·   1 T · 2 T · 3 T · 4 F · 5 F · 6 F · 7 T · 8 F");
+   B("1 T — 문장 6.   2 T — 문장 11.  거짓 문장은 모두 본문에서 딱 한 요소(milk, keeps, fire, turned)를 비튼 것이다 — 그 한 단어를 찾는 것이 정독이다.   3 T — 문장 7.   4 F — 문장 5: 색을 지키는 게 아니라 변한다(changes).   5 F — 문장 10: 불이 아니라 물(water)로부터 보호했다.   6 F — 문장 11: 누렇게 변하지 않았다(didn’t turn yellow).   7 T — 문장 1.   8 F — 문장 3: 우유가 아니라 달걀노른자(egg yolk)다.", true);
+Hs("R2   사건 순서   ·   (d) → (c) → (a) → (b)");
+B("ⓓ 화가들이 노른자를 유화 물감에 섞는다(문장 6) → ⓒ 물감이 걸쭉해진다(문장 6) → ⓐ 물감이 갈라지거나 주름지지 않는다(문장 7) → ⓑ 그림이 좋은 상태로 오래 남는다(문장 8·11). 원인에서 결과로 이어지는 사슬을 따라가면 순서가 보인다.", true);
 Hs("R3   영영풀이   ·   1 (c) · 2 (e) · 3 (a) · 4 (b) · 5 (f) · 6 (d)");
 B("wrinkle = 작은 주름이 지다 · mix = 다른 것들을 한데 섞다 · crack = 표면에 가는 금이 가며 갈라지다 · condition = 어떤 것이 놓인 상태 · guard = 안전하게 지켜 주는 사람이나 것 · last = 한동안 계속되다(last는 '마지막'이라는 뜻도 있는 다의어!).", true);
 Hs("R4   어법 기초   ·   (1) used  (2) their  (3) changes  (4) have");

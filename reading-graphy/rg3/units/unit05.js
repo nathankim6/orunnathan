@@ -80,16 +80,18 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Selfies with Wild Animals Are Never Worth It", "② How to Take a Better Selfie with Your Phone",
- "③ The Best Zoos to Visit This Summer", "④ Why Social Media Is Full of Animal Pictures",
+["① How to Take a Better Selfie with Your Phone",
+ "② The Best Zoos to Visit This Summer",
+ "③ Why Social Media Is Full of Animal Pictures",
+ "④ Selfies with Wild Animals Are Never Worth It",
  "⑤ Safety Signs Around the World"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Signs for safety are everywhere, but people often ignore them.",
  "② Animals that seem friendly could attack people at any moment.",
- "③ Selfies with dangerous animals get few Likes and comments.",
- "④ Some people were actually attacked or killed by animals.",
+ "③ Some people were actually attacked or killed by animals.",
+ "④ Selfies with dangerous animals get few Likes and comments.",
  "⑤ Animals might be killed to protect people."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) This가 가리키는 것으로 가장 적절한 것은?"));
@@ -145,7 +147,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -158,7 +160,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -196,7 +198,7 @@ K.push(spF(2, 85, 0.06));
  [11, "Getting too close to animals also puts them in danger because they might be killed to protect people."]
 ].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -251,7 +253,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 셀카를 더 잘 찍는 방법", "② 야생 동물과 셀카를 찍는 일의 위험", "③ 동물원 동물들의 하루"].forEach(c =>
+["① 셀카를 더 잘 찍는 방법",
+ "② 동물원 동물들의 하루",
+ "③ 야생 동물과 셀카를 찍는 일의 위험"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -263,7 +267,7 @@ K.push(T([1740,1740,1740,1740,1740,1740], [new TableRow({ children: KWCAND.map((
   new Paragraph({ children: [t(ko, { size: 14, color: SUB })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 190 } }),
 ], { w: 1740, shade: FIELD, va: VerticalAlign.CENTER, m: { top: 240, bottom: 240, left: 40, right: 40 },
     b: { top: bd(4, FLINE), bottom: bd(4, FLINE), left: bd(4, FLINE), right: bd(4, FLINE) } })) })]));
-K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 사람들이 찍으려는 것  ② 그러다 하게 되는 행동  ③ 글쓴이의 평가 \u2014 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
+K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 사람들이 찍으려는 것  ② 그러다 하게 되는 행동  ③ 글쓴이의 평가 — 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
 K.push(spF(4, 260, 0.30));
 
 K.push(p([t("1-3  ", { size: 18, bold: true, color: GOLD }), t("지시어 이해하기", { size: 19, bold: true }),
@@ -272,7 +276,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -319,7 +323,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -334,15 +338,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
+    "Social media plays only a small role.",
+    "Nobody has ever been attacked by animals for a selfie.",
     "Signs for safety are everywhere, but they are often ignored.",
     "Animals that seem friendly can never attack people.",
     "We often see wild animals in places like zoos.",
-    "Social media plays only a small role.",
     "Posting selfies with dangerous animals can get lots of Likes.",
-    "Nobody has ever been attacked by animals for a selfie.",
     "Animals might be killed to protect people.",
-    "A selfie is more important than the lives of wild animals.",
-  ].map((s, i) => new TableRow({ children: [
+    "A selfie is more important than the lives of wild animals."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -358,9 +361,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "야생 동물 셀�
 K.push(sp(120));
 K.push(box([
   ...["ⓐ People post the selfies and get lots of Likes.",
-      "ⓑ People ignore the signs for safety.",
-      "ⓒ Some people are attacked or killed by animals.",
-      "ⓓ People get closer and closer to wild animals."]
+      "ⓑ Some people are attacked or killed by animals.",
+      "ⓒ People get closer and closer to wild animals.",
+      "ⓓ People ignore the signs for safety."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -398,22 +401,22 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("Getting too close to animals(S)·puts(△V)·because[네모]·they(S′)·might be killed(△V′)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 친구들과 축구를 하는 것은 정말 재미있다  (2) 그 창문은 강한 바람에 깨졌다  (3) 자전거를 타는 것은 많은 학생에게 사랑받는다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 selfies · close · dangerous   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 selfies · close · dangerous   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 F · 5 T · 6 T · 7 T · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("야생 동물과 셀카를 찍으려 다가가는 일이 사람에게도 동물에게도 위험하다는 것(문장 1–11)이 글의 중심이고, 문장 13이 글쓴이의 결론이다. ①이 정답. ④·⑤는 지엽적 오답, ②·③은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 8에서 위험한 동물과 찍은 셀카는 많은 '좋아요'와 댓글을 받는다고 했으므로, 거의 못 받는다는 ③이 본문과 반대된다. ①은 문장 2, ②는 문장 4, ④는 문장 10, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ④");
+B("야생 동물과 셀카를 찍으려 다가가는 일이 사람에게도 동물에게도 위험하다는 것(문장 1–11)이 글의 중심이고, 문장 13이 글쓴이의 결론이다. ④이 정답. ③·⑤는 지엽적 오답, ①·②은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 8에서 위험한 동물과 찍은 셀카는 많은 '좋아요'와 댓글을 받는다고 했으므로, 거의 못 받는다는 ④이 본문과 반대된다. ①은 문장 2, ②는 문장 4, ③는 문장 10, ⑤는 문장 11에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) This는 바로 앞 문장 8의 내용, 곧 '위험한 동물과 찍은 셀카가 많은 좋아요를 받는다'를 가리킨다. 지시어는 한 단어만이 아니라 앞 문장 전체를 받을 수도 있다.", true);
 Hs("독해 04   배열 영작   ·   So, never get too close to animals for selfies.");
 B("문장 12를 그대로 복원하는 문제다. ① 첫 글자는 대문자 So, 뒤의 콤마까지.   ② 부정 명령문은 never+동사원형.   ③ too close to ~ 순서를 지킨다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 selfies · close · dangerous     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 야생 동물과 셀카를 찍는 일이 왜 위험한지를 말한다. ① 촬영 기술 이야기는 없고, ③ 동물원은 위험을 못 느끼게 만드는 배경으로만 나온다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 selfies · close · dangerous     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 야생 동물과 셀카를 찍는 일이 왜 위험한지를 말한다. ① 촬영 기술 이야기는 없고, ② 동물원은 위험을 못 느끼게 만드는 배경으로만 나온다.");
 B("1-2   ○표 할 세 단어: selfies(힌트① 사람들이 찍으려는 것) · close(힌트② 그러다 하게 되는 행동) · dangerous(힌트③ 글쓴이의 평가). 나머지 셋(zoos · Likes · signs)은 본문에 나오지만 주제문에 들어가지 않는다 — 까닭과 배경일 뿐이다.");
 B("1-3   문장 3 — This는 표지판을 무시함에 ○ (문장 2의 내용).   문장 6 — them은 야생 동물에 ○ (문장 5).   문장 9 — This는 좋아요가 많은 것에 ○ (문장 8의 내용).");
 B("[학습 포인트]   문장 3의 This와 문장 9의 This는 생김새가 같지만 가리키는 것이 다르다. This를 만나면 반드시 '바로 앞 문장'으로 돌아가 확인하자 — 고등 독해의 지칭 추론이 여기서 자란다.", true);
@@ -422,10 +425,10 @@ B("[학습 포인트]   문장 3의 This와 문장 9의 This는 생김새가 같
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 2.   2 F — 문장 4: 절대 공격하지 않는 게 아니라 언제든 공격할 수 있다(could attack).   3 T — 문장 5.   4 F — 문장 7: 작은 역할이 아니라 큰 역할(a big role)이다.   5 T — 문장 8.   6 F — 문장 10: 실제로 공격당하거나 목숨을 잃은 사람들이 있었다.   7 T — 문장 11.   8 F — 문장 13: 셀카가 더 중요한 게 아니라 결코 더 중요하지 않다(never).  거짓 문장은 모두 딱 한 요소만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (d) → (a) → (c)");
-B("ⓑ 안전 표지판을 무시한다(문장 2) → ⓓ 야생 동물에게 점점 더 가까이 간다(문장 1·6) → ⓐ 셀카를 올려 많은 좋아요를 받는다(문장 8) → ⓒ 실제로 공격당하거나 목숨을 잃는다(문장 10). 본문은 위험(문장 3)을 먼저 말하고 까닭을 나중에 밝히므로, 서술 순서와 실제 일이 벌어지는 순서가 같지 않다.", true);
+Hs("R1   True / False   ·   1 F · 2 F · 3 T · 4 F · 5 T · 6 T · 7 T · 8 F");
+   B("1 F — 문장 7: 작은 역할이 아니라 큰 역할(a big role)이다.   2 F — 문장 10: 실제로 공격당하거나 목숨을 잃은 사람들이 있었다.   3 T — 문장 2.   4 F — 문장 4: 절대 공격하지 않는 게 아니라 언제든 공격할 수 있다(could attack).   5 T — 문장 5.   6 T — 문장 8.   7 T — 문장 11.   8 F — 문장 13: 셀카가 더 중요한 게 아니라 결코 더 중요하지 않다(never).  거짓 문장은 모두 딱 한 요소만 비튼 것이다.", true);
+Hs("R2   사건 순서   ·   (d) → (c) → (a) → (b)");
+B("ⓓ 안전 표지판을 무시한다(문장 2) → ⓒ 야생 동물에게 점점 더 가까이 간다(문장 1·6) → ⓐ 셀카를 올려 많은 좋아요를 받는다(문장 8) → ⓑ 실제로 공격당하거나 목숨을 잃는다(문장 10). 본문은 위험(문장 3)을 먼저 말하고 까닭을 나중에 밝히므로, 서술 순서와 실제 일이 벌어지는 순서가 같지 않다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

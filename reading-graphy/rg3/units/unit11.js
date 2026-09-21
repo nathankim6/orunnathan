@@ -79,15 +79,17 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Twin Sisters Who Feel the Same Pain", "② How to Treat Kidney Cancer",
- "③ The Best Hospitals in Scotland", "④ Easy Ways to Lose Weight",
+["① How to Treat Kidney Cancer",
+ "② The Best Hospitals in Scotland",
+ "③ Twin Sisters Who Feel the Same Pain",
+ "④ Easy Ways to Lose Weight",
  "⑤ How to Make New Friends"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Sophie and Megan are twin sisters from Scotland.",
- "② Megan got the same kidney cancer as Sophie.",
- "③ Megan has stomach pain and back pain.",
+ "② Megan has stomach pain and back pain.",
+ "③ Megan got the same kidney cancer as Sophie.",
  "④ The doctors found nothing wrong with Megan.",
  "⑤ People can feel the same pain as others even if they aren’t hurt."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -144,7 +146,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -157,7 +159,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -193,7 +195,7 @@ K.push(spF(2, 85, 0.06));
  [5, "The doctors did many tests on Megan, but they found nothing wrong with her."],
  [9, "Sometimes, people can feel the same pain as others, even if they aren’t hurt."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -248,7 +250,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 신장암을 치료하는 방법", "② 같은 아픔을 느끼는 쌍둥이 자매", "③ 스코틀랜드의 병원 이야기"].forEach(c =>
+["① 신장암을 치료하는 방법",
+ "② 스코틀랜드의 병원 이야기",
+ "③ 같은 아픔을 느끼는 쌍둥이 자매"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -269,7 +273,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -322,7 +326,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -337,15 +341,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Sophie and Megan are twin sisters from Scotland.",
     "In 2017, Megan got a rare type of kidney cancer.",
     "Megan had the same sickness as Sophie before.",
-    "Megan has lost weight just like her sister.",
-    "The doctors found a serious problem in Megan’s tests.",
-    "Sympathy pain can happen when close friends or family have a hard time.",
-    "Doctors know exactly why sympathy pain happens.",
     "The writer thinks the twins have a special connection.",
-  ].map((s, i) => new TableRow({ children: [
+    "Doctors know exactly why sympathy pain happens.",
+    "The doctors found a serious problem in Megan’s tests.",
+    "Megan has lost weight just like her sister.",
+    "Sophie and Megan are twin sisters from Scotland.",
+    "Sympathy pain can happen when close friends or family have a hard time."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -400,22 +403,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문9 ", { size: 17, bold: true, color: NAVY2 }), t("people(S)·can feel(△V)·even if[네모]·they(S′)·aren’t(△V′)·Sometimes(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 전에 인도 음식을 먹어 본 적이 한 번도 없다  (2) 그 박물관이 아홉 시에 문을 연다는 것은 사실이다  (3) 그가 바다를 한 번도 본 적이 없다는 것은 이상하다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 sympathy · pain · connection   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 sympathy · pain · connection   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3F · 4T · 5F · 6T · 7F · 8T        ", { size: 19, bold: true }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 F · 5 F · 6 T · 7 T · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 소피만 아픈데도 메건이 같은 통증을 느낀 일(문장 2–5)과 그것이 '공감 통증'이라는 설명(문장 8–12)을 들려준다. 소재와 특징을 함께 담은 ①이 적절하다. ②·④는 암·체중만 건드린 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 3에서 메건은 이 병을 앓은 적이 한 번도 없다고 했다. 같은 암에 걸렸다는 ②는 본문과 반대된다. ①은 문장 1, ③은 문장 4, ④는 문장 5, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 소피만 아픈데도 메건이 같은 통증을 느낀 일(문장 2–5)과 그것이 '공감 통증'이라는 설명(문장 8–12)을 들려준다. 소재와 특징을 함께 담은 ③이 적절하다. ①·④는 암·체중만 건드린 지엽적 오답, ②·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 3에서 메건은 이 병을 앓은 적이 한 번도 없다고 했다. 같은 암에 걸렸다는 ③는 본문과 반대된다. ①은 문장 1, ②은 문장 4, ④는 문장 5, ⑤는 문장 9에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) they는 같은 문장 앞부분의 The doctors를 가리킨다. 검사를 한 쪽이 누구인지 보면 된다 — 뒤의 her는 검사를 받은 메건이다.", true);
 Hs("독해 04   배열 영작   ·   We don’t know why this pain happens.");
 B("문장 11을 그대로 복원한다. ① 첫 글자는 대문자 We.   ② don’t의 아포스트로피를 빠뜨리지 않는다.   ③ why 뒤는 '주어+동사' 순서 — this pain happens.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 sympathy · pain · connection     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 한 사람만 아픈데 쌍둥이 자매가 같은 통증을 느낀 일을 다룬다. ① 치료법도, ③ 병원 소개도 아니다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 sympathy · pain · connection     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 한 사람만 아픈데 쌍둥이 자매가 같은 통증을 느낀 일을 다룬다. ① 치료법도, ② 병원 소개도 아니다.");
 B("1-2   ○표 할 세 단어: sympathy(힌트① 메건이 겪는 것) · pain(힌트② 함께 느끼는 것) · connection(힌트③ 글쓴이의 결론). 나머지 셋(cancer · tests · Scotland)은 배경과 근거일 뿐이다.");
 B("1-3   문장 5 — they는 의사들에, her는 메건에 ○.   문장 7 — this는 메건도 아픈 일에 ○.   문장 10 — This는 같은 아픔 느끼기에 ○.");
 B("[학습 포인트]   문장 5처럼 한 문장 안에서도 주어 자리의 they와 목적어 자리의 her가 서로 다른 사람을 가리킨다. 자리를 나누어 확인하자.", true);
@@ -423,8 +426,8 @@ B("[학습 포인트]   문장 5처럼 한 문장 안에서도 주어 자리의 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 F · 4 T · 5 F · 6 T · 7 F · 8 T");
-B("1 T — 문장 1.   2 F — 문장 2: 암에 걸린 사람은 메건이 아니라 소피다.   3 F — 문장 3: 메건은 이 병을 앓은 적이 없다.   4 T — 문장 4.   5 F — 문장 5: 심각한 문제를 찾은 것이 아니라 아무 이상도 찾지 못했다.   6 T — 문장 10.   7 F — 문장 11: 왜 생기는지 모른다.   8 T — 문장 12.  거짓 문장은 모두 한 요소(Megan, had, a serious problem, know)만 비튼 것이다.", true);
+Hs("R1   True / False   ·   1 F · 2 F · 3 T · 4 F · 5 F · 6 T · 7 T · 8 T");
+   B("1 F — 문장 2: 암에 걸린 사람은 메건이 아니라 소피다.   2 F — 문장 3: 메건은 이 병을 앓은 적이 없다.   3 T — 문장 12.  거짓 문장은 모두 한 요소(Megan, had, a serious problem, know)만 비튼 것이다.   4 F — 문장 11: 왜 생기는지 모른다.   5 F — 문장 5: 심각한 문제를 찾은 것이 아니라 아무 이상도 찾지 못했다.   6 T — 문장 4.   7 T — 문장 1.   8 T — 문장 10.", true);
 Hs("R2   사건 순서   ·   (b) → (d) → (a) → (c)");
 B("ⓑ 소피가 희귀 신장암에 걸린다(문장 2) → ⓓ 메건이 복통과 요통을 느끼기 시작한다(문장 3–4) → ⓐ 의사들이 메건을 여러 번 검사한다(문장 5) → ⓒ 아무 이상도 찾지 못한다(문장 5). 한 문장(5) 안에 검사와 결과가 함께 들어 있으므로, 두 단계로 끊어 읽어야 한다.", true);
 K.push(sp(70));

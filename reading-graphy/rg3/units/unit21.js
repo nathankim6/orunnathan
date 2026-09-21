@@ -94,9 +94,9 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) This가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① our brains changing with age",
- "② listening to new songs every day",
- "③ making special memories with songs",
+["① listening to new songs every day",
+ "② making special memories with songs",
+ "③ our brains changing with age",
  "④ having more free time as a teenager",
  "⑤ liking the same music as your parents"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -331,15 +331,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Sometimes parents don’t like the music their children listen to.",
-    "Only a few parents feel this way about their children’s music.",
-    "People often start to develop their musical taste around 13 or 14.",
     "In their 20s, people usually change their musical taste a lot.",
-    "Teenagers have more time to find new music.",
     "As people get older, they usually get less busy.",
+    "People often start to develop their musical taste around 13 or 14.",
+    "Only a few parents feel this way about their children’s music.",
     "Some scientists think our brains change with age.",
     "To older people, newer songs sound very different from each other.",
-  ].map((s, i) => new TableRow({ children: [
+    "Teenagers have more time to find new music.",
+    "Sometimes parents don’t like the music their children listen to."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -355,8 +354,8 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "한 사람의 음�
 K.push(sp(120));
 K.push(box([
   ...["ⓐ People get busier and listen to old favorite songs.",
-      "ⓑ Parents call their children’s music “a lot of noise.”",
-      "ⓒ People start to develop their musical taste at 13 or 14.",
+      "ⓑ People start to develop their musical taste at 13 or 14.",
+      "ⓒ Parents call their children’s music “a lot of noise.”",
       "ⓓ In their 20s, people know what music they like."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -397,15 +396,15 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 taste · teenagers · brains   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (d) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ①");
 B("이 글은 음악 취향이 십 대에 만들어져 나이가 들어도 잘 바뀌지 않는다는 것(문장 4–5)과 그 두 가지 이유(문장 7–10)를 설명한다. 소재와 핵심을 모두 담은 ①이 제목이다. ②·③은 지엽, ④·⑤는 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ③");
 B("문장 5에서 20대가 되면 좋아하는 음악을 알게 되고 그 뒤로는 크게 바뀌지 않는다고 했다. 많이 바뀐다는 ③은 본문과 반대된다. ①은 문장 1·3, ②는 문장 4, ④는 문장 7, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) This는 바로 앞 문장 9의 내용, 곧 나이가 들면서 우리 뇌가 변한다는 것을 가리킨다. 무엇이 화음과 리듬을 구별하기 어렵게 만드는지 생각하면 된다 — 지시어는 바로 앞에서 찾는다.", true);
 Hs("독해 04   배열 영작   ·   Some scientists think our brains change with age.");
 B("문장 9를 그대로 복원하는 문제다. ① 첫 글자는 대문자 Some.   ② think 뒤에 접속사 that이 생략된 문장이 온다.   ③ 주어 our brains는 복수 — change에 -s를 붙이지 않는다.", true);
@@ -419,10 +418,10 @@ B("[학습 포인트]   this·it은 단어 하나가 아니라 앞 문장 전체
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 1.   2 F — 문장 3: 소수가 아니라 많은 부모(many parents)가 그렇다.   3 T — 문장 4.   4 F — 문장 5: 많이 바뀌는 것이 아니라 크게 바뀌지 않는다.   5 T — 문장 7.   6 F — 문장 8: 덜 바빠지는 것이 아니라 더 바빠진다(busier).   7 T — 문장 9.   8 F — 문장 11: 서로 다르게가 아니라 다 똑같이 들린다.  거짓 문장은 모두 딱 한 요소(a few, change a lot, less busy, very different)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (c) → (d) → (a) → (b)");
-B("ⓒ 열서너 살에 음악 취향이 만들어지기 시작한다(문장 4) → ⓓ 20대에 좋아하는 음악을 알게 된다(문장 5) → ⓐ 바빠져서 예전에 좋아하던 노래만 듣는다(문장 8) → ⓑ 자녀의 음악을 '소음'이라고 말한다(문장 2). 글은 ⓑ로 시작하지만 시간으로는 가장 나중의 일이다 — 서술 순서와 사건 순서를 구분하자.", true);
+Hs("R1   True / False   ·   1 F · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 T");
+   B("1 F — 문장 5: 많이 바뀌는 것이 아니라 크게 바뀌지 않는다.   2 F — 문장 8: 덜 바빠지는 것이 아니라 더 바빠진다(busier).   3 T — 문장 4.   4 F — 문장 3: 소수가 아니라 많은 부모(many parents)가 그렇다.   5 T — 문장 9.   6 F — 문장 11: 서로 다르게가 아니라 다 똑같이 들린다.  거짓 문장은 모두 딱 한 요소(a few, change a lot, less busy, very different)만 비튼 것이다.   7 T — 문장 7.   8 T — 문장 1.", true);
+Hs("R2   사건 순서   ·   (b) → (d) → (a) → (c)");
+B("ⓑ 열서너 살에 음악 취향이 만들어지기 시작한다(문장 4) → ⓓ 20대에 좋아하는 음악을 알게 된다(문장 5) → ⓐ 바빠져서 예전에 좋아하던 노래만 듣는다(문장 8) → ⓒ 자녀의 음악을 '소음'이라고 말한다(문장 2). 글은 ⓒ로 시작하지만 시간으로는 가장 나중의 일이다 — 서술 순서와 사건 순서를 구분하자.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

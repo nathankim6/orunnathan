@@ -78,23 +78,25 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Talking with Whistles Around the World", "② How to Whistle Loudly and Clearly",
- "③ The Beautiful Islands of Spain", "④ Spanish Vowels and Consonants",
+["① How to Whistle Loudly and Clearly",
+ "② Talking with Whistles Around the World",
+ "③ The Beautiful Islands of Spain",
+ "④ Spanish Vowels and Consonants",
  "⑤ The Best Way to Climb High Mountains"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① More than 80 different cultures use whistles as a language.",
  "② A whistle’s sound travels farther than regular talking.",
- "③ Silbo Gomero uses four whistles for the five Spanish vowels.",
- "④ The Hmong people in Asia also communicate in whistles.",
- "⑤ The same word can have different meanings in their whistles."].forEach(c => K.push(ch(c)));
+ "③ The Hmong people in Asia also communicate in whistles.",
+ "④ The same word can have different meanings in their whistles.",
+ "⑤ Silbo Gomero uses four whistles for the five Spanish vowels."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) those가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the different cultures that use whistles",
- "② the whistling sounds in the mountains",
- "③ the people of La Gomera in Spain",
+["① the whistling sounds in the mountains",
+ "② the people of La Gomera in Spain",
+ "③ the different cultures that use whistles",
  "④ the forests and mountains in Asia",
  "⑤ the vowels and consonants of Spanish"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -329,15 +331,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "More than 80 different cultures use whistles as a language.",
-    "A whistle’s sound travels a shorter distance than shouting.",
-    "Silbo Gomero is used on La Gomera in Spain.",
-    "Two whistles replace the five Spanish vowels.",
-    "There are ten whistles for consonants in Silbo Gomero.",
-    "The Hmong people live in East and Southeast Asia.",
-    "The Hmong people use the same tone for every message.",
     "Whistling lets people understand each other with spoken words.",
-  ].map((s, i) => new TableRow({ children: [
+    "The Hmong people live in East and Southeast Asia.",
+    "Two whistles replace the five Spanish vowels.",
+    "The Hmong people use the same tone for every message.",
+    "There are ten whistles for consonants in Silbo Gomero.",
+    "A whistle’s sound travels a shorter distance than shouting.",
+    "More than 80 different cultures use whistles as a language.",
+    "Silbo Gomero is used on La Gomera in Spain."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -354,8 +355,8 @@ K.push(sp(120));
 K.push(box([
   ...["ⓐ The Hmong people use different tones of whistles.",
       "ⓑ Whistling shows people can understand each other.",
-      "ⓒ More than 80 cultures use whistles as a language.",
-      "ⓓ Silbo Gomero replaces Spanish vowels and consonants."]
+      "ⓒ Silbo Gomero replaces Spanish vowels and consonants.",
+      "ⓓ More than 80 cultures use whistles as a language."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -395,15 +396,15 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 whistles · language · communicate   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4T · 5F · 6T · 7F · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (d) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 F · 5 F · 6 F · 7 T · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 세계 여러 문화가 휘파람을 언어로 쓴다는 사실(문장 1–2)과 두 가지 예(문장 3–9), 그리고 말 없이도 통한다는 평가(문장 10–11)를 소개한다. 소재와 핵심을 모두 담은 ①이 제목이다. ③·④는 지엽, ②·⑤는 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 5에서 스페인어 모음 다섯 개를 대신하는 것은 휘파람 두 개이고, 자음용 휘파람이 네 개다. 숫자를 뒤바꾼 ③이 본문과 어긋난다. ①은 문장 1, ②는 문장 2, ④는 문장 7, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ②");
+B("이 글은 세계 여러 문화가 휘파람을 언어로 쓴다는 사실(문장 1–2)과 두 가지 예(문장 3–9), 그리고 말 없이도 통한다는 평가(문장 10–11)를 소개한다. 소재와 핵심을 모두 담은 ②이 제목이다. ③·④는 지엽, ①·⑤는 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 5에서 스페인어 모음 다섯 개를 대신하는 것은 휘파람 두 개이고, 자음용 휘파람이 네 개다. 숫자를 뒤바꾼 ⑤이 본문과 어긋난다. ①은 문장 1, ②는 문장 2, ③는 문장 7, ④는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) those는 앞에 나온 복수 명사 cultures를 대신한다. '숲이나 산 같은 곳에 있는 those'이므로 그런 곳의 문화들을 가리킨다 — 복수 지시어는 복수 명사를 받는다.", true);
 Hs("독해 04   배열 영작   ·   Whistling is an interesting way to communicate.");
 B("문장 10을 그대로 복원하는 문제다. ① 동명사 Whistling이 주어 — 첫 글자는 대문자.   ② 동명사 주어는 단수 취급이라 동사는 is.   ③ way to communicate — to부정사가 뒤에서 way를 꾸민다.", true);
@@ -417,10 +418,10 @@ B("[학습 포인트]   같은 they라도 문장 6에서는 휘파람을, 문장
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 T · 5 F · 6 T · 7 F · 8 F");
-B("1 T — 문장 1.   2 F — 문장 2: 더 짧게가 아니라 훨씬 멀리(much farther) 간다.   3 T — 문장 3.   4 T — 문장 5.   5 F — 문장 5: 자음용 휘파람은 열 개가 아니라 네 개다.   6 T — 문장 7.   7 F — 문장 8: 같은 톤이 아니라 서로 다른 톤을 쓴다.   8 F — 문장 11: 말을 쓰고가 아니라 말을 쓰지 않고(without) 알아듣는다.  거짓 문장은 모두 딱 한 요소(shorter, ten, the same tone, with)만 비튼 것이다.", true);
-Hs("R2   내용 전개 순서   ·   (c) → (d) → (a) → (b)");
-B("ⓒ 80개가 넘는 문화가 소리가 멀리 가기 때문에 휘파람을 쓴다(문장 1–2) → ⓓ 실보 고메로가 스페인어의 모음과 자음을 대신한다(문장 3–5) → ⓐ 아시아의 흐몽 사람들이 서로 다른 톤으로 뜻을 나른다(문장 7–8) → ⓑ 말 없이도 서로를 이해할 수 있음을 보여 준다(문장 10–11). 설명문은 '일반 → 예 → 마무리'로 흐른다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 F · 5 F · 6 F · 7 T · 8 T");
+   B("1 F — 문장 11: 말을 쓰고가 아니라 말을 쓰지 않고(without) 알아듣는다.  거짓 문장은 모두 딱 한 요소(shorter, ten, the same tone, with)만 비튼 것이다.   2 T — 문장 7.   3 T — 문장 5.   4 F — 문장 8: 같은 톤이 아니라 서로 다른 톤을 쓴다.   5 F — 문장 5: 자음용 휘파람은 열 개가 아니라 네 개다.   6 F — 문장 2: 더 짧게가 아니라 훨씬 멀리(much farther) 간다.   7 T — 문장 1.   8 T — 문장 3.", true);
+Hs("R2   내용 전개 순서   ·   (d) → (c) → (a) → (b)");
+B("ⓓ 80개가 넘는 문화가 소리가 멀리 가기 때문에 휘파람을 쓴다(문장 1–2) → ⓒ 실보 고메로가 스페인어의 모음과 자음을 대신한다(문장 3–5) → ⓐ 아시아의 흐몽 사람들이 서로 다른 톤으로 뜻을 나른다(문장 7–8) → ⓑ 말 없이도 서로를 이해할 수 있음을 보여 준다(문장 10–11). 설명문은 '일반 → 예 → 마무리'로 흐른다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

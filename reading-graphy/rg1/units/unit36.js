@@ -76,25 +76,27 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Bringing Back a Lost Color from the Middle Ages", "② How to Paint Pictures in Old Books",
- "③ The Most Popular Colors of Today", "④ A Village That Grows Rare Flowers",
- "⑤ Why Books Were So Expensive Long Ago"].forEach(c => K.push(ch(c)));
+["① How to Paint Pictures in Old Books",
+ "② The Most Popular Colors of Today",
+ "③ A Village That Grows Rare Flowers",
+ "④ Why Books Were So Expensive Long Ago",
+ "⑤ Bringing Back a Lost Color from the Middle Ages"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Folium was a purple-blue color popular in the Middle Ages.",
- "② The color was used to paint images on the pages of books.",
- "③ Scientists looked into old books from the 1600s for hints.",
+ "② Scientists looked into old books from the 1600s for hints.",
+ "③ The color was used to paint images on the pages of books.",
  "④ They discovered the plant in a village in Portugal.",
  "⑤ The scientists succeeded in recreating the color."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) that plant가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the plant used to make the color",
- "② the color called folium",
- "③ the old books from the 1400s",
- "④ a village in Portugal",
- "⑤ the scientists’ labs"].forEach(c => K.push(ch(c)));
+["① the color called folium",
+ "② the old books from the 1400s",
+ "③ a village in Portugal",
+ "④ the scientists’ labs",
+ "⑤ the plant used to make the color"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -141,7 +143,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -154,7 +156,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -191,7 +193,7 @@ K.push(spF(2, 85, 0.06));
  [8, "Luckily, in one book, they found the plant used to make the color."],
  [12, "Now, we can enjoy this color just like people did hundreds of years ago."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -267,7 +269,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -314,7 +316,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -329,15 +331,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Folium was a purple-blue color popular during the Middle Ages.",
-    "The color was used to paint images on the walls of houses.",
-    "As time went by, people stopped using this color.",
-    "Scientists looked into old books from the 1600s for hints.",
-    "They found the plant in a village in Portugal.",
     "The scientists did only one experiment in their labs.",
-    "The scientists succeeded in recreating the color.",
     "Today, nobody can enjoy this color.",
-  ].map((s, i) => new TableRow({ children: [
+    "Scientists looked into old books from the 1600s for hints.",
+    "The color was used to paint images on the walls of houses.",
+    "Folium was a purple-blue color popular during the Middle Ages.",
+    "They found the plant in a village in Portugal.",
+    "As time went by, people stopped using this color.",
+    "The scientists succeeded in recreating the color."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -353,8 +354,8 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "사라진 색에 �
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Scientists looked into old books from the 1400s.",
-      "ⓑ People stopped using folium, and it disappeared.",
-      "ⓒ The scientists succeeded in recreating the color.",
+      "ⓑ The scientists succeeded in recreating the color.",
+      "ⓒ People stopped using folium, and it disappeared.",
       "ⓓ They discovered the plant in a village in Portugal."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -395,15 +396,15 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 color · lost · scientists   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (d) → (c)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 F · 4 F · 5 T · 6 T · 7 T · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (d) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 중세에 쓰이다 사라진 색 폴리움(문장 1–4)과, 과학자들이 그 색을 되살린 과정(문장 5–11)을 들려준다. 소재(사라진 색)와 결과(되살림)를 함께 담은 ①이 제목이다. ②·④는 책 그림·마을만 건드린 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 7에서 과학자들이 살펴본 것은 1400년대의 옛 책이다. 1600년대라고 한 ③이 본문과 다르다. ①은 문장 1, ②는 문장 2, ④은 문장 9, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 중세에 쓰이다 사라진 색 폴리움(문장 1–4)과, 과학자들이 그 색을 되살린 과정(문장 5–11)을 들려준다. 소재(사라진 색)와 결과(되살림)를 함께 담은 ⑤이 제목이다. ①·③는 책 그림·마을만 건드린 지엽적 오답, ②·④는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 7에서 과학자들이 살펴본 것은 1400년대의 옛 책이다. 1600년대라고 한 ②이 본문과 다르다. ①은 문장 1, ③는 문장 2, ④은 문장 9, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) that plant는 바로 앞 문장 8의 the plant used to make the color를 가리킨다. that+명사는 '앞에 나온 바로 그 명사'라는 뜻이다 — 명사가 무엇을 찾을지 알려 준다.", true);
 Hs("독해 04   배열 영작   ·   Finally, they succeeded in recreating the color!");
 B("문장 11을 그대로 복원하는 문제다. ① Finally, 뒤의 콤마를 빠뜨리지 않는다.   ② succeed in ~ing — 전치사 in 뒤에는 recreating.   ③ 문장 끝은 느낌표.", true);
@@ -417,10 +418,10 @@ B("[학습 포인트]   this·that에 명사가 붙으면(that plant) 그 명사
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 1.   2 F — 문장 2: 집 벽이 아니라 책의 페이지에 그림을 그리는 데 쓰였다.   3 T — 문장 3.   4 F — 문장 7: 1600년대가 아니라 1400년대의 책이다.   5 T — 문장 9.   6 F — 문장 10: 실험을 한 번만 한 게 아니라 여러 번(many) 했다.   7 T — 문장 11.   8 F — 문장 12: 오늘날 우리도 이 색을 즐길 수 있다.  거짓 문장은 모두 한 요소(walls, 1600s, only one, nobody)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (a) → (d) → (c)");
-B("ⓑ 사람들이 폴리움을 쓰지 않게 되고 색이 사라진다(문장 3–4) → ⓐ 과학자들이 1400년대의 옛 책을 살펴본다(문장 7) → ⓓ 포르투갈의 한 마을에서 그 식물을 찾아낸다(문장 9) → ⓒ 마침내 색을 다시 만들어 낸다(문장 11). 사라짐 → 단서 → 발견 → 재현, 시간 순서 그대로 서술된 글이다.", true);
+Hs("R1   True / False   ·   1 F · 2 F · 3 F · 4 F · 5 T · 6 T · 7 T · 8 T");
+   B("1 F — 문장 10: 실험을 한 번만 한 게 아니라 여러 번(many) 했다.   2 F — 문장 12: 오늘날 우리도 이 색을 즐길 수 있다.  거짓 문장은 모두 한 요소(walls, 1600s, only one, nobody)만 비튼 것이다.   3 F — 문장 7: 1600년대가 아니라 1400년대의 책이다.   4 F — 문장 2: 집 벽이 아니라 책의 페이지에 그림을 그리는 데 쓰였다.   5 T — 문장 1.   6 T — 문장 9.   7 T — 문장 3.   8 T — 문장 11.", true);
+Hs("R2   사건 순서   ·   (c) → (a) → (d) → (b)");
+B("ⓒ 사람들이 폴리움을 쓰지 않게 되고 색이 사라진다(문장 3–4) → ⓐ 과학자들이 1400년대의 옛 책을 살펴본다(문장 7) → ⓓ 포르투갈의 한 마을에서 그 식물을 찾아낸다(문장 9) → ⓑ 마침내 색을 다시 만들어 낸다(문장 11). 사라짐 → 단서 → 발견 → 재현, 시간 순서 그대로 서술된 글이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

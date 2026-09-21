@@ -98,25 +98,27 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["\u2460 Cute but Dangerous: A Lesson from Wild Otters", "\u2461 The Best Morning Walk Courses in Singapore",
- "\u2462 How to Build an Otter Park", "\u2463 Why Jogging Is Good for Your Health",
- "\u2464 How Otters Swim in the Water"].forEach(c => K.push(ch(c)));
+["① The Best Morning Walk Courses in Singapore",
+ "② How to Build an Otter Park",
+ "③ Why Jogging Is Good for Your Health",
+ "④ How Otters Swim in the Water",
+ "⑤ Cute but Dangerous: A Lesson from Wild Otters"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["\u2460 Steve saw about 20 furry animals near the water.",
- "\u2461 It was bright when Steve took a walk.",
- "\u2462 A jogger stepped on an otter by accident.",
- "\u2463 Steve climbed a tree to get away from the otters.",
- "\u2464 The otters calmed down and went back to the water."].forEach(c => K.push(ch(c)));
+["① Steve saw about 20 furry animals near the water.",
+ "② It was bright when Steve took a walk.",
+ "③ A jogger stepped on an otter by accident.",
+ "④ Steve climbed a tree to get away from the otters.",
+ "⑤ The otters calmed down and went back to the water."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["\u2460 the angry otters",
- "\u2461 Steve\u2019s ankles and legs",
- "\u2462 the joggers in the park",
- "\u2463 the trees near the water",
- "\u2464 the people in Singapore"].forEach(c => K.push(ch(c)));
+["① Steve\u2019s ankles and legs",
+ "② the joggers in the park",
+ "③ the angry otters",
+ "④ the trees near the water",
+ "⑤ the people in Singapore"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -175,7 +177,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -189,7 +191,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -225,7 +227,7 @@ K.push(spF(2, 85, 0.06));
  [10, "At last, Steve climbed a tree to get away from the angry otters."],
  [11, "He stayed there until the otters calmed down and went back to the water."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -283,7 +285,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["\u2460 싱가포르의 아침 산책 코스", "\u2461 화난 수달에게 물린 남자", "\u2462 수달의 먹이 습관"].forEach(c =>
+["① 화난 수달에게 물린 남자",
+ "② 싱가포르의 아침 산책 코스",
+ "③ 수달의 먹이 습관"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -295,7 +299,7 @@ K.push(T([1740,1740,1740,1740,1740,1740], [new TableRow({ children: KWCAND.map((
   new Paragraph({ children: [t(ko, { size: 14, color: SUB })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 190 } }),
 ], { w: 1740, shade: FIELD, va: VerticalAlign.CENTER, m: { top: 240, bottom: 240, left: 40, right: 40 },
     b: { top: bd(4, FLINE), bottom: bd(4, FLINE), left: bd(4, FLINE), right: bd(4, FLINE) } })) })]));
-K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 이 글의 주인공  ② 수달들의 감정  ③ 글쓴이의 교훈 \u2014 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
+K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 이 글의 주인공  ② 수달들의 감정  ③ 글쓴이의 교훈 — 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
 K.push(spF(4, 260, 0.30));
 
 K.push(p([t("1-3  ", { size: 18, bold: true, color: GOLD }), t("지시어 이해하기", { size: 19, bold: true }),
@@ -304,7 +308,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 1950, 7350];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -406,11 +410,11 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["\u2460 실제 겪은 일을 들려주는 이야기",
- "\u2461 물건을 팔기 위해 만든 광고",
- "\u2462 요리 방법을 알려 주는 설명문",
- "\u2463 리듬을 살려 쓴 시",
- "\u2464 행사에 초대하는 초대장"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
+["① 실제 겪은 일을 들려주는 이야기",
+ "② 물건을 팔기 위해 만든 광고",
+ "③ 요리 방법을 알려 주는 설명문",
+ "④ 리듬을 살려 쓴 시",
+ "⑤ 행사에 초대하는 초대장"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
 K.push(brk());
@@ -461,12 +465,12 @@ K.push(p([t("조건 ", { size: 16, bold: true, color: GOLD }),
   t("덩어리의 순서를 괄호에 쓰세요. 덩어리 안의 단어는 바꾸지 않습니다.", { size: 16, color: SUB })], { after: 100, line: 250 }));
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("보기   ", { size: 16, bold: true, color: NAVY2 }),
-     t("\u24D0 around wild animals     \u24D1 even if     \u24D2 always be careful     \u24D3 they look cute.", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
+     t("ⓐ always be careful     ⓑ around wild animals     ⓒ even if     ⓓ they look cute.", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
   { w: W, shade: COOL, b: { top: bd(4, CLINE), bottom: bd(4, CLINE), left: NOB, right: NOB }, m: { top: 150 + Math.round((FT(6) || 0) * 0.02), bottom: 150 + Math.round((FT(6) || 0) * 0.02), left: 180, right: 180 } })] })]));
 K.push(spF(6, 200, 0.05));
 K.push(p([t("순서   ", { size: 17, bold: true, color: NAVY2 }),
-  t("(  \u24D2  )", { size: 19 }), t("  \u2192  (      )  \u2192  (      )  \u2192  (      )", { size: 19 }),
-  t("      (c)가 맨 앞 \u2014 명령문은 동사부터!", { size: 14, color: GOLD, bold: true })], { after: 0, align: AlignmentType.CENTER }));
+  t("(  ⓒ  )", { size: 19 }), t("  →  (      )  →  (      )  →  (      )", { size: 19 }),
+  t("      (c)가 맨 앞 — 명령문은 동사부터!", { size: 14, color: GOLD, bold: true })], { after: 0, align: AlignmentType.CENTER }));
 
 /* ═══════════ 6~7면 [DATA] STEP 4 요약 · STEP 5 같은 뜻 찾기 ═══════════ */
 K.push(brk());
@@ -514,15 +518,15 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 2, main: "still dark and quiet",
-    opts: ["\u2460 bright and noisy", "\u2461 not yet light, with no sound", "\u2462 full of many people"] },
+    opts: ["① bright and noisy", "② not yet light, with no sound", "③ full of many people"] },
   { sn: 5, main: "got close",
-    opts: ["\u2460 moved near", "\u2461 ran far away", "\u2462 took a picture"] });
+    opts: ["① ran far away", "② moved near", "③ took a picture"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 9, main: "tried to stop them, but couldn\u2019t",
-    opts: ["\u2460 easily made them stop", "\u2461 failed to stop them", "\u2462 wanted to feed them"] },
+    opts: ["① failed to stop them", "② easily made them stop", "③ wanted to feed them"] },
   { sn: 12, main: "be careful around wild animals",
-    opts: ["\u2460 watch out near wild animals", "\u2461 play freely with wild animals", "\u2462 keep wild animals as pets"] });
+    opts: ["① play freely with wild animals", "② keep wild animals as pets", "③ watch out near wild animals"] });
 K.push(spF(7, 150, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -577,15 +581,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Steve went for a morning walk in a park in Singapore.",
-    "It was bright and sunny when Steve walked.",
     "Steve saw about 20 furry animals near the water.",
-    "A jogger stepped on an otter on purpose.",
-    "The otters thought Steve was a danger too.",
-    "Steve easily stopped the angry otters.",
     "Steve climbed a tree to get away from the otters.",
     "The otters never went back to the water.",
-  ].map((s, i) => new TableRow({ children: [
+    "Steve went for a morning walk in a park in Singapore.",
+    "Steve easily stopped the angry otters.",
+    "A jogger stepped on an otter on purpose.",
+    "The otters thought Steve was a danger too.",
+    "It was bright and sunny when Steve walked."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -600,10 +603,10 @@ K.push(spF(8, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "스티브에게 일어난 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["\u24D0 Steve climbed a tree to get away.",
-      "\u24D1 Steve saw furry animals near the water.",
-      "\u24D2 A jogger stepped on an otter by accident.",
-      "\u24D3 The otters started biting Steve."]
+  ...["ⓐ Steve climbed a tree to get away.",
+      "ⓑ Steve saw furry animals near the water.",
+      "ⓒ A jogger stepped on an otter by accident.",
+      "ⓓ The otters started biting Steve."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -624,12 +627,12 @@ const m3b = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(mw3, [
   thead(["어휘", "답", "영영풀이"], mw3, TEAL),
   ...[
-    ["1  furry", "\u24D0 by mistake, not on purpose"],
-    ["2  suddenly", "\u24D1 to go up something"],
-    ["3  accidentally", "\u24D2 quickly, without warning"],
-    ["4  danger", "\u24D3 to become quiet and relaxed"],
-    ["5  climb", "\u24D4 covered with soft hair"],
-    ["6  calm down", "\u24D5 something that can hurt you"],
+    ["1  furry", "ⓐ by mistake, not on purpose"],
+    ["2  suddenly", "ⓑ to go up something"],
+    ["3  accidentally", "ⓒ quickly, without warning"],
+    ["4  danger", "ⓓ to become quiet and relaxed"],
+    ["5  climb", "ⓔ covered with soft hair"],
+    ["6  calm down", "ⓕ something that can hurt you"],
   ].map(([wd, df]) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(wd, { size: 18, bold: true, color: NAVY })], spacing: { after: 0 } }),
       { w: mw3[0], shade: GREY, b: m3b, va: VerticalAlign.CENTER, m: { top: 158 + RX9, bottom: 158 + RX9, left: 150, right: 80 } }),
@@ -644,7 +647,7 @@ K.push(spF(9, 380, 0.12));
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
 [["문장 3", [t("While he ", { size: 19 }), t("( was walking  /  walking )", { size: 19, bold: true, color: NAVY }), t(", he saw about 20 furry animals.", { size: 19 })], "진행형은 be+~ing — 한 덩어리의 동사예요."],
- ["문장 8", [t("The otters thought Steve ", { size: 19 }), t("( was  /  is )", { size: 19, bold: true, color: NAVY }), t(" a danger too.", { size: 19 })], "thought(과거)와 어울리는 시제를 고르세요."],
+ ["문장 8", [t("The otters thought Steve ", { size: 19 }), t("( is  /  was )", { size: 19, bold: true, color: NAVY }), t(" a danger too.", { size: 19 })], "thought(과거)와 어울리는 시제를 고르세요."],
  ["문장 10", [t("Steve climbed a tree ", { size: 19 }), t("( to get  /  got )", { size: 19, bold: true, color: NAVY }), t(" away from the otters.", { size: 19 })], "'~하기 위해'는 to+동사원형!"],
  ["문장 12", [t("Be careful, even if they ", { size: 19 }), t("( look  /  looks )", { size: 19, bold: true, color: NAVY }), t(" cute.", { size: 19 })], "주어 they(복수)에 맞는 동사 형태는?"],
 ].forEach(([n, runs, hint], i) => {
@@ -730,9 +733,9 @@ K.push(...tab("정답 및 해설", "UNIT 01  귀엽지만 위험한 야생 동�
 K.push(sp(150));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("독해", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("\u2460      ", { size: 19, bold: true }),
-     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("\u2461      ", { size: 19, bold: true }),
-     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("\u2460", { size: 19, bold: true })], { after: 25 }),
+  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("①      ", { size: 19, bold: true }),
+     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("②      ", { size: 19, bold: true }),
+     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("①", { size: 19, bold: true })], { after: 25 }),
   p([t("04 ", { size: 19, bold: true, color: NAVY2 }), t("It was still dark and quiet.", { size: 19, bold: true })], { after: 75 }),
   p([t("구문분석", { size: 16, bold: true, color: NAVY })], { after: 60 }),
   p([t("문6 ", { size: 17, bold: true, color: NAVY2 }), t("jogger(S)\u00b7ran(\u25b3V)\u00b7and[네모]\u00b7he(S)\u00b7stepped(\u25b3V)   ", { size: 17, bold: true }),
@@ -740,13 +743,13 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("He(S)\u00b7stayed(\u25b3V)\u00b7until[네모]\u00b7otters(S\u2032)\u00b7calmed down\u00b7went back(\u25b3V\u2032)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 '미나'라는 이름의 소녀를 만났다  (2) 그는 버스를 잡기 위해 빨리 달렸다  (3) 우리는 사진을 찍기 위해 '불국사'라는 절을 방문했다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 \u2461   1-2 otters · angry · careful        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 결과 · 반전 · ~까지   2-2 [B] 사고 · [E] 교훈   2-3 \u2460", { size: 19, bold: true })], { after: 25 }),
-  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (c) \u2192 (a) \u2192 (b) \u2192 (d)  ·  Always be careful around wild animals, even if they look cute.", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 otters · angry · careful        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 결과 · 반전 · ~까지   2-2 [B] 사고 · [E] 교훈   2-3 ①", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (a) → (b) → (c) → (d)  ·  Always be careful around wild animals, even if they look cute.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) cute  (2) angry  (3) tree  (4) careful        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 \u2461  문장 5 \u2460  문장 9 \u2461  문장 12 \u2460", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ②  문장 5 ②  문장 9 ①  문장 12 ③", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 T · 3 F · 4 T · 5 F · 6 F · 7 T · 8 F", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (d) → (a)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(e) · 2(c) · 3(a) · 4(f) · 5(b) · 6(d)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) was walking  (2) was  (3) to get  (4) look", { size: 19, bold: true })], { after: 25 }),
@@ -754,61 +757,61 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) The other otters got angry and scared.  (2) Steve tried to stop them, but he couldn\u2019t.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 \u2460");
-B("이 글은 수달에게 물린 남자(문장 6\u20139)와 그가 배운 교훈(문장 12)을 들려주는 이야기다. 소재(otters)와 교훈(cute but dangerous)을 모두 담은 \u2460이 제목으로 적절하다. \u2461·\u2463은 본문의 배경(산책·조깅)만 건드린 지엽적 오답, \u2462·\u2464는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 \u2461");
-B("문장 2에서 '아직 어둡고 조용했다(still dark and quiet)'고 했으므로, 밝았다는 \u2461은 본문과 반대된다. \u2460은 문장 3, \u2462는 문장 6, \u2463은 문장 10, \u2464는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 \u2460");
-B("(A) them은 바로 앞 문장 8에서 스티브를 물기 시작한 화난 수달들을 가리킨다. 스티브가 멈추려던 대상이 무엇인지 생각하면 된다 \u2014 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 수달에게 물린 남자(문장 6–9)와 그가 배운 교훈(문장 12)을 들려주는 이야기다. 소재(otters)와 교훈(cute but dangerous)을 모두 담은 ⑤이 제목으로 적절하다. ①·③은 본문의 배경(산책·조깅)만 건드린 지엽적 오답, ②·④는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 2에서 '아직 어둡고 조용했다(still dark and quiet)'고 했으므로, 밝았다는 ②은 본문과 반대된다. ①은 문장 3, ③는 문장 6, ④은 문장 10, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
+B("(A) them은 바로 앞 문장 8에서 스티브를 물기 시작한 화난 수달들을 가리킨다. 스티브가 멈추려던 대상이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   It was still dark and quiet.");
-B("문장 2를 그대로 복원하는 문제다. \u2460 날씨·시간을 나타내는 문장의 주어는 It \u2014 첫 글자는 대문자.   \u2461 still(아직)의 위치는 was 뒤.   \u2462 dark and quiet \u2014 두 형용사를 and로 잇는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 \u2461     1-2 otters · angry · careful     1-3 아래 참조");
-B("1-1   정답 \u2461. 이 글은 산책하던 스티브가 화난 수달들에게 물린 사건과 그 교훈을 들려준다. \u2460 산책은 사건의 배경일 뿐이고, \u2462 수달의 먹이 이야기는 나오지 않는다.");
-B("1-2   \u25cb표 할 세 단어: otters(힌트\u2460 주인공) · angry(힌트\u2461 수달들의 감정) · careful(힌트\u2462 글쓴이의 교훈). 나머지 셋(park · jogger · water)은 본문에 등장하지만 주제문에 들어가지 않는다 \u2014 배경과 계기일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
-B("1-3   문장 9 \u2014 them은 수달들에 \u25cb (스티브가 멈추려던 대상).   문장 11 \u2014 there는 나무 위에 \u25cb (문장 10에서 올라간 곳).   문장 12 \u2014 they는 wild animals에 \u25cb (귀여워 보여도 조심해야 할 대상).");
+B("문장 2를 그대로 복원하는 문제다. ① 날씨·시간을 나타내는 문장의 주어는 It — 첫 글자는 대문자.   ② still(아직)의 위치는 was 뒤.   ③ dark and quiet — 두 형용사를 and로 잇는다.", true);
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 otters · angry · careful     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 산책하던 스티브가 화난 수달들에게 물린 사건과 그 교훈을 들려준다. ② 산책은 사건의 배경일 뿐이고, ③ 수달의 먹이 이야기는 나오지 않는다.");
+B("1-2   \u25cb표 할 세 단어: otters(힌트① 주인공) · angry(힌트② 수달들의 감정) · careful(힌트③ 글쓴이의 교훈). 나머지 셋(park · jogger · water)은 본문에 등장하지만 주제문에 들어가지 않는다 — 배경과 계기일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
+B("1-3   문장 9 — them은 수달들에 \u25cb (스티브가 멈추려던 대상).   문장 11 — there는 나무 위에 \u25cb (문장 10에서 올라간 곳).   문장 12 — they는 wild animals에 \u25cb (귀여워 보여도 조심해야 할 대상).");
 B("[학습 포인트]   문장 11의 there가 이 지문의 백미다. 지시어는 사람·사물만이 아니라 장소도 대신한다(there = 문장 10의 나무 위). 지시어를 만날 때마다 '이게 뭘 가리키지?'를 확인해 화살표로 연결해 두자. 이 습관이 고등 독해의 지칭 추론 문항으로 그대로 이어진다.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 때 / 결과 / 반전 / ~까지     2-2 [B] 사고 · [E] 교훈     2-3 \u2460");
-B("2-1   문장 3 While \u2014 걷고 있던 '때'에 수달들을 보았다.   문장 8 so \u2014 위험하다고 생각한 원인의 '결과'로 달려들었다.   문장 9 but \u2014 멈추려 했지만 못 했다는 '반전'.   문장 11 until \u2014 수달들이 진정할 '때까지' 나무 위에 있었다.");
-B("2-2   [B] 사고(문장 5\u20136: 다가갔다가 조거가 수달을 밟는 사고가 난다), [E] 교훈(문장 12: 야생 동물을 조심하라). 보기의 '광고'는 이 글에 없는 역할이다. [A] 만남 \u2192 [B] 사고 \u2192 [C] 위기 \u2192 [D] 탈출 \u2192 [E] 교훈 \u2014 사건이 있는 이야기 글의 전형적인 흐름이다.");
-B("2-3   정답 \u2460. 스티브가 실제로 겪은 사건을 시간 순서대로 들려주고 마지막에 교훈을 남기는 이야기(경험담)다. \u2461 광고의 신호(사라는 말·가격)가 없고, \u2462 요리법·\u2463 시·\u2464 초대장의 형식도 아니다.");
-B("[학습 포인트]   연결어만 표시해도 글의 지도가 그려진다. While(때), so(결과), but(반전), until(끝나는 지점). 특히 이야기 글의 마지막 문장은 글쓴이가 진짜 하고 싶은 말 \u2014 교훈의 신호다.", true);
-Hs("STEP 3   주제문 만들기   ·   3-1 careful · cute     3-3 (c) \u2192 (a) \u2192 (b) \u2192 (d)");
-B("3-1  재료 찾기 \u2014 (2) 문장 12에서 careful에 \u25cb: 교훈의 핵심 태도다. scared는 수달들의 감정이지 교훈이 아니다. (3) 문장 12에서 cute에 \u25cb: even if 뒤에 놓일 겉모습이다. dark는 문장 2의 배경일 뿐. 주제문의 재료는 언제나 본문 안에 있다.");
-B("3-2  뼈대 채우기 \u2014 (1) wild animals  (2) careful  (3) cute.  넣으면 Always be careful around wild animals, even if they look cute.가 완성된다.");
-B("3-3  정답 순서 \u2014 \u24D2 always be careful \u2192 \u24D0 around wild animals \u2192 \u24D1 even if \u2192 \u24D3 they look cute.  완성 문장: Always be careful around wild animals, even if they look cute.");
-B("[채점 포인트]  명령문이므로 동사 덩어리(\u24D2)가 맨 앞, 마침표가 붙은 덩어리(\u24D3)가 맨 뒤 \u2014 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
+Hs("STEP 2   글의 흐름   ·   2-1 때 / 결과 / 반전 / ~까지     2-2 [B] 사고 · [E] 교훈     2-3 ①");
+B("2-1   문장 3 While — 걷고 있던 '때'에 수달들을 보았다.   문장 8 so — 위험하다고 생각한 원인의 '결과'로 달려들었다.   문장 9 but — 멈추려 했지만 못 했다는 '반전'.   문장 11 until — 수달들이 진정할 '때까지' 나무 위에 있었다.");
+B("2-2   [B] 사고(문장 5–6: 다가갔다가 조거가 수달을 밟는 사고가 난다), [E] 교훈(문장 12: 야생 동물을 조심하라). 보기의 '광고'는 이 글에 없는 역할이다. [A] 만남 → [B] 사고 → [C] 위기 → [D] 탈출 → [E] 교훈 — 사건이 있는 이야기 글의 전형적인 흐름이다.");
+B("2-3   정답 ①. 스티브가 실제로 겪은 사건을 시간 순서대로 들려주고 마지막에 교훈을 남기는 이야기(경험담)다. ② 광고의 신호(사라는 말·가격)가 없고, ③ 요리법·④ 시·⑤ 초대장의 형식도 아니다.");
+B("[학습 포인트]   연결어만 표시해도 글의 지도가 그려진다. While(때), so(결과), but(반전), until(끝나는 지점). 특히 이야기 글의 마지막 문장은 글쓴이가 진짜 하고 싶은 말 — 교훈의 신호다.", true);
+Hs("STEP 3   주제문 만들기   ·   3-1 careful · cute     3-3 (a) → (b) → (c) → (d)");
+B("3-1  재료 찾기 — (2) 문장 12에서 careful에 \u25cb: 교훈의 핵심 태도다. scared는 수달들의 감정이지 교훈이 아니다. (3) 문장 12에서 cute에 \u25cb: even if 뒤에 놓일 겉모습이다. dark는 문장 2의 배경일 뿐. 주제문의 재료는 언제나 본문 안에 있다.");
+B("3-2  뼈대 채우기 — (1) wild animals  (2) careful  (3) cute.  넣으면 Always be careful around wild animals, even if they look cute.가 완성된다.");
+B("3-3  정답 순서 — ⓐ always be careful → ⓑ around wild animals → ⓒ even if → ⓓ they look cute.  완성 문장: Always be careful around wild animals, even if they look cute.");
+B("[채점 포인트]  명령문이므로 동사 덩어리(ⓐ)가 맨 앞, 마침표가 붙은 덩어리(ⓓ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) cute  (2) angry  (3) tree  (4) careful");
-B("(1)은 문장 5의 cute, (2)는 문장 7의 angry, (3)은 문장 10의 tree, (4)는 문장 12의 careful에서 가져온다. 요약문이 곧 이 글의 흐름이다: 만남(1) \u2192 위기(2) \u2192 탈출(3) \u2192 교훈(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 2 \u2461   문장 5 \u2460   문장 9 \u2461   문장 12 \u2460  (정답 선지는 무표시)");
-B("문장 2 still dark and quiet   \u2460 ✕ [반대] 밝고 시끄럽다 \u2014 정반대.   \u2461 ○ 아직 해가 안 떠서 어둡고 소리가 없다.   \u2462 ✕ [무관] 사람이 많다는 말은 지문에 없다.");
-B("문장 5 got close   \u2460 ○ moved near = 가까이 다가갔다.   \u2461 ✕ [반대] 멀리 달아났다 \u2014 정반대.   \u2462 ✕ [무관] 사진을 찍었다는 말은 지문에 없다.");
-B("문장 9 tried to stop them, but couldn\u2019t   \u2460 ✕ [반대] 쉽게 멈추게 했다 \u2014 정반대.   \u2461 ○ failed to stop them = 멈추게 하지 못했다.   \u2462 ✕ [무관] 먹이를 주고 싶었다는 말은 지문에 없다.");
-B("문장 12 be careful around wild animals   \u2460 ○ watch out near wild animals = 야생 동물 근처에서 조심하다.   \u2461 ✕ [반대] 자유롭게 논다 \u2014 정반대.   \u2462 ✕ [무관] 반려동물로 기른다는 말은 지문에 없다.");
+B("(1)은 문장 5의 cute, (2)는 문장 7의 angry, (3)은 문장 10의 tree, (4)는 문장 12의 careful에서 가져온다. 요약문이 곧 이 글의 흐름이다: 만남(1) → 위기(2) → 탈출(3) → 교훈(4).", true);
+Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ②   문장 5 ②   문장 9 ①   문장 12 ③  (정답 선지는 무표시)");
+B("문장 2 still dark and quiet   ① ✕ [반대] 밝고 시끄럽다 — 정반대.   ② ○ 아직 해가 안 떠서 어둡고 소리가 없다.   ③ ✕ [무관] 사람이 많다는 말은 지문에 없다.");
+B("문장 5 got close   ② ○ moved near = 가까이 다가갔다.   ① ✕ [반대] 멀리 달아났다 — 정반대.   ③ ✕ [무관] 사진을 찍었다는 말은 지문에 없다.");
+B("문장 9 tried to stop them, but couldn\u2019t   ② ✕ [반대] 쉽게 멈추게 했다 — 정반대.   ① ○ failed to stop them = 멈추게 하지 못했다.   ③ ✕ [무관] 먹이를 주고 싶었다는 말은 지문에 없다.");
+B("문장 12 be careful around wild animals   ③ ○ watch out near wild animals = 야생 동물 근처에서 조심하다.   ① ✕ [반대] 자유롭게 논다 — 정반대.   ② ✕ [무관] 반려동물로 기른다는 말은 지문에 없다.");
 B("[학습 포인트]  시험은 본문 표현을 그대로 쓰지 않고 반드시 바꿔서 묻는다. 지문을 읽을 때마다 '이 표현을 다른 말로 하면?'을 스스로 물어보자. 지금은 반대/무관 두 갈래를 정확히 가르는 것이 먼저다.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T \u2014 문장 1.   2 F \u2014 문장 2: 밝은 게 아니라 아직 어둡고 조용했다.   3 T \u2014 문장 3.   4 F \u2014 문장 6: 일부러(on purpose)가 아니라 실수로(accidentally) 밟았다.   5 T \u2014 문장 8.   6 F \u2014 문장 9: 멈추려 했지만 그럴 수 없었다.   7 T \u2014 문장 10.   8 F \u2014 문장 11: 진정한 뒤 물로 돌아갔다.  거짓 문장은 모두 본문에서 딱 한 단어(bright, on purpose, easily, never)를 비튼 것이다 \u2014 그 한 단어를 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (b) \u2192 (c) \u2192 (d) \u2192 (a)");
-B("\u24D1 물가에서 털북숭이 동물들을 본다(문장 3) \u2192 \u24D2 조거가 실수로 수달을 밟는다(문장 6) \u2192 \u24D3 수달들이 스티브를 물기 시작한다(문장 8) \u2192 \u24D0 스티브가 나무에 올라가 피한다(문장 10). 이 글은 사건이 일어난 순서 그대로 서술된 이야기이므로, 문장 번호를 따라가면 순서가 보인다.", true);
+Hs("R1   True / False   ·   1 T · 2 T · 3 F · 4 T · 5 F · 6 F · 7 T · 8 F");
+   B("1 T — 문장 3.   2 T — 문장 10.   3 F — 문장 11: 진정한 뒤 물로 돌아갔다.  거짓 문장은 모두 본문에서 딱 한 단어(bright, on purpose, easily, never)를 비튼 것이다 — 그 한 단어를 찾는 것이 정독이다.   4 T — 문장 1.   5 F — 문장 9: 멈추려 했지만 그럴 수 없었다.   6 F — 문장 6: 일부러(on purpose)가 아니라 실수로(accidentally) 밟았다.   7 T — 문장 8.   8 F — 문장 2: 밝은 게 아니라 아직 어둡고 조용했다.", true);
+Hs("R2   사건 순서   ·   (b) → (c) → (d) → (a)");
+B("ⓑ 물가에서 털북숭이 동물들을 본다(문장 3) → ⓒ 조거가 실수로 수달을 밟는다(문장 6) → ⓓ 수달들이 스티브를 물기 시작한다(문장 8) → ⓐ 스티브가 나무에 올라가 피한다(문장 10). 이 글은 사건이 일어난 순서 그대로 서술된 이야기이므로, 문장 번호를 따라가면 순서가 보인다.", true);
 Hs("R3   영영풀이   ·   1 (e) · 2 (c) · 3 (a) · 4 (f) · 5 (b) · 6 (d)");
 B("furry = covered with soft hair(부드러운 털로 덮인) · suddenly = 갑자기, 예고 없이 · accidentally = 실수로, 고의가 아니게 · danger = 다치게 할 수 있는 것 · climb = 위로 올라가다 · calm down = 조용하고 편안해지다.", true);
 Hs("R4   어법 기초   ·   (1) was walking  (2) was  (3) to get  (4) look");
-B("(1) 진행형은 be+~ing가 한 덩어리의 동사다 \u2014 was walking. 2면 분석 Tip의 그 원칙이다.   (2) thought(과거)와 시제를 맞춘다 \u2014 was.   (3) '~하기 위해'는 to+동사원형 \u2014 to get. 2면 구문에서 배운 그 문장이다.   (4) 주어 they는 복수 \u2014 look.", true);
+B("(1) 진행형은 be+~ing가 한 덩어리의 동사다 — was walking. 2면 분석 Tip의 그 원칙이다.   (2) thought(과거)와 시제를 맞춘다 — was.   (3) '~하기 위해'는 to+동사원형 — to get. 2면 구문에서 배운 그 문장이다.   (4) 주어 they는 복수 — look.", true);
 Hs("R5   빈칸 클로즈   ·   (1) walk (2) otters (3) stepped (4) angry (5) biting (6) tree (7) water (8) careful");
 B("빈칸 8개는 모두 이 유닛의 핵심어와 어휘다. 빈칸 앞뒤가 단서다: morning ___ \u2190 아침 산책, They were ___! \u2190 정체가 밝혀지는 문장, climbed a ___ \u2190 올라간 곳, always be ___ \u2190 교훈. 채우고 나면 지문 한 편을 처음부터 끝까지 다시 읽은 셈이 된다.", true);
 Hs("R6   해석 쓰기   ·   모범 답안");
-B("(1) 마침내 스티브는 화난 수달들에게서 벗어나기 위해 나무에 올라갔다.  \u2014 to get away(to부정사)를 '~하기 위해'로 옮기는 것이 핵심이다.");
-B("(2) 야생 동물이 귀여워 보여도 언제나 조심해라.  \u2014 even if를 '~일지라도/~해 보여도'로 자연스럽게 옮긴다.", true);
+B("(1) 마침내 스티브는 화난 수달들에게서 벗어나기 위해 나무에 올라갔다.  — to get away(to부정사)를 '~하기 위해'로 옮기는 것이 핵심이다.");
+B("(2) 야생 동물이 귀여워 보여도 언제나 조심해라.  — even if를 '~일지라도/~해 보여도'로 자연스럽게 옮긴다.", true);
 Hs("R7   조건 영작   ·   (1) The other otters got angry and scared.  (2) Steve tried to stop them, but he couldn\u2019t.");
-B("(1) 문장 7의 복원. \u3131 첫 글자 대문자 The  \u3134 got angry and scared \u2014 두 형용사를 and로 잇는다.");
-B("(2) 문장 9의 복원. \u3131 첫 글자 대문자 Steve  \u3134 stop them 뒤의 콤마를 빠뜨리지 않는다  \u3137 but he couldn\u2019t로 문장이 끝난다. R4-(3)의 to부정사와 짝을 이루는 'try to+동사원형'이 여기서 다시 나온다 \u2014 워크북은 서로 연결되어 있다.", true);
+B("(1) 문장 7의 복원. \u3131 첫 글자 대문자 The  \u3134 got angry and scared — 두 형용사를 and로 잇는다.");
+B("(2) 문장 9의 복원. \u3131 첫 글자 대문자 Steve  \u3134 stop them 뒤의 콤마를 빠뜨리지 않는다  \u3137 but he couldn\u2019t로 문장이 끝난다. R4-(3)의 to부정사와 짝을 이루는 'try to+동사원형'이 여기서 다시 나온다 — 워크북은 서로 연결되어 있다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

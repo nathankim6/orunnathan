@@ -100,8 +100,10 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Three Colors of Noise That Calm You Down", "② White Noise: A Sound from a Fan",
- "③ The Sound of Rain and Waves on a Beach", "④ How to Make Your Room Quiet",
+["① White Noise: A Sound from a Fan",
+ "② The Sound of Rain and Waves on a Beach",
+ "③ Three Colors of Noise That Calm You Down",
+ "④ How to Make Your Room Quiet",
  "⑤ The Best Ways to Study for a Test"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
@@ -114,10 +116,10 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) It이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① pink noise",
- "② white noise",
- "③ brown noise",
- "④ the sound of a fan",
+["① white noise",
+ "② brown noise",
+ "③ the sound of a fan",
+ "④ pink noise",
  "⑤ a waterfall in nature"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -177,7 +179,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -191,7 +193,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -224,7 +226,7 @@ K.push(spF(2, 85, 0.06));
  [11, "It’s relaxing because it sounds like nature."],
  [14, "It could help improve your thinking skills."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -303,7 +305,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 1950, 7350];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -405,8 +407,8 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 대상을 소개하고 사실을 알려 주는 설명문",
- "② 물건을 팔기 위해 만든 광고",
+["① 물건을 팔기 위해 만든 광고",
+ "② 대상을 소개하고 사실을 알려 주는 설명문",
  "③ 하루 일을 적은 일기",
  "④ 친구에게 보내는 편지",
  "⑤ 옛날이야기를 들려주는 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
@@ -460,7 +462,7 @@ K.push(p([t("조건 ", { size: 16, bold: true, color: GOLD }),
   t("덩어리의 순서를 괄호에 쓰세요. 덩어리 안의 단어는 바꾸지 않습니다.", { size: 16, color: SUB })], { after: 100, line: 250 }));
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("보기   ", { size: 16, bold: true, color: NAVY2 }),
-     t("ⓐ three types of noise     ⓑ we use color     ⓒ with a calming effect.     ⓓ to describe", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
+     t("ⓐ we use color     ⓑ three types of noise     ⓒ with a calming effect.     ⓓ to describe", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
   { w: W, shade: COOL, b: { top: bd(4, CLINE), bottom: bd(4, CLINE), left: NOB, right: NOB }, m: { top: 150 + Math.round((FT(6) || 0) * 0.02), bottom: 150 + Math.round((FT(6) || 0) * 0.02), left: 180, right: 180 } })] })]));
 K.push(spF(6, 200, 0.05));
 K.push(p([t("순서   ", { size: 17, bold: true, color: NAVY2 }),
@@ -513,15 +515,15 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 4, main: "have a calming effect",
-    opts: ["① make you excited", "② make you feel calm", "③ cost a lot of money"] },
+    opts: ["① make you feel calm", "② make you excited", "③ cost a lot of money"] },
   { sn: 6, main: "the most well-known",
-    opts: ["① the most famous", "② the least known", "③ the newest sound"] });
+    opts: ["① the least known", "② the most famous", "③ the newest sound"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 9, main: "uses lower sounds",
-    opts: ["① uses higher sounds", "② uses louder sounds", "③ uses deeper sounds"] },
+    opts: ["① uses deeper sounds", "② uses higher sounds", "③ uses louder sounds"] },
   { sn: 12, main: "the deepest sound of the three",
-    opts: ["① the shortest of the three", "② the lowest sound of the three", "③ the highest of the three"] });
+    opts: ["① the lowest sound of the three", "② the shortest of the three", "③ the highest of the three"] });
 K.push(spF(7, 150, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -576,15 +578,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "We use color to describe different types of noise.",
-    "Only two sounds have a calming effect.",
-    "White noise is the most well-known of the three.",
-    "You can hear white noise from a fan or a vacuum.",
     "Pink noise uses higher sounds than white noise.",
-    "Pink noise is similar to the sound of rain or waves.",
-    "Brown noise is the highest sound of the three.",
     "Brown noise could hurt your thinking skills.",
-  ].map((s, i) => new TableRow({ children: [
+    "We use color to describe different types of noise.",
+    "Pink noise is similar to the sound of rain or waves.",
+    "Only two sounds have a calming effect.",
+    "Brown noise is the highest sound of the three.",
+    "White noise is the most well-known of the three.",
+    "You can hear white noise from a fan or a vacuum."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -600,8 +601,8 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "글쓴이가 소개
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Brown noise, the deepest sound, is introduced.",
-      "ⓑ The writer asks about the difference between the three sounds.",
-      "ⓒ White noise, the most well-known, is introduced.",
+      "ⓑ White noise, the most well-known, is introduced.",
+      "ⓒ The writer asks about the difference between the three sounds.",
       "ⓓ Pink noise, the sound of nature, is introduced."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -642,7 +643,7 @@ K.push(spF(9, 380, 0.12));
 
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
-[["문장 4", [t("All these three sounds ", { size: 19 }), t("( have  /  has )", { size: 19, bold: true, color: NAVY }), t(" a calming effect.", { size: 19 })], "주어 sounds는 복수예요."],
+[["문장 4", [t("All these three sounds ", { size: 19 }), t("( has  /  have )", { size: 19, bold: true, color: NAVY }), t(" a calming effect.", { size: 19 })], "주어 sounds는 복수예요."],
  ["문장 6", [t("White noise ", { size: 19 }), t("( is  /  are )", { size: 19, bold: true, color: NAVY }), t(" the most well-known.", { size: 19 })], "주어 White noise는 단수예요."],
  ["문장 9", [t("Pink noise ", { size: 19 }), t("( use  /  uses )", { size: 19, bold: true, color: NAVY }), t(" lower sounds than white noise.", { size: 19 })], "3인칭 단수 주어 뒤 동사에는 -s!"],
  ["문장 14", [t("It could ", { size: 19 }), t("( help  /  helps )", { size: 19, bold: true, color: NAVY }), t(" improve your thinking skills.", { size: 19 })], "조동사 could 뒤에는 동사원형!"],
@@ -743,24 +744,24 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 신선한 공기를 마시려고 창문을 열었다  (2) 이것은 그 공원에서 가장 큰 나무이다  (3) 우리는 바다를 보려고 가장 높은 언덕에 올라갔다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 color · noise · calming        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 · 결과 · 이유 · 마무리   2-2 [B] 공통점 · [E] 브라운 소음   2-3 ①", { size: 19, bold: true })], { after: 25 }),
-  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (d) → (a) → (c)  ·  We use color to describe three types of noise with a calming effect.", { size: 19, bold: true })], { after: 25 }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 · 결과 · 이유 · 마무리   2-2 [B] 공통점 · [E] 브라운 소음   2-3 ②", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (a) → (d) → (b) → (c)  ·  We use color to describe three types of noise with a calming effect.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) color  (2) calming  (3) lower  (4) deepest        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 4 ②  문장 6 ①  문장 9 ③  문장 12 ②", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 4 ①  문장 6 ②  문장 9 ①  문장 12 ①", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4T · 5F · 6T · 7F · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (d) → (a)", { size: 19, bold: true })], { after: 25 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 T · 5 F · 6 F · 7 T · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (b) → (d) → (a)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(e) · 2(c) · 3(a) · 4(f) · 5(b) · 6(d)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) have  (2) is  (3) uses  (4) help", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) color (2) calming (3) well-known (4) fan (5) cover (6) lower (7) deepest (8) improve", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) All these three sounds have a calming effect.  (2) It could help improve your thinking skills.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 소음에 색 이름을 붙여 세 가지를 구분하고(문장 1–3), 세 소리 모두 진정 효과가 있다고 말한다(문장 4). 소재(세 가지 색 소음)와 특징(진정 효과)을 함께 담은 ①이 제목으로 적절하다. ②·③는 한 종류의 예만 담은 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 소음에 색 이름을 붙여 세 가지를 구분하고(문장 1–3), 세 소리 모두 진정 효과가 있다고 말한다(문장 4). 소재(세 가지 색 소음)와 특징(진정 효과)을 함께 담은 ③이 제목으로 적절하다. ①·②는 한 종류의 예만 담은 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ③");
 B("문장 9에서 핑크 소음은 백색 소음보다 '더 낮은(lower)' 소리를 쓴다고 했으므로, 더 높다는 ③는 본문과 반대된다. ①은 문장 4, ②은 문장 6, ④은 문장 10, ⑤는 문장 14에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) It은 문장 9부터 주인공이 된 핑크 소음을 가리킨다. 바로 앞 문장 10의 It도 같은 대상이다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   White noise is the most well-known.");
 B("문장 6을 그대로 복원하는 문제다. ① 첫 글자는 대문자 White.   ② 최상급은 the most well-known이 한 덩어리.   ③ 마침표를 빠뜨리지 않는다.", true);
@@ -773,32 +774,32 @@ B("[학습 포인트]   같은 It이라도 문장 11에서는 핑크 소음, 문
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 반전 / 결과 / 이유 / 마무리     2-2 [B] 공통점 · [E] 브라운 소음     2-3 ①");
+Hs("STEP 2   글의 흐름   ·   2-1 반전 / 결과 / 이유 / 마무리     2-2 [B] 공통점 · [E] 브라운 소음     2-3 ②");
 B("2-1   문장 3 But — 아는 것(백색)에서 모르는 것(핑크·브라운)으로 방향을 바꾸는 '반전'.   문장 8 so — 다른 소리를 덮어 주는 '결과'로 집중할 수 있다.   문장 11 because — 자연 소리 같다는 '이유'.   문장 15 So — 글을 정리하며 독자에게 되묻는 '마무리'.");
 B("2-2   [B] 공통점(문장 4–5: 세 소리 모두 진정 효과가 있다는 공통점과 질문), [E] 브라운 소음(문장 12–15: 가장 깊은 소리 소개와 마무리 질문). 보기의 '만드는 법'은 이 글에 없는 역할이다. [A] 소개 → [B] 공통점 → [C] 백색 → [D] 핑크 → [E] 브라운 — 하나씩 차례로 소개하는 설명문의 전형적인 흐름이다.");
-B("2-3   정답 ①. 세 가지 소음이라는 대상을 소개하고 사실을 알려 주는 설명문이다 — 현재시제로 대상의 이름과 특징이 이어진다(문장 6·9·12). ② 가격이나 명령문이 없어 광고가 아니고, ③ I·Today가 없어 일기도, ④ 받는 사람이 없어 편지도, ⑤ 등장인물과 사건이 없어 동화도 아니다.");
+B("2-3   정답 ②. 세 가지 소음이라는 대상을 소개하고 사실을 알려 주는 설명문이다 — 현재시제로 대상의 이름과 특징이 이어진다(문장 6·9·12). ① 가격이나 명령문이 없어 광고가 아니고, ③ I·Today가 없어 일기도, ④ 받는 사람이 없어 편지도, ⑤ 등장인물과 사건이 없어 동화도 아니다.");
 B("[학습 포인트]   연결어만 표시해도 글의 지도가 그려진다. But(반전) · so(결과) · because(이유). 설명문은 '소개 → 공통점 → 하나씩 차례로'가 기본 뼈대다.", true);
-Hs("STEP 3   주제문 만들기   ·   3-1 color · calming     3-3 (b) → (d) → (a) → (c)");
+Hs("STEP 3   주제문 만들기   ·   3-1 color · calming     3-3 (a) → (d) → (b) → (c)");
 B("3-1  재료 찾기 — (2) 문장 1에서 color에 ○: 소음을 설명할 때 쓰는 도구다. shape는 본문에 없다. (3) 문장 4에서 calming에 ○: 세 소리의 공통 효과다. boring은 반대 방향의 말이다. 주제문의 재료는 언제나 본문 안에 있다.");
 B("3-2  뼈대 채우기 — (1) noise  (2) color  (3) calming.  넣으면 We use color to describe three types of noise with a calming effect.가 완성된다.");
-B("3-3  정답 순서 — ⓑ we use color → ⓓ to describe → ⓐ three types of noise → ⓒ with a calming effect.  완성 문장: We use color to describe three types of noise with a calming effect.");
-B("[채점 포인트]  주어 We가 든 덩어리(ⓑ)가 맨 앞, 마침표가 붙은 덩어리(ⓒ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
+B("3-3  정답 순서 — ⓐ we use color → ⓓ to describe → ⓑ three types of noise → ⓒ with a calming effect.  완성 문장: We use color to describe three types of noise with a calming effect.");
+B("[채점 포인트]  주어 We가 든 덩어리(ⓐ)가 맨 앞, 마침표가 붙은 덩어리(ⓒ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) color  (2) calming  (3) lower  (4) deepest");
 B("(1)은 문장 1의 color, (2)는 문장 4의 calming, (3)은 문장 9의 lower, (4)는 문장 12의 deepest에서 가져온다. 요약문이 곧 이 글의 흐름이다: 이름(1) → 공통 효과(2) → 핑크(3) → 브라운(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 4 ②   문장 6 ①   문장 9 ③   문장 12 ②  (정답 선지는 무표시)");
-B("문장 4 have a calming effect   ① ✕ [반대] 신나게 만든다 — 정반대.   ② ○ 마음을 차분하게 해 준다.   ③ ✕ [무관] 돈이 많이 든다는 말은 지문에 없다.");
-B("문장 6 the most well-known   ① ○ the most famous = 가장 널리 알려진.   ② ✕ [반대] 가장 덜 알려졌다 — 정반대.   ③ ✕ [무관] 가장 새로운 소리라는 말은 지문에 없다.");
-B("문장 9 uses lower sounds   ① ✕ [반대] 더 높은 소리를 쓴다 — 정반대.   ② ✕ [무관] 더 시끄럽다는 말은 지문에 없다.   ③ ○ uses deeper sounds = 더 낮은 소리를 쓴다.");
-B("문장 12 the deepest sound of the three   ① ✕ [무관] 가장 짧다는 말은 지문에 없다.   ② ○ 셋 중 가장 낮은 소리라는 뜻.   ③ ✕ [반대] 가장 높다 — 정반대.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 4 ①   문장 6 ②   문장 9 ①   문장 12 ①  (정답 선지는 무표시)");
+B("문장 4 have a calming effect   ② ✕ [반대] 신나게 만든다 — 정반대.   ① ○ 마음을 차분하게 해 준다.   ③ ✕ [무관] 돈이 많이 든다는 말은 지문에 없다.");
+B("문장 6 the most well-known   ② ○ the most famous = 가장 널리 알려진.   ① ✕ [반대] 가장 덜 알려졌다 — 정반대.   ③ ✕ [무관] 가장 새로운 소리라는 말은 지문에 없다.");
+B("문장 9 uses lower sounds   ② ✕ [반대] 더 높은 소리를 쓴다 — 정반대.   ③ ✕ [무관] 더 시끄럽다는 말은 지문에 없다.   ① ○ uses deeper sounds = 더 낮은 소리를 쓴다.");
+B("문장 12 the deepest sound of the three   ② ✕ [무관] 가장 짧다는 말은 지문에 없다.   ① ○ 셋 중 가장 낮은 소리라는 뜻.   ③ ✕ [반대] 가장 높다 — 정반대.");
 B("[학습 포인트]  시험은 본문 표현을 그대로 쓰지 않고 반드시 바꿔서 묻는다. deepest ↔ lowest처럼 같은 뜻의 다른 말을 짝지어 정리해 두자.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 T · 5 F · 6 T · 7 F · 8 F");
-B("1 T — 문장 1.   2 F — 문장 4: 두 소리가 아니라 세 소리 모두(All these three)다.   3 T — 문장 6.   4 T — 문장 7.   5 F — 문장 9: 더 높은 게 아니라 더 낮은(lower) 소리다.   6 T — 문장 10.   7 F — 문장 12: 가장 높은 게 아니라 가장 깊은(deepest) 소리다.   8 F — 문장 14: 해치는 게 아니라 향상시키는 데(improve) 도움이 된다.  거짓 문장은 모두 본문에서 딱 한 요소(two, higher, highest, hurt)를 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (c) → (d) → (a)");
-B("ⓑ 세 소리의 차이가 무엇인지 묻는다(문장 5) → ⓒ 가장 잘 알려진 백색 소음을 소개한다(문장 6) → ⓓ 자연 소리 같은 핑크 소음을 소개한다(문장 9) → ⓐ 가장 깊은 브라운 소음을 소개한다(문장 12). 문장 5의 질문이 글 전체의 목차 역할을 한다 — 질문을 던진 뒤 하나씩 답해 나가는 순서다.", true);
+Hs("R1   True / False   ·   1 F · 2 F · 3 T · 4 T · 5 F · 6 F · 7 T · 8 T");
+   B("1 F — 문장 9: 더 높은 게 아니라 더 낮은(lower) 소리다.   2 F — 문장 14: 해치는 게 아니라 향상시키는 데(improve) 도움이 된다.  거짓 문장은 모두 본문에서 딱 한 요소(two, higher, highest, hurt)를 비튼 것이다.   3 T — 문장 1.   4 T — 문장 10.   5 F — 문장 4: 두 소리가 아니라 세 소리 모두(All these three)다.   6 F — 문장 12: 가장 높은 게 아니라 가장 깊은(deepest) 소리다.   7 T — 문장 6.   8 T — 문장 7.", true);
+Hs("R2   사건 순서   ·   (c) → (b) → (d) → (a)");
+B("ⓒ 세 소리의 차이가 무엇인지 묻는다(문장 5) → ⓑ 가장 잘 알려진 백색 소음을 소개한다(문장 6) → ⓓ 자연 소리 같은 핑크 소음을 소개한다(문장 9) → ⓐ 가장 깊은 브라운 소음을 소개한다(문장 12). 문장 5의 질문이 글 전체의 목차 역할을 한다 — 질문을 던진 뒤 하나씩 답해 나가는 순서다.", true);
 Hs("R3   영영풀이   ·   1 (e) · 2 (c) · 3 (a) · 4 (f) · 5 (b) · 6 (d)");
 B("describe = 어떤 것이 어떠한지 말하다 · noise = 크거나 원하지 않는 소리 · calming = 조용하고 편안하게 만드는 · well-known = 많은 사람이 아는 · similar = 다른 것과 거의 같은 · improve = 더 좋게 만들다.", true);
 Hs("R4   어법 기초   ·   (1) have  (2) is  (3) uses  (4) help");

@@ -99,16 +99,18 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Braces for Msituni: A Baby Giraffe Walks Again", "② How to Make Braces for People",
- "③ A Day at the San Diego Zoo Safari Park", "④ Why Giraffes Have Such Long Necks",
+["① How to Make Braces for People",
+ "② A Day at the San Diego Zoo Safari Park",
+ "③ Why Giraffes Have Such Long Necks",
+ "④ Braces for Msituni: A Baby Giraffe Walks Again",
  "⑤ The Best Foods for Baby Animals"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Msituni’s front legs were bending the wrong way.",
  "② The zookeepers asked Dr. Ara to make special braces.",
- "③ Dr. Ara often worked with giraffes before Msituni.",
- "④ Msituni was getting taller every day.",
+ "③ Msituni was getting taller every day.",
+ "④ Dr. Ara often worked with giraffes before Msituni.",
  "⑤ After two months, Msituni could walk without the braces."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
@@ -176,7 +178,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -190,7 +192,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -223,7 +225,7 @@ K.push(spF(2, 85, 0.06));
  [9, "So making her braces was a big job for Dr. Ara."],
  [13, "But after two months, she could walk by herself without them."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -281,7 +283,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 샌디에이고 동물원의 하루 일과", "② 앞다리가 굽은 아기 기린과 특별한 보조기", "③ 치아 교정기를 끼는 방법"].forEach(c =>
+["① 샌디에이고 동물원의 하루 일과",
+ "② 치아 교정기를 끼는 방법",
+ "③ 앞다리가 굽은 아기 기린과 특별한 보조기"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -302,7 +306,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 1950, 7350];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -404,11 +408,11 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 실제로 있었던 일을 들려주는 이야기",
- "② 물건을 팔기 위해 만든 광고",
- "③ 요리 방법을 알려 주는 설명문",
- "④ 친구에게 보내는 편지",
- "⑤ 리듬을 살려 쓴 시"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
+["① 물건을 팔기 위해 만든 광고",
+ "② 요리 방법을 알려 주는 설명문",
+ "③ 친구에게 보내는 편지",
+ "④ 리듬을 살려 쓴 시",
+ "⑤ 실제로 있었던 일을 들려주는 이야기"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
 K.push(brk());
@@ -459,7 +463,7 @@ K.push(p([t("조건 ", { size: 16, bold: true, color: GOLD }),
   t("덩어리의 순서를 괄호에 쓰세요. 덩어리 안의 단어는 바꾸지 않습니다.", { size: 16, color: SUB })], { after: 100, line: 250 }));
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("보기   ", { size: 16, bold: true, color: NAVY2 }),
-     t("ⓐ for Msituni,     ⓑ Dr. Ara made special braces     ⓒ by herself.     ⓓ and she could walk", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
+     t("ⓐ for Msituni,     ⓑ by herself.     ⓒ and she could walk     ⓓ Dr. Ara made special braces", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
   { w: W, shade: COOL, b: { top: bd(4, CLINE), bottom: bd(4, CLINE), left: NOB, right: NOB }, m: { top: 150 + Math.round((FT(6) || 0) * 0.02), bottom: 150 + Math.round((FT(6) || 0) * 0.02), left: 180, right: 180 } })] })]));
 K.push(spF(6, 200, 0.05));
 K.push(p([t("순서   ", { size: 17, bold: true, color: NAVY2 }),
@@ -512,15 +516,15 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 4, main: "couldn’t stand or walk like other giraffes",
-    opts: ["① was not able to stand or walk", "② walked as well as other giraffes", "③ ran faster than other giraffes"] },
+    opts: ["① walked as well as other giraffes", "② ran faster than other giraffes", "③ was not able to stand or walk"] },
   { sn: 6, main: "had lots of experience in making braces",
-    opts: ["① had never made braces before", "② sold braces at his own shop", "③ had made many braces before"] });
+    opts: ["① had never made braces before", "② had made many braces before", "③ sold braces at his own shop"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 12, main: "was hard for Msituni",
-    opts: ["① was easy for Msituni", "② was not easy for Msituni", "③ was boring for Msituni"] },
+    opts: ["① was easy for Msituni", "② was boring for Msituni", "③ was not easy for Msituni"] },
   { sn: 13, main: "could walk by herself",
-    opts: ["① could walk without help", "② needed help to walk", "③ could jump very high"] });
+    opts: ["① needed help to walk", "② could walk without help", "③ could jump very high"] });
 K.push(spF(7, 150, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -575,15 +579,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Msituni was a baby giraffe at the San Diego Zoo Safari Park.",
-    "Msituni’s back legs were bending the wrong way.",
-    "The zookeepers asked Dr. Ara to make special braces.",
-    "Dr. Ara worked with many giraffes before Msituni.",
-    "Msituni was getting taller every day.",
     "Dr. Ara studied all about giraffes to help Msituni.",
+    "Msituni’s back legs were bending the wrong way.",
+    "Dr. Ara worked with many giraffes before Msituni.",
     "Walking with braces was easy for Msituni at first.",
     "After two weeks, Msituni could walk by herself.",
-  ].map((s, i) => new TableRow({ children: [
+    "Msituni was getting taller every day.",
+    "Msituni was a baby giraffe at the San Diego Zoo Safari Park.",
+    "The zookeepers asked Dr. Ara to make special braces."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -599,8 +602,8 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "므시투니에게 
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Dr. Ara made special braces just for Msituni.",
-      "ⓑ Msituni’s front legs were bending the wrong way.",
-      "ⓒ Msituni could walk by herself without the braces.",
+      "ⓑ Msituni could walk by herself without the braces.",
+      "ⓒ Msituni’s front legs were bending the wrong way.",
       "ⓓ The zookeepers asked Dr. Ara for help."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -641,7 +644,7 @@ K.push(spF(9, 380, 0.12));
 
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
-[["문장 1", [t("There ", { size: 19 }), t("( was  /  were )", { size: 19, bold: true, color: NAVY }), t(" a baby giraffe named Msituni.", { size: 19 })], "뒤에 오는 a baby giraffe가 진짜 주어예요."],
+[["문장 1", [t("There ", { size: 19 }), t("( were  /  was )", { size: 19, bold: true, color: NAVY }), t(" a baby giraffe named Msituni.", { size: 19 })], "뒤에 오는 a baby giraffe가 진짜 주어예요."],
  ["문장 3", [t("Her front legs ", { size: 19 }), t("( was  /  were )", { size: 19, bold: true, color: NAVY }), t(" bending the wrong way.", { size: 19 })], "주어 legs는 복수예요."],
  ["문장 9", [t("Making her braces ", { size: 19 }), t("( was  /  were )", { size: 19, bold: true, color: NAVY }), t(" a big job for Dr. Ara.", { size: 19 })], "동명사 주어는 단수 취급!"],
  ["문장 13", [t("After two months, she could ", { size: 19 }), t("( walk  /  walked )", { size: 19, bold: true, color: NAVY }), t(" by herself.", { size: 19 })], "조동사 could 뒤에는 동사원형!"],
@@ -740,30 +743,30 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문13 ", { size: 17, bold: true, color: NAVY2 }), t("after two months(M)·she(S)·could walk(△V 한 덩어리)·by herself·without them(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 탁자 아래에 작은 고양이 한 마리가 있었다  (2) 책을 읽는 것은 내가 가장 좋아하는 취미이다  (3) 큰 공원이 하나 있었는데, 거기서 걷는 것은 즐거웠다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 Msituni · braces · walk        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 · 결과 · 순서 · 반전   2-2 [B] 문제 · [E] 마무리   2-3 ①", { size: 19, bold: true })], { after: 25 }),
-  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (a) → (d) → (c)  ·  Dr. Ara made special braces for Msituni, and she could walk by herself.", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 Msituni · braces · walk        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 · 결과 · 순서 · 반전   2-2 [B] 문제 · [E] 마무리   2-3 ⑤", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (d) → (a) → (c) → (b)  ·  Dr. Ara made special braces for Msituni, and she could walk by herself.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) problem  (2) braces  (3) studied  (4) herself        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 4 ①  문장 6 ③  문장 12 ②  문장 13 ①", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 4 ③  문장 6 ②  문장 12 ③  문장 13 ②", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6T · 7F · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (a) → (c)", { size: 19, bold: true })], { after: 25 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 F · 4 F · 5 F · 6 T · 7 T · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (d) → (a) → (b)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(e) · 2(c) · 3(a) · 4(f) · 5(b) · 6(d)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) was  (2) were  (3) was  (4) walk", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) problem (2) bending (3) braces (4) experience (5) taller (6) studied (7) hard (8) herself", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) Her front legs were bending the wrong way.  (2) He then made special braces just for her.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("앞다리가 잘못된 방향으로 휜 아기 기린 므시투니(문장 1–4)가 닥터 아라의 특별한 보조기 덕분에 두 달 만에 혼자 걷게 된 이야기다(문장 11–13). 주인공과 결말을 함께 담은 ①이 제목으로 적절하다. ②·③은 배경만 건드린 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 7에서 닥터 아라는 전에 기린과 일해 본 적이 한 번도 없다(never)고 했으므로, 자주 함께 일했다는 ③은 본문과 반대된다. ①은 문장 3, ②는 문장 5, ④는 문장 8, ⑤는 문장 13에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ④");
+B("앞다리가 잘못된 방향으로 휜 아기 기린 므시투니(문장 1–4)가 닥터 아라의 특별한 보조기 덕분에 두 달 만에 혼자 걷게 된 이야기다(문장 11–13). 주인공과 결말을 함께 담은 ④이 제목으로 적절하다. ①·②은 배경만 건드린 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 7에서 닥터 아라는 전에 기린과 일해 본 적이 한 번도 없다(never)고 했으므로, 자주 함께 일했다는 ④은 본문과 반대된다. ①은 문장 3, ②는 문장 5, ③는 문장 8, ⑤는 문장 13에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) them은 앞에서 계속 이야기해 온 특별한 보조기(문장 11의 special braces)를 가리킨다. 보조기 '없이' 혼자 걸었다는 뜻이다 — 복수 them은 복수 명사를 받는다.", true);
 Hs("독해 04   배열 영작   ·   Msituni was getting taller every day.");
 B("문장 8을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Msituni.   ② 진행형은 was getting이 한 덩어리.   ③ every day는 문장 맨 뒤.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 Msituni · braces · walk     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 앞다리가 굽은 아기 기린과 그를 위해 만든 특별한 보조기 이야기다. ① 동물원은 배경일 뿐이고, ③ 치아 교정기는 braces의 다른 뜻일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 Msituni · braces · walk     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 앞다리가 굽은 아기 기린과 그를 위해 만든 특별한 보조기 이야기다. ① 동물원은 배경일 뿐이고, ② 치아 교정기는 braces의 다른 뜻일 뿐이다.");
 B("1-2   ○표 할 세 단어: Msituni(힌트① 주인공) · braces(힌트② 닥터 아라가 만든 것) · walk(힌트③ 주인공이 해낸 일). 나머지 셋(zoo · experience · months)은 본문에 나오지만 배경과 세부다.");
 B("1-3   문장 7 — he는 Dr. Ara에 ○ (문장 5–6의 그 사람).   문장 11 — her는 Msituni에 ○.   문장 13 — them은 the braces에 ○ (문장 11에서 만든 그 보조기).");
 B("[학습 포인트]   문장 4의 This처럼 지시어는 단어 하나가 아니라 앞 문장 전체(앞다리가 반대로 휘고 있다는 사실)를 받기도 한다. This를 만나면 앞 문장을 통째로 묶어 화살표를 그어 두자.", true);
@@ -771,32 +774,32 @@ B("[학습 포인트]   문장 4의 This처럼 지시어는 단어 하나가 아
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 반전 / 결과 / 순서 / 반전     2-2 [B] 문제 · [E] 마무리     2-3 ①");
+Hs("STEP 2   글의 흐름   ·   2-1 반전 / 결과 / 순서 / 반전     2-2 [B] 문제 · [E] 마무리     2-3 ⑤");
 B("2-1   문장 2 But — 귀여운 소개에서 문제로 방향이 바뀌는 '반전'.   문장 5 So — 걷지 못한다는 원인의 '결과'로 사육사들이 도움을 청한다.   문장 11 then — 연구한 뒤 보조기를 만든 '순서'.   문장 13 But — 힘들었지만 결국 해냈다는 '반전'.");
 B("2-2   [B] 문제(문장 3–4: 앞다리가 반대로 휘어 서지도 걷지도 못한다), [E] 마무리(문장 12–14: 두 달 뒤 혼자 걷고 친구들과 뛰논다). 보기의 '가격 안내'는 이 글에 없는 역할이다. [A] 소개 → [B] 문제 → [C] 도움 요청 → [D] 해결 → [E] 마무리 — 문제 해결형 이야기의 전형적인 흐름이다.");
-B("2-3   정답 ①. 실제로 있었던 일을 시간 순서대로 들려주는 이야기다 — 등장인물(므시투니·닥터 아라)과 사건, 과거시제가 이어진다. ② 가격·명령문이 없어 광고가 아니고, ③ 요리법·④ 받는 사람·⑤ 시의 형식도 아니다.");
+B("2-3   정답 ⑤. 실제로 있었던 일을 시간 순서대로 들려주는 이야기다 — 등장인물(므시투니·닥터 아라)과 사건, 과거시제가 이어진다. ① 가격·명령문이 없어 광고가 아니고, ② 요리법·③ 받는 사람·④ 시의 형식도 아니다.");
 B("[학습 포인트]   연결어만 표시해도 글의 지도가 그려진다. But(반전) · So(결과) · then(순서). 특히 마지막 But은 '그래도 해냈다'는 결말의 신호다.", true);
-Hs("STEP 3   주제문 만들기   ·   3-1 special · walk     3-3 (b) → (a) → (d) → (c)");
+Hs("STEP 3   주제문 만들기   ·   3-1 special · walk     3-3 (d) → (a) → (c) → (b)");
 B("3-1  재료 찾기 — (2) 문장 11에서 special에 ○: 므시투니만을 위해 새로 만든 보조기다. cheap(값싼)은 본문에 없다. (3) 문장 13에서 walk에 ○: 두 달 뒤 해낸 일이다. swim은 본문에 없다. 주제문의 재료는 언제나 본문 안에 있다.");
 B("3-2  뼈대 채우기 — (1) braces  (2) special  (3) walk.  넣으면 Dr. Ara made special braces for Msituni, and she could walk by herself.가 완성된다.");
-B("3-3  정답 순서 — ⓑ Dr. Ara made special braces → ⓐ for Msituni, → ⓓ and she could walk → ⓒ by herself.  완성 문장: Dr. Ara made special braces for Msituni, and she could walk by herself.");
-B("[채점 포인트]  만든 사람이 주어인 덩어리(ⓑ)가 맨 앞, 마침표가 붙은 덩어리(ⓒ)가 맨 뒤 — 콤마가 붙은 ⓐ 다음에 and로 시작하는 ⓓ가 온다.", true);
+B("3-3  정답 순서 — ⓓ Dr. Ara made special braces → ⓐ for Msituni, → ⓒ and she could walk → ⓑ by herself.  완성 문장: Dr. Ara made special braces for Msituni, and she could walk by herself.");
+B("[채점 포인트]  만든 사람이 주어인 덩어리(ⓓ)가 맨 앞, 마침표가 붙은 덩어리(ⓑ)가 맨 뒤 — 콤마가 붙은 ⓐ 다음에 and로 시작하는 ⓒ가 온다.", true);
 Hs("STEP 4   요약문   ·   (1) problem  (2) braces  (3) studied  (4) herself");
 B("(1)은 문장 2의 problem, (2)는 문장 5의 braces, (3)은 문장 10의 studied, (4)는 문장 13의 herself에서 가져온다. 요약문이 곧 이 글의 흐름이다: 문제(1) → 요청(2) → 노력(3) → 결과(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 4 ①   문장 6 ③   문장 12 ②   문장 13 ①  (정답 선지는 무표시)");
-B("문장 4 couldn’t stand or walk   ① ○ 서거나 걸을 수 없었다.   ② ✕ [반대] 다른 기린만큼 잘 걸었다 — 정반대.   ③ ✕ [무관] 더 빨리 달렸다는 말은 지문에 없다.");
-B("문장 6 had lots of experience   ① ✕ [반대] 보조기를 만들어 본 적이 없다 — 정반대.   ② ✕ [무관] 가게에서 팔았다는 말은 지문에 없다.   ③ ○ 전에 많이 만들어 봤다.");
-B("문장 12 was hard for Msituni   ① ✕ [반대] 쉬웠다 — 정반대.   ② ○ 쉽지 않았다.   ③ ✕ [무관] 지루했다는 말은 지문에 없다.");
-B("문장 13 could walk by herself   ① ○ 도움 없이 걸을 수 있었다.   ② ✕ [반대] 걸으려면 도움이 필요했다 — 정반대.   ③ ✕ [무관] 높이 뛰었다는 말은 지문에 없다.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 4 ③   문장 6 ②   문장 12 ③   문장 13 ②  (정답 선지는 무표시)");
+B("문장 4 couldn’t stand or walk   ③ ○ 서거나 걸을 수 없었다.   ① ✕ [반대] 다른 기린만큼 잘 걸었다 — 정반대.   ② ✕ [무관] 더 빨리 달렸다는 말은 지문에 없다.");
+B("문장 6 had lots of experience   ① ✕ [반대] 보조기를 만들어 본 적이 없다 — 정반대.   ③ ✕ [무관] 가게에서 팔았다는 말은 지문에 없다.   ② ○ 전에 많이 만들어 봤다.");
+B("문장 12 was hard for Msituni   ① ✕ [반대] 쉬웠다 — 정반대.   ③ ○ 쉽지 않았다.   ② ✕ [무관] 지루했다는 말은 지문에 없다.");
+B("문장 13 could walk by herself   ② ○ 도움 없이 걸을 수 있었다.   ① ✕ [반대] 걸으려면 도움이 필요했다 — 정반대.   ③ ✕ [무관] 높이 뛰었다는 말은 지문에 없다.");
 B("[학습 포인트]  시험은 본문 표현을 그대로 쓰지 않고 반드시 바꿔서 묻는다. by herself ↔ without help처럼 같은 뜻의 다른 말을 짝지어 정리해 두자.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 T · 7 F · 8 F");
-B("1 T — 문장 1.   2 F — 문장 3: 뒷다리가 아니라 앞다리(front legs)다.   3 T — 문장 5.   4 F — 문장 7: 많은 기린과 일한 게 아니라 한 번도(never) 없었다.   5 T — 문장 8.   6 T — 문장 10.   7 F — 문장 12: 쉬운 게 아니라 힘들었다(hard).   8 F — 문장 13: 두 주가 아니라 두 달(two months) 뒤다.  거짓 문장은 모두 본문에서 딱 한 요소(back, many, easy, two weeks)를 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (d) → (a) → (c)");
-B("ⓑ 앞다리가 반대로 휜다(문장 3) → ⓓ 사육사들이 닥터 아라에게 도움을 청한다(문장 5) → ⓐ 닥터 아라가 므시투니만을 위한 보조기를 만든다(문장 11) → ⓒ 두 달 뒤 보조기 없이 혼자 걷는다(문장 13). 이 글은 일이 일어난 순서 그대로 서술되어 있으므로, 문장 번호를 따라가면 순서가 보인다.", true);
+Hs("R1   True / False   ·   1 T · 2 F · 3 F · 4 F · 5 F · 6 T · 7 T · 8 T");
+   B("1 T — 문장 10.   2 F — 문장 3: 뒷다리가 아니라 앞다리(front legs)다.   3 F — 문장 7: 많은 기린과 일한 게 아니라 한 번도(never) 없었다.   4 F — 문장 12: 쉬운 게 아니라 힘들었다(hard).   5 F — 문장 13: 두 주가 아니라 두 달(two months) 뒤다.  거짓 문장은 모두 본문에서 딱 한 요소(back, many, easy, two weeks)를 비튼 것이다.   6 T — 문장 8.   7 T — 문장 1.   8 T — 문장 5.", true);
+Hs("R2   사건 순서   ·   (c) → (d) → (a) → (b)");
+B("ⓒ 앞다리가 반대로 휜다(문장 3) → ⓓ 사육사들이 닥터 아라에게 도움을 청한다(문장 5) → ⓐ 닥터 아라가 므시투니만을 위한 보조기를 만든다(문장 11) → ⓑ 두 달 뒤 보조기 없이 혼자 걷는다(문장 13). 이 글은 일이 일어난 순서 그대로 서술되어 있으므로, 문장 번호를 따라가면 순서가 보인다.", true);
 Hs("R3   영영풀이   ·   1 (e) · 2 (c) · 3 (a) · 4 (f) · 5 (b) · 6 (d)");
 B("bend = 곧지 않고 휘다 · problem = 풀어야 할 좋지 않은 일 · zookeeper = 동물원 동물을 돌보는 사람 · experience = 전에 해 본 일들 · brace = 몸의 한 부분을 제자리에 잡아 주는 것 · study = 무언가를 자세히 배우다.", true);
 Hs("R4   어법 기초   ·   (1) was  (2) were  (3) was  (4) walk");

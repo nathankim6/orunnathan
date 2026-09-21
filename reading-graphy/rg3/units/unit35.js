@@ -78,23 +78,25 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① The First Pig Heart Transplant into a Person", "② How to Raise Healthy Pigs on a Farm",
- "③ The Best Hospitals in the United States", "④ Who Was David Bennett?",
+["① How to Raise Healthy Pigs on a Farm",
+ "② The Best Hospitals in the United States",
+ "③ Who Was David Bennett?",
+ "④ The First Pig Heart Transplant into a Person",
  "⑤ Changing Genes: A New Farming Skill"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Doctors transplanted a pig’s heart into a person for the first time.",
  "② David Bennett’s heart was too weak for a human heart transplant.",
- "③ In the past, doctors tried to use animal hearts and succeeded.",
- "④ The doctors used special pigs whose genes were partly changed.",
+ "③ The doctors used special pigs whose genes were partly changed.",
+ "④ In the past, doctors tried to use animal hearts and succeeded.",
  "⑤ David passed away 60 days after he received the new heart."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) their가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the special pigs’",
- "② the doctors’",
- "③ David Bennett’s",
+["① the doctors’",
+ "② David Bennett’s",
+ "③ the special pigs’",
  "④ the human patients’",
  "⑤ the hospitals’"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -248,7 +250,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 돼지를 기르는 농장의 하루", "② 사람에게 돼지 심장을 이식한 첫 시도", "③ 유전자를 바꾸는 기술의 역사"].forEach(c =>
+["① 돼지를 기르는 농장의 하루",
+ "② 유전자를 바꾸는 기술의 역사",
+ "③ 사람에게 돼지 심장을 이식한 첫 시도"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -331,15 +335,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Doctors transplanted a pig’s heart into a person for the first time.",
-    "David Bennett’s heart was strong enough for a human heart transplant.",
+    "Doctors hope that they can use organs from robots to help many more patients.",
+    "Despite this result, the experiment gave doctors valuable information.",
     "In the past, doctors tried to use animal hearts but they didn’t succeed.",
+    "David passed away 6 days later.",
+    "David Bennett’s heart was strong enough for a human heart transplant.",
     "Doctors used special pigs whose genes were fully changed.",
     "David’s new heart came from one of these special pigs.",
-    "David passed away 6 days later.",
-    "Despite this result, the experiment gave doctors valuable information.",
-    "Doctors hope that they can use organs from robots to help many more patients.",
-  ].map((s, i) => new TableRow({ children: [
+    "Doctors transplanted a pig’s heart into a person for the first time."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -354,8 +357,8 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "이 실험을 둘러싼 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ David Bennett received a pig’s heart.",
-      "ⓑ Doctors in the past tried animal hearts but failed.",
+  ...["ⓐ Doctors in the past tried animal hearts but failed.",
+      "ⓑ David Bennett received a pig’s heart.",
       "ⓒ Doctors changed some genes of special pigs.",
       "ⓓ The experiment gave doctors valuable information."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
@@ -395,22 +398,22 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("They(S)·hope(△V)·that[네모]·they(S′)·can use(△V′)·to help ~(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 그 상자는 너무 무거워서 나는 그것을 들 수 없었다  (2) 나는 바이올린을 아주 잘 켜는 소녀를 안다  (3) 내 옆에 앉은 소년은 너무 친절해서 자기 점심을 나눠 주었다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 heart · transplant · information   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 heart · transplant · information   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (a) → (d)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 F · 5 F · 6 F · 7 T · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (b) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 사람에게 돼지 심장을 처음 이식한 시도(문장 1–7)와 그 결과, 그리고 남은 의미(문장 8–11)를 전한다. 소재와 의의를 함께 담은 ①이 적절하다. ④·⑤는 지엽적 오답, ②·③은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 5에서 과거의 시도들은 성공하지 못했다(didn’t succeed). 성공했다고 한 ③이 본문과 반대된다. ①은 문장 1, ②는 문장 3, ④는 문장 6, ⑤는 문장 8에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 사람에게 돼지 심장을 처음 이식한 시도(문장 1–7)와 그 결과, 그리고 남은 의미(문장 8–11)를 전한다. 소재와 의의를 함께 담은 ④이 적절하다. ③·⑤는 지엽적 오답, ①·②은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 5에서 과거의 시도들은 성공하지 못했다(didn’t succeed). 성공했다고 한 ④이 본문과 반대된다. ①은 문장 1, ②는 문장 3, ③는 문장 6, ⑤는 문장 8에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) their는 앞의 special pigs를 가리킨다. 사람 몸에서 더 잘 작동해야 하는 것은 돼지의 장기이므로, 같은 문장의 주어 doctors가 아니다.", true);
 Hs("독해 04   배열 영작   ·   However, David passed away 60 days later.");
 B("문장 8을 그대로 복원한다. ① 첫 글자는 대문자 However — 뒤에 콤마.   ② pass away는 '세상을 떠나다'라는 한 덩어리.   ③ 60 days later가 문장 끝에 온다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 heart · transplant · information     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 사람에게 돼지 심장을 처음 이식한 시도를 소개한다. ① 농장 이야기는 나오지 않고, ③ 유전자 조작은 이 시도를 위한 준비 단계로만 등장한다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 heart · transplant · information     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 사람에게 돼지 심장을 처음 이식한 시도를 소개한다. ① 농장 이야기는 나오지 않고, ② 유전자 조작은 이 시도를 위한 준비 단계로만 등장한다.");
 B("1-2   ○표 할 세 단어: heart(힌트① 사람에게 옮겨진 것) · transplant(힌트② 의사들이 한 일) · information(힌트③ 실패에도 남은 것). 나머지 셋(genes · doctors · David)은 본문에 등장하지만 주제문에 들어가지 않는다 — 방법과 등장인물일 뿐이다.");
 B("1-3   문장 4 — That은 심장이 약했던 것에 ○ (문장 3의 내용 전체).   문장 6 — their는 특별한 돼지들의에 ○.   문장 7 — these special pigs는 유전자를 바꾼 돼지에 ○ (문장 6의 그 돼지들).");
 B("[학습 포인트]   문장 6의 their는 같은 문장 주어(doctors)가 아니라 바로 앞의 pigs를 받는다. 지시어는 자리가 아니라 뜻으로 짝을 찾아야 한다.", true);
@@ -419,10 +422,10 @@ B("[학습 포인트]   문장 6의 their는 같은 문장 주어(doctors)가 �
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 1.   2 F — 문장 3: 튼튼했던(strong) 것이 아니라 너무 약했다(so weak).   3 T — 문장 5.   4 F — 문장 6: 완전히(fully)가 아니라 일부만(partly) 바꾼 유전자다.   5 T — 문장 7.   6 F — 문장 8: 6일이 아니라 60일 뒤다.   7 T — 문장 10.   8 F — 문장 11: 로봇(robots)이 아니라 동물(animals)의 장기다.  거짓 문장은 모두 딱 한 요소(strong, fully, 6, robots)를 비튼 것이다 — 그 한 곳을 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (b) → (c) → (a) → (d)");
-B("ⓑ 과거의 의사들이 동물 심장을 시도했지만 실패한다(문장 5) → ⓒ 이번에는 특별한 돼지의 유전자 일부를 바꾼다(문장 6) → ⓐ 데이비드가 돼지 심장을 받는다(문장 1·7) → ⓓ 그 실험이 의사들에게 값진 정보를 남긴다(문장 10). 글은 ⓐ를 문장 1에서 가장 먼저 말하지만 실제로는 ⓑ·ⓒ 다음의 일이다 — 서술 순서와 사건 순서가 다른 지점이 이 문항의 핵심이다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 F · 5 F · 6 F · 7 T · 8 T");
+   B("1 F — 문장 11: 로봇(robots)이 아니라 동물(animals)의 장기다.  거짓 문장은 모두 딱 한 요소(strong, fully, 6, robots)를 비튼 것이다 — 그 한 곳을 찾는 것이 정독이다.   2 T — 문장 10.   3 T — 문장 5.   4 F — 문장 8: 6일이 아니라 60일 뒤다.   5 F — 문장 3: 튼튼했던(strong) 것이 아니라 너무 약했다(so weak).   6 F — 문장 6: 완전히(fully)가 아니라 일부만(partly) 바꾼 유전자다.   7 T — 문장 7.   8 T — 문장 1.", true);
+Hs("R2   사건 순서   ·   (a) → (c) → (b) → (d)");
+B("ⓐ 과거의 의사들이 동물 심장을 시도했지만 실패한다(문장 5) → ⓒ 이번에는 특별한 돼지의 유전자 일부를 바꾼다(문장 6) → ⓑ 데이비드가 돼지 심장을 받는다(문장 1·7) → ⓓ 그 실험이 의사들에게 값진 정보를 남긴다(문장 10). 글은 ⓑ를 문장 1에서 가장 먼저 말하지만 실제로는 ⓐ·ⓒ 다음의 일이다 — 서술 순서와 사건 순서가 다른 지점이 이 문항의 핵심이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

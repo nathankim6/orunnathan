@@ -98,17 +98,19 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① A Museum That Keeps Our Failures", "② The Most Popular Snacks in Sweden",
- "③ How Coca-Cola Became a Big Company", "④ Ways to Sell New Products Fast",
+["① The Most Popular Snacks in Sweden",
+ "② How Coca-Cola Became a Big Company",
+ "③ Ways to Sell New Products Fast",
+ "④ A Museum That Keeps Our Failures",
  "⑤ Famous Oreo Flavors Around the World"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① The Museum of Failure started in Sweden in 2017.",
  "② You can see more than 150 failed products there.",
- "③ A woman named Samuel West made this museum.",
- "④ Samuel says even big companies made mistakes.",
- "⑤ Visitors can write their own mistakes on sticky notes."].forEach(c => K.push(ch(c)));
+ "③ Samuel says even big companies made mistakes.",
+ "④ Visitors can write their own mistakes on sticky notes.",
+ "⑤ A woman named Samuel West made this museum."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) Here가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
@@ -175,7 +177,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -189,7 +191,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -225,7 +227,7 @@ K.push(spF(2, 85, 0.06));
  [8, "He says that even big companies like Coca-Cola and Pepsi made mistakes."],
  [11, "Any visitors can write their own mistakes on sticky notes and put them on a wall."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -283,7 +285,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 스웨덴의 유명한 관광지 소개", "② 실패한 제품을 모아 보여 주는 박물관", "③ 코카콜라와 펩시의 광고 경쟁"].forEach(c =>
+["① 실패한 제품을 모아 보여 주는 박물관",
+ "② 스웨덴의 유명한 관광지 소개",
+ "③ 코카콜라와 펩시의 광고 경쟁"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -304,7 +308,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 1950, 7350];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -406,11 +410,11 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 한 박물관을 소개하는 설명문",
- "② 물건을 팔기 위해 만든 광고",
- "③ 하루 일과를 적은 일기",
- "④ 친구에게 보내는 편지",
- "⑤ 상상으로 지어낸 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
+["① 물건을 팔기 위해 만든 광고",
+ "② 하루 일과를 적은 일기",
+ "③ 친구에게 보내는 편지",
+ "④ 상상으로 지어낸 동화",
+ "⑤ 한 박물관을 소개하는 설명문"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
 K.push(brk());
@@ -460,7 +464,7 @@ K.push(p([t("조건 ", { size: 16, bold: true, color: GOLD }),
   t("덩어리의 순서를 괄호에 쓰세요. 덩어리 안의 단어는 바꾸지 않습니다.", { size: 16, color: SUB })], { after: 100, line: 250 }));
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("보기   ", { size: 16, bold: true, color: NAVY2 }),
-     t("ⓐ is just a way     ⓑ Samuel’s message is clear:     ⓒ to become better.     ⓓ making mistakes", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
+     t("ⓐ is just a way     ⓑ to become better.     ⓒ Samuel’s message is clear:     ⓓ making mistakes", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
   { w: W, shade: COOL, b: { top: bd(4, CLINE), bottom: bd(4, CLINE), left: NOB, right: NOB }, m: { top: 150 + Math.round((FT(6) || 0) * 0.02), bottom: 150 + Math.round((FT(6) || 0) * 0.02), left: 180, right: 180 } })] })]));
 K.push(spF(6, 200, 0.05));
 K.push(p([t("순서   ", { size: 17, bold: true, color: NAVY2 }),
@@ -513,15 +517,15 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 1, main: "try to forget them fast",
-    opts: ["① want to remember them for a long time", "② work hard to put them out of their minds", "③ sell them at a low price"] },
+    opts: ["① work hard to put them out of their minds", "② want to remember them for a long time", "③ sell them at a low price"] },
   { sn: 5, main: "some funny examples",
-    opts: ["① a few strange and amusing things", "② very serious and sad things", "③ things that cost a lot of money"] });
+    opts: ["① very serious and sad things", "② a few strange and amusing things", "③ things that cost a lot of money"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 9, main: "they learned and improved",
-    opts: ["① they stopped making anything", "② they got better than before", "③ they made the same mistakes again"] },
+    opts: ["① they stopped making anything", "② they made the same mistakes again", "③ they got better than before"] },
   { sn: 12, main: "a way to become better",
-    opts: ["① a road you must never take", "② a school subject for children", "③ a path that helps you grow"] });
+    opts: ["① a path that helps you grow", "② a road you must never take", "③ a school subject for children"] });
 K.push(spF(7, 150, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -577,14 +581,13 @@ K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
     "When new products fail, companies often try to forget them fast.",
-    "The Museum of Failure started in Norway in 2017.",
-    "You can see more than 150 failed products at the museum.",
-    "Coffee-flavored Coca-Cola is one of the funny examples.",
-    "A woman named Samuel West made this museum.",
-    "He thinks we learn from our mistakes.",
     "Big companies like Coca-Cola and Pepsi never made mistakes.",
+    "He thinks we learn from our mistakes.",
+    "A woman named Samuel West made this museum.",
+    "The Museum of Failure started in Norway in 2017.",
+    "Coffee-flavored Coca-Cola is one of the funny examples.",
     "Visitors must not write their own mistakes at the museum.",
-  ].map((s, i) => new TableRow({ children: [
+    "You can see more than 150 failed products at the museum."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -599,10 +602,10 @@ K.push(spF(8, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "실패 박물관에 얽힌 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ The museum traveled around the world.",
-      "ⓑ Samuel West made the Museum of Failure in Sweden.",
-      "ⓒ Visitors write their own mistakes on sticky notes.",
-      "ⓓ Big companies like Coca-Cola and Pepsi made mistakes."]
+  ...["ⓐ Big companies like Coca-Cola and Pepsi made mistakes.",
+      "ⓑ The museum traveled around the world.",
+      "ⓒ Samuel West made the Museum of Failure in Sweden.",
+      "ⓓ Visitors write their own mistakes on sticky notes."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -642,8 +645,8 @@ K.push(spF(9, 380, 0.12));
 
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
-[["문장 6", [t("A man ", { size: 19 }), t("( named  /  naming )", { size: 19, bold: true, color: NAVY }), t(" Samuel West made this museum.", { size: 19 })], "'~라는 이름의'는 과거분사로 뒤에서 꾸며요."],
- ["문장 10", [t("At the end of the tour, there ", { size: 19 }), t("( is  /  are )", { size: 19, bold: true, color: NAVY }), t(" a “Share Your Failure” wall.", { size: 19 })], "there 뒤의 명사(a wall)가 진짜 주어예요."],
+[["문장 6", [t("A man ", { size: 19 }), t("( naming  /  named )", { size: 19, bold: true, color: NAVY }), t(" Samuel West made this museum.", { size: 19 })], "'~라는 이름의'는 과거분사로 뒤에서 꾸며요."],
+ ["문장 10", [t("At the end of the tour, there ", { size: 19 }), t("( are  /  is )", { size: 19, bold: true, color: NAVY }), t(" a “Share Your Failure” wall.", { size: 19 })], "there 뒤의 명사(a wall)가 진짜 주어예요."],
  ["문장 11", [t("Any visitors ", { size: 19 }), t("( can write  /  can writes )", { size: 19, bold: true, color: NAVY }), t(" their own mistakes.", { size: 19 })], "조동사 can 뒤에는 언제나 동사원형!"],
  ["문장 12", [t("", { size: 19 }), t("( Making  /  Make )", { size: 19, bold: true, color: NAVY }), t(" mistakes is just a way to become better.", { size: 19 })], "주어 자리에 동사를 쓰려면 ~ing로!"],
 ].forEach(([n, runs, hint], i) => {
@@ -739,30 +742,30 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("Any visitors(S)·can write·put(△V)·on sticky notes(M)·on a wall(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 ‘어린 왕자’라는 이름의 책을 읽었다  (2) 우리 집 앞에는 큰 나무가 한 그루 있다  (3) 우리 학교 근처에는 ‘써니’라는 이름의 작은 가게가 있다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 mistakes · way · better        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 반전 · 덧붙임 · 순서   2-2 [B] 전시물 · [E] 마무리   2-3 ①", { size: 19, bold: true })], { after: 25 }),
-  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (d) → (a) → (c)  ·  Samuel’s message is clear: making mistakes is just a way to become better.", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 mistakes · way · better        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 반전 · 덧붙임 · 순서   2-2 [B] 전시물 · [E] 마무리   2-3 ⑤", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (c) → (d) → (a) → (b)  ·  Samuel’s message is clear: making mistakes is just a way to become better.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) Sweden  (2) failed  (3) mistakes  (4) better        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 1 ②  문장 5 ①  문장 9 ②  문장 12 ③", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 1 ①  문장 5 ②  문장 9 ③  문장 12 ①", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4T · 5F · 6T · 7F · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (a) → (c)", { size: 19, bold: true })], { after: 25 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 T · 4 F · 5 F · 6 T · 7 F · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (b) → (d)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(f) · 2(b) · 3(d) · 4(e) · 5(a) · 6(c)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) named  (2) is  (3) can write  (4) Making", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) fail (2) forgets (3) products (4) museum (5) mistakes (6) improved (7) visitors (8) better", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) But the Museum of Failure never forgets.  (2) He thinks we learn from our mistakes.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("회사들은 실패를 빨리 잊으려 하지만(문장 1) 이 박물관은 실패작을 모아 보여 준다(문장 2–5). 실수는 더 나아지는 길이라는 것이 요지다(문장 12). 소재(박물관)와 특징(실패를 간직함)을 담은 ①이 제목이다. ③·⑤는 지엽적 오답, ②·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 6에서 이 박물관을 만든 사람은 사무엘 웨스트라는 이름의 남자(A man)다. 여자라고 한 ③이 본문과 다르다. ①은 문장 3, ②는 문장 4, ④는 문장 8, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ④");
+B("회사들은 실패를 빨리 잊으려 하지만(문장 1) 이 박물관은 실패작을 모아 보여 준다(문장 2–5). 실수는 더 나아지는 길이라는 것이 요지다(문장 12). 소재(박물관)와 특징(실패를 간직함)을 담은 ④이 제목이다. ②·⑤는 지엽적 오답, ①·③는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 6에서 이 박물관을 만든 사람은 사무엘 웨스트라는 이름의 남자(A man)다. 여자라고 한 ⑤이 본문과 다르다. ①은 문장 3, ②는 문장 4, ③는 문장 8, ④는 문장 11에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) Here는 바로 앞 문장 2·3의 실패 박물관을 가리킨다. 지시어는 사람·사물만이 아니라 장소도 대신한다 — 바로 앞 문장에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   A man named Samuel West made this museum.");
 B("문장 6을 그대로 복원하는 문제다. ① 첫 글자는 대문자 A.   ② named Samuel West가 앞의 man을 뒤에서 꾸민다.   ③ 문장의 진짜 동사는 made — 위치를 헷갈리지 않는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 mistakes · way · better     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 실패한 제품을 모아 보여 주는 박물관과 그 뜻을 소개한다. ① 관광지 소개가 아니고, ③ 코카콜라·펩시는 근거로 든 예일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 mistakes · way · better     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 실패한 제품을 모아 보여 주는 박물관과 그 뜻을 소개한다. ② 관광지 소개가 아니고, ③ 코카콜라·펩시는 근거로 든 예일 뿐이다.");
 B("1-2   ○표 할 세 단어: mistakes(힌트① 열쇳말) · way(힌트② 실수가 무엇인지) · better(힌트③ 그래서 어떻게 되는지). 나머지 셋(museum · Sweden · products)은 본문에 자주 나오지만 주제문에 들어가지 않는다 — 장소와 전시물일 뿐이다.");
 B("1-3   문장 4 — Here는 실패 박물관에 ○.   문장 9 — they는 큰 회사들에 ○ (문장 8의 코카콜라·펩시).   문장 11 — their는 방문객들에, them은 메모지에 ○ (한 문장 안에서 가리키는 대상이 바뀐다).");
 B("[학습 포인트]   문장 11처럼 한 문장에 지시어가 둘이면 짝이 서로 다를 수 있다. 지시어를 만날 때마다 앞으로 화살표를 그어 확인하는 습관이 고등 지칭 추론으로 이어진다.", true);
@@ -770,32 +773,32 @@ B("[학습 포인트]   문장 11처럼 한 문장에 지시어가 둘이면 짝
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 때 / 반전 / 덧붙임 / 순서     2-2 [B] 전시물 · [E] 마무리     2-3 ①");
+Hs("STEP 2   글의 흐름   ·   2-1 때 / 반전 / 덧붙임 / 순서     2-2 [B] 전시물 · [E] 마무리     2-3 ⑤");
 B("2-1   문장 1 When — 제품이 실패할 '때'.   문장 2 But — 그런데 이 박물관은 잊지 않는다는 '반전'.   문장 3 and — 시작한 일에 여행한 일을 '덧붙임'.   문장 10 At the end — 관람의 마지막 '순서'를 알려 준다.");
 B("2-2   [B] 전시물(문장 3–5: 언제 어디서 시작했고 무엇을 볼 수 있는지), [E] 마무리(문장 10–12: 실패 공유 벽과 메시지). 보기의 '가격표'는 이 글에 없는 역할이다. [A] 소개 → [B] 전시물 → [C] 만든 사람 → [D] 근거 → [E] 마무리의 흐름이다.");
-B("2-3   정답 ①. 한 박물관이 무엇이고 무엇을 보여 주는지 사실을 알려 주는 설명문이다. ② 광고의 신호(사라는 말·가격)가 없고, ③ 일기의 I·오늘도, ④ 편지의 Dear도, ⑤ 동화의 상상 속 인물도 없다.");
+B("2-3   정답 ⑤. 한 박물관이 무엇이고 무엇을 보여 주는지 사실을 알려 주는 설명문이다. ① 광고의 신호(사라는 말·가격)가 없고, ② 일기의 I·오늘도, ③ 편지의 Dear도, ④ 동화의 상상 속 인물도 없다.");
 B("[학습 포인트]   연결어만 표시해도 글의 지도가 그려진다. When(때), But(반전), and(덧붙임), At the end(순서). 특히 첫 문장의 But 뒤에 글의 주인공이 등장한다.", true);
-Hs("STEP 3   주제문 만들기   ·   3-1 making · better     3-3 (b) → (d) → (a) → (c)");
+Hs("STEP 3   주제문 만들기   ·   3-1 making · better     3-3 (c) → (d) → (a) → (b)");
 B("3-1  재료 찾기 — (2) 문장 12에서 making에 ○: 실수를 '하는 것'이다. hiding(숨기는 것)은 본문과 반대다. (3) 문장 12에서 better에 ○: 실수 끝에 이르는 상태다. famous는 본문에 없는 말이다.");
 B("3-2  뼈대 채우기 — (1) Samuel  (2) making  (3) better.  넣으면 Samuel’s message is clear: making mistakes is just a way to become better.가 완성된다.");
-B("3-3  정답 순서 — ⓑ Samuel’s message is clear: → ⓓ making mistakes → ⓐ is just a way → ⓒ to become better.");
+B("3-3  정답 순서 — ⓒ Samuel’s message is clear: → ⓓ making mistakes → ⓐ is just a way → ⓑ to become better.");
 B("[채점 포인트]  콜론(:)이 붙은 덩어리가 맨 앞, 마침표가 붙은 덩어리가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) Sweden  (2) failed  (3) mistakes  (4) better");
 B("(1)은 문장 3의 Sweden, (2)는 문장 4의 failed, (3)은 문장 7의 mistakes, (4)는 문장 12의 better에서 가져온다. 요약문이 곧 이 글의 흐름이다: 시작(1) → 전시물(2) → 생각(3) → 메시지(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 1 ②   문장 5 ①   문장 9 ②   문장 12 ③  (정답 선지는 무표시)");
-B("문장 1 try to forget them fast   ① ✕ [반대] 오래 기억하고 싶어 한다 — 정반대.   ② ○ 머릿속에서 얼른 지우려 애쓴다.   ③ ✕ [무관] 싸게 판다는 말은 지문에 없다.");
-B("문장 5 some funny examples   ① ○ 좀 이상하고 웃긴 것들.   ② ✕ [반대] 아주 심각하고 슬픈 것들 — 정반대.   ③ ✕ [무관] 값이 비싸다는 말은 지문에 없다.");
-B("문장 9 they learned and improved   ① ✕ [무관] 아무것도 만들지 않게 됐다는 말은 지문에 없다.   ② ○ 전보다 나아졌다.   ③ ✕ [반대] 같은 실수를 되풀이했다 — 정반대.");
-B("문장 12 a way to become better   ① ✕ [반대] 절대 가면 안 되는 길 — 정반대.   ② ✕ [무관] 학교 과목이라는 말은 지문에 없다.   ③ ○ 자라게 도와주는 길이다.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 1 ①   문장 5 ②   문장 9 ③   문장 12 ①  (정답 선지는 무표시)");
+B("문장 1 try to forget them fast   ② ✕ [반대] 오래 기억하고 싶어 한다 — 정반대.   ① ○ 머릿속에서 얼른 지우려 애쓴다.   ③ ✕ [무관] 싸게 판다는 말은 지문에 없다.");
+B("문장 5 some funny examples   ② ○ 좀 이상하고 웃긴 것들.   ① ✕ [반대] 아주 심각하고 슬픈 것들 — 정반대.   ③ ✕ [무관] 값이 비싸다는 말은 지문에 없다.");
+B("문장 9 they learned and improved   ① ✕ [무관] 아무것도 만들지 않게 됐다는 말은 지문에 없다.   ③ ○ 전보다 나아졌다.   ② ✕ [반대] 같은 실수를 되풀이했다 — 정반대.");
+B("문장 12 a way to become better   ② ✕ [반대] 절대 가면 안 되는 길 — 정반대.   ③ ✕ [무관] 학교 과목이라는 말은 지문에 없다.   ① ○ 자라게 도와주는 길이다.");
 B("[학습 포인트]  시험은 본문 표현을 그대로 쓰지 않고 반드시 바꿔서 묻는다. 지문을 읽을 때마다 '이 표현을 다른 말로 하면?'을 스스로 물어보자.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 T · 5 F · 6 T · 7 F · 8 F");
-B("1 T — 문장 1.   2 F — 문장 3: 노르웨이(Norway)가 아니라 스웨덴(Sweden)이다.   3 T — 문장 4.   4 T — 문장 5.   5 F — 문장 6: 여자가 아니라 남자(A man)다.   6 T — 문장 7.   7 F — 문장 8: 큰 회사들도 실수를 했다.   8 F — 문장 11: 방문객은 자기 실수를 적을 수 있다.  거짓 문장은 모두 딱 한 요소(Norway, woman, never, must not)를 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (d) → (b) → (a) → (c)");
-B("ⓓ 큰 회사들이 실수를 한다(문장 8) → ⓑ 사무엘 웨스트가 스웨덴에서 박물관을 만든다(문장 3·6) → ⓐ 박물관이 세계를 돈다(문장 3) → ⓒ 방문객이 메모지에 자기 실수를 적는다(문장 11). 본문은 박물관 이야기를 먼저 하고 회사들의 실수를 나중에 말하지만, 실제로는 실수가 먼저 있었다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
+Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 F · 6 T · 7 F · 8 T");
+   B("1 T — 문장 1.   2 F — 문장 8: 큰 회사들도 실수를 했다.   3 T — 문장 7.   4 F — 문장 6: 여자가 아니라 남자(A man)다.   5 F — 문장 3: 노르웨이(Norway)가 아니라 스웨덴(Sweden)이다.   6 T — 문장 5.   7 F — 문장 11: 방문객은 자기 실수를 적을 수 있다.  거짓 문장은 모두 딱 한 요소(Norway, woman, never, must not)를 비튼 것이다.   8 T — 문장 4.", true);
+Hs("R2   사건 순서   ·   (a) → (c) → (b) → (d)");
+B("ⓐ 큰 회사들이 실수를 한다(문장 8) → ⓒ 사무엘 웨스트가 스웨덴에서 박물관을 만든다(문장 3·6) → ⓑ 박물관이 세계를 돈다(문장 3) → ⓓ 방문객이 메모지에 자기 실수를 적는다(문장 11). 본문은 박물관 이야기를 먼저 하고 회사들의 실수를 나중에 말하지만, 실제로는 실수가 먼저 있었다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
 Hs("R3   영영풀이   ·   1 (f) · 2 (b) · 3 (d) · 4 (e) · 5 (a) · 6 (c)");
 B("fail = 잘되지 않거나 아예 작동하지 않다 · product = 회사가 팔려고 만드는 것 · museum = 특별한 것들을 볼 수 있는 곳 · mistake = 그러려고 한 것이 아닌데 잘못한 일 · visitor = 어떤 곳을 보러 오는 사람 · improve = 전보다 나아지다.", true);
 Hs("R4   어법 기초   ·   (1) named  (2) is  (3) can write  (4) Making");

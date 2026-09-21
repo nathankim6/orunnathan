@@ -99,8 +99,10 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Under the Sea: The Cables That Carry the Internet", "② How to Become a Ship Worker",
- "③ The Best Places to Go Fishing", "④ Why Satellites Are Slow",
+["① How to Become a Ship Worker",
+ "② The Best Places to Go Fishing",
+ "③ Why Satellites Are Slow",
+ "④ Under the Sea: The Cables That Carry the Internet",
  "⑤ Mount Everest: The World’s Tallest Mountain"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
@@ -113,11 +115,11 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the big cables under the sea",
- "② the satellites in space",
- "③ the workers on special ships",
- "④ the fishing areas in the ocean",
- "⑤ the optical fibers made of glass"].forEach(c => K.push(ch(c)));
+["① the satellites in space",
+ "② the workers on special ships",
+ "③ the fishing areas in the ocean",
+ "④ the optical fibers made of glass",
+ "⑤ the big cables under the sea"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -462,7 +464,7 @@ K.push(p([t("조건 ", { size: 16, bold: true, color: GOLD }),
   t("덩어리의 순서를 괄호에 쓰세요. 덩어리 안의 단어는 바꾸지 않습니다.", { size: 16, color: SUB })], { after: 100, line: 250 }));
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("보기   ", { size: 16, bold: true, color: NAVY2 }),
-     t("ⓐ because they are very fast.     ⓑ Most international data     ⓒ through big undersea cables     ⓓ travels", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
+     t("ⓐ because they are very fast.     ⓑ through big undersea cables     ⓒ travels     ⓓ Most international data", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
   { w: W, shade: COOL, b: { top: bd(4, CLINE), bottom: bd(4, CLINE), left: NOB, right: NOB }, m: { top: 150 + Math.round((FT(6) || 0) * 0.02), bottom: 150 + Math.round((FT(6) || 0) * 0.02), left: 180, right: 180 } })] })]));
 K.push(spF(6, 200, 0.05));
 K.push(p([t("순서   ", { size: 17, bold: true, color: NAVY2 }),
@@ -515,9 +517,9 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 2, main: "more than 95 percent of data is sent by them",
-    opts: ["① almost all international data goes through them", "② only a small part of data goes through them", "③ all data is stored inside them"] },
+    opts: ["① only a small part of data goes through them", "② almost all international data goes through them", "③ all data is stored inside them"] },
   { sn: 5, main: "Laying these cables is hard work",
-    opts: ["① putting the cables down is not easy", "② setting the cables is very simple", "③ cleaning the cables takes one day"] });
+    opts: ["① setting the cables is very simple", "② cleaning the cables takes one day", "③ putting the cables down is not easy"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 9, main: "Using satellites can have delays",
@@ -578,15 +580,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "More than 95 percent of international data is sent by undersea cables.",
-    "The cables lie 800 meters below the ocean’s surface.",
     "The cables are safest in deep water.",
-    "Laying these cables is easy work.",
-    "Workers must avoid fishing areas or military zones.",
-    "This work can take days at sea.",
     "The undersea cables use optical fibers.",
+    "Laying these cables is easy work.",
+    "The cables lie 800 meters below the ocean’s surface.",
+    "This work can take days at sea.",
+    "More than 95 percent of international data is sent by undersea cables.",
     "As more people use the internet, we will need fewer cables.",
-  ].map((s, i) => new TableRow({ children: [
+    "Workers must avoid fishing areas or military zones."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -601,10 +602,10 @@ K.push(spF(8, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "해저 케이블을 놓는 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ Workers choose the best path, avoiding fishing and military zones.",
-      "ⓑ Special ships carry the cables out to sea and place them.",
-      "ⓒ The work takes months at sea.",
-      "ⓓ Data travels through the finished cables under the sea."]
+  ...["ⓐ Special ships carry the cables out to sea and place them.",
+      "ⓑ The work takes months at sea.",
+      "ⓒ Data travels through the finished cables under the sea.",
+      "ⓓ Workers choose the best path, avoiding fishing and military zones."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -644,10 +645,10 @@ K.push(spF(9, 380, 0.12));
 
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
-[["문장 2", [t("More than 95 percent of international data ", { size: 19 }), t("( is  /  are )", { size: 19, bold: true, color: NAVY }), t(" sent by them.", { size: 19 })], "percent of data는 단수로 봅니다."],
- ["문장 5", [t("( Laying  /  Lay )", { size: 19, bold: true, color: NAVY }), t(" these cables is hard work.", { size: 19 })], "주어 자리에는 동사원형이 올 수 없어요."],
+[["문장 2", [t("More than 95 percent of international data ", { size: 19 }), t("( are  /  is )", { size: 19, bold: true, color: NAVY }), t(" sent by them.", { size: 19 })], "percent of data는 단수로 봅니다."],
+ ["문장 5", [t("( Lay  /  Laying )", { size: 19, bold: true, color: NAVY }), t(" these cables is hard work.", { size: 19 })], "주어 자리에는 동사원형이 올 수 없어요."],
  ["문장 6", [t("Workers use special ships ", { size: 19 }), t("( to place  /  placing )", { size: 19, bold: true, color: NAVY }), t(" cables.", { size: 19 })], "'~하기 위해'는 to+동사원형!"],
- ["문장 13", [t("The workers ", { size: 19 }), t("( are  /  is )", { size: 19, bold: true, color: NAVY }), t(" doing their best.", { size: 19 })], "진행형은 be+~ing — 주어의 수에 맞춰요."],
+ ["문장 13", [t("The workers ", { size: 19 }), t("( is  /  are )", { size: 19, bold: true, color: NAVY }), t(" doing their best.", { size: 19 })], "진행형은 be+~ing — 주어의 수에 맞춰요."],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
     cel(new Paragraph({ children: [t("(" + (i + 1) + ")", { size: 16, bold: true, color: "FFFFFF" })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 210 } }),
@@ -744,23 +745,23 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 data · cables · fast        ", { size: 19, bold: true }),
      t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 덧붙임 · 반전 · ~할수록 · 결과   2-2 [B] 모습 · [D] 비교   2-3 ①", { size: 19, bold: true })], { after: 25 }),
-  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (d) → (c) → (a)  ·  Most international data travels through big undersea cables because they are very fast.", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (d) → (c) → (b) → (a)  ·  Most international data travels through big undersea cables because they are very fast.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) cables  (2) deep  (3) satellites  (4) fast        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ①  문장 5 ①  문장 9 ①  문장 12 ①", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ②  문장 5 ③  문장 9 ①  문장 12 ①", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (b) → (c) → (d)", { size: 19, bold: true })], { after: 25 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 T · 3 F · 4 F · 5 F · 6 T · 7 F · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (b) → (c)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(c) · 2(a) · 3(d) · 4(f) · 5(e) · 6(b)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) is  (2) Laying  (3) to place  (4) are", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) cables (2) surface (3) hard (4) path (5) months (6) delays (7) fast (8) patient", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) This work can take months at sea.  (2) More than 95 percent of international data is sent by them.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 인터넷 데이터가 바다 밑 케이블로 오간다는 사실(문장 1–2)과 그 설치·속도(문장 5–10)를 설명한다. 소재와 특징을 함께 담은 ①이 적절하다. ④·⑤는 지엽적 오답, ②·③은 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 인터넷 데이터가 바다 밑 케이블로 오간다는 사실(문장 1–2)과 그 설치·속도(문장 5–10)를 설명한다. 소재와 특징을 함께 담은 ④이 적절하다. ③·⑤는 지엽적 오답, ①·②은 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ④");
 B("문장 9에서 인공위성을 쓰면 지연이 생길 수 있다(can have delays)고 했다. 지연이 없다고 한 ④가 본문과 반대된다. ①은 문장 2, ②는 문장 3, ③은 문장 6, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) them은 바로 앞 문장 1의 big cables under the sea를 가리킨다. 데이터가 무엇을 통해 오가는지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   The cables are safest in deep water.");
 B("문장 4를 그대로 복원하는 문제다. ① 첫 글자는 대문자 The.   ② safe의 최상급은 safest.   ③ in deep water가 문장 끝에 온다.", true);
@@ -778,16 +779,16 @@ B("2-1   문장 6 and — 두 가지 할 일을 '덧붙임'.   문장 10 But —
 B("2-2   [B] 모습(문장 3–4: 길이·깊이 등 케이블의 생김새), [D] 비교(문장 8–10: 위성과 견주어 케이블이 빠른 이유). 보기의 '광고'는 이 글에 없는 역할이다. [A] 소개 → [B] 모습 → [C] 설치 → [D] 비교 → [E] 마무리 — 설명문의 전형적인 흐름이다.");
 B("2-3   정답 ①. 해저 케이블에 관한 사실을 차례로 알려 주는 설명문이다. ② 가격·명령문이 없어 광고가 아니고, ③ I·날짜, ④ 등장인물과 사건, ⑤ 초대의 형식도 없다.");
 B("[학습 포인트]   But 뒤가 글쓴이가 진짜 하고 싶은 말인 경우가 많다. 문장 10의 But 뒤에 이 글의 주제(케이블이 빠르다)가 놓여 있다.", true);
-Hs("STEP 3   주제문 만들기   ·   3-1 undersea cables · fast     3-3 (b) → (d) → (c) → (a)");
+Hs("STEP 3   주제문 만들기   ·   3-1 undersea cables · fast     3-3 (d) → (c) → (b) → (a)");
 B("3-1  재료 찾기 — (2) 문장 1에서 undersea cables에 ○: 데이터가 지나가는 길이다. big clouds는 글쓴이가 아니라고 못 박은 말이다. (3) 문장 10에서 fast에 ○: 케이블의 가장 큰 장점이다. slow는 위성 쪽 이야기다.");
 B("3-2  뼈대 채우기 — (1) international data  (2) undersea cables  (3) fast.  넣으면 Most international data travels through big undersea cables because they are very fast.가 완성된다.");
-B("3-3  정답 순서 — ⓑ Most international data → ⓓ travels → ⓒ through big undersea cables → ⓐ because they are very fast.");
-B("[채점 포인트]  주인공(ⓑ)이 맨 앞, 마침표가 붙은 덩어리(ⓐ)가 맨 뒤 — 주어 바로 뒤에 동사 덩어리(ⓓ)가 온다는 것만 기억하면 된다.", true);
+B("3-3  정답 순서 — ⓓ Most international data → ⓒ travels → ⓑ through big undersea cables → ⓐ because they are very fast.");
+B("[채점 포인트]  주인공(ⓓ)이 맨 앞, 마침표가 붙은 덩어리(ⓐ)가 맨 뒤 — 주어 바로 뒤에 동사 덩어리(ⓒ)가 온다는 것만 기억하면 된다.", true);
 Hs("STEP 4   요약문   ·   (1) cables  (2) deep  (3) satellites  (4) fast");
 B("(1)은 문장 1의 cables, (2)는 문장 4의 deep, (3)은 문장 8–9의 satellites, (4)는 문장 10의 fast에서 가져온다. 요약문이 곧 이 글의 흐름이다: 소개(1) → 모습(2) → 비교(3) → 이유(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ①   문장 5 ①   문장 9 ①   문장 12 ①  (정답 선지는 무표시)");
-B("문장 2 more than 95 percent ~ is sent by them   ① ○ 거의 모든 국제 데이터가 그것을 지난다.   ② ✕ [반대] 아주 일부만 지난다 — 정반대.   ③ ✕ [무관] 데이터를 안에 저장한다는 말은 지문에 없다.");
-B("문장 5 Laying these cables is hard work   ① ○ 케이블을 내려놓는 일은 쉽지 않다.   ② ✕ [반대] 아주 간단하다 — 정반대.   ③ ✕ [무관] 청소에 하루가 걸린다는 말은 지문에 없다.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ②   문장 5 ③   문장 9 ①   문장 12 ①  (정답 선지는 무표시)");
+B("문장 2 more than 95 percent ~ is sent by them   ② ○ 거의 모든 국제 데이터가 그것을 지난다.   ① ✕ [반대] 아주 일부만 지난다 — 정반대.   ③ ✕ [무관] 데이터를 안에 저장한다는 말은 지문에 없다.");
+B("문장 5 Laying these cables is hard work   ③ ○ 케이블을 내려놓는 일은 쉽지 않다.   ① ✕ [반대] 아주 간단하다 — 정반대.   ② ✕ [무관] 청소에 하루가 걸린다는 말은 지문에 없다.");
 B("문장 9 Using satellites can have delays   ① ○ 위성은 더 느릴 수 있다.   ② ✕ [반대] 언제나 가장 빠르다 — 정반대.   ③ ✕ [무관] 만드는 비용이 비싸다는 말은 지문에 없다.");
 B("문장 12 just be more patient   ① ○ 조금만 더 기다리라.   ② ✕ [반대] 곧바로 화를 내라 — 정반대.   ③ ✕ [무관] 새 컴퓨터를 사라는 말은 지문에 없다.");
 B("[학습 포인트]  시험은 본문 표현을 그대로 쓰지 않고 반드시 바꿔서 묻는다. 지문을 읽을 때마다 '이 표현을 다른 말로 하면?'을 스스로 물어보자. 지금은 반대/무관 두 갈래를 정확히 가르는 것이 먼저다.", true);
@@ -795,10 +796,10 @@ B("[학습 포인트]  시험은 본문 표현을 그대로 쓰지 않고 반드
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 2.   2 F — 문장 3: 800미터가 아니라 8,000미터 아래다.   3 T — 문장 4.   4 F — 문장 5: 쉬운(easy) 일이 아니라 힘든(hard) 일이다.   5 T — 문장 6.   6 F — 문장 7: 며칠(days)이 아니라 몇 달(months)이 걸린다.   7 T — 문장 10.   8 F — 문장 11: 더 적은(fewer) 것이 아니라 더 많은(more) 케이블이 필요하다.  거짓 문장은 모두 본문에서 딱 한 요소를 비튼 것이다 — 그 한 곳을 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (a) → (b) → (c) → (d)");
-B("ⓐ 어업·군사 구역을 피해 가장 좋은 경로를 고른다(문장 6) → ⓑ 특별한 배가 케이블을 싣고 나가 내려놓는다(문장 6) → ⓒ 그 작업은 바다에서 몇 달이 걸린다(문장 7) → ⓓ 완성된 케이블로 데이터가 오간다(문장 1). 글은 ⓓ를 문장 1에서 가장 먼저 말하지만 실제로는 가장 나중의 일이다 — 서술 순서와 사건 순서가 다른 지점이 이 문항의 핵심이다.", true);
+Hs("R1   True / False   ·   1 T · 2 T · 3 F · 4 F · 5 F · 6 T · 7 F · 8 T");
+   B("1 T — 문장 4.   2 T — 문장 10.   3 F — 문장 5: 쉬운(easy) 일이 아니라 힘든(hard) 일이다.   4 F — 문장 3: 800미터가 아니라 8,000미터 아래다.   5 F — 문장 7: 며칠(days)이 아니라 몇 달(months)이 걸린다.   6 T — 문장 2.   7 F — 문장 11: 더 적은(fewer) 것이 아니라 더 많은(more) 케이블이 필요하다.  거짓 문장은 모두 본문에서 딱 한 요소를 비튼 것이다 — 그 한 곳을 찾는 것이 정독이다.   8 T — 문장 6.", true);
+Hs("R2   사건 순서   ·   (d) → (a) → (b) → (c)");
+B("ⓓ 어업·군사 구역을 피해 가장 좋은 경로를 고른다(문장 6) → ⓐ 특별한 배가 케이블을 싣고 나가 내려놓는다(문장 6) → ⓑ 그 작업은 바다에서 몇 달이 걸린다(문장 7) → ⓒ 완성된 케이블로 데이터가 오간다(문장 1). 글은 ⓒ를 문장 1에서 가장 먼저 말하지만 실제로는 가장 나중의 일이다 — 서술 순서와 사건 순서가 다른 지점이 이 문항의 핵심이다.", true);
 Hs("R3   영영풀이   ·   1 (c) · 2 (a) · 3 (d) · 4 (f) · 5 (e) · 6 (b)");
 B("float = 물이나 공기 위에 떠 있다 · surface = 물이나 땅의 맨 윗부분 · path = 한 곳에서 다른 곳으로 가는 길 · avoid = 무엇을 피하다 · delay = 예정보다 늦어지는 시간 · patient = 화내지 않고 기다릴 줄 아는.", true);
 Hs("R4   어법 기초   ·   (1) is  (2) Laying  (3) to place  (4) are");

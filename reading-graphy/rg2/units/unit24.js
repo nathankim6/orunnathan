@@ -79,22 +79,24 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Craters: Not Only on the Moon but Also on Earth", "② How to Watch the Moon with a Telescope",
- "③ The Life of Dinosaurs in Wyoming", "④ Why Plants Need Rain and Wind",
+["① How to Watch the Moon with a Telescope",
+ "② The Life of Dinosaurs in Wyoming",
+ "③ Craters: Not Only on the Moon but Also on Earth",
+ "④ Why Plants Need Rain and Wind",
  "⑤ How Scientists Became Famous in 2022"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① The Earth has a thick atmosphere that protects it from space rocks.",
- "② The Moon doesn’t have an atmosphere.",
- "③ On Earth, rain, wind, and plants help to erase craters.",
- "④ The Moon has weather and many plants.",
+ "② The Moon has weather and many plants.",
+ "③ The Moon doesn’t have an atmosphere.",
+ "④ On Earth, rain, wind, and plants help to erase craters.",
  "⑤ Scientists found huge craters in Wyoming in 2022."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the crater that the space rock makes",
- "② the space rock from the sky",
+["① the space rock from the sky",
+ "② the crater that the space rock makes",
  "③ the atmosphere of the Moon",
  "④ the weather on the Earth",
  "⑤ the plant that grows on the Moon"].forEach(c => K.push(ch(c)));
@@ -144,7 +146,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -157,7 +159,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -194,7 +196,7 @@ K.push(spF(2, 85, 0.06));
  [6, "Additionally, on Earth, things like rain, wind, and even plants help to slowly erase craters."],
  [12, "Because Earth’s ground changes a lot and craters usually disappear, finding these old craters is really amazing."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -249,7 +251,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 망원경으로 달을 관찰하는 방법", "② 달과 지구에 있는 크레이터", "③ 공룡이 살았던 시대"].forEach(c =>
+["① 달과 지구에 있는 크레이터",
+ "② 망원경으로 달을 관찰하는 방법",
+ "③ 공룡이 살았던 시대"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -270,7 +274,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 1800, 7500];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -317,7 +321,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -332,15 +336,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "The Earth has craters as well as the Moon.",
-    "The Earth has a thick atmosphere.",
+    "Earth’s ground never changes, so craters stay forever.",
     "The Moon has a thicker atmosphere than the Earth.",
-    "Rain, wind, and plants help to erase craters on Earth.",
     "The Moon has a lot of weather and plants.",
     "Scientists found huge craters in Wyoming in 2022.",
+    "Rain, wind, and plants help to erase craters on Earth.",
+    "The Earth has craters as well as the Moon.",
     "The craters in Wyoming are about 280 years old.",
-    "Earth’s ground never changes, so craters stay forever.",
-  ].map((s, i) => new TableRow({ children: [
+    "The Earth has a thick atmosphere."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -356,9 +359,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "지구에서 크레
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Rain, wind, and plants slowly erase the crater.",
-      "ⓑ A space rock hits the ground of the Earth.",
-      "ⓒ The space rock makes a crater.",
-      "ⓓ Scientists find very old craters in Wyoming."]
+      "ⓑ The space rock makes a crater.",
+      "ⓒ Scientists find very old craters in Wyoming.",
+      "ⓓ A space rock hits the ground of the Earth."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -386,9 +389,9 @@ K.push(...tab("정답 및 해설", "UNIT 24  달 뿐만 아니라 지구에도 �
 K.push(sp(150));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("독해", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("\u2460      ", { size: 19, bold: true }),
-     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("\u2463      ", { size: 19, bold: true }),
-     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("\u2460", { size: 19, bold: true })], { after: 25 }),
+  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("①      ", { size: 19, bold: true }),
+     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("④      ", { size: 19, bold: true }),
+     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("①", { size: 19, bold: true })], { after: 25 }),
   p([t("04 ", { size: 19, bold: true, color: NAVY2 }), t("But the Moon doesn’t have weather or plants.", { size: 19, bold: true })], { after: 75 }),
   p([t("구문분석", { size: 16, bold: true, color: NAVY })], { after: 60 }),
   p([t("문1 ", { size: 17, bold: true, color: NAVY2 }), t("people(S)·may believe(△V)·that[네모]·Moon(S′)·has(△V′)   ", { size: 17, bold: true }),
@@ -396,22 +399,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문12 ", { size: 17, bold: true, color: NAVY2 }), t("Because[네모]·ground(S′)·changes(△V′)·finding these old craters(S)·is(△V)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 책을 읽는 것은 정말 재미있다  (2) 비가 올 때, 나는 집에 있는다  (3) 내가 피곤할 때, 물을 마시는 것이 나에게 도움이 된다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 craters · Moon · Earth   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 craters · Moon · Earth   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2T · 3F · 4T · 5F · 6T · 7F · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (a) → (d)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 F · 4 T · 5 T · 6 T · 7 F · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 \u2460");
-B("이 글은 크레이터가 달에만 있는 것이 아니라 지구에도 있다는 사실(문장 1)과 달에 더 많아 보이는 까닭(문장 3–8), 지구에서 발견된 아주 오래된 크레이터(문장 9–12)를 설명한다. 소재(크레이터)와 핵심(달과 지구 둘 다)을 담은 ①이 적절하다. ③·④은 지엽적, ②·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 \u2463");
-B("문장 7에서 달에는 날씨도 식물도 없다고 했다. 달에 날씨와 식물이 많다고 뒤집은 ④이 본문과 반대된다. ①은 문장 3, ②은 문장 4, ③는 문장 6, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 \u2460");
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 크레이터가 달에만 있는 것이 아니라 지구에도 있다는 사실(문장 1)과 달에 더 많아 보이는 까닭(문장 3–8), 지구에서 발견된 아주 오래된 크레이터(문장 9–12)를 설명한다. 소재(크레이터)와 핵심(달과 지구 둘 다)을 담은 ③이 적절하다. ②·④은 지엽적, ①·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 7에서 달에는 날씨도 식물도 없다고 했다. 달에 날씨와 식물이 많다고 뒤집은 ②이 본문과 반대된다. ①은 문장 3, ③은 문장 4, ④는 문장 6, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) it은 앞에 나온 a crater를 가리킨다. 오랫동안 그 자리에 남아 있는 것은 우주 암석이 아니라 그 암석이 만든 자국(크레이터)이다 — 수와 뜻을 함께 따져야 함정을 피한다.", true);
 Hs("독해 04   배열 영작   ·   But the Moon doesn’t have weather or plants.");
 B("문장 7을 그대로 복원하는 문제다. ① 첫 글자는 대문자 But.   ② doesn’t 뒤에는 동사원형 have.   ③ 부정문에서 '~도 …도 없다'는 A or B로 잇는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 craters · Moon · Earth     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 달과 지구 양쪽에 있는 크레이터를 설명한다. ① 망원경 사용법은 나오지 않고, ③ 공룡은 크레이터의 나이를 견주는 예일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 craters · Moon · Earth     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 달과 지구 양쪽에 있는 크레이터를 설명한다. ② 망원경 사용법은 나오지 않고, ③ 공룡은 크레이터의 나이를 견주는 예일 뿐이다.");
 B("1-2   ○표 할 세 단어: craters(힌트① 이 글이 다루는 것) · Moon(힌트② 그것이 더 많아 보이는 곳) · Earth(힌트③ 그것이 사라지는 곳). 나머지 셋(dinosaurs · plants · scientists)은 본문에 등장하지만 주제문에 들어가지 않는다 — 비교와 예시일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
 B("1-3   문장 3 — it은 지구에 ○ (대기가 보호해 주는 대상).   문장 5 — This는 달에 대기가 없음에 ○ (문장 4의 내용 전체).   문장 8 — it은 크레이터에 ○ (우주 암석이 아니라 그 자국).");
 B("[학습 포인트]   문장 3의 it은 지구, 문장 8의 it은 크레이터다. 같은 it이라도 문장마다 짝이 다르므로, 만날 때마다 바로 앞에서 짝을 찾아 화살표로 연결해 두자.", true);
@@ -420,10 +423,10 @@ B("[학습 포인트]   문장 3의 it은 지구, 문장 8의 it은 크레이터
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 T · 3 F · 4 T · 5 F · 6 T · 7 F · 8 F");
-B("1 T — 문장 1.   2 T — 문장 3.   3 F — 문장 4: 달에는 대기가 아예 없다.   4 T — 문장 6.   5 F — 문장 7: 달에는 날씨도 식물도 없다.   6 T — 문장 9.   7 F — 문장 10: 280년이 아니라 약 2억 8천만(280 million) 년이다.   8 F — 문장 12: 지구의 땅은 많이 변해서 크레이터가 대개 사라진다.  거짓 문장은 모두 딱 한 요소(thicker, a lot of, million, never)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (c) → (a) → (d)");
-B("ⓑ 우주 암석이 지구 땅에 부딪힌다(문장 5·8) → ⓒ 그 암석이 크레이터를 만든다(문장 8) → ⓐ 비·바람·식물이 크레이터를 천천히 지운다(문장 6) → ⓓ 과학자들이 아주 오래된 크레이터를 발견한다(문장 9). 본문은 지우는 힘(문장 6)을 만들어지는 과정(문장 8)보다 먼저 말한다 — 서술 순서와 사건 순서가 갈리는 지점이다.", true);
+Hs("R1   True / False   ·   1 F · 2 F · 3 F · 4 T · 5 T · 6 T · 7 F · 8 T");
+   B("1 F — 문장 12: 지구의 땅은 많이 변해서 크레이터가 대개 사라진다.  거짓 문장은 모두 딱 한 요소(thicker, a lot of, million, never)만 비튼 것이다.   2 F — 문장 4: 달에는 대기가 아예 없다.   3 F — 문장 7: 달에는 날씨도 식물도 없다.   4 T — 문장 9.   5 T — 문장 6.   6 T — 문장 1.   7 F — 문장 10: 280년이 아니라 약 2억 8천만(280 million) 년이다.   8 T — 문장 3.", true);
+Hs("R2   사건 순서   ·   (d) → (b) → (a) → (c)");
+B("ⓓ 우주 암석이 지구 땅에 부딪힌다(문장 5·8) → ⓑ 그 암석이 크레이터를 만든다(문장 8) → ⓐ 비·바람·식물이 크레이터를 천천히 지운다(문장 6) → ⓒ 과학자들이 아주 오래된 크레이터를 발견한다(문장 9). 본문은 지우는 힘(문장 6)을 만들어지는 과정(문장 8)보다 먼저 말한다 — 서술 순서와 사건 순서가 갈리는 지점이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

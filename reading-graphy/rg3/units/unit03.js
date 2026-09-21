@@ -79,16 +79,18 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Arsenic Hiding in Old Green Books", "② How to Make a Beautiful Bookmark",
- "③ The Most Popular Colors of the 1800s", "④ A Guide to Cleaning Old Book Covers",
+["① How to Make a Beautiful Bookmark",
+ "② The Most Popular Colors of the 1800s",
+ "③ A Guide to Cleaning Old Book Covers",
+ "④ Arsenic Hiding in Old Green Books",
  "⑤ Why People Stopped Reading Old Books"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① In the 1800s, emerald green was a very popular color.",
  "② Emerald green had a harmful chemical called arsenic.",
- "③ Melissa’s team made fewer than 100 bookmarks.",
- "④ The bookmarks were sent to 18 other countries.",
+ "③ The bookmarks were sent to 18 other countries.",
+ "④ Melissa’s team made fewer than 100 bookmarks.",
  "⑤ Melissa says people don’t have to throw away the books."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
@@ -144,7 +146,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -157,7 +159,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -195,7 +197,7 @@ K.push(spF(2, 85, 0.06));
  [8, "These bookmarks were sent throughout the U.S. and to 18 other countries."]
 ].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -250,7 +252,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 에메랄드 보석의 값어치", "② 비소가 들어 있는 옛 초록색 책", "③ 책갈피를 예쁘게 만드는 방법"].forEach(c =>
+["① 비소가 들어 있는 옛 초록색 책",
+ "② 에메랄드 보석의 값어치",
+ "③ 책갈피를 예쁘게 만드는 방법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -262,7 +266,7 @@ K.push(T([1740,1740,1740,1740,1740,1740], [new TableRow({ children: KWCAND.map((
   new Paragraph({ children: [t(ko, { size: 14, color: SUB })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 190 } }),
 ], { w: 1740, shade: FIELD, va: VerticalAlign.CENTER, m: { top: 240, bottom: 240, left: 40, right: 40 },
     b: { top: bd(4, FLINE), bottom: bd(4, FLINE), left: bd(4, FLINE), right: bd(4, FLINE) } })) })]));
-K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 조사의 대상  ② 그 안에 든 위험한 것  ③ 멜리사의 당부 \u2014 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
+K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 조사의 대상  ② 그 안에 든 위험한 것  ③ 멜리사의 당부 — 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
 K.push(spF(4, 260, 0.30));
 
 K.push(p([t("1-3  ", { size: 18, bold: true, color: GOLD }), t("지시어 이해하기", { size: 19, bold: true }),
@@ -271,7 +275,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -318,7 +322,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -333,15 +337,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "In the 1800s, emerald green was a very popular color.",
     "Emerald green had a safe chemical called arsenic in it.",
+    "The bookmarks had pictures of the green book covers and safety tips.",
+    "In the 1800s, emerald green was a very popular color.",
+    "Books with arsenic were found in other places too.",
     "Melissa Tedone and her team studied old green books from the 19th century.",
     "Melissa’s team made fewer than 100 bookmarks.",
-    "The bookmarks had pictures of the green book covers and safety tips.",
     "The bookmarks were sent only inside the U.S.",
-    "Books with arsenic were found in other places too.",
-    "Melissa says people must throw away these books.",
-  ].map((s, i) => new TableRow({ children: [
+    "Melissa says people must throw away these books."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -357,8 +360,8 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "비소 책을 찾�
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Melissa’s team studied old green books.",
-      "ⓑ People used emerald green on clothes and book covers.",
-      "ⓒ The team sent over 900 bookmarks to many countries.",
+      "ⓑ The team sent over 900 bookmarks to many countries.",
+      "ⓒ People used emerald green on clothes and book covers.",
       "ⓓ Books with arsenic were found in other places too."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -397,22 +400,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문8 ", { size: 17, bold: true, color: NAVY2 }), t("These bookmarks(S)·were sent(△V)·throughout the U.S. and to 18 other countries(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 우리는 '겨울왕국'이라고 불리는 영화를 봤다  (2) 너는 오늘 점심을 가져올 필요가 없다  (3) 너는 두리안이라고 불리는 그 과일을 먹을 필요가 없다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 books · arsenic · careful   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 books · arsenic · careful   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (c) → (d)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 T · 5 T · 6 F · 7 F · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (b) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("1800년대에 유행한 에메랄드그린 책에 비소가 들어 있다는 사실(문장 1–5)과 그 책들을 찾아낸 프로젝트(문장 6–9)를 소개한다. 소재와 특징을 함께 담은 ①이 정답. ②·③은 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 7에서 멜리사의 팀은 책갈피를 900개 넘게 만들었다고 했으므로, 100개도 안 된다는 ③이 본문과 반대된다. ①은 문장 1, ②는 문장 3, ④는 문장 8, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ④");
+B("1800년대에 유행한 에메랄드그린 책에 비소가 들어 있다는 사실(문장 1–5)과 그 책들을 찾아낸 프로젝트(문장 6–9)를 소개한다. 소재와 특징을 함께 담은 ④이 정답. ①·②은 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 7에서 멜리사의 팀은 책갈피를 900개 넘게 만들었다고 했으므로, 100개도 안 된다는 ④이 본문과 반대된다. ①은 문장 1, ②는 문장 3, ③는 문장 8, ⑤는 문장 11에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) them은 앞 문장 9의 books with arsenic, 곧 비소가 든 책들을 가리킨다. 바로 앞에 나온 bookmarks에 끌리지 않아야 한다 — 자주 만지면 안 되는 것은 책갈피가 아니라 책이다.", true);
 Hs("독해 04   배열 영작   ·   But emerald green had a harmful chemical called arsenic in it.");
 B("문장 3을 그대로 복원하는 문제다. ① 첫 글자는 대문자 But.   ② 관사 a를 빠뜨리지 않는다.   ③ called arsenic이 앞의 chemical을 뒤에서 꾸민다 — 2면 구문 카드의 그 자리다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 books · arsenic · careful     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 비소가 든 19세기 초록색 책과 그 책을 찾는 일을 다룬다. ① 에메랄드는 색 이름일 뿐 보석 이야기가 아니고, ③ 책갈피는 책을 찾기 위한 도구다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 books · arsenic · careful     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 비소가 든 19세기 초록색 책과 그 책을 찾는 일을 다룬다. ② 에메랄드는 색 이름일 뿐 보석 이야기가 아니고, ③ 책갈피는 책을 찾기 위한 도구다.");
 B("1-2   ○표 할 세 단어: books(힌트① 조사의 대상) · arsenic(힌트② 그 안에 든 위험한 것) · careful(힌트③ 멜리사의 당부). 나머지 셋(bookmarks · clothes · team)은 본문에 나오지만 주제문에 들어가지 않는다 — 도구와 배경일 뿐이다.");
 B("1-3   문장 5 — these books는 옛 초록색 책에 ○ (문장 4의 그 책들).   문장 8 — These bookmarks는 900개의 책갈피에 ○ (문장 7).   문장 10 — them은 비소가 든 책들에 ○.");
 B("[학습 포인트]   문장 5의 these books와 문장 8의 These bookmarks는 생김새가 닮았지만 가리키는 것이 다르다. this/these 뒤의 명사가 곧 답의 열쇠다 — 명사를 먼저 읽고 앞 문장에서 짝을 찾자.", true);
@@ -421,10 +424,10 @@ B("[학습 포인트]   문장 5의 these books와 문장 8의 These bookmarks�
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 1.   2 F — 문장 3: 안전한 게 아니라 해로운(harmful) 화학 물질이다.   3 T — 문장 4.   4 F — 문장 7: 100개 미만이 아니라 900개가 넘는다(over 900).   5 T — 문장 7.   6 F — 문장 8: 미국 안에만이 아니라 다른 18개국에도 보내졌다.   7 T — 문장 9.   8 F — 문장 11: 버려야 한다가 아니라 버릴 필요가 없다(don’t have to)이다.  거짓 문장은 모두 딱 한 요소만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (a) → (c) → (d)");
-B("ⓑ 사람들이 옷과 책 표지에 에메랄드그린을 쓴다(문장 2, 1800년대) → ⓐ 멜리사 팀이 옛 초록색 책을 연구한다(문장 4, 2019년) → ⓒ 책갈피 900여 개를 여러 나라로 보낸다(문장 7–8) → ⓓ 다른 곳에서도 비소 책이 발견된다(문장 9). 연도(In the 1800s, In 2019)와 As a result가 순서를 알려 주는 표지다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 T · 5 T · 6 F · 7 F · 8 F");
+   B("1 F — 문장 3: 안전한 게 아니라 해로운(harmful) 화학 물질이다.   2 T — 문장 7.   3 T — 문장 1.   4 T — 문장 9.   5 T — 문장 4.   6 F — 문장 7: 100개 미만이 아니라 900개가 넘는다(over 900).   7 F — 문장 8: 미국 안에만이 아니라 다른 18개국에도 보내졌다.   8 F — 문장 11: 버려야 한다가 아니라 버릴 필요가 없다(don’t have to)이다.  거짓 문장은 모두 딱 한 요소만 비튼 것이다.", true);
+Hs("R2   사건 순서   ·   (c) → (a) → (b) → (d)");
+B("ⓒ 사람들이 옷과 책 표지에 에메랄드그린을 쓴다(문장 2, 1800년대) → ⓐ 멜리사 팀이 옛 초록색 책을 연구한다(문장 4, 2019년) → ⓑ 책갈피 900여 개를 여러 나라로 보낸다(문장 7–8) → ⓓ 다른 곳에서도 비소 책이 발견된다(문장 9). 연도(In the 1800s, In 2019)와 As a result가 순서를 알려 주는 표지다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

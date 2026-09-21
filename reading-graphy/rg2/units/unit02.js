@@ -80,25 +80,27 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["\u2460 A Special Festival: Throwing Turnips at Monsters", "\u2461 How to Grow Turnips in Spain",
- "\u2462 The Daily Life of Spanish Farmers", "\u2463 Why Monsters Appear in Old Stories",
- "\u2464 The Most Popular Winter Foods in Spain"].forEach(c => K.push(ch(c)));
+["① How to Grow Turnips in Spain",
+ "② The Daily Life of Spanish Farmers",
+ "③ Why Monsters Appear in Old Stories",
+ "④ A Special Festival: Throwing Turnips at Monsters",
+ "⑤ The Most Popular Winter Foods in Spain"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["\u2460 The Jarramplas Festival takes place in Piornal, Spain every year.",
- "\u2461 The monsters wear costumes with lots of colorful cloth.",
- "\u2462 The festival is based on a local story.",
- "\u2463 In the story, the farmers stole animals from the thief.",
- "\u2464 Over 2,000 people are on a waiting list."].forEach(c => K.push(ch(c)));
+["① The Jarramplas Festival takes place in Piornal, Spain every year.",
+ "② In the story, the farmers stole animals from the thief.",
+ "③ The monsters wear costumes with lots of colorful cloth.",
+ "④ The festival is based on a local story.",
+ "⑤ Over 2,000 people are on a waiting list."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) him이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["\u2460 the thief named el Jarrampla",
- "\u2461 one of the farmers in the story",
- "\u2462 a person on the waiting list",
- "\u2463 a tourist visiting Piornal",
- "\u2464 the king of Spain"].forEach(c => K.push(ch(c)));
+["① one of the farmers in the story",
+ "② a person on the waiting list",
+ "③ a tourist visiting Piornal",
+ "④ the thief named el Jarrampla",
+ "⑤ the king of Spain"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -145,7 +147,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -158,7 +160,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -193,7 +195,7 @@ K.push(spF(2, 85, 0.06));
  [10, "To chase him away, the farmers threw turnips at him."],
  [12, "But people in Piornal think playing el Jarrampla is a big honor."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -248,7 +250,7 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["\u2460 스페인의 겨울 채소 요리", "\u2461 괴물에게 순무를 던지는 축제", "\u2462 스페인 농부들의 하루"].forEach(c =>
+["① 스페인의 겨울 채소 요리", "② 괴물에게 순무를 던지는 축제", "③ 스페인 농부들의 하루"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -260,7 +262,7 @@ K.push(T([1740,1740,1740,1740,1740,1740], [new TableRow({ children: KWCAND.map((
   new Paragraph({ children: [t(ko, { size: 14, color: SUB })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 190 } }),
 ], { w: 1740, shade: FIELD, va: VerticalAlign.CENTER, m: { top: 240, bottom: 240, left: 40, right: 40 },
     b: { top: bd(4, FLINE), bottom: bd(4, FLINE), left: bd(4, FLINE), right: bd(4, FLINE) } })) })]));
-K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 축제의 주인공  ② 사람들이 던지는 것  ③ 마을 사람들의 평가 \u2014 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
+K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 축제의 주인공  ② 사람들이 던지는 것  ③ 마을 사람들의 평가 — 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
 K.push(spF(4, 260, 0.30));
 
 K.push(p([t("1-3  ", { size: 18, bold: true, color: GOLD }), t("지시어 이해하기", { size: 19, bold: true }),
@@ -269,7 +271,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -316,7 +318,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -331,15 +333,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
+    "Only a few people want to play el Jarrampla.",
     "The Jarramplas Festival takes place in Piornal, Spain.",
+    "In the story, the thief gave animals to the farmers.",
+    "The monsters wear costumes decorated with white pieces of cloth.",
+    "The farmers threw turnips to chase the thief away.",
     "The festival takes place in July every year.",
     "Two people from the village act as the monsters.",
-    "The monsters wear costumes decorated with white pieces of cloth.",
-    "Underneath the costumes, they wear special protection.",
-    "In the story, the thief gave animals to the farmers.",
-    "The farmers threw turnips to chase the thief away.",
-    "Only a few people want to play el Jarrampla.",
-  ].map((s, i) => new TableRow({ children: [
+    "Underneath the costumes, they wear special protection."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -354,10 +355,10 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "이야기 속 사건과 축제의 모습 ⓐ~ⓓ를 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["\u24D0 The farmers threw turnips at the thief.",
-      "\u24D1 The thief stole animals from the farmers.",
-      "\u24D2 Two villagers put on the monster costumes.",
-      "\u24D3 People in town chase the monsters with turnips."]
+  ...["ⓐ The farmers threw turnips at the thief.",
+      "ⓑ Two villagers put on the monster costumes.",
+      "ⓒ People in town chase the monsters with turnips.",
+      "ⓓ The thief stole animals from the farmers."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -385,9 +386,9 @@ K.push(...tab("정답 및 해설", "UNIT 02  순무로 맞는 영광", CHAR, "�
 K.push(sp(150));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("독해", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("\u2460      ", { size: 19, bold: true }),
-     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("\u2463      ", { size: 19, bold: true }),
-     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("\u2460", { size: 19, bold: true })], { after: 25 }),
+  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("①      ", { size: 19, bold: true }),
+     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("④      ", { size: 19, bold: true }),
+     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("①", { size: 19, bold: true })], { after: 25 }),
   p([t("04 ", { size: 19, bold: true, color: NAVY2 }), t("The festival is based on a local story.", { size: 19, bold: true })], { after: 75 }),
   p([t("구문분석", { size: 16, bold: true, color: NAVY })], { after: 60 }),
   p([t("문2 ", { size: 17, bold: true, color: NAVY2 }), t("During this festival(M)\u00b7everyone(S)\u00b7chases\u00b7throws(\u25b3V)   ", { size: 17, bold: true }),
@@ -395,34 +396,34 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문12 ", { size: 17, bold: true, color: NAVY2 }), t("people(S)\u00b7think(\u25b3V)\u00b7playing el Jarrampla(S\u2032)\u00b7is(\u25b3V\u2032)\u00b7a big honor", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 딸기로 장식된 케이크를 샀다  (2) 첫 버스를 잡기 위해, 그녀는 일찍 일어났다  (3) 그는 멋있어 보이기 위해 깃털로 장식된 모자를 썼다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 \u2461   1-2 monsters · turnips · honor   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 monsters · turnips · honor   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (c) → (d)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 F · 5 T · 6 F · 7 T · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 \u2460");
-B("이 글은 괴물에게 순무를 던지는 스페인의 축제(문장 1\u20132)와 그 유래(문장 7\u201310), 그리고 괴물 역할이 큰 영광이라는 반전(문장 12\u201313)을 소개한다. 소재(축제·순무·괴물)를 모두 담은 \u2460이 제목으로 적절하다. \u2461·\u2464는 순무·음식만 건드린 지엽적 오답, \u2462·\u2463은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 \u2463");
-B("문장 9에서 동물을 훔친 쪽은 도둑(the thief)이고 도둑맞은 쪽이 농부들이다. 주어와 목적어가 뒤바뀐 \u2463이 본문과 반대된다. \u2460은 문장 1, \u2461은 문장 5, \u2462는 문장 7, \u2464는 문장 13에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 \u2460");
-B("(A) him은 바로 앞 문장 9의 the thief, 곧 엘 하람플라를 가리킨다. 농부들이 순무를 던져 쫓아내려던 대상이 누구인지 생각하면 된다 \u2014 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 괴물에게 순무를 던지는 스페인의 축제(문장 1–2)와 그 유래(문장 7–10), 그리고 괴물 역할이 큰 영광이라는 반전(문장 12–13)을 소개한다. 소재(축제·순무·괴물)를 모두 담은 ④이 제목으로 적절하다. ①·⑤는 순무·음식만 건드린 지엽적 오답, ②·③은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 9에서 동물을 훔친 쪽은 도둑(the thief)이고 도둑맞은 쪽이 농부들이다. 주어와 목적어가 뒤바뀐 ②이 본문과 반대된다. ①은 문장 1, ③은 문장 5, ④는 문장 7, ⑤는 문장 13에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
+B("(A) him은 바로 앞 문장 9의 the thief, 곧 엘 하람플라를 가리킨다. 농부들이 순무를 던져 쫓아내려던 대상이 누구인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   The festival is based on a local story.");
-B("문장 7을 그대로 복원하는 문제다. \u2460 첫 글자는 대문자 The.   \u2461 be based on \u2014 '~에 바탕을 두다'는 is based on 세 단어가 한 덩어리.   \u2462 a local story \u2014 관사 a를 빠뜨리지 않는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 \u2461     1-2 monsters · turnips · honor     1-3 아래 참조");
-B("1-1   정답 \u2461. 이 글은 괴물에게 순무를 던지는 하람플라스 축제를 소개한다. \u2460 요리 이야기는 나오지 않고, \u2462 농부들은 유래 이야기 속 인물일 뿐이다.");
-B("1-2   \u25cb표 할 세 단어: monsters(힌트\u2460 축제의 주인공) · turnips(힌트\u2461 사람들이 던지는 것) · honor(힌트\u2462 마을 사람들의 평가). 나머지 셋(farmers · costumes · Spain)은 본문에 등장하지만 주제문에 들어가지 않는다 \u2014 유래와 배경일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
-B("1-3   문장 5 \u2014 They는 마을 사람 두 명에 \u25cb (문장 4에서 괴물 역할을 맡은 사람들).   문장 6 \u2014 these costumes는 괴물 의상에 \u25cb (문장 5의 색색 천으로 장식된 그 의상).   문장 10 \u2014 him은 도둑 el Jarrampla에 \u25cb (문장 9에서 동물을 훔친 인물).");
-B("[학습 포인트]   문장 2의 this festival처럼 지시어는 사람만이 아니라 명칭(축제 이름)도 대신한다. these costumes는 '앞 문장에 나온 바로 그 의상'이라는 뜻 \u2014 this/these가 붙으면 반드시 앞 문장에서 짝을 찾자.", true);
+B("문장 7을 그대로 복원하는 문제다. ① 첫 글자는 대문자 The.   ② be based on — '~에 바탕을 두다'는 is based on 세 단어가 한 덩어리.   ③ a local story — 관사 a를 빠뜨리지 않는다.", true);
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 monsters · turnips · honor     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 괴물에게 순무를 던지는 하람플라스 축제를 소개한다. ① 요리 이야기는 나오지 않고, ③ 농부들은 유래 이야기 속 인물일 뿐이다.");
+B("1-2   \u25cb표 할 세 단어: monsters(힌트① 축제의 주인공) · turnips(힌트② 사람들이 던지는 것) · honor(힌트③ 마을 사람들의 평가). 나머지 셋(farmers · costumes · Spain)은 본문에 등장하지만 주제문에 들어가지 않는다 — 유래와 배경일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
+B("1-3   문장 5 — They는 마을 사람 두 명에 \u25cb (문장 4에서 괴물 역할을 맡은 사람들).   문장 6 — these costumes는 괴물 의상에 \u25cb (문장 5의 색색 천으로 장식된 그 의상).   문장 10 — him은 도둑 el Jarrampla에 \u25cb (문장 9에서 동물을 훔친 인물).");
+B("[학습 포인트]   문장 2의 this festival처럼 지시어는 사람만이 아니라 명칭(축제 이름)도 대신한다. these costumes는 '앞 문장에 나온 바로 그 의상'이라는 뜻 — this/these가 붙으면 반드시 앞 문장에서 짝을 찾자.", true);
 
 /* ═══════════ [DATA] 해설 2면 — R1 · R2 · 전문 해석 ═══════════ */
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T \u2014 문장 1.   2 F \u2014 문장 1: 7월이 아니라 1월 19\u201320일이다.   3 T \u2014 문장 4.   4 F \u2014 문장 5: 흰 천이 아니라 색색의(colorful) 천이다.   5 T \u2014 문장 6.   6 F \u2014 문장 9: 도둑이 농부들에게 준 게 아니라 훔쳤다(stole).   7 T \u2014 문장 10.   8 F \u2014 문장 13: 소수가 아니라 2,000명이 넘게 기다린다.  거짓 문장은 모두 본문에서 딱 한 요소(July, white, gave, only a few)를 비튼 것이다 \u2014 그 한 단어를 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (b) \u2192 (a) \u2192 (c) \u2192 (d)");
-B("\u24D1 도둑이 농부들에게서 동물을 훔친다(문장 9) \u2192 \u24D0 농부들이 도둑에게 순무를 던진다(문장 10) \u2192 \u24D2 마을 사람 두 명이 괴물 의상을 입는다(오늘의 축제, 문장 4\u20135) \u2192 \u24D3 마을 사람들이 순무를 들고 괴물을 쫓는다(문장 2). 옛이야기(ⓑ\u2192ⓐ)가 먼저, 그 이야기를 재현하는 오늘의 축제(ⓒ\u2192ⓓ)가 나중이다 \u2014 이야기와 축제, 두 층의 시간을 구분하는 것이 핵심이다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 F · 4 F · 5 T · 6 F · 7 T · 8 T");
+   B("1 F — 문장 13: 소수가 아니라 2,000명이 넘게 기다린다.  거짓 문장은 모두 본문에서 딱 한 요소(July, white, gave, only a few)를 비튼 것이다 — 그 한 단어를 찾는 것이 정독이다.   2 T — 문장 1.   3 F — 문장 9: 도둑이 농부들에게 준 게 아니라 훔쳤다(stole).   4 F — 문장 5: 흰 천이 아니라 색색의(colorful) 천이다.   5 T — 문장 10.   6 F — 문장 1: 7월이 아니라 1월 19–20일이다.   7 T — 문장 4.   8 T — 문장 6.", true);
+Hs("R2   사건 순서   ·   (d) → (a) → (b) → (c)");
+B("ⓓ 도둑이 농부들에게서 동물을 훔친다(문장 9) → ⓐ 농부들이 도둑에게 순무를 던진다(문장 10) → ⓑ 마을 사람 두 명이 괴물 의상을 입는다(오늘의 축제, 문장 4–5) → ⓒ 마을 사람들이 순무를 들고 괴물을 쫓는다(문장 2). 옛이야기(ⓓ→ⓐ)가 먼저, 그 이야기를 재현하는 오늘의 축제(ⓑ→ⓒ)가 나중이다 — 이야기와 축제, 두 층의 시간을 구분하는 것이 핵심이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

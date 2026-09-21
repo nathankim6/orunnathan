@@ -84,18 +84,18 @@ K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① In the Middle Ages, people ate about 1.3 kilograms of bread a day.",
- "② Horse bread was flat and brown, unlike the white bread people ate.",
- "③ Horse bread was made by using leftovers from the bakery.",
- "④ Horse bread was expensive and hard to carry.",
+ "② Horse bread was expensive and hard to carry.",
+ "③ Horse bread was flat and brown, unlike the white bread people ate.",
+ "④ Horse bread was made by using leftovers from the bakery.",
  "⑤ The first railways opened in England in 1830."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) they가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the first railways in England",
- "② the horses working in the country",
- "③ the bakers in the Middle Ages",
- "④ the owners of the working horses",
- "⑤ the heavy things people carried"].forEach(c => K.push(ch(c)));
+["① the horses working in the country",
+ "② the bakers in the Middle Ages",
+ "③ the owners of the working horses",
+ "④ the heavy things people carried",
+ "⑤ the first railways in England"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -142,7 +142,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -155,7 +155,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -191,7 +191,7 @@ K.push(spF(2, 85, 0.06));
  [5, "This special horse bread was made for working horses by using leftovers from the bakery."],
  [8, "When they had to carry people and things across the country, their owners didn’t have to feed them."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -246,7 +246,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 중세 사람들의 하루 식사량", "② 말을 위해 구운 특별한 빵", "③ 영국 철도가 생긴 과정"].forEach(c =>
+["① 중세 사람들의 하루 식사량",
+ "② 영국 철도가 생긴 과정",
+ "③ 말을 위해 구운 특별한 빵"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -267,7 +269,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -314,7 +316,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -329,15 +331,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Horses were the biggest customers for bakers in England.",
-    "In the Middle Ages, people ate about 1.3 kilograms of bread a week.",
-    "Horses ate even more bread than people did.",
-    "Horse bread was the same as the white bread people ate.",
     "Horse bread was made by using leftovers from the bakery.",
-    "Horse bread was expensive and hard to carry.",
     "Horse bread gave horses the energy for their hard work.",
+    "Horses ate even more bread than people did.",
+    "In the Middle Ages, people ate about 1.3 kilograms of bread a week.",
     "The first railways opened in England in 1930.",
-  ].map((s, i) => new TableRow({ children: [
+    "Horse bread was the same as the white bread people ate.",
+    "Horses were the biggest customers for bakers in England.",
+    "Horse bread was expensive and hard to carry."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -353,9 +354,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "말 빵을 둘러�
 K.push(sp(120));
 K.push(box([
   ...["ⓐ The first railways opened in England.",
-      "ⓑ Bakers made horse bread from leftovers.",
-      "ⓒ Horses stopped eating horse bread.",
-      "ⓓ Horses carried people and things across the country."]
+      "ⓑ Horses stopped eating horse bread.",
+      "ⓒ Horses carried people and things across the country.",
+      "ⓓ Bakers made horse bread from leftovers."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -393,22 +394,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문8 ", { size: 17, bold: true, color: NAVY2 }), t("When[네모]·they(S′)·had to carry(△V′)·owners(S)·didn’t have to feed(△V)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 코코라고 불리는 작은 개를 키운다  (2) 그 케이크는 언니가 만들었다  (3) '봄'이라고 불리는 노래가 1990년에 만들어졌다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 horses · customers · horse bread   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 horses · customers · horse bread   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 T · 3 T · 4 F · 5 F · 6 F · 7 T · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ①");
 B("이 글은 영국의 제빵사에게 가장 큰 고객이 말이었다는 사실(문장 1–3)과, 말을 위한 특별한 빵(문장 4–7)을 소개한다. 소재(horse bread)와 특징(말이 최대 고객)을 함께 담은 ①이 제목으로 적절하다. ③·⑤는 지엽적 오답, ②·④은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 6에서 말 빵은 값이 싸고(cheap) 나르기 쉬웠다(easy to carry)고 했으므로, 비싸고 나르기 어려웠다는 ④은 본문과 반대된다. ①은 문장 2, ②은 문장 4, ③는 문장 5, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 6에서 말 빵은 값이 싸고(cheap) 나르기 쉬웠다(easy to carry)고 했으므로, 비싸고 나르기 어려웠다는 ②은 본문과 반대된다. ①은 문장 2, ③은 문장 4, ④는 문장 5, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) they는 같은 문장 앞부분의 the first railways를 가리킨다. 말을 대신해 사람과 무거운 짐을 나른 주체가 무엇인지 보면 된다 — 문장 8의 they(말들)와 가리키는 대상이 다르다는 점이 함정이다.", true);
 Hs("독해 04   배열 영작   ·   It was cheap, easy to carry and also good for the horses.");
 B("문장 6을 그대로 복원하는 문제다. ① 첫 글자는 대문자 It.   ② cheap 뒤의 콤마를 빠뜨리지 않는다.   ③ easy to carry — 형용사 뒤에 to부정사가 붙는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 horses · customers · horse bread     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 일하는 말을 위해 만든 특별한 빵을 소개한다. ① 사람들의 식사량은 비교를 위한 배경이고, ③ 철도는 말 빵이 사라진 이유로 한 번 나온다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 horses · customers · horse bread     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 일하는 말을 위해 만든 특별한 빵을 소개한다. ① 사람들의 식사량은 비교를 위한 배경이고, ② 철도는 말 빵이 사라진 이유로 한 번 나온다.");
 B("1-2   ○표 할 세 단어: horses(힌트① 주인공) · customers(힌트② 빵집에서 그들의 자리) · horse bread(힌트③ 그들이 먹던 것). 나머지 셋(railways · grain · bakers)은 본문에 등장하지만 주제문에 들어가지 않는다 — 배경과 결말일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
 B("1-3   문장 6 — It은 말 빵에 ○ (문장 5의 그 특별한 빵).   문장 8 — they는 말들에 ○ (짐을 나르던 주체).   문장 9 — they는 첫 철도에 ○ (말을 대신한 것).");
 B("[학습 포인트]   문장 8의 they는 말들, 문장 9의 they는 철도다. 대명사는 '바로 앞'에서 짝을 찾되, 문장이 바뀌면 대상도 바뀔 수 있다는 것을 늘 의심하자.", true);
@@ -417,10 +418,10 @@ B("[학습 포인트]   문장 8의 they는 말들, 문장 9의 they는 철도�
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 1.   2 F — 문장 2: 일주일이 아니라 하루(a day)에 1.3킬로그램이다.   3 T — 문장 3.   4 F — 문장 4: 흰 빵과 같은 것이 아니라 달랐다(different).   5 T — 문장 5.   6 F — 문장 6: 비싼 것이 아니라 값이 쌌다(cheap).   7 T — 문장 7.   8 F — 문장 9: 1930년이 아니라 1830년이다.  거짓 문장은 모두 딱 한 요소(a week, the same, expensive, 1930)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (d) → (a) → (c)");
-B("ⓑ 제빵사들이 남은 재료로 말 빵을 만든다(문장 5) → ⓓ 말들이 사람과 물건을 싣고 전국을 다닌다(문장 8) → ⓐ 1830년 첫 철도가 개통된다(문장 9) → ⓒ 말들이 말 빵을 먹지 않게 된다(문장 10). 문장 1은 결론을 먼저 말한 것이므로, 사건의 순서는 문장 5부터 따라가야 한다 — 서술 순서와 사건 순서는 다를 수 있다.", true);
+Hs("R1   True / False   ·   1 T · 2 T · 3 T · 4 F · 5 F · 6 F · 7 T · 8 F");
+   B("1 T — 문장 5.   2 T — 문장 7.   3 T — 문장 3.   4 F — 문장 2: 일주일이 아니라 하루(a day)에 1.3킬로그램이다.   5 F — 문장 9: 1930년이 아니라 1830년이다.  거짓 문장은 모두 딱 한 요소(a week, the same, expensive, 1930)만 비튼 것이다.   6 F — 문장 4: 흰 빵과 같은 것이 아니라 달랐다(different).   7 T — 문장 1.   8 F — 문장 6: 비싼 것이 아니라 값이 쌌다(cheap).", true);
+Hs("R2   사건 순서   ·   (d) → (c) → (a) → (b)");
+B("ⓓ 제빵사들이 남은 재료로 말 빵을 만든다(문장 5) → ⓒ 말들이 사람과 물건을 싣고 전국을 다닌다(문장 8) → ⓐ 1830년 첫 철도가 개통된다(문장 9) → ⓑ 말들이 말 빵을 먹지 않게 된다(문장 10). 문장 1은 결론을 먼저 말한 것이므로, 사건의 순서는 문장 5부터 따라가야 한다 — 서술 순서와 사건 순서는 다를 수 있다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

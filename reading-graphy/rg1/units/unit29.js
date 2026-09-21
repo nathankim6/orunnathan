@@ -84,15 +84,17 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Wanted: A Candy Taste Tester", "② How to Make Gummy Candies at Home",
- "③ The History of Chocolate in America", "④ Foods That Cause Allergies",
+["① How to Make Gummy Candies at Home",
+ "② The History of Chocolate in America",
+ "③ Foods That Cause Allergies",
+ "④ Wanted: A Candy Taste Tester",
  "⑤ The Best Part-Time Jobs for Students"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① The company is looking for people to try new candies.",
- "② Testers will taste the candies and share their thoughts.",
- "③ Testers can earn $13 an hour.",
+["① Testers can earn $13 an hour.",
+ "② The company is looking for people to try new candies.",
+ "③ Testers will taste the candies and share their thoughts.",
  "④ Anyone with a sweet tooth for candy can apply.",
  "⑤ You must be 18 years or older to apply."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -149,7 +151,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -162,7 +164,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -198,7 +200,7 @@ K.push(spF(2, 85, 0.06));
  [10, "You can choose to work full-time or part-time."],
  [16, "To apply, please send us an email to: jobs@candyhouse.com by February 15."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -274,7 +276,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -327,7 +329,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -343,14 +345,13 @@ K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
     "Candy House is looking for a candy taste tester.",
-    "This job is only for people who hate sweets.",
-    "Testers will taste new candies like chocolate and gummy candies.",
     "Testers must work full-time only.",
-    "Testers can earn $30 an hour.",
-    "You must live in Canada to apply for this job.",
     "You must be 18 years or older to apply.",
+    "You must live in Canada to apply for this job.",
     "People with food allergies can also apply.",
-  ].map((s, i) => new TableRow({ children: [
+    "Testers can earn $30 an hour.",
+    "Testers will taste new candies like chocolate and gummy candies.",
+    "This job is only for people who hate sweets."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -367,8 +368,8 @@ K.push(sp(120));
 K.push(box([
   ...["ⓐ You send an email to Candy House by February 15.",
       "ⓑ You read the job details and check the rules.",
-      "ⓒ You taste new candies and share your thoughts.",
-      "ⓓ You find this candy taste tester ad."]
+      "ⓒ You find this candy taste tester ad.",
+      "ⓓ You taste new candies and share your thoughts."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -408,14 +409,14 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 candy · tester · apply   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 T · 4 F · 5 F · 6 T · 7 T · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (b) → (a) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 사탕 맛을 보는 사람을 뽑는다는 구인 광고다. 하는 일(문장 9–11)과 지원 자격(문장 13–15), 지원 방법(문장 16)이 차례로 나온다. 소재와 목적을 함께 담은 ①이 제목이다. ④·⑤는 지엽적 오답, ②·③은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 11에서 시급은 30달러다. 13달러라고 한 ③이 본문과 다르다. ①은 문장 6, ②는 문장 9, ④는 문장 13, ⑤는 문장 14에서 확인된다. 광고문은 숫자가 곧 정답의 자리다.", true);
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 사탕 맛을 보는 사람을 뽑는다는 구인 광고다. 하는 일(문장 9–11)과 지원 자격(문장 13–15), 지원 방법(문장 16)이 차례로 나온다. 소재와 목적을 함께 담은 ④이 제목이다. ③·⑤는 지엽적 오답, ①·②은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 11에서 시급은 30달러다. 13달러라고 한 ①이 본문과 다르다. ②은 문장 6, ③는 문장 9, ④는 문장 13, ⑤는 문장 14에서 확인된다. 광고문은 숫자가 곧 정답의 자리다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) them은 같은 문장 앞부분의 new candies를 가리킨다. 맛과 느낌, 냄새를 말해 줄 대상이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   Our company is looking for people to try new candies.");
@@ -430,10 +431,10 @@ B("[학습 포인트]   광고문에서 we는 언제나 광고를 낸 쪽, you�
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 1·7.   2 F — 문장 2·13: 단것을 싫어하는 사람이 아니라 좋아하는 사람을 찾는다.   3 T — 문장 9.   4 F — 문장 10: 전일제만이 아니라 시간제도 고를 수 있다.   5 T — 문장 11.   6 F — 문장 14: 캐나다가 아니라 미국에 살아야 한다.   7 T — 문장 14.   8 F — 문장 15: 음식 알레르기가 있으면 지원할 수 없다.  거짓 문장은 모두 딱 한 요소(hate, only, Canada, can also)를 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (d) → (b) → (a) → (c)");
-B("ⓓ 이 구인 광고를 발견한다(문장 1) → ⓑ 하는 일과 지원 조건을 읽는다(문장 8–15) → ⓐ 2월 15일까지 이메일을 보낸다(문장 16) → ⓒ 새 사탕을 맛보고 생각을 말한다(문장 9). 본문은 '하는 일'을 앞에, '지원 방법'을 맨 뒤에 두지만, 실제로는 지원한 뒤에야 맛보는 일이 시작된다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
+Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 F · 6 T · 7 T · 8 F");
+   B("1 T — 문장 1·7.   2 F — 문장 10: 전일제만이 아니라 시간제도 고를 수 있다.   3 T — 문장 14.   4 F — 문장 14: 캐나다가 아니라 미국에 살아야 한다.   5 F — 문장 15: 음식 알레르기가 있으면 지원할 수 없다.  거짓 문장은 모두 딱 한 요소(hate, only, Canada, can also)를 비튼 것이다.   6 T — 문장 11.   7 T — 문장 9.   8 F — 문장 2·13: 단것을 싫어하는 사람이 아니라 좋아하는 사람을 찾는다.", true);
+Hs("R2   사건 순서   ·   (c) → (b) → (a) → (d)");
+B("ⓒ 이 구인 광고를 발견한다(문장 1) → ⓑ 하는 일과 지원 조건을 읽는다(문장 8–15) → ⓐ 2월 15일까지 이메일을 보낸다(문장 16) → ⓓ 새 사탕을 맛보고 생각을 말한다(문장 9). 본문은 '하는 일'을 앞에, '지원 방법'을 맨 뒤에 두지만, 실제로는 지원한 뒤에야 맛보는 일이 시작된다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

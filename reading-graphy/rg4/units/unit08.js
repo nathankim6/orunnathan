@@ -79,24 +79,26 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Space Travel: A New Risk to Astronauts’ DNA", "② How Astronauts Prepare for a Mission to Mars",
- "③ The Best Way to Keep Blood Samples Frozen", "④ A New Medicine That Cures Cancer Quickly",
- "⑤ Life on the Moon: Building the First Base"].forEach(c => K.push(ch(c)));
+["① How Astronauts Prepare for a Mission to Mars",
+ "② The Best Way to Keep Blood Samples Frozen",
+ "③ A New Medicine That Cures Cancer Quickly",
+ "④ Life on the Moon: Building the First Base",
+ "⑤ Space Travel: A New Risk to Astronauts’ DNA"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① When we go to space, our DNA can change.",
- "② Researchers examined the blood of 14 astronauts.",
- "③ The blood samples were kept frozen for two years.",
+ "② The blood samples were kept frozen for two years.",
+ "③ Researchers examined the blood of 14 astronauts.",
  "④ The researchers found changes in all 14 astronauts.",
  "⑤ Several nations are working on sending astronauts to Mars."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) they가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the astronauts in the study",
- "② the researchers who studied the blood",
- "③ the changes in the DNA",
- "④ the nations planning to go to Mars",
+["① the researchers who studied the blood",
+ "② the changes in the DNA",
+ "③ the nations planning to go to Mars",
+ "④ the astronauts in the study",
  "⑤ the blood samples kept frozen"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -248,7 +250,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 우주비행사의 혈액을 보관하는 방법", "② 우주여행이 DNA에 남기는 위험", "③ 암을 치료하는 새로운 약"].forEach(c =>
+["① 우주여행이 DNA에 남기는 위험",
+ "② 우주비행사의 혈액을 보관하는 방법",
+ "③ 암을 치료하는 새로운 약"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -331,15 +335,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Scientists have found a new risk to space travel.",
-    "When we go to space, our DNA can change.",
-    "Researchers examined the blood of 40 astronauts.",
-    "The blood samples were kept frozen for 20 years.",
-    "The researchers found changes in only a few astronauts.",
-    "Space has extreme conditions, including space radiation.",
-    "The changes mean that astronauts will surely get cancer.",
     "Goukassian said that no more research is necessary.",
-  ].map((s, i) => new TableRow({ children: [
+    "Researchers examined the blood of 40 astronauts.",
+    "Scientists have found a new risk to space travel.",
+    "The changes mean that astronauts will surely get cancer.",
+    "The researchers found changes in only a few astronauts.",
+    "The blood samples were kept frozen for 20 years.",
+    "When we go to space, our DNA can change.",
+    "Space has extreme conditions, including space radiation."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -355,8 +358,8 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "연구에서 일어
 K.push(sp(120));
 K.push(box([
   ...["ⓐ The researchers found changes in all 14 astronauts.",
-      "ⓑ The astronauts traveled to space between 1998 and 2001.",
-      "ⓒ The blood samples were kept frozen for 20 years.",
+      "ⓑ The blood samples were kept frozen for 20 years.",
+      "ⓒ The astronauts traveled to space between 1998 and 2001.",
       "ⓓ The astronauts provided blood samples after their missions."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -395,22 +398,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("nations(S)·are working(△V)·and[네모]·countries(S)·are preparing(△V)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 그 창문은 강한 바람에 의해 깨졌다  (2) 시험에 합격하기 위해, 그는 매일 밤 공부했다  (3) 경기에서 이기기 위해, 그 팀은 유명한 코치에게 훈련받았다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 space · DNA · cancer   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 space · DNA · cancer   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2T · 3F · 4T · 5F · 6T · 7F · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (c) → (a)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 F · 5 F · 6 T · 7 T · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (d) → (b) → (a)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 우주여행이 우주비행사의 DNA를 바꾸고(문장 1–2·8) 암 가능성을 조금 높일 수 있다(문장 3·9)는 연구를 소개한다. 소재(우주여행)와 특징(DNA에 남는 위험)을 함께 담은 ①이 제목으로 적절하다. ②·③은 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 6에서 혈액 샘플은 2년이 아니라 20년 동안 냉동 보관되었다. ③이 본문과 어긋난다. ①은 문장 2, ②는 문장 4, ④는 문장 7, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 우주여행이 우주비행사의 DNA를 바꾸고(문장 1–2·8) 암 가능성을 조금 높일 수 있다(문장 3·9)는 연구를 소개한다. 소재(우주여행)와 특징(DNA에 남는 위험)을 함께 담은 ⑤이 제목으로 적절하다. ①·②은 지엽적 오답, ③·④는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 6에서 혈액 샘플은 2년이 아니라 20년 동안 냉동 보관되었다. ②이 본문과 어긋난다. ①은 문장 2, ③는 문장 4, ④는 문장 7, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) they는 같은 문장 앞부분의 astronauts를 가리킨다. 암에 걸릴 작은 가능성이 있는 쪽은 연구자가 아니라 우주비행사다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   This might increase the chances of getting cancer.");
 B("문장 3을 그대로 복원하는 문제다. ① 첫 글자는 대문자 This.   ② 조동사 might 뒤에는 동사원형 increase.   ③ the chances of getting ~ — 전치사 of 뒤에는 동명사.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 space · DNA · cancer     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 우주여행이 DNA를 바꿔 암 가능성을 높일 수 있다는 연구를 다룬다. ① 혈액 보관은 연구 과정의 일부일 뿐이고, ③ 암 치료제 이야기는 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 space · DNA · cancer     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 우주여행이 DNA를 바꿔 암 가능성을 높일 수 있다는 연구를 다룬다. ② 혈액 보관은 연구 과정의 일부일 뿐이고, ③ 암 치료제 이야기는 나오지 않는다.");
 B("1-2   ○표 할 세 단어: space(힌트① 이 글의 무대) · DNA(힌트② 변하는 것) · cancer(힌트③ 걱정되는 결과). 나머지 셋(blood · Mars · frozen)은 본문에 나오지만 주제문에는 들어가지 않는다 — 연구 방법과 배경일 뿐이다.");
 B("1-3   문장 7 — they는 연구자들에 ○ (연구를 수행한 쪽).   문장 8 — its는 우주의에 ○ (극한 환경을 가진 것은 space).   문장 9 — they는 우주비행사들에 ○ (암에 걸릴 수 있는 쪽).");
 B("[학습 포인트]   문장 7의 they와 문장 9의 they는 같은 단어지만 가리키는 대상이 다르다. 지시어는 모양이 아니라 '문장 안에서 무슨 일을 하는가'로 찾아야 한다.", true);
@@ -419,10 +422,10 @@ B("[학습 포인트]   문장 7의 they와 문장 9의 they는 같은 단어지
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 T · 3 F · 4 T · 5 F · 6 T · 7 F · 8 F");
-B("1 T — 문장 1.   2 T — 문장 2.   3 F — 문장 4: 40명이 아니라 14명이다.   4 T — 문장 6.   5 F — 문장 7: 일부가 아니라 14명 전원(all 14)에게서 변화를 찾았다.   6 T — 문장 8.   7 F — 문장 9: 반드시 걸린다는 뜻이 아니라(don’t mean) 작은 가능성이 있을 뿐이다.   8 F — 문장 12: 더 이상 연구가 필요 없다가 아니라 더 많은 연구가 필요하다.  거짓 문장은 모두 딱 한 요소(40, only a few, surely, no more)를 비튼 것이다 — 그 한 요소를 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (b) → (d) → (c) → (a)");
-B("ⓑ 우주비행사들이 1998–2001년에 우주로 간다(문장 4) → ⓓ 임무 뒤 혈액을 제공한다(문장 5) → ⓒ 혈액이 20년간 냉동 보관된다(문장 6) → ⓐ 연구자들이 14명 전원에게서 변화를 찾아낸다(문장 7). 본문은 '조사했다'(문장 4)를 먼저 말하고 그 과정을 뒤에 풀어 놓는다 — 서술 순서와 실제 순서가 다른 지점이다.", true);
+Hs("R1   True / False   ·   1 F · 2 F · 3 T · 4 F · 5 F · 6 T · 7 T · 8 T");
+   B("1 F — 문장 12: 더 이상 연구가 필요 없다가 아니라 더 많은 연구가 필요하다.  거짓 문장은 모두 딱 한 요소(40, only a few, surely, no more)를 비튼 것이다 — 그 한 요소를 찾는 것이 정독이다.   2 F — 문장 4: 40명이 아니라 14명이다.   3 T — 문장 1.   4 F — 문장 9: 반드시 걸린다는 뜻이 아니라(don’t mean) 작은 가능성이 있을 뿐이다.   5 F — 문장 7: 일부가 아니라 14명 전원(all 14)에게서 변화를 찾았다.   6 T — 문장 6.   7 T — 문장 2.   8 T — 문장 8.", true);
+Hs("R2   사건 순서   ·   (c) → (d) → (b) → (a)");
+B("ⓒ 우주비행사들이 1998–2001년에 우주로 간다(문장 4) → ⓓ 임무 뒤 혈액을 제공한다(문장 5) → ⓑ 혈액이 20년간 냉동 보관된다(문장 6) → ⓐ 연구자들이 14명 전원에게서 변화를 찾아낸다(문장 7). 본문은 '조사했다'(문장 4)를 먼저 말하고 그 과정을 뒤에 풀어 놓는다 — 서술 순서와 실제 순서가 다른 지점이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

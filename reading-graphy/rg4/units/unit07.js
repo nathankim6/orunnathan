@@ -97,8 +97,10 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Getting Older: Better at Controlling Emotions", "② How to Save Your Energy as You Get Older",
- "③ Why Young People Learn New Skills Faster", "④ A Psychologist Who Studies Children’s Dreams",
+["① How to Save Your Energy as You Get Older",
+ "② Why Young People Learn New Skills Faster",
+ "③ Getting Older: Better at Controlling Emotions",
+ "④ A Psychologist Who Studies Children’s Dreams",
  "⑤ The Best Foods for a Healthy Brain"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
@@ -111,8 +113,8 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) This가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① thinking more before we act",
- "② reacting to things very quickly",
+["① reacting to things very quickly",
+ "② thinking more before we act",
  "③ forgetting things more often",
  "④ having less energy than before",
  "⑤ making new social connections"].forEach(c => K.push(ch(c)));
@@ -401,11 +403,11 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 연구 결과를 근거로 사실을 알려 주는 설명문",
- "② 물건을 팔기 위해 만든 광고",
- "③ 하루 일과를 적은 일기",
- "④ 안부를 전하는 편지",
- "⑤ 상상으로 지어낸 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
+["① 물건을 팔기 위해 만든 광고",
+ "② 하루 일과를 적은 일기",
+ "③ 안부를 전하는 편지",
+ "④ 상상으로 지어낸 동화",
+ "⑤ 연구 결과를 근거로 사실을 알려 주는 설명문"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
 K.push(brk());
@@ -455,7 +457,7 @@ K.push(p([t("조건 ", { size: 16, bold: true, color: GOLD }),
   t("덩어리의 순서를 괄호에 쓰세요. 덩어리 안의 단어는 바꾸지 않습니다.", { size: 16, color: SUB })], { after: 100, line: 250 }));
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("보기   ", { size: 16, bold: true, color: NAVY2 }),
-     t("ⓐ are better at controlling     ⓑ older people     ⓒ their emotions     ⓓ and focus on positive things.", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
+     t("ⓐ are better at controlling     ⓑ their emotions     ⓒ and focus on positive things.     ⓓ older people", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
   { w: W, shade: COOL, b: { top: bd(4, CLINE), bottom: bd(4, CLINE), left: NOB, right: NOB }, m: { top: 150 + Math.round((FT(6) || 0) * 0.02), bottom: 150 + Math.round((FT(6) || 0) * 0.02), left: 180, right: 180 } })] })]));
 K.push(spF(6, 200, 0.05));
 K.push(p([t("순서   ", { size: 17, bold: true, color: NAVY2 }),
@@ -508,15 +510,15 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 3, main: "have less energy",
-    opts: ["① feel more tired than before", "② feel full of power", "③ sleep for eight hours"] },
+    opts: ["① feel full of power", "② sleep for eight hours", "③ feel more tired than before"] },
   { sn: 6, main: "fewer but more satisfying connections",
     opts: ["① many friends who make them tired", "② not many friends, but better ones", "③ friends who live far away"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 7, main: "get less upset over negative experiences",
-    opts: ["① become angry more easily", "② are not so bothered by bad things", "③ never remember anything"] },
+    opts: ["① are not so bothered by bad things", "② become angry more easily", "③ never remember anything"] },
   { sn: 12, main: "pursue a more positive attitude",
-    opts: ["① try to think more positively", "② give up hope about getting older", "③ move to a warmer country"] });
+    opts: ["① give up hope about getting older", "② move to a warmer country", "③ try to think more positively"] });
 K.push(spF(7, 150, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -571,15 +573,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "When we are young, our skills improve with age and experience.",
-    "Older people are better at controlling their emotions.",
     "Susan Turk Charles has been studying emotions for the past 50 years.",
-    "Older people tend to have more social connections than young people.",
-    "Older people get less upset over negative experiences.",
+    "Older people are better at controlling their emotions.",
     "As we get older, our brain makes us act before we think.",
     "Older people usually focus on positive things.",
     "These findings might make people afraid of getting older.",
-  ].map((s, i) => new TableRow({ children: [
+    "When we are young, our skills improve with age and experience.",
+    "Older people get less upset over negative experiences.",
+    "Older people tend to have more social connections than young people."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -595,8 +596,8 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "나이가 들면서
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Our brain makes us think more before we act.",
-      "ⓑ We get older year by year.",
-      "ⓒ We stay calm and control our emotions better.",
+      "ⓑ We stay calm and control our emotions better.",
+      "ⓒ We get older year by year.",
       "ⓓ We pursue a more positive attitude toward getting older."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -640,7 +641,7 @@ K.push(sp(130));
 [["문장 1", [t("When we are young, our skills ", { size: 19 }), t("( improve  /  improves )", { size: 19, bold: true, color: NAVY }), t(" with age.", { size: 19 })], "주어 our skills는 복수 — 동사 형태는?"],
  ["문장 4", [t("Older people are better at ", { size: 19 }), t("( controlling  /  control )", { size: 19, bold: true, color: NAVY }), t(" their emotions.", { size: 19 })], "전치사 at 뒤에는 동명사(-ing)!"],
  ["문장 7", [t("They also ", { size: 19 }), t("( get  /  gets )", { size: 19, bold: true, color: NAVY }), t(" less upset over negative experiences.", { size: 19 })], "주어 They(복수)에 맞는 동사 형태는?"],
- ["문장 10", [t("This ", { size: 19 }), t("( helps  /  help )", { size: 19, bold: true, color: NAVY }), t(" us to stay calm.", { size: 19 })], "주어 This는 3인칭 단수 — -s를 잊지 마세요."],
+ ["문장 10", [t("This ", { size: 19 }), t("( help  /  helps )", { size: 19, bold: true, color: NAVY }), t(" us to stay calm.", { size: 19 })], "주어 This는 3인칭 단수 — -s를 잊지 마세요."],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
     cel(new Paragraph({ children: [t("(" + (i + 1) + ")", { size: 16, bold: true, color: "FFFFFF" })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 210 } }),
@@ -735,24 +736,24 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 그녀는 동물을 그리는 것을 잘한다  (2) 음악은 내가 방과 후에 긴장을 푸는 것을 돕는다  (3) 이 앱은 우리가 영어를 배우는 데 집중하도록 돕는다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 older · emotions · positive        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 · 때 · 대신 · 덧붙임   2-2 [B] 예외 · [E] 마무리   2-3 ①", { size: 19, bold: true })], { after: 25 }),
-  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (a) → (c) → (d)  ·  Older people are better at controlling their emotions and focus on positive things.", { size: 19, bold: true })], { after: 25 }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 · 때 · 대신 · 덧붙임   2-2 [B] 예외 · [E] 마무리   2-3 ⑤", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (d) → (a) → (b) → (c)  ·  Older people are better at controlling their emotions and focus on positive things.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) emotions  (2) calm  (3) positive  (4) emotional        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 3 ①  문장 6 ②  문장 7 ②  문장 12 ①", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 3 ③  문장 6 ②  문장 7 ①  문장 12 ③", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2T · 3F · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (c) → (d)", { size: 19, bold: true })], { after: 25 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 T · 5 F · 6 T · 7 T · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (b) → (d)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(c) · 2(f) · 3(e) · 4(a) · 5(b) · 6(d)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) improve  (2) controlling  (3) get  (4) helps", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) improve (2) exception (3) emotions (4) psychologist (5) upset (6) calm (7) positive (8) attitude", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) This helps us to stay calm.  (2) Also, older people usually focus on positive things.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 나이가 들면 여러 능력이 떨어지지만(문장 1–3) 감정 조절만은 오히려 좋아진다(문장 4·11)는 예외를 다룬다. 소재(나이 듦)와 특징(감정 조절)을 함께 담은 ①이 제목으로 적절하다. ②·③는 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 나이가 들면 여러 능력이 떨어지지만(문장 1–3) 감정 조절만은 오히려 좋아진다(문장 4·11)는 예외를 다룬다. 소재(나이 듦)와 특징(감정 조절)을 함께 담은 ③이 제목으로 적절하다. ①·②는 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ③");
 B("문장 6에서 관계가 '더 적지만 더 만족스럽다(fewer but more satisfying)'고 했으므로, 더 많다는 ③는 본문과 반대된다. ①은 문장 1, ②은 문장 5, ④은 문장 7, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) This는 바로 앞 문장 9의 내용, 곧 '행동하기 전에 더 생각하게 되는 것'을 가리킨다. 지시어 this는 단어 하나만이 아니라 앞 문장 전체를 받을 수도 있다.", true);
 Hs("독해 04   배열 영작   ·   They also get less upset over negative experiences.");
 B("문장 7을 그대로 복원하는 문제다. ① 첫 글자는 대문자 They.   ② also는 일반동사 get 앞.   ③ get less upset over ~ — '~에 대해 덜 속상해하다'.", true);
@@ -765,32 +766,32 @@ B("[학습 포인트]   this·these는 앞 문장 전체를 통째로 받을 수
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 반전 / 때 / 대신 / 덧붙임     2-2 [B] 예외 · [E] 마무리     2-3 ①");
+Hs("STEP 2   글의 흐름   ·   2-1 반전 / 때 / 대신 / 덧붙임     2-2 [B] 예외 · [E] 마무리     2-3 ⑤");
 B("2-1   문장 2 But — 젊을 때와 달라진다는 '반전'.   문장 9 As — 나이가 들어가는 '때'.   문장 9 instead of — 빨리 반응하는 '대신'에.   문장 11 Also — 앞의 이유에 하나를 더 '덧붙임'.");
 B("2-2   [B] 예외(문장 4: 감정 조절만은 예외다), [E] 마무리(문장 12: 나이 듦을 긍정적으로 보자). 보기의 '반박'은 이 글에 없는 역할이다. [A] 도입 → [B] 예외 → [C] 연구 → [D] 이유 → [E] 마무리 — 설명문의 전형적인 흐름이다.");
-B("2-3   정답 ①. 심리학자의 연구 결과를 근거로 사실을 알려 주는 설명문이다. ②은 가격·명령문이 없어 광고가 아니고, ③는 I·Today가 없어 일기가 아니며, ④은 Dear·안부가 없고, ⑤는 등장인물과 사건이 없다.");
+B("2-3   정답 ⑤. 심리학자의 연구 결과를 근거로 사실을 알려 주는 설명문이다. ①은 가격·명령문이 없어 광고가 아니고, ②는 I·Today가 없어 일기가 아니며, ③은 Dear·안부가 없고, ④는 등장인물과 사건이 없다.");
 B("[학습 포인트]   But·However가 나오면 그 뒤가 글쓴이가 진짜 하고 싶은 말이다. 문장 4의 However가 이 글 전체의 방향을 바꾼다.", true);
-Hs("STEP 3   주제문 만들기   ·   3-1 controlling · positive     3-3 (b) → (a) → (c) → (d)");
+Hs("STEP 3   주제문 만들기   ·   3-1 controlling · positive     3-3 (d) → (a) → (b) → (c)");
 B("3-1  재료 찾기 — (2) 문장 4에서 controlling에 ○: better at 뒤에는 동명사가 온다. forgetting은 문장 3의 '나빠지는 것'이라 반대다. (3) 문장 11에서 positive에 ○: 나이 든 사람들이 집중하는 방향이다. negative는 문장 7의 대상일 뿐이다.");
 B("3-2  뼈대 채우기 — (1) older people  (2) controlling  (3) positive.  넣으면 Older people are better at controlling their emotions and focus on positive things.가 완성된다.");
-B("3-3  정답 순서 — ⓑ older people → ⓐ are better at controlling → ⓒ their emotions → ⓓ and focus on positive things.");
-B("[채점 포인트]  주인공(ⓑ)이 맨 앞, 마침표가 붙은 덩어리(ⓓ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
+B("3-3  정답 순서 — ⓓ older people → ⓐ are better at controlling → ⓑ their emotions → ⓒ and focus on positive things.");
+B("[채점 포인트]  주인공(ⓓ)이 맨 앞, 마침표가 붙은 덩어리(ⓒ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) emotions  (2) calm  (3) positive  (4) emotional");
 B("(1)은 문장 4의 emotions, (2)는 문장 10의 calm, (3)은 문장 11의 positive, (4)는 문장 6의 emotional well-being에서 가져온다. 요약문이 곧 이 글의 흐름이다: 예외(1) → 이유(2) → 방향(3) → 결과(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 3 ①   문장 6 ②   문장 7 ②   문장 12 ①  (정답 선지는 무표시)");
-B("문장 3 have less energy   ① ○ 전보다 더 피곤하다.   ② ✕ [반대] 힘이 넘친다 — 정반대.   ③ ✕ [무관] 여덟 시간 잔다는 말은 지문에 없다.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 3 ③   문장 6 ②   문장 7 ①   문장 12 ③  (정답 선지는 무표시)");
+B("문장 3 have less energy   ③ ○ 전보다 더 피곤하다.   ① ✕ [반대] 힘이 넘친다 — 정반대.   ② ✕ [무관] 여덟 시간 잔다는 말은 지문에 없다.");
 B("문장 6 fewer but more satisfying connections   ① ✕ [반대] 친구가 많아 지치게 한다 — 방향이 반대.   ② ○ 친구는 많지 않지만 더 좋은 관계다.   ③ ✕ [무관] 멀리 사는 친구 이야기는 지문에 없다.");
-B("문장 7 get less upset over negative experiences   ① ✕ [반대] 더 쉽게 화를 낸다 — 정반대.   ② ○ 나쁜 일에 그다지 흔들리지 않는다.   ③ ✕ [무관] 아무것도 기억하지 못한다는 말은 지문에 없다.");
-B("문장 12 pursue a more positive attitude   ① ○ 더 긍정적으로 생각하려 애쓰다.   ② ✕ [반대] 희망을 포기한다 — 정반대.   ③ ✕ [무관] 따뜻한 나라로 이사한다는 말은 지문에 없다.");
+B("문장 7 get less upset over negative experiences   ② ✕ [반대] 더 쉽게 화를 낸다 — 정반대.   ① ○ 나쁜 일에 그다지 흔들리지 않는다.   ③ ✕ [무관] 아무것도 기억하지 못한다는 말은 지문에 없다.");
+B("문장 12 pursue a more positive attitude   ③ ○ 더 긍정적으로 생각하려 애쓰다.   ① ✕ [반대] 희망을 포기한다 — 정반대.   ② ✕ [무관] 따뜻한 나라로 이사한다는 말은 지문에 없다.");
 B("[학습 포인트]  시험은 본문 표현을 반드시 바꿔서 묻는다. 지문을 읽을 때마다 '이 표현을 다른 말로 하면?'을 스스로 물어보자.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 T · 3 F · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 1.   2 T — 문장 4.   3 F — 문장 5: 50년이 아니라 20년(the past 20 years)이다.   4 F — 문장 6: 더 많은 게 아니라 더 적은(fewer) 관계다.   5 T — 문장 7.   6 F — 문장 9: 생각 전에 행동하는 게 아니라 행동 전에 더 생각한다.   7 T — 문장 11.   8 F — 문장 12: 두렵게 하는 게 아니라 긍정적인 태도를 갖게 한다(inspire).  거짓 문장은 모두 딱 한 요소(50, more, act before we think, afraid)를 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (a) → (c) → (d)");
-B("ⓑ 나이가 든다(문장 9) → ⓐ 뇌가 행동 전에 더 생각하게 만든다(문장 9) → ⓒ 침착해지고 감정을 더 잘 조절한다(문장 4·10) → ⓓ 나이 듦에 더 긍정적인 태도를 갖는다(문장 12). 본문은 결과(문장 4)를 먼저 말하고 원인(문장 9)을 나중에 설명한다 — 서술 순서와 실제 순서가 다른 지점이다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 F · 4 T · 5 F · 6 T · 7 T · 8 F");
+   B("1 F — 문장 5: 50년이 아니라 20년(the past 20 years)이다.   2 T — 문장 4.   3 F — 문장 9: 생각 전에 행동하는 게 아니라 행동 전에 더 생각한다.   4 T — 문장 11.   5 F — 문장 12: 두렵게 하는 게 아니라 긍정적인 태도를 갖게 한다(inspire).  거짓 문장은 모두 딱 한 요소(50, more, act before we think, afraid)를 비튼 것이다.   6 T — 문장 1.   7 T — 문장 7.   8 F — 문장 6: 더 많은 게 아니라 더 적은(fewer) 관계다.", true);
+Hs("R2   사건 순서   ·   (c) → (a) → (b) → (d)");
+B("ⓒ 나이가 든다(문장 9) → ⓐ 뇌가 행동 전에 더 생각하게 만든다(문장 9) → ⓑ 침착해지고 감정을 더 잘 조절한다(문장 4·10) → ⓓ 나이 듦에 더 긍정적인 태도를 갖는다(문장 12). 본문은 결과(문장 4)를 먼저 말하고 원인(문장 9)을 나중에 설명한다 — 서술 순서와 실제 순서가 다른 지점이다.", true);
 Hs("R3   영영풀이   ·   1 (c) · 2 (f) · 3 (e) · 4 (a) · 5 (b) · 6 (d)");
 B("improve = 전보다 더 나아지다 · exception = 다른 것들과 같지 않은 것 · emotion = 기쁨이나 분노 같은 강한 감정 · upset = 속상하거나 걱정스러운 · calm = 조용하고 편안한 · attitude = 무엇에 대해 생각하거나 느끼는 방식.", true);
 Hs("R4   어법 기초   ·   (1) improve  (2) controlling  (3) get  (4) helps");

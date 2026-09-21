@@ -79,25 +79,27 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Careful with Lemons: They Can Burn Your Skin", "② The Best Lemonade Recipe for Summer",
- "③ How to Grow Lemon Trees at Home", "④ Cool Drinks for Hot Summer Days",
+["① The Best Lemonade Recipe for Summer",
+ "② How to Grow Lemon Trees at Home",
+ "③ Careful with Lemons: They Can Burn Your Skin",
+ "④ Cool Drinks for Hot Summer Days",
  "⑤ Why Towels Are Good for Cleaning"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Lemon juice can burn our skin in the sun.",
- "② After squeezing lemons, we should wash our hands well.",
- "③ A sunburn can never turn into a rash.",
+ "② A sunburn can never turn into a rash.",
+ "③ After squeezing lemons, we should wash our hands well.",
  "④ You can take care of a sunburn from lemon juice at home.",
  "⑤ A cool, wet towel helps your itchiness and pain."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) This가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① putting a cool, wet towel on your skin",
- "② drinking cold lemonade in the sun",
- "③ squeezing lemons for lemonade",
- "④ getting a sunburn from lemon juice",
- "⑤ washing your hands with hot water"].forEach(c => K.push(ch(c)));
+["① drinking cold lemonade in the sun",
+ "② squeezing lemons for lemonade",
+ "③ getting a sunburn from lemon juice",
+ "④ washing your hands with hot water",
+ "⑤ putting a cool, wet towel on your skin"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -144,7 +146,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -157,7 +159,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -194,7 +196,7 @@ K.push(spF(2, 85, 0.06));
  [6, "If we don’t and go out in the sun, we might get a sunburn!"],
  [7, "The sunburn can even turn into a rash if it’s really bad."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -270,7 +272,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 1800, 7500];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -317,7 +319,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -332,15 +334,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "When it’s really hot, we like to drink something cool like lemonade.",
-    "Lemon juice can burn our skin in the rain.",
+    "You should put a hot towel on your skin a few times a day.",
     "We squeeze lemons to make lemonade.",
+    "When it’s really hot, we like to drink something cool like lemonade.",
+    "You can wash the area with mild soap and water.",
+    "You must go to a hospital to take care of the sunburn.",
     "We should wash our hands before we squeeze lemons.",
     "A sunburn can turn into a rash if it’s really bad.",
-    "You must go to a hospital to take care of the sunburn.",
-    "You can wash the area with mild soap and water.",
-    "You should put a hot towel on your skin a few times a day.",
-  ].map((s, i) => new TableRow({ children: [
+    "Lemon juice can burn our skin in the rain."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -355,8 +356,8 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "레모네이드를 만들 때 일어나는 일 ⓐ~ⓓ를 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ You wash the area with mild soap and water.",
-      "ⓑ You squeeze lemons to make lemonade.",
+  ...["ⓐ You squeeze lemons to make lemonade.",
+      "ⓑ You wash the area with mild soap and water.",
       "ⓒ You go out in the sun and get a sunburn.",
       "ⓓ You put a cool, wet towel on your skin."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
@@ -398,15 +399,15 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 lemon · careful · skin   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (a) → (d)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 T · 5 F · 6 F · 7 T · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (b) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 레몬즙이 햇볕에서 피부를 태울 수 있다는 경고(문장 2–3·6)와 그 대처법(문장 9–12)을 알려 준다. 소재와 경고를 함께 담은 ①이 제목이다. ②·④는 지엽적, ③·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 7에서 화상이 심하면 발진으로 번질 수도 있다고 했다. 절대 그렇지 않다는 ③은 본문과 반대다. ①은 문장 3, ②는 문장 5, ④는 문장 9, ⑤는 문장 11–12에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 레몬즙이 햇볕에서 피부를 태울 수 있다는 경고(문장 2–3·6)와 그 대처법(문장 9–12)을 알려 준다. 소재와 경고를 함께 담은 ③이 제목이다. ①·④는 지엽적, ②·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 7에서 화상이 심하면 발진으로 번질 수도 있다고 했다. 절대 그렇지 않다는 ②은 본문과 반대다. ①은 문장 3, ③는 문장 5, ④는 문장 9, ⑤는 문장 11–12에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) This는 바로 앞 문장 11의 행동, 곧 차고 젖은 수건을 피부에 올리는 일을 가리킨다. This는 앞 문장 전체를 받을 수 있다.", true);
 Hs("독해 04   배열 영작   ·   We squeeze lemons to make lemonade.");
 B("문장 4를 그대로 복원한다. ㄱ 첫 글자는 대문자 We.   ㄴ '~하기 위해'는 to+동사원형 to make.   ㄷ 마지막은 lemonade.", true);
@@ -420,10 +421,10 @@ B("[학습 포인트]   This·it은 단어 하나만이 아니라 앞 문장의 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 1.   2 F — 문장 3: 비(rain)가 아니라 햇볕(sun)에서 탄다.   3 T — 문장 4.   4 F — 문장 5: 짜기 전(before)이 아니라 짠 뒤(after)에 씻는다.   5 T — 문장 7.   6 F — 문장 9: 병원이 아니라 집에서 돌볼 수 있다.   7 T — 문장 10.   8 F — 문장 11: 뜨거운(hot) 수건이 아니라 차고 젖은(cool, wet) 수건이다.", true);
-Hs("R2   사건 순서   ·   (b) → (c) → (a) → (d)");
-B("ⓑ 레모네이드를 만들려고 레몬을 짠다(문장 4) → ⓒ 손을 안 씻고 햇볕에 나가 화상을 입는다(문장 6) → ⓐ 순한 비누와 물로 그 부위를 씻는다(문장 10) → ⓓ 차고 젖은 수건을 얹는다(문장 11). 원인에서 대처로 이어지는 순서다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 T · 5 F · 6 F · 7 T · 8 F");
+   B("1 F — 문장 11: 뜨거운(hot) 수건이 아니라 차고 젖은(cool, wet) 수건이다.   2 T — 문장 4.   3 T — 문장 1.   4 T — 문장 10.   5 F — 문장 9: 병원이 아니라 집에서 돌볼 수 있다.   6 F — 문장 5: 짜기 전(before)이 아니라 짠 뒤(after)에 씻는다.   7 T — 문장 7.   8 F — 문장 3: 비(rain)가 아니라 햇볕(sun)에서 탄다.", true);
+Hs("R2   사건 순서   ·   (a) → (c) → (b) → (d)");
+B("ⓐ 레모네이드를 만들려고 레몬을 짠다(문장 4) → ⓒ 손을 안 씻고 햇볕에 나가 화상을 입는다(문장 6) → ⓑ 순한 비누와 물로 그 부위를 씻는다(문장 10) → ⓓ 차고 젖은 수건을 얹는다(문장 11). 원인에서 대처로 이어지는 순서다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

@@ -86,17 +86,17 @@ K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① In 16th century Europe, wealthy women wore masks to protect their skin.",
- "② Pale skin was a symbol of high status during this period.",
- "③ The first masks were made of white silk.",
+ "② The first masks were made of white silk.",
+ "③ Pale skin was a symbol of high status during this period.",
  "④ A vizard covered the whole face with small holes for the eyes.",
  "⑤ Masks allowed women to visit the market without a man."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) It이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① having pale skin",
- "② wearing a black velvet mask",
- "③ traveling on horseback",
- "④ working outside all day",
+["① wearing a black velvet mask",
+ "② traveling on horseback",
+ "③ working outside all day",
+ "④ having pale skin",
  "⑤ visiting the market alone"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -144,7 +144,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -157,7 +157,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -194,7 +194,7 @@ K.push(spF(2, 85, 0.06));
  [10, "Masks also allowed women to visit places like the market or church without a man."],
  [11, "Without a mask, a woman going out alone might have caused rumors."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -249,7 +249,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 벨벳으로 가면을 만드는 방법", "② 16세기 유럽 여성들이 쓴 가면", "③ 햇볕에서 피부를 지키는 화장품"].forEach(c =>
+["① 벨벳으로 가면을 만드는 방법",
+ "② 햇볕에서 피부를 지키는 화장품",
+ "③ 16세기 유럽 여성들이 쓴 가면"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -270,7 +272,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -317,7 +319,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -332,15 +334,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "People from various cultures have worn masks for different reasons.",
-    "In 16th century Europe, poor women wore masks to protect their skin.",
-    "Pale skin was a symbol of high status during this period.",
+    "Masks gave women less freedom than before.",
     "The first masks were made of white velvet.",
     "A vizard covered the whole face.",
-    "Women wore these masks while they were swimming.",
     "Masks allowed women to visit the market without a man.",
-    "Masks gave women less freedom than before.",
-  ].map((s, i) => new TableRow({ children: [
+    "Women wore these masks while they were swimming.",
+    "People from various cultures have worn masks for different reasons.",
+    "In 16th century Europe, poor women wore masks to protect their skin.",
+    "Pale skin was a symbol of high status during this period."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -356,9 +357,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "가면 유행에 �
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Stylish women in London and Paris started wearing masks.",
-      "ⓑ Pale skin became a symbol of high status.",
-      "ⓒ A mask called a vizard covered the whole face.",
-      "ⓓ Women could visit the market or church without a man."]
+      "ⓑ A mask called a vizard covered the whole face.",
+      "ⓒ Women could visit the market or church without a man.",
+      "ⓓ Pale skin became a symbol of high status."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -396,22 +397,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("a woman(S)·might have caused(△V)·Without a mask(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 책을 읽는 것은 내가 가장 좋아하는 취미다  (2) 이 상자는 오래된 나무로 만들어졌다  (3) 헬멧을 쓰는 것은 중요한데, 그것이 튼튼한 플라스틱으로 만들어졌기 때문이다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 masks · women · freedom   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 masks · women · freedom   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (c) → (d)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 T · 5 F · 6 T · 7 F · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ①");
 B("이 글은 16세기 유럽 여성들이 왜 가면을 썼는지(문장 3–4), 어떤 가면이었는지(문장 7–8), 그리고 가면이 무엇을 주었는지(문장 10–12)를 설명한다. 대상과 이유를 함께 담은 ①이 제목으로 적절하다. ③·⑤는 지엽적, ②·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 7에서 최초의 가면은 검은 벨벳(black velvet)으로 만들어졌다고 했다. 흰 비단이라고 바꾼 ③이 본문과 어긋난다. ①은 문장 3, ②는 문장 4, ④는 문장 8, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 7에서 최초의 가면은 검은 벨벳(black velvet)으로 만들어졌다고 했다. 흰 비단이라고 바꾼 ②이 본문과 어긋난다. ①은 문장 3, ③는 문장 4, ④는 문장 8, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) It은 바로 앞 문장 4의 having pale skin, 곧 '창백한 피부를 가진 것'을 가리킨다. 무엇이 바깥에서 일하지 않음을 보여 주었는지 생각하면 된다.", true);
 Hs("독해 04   배열 영작   ·   In London and Paris, stylish women started wearing masks.");
 B("문장 6을 그대로 복원하는 문제다. ① 첫 글자는 대문자 In.   ② Paris 뒤의 콤마를 빠뜨리지 않는다.   ③ start 뒤에는 wearing(~ing)이 온다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 masks · women · freedom     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 16세기 유럽 여성들이 쓴 가면과 그 의미를 소개한다. ① 가면 만드는 방법은 나오지 않고, ③ 피부 보호는 가면을 쓴 여러 이유 중 하나일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 masks · women · freedom     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 16세기 유럽 여성들이 쓴 가면과 그 의미를 소개한다. ① 가면 만드는 방법은 나오지 않고, ② 피부 보호는 가면을 쓴 여러 이유 중 하나일 뿐이다.");
 B("1-2   ○표 할 세 단어: masks(힌트① 주인공) · women(힌트② 쓴 사람들) · freedom(힌트③ 그들이 얻은 것). 나머지 셋(velvet · skin · horseback)은 재료와 상황일 뿐 주제문에는 들어가지 않는다.");
 B("1-3   문장 5 — It은 창백한 피부를 가진 것에 ○ (문장 4의 내용).   문장 9 — these masks는 벨벳 가면과 바이저드에 ○.   문장 12 — them은 여성들에 ○.");
 B("[학습 포인트]   문장 5의 It은 단어 하나가 아니라 앞 문장의 내용 전체를 받는다. 지시어를 만나면 '앞 문장 어디까지가 그것인가'를 먼저 묶어 보자.", true);
@@ -420,10 +421,10 @@ B("[학습 포인트]   문장 5의 It은 단어 하나가 아니라 앞 문장�
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 1.   2 F — 문장 3: 가난한 여성이 아니라 부유한(wealthy) 여성이다.   3 T — 문장 4.   4 F — 문장 7: 흰 벨벳이 아니라 검은(black) 벨벳이다.   5 T — 문장 8.   6 F — 문장 9: 수영할 때가 아니라 말을 타고 이동할 때다.   7 T — 문장 10.   8 F — 문장 12: 더 적은 게 아니라 더 많은(more) 자유를 주었다.  거짓 문장은 모두 한 요소만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (a) → (c) → (d)");
-B("ⓑ 창백한 피부가 높은 신분의 상징이 된다(문장 4) → ⓐ 런던과 파리의 멋쟁이 여성들이 가면을 쓰기 시작한다(문장 6) → ⓒ 얼굴 전체를 가리는 바이저드가 등장한다(문장 8) → ⓓ 여성들이 남자 없이 시장과 교회에 간다(문장 10). 유행의 이유가 먼저, 결과가 나중이다.", true);
+Hs("R1   True / False   ·   1 F · 2 F · 3 T · 4 T · 5 F · 6 T · 7 F · 8 T");
+   B("1 F — 문장 12: 더 적은 게 아니라 더 많은(more) 자유를 주었다.  거짓 문장은 모두 한 요소만 비튼 것이다.   2 F — 문장 7: 흰 벨벳이 아니라 검은(black) 벨벳이다.   3 T — 문장 8.   4 T — 문장 10.   5 F — 문장 9: 수영할 때가 아니라 말을 타고 이동할 때다.   6 T — 문장 1.   7 F — 문장 3: 가난한 여성이 아니라 부유한(wealthy) 여성이다.   8 T — 문장 4.", true);
+Hs("R2   사건 순서   ·   (d) → (a) → (b) → (c)");
+B("ⓓ 창백한 피부가 높은 신분의 상징이 된다(문장 4) → ⓐ 런던과 파리의 멋쟁이 여성들이 가면을 쓰기 시작한다(문장 6) → ⓑ 얼굴 전체를 가리는 바이저드가 등장한다(문장 8) → ⓒ 여성들이 남자 없이 시장과 교회에 간다(문장 10). 유행의 이유가 먼저, 결과가 나중이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

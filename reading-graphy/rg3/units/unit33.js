@@ -87,15 +87,15 @@ K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?")
 K.push(sp(65));
 ["① Before 1927, movie theaters were places for high-class customers.",
  "② The theater owners didn’t like the noise of people eating popcorn.",
- "③ During the Great Depression, many people lost their jobs.",
- "④ At that time, going to a movie was more expensive than other activities.",
+ "③ At that time, going to a movie was more expensive than other activities.",
+ "④ During the Great Depression, many people lost their jobs.",
  "⑤ Owners allowed the sale of popcorn in the lobby of their theaters."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) they가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the theater owners",
- "② the moviegoers who ate popcorn",
- "③ the high-class customers",
+["① the moviegoers who ate popcorn",
+ "② the high-class customers",
+ "③ the theater owners",
  "④ the workers who lost their jobs",
  "⑤ the popcorn sellers in the lobby"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -332,15 +332,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Before 1927, movie theaters were luxurious places for high-class customers.",
     "The theater owners wanted people to make noise at the movies.",
-    "During the Great Depression, many people lost their jobs.",
-    "At that time, going to a movie was more expensive than other activities.",
     "Movie theaters became popular places.",
     "Owners started selling popcorn outside their theaters.",
-    "Today popcorn is a big part of making money for most theaters.",
+    "Before 1927, movie theaters were luxurious places for high-class customers.",
     "Popcorn was always allowed in American movie theaters.",
-  ].map((s, i) => new TableRow({ children: [
+    "At that time, going to a movie was more expensive than other activities.",
+    "Today popcorn is a big part of making money for most theaters.",
+    "During the Great Depression, many people lost their jobs."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -356,9 +355,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "극장과 팝콘에
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Owners finally started selling popcorn in the lobby.",
-      "ⓑ Movie theaters were only for high-class customers.",
-      "ⓒ The Great Depression made many people lose their jobs.",
-      "ⓓ Cheap movie tickets made theaters popular places."]
+      "ⓑ The Great Depression made many people lose their jobs.",
+      "ⓒ Cheap movie tickets made theaters popular places.",
+      "ⓓ Movie theaters were only for high-class customers."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -398,15 +397,15 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 popcorn · theaters · money   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (d) → (a)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 T · 5 F · 6 F · 7 T · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (c) → (a)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ①");
 B("이 글은 팝콘이 극장에서 금지되던 시절(문장 1–4)과 대공황을 거치며 극장의 대표 간식이 된 과정(문장 5–12)을 설명한다. 소재와 변화를 함께 담은 ①이 적절하다. ④·⑤는 지엽적 오답, ②·③은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 7에서 영화를 보러 가는 것은 다른 활동보다 더 쌌다(cheaper). 더 비쌌다고 한 ④가 본문과 반대된다. ①은 문장 2, ②는 문장 3, ③은 문장 5, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 7에서 영화를 보러 가는 것은 다른 활동보다 더 쌌다(cheaper). 더 비쌌다고 한 ③가 본문과 반대된다. ①은 문장 2, ②는 문장 3, ④은 문장 5, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) they는 바로 앞 문장 3의 The theater owners를 가리킨다. 자기 극장(their theaters) 안에 팝콘을 들일지 망설인 주체가 누구인지 생각하면 된다.", true);
 Hs("독해 04   배열 영작   ·   As a result, movie theaters became popular places!");
 B("문장 8을 그대로 복원한다. ① 첫 글자는 대문자 As — result 뒤에 콤마.   ② As a result는 '그 결과'라는 한 덩어리.   ③ 느낌표까지 붙여 쓴다.", true);
@@ -420,10 +419,10 @@ B("[학습 포인트]   문장 3의 they와 문장 4의 they는 바로 이웃한
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 2.   2 F — 문장 3: 원했던(wanted) 것이 아니라 원치 않았다(didn’t want).   3 T — 문장 5.   4 F — 문장 7: 더 비싼(more expensive) 것이 아니라 더 쌌다(cheaper).   5 T — 문장 8.   6 F — 문장 10: 극장 밖(outside)이 아니라 로비(in the lobby)에서 팔았다.   7 T — 문장 11.   8 F — 문장 1: 언제나(always) 허용된 것이 아니라 늘 허용되지는 않았다.  거짓 문장은 모두 딱 한 요소(wanted, more expensive, outside, always)를 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (c) → (d) → (a)");
-B("ⓑ 극장이 상류층만의 고급 장소였다(문장 2) → ⓒ 대공황으로 많은 사람이 일자리를 잃는다(문장 5) → ⓓ 값싼 영화표 덕분에 극장이 인기 장소가 된다(문장 7–8) → ⓐ 주인들이 마침내 로비에서 팝콘을 팔기 시작한다(문장 9–10). 이 글은 시간 순서 그대로 서술되어 있으므로, 문장 번호를 따라가면 순서가 보인다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 F · 4 T · 5 F · 6 F · 7 T · 8 T");
+   B("1 F — 문장 3: 원했던(wanted) 것이 아니라 원치 않았다(didn’t want).   2 T — 문장 8.   3 F — 문장 10: 극장 밖(outside)이 아니라 로비(in the lobby)에서 팔았다.   4 T — 문장 2.   5 F — 문장 1: 언제나(always) 허용된 것이 아니라 늘 허용되지는 않았다.  거짓 문장은 모두 딱 한 요소(wanted, more expensive, outside, always)를 비튼 것이다.   6 F — 문장 7: 더 비싼(more expensive) 것이 아니라 더 쌌다(cheaper).   7 T — 문장 11.   8 T — 문장 5.", true);
+Hs("R2   사건 순서   ·   (d) → (b) → (c) → (a)");
+B("ⓓ 극장이 상류층만의 고급 장소였다(문장 2) → ⓑ 대공황으로 많은 사람이 일자리를 잃는다(문장 5) → ⓒ 값싼 영화표 덕분에 극장이 인기 장소가 된다(문장 7–8) → ⓐ 주인들이 마침내 로비에서 팝콘을 팔기 시작한다(문장 9–10). 이 글은 시간 순서 그대로 서술되어 있으므로, 문장 번호를 따라가면 순서가 보인다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

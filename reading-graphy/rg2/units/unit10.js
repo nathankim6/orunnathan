@@ -98,8 +98,10 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① An App That Becomes the Eyes of Blind People", "② How to Make Video Calls with Friends",
- "③ The Long History of Artificial Intelligence", "④ A Man Who Lost His Sight at 13",
+["① How to Make Video Calls with Friends",
+ "② An App That Becomes the Eyes of Blind People",
+ "③ The Long History of Artificial Intelligence",
+ "④ A Man Who Lost His Sight at 13",
  "⑤ Easy Jobs for Millions of Volunteers"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
@@ -112,11 +114,11 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) They가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the volunteers of the app",
- "② Brian and his family",
- "③ people who cannot see",
- "④ the product labels and mail",
- "⑤ the app’s new functions"].forEach(c => K.push(ch(c)));
+["① Brian and his family",
+ "② people who cannot see",
+ "③ the product labels and mail",
+ "④ the app’s new functions",
+ "⑤ the volunteers of the app"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -175,7 +177,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -189,7 +191,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -225,7 +227,7 @@ K.push(spF(2, 85, 0.06));
  [6, "It has more than 6 million volunteers all over the world."],
  [7, "These volunteers describe things Brian can’t see."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -304,7 +306,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 1950, 7350];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -406,10 +408,10 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 새로운 앱과 그 쓰임을 알려 주는 설명문",
- "② 물건을 팔기 위해 만든 광고",
- "③ 하루 있었던 일을 적은 일기",
- "④ 친구에게 안부를 전하는 편지",
+["① 물건을 팔기 위해 만든 광고",
+ "② 하루 있었던 일을 적은 일기",
+ "③ 친구에게 안부를 전하는 편지",
+ "④ 새로운 앱과 그 쓰임을 알려 주는 설명문",
  "⑤ 상상으로 지어낸 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
@@ -460,7 +462,7 @@ K.push(p([t("조건 ", { size: 16, bold: true, color: GOLD }),
   t("덩어리의 순서를 괄호에 쓰세요. 덩어리 안의 단어는 바꾸지 않습니다.", { size: 16, color: SUB })], { after: 100, line: 250 }));
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("보기   ", { size: 16, bold: true, color: NAVY2 }),
-     t("ⓐ in Be My Eyes     ⓑ do more amazing things.     ⓒ Volunteers and AI     ⓓ help blind people", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
+     t("ⓐ in Be My Eyes     ⓑ Volunteers and AI     ⓒ do more amazing things.     ⓓ help blind people", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
   { w: W, shade: COOL, b: { top: bd(4, CLINE), bottom: bd(4, CLINE), left: NOB, right: NOB }, m: { top: 150 + Math.round((FT(6) || 0) * 0.02), bottom: 150 + Math.round((FT(6) || 0) * 0.02), left: 180, right: 180 } })] })]));
 K.push(spF(6, 200, 0.05));
 K.push(p([t("순서   ", { size: 17, bold: true, color: NAVY2 }),
@@ -513,15 +515,15 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 1, main: "is blind",
-    opts: ["① can see very well", "② cannot see", "③ works as a doctor"] },
+    opts: ["① can see very well", "② works as a doctor", "③ cannot see"] },
   { sn: 6, main: "more than 6 million volunteers",
-    opts: ["① over six million helpers", "② only a few helpers in one city", "③ six million dollars for the app"] });
+    opts: ["① only a few helpers in one city", "② over six million helpers", "③ six million dollars for the app"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 8, main: "guide him to a specific place",
-    opts: ["① show him the way to a certain place", "② leave him alone on the street", "③ drive him to school every day"] },
+    opts: ["① leave him alone on the street", "② show him the way to a certain place", "③ drive him to school every day"] },
   { sn: 11, main: "the volunteers are still important",
-    opts: ["① volunteers are no longer needed", "② volunteers get paid for their work", "③ volunteers still matter a lot"] });
+    opts: ["① volunteers are no longer needed", "② volunteers still matter a lot", "③ volunteers get paid for their work"] });
 K.push(spF(7, 150, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -576,15 +578,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Brian Fischler lost most of his sight when he was 13.",
-    "Brian can tell if it’s light or dark outside.",
     "The app connects Brian with people through text messages.",
-    "The app has more than 6 million volunteers all over the world.",
-    "These volunteers describe things Brian can’t see.",
     "The volunteers can only read product labels for Brian.",
+    "The app has more than 6 million volunteers all over the world.",
+    "Brian Fischler lost most of his sight when he was 13.",
     "The app is adding a new function called virtual reality.",
     "The volunteers are no longer important after the upgrade.",
-  ].map((s, i) => new TableRow({ children: [
+    "These volunteers describe things Brian can’t see.",
+    "Brian can tell if it’s light or dark outside."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -600,8 +601,8 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "브라이언과 앱
 K.push(sp(120));
 K.push(box([
   ...["ⓐ The app began to add artificial intelligence.",
-      "ⓑ Brian lost most of his sight at 13.",
-      "ⓒ Volunteers started to describe things for Brian.",
+      "ⓑ Volunteers started to describe things for Brian.",
+      "ⓒ Brian lost most of his sight at 13.",
       "ⓓ Brian could only tell light from dark."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -643,7 +644,7 @@ K.push(spF(9, 380, 0.12));
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
 [["문장 3", [t("Now, he ", { size: 19 }), t("( can only tell  /  can only tells )", { size: 19, bold: true, color: NAVY }), t(" if it’s light or dark outside.", { size: 19 })], "조동사 can 뒤에는 동사원형이 와요."],
- ["문장 4", [t("An app, “Be My Eyes,” ", { size: 19 }), t("( is  /  are )", { size: 19, bold: true, color: NAVY }), t(" helping him every day.", { size: 19 })], "주어 an app은 단수예요."],
+ ["문장 4", [t("An app, “Be My Eyes,” ", { size: 19 }), t("( are  /  is )", { size: 19, bold: true, color: NAVY }), t(" helping him every day.", { size: 19 })], "주어 an app은 단수예요."],
  ["문장 6", [t("It ", { size: 19 }), t("( has  /  have )", { size: 19, bold: true, color: NAVY }), t(" more than 6 million volunteers.", { size: 19 })], "주어 It에 맞는 3인칭 단수 형태는?"],
  ["문장 7", [t("These volunteers ", { size: 19 }), t("( describe  /  describes )", { size: 19, bold: true, color: NAVY }), t(" things Brian can’t see.", { size: 19 })], "주어 These volunteers(복수)에 맞는 형태는?"],
 ].forEach(([n, runs, hint], i) => {
@@ -740,24 +741,24 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 내 남동생은 지금 설거지를 하고 있다  (2) 이 가방은 저것보다 더 싸다  (3) 그녀는 오늘 친구들보다 더 빨리 달리고 있다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 volunteers · AI · blind        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 반전 · 나열 · 덧붙임   2-2 [B] 앱 등장 · [E] 기대   2-3 ①", { size: 19, bold: true })], { after: 25 }),
-  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (c) → (a) → (d) → (b)  ·  Volunteers and AI in Be My Eyes help blind people do more amazing things.", { size: 19, bold: true })], { after: 25 }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 반전 · 나열 · 덧붙임   2-2 [B] 앱 등장 · [E] 기대   2-3 ④", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (a) → (d) → (c)  ·  Volunteers and AI in Be My Eyes help blind people do more amazing things.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) blind  (2) volunteers  (3) AI  (4) lives        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 1 ②  문장 6 ①  문장 8 ①  문장 11 ③", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 1 ③  문장 6 ②  문장 8 ②  문장 11 ②", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2T · 3F · 4T · 5T · 6F · 7F · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (c) → (a)", { size: 19, bold: true })], { after: 25 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 T · 5 F · 6 F · 7 T · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (d) → (b) → (a)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(e) · 2(c) · 3(a) · 4(f) · 5(b) · 6(d)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) can only tell  (2) is  (3) has  (4) describe", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) blind (2) sight (3) volunteers (4) describe (5) labels (6) upgrade (7) important (8) lives", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) These volunteers describe things Brian can’t see.  (2) It has more than 6 million volunteers all over the world.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 앞이 보이지 않는 브라이언(문장 1–3)에게 자원봉사자와 AI가 눈이 되어 주는 앱을 소개한다(문장 4–12). 소재(앱)와 특징(시각장애인의 눈)을 함께 담은 ①이 제목으로 적절하다. ④·⑤는 세부만 건드린 지엽적 오답, ②·③은 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ②");
+B("이 글은 앞이 보이지 않는 브라이언(문장 1–3)에게 자원봉사자와 AI가 눈이 되어 주는 앱을 소개한다(문장 4–12). 소재(앱)와 특징(시각장애인의 눈)을 함께 담은 ②이 제목으로 적절하다. ④·⑤는 세부만 건드린 지엽적 오답, ①·③은 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ③");
 B("문장 6에서 자원봉사자는 600만 명이 넘는다고 했다. 100만 명이 안 된다는 ③이 본문과 반대된다. ①은 문장 2, ②은 문장 5, ④은 문장 8, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) They는 바로 앞 문장 7의 These volunteers를 가리킨다. 같은 문장의 him은 브라이언이다 — 한 문장 안에서 주어와 목적어가 서로 다른 것을 가리키는 자리다.", true);
 Hs("독해 04   배열 영작   ·   He lost most of his sight when he was 13.");
 B("문장 2를 그대로 복원하는 문제다. ① 첫 글자는 대문자 He.   ② most of his sight — of가 두 덩어리를 잇는다.   ③ when 뒤에는 '주어+동사'(he was 13)가 온다.", true);
@@ -770,32 +771,32 @@ B("[학습 포인트]   문장 8처럼 한 문장 안에서 주어(They)와 목�
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 때 / 반전 / 나열 / 덧붙임     2-2 [B] 앱 등장 · [E] 기대     2-3 ①");
+Hs("STEP 2   글의 흐름   ·   2-1 때 / 반전 / 나열 / 덧붙임     2-2 [B] 앱 등장 · [E] 기대     2-3 ④");
 B("2-1   문장 2 when — 시력을 잃은 '때'를 알려 준다.   문장 4 However — 어둡던 이야기를 뒤집는 '반전'.   문장 8 or — 자원봉사자가 하는 일을 '나열'한다.   문장 12 and — 하나 더 '덧붙인다'.");
 B("2-2   [B] 앱 등장(문장 4: However와 함께 Be My Eyes가 나타난다), [E] 기대(문장 12: 삶이 나아지기를 바란다). 보기의 '가격 비교'는 이 글에 없는 역할이다. [A] 소개 → [B] 앱 등장 → [C] 쓰임 → [D] 변화 → [E] 기대 — 소개형 설명문의 전형적 흐름이다.");
-B("2-3   정답 ①. 앱의 정체와 쓰임, 새 기능을 사실 위주로 알려 주는 설명문이다. ② 가격·명령문이 없으니 광고가 아니고, ③ 날짜와 '나의 하루'가 없으니 일기도, ④ Dear·받는 사람이 없으니 편지도 아니다.");
+B("2-3   정답 ④. 앱의 정체와 쓰임, 새 기능을 사실 위주로 알려 주는 설명문이다. ① 가격·명령문이 없으니 광고가 아니고, ② 날짜와 '나의 하루'가 없으니 일기도, ③ Dear·받는 사람이 없으니 편지도 아니다.");
 B("[학습 포인트]   However와 But은 글의 방향을 바꾸는 신호다. 문장 4의 However 앞뒤를 비교하면 '보이지 않는 삶'에서 '앱과 함께하는 삶'으로 이야기가 넘어간 것이 한눈에 보인다.", true);
-Hs("STEP 3   주제문 만들기   ·   3-1 AI · amazing things     3-3 (c) → (a) → (d) → (b)");
+Hs("STEP 3   주제문 만들기   ·   3-1 AI · amazing things     3-3 (b) → (a) → (d) → (c)");
 B("3-1  재료 찾기 — (2) 문장 10에서 AI에 ○: 새로 더해지는 기능의 이름이다. video calls는 이미 있던 방식일 뿐. (3) 문장 12에서 amazing things에 ○: 시각장애인이 하게 될 일이다. product labels는 자원봉사자가 읽어 주는 예시다.");
 B("3-2  뼈대 채우기 — (1) Volunteers  (2) AI  (3) amazing things.  넣으면 Volunteers and AI in Be My Eyes help blind people do more amazing things.가 완성된다.");
-B("3-3  정답 순서 — ⓒ Volunteers and AI → ⓐ in Be My Eyes → ⓓ help blind people → ⓑ do more amazing things.");
-B("[채점 포인트]  주어 덩어리(ⓒ)가 맨 앞, 마침표가 붙은 덩어리(ⓑ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
+B("3-3  정답 순서 — ⓑ Volunteers and AI → ⓐ in Be My Eyes → ⓓ help blind people → ⓒ do more amazing things.");
+B("[채점 포인트]  주어 덩어리(ⓑ)가 맨 앞, 마침표가 붙은 덩어리(ⓒ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) blind  (2) volunteers  (3) AI  (4) lives");
 B("(1)은 문장 1의 blind, (2)는 문장 6의 volunteers, (3)은 문장 10의 AI, (4)는 문장 12의 lives에서 가져온다. 요약문이 곧 이 글의 흐름이다: 상황(1) → 도움(2) → 변화(3) → 기대(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 1 ②   문장 6 ①   문장 8 ①   문장 11 ③  (정답 선지는 무표시)");
-B("문장 1 is blind   ① ✕ [반대] 아주 잘 본다 — 정반대.   ② ○ 볼 수 없다.   ③ ✕ [무관] 의사로 일한다는 말은 지문에 없다.");
-B("문장 6 more than 6 million volunteers   ① ○ 600만 명이 넘는 조력자.   ② ✕ [반대] 한 도시에 몇 명뿐 — 정반대.   ③ ✕ [무관] 600만 달러라는 말은 지문에 없다.");
-B("문장 8 guide him to a specific place   ① ○ 어떤 장소로 가는 길을 알려 준다.   ② ✕ [반대] 길에 혼자 남겨 둔다 — 정반대.   ③ ✕ [무관] 매일 학교까지 태워 준다는 말은 지문에 없다.");
-B("문장 11 the volunteers are still important   ① ✕ [반대] 더는 필요 없다 — 정반대.   ② ✕ [무관] 보수를 받는다는 말은 지문에 없다.   ③ ○ 자원봉사자는 여전히 중요하다.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 1 ③   문장 6 ②   문장 8 ②   문장 11 ②  (정답 선지는 무표시)");
+B("문장 1 is blind   ① ✕ [반대] 아주 잘 본다 — 정반대.   ③ ○ 볼 수 없다.   ② ✕ [무관] 의사로 일한다는 말은 지문에 없다.");
+B("문장 6 more than 6 million volunteers   ② ○ 600만 명이 넘는 조력자.   ① ✕ [반대] 한 도시에 몇 명뿐 — 정반대.   ③ ✕ [무관] 600만 달러라는 말은 지문에 없다.");
+B("문장 8 guide him to a specific place   ② ○ 어떤 장소로 가는 길을 알려 준다.   ① ✕ [반대] 길에 혼자 남겨 둔다 — 정반대.   ③ ✕ [무관] 매일 학교까지 태워 준다는 말은 지문에 없다.");
+B("문장 11 the volunteers are still important   ① ✕ [반대] 더는 필요 없다 — 정반대.   ③ ✕ [무관] 보수를 받는다는 말은 지문에 없다.   ② ○ 자원봉사자는 여전히 중요하다.");
 B("[학습 포인트]  시험은 본문 표현을 그대로 쓰지 않고 반드시 바꿔서 묻는다. still(여전히) 하나가 ①과 ③의 운명을 가른다 — 작은 부사를 놓치지 말자.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 T · 3 F · 4 T · 5 T · 6 F · 7 F · 8 F");
-B("1 T — 문장 2.   2 T — 문장 3.   3 F — 문장 5: 문자 메시지가 아니라 영상 통화(video calls)로 연결한다.   4 T — 문장 6.   5 T — 문장 7.   6 F — 문장 8: 상표만이 아니라 우편물·사진 설명·길 안내까지 한다.   7 F — 문장 10: 가상현실이 아니라 인공지능(AI)이다.   8 F — 문장 11: 자원봉사자는 여전히(still) 중요하다.  거짓 문장은 모두 딱 한 요소(text messages, only, virtual reality, no longer)를 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (d) → (c) → (a)");
-B("ⓑ 13살에 시력을 대부분 잃는다(문장 2) → ⓓ 밝고 어두운 것만 구분하게 된다(문장 3) → ⓒ 자원봉사자들이 대신 설명해 주기 시작한다(문장 5–7) → ⓐ 앱이 AI를 더하기 시작한다(문장 10). 글은 현재(문장 1)로 시작해 과거(문장 2)로 돌아간다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
+Hs("R1   True / False   ·   1 F · 2 F · 3 T · 4 T · 5 F · 6 F · 7 T · 8 T");
+   B("1 F — 문장 5: 문자 메시지가 아니라 영상 통화(video calls)로 연결한다.   2 F — 문장 8: 상표만이 아니라 우편물·사진 설명·길 안내까지 한다.   3 T — 문장 6.   4 T — 문장 2.   5 F — 문장 10: 가상현실이 아니라 인공지능(AI)이다.   6 F — 문장 11: 자원봉사자는 여전히(still) 중요하다.  거짓 문장은 모두 딱 한 요소(text messages, only, virtual reality, no longer)를 비튼 것이다.   7 T — 문장 7.   8 T — 문장 3.", true);
+Hs("R2   사건 순서   ·   (c) → (d) → (b) → (a)");
+B("ⓒ 13살에 시력을 대부분 잃는다(문장 2) → ⓓ 밝고 어두운 것만 구분하게 된다(문장 3) → ⓑ 자원봉사자들이 대신 설명해 주기 시작한다(문장 5–7) → ⓐ 앱이 AI를 더하기 시작한다(문장 10). 글은 현재(문장 1)로 시작해 과거(문장 2)로 돌아간다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
 Hs("R3   영영풀이   ·   1 (e) · 2 (c) · 3 (a) · 4 (f) · 5 (b) · 6 (d)");
 B("blind = 볼 수 없는 · sight = 사물을 보는 힘(시력) · volunteer = 돈을 받지 않고 돕는 사람 · describe = 어떤 것이 어떠한지 말해 주다 · guide = 누군가에게 길을 알려 주다 · improve = 무언가를 더 좋게 만들다.", true);
 Hs("R4   어법 기초   ·   (1) can only tell  (2) is  (3) has  (4) describe");

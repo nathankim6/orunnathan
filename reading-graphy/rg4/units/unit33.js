@@ -85,15 +85,15 @@ K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① The ozone layer protects us from the sun’s harmful rays.",
- "② The ozone layer was destroyed by pollution.",
- "③ Countries around the world signed the Montreal Protocol in 1987.",
- "④ The ozone layer is expected to be as healthy as it was in 1980 by the year 2026.",
+ "② The ozone layer is expected to be as healthy as it was in 1980 by the year 2026.",
+ "③ The ozone layer was destroyed by pollution.",
+ "④ Countries around the world signed the Montreal Protocol in 1987.",
  "⑤ Healing the ozone hole has been saving two million people from skin cancer every year."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) It이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the Montreal Protocol",
- "② the ozone layer",
+["① the ozone layer",
+ "② the Montreal Protocol",
  "③ the new UN report",
  "④ the sun’s harmful rays",
  "⑤ the big hole over Antarctica"].forEach(c => K.push(ch(c)));
@@ -143,7 +143,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -156,7 +156,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -191,7 +191,7 @@ K.push(spF(2, 85, 0.06));
  [8, "It is expected to be as healthy as it was in 1980 by the year 2066."],
  [10, "Healing the ozone layer shows what’s possible when everyone works together to help our planet."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -246,7 +246,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 남극에서 살아가는 동물들", "② 회복되고 있는 오존층과 그 의미", "③ 피부암을 치료하는 새로운 약"].forEach(c =>
+["① 남극에서 살아가는 동물들",
+ "② 피부암을 치료하는 새로운 약",
+ "③ 회복되고 있는 오존층과 그 의미"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -258,7 +260,7 @@ K.push(T([1740,1740,1740,1740,1740,1740], [new TableRow({ children: KWCAND.map((
   new Paragraph({ children: [t(ko, { size: 14, color: SUB })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 190 } }),
 ], { w: 1740, shade: FIELD, va: VerticalAlign.CENTER, m: { top: 240, bottom: 240, left: 40, right: 40 },
     b: { top: bd(4, FLINE), bottom: bd(4, FLINE), left: bd(4, FLINE), right: bd(4, FLINE) } })) })]));
-K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 이 글의 주인공  ② 지금 일어나고 있는 일  ③ 과학자들의 평가 \u2014 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
+K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 이 글의 주인공  ② 지금 일어나고 있는 일  ③ 과학자들의 평가 — 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
 K.push(spF(4, 260, 0.30));
 
 K.push(p([t("1-3  ", { size: 18, bold: true, color: GOLD }), t("지시어 이해하기", { size: 19, bold: true }),
@@ -267,7 +269,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -314,7 +316,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -329,15 +331,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "The ozone layer is high above the Earth’s surface.",
-    "The ozone layer protects us from heavy rain.",
     "The ozone layer was destroyed by pollution.",
+    "Healing the ozone hole has been saving two hundred people from skin cancer every year.",
+    "The ozone layer protects us from heavy rain.",
+    "The Montreal Protocol includes starting the use of harmful chemicals.",
+    "The ozone layer is high above the Earth’s surface.",
     "The big hole over Antarctica will fully recover in about 5 years.",
     "Countries around the world signed the Montreal Protocol in 1987.",
-    "The Montreal Protocol includes starting the use of harmful chemicals.",
-    "Scientists say the agreement is one of the biggest environmental victories.",
-    "Healing the ozone hole has been saving two hundred people from skin cancer every year.",
-  ].map((s, i) => new TableRow({ children: [
+    "Scientists say the agreement is one of the biggest environmental victories."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -352,8 +353,8 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "오존층에 일어난 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ The ozone layer was destroyed by pollution.",
-      "ⓑ The ozone layer will be as healthy as it was in 1980.",
+  ...["ⓐ The ozone layer will be as healthy as it was in 1980.",
+      "ⓑ The ozone layer was destroyed by pollution.",
       "ⓒ Countries around the world signed the Montreal Protocol.",
       "ⓓ The ozone layer started healing slowly."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
@@ -393,34 +394,34 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문10 ", { size: 17, bold: true, color: NAVY2 }), t("Healing the ozone layer(S)·shows(△V)·when[네모]·everyone(S′)·works(△V′)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 그 창문은 강한 바람에 깨졌다  (2) 책을 읽는 것은 우리를 더 똑똑하게 만든다  (3) 물 절약은 작년에 우리 학교에 의해 시작되었다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 ozone · healing · victory   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 ozone · healing · victory   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (d) → (b)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 F · 4 F · 5 T · 6 F · 7 T · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (d) → (a)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ①");
 B("이 글은 오염으로 파괴됐던 오존층이 회복 중이라는 사실(문장 3–4)과 그것이 인류의 큰 환경 승리라는 평가(문장 9–10)를 전한다. 소재와 평가를 함께 담은 ①이 적절하다. ③·④는 지엽적, ②·⑤는 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 8에서 1980년 수준으로 돌아가는 시점은 2026년이 아니라 2066년이다. ①은 문장 2, ②는 문장 3, ③은 문장 5, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 8에서 1980년 수준으로 돌아가는 시점은 2026년이 아니라 2066년이다. ①은 문장 2, ③는 문장 3, ④은 문장 5, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) It은 바로 앞 문장 5의 the Montreal Protocol을 받는다. 뒤에 an agreement(협정)라는 설명이 이어지므로 오존층이 아니라 협정을 가리킨다.", true);
 Hs("독해 04   배열 영작   ·   In 1987, countries around the world signed the Montreal Protocol.");
 B("문장 5를 그대로 복원한다. ① 첫 글자는 대문자 In, 1987 뒤 콤마를 잊지 않는다.   ② around the world가 countries를 뒤에서 꾸민다.   ③ 동사는 과거형 signed.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 ozone · healing · victory     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 회복되고 있는 오존층과 그 의미를 다룬다. ① 남극은 구멍이 있는 장소로만 나오고, ③ 피부암 치료제 이야기는 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 ozone · healing · victory     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 회복되고 있는 오존층과 그 의미를 다룬다. ① 남극은 구멍이 있는 장소로만 나오고, ② 피부암 치료제 이야기는 나오지 않는다.");
 B("1-2   ○표 할 세 단어: ozone(힌트① 주인공) · healing(힌트② 지금 일어나는 일) · victory(힌트③ 과학자들의 평가). Antarctica · chemicals · report는 배경과 근거일 뿐 주제문에 들어가지 않는다.");
-B("1-3   문장 6 \u2014 It은 몬트리올 의정서에 ○ (문장 5의 그 협정).   문장 7 \u2014 that은 협정을 맺은 일에 ○ (앞 내용 전체).   문장 9 \u2014 this agreement도 몬트리올 의정서에 ○.");
-B("[학습 포인트]   같은 It이라도 문장 2에서는 오존층, 문장 6에서는 협정을 가리킨다. 지시어는 뜻이 아니라 ‘바로 앞 문장’이 정한다 \u2014 만날 때마다 앞으로 화살표를 그어 두자.", true);
+B("1-3   문장 6 — It은 몬트리올 의정서에 ○ (문장 5의 그 협정).   문장 7 — that은 협정을 맺은 일에 ○ (앞 내용 전체).   문장 9 — this agreement도 몬트리올 의정서에 ○.");
+B("[학습 포인트]   같은 It이라도 문장 2에서는 오존층, 문장 6에서는 협정을 가리킨다. 지시어는 뜻이 아니라 ‘바로 앞 문장’이 정한다 — 만날 때마다 앞으로 화살표를 그어 두자.", true);
 
 /* ═══════════ [DATA] 해설 2면 — R1 · R2 · 전문 해석 ═══════════ */
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T \u2014 문장 1.   2 F \u2014 문장 2: 폭우가 아니라 해로운 광선(harmful rays)을 막아 준다.   3 T \u2014 문장 3.   4 F \u2014 문장 4: 5년이 아니라 약 50년이다.   5 T \u2014 문장 5.   6 F \u2014 문장 6: 사용을 시작하는 게 아니라 중단하는(stopping) 내용이다.   7 T \u2014 문장 9.   8 F \u2014 문장 11: 200명이 아니라 200만 명(two million)이다.", true);
-Hs("R2   사건 순서   ·   (a) → (c) → (d) → (b)");
-B("ⓐ 오염으로 오존층이 파괴된다(문장 3) → ⓒ 1987년 세계 각국이 몬트리올 의정서에 서명한다(문장 5) → ⓓ 오존층이 천천히 회복되기 시작한다(문장 3·7) → ⓑ 2066년 1980년 수준으로 돌아간다(문장 8). 글은 회복(문장 3)을 먼저 말하고 원인이 된 협정(문장 5)을 뒤에 밝힌다 \u2014 서술 순서와 사건 순서가 다른 지점이다.", true);
+Hs("R1   True / False   ·   1 T · 2 F · 3 F · 4 F · 5 T · 6 F · 7 T · 8 T");
+   B("1 T — 문장 3.   2 F — 문장 11: 200명이 아니라 200만 명(two million)이다.   3 F — 문장 2: 폭우가 아니라 해로운 광선(harmful rays)을 막아 준다.   4 F — 문장 6: 사용을 시작하는 게 아니라 중단하는(stopping) 내용이다.   5 T — 문장 1.   6 F — 문장 4: 5년이 아니라 약 50년이다.   7 T — 문장 5.   8 T — 문장 9.", true);
+Hs("R2   사건 순서   ·   (b) → (c) → (d) → (a)");
+B("ⓑ 오염으로 오존층이 파괴된다(문장 3) → ⓒ 1987년 세계 각국이 몬트리올 의정서에 서명한다(문장 5) → ⓓ 오존층이 천천히 회복되기 시작한다(문장 3·7) → ⓐ 2066년 1980년 수준으로 돌아간다(문장 8). 글은 회복(문장 3)을 먼저 말하고 원인이 된 협정(문장 5)을 뒤에 밝힌다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

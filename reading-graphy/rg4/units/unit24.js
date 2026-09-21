@@ -79,25 +79,27 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Tying Yourself Up: The Ulysses Contract", "② The Greek Hero Who Loved Music",
- "③ How to Write a Good School Report", "④ Why the Sirens’ Songs Sank Many Ships",
+["① The Greek Hero Who Loved Music",
+ "② Tying Yourself Up: The Ulysses Contract",
+ "③ How to Write a Good School Report",
+ "④ Why the Sirens’ Songs Sank Many Ships",
  "⑤ The History of Greek Ships"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① The professor created three groups of students.",
- "② One group could turn in their reports anytime.",
- "③ Most of the third group set their own deadlines.",
- "④ Ulysses had his own ears filled with wax.",
+ "② Ulysses had his own ears filled with wax.",
+ "③ One group could turn in their reports anytime.",
+ "④ Most of the third group set their own deadlines.",
  "⑤ Ulysses contracts help us improve self-control."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) they가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the students in the third group",
- "② the strict deadlines of the first group",
- "③ the reports of the second group",
- "④ the Greek sailors on the ship",
- "⑤ the professors at the university"].forEach(c => K.push(ch(c)));
+["① the strict deadlines of the first group",
+ "② the reports of the second group",
+ "③ the Greek sailors on the ship",
+ "④ the professors at the university",
+ "⑤ the students in the third group"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -144,7 +146,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -157,7 +159,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -194,7 +196,7 @@ K.push(spF(2, 85, 0.06));
  [11, "The “present Ulysses” was in control and made plans for the “future Ulysses.”"],
  [12, "Ulysses contracts are a great way to improve self-control and achieve our goals."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -323,7 +325,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -338,15 +340,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
+    "The “present Ulysses” made plans for the “future Ulysses.”",
+    "This strategy for controlling oneself is called a Ulysses contract.",
+    "Ulysses contracts are a bad way to improve self-control.",
     "A university professor did an experiment with his students.",
     "The professor created two groups of students.",
-    "One group was given strict deadlines.",
     "Most of the third group chose to have no deadlines.",
-    "This strategy for controlling oneself is called a Ulysses contract.",
     "Ulysses had his own ears filled with wax.",
-    "The “present Ulysses” made plans for the “future Ulysses.”",
-    "Ulysses contracts are a bad way to improve self-control.",
-  ].map((s, i) => new TableRow({ children: [
+    "One group was given strict deadlines."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -404,15 +405,15 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 contract · self-control · goals   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 T · 3 F · 4 T · 5 F · 6 F · 7 F · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (c) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 스스로 마감을 정한 학생들의 실험(문장 1–5)과 자신을 배에 묶은 율리시스의 이야기(문장 8–11)를 통해 '율리시스 계약'이라는 자기 통제 방법을 소개한다. ①이 제목으로 적절하다. ②·④는 지엽적이고, ③·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 10에서 밀랍으로 귀를 막은 것은 율리시스 자신이 아니라 선원들(his sailors’ ears)이다. 율리시스는 자신을 배에 묶게 했다. ①은 문장 2, ②은 문장 3, ③는 문장 5, ⑤는 문장 12에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ②");
+B("이 글은 스스로 마감을 정한 학생들의 실험(문장 1–5)과 자신을 배에 묶은 율리시스의 이야기(문장 8–11)를 통해 '율리시스 계약'이라는 자기 통제 방법을 소개한다. ②이 제목으로 적절하다. ①·④는 지엽적이고, ③·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 10에서 밀랍으로 귀를 막은 것은 율리시스 자신이 아니라 선원들(his sailors’ ears)이다. 율리시스는 자신을 배에 묶게 했다. ①은 문장 2, ③은 문장 3, ④는 문장 5, ⑤는 문장 12에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) they는 바로 앞의 most of the third group, 곧 마감을 스스로 고른 세 번째 집단 학생들을 가리킨다. 자신이 게을러질 수 있다는 것을 안 사람이 누구인지 생각하면 된다.", true);
 Hs("독해 04   배열 영작   ·   Ulysses didn’t want his people to be in danger.");
 B("문장 9를 그대로 복원하는 문제다. ① 첫 글자는 대문자 Ulysses.   ② want+목적어+to부정사 = '~가 …하기를 바라다'.   ③ be in danger가 한 덩어리로 붙어 다닌다.", true);
@@ -426,8 +427,8 @@ B("[학습 포인트]   같은 their라도 앞뒤 문맥에 따라 주인이 달
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 1.   2 F — 문장 2: 두(two) 집단이 아니라 세(three) 집단이다.   3 T — 문장 3.   4 F — 문장 5: 마감을 없앤 것이 아니라 구체적인 마감을 스스로 정했다.   5 T — 문장 6.   6 F — 문장 10: 자기 귀가 아니라 선원들의 귀를 밀랍으로 채우게 했다.   7 T — 문장 11.   8 F — 문장 12: 나쁜(bad) 방법이 아니라 훌륭한(great) 방법이다.", true);
+Hs("R1   True / False   ·   1 T · 2 T · 3 F · 4 T · 5 F · 6 F · 7 F · 8 T");
+   B("1 T — 문장 11.   2 T — 문장 6.   3 F — 문장 12: 나쁜(bad) 방법이 아니라 훌륭한(great) 방법이다.   4 T — 문장 1.   5 F — 문장 2: 두(two) 집단이 아니라 세(three) 집단이다.   6 F — 문장 5: 마감을 없앤 것이 아니라 구체적인 마감을 스스로 정했다.   7 F — 문장 10: 자기 귀가 아니라 선원들의 귀를 밀랍으로 채우게 했다.   8 T — 문장 3.", true);
 Hs("R2   사건 순서   ·   (b) → (a) → (c) → (d)");
 B("ⓑ 율리시스가 사이렌의 노래를 듣고 싶어 한다(문장 8) → ⓐ 선원들의 귀를 밀랍으로 채우게 한다(문장 10) → ⓒ 교수가 세 번째 집단에 마감을 스스로 고르게 한다(문장 4) → ⓓ 학생들이 보고서마다 마감을 정한다(문장 5). 본문은 오늘의 실험을 먼저 말하지만, 실제 시간 순서로는 고대 그리스 이야기가 훨씬 앞선다 — 서술 순서와 사건 순서를 구분하는 것이 핵심이다.", true);
 K.push(sp(70));

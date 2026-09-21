@@ -85,22 +85,24 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① From Hunter to Helper: Johnny’s New Job", "② How to Cook Sea Turtle Eggs",
- "③ The Best Fishing Spots in the Philippines", "④ Baby Turtles Going Back to the Ocean",
- "⑤ Money Problems of Village Fishermen"].forEach(c => K.push(ch(c)));
+["① How to Cook Sea Turtle Eggs",
+ "② The Best Fishing Spots in the Philippines",
+ "③ Baby Turtles Going Back to the Ocean",
+ "④ Money Problems of Village Fishermen",
+ "⑤ From Hunter to Helper: Johnny’s New Job"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Johnny was once a fisherman in the Philippines.",
- "② Johnny hunted sea turtle eggs for money.",
- "③ Johnny knew that poaching was illegal at first.",
+["① Johnny knew that poaching was illegal at first.",
+ "② Johnny was once a fisherman in the Philippines.",
+ "③ Johnny hunted sea turtle eggs for money.",
  "④ CURMA gave Johnny money for collecting the eggs.",
  "⑤ CURMA released the baby turtles back into the ocean."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the sea turtles’ eggs",
- "② the baby turtles in the ocean",
+["① the baby turtles in the ocean",
+ "② the sea turtles’ eggs",
  "③ the people in CURMA",
  "④ other hunters in the Philippines",
  "⑤ the fishermen’s small boats"].forEach(c => K.push(ch(c)));
@@ -150,7 +152,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -163,7 +165,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -198,7 +200,7 @@ K.push(spF(2, 85, 0.06));
  [11, "They kept the eggs safe and then released the baby turtles back into the ocean."],
  [12, "I learned from this experience that we should save the turtles’ eggs, not hunt them."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -253,7 +255,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 필리핀 어부들의 낚시 여행", "② 바다거북 알을 지키는 새 직업을 찾은 사람", "③ 바다거북 알로 만드는 요리"].forEach(c =>
+["① 바다거북 알을 지키는 새 직업을 찾은 사람",
+ "② 필리핀 어부들의 낚시 여행",
+ "③ 바다거북 알로 만드는 요리"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -274,7 +278,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2000, 7300];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -321,7 +325,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -336,15 +340,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
+    "Johnny says starting a new career is very easy.",
+    "CURMA gave Johnny some money for collecting the eggs.",
     "Johnny was once a fisherman in the Philippines.",
-    "Johnny still hunts sea turtle eggs for money.",
     "At first, Johnny didn’t know that poaching was illegal.",
     "Johnny learned about an organization called WWF.",
-    "CURMA gave Johnny some money for collecting the eggs.",
     "CURMA released the baby turtles back into the river.",
     "Johnny thinks people should save the turtles’ eggs.",
-    "Johnny says starting a new career is very easy.",
-  ].map((s, i) => new TableRow({ children: [
+    "Johnny still hunts sea turtle eggs for money."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -359,10 +362,10 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "조니에게 일어난 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ Johnny hunted sea turtle eggs for money.",
-      "ⓑ CURMA gave Johnny money for collecting the eggs.",
-      "ⓒ Johnny learned about an organization called CURMA.",
-      "ⓓ Johnny tells other hunters to start a new career."]
+  ...["ⓐ CURMA gave Johnny money for collecting the eggs.",
+      "ⓑ Johnny learned about an organization called CURMA.",
+      "ⓒ Johnny tells other hunters to start a new career.",
+      "ⓓ Johnny hunted sea turtle eggs for money."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -400,22 +403,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문12 ", { size: 17, bold: true, color: NAVY2 }), t("I(S)·learned(△V)·that[네모]·we(S′)·should save(△V′)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 코코라는 이름의 개를 기른다  (2) 내 꿈은 조종사가 되는 것이다  (3) 그녀의 계획은 부산이라는 도시를 방문하는 것이다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 turtles · hunting · career   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 turtles · hunting · career   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (b) → (d)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 T · 5 F · 6 F · 7 T · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 거북 알을 사냥하던 조니가 거북을 지키는 새 직업을 갖게 된 이야기다(문장 4·9–12·16). 소재와 변화를 함께 담은 ①이 제목으로 알맞다. ④·⑤는 지엽적, ②·③은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 8에서 조니는 처음에 밀렵이 불법인 줄 몰랐다고 했다. 알고 있었다는 ③은 본문과 반대다. ①은 문장 3, ②는 문장 4, ④는 문장 10, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 거북 알을 사냥하던 조니가 거북을 지키는 새 직업을 갖게 된 이야기다(문장 4·9–12·16). 소재와 변화를 함께 담은 ⑤이 제목으로 알맞다. ③·④는 지엽적, ①·②은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 8에서 조니는 처음에 밀렵이 불법인 줄 몰랐다고 했다. 알고 있었다는 ①은 본문과 반대다. ②은 문장 3, ③는 문장 4, ④는 문장 10, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) them은 같은 문장 앞부분의 the turtles’ eggs를 가리킨다. '알을 지켜야지 사냥하면 안 된다'는 뜻이므로 사냥의 대상은 알이다.", true);
 Hs("독해 04   배열 영작   ·   But I don’t do that anymore.");
 B("문장 5를 그대로 복원한다. ㄱ 첫 글자는 대문자 But.   ㄴ don’t 뒤에는 동사원형 do.   ㄷ '더 이상 ~않다'의 anymore는 문장 맨 뒤.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 turtles · hunting · career     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 밀렵꾼이었던 사람이 거북을 지키는 새 직업을 갖게 된 인터뷰다. ① 낚시 여행이나 ③ 요리 이야기는 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 turtles · hunting · career     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 밀렵꾼이었던 사람이 거북을 지키는 새 직업을 갖게 된 인터뷰다. ② 낚시 여행이나 ③ 요리 이야기는 나오지 않는다.");
 B("1-2   ○표 할 세 단어: turtles(힌트① 지키는 동물) · hunting(힌트② 예전 일) · career(힌트③ 새 일). money · ocean · Philippines는 본문에 있지만 주제문에는 들어가지 않는다.");
 B("1-3   문장 10 — They는 CURMA 사람들에 ○(문장 9의 단체).   문장 12 — them은 거북의 알에 ○.   문장 16 — you는 다른 사냥꾼들에 ○(문장 14의 other hunters).");
 B("[학습 포인트]   같은 글 안에서도 지시어가 가리키는 대상은 계속 바뀐다. They(단체) → them(알) → you(사냥꾼들). 지시어를 만나면 앞 문장으로 돌아가 짝을 찾자.", true);
@@ -424,10 +427,10 @@ B("[학습 포인트]   같은 글 안에서도 지시어가 가리키는 대상
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 3.   2 F — 문장 5: 더 이상 하지 않는다.   3 T — 문장 8.   4 F — 문장 9: WWF가 아니라 CURMA다.   5 T — 문장 10.   6 F — 문장 11: 강(river)이 아니라 바다(ocean)로 돌려보냈다.   7 T — 문장 12.   8 F — 문장 15: 쉽지 않다고 했다.  거짓 문장은 모두 한 요소(still, WWF, river, easy)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (a) → (c) → (b) → (d)");
-B("ⓐ 돈을 벌려고 거북 알을 사냥한다(문장 4) → ⓒ CURMA라는 단체를 알게 된다(문장 9) → ⓑ 알을 모아 주고 돈을 받는다(문장 10) → ⓓ 다른 사냥꾼들에게 새 일을 권한다(문장 16). 문장 5에서 '이제는 안 한다'가 먼저 나오지만 실제로는 나중 일이다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 T · 5 F · 6 F · 7 T · 8 F");
+   B("1 F — 문장 15: 쉽지 않다고 했다.  거짓 문장은 모두 한 요소(still, WWF, river, easy)만 비튼 것이다.   2 T — 문장 10.   3 T — 문장 3.   4 T — 문장 8.   5 F — 문장 9: WWF가 아니라 CURMA다.   6 F — 문장 11: 강(river)이 아니라 바다(ocean)로 돌려보냈다.   7 T — 문장 12.   8 F — 문장 5: 더 이상 하지 않는다.", true);
+Hs("R2   사건 순서   ·   (d) → (b) → (a) → (c)");
+B("ⓓ 돈을 벌려고 거북 알을 사냥한다(문장 4) → ⓑ CURMA라는 단체를 알게 된다(문장 9) → ⓐ 알을 모아 주고 돈을 받는다(문장 10) → ⓒ 다른 사냥꾼들에게 새 일을 권한다(문장 16). 문장 5에서 '이제는 안 한다'가 먼저 나오지만 실제로는 나중 일이다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

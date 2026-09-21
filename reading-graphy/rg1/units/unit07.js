@@ -99,22 +99,24 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Chocolate Without Cacao Beans: Better for All", "② Children Who Work on Cacao Farms",
- "③ The Sweet Taste of Old Chocolate", "④ How to Make Barley Bread at Home",
+["① Children Who Work on Cacao Farms",
+ "② Chocolate Without Cacao Beans: Better for All",
+ "③ The Sweet Taste of Old Chocolate",
+ "④ How to Make Barley Bread at Home",
  "⑤ The Best Chocolate Shops in the U.K."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Chocolate is made from cacao beans.",
  "② About 1.8 million children work on cacao farms.",
- "③ Big chocolate companies solved all the problems.",
- "④ The new chocolate looks and tastes like regular chocolate.",
- "⑤ The new chocolate uses barley and carob."].forEach(c => K.push(ch(c)));
+ "③ The new chocolate looks and tastes like regular chocolate.",
+ "④ The new chocolate uses barley and carob.",
+ "⑤ Big chocolate companies solved all the problems."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the new chocolate without cacao beans",
- "② regular chocolate made from cacao beans",
+["① regular chocolate made from cacao beans",
+ "② the new chocolate without cacao beans",
  "③ the dark side of the chocolate industry",
  "④ a big cacao farm in a hot country",
  "⑤ barley bread from the U.K."].forEach(c => K.push(ch(c)));
@@ -176,7 +178,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -190,7 +192,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -224,7 +226,7 @@ K.push(spF(2, 85, 0.06));
  [7, "So, a company in the U.K. made a new kind of chocolate: “fake” chocolate."],
  [13, "But if more people buy it, the dark side of the chocolate industry might become brighter!"]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -282,7 +284,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 카카오 농장에서 일하는 아이들", "② 카카오빈 없이 만든 새로운 초콜릿", "③ 초콜릿 케이크 만드는 법"].forEach(c =>
+["① 카카오빈 없이 만든 새로운 초콜릿",
+ "② 카카오 농장에서 일하는 아이들",
+ "③ 초콜릿 케이크 만드는 법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -303,7 +307,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -456,7 +460,7 @@ K.push(p([t("조건 ", { size: 16, bold: true, color: GOLD }),
   t("덩어리의 순서를 괄호에 쓰세요. 덩어리 안의 단어는 바꾸지 않습니다.", { size: 16, color: SUB })], { after: 100, line: 250 }));
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("보기   ", { size: 16, bold: true, color: NAVY2 }),
-     t("ⓐ without cacao beans     ⓑ is better     ⓒ This new chocolate     ⓓ for the Earth and people.", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
+     t("ⓐ This new chocolate     ⓑ without cacao beans     ⓒ is better     ⓓ for the Earth and people.", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
   { w: W, shade: COOL, b: { top: bd(4, CLINE), bottom: bd(4, CLINE), left: NOB, right: NOB }, m: { top: 150 + Math.round((FT(6) || 0) * 0.02), bottom: 150 + Math.round((FT(6) || 0) * 0.02), left: 180, right: 180 } })] })]));
 K.push(spF(6, 200, 0.05));
 K.push(p([t("순서   ", { size: 17, bold: true, color: NAVY2 }),
@@ -511,11 +515,11 @@ pairGrid(
   { sn: 3, main: "some hidden problems",
     opts: ["① no problems at all", "② problems people don’t see easily", "③ a very sweet taste"] },
   { sn: 6, main: "not much changed",
-    opts: ["① things stayed almost the same", "② everything changed quickly", "③ the price became lower"] });
+    opts: ["① everything changed quickly", "② the price became lower", "③ things stayed almost the same"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 8, main: "looks and tastes like regular chocolate",
-    opts: ["① tastes very different from normal chocolate", "② costs much less than normal chocolate", "③ seems the same as normal chocolate"] },
+    opts: ["① tastes very different from normal chocolate", "② seems the same as normal chocolate", "③ costs much less than normal chocolate"] },
   { sn: 11, main: "better for the Earth and people",
     opts: ["① kinder to the planet and to people", "② worse for the planet and people", "③ sweeter than any other snack"] });
 K.push(spF(7, 150, 0.16));
@@ -573,14 +577,13 @@ K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
     "Chocolate is made from cacao beans.",
-    "About 1.8 million adults work on cacao farms.",
-    "Many trees get cut down to make space for cacao farms.",
-    "Big chocolate companies solved these problems.",
-    "A company in the U.K. made a new kind of chocolate.",
-    "The new chocolate uses a few cacao beans.",
-    "The new chocolate uses barley and carob.",
     "The new chocolate might be a bit cheap.",
-  ].map((s, i) => new TableRow({ children: [
+    "The new chocolate uses a few cacao beans.",
+    "Big chocolate companies solved these problems.",
+    "Many trees get cut down to make space for cacao farms.",
+    "About 1.8 million adults work on cacao farms.",
+    "The new chocolate uses barley and carob.",
+    "A company in the U.K. made a new kind of chocolate."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -595,8 +598,8 @@ K.push(spF(8, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "카카오와 초콜릿에 일어난 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ A U.K. company made a new kind of chocolate.",
-      "ⓑ Children worked on cacao farms, and trees were cut down.",
+  ...["ⓐ Children worked on cacao farms, and trees were cut down.",
+      "ⓑ A U.K. company made a new kind of chocolate.",
       "ⓒ Big chocolate companies promised to solve the problems.",
       "ⓓ More people buy the new chocolate, and the industry gets brighter."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
@@ -639,8 +642,8 @@ K.push(spF(9, 380, 0.12));
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
 [["문장 1", [t("Many people love ", { size: 19 }), t("( eating  /  eat )", { size: 19, bold: true, color: NAVY }), t(" chocolate.", { size: 19 })], "love 뒤에는 ~ing가 올 수 있어요."],
- ["문장 2", [t("This sweet snack ", { size: 19 }), t("( is made  /  makes )", { size: 19, bold: true, color: NAVY }), t(" from cacao beans.", { size: 19 })], "간식은 '만들어지는' 쪽이에요 — be+과거분사!"],
- ["문장 3", [t("Behind the sweet taste, there ", { size: 19 }), t("( are  /  is )", { size: 19, bold: true, color: NAVY }), t(" some hidden problems.", { size: 19 })], "there 뒤의 진짜 주어는 problems(복수)예요."],
+ ["문장 2", [t("This sweet snack ", { size: 19 }), t("( makes  /  is made )", { size: 19, bold: true, color: NAVY }), t(" from cacao beans.", { size: 19 })], "간식은 '만들어지는' 쪽이에요 — be+과거분사!"],
+ ["문장 3", [t("Behind the sweet taste, there ", { size: 19 }), t("( is  /  are )", { size: 19, bold: true, color: NAVY }), t(" some hidden problems.", { size: 19 })], "there 뒤의 진짜 주어는 problems(복수)예요."],
  ["문장 5", [t("Many trees get cut down ", { size: 19 }), t("( to make  /  make )", { size: 19, bold: true, color: NAVY }), t(" space for farms.", { size: 19 })], "'~하기 위해'는 to+동사원형!"],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
@@ -736,30 +739,30 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문13 ", { size: 17, bold: true, color: NAVY2 }), t("if[네모]·people(S′)·buy(△V′)·side(S)·might become(△V)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 이 빵은 쌀로 만들어진다  (2) 그녀는 우유를 사기 위해 가게에 갔다  (3) 이 카드는 나무를 아끼기 위해 헌 종이로 만들어진다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 chocolate · cacao · better        ", { size: 19, bold: true }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 chocolate · cacao · better        ", { size: 19, bold: true }),
      t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 덧붙임 · 결과 · 반전 · 조건   2-2 [B] 문제 · [E] 평가   2-3 ①", { size: 19, bold: true })], { after: 25 }),
-  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (c) → (a) → (b) → (d)  ·  This new chocolate without cacao beans is better for the Earth and people.", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (a) → (b) → (c) → (d)  ·  This new chocolate without cacao beans is better for the Earth and people.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) cacao  (2) problems  (3) barley  (4) better        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 3 ②  문장 6 ①  문장 8 ③  문장 11 ①", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 3 ②  문장 6 ③  문장 8 ②  문장 11 ①", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (a) → (d)", { size: 19, bold: true })], { after: 25 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 F · 4 F · 5 T · 6 F · 7 T · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (b) → (d)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(e) · 2(c) · 3(a) · 4(f) · 5(b) · 6(d)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) eating  (2) is made  (3) are  (4) to make", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) beans (2) problems (3) children (4) trees (5) promised (6) regular (7) barley (8) better", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) Many people love eating chocolate.  (2) This new chocolate is better for the Earth and people.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 카카오빈을 쓰지 않는 새 초콜릿(문장 7–10)과 그 장점(문장 11)을 알려 준다. 소재와 특징을 함께 담은 ①이 제목으로 적절하다. ②·③는 지엽적이고, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 6에서 큰 회사들은 문제를 해결하겠다고 약속만 했을 뿐 별로 바뀐 것이 없다고 했다. ①은 문장 2, ②은 문장 4, ④은 문장 8, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ②");
+B("이 글은 카카오빈을 쓰지 않는 새 초콜릿(문장 7–10)과 그 장점(문장 11)을 알려 준다. 소재와 특징을 함께 담은 ②이 제목으로 적절하다. ①·③는 지엽적이고, ④·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 6에서 큰 회사들은 문제를 해결하겠다고 약속만 했을 뿐 별로 바뀐 것이 없다고 했다. ①은 문장 2, ②은 문장 4, ③은 문장 8, ④는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) it은 문장 7–11의 카카오빈 없는 새 초콜릿을 가리킨다. 사람들이 더 많이 사면 초콜릿 산업이 밝아진다는 흐름이다 — 지시어는 앞에서 찾는다.", true);
 Hs("독해 04   배열 영작   ·   It looks and tastes like regular chocolate.");
 B("문장 8을 그대로 복원한다. ㄱ 첫 글자는 대문자 It.   ㄴ looks and tastes — 동사 두 개를 and로 잇는다.   ㄷ like는 '~처럼'이라는 뜻이다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 chocolate · cacao · better     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 카카오빈 없이 만든 새 초콜릿을 소개한다. ① 아이들 이야기는 문제점의 한 예이고, ③ 케이크 만드는 법은 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 chocolate · cacao · better     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 카카오빈 없이 만든 새 초콜릿을 소개한다. ② 아이들 이야기는 문제점의 한 예이고, ③ 케이크 만드는 법은 나오지 않는다.");
 B("1-2   ○표 할 세 단어: chocolate(힌트① 주인공) · cacao(힌트② 쓰지 않는 것) · better(힌트③ 평가). children · barley · expensive는 본문에 있지만 주제문에는 들어가지 않는다.");
 B("1-3   문장 5 — these cacao farms는 카카오 농장들에 ○.   문장 6 — these problems는 아동 노동과 벌목에 ○(문장 4–5).   문장 13 — it은 새로운 초콜릿에 ○.");
 B("[학습 포인트]   these problems처럼 지시어는 단어 하나가 아니라 앞 문장 전체를 받기도 한다. 지시어를 만나면 앞으로 돌아가 짝을 찾는 습관을 들이자.", true);
@@ -772,27 +775,27 @@ B("2-1   문장 5 Plus — 문제 하나를 더 '덧붙임'.   문장 7 So — �
 B("2-2   [B] 문제(문장 3–5: 아동 노동과 벌목), [E] 평가(문장 11–13: 지구와 사람에게 더 좋다). 보기의 '요리법'은 이 글에 없는 역할이다. 소개 → 문제 → 등장 → 특징 → 평가의 흐름이다.");
 B("2-3   정답 ①. 새로운 초콜릿이라는 대상을 소개하고 사실을 알려 주는 설명문이다(문장 2·10). ② 가격이나 사라는 말이 없어 광고가 아니고, ③ I나 날짜, ④ Dear, ⑤ 옛이야기의 신호도 없다.");
 B("[학습 포인트]   연결어만 표시해도 글의 지도가 그려진다. Plus(덧붙임), So(결과), However(반전), if(조건). 특히 마지막 문장의 But은 글쓴이가 진짜 하고 싶은 말의 신호다.", true);
-Hs("STEP 3   주제문 만들기   ·   3-1 cacao beans · better     3-3 (c) → (a) → (b) → (d)");
+Hs("STEP 3   주제문 만들기   ·   3-1 cacao beans · better     3-3 (a) → (b) → (c) → (d)");
 B("3-1  재료 찾기 — (2) 문장 9에서 cacao beans에 ○: 새 초콜릿이 쓰지 '않는' 재료다. barley는 대신 쓰는 재료라 자리가 다르다. (3) 문장 11에서 better에 ○: 글쓴이의 평가다.");
 B("3-2  뼈대 채우기 — (1) This new chocolate  (2) cacao beans  (3) better.  넣으면 This new chocolate without cacao beans is better for the Earth and people.이 된다.");
-B("3-3  정답 순서 — ⓒ This new chocolate → ⓐ without cacao beans → ⓑ is better → ⓓ for the Earth and people.");
-B("[채점 포인트]  주인공(ⓒ)이 맨 앞, 마침표가 붙은 덩어리(ⓓ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
+B("3-3  정답 순서 — ⓐ This new chocolate → ⓑ without cacao beans → ⓒ is better → ⓓ for the Earth and people.");
+B("[채점 포인트]  주인공(ⓐ)이 맨 앞, 마침표가 붙은 덩어리(ⓓ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) cacao  (2) problems  (3) barley  (4) better");
 B("(1)은 문장 2의 cacao, (2)는 문장 3의 problems, (3)은 문장 10의 barley, (4)는 문장 11의 better에서 가져온다. 요약문이 곧 이 글의 흐름이다: 소재 → 문제 → 대안 → 평가.", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 3 ②   문장 6 ①   문장 8 ③   문장 11 ①  (정답 선지는 무표시)");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 3 ②   문장 6 ③   문장 8 ②   문장 11 ①  (정답 선지는 무표시)");
 B("문장 3 some hidden problems   ① ✕ [반대] 문제가 전혀 없다 — 정반대.   ② ○ 사람들이 쉽게 보지 못하는 문제.   ③ ✕ [무관] 맛 이야기는 근거가 없다.");
-B("문장 6 not much changed   ① ○ 거의 그대로였다.   ② ✕ [반대] 모든 것이 빨리 바뀌었다 — 정반대.   ③ ✕ [무관] 값이 내렸다는 말은 지문에 없다.");
-B("문장 8 looks and tastes like regular chocolate   ① ✕ [반대] 맛이 아주 다르다 — 정반대.   ② ✕ [무관] 값이 싸다는 말은 없다(문장 12는 오히려 비쌀 수 있다).   ③ ○ 보통 초콜릿과 같아 보인다.");
+B("문장 6 not much changed   ③ ○ 거의 그대로였다.   ① ✕ [반대] 모든 것이 빨리 바뀌었다 — 정반대.   ② ✕ [무관] 값이 내렸다는 말은 지문에 없다.");
+B("문장 8 looks and tastes like regular chocolate   ① ✕ [반대] 맛이 아주 다르다 — 정반대.   ③ ✕ [무관] 값이 싸다는 말은 없다(문장 12는 오히려 비쌀 수 있다).   ② ○ 보통 초콜릿과 같아 보인다.");
 B("문장 11 better for the Earth and people   ① ○ 지구와 사람에게 더 이롭다.   ② ✕ [반대] 더 나쁘다 — 정반대.   ③ ✕ [무관] 더 달다는 말은 지문에 없다.");
 B("[학습 포인트]  시험은 본문 표현을 그대로 쓰지 않고 반드시 바꿔서 묻는다. 지금은 반대/무관 두 갈래를 정확히 가르는 것이 먼저다.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 2.   2 F — 문장 4: 어른(adults)이 아니라 아이들(children)이다.   3 T — 문장 5.   4 F — 문장 6: 해결한(solved) 것이 아니라 약속만(promised) 했다.   5 T — 문장 7.   6 F — 문장 9: 조금도 쓰지 않는다.   7 T — 문장 10.   8 F — 문장 12: 싼(cheap) 것이 아니라 비쌀(expensive) 수 있다.  거짓 문장은 모두 한 요소만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (c) → (a) → (d)");
-B("ⓑ 카카오 농장의 문제가 생긴다(문장 4–5) → ⓒ 큰 회사들이 해결을 약속한다(문장 6) → ⓐ 영국의 한 회사가 새 초콜릿을 만든다(문장 7) → ⓓ 사람들이 사면 산업이 밝아진다(문장 13). 문제 → 약속 → 대안 → 기대의 순서다.", true);
+Hs("R1   True / False   ·   1 T · 2 F · 3 F · 4 F · 5 T · 6 F · 7 T · 8 T");
+   B("1 T — 문장 2.   2 F — 문장 12: 싼(cheap) 것이 아니라 비쌀(expensive) 수 있다.  거짓 문장은 모두 한 요소만 비튼 것이다.   3 F — 문장 9: 조금도 쓰지 않는다.   4 F — 문장 6: 해결한(solved) 것이 아니라 약속만(promised) 했다.   5 T — 문장 5.   6 F — 문장 4: 어른(adults)이 아니라 아이들(children)이다.   7 T — 문장 10.   8 T — 문장 7.", true);
+Hs("R2   사건 순서   ·   (a) → (c) → (b) → (d)");
+B("ⓐ 카카오 농장의 문제가 생긴다(문장 4–5) → ⓒ 큰 회사들이 해결을 약속한다(문장 6) → ⓑ 영국의 한 회사가 새 초콜릿을 만든다(문장 7) → ⓓ 사람들이 사면 산업이 밝아진다(문장 13). 문제 → 약속 → 대안 → 기대의 순서다.", true);
 Hs("R3   영영풀이   ·   1 (e) · 2 (c) · 3 (a) · 4 (f) · 5 (b) · 6 (d)");
 B("hidden = 쉽게 보이지 않는 · promise = 나중에 하겠다고 말하다 · solve = 문제의 답을 찾다 · regular = 보통의, 특별하지 않은 · expensive = 돈이 많이 드는 · industry = 한 가지를 만드는 회사 전체(산업).", true);
 Hs("R4   어법 기초   ·   (1) eating  (2) is made  (3) are  (4) to make");

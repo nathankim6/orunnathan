@@ -102,16 +102,18 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Blue Feet: A Sign of Health and Charm", "② The Best Fish to Eat for Dinner",
- "③ How to Travel to the Galapagos Islands", "④ Why Baby Birds Have White Feathers",
- "⑤ Funny Bird Dances Around the World"].forEach(c => K.push(ch(c)));
+["① The Best Fish to Eat for Dinner",
+ "② How to Travel to the Galapagos Islands",
+ "③ Why Baby Birds Have White Feathers",
+ "④ Funny Bird Dances Around the World",
+ "⑤ Blue Feet: A Sign of Health and Charm"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Baby boobies have white feathers and fluffy bodies.",
  "② The boobies eat fresh fish, and the fish have pigments.",
- "③ Having blue feet is a sign of bad health.",
- "④ Male boobies dance to show off their feet.",
+ "③ Male boobies dance to show off their feet.",
+ "④ Having blue feet is a sign of bad health.",
  "⑤ The dance might look funny to humans."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) These가 가리키는 것으로 가장 적절한 것은?"));
@@ -179,7 +181,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -193,7 +195,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -287,7 +289,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 갈라파고스 제도를 여행하는 방법", "② 파란발부비새의 파란 발", "③ 신선한 생선을 고르는 요령"].forEach(c =>
+["① 파란발부비새의 파란 발",
+ "② 갈라파고스 제도를 여행하는 방법",
+ "③ 신선한 생선을 고르는 요령"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -410,9 +414,9 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 동물의 특징을 소개하고 사실을 알려 주는 설명문",
- "② 물건을 팔기 위해 만든 광고",
- "③ 하루에 있었던 일을 적은 일기",
+["① 물건을 팔기 위해 만든 광고",
+ "② 하루에 있었던 일을 적은 일기",
+ "③ 동물의 특징을 소개하고 사실을 알려 주는 설명문",
  "④ 친구에게 안부를 전하는 편지",
  "⑤ 리듬을 살려 쓴 시"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
@@ -464,7 +468,7 @@ K.push(p([t("조건 ", { size: 16, bold: true, color: GOLD }),
   t("덩어리의 순서를 괄호에 쓰세요. 덩어리 안의 단어는 바꾸지 않습니다.", { size: 16, color: SUB })], { after: 100, line: 250 }));
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("보기   ", { size: 16, bold: true, color: NAVY2 }),
-     t("ⓐ and are attractive     ⓑ Blue feet     ⓒ to the female.     ⓓ are a sign of good health", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
+     t("ⓐ and are attractive     ⓑ to the female.     ⓒ Blue feet     ⓓ are a sign of good health", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
   { w: W, shade: COOL, b: { top: bd(4, CLINE), bottom: bd(4, CLINE), left: NOB, right: NOB }, m: { top: 150 + Math.round((FT(6) || 0) * 0.02), bottom: 150 + Math.round((FT(6) || 0) * 0.02), left: 180, right: 180 } })] })]));
 K.push(spF(6, 200, 0.05));
 K.push(p([t("순서   ", { size: 17, bold: true, color: NAVY2 }),
@@ -517,13 +521,13 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 5, main: "their feet turn blue",
-    opts: ["① their feet stay white", "② their feet become blue", "③ their feet fall off"] },
+    opts: ["① their feet become blue", "② their feet stay white", "③ their feet fall off"] },
   { sn: 9, main: "a sign of good health",
     opts: ["① it shows the bird is healthy", "② it shows the bird is sick", "③ it shows the bird is old"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 11, main: "more attractive to the female",
-    opts: ["① the female eats more fish", "② the female does not like it", "③ the female likes it more"] },
+    opts: ["① the female eats more fish", "② the female likes it more", "③ the female does not like it"] },
   { sn: 14, main: "might look funny to humans",
     opts: ["① people may think it is silly", "② people always think it is scary", "③ people never watch the dance"] });
 K.push(spF(7, 150, 0.16));
@@ -580,15 +584,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "The blue-footed boobies live in the Galapagos Islands.",
-    "Baby boobies have blue feathers and blue feet.",
-    "The boobies eat fresh fish, and the fish have pigments.",
     "Having blue feet is a sign of bad health.",
     "Male boobies use their blue feet to attract a partner.",
     "The female booby dances to show off her feet.",
     "The dance might look funny to humans.",
+    "The blue-footed boobies live in the Galapagos Islands.",
     "The dance is not important to the male booby.",
-  ].map((s, i) => new TableRow({ children: [
+    "Baby boobies have blue feathers and blue feet.",
+    "The boobies eat fresh fish, and the fish have pigments."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -604,8 +607,8 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "부비새에게 일
 K.push(sp(120));
 K.push(box([
   ...["ⓐ The male booby lifts up one foot and then the other.",
-      "ⓑ A baby booby has white feathers and white feet.",
-      "ⓒ The booby eats fresh fish with pigments.",
+      "ⓑ The booby eats fresh fish with pigments.",
+      "ⓒ A baby booby has white feathers and white feet.",
       "ⓓ The booby’s feet turn blue."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -646,9 +649,9 @@ K.push(spF(9, 380, 0.12));
 
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
-[["문장 1", [t("The blue-footed boobies ", { size: 19 }), t("( is  /  are )", { size: 19, bold: true, color: NAVY }), t(" birds.", { size: 19 })], "주어가 복수일 때 쓰는 be동사는?"],
+[["문장 1", [t("The blue-footed boobies ", { size: 19 }), t("( are  /  is )", { size: 19, bold: true, color: NAVY }), t(" birds.", { size: 19 })], "주어가 복수일 때 쓰는 be동사는?"],
  ["문장 9", [t("", { size: 19 }), t("( Having  /  Have )", { size: 19, bold: true, color: NAVY }), t(" blue feet is a sign of good health.", { size: 19 })], "주어 자리에는 '~하는 것'을 뜻하는 동명사!"],
- ["문장 10", [t("Male boobies use ", { size: 19 }), t("( their  /  them )", { size: 19, bold: true, color: NAVY }), t(" blue feet to attract a partner.", { size: 19 })], "명사 feet 앞에 오는 형태는?"],
+ ["문장 10", [t("Male boobies use ", { size: 19 }), t("( them  /  their )", { size: 19, bold: true, color: NAVY }), t(" blue feet to attract a partner.", { size: 19 })], "명사 feet 앞에 오는 형태는?"],
  ["문장 12", [t("The male booby ", { size: 19 }), t("( dance  /  dances )", { size: 19, bold: true, color: NAVY }), t(" to show off his feet.", { size: 19 })], "주어가 3인칭 단수일 때 동사 끝은?"],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
@@ -747,30 +750,30 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문16 ", { size: 17, bold: true, color: NAVY2 }), t("The dance(S)·can show(△V)·the female·how healthy he is", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 만화책을 읽는 것은 정말 재미있다  (2) 그녀는 튼튼해지기 위해 매일 달린다  (3) 신선한 과일을 먹는 것은 건강을 지키기 위해 중요하다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 feet · health · attractive        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 반전 · 덧붙임 · 순서   2-2 [B] 변화 · [E] 마무리   2-3 ①", { size: 19, bold: true })], { after: 25 }),
-  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (d) → (a) → (c)  ·  Blue feet are a sign of good health and are attractive to the female.", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 feet · health · attractive        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 반전 · 덧붙임 · 순서   2-2 [B] 변화 · [E] 마무리   2-3 ③", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (c) → (d) → (a) → (b)  ·  Blue feet are a sign of good health and are attractive to the female.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) white  (2) blue  (3) health  (4) dance        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 5 ②  문장 9 ①  문장 11 ③  문장 14 ①", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 5 ①  문장 9 ①  문장 11 ②  문장 14 ①", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (d) → (a)", { size: 19, bold: true })], { after: 25 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 T · 5 T · 6 F · 7 F · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (b) → (d) → (a)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(c) · 2(a) · 3(e) · 4(d) · 5(f) · 6(b)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) are  (2) Having  (3) their  (4) dances", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) feathers (2) feet (3) blue (4) pigments (5) health (6) attract (7) dances (8) funny", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) Also, male boobies use their blue feet to attract a partner.  (2) The dance might look funny to humans.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 파란발부비새의 파란 발이 건강의 표시이자 짝을 끄는 매력이라는 점을 설명한다(문장 9·10). 소재와 특징을 함께 담은 ①이 정답이다. ④·⑤는 지엽적이고, ②·③은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 9에서 파란 발은 '건강이 좋다는(good health)' 표시라고 했으므로, 나쁘다는 ③은 본문과 반대된다. ①은 문장 3, ②은 문장 7, ④은 문장 12, ⑤는 문장 14에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 파란발부비새의 파란 발이 건강의 표시이자 짝을 끄는 매력이라는 점을 설명한다(문장 9·10). 소재와 특징을 함께 담은 ⑤이 정답이다. ③·④는 지엽적이고, ①·②은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 9에서 파란 발은 '건강이 좋다는(good health)' 표시라고 했으므로, 나쁘다는 ④은 본문과 반대된다. ①은 문장 3, ②은 문장 7, ③은 문장 12, ⑤는 문장 14에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) These는 바로 앞 문장 7의 pigments(물고기 속 색소)를 가리킨다. 복수 These는 복수 명사를 받는다 — 수 일치가 첫 번째 단서다.", true);
 Hs("독해 04   배열 영작   ·   When they’re babies, they have white feathers and fluffy bodies.");
 B("문장 3을 그대로 복원하는 문제다. ① 첫 글자는 대문자 When.   ② babies 뒤의 콤마를 빠뜨리지 않는다.   ③ white feathers and fluffy bodies를 and로 잇는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 feet · health · attractive     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 파란발부비새의 파란 발이 무엇을 뜻하는지 설명한다. ① 여행 방법은 나오지 않고, ③ 물고기는 발이 파래지는 이유일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 feet · health · attractive     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 파란발부비새의 파란 발이 무엇을 뜻하는지 설명한다. ② 여행 방법은 나오지 않고, ③ 물고기는 발이 파래지는 이유일 뿐이다.");
 B("1-2   ○표 할 세 단어: feet(힌트① 주인공) · health(힌트② 파란 발이 보여 주는 것) · attractive(힌트③ 암컷에게 주는 인상). 나머지 셋(fish · dance · islands)은 본문에 나오지만 주제문에는 들어가지 않는다.");
 B("1-3   문장 8 — These는 물고기 속 색소에 ○.   문장 13 — He는 수컷 부비새, the other는 나머지 한 발에 ○.   문장 15 — it은 발 자랑 춤에 ○.");
 B("[학습 포인트]   같은 it이라도 문장 11에서는 수컷을, 문장 15에서는 춤을 가리킨다 — 지시어를 만날 때마다 바로 앞에서 짝을 다시 확인하는 습관을 들이자.", true);
@@ -778,32 +781,32 @@ B("[학습 포인트]   같은 it이라도 문장 11에서는 수컷을, 문장 
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 때 / 반전 / 덧붙임 / 순서     2-2 [B] 변화 · [E] 마무리     2-3 ①");
+Hs("STEP 2   글의 흐름   ·   2-1 때 / 반전 / 덧붙임 / 순서     2-2 [B] 변화 · [E] 마무리     2-3 ③");
 B("2-1   문장 3 When — 아기일 '때'.   문장 5 But — 흰 발이 파랗게 바뀌는 '반전'.   문장 10 Also — 건강의 표시에 더해 쓰임을 '덧붙임'.   문장 13 and then — 한 발 다음 다른 발, 동작의 '순서'.");
 B("2-2   [B] 변화(문장 3–5: 흰 발이 자라면서 파랗게 바뀐다), [E] 마무리(문장 14–16: 우스워 보여도 수컷에게는 중요하다). 보기의 '사냥법'은 이 글에 없는 역할이다.");
-B("2-3   정답 ①. 파란발부비새라는 동물의 특징을 소개하고 사실을 알려 주는 설명문이다. 광고의 신호(사라는 말·가격)도, 일기의 날짜도, 편지의 Dear도, 시의 운율도 없다.");
+B("2-3   정답 ③. 파란발부비새라는 동물의 특징을 소개하고 사실을 알려 주는 설명문이다. 광고의 신호(사라는 말·가격)도, 일기의 날짜도, 편지의 Dear도, 시의 운율도 없다.");
 B("[학습 포인트]   문장 5의 But과 문장 15의 But이 이 글의 두 전환점이다. 마무리 직전의 But은 글쓴이가 진짜 하고 싶은 말의 신호다.", true);
-Hs("STEP 3   주제문 만들기   ·   3-1 health · attractive     3-3 (b) → (d) → (a) → (c)");
+Hs("STEP 3   주제문 만들기   ·   3-1 health · attractive     3-3 (c) → (d) → (a) → (b)");
 B("3-1  재료 찾기 — (2) 문장 9에서 health에 ○: 파란 발이 보여 주는 것이다. danger는 본문에 없다. (3) 문장 11에서 attractive에 ○: 암컷이 받는 인상이다. funny는 사람이 춤을 볼 때의 느낌이다.");
 B("3-2  뼈대 채우기 — (1) Blue feet  (2) health  (3) attractive.  넣으면 Blue feet are a sign of good health and are attractive to the female.이 완성된다.");
-B("3-3  정답 순서 — ⓑ Blue feet → ⓓ are a sign of good health → ⓐ and are attractive → ⓒ to the female.");
-B("[채점 포인트]  주인공(ⓑ)이 맨 앞, 마침표가 붙은 덩어리(ⓒ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
+B("3-3  정답 순서 — ⓒ Blue feet → ⓓ are a sign of good health → ⓐ and are attractive → ⓑ to the female.");
+B("[채점 포인트]  주인공(ⓒ)이 맨 앞, 마침표가 붙은 덩어리(ⓑ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) white  (2) blue  (3) health  (4) dance");
 B("(1)은 문장 4의 white, (2)는 문장 5의 blue, (3)은 문장 9의 health, (4)는 문장 12의 dance에서 가져온다. 요약문이 곧 이 글의 흐름이다: 소개 → 변화 → 이유 → 쓰임.", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 5 ②   문장 9 ①   문장 11 ③   문장 14 ①  (정답 선지는 무표시)");
-B("문장 5 their feet turn blue   ① ✕ [반대] 계속 하얗다 — 정반대.   ② ○ 발이 파랗게 된다.   ③ ✕ [무관] 발이 떨어진다는 말은 없다.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 5 ①   문장 9 ①   문장 11 ②   문장 14 ①  (정답 선지는 무표시)");
+B("문장 5 their feet turn blue   ② ✕ [반대] 계속 하얗다 — 정반대.   ① ○ 발이 파랗게 된다.   ③ ✕ [무관] 발이 떨어진다는 말은 없다.");
 B("문장 9 a sign of good health   ① ○ 그 새가 건강하다는 것을 보여 준다.   ② ✕ [반대] 아프다는 표시 — 정반대.   ③ ✕ [무관] 나이가 많다는 말은 지문에 없다.");
-B("문장 11 more attractive to the female   ① ✕ [무관] 암컷이 물고기를 더 먹는다는 말은 없다.   ② ✕ [반대] 암컷이 좋아하지 않는다 — 정반대.   ③ ○ 암컷이 더 좋아한다.");
+B("문장 11 more attractive to the female   ① ✕ [무관] 암컷이 물고기를 더 먹는다는 말은 없다.   ③ ✕ [반대] 암컷이 좋아하지 않는다 — 정반대.   ② ○ 암컷이 더 좋아한다.");
 B("문장 14 might look funny to humans   ① ○ 사람들이 우습다고 생각할 수도 있다.   ② ✕ [반대] 늘 무섭다고 생각한다 — 반대 방향.   ③ ✕ [무관] 사람들이 춤을 전혀 보지 않는다는 말은 없다.");
 B("[학습 포인트]  might(~일지도 모른다)와 always(늘)의 차이가 정답을 가른다. 정도를 나타내는 말도 반드시 함께 읽자.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 2.   2 F — 문장 3–4: 파란색이 아니라 하얀(white) 깃털과 발이다.   3 T — 문장 7.   4 F — 문장 9: 나쁜 건강이 아니라 좋은 건강(good health)의 표시다.   5 T — 문장 10.   6 F — 문장 12: 암컷이 아니라 수컷(male)이 춤춘다.   7 T — 문장 14.   8 F — 문장 15: 중요하지 않은 게 아니라 중요하다.  거짓 문장은 모두 한 요소만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (c) → (d) → (a)");
-B("ⓑ 아기 때는 발이 하얗다(문장 3–4) → ⓒ 색소가 든 신선한 물고기를 먹는다(문장 7) → ⓓ 발이 파랗게 변한다(문장 5·8) → ⓐ 한 발씩 들어 올리며 춤춘다(문장 13). 본문은 파랗게 변한다는 결과(문장 5)를 그 이유(문장 7–8)보다 먼저 말한다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 F · 4 T · 5 T · 6 F · 7 F · 8 T");
+   B("1 F — 문장 9: 나쁜 건강이 아니라 좋은 건강(good health)의 표시다.   2 T — 문장 10.   3 F — 문장 12: 암컷이 아니라 수컷(male)이 춤춘다.   4 T — 문장 14.   5 T — 문장 2.   6 F — 문장 15: 중요하지 않은 게 아니라 중요하다.  거짓 문장은 모두 한 요소만 비튼 것이다.   7 F — 문장 3–4: 파란색이 아니라 하얀(white) 깃털과 발이다.   8 T — 문장 7.", true);
+Hs("R2   사건 순서   ·   (c) → (b) → (d) → (a)");
+B("ⓒ 아기 때는 발이 하얗다(문장 3–4) → ⓑ 색소가 든 신선한 물고기를 먹는다(문장 7) → ⓓ 발이 파랗게 변한다(문장 5·8) → ⓐ 한 발씩 들어 올리며 춤춘다(문장 13). 본문은 파랗게 변한다는 결과(문장 5)를 그 이유(문장 7–8)보다 먼저 말한다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
 Hs("R3   영영풀이   ·   1 (c) · 2 (a) · 3 (e) · 4 (d) · 5 (f) · 6 (b)");
 B("feathers = 새를 덮고 있는 가볍고 부드러운 것 · fluffy = 만지면 부드럽고 가벼운 · attract = 누군가를 오게 만들다 · partner = 무언가를 함께 하는 상대 · show off = 자기가 얼마나 좋은지 보여 주다 · lift = 위로 들어 올리다.", true);
 Hs("R4   어법 기초   ·   (1) are  (2) Having  (3) their  (4) dances");

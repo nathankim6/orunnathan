@@ -76,22 +76,24 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Ugly Plants Need Our Attention, Too", "② How to Grow Blue Flowers at Home",
- "③ The Sun Moth: Australia’s Rarest Insect", "④ Ways to Make Your Garden Colorful",
+["① How to Grow Blue Flowers at Home",
+ "② Ugly Plants Need Our Attention, Too",
+ "③ The Sun Moth: Australia’s Rarest Insect",
+ "④ Ways to Make Your Garden Colorful",
  "⑤ Why Scientists Love Butterflies"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Many people plant colorful plants and flowers around their homes.",
  "② White, red, and pink flowers were studied more than green ones.",
- "③ Blue plants received the least research attention because they’re very rare.",
- "④ In Australia, milkweed is an important food source for butterflies.",
+ "③ In Australia, milkweed is an important food source for butterflies.",
+ "④ Blue plants received the least research attention because they’re very rare.",
  "⑤ Ugly plants often get less attention because of their appearance."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) those가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① ugly plants in danger",
- "② colorful flowers in gardens",
+["① colorful flowers in gardens",
+ "② ugly plants in danger",
  "③ blue plants that are very rare",
  "④ butterflies and sun moths",
  "⑤ scientists who study plants"].forEach(c => K.push(ch(c)));
@@ -141,7 +143,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -154,7 +156,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -191,7 +193,7 @@ K.push(spF(2, 85, 0.06));
  [8, "Despite their importance, these plants often get less attention from scientists due to their appearance."],
  [9, "Scientists can truly understand how important a species is only after thorough research."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -246,7 +248,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 집을 꾸미는 화려한 꽃 고르기", "② 못생겼다는 이유로 연구에서 밀려나는 식물들", "③ 호주에 사는 희귀한 나방"].forEach(c =>
+["① 못생겼다는 이유로 연구에서 밀려나는 식물들",
+ "② 집을 꾸미는 화려한 꽃 고르기",
+ "③ 호주에 사는 희귀한 나방"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -258,7 +262,7 @@ K.push(T([1740,1740,1740,1740,1740,1740], [new TableRow({ children: KWCAND.map((
   new Paragraph({ children: [t(ko, { size: 14, color: SUB })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 190 } }),
 ], { w: 1740, shade: FIELD, va: VerticalAlign.CENTER, m: { top: 240, bottom: 240, left: 40, right: 40 },
     b: { top: bd(4, FLINE), bottom: bd(4, FLINE), left: bd(4, FLINE), right: bd(4, FLINE) } })) })]));
-K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 이 글이 주목하는 식물  ② 그 식물이 못 받는 것  ③ 그 식물이 자연에서 하는 일 \u2014 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
+K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 이 글이 주목하는 식물  ② 그 식물이 못 받는 것  ③ 그 식물이 자연에서 하는 일 — 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
 K.push(spF(4, 260, 0.30));
 
 K.push(p([t("1-3  ", { size: 18, bold: true, color: GOLD }), t("지시어 이해하기", { size: 19, bold: true }),
@@ -267,7 +271,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -320,7 +324,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -335,15 +339,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Many people choose to plant colorful plants around their homes.",
-    "Colors influenced which plants scientists chose to research.",
     "Green and brown flowers were studied more than white ones.",
+    "Ugly plants get more attention from scientists because of their appearance.",
+    "Colors influenced which plants scientists chose to research.",
+    "Many people choose to plant colorful plants around their homes.",
+    "The grassy mat rushes are homes for the rare sun moth.",
     "Blue plants received the most research attention because they are rare.",
     "In Australia, milkweed is an important food source for bees.",
-    "The grassy mat rushes are homes for the rare sun moth.",
-    "Ugly plants get more attention from scientists because of their appearance.",
-    "Scientists can fully understand a species without any research.",
-  ].map((s, i) => new TableRow({ children: [
+    "Scientists can fully understand a species without any research."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -358,8 +361,8 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "글이 생각을 펼쳐 나가는 차례대로 ⓐ~ⓓ를 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ Some “ugly” plants play important roles in nature.",
-      "ⓑ Both people and scientists are attracted by colorful plants.",
+  ...["ⓐ Both people and scientists are attracted by colorful plants.",
+      "ⓑ Some “ugly” plants play important roles in nature.",
       "ⓒ Ugly plants still get less attention because of their looks.",
       "ⓓ Scientists are asked to study ugly plants as well."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
@@ -399,22 +402,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문8 ", { size: 17, bold: true, color: NAVY2 }), t("Despite their importance(M)·plants(S)·get(△V)·due to their appearance(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 이 노래는 많은 학생들에게 사랑받는다  (2) 매일 자전거를 타는 것은 너를 튼튼하게 만든다  (3) 채소를 기르는 것은 우리 과학 수업에서 가르쳐진다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 ugly · attention · role   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 ugly · attention · role   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2T · 3F · 4T · 5F · 6T · 7F · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (c) → (d)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 T · 5 T · 6 T · 7 F · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (b) → (c) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 색이 예쁜 식물에 연구가 쏠리고(문장 2–4), 못생긴 식물은 중요한 역할에도 관심을 못 받는다(문장 6–8)고 지적한 뒤 연구를 촉구한다(문장 11). 소재와 주장을 함께 담은 ①이 제목이다. ②·③는 지엽적, ④·⑤는 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 4에서 파란 식물은 아주 드물어서 '가장 많은(the most)' 연구 관심을 받았다. least로 뒤집은 ③이 본문과 반대된다. ①은 문장 1, ②은 문장 3, ④는 문장 7, ⑤는 문장 8에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ②");
+B("이 글은 색이 예쁜 식물에 연구가 쏠리고(문장 2–4), 못생긴 식물은 중요한 역할에도 관심을 못 받는다(문장 6–8)고 지적한 뒤 연구를 촉구한다(문장 11). 소재와 주장을 함께 담은 ②이 제목이다. ①·③는 지엽적, ④·⑤는 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 4에서 파란 식물은 아주 드물어서 '가장 많은(the most)' 연구 관심을 받았다. least로 뒤집은 ④이 본문과 반대된다. ①은 문장 1, ②은 문장 3, ③는 문장 7, ⑤는 문장 8에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) those는 바로 앞의 ugly plants를 받는다. especially those in danger는 '특히 위험에 처한 (못생긴) 식물들'이라는 뜻이다 — those는 앞에 나온 복수 명사를 대신한다.", true);
 Hs("독해 04   배열 영작   ·   White, red, and pink flowers were studied more than green and brown ones.");
 B("문장 3을 그대로 복원하는 문제다. ① 첫 글자는 대문자 White, 뒤의 콤마도 그대로.   ② 수동태 were studied — be동사+과거분사.   ③ 비교는 more than, 반복을 피한 ones로 끝난다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 ugly · attention · role     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 생김새 때문에 연구에서 밀려나는 식물을 다룬다. ① 집 꾸미기는 도입의 배경일 뿐이고, ③ 나방은 예시 속 곤충이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 ugly · attention · role     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 생김새 때문에 연구에서 밀려나는 식물을 다룬다. ② 집 꾸미기는 도입의 배경일 뿐이고, ③ 나방은 예시 속 곤충이다.");
 B("1-2   ○표 할 세 단어: ugly(힌트① 주목하는 식물) · attention(힌트② 못 받는 것) · role(힌트③ 자연에서 하는 일). 나머지 셋(blue · butterflies · colors)은 본문에 나오지만 예시와 배경일 뿐이다.");
 B("1-3   문장 3 — ones는 flowers에 ○ (앞에 나온 명사의 반복을 피한 말).   문장 4 — they는 파란 식물.   문장 8 — their도, these plants도 모두 앞 문장의 못생긴 식물을 가리킨다.");
 B("[학습 포인트]   같은 their라도 문장 2에서는 과학자들을, 문장 8에서는 식물을 가리킨다. 지시어는 뜻이 아니라 '바로 앞의 자리'로 찾는 것이 원칙이다.", true);
@@ -423,10 +426,10 @@ B("[학습 포인트]   같은 their라도 문장 2에서는 과학자들을, �
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 T · 3 F · 4 T · 5 F · 6 T · 7 F · 8 F");
-B("1 T — 문장 1.   2 T — 문장 2.   3 F — 문장 3: 초록·갈색이 아니라 흰·빨강·분홍 꽃이 더 많이 연구되었다.   4 T — 문장 4.   5 F — 문장 7: 벌(bees)이 아니라 나비(butterflies)의 먹이원이다.   6 T — 문장 7.   7 F — 문장 8: 생김새 때문에 관심을 더 받는 게 아니라 덜 받는다.   8 F — 문장 9: 충분한 연구 뒤에야 이해할 수 있다.  거짓 넷은 모두 한 요소(green, bees, more, without)만 비튼 것이다.", true);
-Hs("R2   생각의 차례   ·   (b) → (a) → (c) → (d)");
-B("ⓑ 사람도 과학자도 화려한 색에 끌린다(문장 1–5) → ⓐ 그러나 못생긴 식물도 자연에서 중요한 역할을 한다(문장 6–7) → ⓒ 그럼에도 생김새 때문에 관심을 덜 받는다(문장 8) → ⓓ 그러므로 못생긴 식물도 연구해야 한다(문장 9–11). However와 Therefore가 차례를 알려 주는 신호다.", true);
+Hs("R1   True / False   ·   1 F · 2 F · 3 T · 4 T · 5 T · 6 T · 7 F · 8 F");
+   B("1 F — 문장 3: 초록·갈색이 아니라 흰·빨강·분홍 꽃이 더 많이 연구되었다.   2 F — 문장 8: 생김새 때문에 관심을 더 받는 게 아니라 덜 받는다.   3 T — 문장 2.   4 T — 문장 1.   5 T — 문장 7.   6 T — 문장 4.   7 F — 문장 7: 벌(bees)이 아니라 나비(butterflies)의 먹이원이다.   8 F — 문장 9: 충분한 연구 뒤에야 이해할 수 있다.  거짓 넷은 모두 한 요소(green, bees, more, without)만 비튼 것이다.", true);
+Hs("R2   생각의 차례   ·   (a) → (b) → (c) → (d)");
+B("ⓐ 사람도 과학자도 화려한 색에 끌린다(문장 1–5) → ⓑ 그러나 못생긴 식물도 자연에서 중요한 역할을 한다(문장 6–7) → ⓒ 그럼에도 생김새 때문에 관심을 덜 받는다(문장 8) → ⓓ 그러므로 못생긴 식물도 연구해야 한다(문장 9–11). However와 Therefore가 차례를 알려 주는 신호다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

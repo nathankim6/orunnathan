@@ -79,25 +79,27 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["\u2460 Don\u2019t Throw It Away: E-waste Is a Treasure", "\u2461 How to Fix a Broken Phone at Home",
- "\u2462 The Best Drawers for Small Items", "\u2463 Why Europeans Buy Many Electronic Items",
- "\u2464 How Gold and Silver Are Found in Mines"].forEach(c => K.push(ch(c)));
+["① How to Fix a Broken Phone at Home",
+ "② The Best Drawers for Small Items",
+ "③ Why Europeans Buy Many Electronic Items",
+ "④ How Gold and Silver Are Found in Mines",
+ "⑤ Don\u2019t Throw It Away: E-waste Is a Treasure"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["\u2460 Many households in Europe keep unused electronic items.",
- "\u2461 Out of 74 electronic items in a household, 13 aren\u2019t used anymore.",
- "\u2462 E-waste includes anything with plugs, cords, and electronic parts.",
- "\u2463 E-waste is exactly the same as regular trash.",
- "\u2464 The metals in e-waste can be reused to make batteries."].forEach(c => K.push(ch(c)));
+["① Many households in Europe keep unused electronic items.",
+ "② Out of 74 electronic items in a household, 13 aren\u2019t used anymore.",
+ "③ E-waste includes anything with plugs, cords, and electronic parts.",
+ "④ The metals in e-waste can be reused to make batteries.",
+ "⑤ E-waste is exactly the same as regular trash."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) These가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["\u2460 the valuable metals in e-waste",
- "\u2461 the unused items in a drawer",
- "\u2462 the electric cars and solar panels",
- "\u2463 the local recycling centers",
- "\u2464 the plugs and cords"].forEach(c => K.push(ch(c)));
+["① the unused items in a drawer",
+ "② the electric cars and solar panels",
+ "③ the valuable metals in e-waste",
+ "④ the local recycling centers",
+ "⑤ the plugs and cords"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -144,7 +146,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -157,7 +159,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -194,7 +196,7 @@ K.push(spF(2, 85, 0.06));
  [10, "These can be reused to make batteries for electric cars and solar panels."],
  [11, "So, if you have any e-waste in your house, take it to a local recycling center."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -249,7 +251,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["\u2460 서랍을 깔끔하게 정리하는 방법", "\u2461 안 쓰는 전자제품의 가치와 재활용", "\u2462 유럽 가정의 전기 요금 아끼기"].forEach(c =>
+["① 서랍을 깔끔하게 정리하는 방법",
+ "② 유럽 가정의 전기 요금 아끼기",
+ "③ 안 쓰는 전자제품의 가치와 재활용"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -261,7 +265,7 @@ K.push(T([1740,1740,1740,1740,1740,1740], [new TableRow({ children: KWCAND.map((
   new Paragraph({ children: [t(ko, { size: 14, color: SUB })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 190 } }),
 ], { w: 1740, shade: FIELD, va: VerticalAlign.CENTER, m: { top: 240, bottom: 240, left: 40, right: 40 },
     b: { top: bd(4, FLINE), bottom: bd(4, FLINE), left: bd(4, FLINE), right: bd(4, FLINE) } })) })]));
-K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("\u2460 이 글의 주인공  \u2461 그 안에 들어 있는 것  \u2462 글쓴이가 권하는 행동 \u2014 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
+K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 이 글의 주인공  ② 그 안에 들어 있는 것  ③ 글쓴이가 권하는 행동 — 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
 K.push(spF(4, 260, 0.30));
 
 K.push(p([t("1-3  ", { size: 18, bold: true, color: GOLD }), t("지시어 이해하기", { size: 19, bold: true }),
@@ -270,7 +274,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -317,7 +321,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -332,15 +336,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Many households in Europe also keep unused electronic items.",
-    "Out of 74 electronic items in a household, 40 aren\u2019t used anymore.",
-    "E-waste includes anything with plugs, cords, and electronic parts.",
-    "E-waste is exactly the same as regular trash.",
-    "E-waste has valuable metals like gold, silver, and copper.",
-    "The metals in e-waste cannot be used again.",
     "You should take your e-waste to a local recycling center.",
+    "E-waste has valuable metals like gold, silver, and copper.",
+    "E-waste is exactly the same as regular trash.",
     "Recycling e-waste harms the Earth.",
-  ].map((s, i) => new TableRow({ children: [
+    "E-waste includes anything with plugs, cords, and electronic parts.",
+    "Out of 74 electronic items in a household, 40 aren\u2019t used anymore.",
+    "Many households in Europe also keep unused electronic items.",
+    "The metals in e-waste cannot be used again."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -355,10 +358,10 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "전자제품이 전자 폐기물이 되어 다시 쓰이기까지 ⓐ~ⓓ를 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["\u24D0 The metals are reused to make batteries.",
-      "\u24D1 An electronic item stops working.",
-      "\u24D2 You take the e-waste to a recycling center.",
-      "\u24D3 The item is put in a drawer and becomes e-waste."]
+  ...["ⓐ An electronic item stops working.",
+      "ⓑ The metals are reused to make batteries.",
+      "ⓒ You take the e-waste to a recycling center.",
+      "ⓓ The item is put in a drawer and becomes e-waste."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -396,22 +399,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("if[네모]·you(S′)·have(△V′)·take(△V, 명령문이라 주어 없음)·to a local recycling center(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 이 무거운 상자는 두 사람에 의해 옮겨질 수 있다  (2) 매일 읽음으로써, 나는 새 단어를 많이 배웠다  (3) 플라스틱을 덜 씀으로써, 바다는 구해질 수 있다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 e-waste · metals · recycling   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 e-waste · metals · recycling   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (c) → (a)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 T · 3 F · 4 F · 5 T · 6 F · 7 T · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (d) → (c) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("안 쓰는 전자제품이 전자 폐기물이 된다는 소개(문장 1–7)에 이어, 그 안에 값진 금속이 들어 있으니 재활용 센터로 가져가라고 권한다(문장 8–12). 소재와 평가를 모두 담은 ①이 제목이다. ④은 지엽적이고 ②·③·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 8에서 전자 폐기물은 일반 쓰레기 '그 이상(more than)'이라고 했으므로, 똑같다고 한 ④이 본문과 반대된다. ①은 문장 2, ②은 문장 3, ③는 문장 7, ⑤는 문장 9–10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ⑤");
+B("안 쓰는 전자제품이 전자 폐기물이 된다는 소개(문장 1–7)에 이어, 그 안에 값진 금속이 들어 있으니 재활용 센터로 가져가라고 권한다(문장 8–12). 소재와 평가를 모두 담은 ⑤이 제목이다. ③은 지엽적이고 ①·②·④는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 8에서 전자 폐기물은 일반 쓰레기 '그 이상(more than)'이라고 했으므로, 똑같다고 한 ⑤이 본문과 반대된다. ①은 문장 2, ②은 문장 3, ③는 문장 7, ④는 문장 9–10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) These는 바로 앞 문장 9의 valuable metals(금·은·구리)를 가리킨다. 배터리로 다시 만들어지는 것이 무엇인지 생각하면 된다 — 복수형 These는 복수 명사를 받는다.", true);
 Hs("독해 04   배열 영작   ·   But, e-waste is more than regular trash.");
 B("문장 8을 그대로 복원하는 문제다. ① 첫 글자는 대문자 But — 뒤의 콤마까지 함께 쓴다.   ② more than이 한 덩어리로 '~보다 더한'.   ③ regular trash가 비교 대상으로 맨 뒤.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 e-waste · metals · recycling     1-3 아래 참조");
-B("1-1   정답 ②. 안 쓰는 전자제품(전자 폐기물)의 가치와 재활용을 다룬 글이다. ① 서랍은 물건을 넣어 두는 장소로 한 번 나올 뿐이고, ③ 전기 요금 이야기는 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 e-waste · metals · recycling     1-3 아래 참조");
+B("1-1   정답 ③. 안 쓰는 전자제품(전자 폐기물)의 가치와 재활용을 다룬 글이다. ① 서랍은 물건을 넣어 두는 장소로 한 번 나올 뿐이고, ② 전기 요금 이야기는 나오지 않는다.");
 B("1-2   ○표 할 세 단어: e-waste(힌트① 이 글의 주인공) · metals(힌트② 그 안에 든 것) · recycling(힌트③ 글쓴이가 권하는 행동). 나머지 셋(drawer · Europe · batteries)은 본문에 나오지만 배경과 예시일 뿐이다.");
 B("1-3   문장 4 — these unused items는 안 쓰는 전자제품에 ○.   문장 9 — It은 전자 폐기물에 ○ (문장 8의 e-waste).   문장 10 — These는 귀중한 금속들에 ○ (문장 9의 metals).");
 B("[학습 포인트]   문장 4의 these와 문장 10의 These는 글자는 같지만 가리키는 것이 다르다(안 쓰는 물건 → 금속). 지시어는 늘 '바로 앞'에서 짝을 찾아야 한다.", true);
@@ -419,10 +422,10 @@ B("[학습 포인트]   문장 4의 these와 문장 10의 These는 글자는 같
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 2.   2 F — 문장 3: 40개가 아니라 13개다.   3 T — 문장 7.   4 F — 문장 8: 똑같은 게 아니라 일반 쓰레기 그 이상이다.   5 T — 문장 9.   6 F — 문장 10: 다시 쓸 수 없는 게 아니라 다시 쓰일 수 있다(can be reused).   7 T — 문장 11.   8 F — 문장 12: 지구를 해치는 게 아니라 돕는다(help).  거짓 넷은 모두 한 요소(40, the same, cannot, harms)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (d) → (c) → (a)");
-B("ⓑ 전자제품이 고장 난다(문장 1) → ⓓ 서랍에 들어가 전자 폐기물이 된다(문장 1·4) → ⓒ 재활용 센터로 가져간다(문장 11) → ⓐ 금속이 배터리로 다시 만들어진다(문장 10). 본문은 금속의 재사용(문장 10)을 재활용 센터(문장 11)보다 먼저 말하지만, 실제 순서는 가져간 뒤에 다시 만들어진다 — 서술 순서와 사건 순서가 어긋나는 지점이다.", true);
+Hs("R1   True / False   ·   1 T · 2 T · 3 F · 4 F · 5 T · 6 F · 7 T · 8 F");
+   B("1 T — 문장 11.   2 T — 문장 9.   3 F — 문장 8: 똑같은 게 아니라 일반 쓰레기 그 이상이다.   4 F — 문장 12: 지구를 해치는 게 아니라 돕는다(help).  거짓 넷은 모두 한 요소(40, the same, cannot, harms)만 비튼 것이다.   5 T — 문장 7.   6 F — 문장 3: 40개가 아니라 13개다.   7 T — 문장 2.   8 F — 문장 10: 다시 쓸 수 없는 게 아니라 다시 쓰일 수 있다(can be reused).", true);
+Hs("R2   사건 순서   ·   (a) → (d) → (c) → (b)");
+B("ⓐ 전자제품이 고장 난다(문장 1) → ⓓ 서랍에 들어가 전자 폐기물이 된다(문장 1·4) → ⓒ 재활용 센터로 가져간다(문장 11) → ⓑ 금속이 배터리로 다시 만들어진다(문장 10). 본문은 금속의 재사용(문장 10)을 재활용 센터(문장 11)보다 먼저 말하지만, 실제 순서는 가져간 뒤에 다시 만들어진다 — 서술 순서와 사건 순서가 어긋나는 지점이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

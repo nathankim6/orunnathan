@@ -43,9 +43,20 @@ def section_of(src, pos):
             if m.start() > best: best, bn = m.start(), name
     return bn
 
+# 여러 유닛이 함께 쓰는 문구(지시문·문법 팁)는 잔존이 아니다 —
+# 20개 유닛 이상에 나오는 문자열은 상용구로 보고 제외한다.
+# 2권 01~04단원은 견본 그 자체이므로 대조에서 뺀다.
+ALLF = sorted(glob.glob("rg[1-4]/units/unit*.js"))
+_freq = collections.Counter()
+for _f in ALLF:
+    _freq.update({s for _, s in strings(open(_f, encoding="utf-8").read()) if distinctive(s)})
+tmpl = {s for s in tmpl if _freq.get(s, 0) < 20}
+SKIP = {"rg2/units/unit01.js", "rg2/units/unit02.js", "rg2/units/unit03.js", "rg2/units/unit04.js"}
+
 rows = []
 for book in sorted(sys.argv[1:] or glob.glob("rg[1-4]")):
     for f in sorted(glob.glob(f"{book}/units/unit*.js")):
+        if f in SKIP: continue
         src = open(f, encoding="utf-8").read()
         hits = [(p, s) for p, s in strings(src) if distinctive(s) and s in tmpl]
         if hits:

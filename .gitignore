@@ -22,3 +22,13 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# 교재 빌드 산출물 — 원본은 units/ 이다
+reading-graphy/*/work/
+reading-graphy/*/scripts/
+reading-graphy/node_modules/
+reading-graphy/package-lock.json
+reading-graphy/__pycache__/
+reading-graphy/*/assets/fonts/
+reading-graphy/*/assets/icons/
+reading-graphy/*/assets/logos/

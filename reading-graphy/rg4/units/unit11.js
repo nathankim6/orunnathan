@@ -84,17 +84,17 @@ K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?")
 K.push(sp(65));
 ["① The Middle English word “mare” meant an evil spirit.",
  "② The word “night” was added later than “mare.”",
- "③ In Scandinavia, King Vanlandi killed a mare.",
- "④ In Germany, various creatures are believed to bring nightmares.",
+ "③ In Germany, various creatures are believed to bring nightmares.",
+ "④ In Scandinavia, King Vanlandi killed a mare.",
  "⑤ Some people put something made of steel in their bed."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the creatures that bring nightmares",
- "② the shoes near the door",
- "③ the people who are sleeping",
- "④ the keyholes in the door",
- "⑤ the old stories from Scandinavia"].forEach(c => K.push(ch(c)));
+["① the shoes near the door",
+ "② the people who are sleeping",
+ "③ the keyholes in the door",
+ "④ the old stories from Scandinavia",
+ "⑤ the creatures that bring nightmares"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -327,14 +327,13 @@ K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
     "The Middle English word “mare” meant an evil spirit.",
-    "The word “night” was added before the word “mare.”",
-    "Nowadays, we use “nightmare” for any scary dream.",
     "In Scandinavia, King Vanlandi killed a mare.",
     "The mare used to sit on the chests of sleeping people.",
-    "In Germany, only one creature is believed to bring nightmares.",
+    "The word “night” was added before the word “mare.”",
     "Some people put something made of steel in their bed.",
+    "Nowadays, we use “nightmare” for any scary dream.",
     "According to other traditions, mares give life to people.",
-  ].map((s, i) => new TableRow({ children: [
+    "In Germany, only one creature is believed to bring nightmares."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -351,8 +350,8 @@ K.push(sp(120));
 K.push(box([
   ...["ⓐ The word “night” was added to show the spirits came at night.",
       "ⓑ Nowadays, the word describes any scary dream.",
-      "ⓒ People in Scandinavia told an ancient story about a mare.",
-      "ⓓ The Middle English word “mare” meant an evil spirit."]
+      "ⓒ The Middle English word “mare” meant an evil spirit.",
+      "ⓓ People in Scandinavia told an ancient story about a mare."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -392,15 +391,15 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 cultures · creatures · dreams   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (d) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 T · 4 F · 5 T · 6 T · 7 F · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ①");
 B("이 글은 ‘nightmare’라는 말이 악령을 뜻하는 mare에서 왔다는 유래(문장 2–4)와, 나쁜 꿈을 일으킨다고 여겨진 여러 문화의 존재들(문장 5–10)을 소개한다. 소재(악몽)와 특징(말의 유래·존재들)을 함께 담은 ①이 제목으로 적절하다. ③·④는 지엽적 오답, ②·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 6에서 바닐란디 왕은 메어에게 죽임을 당했다(was killed by a mare). 주어와 목적어가 뒤바뀐 ③이 본문과 반대된다. ①은 문장 2, ②는 문장 3, ④는 문장 8, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 6에서 바닐란디 왕은 메어에게 죽임을 당했다(was killed by a mare). 주어와 목적어가 뒤바뀐 ④이 본문과 반대된다. ①은 문장 2, ②는 문장 3, ③는 문장 8, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) them은 바로 앞 문장 8의 악몽을 가져온다고 여겨지는 존재들을 가리킨다. 신발과 쇠붙이로 쫓으려는 대상이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   Nowadays, we use the word “nightmare” to describe any scary dream.");
 B("문장 4를 그대로 복원하는 문제다. ① 첫 글자는 대문자 Nowadays, 뒤에 콤마.   ② use the word “nightmare” — 목적어 덩어리를 붙여 둔다.   ③ '묘사하기 위해'는 to describe.", true);
@@ -414,10 +413,10 @@ B("[학습 포인트]   문장 7 한 문장 안에서 This creature와 they가 �
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 2.   2 F — 문장 3: night는 나중에(later) 덧붙여졌다.   3 T — 문장 4.   4 F — 문장 6: 왕이 죽인 게 아니라 메어에게 죽임을 당했다.   5 T — 문장 7.   6 F — 문장 8: 하나가 아니라 여러(various) 존재다.   7 T — 문장 9.   8 F — 문장 10: 생명을 주는 게 아니라 빨아 간다(suck the life out of).  거짓 문장은 모두 딱 한 요소(before, killed, only one, give)를 비튼 것이다 — 그 한 요소를 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (c) → (d) → (a) → (b)");
-B("ⓒ 고대 스칸디나비아에서 메어 이야기가 전해진다(문장 6) → ⓓ 중세 영어에서 mare가 악령을 뜻한다(문장 2) → ⓐ 밤에 온다는 뜻으로 night가 덧붙여진다(문장 3) → ⓑ 오늘날에는 무서운 꿈 전체를 가리킨다(문장 4). 본문은 낱말의 역사(문장 2–4)를 먼저 말하고 더 오래된 이야기(문장 6)를 뒤에 든다 — 서술 순서와 실제 순서가 다른 지점이다.", true);
+Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 T · 7 F · 8 F");
+   B("1 T — 문장 2.   2 F — 문장 6: 왕이 죽인 게 아니라 메어에게 죽임을 당했다.   3 T — 문장 7.   4 F — 문장 3: night는 나중에(later) 덧붙여졌다.   5 T — 문장 9.   6 T — 문장 4.   7 F — 문장 10: 생명을 주는 게 아니라 빨아 간다(suck the life out of).  거짓 문장은 모두 딱 한 요소(before, killed, only one, give)를 비튼 것이다 — 그 한 요소를 찾는 것이 정독이다.   8 F — 문장 8: 하나가 아니라 여러(various) 존재다.", true);
+Hs("R2   사건 순서   ·   (d) → (c) → (a) → (b)");
+B("ⓓ 고대 스칸디나비아에서 메어 이야기가 전해진다(문장 6) → ⓒ 중세 영어에서 mare가 악령을 뜻한다(문장 2) → ⓐ 밤에 온다는 뜻으로 night가 덧붙여진다(문장 3) → ⓑ 오늘날에는 무서운 꿈 전체를 가리킨다(문장 4). 본문은 낱말의 역사(문장 2–4)를 먼저 말하고 더 오래된 이야기(문장 6)를 뒤에 든다 — 서술 순서와 실제 순서가 다른 지점이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

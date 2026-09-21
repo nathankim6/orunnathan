@@ -79,25 +79,27 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["\u2460 Tiny Cleaners of the Hudson River", "\u2461 The Tastiest Seafood Dishes in New York",
- "\u2462 How to Build a House Under the Sea", "\u2463 Why the Hudson River Became Dirty",
- "\u2464 The Best Time to Visit New York City"].forEach(c => K.push(ch(c)));
+["① The Tastiest Seafood Dishes in New York",
+ "② Tiny Cleaners of the Hudson River",
+ "③ How to Build a House Under the Sea",
+ "④ Why the Hudson River Became Dirty",
+ "⑤ The Best Time to Visit New York City"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["\u2460 In New York City, oysters are doing a great job for the environment.",
- "\u2461 The city has put over 11 million young oysters in the river.",
- "\u2462 Oysters take in water and filter out harmful things.",
- "\u2463 Oyster reefs make the water of the river more polluted.",
- "\u2464 Many sea animals have returned to the area."].forEach(c => K.push(ch(c)));
+["① Oyster reefs make the water of the river more polluted.",
+ "② In New York City, oysters are doing a great job for the environment.",
+ "③ The city has put over 11 million young oysters in the river.",
+ "④ Oysters take in water and filter out harmful things.",
+ "⑤ Many sea animals have returned to the area."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["\u2460 the harmful things in the water",
- "\u2461 the oysters in the river",
- "\u2462 the people in New York City",
- "\u2463 the underwater homes",
- "\u2464 the sea animals that returned"].forEach(c => K.push(ch(c)));
+["① the oysters in the river",
+ "② the people in New York City",
+ "③ the underwater homes",
+ "④ the harmful things in the water",
+ "⑤ the sea animals that returned"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -144,7 +146,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -157,7 +159,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -193,7 +195,7 @@ K.push(spF(2, 85, 0.06));
  [8, "They take in water, filter out harmful things, and leave them at the bottom of the river."],
  [11, "These oyster reefs provide places where lots of plants and animals can live."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -248,7 +250,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["\u2460 뉴욕의 해산물 요리법", "\u2461 강물을 깨끗하게 만드는 굴", "\u2462 허드슨강의 다리 건설 이야기"].forEach(c =>
+["① 강물을 깨끗하게 만드는 굴",
+ "② 뉴욕의 해산물 요리법",
+ "③ 허드슨강의 다리 건설 이야기"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -260,7 +264,7 @@ K.push(T([1740,1740,1740,1740,1740,1740], [new TableRow({ children: KWCAND.map((
   new Paragraph({ children: [t(ko, { size: 14, color: SUB })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 190 } }),
 ], { w: 1740, shade: FIELD, va: VerticalAlign.CENTER, m: { top: 240, bottom: 240, left: 40, right: 40 },
     b: { top: bd(4, FLINE), bottom: bd(4, FLINE), left: bd(4, FLINE), right: bd(4, FLINE) } })) })]));
-K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("\u2460 이 글의 주인공  \u2461 강물이 어떻게 되는가  \u2462 굴이 만들어 주는 것 \u2014 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
+K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 이 글의 주인공  ② 강물이 어떻게 되는가  ③ 굴이 만들어 주는 것 — 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
 K.push(spF(4, 260, 0.30));
 
 K.push(p([t("1-3  ", { size: 18, bold: true, color: GOLD }), t("지시어 이해하기", { size: 19, bold: true }),
@@ -269,7 +273,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -316,7 +320,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -331,15 +335,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "In New York City, oysters are helping the environment.",
     "The city has put over 11 million young oysters in the river.",
-    "Oysters take in water and filter out harmful things.",
-    "Oysters leave the harmful things on the surface of the river.",
-    "As a result, the water becomes more polluted.",
+    "In New York City, oysters are helping the environment.",
     "Oyster reefs provide places where plants and animals can live.",
-    "Because of the reefs, the ecosystem is getting weaker.",
     "Only a few sea animals have left the area forever.",
-  ].map((s, i) => new TableRow({ children: [
+    "Because of the reefs, the ecosystem is getting weaker.",
+    "As a result, the water becomes more polluted.",
+    "Oysters take in water and filter out harmful things.",
+    "Oysters leave the harmful things on the surface of the river."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -354,10 +357,10 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "굴이 강을 되살리는 과정 ⓐ~ⓓ를 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["\u24D0 The water becomes less polluted.",
-      "\u24D1 The city puts young oysters in the Hudson River.",
-      "\u24D2 Oysters take in water and filter out harmful things.",
-      "\u24D3 Many sea animals return to the area."]
+  ...["ⓐ The water becomes less polluted.",
+      "ⓑ Oysters take in water and filter out harmful things.",
+      "ⓒ Many sea animals return to the area.",
+      "ⓓ The city puts young oysters in the Hudson River."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -395,22 +398,22 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("These oyster reefs(S)·provide(△V)·places(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 내 언니는 숙제를 끝냈다  (2) 이것은 돈을 아끼는 좋은 방법이다  (3) 그는 집에서 빵을 만드는 방법을 찾아냈다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 oysters · cleaner · reefs   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 oysters · cleaner · reefs   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2T · 3T · 4F · 5F · 6T · 7F · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (a) → (d)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 T · 3 T · 4 F · 5 F · 6 F · 7 T · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("먹거리로만 알던 굴이 허드슨강에서 물을 걸러 내고(문장 7–9) 암초를 만들어 생태계를 되살린다(문장 10–12)는 글이다. 소재와 평가를 함께 담은 ①이 제목이다. ②·④는 지엽적이고 ③·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 9에서 물이 덜 오염된다(less polluted)고 했고 문장 12에서도 생태계가 더 건강해진다고 했으므로, 더 오염된다는 ④은 본문과 반대된다. ①은 문장 2, ②은 문장 5, ③는 문장 8, ⑤는 문장 12에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ②");
+B("먹거리로만 알던 굴이 허드슨강에서 물을 걸러 내고(문장 7–9) 암초를 만들어 생태계를 되살린다(문장 10–12)는 글이다. 소재와 평가를 함께 담은 ②이 제목이다. ①·④는 지엽적이고 ③·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 9에서 물이 덜 오염된다(less polluted)고 했고 문장 12에서도 생태계가 더 건강해진다고 했으므로, 더 오염된다는 ①은 본문과 반대된다. ②은 문장 2, ③은 문장 5, ④는 문장 8, ⑤는 문장 12에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) them은 같은 문장 앞부분의 harmful things를 가리킨다. 굴이 강바닥에 남겨 두는 것이 무엇인지 생각하면 된다 — 문장 2의 they(굴)와 헷갈리지 않아야 한다.", true);
 Hs("독해 04   배열 영작   ·   Oysters have a special way of cleaning up.");
 B("문장 7을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Oysters — 복수 주어이므로 have.   ② a special way가 한 덩어리.   ③ 전치사 of 뒤에는 동사원형+ing — cleaning up.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 oysters · cleaner · reefs     1-3 아래 참조");
-B("1-1   정답 ②. 굴이 허드슨강 물을 깨끗하게 하고 생태계를 살린다는 글이다. ① 해산물은 첫 문장의 통념일 뿐이고, ③ 다리 건설 이야기는 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 oysters · cleaner · reefs     1-3 아래 참조");
+B("1-1   정답 ①. 굴이 허드슨강 물을 깨끗하게 하고 생태계를 살린다는 글이다. ② 해산물은 첫 문장의 통념일 뿐이고, ③ 다리 건설 이야기는 나오지 않는다.");
 B("1-2   ○표 할 세 단어: oysters(힌트① 주인공) · cleaner(힌트② 강물의 변화) · reefs(힌트③ 굴이 만들어 주는 것). 나머지 셋(seafood · million · bottom)은 본문에 나오지만 통념과 세부 수치일 뿐이다.");
 B("1-3   문장 6 — this는 굴이 물을 맑게 하는 일에 ○ (문장 5).   문장 8 — them은 해로운 것들에 ○ (같은 문장의 harmful things).   문장 11 — These oyster reefs는 굴이 만든 암초에 ○ (문장 10).");
 B("[학습 포인트]   문장 2의 they는 굴, 문장 8의 them은 해로운 것들이다. 같은 인칭대명사라도 가리키는 대상이 바뀌므로, 만날 때마다 바로 앞에서 짝을 확인해야 한다.", true);
@@ -418,10 +421,10 @@ B("[학습 포인트]   문장 2의 they는 굴, 문장 8의 them은 해로운 �
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 T · 3 T · 4 F · 5 F · 6 T · 7 F · 8 F");
-B("1 T — 문장 2.   2 T — 문장 5.   3 T — 문장 8.   4 F — 문장 8: 수면(surface)이 아니라 강바닥(bottom)에 남긴다.   5 F — 문장 9: 더 오염되는 게 아니라 덜 오염된다.   6 T — 문장 11.   7 F — 문장 12: 약해지는 게 아니라 더 건강해진다.   8 F — 문장 12: 많은 바다 동물이 돌아왔다.  거짓 넷은 모두 한 요소(surface, more, weaker, left)만 비튼 것이다.", true);
-Hs("R2   과정 순서   ·   (b) → (c) → (a) → (d)");
-B("ⓑ 시가 어린 굴을 강에 넣는다(문장 5) → ⓒ 굴이 물을 빨아들여 해로운 것을 걸러 낸다(문장 8) → ⓐ 물이 덜 오염된다(문장 9) → ⓓ 바다 동물들이 돌아온다(문장 12). 문장 6의 ‘어떻게 이런 일이 가능할까?’ 뒤부터가 이 과정의 설명이다.", true);
+Hs("R1   True / False   ·   1 T · 2 T · 3 T · 4 F · 5 F · 6 F · 7 T · 8 F");
+   B("1 T — 문장 5.   2 T — 문장 2.   3 T — 문장 11.   4 F — 문장 12: 많은 바다 동물이 돌아왔다.  거짓 넷은 모두 한 요소(surface, more, weaker, left)만 비튼 것이다.   5 F — 문장 12: 약해지는 게 아니라 더 건강해진다.   6 F — 문장 9: 더 오염되는 게 아니라 덜 오염된다.   7 T — 문장 8.   8 F — 문장 8: 수면(surface)이 아니라 강바닥(bottom)에 남긴다.", true);
+Hs("R2   과정 순서   ·   (d) → (b) → (a) → (c)");
+B("ⓓ 시가 어린 굴을 강에 넣는다(문장 5) → ⓑ 굴이 물을 빨아들여 해로운 것을 걸러 낸다(문장 8) → ⓐ 물이 덜 오염된다(문장 9) → ⓒ 바다 동물들이 돌아온다(문장 12). 문장 6의 ‘어떻게 이런 일이 가능할까?’ 뒤부터가 이 과정의 설명이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

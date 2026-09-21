@@ -98,25 +98,27 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Brown Fat: The Fat That Burns Calories", "② Why Babies Cry at Night",
- "③ How Sheep Live on a Farm", "④ The Colors of Our Skin",
+["① Why Babies Cry at Night",
+ "② How Sheep Live on a Farm",
+ "③ The Colors of Our Skin",
+ "④ Brown Fat: The Fat That Burns Calories",
  "⑤ A Diet Plan for Losing Weight"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① White fat looks white or yellowish under our skin.",
  "② Brown fat is usually found in newborn babies.",
- "③ We gain more brown fat as we grow up.",
- "④ Scientists injected fat sheep with brown fat.",
- "⑤ The sheep lost weight and became healthier."].forEach(c => K.push(ch(c)));
+ "③ Scientists injected fat sheep with brown fat.",
+ "④ The sheep lost weight and became healthier.",
+ "⑤ We gain more brown fat as we grow up."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) It이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① injecting the sheep with brown fat",
- "② the white fat under the skin",
- "③ eating much less food",
- "④ a new medicine for humans",
- "⑤ the babies’ necks and shoulders"].forEach(c => K.push(ch(c)));
+["① the white fat under the skin",
+ "② eating much less food",
+ "③ a new medicine for humans",
+ "④ the babies’ necks and shoulders",
+ "⑤ injecting the sheep with brown fat"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -175,7 +177,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -189,7 +191,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -225,7 +227,7 @@ K.push(spF(2, 85, 0.06));
  [9, "They did an experiment on fat sheep by injecting them with brown fat."],
  [11, "With this information, the scientists hope to develop a similar medicine for humans."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -304,7 +306,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 1950, 7350];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -515,13 +517,13 @@ pairGrid(
   { sn: 5, main: "burns lots of calories",
     opts: ["① saves energy in the body", "② uses up a lot of energy", "③ adds more fat to the body"] },
   { sn: 6, main: "lose most of our brown fat",
-    opts: ["① most of it goes away", "② it grows more and more", "③ it turns into muscle"] });
+    opts: ["① it grows more and more", "② most of it goes away", "③ it turns into muscle"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 10, main: "lose weight and become healthier",
-    opts: ["① got heavier and weaker", "② stopped eating anything", "③ became lighter and healthier"] },
+    opts: ["① got heavier and weaker", "② became lighter and healthier", "③ stopped eating anything"] },
   { sn: 11, main: "hope to develop a similar medicine",
-    opts: ["① want to make a medicine like it", "② gave up making a medicine", "③ sold the medicine to doctors"] });
+    opts: ["① gave up making a medicine", "② sold the medicine to doctors", "③ want to make a medicine like it"] });
 K.push(spF(7, 150, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -576,15 +578,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Our bodies have different types of fat.",
-    "White fat looks brown under our skin.",
-    "Brown fat is usually found in newborn babies.",
-    "Brown fat burns lots of calories and keeps us warm.",
     "We gain more brown fat as we grow up.",
-    "Scientists did an experiment on fat sheep.",
-    "The experiment made the sheep heavier.",
+    "Brown fat burns lots of calories and keeps us warm.",
+    "Brown fat is usually found in newborn babies.",
+    "White fat looks brown under our skin.",
     "Scientists already sell the new medicine to people.",
-  ].map((s, i) => new TableRow({ children: [
+    "Scientists did an experiment on fat sheep.",
+    "Our bodies have different types of fat.",
+    "The experiment made the sheep heavier."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -600,9 +601,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "과학자들이 한
 K.push(sp(120));
 K.push(box([
   ...["ⓐ The sheep lost weight and became healthier.",
-      "ⓑ Scientists found a way to increase brown fat.",
-      "ⓒ They hope to develop a similar medicine for humans.",
-      "ⓓ They injected fat sheep with brown fat."]
+      "ⓑ They hope to develop a similar medicine for humans.",
+      "ⓒ They injected fat sheep with brown fat.",
+      "ⓓ Scientists found a way to increase brown fat."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -645,7 +646,7 @@ K.push(sp(130));
 [["문장 1", [t("Our bodies ", { size: 19 }), t("( have  /  has )", { size: 19, bold: true, color: NAVY }), t(" different types of fat.", { size: 19 })], "주어 bodies는 복수예요."],
  ["문장 2", [t("One type ", { size: 19 }), t("( is  /  are )", { size: 19, bold: true, color: NAVY }), t(" called white fat.", { size: 19 })], "주어가 하나(단수)일 때 be동사는?"],
  ["문장 5", [t("Brown fat burns lots of calories and ", { size: 19 }), t("( keeps  /  keep )", { size: 19, bold: true, color: NAVY }), t(" us warm.", { size: 19 })], "and 앞뒤의 동사 모양을 맞추세요."],
- ["문장 9", [t("They did an experiment by ", { size: 19 }), t("( injecting  /  inject )", { size: 19, bold: true, color: NAVY }), t(" them with brown fat.", { size: 19 })], "전치사 by 뒤에는 동사에 -ing!"],
+ ["문장 9", [t("They did an experiment by ", { size: 19 }), t("( inject  /  injecting )", { size: 19, bold: true, color: NAVY }), t(" them with brown fat.", { size: 19 })], "전치사 by 뒤에는 동사에 -ing!"],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
     cel(new Paragraph({ children: [t("(" + (i + 1) + ")", { size: 16, bold: true, color: "FFFFFF" })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 210 } }),
@@ -743,21 +744,21 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 이유 · ~할 때 · 반전 · 덧붙임   2-2 [B] 갈색 지방 · [E] 기대   2-3 ①", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (d) → (c) → (a)  ·  Brown fat burns calories, so scientists hope to develop a new medicine.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) brown  (2) calories  (3) sheep  (4) medicine        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 5 ②  문장 6 ①  문장 10 ③  문장 11 ①", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 5 ②  문장 6 ②  문장 10 ②  문장 11 ③", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4T · 5F · 6T · 7F · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (a) → (c)", { size: 19, bold: true })], { after: 25 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 F · 5 F · 6 T · 7 T · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(c) · 2(e) · 3(f) · 4(a) · 5(b) · 6(d)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) have  (2) is  (3) keeps  (4) injecting", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) skin (2) brown (3) calories (4) lose (5) problems (6) increase (7) experiment (8) medicine", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) Another type is called brown fat, and it’s brown.  (2) This can sometimes cause problems for our health.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 칼로리를 태워 몸을 덥히는 갈색 지방(문장 3–5)과 그것을 늘리려는 연구(문장 8–12)를 설명한다. 소재(갈색 지방)와 특징(칼로리를 태운다)을 함께 담은 ①이 제목으로 적절하다. ③·⑤는 실험과 체중만 건드린 지엽적 오답, ②·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 6에서 자라면서 갈색 지방은 대부분 잃고 흰 지방이 늘어난다고 했으므로, 갈색 지방이 늘어난다는 ③은 본문과 반대된다. ①은 문장 2, ②는 문장 4, ④는 문장 9, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 칼로리를 태워 몸을 덥히는 갈색 지방(문장 3–5)과 그것을 늘리려는 연구(문장 8–12)를 설명한다. 소재(갈색 지방)와 특징(칼로리를 태운다)을 함께 담은 ④이 제목으로 적절하다. ②·⑤는 실험과 체중만 건드린 지엽적 오답, ①·③는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 6에서 자라면서 갈색 지방은 대부분 잃고 흰 지방이 늘어난다고 했으므로, 갈색 지방이 늘어난다는 ⑤은 본문과 반대된다. ①은 문장 2, ②는 문장 4, ③는 문장 9, ④는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) It은 바로 앞 문장 9의 실험, 곧 양에게 갈색 지방을 주사한 일을 가리킨다. 양이 살이 빠지고 건강해진 것이 무엇 덕분인지 생각하면 된다.", true);
 Hs("독해 04   배열 영작   ·   Our bodies have different types of fat.");
 B("문장 1을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Our.   ② 주어 bodies가 복수이므로 동사는 have.   ③ different types of fat — of 뒤에 fat이 온다.", true);
@@ -782,20 +783,20 @@ B("3-3  정답 순서 — ⓑ Brown fat → ⓓ burns calories, → ⓒ so scien
 B("[채점 포인트]  주인공(Brown fat)이 맨 앞, 마침표가 붙은 덩어리가 맨 뒤 — so 앞뒤로 원인과 결과가 나뉜다.", true);
 Hs("STEP 4   요약문   ·   (1) brown  (2) calories  (3) sheep  (4) medicine");
 B("(1)은 문장 3의 brown, (2)는 문장 5의 calories, (3)은 문장 9의 sheep, (4)는 문장 11의 medicine에서 가져온다. 요약문이 곧 이 글의 흐름이다: 정체(1) → 역할(2) → 실험(3) → 기대(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 5 ②   문장 6 ①   문장 10 ③   문장 11 ①  (정답 선지는 무표시)");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 5 ②   문장 6 ②   문장 10 ②   문장 11 ③  (정답 선지는 무표시)");
 B("문장 5 burns lots of calories   ① ✕ [반대] 에너지를 아껴 둔다 — 흰 지방이 하는 일이다.   ② ○ 에너지를 많이 써 버린다.   ③ ✕ [무관] 지방을 더 늘린다는 말은 지문에 없다.");
-B("문장 6 lose most of our brown fat   ① ○ 대부분 사라진다.   ② ✕ [반대] 점점 더 많아진다 — 정반대.   ③ ✕ [무관] 근육으로 바뀐다는 말은 지문에 없다.");
-B("문장 10 lose weight and become healthier   ① ✕ [반대] 더 무겁고 약해졌다 — 정반대.   ② ✕ [무관] 아무것도 먹지 않았다는 말은 지문에 없다.   ③ ○ 가벼워지고 건강해졌다.");
-B("문장 11 hope to develop a similar medicine   ① ○ 비슷한 약을 만들고 싶어 한다.   ② ✕ [반대] 약 만들기를 포기했다 — 정반대.   ③ ✕ [무관] 약을 팔았다는 말은 지문에 없다(아직 만들지도 못했다).");
+B("문장 6 lose most of our brown fat   ② ○ 대부분 사라진다.   ① ✕ [반대] 점점 더 많아진다 — 정반대.   ③ ✕ [무관] 근육으로 바뀐다는 말은 지문에 없다.");
+B("문장 10 lose weight and become healthier   ① ✕ [반대] 더 무겁고 약해졌다 — 정반대.   ③ ✕ [무관] 아무것도 먹지 않았다는 말은 지문에 없다.   ② ○ 가벼워지고 건강해졌다.");
+B("문장 11 hope to develop a similar medicine   ③ ○ 비슷한 약을 만들고 싶어 한다.   ① ✕ [반대] 약 만들기를 포기했다 — 정반대.   ② ✕ [무관] 약을 팔았다는 말은 지문에 없다(아직 만들지도 못했다).");
 B("[학습 포인트]  hope to+동사원형은 '아직 이루지 못한 바람'이다. 이미 한 일처럼 바꿔 놓은 선지가 대표적인 함정이다.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 T · 5 F · 6 T · 7 F · 8 F");
-B("1 T — 문장 1.   2 F — 문장 2: 흰 지방은 갈색이 아니라 희거나 누르스름하다.   3 T — 문장 4.   4 T — 문장 5.   5 F — 문장 6: 자라면서 갈색 지방은 오히려 줄어든다.   6 T — 문장 9.   7 F — 문장 10: 무거워진 게 아니라 살이 빠졌다.   8 F — 문장 11: 이미 파는 것이 아니라 만들기를 바라는 단계다.  거짓 문장은 모두 딱 한 요소를 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (d) → (a) → (c)");
-B("ⓑ 과학자들이 갈색 지방을 늘릴 방법을 찾는다(문장 8) → ⓓ 뚱뚱한 양에게 갈색 지방을 주사한다(문장 9) → ⓐ 양이 살이 빠지고 건강해진다(문장 10) → ⓒ 사람을 위한 약을 만들기를 바란다(문장 11). 실험은 '방법 찾기 → 시도 → 결과 → 다음 계획'의 순서로 흘러간다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 F · 5 F · 6 T · 7 T · 8 F");
+   B("1 F — 문장 6: 자라면서 갈색 지방은 오히려 줄어든다.   2 T — 문장 5.   3 T — 문장 4.   4 F — 문장 2: 흰 지방은 갈색이 아니라 희거나 누르스름하다.   5 F — 문장 11: 이미 파는 것이 아니라 만들기를 바라는 단계다.  거짓 문장은 모두 딱 한 요소를 비튼 것이다.   6 T — 문장 9.   7 T — 문장 1.   8 F — 문장 10: 무거워진 게 아니라 살이 빠졌다.", true);
+Hs("R2   사건 순서   ·   (d) → (c) → (a) → (b)");
+B("ⓓ 과학자들이 갈색 지방을 늘릴 방법을 찾는다(문장 8) → ⓒ 뚱뚱한 양에게 갈색 지방을 주사한다(문장 9) → ⓐ 양이 살이 빠지고 건강해진다(문장 10) → ⓑ 사람을 위한 약을 만들기를 바란다(문장 11). 실험은 '방법 찾기 → 시도 → 결과 → 다음 계획'의 순서로 흘러간다.", true);
 Hs("R3   영영풀이   ·   1 (c) · 2 (e) · 3 (f) · 4 (a) · 5 (b) · 6 (d)");
 B("newborn = 갓 태어난 · burn = 몸속 에너지를 써서 없애다 · gain = 더 많이 얻다 · cause = 어떤 일이 일어나게 하다 · experiment = 새로운 것을 알아내려고 하는 실험 · develop = 시간을 들여 새로 만들어 내다.", true);
 Hs("R4   어법 기초   ·   (1) have  (2) is  (3) keeps  (4) injecting");

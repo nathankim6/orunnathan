@@ -86,14 +86,14 @@ K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?")
 K.push(sp(65));
 ["① McCarty spent her whole life doing laundry and saved more than $250,000.",
  "② The banker gave her 10 coins and asked her to divide them.",
- "③ McCarty gave six coins to her cousins.",
- "④ She donated $150,000 to the University of Southern Mississippi.",
- "⑤ The group’s symbol is a tree with six coins on its branches."].forEach(c => K.push(ch(c)));
+ "③ She donated $150,000 to the University of Southern Mississippi.",
+ "④ The group’s symbol is a tree with six coins on its branches.",
+ "⑤ McCarty gave six coins to her cousins."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① African American students",
- "② McCarty’s cousins",
+["① McCarty’s cousins",
+ "② African American students",
  "③ the ten coins",
  "④ the bankers in the small town",
  "⑤ the branches of the tree"].forEach(c => K.push(ch(c)));
@@ -329,15 +329,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "McCarty had spent her whole life doing laundry for others.",
     "McCarty saved less than $100,000 in her whole life.",
     "The banker gave her 10 coins and asked her to divide them.",
     "McCarty gave six coins to her church.",
-    "She donated $150,000 to the University of Southern Mississippi.",
     "McCarty had an easy life and never worked hard.",
-    "Today, people who donate to the university join the McCarty Legacy Society.",
     "The group’s symbol is a tree with ten coins on its branches.",
-  ].map((s, i) => new TableRow({ children: [
+    "She donated $150,000 to the University of Southern Mississippi.",
+    "Today, people who donate to the university join the McCarty Legacy Society.",
+    "McCarty had spent her whole life doing laundry for others."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -353,9 +352,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "매카티에게 일
 K.push(sp(120));
 K.push(box([
   ...["ⓐ The banker gave her 10 coins to divide.",
-      "ⓑ McCarty spent her whole life doing laundry and saved money.",
-      "ⓒ She donated $150,000 to the university.",
-      "ⓓ People who donate today join the McCarty Legacy Society."]
+      "ⓑ She donated $150,000 to the university.",
+      "ⓒ People who donate today join the McCarty Legacy Society.",
+      "ⓓ McCarty spent her whole life doing laundry and saved money."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -395,15 +394,15 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 McCarty · donate · education   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (c) → (d)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 F · 5 F · 6 T · 7 T · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ①");
 B("평생 남의 빨래를 하며 모은 돈을 대학의 흑인 학생들에게 기부한 매카티의 이야기다(문장 1–8). 주인공과 그 행동을 함께 담은 ①이 적절하다. ②·③은 저축·세탁만 건드린 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 4에서 사촌들에게 간 것은 세 개이고, 남은 여섯 개가 대학으로 갔다. 사촌에게 여섯 개를 주었다는 ③은 본문과 다르다. ①은 문장 1, ②는 문장 3, ④는 문장 5, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 4에서 사촌들에게 간 것은 세 개이고, 남은 여섯 개가 대학으로 갔다. 사촌에게 여섯 개를 주었다는 ⑤은 본문과 다르다. ①은 문장 1, ②는 문장 3, ③는 문장 5, ④는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) them은 바로 앞 문장 5의 African American students를 가리킨다. 매카티가 교육받기를 바란 대상이 누구인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   It symbolizes McCarty’s generous contribution to the university.");
 B("문장 11을 그대로 복원하는 문제다. ㄱ 첫 글자는 대문자 It.   ㄴ 주어가 단수이므로 동사는 symbolizes.   ㄷ contribution to ~는 '~에 대한 기부'라는 한 덩어리다.", true);
@@ -417,10 +416,10 @@ B("[학습 포인트]   따옴표 안의 지시어는 말하는 사람의 눈으
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 1.   2 F — 문장 1: 10만 달러 미만이 아니라 25만 달러가 넘는다.   3 T — 문장 3.   4 F — 문장 4: 교회에는 한 개, 여섯 개는 대학에 갔다.   5 T — 문장 5.   6 F — 문장 7: 편한 삶이 아니라 평생 열심히 일해야 했다.   7 T — 문장 9.   8 F — 문장 10: 열 개가 아니라 여섯 개의 동전이다.  거짓은 모두 딱 한 요소(less, church, easy, ten)를 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (a) → (c) → (d)");
-B("ⓑ 매카티가 평생 빨래를 하며 돈을 모은다(문장 1) → ⓐ 은행원이 나눌 동전 10개를 준다(문장 3) → ⓒ 대학에 15만 달러를 기부한다(문장 5) → ⓓ 오늘날 기부자들이 매카티 레거시 소사이어티에 들어간다(문장 9). 글은 시간 순서대로 흐르지만, 문장 6–8의 인용문은 문장 5의 마음을 설명하는 자리이지 새로운 사건이 아니다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 F · 4 F · 5 F · 6 T · 7 T · 8 T");
+   B("1 F — 문장 1: 10만 달러 미만이 아니라 25만 달러가 넘는다.   2 T — 문장 3.   3 F — 문장 4: 교회에는 한 개, 여섯 개는 대학에 갔다.   4 F — 문장 7: 편한 삶이 아니라 평생 열심히 일해야 했다.   5 F — 문장 10: 열 개가 아니라 여섯 개의 동전이다.  거짓은 모두 딱 한 요소(less, church, easy, ten)를 비튼 것이다.   6 T — 문장 5.   7 T — 문장 9.   8 T — 문장 1.", true);
+Hs("R2   사건 순서   ·   (d) → (a) → (b) → (c)");
+B("ⓓ 매카티가 평생 빨래를 하며 돈을 모은다(문장 1) → ⓐ 은행원이 나눌 동전 10개를 준다(문장 3) → ⓑ 대학에 15만 달러를 기부한다(문장 5) → ⓒ 오늘날 기부자들이 매카티 레거시 소사이어티에 들어간다(문장 9). 글은 시간 순서대로 흐르지만, 문장 6–8의 인용문은 문장 5의 마음을 설명하는 자리이지 새로운 사건이 아니다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

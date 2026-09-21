@@ -79,23 +79,25 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① A Human Gene That Makes Crops Grow Bigger", "② How to Cook Rice and Potatoes",
- "③ The Dangers of Being Overweight", "④ Why Farming Causes Pollution",
+["① How to Cook Rice and Potatoes",
+ "② A Human Gene That Makes Crops Grow Bigger",
+ "③ The Dangers of Being Overweight",
+ "④ Why Farming Causes Pollution",
  "⑤ A Trip to a Potato Farm in Europe"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Every year, 9 million people around the world die from hunger.",
  "② The FTO gene is related to being overweight in humans.",
- "③ The plants with this gene grew much faster and larger.",
- "④ Rice crops produced two times more than before.",
+ "③ Rice crops produced two times more than before.",
+ "④ The plants with this gene grew much faster and larger.",
  "⑤ Scientists will do more tests to make sure these plants are safe."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the FTO gene",
- "② the world’s hunger",
- "③ growing more food",
+["① the world’s hunger",
+ "② growing more food",
+ "③ the FTO gene",
  "④ the rice crop",
  "⑤ the pollution from farms"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -249,7 +251,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 쌀과 감자를 맛있게 요리하는 법", "② 사람 유전자를 옮겨 심은 농작물 실험", "③ 농사가 일으키는 환경 오염"].forEach(c =>
+["① 사람 유전자를 옮겨 심은 농작물 실험",
+ "② 쌀과 감자를 맛있게 요리하는 법",
+ "③ 농사가 일으키는 환경 오염"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -332,15 +336,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Every year, 9 million people around the world die from hunger.",
-    "Growing more food is always the best solution.",
-    "Scientists transplanted the FTO gene from humans into crops.",
     "The FTO gene is related to being short in humans.",
-    "The plants with this gene grew much faster and larger.",
     "Rice crops produced three times less than before.",
+    "Every year, 9 million people around the world die from hunger.",
     "Scientists will do more tests to make sure the plants are safe.",
+    "Scientists transplanted the FTO gene from humans into crops.",
+    "Growing more food is always the best solution.",
     "Scientists say this discovery is the final answer to hunger.",
-  ].map((s, i) => new TableRow({ children: [
+    "The plants with this gene grew much faster and larger."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -355,10 +358,10 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "이 연구를 둘러싼 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ Scientists moved the FTO gene from humans into crops.",
-      "ⓑ Rice crops produced three times more food.",
-      "ⓒ Scientists will run more tests on real farms.",
-      "ⓓ Nine million people die from hunger every year."]
+  ...["ⓐ Nine million people die from hunger every year.",
+      "ⓑ Scientists moved the FTO gene from humans into crops.",
+      "ⓒ Rice crops produced three times more food.",
+      "ⓓ Scientists will run more tests on real farms."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -396,22 +399,22 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("Scientists(S)·will do(△V)·to make sure ~(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 비가 꽃들을 빨리 자라게 만들었다  (2) 내 새 자전거는 예전 것보다 훨씬 빠르다  (3) 좋은 잠은 네가 훨씬 더 기분 좋게 느끼도록 만든다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 gene · plants · hunger   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 gene · plants · hunger   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 T · 5 T · 6 F · 7 F · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (b) → (c) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 사람의 FTO 유전자를 작물에 옮겨 심어 더 크고 빠르게 키운 실험(문장 3–8)과 그 의미(문장 9–12)를 전한다. 소재와 결과를 함께 담은 ①이 적절하다. ③·④는 지엽적 오답, ②·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 8에서 쌀 작물은 세 배(three times) 더 많이 생산했다. 두 배라고 한 ④가 본문과 다르다. ①은 문장 1, ②는 문장 4, ③은 문장 7, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ②");
+B("이 글은 사람의 FTO 유전자를 작물에 옮겨 심어 더 크고 빠르게 키운 실험(문장 3–8)과 그 의미(문장 9–12)를 전한다. 소재와 결과를 함께 담은 ②이 적절하다. ③·④는 지엽적 오답, ①·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 8에서 쌀 작물은 세 배(three times) 더 많이 생산했다. 두 배라고 한 ③가 본문과 다르다. ①은 문장 1, ②는 문장 4, ④은 문장 7, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) it은 바로 앞 문장 3–4의 the FTO gene을 가리킨다. 식물을 더 크게 자라게 만들 수도 있다고 기대한 대상이 무엇인지 생각하면 된다.", true);
 Hs("독해 04   배열 영작   ·   However, this is just the beginning.");
 B("문장 10을 그대로 복원한다. ① 첫 글자는 대문자 However — 뒤에 콤마.   ② just는 is 뒤, the beginning 앞.   ③ 마침표까지 붙여 쓴다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 gene · plants · hunger     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 사람의 유전자를 작물에 옮겨 심은 실험을 소개한다. ① 요리법은 나오지 않고, ③ 오염은 식량을 늘리기 어려운 이유로만 등장한다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 gene · plants · hunger     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 사람의 유전자를 작물에 옮겨 심은 실험을 소개한다. ② 요리법은 나오지 않고, ③ 오염은 식량을 늘리기 어려운 이유로만 등장한다.");
 B("1-2   ○표 할 세 단어: gene(힌트① 작물에 옮겨 심은 것) · plants(힌트② 그 결과 커진 것) · hunger(힌트③ 이 발견이 풀려는 문제). 나머지 셋(energy · rice · tests)은 본문에 등장하지만 주제문에 들어가지 않는다 — 이유와 예시, 앞으로의 일일 뿐이다.");
 B("1-3   문장 5 — it은 FTO 유전자에 ○ (문장 3–4의 그 유전자).   문장 9 — This는 실험의 결과에 ○ (문장 7–8의 내용).   문장 11 — these plants는 유전자를 넣은 식물에 ○.");
 B("[학습 포인트]   문장 2의 it은 '식량을 더 기르는 일'을, 문장 5의 it은 'FTO 유전자'를 가리킨다. 같은 it이라도 바로 앞에 무엇이 있었는지 확인하는 습관이 필요하다.", true);
@@ -420,10 +423,10 @@ B("[학습 포인트]   문장 2의 it은 '식량을 더 기르는 일'을, 문�
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 1.   2 F — 문장 2: 언제나(always) 답인 것이 아니라 늘 답은 아니다(isn’t always).   3 T — 문장 3.   4 F — 문장 4: 키가 작은 것(short)이 아니라 과체중(overweight)과 관련이 있다.   5 T — 문장 7.   6 F — 문장 8: 세 배 적게(less)가 아니라 세 배 많이(more) 생산했다.   7 T — 문장 11.   8 F — 문장 10: 최종 답이 아니라 이제 시작(just the beginning)이다.  거짓 문장은 모두 딱 한 요소를 비튼 것이다 — 그 한 곳을 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (d) → (a) → (b) → (c)");
-B("ⓓ 해마다 900만 명이 굶주림으로 목숨을 잃는다(문장 1, 문제) → ⓐ 과학자들이 사람의 FTO 유전자를 작물에 옮겨 심는다(문장 3, 시도) → ⓑ 쌀 작물이 세 배 더 많이 생산한다(문장 8, 결과) → ⓒ 실제 농장에서 더 많은 실험을 할 것이다(문장 11, 앞으로). 이 글은 '문제 → 시도 → 결과 → 앞으로'의 차례로 서술되어 있어, 문장 번호를 따라가면 순서가 보인다.", true);
+Hs("R1   True / False   ·   1 F · 2 F · 3 T · 4 T · 5 T · 6 F · 7 F · 8 T");
+   B("1 F — 문장 4: 키가 작은 것(short)이 아니라 과체중(overweight)과 관련이 있다.   2 F — 문장 8: 세 배 적게(less)가 아니라 세 배 많이(more) 생산했다.   3 T — 문장 1.   4 T — 문장 11.   5 T — 문장 3.   6 F — 문장 2: 언제나(always) 답인 것이 아니라 늘 답은 아니다(isn’t always).   7 F — 문장 10: 최종 답이 아니라 이제 시작(just the beginning)이다.  거짓 문장은 모두 딱 한 요소를 비튼 것이다 — 그 한 곳을 찾는 것이 정독이다.   8 T — 문장 7.", true);
+Hs("R2   사건 순서   ·   (a) → (b) → (c) → (d)");
+B("ⓐ 해마다 900만 명이 굶주림으로 목숨을 잃는다(문장 1, 문제) → ⓑ 과학자들이 사람의 FTO 유전자를 작물에 옮겨 심는다(문장 3, 시도) → ⓒ 쌀 작물이 세 배 더 많이 생산한다(문장 8, 결과) → ⓓ 실제 농장에서 더 많은 실험을 할 것이다(문장 11, 앞으로). 이 글은 '문제 → 시도 → 결과 → 앞으로'의 차례로 서술되어 있어, 문장 번호를 따라가면 순서가 보인다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

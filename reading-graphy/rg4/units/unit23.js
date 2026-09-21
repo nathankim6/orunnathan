@@ -85,15 +85,15 @@ K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① The ESA wants to make a special time zone for the moon.",
- "② Right now, every moon mission uses the same time zone.",
- "③ Clocks on the moon go 56 microseconds faster each day.",
- "④ A day on the moon is the same as 29.5 Earth days.",
+ "② Clocks on the moon go 56 microseconds faster each day.",
+ "③ A day on the moon is the same as 29.5 Earth days.",
+ "④ Right now, every moon mission uses the same time zone.",
  "⑤ It is hard to know the correct time on the moon."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) they가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the ESA and the people working on moon missions",
- "② the clocks on the moon",
+["① the clocks on the moon",
+ "② the ESA and the people working on moon missions",
  "③ the 29.5 days on the moon",
  "④ the spaceships from different countries",
  "⑤ the other planets in space"].forEach(c => K.push(ch(c)));
@@ -143,7 +143,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -156,7 +156,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -191,7 +191,7 @@ K.push(spF(2, 85, 0.06));
  [5, "A new system for time on the moon would make things easier for everyone."],
  [10, "These problems make it hard to know the correct time on the moon."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -246,7 +246,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 달에서 시계를 고치는 수리법", "② 달을 위한 표준 시간을 만들려는 노력", "③ 우주선을 먼저 발사하려는 나라들의 경쟁"].forEach(c =>
+["① 달에서 시계를 고치는 수리법",
+ "② 우주선을 먼저 발사하려는 나라들의 경쟁",
+ "③ 달을 위한 표준 시간을 만들려는 노력"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -314,7 +316,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -329,15 +331,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "The ESA wants to make a special time zone for the moon.",
-    "Right now, every moon mission uses the same time zone.",
-    "The country that launches the spaceship decides the time zone.",
     "Finding the best way to make this happen is very easy.",
-    "Clocks on the moon go 56 microseconds faster than on Earth each day.",
+    "A standard time system for the moon cannot be used for other planets.",
     "A day on the moon is the same as 2.9 Earth days.",
     "These problems make it hard to know the correct time on the moon.",
-    "A standard time system for the moon cannot be used for other planets.",
-  ].map((s, i) => new TableRow({ children: [
+    "The ESA wants to make a special time zone for the moon.",
+    "The country that launches the spaceship decides the time zone.",
+    "Clocks on the moon go 56 microseconds faster than on Earth each day.",
+    "Right now, every moon mission uses the same time zone."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -353,8 +354,8 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "달 표준시를 �
 K.push(sp(120));
 K.push(box([
   ...["ⓐ The ESA wants to make one time zone for the whole moon.",
-      "ⓑ Each country decides the time zone of its own mission.",
-      "ⓒ Scientists find problems with clocks and days on the moon.",
+      "ⓑ Scientists find problems with clocks and days on the moon.",
+      "ⓒ Each country decides the time zone of its own mission.",
       "ⓓ The same time system is made for other planets too."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -393,22 +394,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문5 ", { size: 17, bold: true, color: NAVY2 }), t("A new system(S)·for time on the moon(M)·would make(△V)·for everyone(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 우리 할머니를 찾아뵙고 싶다  (2) 이 기차는 저 버스보다 더 빨리 간다  (3) 그녀는 친구보다 더 빨리 달리고 싶어 한다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 moon · time · easier   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 moon · time · easier   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (c) → (d)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 F · 4 T · 5 T · 6 T · 7 T · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (b) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ①");
 B("이 글은 달을 위한 하나의 표준 시간대를 만들려는 시도(문장 1–5)와 그것이 쉽지 않은 이유(문장 6–10)를 소개한다. 소재와 어려움을 함께 담은 ①이 제목으로 적절하다. ②·③은 지엽적이고, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 3에서 지금은 임무마다 시간대가 '서로 다르다(different)'고 했다. 모두 같은 시간대를 쓴다는 ②가 본문과 반대된다. ①은 문장 1, ③는 문장 8, ④은 문장 9, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 3에서 지금은 임무마다 시간대가 '서로 다르다(different)'고 했다. 모두 같은 시간대를 쓴다는 ④가 본문과 반대된다. ①은 문장 1, ②는 문장 8, ③은 문장 9, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) they는 달의 표준 시간 체계를 세우려는 쪽, 곧 문장 1–2의 ESA와 달 임무에 참여하는 사람들을 가리킨다. 시계나 우주선은 체계를 '세우는' 주체가 될 수 없다.", true);
 Hs("독해 04   배열 영작   ·   Right now, each mission’s time zone is different.");
 B("문장 3을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Right.   ② now 뒤의 콤마를 빠뜨리지 않는다.   ③ each mission’s time zone이 하나의 주어 덩어리다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 moon · time · easier     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 달을 위한 표준 시간 체계를 만들려는 노력과 그 어려움을 다룬다. ① 시계 수리법은 나오지 않고, ③ 나라들의 경쟁이 아니라 협력이 주제다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 moon · time · easier     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 달을 위한 표준 시간 체계를 만들려는 노력과 그 어려움을 다룬다. ① 시계 수리법은 나오지 않고, ② 나라들의 경쟁이 아니라 협력이 주제다.");
 B("1-2   ○표 할 세 단어: moon(힌트① 무대) · time(힌트② 정하려는 것) · easier(힌트③ 그 결과). 나머지 셋(clocks · spaceship · planets)은 본문에 나오지만 주제문에는 들어가지 않는다 — 문제의 예와 배경일 뿐이다.");
 B("1-3   문장 4 — it은 그 임무의 시간대에 ○ (문장 3의 each mission’s time zone).   문장 6 — this는 새 시간 체계 만들기에 ○.   문장 10 — These problems는 시계와 하루 길이 문제에 ○.");
 B("[학습 포인트]   문장 2의 it은 '달의 새 시간대', 문장 4의 it은 '각 임무의 시간대'다. 같은 it이라도 바로 앞 문장이 무엇이냐에 따라 가리키는 것이 달라진다.", true);
@@ -417,10 +418,10 @@ B("[학습 포인트]   문장 2의 it은 '달의 새 시간대', 문장 4의 it
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 1.   2 F — 문장 3: 같은(same) 시간대가 아니라 서로 다르다(different).   3 T — 문장 4.   4 F — 문장 6: 쉬운(easy) 것이 아니라 쉽지 않다(not easy).   5 T — 문장 8.   6 F — 문장 9: 2.9일이 아니라 29.5일이다.   7 T — 문장 10.   8 F — 문장 11: 다른 행성에도 같은 체계를 만들 수 있다.", true);
-Hs("R2   사건 순서   ·   (b) → (a) → (c) → (d)");
-B("ⓑ 지금은 발사한 나라가 각자 시간대를 정한다(문장 3–4) → ⓐ ESA가 달 전체를 위한 하나의 시간대를 만들려 한다(문장 1) → ⓒ 시계와 하루 길이라는 문제를 발견한다(문장 7–9) → ⓓ 다른 행성에도 같은 체계를 만든다(문장 11). 본문은 ESA의 계획을 먼저 말하지만, 실제로는 지금의 상황(ⓑ)이 그 앞에 있다.", true);
+Hs("R1   True / False   ·   1 F · 2 F · 3 F · 4 T · 5 T · 6 T · 7 T · 8 F");
+   B("1 F — 문장 6: 쉬운(easy) 것이 아니라 쉽지 않다(not easy).   2 F — 문장 11: 다른 행성에도 같은 체계를 만들 수 있다.   3 F — 문장 9: 2.9일이 아니라 29.5일이다.   4 T — 문장 10.   5 T — 문장 1.   6 T — 문장 4.   7 T — 문장 8.   8 F — 문장 3: 같은(same) 시간대가 아니라 서로 다르다(different).", true);
+Hs("R2   사건 순서   ·   (c) → (a) → (b) → (d)");
+B("ⓒ 지금은 발사한 나라가 각자 시간대를 정한다(문장 3–4) → ⓐ ESA가 달 전체를 위한 하나의 시간대를 만들려 한다(문장 1) → ⓑ 시계와 하루 길이라는 문제를 발견한다(문장 7–9) → ⓓ 다른 행성에도 같은 체계를 만든다(문장 11). 본문은 ESA의 계획을 먼저 말하지만, 실제로는 지금의 상황(ⓒ)이 그 앞에 있다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

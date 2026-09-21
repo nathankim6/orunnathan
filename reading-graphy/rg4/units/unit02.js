@@ -79,8 +79,10 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Special Viewfinders for Colorblind People", "② The Best Parks to See Fall Leaves in Tennessee",
- "③ How to Take Better Photos in Fall", "④ Why Leaves Change Their Colors Every Year",
+["① The Best Parks to See Fall Leaves in Tennessee",
+ "② How to Take Better Photos in Fall",
+ "③ Special Viewfinders for Colorblind People",
+ "④ Why Leaves Change Their Colors Every Year",
  "⑤ The Long History of the State of Virginia"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
@@ -93,11 +95,11 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① over 13 million colorblind Americans",
- "② the beautiful colors of fall leaves",
- "③ the special viewfinders in 12 places",
- "④ the people living in Virginia",
- "⑤ the workers of the state of Tennessee"].forEach(c => K.push(ch(c)));
+["① the beautiful colors of fall leaves",
+ "② the special viewfinders in 12 places",
+ "③ the people living in Virginia",
+ "④ the workers of the state of Tennessee",
+ "⑤ over 13 million colorblind Americans"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -144,7 +146,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -157,7 +159,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -194,7 +196,7 @@ K.push(spF(2, 85, 0.06));
  [5, "The state of Tennessee wanted to help them see the beautiful fall colors."],
  [6, "In 2017, the state installed special viewfinders in 12 places."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -249,7 +251,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 사진을 잘 찍는 카메라 사용법", "② 색맹인 사람을 위한 특수 뷰파인더", "③ 미국 테네시주의 단풍 명소"].forEach(c =>
+["① 사진을 잘 찍는 카메라 사용법",
+ "② 미국 테네시주의 단풍 명소",
+ "③ 색맹인 사람을 위한 특수 뷰파인더"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -270,7 +274,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -317,7 +321,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -332,15 +336,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
+    "Tennessee hopes that fewer viewfinders will be available.",
     "People with color blindness cannot experience the colors of fall leaves.",
+    "Van Lew has been colorblind her whole life.",
+    "In 2023, a viewfinder was installed at a park in Virginia.",
     "There are over 30 million colorblind Americans.",
     "In 2017, Tennessee installed special viewfinders in 12 places.",
     "Blue-yellow color blindness is the most common type.",
-    "Van Lew has been colorblind her whole life.",
-    "Van Lew saw yellows, oranges, and reds for the second time.",
-    "In 2023, a viewfinder was installed at a park in Virginia.",
-    "Tennessee hopes that fewer viewfinders will be available.",
-  ].map((s, i) => new TableRow({ children: [
+    "Van Lew saw yellows, oranges, and reds for the second time."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -356,8 +359,8 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "뷰파인더에 얽
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Van Lew looked through a special viewfinder.",
-      "ⓑ Tennessee installed viewfinders in 12 places.",
-      "ⓒ A viewfinder was installed at a park in Virginia.",
+      "ⓑ A viewfinder was installed at a park in Virginia.",
+      "ⓒ Tennessee installed viewfinders in 12 places.",
       "ⓓ She saw yellows, oranges, and reds for the first time."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -396,22 +399,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문6 ", { size: 17, bold: true, color: NAVY2 }), t("In 2017(M)·the state(S)·installed(△V)·in 12 places(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 책상 위에 많은 책들이 있다  (2) 내 남동생이 내가 숙제를 끝내도록 도와주었다  (3) 사람들이 방을 청소하도록 돕는 로봇이 있다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 viewfinders · colorblind · colors   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 viewfinders · colorblind · colors   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (d) → (c)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 T · 5 F · 6 T · 7 F · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (d) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 색맹인 사람들을 위해 테네시주가 설치한 특수 뷰파인더(문장 5–7)와, 그 덕분에 난생처음 단풍 색을 본 사람의 이야기(문장 8–10)를 소개한다. 소재(뷰파인더)와 대상(색맹)을 함께 담은 ①이 제목으로 적절하다. ②·⑤는 지엽적, ③·④는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 색맹인 사람들을 위해 테네시주가 설치한 특수 뷰파인더(문장 5–7)와, 그 덕분에 난생처음 단풍 색을 본 사람의 이야기(문장 8–10)를 소개한다. 소재(뷰파인더)와 대상(색맹)을 함께 담은 ③이 제목으로 적절하다. ①·⑤는 지엽적, ②·④는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ③");
 B("문장 7에서 가장 흔한 유형은 적록(Red-green) 색맹이라고 했다. 청황 색맹이라고 바꾼 ③이 본문과 어긋난다. ①은 문장 4, ②는 문장 6, ④는 문장 8, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) them은 바로 앞 문장 4의 over 13 million colorblind Americans를 가리킨다. 테네시주가 돕고 싶었던 대상이 누구인지 생각하면 된다 — 복수 지시어는 복수 명사를 받는다.", true);
 Hs("독해 04   배열 영작   ·   There are over 13 million colorblind Americans.");
 B("문장 4를 그대로 복원하는 문제다. ① 첫 글자는 대문자 There.   ② 진짜 주어 Americans가 복수이므로 are.   ③ over 13 million이 한 덩어리로 Americans 앞에 온다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 viewfinders · colorblind · colors     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 색맹인 사람이 단풍 색을 볼 수 있게 해 준 특수 뷰파인더를 소개한다. ① 사진 촬영법 이야기는 없고, ③ 단풍 명소는 뷰파인더가 설치된 배경일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 viewfinders · colorblind · colors     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 색맹인 사람이 단풍 색을 볼 수 있게 해 준 특수 뷰파인더를 소개한다. ① 사진 촬영법 이야기는 없고, ② 단풍 명소는 뷰파인더가 설치된 배경일 뿐이다.");
 B("1-2   ○표 할 세 단어: viewfinders(힌트① 주인공) · colorblind(힌트② 도움을 받는 사람들) · colors(힌트③ 처음 본 것). 나머지 셋(Tennessee · park · Virginia)은 장소일 뿐 주제문에는 들어가지 않는다.");
 B("1-3   문장 5 — them은 색맹인 미국인들에 ○ (문장 4의 그 사람들).   문장 7 — these colors는 빨강과 초록에 ○ (바로 앞 Red-green).   문장 10 — It은 그녀가 처음 본 색에 ○.");
 B("[학습 포인트]   문장 2와 문장 7은 똑같이 these colors지만 가리키는 것이 다르다(단풍 색 / 빨강과 초록). 지시어는 늘 바로 앞을 확인해야 한다.", true);
@@ -420,10 +423,10 @@ B("[학습 포인트]   문장 2와 문장 7은 똑같이 these colors지만 가
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 1.   2 F — 문장 4: 3천만이 아니라 1,300만(13 million)이 넘는다.   3 T — 문장 6.   4 F — 문장 7: 청황이 아니라 적록(Red-green) 색맹이 가장 흔하다.   5 T — 문장 8.   6 F — 문장 9: 두 번째가 아니라 난생처음(for the first time)이다.   7 T — 문장 11.   8 F — 문장 12: 더 적은 게 아니라 더 많은(more) 뷰파인더를 바란다.  거짓 문장은 모두 한 요소(30 million, Blue-yellow, second, fewer)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (a) → (d) → (c)");
-B("ⓑ 2017년 테네시주가 12곳에 뷰파인더를 설치한다(문장 6) → ⓐ 밴 루가 그중 하나를 들여다본다(문장 8) → ⓓ 난생처음 노랑·주황·빨강을 본다(문장 9) → ⓒ 2023년 버지니아의 공원에도 설치된다(문장 11). 연도(2017 → 2023)가 순서의 열쇠다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 T · 5 F · 6 T · 7 F · 8 F");
+   B("1 F — 문장 12: 더 적은 게 아니라 더 많은(more) 뷰파인더를 바란다.  거짓 문장은 모두 한 요소(30 million, Blue-yellow, second, fewer)만 비튼 것이다.   2 T — 문장 1.   3 T — 문장 8.   4 T — 문장 11.   5 F — 문장 4: 3천만이 아니라 1,300만(13 million)이 넘는다.   6 T — 문장 6.   7 F — 문장 7: 청황이 아니라 적록(Red-green) 색맹이 가장 흔하다.   8 F — 문장 9: 두 번째가 아니라 난생처음(for the first time)이다.", true);
+Hs("R2   사건 순서   ·   (c) → (a) → (d) → (b)");
+B("ⓒ 2017년 테네시주가 12곳에 뷰파인더를 설치한다(문장 6) → ⓐ 밴 루가 그중 하나를 들여다본다(문장 8) → ⓓ 난생처음 노랑·주황·빨강을 본다(문장 9) → ⓑ 2023년 버지니아의 공원에도 설치된다(문장 11). 연도(2017 → 2023)가 순서의 열쇠다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

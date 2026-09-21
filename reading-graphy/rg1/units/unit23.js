@@ -90,14 +90,14 @@ K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?")
 K.push(sp(65));
 ["① Ole Kirk Christiansen lived in Denmark.",
  "② Ole made furniture like chairs and ladders.",
- "③ After the fire in 1924, Ole gave up making things.",
- "④ Ole renamed his company “LEGO.”",
+ "③ Ole renamed his company “LEGO.”",
+ "④ After the fire in 1924, Ole gave up making things.",
  "⑤ Ole made his first plastic toy in 1949."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) this가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the fire that burned down his factory",
- "② the shop he opened in 1916",
+["① the shop he opened in 1916",
+ "② the fire that burned down his factory",
  "③ the wooden toys he made",
  "④ the machine for plastic toys",
  "⑤ the name “LEGO”"].forEach(c => K.push(ch(c)));
@@ -147,7 +147,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -160,7 +160,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -197,7 +197,7 @@ K.push(spF(2, 85, 0.06));
  [11, "Around this time, people started using plastic because it was less expensive."],
  [12, "So in 1946, Ole bought a machine to make toys out of plastic."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -252,7 +252,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 덴마크에서 가구를 만드는 방법", "② 불을 안전하게 끄는 방법", "③ 두 번의 화재를 이겨 낸 레고의 시작"].forEach(c =>
+["① 두 번의 화재를 이겨 낸 레고의 시작",
+ "② 덴마크에서 가구를 만드는 방법",
+ "③ 불을 안전하게 끄는 방법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -273,7 +275,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -320,7 +322,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -335,15 +337,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Ole Kirk Christiansen lived in Denmark.",
-    "Ole opened his own shop in 1924.",
-    "Ole made furniture like chairs and ladders.",
-    "After the first fire, Ole built a bigger workshop.",
-    "Ole renamed his company “WOOD.”",
-    "In 1942, another fire burned down his factory.",
     "People started using plastic because it was more expensive.",
+    "In 1942, another fire burned down his factory.",
+    "Ole Kirk Christiansen lived in Denmark.",
+    "Ole renamed his company “WOOD.”",
+    "Ole opened his own shop in 1924.",
+    "After the first fire, Ole built a bigger workshop.",
     "Ole made his first plastic toy in 1916.",
-  ].map((s, i) => new TableRow({ children: [
+    "Ole made furniture like chairs and ladders."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -399,22 +400,22 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("문12 ", { size: 17, bold: true, color: NAVY2 }), t("in 1946(M)·Ole(S)·bought(△V)·to make toys~(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 만화책 읽는 것을 아주 좋아한다  (2) 이 가방은 저것보다 덜 비싸다  (3) 그녀는 걷는 것을 즐기는데, 그것이 달리기보다 덜 힘들기 때문이다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 fire · chance · LEGO   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 fire · chance · LEGO   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4T · 5F · 6T · 7F · 8F        ", { size: 19, bold: true }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 F · 5 F · 6 T · 7 F · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (d) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ①");
 B("가게를 태운 1924년 화재(문장 4)와 공장을 태운 1942년 화재(문장 9)를 새로운 기회로 바꾼 올레의 이야기이며, 그 끝에 레고 블록이 태어난다(문장 15). 두 번의 화재와 결말을 함께 담은 ①이 제목으로 적절하다. ②·③은 한 부분만 건드린 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 5–6에서 올레는 화재를 새로운 기회로 보고 더 큰 작업장을 지었다고 했으므로, 포기했다는 ③은 본문과 반대된다. ①은 문장 1, ②는 문장 3, ④는 문장 7, ⑤는 문장 13에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 5–6에서 올레는 화재를 새로운 기회로 보고 더 큰 작업장을 지었다고 했으므로, 포기했다는 ④은 본문과 반대된다. ①은 문장 1, ②는 문장 3, ③는 문장 7, ⑤는 문장 13에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) this는 바로 앞 문장 9의 화재, 곧 공장을 태워 버린 1942년의 불을 가리킨다. 문장 5의 this는 1924년 가게 화재였다 — 같은 this라도 가리키는 것이 다르다.", true);
 Hs("독해 04   배열 영작   ·   But Ole saw this as a new chance.");
 B("문장 5를 그대로 복원하는 문제다. ① 첫 글자는 대문자 But.   ② 'A를 B로 보다'는 see A as B — saw this as ~ 순서.   ③ a new chance 앞의 관사 a를 빠뜨리지 않는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 fire · chance · LEGO     1-3 아래 참조");
-B("1-1   정답 ③. 이 글은 두 번의 화재를 이겨 내고 레고 블록이 시작된 과정을 소개한다. ① 가구 만드는 법은 나오지 않고, ② 불을 끄는 방법 이야기도 아니다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 fire · chance · LEGO     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 두 번의 화재를 이겨 내고 레고 블록이 시작된 과정을 소개한다. ② 가구 만드는 법은 나오지 않고, ③ 불을 끄는 방법 이야기도 아니다.");
 B("1-2   ○표 할 세 단어: fire(힌트① 두 번 덮친 일) · chance(힌트② 올레가 그것을 본 방식) · LEGO(힌트③ 결국 태어난 것). 나머지 셋(wood · furniture · plastic)은 본문에 나오지만 과정의 재료일 뿐이다.");
 B("1-3   문장 10 — this는 1942년 공장 화재에 ○ (문장 9).   문장 11 — it은 plastic에 ○ (덜 비쌌던 그 재료).   문장 14 — It은 첫 플라스틱 장난감에 ○ (문장 13).", true);
 
@@ -422,8 +423,8 @@ B("1-3   문장 10 — this는 1942년 공장 화재에 ○ (문장 9).   문장
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 T · 5 F · 6 T · 7 F · 8 F");
-B("1 T — 문장 1.   2 F — 문장 2: 1924년이 아니라 1916년에 가게를 열었다.   3 T — 문장 3.   4 T — 문장 6.   5 F — 문장 7: WOOD가 아니라 LEGO로 이름을 바꿨다.   6 T — 문장 9.   7 F — 문장 11: 더 비싸서가 아니라 덜 비싸서(less expensive) 쓰기 시작했다.   8 F — 문장 13: 1916년이 아니라 1949년에 첫 플라스틱 장난감을 만들었다.  거짓 문장은 모두 본문에서 딱 한 요소(1924, WOOD, more, 1916)를 비튼 것이다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 F · 5 F · 6 T · 7 F · 8 T");
+   B("1 F — 문장 11: 더 비싸서가 아니라 덜 비싸서(less expensive) 쓰기 시작했다.   2 T — 문장 9.   3 T — 문장 1.   4 F — 문장 7: WOOD가 아니라 LEGO로 이름을 바꿨다.   5 F — 문장 2: 1924년이 아니라 1916년에 가게를 열었다.   6 T — 문장 6.   7 F — 문장 13: 1916년이 아니라 1949년에 첫 플라스틱 장난감을 만들었다.  거짓 문장은 모두 본문에서 딱 한 요소(1924, WOOD, more, 1916)를 비튼 것이다.   8 T — 문장 3.", true);
 Hs("R2   사건 순서   ·   (b) → (a) → (d) → (c)");
 B("ⓑ 올레가 자기 가게를 연다(1916년, 문장 2) → ⓐ 큰 불이 가게를 태운다(1924년, 문장 4) → ⓓ 나무 장난감을 만들기 시작하고 회사 이름을 LEGO로 바꾼다(문장 6–7) → ⓒ 첫 플라스틱 장난감을 만든다(1949년, 문장 13). 연도가 곧 순서표다 — 숫자에 동그라미를 치며 읽으면 흐름이 한눈에 보인다.", true);
 K.push(sp(70));

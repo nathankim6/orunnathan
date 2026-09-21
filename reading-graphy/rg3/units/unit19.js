@@ -104,17 +104,17 @@ K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Magawa helped find landmines in Cambodia for five years.",
- "② Magawa learned to find bombs in Cambodia.",
- "③ He helped clear more than 225,000 square meters of land.",
+ "② He helped clear more than 225,000 square meters of land.",
+ "③ Magawa learned to find bombs in Cambodia.",
  "④ He was given a gold medal for his work.",
  "⑤ Magawa died at the age of 8 after retiring."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) this가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① finding more than 100 landmines and hidden dangers",
- "② moving from Tanzania to Cambodia",
- "③ living for eight years in Cambodia",
- "④ training other rats to find bombs",
+["① moving from Tanzania to Cambodia",
+ "② living for eight years in Cambodia",
+ "③ training other rats to find bombs",
+ "④ finding more than 100 landmines and hidden dangers",
  "⑤ playing on 40 soccer fields"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -280,7 +280,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 애완용 쥐를 기르는 방법", "② 지뢰를 찾아낸 영웅 쥐 이야기", "③ 캄보디아의 축구 경기장"].forEach(c =>
+["① 지뢰를 찾아낸 영웅 쥐 이야기",
+ "② 애완용 쥐를 기르는 방법",
+ "③ 캄보디아의 축구 경기장"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -458,7 +460,7 @@ K.push(p([t("조건 ", { size: 16, bold: true, color: GOLD }),
   t("덩어리의 순서를 괄호에 쓰세요. 덩어리 안의 단어는 바꾸지 않습니다.", { size: 16, color: SUB })], { after: 100, line: 250 }));
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("보기   ", { size: 16, bold: true, color: NAVY2 }),
-     t("ⓐ who found landmines     ⓑ and saved so many lives.     ⓒ Magawa was     ⓓ a brave rat", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
+     t("ⓐ Magawa was     ⓑ who found landmines     ⓒ and saved so many lives.     ⓓ a brave rat", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
   { w: W, shade: COOL, b: { top: bd(4, CLINE), bottom: bd(4, CLINE), left: NOB, right: NOB }, m: { top: 150 + Math.round((FT(6) || 0) * 0.02), bottom: 150 + Math.round((FT(6) || 0) * 0.02), left: 180, right: 180 } })] })]));
 K.push(spF(6, 200, 0.05));
 K.push(p([t("순서   ", { size: 17, bold: true, color: NAVY2 }),
@@ -511,13 +513,13 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 1, main: "a very special rat",
-    opts: ["① a very common rat", "② a rat that is not like others", "③ a rat that lives in a zoo"] },
+    opts: ["① a rat that is not like others", "② a very common rat", "③ a rat that lives in a zoo"] },
   { sn: 2, main: "his great sense of smell",
-    opts: ["① his very good nose", "② his very poor nose", "③ his very loud voice"] });
+    opts: ["① his very poor nose", "② his very loud voice", "③ his very good nose"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 9, main: "after retiring from work",
-    opts: ["① after he moved to Africa", "② after he started working", "③ after he stopped working"] },
+    opts: ["① after he stopped working", "② after he moved to Africa", "③ after he started working"] },
   { sn: 11, main: "make the world a safer place",
     opts: ["① make the world more dangerous", "② make the world much bigger", "③ make the world less dangerous"] });
 K.push(spF(7, 150, 0.16));
@@ -576,13 +578,12 @@ K.push(T(tfw, [
   ...[
     "Magawa helped find landmines in Cambodia for five years.",
     "Magawa was born in Cambodia.",
-    "He learned to find bombs by using his great sense of smell.",
-    "He helped clear more than 225,000 square meters of land.",
-    "He found fewer than 20 landmines during his work.",
     "He was given a gold medal to thank him for his work.",
     "Magawa died at the age of 12.",
+    "He helped clear more than 225,000 square meters of land.",
+    "He learned to find bombs by using his great sense of smell.",
     "The people who trained him said he saved only a few lives.",
-  ].map((s, i) => new TableRow({ children: [
+    "He found fewer than 20 landmines during his work."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -640,10 +641,10 @@ K.push(spF(9, 380, 0.12));
 
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
-[["문장 1", [t("Magawa ", { size: 19 }), t("( was  /  were )", { size: 19, bold: true, color: NAVY }), t(" a very special rat.", { size: 19 })], "주어 Magawa는 단수예요. 시제는 과거!"],
+[["문장 1", [t("Magawa ", { size: 19 }), t("( were  /  was )", { size: 19, bold: true, color: NAVY }), t(" a very special rat.", { size: 19 })], "주어 Magawa는 단수예요. 시제는 과거!"],
  ["문장 3", [t("He began his work after ", { size: 19 }), t("( moving  /  move )", { size: 19, bold: true, color: NAVY }), t(" to Cambodia.", { size: 19 })], "전치사 after 뒤에는 어떤 형태가 올까요?"],
  ["문장 8", [t("", { size: 19 }), t("( To thank  /  Thank )", { size: 19, bold: true, color: NAVY }), t(" him for this, he was given a gold medal.", { size: 19 })], "'~하기 위해'는 to+동사원형!"],
- ["문장 11", [t("Magawa ", { size: 19 }), t("( has  /  have )", { size: 19, bold: true, color: NAVY }), t(" passed away.", { size: 19 })], "주어가 3인칭 단수일 때 have의 형태는?"],
+ ["문장 11", [t("Magawa ", { size: 19 }), t("( have  /  has )", { size: 19, bold: true, color: NAVY }), t(" passed away.", { size: 19 })], "주어가 3인칭 단수일 때 have의 형태는?"],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
     cel(new Paragraph({ children: [t("(" + (i + 1) + ")", { size: 16, bold: true, color: "FFFFFF" })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 210 } }),
@@ -736,13 +737,13 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문10 ", { size: 17, bold: true, color: NAVY2 }), t("people(S)·said(△V)·because[네모]·he(S′)·saved(△V′)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 부산에 사는 친구가 한 명 있다  (2) 그녀는 영화를 봄으로써 중국어를 배웠다  (3) 그는 만화책을 읽음으로써 영어를 공부하는 소년이다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 rat · landmines · brave        ", { size: 19, bold: true }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 rat · landmines · brave        ", { size: 19, bold: true }),
      t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 순서 · 안타까움 · 이유 · 반전   2-2 [B] 훈련 · [E] 평가   2-3 ①", { size: 19, bold: true })], { after: 25 }),
-  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (c) → (d) → (a) → (b)  ·  Magawa was a brave rat who found landmines and saved so many lives.", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (a) → (d) → (b) → (c)  ·  Magawa was a brave rat who found landmines and saved so many lives.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) smell  (2) landmines  (3) medal  (4) brave        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 1 ②  문장 2 ①  문장 9 ③  문장 11 ③", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 1 ①  문장 2 ③  문장 9 ①  문장 11 ③", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4T · 5F · 6T · 7F · 8F        ", { size: 19, bold: true }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 T · 4 F · 5 T · 6 T · 7 F · 8 F", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (a) → (d)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(c) · 2(e) · 3(f) · 4(a) · 5(b) · 6(d)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) was  (2) moving  (3) To thank  (4) has", { size: 19, bold: true })], { after: 25 }),
@@ -752,14 +753,14 @@ K.push(T([W], [new TableRow({ children: [cel([
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ①");
 B("이 글은 지뢰를 찾아낸 쥐 마가와의 활약(문장 1·5·7)과 세상을 더 안전하게 만들었다는 평가(문장 11)를 전한다. 소재(rat)와 평가(brave·safer)를 모두 담은 ①이 제목으로 적절하다. ③·④는 배경만 건드린 지엽적 오답, ②·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 2에서 마가와는 탄자니아에서 태어난 뒤 그곳에서 폭탄 찾는 법을 배웠고, 캄보디아로 옮긴 것은 그 다음이다(문장 3). ①은 문장 1, ③은 문장 5, ④는 문장 8, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 2에서 마가와는 탄자니아에서 태어난 뒤 그곳에서 폭탄 찾는 법을 배웠고, 캄보디아로 옮긴 것은 그 다음이다(문장 3). ①은 문장 1, ②은 문장 5, ④는 문장 8, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) this는 바로 앞 문장 7의 내용, 곧 100개가 넘는 지뢰와 숨은 위험물을 찾아낸 일을 가리킨다. 무엇이 고마워서 상을 주었는지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   He began his work after moving to Cambodia.");
 B("문장 3을 그대로 복원하는 문제다. ① 첫 글자는 대문자 He.   ② began his work — '일을 시작했다'가 한 덩어리.   ③ 전치사 after 뒤에는 동명사 moving.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 rat · landmines · brave     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 지뢰를 찾아내 많은 목숨을 구한 쥐 마가와의 이야기다. ① 쥐를 기르는 법은 나오지 않고, ③ 축구장은 넓이를 견주기 위한 비유일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 rat · landmines · brave     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 지뢰를 찾아내 많은 목숨을 구한 쥐 마가와의 이야기다. ② 쥐를 기르는 법은 나오지 않고, ③ 축구장은 넓이를 견주기 위한 비유일 뿐이다.");
 B("1-2   ○표 할 세 단어: rat(힌트① 주인공) · landmines(힌트② 찾아낸 것) · brave(힌트③ 글쓴이의 평가). 나머지 셋(Cambodia · Tanzania · medal)은 본문에 등장하지만 배경과 보상일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
 B("1-3   문장 8 — this는 지뢰를 찾아낸 일에 ○ (문장 7의 내용).   문장 10 — him은 마가와에 ○ (훈련을 받은 쪽).   문장 11 — they는 사람들에 ○, this rat은 마가와에 ○.");
 B("[학습 포인트]   문장 11이 이 지문의 백미다. 한 문장 안에서 they(사람들)와 this brave rat(마가와)이 서로 다른 것을 가리킨다. 지시어를 만날 때마다 '이게 뭘 가리키지?'를 확인해 화살표로 연결해 두자. 이 습관이 고등 독해의 지칭 추론 문항으로 이어진다.", true);
@@ -772,25 +773,25 @@ B("2-1   문장 2 After — 태어난 뒤에 배웠다는 '순서'.   문장 9 U
 B("2-2   [B] 훈련(문장 2–3: 탄자니아에서 냄새로 찾는 법을 배우고 캄보디아로 옮겨 일을 시작한다), [E] 평가(문장 10–11: 많은 목숨을 구한 용감한 쥐라는 평가). 보기의 '홍보'는 이 글에 없는 역할이다. [A] 소개 → [B] 훈련 → [C] 활약 → [D] 이별 → [E] 평가 — 한 주인공의 일생을 따라가는 흐름이다.");
 B("2-3   정답 ①. 실제로 있었던 한 동물의 삶과 업적을 사실대로 알려 주는 글이다. ② 광고의 신호(가격·사라는 말)가 없고, ③ 편지의 형식(Dear ~)도, ④ 요리법도, ⑤ 지어낸 이야기의 신호도 없다.");
 B("[학습 포인트]   연결어만 표시해도 글의 지도가 그려진다. After(순서), because(이유), but(반전). 특히 마지막 문장의 but은 글쓴이가 진짜 하고 싶은 말의 신호 — 여기서 주제문의 재료(brave)가 나온다.", true);
-Hs("STEP 3   주제문 만들기   ·   3-1 brave · landmines     3-3 (c) → (d) → (a) → (b)");
+Hs("STEP 3   주제문 만들기   ·   3-1 brave · landmines     3-3 (a) → (d) → (b) → (c)");
 B("3-1  재료 찾기 — (2) 문장 11에서 brave에 ○: 글쓴이가 마가와에게 붙인 평가다. afraid는 본문에 없는 말이다. (3) 문장 7에서 landmines에 ○: 마가와가 찾아낸 것이다. soccer fields는 넓이를 견주는 비유일 뿐. 주제문의 재료는 언제나 본문 안에 있다.");
 B("3-2  뼈대 채우기 — (1) rat  (2) brave  (3) landmines.  넣으면 Magawa was a brave rat who found landmines and saved so many lives.가 완성된다.");
-B("3-3  정답 순서 — ⓒ Magawa was → ⓓ a brave rat → ⓐ who found landmines → ⓑ and saved so many lives.  완성 문장: Magawa was a brave rat who found landmines and saved so many lives.");
-B("[채점 포인트]  주인공이 주어이므로 ⓒ가 맨 앞, 마침표가 붙은 덩어리(ⓑ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
+B("3-3  정답 순서 — ⓐ Magawa was → ⓓ a brave rat → ⓑ who found landmines → ⓒ and saved so many lives.  완성 문장: Magawa was a brave rat who found landmines and saved so many lives.");
+B("[채점 포인트]  주인공이 주어이므로 ⓐ가 맨 앞, 마침표가 붙은 덩어리(ⓒ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) smell  (2) landmines  (3) medal  (4) brave");
 B("(1)은 문장 2의 smell, (2)는 문장 7의 landmines, (3)은 문장 8의 medal, (4)는 문장 11의 brave에서 가져온다. 요약문이 곧 이 글의 흐름이다: 훈련(1) → 활약(2) → 보상(3) → 평가(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 1 ②   문장 2 ①   문장 9 ③   문장 11 ③  (정답 선지는 무표시)");
-B("문장 1 a very special rat   ① ✕ [반대] 아주 흔한 쥐 — 정반대.   ② ○ 다른 쥐들과 같지 않은 쥐.   ③ ✕ [무관] 동물원에 산다는 말은 지문에 없다.");
-B("문장 2 his great sense of smell   ① ○ 아주 좋은 코 = 뛰어난 후각.   ② ✕ [반대] 아주 나쁜 코 — 정반대.   ③ ✕ [무관] 목소리 이야기는 지문에 없다.");
-B("문장 9 after retiring from work   ① ✕ [무관] 아프리카로 옮겼다는 말은 지문에 없다.   ② ✕ [반대] 일을 시작한 뒤 — 정반대.   ③ ○ 일을 그만둔 뒤.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 1 ①   문장 2 ③   문장 9 ①   문장 11 ③  (정답 선지는 무표시)");
+B("문장 1 a very special rat   ② ✕ [반대] 아주 흔한 쥐 — 정반대.   ① ○ 다른 쥐들과 같지 않은 쥐.   ③ ✕ [무관] 동물원에 산다는 말은 지문에 없다.");
+B("문장 2 his great sense of smell   ③ ○ 아주 좋은 코 = 뛰어난 후각.   ① ✕ [반대] 아주 나쁜 코 — 정반대.   ② ✕ [무관] 목소리 이야기는 지문에 없다.");
+B("문장 9 after retiring from work   ② ✕ [무관] 아프리카로 옮겼다는 말은 지문에 없다.   ③ ✕ [반대] 일을 시작한 뒤 — 정반대.   ① ○ 일을 그만둔 뒤.");
 B("문장 11 make the world a safer place   ① ✕ [반대] 더 위험하게 만든다 — 정반대.   ② ✕ [무관] 세상을 더 크게 만든다는 말은 지문에 없다.   ③ ○ 덜 위험하게 만들다.");
 B("[학습 포인트]  시험은 본문 표현을 그대로 쓰지 않고 반드시 바꿔서 묻는다. safer ↔ less dangerous처럼 반대말을 한 번 더 뒤집어 같은 뜻을 만드는 방식에 익숙해지자.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 T · 5 F · 6 T · 7 F · 8 F");
-B("1 T — 문장 1.   2 F — 문장 2: 캄보디아가 아니라 탄자니아에서 태어났다.   3 T — 문장 2.   4 T — 문장 5.   5 F — 문장 7: 20개 미만이 아니라 100개가 넘는다.   6 T — 문장 8.   7 F — 문장 9: 12살이 아니라 8살에 세상을 떠났다.   8 F — 문장 10: 몇 안 되는 목숨이 아니라 아주 많은 목숨(so many lives)을 구했다.  거짓 문장은 모두 딱 한 요소(Cambodia, fewer than 20, 12, only a few)만 비튼 것이다.", true);
+Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 T · 7 F · 8 F");
+   B("1 T — 문장 1.   2 F — 문장 2: 캄보디아가 아니라 탄자니아에서 태어났다.   3 T — 문장 8.   4 F — 문장 9: 12살이 아니라 8살에 세상을 떠났다.   5 T — 문장 5.   6 T — 문장 2.   7 F — 문장 10: 몇 안 되는 목숨이 아니라 아주 많은 목숨(so many lives)을 구했다.  거짓 문장은 모두 딱 한 요소(Cambodia, fewer than 20, 12, only a few)만 비튼 것이다.   8 F — 문장 7: 20개 미만이 아니라 100개가 넘는다.", true);
 Hs("R2   사건 순서   ·   (b) → (c) → (a) → (d)");
 B("ⓑ 탄자니아에서 태어난다(문장 2) → ⓒ 캄보디아로 옮겨 일을 시작한다(문장 3) → ⓐ 금메달을 받는다(문장 8) → ⓓ 은퇴한 뒤 세상을 떠난다(문장 9). 문장 1은 일생 전체를 먼저 요약한 소개라서 서술 순서와 사건 순서가 어긋난다 — 첫 문장에 속지 말고 사건의 시간을 따라가자.", true);
 Hs("R3   영영풀이   ·   1 (c) · 2 (e) · 3 (f) · 4 (a) · 5 (b) · 6 (d)");

@@ -80,24 +80,26 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Saved by a Bottle of Ketchup", "② How to Fix an Old Boat at Sea",
- "③ The Best Recipes with Ketchup", "④ A Fun Family Trip to the Caribbean",
- "⑤ How the Navy Trains New Sailors"].forEach(c => K.push(ch(c)));
+["① How to Fix an Old Boat at Sea",
+ "② The Best Recipes with Ketchup",
+ "③ A Fun Family Trip to the Caribbean",
+ "④ How the Navy Trains New Sailors",
+ "⑤ Saved by a Bottle of Ketchup"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Elvis was fixing his boat when the weather changed.",
  "② After 24 days, Elvis saw a plane and sent a signal.",
- "③ When the navy rescued Elvis, he was very sick.",
- "④ Elvis mixed ketchup and seasonings with rainwater.",
- "⑤ Heinz gave Elvis a new boat."].forEach(c => K.push(ch(c)));
+ "③ Elvis mixed ketchup and seasonings with rainwater.",
+ "④ Heinz gave Elvis a new boat.",
+ "⑤ When the navy rescued Elvis, he was very sick."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the signal Elvis sent",
- "② the navy ship",
- "③ the bottle of ketchup",
- "④ Elvis’ broken boat",
+["① the navy ship",
+ "② the bottle of ketchup",
+ "③ Elvis’ broken boat",
+ "④ the signal Elvis sent",
  "⑤ the rainwater"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -145,7 +147,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -158,7 +160,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -324,7 +326,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -339,15 +341,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Elvis was fixing his boat when the weather changed.",
     "Elvis was lost in the Pacific Ocean.",
-    "Elvis sent a signal by using a mirror.",
-    "The people on the plane called the police for help.",
-    "When the navy rescued Elvis, he was in good health.",
-    "Elvis had a bottle of milk and some seasonings.",
-    "Heinz heard about Elvis’ story.",
     "Heinz gave Elvis a new car.",
-  ].map((s, i) => new TableRow({ children: [
+    "Heinz heard about Elvis’ story.",
+    "Elvis was fixing his boat when the weather changed.",
+    "The people on the plane called the police for help.",
+    "Elvis had a bottle of milk and some seasonings.",
+    "When the navy rescued Elvis, he was in good health.",
+    "Elvis sent a signal by using a mirror."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -363,9 +364,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "엘비스에게 일
 K.push(sp(120));
 K.push(box([
   ...["ⓐ The navy rescued Elvis after 24 days.",
-      "ⓑ Wind and waves carried Elvis into the ocean.",
-      "ⓒ Heinz gave Elvis a new boat.",
-      "ⓓ Elvis sent a signal by using a mirror."]
+      "ⓑ Heinz gave Elvis a new boat.",
+      "ⓒ Elvis sent a signal by using a mirror.",
+      "ⓓ Wind and waves carried Elvis into the ocean."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -405,15 +406,15 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 ketchup · survived · boat   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 T · 5 F · 6 F · 7 T · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 바다에서 길을 잃은 엘비스가 케첩과 빗물로 24일을 버텨 살아남은 이야기다(문장 5·8–10). 소재(케첩)와 특징(그 덕분에 살아남음)을 함께 담은 ①이 정답이다. ②·⑤는 지엽적이고, ③·④은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 7에서 해군이 구조했을 때 엘비스는 건강 상태가 좋았다(in good health)고 했으므로, 몹시 아팠다는 ③은 본문과 반대된다. ①은 문장 1–2, ②은 문장 5, ④은 문장 8–9, ⑤는 문장 12–13에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 바다에서 길을 잃은 엘비스가 케첩과 빗물로 24일을 버텨 살아남은 이야기다(문장 5·8–10). 소재(케첩)와 특징(그 덕분에 살아남음)을 함께 담은 ⑤이 정답이다. ①·④는 지엽적이고, ②·③은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 7에서 해군이 구조했을 때 엘비스는 건강 상태가 좋았다(in good health)고 했으므로, 몹시 아팠다는 ⑤은 본문과 반대된다. ①은 문장 1–2, ②은 문장 5, ③은 문장 8–9, ④는 문장 12–13에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) it은 바로 앞 문장 5에서 엘비스가 거울로 보낸 신호(a signal)를 가리킨다. 비행기에 탄 사람들이 알아챈 것이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   Poor Elvis was lost in the Caribbean Sea!");
 B("문장 4를 그대로 복원하는 문제다. ① 첫 글자는 대문자 Poor.   ② be lost가 '길을 잃다'라는 한 덩어리.   ③ Caribbean Sea는 바다 이름이라 대문자로 쓴다.", true);
@@ -426,10 +427,10 @@ B("[학습 포인트]   문장 9가 이 지문의 백미다. 한 문장 안에�
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 1–2.   2 F — 문장 4: 태평양이 아니라 카리브해(Caribbean Sea)다.   3 T — 문장 5.   4 F — 문장 6: 경찰이 아니라 해군(navy)을 불렀다.   5 T — 문장 7.   6 F — 문장 8: 우유가 아니라 케첩(ketchup) 한 병이다.   7 T — 문장 11.   8 F — 문장 12: 자동차가 아니라 새 보트(boat)를 주었다.  거짓 문장은 모두 한 단어만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (d) → (a) → (c)");
-B("ⓑ 바람과 파도가 엘비스를 바다로 밀어낸다(문장 3) → ⓓ 거울로 신호를 보낸다(문장 5) → ⓐ 해군이 24일 만에 구조한다(문장 6–7) → ⓒ 하인즈가 새 보트를 준다(문장 12–13). 케첩 이야기(문장 8–10)는 구조된 뒤에 엘비스가 들려준 회상이다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
+Hs("R1   True / False   ·   1 F · 2 F · 3 T · 4 T · 5 F · 6 F · 7 T · 8 T");
+   B("1 F — 문장 4: 태평양이 아니라 카리브해(Caribbean Sea)다.   2 F — 문장 12: 자동차가 아니라 새 보트(boat)를 주었다.  거짓 문장은 모두 한 단어만 비튼 것이다.   3 T — 문장 11.   4 T — 문장 1–2.   5 F — 문장 6: 경찰이 아니라 해군(navy)을 불렀다.   6 F — 문장 8: 우유가 아니라 케첩(ketchup) 한 병이다.   7 T — 문장 7.   8 T — 문장 5.", true);
+Hs("R2   사건 순서   ·   (d) → (c) → (a) → (b)");
+B("ⓓ 바람과 파도가 엘비스를 바다로 밀어낸다(문장 3) → ⓒ 거울로 신호를 보낸다(문장 5) → ⓐ 해군이 24일 만에 구조한다(문장 6–7) → ⓑ 하인즈가 새 보트를 준다(문장 12–13). 케첩 이야기(문장 8–10)는 구조된 뒤에 엘비스가 들려준 회상이다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

@@ -79,25 +79,25 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["\u2460 How to Build a Spaceship with a Camera", "\u2461 NASA\u2019s Test: Changing an Asteroid\u2019s Path",
- "\u2462 Dimorphos: An Asteroid with Two Moons", "\u2463 The 10 Months of a Space Trip",
- "\u2464 Why People Love Space Movies"].forEach(c => K.push(ch(c)));
+["① How to Build a Spaceship with a Camera", "② NASA\u2019s Test: Changing an Asteroid\u2019s Path",
+ "③ Dimorphos: An Asteroid with Two Moons", "④ The 10 Months of a Space Trip",
+ "⑤ Why People Love Space Movies"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["\u2460 In 2022, NASA did an experiment called DART.",
- "\u2461 The spaceship NASA built had a camera.",
- "\u2462 The spaceship followed Dimorphos for 10 days.",
- "\u2463 NASA changed the orbit of an asteroid.",
- "\u2464 Scientists are still studying asteroids."].forEach(c => K.push(ch(c)));
+["① In 2022, NASA did an experiment called DART.",
+ "② The spaceship followed Dimorphos for 10 days.",
+ "③ The spaceship NASA built had a camera.",
+ "④ NASA changed the orbit of an asteroid.",
+ "⑤ Scientists are still studying asteroids."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["\u2460 the camera on the spaceship",
- "\u2461 the spaceship NASA built",
- "\u2462 the asteroid Dimorphos",
- "\u2463 the path of an asteroid",
- "\u2464 a movie about the Earth"].forEach(c => K.push(ch(c)));
+["① the camera on the spaceship",
+ "② the spaceship NASA built",
+ "③ the asteroid Dimorphos",
+ "④ the path of an asteroid",
+ "⑤ a movie about the Earth"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -144,7 +144,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -157,7 +157,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -193,7 +193,7 @@ K.push(spF(2, 85, 0.06));
  [6, "So they built a spaceship with a camera and sent it into space."],
  [10, "Scientists say that right now, the chance of an asteroid hitting the Earth is very low."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -248,7 +248,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["\u2460 우주선을 만드는 방법", "\u2461 소행성의 궤도를 바꾼 NASA의 실험", "\u2462 우주를 배경으로 한 영화들"].forEach(c =>
+["① 소행성의 궤도를 바꾼 NASA의 실험",
+ "② 우주선을 만드는 방법",
+ "③ 우주를 배경으로 한 영화들"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -260,7 +262,7 @@ K.push(T([1740,1740,1740,1740,1740,1740], [new TableRow({ children: KWCAND.map((
   new Paragraph({ children: [t(ko, { size: 14, color: SUB })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 190 } }),
 ], { w: 1740, shade: FIELD, va: VerticalAlign.CENTER, m: { top: 240, bottom: 240, left: 40, right: 40 },
     b: { top: bd(4, FLINE), bottom: bd(4, FLINE), left: bd(4, FLINE), right: bd(4, FLINE) } })) })]));
-K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 이 글의 주인공  ② NASA가 바꾼 것  ③ 과학자들이 되고 싶어 하는 상태 \u2014 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
+K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 이 글의 주인공  ② NASA가 바꾼 것  ③ 과학자들이 되고 싶어 하는 상태 — 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
 K.push(spF(4, 260, 0.30));
 
 K.push(p([t("1-3  ", { size: 18, bold: true, color: GOLD }), t("지시어 이해하기", { size: 19, bold: true }),
@@ -269,7 +271,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -316,7 +318,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -331,15 +333,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Asteroids hitting the Earth is a common story in movies.",
+    "The spaceship crashed into Dimorphos very slowly.",
     "In 2022, NASA did an experiment called DART.",
     "NASA built a spaceship without a camera.",
-    "The spaceship followed an asteroid named Dimorphos.",
     "The spaceship followed the asteroid for 10 days.",
-    "The spaceship crashed into Dimorphos very slowly.",
     "Scientists say the chance of an asteroid hitting the Earth is very low.",
-    "Scientists stopped studying asteroids after DART.",
-  ].map((s, i) => new TableRow({ children: [
+    "The spaceship followed an asteroid named Dimorphos.",
+    "Asteroids hitting the Earth is a common story in movies.",
+    "Scientists stopped studying asteroids after DART."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -354,10 +355,10 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "DART 실험의 과정 ⓐ~ⓓ를 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["\u24D0 The spaceship crashed into Dimorphos and changed its path.",
-      "\u24D1 NASA built a spaceship and sent it into space.",
-      "\u24D2 NASA wanted to see if hitting an asteroid could change its path.",
-      "\u24D3 The spaceship followed Dimorphos for 10 months."]
+  ...["ⓐ NASA wanted to see if hitting an asteroid could change its path.",
+      "ⓑ The spaceship crashed into Dimorphos and changed its path.",
+      "ⓒ NASA built a spaceship and sent it into space.",
+      "ⓓ The spaceship followed Dimorphos for 10 months."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -385,9 +386,9 @@ K.push(...tab("정답 및 해설", "UNIT 14  지구와 충돌할 수 있을까�
 K.push(sp(150));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("독해", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("\u2461      ", { size: 19, bold: true }),
-     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("\u2462      ", { size: 19, bold: true }),
-     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("\u2461", { size: 19, bold: true })], { after: 25 }),
+  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("②      ", { size: 19, bold: true }),
+     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("③      ", { size: 19, bold: true }),
+     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("②", { size: 19, bold: true })], { after: 25 }),
   p([t("04 ", { size: 19, bold: true, color: NAVY2 }), t("In 2022, NASA did an experiment called DART.", { size: 19, bold: true })], { after: 75 }),
   p([t("구문분석", { size: 16, bold: true, color: NAVY })], { after: 60 }),
   p([t("문1 ", { size: 17, bold: true, color: NAVY2 }), t("Asteroids hitting the Earth(S)\u00b7is(\u25b3V)\u00b7in movies(M)   ", { size: 17, bold: true }),
@@ -395,34 +396,34 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문10 ", { size: 17, bold: true, color: NAVY2 }), t("Scientists(S)\u00b7say(\u25b3V)\u00b7that(접속사)\u00b7the chance(S\u2032)\u00b7is(\u25b3V\u2032)\u00b7very low", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 피터 팬이라는 책을 읽었다  (2) 자전거를 타는 것은 좋은 운동이다  (3) 체스라고 불리는 게임을 하는 것은 재미있다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 \u2461   1-2 asteroid · orbit · ready   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 asteroid · orbit · ready   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2T · 3F · 4T · 5F · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (b) → (d) → (a)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 F · 5 T · 6 T · 7 T · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (d) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 \u2461");
-B("이 글은 소행성 충돌이 실제로 가능한지 묻고(문장 3), NASA가 DART 실험으로 소행성의 궤도를 바꾼 일(문장 4\u20139)을 소개한다. 소재와 결과를 함께 담은 \u2461이 제목으로 적절하다. \u2460·\u2463은 세부 사항만 담은 지엽적 오답, \u2462·\u2464는 본문에 근거가 없다.", true);
-Hs("독해 02   내용 불일치   ·   정답 \u2462");
-B("문장 7에서 우주선은 디모르포스를 10개월(10 months) 동안 따라갔다. 이를 '10일'로 바꾼 \u2462가 본문과 다르다. \u2460은 문장 4, \u2461은 문장 6, \u2463은 문장 9, \u2464는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 \u2461");
-B("(A) it은 같은 문장 앞부분의 a spaceship을 가리킨다. NASA가 만들어 우주로 보낸 것이 무엇인지 보면 된다 \u2014 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
+Hs("독해 01   제목   ·   정답 ②");
+B("이 글은 소행성 충돌이 실제로 가능한지 묻고(문장 3), NASA가 DART 실험으로 소행성의 궤도를 바꾼 일(문장 4–9)을 소개한다. 소재와 결과를 함께 담은 ②이 제목으로 적절하다. ①·④은 세부 사항만 담은 지엽적 오답, ③·⑤는 본문에 근거가 없다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 7에서 우주선은 디모르포스를 10개월(10 months) 동안 따라갔다. 이를 '10일'로 바꾼 ②가 본문과 다르다. ①은 문장 4, ③은 문장 6, ④은 문장 9, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
+B("(A) it은 같은 문장 앞부분의 a spaceship을 가리킨다. NASA가 만들어 우주로 보낸 것이 무엇인지 보면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   In 2022, NASA did an experiment called DART.");
-B("문장 4를 그대로 복원하는 문제다. \u2460 첫 글자는 대문자 In.   \u2461 In 2022 뒤의 콤마를 빠뜨리지 않는다.   \u2462 an experiment called DART \u2014 called 이하가 앞의 명사를 꾸민다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 \u2461     1-2 asteroid · orbit · ready     1-3 아래 참조");
-B("1-1   정답 \u2461. 이 글은 소행성의 궤도를 바꾼 NASA의 DART 실험을 소개한다. \u2460 우주선 제작은 실험의 한 부분일 뿐이고, \u2462 영화는 이야기를 꺼내는 도입일 뿐이다.");
-B("1-2   \u25cb표 할 세 단어: asteroid(힌트\u2460 이 글의 주인공) · orbit(힌트\u2461 NASA가 바꾼 것) · ready(힌트\u2462 과학자들이 되고 싶어 하는 상태). 나머지 셋(movies · camera · months)은 본문에 나오지만 주제문에는 들어가지 않는 도입과 세부 사항이다.");
-B("1-3   문장 5 \u2014 its는 소행성의에 \u25cb (an asteroid의 궤도).   문장 6 \u2014 it은 우주선에 \u25cb (앞부분의 a spaceship).   문장 11 \u2014 they는 과학자들에 \u25cb (문장 10의 Scientists).");
+B("문장 4를 그대로 복원하는 문제다. ① 첫 글자는 대문자 In.   ② In 2022 뒤의 콤마를 빠뜨리지 않는다.   ③ an experiment called DART — called 이하가 앞의 명사를 꾸민다.", true);
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 asteroid · orbit · ready     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 소행성의 궤도를 바꾼 NASA의 DART 실험을 소개한다. ② 우주선 제작은 실험의 한 부분일 뿐이고, ③ 영화는 이야기를 꺼내는 도입일 뿐이다.");
+B("1-2   \u25cb표 할 세 단어: asteroid(힌트① 이 글의 주인공) · orbit(힌트② NASA가 바꾼 것) · ready(힌트③ 과학자들이 되고 싶어 하는 상태). 나머지 셋(movies · camera · months)은 본문에 나오지만 주제문에는 들어가지 않는 도입과 세부 사항이다.");
+B("1-3   문장 5 — its는 소행성의에 \u25cb (an asteroid의 궤도).   문장 6 — it은 우주선에 \u25cb (앞부분의 a spaceship).   문장 11 — they는 과학자들에 \u25cb (문장 10의 Scientists).");
 B("[학습 포인트]   같은 they라도 문장 6은 NASA를, 문장 11은 과학자들을 가리킨다. 지시어는 외우는 것이 아니라 매번 바로 앞에서 짝을 다시 찾는 것이다.", true);
 
 /* ═══════════ [DATA] 해설 2면 — R1 · R2 · 전문 해석 ═══════════ */
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 T · 3 F · 4 T · 5 F · 6 F · 7 T · 8 F");
-B("1 T \u2014 문장 1.   2 T \u2014 문장 4.   3 F \u2014 문장 6: 카메라 없이가 아니라 카메라가 달린(with) 우주선이다.   4 T \u2014 문장 7.   5 F \u2014 문장 7: 10일이 아니라 10개월(months)이다.   6 F \u2014 문장 8: 천천히가 아니라 아주 빠르게(fast) 충돌했다.   7 T \u2014 문장 10.   8 F \u2014 문장 11: 연구를 멈춘 것이 아니라 여전히(still) 연구 중이다.  거짓 문장은 모두 한 요소(without, days, slowly, stopped)만 비튼 것이다 \u2014 그 한 단어를 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (c) \u2192 (b) \u2192 (d) \u2192 (a)");
-B("\u24D2 소행성을 때리면 궤도가 바뀌는지 확인하려 한다(문장 5) \u2192 \u24D1 우주선을 만들어 우주로 보낸다(문장 6) \u2192 \u24D3 우주선이 디모르포스를 10개월 따라간다(문장 7) \u2192 \u24D0 우주선이 충돌해 궤도를 바꾼다(문장 8). 목표 \u2192 준비 \u2192 추적 \u2192 실행의 네 단계다 \u2014 실험 글은 이 순서를 따라 읽으면 흐름이 잡힌다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 F · 4 F · 5 T · 6 T · 7 T · 8 F");
+   B("1 F — 문장 8: 천천히가 아니라 아주 빠르게(fast) 충돌했다.   2 T — 문장 4.   3 F — 문장 6: 카메라 없이가 아니라 카메라가 달린(with) 우주선이다.   4 F — 문장 7: 10일이 아니라 10개월(months)이다.   5 T — 문장 10.   6 T — 문장 7.   7 T — 문장 1.   8 F — 문장 11: 연구를 멈춘 것이 아니라 여전히(still) 연구 중이다.  거짓 문장은 모두 한 요소(without, days, slowly, stopped)만 비튼 것이다 — 그 한 단어를 찾는 것이 정독이다.", true);
+Hs("R2   사건 순서   ·   (a) → (c) → (d) → (b)");
+B("ⓐ 소행성을 때리면 궤도가 바뀌는지 확인하려 한다(문장 5) → ⓒ 우주선을 만들어 우주로 보낸다(문장 6) → ⓓ 우주선이 디모르포스를 10개월 따라간다(문장 7) → ⓑ 우주선이 충돌해 궤도를 바꾼다(문장 8). 목표 → 준비 → 추적 → 실행의 네 단계다 — 실험 글은 이 순서를 따라 읽으면 흐름이 잡힌다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

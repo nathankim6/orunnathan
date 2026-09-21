@@ -87,8 +87,8 @@ K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?")
 K.push(sp(65));
 ["① A good shower can relax both your body and your mind.",
  "② Scientists call this the “shower effect.”",
- "③ About 200 writers and scientists recorded their ideas every day.",
- "④ All of their best ideas came while they were at work.",
+ "③ All of their best ideas came while they were at work.",
+ "④ About 200 writers and scientists recorded their ideas every day.",
  "⑤ Everyday activities take some of your attention, but not all of it."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
@@ -144,7 +144,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -157,7 +157,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -193,7 +193,7 @@ K.push(spF(2, 85, 0.06));
  [11, "Then, your mind starts to wander, and you might start dreaming and wondering about all kinds of things."]
 ].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -260,7 +260,7 @@ K.push(T([1740,1740,1740,1740,1740,1740], [new TableRow({ children: KWCAND.map((
   new Paragraph({ children: [t(ko, { size: 14, color: SUB })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 190 } }),
 ], { w: 1740, shade: FIELD, va: VerticalAlign.CENTER, m: { top: 240, bottom: 240, left: 40, right: 40 },
     b: { top: bd(4, FLINE), bottom: bd(4, FLINE), left: bd(4, FLINE), right: bd(4, FLINE) } })) })]));
-K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 이 글의 주인공  ② 어떤 종류의 생각인가  ③ 그 생각이 떠오르는 대표적인 순간 \u2014 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
+K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 이 글의 주인공  ② 어떤 종류의 생각인가  ③ 그 생각이 떠오르는 대표적인 순간 — 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
 K.push(spF(4, 260, 0.30));
 
 K.push(p([t("1-3  ", { size: 18, bold: true, color: GOLD }), t("지시어 이해하기", { size: 19, bold: true }),
@@ -269,7 +269,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -316,7 +316,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -331,15 +331,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "A good shower can relax both your body and your mind.",
     "A good shower makes it harder to think clearly.",
     "Our best ideas can happen while we are taking a shower.",
     "The shower effect can happen only in the shower.",
-    "About 200 writers and scientists recorded their ideas every day.",
-    "Half of their best ideas came while they were doing something else.",
     "Everyday activities take some of your attention, but not all of it.",
+    "A good shower can relax both your body and your mind.",
     "You must try hard to come up with creative ideas.",
-  ].map((s, i) => new TableRow({ children: [
+    "Half of their best ideas came while they were doing something else.",
+    "About 200 writers and scientists recorded their ideas every day."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -354,8 +353,8 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "샤워 효과가 일어나는 과정 ⓐ~ⓓ을 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ Your mind starts to wander.",
-      "ⓑ You do an everyday thing like taking a shower.",
+  ...["ⓐ You do an everyday thing like taking a shower.",
+      "ⓑ Your mind starts to wander.",
       "ⓒ Creative ideas come to you without trying.",
       "ⓓ The activity takes some of your attention, but not all of it."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
@@ -397,14 +396,14 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 ideas · creative · shower   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 T · 5 T · 6 F · 7 F · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (d) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ①");
 B("가장 좋은 아이디어가 샤워 같은 일상적인 일을 할 때 떠오른다는 것(문장 3–5)과 그것을 뒷받침하는 연구(문장 6–8), 그 까닭(문장 10–12)을 소개한다. ①이 정답. ③·⑤는 지엽적 오답, ②·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 8에서 최고의 아이디어 중 일부는 다른 일을 하는 동안 떠올랐다고 했으므로, 전부가 직장에서 나왔다는 ④가 본문과 반대된다. ①은 문장 1, ②는 문장 5, ③은 문장 6, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 8에서 최고의 아이디어 중 일부는 다른 일을 하는 동안 떠올랐다고 했으므로, 전부가 직장에서 나왔다는 ③가 본문과 반대된다. ①은 문장 1, ②는 문장 5, ④은 문장 6, ⑤는 문장 10에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) it은 같은 문장 앞부분의 your attention을 가리킨다. '주의력의 일부는 가져가지만 전부는 아니다'라는 뜻이다. 문장 2의 It은 샤워였다 — 같은 it이라도 가리키는 것이 다르다.", true);
 Hs("독해 04   배열 영작   ·   Most of the time, they got ideas at work.");
@@ -419,10 +418,10 @@ B("[학습 포인트]   문장 2의 It은 샤워, 문장 10의 it은 주의력�
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 1.   2 F — 문장 2: 어렵게 만드는 게 아니라 더 또렷하게 생각하도록 돕는다.   3 T — 문장 4.   4 F — 문장 5: 샤워 안에서만이 아니라 샤워 밖에서도 일어난다.   5 T — 문장 6.   6 F — 문장 8: 절반이 아니라 5분의 1이다.   7 T — 문장 10.   8 F — 문장 12: 애써야 하는 게 아니라 애쓰지 않고도 떠오른다.  거짓 문장은 모두 딱 한 요소만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (d) → (a) → (c)");
-B("ⓑ 샤워 같은 일상적인 일을 한다(문장 4) → ⓓ 그 일이 주의력의 일부만 가져간다(문장 10) → ⓐ 마음이 이리저리 떠돌기 시작한다(문장 11) → ⓒ 애쓰지 않아도 창의적인 생각이 떠오른다(문장 12). 본문은 결과(문장 1–8)를 먼저 말하고 까닭(문장 10–12)을 나중에 밝히므로, 서술 순서와 실제 과정의 순서가 같지 않다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 F · 4 T · 5 T · 6 F · 7 F · 8 T");
+   B("1 F — 문장 2: 어렵게 만드는 게 아니라 더 또렷하게 생각하도록 돕는다.   2 T — 문장 4.   3 F — 문장 5: 샤워 안에서만이 아니라 샤워 밖에서도 일어난다.   4 T — 문장 10.   5 T — 문장 1.   6 F — 문장 12: 애써야 하는 게 아니라 애쓰지 않고도 떠오른다.  거짓 문장은 모두 딱 한 요소만 비튼 것이다.   7 F — 문장 8: 절반이 아니라 5분의 1이다.   8 T — 문장 6.", true);
+Hs("R2   사건 순서   ·   (a) → (d) → (b) → (c)");
+B("ⓐ 샤워 같은 일상적인 일을 한다(문장 4) → ⓓ 그 일이 주의력의 일부만 가져간다(문장 10) → ⓑ 마음이 이리저리 떠돌기 시작한다(문장 11) → ⓒ 애쓰지 않아도 창의적인 생각이 떠오른다(문장 12). 본문은 결과(문장 1–8)를 먼저 말하고 까닭(문장 10–12)을 나중에 밝히므로, 서술 순서와 실제 과정의 순서가 같지 않다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

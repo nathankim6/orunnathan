@@ -79,16 +79,18 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Old Diapers Become New Roads", "② How to Choose Good Diapers for Babies",
- "③ The Long History of British Roads", "④ Why Babies Need Soft Clothes",
+["① How to Choose Good Diapers for Babies",
+ "② The Long History of British Roads",
+ "③ Old Diapers Become New Roads",
+ "④ Why Babies Need Soft Clothes",
  "⑤ Famous Places to Visit in Wales"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① About three billion diapers are thrown away in the U.K. each year.",
- "② Diapers can take 500 years to break down.",
- "③ People use recycled diapers to fix the roads in Wales.",
- "④ The diapers are used without being cut or washed.",
+["① The diapers are used without being cut or washed.",
+ "② About three billion diapers are thrown away in the U.K. each year.",
+ "③ Diapers can take 500 years to break down.",
+ "④ People use recycled diapers to fix the roads in Wales.",
  "⑤ For now, only the U.K. is testing this idea."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) It이 가리키는 것으로 가장 적절한 것은?"));
@@ -333,15 +335,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "The people of Wales use diapers to make roads.",
-    "About three million diapers are thrown away in the U.K. each year.",
-    "Diapers can take 500 years to break down.",
     "People use recycled diapers to fix the bridges in Wales.",
-    "First, the diapers are cut into small pieces and washed.",
+    "Diapers can take 500 years to break down.",
+    "The people of Wales use diapers to make roads.",
     "The pieces are added to a sticky material called plastic.",
     "The last step keeps the asphalt from falling apart.",
+    "About three million diapers are thrown away in the U.K. each year.",
     "Many countries are already testing this idea.",
-  ].map((s, i) => new TableRow({ children: [
+    "First, the diapers are cut into small pieces and washed."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -399,14 +400,14 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 diapers · roads · recycled   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 F · 5 T · 6 F · 7 F · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (c) → (a)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 버려지는 기저귀를 재활용해 웨일스의 도로를 보수한다는 놀라운 아이디어(문장 2·5)와 그 과정(문장 8–11)을 소개한다. 소재(기저귀)와 특징(도로가 된다)을 모두 담은 ①이 제목으로 적절하다. ②·④는 기저귀·아기만 건드린 지엽적 오답, ③·⑤는 도로의 역사·여행지로 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 8에서 기저귀는 먼저 작은 조각으로 잘리고 세척된다(are cut into small pieces and washed)고 했으므로, 자르지도 씻지도 않고 쓴다는 ④는 본문과 반대된다. ①은 문장 3, ②는 문장 4, ③은 문장 5, ⑤는 문장 12에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 버려지는 기저귀를 재활용해 웨일스의 도로를 보수한다는 놀라운 아이디어(문장 2·5)와 그 과정(문장 8–11)을 소개한다. 소재(기저귀)와 특징(도로가 된다)을 모두 담은 ③이 제목으로 적절하다. ①·④는 기저귀·아기만 건드린 지엽적 오답, ②·⑤는 도로의 역사·여행지로 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 8에서 기저귀는 먼저 작은 조각으로 잘리고 세척된다(are cut into small pieces and washed)고 했으므로, 자르지도 씻지도 않고 쓴다는 ①는 본문과 반대된다. ②은 문장 3, ③는 문장 4, ④은 문장 5, ⑤는 문장 12에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) It은 문장 12의 this idea, 곧 재활용 기저귀로 도로를 고치는 아이디어를 가리킨다. 전 세계로 퍼질 수 있는 것이 무엇인지 생각하면 된다. ② 쓰레기 문제나 ⑤ 비투멘은 퍼져 나간다는 서술과 어울리지 않는다.", true);
 Hs("독해 04   배열 영작   ·   Diapers can take 500 years to break down.");
@@ -421,8 +422,8 @@ B("[학습 포인트]   예시로 보여 준 문장 3의 this가 이 지문의 �
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 2.   2 F — 문장 3: 300만 개(million)가 아니라 30억 개(billion)다.   3 T — 문장 4.   4 F — 문장 5: 다리가 아니라 도로(roads)를 고친다.   5 T — 문장 8.   6 F — 문장 10: 플라스틱이 아니라 비투멘(bitumen)이라는 재료다.   7 T — 문장 11.   8 F — 문장 12: 지금은 영국만(only the U.K.) 시험하고 있다.  거짓 문장은 모두 본문에서 딱 한 요소(million, bridges, plastic, many countries)를 비튼 것이다 — 그 한 단어를 찾는 것이 정독이다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 F · 5 T · 6 F · 7 F · 8 T");
+   B("1 F — 문장 5: 다리가 아니라 도로(roads)를 고친다.   2 T — 문장 4.   3 T — 문장 2.   4 F — 문장 10: 플라스틱이 아니라 비투멘(bitumen)이라는 재료다.   5 T — 문장 11.   6 F — 문장 3: 300만 개(million)가 아니라 30억 개(billion)다.   7 F — 문장 12: 지금은 영국만(only the U.K.) 시험하고 있다.  거짓 문장은 모두 본문에서 딱 한 요소(million, bridges, plastic, many countries)를 비튼 것이다 — 그 한 단어를 찾는 것이 정독이다.   8 T — 문장 8.", true);
 Hs("R2   사건 순서   ·   (d) → (b) → (c) → (a)");
 B("ⓓ 수십억 개의 기저귀가 버려진다(문장 3) → ⓑ 기저귀를 작은 조각으로 잘라 세척한다(문장 8) → ⓒ 여러 단계를 거쳐 작고 부드러운 조각으로 변한다(문장 9) → ⓐ 조각들을 끈적한 비투멘에 첨가한다(문장 10). First → Then → Finally라는 순서 연결어가 그대로 과정의 지도가 된다 — 과정을 설명하는 글은 연결어만 따라가면 순서가 보인다.", true);
 K.push(sp(70));

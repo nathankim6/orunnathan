@@ -98,23 +98,25 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Chicken Buses: Guatemala’s Colorful Rides", "② How to Raise Chickens in Guatemala",
- "③ The History of American School Buses", "④ The Cheapest Way to Travel in America",
+["① How to Raise Chickens in Guatemala",
+ "② The History of American School Buses",
+ "③ Chicken Buses: Guatemala’s Colorful Rides",
+ "④ The Cheapest Way to Travel in America",
  "⑤ How to Paint a Bus with Bright Colors"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Chicken buses sometimes carry live chickens.",
- "② People in Guatemala buy the buses for a high price.",
- "③ Inside the buses, there are fun decorations.",
- "④ Many chicken buses are very old and need fixing.",
+ "② Inside the buses, there are fun decorations.",
+ "③ Many chicken buses are very old and need fixing.",
+ "④ People in Guatemala buy the buses for a high price.",
  "⑤ Chicken buses are still very special to the country."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the chicken buses",
- "② the live chickens",
- "③ the school buses in America",
+["① the live chickens",
+ "② the school buses in America",
+ "③ the chicken buses",
  "④ the people in Guatemala",
  "⑤ the flat-screen TVs"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -175,7 +177,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -189,7 +191,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -281,7 +283,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 닭 요리를 파는 과테말라의 시장", "② 과테말라의 화려한 치킨 버스", "③ 미국의 노란 스쿨버스"].forEach(c =>
+["① 과테말라의 화려한 치킨 버스",
+ "② 닭 요리를 파는 과테말라의 시장",
+ "③ 미국의 노란 스쿨버스"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -511,15 +515,15 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 3, main: "run all over the country",
-    opts: ["① go to every part of the country", "② stay in one small town", "③ fly to other countries"] },
+    opts: ["① stay in one small town", "② go to every part of the country", "③ fly to other countries"] },
   { sn: 4, main: "very cheap",
-    opts: ["① costs a lot of money", "② does not cost much money", "③ is free for students"] });
+    opts: ["① costs a lot of money", "② is free for students", "③ does not cost much money"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 10, main: "very old and need fixing",
-    opts: ["① new and perfect", "② not new, and must be repaired", "③ too big for the road"] },
+    opts: ["① not new, and must be repaired", "② new and perfect", "③ too big for the road"] },
   { sn: 11, main: "still very special",
-    opts: ["① no longer important", "② still mean a lot to people", "③ sold to other countries"] });
+    opts: ["① still mean a lot to people", "② no longer important", "③ sold to other countries"] });
 K.push(spF(7, 150, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -574,15 +578,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Chicken buses run all over Guatemala.",
-    "Riding a chicken bus costs a lot of money.",
+    "There are no decorations inside the buses.",
     "The buses were once school buses in America.",
+    "Chicken buses are no longer special to the country.",
     "People in Guatemala buy the buses for a high price.",
     "People paint the buses with bright colors and designs.",
-    "There are no decorations inside the buses.",
-    "Many chicken buses are very old and need fixing.",
-    "Chicken buses are no longer special to the country.",
-  ].map((s, i) => new TableRow({ children: [
+    "Chicken buses run all over Guatemala.",
+    "Riding a chicken bus costs a lot of money.",
+    "Many chicken buses are very old and need fixing."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -598,8 +601,8 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "치킨 버스에게
 K.push(sp(120));
 K.push(box([
   ...["ⓐ People in Guatemala buy the buses for a low price.",
-      "ⓑ The buses carry people to work and school in Guatemala.",
-      "ⓒ The buses were school buses in America.",
+      "ⓑ The buses were school buses in America.",
+      "ⓒ The buses carry people to work and school in Guatemala.",
       "ⓓ People paint the buses with bright colors."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -640,9 +643,9 @@ K.push(spF(9, 380, 0.12));
 
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
-[["문장 1", [t("In Guatemala, there ", { size: 19 }), t("( is  /  are )", { size: 19, bold: true, color: NAVY }), t(" special colorful buses.", { size: 19 })], "there 뒤에 오는 명사가 복수인지 보세요."],
+[["문장 1", [t("In Guatemala, there ", { size: 19 }), t("( are  /  is )", { size: 19, bold: true, color: NAVY }), t(" special colorful buses.", { size: 19 })], "there 뒤에 오는 명사가 복수인지 보세요."],
  ["문장 4", [t("", { size: 19 }), t("( Riding  /  Ride )", { size: 19, bold: true, color: NAVY }), t(" a chicken bus is also very cheap.", { size: 19 })], "주어 자리에는 '~하는 것'을 뜻하는 동명사!"],
- ["문장 5", [t("So many people use ", { size: 19 }), t("( they  /  them )", { size: 19, bold: true, color: NAVY }), t(" to go to work.", { size: 19 })], "동사 뒤 목적어 자리에 오는 형태는?"],
+ ["문장 5", [t("So many people use ", { size: 19 }), t("( them  /  they )", { size: 19, bold: true, color: NAVY }), t(" to go to work.", { size: 19 })], "동사 뒤 목적어 자리에 오는 형태는?"],
  ["문장 8", [t("Then, they ", { size: 19 }), t("( paint  /  paints )", { size: 19, bold: true, color: NAVY }), t(" them with bright colors.", { size: 19 })], "주어 they(복수)에 맞는 동사 형태는?"],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
@@ -737,30 +740,30 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문10 ", { size: 17, bold: true, color: NAVY2 }), t("buses(S)·in Guatemala(M)·are·need(△V)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 '나비'라고 불리는 작은 고양이가 있다  (2) 축구를 하는 것은 매우 재미있다  (3) '두리안'이라고 불리는 과일을 먹는 것은 쉽지 않다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 buses · old · special        ", { size: 19, bold: true }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 buses · old · special        ", { size: 19, bold: true }),
      t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 이유 · 결과 · 순서 · 반전   2-2 [B] 쓰임 · [E] 마무리   2-3 ①", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (d) → (a) → (c)  ·  Chicken buses are old, but they are still very special to Guatemala.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) colorful  (2) cheap  (3) school  (4) special        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 3 ①  문장 4 ②  문장 10 ②  문장 11 ②", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 3 ②  문장 4 ③  문장 10 ①  문장 11 ①", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (d) → (b)", { size: 19, bold: true })], { after: 25 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 F · 5 T · 6 T · 7 F · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (d) → (c)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(c) · 2(a) · 3(e) · 4(b) · 5(f) · 6(d)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) are  (2) Riding  (3) them  (4) paint", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) colorful (2) carry (3) cheap (4) price (5) paint (6) decorations (7) old (8) special", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) Then, they paint them with bright colors and designs.  (2) These buses were once school buses in America.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 과테말라의 화려한 치킨 버스가 어떤 존재인지 소개한다(문장 1·11). 소재(chicken buses)와 특징(colorful)을 함께 담은 ①이 정답이다. ②·④은 본문과 무관하고, ③·⑤는 유래·색칠만 건드린 지엽적 오답이다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 7에서 사람들은 버스를 '낮은 값(a low price)'에 산다고 했으므로, 비싸게 산다는 ②은 본문과 반대된다. ①은 문장 2, ③는 문장 9, ④은 문장 10, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 과테말라의 화려한 치킨 버스가 어떤 존재인지 소개한다(문장 1·11). 소재(chicken buses)와 특징(colorful)을 함께 담은 ③이 정답이다. ①·④은 본문과 무관하고, ②·⑤는 유래·색칠만 건드린 지엽적 오답이다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 7에서 사람들은 버스를 '낮은 값(a low price)'에 산다고 했으므로, 비싸게 산다는 ④은 본문과 반대된다. ①은 문장 2, ②는 문장 9, ③은 문장 10, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) them은 앞 문장 3·4의 chicken buses를 가리킨다. 사람들이 일터와 학교에 갈 때 타는 것이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   These buses run all over the country.");
 B("문장 3을 그대로 복원하는 문제다. ① 첫 글자는 대문자 These.   ② 주어가 복수라 run에 -s가 붙지 않는다.   ③ all over the country가 '전국 곳곳'이라는 한 덩어리다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 buses · old · special     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 과테말라의 치킨 버스를 소개한다. ① 닭 요리는 이름의 유래일 뿐이고, ③ 미국 스쿨버스는 이 버스의 출신이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 buses · old · special     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 과테말라의 치킨 버스를 소개한다. ② 닭 요리는 이름의 유래일 뿐이고, ③ 미국 스쿨버스는 이 버스의 출신이다.");
 B("1-2   ○표 할 세 단어: buses(힌트① 주인공) · old(힌트② 지금 상태) · special(힌트③ 글쓴이의 평가). 나머지 셋(chickens · America · TVs)은 본문에 나오지만 주제문에는 들어가지 않는다.");
 B("1-3   문장 5 — them은 치킨 버스들에 ○.   문장 8 — they는 사람들, them은 버스들에 ○ (한 문장 안에서 대상이 바뀐다).   문장 11 — they는 치킨 버스들에 ○.");
 B("[학습 포인트]   문장 8이 이 지문의 백미다. 같은 문장의 they와 them이 서로 다른 것을 가리킨다 — 지시어를 만나면 늘 '누가? 무엇이?'를 확인하자.", true);
@@ -780,20 +783,20 @@ B("3-3  정답 순서 — ⓑ Chicken buses → ⓓ are old, → ⓐ but they ar
 B("[채점 포인트]  주인공(ⓑ)이 맨 앞, 마침표가 붙은 덩어리(ⓒ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) colorful  (2) cheap  (3) school  (4) special");
 B("(1)은 문장 1의 colorful, (2)는 문장 4의 cheap, (3)은 문장 6의 school, (4)는 문장 11의 special에서 가져온다. 요약문이 곧 이 글의 흐름이다: 소개 → 쓰임 → 유래 → 평가.", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 3 ①   문장 4 ②   문장 10 ②   문장 11 ②  (정답 선지는 무표시)");
-B("문장 3 run all over the country   ① ○ 나라의 모든 곳으로 간다.   ② ✕ [반대] 작은 마을 한 곳에만 머문다.   ③ ✕ [무관] 다른 나라로 날아간다는 말은 없다.");
-B("문장 4 very cheap   ① ✕ [반대] 돈이 많이 든다 — 정반대.   ② ○ 돈이 많이 들지 않는다.   ③ ✕ [무관] 학생은 무료라는 말은 지문에 없다.");
-B("문장 10 very old and need fixing   ① ✕ [반대] 새것이고 완벽하다 — 정반대.   ② ○ 새것이 아니어서 고쳐야 한다.   ③ ✕ [무관] 도로에 비해 크다는 말은 없다.");
-B("문장 11 still very special   ① ✕ [반대] 더 이상 중요하지 않다 — 정반대.   ② ○ 여전히 사람들에게 큰 의미가 있다.   ③ ✕ [무관] 다른 나라에 팔린다는 말은 없다.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 3 ②   문장 4 ③   문장 10 ①   문장 11 ①  (정답 선지는 무표시)");
+B("문장 3 run all over the country   ② ○ 나라의 모든 곳으로 간다.   ① ✕ [반대] 작은 마을 한 곳에만 머문다.   ③ ✕ [무관] 다른 나라로 날아간다는 말은 없다.");
+B("문장 4 very cheap   ① ✕ [반대] 돈이 많이 든다 — 정반대.   ③ ○ 돈이 많이 들지 않는다.   ② ✕ [무관] 학생은 무료라는 말은 지문에 없다.");
+B("문장 10 very old and need fixing   ② ✕ [반대] 새것이고 완벽하다 — 정반대.   ① ○ 새것이 아니어서 고쳐야 한다.   ③ ✕ [무관] 도로에 비해 크다는 말은 없다.");
+B("문장 11 still very special   ② ✕ [반대] 더 이상 중요하지 않다 — 정반대.   ① ○ 여전히 사람들에게 큰 의미가 있다.   ③ ✕ [무관] 다른 나라에 팔린다는 말은 없다.");
 B("[학습 포인트]  시험은 본문 표현을 그대로 쓰지 않고 반드시 바꿔서 묻는다. 읽을 때마다 '이 표현을 다른 말로 하면?'을 스스로 물어보자.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 3.   2 F — 문장 4: 비싼 게 아니라 아주 싸다(cheap).   3 T — 문장 6.   4 F — 문장 7: 높은 값이 아니라 낮은 값(low price)이다.   5 T — 문장 8.   6 F — 문장 9: 장식이 없는 게 아니라 재미있는 장식이 있다.   7 T — 문장 10.   8 F — 문장 11: 여전히 아주 특별하다.  거짓 문장은 모두 한 요소(a lot of money, high, no, no longer)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (c) → (a) → (d) → (b)");
-B("ⓒ 미국의 스쿨버스였다(문장 6) → ⓐ 낮은 값에 산다(문장 7) → ⓓ 밝은 색으로 칠한다(문장 8) → ⓑ 사람들을 태우고 달린다(문장 3–5). 본문은 쓰임(문장 3–5)을 유래(문장 6–8)보다 먼저 말한다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 F · 4 F · 5 T · 6 T · 7 F · 8 T");
+   B("1 F — 문장 9: 장식이 없는 게 아니라 재미있는 장식이 있다.   2 T — 문장 6.   3 F — 문장 11: 여전히 아주 특별하다.  거짓 문장은 모두 한 요소(a lot of money, high, no, no longer)만 비튼 것이다.   4 F — 문장 7: 높은 값이 아니라 낮은 값(low price)이다.   5 T — 문장 8.   6 T — 문장 3.   7 F — 문장 4: 비싼 게 아니라 아주 싸다(cheap).   8 T — 문장 10.", true);
+Hs("R2   사건 순서   ·   (b) → (a) → (d) → (c)");
+B("ⓑ 미국의 스쿨버스였다(문장 6) → ⓐ 낮은 값에 산다(문장 7) → ⓓ 밝은 색으로 칠한다(문장 8) → ⓒ 사람들을 태우고 달린다(문장 3–5). 본문은 쓰임(문장 3–5)을 유래(문장 6–8)보다 먼저 말한다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
 Hs("R3   영영풀이   ·   1 (c) · 2 (a) · 3 (e) · 4 (b) · 5 (f) · 6 (d)");
 B("colorful = 여러 색으로 가득한 · carry = 다른 곳으로 옮기다 · cheap = 돈이 많이 들지 않는 · price = 무언가에 내는 돈 · bright = 색이 밝고 진한 · fix = 고장 난 것을 다시 쓰게 만들다.", true);
 Hs("R4   어법 기초   ·   (1) are  (2) Riding  (3) them  (4) paint");

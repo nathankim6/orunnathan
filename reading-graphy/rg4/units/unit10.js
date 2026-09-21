@@ -97,25 +97,27 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Living Inside Rocks: A Spanish Town Named Setenil", "② How to Grow Olives and Almonds in Spain",
- "③ The Latin Words We Still Use Today", "④ Why Insects Attacked European Vineyards",
- "⑤ The Best Wine Storehouses in the World"].forEach(c => K.push(ch(c)));
+["① How to Grow Olives and Almonds in Spain",
+ "② The Latin Words We Still Use Today",
+ "③ Why Insects Attacked European Vineyards",
+ "④ The Best Wine Storehouses in the World",
+ "⑤ Living Inside Rocks: A Spanish Town Named Setenil"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① In Setenil de las Bodegas, people live in houses built inside rocks.",
  "② The special houses were made by the Moors in the 12th century.",
- "③ The Moors built brand-new houses instead of using the caves.",
- "④ “Bodegas” means “a storehouse for wine” in Spanish.",
- "⑤ Most of the vineyards were destroyed by insects in the 1800s."].forEach(c => K.push(ch(c)));
+ "③ “Bodegas” means “a storehouse for wine” in Spanish.",
+ "④ Most of the vineyards were destroyed by insects in the 1800s.",
+ "⑤ The Moors built brand-new houses instead of using the caves."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) It이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the word “Bodegas”",
- "② the town of Setenil",
- "③ the Latin word for “nothing”",
- "④ the wine made by the settlers",
- "⑤ the vineyard destroyed by insects"].forEach(c => K.push(ch(c)));
+["① the town of Setenil",
+ "② the Latin word for “nothing”",
+ "③ the wine made by the settlers",
+ "④ the vineyard destroyed by insects",
+ "⑤ the word “Bodegas”"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -401,11 +403,11 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 마을을 소개하고 사실을 알려 주는 설명문",
- "② 물건을 팔기 위해 만든 광고",
- "③ 하루 일과를 적은 일기",
- "④ 안부를 전하는 편지",
- "⑤ 상상으로 지어낸 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
+["① 물건을 팔기 위해 만든 광고",
+ "② 하루 일과를 적은 일기",
+ "③ 안부를 전하는 편지",
+ "④ 상상으로 지어낸 동화",
+ "⑤ 마을을 소개하고 사실을 알려 주는 설명문"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
 K.push(brk());
@@ -456,7 +458,7 @@ K.push(p([t("조건 ", { size: 16, bold: true, color: GOLD }),
   t("덩어리의 순서를 괄호에 쓰세요. 덩어리 안의 단어는 바꾸지 않습니다.", { size: 16, color: SUB })], { after: 100, line: 250 }));
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("보기   ", { size: 16, bold: true, color: NAVY2 }),
-     t("ⓐ people really live     ⓑ in a Spanish town,     ⓒ in houses     ⓓ built inside rocks.", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
+     t("ⓐ people really live     ⓑ in houses     ⓒ built inside rocks.     ⓓ in a Spanish town,", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
   { w: W, shade: COOL, b: { top: bd(4, CLINE), bottom: bd(4, CLINE), left: NOB, right: NOB }, m: { top: 150 + Math.round((FT(6) || 0) * 0.02), bottom: 150 + Math.round((FT(6) || 0) * 0.02), left: 180, right: 180 } })] })]));
 K.push(spF(6, 200, 0.05));
 K.push(p([t("순서   ", { size: 17, bold: true, color: NAVY2 }),
@@ -509,15 +511,15 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 1, main: "don’t know what is happening",
-    opts: ["① have no idea about the news", "② know everything about the world", "③ live in a cave in Spain"] },
+    opts: ["① know everything about the world", "② live in a cave in Spain", "③ have no idea about the news"] },
   { sn: 4, main: "made the natural caves bigger",
-    opts: ["① built new houses from nothing", "② widened the caves that were there", "③ painted the caves bright colors"] });
+    opts: ["① built new houses from nothing", "② painted the caves bright colors", "③ widened the caves that were there"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 7, main: "tried seven times to take the town back",
-    opts: ["① gave up after only one try", "② attempted again and again to get it", "③ sold the town to the Moors"] },
+    opts: ["① attempted again and again to get it", "② gave up after only one try", "③ sold the town to the Moors"] },
   { sn: 11, main: "is still famous for its delicious olives",
-    opts: ["① is well known for its tasty olives", "② is now forgotten by everyone", "③ grows the largest olives in Europe"] });
+    opts: ["① is now forgotten by everyone", "② is well known for its tasty olives", "③ grows the largest olives in Europe"] });
 K.push(spF(7, 150, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -572,15 +574,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "In Setenil de las Bodegas, people live in houses built inside rocks.",
     "The special houses were made by the Moors in the 12th century.",
-    "The Moors built brand-new houses instead of using the caves.",
-    "“Setenil” comes from the Latin words for “seven times nothing.”",
-    "Catholic rulers tried three times to take the town back.",
-    "“Bodegas” means “a storehouse for wine” in Spanish.",
     "All of the vineyards are still growing well today.",
     "The town is now famous only for its wine.",
-  ].map((s, i) => new TableRow({ children: [
+    "In Setenil de las Bodegas, people live in houses built inside rocks.",
+    "Catholic rulers tried three times to take the town back.",
+    "“Setenil” comes from the Latin words for “seven times nothing.”",
+    "“Bodegas” means “a storehouse for wine” in Spanish.",
+    "The Moors built brand-new houses instead of using the caves."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -596,9 +597,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "이 마을에 일�
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Catholic rulers tried seven times to take the town back.",
-      "ⓑ The Moors invaded Spain and founded the town.",
-      "ⓒ Insects destroyed most of the vineyards.",
-      "ⓓ Settlers introduced vineyards to the region."]
+      "ⓑ Insects destroyed most of the vineyards.",
+      "ⓒ Settlers introduced vineyards to the region.",
+      "ⓓ The Moors invaded Spain and founded the town."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -639,9 +640,9 @@ K.push(spF(9, 380, 0.12));
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
 [["문장 2", [t("In a Spanish town, people really ", { size: 19 }), t("( live  /  lives )", { size: 19, bold: true, color: NAVY }), t(" in houses built inside rocks.", { size: 19 })], "주어 people은 복수 — 동사 형태는?"],
- ["문장 3", [t("These special houses ", { size: 19 }), t("( were  /  was )", { size: 19, bold: true, color: NAVY }), t(" made by the Moors.", { size: 19 })], "주어가 복수인 수동태 — be동사를 고르세요."],
+ ["문장 3", [t("These special houses ", { size: 19 }), t("( was  /  were )", { size: 19, bold: true, color: NAVY }), t(" made by the Moors.", { size: 19 })], "주어가 복수인 수동태 — be동사를 고르세요."],
  ["문장 4", [t("They made the caves bigger ", { size: 19 }), t("( to stay  /  stayed )", { size: 19, bold: true, color: NAVY }), t(" cool in summer.", { size: 19 })], "'~하기 위해'는 to+동사원형!"],
- ["문장 5", [t("The town’s name ", { size: 19 }), t("( explains  /  explain )", { size: 19, bold: true, color: NAVY }), t(" the history of the town.", { size: 19 })], "주어 name은 3인칭 단수 — -s를 잊지 마세요."],
+ ["문장 5", [t("The town’s name ", { size: 19 }), t("( explain  /  explains )", { size: 19, bold: true, color: NAVY }), t(" the history of the town.", { size: 19 })], "주어 name은 3인칭 단수 — -s를 잊지 마세요."],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
     cel(new Paragraph({ children: [t("(" + (i + 1) + ")", { size: 16, bold: true, color: "FFFFFF" })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 210 } }),
@@ -735,24 +736,24 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 우리는 1900년에 지어진 집을 방문했다  (2) 버스를 타는 대신, 그녀는 학교까지 걸어갔다  (3) 종이로 만들어진 지도를 쓰는 대신, 우리는 휴대전화를 사용했다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 town · houses · rocks        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 반전 · 대신 · 이유   2-2 [B] 유래 · [E] 마무리   2-3 ①", { size: 19, bold: true })], { after: 25 }),
-  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (a) → (c) → (d)  ·  In a Spanish town, people really live in houses built inside rocks.", { size: 19, bold: true })], { after: 25 }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 때 · 반전 · 대신 · 이유   2-2 [B] 유래 · [E] 마무리   2-3 ⑤", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (d) → (a) → (b) → (c)  ·  In a Spanish town, people really live in houses built inside rocks.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) rocks  (2) caves  (3) name  (4) famous        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 1 ①  문장 4 ②  문장 7 ②  문장 11 ①", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 1 ③  문장 4 ③  문장 7 ①  문장 11 ②", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2T · 3F · 4T · 5F · 6T · 7F · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (d) → (c)", { size: 19, bold: true })], { after: 25 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 F · 4 T · 5 F · 6 T · 7 T · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (c) → (b)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(c) · 2(e) · 3(a) · 4(f) · 5(b) · 6(d)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) live  (2) were  (3) to stay  (4) explains", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) rocks (2) invaded (3) caves (4) name (5) wine (6) vineyards (7) destroyed (8) famous", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) Most of the vineyards were destroyed by insects in the 1800s.  (2) But the town is still famous for its delicious olives and almonds!", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 바위 안에 지은 집에서 사람들이 실제로 사는 스페인 마을 세테닐(문장 2–4)과 그 이름의 유래(문장 5–9)를 소개한다. 소재(마을)와 특징(바위 속 집)을 함께 담은 ①이 제목으로 적절하다. ②·④는 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 4에서 무어인들은 새 집을 짓는 대신(Instead of building new houses) 자연 동굴을 넓혔다. ③이 본문과 반대된다. ①은 문장 2, ②는 문장 3, ④는 문장 8, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 바위 안에 지은 집에서 사람들이 실제로 사는 스페인 마을 세테닐(문장 2–4)과 그 이름의 유래(문장 5–9)를 소개한다. 소재(마을)와 특징(바위 속 집)을 함께 담은 ⑤이 제목으로 적절하다. ①·③는 지엽적 오답, ②·④는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 4에서 무어인들은 새 집을 짓는 대신(Instead of building new houses) 자연 동굴을 넓혔다. ⑤이 본문과 반대된다. ①은 문장 2, ②는 문장 3, ③는 문장 8, ④는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) It은 바로 앞 문장 8의 낱말 “Bodegas”를 가리킨다. 마을 이름에 덧붙여진 것이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   The town’s name explains the history of the town.");
 B("문장 5를 그대로 복원하는 문제다. ① 첫 글자는 대문자 The.   ② 주어 name은 단수이므로 explains.   ③ the history of the town — 소유를 나타내는 of의 자리에 주의한다.", true);
@@ -765,32 +766,32 @@ B("[학습 포인트]   지시어는 사람만이 아니라 낱말 하나도 대
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 때 / 반전 / 대신 / 이유     2-2 [B] 유래 · [E] 마무리     2-3 ①");
+Hs("STEP 2   글의 흐름   ·   2-1 때 / 반전 / 대신 / 이유     2-2 [B] 유래 · [E] 마무리     2-3 ⑤");
 B("2-1   문장 1 When — 사람들이 그렇게 물을 '때'.   문장 2 But — 말뜻과 달리 진짜로 산다는 '반전'.   문장 4 Instead of — 새로 짓는 '대신'에 동굴을 넓혔다.   문장 7 because — 이름이 그렇게 붙은 '이유'.");
 B("2-2   [B] 유래(문장 3–4: 12세기 무어인이 동굴을 넓혔다), [E] 마무리(문장 10–11: 포도밭은 사라졌지만 여전히 유명하다). 보기의 '요리법'은 이 글에 없는 역할이다. [A] 소개 → [B] 유래 → [C] 이름 ① → [D] 이름 ② → [E] 마무리.");
-B("2-3   정답 ①. 마을의 집·역사·이름을 사실 그대로 알려 주는 설명문이다. ②는 가격·명령문이 없어 광고가 아니고, ③은 I·Today가 없으며, ④는 Dear·안부가 없고, ⑤는 지어낸 인물과 사건이 없다.");
+B("2-3   정답 ⑤. 마을의 집·역사·이름을 사실 그대로 알려 주는 설명문이다. ①는 가격·명령문이 없어 광고가 아니고, ②은 I·Today가 없으며, ③는 Dear·안부가 없고, ④는 지어낸 인물과 사건이 없다.");
 B("[학습 포인트]   문장 2의 But이 이 글의 문을 연다. 관용 표현을 뒤집는 But 뒤에 진짜 소재가 나오는 것은 설명문이 즐겨 쓰는 도입 방식이다.", true);
-Hs("STEP 3   주제문 만들기   ·   3-1 Spanish · houses     3-3 (b) → (a) → (c) → (d)");
+Hs("STEP 3   주제문 만들기   ·   3-1 Spanish · houses     3-3 (d) → (a) → (b) → (c)");
 B("3-1  재료 찾기 — (2) 문장 2에서 Spanish에 ○: 마을이 있는 나라다. Latin은 문장 6의 낱말 유래일 뿐이다. (3) 문장 2에서 houses에 ○: 사람들이 사는 건물이다. caves는 그 집이 만들어진 재료 자리다.");
 B("3-2  뼈대 채우기 — (1) inside rocks  (2) Spanish  (3) houses.  넣으면 In a Spanish town, people really live in houses built inside rocks.가 완성된다.");
-B("3-3  정답 순서 — ⓑ in a Spanish town, → ⓐ people really live → ⓒ in houses → ⓓ built inside rocks.");
-B("[채점 포인트]  콤마가 붙은 장소 덩어리(ⓑ)가 맨 앞, 마침표가 붙은 덩어리(ⓓ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
+B("3-3  정답 순서 — ⓓ in a Spanish town, → ⓐ people really live → ⓑ in houses → ⓒ built inside rocks.");
+B("[채점 포인트]  콤마가 붙은 장소 덩어리(ⓓ)가 맨 앞, 마침표가 붙은 덩어리(ⓒ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) rocks  (2) caves  (3) name  (4) famous");
 B("(1)은 문장 2의 rocks, (2)는 문장 4의 caves, (3)은 문장 5의 name, (4)는 문장 11의 famous에서 가져온다. 요약문이 곧 이 글의 흐름이다: 소개(1) → 유래(2) → 이름(3) → 마무리(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 1 ①   문장 4 ②   문장 7 ②   문장 11 ①  (정답 선지는 무표시)");
-B("문장 1 don’t know what is happening   ① ○ 소식을 전혀 모른다.   ② ✕ [반대] 세상 모든 것을 안다 — 정반대.   ③ ✕ [무관] 스페인 동굴에 산다는 말은 이 표현의 뜻이 아니다.");
-B("문장 4 made the natural caves bigger   ① ✕ [반대] 아무것도 없는 데서 새 집을 지었다 — 본문과 반대.   ② ○ 이미 있던 동굴을 넓혔다.   ③ ✕ [무관] 동굴을 밝게 칠했다는 말은 지문에 없다.");
-B("문장 7 tried seven times to take the town back   ① ✕ [반대] 한 번 만에 포기했다 — 정반대.   ② ○ 되찾으려고 거듭 시도했다.   ③ ✕ [무관] 마을을 팔았다는 말은 지문에 없다.");
-B("문장 11 is still famous for its delicious olives   ① ○ 맛있는 올리브로 잘 알려져 있다.   ② ✕ [반대] 이제 모두에게 잊혔다 — 정반대.   ③ ✕ [무관] 유럽에서 가장 큰 올리브라는 말은 지문에 없다.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 1 ③   문장 4 ③   문장 7 ①   문장 11 ②  (정답 선지는 무표시)");
+B("문장 1 don’t know what is happening   ③ ○ 소식을 전혀 모른다.   ① ✕ [반대] 세상 모든 것을 안다 — 정반대.   ② ✕ [무관] 스페인 동굴에 산다는 말은 이 표현의 뜻이 아니다.");
+B("문장 4 made the natural caves bigger   ① ✕ [반대] 아무것도 없는 데서 새 집을 지었다 — 본문과 반대.   ③ ○ 이미 있던 동굴을 넓혔다.   ② ✕ [무관] 동굴을 밝게 칠했다는 말은 지문에 없다.");
+B("문장 7 tried seven times to take the town back   ② ✕ [반대] 한 번 만에 포기했다 — 정반대.   ① ○ 되찾으려고 거듭 시도했다.   ③ ✕ [무관] 마을을 팔았다는 말은 지문에 없다.");
+B("문장 11 is still famous for its delicious olives   ② ○ 맛있는 올리브로 잘 알려져 있다.   ① ✕ [반대] 이제 모두에게 잊혔다 — 정반대.   ③ ✕ [무관] 유럽에서 가장 큰 올리브라는 말은 지문에 없다.");
 B("[학습 포인트]  시험은 본문 표현을 반드시 바꿔서 묻는다. 지문을 읽을 때마다 '이 표현을 다른 말로 하면?'을 스스로 물어보자.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 T · 3 F · 4 T · 5 F · 6 T · 7 F · 8 F");
-B("1 T — 문장 2.   2 T — 문장 3.   3 F — 문장 4: 새 집을 지은 게 아니라 동굴을 넓혔다.   4 T — 문장 6.   5 F — 문장 7: 세 번이 아니라 일곱 번(seven times)이다.   6 T — 문장 8.   7 F — 문장 10: 포도밭 대부분이 곤충에 파괴되었다.   8 F — 문장 11: 포도주가 아니라 올리브와 아몬드로 유명하다.  거짓 문장은 모두 딱 한 요소(brand-new, three, all, only wine)를 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (a) → (d) → (c)");
-B("ⓑ 12세기 무어인이 스페인을 침입해 마을을 세운다(문장 3) → ⓐ 15세기 가톨릭 세력이 일곱 번 되찾으려 한다(문장 7) → ⓓ 정착민들이 포도밭을 들여온다(문장 9) → ⓒ 1800년대에 곤충이 포도밭을 대부분 망가뜨린다(문장 10). 세기를 나타내는 표현이 순서의 열쇠다.", true);
+Hs("R1   True / False   ·   1 T · 2 F · 3 F · 4 T · 5 F · 6 T · 7 T · 8 F");
+   B("1 T — 문장 3.   2 F — 문장 10: 포도밭 대부분이 곤충에 파괴되었다.   3 F — 문장 11: 포도주가 아니라 올리브와 아몬드로 유명하다.  거짓 문장은 모두 딱 한 요소(brand-new, three, all, only wine)를 비튼 것이다.   4 T — 문장 2.   5 F — 문장 7: 세 번이 아니라 일곱 번(seven times)이다.   6 T — 문장 6.   7 T — 문장 8.   8 F — 문장 4: 새 집을 지은 게 아니라 동굴을 넓혔다.", true);
+Hs("R2   사건 순서   ·   (d) → (a) → (c) → (b)");
+B("ⓓ 12세기 무어인이 스페인을 침입해 마을을 세운다(문장 3) → ⓐ 15세기 가톨릭 세력이 일곱 번 되찾으려 한다(문장 7) → ⓒ 정착민들이 포도밭을 들여온다(문장 9) → ⓑ 1800년대에 곤충이 포도밭을 대부분 망가뜨린다(문장 10). 세기를 나타내는 표현이 순서의 열쇠다.", true);
 Hs("R3   영영풀이   ·   1 (c) · 2 (e) · 3 (a) · 4 (f) · 5 (b) · 6 (d)");
 B("invade = 군대를 이끌고 어떤 나라에 들어가다 · cave = 바위나 땅속의 큰 구멍 · explain = 무엇을 이해하기 쉽게 만들다 · ruler = 나라를 이끄는 사람 · settler = 새로운 곳으로 옮겨 사는 사람 · destroy = 무엇을 완전히 부수다.", true);
 Hs("R4   어법 기초   ·   (1) live  (2) were  (3) to stay  (4) explains");

@@ -94,24 +94,26 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Tiny Art with a Big Message", "② How Needles Are Made in a Factory",
- "③ The Long History of the Mona Lisa", "④ Artists Who Use a Microscope Every Day",
- "⑤ The Best Way to Protect Wild Animals"].forEach(c => K.push(ch(c)));
+["① How Needles Are Made in a Factory",
+ "② The Long History of the Mona Lisa",
+ "③ Artists Who Use a Microscope Every Day",
+ "④ The Best Way to Protect Wild Animals",
+ "⑤ Tiny Art with a Big Message"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Willard Wigan makes small sculptures of famous paintings and characters.",
- "② His sculptures can be placed even in the eye of a needle.",
- "③ The artist uses a microscope to see his tiny artworks clearly.",
- "④ He paints his sculptures by using a very small brush.",
+["① He paints his sculptures by using a very small brush.",
+ "② Willard Wigan makes small sculptures of famous paintings and characters.",
+ "③ His sculptures can be placed even in the eye of a needle.",
+ "④ The artist uses a microscope to see his tiny artworks clearly.",
  "⑤ He wants us to protect the variety of life on Earth."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the tiny sculptures",
- "② the small tools",
- "③ the needles",
- "④ his fingers",
+["① the small tools",
+ "② the needles",
+ "③ his fingers",
+ "④ the tiny sculptures",
  "⑤ the famous paintings"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -171,7 +173,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -185,7 +187,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -221,7 +223,7 @@ K.push(spF(2, 85, 0.06));
  [5, "First, the artist has to use a microscope to see them clearly, and use really small tools made from needles."],
  [9, "His tiny work makes people think that even the smallest things can have a big impact."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -291,7 +293,7 @@ K.push(T([1740,1740,1740,1740,1740,1740], [new TableRow({ children: KWCAND.map((
   new Paragraph({ children: [t(ko, { size: 14, color: SUB })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 190 } }),
 ], { w: 1740, shade: FIELD, va: VerticalAlign.CENTER, m: { top: 240, bottom: 240, left: 40, right: 40 },
     b: { top: bd(4, FLINE), bottom: bd(4, FLINE), left: bd(4, FLINE), right: bd(4, FLINE) } })) })]));
-K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 위건이 만드는 것  ② 그 작품의 크기  ③ 글쓴이의 평가 \u2014 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
+K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 위건이 만드는 것  ② 그 작품의 크기  ③ 글쓴이의 평가 — 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
 K.push(spF(4, 260, 0.30));
 
 K.push(p([t("1-3  ", { size: 18, bold: true, color: GOLD }), t("지시어 이해하기", { size: 19, bold: true }),
@@ -300,7 +302,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 1950, 7350];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -402,10 +404,10 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 한 예술가와 그의 작품을 소개하는 설명문",
- "② 물건을 팔기 위해 만든 광고",
- "③ 요리 방법을 알려 주는 글",
- "④ 친구에게 안부를 전하는 편지",
+["① 물건을 팔기 위해 만든 광고",
+ "② 요리 방법을 알려 주는 글",
+ "③ 친구에게 안부를 전하는 편지",
+ "④ 한 예술가와 그의 작품을 소개하는 설명문",
  "⑤ 하루 일을 기록한 일기"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
@@ -457,11 +459,11 @@ K.push(p([t("조건 ", { size: 16, bold: true, color: GOLD }),
   t("덩어리의 순서를 괄호에 쓰세요. 덩어리 안의 단어는 바꾸지 않습니다.", { size: 16, color: SUB })], { after: 100, line: 250 }));
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("보기   ", { size: 16, bold: true, color: NAVY2 }),
-     t("\u24D0 can have a big impact.     \u24D1 Wigan\u2019s tiny artworks     \u24D2 that even the smallest things     \u24D3 show", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
+     t("ⓐ can have a big impact.     ⓑ that even the smallest things     ⓒ Wigan\u2019s tiny artworks     ⓓ show", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
   { w: W, shade: COOL, b: { top: bd(4, CLINE), bottom: bd(4, CLINE), left: NOB, right: NOB }, m: { top: 150 + Math.round((FT(6) || 0) * 0.02), bottom: 150 + Math.round((FT(6) || 0) * 0.02), left: 180, right: 180 } })] })]));
 K.push(spF(6, 200, 0.05));
 K.push(p([t("순서   ", { size: 17, bold: true, color: NAVY2 }),
-  t("(  \u24D1  )", { size: 19 }), t("  \u2192  (      )  \u2192  (      )  \u2192  (      )", { size: 19 }),
+  t("(  ⓑ  )", { size: 19 }), t("  →  (      )  →  (      )  →  (      )", { size: 19 }),
   t("      주인공이 주어!", { size: 14, color: GOLD, bold: true })], { after: 0, align: AlignmentType.CENTER }));
 
 /* ═══════════ 6~7면 [DATA] STEP 4 요약 · STEP 5 같은 뜻 찾기 ═══════════ */
@@ -510,15 +512,15 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 3, main: "so small that they can be placed in the eye of a needle",
-    opts: ["\u2460 too big to go into a needle\u2019s eye", "\u2461 tiny enough to fit in a needle\u2019s eye", "\u2462 made of gold and silver"] },
+    opts: ["① too big to go into a needle\u2019s eye", "② made of gold and silver", "③ tiny enough to fit in a needle\u2019s eye"] },
   { sn: 4, main: "a big challenge",
-    opts: ["\u2460 a very difficult job", "\u2461 a very easy job", "\u2462 a fun game for children"] });
+    opts: ["① a very easy job", "② a fun game for children", "③ a very difficult job"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 8, main: "our world is in trouble",
-    opts: ["\u2460 our world is perfectly safe", "\u2461 our world is getting bigger", "\u2462 our world is in danger"] },
+    opts: ["① our world is perfectly safe", "② our world is in danger", "③ our world is getting bigger"] },
   { sn: 9, main: "can have a big impact",
-    opts: ["\u2460 can change nothing", "\u2461 can change many things", "\u2462 can be sold at a high price"] });
+    opts: ["① can change many things", "② can change nothing", "③ can be sold at a high price"] });
 K.push(spF(7, 150, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -573,15 +575,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Willard Wigan makes small sculptures of famous paintings and characters.",
-    "His sculptures are so small that they can be placed in the eye of a needle.",
     "Making these tiny artworks is an easy job.",
-    "The artist uses a telescope to see the tiny artworks clearly.",
     "Wigan paints his sculptures by using an eyelash.",
+    "The artist uses a telescope to see the tiny artworks clearly.",
     "He must work during his heartbeats.",
+    "His sculptures are so small that they can be placed in the eye of a needle.",
     "Wigan\u2019s message is that small things matter in a disappearing world.",
     "He says that our world has no problems at all.",
-  ].map((s, i) => new TableRow({ children: [
+    "Willard Wigan makes small sculptures of famous paintings and characters."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -596,10 +597,10 @@ K.push(spF(8, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "위건이 작품을 만드는 과정 ⓐ~ⓓ를 실제 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["\u24D0 He paints the sculpture by using an eyelash.",
-      "\u24D1 He looks at the tiny work through a microscope.",
-      "\u24D2 He cuts the shape with tools made from needles.",
-      "\u24D3 People learn that even the smallest things matter."]
+  ...["ⓐ He paints the sculpture by using an eyelash.",
+      "ⓑ He cuts the shape with tools made from needles.",
+      "ⓒ He looks at the tiny work through a microscope.",
+      "ⓓ People learn that even the smallest things matter."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -620,12 +621,12 @@ const m3b = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(mw3, [
   thead(["어휘", "답", "영영풀이"], mw3, TEAL),
   ...[
-    ["1  sculpture", "\u24D0 a strong effect on someone or something"],
-    ["2  challenge", "\u24D1 a tool that makes very small things look bigger"],
-    ["3  microscope", "\u24D2 a piece of art made from stone, wood, or metal"],
-    ["4  pulse", "\u24D3 to keep something safe from harm"],
-    ["5  protect", "\u24D4 something difficult that you must try to do"],
-    ["6  impact", "\u24D5 the beat of blood that you can feel in your body"],
+    ["1  sculpture", "ⓐ a strong effect on someone or something"],
+    ["2  challenge", "ⓑ a tool that makes very small things look bigger"],
+    ["3  microscope", "ⓒ a piece of art made from stone, wood, or metal"],
+    ["4  pulse", "ⓓ to keep something safe from harm"],
+    ["5  protect", "ⓔ something difficult that you must try to do"],
+    ["6  impact", "ⓕ the beat of blood that you can feel in your body"],
   ].map(([wd, df]) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(wd, { size: 18, bold: true, color: NAVY })], spacing: { after: 0 } }),
       { w: mw3[0], shade: GREY, b: m3b, va: VerticalAlign.CENTER, m: { top: 158 + RX9, bottom: 158 + RX9, left: 150, right: 80 } }),
@@ -639,10 +640,10 @@ K.push(spF(9, 380, 0.12));
 
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
-[["문장 4", [t("Making these tiny artworks ", { size: 19 }), t("( is  /  are )", { size: 19, bold: true, color: NAVY }), t(" a big challenge.", { size: 19 })], "동명사 주어는 하나로 봅니다 \u2014 단수 취급!"],
- ["문장 5", [t("The artist ", { size: 19 }), t("( has  /  have )", { size: 19, bold: true, color: NAVY }), t(" to use a microscope.", { size: 19 })], "주어가 3인칭 단수일 때 알맞은 형태는?"],
- ["문장 6", [t("He paints his sculptures by ", { size: 19 }), t("( using  /  use )", { size: 19, bold: true, color: NAVY }), t(" an eyelash.", { size: 19 })], "전치사 by 뒤에는 동사원형이 올 수 없어요."],
- ["문장 8", [t("We need ", { size: 19 }), t("( to make  /  making )", { size: 19, bold: true, color: NAVY }), t(" changes.", { size: 19 })], "need 뒤에는 to+동사원형!"],
+[["문장 4", [t("Making these tiny artworks ", { size: 19 }), t("( are  /  is )", { size: 19, bold: true, color: NAVY }), t(" a big challenge.", { size: 19 })], "동명사 주어는 하나로 봅니다 — 단수 취급!"],
+ ["문장 5", [t("The artist ", { size: 19 }), t("( have  /  has )", { size: 19, bold: true, color: NAVY }), t(" to use a microscope.", { size: 19 })], "주어가 3인칭 단수일 때 알맞은 형태는?"],
+ ["문장 6", [t("He paints his sculptures by ", { size: 19 }), t("( use  /  using )", { size: 19, bold: true, color: NAVY }), t(" an eyelash.", { size: 19 })], "전치사 by 뒤에는 동사원형이 올 수 없어요."],
+ ["문장 8", [t("We need ", { size: 19 }), t("( making  /  to make )", { size: 19, bold: true, color: NAVY }), t(" changes.", { size: 19 })], "need 뒤에는 to+동사원형!"],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
     cel(new Paragraph({ children: [t("(" + (i + 1) + ")", { size: 16, bold: true, color: "FFFFFF" })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 210 } }),
@@ -723,9 +724,9 @@ K.push(...tab("정답 및 해설", "UNIT 13  바늘구멍 속의 조각가", CHA
 K.push(sp(150));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("독해", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("\u2460      ", { size: 19, bold: true }),
-     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("\u2463      ", { size: 19, bold: true }),
-     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("\u2460", { size: 19, bold: true })], { after: 25 }),
+  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("①      ", { size: 19, bold: true }),
+     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("④      ", { size: 19, bold: true }),
+     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("①", { size: 19, bold: true })], { after: 25 }),
   p([t("04 ", { size: 19, bold: true, color: NAVY2 }), t("Making these tiny artworks is a big challenge.", { size: 19, bold: true })], { after: 75 }),
   p([t("구문분석", { size: 16, bold: true, color: NAVY })], { after: 60 }),
   p([t("문4 ", { size: 17, bold: true, color: NAVY2 }), t("Making these tiny artworks(S)\u00b7is(\u25b3V)\u00b7a big challenge   ", { size: 17, bold: true }),
@@ -733,75 +734,75 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문9 ", { size: 17, bold: true, color: NAVY2 }), t("His tiny work(S)\u00b7makes(\u25b3V)\u00b7that[네모]\u00b7the smallest things(S\u2032)\u00b7can have(\u25b3V\u2032)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 자전거를 타는 것은 좋은 운동이다  (2) 나는 신선한 공기를 마시기 위해 창문을 열었다  (3) 식물을 기르는 것은 재미있어서, 나는 물을 주려고 일찍 일어난다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 \u2461   1-2 artworks · tiny · impact        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 · 결과 · 순서 · 이유   2-2 [B] 제작 과정 · [E] 마무리   2-3 \u2460", { size: 19, bold: true })], { after: 25 }),
-  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) \u2192 (d) \u2192 (c) \u2192 (a)  ·  Wigan\u2019s tiny artworks show that even the smallest things can have a big impact.", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 artworks · tiny · impact        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 반전 · 결과 · 순서 · 이유   2-2 [B] 제작 과정 · [E] 마무리   2-3 ④", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (c) → (d) → (b) → (a)  ·  Wigan\u2019s tiny artworks show that even the smallest things can have a big impact.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) needle  (2) microscope  (3) message  (4) smallest        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 3 \u2461  문장 4 \u2460  문장 8 \u2462  문장 9 \u2461", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 3 ③  문장 4 ③  문장 8 ②  문장 9 ①", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2T · 3F · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (a) → (d)", { size: 19, bold: true })], { after: 25 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 F · 5 T · 6 T · 7 F · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (b) → (a) → (d)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(c) · 2(e) · 3(b) · 4(f) · 5(d) · 6(a)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) is  (2) has  (3) using  (4) to make", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) sculptures (2) needle (3) challenge (4) microscope (5) eyelash (6) message (7) protect (8) impact", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) Wigan\u2019s small artwork has an important message.  (2) He reminds us that our world is in trouble.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 \u2460");
-B("바늘구멍에 들어갈 만큼 작은 조각(문장 1\u20133)과 그 안에 담긴 메시지(문장 7\u20139)를 함께 소개하는 글이다. 소재와 평가를 모두 담은 \u2460이 제목이다. \u2461\u00b7\u2464는 본문과 무관하고, \u2462\u00b7\u2463은 소재의 일부(모나리자·현미경)만 건드린 지엽적 오답이다.", true);
-Hs("독해 02   내용 불일치   ·   정답 \u2463");
-B("문장 6에서 위건은 붓이 아니라 속눈썹(an eyelash)으로 색을 칠한다고 했으므로 \u2463이 본문과 다르다. \u2460은 문장 1, \u2461은 문장 3, \u2462는 문장 5, \u2464는 문장 8에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 \u2460");
-B("(A) them은 앞 문장 4의 these tiny artworks, 곧 아주 작은 조각들을 가리킨다. 또렷이 보려고 현미경을 들이대는 대상이 무엇인지 생각하면 된다 \u2014 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
+Hs("독해 01   제목   ·   정답 ⑤");
+B("바늘구멍에 들어갈 만큼 작은 조각(문장 1–3)과 그 안에 담긴 메시지(문장 7–9)를 함께 소개하는 글이다. 소재와 평가를 모두 담은 ⑤이 제목이다. ①\u00b7④는 본문과 무관하고, ②\u00b7③은 소재의 일부(모나리자·현미경)만 건드린 지엽적 오답이다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 6에서 위건은 붓이 아니라 속눈썹(an eyelash)으로 색을 칠한다고 했으므로 ①이 본문과 다르다. ②은 문장 1, ③은 문장 3, ④는 문장 5, ⑤는 문장 8에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
+B("(A) them은 앞 문장 4의 these tiny artworks, 곧 아주 작은 조각들을 가리킨다. 또렷이 보려고 현미경을 들이대는 대상이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   Making these tiny artworks is a big challenge.");
-B("문장 4를 그대로 복원하는 문제다. \u2460 '~하는 것은'은 동사원형+ing로 시작 \u2014 첫 글자는 대문자 Making.   \u2461 동명사 주어는 단수 취급이므로 is.   \u2462 a big challenge \u2014 관사 a를 빠뜨리지 않는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 \u2461     1-2 artworks · tiny · impact     1-3 아래 참조");
-B("1-1   정답 \u2461. 바늘구멍에 들어가는 초소형 조각과 그 의미를 소개하는 글이다. \u2460 바늘은 도구일 뿐 공장 이야기는 없고, \u2462 모나리자는 조각의 소재로 한 번 언급될 뿐이다.");
-B("1-2   \u25cb표 할 세 단어: artworks(힌트\u2460 위건이 만드는 것) · tiny(힌트\u2461 작품의 크기) · impact(힌트\u2462 글쓴이의 평가). 나머지 셋(needle · microscope · eyelash)은 본문에 나오지만 도구일 뿐 주제문에 들어가지 않는다.");
-B("1-3   문장 5 \u2014 them은 조각 작품들에 \u25cb (문장 4의 tiny artworks).   문장 8 \u2014 He는 위건, us는 우리 모두에 \u25cb.   문장 9 \u2014 His는 위건의에 \u25cb.");
-B("[학습 포인트]   문장 8은 한 문장 안에서 가리키는 대상이 바뀐다 \u2014 He(위건)와 us(글을 읽는 우리). 지시어를 만나면 수(단수·복수)와 사람인지 사물인지를 먼저 확인하는 습관을 들이자.", true);
+B("문장 4를 그대로 복원하는 문제다. ① '~하는 것은'은 동사원형+ing로 시작 — 첫 글자는 대문자 Making.   ② 동명사 주어는 단수 취급이므로 is.   ③ a big challenge — 관사 a를 빠뜨리지 않는다.", true);
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 artworks · tiny · impact     1-3 아래 참조");
+B("1-1   정답 ②. 바늘구멍에 들어가는 초소형 조각과 그 의미를 소개하는 글이다. ① 바늘은 도구일 뿐 공장 이야기는 없고, ③ 모나리자는 조각의 소재로 한 번 언급될 뿐이다.");
+B("1-2   \u25cb표 할 세 단어: artworks(힌트① 위건이 만드는 것) · tiny(힌트② 작품의 크기) · impact(힌트③ 글쓴이의 평가). 나머지 셋(needle · microscope · eyelash)은 본문에 나오지만 도구일 뿐 주제문에 들어가지 않는다.");
+B("1-3   문장 5 — them은 조각 작품들에 \u25cb (문장 4의 tiny artworks).   문장 8 — He는 위건, us는 우리 모두에 \u25cb.   문장 9 — His는 위건의에 \u25cb.");
+B("[학습 포인트]   문장 8은 한 문장 안에서 가리키는 대상이 바뀐다 — He(위건)와 us(글을 읽는 우리). 지시어를 만나면 수(단수·복수)와 사람인지 사물인지를 먼저 확인하는 습관을 들이자.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 반전 / 결과 / 순서 / 이유     2-2 [B] 제작 과정 · [E] 마무리     2-3 \u2460");
-B("2-1   문장 2 But \u2014 앞의 소개에서 방향을 바꾸는 '반전'.   문장 3 so ~ that \u2014 너무 작아서 생기는 '결과'.   문장 5 First \u2014 작업 순서의 첫 단계를 알리는 '순서'.   문장 6 because \u2014 심장 박동 사이에 일해야 하는 '이유'.");
-B("2-2   [B] 제작 과정(문장 4\u20136: 현미경\u2192바늘 도구\u2192속눈썹 붓), [E] 마무리(문장 9: 작은 것도 큰 영향을 준다는 평가). 보기의 '광고'는 이 글에 없는 역할이다. [A] 소개 \u2192 [B] 제작 과정 \u2192 [C] 메시지 \u2192 [D] 당부 \u2192 [E] 마무리.");
-B("2-3   정답 \u2460. 한 예술가와 그의 작업 방식·메시지를 사실 그대로 알려 주는 설명문이다. \u2461 가격이나 사라는 말이 없어 광고가 아니고, \u2462\u00b7\u2463\u00b7\u2464의 형식적 신호(요리 순서·Dear·날짜)도 없다.");
-B("[학습 포인트]   First\u00b7Then처럼 순서를 알리는 말이 나오면 그 뒤는 과정 설명이다. 과정이 끝나는 지점에서 글쓴이의 평가가 시작된다 \u2014 그 자리가 주제문이다.", true);
-Hs("STEP 3   주제문 만들기   ·   3-1 smallest · impact     3-3 (b) \u2192 (d) \u2192 (c) \u2192 (a)");
-B("3-1  재료 찾기 \u2014 (2) 문장 9에서 smallest에 \u25cb: '가장 작은'이라는 뜻으로 이 글의 핵심 대비다. biggest는 정반대다. (3) 문장 9에서 impact에 \u25cb: 작은 것이 남기는 '영향'이다. problem은 문장 6의 세부 사항일 뿐이다.");
-B("3-2  뼈대 채우기 \u2014 (1) tiny artworks  (2) smallest  (3) impact.  넣으면 Wigan\u2019s tiny artworks show that even the smallest things can have a big impact.가 완성된다.");
-B("3-3  정답 순서 \u2014 \u24D1 Wigan\u2019s tiny artworks \u2192 \u24D3 show \u2192 \u24D2 that even the smallest things \u2192 \u24D0 can have a big impact.");
-B("[채점 포인트]  주인공(\u24D1)이 주어로 맨 앞, 마침표가 붙은 덩어리(\u24D0)가 맨 뒤 \u2014 두 자리만 잡으면 that절의 순서는 저절로 이어진다.", true);
+Hs("STEP 2   글의 흐름   ·   2-1 반전 / 결과 / 순서 / 이유     2-2 [B] 제작 과정 · [E] 마무리     2-3 ④");
+B("2-1   문장 2 But — 앞의 소개에서 방향을 바꾸는 '반전'.   문장 3 so ~ that — 너무 작아서 생기는 '결과'.   문장 5 First — 작업 순서의 첫 단계를 알리는 '순서'.   문장 6 because — 심장 박동 사이에 일해야 하는 '이유'.");
+B("2-2   [B] 제작 과정(문장 4–6: 현미경→바늘 도구→속눈썹 붓), [E] 마무리(문장 9: 작은 것도 큰 영향을 준다는 평가). 보기의 '광고'는 이 글에 없는 역할이다. [A] 소개 → [B] 제작 과정 → [C] 메시지 → [D] 당부 → [E] 마무리.");
+B("2-3   정답 ④. 한 예술가와 그의 작업 방식·메시지를 사실 그대로 알려 주는 설명문이다. ① 가격이나 사라는 말이 없어 광고가 아니고, ②\u00b7③\u00b7⑤의 형식적 신호(요리 순서·Dear·날짜)도 없다.");
+B("[학습 포인트]   First\u00b7Then처럼 순서를 알리는 말이 나오면 그 뒤는 과정 설명이다. 과정이 끝나는 지점에서 글쓴이의 평가가 시작된다 — 그 자리가 주제문이다.", true);
+Hs("STEP 3   주제문 만들기   ·   3-1 smallest · impact     3-3 (c) → (d) → (b) → (a)");
+B("3-1  재료 찾기 — (2) 문장 9에서 smallest에 \u25cb: '가장 작은'이라는 뜻으로 이 글의 핵심 대비다. biggest는 정반대다. (3) 문장 9에서 impact에 \u25cb: 작은 것이 남기는 '영향'이다. problem은 문장 6의 세부 사항일 뿐이다.");
+B("3-2  뼈대 채우기 — (1) tiny artworks  (2) smallest  (3) impact.  넣으면 Wigan\u2019s tiny artworks show that even the smallest things can have a big impact.가 완성된다.");
+B("3-3  정답 순서 — ⓒ Wigan\u2019s tiny artworks → ⓓ show → ⓑ that even the smallest things → ⓐ can have a big impact.");
+B("[채점 포인트]  주인공(ⓒ)이 주어로 맨 앞, 마침표가 붙은 덩어리(ⓐ)가 맨 뒤 — 두 자리만 잡으면 that절의 순서는 저절로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) needle  (2) microscope  (3) message  (4) smallest");
-B("(1)은 문장 3의 needle, (2)는 문장 5의 microscope, (3)은 문장 7의 message, (4)는 문장 9의 smallest에서 가져온다. 요약문이 곧 이 글의 흐름이다: 크기(1) \u2192 제작(2) \u2192 메시지(3) \u2192 평가(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 3 \u2461   문장 4 \u2460   문장 8 \u2462   문장 9 \u2461  (정답 선지는 무표시)");
-B("문장 3 so small that they can be placed in the eye of a needle   \u2460 ✕ [반대] 너무 커서 못 들어간다 \u2014 정반대.   \u2461 ○ 바늘귀에 들어갈 만큼 작다.   \u2462 ✕ [무관] 금·은으로 만든다는 말은 없다.");
-B("문장 4 a big challenge   \u2460 ○ 아주 어려운 일이다.   \u2461 ✕ [반대] 아주 쉬운 일 \u2014 정반대.   \u2462 ✕ [무관] 아이들의 놀이라는 말은 지문에 없다.");
-B("문장 8 our world is in trouble   \u2460 ✕ [반대] 완전히 안전하다 \u2014 정반대.   \u2461 ✕ [무관] 세상이 커진다는 말은 없다.   \u2462 ○ 위험에 처해 있다.");
-B("문장 9 can have a big impact   \u2460 ✕ [반대] 아무것도 바꾸지 못한다 \u2014 정반대.   \u2461 ○ 많은 것을 바꿀 수 있다.   \u2462 ✕ [무관] 비싸게 팔린다는 말은 지문에 없다.");
+B("(1)은 문장 3의 needle, (2)는 문장 5의 microscope, (3)은 문장 7의 message, (4)는 문장 9의 smallest에서 가져온다. 요약문이 곧 이 글의 흐름이다: 크기(1) → 제작(2) → 메시지(3) → 평가(4).", true);
+Hs("STEP 5   같은 뜻 찾기   ·   문장 3 ③   문장 4 ③   문장 8 ②   문장 9 ①  (정답 선지는 무표시)");
+B("문장 3 so small that they can be placed in the eye of a needle   ① ✕ [반대] 너무 커서 못 들어간다 — 정반대.   ③ ○ 바늘귀에 들어갈 만큼 작다.   ② ✕ [무관] 금·은으로 만든다는 말은 없다.");
+B("문장 4 a big challenge   ③ ○ 아주 어려운 일이다.   ① ✕ [반대] 아주 쉬운 일 — 정반대.   ② ✕ [무관] 아이들의 놀이라는 말은 지문에 없다.");
+B("문장 8 our world is in trouble   ① ✕ [반대] 완전히 안전하다 — 정반대.   ③ ✕ [무관] 세상이 커진다는 말은 없다.   ② ○ 위험에 처해 있다.");
+B("문장 9 can have a big impact   ② ✕ [반대] 아무것도 바꾸지 못한다 — 정반대.   ① ○ 많은 것을 바꿀 수 있다.   ③ ✕ [무관] 비싸게 팔린다는 말은 지문에 없다.");
 B("[학습 포인트]  시험은 본문 표현을 그대로 쓰지 않고 반드시 바꿔서 묻는다. impact처럼 평가가 담긴 말은 '큰 변화를 준다'로 풀어 쓰는 연습을 해 두자.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 T · 3 F · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T \u2014 문장 1.   2 T \u2014 문장 3.   3 F \u2014 문장 4: 쉬운 일(easy job)이 아니라 큰 도전(challenge)이다.   4 F \u2014 문장 5: 망원경(telescope)이 아니라 현미경(microscope)이다.   5 T \u2014 문장 6.   6 F \u2014 문장 6: 심장이 뛰는 동안(during)이 아니라 박동 사이(between)에 작업한다.   7 T \u2014 문장 7.   8 F \u2014 문장 8: 문제가 없는 게 아니라 세상이 위험에 처해 있다.  거짓 넷은 모두 한 요소만 비튼 것이다.", true);
-Hs("R2   제작 순서   ·   (b) \u2192 (c) \u2192 (a) \u2192 (d)");
-B("\u24D1 현미경으로 작품을 들여다본다(문장 5) \u2192 \u24D2 바늘로 만든 도구로 형태를 깎는다(문장 5) \u2192 \u24D0 속눈썹으로 색을 칠한다(문장 6) \u2192 \u24D3 사람들이 작은 것의 가치를 깨닫는다(문장 9). 문장 5에는 두 단계가 한 문장에 담겨 있다 \u2014 '보는 일'이 '깎는 일'보다 먼저다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 F · 4 F · 5 T · 6 T · 7 F · 8 T");
+   B("1 F — 문장 4: 쉬운 일(easy job)이 아니라 큰 도전(challenge)이다.   2 T — 문장 6.   3 F — 문장 5: 망원경(telescope)이 아니라 현미경(microscope)이다.   4 F — 문장 6: 심장이 뛰는 동안(during)이 아니라 박동 사이(between)에 작업한다.   5 T — 문장 3.   6 T — 문장 7.   7 F — 문장 8: 문제가 없는 게 아니라 세상이 위험에 처해 있다.  거짓 넷은 모두 한 요소만 비튼 것이다.   8 T — 문장 1.", true);
+Hs("R2   제작 순서   ·   (c) → (b) → (a) → (d)");
+B("ⓒ 현미경으로 작품을 들여다본다(문장 5) → ⓑ 바늘로 만든 도구로 형태를 깎는다(문장 5) → ⓐ 속눈썹으로 색을 칠한다(문장 6) → ⓓ 사람들이 작은 것의 가치를 깨닫는다(문장 9). 문장 5에는 두 단계가 한 문장에 담겨 있다 — '보는 일'이 '깎는 일'보다 먼저다.", true);
 Hs("R3   영영풀이   ·   1 (c) · 2 (e) · 3 (b) · 4 (f) · 5 (d) · 6 (a)");
 B("sculpture = 돌·나무·금속을 깎아 만든 예술품 · challenge = 해내기 어려운 일 · microscope = 아주 작은 것을 크게 보여 주는 도구 · pulse = 몸에서 느껴지는 피의 박동 · protect = 안전하게 지키다 · impact = 강한 영향.", true);
 Hs("R4   어법 기초   ·   (1) is  (2) has  (3) using  (4) to make");
-B("(1) 동명사 주어 Making ~는 하나로 보아 단수 취급 \u2014 is. 2면 구문 카드의 그 원칙이다.   (2) 주어 The artist는 3인칭 단수 \u2014 has.   (3) 전치사 by 뒤에는 동명사 \u2014 using.   (4) need 뒤에는 to+동사원형 \u2014 to make.", true);
+B("(1) 동명사 주어 Making ~는 하나로 보아 단수 취급 — is. 2면 구문 카드의 그 원칙이다.   (2) 주어 The artist는 3인칭 단수 — has.   (3) 전치사 by 뒤에는 동명사 — using.   (4) need 뒤에는 to+동사원형 — to make.", true);
 Hs("R5   빈칸 클로즈   ·   (1) sculptures (2) needle (3) challenge (4) microscope (5) eyelash (6) message (7) protect (8) impact");
 B("빈칸 8개는 모두 이 유닛의 핵심어와 어휘다. 빈칸 앞뒤가 단서다: makes small ___ \u2190 만드는 것, the eye of a ___ \u2190 바늘귀, use a ___ \u2190 도구, have a big ___ \u2190 평가.", true);
 Hs("R6   해석 쓰기   ·   모범 답안");
-B("(1) 먼저, 그 예술가는 작품을 또렷이 보기 위해 현미경을 써야 하고, 바늘로 만든 아주 작은 도구를 사용해야 한다.  \u2014 to see them clearly를 '~하기 위해'로 옮기는 것이 핵심이다.");
-B("(2) 그의 아주 작은 작품은 사람들에게 가장 작은 것조차 큰 영향을 줄 수 있다는 것을 생각하게 만든다.  \u2014 makes people think는 '~가 …하게 만들다'로 옮긴다.", true);
+B("(1) 먼저, 그 예술가는 작품을 또렷이 보기 위해 현미경을 써야 하고, 바늘로 만든 아주 작은 도구를 사용해야 한다.  — to see them clearly를 '~하기 위해'로 옮기는 것이 핵심이다.");
+B("(2) 그의 아주 작은 작품은 사람들에게 가장 작은 것조차 큰 영향을 줄 수 있다는 것을 생각하게 만든다.  — makes people think는 '~가 …하게 만들다'로 옮긴다.", true);
 Hs("R7   조건 영작   ·   (1) Wigan\u2019s small artwork has an important message.  (2) He reminds us that our world is in trouble.");
-B("(1) 문장 7의 앞부분 복원. \u3131 첫 글자 대문자 Wigan\u2019s \u2014 아포스트로피를 빠뜨리지 않는다  \u3134 주어가 단수이므로 has.");
-B("(2) 문장 8의 앞부분 복원. \u3131 remind+사람+that절 \u2014 us가 reminds 바로 뒤  \u3134 in trouble이 한 덩어리로 문장 끝에 온다.", true);
+B("(1) 문장 7의 앞부분 복원. \u3131 첫 글자 대문자 Wigan\u2019s — 아포스트로피를 빠뜨리지 않는다  \u3134 주어가 단수이므로 has.");
+B("(2) 문장 8의 앞부분 복원. \u3131 remind+사람+that절 — us가 reminds 바로 뒤  \u3134 in trouble이 한 덩어리로 문장 끝에 온다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

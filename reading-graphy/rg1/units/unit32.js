@@ -76,24 +76,26 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Ice Instruments: Music from Snow and Water", "② How to Make a Guitar at Home",
- "③ The Best Winter Clothes for a Concert", "④ A Swedish Artist Who Loves Skating",
- "⑤ Why Drums Are Popular in Sweden"].forEach(c => K.push(ch(c)));
+["① How to Make a Guitar at Home",
+ "② The Best Winter Clothes for a Concert",
+ "③ A Swedish Artist Who Loves Skating",
+ "④ Why Drums Are Popular in Sweden",
+ "⑤ Ice Instruments: Music from Snow and Water"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Tim Linhart is a Swedish ice artist.",
  "② Tim got the idea from a friend who makes guitars.",
- "③ Tim used only water to make the ice instruments.",
- "④ Tim’s orchestra has violins, cellos, and drums.",
+ "③ Tim’s orchestra has violins, cellos, and drums.",
+ "④ Tim used only water to make the ice instruments.",
  "⑤ Ice instruments can melt from body heat or breath."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) They가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the ice instruments",
- "② the players in the orchestra",
- "③ Tim’s friends in Sweden",
- "④ people’s bodies",
+["① the players in the orchestra",
+ "② Tim’s friends in Sweden",
+ "③ people’s bodies",
+ "④ the ice instruments",
  "⑤ the warmest clothes"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -141,7 +143,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -154,7 +156,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -190,7 +192,7 @@ K.push(spF(2, 85, 0.06));
  [5, "So, in order to make them, he used ice and a special mix of snow and water."],
  [10, "They can even melt from people’s body heat or breath."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -245,7 +247,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 기타를 만드는 방법", "② 얼음으로 만든 악기와 그 음악", "③ 겨울에 따뜻하게 입는 옷"].forEach(c =>
+["① 얼음으로 만든 악기와 그 음악",
+ "② 기타를 만드는 방법",
+ "③ 겨울에 따뜻하게 입는 옷"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -266,7 +270,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -313,7 +317,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -328,15 +332,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Tim Linhart is a Swedish ice artist.",
-    "Tim got the idea from a friend who makes drums.",
-    "Tim used ice and a special mix of snow and water.",
     "Tim’s orchestra has only two ice instruments.",
+    "Tim used ice and a special mix of snow and water.",
     "Tim loves the unique, sharp sound of ice music.",
+    "Tim Linhart is a Swedish ice artist.",
     "Ice instruments never break.",
     "Ice instruments can melt from people’s body heat or breath.",
     "Visitors should wear light summer clothes for the concert.",
-  ].map((s, i) => new TableRow({ children: [
+    "Tim got the idea from a friend who makes drums."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -352,9 +355,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "팀에게 일어난
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Tim used ice, snow, and water to make instruments.",
-      "ⓑ Tim got the idea from a friend who makes guitars.",
-      "ⓒ Tim’s orchestra now has many ice instruments.",
-      "ⓓ Tim wondered how music would sound on ice."]
+      "ⓑ Tim’s orchestra now has many ice instruments.",
+      "ⓒ Tim wondered how music would sound on ice.",
+      "ⓓ Tim got the idea from a friend who makes guitars."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -392,22 +395,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문10 ", { size: 17, bold: true, color: NAVY2 }), t("They(S)·can melt(△V)·from people’s body heat or breath(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 종이로 만들어진 상자를 가지고 있다  (2) 그 경기를 이기기 위해, 우리는 매일 연습했다  (3) 그녀는 따뜻하게 있으려고 양털로 만들어진 모자를 썼다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 instruments · ice · melt   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 instruments · ice · melt   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 T · 5 F · 6 T · 7 F · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 얼음으로 만든 악기(문장 1–5)와 그 악기로 연주하는 오케스트라, 그리고 조심할 점(문장 8–10)을 소개한다. 소재(얼음 악기)와 재료(눈과 물)를 함께 담은 ①이 제목이다. ③·⑤는 옷·드럼만 건드린 지엽적 오답, ②·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 5에서 팀은 얼음과 함께 눈과 물을 섞은 특별한 혼합물을 썼다고 했다. 물만 썼다는 ③은 본문과 다르다. ①은 문장 2, ②는 문장 3, ④은 문장 6, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 얼음으로 만든 악기(문장 1–5)와 그 악기로 연주하는 오케스트라, 그리고 조심할 점(문장 8–10)을 소개한다. 소재(얼음 악기)와 재료(눈과 물)를 함께 담은 ⑤이 제목이다. ②·④는 옷·드럼만 건드린 지엽적 오답, ①·③는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 5에서 팀은 얼음과 함께 눈과 물을 섞은 특별한 혼합물을 썼다고 했다. 물만 썼다는 ④은 본문과 다르다. ①은 문장 2, ②는 문장 3, ③은 문장 6, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) They는 바로 앞 문장 9의 Ice instruments를 가리킨다. 사람의 체온이나 입김에 녹는 것은 연주자가 아니라 얼음 악기다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   He loves the unique, sharp sound of ice music.");
 B("문장 7을 그대로 복원하는 문제다. ① 첫 글자는 대문자 He.   ② unique, sharp처럼 형용사 둘을 콤마로 이어 sound를 꾸민다.   ③ of ice music이 sound 뒤에 붙는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 instruments · ice · melt     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 얼음으로 만든 악기와 그 음악을 소개한다. ① 기타 만드는 친구는 아이디어의 출발점일 뿐이고, ③ 옷 이야기는 마지막 한 문장에만 나온다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 instruments · ice · melt     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 얼음으로 만든 악기와 그 음악을 소개한다. ② 기타 만드는 친구는 아이디어의 출발점일 뿐이고, ③ 옷 이야기는 마지막 한 문장에만 나온다.");
 B("1-2   ○표 할 세 단어: instruments(힌트① 팀이 만든 것) · ice(힌트② 재료) · melt(힌트③ 조심해야 하는 이유). 나머지 셋(guitars · orchestra · clothes)은 본문에 나오지만 주제문의 재료는 아니다.");
 B("1-3   문장 4 — He는 팀 린하트에 ○ (기타 만드는 친구가 아니다).   문장 5 — them은 얼음 악기들에 ○.   문장 10 — They는 얼음 악기들에 ○ (문장 8의 연주자들이 아니다).");
 B("[학습 포인트]   문장 2의 this dream은 단어 하나가 아니라 앞 문장 전체(얼음 악기로 음악을 연주하는 것)를 받는다. this가 나오면 앞 문장을 통째로 되짚어 보자.", true);
@@ -416,10 +419,10 @@ B("[학습 포인트]   문장 2의 this dream은 단어 하나가 아니라 앞
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 2.   2 F — 문장 3: 드럼이 아니라 기타(guitars)를 만드는 친구다.   3 T — 문장 5.   4 F — 문장 6: 두 개가 아니라 많은(many) 악기가 있다.   5 T — 문장 7.   6 F — 문장 9: 절대 안 부서지는 게 아니라 쉽게 부서진다.   7 T — 문장 10.   8 F — 문장 12: 여름옷이 아니라 가장 따뜻한 옷을 입으라고 했다.  거짓 문장은 모두 한 요소(drums, two, never, summer)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (d) → (a) → (c)");
-B("ⓑ 기타 만드는 친구에게서 아이디어를 얻는다(문장 3) → ⓓ 얼음 악기의 소리가 궁금해진다(문장 4) → ⓐ 얼음과 눈·물로 악기를 만든다(문장 5) → ⓒ 지금은 오케스트라에 많은 얼음 악기가 있다(문장 6). 문장 1–2는 결과를 먼저 보여 준 뒤 문장 3부터 그 과정을 되짚는다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 T · 5 F · 6 T · 7 F · 8 F");
+   B("1 F — 문장 6: 두 개가 아니라 많은(many) 악기가 있다.   2 T — 문장 5.   3 T — 문장 7.   4 T — 문장 2.   5 F — 문장 9: 절대 안 부서지는 게 아니라 쉽게 부서진다.   6 T — 문장 10.   7 F — 문장 12: 여름옷이 아니라 가장 따뜻한 옷을 입으라고 했다.  거짓 문장은 모두 한 요소(drums, two, never, summer)만 비튼 것이다.   8 F — 문장 3: 드럼이 아니라 기타(guitars)를 만드는 친구다.", true);
+Hs("R2   사건 순서   ·   (d) → (c) → (a) → (b)");
+B("ⓓ 기타 만드는 친구에게서 아이디어를 얻는다(문장 3) → ⓒ 얼음 악기의 소리가 궁금해진다(문장 4) → ⓐ 얼음과 눈·물로 악기를 만든다(문장 5) → ⓑ 지금은 오케스트라에 많은 얼음 악기가 있다(문장 6). 문장 1–2는 결과를 먼저 보여 준 뒤 문장 3부터 그 과정을 되짚는다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

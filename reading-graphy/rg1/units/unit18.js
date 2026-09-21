@@ -79,22 +79,24 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① What Does Space Smell Like?", "② How to Become an Astronaut",
- "③ A Day in the Life of a NASA Researcher", "④ How Comets Move Around the Sun",
- "⑤ The Best Buffet Restaurant in Town"].forEach(c => K.push(ch(c)));
+["① How to Become an Astronaut",
+ "② A Day in the Life of a NASA Researcher",
+ "③ How Comets Move Around the Sun",
+ "④ The Best Buffet Restaurant in Town",
+ "⑤ What Does Space Smell Like?"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Astronauts say that space actually smells.",
  "② A comet is a big icy ball of dust and rocks.",
- "③ The cloud around 67P smells like rotten eggs and almonds.",
- "④ The smells of the comet never change.",
+ "③ The smells of the comet never change.",
+ "④ The cloud around 67P smells like rotten eggs and almonds.",
  "⑤ There is a big space cloud named Sagittarius B2."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) It이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the big space cloud Sagittarius B2",
- "② the comet called 67P",
+["① the comet called 67P",
+ "② the big space cloud Sagittarius B2",
  "③ the sun in space",
  "④ a researcher at NASA",
  "⑤ a buffet restaurant"].forEach(c => K.push(ch(c)));
@@ -331,15 +333,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Space is full of stars, planets, and many other things.",
-    "Astronauts say that space has no smell at all.",
-    "A comet is a big icy ball of dust and rocks.",
-    "The cloud around 67P smells like rotten eggs and almonds.",
-    "The smells of the comet never change.",
     "The space cloud Sagittarius B2 smells like rotten eggs.",
+    "A comet is a big icy ball of dust and rocks.",
+    "The smells of the comet never change.",
+    "The cloud around 67P smells like rotten eggs and almonds.",
     "The sweet smell comes from a special chemical in the cloud.",
+    "Astronauts say that space has no smell at all.",
     "A NASA researcher says the smell of space is the same everywhere.",
-  ].map((s, i) => new TableRow({ children: [
+    "Space is full of stars, planets, and many other things."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -355,8 +356,8 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "우주의 냄새를
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Scientists found unique smells around the comet 67P.",
-      "ⓑ Astronauts said that space actually smells.",
-      "ⓒ A NASA researcher said the smell differs from place to place.",
+      "ⓑ A NASA researcher said the smell differs from place to place.",
+      "ⓒ Astronauts said that space actually smells.",
       "ⓓ Scientists also found a sweet smell in Sagittarius B2."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
@@ -397,15 +398,15 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 space · smell · differs   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4T · 5F · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (d) → (c)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 T · 5 T · 6 F · 7 F · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (d) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 우주에 실제로 냄새가 있다는 사실을 혜성 67P(문장 7)와 궁수자리 B2(문장 9–10)의 예로 설명한다. 소재와 물음을 담은 ①이 제목으로 알맞다. ③·④는 지엽적이고, ②·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 8에서 혜성이 태양에 가까워지면 냄새가 바뀔 수 있다(can change)고 했다. 결코 바뀌지 않는다는 ④는 본문과 반대다. ①은 문장 3, ②는 문장 6, ③은 문장 7, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 우주에 실제로 냄새가 있다는 사실을 혜성 67P(문장 7)와 궁수자리 B2(문장 9–10)의 예로 설명한다. 소재와 물음을 담은 ⑤이 제목으로 알맞다. ②·③는 지엽적이고, ①·④는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 8에서 혜성이 태양에 가까워지면 냄새가 바뀔 수 있다(can change)고 했다. 결코 바뀌지 않는다는 ③는 본문과 반대다. ①은 문장 3, ②는 문장 6, ④은 문장 7, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) It은 바로 앞 문장 9에 나온 큰 우주 구름 Sagittarius B2를 받는다. 라즈베리 냄새가 나는 것은 혜성이 아니라 이 구름이다.", true);
 Hs("독해 04   배열 영작   ·   There’s also a big space cloud named Sagittarius B2.");
 B("문장 9를 그대로 복원하는 문제다. ① 첫 글자는 대문자 There’s.   ② also는 There’s 바로 뒤에 온다.   ③ named 이하가 cloud를 뒤에서 꾸민다.", true);
@@ -419,10 +420,10 @@ B("[학습 포인트]   같은 it이라도 문장 2는 우주 전체, 문장 10�
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 T · 5 F · 6 F · 7 T · 8 F");
-B("1 T — 문장 1.   2 F — 문장 3: 냄새가 없는 게 아니라 실제로 난다고 말한다.   3 T — 문장 6.   4 T — 문장 7.   5 F — 문장 8: 결코 안 바뀌는 게 아니라 바뀔 수 있다.   6 F — 문장 10: 썩은 달걀이 아니라 라즈베리 냄새다.   7 T — 문장 11.   8 F — 문장 12: 어디서나 같은 게 아니라 장소마다 다르다.  거짓 문장은 모두 한 요소(no smell, never, rotten eggs, the same)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (a) → (d) → (c)");
-B("ⓑ 우주 비행사들이 우주에서 냄새가 난다고 말한다(문장 3) → ⓐ 과학자들이 혜성 67P 주위에서 독특한 냄새를 찾는다(문장 7) → ⓓ 궁수자리 B2에서 달콤한 냄새를 찾는다(문장 9–11) → ⓒ NASA 연구원이 장소마다 다르다고 정리한다(문장 12). 설명문은 '주장 → 예 1 → 예 2 → 마무리' 순으로 흐른다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 F · 4 T · 5 T · 6 F · 7 F · 8 T");
+   B("1 F — 문장 10: 썩은 달걀이 아니라 라즈베리 냄새다.   2 T — 문장 6.   3 F — 문장 8: 결코 안 바뀌는 게 아니라 바뀔 수 있다.   4 T — 문장 7.   5 T — 문장 11.   6 F — 문장 3: 냄새가 없는 게 아니라 실제로 난다고 말한다.   7 F — 문장 12: 어디서나 같은 게 아니라 장소마다 다르다.  거짓 문장은 모두 한 요소(no smell, never, rotten eggs, the same)만 비튼 것이다.   8 T — 문장 1.", true);
+Hs("R2   사건 순서   ·   (c) → (a) → (d) → (b)");
+B("ⓒ 우주 비행사들이 우주에서 냄새가 난다고 말한다(문장 3) → ⓐ 과학자들이 혜성 67P 주위에서 독특한 냄새를 찾는다(문장 7) → ⓓ 궁수자리 B2에서 달콤한 냄새를 찾는다(문장 9–11) → ⓑ NASA 연구원이 장소마다 다르다고 정리한다(문장 12). 설명문은 '주장 → 예 1 → 예 2 → 마무리' 순으로 흐른다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

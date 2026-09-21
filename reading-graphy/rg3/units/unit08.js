@@ -87,15 +87,15 @@ K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?")
 K.push(sp(65));
 ["① Thomas Sullivan was a tea trader in New York.",
  "② The tins for tea samples became too expensive.",
- "③ In 1908, Thomas decided to use paper bags for tea samples.",
- "④ The silk bags were cheaper and also looked fancy.",
+ "③ The silk bags were cheaper and also looked fancy.",
+ "④ In 1908, Thomas decided to use paper bags for tea samples.",
  "⑤ Some customers put the whole silk bag in boiling water."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) this가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① putting the whole silk bag in boiling water",
- "② taking the tea leaves out of the bag",
- "③ sending tea samples in expensive tins",
+["① taking the tea leaves out of the bag",
+ "② sending tea samples in expensive tins",
+ "③ putting the whole silk bag in boiling water",
  "④ making tea with an infuser",
  "⑤ buying tea at a shop in New York"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -144,7 +144,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -157,7 +157,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -193,7 +193,7 @@ K.push(spF(2, 85, 0.06));
  [10, "Thomas thought people would take the tea leaves out of the silk bags."],
  [12, "They found this more convenient, and the tea still tasted great."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -269,7 +269,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -322,7 +322,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -337,15 +337,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Thomas Sullivan was a famous tea trader in New York.",
-    "He sent his customers new tea samples.",
-    "The tins that he used to send samples became too cheap.",
-    "In 1908, he decided to use silk bags instead of tins.",
     "The silk bags were more expensive than the tins.",
+    "The tins that he used to send samples became too cheap.",
     "Thomas planned to invent tea bags from the beginning.",
     "Some customers put the whole silk bag in boiling water.",
     "The customers found the silk bag less convenient.",
-  ].map((s, i) => new TableRow({ children: [
+    "In 1908, he decided to use silk bags instead of tins.",
+    "He sent his customers new tea samples.",
+    "Thomas Sullivan was a famous tea trader in New York."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -361,9 +360,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "티백이 생겨난
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Thomas started sending tea samples in silk bags.",
-      "ⓑ The tins for tea samples became too expensive.",
-      "ⓒ Tea bags became very popular.",
-      "ⓓ Some customers put the whole bag in boiling water."]
+      "ⓑ Tea bags became very popular.",
+      "ⓒ Some customers put the whole bag in boiling water.",
+      "ⓓ The tins for tea samples became too expensive."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -402,15 +401,15 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 silk · accidentally · invention   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2T · 3F · 4T · 5F · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (d) → (c)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 F · 4 T · 5 F · 6 T · 7 T · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (c) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ①");
 B("이 글은 값싼 대안으로 고른 실크 주머니가 뜻밖에 티백의 발명으로 이어진 과정(문장 7–13)을 들려준다. 소재와 '우연'이라는 특징을 함께 담은 ①이 적절하다. ④·⑤는 실크·양철통만 건드린 지엽적 오답, ②·③은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 7에서 1908년에 쓰기로 한 것은 종이 봉지가 아니라 실크 주머니(silk bags)다. ①은 문장 1, ②는 문장 3, ④는 문장 8, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 7에서 1908년에 쓰기로 한 것은 종이 봉지가 아니라 실크 주머니(silk bags)다. ①은 문장 1, ②는 문장 3, ③는 문장 8, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) this는 바로 앞 문장 11의 행동, 곧 '실크 주머니를 통째로 끓는 물에 넣는 것'을 가리킨다. 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   He needed a cheaper solution.");
 B("문장 4를 그대로 복원한다. ① 첫 글자는 대문자 He.   ② needed 뒤에 목적어가 온다.   ③ a cheaper solution — 관사 a를 빠뜨리지 않는다.", true);
@@ -423,10 +422,10 @@ B("[학습 포인트]   문장 12에서 They(사람)와 this(행동)가 서로 �
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 T · 3 F · 4 T · 5 F · 6 F · 7 T · 8 F");
-B("1 T — 문장 1.   2 T — 문장 2.   3 F — 문장 3: 너무 싸진(cheap) 것이 아니라 너무 비싸졌다(expensive).   4 T — 문장 7.   5 F — 문장 8: 더 비싼 것이 아니라 더 쌌다(cheaper).   6 F — 문장 9: 처음부터 계획한 것이 아니라 우연히(accidentally) 일어났다.   7 T — 문장 11.   8 F — 문장 12: 덜 편한 것이 아니라 더 편하다고(more convenient) 느꼈다.  거짓 문장은 모두 한 요소(cheap, more expensive, planned, less)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (a) → (d) → (c)");
-B("ⓑ 양철통 값이 너무 비싸진다(문장 3) → ⓐ 실크 주머니로 샘플을 보내기 시작한다(문장 7) → ⓓ 일부 고객이 주머니째 끓는 물에 넣는다(문장 11) → ⓒ 티백이 큰 인기를 얻는다(문장 13). 문장 9는 '다음에 일어난 일'을 미리 알려 주는 예고 문장이어서, 서술 순서와 사건 순서가 한 번 어긋난다.", true);
+Hs("R1   True / False   ·   1 F · 2 F · 3 F · 4 T · 5 F · 6 T · 7 T · 8 T");
+   B("1 F — 문장 8: 더 비싼 것이 아니라 더 쌌다(cheaper).   2 F — 문장 3: 너무 싸진(cheap) 것이 아니라 너무 비싸졌다(expensive).   3 F — 문장 9: 처음부터 계획한 것이 아니라 우연히(accidentally) 일어났다.   4 T — 문장 11.   5 F — 문장 12: 덜 편한 것이 아니라 더 편하다고(more convenient) 느꼈다.  거짓 문장은 모두 한 요소(cheap, more expensive, planned, less)만 비튼 것이다.   6 T — 문장 7.   7 T — 문장 2.   8 T — 문장 1.", true);
+Hs("R2   사건 순서   ·   (d) → (a) → (c) → (b)");
+B("ⓓ 양철통 값이 너무 비싸진다(문장 3) → ⓐ 실크 주머니로 샘플을 보내기 시작한다(문장 7) → ⓒ 일부 고객이 주머니째 끓는 물에 넣는다(문장 11) → ⓑ 티백이 큰 인기를 얻는다(문장 13). 문장 9는 '다음에 일어난 일'을 미리 알려 주는 예고 문장이어서, 서술 순서와 사건 순서가 한 번 어긋난다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

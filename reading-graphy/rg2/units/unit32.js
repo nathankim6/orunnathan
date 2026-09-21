@@ -76,25 +76,27 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["\u2460 How to Catch a Fly on the Wall", "\u2461 What Security Cameras Can Do",
- "\u2462 A Simple Trick That Really Reduces Stress", "\u2463 The History of Ohio University",
- "\u2464 How to Finish Your Tasks 30% Faster"].forEach(c => K.push(ch(c)));
+["① How to Catch a Fly on the Wall",
+ "② What Security Cameras Can Do",
+ "③ The History of Ohio University",
+ "④ A Simple Trick That Really Reduces Stress",
+ "⑤ How to Finish Your Tasks 30% Faster"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["\u2460 Scientists at Ohio University did a study about this method.",
- "\u2461 People who tried the method felt more angry than before.",
- "\u2462 Seeing things from the outside can help you when you’re upset.",
- "\u2463 You could also imagine being a cloud in the sky.",
- "\u2464 The method can be done anywhere at any time."].forEach(c => K.push(ch(c)));
+["① People who tried the method felt more angry than before.",
+ "② Scientists at Ohio University did a study about this method.",
+ "③ Seeing things from the outside can help you when you’re upset.",
+ "④ You could also imagine being a cloud in the sky.",
+ "⑤ The method can be done anywhere at any time."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) It이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["\u2460 getting caught up in bad feelings",
- "\u2461 seeing things from the outside",
- "\u2462 being a fly on the wall",
- "\u2463 the study at Ohio University",
- "\u2464 a security camera in the room"].forEach(c => K.push(ch(c)));
+["① seeing things from the outside",
+ "② getting caught up in bad feelings",
+ "③ being a fly on the wall",
+ "④ the study at Ohio University",
+ "⑤ a security camera in the room"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -141,7 +143,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -154,7 +156,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -190,7 +192,7 @@ K.push(spF(2, 85, 0.06));
  [6, "When you’re upset, seeing things from the outside can help you."],
  [9, "This method can be done anywhere at any time and is great for reducing stress."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -245,7 +247,7 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["\u2460 파리를 잡는 여러 가지 방법", "\u2461 스트레스를 줄이는 상상 방법", "\u2462 보안 카메라의 좋은 점"].forEach(c =>
+["① 파리를 잡는 여러 가지 방법", "② 스트레스를 줄이는 상상 방법", "③ 보안 카메라의 좋은 점"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -257,7 +259,7 @@ K.push(T([1740,1740,1740,1740,1740,1740], [new TableRow({ children: KWCAND.map((
   new Paragraph({ children: [t(ko, { size: 14, color: SUB })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 190 } }),
 ], { w: 1740, shade: FIELD, va: VerticalAlign.CENTER, m: { top: 240, bottom: 240, left: 40, right: 40 },
     b: { top: bd(4, FLINE), bottom: bd(4, FLINE), left: bd(4, FLINE), right: bd(4, FLINE) } })) })]));
-K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 이 글이 소개하는 것  ② 그것이 다루는 문제  ③ 글쓴이의 평가 \u2014 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
+K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 이 글이 소개하는 것  ② 그것이 다루는 문제  ③ 글쓴이의 평가 — 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
 K.push(spF(4, 260, 0.30));
 
 K.push(p([t("1-3  ", { size: 18, bold: true, color: GOLD }), t("지시어 이해하기", { size: 19, bold: true }),
@@ -266,7 +268,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -313,7 +315,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -328,15 +330,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "The fly on the wall method might sound funny.",
-    "Scientists at Ohio University did a study about this method.",
-    "People who tried the method felt more angry.",
-    "People who tried the method did their tasks 30% better.",
-    "Seeing things from the inside can help you when you’re upset.",
-    "You could also imagine being a cloud in the sky.",
     "This method can be done only in the morning.",
+    "People who tried the method felt more angry.",
+    "You could also imagine being a cloud in the sky.",
+    "People who tried the method did their tasks 30% better.",
     "The method is great for increasing stress.",
-  ].map((s, i) => new TableRow({ children: [
+    "Seeing things from the inside can help you when you’re upset.",
+    "Scientists at Ohio University did a study about this method.",
+    "The fly on the wall method might sound funny."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -351,10 +352,10 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "파리 방법을 쓸 때 일어나는 일 ⓐ~ⓓ를 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["\u24D0 You imagine yourself as a fly on the wall.",
-      "\u24D1 You are feeling too much stress.",
-      "\u24D2 You feel much better and do your tasks better.",
-      "\u24D3 You stop getting caught up in bad feelings."]
+  ...["ⓐ You imagine yourself as a fly on the wall.",
+      "ⓑ You feel much better and do your tasks better.",
+      "ⓒ You are feeling too much stress.",
+      "ⓓ You stop getting caught up in bad feelings."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -382,9 +383,9 @@ K.push(...tab("정답 및 해설", "UNIT 32  벽에 붙은 파리가 된다면?"
 K.push(sp(150));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("독해", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("\u2462      ", { size: 19, bold: true }),
-     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("\u2461      ", { size: 19, bold: true }),
-     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("\u2461", { size: 19, bold: true })], { after: 25 }),
+  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("③      ", { size: 19, bold: true }),
+     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("②      ", { size: 19, bold: true }),
+     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("②", { size: 19, bold: true })], { after: 25 }),
   p([t("04 ", { size: 19, bold: true, color: NAVY2 }), t("When you’re upset, seeing things from the outside can help you.", { size: 19, bold: true })], { after: 75 }),
   p([t("구문분석", { size: 16, bold: true, color: NAVY })], { after: 60 }),
   p([t("문5 ", { size: 17, bold: true, color: NAVY2 }), t("People(S)\u00b7who tried it(M)\u00b7felt\u00b7were able to do(\u25b3V)   ", { size: 17, bold: true }),
@@ -392,34 +393,34 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문9 ", { size: 17, bold: true, color: NAVY2 }), t("This method(S)\u00b7can be done(\u25b3V)\u00b7anywhere at any time(M)\u00b7is great(\u25b3V)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 친구들과 영화를 보는 것은 언제나 즐겁다  (2) 그 숙제는 저녁 식사 전에 끝내질 수 있다  (3) 방을 청소하는 것은 10분 안에 될 수 있다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 \u2461   1-2 method · stress · effective   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 method · stress · effective   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2T · 3F · 4T · 5F · 6T · 7F · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (d) → (c)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 T · 5 F · 6 F · 7 T · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (d) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 \u2462");
-B("이 글은 스트레스를 줄이는 '파리' 상상법을 소개하고(문장 2\u20133), 그 효과를 연구로 뒷받침한다(문장 4\u20135, 9). 방법과 평가를 함께 담은 \u2462가 제목이다. \u2461·\u2464는 카메라·과제만 건드린 지엽적 오답, \u2460·\u2463은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 \u2461");
-B("문장 5에서 방법을 써 본 사람들은 화가 '덜(less)' 났다. 더 화가 났다고 뒤집은 \u2461이 본문과 반대된다. \u2460은 문장 4, \u2462는 문장 6, \u2463은 문장 8, \u2464는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 \u2461");
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 스트레스를 줄이는 '파리' 상상법을 소개하고(문장 2–3), 그 효과를 연구로 뒷받침한다(문장 4–5, 9). 방법과 평가를 함께 담은 ④가 제목이다. ②·⑤는 카메라·과제만 건드린 지엽적 오답, ①·③은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 5에서 방법을 써 본 사람들은 화가 '덜(less)' 났다. 더 화가 났다고 뒤집은 ①이 본문과 반대된다. ②은 문장 4, ③는 문장 6, ④은 문장 8, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) It은 바로 앞 문장 6의 seeing things from the outside를 가리킨다. 지시어가 단어 하나가 아니라 앞 문장의 '~하는 것' 전체를 받을 수도 있다는 점이 핵심이다.", true);
 Hs("독해 04   배열 영작   ·   When you’re upset, seeing things from the outside can help you.");
-B("문장 6을 그대로 복원하는 문제다. \u2460 첫 글자는 대문자 When.   \u2461 upset, 뒤의 쉼표가 종속절의 끝을 알린다.   \u2462 주어는 동명사 덩어리 seeing things from the outside이고 동사는 can help다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 \u2461     1-2 method · stress · effective     1-3 아래 참조");
-B("1-1   정답 \u2461. 이 글은 스트레스를 줄이는 상상법을 소개한다. \u2460 진짜 파리를 잡는 이야기가 아니고, \u2462 보안 카메라는 상상의 예 하나일 뿐이다.");
-B("1-2   \u25cb표 할 세 단어: method(힌트\u2460 이 글이 소개하는 것) · stress(힌트\u2461 그것이 다루는 문제) · effective(힌트\u2462 글쓴이의 평가). 나머지 셋(scientists · tasks · camera)은 본문에 등장하지만 주제문에 들어가지 않는다 \u2014 근거와 예일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
-B("1-3   문장 5 \u2014 it은 파리 방법에 \u25cb (문장 4의 this method).   문장 7 \u2014 It은 바깥에서 보는 것에 \u25cb (문장 6의 seeing ~ outside).   문장 11 \u2014 It은 파리 방법에 \u25cb (문장 10에서 다시 부른 그 방법).");
-B("[학습 포인트]   It이 늘 단어 하나를 받는 것은 아니다. 문장 7의 It처럼 앞 문장의 '~하는 것' 전체를 받기도 한다 \u2014 뒤 문장이 어색하면 앞 문장 통째로 넣어 보자.", true);
+B("문장 6을 그대로 복원하는 문제다. ① 첫 글자는 대문자 When.   ② upset, 뒤의 쉼표가 종속절의 끝을 알린다.   ③ 주어는 동명사 덩어리 seeing things from the outside이고 동사는 can help다.", true);
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 method · stress · effective     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 스트레스를 줄이는 상상법을 소개한다. ① 진짜 파리를 잡는 이야기가 아니고, ③ 보안 카메라는 상상의 예 하나일 뿐이다.");
+B("1-2   \u25cb표 할 세 단어: method(힌트① 이 글이 소개하는 것) · stress(힌트② 그것이 다루는 문제) · effective(힌트③ 글쓴이의 평가). 나머지 셋(scientists · tasks · camera)은 본문에 등장하지만 주제문에 들어가지 않는다 — 근거와 예일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
+B("1-3   문장 5 — it은 파리 방법에 \u25cb (문장 4의 this method).   문장 7 — It은 바깥에서 보는 것에 \u25cb (문장 6의 seeing ~ outside).   문장 11 — It은 파리 방법에 \u25cb (문장 10에서 다시 부른 그 방법).");
+B("[학습 포인트]   It이 늘 단어 하나를 받는 것은 아니다. 문장 7의 It처럼 앞 문장의 '~하는 것' 전체를 받기도 한다 — 뒤 문장이 어색하면 앞 문장 통째로 넣어 보자.", true);
 
 /* ═══════════ [DATA] 해설 2면 — R1 · R2 · 전문 해석 ═══════════ */
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 T · 3 F · 4 T · 5 F · 6 T · 7 F · 8 F");
-B("1 T \u2014 문장 3.   2 T \u2014 문장 4.   3 F \u2014 문장 5: more가 아니라 less angry다.   4 T \u2014 문장 5.   5 F \u2014 문장 6: inside가 아니라 outside다.   6 T \u2014 문장 8.   7 F \u2014 문장 9: only in the morning이 아니라 anywhere at any time이다.   8 F \u2014 문장 9: increasing이 아니라 reducing stress다.  거짓 넷은 모두 한 요소(more, inside, only in the morning, increasing)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) \u2192 (a) \u2192 (d) \u2192 (c)");
-B("\u24D1 스트레스를 너무 많이 느낀다(문장 1) \u2192 \u24D0 자신을 벽에 붙은 파리로 상상한다(문장 2) \u2192 \u24D3 나쁜 감정에 사로잡히는 것을 멈춘다(문장 7) \u2192 \u24D2 기분이 훨씬 나아지고 과제도 더 잘한다(문장 5, 11). 본문은 효과(문장 5)를 원리(문장 7)보다 먼저 말하지만, 실제로 일어나는 순서는 원리가 먼저다 \u2014 서술 순서와 사건 순서를 구분하자.", true);
+Hs("R1   True / False   ·   1 F · 2 F · 3 T · 4 T · 5 F · 6 F · 7 T · 8 T");
+   B("1 F — 문장 9: only in the morning이 아니라 anywhere at any time이다.   2 F — 문장 5: more가 아니라 less angry다.   3 T — 문장 8.   4 T — 문장 5.   5 F — 문장 9: increasing이 아니라 reducing stress다.  거짓 넷은 모두 한 요소(more, inside, only in the morning, increasing)만 비튼 것이다.   6 F — 문장 6: inside가 아니라 outside다.   7 T — 문장 4.   8 T — 문장 3.", true);
+Hs("R2   사건 순서   ·   (c) → (a) → (d) → (b)");
+B("ⓒ 스트레스를 너무 많이 느낀다(문장 1) → ⓐ 자신을 벽에 붙은 파리로 상상한다(문장 2) → ⓓ 나쁜 감정에 사로잡히는 것을 멈춘다(문장 7) → ⓑ 기분이 훨씬 나아지고 과제도 더 잘한다(문장 5, 11). 본문은 효과(문장 5)를 원리(문장 7)보다 먼저 말하지만, 실제로 일어나는 순서는 원리가 먼저다 — 서술 순서와 사건 순서를 구분하자.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

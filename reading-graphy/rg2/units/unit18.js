@@ -30,7 +30,7 @@ const SENT = [
   "The plants normally make one tiny popping sound each hour.",
   "However, scientists discovered something interesting.",
   "They studied tomato plants with special microphones that can hear the quietest sounds.",
-  "When the plants were stressed \u2014 such as when their stems were cut \u2014 they made 30 to 50 popping sounds in an hour!",
+  "When the plants were stressed — such as when their stems were cut — they made 30 to 50 popping sounds in an hour!",
   "This shows that plants react to stress, just like we do.",
   "But this reaction doesn\u2019t mean that plants communicate with each other by making sounds.",
   "Making sounds is just their unique way of reacting to stress.",
@@ -59,7 +59,7 @@ function reprint(mark) {
 const DEIXIS = {
   3: [R("But these sounds are very quiet, so we can\u2019t usually hear "), RM("them"), R(".  ")],
   6: [RM("They"), R(" studied tomato plants with special microphones that can hear the quietest sounds.  ")],
-  7: [R("When the plants were stressed \u2014 such as when their stems were cut \u2014 "), RM("they"), R(" made 30 to 50 popping sounds in an hour!  ")],
+  7: [R("When the plants were stressed — such as when their stems were cut — "), RM("they"), R(" made 30 to 50 popping sounds in an hour!  ")],
   11: [R("So, if you\u2019re taking care of plants, don\u2019t forget to give "), RM("them"), R(" water.  ")],
 };
 
@@ -79,25 +79,25 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["\u2460 Why Tomatoes Are Good for Your Health", "\u2461 How to Build a Special Microphone",
- "\u2462 The Secret Language of Popcorn", "\u2463 Plants Make Sounds When They Are Stressed",
- "\u2464 How Often Plants Need Water"].forEach(c => K.push(ch(c)));
+["① Why Tomatoes Are Good for Your Health", "② How to Build a Special Microphone",
+ "③ The Secret Language of Popcorn", "④ Plants Make Sounds When They Are Stressed",
+ "⑤ How Often Plants Need Water"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["\u2460 Some plants can make sounds like popping popcorn.",
- "\u2461 Plants normally make 50 popping sounds each hour.",
- "\u2462 Scientists studied tomato plants with special microphones.",
- "\u2463 Stressed plants made 30 to 50 popping sounds in an hour.",
- "\u2464 Making sounds is their way of reacting to stress."].forEach(c => K.push(ch(c)));
+["① Some plants can make sounds like popping popcorn.",
+ "② Scientists studied tomato plants with special microphones.",
+ "③ Plants normally make 50 popping sounds each hour.",
+ "④ Stressed plants made 30 to 50 popping sounds in an hour.",
+ "⑤ Making sounds is their way of reacting to stress."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) They가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["\u2460 tomato plants",
- "\u2461 special microphones",
- "\u2462 scientists",
- "\u2463 the quietest sounds",
- "\u2464 popping sounds"].forEach(c => K.push(ch(c)));
+["① tomato plants",
+ "② scientists",
+ "③ special microphones",
+ "④ the quietest sounds",
+ "⑤ popping sounds"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -144,7 +144,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -157,7 +157,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -194,7 +194,7 @@ K.push(spF(2, 85, 0.06));
  [6, "They studied tomato plants with special microphones that can hear the quietest sounds."],
  [9, "But this reaction doesn\u2019t mean that plants communicate with each other by making sounds."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -249,7 +249,7 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["\u2460 토마토를 잘 기르는 방법", "\u2461 팝콘이 톡톡 튀는 소리의 원리", "\u2462 스트레스를 받으면 소리를 내는 식물"].forEach(c =>
+["① 토마토를 잘 기르는 방법", "② 팝콘이 톡톡 튀는 소리의 원리", "③ 스트레스를 받으면 소리를 내는 식물"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -261,7 +261,7 @@ K.push(T([1740,1740,1740,1740,1740,1740], [new TableRow({ children: KWCAND.map((
   new Paragraph({ children: [t(ko, { size: 14, color: SUB })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 190 } }),
 ], { w: 1740, shade: FIELD, va: VerticalAlign.CENTER, m: { top: 240, bottom: 240, left: 40, right: 40 },
     b: { top: bd(4, FLINE), bottom: bd(4, FLINE), left: bd(4, FLINE), right: bd(4, FLINE) } })) })]));
-K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 식물이 내는 것  ② 소리가 많아지는 까닭  ③ 소리가 뜻하지 ‘않는’ 것 \u2014 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
+K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 식물이 내는 것  ② 소리가 많아지는 까닭  ③ 소리가 뜻하지 ‘않는’ 것 — 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
 K.push(spF(4, 260, 0.30));
 
 K.push(p([t("1-3  ", { size: 18, bold: true, color: GOLD }), t("지시어 이해하기", { size: 19, bold: true }),
@@ -270,7 +270,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -317,7 +317,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -332,15 +332,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Some plants can make sounds like popping popcorn.",
     "These popping sounds are very loud.",
-    "The plants normally make one tiny popping sound each hour.",
     "Scientists studied rose plants with special microphones.",
     "Stressed plants made 30 to 50 popping sounds in an hour.",
-    "The sounds mean that plants communicate with each other.",
     "Making sounds is their unique way of reacting to stress.",
-    "If you take care of plants, you don\u2019t need to give them water.",
-  ].map((s, i) => new TableRow({ children: [
+    "The plants normally make one tiny popping sound each hour.",
+    "The sounds mean that plants communicate with each other.",
+    "Some plants can make sounds like popping popcorn.",
+    "If you take care of plants, you don\u2019t need to give them water."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -355,10 +354,10 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "과학자들의 연구 과정 ⓐ~ⓓ를 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["\u24D0 The plants made 30 to 50 popping sounds in an hour.",
-      "\u24D1 Scientists studied tomato plants with special microphones.",
-      "\u24D2 Scientists cut the stems of the plants.",
-      "\u24D3 Scientists learned that plants react to stress."]
+  ...["ⓐ The plants made 30 to 50 popping sounds in an hour.",
+      "ⓑ Scientists cut the stems of the plants.",
+      "ⓒ Scientists studied tomato plants with special microphones.",
+      "ⓓ Scientists learned that plants react to stress."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -386,9 +385,9 @@ K.push(...tab("정답 및 해설", "UNIT 18  식물도 말을 할 수 있을까�
 K.push(sp(150));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("독해", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("\u2463      ", { size: 19, bold: true }),
-     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("\u2461      ", { size: 19, bold: true }),
-     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("\u2462", { size: 19, bold: true })], { after: 25 }),
+  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("④      ", { size: 19, bold: true }),
+     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("②      ", { size: 19, bold: true }),
+     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("③", { size: 19, bold: true })], { after: 25 }),
   p([t("04 ", { size: 19, bold: true, color: NAVY2 }), t("This shows that plants react to stress, just like we do.", { size: 19, bold: true })], { after: 75 }),
   p([t("구문분석", { size: 16, bold: true, color: NAVY })], { after: 60 }),
   p([t("문4 ", { size: 17, bold: true, color: NAVY2 }), t("The plants(S)\u00b7make(\u25b3V)\u00b7normally / each hour(M)   ", { size: 17, bold: true }),
@@ -396,34 +395,34 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문9 ", { size: 17, bold: true, color: NAVY2 }), t("this reaction(S)\u00b7doesn\u2019t mean(\u25b3V)\u00b7that(접속사)\u00b7plants(S\u2032)\u00b7communicate(\u25b3V\u2032)\u00b7by making sounds(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 책을 읽는 것은 내가 가장 좋아하는 취미다  (2) 그녀는 우리를 기다리고 있을지도 모른다  (3) 크게 노래하는 것이 아기를 깨우고 있을지도 모른다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 \u2462   1-2 sounds · stress · communicate   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 sounds · stress · communicate   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (a) → (d)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 T · 5 T · 6 F · 7 T · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (b) → (a) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 \u2463");
-B("식물이 아주 작은 소리를 내고(문장 2\u20134), 스트레스를 받으면 그 소리가 30\u201350번으로 늘어나며(문장 7), 그것이 의사소통은 아니라는 것(문장 9\u201310)이 글의 뼈대다. 소재와 조건을 함께 담은 \u2463이 제목으로 적절하다. \u2461·\u2464는 지엽적, \u2460·\u2462는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 \u2461");
-B("문장 4에서 식물은 평소에 한 시간에 '한 번'의 작은 톡 소리를 낸다. 50번은 스트레스를 받았을 때의 수치(문장 7)이므로 \u2461이 본문과 다르다. \u2460은 문장 2, \u2462는 문장 6, \u2463은 문장 7, \u2464는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 \u2462");
-B("(A) They는 바로 앞 문장 5의 scientists를 가리킨다. 토마토 식물을 '연구한' 쪽이 누구인지 보면 된다 \u2014 뒤의 tomato plants는 연구 대상이지 주어가 아니다.", true);
+Hs("독해 01   제목   ·   정답 ④");
+B("식물이 아주 작은 소리를 내고(문장 2–4), 스트레스를 받으면 그 소리가 30–50번으로 늘어나며(문장 7), 그것이 의사소통은 아니라는 것(문장 9–10)이 글의 뼈대다. 소재와 조건을 함께 담은 ④이 제목으로 적절하다. ②·⑤는 지엽적, ①·③는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 4에서 식물은 평소에 한 시간에 '한 번'의 작은 톡 소리를 낸다. 50번은 스트레스를 받았을 때의 수치(문장 7)이므로 ③이 본문과 다르다. ①은 문장 2, ②는 문장 6, ④은 문장 7, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
+B("(A) They는 바로 앞 문장 5의 scientists를 가리킨다. 토마토 식물을 '연구한' 쪽이 누구인지 보면 된다 — 뒤의 tomato plants는 연구 대상이지 주어가 아니다.", true);
 Hs("독해 04   배열 영작   ·   This shows that plants react to stress, just like we do.");
-B("문장 8을 그대로 복원한다. \u2460 첫 글자는 대문자 This.   \u2461 shows 뒤의 that은 '~라는 것을'을 이끄는 접속사.   \u2462 stress 뒤의 콤마와 마지막 마침표를 빠뜨리지 않는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 \u2462     1-2 sounds · stress · communicate     1-3 아래 참조");
-B("1-1   정답 \u2462. 이 글은 스트레스를 받으면 소리를 내는 식물을 다룬다. \u2460 토마토는 실험 대상일 뿐이고, \u2461 팝콘은 소리를 설명하는 비유일 뿐이다.");
-B("1-2   \u25cb표 할 세 단어: sounds(힌트\u2460 식물이 내는 것) · stress(힌트\u2461 소리가 많아지는 까닭) · communicate(힌트\u2462 소리가 뜻하지 ‘않는’ 것). 나머지 셋(popcorn · tomato · microphones)은 본문에 나오지만 비유와 실험 도구일 뿐이다.");
-B("1-3   문장 6 \u2014 They는 과학자들에 \u25cb (문장 5의 scientists).   문장 7 \u2014 they는 식물들에 \u25cb (앞부분의 the plants).   문장 11 \u2014 them은 식물들에 \u25cb (물을 받는 대상).", true);
+B("문장 8을 그대로 복원한다. ① 첫 글자는 대문자 This.   ② shows 뒤의 that은 '~라는 것을'을 이끄는 접속사.   ③ stress 뒤의 콤마와 마지막 마침표를 빠뜨리지 않는다.", true);
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 sounds · stress · communicate     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 스트레스를 받으면 소리를 내는 식물을 다룬다. ① 토마토는 실험 대상일 뿐이고, ② 팝콘은 소리를 설명하는 비유일 뿐이다.");
+B("1-2   \u25cb표 할 세 단어: sounds(힌트① 식물이 내는 것) · stress(힌트② 소리가 많아지는 까닭) · communicate(힌트③ 소리가 뜻하지 ‘않는’ 것). 나머지 셋(popcorn · tomato · microphones)은 본문에 나오지만 비유와 실험 도구일 뿐이다.");
+B("1-3   문장 6 — They는 과학자들에 \u25cb (문장 5의 scientists).   문장 7 — they는 식물들에 \u25cb (앞부분의 the plants).   문장 11 — them은 식물들에 \u25cb (물을 받는 대상).", true);
 B("[학습 포인트]   문장 6의 They는 과학자, 문장 7의 they는 식물이다. 한 글 안에서 같은 they가 대상을 바꾸는 지점이 있으니, 지시어는 늘 바로 앞에서 짝을 다시 찾아야 한다.", true);
 
 /* ═══════════ [DATA] 해설 2면 — R1 · R2 · 전문 해석 ═══════════ */
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T \u2014 문장 2.   2 F \u2014 문장 3: 시끄러운(loud) 것이 아니라 아주 조용하다(quiet).   3 T \u2014 문장 4.   4 F \u2014 문장 6: 장미(rose)가 아니라 토마토(tomato) 식물이다.   5 T \u2014 문장 7.   6 F \u2014 문장 9: 서로 의사소통한다는 뜻이 아니다(doesn\u2019t mean).   7 T \u2014 문장 10.   8 F \u2014 문장 11: 물 주는 것을 잊지 말라고 했다.  거짓 문장은 모두 한 요소(loud, rose, mean, don\u2019t need)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) \u2192 (c) \u2192 (a) \u2192 (d)");
-B("\u24D1 특별한 마이크로 토마토 식물을 연구한다(문장 6) \u2192 \u24D2 줄기를 잘라 스트레스를 준다(문장 7) \u2192 \u24D0 식물이 한 시간에 30\u201350번 소리를 낸다(문장 7) \u2192 \u24D3 식물이 스트레스에 반응한다는 것을 알아낸다(문장 8). 문장 7 하나에 '자극'과 '반응' 두 단계가 들어 있다 \u2014 문장 수와 사건 수는 다를 수 있다.", true);
+Hs("R1   True / False   ·   1 F · 2 F · 3 T · 4 T · 5 T · 6 F · 7 T · 8 F");
+   B("1 F — 문장 3: 시끄러운(loud) 것이 아니라 아주 조용하다(quiet).   2 F — 문장 6: 장미(rose)가 아니라 토마토(tomato) 식물이다.   3 T — 문장 7.   4 T — 문장 10.   5 T — 문장 4.   6 F — 문장 9: 서로 의사소통한다는 뜻이 아니다(doesn\u2019t mean).   7 T — 문장 2.   8 F — 문장 11: 물 주는 것을 잊지 말라고 했다.  거짓 문장은 모두 한 요소(loud, rose, mean, don\u2019t need)만 비튼 것이다.", true);
+Hs("R2   사건 순서   ·   (c) → (b) → (a) → (d)");
+B("ⓒ 특별한 마이크로 토마토 식물을 연구한다(문장 6) → ⓑ 줄기를 잘라 스트레스를 준다(문장 7) → ⓐ 식물이 한 시간에 30–50번 소리를 낸다(문장 7) → ⓓ 식물이 스트레스에 반응한다는 것을 알아낸다(문장 8). 문장 7 하나에 '자극'과 '반응' 두 단계가 들어 있다 — 문장 수와 사건 수는 다를 수 있다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),
@@ -433,7 +432,7 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("4 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("그 식물들은 보통 한 시간에 한 번 아주 작은 톡 소리를 낸다.  ", { size: 17, color: SUB }),
      t("5 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("그런데, 과학자들이 흥미로운 것을 발견했다.  ", { size: 17, color: SUB }),
      t("6 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("그들은 가장 작은 소리도 들을 수 있는 특별한 마이크로 토마토 식물을 연구했다.  ", { size: 17, color: SUB }),
-     t("7 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("식물이 스트레스를 받았을 때 \u2014 예를 들어 줄기가 잘렸을 때 \u2014 그것들은 한 시간에 30~50번의 톡 소리를 냈다!  ", { size: 17, color: SUB }),
+     t("7 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("식물이 스트레스를 받았을 때 — 예를 들어 줄기가 잘렸을 때 — 그것들은 한 시간에 30~50번의 톡 소리를 냈다!  ", { size: 17, color: SUB }),
      t("8 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("이것은 식물이 우리와 꼭 마찬가지로 스트레스에 반응한다는 것을 보여 준다.  ", { size: 17, color: SUB }),
      t("9 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("하지만 이 반응이 식물들이 소리를 내서 서로 의사소통한다는 뜻은 아니다.  ", { size: 17, color: SUB }),
      t("10 ", { size: 13, bold: true, color: NAVY2, sup: true }), t("소리를 내는 것은 그저 스트레스에 반응하는 그들만의 독특한 방식일 뿐이다.  ", { size: 17, color: SUB }),

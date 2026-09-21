@@ -77,23 +77,25 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① A New Treatment Using Healthy Bacteria", "② The History of Bone Marrow Transplants",
- "③ How to Keep Your Bathroom Clean", "④ Foods That Make Your Gut Happy",
+["① The History of Bone Marrow Transplants",
+ "② How to Keep Your Bathroom Clean",
+ "③ Foods That Make Your Gut Happy",
+ "④ A New Treatment Using Healthy Bacteria",
  "⑤ Why Australia Has the Best Hospitals"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Scientists in Australia are testing “poo” to help people with blood cancer.",
- "② The method puts healthy bacteria into a sick person’s gut.",
- "③ The treatment is aimed at patients who have had bone marrow transplants.",
- "④ A bone marrow transplant never causes a side effect.",
+ "② A bone marrow transplant never causes a side effect.",
+ "③ The method puts healthy bacteria into a sick person’s gut.",
+ "④ The treatment is aimed at patients who have had bone marrow transplants.",
  "⑤ The new treatment could help patients without weakening their immune system."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① healthy bacteria from a healthy person",
- "② sick people with blood cancer",
- "③ scientists in Australia",
+["① sick people with blood cancer",
+ "② scientists in Australia",
+ "③ healthy bacteria from a healthy person",
  "④ bone marrow transplants",
  "⑤ serious side effects"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -329,15 +331,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Scientists in Australia are testing “poo” to help people with blood cancer.",
+    "The new treatment could help patients without weakening their immune system.",
     "The method takes healthy bacteria from a sick person’s poo.",
     "The treatment is aimed at patients who have had bone marrow transplants.",
     "A bone marrow transplant is rare for all cancers.",
-    "After a transplant, the new cells can attack the healthy cells.",
     "Patients with this side effect leave the hospital very quickly.",
-    "The new treatment could help patients without weakening their immune system.",
+    "Scientists in Australia are testing “poo” to help people with blood cancer.",
     "The scientists have already finished the new treatment.",
-  ].map((s, i) => new TableRow({ children: [
+    "After a transplant, the new cells can attack the healthy cells."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -352,8 +353,8 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "환자에게 일어나는 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ The new cells attack the person’s own healthy cells.",
-      "ⓑ A patient has a bone marrow transplant.",
+  ...["ⓐ A patient has a bone marrow transplant.",
+      "ⓑ The new cells attack the person’s own healthy cells.",
       "ⓒ Doctors put healthy bacteria into the patient’s gut.",
       "ⓓ The patient ends up in the hospital for a long time."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
@@ -395,15 +396,15 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 bacteria · treatment · patients   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (d) → (c)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 T · 4 F · 5 F · 6 T · 7 F · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (b) → (d) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("건강한 사람의 대변에서 얻은 세균을 환자의 장에 넣는 새 치료법(문장 1–4)과 그 대상·기대(문장 5–10)를 소개하는 글이다. 소재와 방법을 함께 담은 ①이 적절하다. ②·④는 이식·장만 건드린 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 6에서 골수 이식은 '때때로 심각한 부작용을 일으킬 수 있다'고 했으므로, 절대 부작용이 없다는 ④는 본문과 반대된다. ①은 문장 1, ②는 문장 3, ③은 문장 5, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ④");
+B("건강한 사람의 대변에서 얻은 세균을 환자의 장에 넣는 새 치료법(문장 1–4)과 그 대상·기대(문장 5–10)를 소개하는 글이다. 소재와 방법을 함께 담은 ④이 적절하다. ①·③는 이식·장만 건드린 지엽적 오답, ②·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 6에서 골수 이식은 '때때로 심각한 부작용을 일으킬 수 있다'고 했으므로, 절대 부작용이 없다는 ②는 본문과 반대된다. ①은 문장 1, ③는 문장 3, ④은 문장 5, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) them은 같은 문장 앞부분의 healthy bacteria를 가리킨다. 복수형 them은 복수 명사를 받는다는 수 일치가 첫 번째 단서다.", true);
 Hs("독해 04   배열 영작   ·   This can improve a person’s immune system and help fight diseases.");
 B("문장 4를 그대로 복원하는 문제다. ㄱ 첫 글자는 대문자 This.   ㄴ 조동사 can 뒤에는 동사원형 improve.   ㄷ and가 improve와 help 두 동사를 잇는다.", true);
@@ -417,10 +418,10 @@ B("[학습 포인트]   같은 글에서도 지시어가 받는 것은 계속 �
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 1.   2 F — 문장 3: 아픈 사람이 아니라 건강한 사람(healthy person)의 대변에서 얻는다.   3 T — 문장 5.   4 F — 문장 6: 드문 게 아니라 일부 암에는 흔하다(common).   5 T — 문장 7.   6 F — 문장 8: 빨리 나가는 게 아니라 오래 입원한다.   7 T — 문장 9.   8 F — 문장 10: 이미 끝낸 게 아니라 계속 애쓰는 중이다.  거짓은 모두 딱 한 요소(sick, rare, quickly, finished)를 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (a) → (d) → (c)");
-B("ⓑ 환자가 골수 이식을 받는다(문장 5–6) → ⓐ 새 세포가 환자 자신의 건강한 세포를 공격한다(문장 7) → ⓓ 환자가 오래 입원한다(문장 8) → ⓒ 의사들이 건강한 세균을 환자의 장에 넣는다(문장 3·9). 글은 새 치료법(ⓒ)을 먼저 소개하지만, 실제 시간 순서로는 ⓒ가 마지막이다 — 서술 순서와 사건 순서를 구분하는 것이 핵심이다.", true);
+Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 F · 6 T · 7 F · 8 T");
+   B("1 T — 문장 9.   2 F — 문장 3: 아픈 사람이 아니라 건강한 사람(healthy person)의 대변에서 얻는다.   3 T — 문장 5.   4 F — 문장 6: 드문 게 아니라 일부 암에는 흔하다(common).   5 F — 문장 8: 빨리 나가는 게 아니라 오래 입원한다.   6 T — 문장 1.   7 F — 문장 10: 이미 끝낸 게 아니라 계속 애쓰는 중이다.  거짓은 모두 딱 한 요소(sick, rare, quickly, finished)를 비튼 것이다.   8 T — 문장 7.", true);
+Hs("R2   사건 순서   ·   (a) → (b) → (d) → (c)");
+B("ⓐ 환자가 골수 이식을 받는다(문장 5–6) → ⓑ 새 세포가 환자 자신의 건강한 세포를 공격한다(문장 7) → ⓓ 환자가 오래 입원한다(문장 8) → ⓒ 의사들이 건강한 세균을 환자의 장에 넣는다(문장 3·9). 글은 새 치료법(ⓒ)을 먼저 소개하지만, 실제 시간 순서로는 ⓒ가 마지막이다 — 서술 순서와 사건 순서를 구분하는 것이 핵심이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

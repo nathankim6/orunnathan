@@ -86,16 +86,16 @@ K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① The average American eats nearly 14 kilograms of French fries each year.",
- "② People in Namur enjoyed eating fried fish.",
- "③ In 1680, a very cold winter made the local river freeze.",
- "④ The name “French fries” comes from the country France.",
+ "② The name “French fries” comes from the country France.",
+ "③ People in Namur enjoyed eating fried fish.",
+ "④ In 1680, a very cold winter made the local river freeze.",
  "⑤ “Frenching” means cutting food into thin pieces."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) they가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the people of Belgium",
- "② the people of France",
- "③ the fish in the river",
+["① the people of France",
+ "② the fish in the river",
+ "③ the people of Belgium",
  "④ the potatoes in Namur",
  "⑤ the cooks in Paris"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -331,15 +331,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "The average American eats nearly 14 kilograms of French fries each year.",
     "Belgium claims that France invented French fries.",
-    "In Namur, people enjoyed eating fried fish.",
+    "The average American eats nearly 14 kilograms of French fries each year.",
     "In 1680, a very hot summer made the local river freeze.",
-    "They decided to fry potatoes instead of fish.",
-    "The name comes from where French fries were invented.",
-    "“Frenching” means cutting food into thin pieces.",
     "“French fries” should actually be “frenched fried fish.”",
-  ].map((s, i) => new TableRow({ children: [
+    "They decided to fry potatoes instead of fish.",
+    "In Namur, people enjoyed eating fried fish.",
+    "The name comes from where French fries were invented.",
+    "“Frenching” means cutting food into thin pieces."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -355,9 +354,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "프렌치프라이�
 K.push(sp(120));
 K.push(box([
   ...["ⓐ The average American eats a lot of French fries today.",
-      "ⓑ People in Namur enjoyed eating fried fish.",
-      "ⓒ A very cold winter made the local river freeze.",
-      "ⓓ People fried potatoes instead of fish."]
+      "ⓑ A very cold winter made the local river freeze.",
+      "ⓒ People fried potatoes instead of fish.",
+      "ⓓ People in Namur enjoyed eating fried fish."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -397,15 +396,15 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 fries · Belgium · name   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (d) → (a)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 F · 5 T · 6 T · 7 F · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (c) → (a)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ①");
 B("이 글은 프렌치프라이가 프랑스가 아니라 벨기에에서 처음 만들어졌다는 이야기(문장 4–8)와, 그 이름이 조리법에서 왔다는 설명(문장 10–12)을 담고 있다. 소재와 핵심(어디서 왔는가)을 모두 담은 ①이 제목이다. ②·③은 지엽, ④·⑤는 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 10에서 이름은 '어디서 발명되었는가'가 아니라 '어떻게 손질되는가'에서 왔다고 했다. 나라 이름에서 왔다는 ④는 본문과 반대된다. ①은 문장 2, ②는 문장 5, ③은 문장 6, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 10에서 이름은 '어디서 발명되었는가'가 아니라 '어떻게 손질되는가'에서 왔다고 했다. 나라 이름에서 왔다는 ②는 본문과 반대된다. ①은 문장 2, ③는 문장 5, ④은 문장 6, ⑤는 문장 11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) they는 같은 문장의 주어인 Belgium, 곧 벨기에 사람들을 가리킨다. 뒤의 them이 French fries이므로 한 문장 안에서 they와 them이 서로 다른 것을 가리킨다는 점에 주의한다.", true);
 Hs("독해 04   배열 영작   ·   This historical story supports that they were made in Belgium.");
 B("문장 8을 그대로 복원하는 문제다. ① 첫 글자는 대문자 This.   ② supports 뒤에 접속사 that이 온다.   ③ were made — '만들어졌다'는 be+p.p 한 덩어리.", true);
@@ -419,10 +418,10 @@ B("[학습 포인트]   문장 4가 이 지문의 백미다. 한 문장 안에�
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 2.   2 F — 문장 4: 발명했다고 주장하는 쪽은 프랑스가 아니라 벨기에다.   3 T — 문장 5.   4 F — 문장 6: 아주 더운 여름이 아니라 아주 추운 겨울이었다.   5 T — 문장 7.   6 F — 문장 10: 발명된 곳이 아니라 손질하는 방법에서 이름이 왔다.   7 T — 문장 11.   8 F — 문장 12: 감자가 아니라 생선으로 바꾼 이름이다.  거짓 문장은 모두 딱 한 요소(France, hot summer, where, fish)만 비튼 것이다 — 그 하나를 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (b) → (c) → (d) → (a)");
-B("ⓑ 나뮈르 사람들이 생선 튀김을 즐긴다(문장 5) → ⓒ 아주 추운 겨울에 강이 언다(문장 6) → ⓓ 생선 대신 감자를 튀긴다(문장 7) → ⓐ 오늘날 미국인이 프렌치프라이를 많이 먹는다(문장 2). 문장 2는 글의 앞머리에 있지만 시간으로는 가장 나중의 일이다 — 서술 순서와 사건 순서를 구분하는 것이 핵심이다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 F · 4 F · 5 T · 6 T · 7 F · 8 T");
+   B("1 F — 문장 4: 발명했다고 주장하는 쪽은 프랑스가 아니라 벨기에다.   2 T — 문장 2.   3 F — 문장 6: 아주 더운 여름이 아니라 아주 추운 겨울이었다.   4 F — 문장 12: 감자가 아니라 생선으로 바꾼 이름이다.  거짓 문장은 모두 딱 한 요소(France, hot summer, where, fish)만 비튼 것이다 — 그 하나를 찾는 것이 정독이다.   5 T — 문장 7.   6 T — 문장 5.   7 F — 문장 10: 발명된 곳이 아니라 손질하는 방법에서 이름이 왔다.   8 T — 문장 11.", true);
+Hs("R2   사건 순서   ·   (d) → (b) → (c) → (a)");
+B("ⓓ 나뮈르 사람들이 생선 튀김을 즐긴다(문장 5) → ⓑ 아주 추운 겨울에 강이 언다(문장 6) → ⓒ 생선 대신 감자를 튀긴다(문장 7) → ⓐ 오늘날 미국인이 프렌치프라이를 많이 먹는다(문장 2). 문장 2는 글의 앞머리에 있지만 시간으로는 가장 나중의 일이다 — 서술 순서와 사건 순서를 구분하는 것이 핵심이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

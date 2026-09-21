@@ -79,8 +79,10 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Safe and Comfortable: Jeans with Airbags", "② How to Ride a Motorcycle Fast",
- "③ The History of Blue Denim", "④ Why Cars Are Cheaper Than Motorcycles",
+["① How to Ride a Motorcycle Fast",
+ "② The History of Blue Denim",
+ "③ Why Cars Are Cheaper Than Motorcycles",
+ "④ Safe and Comfortable: Jeans with Airbags",
  "⑤ The Best Knee Pads for Riders"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
@@ -93,10 +95,10 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the airbag jeans",
- "② their motorcycles",
- "③ regular pants",
- "④ the knees and hips",
+["① their motorcycles",
+ "② regular pants",
+ "③ the knees and hips",
+ "④ the airbag jeans",
  "⑤ serious accidents"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -144,7 +146,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -157,7 +159,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -193,7 +195,7 @@ K.push(spF(2, 85, 0.06));
  [5, "So, most motorcycle pants usually protect the knees and hips."],
  [11, "The airbag jeans help keep riders safe, and are as comfortable as regular pants."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -269,7 +271,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -316,7 +318,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -331,15 +333,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Riding a motorcycle is much more dangerous than driving a car.",
-    "Many injuries from serious accidents happen to the upper body.",
     "Most motorcycle pants usually protect the knees and hips.",
-    "The airbag jeans protect new areas, especially the tailbone.",
-    "These jeans are made from the weakest denim in the world.",
-    "The airbags blow up when a rider falls off his motorcycle.",
-    "The airbag jeans are heavier and harder than regular pants.",
     "Riders can use the airbag jeans only one time.",
-  ].map((s, i) => new TableRow({ children: [
+    "The airbag jeans are heavier and harder than regular pants.",
+    "The airbag jeans protect new areas, especially the tailbone.",
+    "Many injuries from serious accidents happen to the upper body.",
+    "The airbags blow up when a rider falls off his motorcycle.",
+    "Riding a motorcycle is much more dangerous than driving a car.",
+    "These jeans are made from the weakest denim in the world."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -355,9 +356,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "에어백 청바지
 K.push(sp(120));
 K.push(box([
   ...["ⓐ The airbags blow up right away.",
-      "ⓑ A rider puts on the airbag jeans.",
-      "ⓒ The rider uses the same jeans again later.",
-      "ⓓ The rider falls off his motorcycle."]
+      "ⓑ The rider uses the same jeans again later.",
+      "ⓒ The rider falls off his motorcycle.",
+      "ⓓ A rider puts on the airbag jeans."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -397,15 +398,15 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 jeans · safe · comfortable   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4T · 5F · 6T · 7F · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 F · 4 T · 5 F · 6 T · 7 T · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 오토바이 사고에서 몸을 지켜 주는 에어백 청바지(문장 3·6–10)와 일반 바지처럼 편안하다는 장점(문장 11–12)을 소개한다. 소재(에어백 청바지)와 특징(안전하고 편안함)을 담은 ①이 제목이다. ③·⑤는 지엽적 오답, ②·④는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 오토바이 사고에서 몸을 지켜 주는 에어백 청바지(문장 3·6–10)와 일반 바지처럼 편안하다는 장점(문장 11–12)을 소개한다. 소재(에어백 청바지)와 특징(안전하고 편안함)을 담은 ④이 제목이다. ②·⑤는 지엽적 오답, ①·③는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ③");
 B("문장 7에서 이 청바지는 세계에서 가장 튼튼한(strongest) 데님으로 만들어진다. 가장 약한 데님이라고 한 ③이 본문과 반대된다. ①은 문장 1, ②는 문장 4, ④는 문장 9, ⑤는 문장 12에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) them은 앞에서 계속 이야기해 온 에어백 청바지를 가리킨다. 여러 번 다시 쓸 수 있는 것이 무엇인지 생각하면 된다 — 지시어는 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   These airbags protect the rider from getting hurt.");
 B("문장 10을 그대로 복원하는 문제다. ① 첫 글자는 대문자 These.   ② 주어가 복수이므로 동사는 protect.   ③ protect A from B(‘A를 B로부터 지키다’)의 from 자리를 지킨다.", true);
@@ -419,10 +420,10 @@ B("[학습 포인트]   these·this가 붙으면 반드시 앞 문장에 짝이 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 T · 5 F · 6 T · 7 F · 8 F");
-B("1 T — 문장 1.   2 F — 문장 4: 상체(upper)가 아니라 하체(lower body)에 부상이 많다.   3 T — 문장 5.   4 T — 문장 6.   5 F — 문장 7: 가장 약한(weakest)이 아니라 가장 튼튼한(strongest) 데님이다.   6 T — 문장 9.   7 F — 문장 11: 일반 바지만큼 편안하다.   8 F — 문장 12: 한 번이 아니라 여러 번 쓸 수 있다.  거짓 문장은 모두 딱 한 요소(upper, weakest, heavier, only one time)를 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (d) → (a) → (c)");
-B("ⓑ 라이더가 에어백 청바지를 입는다 → ⓓ 오토바이에서 떨어진다(문장 9) → ⓐ 에어백이 곧바로 부풀어 오른다(문장 9) → ⓒ 나중에 같은 청바지를 다시 쓴다(문장 12). '여러 번 쓸 수 있다'는 마지막 문장이 곧 마지막 단계라는 것을 잡아내는 것이 핵심이다.", true);
+Hs("R1   True / False   ·   1 T · 2 F · 3 F · 4 T · 5 F · 6 T · 7 T · 8 F");
+   B("1 T — 문장 5.   2 F — 문장 12: 한 번이 아니라 여러 번 쓸 수 있다.  거짓 문장은 모두 딱 한 요소(upper, weakest, heavier, only one time)를 비튼 것이다.   3 F — 문장 11: 일반 바지만큼 편안하다.   4 T — 문장 6.   5 F — 문장 4: 상체(upper)가 아니라 하체(lower body)에 부상이 많다.   6 T — 문장 9.   7 T — 문장 1.   8 F — 문장 7: 가장 약한(weakest)이 아니라 가장 튼튼한(strongest) 데님이다.", true);
+Hs("R2   사건 순서   ·   (d) → (c) → (a) → (b)");
+B("ⓓ 라이더가 에어백 청바지를 입는다 → ⓒ 오토바이에서 떨어진다(문장 9) → ⓐ 에어백이 곧바로 부풀어 오른다(문장 9) → ⓑ 나중에 같은 청바지를 다시 쓴다(문장 12). '여러 번 쓸 수 있다'는 마지막 문장이 곧 마지막 단계라는 것을 잡아내는 것이 핵심이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

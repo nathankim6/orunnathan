@@ -79,9 +79,11 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① The Secret Apartment in the Eiffel Tower", "② How to Buy a House in Paris",
- "③ The History of French Towers", "④ Gustave Eiffel’s Childhood",
- "⑤ The Best View Points in Paris"].forEach(c => K.push(ch(c)));
+["① How to Buy a House in Paris",
+ "② The History of French Towers",
+ "③ Gustave Eiffel’s Childhood",
+ "④ The Best View Points in Paris",
+ "⑤ The Secret Apartment in the Eiffel Tower"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
@@ -93,11 +95,11 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the apartment on the top floor",
- "② the Eiffel Tower itself",
- "③ the money from the people",
- "④ the special window",
- "⑤ the city of Paris"].forEach(c => K.push(ch(c)));
+["① the Eiffel Tower itself",
+ "② the money from the people",
+ "③ the special window",
+ "④ the city of Paris",
+ "⑤ the apartment on the top floor"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -144,7 +146,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -157,7 +159,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -194,7 +196,7 @@ K.push(spF(2, 85, 0.06));
  [8, "They offered him lots of money, but he said no."],
  [11, "Unfortunately, you can’t go inside, but you can look at it through a special window."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -249,7 +251,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 에펠탑 꼭대기의 비밀 아파트", "② 파리에서 집을 빌리는 방법", "③ 에펠탑을 짓는 데 쓰인 재료"].forEach(c =>
+["① 파리에서 집을 빌리는 방법",
+ "② 에펠탑 꼭대기의 비밀 아파트",
+ "③ 에펠탑을 짓는 데 쓰인 재료"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -270,7 +274,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -317,7 +321,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -332,15 +336,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Many tourists go to see the Eiffel Tower every year.",
-    "There is a secret apartment at the bottom of the tower.",
-    "Gustave Eiffel named the tower after himself.",
-    "The apartment had a wonderful view of Paris.",
-    "Eiffel sold his apartment for lots of money.",
-    "The apartment still remains at the top floor today.",
-    "You can go inside the apartment today.",
     "The secret place makes the tower less interesting.",
-  ].map((s, i) => new TableRow({ children: [
+    "The apartment had a wonderful view of Paris.",
+    "There is a secret apartment at the bottom of the tower.",
+    "Eiffel sold his apartment for lots of money.",
+    "Many tourists go to see the Eiffel Tower every year.",
+    "You can go inside the apartment today.",
+    "Gustave Eiffel named the tower after himself.",
+    "The apartment still remains at the top floor today."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -356,9 +359,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "에펠탑 아파트
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Many people offered him lots of money for it.",
-      "ⓑ Gustave Eiffel built a tower in 1889.",
-      "ⓒ He secretly kept an apartment on the top floor.",
-      "ⓓ Today people look at it through a special window."]
+      "ⓑ He secretly kept an apartment on the top floor.",
+      "ⓒ Today people look at it through a special window.",
+      "ⓓ Gustave Eiffel built a tower in 1889."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -396,22 +399,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("you(S)·can’t go(△V)·but[네모]·you(S′)·can look(△V′)·through a special window(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 언젠가 파리를 방문하고 싶다  (2) 그 좋은 소식은 우리 엄마를 아주 행복하게 만들었다  (3) 그녀는 자기 방을 더 편안하게 만들고 싶어 한다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 apartment · secret · interesting   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 apartment · secret · interesting   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4T · 5F · 6T · 7F · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (a) → (d)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 F · 5 T · 6 F · 7 T · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 에펠탑 꼭대기에 숨어 있는 비밀 아파트(문장 3–5)와 에펠이 그곳을 아무에게도 빌려주지 않은 이야기(문장 7–9), 그리고 오늘날의 모습(문장 10–12)을 들려준다. 소재(에펠탑)와 특징(비밀 아파트)을 함께 담은 ①이 적절하다. ③·⑤는 배경만 건드린 지엽적 오답, ②·④는 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ⑤");
+B("이 글은 에펠탑 꼭대기에 숨어 있는 비밀 아파트(문장 3–5)와 에펠이 그곳을 아무에게도 빌려주지 않은 이야기(문장 7–9), 그리고 오늘날의 모습(문장 10–12)을 들려준다. 소재(에펠탑)와 특징(비밀 아파트)을 함께 담은 ⑤이 적절하다. ②·④는 배경만 건드린 지엽적 오답, ①·③는 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ③");
 B("문장 8에서 사람들이 많은 돈을 제안했지만 에펠은 거절했다(he said no)고 했으므로, 부자들에게 빌려주었다는 ③은 본문과 반대된다. ①은 문장 4, ②는 문장 5, ④는 문장 10, ⑤는 문장 11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) it은 앞에서 계속 이야기해 온 꼭대기 층의 아파트를 가리킨다(문장 5·7). 에펠이 자기만의 특별한 공간으로 남겨 두고 싶어 한 것이 무엇인지 생각하면 된다.", true);
 Hs("독해 04   배열 영작   ·   There is a secret apartment at the top of the tower!");
 B("문장 3을 그대로 복원하는 문제다. ① 첫 글자는 대문자 There.   ② There is 뒤의 명사(a secret apartment)가 진짜 주어.   ③ at the top of the tower — 위치를 나타내는 말이 맨 뒤에 온다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 apartment · secret · interesting     1-3 아래 참조");
-B("1-1   정답 ①. 이 글은 에펠탑 꼭대기의 비밀 아파트를 소개한다. ② 집을 빌리는 방법은 나오지 않고(오히려 빌려주지 않았다), ③ 탑을 짓는 재료 이야기도 없다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 apartment · secret · interesting     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 에펠탑 꼭대기의 비밀 아파트를 소개한다. ① 집을 빌리는 방법은 나오지 않고(오히려 빌려주지 않았다), ③ 탑을 짓는 재료 이야기도 없다.");
 B("1-2   ○표 할 세 단어: apartment(힌트① 탑 꼭대기에 있는 것) · secret(힌트② 그것의 특징) · interesting(힌트③ 글쓴이의 평가). 나머지 셋(tourists · money · window)은 본문에 등장하지만 주제문에 들어가지 않는다 — 배경과 세부일 뿐이다.");
 B("1-3   문장 6 — It은 꼭대기 층 아파트에 ○ (문장 5의 그 아파트).   문장 8 — They는 빌리려는 사람들에 ○ (문장 7의 Many people).   문장 11 — it은 그 아파트에 ○ (창문은 들여다보는 도구다).");
 B("[학습 포인트]   문장 4의 it은 탑, 문장 6의 It은 아파트다. 같은 it이라도 바로 앞 문장이 무엇을 말했는지에 따라 가리키는 것이 바뀐다.", true);
@@ -420,10 +423,10 @@ B("[학습 포인트]   문장 4의 it은 탑, 문장 6의 It은 아파트다. �
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 T · 5 F · 6 T · 7 F · 8 F");
-B("1 T — 문장 1.   2 F — 문장 3: 탑의 아래(bottom)가 아니라 꼭대기(top)에 있다.   3 T — 문장 4.   4 T — 문장 6.   5 F — 문장 8: 팔거나 빌려준 것이 아니라 거절했다.   6 T — 문장 10.   7 F — 문장 11: 안에는 들어갈 수 없다.   8 F — 문장 12: 덜 흥미롭게가 아니라 더 흥미롭게 만든다.  거짓 문장은 모두 딱 한 요소를 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (c) → (a) → (d)");
-B("ⓑ 에펠이 1889년에 탑을 세운다(문장 4) → ⓒ 꼭대기 층에 몰래 아파트를 둔다(문장 5) → ⓐ 사람들이 많은 돈을 제안한다(문장 7–8) → ⓓ 오늘날 사람들은 창문으로 들여다본다(문장 11). 문장 1–3은 오늘의 이야기로 먼저 시작하지만, 사건은 1889년부터 순서대로 흘러간다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 F · 4 F · 5 T · 6 F · 7 T · 8 T");
+   B("1 F — 문장 12: 덜 흥미롭게가 아니라 더 흥미롭게 만든다.  거짓 문장은 모두 딱 한 요소를 비튼 것이다.   2 T — 문장 6.   3 F — 문장 3: 탑의 아래(bottom)가 아니라 꼭대기(top)에 있다.   4 F — 문장 8: 팔거나 빌려준 것이 아니라 거절했다.   5 T — 문장 1.   6 F — 문장 11: 안에는 들어갈 수 없다.   7 T — 문장 4.   8 T — 문장 10.", true);
+Hs("R2   사건 순서   ·   (d) → (b) → (a) → (c)");
+B("ⓓ 에펠이 1889년에 탑을 세운다(문장 4) → ⓑ 꼭대기 층에 몰래 아파트를 둔다(문장 5) → ⓐ 사람들이 많은 돈을 제안한다(문장 7–8) → ⓒ 오늘날 사람들은 창문으로 들여다본다(문장 11). 문장 1–3은 오늘의 이야기로 먼저 시작하지만, 사건은 1889년부터 순서대로 흘러간다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

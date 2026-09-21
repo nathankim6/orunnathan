@@ -97,25 +97,27 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["\u2460 Into the Eye: The Storm Trick of Shearwaters", "\u2461 How Scientists Track Birds with Cameras",
- "\u2462 The Best Places to Watch Sea Birds", "\u2463 Why Storms Are Getting Stronger Every Year",
- "\u2464 Birds That Always Fly Away from Bad Weather"].forEach(c => K.push(ch(c)));
+["① How Scientists Track Birds with Cameras",
+ "② Into the Eye: The Storm Trick of Shearwaters",
+ "③ The Best Places to Watch Sea Birds",
+ "④ Why Storms Are Getting Stronger Every Year",
+ "⑤ Birds That Always Fly Away from Bad Weather"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["\u2460 Shearwaters are birds that live near the ocean.",
- "\u2461 Most birds fly away from big storms.",
- "\u2462 Some shearwaters stayed near the storm\u2019s center for up to eight hours.",
- "\u2463 Scientists tracked the birds\u2019 flight paths for only one year.",
- "\u2464 Some shearwaters fly around the storm\u2019s edges to move faster."].forEach(c => K.push(ch(c)));
+["① Scientists tracked the birds\u2019 flight paths for only one year.",
+ "② Shearwaters are birds that live near the ocean.",
+ "③ Most birds fly away from big storms.",
+ "④ Some shearwaters stayed near the storm\u2019s center for up to eight hours.",
+ "⑤ Some shearwaters fly around the storm\u2019s edges to move faster."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) this가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["\u2460 flying straight into the storm\u2019s center",
- "\u2461 flying around the storm\u2019s edges",
- "\u2462 staying near the land during storms",
- "\u2463 tracking the birds\u2019 flight paths for 11 years",
- "\u2464 eating more food before a storm"].forEach(c => K.push(ch(c)));
+["① flying around the storm\u2019s edges",
+ "② flying straight into the storm\u2019s center",
+ "③ staying near the land during storms",
+ "④ tracking the birds\u2019 flight paths for 11 years",
+ "⑤ eating more food before a storm"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -174,7 +176,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -188,7 +190,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -224,7 +226,7 @@ K.push(spF(2, 85, 0.06));
  [7, "To learn more about shearwater behavior, scientists tracked their flight paths during storms for 11 years."],
  [10, "Meanwhile, other shearwaters head straight into the storm\u2019s center."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -282,7 +284,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["\u2460 폭풍이 만들어지는 과정", "\u2461 폭풍 속으로 날아드는 슴새", "\u2462 과학자들이 쓰는 추적 장비"].forEach(c =>
+["① 폭풍 속으로 날아드는 슴새",
+ "② 폭풍이 만들어지는 과정",
+ "③ 과학자들이 쓰는 추적 장비"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -294,7 +298,7 @@ K.push(T([1740,1740,1740,1740,1740,1740], [new TableRow({ children: KWCAND.map((
   new Paragraph({ children: [t(ko, { size: 14, color: SUB })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 190 } }),
 ], { w: 1740, shade: FIELD, va: VerticalAlign.CENTER, m: { top: 240, bottom: 240, left: 40, right: 40 },
     b: { top: bd(4, FLINE), bottom: bd(4, FLINE), left: bd(4, FLINE), right: bd(4, FLINE) } })) })]));
-K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("\u2460 이 글의 주인공  \u2461 주인공이 뛰어드는 곳  \u2462 글쓴이의 평가 \u2014 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
+K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 이 글의 주인공  ② 주인공이 뛰어드는 곳  ③ 글쓴이의 평가 — 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
 K.push(spF(4, 260, 0.30));
 
 K.push(p([t("1-3  ", { size: 18, bold: true, color: GOLD }), t("지시어 이해하기", { size: 19, bold: true }),
@@ -303,7 +307,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 1950, 7350];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -405,11 +409,11 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["\u2460 동물의 행동을 사실대로 알려 주는 설명문",
- "\u2461 물건을 팔기 위해 만든 광고",
- "\u2462 하루 일을 기록한 일기",
- "\u2463 친구에게 안부를 전하는 편지",
- "\u2464 리듬을 살려 쓴 시"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
+["① 동물의 행동을 사실대로 알려 주는 설명문",
+ "② 물건을 팔기 위해 만든 광고",
+ "③ 하루 일을 기록한 일기",
+ "④ 친구에게 안부를 전하는 편지",
+ "⑤ 리듬을 살려 쓴 시"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
 K.push(brk());
@@ -459,12 +463,12 @@ K.push(p([t("조건 ", { size: 16, bold: true, color: GOLD }),
   t("덩어리의 순서를 괄호에 쓰세요. 덩어리 안의 단어는 바꾸지 않습니다.", { size: 16, color: SUB })], { after: 100, line: 250 }));
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("보기   ", { size: 16, bold: true, color: NAVY2 }),
-     t("\u24D0 is a smart trick     \u24D1 that only shearwaters know.     \u24D2 Flying into     \u24D3 a storm\u2019s center", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
+     t("ⓐ is a smart trick     ⓑ that only shearwaters know.     ⓒ Flying into     ⓓ a storm\u2019s center", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
   { w: W, shade: COOL, b: { top: bd(4, CLINE), bottom: bd(4, CLINE), left: NOB, right: NOB }, m: { top: 150 + Math.round((FT(6) || 0) * 0.02), bottom: 150 + Math.round((FT(6) || 0) * 0.02), left: 180, right: 180 } })] })]));
 K.push(spF(6, 200, 0.05));
 K.push(p([t("순서   ", { size: 17, bold: true, color: NAVY2 }),
-  t("(  \u24D2  )", { size: 19 }), t("  \u2192  (      )  \u2192  (      )  \u2192  (      )", { size: 19 }),
-  t("      (c)가 맨 앞 \u2014 동명사가 주어!", { size: 14, color: GOLD, bold: true })], { after: 0, align: AlignmentType.CENTER }));
+  t("(  ⓒ  )", { size: 19 }), t("  →  (      )  →  (      )  →  (      )", { size: 19 }),
+  t("      (c)가 맨 앞 — 동명사가 주어!", { size: 14, color: GOLD, bold: true })], { after: 0, align: AlignmentType.CENTER }));
 
 /* ═══════════ 6~7면 [DATA] STEP 4 요약 · STEP 5 같은 뜻 찾기 ═══════════ */
 K.push(brk());
@@ -512,15 +516,15 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 3, main: "fly straight into them",
-    opts: ["\u2460 fly far away from the storms", "\u2461 fly right into the storms", "\u2462 stop flying during storms"] },
+    opts: ["① fly far away from the storms", "② stop flying during storms", "③ fly right into the storms"] },
   { sn: 5, main: "for up to eight hours",
-    opts: ["\u2460 for as long as eight hours", "\u2461 for only a few seconds", "\u2462 for eight days without food"] });
+    opts: ["① for only a few seconds", "② for as long as eight hours", "③ for eight days without food"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 6, main: "very surprising",
-    opts: ["\u2460 quite normal and common", "\u2461 very dangerous for people", "\u2462 hard to believe"] },
+    opts: ["① hard to believe", "② quite normal and common", "③ very dangerous for people"] },
   { sn: 9, main: "to move faster",
-    opts: ["\u2460 to slow down", "\u2461 to travel more quickly", "\u2462 to find more food"] });
+    opts: ["① to slow down", "② to find more food", "③ to travel more quickly"] });
 K.push(spF(7, 150, 0.16));
 
 K.push(T([W], [new TableRow({ children: [cel([
@@ -575,15 +579,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Shearwaters are birds that live near the ocean.",
-    "Most birds fly straight into big storms.",
-    "Some shearwaters fly very close to the storm\u2019s center.",
     "They stayed near the eye for up to eight minutes.",
+    "Scientists think shearwaters do this to use more energy.",
     "Many other birds are known to act this way.",
     "Scientists tracked the birds\u2019 flight paths for 11 years.",
+    "Most birds fly straight into big storms.",
     "Some shearwaters use the strong winds at the edges to move faster.",
-    "Scientists think shearwaters do this to use more energy.",
-  ].map((s, i) => new TableRow({ children: [
+    "Some shearwaters fly very close to the storm\u2019s center.",
+    "Shearwaters are birds that live near the ocean."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -598,10 +601,10 @@ K.push(spF(8, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "과학자들이 슴새를 연구한 과정 ⓐ~ⓓ를 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["\u24D0 Scientists tracked the birds\u2019 flight paths for 11 years.",
-      "\u24D1 Scientists noticed shearwaters flying close to the storm\u2019s eye.",
-      "\u24D2 Scientists think the birds do this to save energy.",
-      "\u24D3 Scientists found out that some birds fly around the edges."]
+  ...["ⓐ Scientists tracked the birds\u2019 flight paths for 11 years.",
+      "ⓑ Scientists think the birds do this to save energy.",
+      "ⓒ Scientists noticed shearwaters flying close to the storm\u2019s eye.",
+      "ⓓ Scientists found out that some birds fly around the edges."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -622,12 +625,12 @@ const m3b = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(mw3, [
   thead(["어휘", "답", "영영풀이"], mw3, TEAL),
   ...[
-    ["1  ocean", "\u24D0 to stay away from something"],
-    ["2  storm", "\u24D1 the way a person or animal acts"],
-    ["3  notice", "\u24D2 a very large area of salt water"],
-    ["4  track", "\u24D3 very bad weather with strong wind and rain"],
-    ["5  avoid", "\u24D4 to follow and record where something goes"],
-    ["6  behavior", "\u24D5 to see or feel something for the first time"],
+    ["1  ocean", "ⓐ to stay away from something"],
+    ["2  storm", "ⓑ the way a person or animal acts"],
+    ["3  notice", "ⓒ a very large area of salt water"],
+    ["4  track", "ⓓ very bad weather with strong wind and rain"],
+    ["5  avoid", "ⓔ to follow and record where something goes"],
+    ["6  behavior", "ⓕ to see or feel something for the first time"],
   ].map(([wd, df]) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(wd, { size: 18, bold: true, color: NAVY })], spacing: { after: 0 } }),
       { w: mw3[0], shade: GREY, b: m3b, va: VerticalAlign.CENTER, m: { top: 158 + RX9, bottom: 158 + RX9, left: 150, right: 80 } }),
@@ -738,30 +741,30 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문7 ", { size: 17, bold: true, color: NAVY2 }), t("To learn more~(M)·scientists(S)·tracked(△V)·during storms for 11 years(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 우리는 동물원을 방문할 계획이 있다  (2) 오늘 오후에 비가 올지도 모른다  (3) 그녀는 자전거를 고칠 좋은 방법을 알고 있을지도 모른다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 shearwaters · storm · trick        ", { size: 19, bold: true }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 shearwaters · storm · trick        ", { size: 19, bold: true }),
      t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 대조 · 이유 · 한편 · 덧붙임   2-2 [B] 놀라운 관찰 · [E] 마무리   2-3 ①", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (c) → (d) → (a) → (b)  ·  Flying into a storm’s center is a smart trick that only shearwaters know.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) storms  (2) edges  (3) center  (4) energy        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 3 ②  문장 5 ①  문장 6 ③  문장 9 ②", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 3 ③  문장 5 ②  문장 6 ①  문장 9 ③", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5F · 6T · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (d) → (c)", { size: 19, bold: true })], { after: 25 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 F · 4 T · 5 F · 6 T · 7 T · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (d) → (b)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(c) · 2(d) · 3(f) · 4(e) · 5(a) · 6(b)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) are  (2) was  (3) might do  (4) Flying", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) ocean (2) storms (3) straight (4) center (5) surprising (6) tracked (7) edges (8) energy", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) They stayed there for up to eight hours.  (2) They use the strong winds there to move faster.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("대부분의 새와 달리 폭풍 속으로 날아드는 슴새의 행동(문장 1–6)과 11년 추적으로 밝혀진 두 가지 비행법·이유(문장 7–12)를 소개한다. 소재와 평가를 함께 담은 ①이 제목이다. ②은 지엽적이고 ③·④는 무관, ⑤는 본문과 반대다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 7에서 과학자들은 11년 동안 비행 경로를 추적했다고 했으므로, 1년뿐이라는 ④은 본문과 다르다. ①은 문장 1, ②은 문장 3, ③는 문장 4–5, ⑤는 문장 8–9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ②");
+B("대부분의 새와 달리 폭풍 속으로 날아드는 슴새의 행동(문장 1–6)과 11년 추적으로 밝혀진 두 가지 비행법·이유(문장 7–12)를 소개한다. 소재와 평가를 함께 담은 ②이 제목이다. ①은 지엽적이고 ③·④는 무관, ⑤는 본문과 반대다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 7에서 과학자들은 11년 동안 비행 경로를 추적했다고 했으므로, 1년뿐이라는 ①은 본문과 다르다. ②은 문장 1, ③은 문장 3, ④는 문장 4–5, ⑤는 문장 8–9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) this는 바로 앞 문장 10의 행동, 곧 폭풍의 중심으로 곧장 날아드는 것을 가리킨다. 뒤에 이어지는 '에너지를 아끼려고'가 그 행동의 이유다.", true);
 Hs("독해 04   배열 영작   ·   Shearwaters are birds that live near the ocean.");
 B("문장 1을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Shearwaters — 복수 주어이므로 are.   ② birds 뒤에 that이 와서 뒤의 설명을 잇는다.   ③ near the ocean이 한 덩어리로 맨 뒤.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 shearwaters · storm · trick     1-3 아래 참조");
-B("1-1   정답 ②. 폭풍 속으로 날아드는 슴새의 행동과 그 이유를 다룬 글이다. ① 폭풍이 만들어지는 과정은 나오지 않고, ③ 추적은 연구 방법으로 한 번 언급될 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 shearwaters · storm · trick     1-3 아래 참조");
+B("1-1   정답 ①. 폭풍 속으로 날아드는 슴새의 행동과 그 이유를 다룬 글이다. ② 폭풍이 만들어지는 과정은 나오지 않고, ③ 추적은 연구 방법으로 한 번 언급될 뿐이다.");
 B("1-2   ○표 할 세 단어: shearwaters(힌트① 주인공) · storm(힌트② 뛰어드는 곳) · trick(힌트③ 글쓴이의 평가). 나머지 셋(scientists · ocean · winds)은 본문에 나오지만 관찰자와 배경일 뿐이다.");
 B("1-3   문장 5 — They는 슴새들, there는 폭풍의 눈에 ○.   문장 9 — there는 폭풍 가장자리에 ○ (문장 8의 edges).   문장 11 — this는 중심으로 날아들기에 ○ (문장 10).");
 B("[학습 포인트]   같은 there라도 문장 5에서는 폭풍의 눈, 문장 9에서는 폭풍 가장자리다. 장소를 받는 지시어는 반드시 바로 앞 문장에서 짝을 찾아 확인하자.", true);
@@ -781,20 +784,20 @@ B("3-3  정답 순서 — ⓒ Flying into → ⓓ a storm’s center → ⓐ is 
 B("[채점 포인트]  동명사 덩어리(ⓒ+ⓓ)가 통째로 주어다. 주어가 길어도 동사는 하나(is) — 주어 덩어리의 끝을 찾는 것이 요령이다.", true);
 Hs("STEP 4   요약문   ·   (1) storms  (2) edges  (3) center  (4) energy");
 B("(1)은 문장 2–3의 storms, (2)는 문장 8의 edges, (3)은 문장 10의 center, (4)는 문장 11의 energy에서 가져온다. 요약문이 곧 이 글의 흐름이다: 특이 행동(1) → 두 갈래(2·3) → 이유(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 3 ②   문장 5 ①   문장 6 ③   문장 9 ②  (정답 선지는 무표시)");
-B("문장 3 fly straight into them   ① ✕ [반대] 폭풍에서 멀리 달아난다 — 정반대.   ② ○ 폭풍 속으로 곧장 날아든다.   ③ ✕ [무관] 폭풍 때 나는 것을 멈춘다는 말은 없다.");
-B("문장 5 for up to eight hours   ① ○ 여덟 시간이나 되는 동안.   ② ✕ [반대] 단 몇 초 — 정반대.   ③ ✕ [무관] 여드레 동안 굶었다는 말은 지문에 없다.");
-B("문장 6 very surprising   ① ✕ [반대] 아주 흔하고 평범하다 — 정반대.   ② ✕ [무관] 사람에게 위험하다는 말은 없다.   ③ ○ 믿기 어려울 만큼 놀랍다.");
-B("문장 9 to move faster   ① ✕ [반대] 속도를 늦추려고 — 정반대.   ② ○ 더 빨리 이동하려고.   ③ ✕ [무관] 먹이를 더 찾으려고는 지문에 없다.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 3 ③   문장 5 ②   문장 6 ①   문장 9 ③  (정답 선지는 무표시)");
+B("문장 3 fly straight into them   ① ✕ [반대] 폭풍에서 멀리 달아난다 — 정반대.   ③ ○ 폭풍 속으로 곧장 날아든다.   ② ✕ [무관] 폭풍 때 나는 것을 멈춘다는 말은 없다.");
+B("문장 5 for up to eight hours   ② ○ 여덟 시간이나 되는 동안.   ① ✕ [반대] 단 몇 초 — 정반대.   ③ ✕ [무관] 여드레 동안 굶었다는 말은 지문에 없다.");
+B("문장 6 very surprising   ② ✕ [반대] 아주 흔하고 평범하다 — 정반대.   ③ ✕ [무관] 사람에게 위험하다는 말은 없다.   ① ○ 믿기 어려울 만큼 놀랍다.");
+B("문장 9 to move faster   ① ✕ [반대] 속도를 늦추려고 — 정반대.   ③ ○ 더 빨리 이동하려고.   ② ✕ [무관] 먹이를 더 찾으려고는 지문에 없다.");
 B("[학습 포인트]  up to(최대 ~까지)처럼 수를 꾸미는 말은 시험에서 자주 바뀐다. 숫자만 보지 말고 앞뒤의 꾸밈말까지 함께 읽자.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 F · 6 T · 7 T · 8 F");
-B("1 T — 문장 1.   2 F — 문장 3: 대부분의 새는 폭풍에서 멀리 달아난다.   3 T — 문장 4.   4 F — 문장 5: 여덟 분(minutes)이 아니라 여덟 시간(hours)이다.   5 F — 문장 6: 이렇게 하는 새는 슴새 말고는 없다.   6 T — 문장 7.   7 T — 문장 8–9.   8 F — 문장 11: 에너지를 더 쓰는 게 아니라 아끼려고 한다.  거짓 넷은 모두 한 요소만 비튼 것이다.", true);
-Hs("R2   연구 순서   ·   (b) → (a) → (d) → (c)");
-B("ⓑ 폭풍의 눈 가까이 나는 슴새를 발견한다(문장 4) → ⓐ 11년 동안 비행 경로를 추적한다(문장 7) → ⓓ 일부는 가장자리를 돈다는 것을 알아낸다(문장 8) → ⓒ 에너지를 아끼려는 행동이라고 추측한다(문장 11). 관찰 → 조사 → 발견 → 해석, 과학 글의 전형적인 순서다.", true);
+Hs("R1   True / False   ·   1 F · 2 F · 3 F · 4 T · 5 F · 6 T · 7 T · 8 T");
+   B("1 F — 문장 5: 여덟 분(minutes)이 아니라 여덟 시간(hours)이다.   2 F — 문장 11: 에너지를 더 쓰는 게 아니라 아끼려고 한다.  거짓 넷은 모두 한 요소만 비튼 것이다.   3 F — 문장 6: 이렇게 하는 새는 슴새 말고는 없다.   4 T — 문장 7.   5 F — 문장 3: 대부분의 새는 폭풍에서 멀리 달아난다.   6 T — 문장 8–9.   7 T — 문장 4.   8 T — 문장 1.", true);
+Hs("R2   연구 순서   ·   (c) → (a) → (d) → (b)");
+B("ⓒ 폭풍의 눈 가까이 나는 슴새를 발견한다(문장 4) → ⓐ 11년 동안 비행 경로를 추적한다(문장 7) → ⓓ 일부는 가장자리를 돈다는 것을 알아낸다(문장 8) → ⓑ 에너지를 아끼려는 행동이라고 추측한다(문장 11). 관찰 → 조사 → 발견 → 해석, 과학 글의 전형적인 순서다.", true);
 Hs("R3   영영풀이   ·   1 (c) · 2 (d) · 3 (f) · 4 (e) · 5 (a) · 6 (b)");
 B("ocean = 아주 넓은 소금물의 구역 · storm = 강한 바람과 비가 몰아치는 나쁜 날씨 · notice = 처음으로 알아채다 · track = 어디로 가는지 따라가며 기록하다 · avoid = ~에서 떨어져 있다, 피하다 · behavior = 사람이나 동물이 행동하는 방식.", true);
 Hs("R4   어법 기초   ·   (1) are  (2) was  (3) might do  (4) Flying");

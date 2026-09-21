@@ -84,10 +84,10 @@ K.push(sp(65));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Slow lorises are night-active animals from Asia.",
- "② Slow lorises raise their arms to produce the poison.",
- "③ Researchers studied 82 slow lorises in Indonesia.",
- "④ Females suffered more frequent bites than males.",
+["① Females suffered more frequent bites than males.",
+ "② Slow lorises are night-active animals from Asia.",
+ "③ Slow lorises raise their arms to produce the poison.",
+ "④ Researchers studied 82 slow lorises in Indonesia.",
  "⑤ It is rare to see animals use poison against their own species."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) These bite wounds가 가리키는 것으로 가장 적절한 것은?"));
@@ -143,7 +143,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -156,7 +156,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -193,7 +193,7 @@ K.push(spF(2, 85, 0.06));
  [5, "Researchers studied 82 slow lorises in Indonesia."],
  [7, "They noticed that 20% of them had new bite wounds, sometimes very serious."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -322,7 +322,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -337,15 +337,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Slow lorises are night-active animals from Asia.",
-    "Slow lorises are one of the world’s few poisonous birds.",
-    "The poison goes into their sharp teeth.",
-    "Researchers studied 82 slow lorises in Australia.",
-    "These animals often use their poison on each other.",
-    "They noticed that 80% of them had new bite wounds.",
     "Males suffered more frequent bites than females.",
+    "Researchers studied 82 slow lorises in Australia.",
+    "Slow lorises are one of the world’s few poisonous birds.",
     "It is common to see animals use poison against their own species.",
-  ].map((s, i) => new TableRow({ children: [
+    "The poison goes into their sharp teeth.",
+    "They noticed that 80% of them had new bite wounds.",
+    "Slow lorises are night-active animals from Asia.",
+    "These animals often use their poison on each other."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -360,10 +359,10 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "느림보로리스의 독과 연구에 관한 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ The poison goes into their sharp teeth.",
-      "ⓑ Slow lorises lick the glands on their arms.",
-      "ⓒ Researchers found new bite wounds on the lorises.",
-      "ⓓ Slow lorises raise their arms above their head."]
+  ...["ⓐ Slow lorises raise their arms above their head.",
+      "ⓑ The poison goes into their sharp teeth.",
+      "ⓒ Slow lorises lick the glands on their arms.",
+      "ⓓ Researchers found new bite wounds on the lorises."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -403,14 +402,14 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 poison · fight · species   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 F · 4 F · 5 T · 6 F · 7 T · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (b) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
 Hs("독해 01   제목   ·   정답 ①");
 B("이 글은 귀여워 보이는 느림보로리스가 독을 지닌 드문 포유류이며(문장 2), 그 독을 같은 종끼리 싸울 때도 쓴다는 연구(문장 6–9)를 소개한다. 소재와 특징을 함께 담은 ①이 제목으로 적절하다. ③·⑤는 지엽적이고, ②·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 8에서 더 자주 물린 쪽은 수컷(Males)이다. 암컷이 더 자주 물렸다는 ④가 본문과 반대된다. ①은 문장 1, ②은 문장 3, ③는 문장 5, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 8에서 더 자주 물린 쪽은 수컷(Males)이다. 암컷이 더 자주 물렸다는 ①가 본문과 반대된다. ②은 문장 1, ③은 문장 3, ④는 문장 5, ⑤는 문장 10에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) These bite wounds는 바로 앞 문장 7에서 로리스의 20%에게 발견된, 서로 물어서 생긴 새 상처를 가리킨다 — these가 붙으면 반드시 앞 문장에서 짝을 찾는다.", true);
 Hs("독해 04   배열 영작   ·   The poison then goes into their sharp teeth.");
@@ -425,10 +424,10 @@ B("[학습 포인트]   문장 6처럼 한 문장 안에 지시어가 둘이면,
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 1.   2 F — 문장 2: 새(birds)가 아니라 포유류(mammals)다.   3 T — 문장 4.   4 F — 문장 5: 호주가 아니라 인도네시아다.   5 T — 문장 6.   6 F — 문장 7: 80%가 아니라 20%다.   7 T — 문장 8.   8 F — 문장 10: 흔한(common) 것이 아니라 드문(rare) 일이다.  거짓 문장은 모두 딱 한 요소(birds, Australia, 80%, common)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (d) → (b) → (a) → (c)");
-B("ⓓ 팔을 머리 위로 들어 올린다(문장 3) → ⓑ 팔의 분비샘을 핥는다(문장 3) → ⓐ 독이 날카로운 이빨로 들어간다(문장 4) → ⓒ 연구자들이 물린 상처를 발견한다(문장 7). 독을 만드는 과정이 먼저, 그 독이 남긴 흔적을 확인하는 연구가 나중이다.", true);
+Hs("R1   True / False   ·   1 T · 2 F · 3 F · 4 F · 5 T · 6 F · 7 T · 8 T");
+   B("1 T — 문장 8.   2 F — 문장 5: 호주가 아니라 인도네시아다.   3 F — 문장 2: 새(birds)가 아니라 포유류(mammals)다.   4 F — 문장 10: 흔한(common) 것이 아니라 드문(rare) 일이다.  거짓 문장은 모두 딱 한 요소(birds, Australia, 80%, common)만 비튼 것이다.   5 T — 문장 4.   6 F — 문장 7: 80%가 아니라 20%다.   7 T — 문장 1.   8 T — 문장 6.", true);
+Hs("R2   사건 순서   ·   (a) → (c) → (b) → (d)");
+B("ⓐ 팔을 머리 위로 들어 올린다(문장 3) → ⓒ 팔의 분비샘을 핥는다(문장 3) → ⓑ 독이 날카로운 이빨로 들어간다(문장 4) → ⓓ 연구자들이 물린 상처를 발견한다(문장 7). 독을 만드는 과정이 먼저, 그 독이 남긴 흔적을 확인하는 연구가 나중이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

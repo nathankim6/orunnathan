@@ -80,22 +80,24 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① A Teenager’s Long Ride from Alaska to Argentina", "② How to Choose a Good Bike",
- "③ The Best High Schools in America", "④ The Most Dangerous Roads in Colombia",
+["① How to Choose a Good Bike",
+ "② The Best High Schools in America",
+ "③ The Most Dangerous Roads in Colombia",
+ "④ A Teenager’s Long Ride from Alaska to Argentina",
  "⑤ Reading Books About Faraway Countries"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Liam went on his adventure when he was 17 years old.",
- "② A book about a bike trip inspired Liam.",
- "③ Liam’s journey was easy from start to end.",
+ "② Liam’s journey was easy from start to end.",
+ "③ A book about a bike trip inspired Liam.",
  "④ In Colombia, Liam even had a bike accident.",
  "⑤ After 527 days, Liam reached Argentina."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) That experience가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① reading a book about a long bike trip",
- "② finishing high school in Alaska",
+["① finishing high school in Alaska",
+ "② reading a book about a long bike trip",
  "③ having a bike accident in Colombia",
  "④ traveling through 14 countries",
  "⑤ meeting a famous teenager"].forEach(c => K.push(ch(c)));
@@ -145,7 +147,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -158,7 +160,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -324,7 +326,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -339,15 +341,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Liam went on his great adventure when he was 17 years old.",
-    "Liam rode his bike from Argentina to Alaska.",
-    "A book about a bike trip inspired Liam.",
-    "Liam’s journey was easy from start to end.",
-    "In Colombia, Liam even had a bike accident.",
-    "Liam gave up after the accident.",
     "Liam traveled through 14 countries on his trip.",
+    "Liam rode his bike from Argentina to Alaska.",
+    "Liam gave up after the accident.",
+    "In Colombia, Liam even had a bike accident.",
+    "A book about a bike trip inspired Liam.",
+    "Liam went on his great adventure when he was 17 years old.",
     "Now Liam tells others not to travel.",
-  ].map((s, i) => new TableRow({ children: [
+    "Liam’s journey was easy from start to end."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -405,15 +406,15 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 bike · adventure · encourages   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 F · 4 T · 5 T · 6 T · 7 F · 8 F", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (b) → (d)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 17살 리암이 알래스카에서 아르헨티나까지 자전거로 달린 이야기다(문장 2·10). 주인공(10대)과 소재(긴 자전거 여행)를 함께 담은 ①이 정답이다. ④·⑤는 지엽적이고, ②·③은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 6에서 리암의 여정은 '전혀 쉽지 않았다(wasn’t easy at all)'고 했으므로, 처음부터 끝까지 쉬웠다는 ③은 본문과 반대된다. ①은 문장 2, ②은 문장 4–5, ④은 문장 8, ⑤는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 17살 리암이 알래스카에서 아르헨티나까지 자전거로 달린 이야기다(문장 2·10). 주인공(10대)과 소재(긴 자전거 여행)를 함께 담은 ④이 정답이다. ③·⑤는 지엽적이고, ①·②은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 6에서 리암의 여정은 '전혀 쉽지 않았다(wasn’t easy at all)'고 했으므로, 처음부터 끝까지 쉬웠다는 ②은 본문과 반대된다. ①은 문장 2, ③은 문장 4–5, ④은 문장 8, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) That experience는 바로 앞 문장 4에서 자전거 여행에 관한 책을 읽은 일을 가리킨다. that+명사는 앞 내용을 통째로 받는다 — 바로 앞 문장에서 짝을 찾자.", true);
 Hs("독해 04   배열 영작   ·   After 527 days, Liam reached Argentina.");
 B("문장 10을 그대로 복원하는 문제다. ① 첫 글자는 대문자 After.   ② days 뒤의 콤마를 빠뜨리지 않는다.   ③ reach는 뒤에 전치사 없이 바로 목적지가 온다.", true);
@@ -426,8 +427,8 @@ B("[학습 포인트]   문장 5가 이 지문의 백미다. 한 문장 안에�
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 2.   2 F — 문장 2: 방향이 반대다. 알래스카에서 아르헨티나로 갔다.   3 T — 문장 4–5.   4 F — 문장 6: 전혀 쉽지 않았다.   5 T — 문장 8.   6 F — 문장 9: 포기하지 않았다(didn’t give up).   7 T — 문장 11.   8 F — 문장 12: 여행하지 말라가 아니라 모험을 떠나라고 격려한다.  거짓 문장은 모두 한 요소만 비튼 것이다.", true);
+Hs("R1   True / False   ·   1 T · 2 F · 3 F · 4 T · 5 T · 6 T · 7 F · 8 F");
+   B("1 T — 문장 11.   2 F — 문장 2: 방향이 반대다. 알래스카에서 아르헨티나로 갔다.   3 F — 문장 9: 포기하지 않았다(didn’t give up).   4 T — 문장 8.   5 T — 문장 4–5.   6 T — 문장 2.   7 F — 문장 12: 여행하지 말라가 아니라 모험을 떠나라고 격려한다.  거짓 문장은 모두 한 요소만 비튼 것이다.   8 F — 문장 6: 전혀 쉽지 않았다.", true);
 Hs("R2   사건 순서   ·   (c) → (a) → (b) → (d)");
 B("ⓒ 고등학교를 마친다(문장 3) → ⓐ 자전거 여행 책을 읽는다(문장 4) → ⓑ 콜롬비아에서 사고를 당한다(문장 8) → ⓓ 527일 만에 아르헨티나에 도착한다(문장 10). 문장 2는 여정 전체를 미리 알려 주는 '맛보기'다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
 K.push(sp(70));

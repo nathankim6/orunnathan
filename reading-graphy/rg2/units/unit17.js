@@ -80,25 +80,27 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["\u2460 How to Turn Tea Leaves into Powder", "\u2461 The Best Coffee Shops in Ancient China",
- "\u2462 Chabaixi: Latte Art from Ancient China", "\u2463 Why a Picture Disappears in 20 Minutes",
- "\u2464 How to Draw Bamboo and Mountains"].forEach(c => K.push(ch(c)));
+["① How to Turn Tea Leaves into Powder",
+ "② The Best Coffee Shops in Ancient China",
+ "③ Why a Picture Disappears in 20 Minutes",
+ "④ Chabaixi: Latte Art from Ancient China",
+ "⑤ How to Draw Bamboo and Mountains"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["\u2460 Latte art is a creative way to decorate coffee using milk.",
- "\u2461 Chabaixi means \u201ca hundred tricks with tea.\u201d",
- "\u2462 Artists first turned tea leaves into powder.",
- "\u2463 Chabaixi uses milk instead of water to make the designs.",
- "\u2464 The picture disappears in just 20 minutes."].forEach(c => K.push(ch(c)));
+["① Latte art is a creative way to decorate coffee using milk.",
+ "② Chabaixi means \u201ca hundred tricks with tea.\u201d",
+ "③ Chabaixi uses milk instead of water to make the designs.",
+ "④ Artists first turned tea leaves into powder.",
+ "⑤ The picture disappears in just 20 minutes."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["\u2460 the tea in the cup",
- "\u2461 the clear water",
- "\u2462 the special spoon",
- "\u2463 the picture on top",
- "\u2464 the tea powder"].forEach(c => K.push(ch(c)));
+["① the tea in the cup",
+ "② the special spoon",
+ "③ the picture on top",
+ "④ the tea powder",
+ "⑤ the clear water"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -145,7 +147,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -158,7 +160,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -195,7 +197,7 @@ K.push(spF(2, 85, 0.06));
  [9, "After that, they used a special spoon to draw pictures, like bamboo and mountains."],
  [13, "Although the picture disappears in just 20 minutes, that\u2019s enough time to enjoy the beautiful designs!"]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -250,7 +252,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["\u2460 우유로 그림을 그리는 현대의 라테 아트", "\u2461 고대 중국의 차 예술 차바이시", "\u2462 대나무와 산을 그린 중국의 그림"].forEach(c =>
+["① 우유로 그림을 그리는 현대의 라테 아트",
+ "② 대나무와 산을 그린 중국의 그림",
+ "③ 고대 중국의 차 예술 차바이시"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -262,7 +266,7 @@ K.push(T([1740,1740,1740,1740,1740,1740], [new TableRow({ children: KWCAND.map((
   new Paragraph({ children: [t(ko, { size: 14, color: SUB })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 190 } }),
 ], { w: 1740, shade: FIELD, va: VerticalAlign.CENTER, m: { top: 240, bottom: 240, left: 40, right: 40 },
     b: { top: bd(4, FLINE), bottom: bd(4, FLINE), left: bd(4, FLINE), right: bd(4, FLINE) } })) })]));
-K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 이 글의 주인공  ② 언제의 것인지  ③ 무엇이라고 부르는지 \u2014 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
+K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 이 글의 주인공  ② 언제의 것인지  ③ 무엇이라고 부르는지 — 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
 K.push(spF(4, 260, 0.30));
 
 K.push(p([t("1-3  ", { size: 18, bold: true, color: GOLD }), t("지시어 이해하기", { size: 19, bold: true }),
@@ -271,7 +275,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -318,7 +322,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -334,14 +338,13 @@ K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
     "Latte art is a way to decorate coffee using milk.",
+    "Chabaixi uses clear water instead of milk.",
     "Chabaixi is an ancient Chinese tea art.",
-    "Chabaixi means \u201ca hundred tricks with coffee.\u201d",
-    "To make Chabaixi, artists first turned tea leaves into powder.",
     "They mixed oil with the powder until it became foamy.",
     "They used a special brush to draw pictures.",
-    "Chabaixi uses clear water instead of milk.",
+    "To make Chabaixi, artists first turned tea leaves into powder.",
     "The picture disappears in just 20 seconds.",
-  ].map((s, i) => new TableRow({ children: [
+    "Chabaixi means \u201ca hundred tricks with coffee.\u201d"].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -356,10 +359,10 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "차바이시를 만드는 과정 ⓐ~ⓓ를 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["\u24D0 They mixed water with the powder until it became foamy.",
-      "\u24D1 They drew pictures with a special spoon.",
-      "\u24D2 Artists turned tea leaves into powder.",
-      "\u24D3 The picture disappeared in about 20 minutes."]
+  ...["ⓐ They mixed water with the powder until it became foamy.",
+      "ⓑ They drew pictures with a special spoon.",
+      "ⓒ The picture disappeared in about 20 minutes.",
+      "ⓓ Artists turned tea leaves into powder."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -387,9 +390,9 @@ K.push(...tab("정답 및 해설", "UNIT 17  고대 중국에서 시작된 예�
 K.push(sp(150));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("독해", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("\u2462      ", { size: 19, bold: true }),
-     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("\u2463      ", { size: 19, bold: true }),
-     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("\u2461", { size: 19, bold: true })], { after: 25 }),
+  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("③      ", { size: 19, bold: true }),
+     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("④      ", { size: 19, bold: true }),
+     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("②", { size: 19, bold: true })], { after: 25 }),
   p([t("04 ", { size: 19, bold: true, color: NAVY2 }), t("The ancient Chinese tea art was called Chabaixi.", { size: 19, bold: true })], { after: 75 }),
   p([t("구문분석", { size: 16, bold: true, color: NAVY })], { after: 60 }),
   p([t("문4 ", { size: 17, bold: true, color: NAVY2 }), t("something similar(S)\u00b7was happening(\u25b3V)\u00b7thousands of years ago in China(M)", { size: 17, bold: true })], { after: 22 }),
@@ -397,34 +400,34 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("문13 ", { size: 17, bold: true, color: NAVY2 }), t("Although(접속사)\u00b7the picture(S\u2032)\u00b7disappears(\u25b3V\u2032)\u00b7that(S)\u00b7is(\u25b3V)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 이 노래는 우리 언니가 썼다  (2) 나는 비가 그칠 때까지 기다렸다  (3) 그 문은 종이 울릴 때까지 잠겨 있었다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 \u2461   1-2 Chabaixi · ancient · art   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 Chabaixi · ancient · art   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2T · 3F · 4T · 5F · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (b) → (d)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 T · 3 T · 4 F · 5 F · 6 T · 7 F · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 \u2462");
-B("현대의 라테 아트(문장 1\u20133)로 문을 열고, 수천 년 전 중국의 차 예술 차바이시(문장 4\u20139)와 그 차이(문장 10\u201313)를 설명한다. 소재와 특징을 함께 담은 \u2462가 제목으로 적절하다. \u2460·\u2463은 지엽적 오답, \u2461·\u2464는 본문에 근거가 없다.", true);
-Hs("독해 02   내용 불일치   ·   정답 \u2463");
-B("문장 11에서 차바이시는 우유 대신 맑은 물(clear water instead of milk)을 쓴다고 했다. 우유와 물을 뒤바꾼 \u2463이 본문과 반대다. \u2460은 문장 3, \u2461은 문장 6, \u2462는 문장 7, \u2464는 문장 13에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 \u2461");
+Hs("독해 01   제목   ·   정답 ④");
+B("현대의 라테 아트(문장 1–3)로 문을 열고, 수천 년 전 중국의 차 예술 차바이시(문장 4–9)와 그 차이(문장 10–13)를 설명한다. 소재와 특징을 함께 담은 ④가 제목으로 적절하다. ①·③은 지엽적 오답, ②·⑤는 본문에 근거가 없다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 11에서 차바이시는 우유 대신 맑은 물(clear water instead of milk)을 쓴다고 했다. 우유와 물을 뒤바꾼 ③이 본문과 반대다. ①은 문장 3, ②은 문장 6, ④는 문장 7, ⑤는 문장 13에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) it은 같은 문장 앞부분의 the water, 곧 문장 11의 맑은 물이다. 차에 닿아 하얗게 변하면서 무늬가 생기는 것이 바로 이 물이다.", true);
 Hs("독해 04   배열 영작   ·   The ancient Chinese tea art was called Chabaixi.");
-B("문장 5를 그대로 복원한다. \u2460 첫 글자는 대문자 The.   \u2461 ancient Chinese tea art \u2014 꾸미는 말들이 명사 art 앞에 줄줄이 붙는다.   \u2462 was called가 한 덩어리(수동태).", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 \u2461     1-2 Chabaixi · ancient · art     1-3 아래 참조");
-B("1-1   정답 \u2461. 이 글의 중심은 고대 중국의 차 예술 차바이시다. \u2460 라테 아트는 차바이시를 소개하기 위한 비교 대상이고, \u2462 대나무와 산은 그림의 예일 뿐이다.");
-B("1-2   \u25cb표 할 세 단어: Chabaixi(힌트\u2460 이 글의 주인공) · ancient(힌트\u2461 언제의 것인지) · art(힌트\u2462 무엇이라고 부르는지). 나머지 셋(milk · spoon · bamboo)은 본문에 나오지만 주제문에는 들어가지 않는 재료와 예시다.");
-B("1-3   문장 6 \u2014 It은 차바이시에 \u25cb (문장 5의 명칭).   문장 8 \u2014 it은 섞은 물과 가루에 \u25cb (거품이 이는 그 혼합물).   문장 12 \u2014 it은 맑은 물에 \u25cb (문장 11의 clear water).", true);
+B("문장 5를 그대로 복원한다. ① 첫 글자는 대문자 The.   ② ancient Chinese tea art — 꾸미는 말들이 명사 art 앞에 줄줄이 붙는다.   ③ was called가 한 덩어리(수동태).", true);
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 Chabaixi · ancient · art     1-3 아래 참조");
+B("1-1   정답 ③. 이 글의 중심은 고대 중국의 차 예술 차바이시다. ① 라테 아트는 차바이시를 소개하기 위한 비교 대상이고, ② 대나무와 산은 그림의 예일 뿐이다.");
+B("1-2   \u25cb표 할 세 단어: Chabaixi(힌트① 이 글의 주인공) · ancient(힌트② 언제의 것인지) · art(힌트③ 무엇이라고 부르는지). 나머지 셋(milk · spoon · bamboo)은 본문에 나오지만 주제문에는 들어가지 않는 재료와 예시다.");
+B("1-3   문장 6 — It은 차바이시에 \u25cb (문장 5의 명칭).   문장 8 — it은 섞은 물과 가루에 \u25cb (거품이 이는 그 혼합물).   문장 12 — it은 맑은 물에 \u25cb (문장 11의 clear water).", true);
 B("[학습 포인트]   같은 It이라도 문장 2는 커피를, 문장 6은 차바이시를 가리킨다. 지시어는 글자 모양이 아니라 바로 앞 문장의 짝으로 결정된다.", true);
 
 /* ═══════════ [DATA] 해설 2면 — R1 · R2 · 전문 해석 ═══════════ */
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 T · 3 F · 4 T · 5 F · 6 F · 7 T · 8 F");
-B("1 T \u2014 문장 3.   2 T \u2014 문장 5.   3 F \u2014 문장 6: 커피(coffee)가 아니라 차(tea)로 부리는 백 가지 재주다.   4 T \u2014 문장 7.   5 F \u2014 문장 8: 기름(oil)이 아니라 물(water)을 섞었다.   6 F \u2014 문장 9: 붓(brush)이 아니라 특별한 숟가락(spoon)이다.   7 T \u2014 문장 11.   8 F \u2014 문장 13: 20초가 아니라 20분(minutes)이다.  거짓 문장은 모두 한 요소만 비튼 것이다 \u2014 그 한 단어를 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (c) \u2192 (a) \u2192 (b) \u2192 (d)");
-B("\u24D2 찻잎을 가루로 만든다(문장 7) \u2192 \u24D0 거품이 일 때까지 물과 가루를 섞는다(문장 8) \u2192 \u24D1 숟가락으로 그림을 그린다(문장 9) \u2192 \u24D3 그림이 20분 만에 사라진다(문장 13). first \u2192 Then \u2192 After that처럼 순서를 알려 주는 말이 곧 단계의 표지판이다.", true);
+Hs("R1   True / False   ·   1 T · 2 T · 3 T · 4 F · 5 F · 6 T · 7 F · 8 F");
+   B("1 T — 문장 3.   2 T — 문장 11.   3 T — 문장 5.   4 F — 문장 8: 기름(oil)이 아니라 물(water)을 섞었다.   5 F — 문장 9: 붓(brush)이 아니라 특별한 숟가락(spoon)이다.   6 T — 문장 7.   7 F — 문장 13: 20초가 아니라 20분(minutes)이다.  거짓 문장은 모두 한 요소만 비튼 것이다 — 그 한 단어를 찾는 것이 정독이다.   8 F — 문장 6: 커피(coffee)가 아니라 차(tea)로 부리는 백 가지 재주다.", true);
+Hs("R2   사건 순서   ·   (d) → (a) → (b) → (c)");
+B("ⓓ 찻잎을 가루로 만든다(문장 7) → ⓐ 거품이 일 때까지 물과 가루를 섞는다(문장 8) → ⓑ 숟가락으로 그림을 그린다(문장 9) → ⓒ 그림이 20분 만에 사라진다(문장 13). first → Then → After that처럼 순서를 알려 주는 말이 곧 단계의 표지판이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

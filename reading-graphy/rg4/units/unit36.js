@@ -78,24 +78,26 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Zombie Cells in Our Body and How to Remove Them", "② The Best Zombie Movies of the Year",
- "③ Why Mice Are Used in Science Labs", "④ How the Brain Makes New Cells",
+["① The Best Zombie Movies of the Year",
+ "② Why Mice Are Used in Science Labs",
+ "③ How the Brain Makes New Cells",
+ "④ Zombie Cells in Our Body and How to Remove Them",
  "⑤ Foods That Help You Live Longer"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Aging cells stop dividing but don’t die.",
  "② Zombie cells increase as we get older.",
- "③ Scientists did an experiment with young children.",
- "④ Before, this method was only tested on mice.",
+ "③ Before, this method was only tested on mice.",
+ "④ Scientists did an experiment with young children.",
  "⑤ Researchers are mapping these zombie cells, including in the brain."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) it이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① removing aging cells with medicine",
- "② testing new medicine on mice",
- "③ mapping the cells in the brain",
- "④ growing and dividing normally",
+["① testing new medicine on mice",
+ "② mapping the cells in the brain",
+ "③ growing and dividing normally",
+ "④ removing aging cells with medicine",
  "⑤ getting older every year"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
@@ -143,7 +145,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -156,7 +158,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -191,7 +193,7 @@ K.push(spF(2, 85, 0.06));
  [8, "Before, this method was only tested on mice, but now they know it does work on humans, too."],
  [9, "Recently, researchers are mapping these zombie cells throughout the body, including in the brain."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -258,7 +260,7 @@ K.push(T([1740,1740,1740,1740,1740,1740], [new TableRow({ children: KWCAND.map((
   new Paragraph({ children: [t(ko, { size: 14, color: SUB })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 190 } }),
 ], { w: 1740, shade: FIELD, va: VerticalAlign.CENTER, m: { top: 240, bottom: 240, left: 40, right: 40 },
     b: { top: bd(4, FLINE), bottom: bd(4, FLINE), left: bd(4, FLINE), right: bd(4, FLINE) } })) })]));
-K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 이 글의 주인공  ② 과학자들이 하려는 일  ③ 그렇게 해서 이루려는 목표 \u2014 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
+K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 이 글의 주인공  ② 과학자들이 하려는 일  ③ 그렇게 해서 이루려는 목표 — 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
 K.push(spF(4, 260, 0.30));
 
 K.push(p([t("1-3  ", { size: 18, bold: true, color: GOLD }), t("지시어 이해하기", { size: 19, bold: true }),
@@ -267,7 +269,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -314,7 +316,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -329,15 +331,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Aging cells are similar to zombies in our bodies.",
-    "Normal cells never divide.",
-    "Aging cells stop dividing but don’t die.",
-    "Zombie cells decrease as we get older.",
-    "Scientists in a U.S. clinic did an experiment with elderly people.",
     "The method was tested on humans first.",
-    "Researchers are mapping zombie cells, including in the brain.",
     "Their goal is to make the zombie cells increase.",
-  ].map((s, i) => new TableRow({ children: [
+    "Researchers are mapping zombie cells, including in the brain.",
+    "Aging cells are similar to zombies in our bodies.",
+    "Aging cells stop dividing but don’t die.",
+    "Scientists in a U.S. clinic did an experiment with elderly people.",
+    "Zombie cells decrease as we get older.",
+    "Normal cells never divide."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -352,10 +353,10 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "좀비 세포 연구에서 일어난 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ Scientists tested the method on mice.",
-      "ⓑ Researchers began mapping the cells throughout the body.",
-      "ⓒ Scientists did an experiment with elderly people.",
-      "ⓓ They learned that the medicine works on humans, too."]
+  ...["ⓐ Researchers began mapping the cells throughout the body.",
+      "ⓑ Scientists did an experiment with elderly people.",
+      "ⓒ They learned that the medicine works on humans, too.",
+      "ⓓ Scientists tested the method on mice."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -395,32 +396,32 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 zombie cells · remove · healthier   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (d) → (b)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 T · 5 T · 6 T · 7 F · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (c) → (a)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 죽지 않는 노화 세포(문장 2–6)와 그것을 약으로 없애려는 연구(문장 7–11)를 소개한다. 소재와 핵심을 함께 담은 ①이 적절하다. ③·⑤는 지엽적이거나 부분만 건드렸고, ②·④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 7에서 실험 대상은 어린이가 아니라 노인들(elderly people)이다. ①은 문장 4, ②는 문장 6, ④는 문장 8, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ④");
+B("이 글은 죽지 않는 노화 세포(문장 2–6)와 그것을 약으로 없애려는 연구(문장 7–11)를 소개한다. 소재와 핵심을 함께 담은 ④이 적절하다. ②·⑤는 지엽적이거나 부분만 건드렸고, ①·③는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 7에서 실험 대상은 어린이가 아니라 노인들(elderly people)이다. ①은 문장 4, ②는 문장 6, ③는 문장 8, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ④");
 B("(A) it은 앞 문장 7–8의 this method, 곧 약으로 노화 세포를 제거하는 방법을 받는다. 쥐에게만 시험되던 그 방법이 사람에게도 통한다는 뜻이다.", true);
 Hs("독해 04   배열 영작   ·   Our bodies have something similar called aging cells.");
 B("문장 2를 그대로 복원한다. ① 첫 글자는 대문자 Our.   ② similar가 something을 뒤에서 꾸민다(-thing 뒤의 형용사).   ③ called 이하가 그 말을 다시 뒤에서 꾸민다.", true);
 Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 zombie cells · remove · healthier     1-3 아래 참조");
 B("1-1   정답 ②. 이 글은 몸속 노화 세포와 그것을 없애려는 연구를 다룬다. ① 좀비는 비유로만 쓰였고, ③ 쥐 실험은 연구 과정의 한 대목일 뿐이다.");
 B("1-2   ○표 할 세 단어: zombie cells(힌트① 주인공) · remove(힌트② 과학자들이 하려는 일) · healthier(힌트③ 목표). mice · brain · medicine은 과정과 도구일 뿐 주제문에 들어가지 않는다.");
-B("1-3   문장 4 \u2014 they는 노화 세포에 ○ (문장 3의 aging cells).   문장 8 \u2014 it은 약으로 없애기에 ○ (문장 7–8의 this method).   문장 10 \u2014 them은 좀비 세포에 ○, 같은 문장의 They는 연구자들이다.");
+B("1-3   문장 4 — they는 노화 세포에 ○ (문장 3의 aging cells).   문장 8 — it은 약으로 없애기에 ○ (문장 7–8의 this method).   문장 10 — them은 좀비 세포에 ○, 같은 문장의 They는 연구자들이다.");
 B("[학습 포인트]   문장 10의 They(연구자들)와 them(좀비 세포)은 한 문장 안에서 서로 다른 것을 가리킨다. 주어 자리와 목적어 자리의 지시어는 따로 확인하는 습관을 들이자.", true);
 
 /* ═══════════ [DATA] 해설 2면 — R1 · R2 · 전문 해석 ═══════════ */
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T \u2014 문장 1–2.   2 F \u2014 문장 3: 정상 세포는 자라고 분열한다(divide).   3 T \u2014 문장 4.   4 F \u2014 문장 6: 줄어드는 게 아니라 늘어난다(increase).   5 T \u2014 문장 7.   6 F \u2014 문장 8: 사람이 아니라 쥐(mice)에게 먼저 시험했다.   7 T \u2014 문장 9.   8 F \u2014 문장 11: 늘리는 게 아니라 이해하고 관리해 건강을 돕는 것이 목표다.", true);
-Hs("R2   사건 순서   ·   (a) → (c) → (d) → (b)");
-B("ⓐ 이 방법을 쥐에게만 시험했다(문장 8의 Before) → ⓒ 미국의 한 클리닉에서 노인들을 대상으로 실험했다(문장 7) → ⓓ 사람에게도 효과가 있음을 알게 되었다(문장 8) → ⓑ 최근 몸 전체의 세포 지도를 만들고 있다(문장 9). 글은 최근 실험(문장 7)을 먼저 말하고 Before로 과거를 되짚는다 \u2014 서술 순서와 사건 순서가 다른 지점이다.", true);
+Hs("R1   True / False   ·   1 F · 2 F · 3 T · 4 T · 5 T · 6 T · 7 F · 8 F");
+   B("1 F — 문장 8: 사람이 아니라 쥐(mice)에게 먼저 시험했다.   2 F — 문장 11: 늘리는 게 아니라 이해하고 관리해 건강을 돕는 것이 목표다.   3 T — 문장 9.   4 T — 문장 1–2.   5 T — 문장 4.   6 T — 문장 7.   7 F — 문장 6: 줄어드는 게 아니라 늘어난다(increase).   8 F — 문장 3: 정상 세포는 자라고 분열한다(divide).", true);
+Hs("R2   사건 순서   ·   (d) → (b) → (c) → (a)");
+B("ⓓ 이 방법을 쥐에게만 시험했다(문장 8의 Before) → ⓑ 미국의 한 클리닉에서 노인들을 대상으로 실험했다(문장 7) → ⓒ 사람에게도 효과가 있음을 알게 되었다(문장 8) → ⓐ 최근 몸 전체의 세포 지도를 만들고 있다(문장 9). 글은 최근 실험(문장 7)을 먼저 말하고 Before로 과거를 되짚는다 — 서술 순서와 사건 순서가 다른 지점이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

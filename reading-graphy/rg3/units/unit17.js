@@ -79,25 +79,27 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["\u2460 One Letter That Changed a Shoe and a Life", "\u2461 How to Tie Your Shoes in Ten Seconds",
- "\u2462 The History of Sports Shoe Companies", "\u2463 A Guide to Choosing a College in America",
- "\u2464 Why Zippers Are Better Than Buttons"].forEach(c => K.push(ch(c)));
+["① How to Tie Your Shoes in Ten Seconds",
+ "② The History of Sports Shoe Companies",
+ "③ One Letter That Changed a Shoe and a Life",
+ "④ A Guide to Choosing a College in America",
+ "⑤ Why Zippers Are Better Than Buttons"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["\u2460 Matthew Walzer was born with cerebral palsy.",
- "\u2461 By 16, he still couldn\u2019t tie his shoes.",
- "\u2462 Nike invited Matthew to design the shoes with them.",
- "\u2463 The Nike FlyEase was released after one year of work.",
- "\u2464 The shoes helped Matthew go to college away from home."].forEach(c => K.push(ch(c)));
+["① The Nike FlyEase was released after one year of work.",
+ "② Matthew Walzer was born with cerebral palsy.",
+ "③ By 16, he still couldn\u2019t tie his shoes.",
+ "④ Nike invited Matthew to design the shoes with them.",
+ "⑤ The shoes helped Matthew go to college away from home."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) This가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["\u2460 the back of the shoe opening with the zipper",
- "\u2461 the open letter Matthew wrote to Nike",
- "\u2462 Matthew going to college away from home",
- "\u2463 the three years of working together",
- "\u2464 the Velcro strap on the front of the shoe"].forEach(c => K.push(ch(c)));
+["① the back of the shoe opening with the zipper",
+ "② the open letter Matthew wrote to Nike",
+ "③ Matthew going to college away from home",
+ "④ the three years of working together",
+ "⑤ the Velcro strap on the front of the shoe"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -144,7 +146,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -157,7 +159,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -194,7 +196,7 @@ K.push(spF(2, 85, 0.06));
  [7, "This shoe, with a zipper and Velcro strap, is easy to put on and take off."],
  [9, "This allows the foot to slide in and out easily."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -249,7 +251,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["\u2460 신발끈을 예쁘게 묶는 방법", "\u2461 편지 한 통에서 시작된 신발", "\u2462 미국 대학의 기숙사 생활"].forEach(c =>
+["① 편지 한 통에서 시작된 신발",
+ "② 신발끈을 예쁘게 묶는 방법",
+ "③ 미국 대학의 기숙사 생활"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -261,7 +265,7 @@ K.push(T([1740,1740,1740,1740,1740,1740], [new TableRow({ children: KWCAND.map((
   new Paragraph({ children: [t(ko, { size: 14, color: SUB })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 190 } }),
 ], { w: 1740, shade: FIELD, va: VerticalAlign.CENTER, m: { top: 240, bottom: 240, left: 40, right: 40 },
     b: { top: bd(4, FLINE), bottom: bd(4, FLINE), left: bd(4, FLINE), right: bd(4, FLINE) } })) })]));
-K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("\u2460 매튜가 세상에 보낸 것  \u2461 그 결과 만들어진 것  \u2462 글쓴이가 말하려는 것 \u2014 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
+K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 매튜가 세상에 보낸 것  ② 그 결과 만들어진 것  ③ 글쓴이가 말하려는 것 — 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
 K.push(spF(4, 260, 0.30));
 
 K.push(p([t("1-3  ", { size: 18, bold: true, color: GOLD }), t("지시어 이해하기", { size: 19, bold: true }),
@@ -270,7 +274,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -317,7 +321,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -332,15 +336,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Matthew Walzer was born with cerebral palsy.",
     "He could tie his shoes easily when he was 16.",
+    "Matthew Walzer was born with cerebral palsy.",
+    "These shoes helped Matthew achieve his dream.",
     "He wrote an open letter to the shoe company Nike.",
-    "Nike refused to work with Matthew.",
     "They released The Nike FlyEase in 2015.",
     "The front of the shoe opens with the zipper.",
-    "These shoes helped Matthew achieve his dream.",
-    "He had to stay at home instead of going to college.",
-  ].map((s, i) => new TableRow({ children: [
+    "Nike refused to work with Matthew.",
+    "He had to stay at home instead of going to college."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -355,10 +358,10 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "매튜에게 일어난 일 ⓐ~ⓓ를 실제로 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["\u24D0 Nike invited Matthew to design the shoes.",
-      "\u24D1 Matthew wrote an open letter to Nike.",
-      "\u24D2 Matthew went to college away from home.",
-      "\u24D3 The Nike FlyEase was released in 2015."]
+  ...["ⓐ Nike invited Matthew to design the shoes.",
+      "ⓑ Matthew went to college away from home.",
+      "ⓒ Matthew wrote an open letter to Nike.",
+      "ⓓ The Nike FlyEase was released in 2015."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -396,22 +399,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문7 ", { size: 17, bold: true, color: NAVY2 }), t("This shoe(S)·with a zipper and Velcro strap(M)·is(△V)·easy to put on and take off", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 그녀는 나에게 자기 동아리에 들어오라고 청했다  (2) 이 앱은 내가 새 단어를 배우도록 돕는다  (3) 그는 우리를 농장에 초대했고 사과 따는 것을 도왔다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 letter · shoes · difference   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 letter · shoes · difference   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (d) → (c)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 T · 5 T · 6 F · 7 F · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(c) → (a) → (d) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("신발끈을 묶지 못하던 소년이 나이키에 보낸 편지 한 통(문장 1–4)이 플라이이즈라는 신발과 그의 새 삶으로 이어진 이야기(문장 5–12)다. 소재와 평가를 함께 담은 ①이 제목이다. ②·⑤는 지엽적이고 ③·④는 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ④");
-B("문장 6에서 3년을 함께 일한 뒤 2015년에 출시했다고 했으므로, 1년 만이라는 ④은 본문과 다르다. ①은 문장 1, ②은 문장 3, ③는 문장 5, ⑤는 문장 10–11에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ③");
+B("신발끈을 묶지 못하던 소년이 나이키에 보낸 편지 한 통(문장 1–4)이 플라이이즈라는 신발과 그의 새 삶으로 이어진 이야기(문장 5–12)다. 소재와 평가를 함께 담은 ③이 제목이다. ①·⑤는 지엽적이고 ②·④는 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 6에서 3년을 함께 일한 뒤 2015년에 출시했다고 했으므로, 1년 만이라는 ①은 본문과 다르다. ②은 문장 1, ③은 문장 3, ④는 문장 5, ⑤는 문장 10–11에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) This는 바로 앞 문장 8의 내용, 곧 지퍼로 신발 뒤쪽이 열리는 것을 가리킨다. 발이 쉽게 들어가고 나오게 해 주는 것이 무엇인지 생각하면 된다.", true);
 Hs("독해 04   배열 영작   ·   The back of the shoe opens with the zipper.");
 B("문장 8을 그대로 복원하는 문제다. ① 첫 글자는 대문자 The.   ② The back of the shoe가 주어 한 덩어리 — 단수이므로 opens.   ③ 수단을 나타내는 with the zipper가 맨 뒤.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 letter · shoes · difference     1-3 아래 참조");
-B("1-1   정답 ②. 매튜의 편지 한 통에서 시작된 신발과 그 변화를 다룬 글이다. ① 신발끈은 매튜가 겪은 어려움일 뿐이고, ③ 기숙사 생활 이야기는 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 letter · shoes · difference     1-3 아래 참조");
+B("1-1   정답 ①. 매튜의 편지 한 통에서 시작된 신발과 그 변화를 다룬 글이다. ② 신발끈은 매튜가 겪은 어려움일 뿐이고, ③ 기숙사 생활 이야기는 나오지 않는다.");
 B("1-2   ○표 할 세 단어: letter(힌트① 매튜가 세상에 보낸 것) · shoes(힌트② 그 결과 만들어진 것) · difference(힌트③ 글쓴이가 말하려는 변화). 나머지 셋(zipper · college · Nike)은 본문에 나오지만 세부 사항이다.");
 B("1-3   문장 5 — such shoes는 쉽게 신는 신발에 ○ (문장 4).   문장 9 — This는 뒤가 지퍼로 열리는 것에 ○ (문장 8 전체).   문장 10 — These shoes는 나이키 플라이이즈에 ○ (문장 6).");
 B("[학습 포인트]   such shoes·These shoes처럼 지시어 뒤에 명사가 붙으면, 그 명사가 무엇을 찾을지 알려 주는 힌트다. 앞 문장에서 같은 명사를 찾아 화살표로 이어 보자.", true);
@@ -419,10 +422,10 @@ B("[학습 포인트]   such shoes·These shoes처럼 지시어 뒤에 명사가
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 1.   2 F — 문장 3: 16세가 되어서도 여전히 묶지 못했다.   3 T — 문장 4.   4 F — 문장 5: 거절한 게 아니라 함께 디자인하자고 초대했다(invited).   5 T — 문장 6.   6 F — 문장 8: 앞쪽(front)이 아니라 뒤쪽(back)이 열린다.   7 T — 문장 10.   8 F — 문장 11: 집을 떠나 대학에 갈 수 있었다.  거짓 넷은 모두 한 요소만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (a) → (d) → (c)");
-B("ⓑ 매튜가 나이키에 공개편지를 쓴다(문장 4) → ⓐ 나이키가 그를 디자인에 초대한다(문장 5) → ⓓ 2015년에 플라이이즈가 나온다(문장 6) → ⓒ 매튜가 집을 떠나 대학에 간다(문장 11). 본문은 신발의 구조(문장 7–9)를 중간에 끼워 설명하지만, 사건의 줄기는 편지에서 대학까지 곧게 이어진다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 T · 5 T · 6 F · 7 F · 8 F");
+   B("1 F — 문장 3: 16세가 되어서도 여전히 묶지 못했다.   2 T — 문장 1.   3 T — 문장 10.   4 T — 문장 4.   5 T — 문장 6.   6 F — 문장 8: 앞쪽(front)이 아니라 뒤쪽(back)이 열린다.   7 F — 문장 5: 거절한 게 아니라 함께 디자인하자고 초대했다(invited).   8 F — 문장 11: 집을 떠나 대학에 갈 수 있었다.  거짓 넷은 모두 한 요소만 비튼 것이다.", true);
+Hs("R2   사건 순서   ·   (c) → (a) → (d) → (b)");
+B("ⓒ 매튜가 나이키에 공개편지를 쓴다(문장 4) → ⓐ 나이키가 그를 디자인에 초대한다(문장 5) → ⓓ 2015년에 플라이이즈가 나온다(문장 6) → ⓑ 매튜가 집을 떠나 대학에 간다(문장 11). 본문은 신발의 구조(문장 7–9)를 중간에 끼워 설명하지만, 사건의 줄기는 편지에서 대학까지 곧게 이어진다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

@@ -78,25 +78,27 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["\u2460 A Game You Cannot Win Alone: Panjat Pinang", "\u2461 How to Make a Pole Slippery",
- "\u2462 The Best Prizes You Can Buy in Indonesia", "\u2463 A Short History of the Netherlands",
- "\u2464 Traditional Foods for a Summer Holiday"].forEach(c => K.push(ch(c)));
+["① How to Make a Pole Slippery",
+ "② The Best Prizes You Can Buy in Indonesia",
+ "③ A Short History of the Netherlands",
+ "④ Traditional Foods for a Summer Holiday",
+ "⑤ A Game You Cannot Win Alone: Panjat Pinang"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["\u2460 Panjat Pinang takes place every August 17th.",
- "\u2461 People climb up greased poles to reach the prizes.",
- "\u2462 People can climb the tall poles alone.",
- "\u2463 There are prizes like bicycles and bags of sugar at the top.",
- "\u2464 Panjat Pinang teaches the importance of teamwork."].forEach(c => K.push(ch(c)));
+["① Panjat Pinang takes place every August 17th.",
+ "② People climb up greased poles to reach the prizes.",
+ "③ People can climb the tall poles alone.",
+ "④ There are prizes like bicycles and bags of sugar at the top.",
+ "⑤ Panjat Pinang teaches the importance of teamwork."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) them이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["\u2460 the prizes at the top",
- "\u2461 the greased poles",
- "\u2462 friends and family",
- "\u2463 bags of sugar",
- "\u2464 women and children"].forEach(c => K.push(ch(c)));
+["① the prizes at the top",
+ "② friends and family",
+ "③ bags of sugar",
+ "④ women and children",
+ "⑤ the greased poles"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -119,7 +121,7 @@ K.push(T([4790, 220, 4790], [new TableRow({ children: [
   ], { w: 4790, shade: PAPER, b: { top: NOB, bottom: NOB, right: NOB, left: bd(14, AMB) }, m: { top: 74, bottom: 74, left: 170, right: 120 } }),
   cel(new Paragraph({ children: [t("", { size: 2 })], spacing: { after: 0 } }), { w: 220, b: { top: NOB, bottom: NOB, left: NOB, right: NOB }, m: { top: 0, bottom: 0, left: 0, right: 0 } }),
   cel([
-    new Paragraph({ children: [t("문장 4", { size: 14, bold: true, color: AMB }), t("   가주어 it \u2014 진짜 주어는 to부정사", { size: 17, bold: true })], spacing: { after: 45, line: 228 } }),
+    new Paragraph({ children: [t("문장 4", { size: 14, bold: true, color: AMB }), t("   가주어 it — 진짜 주어는 to부정사", { size: 17, bold: true })], spacing: { after: 45, line: 228 } }),
     new Paragraph({ children: [t("it", { size: 18, bold: true, color: NAVY }), t("\u2019s not possible ", { size: 18 }), t("to climb them alone", { size: 18, underline: {} })], spacing: { after: 38, line: 238 } }),
     new Paragraph({ children: [t("앞의 it은 뜻이 없는 가짜 주어입니다. '그것들을 혼자 오르는 것은 가능하지 않다'", { size: 15, color: SUB })], spacing: { after: 0, line: 225 } }),
   ], { w: 4790, shade: PAPER, b: { top: NOB, bottom: NOB, right: NOB, left: bd(14, AMB) }, m: { top: 74, bottom: 74, left: 170, right: 120 } }),
@@ -143,7 +145,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -156,7 +158,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -193,7 +195,7 @@ K.push(spF(2, 85, 0.06));
  [7, "At the top of the poles, there are prizes like bicycles, electronics, and bags of sugar."],
  [10, "Panjat Pinang teaches people the importance of teamwork and cooperation."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -248,7 +250,7 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["\u2460 기둥 꼭대기에 걸리는 상품의 종류", "\u2461 함께 기둥을 오르는 인도네시아의 놀이", "\u2462 네덜란드에서 시작된 전통 운동 경기"].forEach(c =>
+["① 기둥 꼭대기에 걸리는 상품의 종류", "② 함께 기둥을 오르는 인도네시아의 놀이", "③ 네덜란드에서 시작된 전통 운동 경기"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -260,7 +262,7 @@ K.push(T([1740,1740,1740,1740,1740,1740], [new TableRow({ children: KWCAND.map((
   new Paragraph({ children: [t(ko, { size: 14, color: SUB })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 190 } }),
 ], { w: 1740, shade: FIELD, va: VerticalAlign.CENTER, m: { top: 240, bottom: 240, left: 40, right: 40 },
     b: { top: bd(4, FLINE), bottom: bd(4, FLINE), left: bd(4, FLINE), right: bd(4, FLINE) } })) })]));
-K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 이 놀이가 기념하는 것  ② 기둥을 오르는 데 꼭 필요한 것  ③ 글쓴이가 강조하는 것 \u2014 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
+K.push(p([t("힌트   ", { size: 14, bold: true, color: GOLD }), t("① 이 놀이가 기념하는 것  ② 기둥을 오르는 데 꼭 필요한 것  ③ 글쓴이가 강조하는 것 — 세 힌트에 하나씩 짝이 있어요.", { size: 15, color: SUB })], { after: 0, line: 230, indent: { left: 190 } }));
 K.push(spF(4, 260, 0.30));
 
 K.push(p([t("1-3  ", { size: 18, bold: true, color: GOLD }), t("지시어 이해하기", { size: 19, bold: true }),
@@ -269,7 +271,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -316,7 +318,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -331,15 +333,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Panjat Pinang is a unique game in Indonesia.",
-    "The game takes place every August 7th.",
-    "The game celebrates Indonesia\u2019s independence from the Netherlands.",
-    "People climb up greased poles to reach the prizes at the top.",
-    "The poles are slippery, but people climb them alone.",
-    "Friends and family need to work together.",
-    "At the top, there are prizes like bicycles and bags of rice.",
     "Panjat Pinang teaches people the importance of speed.",
-  ].map((s, i) => new TableRow({ children: [
+    "The game takes place every August 7th.",
+    "Friends and family need to work together.",
+    "People climb up greased poles to reach the prizes at the top.",
+    "Panjat Pinang is a unique game in Indonesia.",
+    "The poles are slippery, but people climb them alone.",
+    "The game celebrates Indonesia\u2019s independence from the Netherlands.",
+    "At the top, there are prizes like bicycles and bags of rice."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -354,10 +355,10 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "판자트 피낭에 얽힌 일 ⓐ~ⓓ를 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["\u24D0 Friends and family form teams to climb together.",
-      "\u24D1 Indonesia became independent from the Netherlands.",
-      "\u24D2 Someone reaches the prizes at the top of a pole.",
-      "\u24D3 The game Panjat Pinang started as a celebration."]
+  ...["ⓐ Indonesia became independent from the Netherlands.",
+      "ⓑ Friends and family form teams to climb together.",
+      "ⓒ Someone reaches the prizes at the top of a pole.",
+      "ⓓ The game Panjat Pinang started as a celebration."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -385,9 +386,9 @@ K.push(...tab("정답 및 해설", "UNIT 15  미끄러워도 함께라면 할 �
 K.push(sp(150));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("독해", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("\u2460      ", { size: 19, bold: true }),
-     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("\u2462      ", { size: 19, bold: true }),
-     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("\u2461", { size: 19, bold: true })], { after: 25 }),
+  p([t("01 ", { size: 19, bold: true, color: NAVY2 }), t("①      ", { size: 19, bold: true }),
+     t("02 ", { size: 19, bold: true, color: NAVY2 }), t("③      ", { size: 19, bold: true }),
+     t("03 ", { size: 19, bold: true, color: NAVY2 }), t("②", { size: 19, bold: true })], { after: 25 }),
   p([t("04 ", { size: 19, bold: true, color: NAVY2 }), t("Panjat Pinang teaches people the importance of teamwork and cooperation.", { size: 19, bold: true })], { after: 75 }),
   p([t("구문분석", { size: 16, bold: true, color: NAVY })], { after: 60 }),
   p([t("문3 ", { size: 17, bold: true, color: NAVY2 }), t("people(S)\u00b7climb up(\u25b3V)\u00b7In the game / to reach the prizes(M)   ", { size: 17, bold: true }),
@@ -395,34 +396,34 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문10 ", { size: 17, bold: true, color: NAVY2 }), t("Panjat Pinang(S)\u00b7teaches(\u25b3V)\u00b7people\u00b7the importance of teamwork and cooperation", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 공원에 큰 나무가 한 그루 있다  (2) 일찍 일어나는 것은 쉽지 않다  (3) 눈이 많이 있어서, 빨리 걷는 것은 힘들다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 \u2461   1-2 teamwork · Independence · importance   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 teamwork · Independence · importance   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4T · 5F · 6T · 7F · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 T · 5 T · 6 F · 7 T · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (d) → (b) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 \u2460");
-B("기름칠한 기둥은 혼자 오를 수 없어(문장 4) 친구와 가족이 팀을 이뤄야 하고(문장 5\u20136), 이 놀이는 팀워크의 중요성을 가르친다(문장 10). 소재와 핵심 특징을 함께 담은 \u2460이 제목으로 적절하다. \u2461·\u2462는 지엽적이고, \u2463·\u2464는 본문에 근거가 없다.", true);
-Hs("독해 02   내용 불일치   ·   정답 \u2462");
-B("문장 4에서 기둥은 미끄럽고 높아서 혼자 오르는 것이 가능하지 않다고 했다. 혼자 오를 수 있다고 한 \u2462가 본문과 반대다. \u2460은 문장 2, \u2461은 문장 3, \u2463은 문장 7, \u2464는 문장 10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 \u2461");
-B("(A) them은 같은 문장 앞부분의 the poles를 가리킨다. 복수 지시어는 복수 명사를 받는다 \u2014 '미끄럽고 높은 그것들'을 혼자 오를 수 없다는 뜻이다.", true);
+Hs("독해 01   제목   ·   정답 ⑤");
+B("기름칠한 기둥은 혼자 오를 수 없어(문장 4) 친구와 가족이 팀을 이뤄야 하고(문장 5–6), 이 놀이는 팀워크의 중요성을 가르친다(문장 10). 소재와 핵심 특징을 함께 담은 ⑤이 제목으로 적절하다. ①·②는 지엽적이고, ③·④는 본문에 근거가 없다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ③");
+B("문장 4에서 기둥은 미끄럽고 높아서 혼자 오르는 것이 가능하지 않다고 했다. 혼자 오를 수 있다고 한 ③가 본문과 반대다. ①은 문장 2, ②은 문장 3, ④은 문장 7, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
+B("(A) them은 같은 문장 앞부분의 the poles를 가리킨다. 복수 지시어는 복수 명사를 받는다 — '미끄럽고 높은 그것들'을 혼자 오를 수 없다는 뜻이다.", true);
 Hs("독해 04   배열 영작   ·   Panjat Pinang teaches people the importance of teamwork and cooperation.");
-B("문장 10을 그대로 복원한다. \u2460 놀이 이름 Panjat Pinang이 주어.   \u2461 teaches + 사람(people) + 사물(the importance) 순서.   \u2462 the importance of A and B \u2014 of 뒤에 두 낱말이 and로 묶인다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 \u2461     1-2 teamwork · Independence · importance     1-3 아래 참조");
-B("1-1   정답 \u2461. 이 글은 함께 기둥을 오르는 인도네시아의 놀이를 소개한다. \u2460 상품은 놀이의 한 요소일 뿐이고, \u2462 네덜란드는 독립의 상대일 뿐 놀이가 시작된 곳이 아니다.");
-B("1-2   \u25cb표 할 세 단어: Independence(힌트\u2460 이 놀이가 기념하는 것) · teamwork(힌트\u2461 기둥을 오르는 데 꼭 필요한 것) · importance(힌트\u2462 글쓴이가 강조하는 것). 나머지 셋(poles · sugar · Netherlands)은 본문에 나오지만 주제문에는 들어가지 않는 배경과 세부 사항이다.");
-B("1-3   문장 4 \u2014 them은 기둥들에 \u25cb (같은 문장의 the poles).   문장 6 \u2014 They는 친구와 가족에 \u25cb (문장 5의 Friends and family).   문장 11 \u2014 It은 판자트 피낭에 \u25cb (글 전체의 주인공).", true);
+B("문장 10을 그대로 복원한다. ① 놀이 이름 Panjat Pinang이 주어.   ② teaches + 사람(people) + 사물(the importance) 순서.   ③ the importance of A and B — of 뒤에 두 낱말이 and로 묶인다.", true);
+Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 teamwork · Independence · importance     1-3 아래 참조");
+B("1-1   정답 ②. 이 글은 함께 기둥을 오르는 인도네시아의 놀이를 소개한다. ① 상품은 놀이의 한 요소일 뿐이고, ③ 네덜란드는 독립의 상대일 뿐 놀이가 시작된 곳이 아니다.");
+B("1-2   \u25cb표 할 세 단어: Independence(힌트① 이 놀이가 기념하는 것) · teamwork(힌트② 기둥을 오르는 데 꼭 필요한 것) · importance(힌트③ 글쓴이가 강조하는 것). 나머지 셋(poles · sugar · Netherlands)은 본문에 나오지만 주제문에는 들어가지 않는 배경과 세부 사항이다.");
+B("1-3   문장 4 — them은 기둥들에 \u25cb (같은 문장의 the poles).   문장 6 — They는 친구와 가족에 \u25cb (문장 5의 Friends and family).   문장 11 — It은 판자트 피낭에 \u25cb (글 전체의 주인공).", true);
 B("[학습 포인트]   문장 4의 them(기둥)과 문장 6의 They(사람)는 생김새가 비슷해도 가리키는 것이 다르다. 지시어는 앞 문장에서 수와 뜻이 맞는 짝을 매번 새로 찾아야 한다.", true);
 
 /* ═══════════ [DATA] 해설 2면 — R1 · R2 · 전문 해석 ═══════════ */
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 T · 5 F · 6 T · 7 F · 8 F");
-B("1 T \u2014 문장 1.   2 F \u2014 문장 2: 8월 7일이 아니라 8월 17일(17th)이다.   3 T \u2014 문장 2.   4 T \u2014 문장 3.   5 F \u2014 문장 4: 혼자(alone) 오르는 것은 가능하지 않다.   6 T \u2014 문장 5.   7 F \u2014 문장 7: 쌀(rice) 자루가 아니라 설탕(sugar) 자루다.   8 F \u2014 문장 10: 속도(speed)가 아니라 팀워크와 협동이다.  거짓 문장은 모두 한 요소(7th, alone, rice, speed)만 비튼 것이다 \u2014 그 한 단어를 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (b) \u2192 (d) \u2192 (a) \u2192 (c)");
-B("\u24D1 인도네시아가 네덜란드에서 독립한다 \u2192 \u24D3 그것을 기념하려고 판자트 피낭이 시작된다(문장 2) \u2192 \u24D0 친구와 가족이 팀을 이룬다(문장 5\u20136) \u2192 \u24D2 누군가 꼭대기의 상품을 차지한다(문장 3·9). 독립은 문장 2 뒷부분에 나오지만 실제로는 가장 먼저 일어난 일이다 \u2014 서술 순서와 사건 순서는 다를 수 있다.", true);
+Hs("R1   True / False   ·   1 F · 2 F · 3 T · 4 T · 5 T · 6 F · 7 T · 8 F");
+   B("1 F — 문장 10: 속도(speed)가 아니라 팀워크와 협동이다.  거짓 문장은 모두 한 요소(7th, alone, rice, speed)만 비튼 것이다 — 그 한 단어를 찾는 것이 정독이다.   2 F — 문장 2: 8월 7일이 아니라 8월 17일(17th)이다.   3 T — 문장 5.   4 T — 문장 3.   5 T — 문장 1.   6 F — 문장 4: 혼자(alone) 오르는 것은 가능하지 않다.   7 T — 문장 2.   8 F — 문장 7: 쌀(rice) 자루가 아니라 설탕(sugar) 자루다.", true);
+Hs("R2   사건 순서   ·   (a) → (d) → (b) → (c)");
+B("ⓐ 인도네시아가 네덜란드에서 독립한다 → ⓓ 그것을 기념하려고 판자트 피낭이 시작된다(문장 2) → ⓑ 친구와 가족이 팀을 이룬다(문장 5–6) → ⓒ 누군가 꼭대기의 상품을 차지한다(문장 3·9). 독립은 문장 2 뒷부분에 나오지만 실제로는 가장 먼저 일어난 일이다 — 서술 순서와 사건 순서는 다를 수 있다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

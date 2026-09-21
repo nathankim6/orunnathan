@@ -78,22 +78,24 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Did Dirty Air Inspire Monet’s Paintings?", "② How to Paint Fog with Watercolors",
- "③ The Life of a Famous Painter’s Wife", "④ Factories and Jobs in the 1800s",
+["① How to Paint Fog with Watercolors",
+ "② The Life of a Famous Painter’s Wife",
+ "③ Did Dirty Air Inspire Monet’s Paintings?",
+ "④ Factories and Jobs in the 1800s",
  "⑤ The Best Museums to Visit in London"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① A new study says air pollution might have inspired famous painters.",
- "② The study looked at over 100 paintings by Monet and Turner.",
- "③ The researchers found that the paintings did not match the pollution levels.",
+["① The researchers found that the paintings did not match the pollution levels.",
+ "② A new study says air pollution might have inspired famous painters.",
+ "③ The study looked at over 100 paintings by Monet and Turner.",
  "④ Monet wrote to his wife about the clear blue sky in London.",
  "⑤ Monet’s work continued after smoke and fog returned to the sky."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) They가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the researchers who did the study",
- "② Monet and William Turner",
+["① Monet and William Turner",
+ "② the researchers who did the study",
  "③ the factories near London",
  "④ the dreamy paintings of Monet",
  "⑤ the letters Monet sent to his wife"].forEach(c => K.push(ch(c)));
@@ -143,7 +145,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -156,7 +158,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -193,7 +195,7 @@ K.push(spF(2, 85, 0.06));
  [9, "I thought that I couldn’t paint anymore."],
  [11, "Then, his work continued."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -248,7 +250,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 모네가 살던 도시 런던의 날씨", "② 대기 오염이 유명 화가의 그림에 준 영향", "③ 그림을 맑고 밝게 그리는 방법"].forEach(c =>
+["① 모네가 살던 도시 런던의 날씨",
+ "② 그림을 맑고 밝게 그리는 방법",
+ "③ 대기 오염이 유명 화가의 그림에 준 영향"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -269,7 +273,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -316,7 +320,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -331,15 +335,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "A new study says air pollution might have inspired famous painters.",
-    "The study looked at over 500 paintings by Monet and Turner.",
-    "Monet and Turner painted when factories released a lot of smoke.",
-    "The researchers found that the paintings did not match the pollution levels.",
-    "Monet wrote a letter to his wife.",
     "Monet was happy in the morning because he saw no fog.",
+    "A new study says air pollution might have inspired famous painters.",
+    "Monet wrote a letter to his wife.",
+    "The study looked at over 500 paintings by Monet and Turner.",
     "Monet thought that he couldn’t paint anymore.",
+    "The researchers found that the paintings did not match the pollution levels.",
     "Monet stopped his work after the smoke and fog returned.",
-  ].map((s, i) => new TableRow({ children: [
+    "Monet and Turner painted when factories released a lot of smoke."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -354,10 +357,10 @@ K.push(spF(5, 240, 0.34));
 K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "모네의 편지 속 일 ⓐ~ⓓ를 일어난 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ Monet saw only clear blue sky and felt worried.",
-      "ⓑ Smoke and fog from pollution returned to the sky.",
-      "ⓒ He thought that he couldn’t paint anymore.",
-      "ⓓ His work continued."]
+  ...["ⓐ Smoke and fog from pollution returned to the sky.",
+      "ⓑ He thought that he couldn’t paint anymore.",
+      "ⓒ His work continued.",
+      "ⓓ Monet saw only clear blue sky and felt worried."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -395,22 +398,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("his work(S)·continued(△V)·Then(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 “Blue Sky”라는 이름의 책을 읽었다  (2) 그는 책을 읽기 위해 불을 켰다  (3) 우리는 사진을 찍기 위해 “Green Hill”이라는 이름의 공원을 방문했다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 pollution · paintings · influenced   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 pollution · paintings · influenced   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (b) → (d)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 F · 5 T · 6 F · 7 F · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 대기 오염이 모네와 터너의 몽환적인 그림에 영향을 주었을지 모른다는 연구(문장 1–6)와, 그것을 뒷받침하는 모네의 편지(문장 7–11)를 소개한다. 원인과 대상을 함께 담은 ①이 제목으로 적절하다. ③·④는 지엽적, ②·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 5에서 연구자들은 그림이 당시의 대기 오염 수치와 맞아떨어진다는 것을 발견했다. 맞지 않았다고 뒤집은 ③이 본문과 반대된다. ①은 문장 1, ②는 문장 2, ④는 문장 8, ⑤는 문장 10–11에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 대기 오염이 모네와 터너의 몽환적인 그림에 영향을 주었을지 모른다는 연구(문장 1–6)와, 그것을 뒷받침하는 모네의 편지(문장 7–11)를 소개한다. 원인과 대상을 함께 담은 ③이 제목으로 적절하다. ②·④는 지엽적, ①·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 5에서 연구자들은 그림이 당시의 대기 오염 수치와 맞아떨어진다는 것을 발견했다. 맞지 않았다고 뒤집은 ①이 본문과 반대된다. ②은 문장 1, ③는 문장 2, ④는 문장 8, ⑤는 문장 10–11에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) They는 바로 앞 문장 4의 Researchers를 가리킨다. 문장 3의 They는 두 화가였지만, 문장 4에서 주인공이 연구자들로 바뀌었다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   They painted during a time when factories released a lot of smoke.");
 B("문장 3을 그대로 복원하는 문제다. ① 첫 글자는 대문자 They.   ② during a time 뒤에 when이 이어져 '~하던 시기'가 된다.   ③ a lot of smoke — 세 단어가 한 덩어리.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 pollution · paintings · influenced     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 대기 오염이 유명 화가의 그림에 준 영향을 다룬다. ① 런던 날씨는 편지 속 배경일 뿐이고, ③ 그림 그리는 방법은 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 pollution · paintings · influenced     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 대기 오염이 유명 화가의 그림에 준 영향을 다룬다. ① 런던 날씨는 편지 속 배경일 뿐이고, ② 그림 그리는 방법은 나오지 않는다.");
 B("1-2   ○표 할 세 단어: pollution(힌트① 영향을 준 것) · paintings(힌트② 다루는 대상) · influenced(힌트③ 둘 사이의 관계). 나머지 셋(letter · factories · wife)은 근거와 배경일 뿐 주제문에는 들어가지 않는다.");
 B("1-3   문장 5 — They는 연구자들에 ○ (문장 4의 Researchers).   문장 6 — This는 앞에서 찾아낸 사실에 ○ (문장 5의 내용).   문장 11 — his는 모네에 ○.");
 B("[학습 포인트]   문장 3과 문장 5의 They는 똑같이 생겼지만 가리키는 사람이 다르다(화가들 / 연구자들). 지시어는 늘 바로 앞 문장에서 짝을 찾아야 한다.", true);
@@ -419,10 +422,10 @@ B("[학습 포인트]   문장 3과 문장 5의 They는 똑같이 생겼지만 �
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 1.   2 F — 문장 2: 500점이 아니라 100점 넘게 살펴보았다.   3 T — 문장 3.   4 F — 문장 5: 맞지 않은 게 아니라 맞아떨어졌다(matched).   5 T — 문장 8.   6 F — 문장 8: 기뻐한 게 아니라 무척 걱정했다(worried).   7 T — 문장 9.   8 F — 문장 11: 그만둔 게 아니라 작업을 계속했다(continued).  거짓 문장은 모두 한 요소만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (a) → (c) → (b) → (d)");
-B("ⓐ 안개 없는 맑은 하늘을 보고 걱정한다(문장 8) → ⓒ 더 이상 그릴 수 없겠다고 생각한다(문장 9) → ⓑ 오염에서 나온 연기와 안개가 돌아온다(문장 10) → ⓓ 작업이 다시 이어진다(문장 11). 맑은 하늘이 화가에게는 걱정거리였다는 점이 이 편지의 핵심이다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 F · 5 T · 6 F · 7 F · 8 T");
+   B("1 F — 문장 8: 기뻐한 게 아니라 무척 걱정했다(worried).   2 T — 문장 1.   3 T — 문장 8.   4 F — 문장 2: 500점이 아니라 100점 넘게 살펴보았다.   5 T — 문장 9.   6 F — 문장 5: 맞지 않은 게 아니라 맞아떨어졌다(matched).   7 F — 문장 11: 그만둔 게 아니라 작업을 계속했다(continued).  거짓 문장은 모두 한 요소만 비튼 것이다.   8 T — 문장 3.", true);
+Hs("R2   사건 순서   ·   (d) → (b) → (a) → (c)");
+B("ⓓ 안개 없는 맑은 하늘을 보고 걱정한다(문장 8) → ⓑ 더 이상 그릴 수 없겠다고 생각한다(문장 9) → ⓐ 오염에서 나온 연기와 안개가 돌아온다(문장 10) → ⓒ 작업이 다시 이어진다(문장 11). 맑은 하늘이 화가에게는 걱정거리였다는 점이 이 편지의 핵심이다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

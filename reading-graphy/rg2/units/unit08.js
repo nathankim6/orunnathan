@@ -79,8 +79,10 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① An Unexpected Adventure on a Family Trip", "② The Best States to Visit in America",
- "③ How to Fix a Flat Tire on the Road", "④ Why Bison Live in South Dakota",
+["① The Best States to Visit in America",
+ "② How to Fix a Flat Tire on the Road",
+ "③ Why Bison Live in South Dakota",
+ "④ An Unexpected Adventure on a Family Trip",
  "⑤ Tips for Taking Better Photos with Your Phone"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
@@ -144,7 +146,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -157,7 +159,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -194,7 +196,7 @@ K.push(spF(2, 85, 0.06));
  [4, "Her brother, Tony, saw this and asked, “What’s so interesting on your phone?”"],
  [11, "She quickly lifted her phone to take pictures."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -249,7 +251,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 미국에서 가장 지루한 주 소개", "② 뜻밖의 모험이 된 가족 여행", "③ 자동차 타이어를 고치는 방법"].forEach(c =>
+["① 뜻밖의 모험이 된 가족 여행",
+ "② 미국에서 가장 지루한 주 소개",
+ "③ 자동차 타이어를 고치는 방법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -270,7 +274,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -317,7 +321,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -332,15 +336,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Sophia’s family was on a trip to South Dakota.",
     "Sophia thought the trip would be exciting from the start.",
     "On the way, Sophia spent most of the time on her phone.",
-    "Ally went on an exciting trip to Texas.",
-    "Tony said that anything can happen on their trip.",
-    "Their car got a flat tire on the way.",
     "Their dad told the children to get out of the car.",
-    "Sophia saw a small group of bison near the road.",
-  ].map((s, i) => new TableRow({ children: [
+    "Their car got a flat tire on the way.",
+    "Tony said that anything can happen on their trip.",
+    "Sophia’s family was on a trip to South Dakota.",
+    "Ally went on an exciting trip to Texas.",
+    "Sophia saw a small group of bison near the road."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -356,9 +359,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "소피아의 가족
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Their car got a flat tire.",
-      "ⓑ Sophia showed Tony pictures of Ally’s trip.",
-      "ⓒ Sophia lifted her phone to take pictures of the bison.",
-      "ⓓ A large group of bison passed by."]
+      "ⓑ Sophia lifted her phone to take pictures of the bison.",
+      "ⓒ A large group of bison passed by.",
+      "ⓓ Sophia showed Tony pictures of Ally’s trip."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -396,22 +399,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("She(S)·lifted(△V)·quickly(M)·to take pictures(M)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 부산은 한국에서 가장 큰 도시들 중 하나이다  (2) 나는 신선한 공기를 마시기 위해 창문을 열었다  (3) 우리는 사진을 찍기 위해 한국에서 가장 오래된 절들 중 하나를 방문했다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 trip · boring · adventure   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 trip · boring · adventure   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6T · 7F · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (a) → (d) → (c)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 T · 5 T · 6 T · 7 F · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (a) → (c) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("지루할 거라 여겼던 가족 여행(문장 2)이 들소 무리를 만나 뜻밖의 모험으로 바뀌는(문장 9–12) 이야기다. 소재(가족 여행)와 특징(뜻밖의 모험)을 함께 담은 ①이 제목으로 적절하다. ③·⑤는 세부 사항만 건드린 지엽적 오답, ②·④은 본문과 무관하다.", true);
+Hs("독해 01   제목   ·   정답 ④");
+B("지루할 거라 여겼던 가족 여행(문장 2)이 들소 무리를 만나 뜻밖의 모험으로 바뀌는(문장 9–12) 이야기다. 소재(가족 여행)와 특징(뜻밖의 모험)을 함께 담은 ④이 제목으로 적절하다. ②·⑤는 세부 사항만 건드린 지엽적 오답, ①·③은 본문과 무관하다.", true);
 Hs("독해 02   내용 불일치   ·   정답 ③");
 B("문장 5에서 사진을 보여 준 쪽은 소피아이고, 본 쪽이 토니다. 주어와 목적어가 뒤바뀐 ③가 본문과 반대된다. ①은 문장 1, ②은 문장 3, ④은 문장 7–8, ⑤는 문장 11에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) that은 바로 앞 문장 9에서 지나가던 큰 들소 무리를 가리킨다. 소피아가 보고 놀란 대상이 무엇인지 생각하면 된다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   She quickly lifted her phone to take pictures.");
 B("문장 11을 그대로 복원하는 문제다. ① 첫 글자는 대문자 She.   ② quickly는 동사 lifted 바로 앞자리.   ③ '~하기 위해'는 to take pictures — to+동사원형.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 trip · boring · adventure     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 지루할 줄 알았던 가족 여행이 뜻밖의 모험이 되는 과정을 들려준다. ① 지루한 주 이야기는 배경일 뿐이고, ③ 타이어 고치는 방법은 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 trip · boring · adventure     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 지루할 줄 알았던 가족 여행이 뜻밖의 모험이 되는 과정을 들려준다. ② 지루한 주 이야기는 배경일 뿐이고, ③ 타이어 고치는 방법은 나오지 않는다.");
 B("1-2   ○표 할 세 단어: trip(힌트① 이 글의 소재) · boring(힌트② 소피아의 예상) · adventure(힌트③ 실제로 벌어진 일). 나머지 셋(phone · bison · Florida)은 본문에 등장하지만 주제문에 들어가지 않는다 — 배경과 소품일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
 B("1-3   문장 5 — him은 토니에 ○ (문장 4에서 물어본 오빠).   문장 8 — I는 아빠에 ○ (따옴표 안에서 말하고 있는 사람).   문장 10 — that은 들소 무리에 ○ (문장 9에서 본 것).");
 B("[학습 포인트]   따옴표 안의 I는 글쓴이가 아니라 그 말을 하는 사람이다. 대화가 나오면 '지금 말하는 사람이 누구지?'부터 확인하는 습관을 들이자.", true);
@@ -420,10 +423,10 @@ B("[학습 포인트]   따옴표 안의 I는 글쓴이가 아니라 그 말을 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 T · 7 F · 8 F");
-B("1 T — 문장 1.   2 F — 문장 2: 신날 거라고가 아니라 지루할 거라고(boring) 생각했다.   3 T — 문장 3.   4 F — 문장 5: 텍사스가 아니라 플로리다(Florida)다.   5 T — 문장 6.   6 T — 문장 7.   7 F — 문장 8: 내리라는 게 아니라 차 안에 안전하게 있으라고(Stay safe) 했다.   8 F — 문장 9: 작은 무리가 아니라 큰(large) 무리다.  거짓 문장은 모두 본문에서 딱 한 요소(exciting, Texas, get out, small)를 비튼 것이다 — 그 한 단어를 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (b) → (a) → (d) → (c)");
-B("ⓑ 소피아가 토니에게 앨리의 여행 사진을 보여 준다(문장 5) → ⓐ 차 타이어가 펑크 난다(문장 7) → ⓓ 큰 들소 무리가 지나간다(문장 9) → ⓒ 소피아가 휴대폰을 들어 사진을 찍는다(문장 11). 이 글은 사건이 일어난 순서 그대로 서술된 이야기이므로, 문장 번호를 따라가면 순서가 그대로 보인다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 F · 4 T · 5 T · 6 T · 7 F · 8 F");
+   B("1 F — 문장 2: 신날 거라고가 아니라 지루할 거라고(boring) 생각했다.   2 T — 문장 3.   3 F — 문장 8: 내리라는 게 아니라 차 안에 안전하게 있으라고(Stay safe) 했다.   4 T — 문장 7.   5 T — 문장 6.   6 T — 문장 1.   7 F — 문장 5: 텍사스가 아니라 플로리다(Florida)다.   8 F — 문장 9: 작은 무리가 아니라 큰(large) 무리다.  거짓 문장은 모두 본문에서 딱 한 요소(exciting, Texas, get out, small)를 비튼 것이다 — 그 한 단어를 찾는 것이 정독이다.", true);
+Hs("R2   사건 순서   ·   (d) → (a) → (c) → (b)");
+B("ⓓ 소피아가 토니에게 앨리의 여행 사진을 보여 준다(문장 5) → ⓐ 차 타이어가 펑크 난다(문장 7) → ⓒ 큰 들소 무리가 지나간다(문장 9) → ⓑ 소피아가 휴대폰을 들어 사진을 찍는다(문장 11). 이 글은 사건이 일어난 순서 그대로 서술된 이야기이므로, 문장 번호를 따라가면 순서가 그대로 보인다.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),

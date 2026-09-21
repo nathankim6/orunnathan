@@ -80,22 +80,24 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① A Garden Full of Poisonous Plants", "② How to Grow Beautiful Flowers at Home",
- "③ The Long History of English Dukes", "④ Safety Rules for Every Public Park",
+["① How to Grow Beautiful Flowers at Home",
+ "② The Long History of English Dukes",
+ "③ A Garden Full of Poisonous Plants",
+ "④ Safety Rules for Every Public Park",
  "⑤ Jane Percy’s Favorite Flowers"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① The 1st Duke of Northumberland created the Alnwick Garden in 1750.",
- "② Over time, the Alnwick Garden was forgotten.",
- "③ Jane Percy added the Poison Garden in 1995.",
+ "② Jane Percy added the Poison Garden in 1995.",
+ "③ Over time, the Alnwick Garden was forgotten.",
  "④ Some of the poisonous plants are kept in cages.",
  "⑤ The Alnwick Garden attracts over 600,000 visitors every year."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) It이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the Poison Garden",
- "② the whole Alnwick Garden",
+["① the whole Alnwick Garden",
+ "② the Poison Garden",
  "③ Jane Percy’s family",
  "④ the 1st Duke of Northumberland",
  "⑤ a cage for safety"].forEach(c => K.push(ch(c)));
@@ -145,7 +147,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -158,7 +160,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -193,7 +195,7 @@ K.push(spF(2, 85, 0.06));
  [12, "But despite the dangers, the Alnwick Garden attracts over 600,000 visitors every year."],
  [13, "Jane hopes the garden will teach people about the good and bad effect of plants."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -248,7 +250,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 영국 공작 가문의 역사", "② 독이 있는 식물로 가득한 정원", "③ 꽃향기를 즐기는 방법"].forEach(c =>
+["① 독이 있는 식물로 가득한 정원",
+ "② 영국 공작 가문의 역사",
+ "③ 꽃향기를 즐기는 방법"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -269,7 +273,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -316,7 +320,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -332,14 +336,13 @@ K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
     "The Alnwick Garden in England is famous worldwide.",
-    "The 1st Duke of Northumberland created the garden in 1750.",
-    "The garden was never forgotten over time.",
-    "Jane Percy decided to recreate the garden in 1995.",
     "Jane added the Poison Garden in 1985.",
-    "The Poison Garden has over 100 different poisonous plants.",
-    "Signs in the Poison Garden tell visitors to smell the flowers.",
     "Fewer than 100,000 visitors come to the garden every year.",
-  ].map((s, i) => new TableRow({ children: [
+    "Signs in the Poison Garden tell visitors to smell the flowers.",
+    "The garden was never forgotten over time.",
+    "The Poison Garden has over 100 different poisonous plants.",
+    "The 1st Duke of Northumberland created the garden in 1750.",
+    "Jane Percy decided to recreate the garden in 1995."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -395,22 +398,22 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문13 ", { size: 17, bold: true, color: NAVY2 }), t("Jane(S)·hopes(△V)·the garden(S′)·will teach(△V′)·people", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 코코라고 불리는 개를 기른다  (2) 그 상자는 오래된 장난감으로 가득 차 있다  (3) 다락방이라고 불리는 방이 오래된 책으로 가득 차 있다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 plants · poisonous · visitors   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 plants · poisonous · visitors   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2T · 3F · 4T · 5F · 6T · 7F · 8F        ", { size: 19, bold: true }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 F · 4 F · 5 F · 6 T · 7 T · 8 T", { size: 19, bold: true }),
      t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 앨른윅 정원 안에 있는 '독 정원'(문장 2, 8–10)과 그곳을 찾는 사람들(문장 12–13)을 소개한다. 소재(정원)와 특징(독이 있는 식물)을 함께 담은 ①이 제목으로 적절하다. ③·⑤는 공작 가문·인물만 건드린 지엽적 오답, ②·④은 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 6에서 1995년에 한 일은 정원을 되살리기로 결심한 것이고, 독 정원을 더한 것은 문장 8의 2005년이다. 연도가 뒤바뀐 ③이 본문과 다르다. ①은 문장 3, ②은 문장 5, ④은 문장 10, ⑤는 문장 12에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 앨른윅 정원 안에 있는 '독 정원'(문장 2, 8–10)과 그곳을 찾는 사람들(문장 12–13)을 소개한다. 소재(정원)와 특징(독이 있는 식물)을 함께 담은 ③이 제목으로 적절하다. ②·⑤는 공작 가문·인물만 건드린 지엽적 오답, ①·④은 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ②");
+B("문장 6에서 1995년에 한 일은 정원을 되살리기로 결심한 것이고, 독 정원을 더한 것은 문장 8의 2005년이다. 연도가 뒤바뀐 ②이 본문과 다르다. ①은 문장 3, ③은 문장 5, ④은 문장 10, ⑤는 문장 12에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) It은 바로 앞 문장 8에서 제인이 새로 더한 '독 정원'을 가리킨다. 문장 4의 It(앨른윅 정원 전체)과 철자는 같지만 대상이 다르다 — 지시어는 늘 바로 앞에서 짝을 찾아야 한다.", true);
 Hs("독해 04   배열 영작   ·   She made it more beautiful than before.");
 B("문장 7을 그대로 복원하는 문제다. ① 첫 글자는 대문자 She.   ② make + 목적어 + 형용사 — '그것을 아름답게 만들다'.   ③ 비교급은 more beautiful, 그 뒤에 than before.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 plants · poisonous · visitors     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 독이 있는 식물로 가득한 정원을 소개한다. ① 공작 가문은 유래를 설명하는 배경이고, ③ 꽃향기를 즐기라는 말은 오히려 하지 말라고 한다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 plants · poisonous · visitors     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 독이 있는 식물로 가득한 정원을 소개한다. ② 공작 가문은 유래를 설명하는 배경이고, ③ 꽃향기를 즐기라는 말은 오히려 하지 말라고 한다.");
 B("1-2   ○표 할 세 단어: plants(힌트① 이 정원을 채운 것) · poisonous(힌트② 그것들의 성질) · visitors(힌트③ 그래도 찾아오는 사람들). 나머지 셋(cages · England · Duke)은 본문에 등장하지만 주제문에 들어가지 않는다 — 장치와 배경일 뿐이다. 빈도가 아니라 '주제문에 없으면 말이 안 되는 말'을 고르는 것이 기준이다.");
 B("1-3   문장 4 — It은 앨른윅 정원에 ○ (문장 3에서 만든 그 정원).   문장 7 — She는 제인 퍼시에 ○ (문장 6의 인물).   문장 9 — It은 독 정원에 ○ (문장 8에서 새로 더한 정원).");
 B("[학습 포인트]   같은 It이 문장 4에서는 앨른윅 정원 전체를, 문장 9에서는 그 안의 독 정원을 가리킨다. 대명사를 만나면 '바로 앞 문장의 주인공이 누구였지?'를 확인하는 습관을 들이자.", true);
@@ -419,8 +422,8 @@ B("[학습 포인트]   같은 It이 문장 4에서는 앨른윅 정원 전체�
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 T · 3 F · 4 T · 5 F · 6 T · 7 F · 8 F");
-B("1 T — 문장 1.   2 T — 문장 3.   3 F — 문장 5: 잊히지 않은 게 아니라 잊혔다(was forgotten).   4 T — 문장 6.   5 F — 문장 8: 1985년이 아니라 2005년이다.   6 T — 문장 9.   7 F — 문장 11: 냄새를 맡으라는 게 아니라 만지지도 냄새 맡지도 말라고(not to) 경고한다.   8 F — 문장 12: 10만 명 미만이 아니라 60만 명이 넘는다.  거짓 문장은 모두 딱 한 요소(never, 1985, to smell, Fewer than)를 비튼 것이다 — 그 한 부분을 찾는 것이 정독이다.", true);
+Hs("R1   True / False   ·   1 T · 2 F · 3 F · 4 F · 5 F · 6 T · 7 T · 8 T");
+   B("1 T — 문장 1.   2 F — 문장 8: 1985년이 아니라 2005년이다.   3 F — 문장 12: 10만 명 미만이 아니라 60만 명이 넘는다.  거짓 문장은 모두 딱 한 요소(never, 1985, to smell, Fewer than)를 비튼 것이다 — 그 한 부분을 찾는 것이 정독이다.   4 F — 문장 11: 냄새를 맡으라는 게 아니라 만지지도 냄새 맡지도 말라고(not to) 경고한다.   5 F — 문장 5: 잊히지 않은 게 아니라 잊혔다(was forgotten).   6 T — 문장 9.   7 T — 문장 3.   8 T — 문장 6.", true);
 Hs("R2   사건 순서   ·   (b) → (d) → (a) → (c)");
 B("ⓑ 1750년에 초대 공작이 정원을 만든다(문장 3) → ⓓ 세월이 흐르며 잊힌다(문장 5) → ⓐ 1995년에 제인이 되살리기로 결심한다(문장 6) → ⓒ 2005년에 독 정원을 더한다(문장 8). 연도가 그대로 순서표가 되는 글이다 — 숫자가 나오면 먼저 동그라미를 치자.", true);
 K.push(sp(70));

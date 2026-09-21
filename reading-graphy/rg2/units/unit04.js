@@ -98,23 +98,25 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① A Great Shoe Idea from a Waffle Iron", "② How to Cook Waffles for Breakfast",
- "③ The Life of a Fast Runner, Phil Knight", "④ Popular Sports at U.S. Colleges",
+["① How to Cook Waffles for Breakfast",
+ "② A Great Shoe Idea from a Waffle Iron",
+ "③ The Life of a Fast Runner, Phil Knight",
+ "④ Popular Sports at U.S. Colleges",
  "⑤ Why Breakfast Is the Most Important Meal"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Bill Bowerman was a running coach at a U.S. college.",
- "② Bill tested his new shoe ideas with Phil Knight.",
- "③ Phil Knight was a very fast runner.",
+["① Phil Knight was a very fast runner.",
+ "② Bill Bowerman was a running coach at a U.S. college.",
+ "③ Bill tested his new shoe ideas with Phil Knight.",
  "④ Bill got a great idea from a waffle iron.",
  "⑤ Many shoes still use the waffle design today."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) It이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the special pattern of the waffle iron",
- "② Bill’s breakfast on the table",
- "③ Phil Knight’s fast running",
+["① Bill’s breakfast on the table",
+ "② Phil Knight’s fast running",
+ "③ the special pattern of the waffle iron",
  "④ the college in the U.S.",
  "⑤ Bill’s new running shoes"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -270,7 +272,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 와플을 맛있게 굽는 방법", "② 와플 기계에서 시작된 운동화 발명", "③ 미국 대학의 달리기 수업"].forEach(c =>
+["① 와플 기계에서 시작된 운동화 발명",
+ "② 와플을 맛있게 굽는 방법",
+ "③ 미국 대학의 달리기 수업"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -393,8 +397,8 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 한 발명의 이야기를 들려주는 설명문",
- "② 물건을 팔기 위해 만든 광고",
+["① 물건을 팔기 위해 만든 광고",
+ "② 한 발명의 이야기를 들려주는 설명문",
  "③ 하루 일을 기록한 일기",
  "④ 친구에게 안부를 전하는 편지",
  "⑤ 자신의 의견을 내세우는 주장 글"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
@@ -503,11 +507,11 @@ pairGrid(
   { sn: 3, main: "take apart shoes",
     opts: ["① separate shoes into pieces", "② put shoes together", "③ buy many new shoes"] },
   { sn: 5, main: "wasn’t a fast runner",
-    opts: ["① ran very fast", "② did not run fast", "③ didn’t like breakfast"] });
+    opts: ["① ran very fast", "② didn’t like breakfast", "③ did not run fast"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 7, main: "noticed his wife’s waffle iron",
-    opts: ["① saw the waffle iron", "② did not see it at all", "③ cooked many waffles"] },
+    opts: ["① did not see it at all", "② saw the waffle iron", "③ cooked many waffles"] },
   { sn: 11, main: "kept trying and finally succeeded",
     opts: ["① gave up in the end", "② did not stop and made it", "③ took a long rest"] });
 K.push(spF(7, 150, 0.16));
@@ -564,15 +568,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Bill Bowerman was a running coach at a college in the U.S.",
-    "Bill made big changes to improve the shoes.",
-    "Bill often tested his new shoe ideas with Phil Knight.",
     "Phil Knight was a very fast runner.",
-    "Bill noticed his wife’s waffle iron at breakfast.",
-    "The waffle shoe bottom worked well from the start.",
-    "The new waffle shoes made runners much faster.",
+    "Bill Bowerman was a running coach at a college in the U.S.",
     "Today, no shoes use the waffle design.",
-  ].map((s, i) => new TableRow({ children: [
+    "Bill noticed his wife’s waffle iron at breakfast.",
+    "Bill often tested his new shoe ideas with Phil Knight.",
+    "The new waffle shoes made runners much faster.",
+    "The waffle shoe bottom worked well from the start.",
+    "Bill made big changes to improve the shoes."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -588,9 +591,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "빌에게 일어난
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Bill made a waffle shoe bottom and finally succeeded.",
-      "ⓑ Bill tested his shoe ideas with Phil Knight.",
-      "ⓒ Bill noticed his wife’s waffle iron at breakfast.",
-      "ⓓ The new waffle shoes made runners much faster."]
+      "ⓑ Bill noticed his wife’s waffle iron at breakfast.",
+      "ⓒ The new waffle shoes made runners much faster.",
+      "ⓓ Bill tested his shoe ideas with Phil Knight."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -631,8 +634,8 @@ K.push(spF(9, 380, 0.12));
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
 [["문장 1", [t("Bill Bowerman ", { size: 19 }), t("( was  /  were )", { size: 19, bold: true, color: NAVY }), t(" a running coach at a college.", { size: 19 })], "주어가 한 명(단수)일 때, 과거의 be동사는?"],
- ["문장 2", [t("He always wanted ", { size: 19 }), t("( to make  /  making )", { size: 19, bold: true, color: NAVY }), t(" better shoes for running.", { size: 19 })], "want 뒤에는 to+동사원형이 와요."],
- ["문장 7", [t("While Bill ", { size: 19 }), t("( was having  /  having )", { size: 19, bold: true, color: NAVY }), t(" breakfast, he noticed the waffle iron.", { size: 19 })], "진행형은 be+~ing — 한 덩어리의 동사예요."],
+ ["문장 2", [t("He always wanted ", { size: 19 }), t("( making  /  to make )", { size: 19, bold: true, color: NAVY }), t(" better shoes for running.", { size: 19 })], "want 뒤에는 to+동사원형이 와요."],
+ ["문장 7", [t("While Bill ", { size: 19 }), t("( having  /  was having )", { size: 19, bold: true, color: NAVY }), t(" breakfast, he noticed the waffle iron.", { size: 19 })], "진행형은 be+~ing — 한 덩어리의 동사예요."],
  ["문장 13", [t("Even today, many shoes ", { size: 19 }), t("( use  /  uses )", { size: 19, bold: true, color: NAVY }), t(" this design.", { size: 19 })], "주어 many shoes(복수)에 맞는 동사 형태는?"],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
@@ -728,30 +731,30 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("문11 ", { size: 17, bold: true, color: NAVY2 }), t("At first(M)·it(S)·didn’t work(△V)·but[네모]·he(S)·kept trying·succeeded(△V)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 여름마다 수영을 하곤 했다  (2) 그녀가 요리하고 있는 동안, 전화가 울렸다  (3) 그는 샤워를 하는 동안 노래를 부르곤 했다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 waffle shoes · kept trying · faster        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 결과 · 조건 · ~하는 동안 · 반전   2-2 [C] 계기 · [E] 오늘날   2-3 ①", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ①   1-2 waffle shoes · kept trying · faster        ", { size: 19, bold: true }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 결과 · 조건 · ~하는 동안 · 반전   2-2 [C] 계기 · [E] 오늘날   2-3 ②", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (c) → (b) → (d) → (a)  ·  Bill kept trying, and the new waffle shoes made runners much faster.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) shoes  (2) iron  (3) trying  (4) faster        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 3 ①  문장 5 ②  문장 7 ①  문장 11 ②", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 3 ①  문장 5 ③  문장 7 ②  문장 11 ②", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (a) → (d)", { size: 19, bold: true })], { after: 25 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 F · 4 T · 5 T · 6 T · 7 F · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (b) → (a) → (c)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(b) · 2(e) · 3(a) · 4(d) · 5(f) · 6(c)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) was  (2) to make  (3) was having  (4) use", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) coach (2) improve (3) tested (4) noticed (5) pattern (6) bottom (7) succeeded (8) faster", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) He always wanted to make better shoes for running.  (2) The new waffle shoes made runners much faster.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 코치 빌 보워먼이 와플 기계에서 아이디어를 얻어(문장 7–9) 와플 밑창 운동화를 만든 이야기다(문장 10–12). 소재와 특징을 모두 담은 ①이 제목으로 적절하다. ②·⑤는 와플·아침 식사만 건드린 지엽적 오답, ③은 문장 5와 어긋나고 ④는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 5에서 필은 빠른 러너가 아니었다(wasn’t a fast runner)고 했으므로, 매우 빠른 러너였다는 ③은 본문과 반대된다. ①은 문장 1, ②는 문장 4, ④는 문장 7–9, ⑤는 문장 13에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ②");
+B("이 글은 코치 빌 보워먼이 와플 기계에서 아이디어를 얻어(문장 7–9) 와플 밑창 운동화를 만든 이야기다(문장 10–12). 소재와 특징을 모두 담은 ②이 제목으로 적절하다. ①·⑤는 와플·아침 식사만 건드린 지엽적 오답, ③은 문장 5와 어긋나고 ④는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 5에서 필은 빠른 러너가 아니었다(wasn’t a fast runner)고 했으므로, 매우 빠른 러너였다는 ①은 본문과 반대된다. ②은 문장 1, ③는 문장 4, ④는 문장 7–9, ⑤는 문장 13에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ③");
 B("(A) It은 바로 앞 문장 8의 특별한 무늬(를 가진 와플 틀)를 가리킨다. 무늬를 본 순간 와플 모양 밑창이라는 아이디어가 떠올랐다(문장 10). ⑤ 새 운동화는 이 아이디어의 결과이지, 아이디어를 준 것이 아니다 — 지시어는 바로 앞에서 찾는 것이 원칙이다.", true);
 Hs("독해 04   배열 영작   ·   The iron had a special pattern.");
 B("문장 8을 그대로 복원하는 문제다. ① 첫 글자는 대문자 The.   ② had — 과거의 일이므로 have가 아니라 had.   ③ a special pattern — 관사 a를 빠뜨리지 않는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 waffle shoes · kept trying · faster     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 와플 기계에서 시작된 운동화 발명 이야기다. ① 와플 요리법은 나오지 않고, ③ 달리기 수업은 배경(코치)일 뿐이다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ①     1-2 waffle shoes · kept trying · faster     1-3 아래 참조");
+B("1-1   정답 ①. 이 글은 와플 기계에서 시작된 운동화 발명 이야기다. ② 와플 요리법은 나오지 않고, ③ 달리기 수업은 배경(코치)일 뿐이다.");
 B("1-2   ○표 할 세 말: waffle shoes(힌트① 발명된 것) · kept trying(힌트② 발명가의 태도) · faster(힌트③ 신발이 만든 변화). 나머지 셋(breakfast · coach · iron)은 배경과 계기일 뿐, 주제문에는 들어가지 않는다.");
 B("1-3   문장 6 — him은 필에 ○ (새 신발을 신고 달려 본 사람), they는 신발들에 ○ (좋다고 여겨진 것).   문장 9 — It은 특별한 무늬에 ○ (문장 8의 무늬가 아이디어를 주었다).   문장 13 — this design은 와플 모양 밑창에 ○ (문장 10에서 만든 그 디자인).");
 B("[학습 포인트]   문장 6에서 him(단수)은 사람 필을, they(복수)는 신발들을 가리킨다 — 수 일치가 첫 번째 단서다. 이 습관이 고등 독해의 지칭 추론으로 그대로 이어진다.", true);
@@ -759,10 +762,10 @@ B("[학습 포인트]   문장 6에서 him(단수)은 사람 필을, they(복수
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 결과 / 조건 / ~하는 동안 / 반전     2-2 [C] 계기 · [E] 오늘날     2-3 ①");
+Hs("STEP 2   글의 흐름   ·   2-1 결과 / 조건 / ~하는 동안 / 반전     2-2 [C] 계기 · [E] 오늘날     2-3 ②");
 B("2-1   문장 3 So — 더 나은 신발을 원했기 때문에 일어난 ‘결과’.   문장 6 if — 더 빨리 달리게 해 준다면이라는 ‘조건’.   문장 7 while — 아침을 먹고 있던 ‘~하는 동안’.   문장 11 but — 잘 안 됐지만 계속 시도했다는 ‘반전’.");
 B("2-2   [C] 계기(문장 7–9: 와플 기계의 무늬에서 아이디어를 얻는다), [E] 오늘날(문장 12–13: 러너들이 빨라졌고 지금도 쓰인다). 보기의 ‘요리법’은 이 글에 없는 역할이다. [A] 소개 → [B] 노력 → [C] 계기 → [D] 성공 → [E] 오늘날 — 발명 이야기의 전형적인 흐름이다.");
-B("2-3   정답 ①. 실존 인물의 발명 이야기를 사실대로 들려주는 설명문이다. ② 사라는 말·가격이 없으니 광고가 아니고, ③ I·Today로 시작하는 하루 기록이 아니며, ④ 받는 사람이 없고, ⑤ should·I think 같은 주장의 신호도 없다.");
+B("2-3   정답 ②. 실존 인물의 발명 이야기를 사실대로 들려주는 설명문이다. ① 사라는 말·가격이 없으니 광고가 아니고, ③ I·Today로 시작하는 하루 기록이 아니며, ④ 받는 사람이 없고, ⑤ should·I think 같은 주장의 신호도 없다.");
 B("[학습 포인트]   연결어만 표시해도 글의 지도가 그려진다. So(결과), if(조건), while(동안), but(반전). 특히 발명·성공 이야기에서 But 뒤에는 ‘실패를 이겨 낸 이야기’가 온다 — 반전 뒤의 문장이 글의 핵심 재료다.", true);
 Hs("STEP 3   주제문 만들기   ·   3-1 waffle · faster     3-3 (c) → (b) → (d) → (a)");
 B("3-1  재료 찾기 — (2) 문장 12에서 waffle에 ○: 새 신발의 이름은 waffle shoes다. breakfast는 계기가 된 시간일 뿐이다. (3) 문장 12에서 faster에 ○: 신발이 러너들을 더 빠르게 만들었다. slower는 반대말이다. 주제문의 재료는 언제나 본문 안에 있다.");
@@ -771,20 +774,20 @@ B("3-3  정답 순서 — ⓒ Bill kept trying, → ⓑ and the new waffle shoes
 B("[채점 포인트]  주인공 Bill이 든 덩어리(ⓒ)가 맨 앞, 마침표가 붙은 덩어리(ⓐ)가 맨 뒤 — 이 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) shoes  (2) iron  (3) trying  (4) faster");
 B("(1)은 문장 2의 shoes, (2)는 문장 7의 iron, (3)은 문장 11의 trying, (4)는 문장 12의 faster에서 가져온다. 요약문이 곧 이 글의 흐름이다: 목표(1) → 계기(2) → 끈기(3) → 변화(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 3 ①   문장 5 ②   문장 7 ①   문장 11 ②  (정답 선지는 무표시)");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 3 ①   문장 5 ③   문장 7 ②   문장 11 ②  (정답 선지는 무표시)");
 B("문장 3 take apart shoes   ① ○ 신발을 조각조각 분리하다.   ② ✕ [반대] 신발을 조립하다 — 정반대.   ③ ✕ [무관] 새 신발을 많이 산다는 말은 지문에 없다.");
-B("문장 5 wasn’t a fast runner   ① ✕ [반대] 매우 빨리 달렸다 — 정반대.   ② ○ did not run fast = 빨리 달리지 못했다.   ③ ✕ [무관] 아침 식사를 싫어했다는 말은 지문에 없다.");
-B("문장 7 noticed his wife’s waffle iron   ① ○ saw the waffle iron = 와플 틀을 보았다.   ② ✕ [반대] 전혀 보지 못했다 — 정반대.   ③ ✕ [무관] 와플을 많이 구웠다는 말은 지문에 없다.");
+B("문장 5 wasn’t a fast runner   ① ✕ [반대] 매우 빨리 달렸다 — 정반대.   ③ ○ did not run fast = 빨리 달리지 못했다.   ② ✕ [무관] 아침 식사를 싫어했다는 말은 지문에 없다.");
+B("문장 7 noticed his wife’s waffle iron   ② ○ saw the waffle iron = 와플 틀을 보았다.   ① ✕ [반대] 전혀 보지 못했다 — 정반대.   ③ ✕ [무관] 와플을 많이 구웠다는 말은 지문에 없다.");
 B("문장 11 kept trying and finally succeeded   ① ✕ [반대] 결국 포기했다 — 정반대.   ② ○ did not stop and made it = 멈추지 않고 해냈다.   ③ ✕ [무관] 오래 쉬었다는 말은 지문에 없다.");
 B("[학습 포인트]  시험은 본문 표현을 그대로 쓰지 않고 반드시 바꿔서 묻는다. 지문을 읽을 때마다 ‘이 표현을 다른 말로 하면?’을 스스로 물어보자. 지금은 반대/무관 두 갈래를 정확히 가르는 것이 먼저다.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 1.   2 F — 문장 3: 큰 변화가 아니라 작은(small) 변화를 주었다.   3 T — 문장 4.   4 F — 문장 5: 필은 빠른 러너가 아니었다.   5 T — 문장 7.   6 F — 문장 11: 처음에는 잘되지 않았다.   7 T — 문장 12.   8 F — 문장 13: 오늘날에도 많은(many) 신발이 이 디자인을 쓴다.  거짓 문장은 모두 본문에서 딱 한 요소(big, very fast, from the start, no)를 비튼 것이다 — 그 한 단어를 찾는 것이 정독이다.", true);
-Hs("R2   사건 순서   ·   (b) → (c) → (a) → (d)");
-B("ⓑ 필과 함께 신발 아이디어를 시험한다(문장 4) → ⓒ 아침 식사 중 와플 기계를 발견한다(문장 7) → ⓐ 와플 밑창을 만들어 마침내 성공한다(문장 10–11) → ⓓ 새 와플 신발이 러너들을 훨씬 빠르게 만든다(문장 12). 이 글은 사건이 일어난 순서 그대로 서술된 이야기이므로, 문장 번호를 따라가면 순서가 보인다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 F · 4 T · 5 T · 6 T · 7 F · 8 F");
+   B("1 F — 문장 5: 필은 빠른 러너가 아니었다.   2 T — 문장 1.   3 F — 문장 13: 오늘날에도 많은(many) 신발이 이 디자인을 쓴다.  거짓 문장은 모두 본문에서 딱 한 요소(big, very fast, from the start, no)를 비튼 것이다 — 그 한 단어를 찾는 것이 정독이다.   4 T — 문장 7.   5 T — 문장 4.   6 T — 문장 12.   7 F — 문장 11: 처음에는 잘되지 않았다.   8 F — 문장 3: 큰 변화가 아니라 작은(small) 변화를 주었다.", true);
+Hs("R2   사건 순서   ·   (d) → (b) → (a) → (c)");
+B("ⓓ 필과 함께 신발 아이디어를 시험한다(문장 4) → ⓑ 아침 식사 중 와플 기계를 발견한다(문장 7) → ⓐ 와플 밑창을 만들어 마침내 성공한다(문장 10–11) → ⓒ 새 와플 신발이 러너들을 훨씬 빠르게 만든다(문장 12). 이 글은 사건이 일어난 순서 그대로 서술된 이야기이므로, 문장 번호를 따라가면 순서가 보인다.", true);
 Hs("R3   영영풀이   ·   1 (b) · 2 (e) · 3 (a) · 4 (d) · 5 (f) · 6 (c)");
 B("coach = a person who trains people in a sport(운동을 가르치는 사람) · take apart = 조각조각 분리하다 · improve = 더 좋게 만들다 · notice = 보고 관심을 기울이다, 알아차리다 · pattern = 선과 모양으로 된 무늬 · succeed = 잘 해내어 원하던 것을 얻다.", true);
 Hs("R4   어법 기초   ·   (1) was  (2) to make  (3) was having  (4) use");

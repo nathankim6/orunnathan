@@ -96,22 +96,24 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Ethiopia’s Special Way of Counting Days and Time", "② How to Make a New Calendar at School",
- "③ The Best Time to Travel to Ethiopia", "④ Why the 13th Month Has Six Days",
+["① How to Make a New Calendar at School",
+ "② Ethiopia’s Special Way of Counting Days and Time",
+ "③ The Best Time to Travel to Ethiopia",
+ "④ Why the 13th Month Has Six Days",
  "⑤ How to Meet Friends at 10 O’clock"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① The Ethiopian calendar has 13 months in a year.",
  "② The first 12 months each have 30 days.",
- "③ The 13th month has 30 days, too.",
- "④ Ethiopians divide the day into two parts of 12 hours.",
+ "③ Ethiopians divide the day into two parts of 12 hours.",
+ "④ The 13th month has 30 days, too.",
  "⑤ They start counting time from 6:00 a.m."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) they가 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① the people in Ethiopia",
- "② the first 12 months",
+["① the first 12 months",
+ "② the people in Ethiopia",
  "③ the days of the 13th month",
  "④ the readers of this text",
  "⑤ the friends in the afternoon"].forEach(c => K.push(ch(c)));
@@ -173,7 +175,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -187,7 +189,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -223,7 +225,7 @@ K.push(spF(2, 85, 0.06));
  [8, "They divide the day into two parts, each with 12 hours."],
  [11, "So, if a friend in Ethiopia wants to meet you at 10 o’clock, they might actually mean 4 o’clock."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -302,7 +304,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 1950, 7350];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -404,10 +406,10 @@ K.push(spF(5, 360, 0.38));
 
 K.push(p([t("2-3  ", { size: 18, bold: true, color: GOLD }), t("글의 종류 고르기", { size: 19, bold: true }),
   t("      위 분석을 바탕으로, 이 글의 종류로 가장 알맞은 것을 고르세요.", { size: 16, color: SUB })], { after: 110, line: 250 }));
-["① 다른 나라의 문화를 알려 주는 설명문",
- "② 여행을 다녀와서 쓴 일기",
- "③ 친구에게 안부를 전하는 편지",
- "④ 상품을 사라고 권하는 광고",
+["① 여행을 다녀와서 쓴 일기",
+ "② 친구에게 안부를 전하는 편지",
+ "③ 상품을 사라고 권하는 광고",
+ "④ 다른 나라의 문화를 알려 주는 설명문",
  "⑤ 상상으로 지어낸 동화"].forEach(c => K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 
 /* ═══════════ 5면 [DATA] STEP 3 주제문 만들기 ═══════════ */
@@ -459,7 +461,7 @@ K.push(p([t("조건 ", { size: 16, bold: true, color: GOLD }),
   t("덩어리의 순서를 괄호에 쓰세요. 덩어리 안의 단어는 바꾸지 않습니다.", { size: 16, color: SUB })], { after: 100, line: 250 }));
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("보기   ", { size: 16, bold: true, color: NAVY2 }),
-     t("ⓐ a special way     ⓑ In Ethiopia, people have     ⓒ days and time.     ⓓ of counting", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
+     t("ⓐ In Ethiopia, people have     ⓑ a special way     ⓒ days and time.     ⓓ of counting", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
   { w: W, shade: COOL, b: { top: bd(4, CLINE), bottom: bd(4, CLINE), left: NOB, right: NOB }, m: { top: 150 + Math.round((FT(6) || 0) * 0.02), bottom: 150 + Math.round((FT(6) || 0) * 0.02), left: 180, right: 180 } })] })]));
 K.push(spF(6, 200, 0.05));
 K.push(p([t("순서   ", { size: 17, bold: true, color: NAVY2 }),
@@ -512,13 +514,13 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 2, main: "has 13 months in a year instead of 12",
-    opts: ["① has one more month than our calendar", "② has one month less than our calendar", "③ has a new month every year"] },
+    opts: ["① has one month less than our calendar", "② has one more month than our calendar", "③ has a new month every year"] },
   { sn: 6, main: "don’t have to remember how many days",
-    opts: ["① must memorize the days of every month", "② don’t need to memorize each month’s days", "③ never use a calendar at all"] });
+    opts: ["① must memorize the days of every month", "② never use a calendar at all", "③ don’t need to memorize each month’s days"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 8, main: "divide the day into two parts",
-    opts: ["① cut the day into two halves", "② keep the day as one long part", "③ have only two days in a week"] },
+    opts: ["① keep the day as one long part", "② cut the day into two halves", "③ have only two days in a week"] },
   { sn: 11, main: "might actually mean 4 o’clock in the afternoon",
     opts: ["① really means 4 p.m.", "② means 4 o’clock in the morning", "③ means the friend will be late"] });
 K.push(spF(7, 150, 0.16));
@@ -575,15 +577,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "The Ethiopian calendar has 13 months in a year.",
     "The first 12 months each have 31 days.",
     "The 13th month only has five or six days.",
+    "Noon and midnight are both 6 o’clock in Ethiopian time.",
+    "The Ethiopian calendar has 13 months in a year.",
     "Ethiopians have to remember how many days each month has.",
     "They divide the day into two parts, each with 12 hours.",
     "They start counting time from 12:00 a.m.",
-    "Noon and midnight are both 6 o’clock in Ethiopian time.",
-    "10 o’clock in Ethiopia means 4 o’clock in the morning.",
-  ].map((s, i) => new TableRow({ children: [
+    "10 o’clock in Ethiopia means 4 o’clock in the morning."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -598,8 +599,8 @@ K.push(spF(8, 240, 0.34));
 K.push(wbAsk("R2", "설명 순서 잡기 · 흐름 이해", "이 글이 설명하는 내용 ⓐ~ⓓ를 본문에 나온 순서대로 배열하세요."));
 K.push(sp(120));
 K.push(box([
-  ...["ⓐ Ethiopians divide the day into two parts of 12 hours.",
-      "ⓑ The Ethiopian calendar has 13 months in a year.",
+  ...["ⓐ The Ethiopian calendar has 13 months in a year.",
+      "ⓑ Ethiopians divide the day into two parts of 12 hours.",
       "ⓒ The 13th month only has five or six days.",
       "ⓓ 10 o’clock can really mean 4 o’clock in the afternoon."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
@@ -641,10 +642,10 @@ K.push(spF(9, 380, 0.12));
 
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
-[["문장 2", [t("The Ethiopian calendar ", { size: 19 }), t("( has  /  have )", { size: 19, bold: true, color: NAVY }), t(" 13 months in a year.", { size: 19 })], "주어 calendar는 3인칭 단수예요."],
+[["문장 2", [t("The Ethiopian calendar ", { size: 19 }), t("( have  /  has )", { size: 19, bold: true, color: NAVY }), t(" 13 months in a year.", { size: 19 })], "주어 calendar는 3인칭 단수예요."],
  ["문장 6", [t("They ", { size: 19 }), t("( don’t  /  doesn’t )", { size: 19, bold: true, color: NAVY }), t(" have to remember how many days each month has.", { size: 19 })], "주어 They는 복수예요."],
- ["문장 9", [t("They start ", { size: 19 }), t("( counting  /  count )", { size: 19, bold: true, color: NAVY }), t(" time from 6:00 a.m.", { size: 19 })], "start 뒤에는 ~ing를 쓸 수 있어요."],
- ["문장 11", [t("If a friend in Ethiopia ", { size: 19 }), t("( wants  /  want )", { size: 19, bold: true, color: NAVY }), t(" to meet you at 10 o’clock,", { size: 19 })], "주어 a friend는 단수!"],
+ ["문장 9", [t("They start ", { size: 19 }), t("( count  /  counting )", { size: 19, bold: true, color: NAVY }), t(" time from 6:00 a.m.", { size: 19 })], "start 뒤에는 ~ing를 쓸 수 있어요."],
+ ["문장 11", [t("If a friend in Ethiopia ", { size: 19 }), t("( want  /  wants )", { size: 19, bold: true, color: NAVY }), t(" to meet you at 10 o’clock,", { size: 19 })], "주어 a friend는 단수!"],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
     cel(new Paragraph({ children: [t("(" + (i + 1) + ")", { size: 16, bold: true, color: "FFFFFF" })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 210 } }),
@@ -738,24 +739,24 @@ K.push(T([W], [new TableRow({ children: [cel([
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 이것은 돈을 아끼는 좋은 방법이다  (2) 너는 오늘 점심을 가져올 필요가 없다  (3) 너는 실수하는 것을 걱정할 필요가 없다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
   p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 Ethiopia · special · counting        ", { size: 19, bold: true }),
-     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 결과 · 덧붙임 · 설명 · 조건   2-2 [B] 달력 · [D] 시간   2-3 ①", { size: 19, bold: true })], { after: 25 }),
-  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (a) → (d) → (c)  ·  In Ethiopia, people have a special way of counting days and time.", { size: 19, bold: true })], { after: 25 }),
+     t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 결과 · 덧붙임 · 설명 · 조건   2-2 [B] 달력 · [D] 시간   2-3 ④", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (a) → (b) → (d) → (c)  ·  In Ethiopia, people have a special way of counting days and time.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) months  (2) days  (3) hours  (4) afternoon        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ①  문장 6 ②  문장 8 ①  문장 11 ①", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ②  문장 6 ③  문장 8 ②  문장 11 ①", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (c) → (a) → (d)", { size: 19, bold: true })], { after: 25 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 T · 3 T · 4 T · 5 F · 6 T · 7 F · 8 F", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(a) → (c) → (b) → (d)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(d) · 2(f) · 3(b) · 4(e) · 5(c) · 6(a)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) has  (2) don’t  (3) counting  (4) wants", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) special (2) months (3) days (4) remember (5) divide (6) hours (7) noon (8) afternoon", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) The first 12 months each have 30 days.  (2) They divide the day into two parts, each with 12 hours.", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 에티오피아의 특별한 달력(문장 2–6)과 시간 세는 방법(문장 7–11)을 함께 소개한다. 두 가지를 모두 담은 ①이 제목이다. ④·⑤는 13월·약속 시간만 건드린 지엽적 오답, ②·③는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 5에서 13번째 달은 5일이나 6일만 있다고 했으므로 ③은 본문과 다르다. ①은 문장 2, ②는 문장 3, ④은 문장 8, ⑤는 문장 9에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ②");
+B("이 글은 에티오피아의 특별한 달력(문장 2–6)과 시간 세는 방법(문장 7–11)을 함께 소개한다. 두 가지를 모두 담은 ②이 제목이다. ④·⑤는 13월·약속 시간만 건드린 지엽적 오답, ①·③는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ④");
+B("문장 5에서 13번째 달은 5일이나 6일만 있다고 했으므로 ④은 본문과 다르다. ①은 문장 2, ②는 문장 3, ③은 문장 8, ⑤는 문장 9에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ②");
 B("(A) they는 문장 1의 people in Ethiopia, 곧 에티오피아 사람들을 가리킨다. 앞의 us(우리)와 대비되는 쪽이 누구인지 보면 된다.", true);
 Hs("독해 04   배열 영작   ·   It only has five or six days.");
 B("문장 5를 그대로 복원하는 문제다. ① 첫 글자는 대문자 It.   ② only는 동사 has 앞자리.   ③ five or six days — or로 두 숫자를 잇고 days는 맨 뒤.", true);
@@ -768,32 +769,32 @@ B("[학습 포인트]   문장 11의 they는 a friend 한 사람을 받는다. �
 K.push(brk());
 K.push(...tab("정답 및 해설", "5단계 훈련 STEP 2 – 5", CHAR, "✓"));
 K.push(sp(190));
-Hs("STEP 2   글의 흐름   ·   2-1 결과 / 덧붙임 / 설명 / 조건     2-2 [B] 달력 · [D] 시간     2-3 ①");
+Hs("STEP 2   글의 흐름   ·   2-1 결과 / 덧붙임 / 설명 / 조건     2-2 [B] 달력 · [D] 시간     2-3 ④");
 B("2-1   문장 6 So — 앞의 달력 구조가 낳은 '결과'.   문장 7 as well — 달력에 시간 이야기를 '덧붙임'.   문장 10 This means that — 앞 내용을 다시 풀어 주는 '설명'.   문장 11 if — '만약 ~라면'의 '조건'.");
 B("2-2   [B] 달력(문장 2–3: 13개월과 30일), [D] 시간(문장 7–9: 하루를 둘로 나누고 6시부터 센다). 보기의 '날씨'는 이 글에 없는 역할이다. 소개 → 달력 → 13번째 달 → 시간 → 마무리, 두 가지를 나란히 설명하는 글이다.");
-B("2-3   정답 ①. 다른 나라의 문화를 사실 그대로 알려 주는 설명문이다. ② I나 날짜가 없어 일기가 아니고, ③ 받는 사람이 없어 편지도, ④ 가격·명령문이 없어 광고도, ⑤ 지어낸 이야기도 아니다.");
+B("2-3   정답 ④. 다른 나라의 문화를 사실 그대로 알려 주는 설명문이다. ① I나 날짜가 없어 일기가 아니고, ② 받는 사람이 없어 편지도, ③ 가격·명령문이 없어 광고도, ⑤ 지어낸 이야기도 아니다.");
 B("[학습 포인트]   as well, also 같은 말은 '이야기가 하나 더 있다'는 신호다. 이 신호를 만나면 글이 두 덩어리로 나뉜다고 생각하자.", true);
-Hs("STEP 3   주제문 만들기   ·   3-1 special · days and time     3-3 (b) → (a) → (d) → (c)");
+Hs("STEP 3   주제문 만들기   ·   3-1 special · days and time     3-3 (a) → (b) → (d) → (c)");
 B("3-1  재료 찾기 — (2) 문장 1에서 special에 ○: 글쓴이의 평가다. boring(지루한)은 본문에 없다. (3) 문장 1에서 days and time에 ○: 세는 대상 두 가지다. day and night는 본문에 없는 말이다.");
 B("3-2  뼈대 채우기 — (1) Ethiopia  (2) special  (3) days and time.  넣으면 In Ethiopia, people have a special way of counting days and time.이 된다.");
-B("3-3  정답 순서 — ⓑ In Ethiopia, people have → ⓐ a special way → ⓓ of counting → ⓒ days and time.");
-B("[채점 포인트]  장소(In Ethiopia)와 주어(people)가 붙어 있는 ⓑ가 맨 앞, 마침표가 붙은 ⓒ가 맨 뒤다 — 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
+B("3-3  정답 순서 — ⓐ In Ethiopia, people have → ⓑ a special way → ⓓ of counting → ⓒ days and time.");
+B("[채점 포인트]  장소(In Ethiopia)와 주어(people)가 붙어 있는 ⓐ가 맨 앞, 마침표가 붙은 ⓒ가 맨 뒤다 — 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) months  (2) days  (3) hours  (4) afternoon");
 B("(1)은 문장 2의 months, (2)는 문장 5의 days, (3)은 문장 8의 hours, (4)는 문장 11의 afternoon에서 가져온다. 요약문이 곧 이 글의 흐름이다: 달력(1)(2) → 시간(3) → 실제 예(4).", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ①   문장 6 ②   문장 8 ①   문장 11 ①  (정답 선지는 무표시)");
-B("문장 2 has 13 months instead of 12   ① ○ 우리 달력보다 한 달이 더 많다.   ② ✕ [반대] 한 달이 적다 — 정반대.   ③ ✕ [무관] 해마다 새 달이 생긴다는 말은 없다.");
-B("문장 6 don’t have to remember how many days   ① ✕ [반대] 반드시 외워야 한다 — 정반대.   ② ○ 각 달의 날수를 외울 필요가 없다.   ③ ✕ [무관] 달력을 아예 안 쓴다는 말은 없다.");
-B("문장 8 divide the day into two parts   ① ○ 하루를 두 덩어리로 자른다.   ② ✕ [반대] 하루를 하나로 둔다 — 정반대.   ③ ✕ [무관] 일주일이 이틀이라는 말은 없다.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ②   문장 6 ③   문장 8 ②   문장 11 ①  (정답 선지는 무표시)");
+B("문장 2 has 13 months instead of 12   ② ○ 우리 달력보다 한 달이 더 많다.   ① ✕ [반대] 한 달이 적다 — 정반대.   ③ ✕ [무관] 해마다 새 달이 생긴다는 말은 없다.");
+B("문장 6 don’t have to remember how many days   ① ✕ [반대] 반드시 외워야 한다 — 정반대.   ③ ○ 각 달의 날수를 외울 필요가 없다.   ② ✕ [무관] 달력을 아예 안 쓴다는 말은 없다.");
+B("문장 8 divide the day into two parts   ② ○ 하루를 두 덩어리로 자른다.   ① ✕ [반대] 하루를 하나로 둔다 — 정반대.   ③ ✕ [무관] 일주일이 이틀이라는 말은 없다.");
 B("문장 11 might actually mean 4 o’clock in the afternoon   ① ○ 실제로는 오후 4시를 뜻한다.   ② ✕ [반대] 새벽 4시 — 반대 방향.   ③ ✕ [무관] 친구가 늦는다는 말은 없다.");
 B("[학습 포인트]  don’t have to는 '~하면 안 된다'가 아니라 '~할 필요가 없다'이다. 뜻이 반대인 선지는 이런 작은 차이를 노린다.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 2.   2 F — 문장 3: 31일이 아니라 30일이다.   3 T — 문장 5.   4 F — 문장 6: 외워야 하는 게 아니라 외울 필요가 없다.   5 T — 문장 8.   6 F — 문장 9: 12시가 아니라 아침 6시부터 센다.   7 T — 문장 10.   8 F — 문장 11: 아침 4시가 아니라 오후 4시다.  거짓 문장은 모두 한 요소(31, have to, 12:00, morning)만 비튼 것이다.", true);
-Hs("R2   설명 순서   ·   (b) → (c) → (a) → (d)");
-B("ⓑ 13개월 달력(문장 2) → ⓒ 5~6일뿐인 13번째 달(문장 5) → ⓐ 12시간씩 둘로 나눈 하루(문장 8) → ⓓ 10시가 오후 4시라는 예(문장 11). 이 글은 사건이 아니라 두 가지 제도를 차례로 설명한다 — 달력이 먼저, 시간이 나중이다.", true);
+Hs("R1   True / False   ·   1 F · 2 T · 3 T · 4 T · 5 F · 6 T · 7 F · 8 F");
+   B("1 F — 문장 3: 31일이 아니라 30일이다.   2 T — 문장 5.   3 T — 문장 10.   4 T — 문장 2.   5 F — 문장 6: 외워야 하는 게 아니라 외울 필요가 없다.   6 T — 문장 8.   7 F — 문장 9: 12시가 아니라 아침 6시부터 센다.   8 F — 문장 11: 아침 4시가 아니라 오후 4시다.  거짓 문장은 모두 한 요소(31, have to, 12:00, morning)만 비튼 것이다.", true);
+Hs("R2   설명 순서   ·   (a) → (c) → (b) → (d)");
+B("ⓐ 13개월 달력(문장 2) → ⓒ 5~6일뿐인 13번째 달(문장 5) → ⓑ 12시간씩 둘로 나눈 하루(문장 8) → ⓓ 10시가 오후 4시라는 예(문장 11). 이 글은 사건이 아니라 두 가지 제도를 차례로 설명한다 — 달력이 먼저, 시간이 나중이다.", true);
 Hs("R3   영영풀이   ·   1 (d) · 2 (f) · 3 (b) · 4 (e) · 5 (c) · 6 (a)");
 B("calendar = 한 해의 날짜를 보여 주는 표 · month = 한 해의 열두 부분 중 하나 · remember = 무엇을 마음에 담아 두다 · divide = 더 작은 부분으로 나누다 · noon = 한낮 12시 · midnight = 밤 12시.", true);
 Hs("R4   어법 기초   ·   (1) has  (2) don’t  (3) counting  (4) wants");

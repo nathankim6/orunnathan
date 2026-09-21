@@ -97,15 +97,17 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Moss Balls That Move Together on Ice", "② How to Grow Moss at Home",
- "③ The Real Mice of Iceland and Alaska", "④ Why Glaciers Melt in Summer",
+["① How to Grow Moss at Home",
+ "② The Real Mice of Iceland and Alaska",
+ "③ Moss Balls That Move Together on Ice",
+ "④ Why Glaciers Melt in Summer",
  "⑤ The History of Animal Herds"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
-["① Glacier mice are not real mice but small balls of moss.",
- "② The moss balls can be found in places like Iceland and Alaska.",
- "③ The moss balls move because of the wind.",
+["① The moss balls move because of the wind.",
+ "② Glacier mice are not real mice but small balls of moss.",
+ "③ The moss balls can be found in places like Iceland and Alaska.",
  "④ The moss balls can survive on glaciers for six years or more.",
  "⑤ Scientists haven’t found a clear answer yet."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
@@ -174,7 +176,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -188,7 +190,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -223,7 +225,7 @@ K.push(spF(2, 85, 0.06));
  [9, "The moss balls moved together, and even changed direction together, like a herd of animals!"],
  [10, "Scientists are still trying to find out why they move this way, but haven’t found a clear answer yet."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -281,7 +283,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 아이슬란드의 빙하 여행 코스", "② 빙하 위에서 함께 움직이는 이끼 공", "③ 집에서 이끼를 기르는 방법"].forEach(c =>
+["① 아이슬란드의 빙하 여행 코스",
+ "② 집에서 이끼를 기르는 방법",
+ "③ 빙하 위에서 함께 움직이는 이끼 공"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -302,7 +306,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 1950, 7350];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -459,7 +463,7 @@ K.push(p([t("조건 ", { size: 16, bold: true, color: GOLD }),
   t("덩어리의 순서를 괄호에 쓰세요. 덩어리 안의 단어는 바꾸지 않습니다.", { size: 16, color: SUB })], { after: 100, line: 250 }));
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("보기   ", { size: 16, bold: true, color: NAVY2 }),
-     t("ⓐ move together     ⓑ and it is still a mystery.     ⓒ The moss balls     ⓓ across the ice,", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
+     t("ⓐ move together     ⓑ The moss balls     ⓒ and it is still a mystery.     ⓓ across the ice,", { size: 18 })], { after: 0, align: AlignmentType.CENTER }),
   { w: W, shade: COOL, b: { top: bd(4, CLINE), bottom: bd(4, CLINE), left: NOB, right: NOB }, m: { top: 150 + Math.round((FT(6) || 0) * 0.02), bottom: 150 + Math.round((FT(6) || 0) * 0.02), left: 180, right: 180 } })] })]));
 K.push(spF(6, 200, 0.05));
 K.push(p([t("순서   ", { size: 17, bold: true, color: NAVY2 }),
@@ -512,13 +516,13 @@ function pairGrid(A, B) {
 }
 pairGrid(
   { sn: 2, main: "not real mice, but rather balls of moss",
-    opts: ["① live animals with soft fur", "② not mice at all, but moss", "③ small stones from a river"] },
+    opts: ["① not mice at all, but moss", "② live animals with soft fur", "③ small stones from a river"] },
   { sn: 4, main: "were surprised to learn",
-    opts: ["① did not expect this fact", "② already knew it very well", "③ wrote a long book about it"] });
+    opts: ["① already knew it very well", "② wrote a long book about it", "③ did not expect this fact"] });
 K.push(spF(7, 140, 0.16));
 pairGrid(
   { sn: 7, main: "can survive for six years or more",
-    opts: ["① die after only a few days", "② are sold in many shops", "③ can stay alive on ice for many years"] },
+    opts: ["① die after only a few days", "② can stay alive on ice for many years", "③ are sold in many shops"] },
   { sn: 10, main: "haven’t found a clear answer yet",
     opts: ["① still don’t know the reason", "② solved the puzzle last year", "③ stopped studying the moss balls"] });
 K.push(spF(7, 150, 0.16));
@@ -575,15 +579,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Glacier mice are small balls of moss.",
-    "Glacier mice are found on glaciers in Iceland and Alaska.",
-    "The moss balls move because of the wind.",
-    "In summer, the moss balls move about 2.5 centimeters per day.",
     "The moss balls can survive on glaciers for only six days.",
+    "Scientists were surprised that the moss balls stay still on the ice.",
+    "Glacier mice are found on glaciers in Iceland and Alaska.",
     "The moss balls moved together and even changed direction together.",
     "Scientists have already found a clear answer.",
-    "Scientists were surprised that the moss balls stay still on the ice.",
-  ].map((s, i) => new TableRow({ children: [
+    "In summer, the moss balls move about 2.5 centimeters per day.",
+    "The moss balls move because of the wind.",
+    "Glacier mice are small balls of moss."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -599,9 +602,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "이끼 공 연구�
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Scientists found that the moss balls can live for six years or more.",
-      "ⓑ Scientists learned that the moss balls move across the ice.",
-      "ⓒ Researchers noticed that the balls move together like a herd.",
-      "ⓓ Scientists found that the sun makes the moss balls move."]
+      "ⓑ Researchers noticed that the balls move together like a herd.",
+      "ⓒ Scientists found that the sun makes the moss balls move.",
+      "ⓓ Scientists learned that the moss balls move across the ice."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -642,8 +645,8 @@ K.push(spF(9, 380, 0.12));
 K.push(wbAsk("R4", "어법 기초 · 문장 감각", "본문의 문장입니다. 괄호 안에서 알맞은 것을 고르세요."));
 K.push(sp(130));
 [["문장 2", [t("They ", { size: 19 }), t("( are  /  is )", { size: 19, bold: true, color: NAVY }), t(" not real mice.", { size: 19 })], "주어 They는 복수예요."],
- ["문장 3", [t("These moss balls can ", { size: 19 }), t("( be found  /  found )", { size: 19, bold: true, color: NAVY }), t(" on glaciers.", { size: 19 })], "조동사 can 뒤에는 동사원형이 옵니다."],
- ["문장 6", [t("In summer, when the sun ", { size: 19 }), t("( melts  /  melt )", { size: 19, bold: true, color: NAVY }), t(" the glacier, they move.", { size: 19 })], "주어 the sun은 3인칭 단수!"],
+ ["문장 3", [t("These moss balls can ", { size: 19 }), t("( found  /  be found )", { size: 19, bold: true, color: NAVY }), t(" on glaciers.", { size: 19 })], "조동사 can 뒤에는 동사원형이 옵니다."],
+ ["문장 6", [t("In summer, when the sun ", { size: 19 }), t("( melt  /  melts )", { size: 19, bold: true, color: NAVY }), t(" the glacier, they move.", { size: 19 })], "주어 the sun은 3인칭 단수!"],
  ["문장 10", [t("Scientists are still ", { size: 19 }), t("( trying  /  try )", { size: 19, bold: true, color: NAVY }), t(" to find out why.", { size: 19 })], "be동사 뒤의 진행형은 be+~ing."],
 ].forEach(([n, runs, hint], i) => {
   K.push(T([GUT, BODY], [new TableRow({ children: [
@@ -737,30 +740,30 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("문10 ", { size: 17, bold: true, color: NAVY2 }), t("Scientists(S)·are trying(△V)·but[네모]·haven’t found(△V)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 나는 오랜 친구를 만나서 기뻤다  (2) 밤하늘에서 많은 별을 볼 수 있다  (3) 그는 그 문이 쉽게 열릴 수 있다는 말을 듣고 반가웠다", { size: 17, bold: true })], { after: 72 }),
   p([t("독해력 5단계 훈련", { size: 16, bold: true, color: NAVY })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 moss · move · mystery        ", { size: 19, bold: true }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 moss · move · mystery        ", { size: 19, bold: true }),
      t("STEP 2 ", { size: 19, bold: true, color: NAVY2 }), t("2-1 이유 · 때 · 반전 · 덧붙임   2-2 [B] 발견 · [E] 마무리   2-3 ①", { size: 19, bold: true })], { after: 25 }),
-  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (c) → (a) → (d) → (b)  ·  The moss balls move together across the ice, and it is still a mystery.", { size: 19, bold: true })], { after: 25 }),
+  p([t("STEP 3 ", { size: 19, bold: true, color: NAVY2 }), t("3-3 (b) → (a) → (d) → (c)  ·  The moss balls move together across the ice, and it is still a mystery.", { size: 19, bold: true })], { after: 25 }),
   p([t("STEP 4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) moss  (2) move  (3) sun  (4) mystery        ", { size: 19, bold: true }),
-     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ②  문장 4 ①  문장 7 ③  문장 10 ①", { size: 19, bold: true })], { after: 150 }),
+     t("STEP 5 ", { size: 19, bold: true, color: NAVY2 }), t("문장 2 ①  문장 4 ③  문장 7 ②  문장 10 ①", { size: 19, bold: true })], { after: 150 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2T · 3F · 4T · 5F · 6T · 7F · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (a) → (c)", { size: 19, bold: true })], { after: 25 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 F · 2 F · 3 T · 4 T · 5 F · 6 T · 7 F · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 25 }),
   p([t("R3 ", { size: 19, bold: true, color: NAVY2 }), t("1(c) · 2(e) · 3(a) · 4(f) · 5(b) · 6(d)        ", { size: 19, bold: true }),
      t("R4 ", { size: 19, bold: true, color: NAVY2 }), t("(1) are  (2) be found  (3) melts  (4) trying", { size: 19, bold: true })], { after: 25 }),
   p([t("R5 ", { size: 19, bold: true, color: NAVY2 }), t("(1) moss (2) glaciers (3) surprised (4) sun (5) centimeters (6) survive (7) direction (8) mystery", { size: 19, bold: true })], { after: 25 }),
   p([t("R7 ", { size: 19, bold: true, color: NAVY2 }), t("(1) It’s a mousy mossy mystery.  (2) Have you ever heard of glacier mice?", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이 글은 빙하 위 이끼 공이 무리처럼 함께 움직인다는 사실(문장 8–9)과 그 까닭이 아직 밝혀지지 않았다는 점(문장 10–11)을 소개한다. 소재와 특징을 함께 담은 ①이 적절하다. ③·④는 쥐·빙하만 건드린 지엽적 오답, ②·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ③");
-B("문장 5에서 이끼 공을 움직이게 하는 것은 바람이 아니라 해(the sun)다. ①은 문장 2, ②는 문장 3, ④는 문장 7, ⑤는 문장 10에서 확인된다.", true);
+Hs("독해 01   제목   ·   정답 ③");
+B("이 글은 빙하 위 이끼 공이 무리처럼 함께 움직인다는 사실(문장 8–9)과 그 까닭이 아직 밝혀지지 않았다는 점(문장 10–11)을 소개한다. 소재와 특징을 함께 담은 ③이 적절하다. ②·④는 쥐·빙하만 건드린 지엽적 오답, ①·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ①");
+B("문장 5에서 이끼 공을 움직이게 하는 것은 바람이 아니라 해(the sun)다. ②은 문장 2, ③는 문장 3, ④는 문장 7, ⑤는 문장 10에서 확인된다.", true);
 Hs("독해 03   지칭 추론   ·   정답 ①");
 B("(A) them은 앞 문장 4의 the moss balls를 가리킨다. 같은 문장의 They는 과학자들이므로, 한 문장 안에서 대상이 바뀌는 것에 주의한다.", true);
 Hs("독해 04   배열 영작   ·   But the researchers noticed something strange about the movement.");
 B("문장 8을 그대로 복원한다. ① 첫 글자는 대문자 But.   ② something strange — 형용사가 뒤에서 꾸민다.   ③ about the movement로 문장을 맺는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 moss · move · mystery     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 빙하 위 이끼 공이 함께 움직이는 현상을 다룬다. ① 여행 코스도, ③ 이끼 기르는 방법도 아니다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 moss · move · mystery     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 빙하 위 이끼 공이 함께 움직이는 현상을 다룬다. ① 여행 코스도, ② 이끼 기르는 방법도 아니다.");
 B("1-2   ○표 할 세 단어: moss(힌트① 주인공) · move(힌트② 하는 일) · mystery(힌트③ 글쓴이의 평가). 나머지 셋(glaciers · scientists · sun)은 배경과 원인이다.");
 B("1-3   문장 5 — They는 과학자들, them은 이끼 공들에 ○.   문장 8 — the movement는 이끼 공의 이동에 ○.   문장 10 — this way는 함께 무리 지어에 ○.");
 B("[학습 포인트]   한 문장 안의 They와 them이 서로 다른 것을 가리킬 수 있다. 주어 자리와 목적어 자리를 나누어 확인하는 습관을 들이자.", true);
@@ -773,27 +776,27 @@ B("2-1   문장 5 because of — 움직임의 '이유'가 해다.   문장 6 whe
 B("2-2   [B] 발견(문장 4–5: 움직인다는 사실과 그 원인), [E] 마무리(문장 10–11: 아직 답이 없는 수수께끼). 보기의 '사용법'은 이 글에 없는 역할이다. 소개 → 발견 → 관찰 → 이상한 점 → 마무리의 흐름이다.");
 B("2-3   정답 ①. 과학자들이 밝혀낸 사실과 아직 모르는 점을 알려 주는 설명문이다. 일기의 I·날짜도, 광고의 가격·명령문도, 동화의 등장인물도 없다.");
 B("[학습 포인트]   설명문에서 마지막 But 뒤 문장은 글쓴이가 가장 하고 싶은 말이다. 문장 8의 But이 이 글의 진짜 주제로 가는 문이다.", true);
-Hs("STEP 3   주제문 만들기   ·   3-1 together · mystery     3-3 (c) → (a) → (d) → (b)");
+Hs("STEP 3   주제문 만들기   ·   3-1 together · mystery     3-3 (b) → (a) → (d) → (c)");
 B("3-1  재료 찾기 — (2) 문장 9에서 together에 ○: 함께 움직였다는 것이 핵심이다. alone은 본문과 반대다. (3) 문장 11에서 mystery에 ○: 글쓴이의 평가다. answer는 아직 찾지 못했다.");
 B("3-2  뼈대 채우기 — (1) moss balls  (2) together  (3) mystery. 넣으면 The moss balls move together across the ice, and it is still a mystery.가 된다.");
-B("3-3  정답 순서 — ⓒ The moss balls → ⓐ move together → ⓓ across the ice, → ⓑ and it is still a mystery.");
-B("[채점 포인트]  주어(ⓒ)가 맨 앞, 마침표가 붙은 덩어리(ⓑ)가 맨 뒤 — 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
+B("3-3  정답 순서 — ⓑ The moss balls → ⓐ move together → ⓓ across the ice, → ⓒ and it is still a mystery.");
+B("[채점 포인트]  주어(ⓑ)가 맨 앞, 마침표가 붙은 덩어리(ⓒ)가 맨 뒤 — 두 자리만 잡으면 나머지는 뜻으로 이어진다.", true);
 Hs("STEP 4   요약문   ·   (1) moss  (2) move  (3) sun  (4) mystery");
 B("(1)은 문장 2의 moss, (2)는 문장 4의 move, (3)은 문장 5의 sun, (4)는 문장 11의 mystery에서 가져온다. 요약문이 곧 이 글의 흐름이다: 정체 → 움직임 → 원인 → 남은 수수께끼.", true);
-Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ②   문장 4 ①   문장 7 ③   문장 10 ①  (정답 선지는 무표시)");
-B("문장 2 not real mice, but balls of moss   ① ✕ [반대] 털 달린 살아 있는 동물 — 정반대.   ② ○ 쥐가 아니라 이끼다.   ③ ✕ [무관] 강가의 돌 이야기는 지문에 없다.");
-B("문장 4 were surprised to learn   ① ○ 예상하지 못했던 사실이다.   ② ✕ [반대] 이미 잘 알고 있었다 — 정반대.   ③ ✕ [무관] 책을 썼다는 말은 지문에 없다.");
-B("문장 7 can survive for six years or more   ① ✕ [반대] 며칠 만에 죽는다 — 정반대.   ② ✕ [무관] 가게에서 판다는 말은 지문에 없다.   ③ ○ 얼음 위에서 여러 해를 산다.");
+Hs("STEP 5   같은 뜻 찾기   ·   문장 2 ①   문장 4 ③   문장 7 ②   문장 10 ①  (정답 선지는 무표시)");
+B("문장 2 not real mice, but balls of moss   ② ✕ [반대] 털 달린 살아 있는 동물 — 정반대.   ① ○ 쥐가 아니라 이끼다.   ③ ✕ [무관] 강가의 돌 이야기는 지문에 없다.");
+B("문장 4 were surprised to learn   ③ ○ 예상하지 못했던 사실이다.   ① ✕ [반대] 이미 잘 알고 있었다 — 정반대.   ② ✕ [무관] 책을 썼다는 말은 지문에 없다.");
+B("문장 7 can survive for six years or more   ① ✕ [반대] 며칠 만에 죽는다 — 정반대.   ③ ✕ [무관] 가게에서 판다는 말은 지문에 없다.   ② ○ 얼음 위에서 여러 해를 산다.");
 B("문장 10 haven’t found a clear answer yet   ① ○ 아직 이유를 모른다.   ② ✕ [반대] 작년에 다 풀었다 — 정반대.   ③ ✕ [무관] 연구를 그만두었다는 말은 지문에 없다.");
 B("[학습 포인트]  시험은 본문 표현을 반드시 바꿔서 묻는다. 읽을 때마다 '이 말을 다른 말로 하면?'을 스스로 물어보자.", true);
 
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R7 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 T · 3 F · 4 T · 5 F · 6 T · 7 F · 8 F");
-B("1 T — 문장 2.   2 T — 문장 3.   3 F — 문장 5: 바람(wind)이 아니라 해(sun) 때문이다.   4 T — 문장 6.   5 F — 문장 7: 6일(days)이 아니라 6년(years) 이상이다.   6 T — 문장 9.   7 F — 문장 10: 아직 분명한 답을 찾지 못했다.   8 F — 문장 4: 가만히 있는 것이 아니라 얼음 위를 움직인다는 사실에 놀랐다.  거짓 문장은 모두 한 요소(wind, days, already, stay still)만 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (d) → (a) → (c)");
-B("ⓑ 이끼 공이 얼음 위를 움직인다는 사실을 알게 된다(문장 4) → ⓓ 해 때문에 움직인다는 것을 밝혀낸다(문장 5) → ⓐ 6년 이상 산다는 것도 알아낸다(문장 7) → ⓒ 무리처럼 함께 움직인다는 것을 알아차린다(문장 9). 연구가 한 단계씩 깊어지는 순서 그대로다.", true);
+Hs("R1   True / False   ·   1 F · 2 F · 3 T · 4 T · 5 F · 6 T · 7 F · 8 T");
+   B("1 F — 문장 7: 6일(days)이 아니라 6년(years) 이상이다.   2 F — 문장 4: 가만히 있는 것이 아니라 얼음 위를 움직인다는 사실에 놀랐다.  거짓 문장은 모두 한 요소(wind, days, already, stay still)만 비튼 것이다.   3 T — 문장 3.   4 T — 문장 9.   5 F — 문장 10: 아직 분명한 답을 찾지 못했다.   6 T — 문장 6.   7 F — 문장 5: 바람(wind)이 아니라 해(sun) 때문이다.   8 T — 문장 2.", true);
+Hs("R2   사건 순서   ·   (d) → (c) → (a) → (b)");
+B("ⓓ 이끼 공이 얼음 위를 움직인다는 사실을 알게 된다(문장 4) → ⓒ 해 때문에 움직인다는 것을 밝혀낸다(문장 5) → ⓐ 6년 이상 산다는 것도 알아낸다(문장 7) → ⓑ 무리처럼 함께 움직인다는 것을 알아차린다(문장 9). 연구가 한 단계씩 깊어지는 순서 그대로다.", true);
 Hs("R3   영영풀이   ·   1 (c) · 2 (e) · 3 (a) · 4 (f) · 5 (b) · 6 (d)");
 B("glacier = 천천히 움직이는 아주 큰 얼음 지대 · moss = 젖은 바위에 자라는 작은 초록 식물 · survive = 살아남다 · direction = 무언가가 향하는 방향 · herd = 함께 다니는 동물 무리 · researcher = 새로운 사실을 밝히려 연구하는 사람.", true);
 Hs("R4   어법 기초   ·   (1) are  (2) be found  (3) melts  (4) trying");

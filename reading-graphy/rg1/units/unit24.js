@@ -79,25 +79,27 @@ K.push(sp(190));
 
 K.push(ask("01", "제목", "윗글의 제목으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① A Broken Bowl and a New Start for Noah", "② How to Move to a New City",
- "③ Gold Paint on the Cracks", "④ The Price of Gold in Japan",
+["① How to Move to a New City",
+ "② Gold Paint on the Cracks",
+ "③ The Price of Gold in Japan",
+ "④ A Broken Bowl and a New Start for Noah",
  "⑤ Mr. Sato’s Favorite Foods"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("02", "불일치", "윗글의 내용과 일치하지 않는 것은?"));
 K.push(sp(65));
 ["① Noah felt sad after he moved to a new city.",
- "② Noah broke his mom’s favorite bowl on purpose.",
- "③ Mr. Sato said he could fix the bowl with kintsugi.",
- "④ Mr. Sato glued the pieces and painted gold on the cracks.",
- "⑤ The fixed bowl looked different but more beautiful."].forEach(c => K.push(ch(c)));
+ "② Mr. Sato said he could fix the bowl with kintsugi.",
+ "③ Mr. Sato glued the pieces and painted gold on the cracks.",
+ "④ The fixed bowl looked different but more beautiful.",
+ "⑤ Noah broke his mom’s favorite bowl on purpose."].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("03", "지칭", "밑줄 친 (A) him이 가리키는 것으로 가장 적절한 것은?"));
 K.push(sp(65));
-["① Noah",
- "② Mr. Sato",
- "③ Noah’s mom",
- "④ the broken bowl",
- "⑤ a new neighbor"].forEach(c => K.push(ch(c)));
+["① Mr. Sato",
+ "② Noah’s mom",
+ "③ the broken bowl",
+ "④ a new neighbor",
+ "⑤ Noah"].forEach(c => K.push(ch(c)));
 K.push(spF(1, 140, 0.13));
 K.push(ask("04", "배열 영작", "다음 우리말과 일치하도록 <보기>의 단어를 바르게 배열하시오."));
 K.push(sp(75));
@@ -144,7 +146,7 @@ K.push(sp(120));
 /* RUNE FLOW 바 */
 K.push(T([W], [new TableRow({ children: [cel(
   p([t("ORUN FLOW   ", { f: FD, size: 13, color: YEL, ls: 14 }),
-     t("1 주어 밑줄+S  \u2192  2 본동사 \u25b3+V  \u2192  3 접속사 [네모]  \u2192  4 종속절 S\u2032\u00b7V\u2032  \u2192  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
+     t("1 주어 밑줄+S  →  2 본동사 \u25b3+V  →  3 접속사 [네모]  →  4 종속절 S\u2032\u00b7V\u2032  →  5 수식어(구) 밑줄+M", { size: 15, bold: true, color: "FFFFFF" })],
     { after: 0, align: AlignmentType.CENTER, line: 240 }),
   { w: W, shade: NAVY, b: { top: NOB, bottom: bd(6, YEL), left: NOB, right: NOB }, m: { top: 46, bottom: 46, left: 120, right: 120 } })] })]));
 K.push(sp(60));
@@ -157,7 +159,7 @@ K.push(T([W], [new TableRow({ children: [cel(
      t("be+p.p", { size: 15, bold: true, color: NAVY }), t("(수동태)", { size: 14, color: SUB }),
      t(" · ", { size: 15, color: FAINT }),
      t("be+~ing", { size: 15, bold: true, color: NAVY }), t("(진행형)", { size: 14, color: SUB }),
-     t("  \u2192  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
+     t("  →  한 덩어리의 동사로 표시! \u25b3", { size: 15, bold: true })],
     { after: 0, align: AlignmentType.CENTER, line: 235 }),
   { w: W, shade: COOL, b: { top: bd(3, CLINE), bottom: bd(3, CLINE), left: NOB, right: NOB }, m: { top: 38, bottom: 38, left: 120, right: 120 } })] })]));
 K.push(spF(2, 75, 0.07));
@@ -194,7 +196,7 @@ K.push(spF(2, 85, 0.06));
  [10, "But it was even more beautiful than before."],
  [12, "He learned that things might break, but they can be fixed and become even better."]].forEach(([n, c]) => {
   K.push(p([t("문장 " + n, { size: 15, bold: true, color: NAVY2 }), t("   " + c, { size: 20 }),
-    t("      \u2192 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
+    t("      → 문장에 직접 표시!", { size: 13, color: FAINT })], { after: 58, line: 520 }));
   K.push(writeField(1, 410));
   K.push(spF(2, 150, 0.08));
 });
@@ -249,7 +251,9 @@ K.push(spF(4, 300, 0.10));
 
 K.push(p([t("1-1  ", { size: 18, bold: true, color: GOLD }), t("소재 찾기", { size: 19, bold: true }),
   t("      이 글은 무엇에 관한 글인가요? 하나만 고르세요.", { size: 16, color: SUB })], { after: 90, line: 250 }));
-["① 새 도시로 이사 가는 방법", "② 깨진 그릇을 고치며 노아가 배운 것", "③ 금으로 장신구를 만드는 방법"].forEach(c =>
+["① 새 도시로 이사 가는 방법",
+ "② 금으로 장신구를 만드는 방법",
+ "③ 깨진 그릇을 고치며 노아가 배운 것"].forEach(c =>
   K.push(p([t(c, { size: 19 })], { after: 55, indent: { left: 440, hanging: 190 }, line: 268 })));
 K.push(spF(4, 200, 0.26));
 
@@ -270,7 +274,7 @@ K.push(p([t("앞 면의 문장 목록에 밑줄로 표시된 지시어가 무엇
 const aw = [700, 2350, 6950];
 const ahd = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(aw, [
-  thead(["문장", "지시어", "무엇을 가리키는가 \u2014 하나에 \u25cb표"], aw),
+  thead(["문장", "지시어", "무엇을 가리키는가 — 하나에 \u25cb표"], aw),
   ...(() => {
     const chipC = (s, w) => cel(new Paragraph({ children: [t(s, { size: 16 })], alignment: AlignmentType.CENTER, spacing: { after: 0, line: 225 } }),
       { w, shade: "FFFFFF", va: VerticalAlign.CENTER, m: { top: 68, bottom: 68, left: 60, right: 60 },
@@ -317,7 +321,7 @@ K.push(T([1050, W - 1050], [new TableRow({ children: [
     { w: 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 0, right: 0 }, b: { top: NOB, right: NOB, left: bd(26, YEL), bottom: bd(6, YEL) } }),
   cel([
   new Paragraph({ children: [t("RE:RIGHT", { f: FO, size: 22, color: "FFFFFF", ls: 10 })], tabStops: [{ type: TabStopType.RIGHT, position: 8300 }], spacing: { after: 55, line: 350 } }),
-  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 \u2014 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
+  new Paragraph({ children: [t("Step Up! ", { size: 16, bold: true, color: "C3E0DA" }), t("같은 지문을 두 가지 방법으로 다시 만납니다 — 정독(True/False)과 흐름(사건 순서).", { size: 16, color: "C3E0DA" })], spacing: { after: 0, line: 230 } }),
 ], { w: W - 1050, shade: TEAL, va: VerticalAlign.CENTER, m: { top: 160, bottom: 150, left: 60, right: 250 }, b: { top: NOB, right: NOB, left: NOB, bottom: bd(6, YEL) } }),
 ] })]));
 K.push(spF(5, 140, 0.14));
@@ -332,15 +336,14 @@ const tfb = { top: NOB, bottom: bd(3, HAIR), left: NOB, right: NOB };
 K.push(T(tfw, [
   thead(["", "문장", "T / F"], tfw, TEAL),
   ...[
-    "Noah and his mom moved to a new city.",
-    "Noah broke his mom’s favorite cup.",
     "Noah’s neighbor, Mr. Sato, happened to see him.",
-    "Mr. Sato said the repair was very difficult.",
-    "Mr. Sato glued the broken pieces together.",
-    "Mr. Sato painted silver on the cracks.",
-    "The fixed bowl looked different from before.",
     "The fixed bowl was less beautiful than before.",
-  ].map((s, i) => new TableRow({ children: [
+    "Mr. Sato painted silver on the cracks.",
+    "Mr. Sato glued the broken pieces together.",
+    "Noah and his mom moved to a new city.",
+    "Mr. Sato said the repair was very difficult.",
+    "Noah broke his mom’s favorite cup.",
+    "The fixed bowl looked different from before."].map((s, i) => new TableRow({ children: [
     cel(new Paragraph({ children: [t(String(i + 1), { size: 17, bold: true, color: NAVY2 })], alignment: AlignmentType.CENTER, spacing: { after: 0 } }),
       { w: tfw[0], shade: GREY, b: tfb, va: VerticalAlign.CENTER, m: { top: 92, bottom: 92, left: 0, right: 0 } }),
     cel(new Paragraph({ children: [t(s, { size: 18 })], spacing: { after: 0, line: 246 } }),
@@ -356,9 +359,9 @@ K.push(wbAsk("R2", "사건 순서 잡기 · 흐름 이해", "노아에게 일어
 K.push(sp(120));
 K.push(box([
   ...["ⓐ Mr. Sato painted gold on the cracks.",
-      "ⓑ Noah broke his mom’s favorite bowl.",
-      "ⓒ The bowl looked even more beautiful than before.",
-      "ⓓ Mr. Sato glued the broken pieces together."]
+      "ⓑ The bowl looked even more beautiful than before.",
+      "ⓒ Mr. Sato glued the broken pieces together.",
+      "ⓓ Noah broke his mom’s favorite bowl."]
     .map((s, i, a) => p([t(s, { size: 18 })], { after: i === a.length - 1 ? 0 : 150, line: 280 })),
 ], { shade: PAPER }));
 K.push(sp(140));
@@ -396,22 +399,22 @@ K.push(T([W], [new TableRow({ children: [cel([
      t("문12 ", { size: 17, bold: true, color: NAVY2 }), t("He(S)·learned(△V)·that[네모]·things(S′)·might break(△V′)·they(S′)·can be fixed(△V′)", { size: 17, bold: true })], { after: 45 }),
   p([t("구문 훈련 ", { size: 16, bold: true, color: NAVY }), t("(1) 그녀는 영화를 봄으로써 영어를 배웠다  (2) 우리 아빠는 나에게 자전거 타는 법을 알려 주셨다  (3) 그는 쌀가루를 사용해서 빵 만드는 법을 나에게 가르쳐 주었다", { size: 17, bold: true })], { after: 72 }),
   p([t("READ RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ②   1-2 break · fixed · better   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
+  p([t("STEP 1 ", { size: 19, bold: true, color: NAVY2 }), t("1-1 ③   1-2 break · fixed · better   1-3 아래 참조", { size: 19, bold: true })], { after: 75 }),
   p([t("RE:RIGHT", { f: FO, size: 13, bold: true, color: NAVY, ls: 10 })], { after: 42 }),
-  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1T · 2F · 3T · 4F · 5T · 6F · 7T · 8F        ", { size: 19, bold: true }),
-     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(b) → (d) → (a) → (c)", { size: 19, bold: true })], { after: 0 }),
+  p([t("R1 ", { size: 19, bold: true, color: NAVY2 }), t("1 T · 2 F · 3 F · 4 T · 5 T · 6 F · 7 F · 8 T", { size: 19, bold: true }),
+     t("R2 ", { size: 19, bold: true, color: NAVY2 }), t("(d) → (c) → (a) → (b)", { size: 19, bold: true })], { after: 0 }),
 ], { w: W, shade: COOL, b: { top: bd(12, NAVY), bottom: bd(4, GOLD), left: NOB, right: NOB }, m: { top: 74, bottom: 74, left: 250, right: 250 } })] })]));
 K.push(sp(68));
-Hs("독해 01   제목   ·   정답 ①");
-B("이사 뒤 슬퍼하던 노아가 엄마의 그릇을 깨뜨리고(문장 1–2), 이웃 사토 씨가 킨츠기로 그것을 더 아름답게 고쳐 주면서 새로운 시작을 느낀다(문장 9–11). 소재(깨진 그릇)와 주제(새로운 시작)를 함께 담은 ①이 제목으로 적절하다. ②·③은 한 부분만 건드린 지엽적 오답, ④·⑤는 본문과 무관하다.", true);
-Hs("독해 02   내용 불일치   ·   정답 ②");
-B("문장 2에서 노아는 실수로(accidentally) 그릇을 깨뜨렸으므로, 일부러(on purpose) 깨뜨렸다는 ②는 본문과 반대된다. ①은 문장 1, ③은 문장 5, ④는 문장 7–8, ⑤는 문장 9–10에서 확인된다.", true);
-Hs("독해 03   지칭 추론   ·   정답 ①");
+Hs("독해 01   제목   ·   정답 ④");
+B("이사 뒤 슬퍼하던 노아가 엄마의 그릇을 깨뜨리고(문장 1–2), 이웃 사토 씨가 킨츠기로 그것을 더 아름답게 고쳐 주면서 새로운 시작을 느낀다(문장 9–11). 소재(깨진 그릇)와 주제(새로운 시작)를 함께 담은 ④이 제목으로 적절하다. ①·②은 한 부분만 건드린 지엽적 오답, ③·⑤는 본문과 무관하다.", true);
+Hs("독해 02   내용 불일치   ·   정답 ⑤");
+B("문장 2에서 노아는 실수로(accidentally) 그릇을 깨뜨렸으므로, 일부러(on purpose) 깨뜨렸다는 ⑤는 본문과 반대된다. ①은 문장 1, ②은 문장 5, ③는 문장 7–8, ④는 문장 9–10에서 확인된다.", true);
+Hs("독해 03   지칭 추론   ·   정답 ⑤");
 B("(A) him은 앞 문장 2–3에서 그릇을 깨고 마음이 안 좋았던 노아를 가리킨다. 사토 씨는 him을 '본' 사람이므로 him이 될 수 없다 — 문장의 주어와 목적어를 갈라 보는 것이 요령이다.", true);
 Hs("독해 04   배열 영작   ·   Then he painted gold on the cracks.");
 B("문장 8을 그대로 복원하는 문제다. ① 첫 글자는 대문자 Then.   ② paint A on B 순서 — gold가 먼저, on the cracks가 뒤.   ③ 마침표를 빠뜨리지 않는다.", true);
-Hs("STEP 1   소재와 핵심어   ·   1-1 ②     1-2 break · fixed · better     1-3 아래 참조");
-B("1-1   정답 ②. 이 글은 깨진 그릇을 함께 고치면서 노아가 배운 것을 들려준다. ① 이사는 사건의 배경일 뿐이고, ③ 장신구 만드는 법은 나오지 않는다.");
+Hs("STEP 1   소재와 핵심어   ·   1-1 ③     1-2 break · fixed · better     1-3 아래 참조");
+B("1-1   정답 ③. 이 글은 깨진 그릇을 함께 고치면서 노아가 배운 것을 들려준다. ① 이사는 사건의 배경일 뿐이고, ② 장신구 만드는 법은 나오지 않는다.");
 B("1-2   ○표 할 세 단어: break(힌트① 물건에 일어날 수 있는 일) · fixed(힌트② 그다음에 할 수 있는 일) · better(힌트③ 그래서 되는 상태). 나머지 셋(bowl · gold · city)은 본문에 나오지만 소품과 배경이다.");
 B("1-3   문장 4 — him은 Noah에 ○ (문장 2–3의 주인공).   문장 9 — it은 the bowl에 ○ (고친 바로 그 그릇).   문장 12 — they는 things에 ○ (깨질 수 있는 물건들).", true);
 
@@ -419,10 +422,10 @@ B("1-3   문장 4 — him은 Noah에 ○ (문장 2–3의 주인공).   문장 9
 K.push(brk());
 K.push(...tab("정답 및 해설", "RE:RIGHT R1 – R2 · 전문 해석", CHAR, "✓"));
 K.push(sp(190));
-Hs("R1   True / False   ·   1 T · 2 F · 3 T · 4 F · 5 T · 6 F · 7 T · 8 F");
-B("1 T — 문장 1.   2 F — 문장 2: 컵이 아니라 그릇(bowl)이다.   3 T — 문장 4.   4 F — 문장 6: 아주 어렵다고 한 게 아니라 간단한 수리(a simple repair)라고 했다.   5 T — 문장 7.   6 F — 문장 8: 은이 아니라 금(gold)을 칠했다.   7 T — 문장 9.   8 F — 문장 10: 덜 아름다운 게 아니라 전보다 더 아름다웠다(more beautiful).  거짓 문장은 모두 본문에서 딱 한 요소(cup, difficult, silver, less)를 비튼 것이다.", true);
-Hs("R2   사건 순서   ·   (b) → (d) → (a) → (c)");
-B("ⓑ 노아가 엄마가 아끼는 그릇을 깨뜨린다(문장 2) → ⓓ 사토 씨가 깨진 조각들을 붙인다(문장 7) → ⓐ 금이 간 곳에 금을 칠한다(문장 8) → ⓒ 그릇이 전보다 더 아름다워진다(문장 10). 문장 7의 콜론(:) 뒤부터가 고치는 과정의 시작이라는 점을 놓치지 말자.", true);
+Hs("R1   True / False   ·   1 T · 2 F · 3 F · 4 T · 5 T · 6 F · 7 F · 8 T");
+   B("1 T — 문장 4.   2 F — 문장 10: 덜 아름다운 게 아니라 전보다 더 아름다웠다(more beautiful).  거짓 문장은 모두 본문에서 딱 한 요소(cup, difficult, silver, less)를 비튼 것이다.   3 F — 문장 8: 은이 아니라 금(gold)을 칠했다.   4 T — 문장 7.   5 T — 문장 1.   6 F — 문장 6: 아주 어렵다고 한 게 아니라 간단한 수리(a simple repair)라고 했다.   7 F — 문장 2: 컵이 아니라 그릇(bowl)이다.   8 T — 문장 9.", true);
+Hs("R2   사건 순서   ·   (d) → (c) → (a) → (b)");
+B("ⓓ 노아가 엄마가 아끼는 그릇을 깨뜨린다(문장 2) → ⓒ 사토 씨가 깨진 조각들을 붙인다(문장 7) → ⓐ 금이 간 곳에 금을 칠한다(문장 8) → ⓑ 그릇이 전보다 더 아름다워진다(문장 10). 문장 7의 콜론(:) 뒤부터가 고치는 과정의 시작이라는 점을 놓치지 말자.", true);
 K.push(sp(70));
 K.push(T([W], [new TableRow({ children: [cel([
   p([t("전문 해석", { size: 16, bold: true, color: NAVY })], { after: 72 }),
