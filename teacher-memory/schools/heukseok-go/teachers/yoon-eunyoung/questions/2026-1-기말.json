@@ -1,0 +1,19 @@
+{
+  "examId": "2026-1-기말",
+  "examLabel": "2026학년도 1학기 기말고사 (윤은영 담당분 11문항, 전정이 선생님과 공동 시험지)",
+  "date": "2026-07-09",
+  "totalPoints": 39.0,
+  "questions": [
+    { "order": 9, "type": "순서", "format": "객관식", "difficulty": "중", "points": 3.4, "passageId": "f-crop", "external": true, "source": "올림포스", "stem": "주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?", "answer": "②" },
+    { "order": 10, "type": "무관문장", "format": "객관식", "difficulty": "중", "points": 3.6, "passageId": "f-oral", "external": true, "source": "올림포스", "stem": "다음 글에서 전체 흐름과 관계 없는 문장은?", "answer": "③" },
+    { "order": 11, "type": "요약", "format": "객관식", "difficulty": "중", "points": 3.6, "passageId": "f-diversity", "external": true, "source": "올림포스", "stem": "다음 글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?", "answer": "①" },
+    { "order": 12, "type": "제목", "format": "객관식", "difficulty": "중", "points": 3.4, "passageId": "f-wobegon", "external": true, "source": "올림포스", "stem": "다음 글의 제목으로 가장 적절한 것은?", "answer": "③" },
+    { "order": 13, "type": "문장삽입", "format": "객관식", "difficulty": "하", "points": 3.3, "passageId": "f-weather", "external": true, "source": "올림포스", "stem": "글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?", "answer": "④" },
+    { "order": 14, "type": "어법", "format": "객관식", "difficulty": "상", "points": 3.8, "passageId": "f-brain", "external": true, "source": "올림포스", "grammarPoints": ["관계대명사 계속적 용법(that 불가)", "분사형 형용사(-ing/-ed) 구분"], "stem": "다음 글의 밑줄 친 부분 중, 어법상 틀린 것을 2개 고르면?", "answer": "④,⑤" },
+    { "order": 16, "type": "어휘", "format": "객관식", "difficulty": "중", "points": 3.4, "passageId": "f-herbivore", "external": true, "source": "올림포스", "vocabPoints": ["문맥에 맞는 낱말 선택(likely/unlikely 반의 구분)"], "stem": "다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?", "answer": "③" },
+    { "order": 17, "type": "함의추론", "format": "객관식", "difficulty": "상", "points": 3.7, "passageId": "f-belong", "external": true, "source": "올림포스", "stem": "밑줄 친 smiled upon those with a strong need to belong이 다음 글에서 의미하는 바로 가장 적절한 것은?", "answer": "③" },
+    { "order": 18, "type": "빈칸", "format": "객관식", "difficulty": "중", "points": 3.6, "passageId": "f-children", "external": true, "source": "올림포스", "stem": "다음 빈칸에 들어갈 말로 가장 적절한 것은?", "answer": "②" },
+    { "order": 19, "type": "빈칸", "format": "객관식", "difficulty": "상", "points": 3.7, "passageId": "f-expert", "external": true, "source": "올림포스", "stem": "다음 빈칸에 들어갈 말로 가장 적절한 것은?", "answer": "⑤" },
+    { "order": 20, "type": "빈칸", "format": "객관식", "difficulty": "중", "points": 3.5, "passageId": "f-quant", "external": true, "source": "올림포스", "stem": "다음 빈칸에 들어갈 말로 가장 적절한 것은?", "answer": "①" }
+  ]
+}

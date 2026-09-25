@@ -1,0 +1,432 @@
+
+
+  EPICAC 단어 표시 지문  (전체 340개)
+흑석고 | ORUN ACADEMY   ★ 파란형광펜+굵게 = 단어
+◆ EPICAC #1
+1. Hell, it's about time someone told about my friend EPICAC.
+   젠장, 이제 누군가는 내 친구 EPICAC에 대해 이야기할 때가 됐다.
+2. After all, he cost the taxpayers $776,434,927.54.
+   어쨌든 그는 납세자들에게 776,434,927.54달러나 들었다.
+3. They have a right to know about him, picking up a check like that.
+   그 정도 돈이 들어갔다면, 사람들은 그에 대해 알 권리가 있다.
+4. EPICAC got a big send-off in the papers when Dr. Ormand von Kleigstadt designed him for the Government people.
+   EPICAC은 정부를 위해 오르만드 폰 클라이그슈타트 박사가 설계했을 때 신문에서 대대적으로 다뤄졌다.
+5. Since then, there hasn't been a peep about him--not a peep.
+   하지만 그 이후로는 아무 소식도 없었다—단 한 마디도.
+6. It isn't any military secret about what happened to EPICAC, although the Brass has been acting as though it were.
+   EPICAC에게 무슨 일이 있었는지는 군사 기밀이 아니다. 다만, 군 수뇌부가 그렇게 행동하고 있을 뿐이다.
+7. The story is embarrassing, that's all.
+   이야기가 난처할 뿐이다.
+8. After all that money, EPICAC didn't work out the way he was supposed to.
+   엄청난 돈이 들었지만, EPICAC은 기대했던 대로 작동하지 않았다.
+9. And that's another thing: I want to vindicate EPICAC.
+   그리고 한 가지 더 있다: 나는 EPICAC의 명예를 회복하고 싶다.
+10. Maybe he didn't do what the Brass wanted him to, but that doesn't mean he wasn't noble and great and brilliant.
+   그는 군 수뇌부가 원했던 일을 하지 못했을지도 모른다. 하지만 그가 고귀하지도, 위대하지도, 천재적이지도 않았다는 뜻은 아니다.
+11. He was all of those things.
+   그는 그 모든 것이었다.
+12. The best friend I ever had, God rest his soul.
+   내 생애 최고의 친구였다. 부디 그의 영혼이 평안하길.
+13. You can call him a machine if you want to.
+   그를 기계라고 부르고 싶다면 그렇게 해라.
+14. He looked like a machine, but he was a whole lot less like a machine than plenty of people I could name.
+   그는 겉모습만 보면 기계였다. 하지만 내가 아는 많은 사람들보다 훨씬 인간적이었다.
+15. That's why he fizzled as far as the Brass was concerned.
+   그것이 그가 군 수뇌부에게 실패작이 된 이유였다.
+16. EPICAC covered about an acre on the fourth floor of the physics building at Wyandotte College.
+   EPICAC은 와이언닷 대학 물리학과 건물 4층에서 약 1에이커 정도의 공간을 차지하고 있었다.
+17. Ignoring his spiritual side for a minute, he was seven tons of electronic tubes, wires, and switches, housed in a bank of steel cabinets and plugged into a 110-volt A.C. line just like a toaster or a vacuum cleaner.
+   그의 정신적인 면을 잠시 무시하더라도, 그는 7톤에 달하는 전자관, 전선, 스위치로 이루어져 있었으며, 강철 캐비닛에 장착되어 110볼트 교류 전원에 꽂혀 있었다.
+18. Von Kleigstadt and the Brass wanted him to be a super computing machine that (who) could plot the course of a rocket from anywhere on earth to the second button from the bottom of Joe Stalin's overcoat, if necessary.
+   폰 클라이그슈타트 박사와 군 수뇌부는 EPICAC이 초강력 컴퓨터가 되어, 필요하다면 지구 어디에서든 로켓의 궤도를 계산해 스탈린의 외투에서 두 번째 단추에 정확히 명중시킬 수 있도록 만들고자 했다.
+19. Or, with his controls set right, he could figure out supply problems for an amphibious landing of a Marine division, right down to the last cigar and hand grenade.
+   혹은 설정만 맞춘다면 해병 사단의 상륙 작전에 필요한 보급품을 마지막 시가 한 개와 수류탄 하나까지 정확히 계산해낼 수도 있었다.
+20. He did, in fact.
+   그리고 실제로 그는 그렇게 해냈다.
+◆ EPICAC #2
+21. The Brass had good luck with smaller computers, so they were strong for EPICAC when he was in the blueprint stage.
+   군 수뇌부는 그동안 소형 컴퓨터로 좋은 성과를 거두었기 때문에, EPICAC이 설계 단계에 있을 때부터 강력히 밀어붙였다.
+22. Any ordnance or supply officer above field grade will tell you that the mathematics of modern war is far beyond the fumbling minds of mere human beings.
+   야전급 이상의 병기나 보급 장교라면 누구나 현대 전쟁의 수학이 인간의 어설픈 두뇌로는 감당할 수 없는 수준이라고 말할 것이다.
+23. The bigger the war, the bigger the computing machines needed.
+   전쟁이 커질수록 더 거대한 컴퓨터가 필요했다.
+24. EPICAC was, as far as anyone in this country knows, the biggest computer in the world.
+   EPICAC은, 적어도 이 나라에서 알려진 한, 세계에서 가장 큰 컴퓨터였다.
+25. Too big, in fact, for even Von Kleigstadt to understand much about.
+   사실 너무 거대해서 폰 클라이그슈타트조차 완전히 이해할 수 없을 정도였다.
+26. I won't go into the details about how EPICAC worked (reasoned), except to say that you would set up your problem on paper, turn dials and switches that would get him ready to solve that kind of problem, then feed numbers into him with a keyboard that looked something like a typewriter.
+   EPICAC이 어떻게 작동했는지에 대한 세부 사항은 생략하겠다. 다만, 문제를 종이에 설정하고, 타자기 같은 키보드로 숫자를 입력하면 됐다.
+27. The answers came out typed on a paper ribbon fed from a big spool.
+   정답은 커다란 스풀에서 나오는 종이 리본에 인쇄되어 출력되었다.
+28. It took EPICAC a split second to solve problems fifty Einsteins couldn't handle in a lifetime.
+   EPICAC은 50명의 아인슈타인이 평생 해결하지 못할 문제도 단 몇 초 만에 풀어냈다.
+29. And EPICAC never forgot any piece of information that was given to him.
+   그리고 한 번 입력된 정보는 절대 잊지 않았다.
+30. Clickety-click, out came some ribbon, and there you were.
+   딸깍딸깍 소리가 나더니 리본이 출력되었고, 정답이 나왔다.
+31. There were a lot of problems the Brass wanted solved in a hurry, so, the minute EPICAC's last tube was in place, he was put to work sixteen hours a day with two eight-hour shifts of operators.
+   EPICAC의 마지막 전자관이 장착되자마자 그는 하루 16시간씩, 8시간 교대제로 가동되었다.
+32. Well, it didn't take long to find out he was a good bit below his specifications.
+   곧 그의 성능이 기대에 못 미친다는 사실이 드러났다.
+33. He did a more complete and faster job than any other computer all right, but nothing like what his size and special features seemed to promise.
+   기존 컴퓨터들보다 훨씬 빠르고 정확하게 계산하긴 했지만, 크기와 특별한 기능에 비하면 기대 이하였다.
+34. He was sluggish, and the clicks of his answers had a funny irregularity, sort of a stammer.
+   그는 느렸고, 답을 출력할 때 이상한 불규칙성이 있었다. 마치 말을 더듬는 것처럼.
+35. We cleaned his contacts a dozen times, checked and double-checked his circuits, replaced every one of his tubes, but nothing helped.
+   우리는 접점을 수십 번 닦고, 회로를 여러 번 점검하고, 모든 전자관을 교체했지만 아무 소용이 없었다.
+36. Von Kleigstadt was in one hell of a state.
+   폰 클라이그슈타트 박사는 완전히 패닉 상태였다.
+◆ EPICAC #3
+37. Well, as I said, we went ahead and used EPICAC anyway.
+   어쨌든, 우리는 EPICAC을 계속 사용하기로 했다.
+38. My wife, the former Pat Kilgallen, and I worked with him on the night shift, from five in the afternoon until two in the morning.
+   당시 내 아내였던, 아니, 당시에는 아내가 아니었던 팻 킬갤런과 나는 야간 근무를 맡아 오후 5시부터 새벽 2시까지 EPICAC과 함께 일했다.
+39. Pat wasn't my wife then.
+   팻은 그 당시 내 아내가 아니었다.
+40. Far from it.
+   어림도 없는 소리.
+41. That's how I came to talk with EPICAC in the first place.
+   사실, 내가 처음 EPICAC과 대화를 나누게 된 건 그 때문이다.
+42. I loved Pat Kilgallen.
+   나는 팻 킬갤런을 사랑했다.
+43. She is a brown-eyed strawberry blond who looked very warm and soft to me, and later proved to be exactly that.
+   그녀는 갈색 눈을 가진 딸기빛 금발의 여자였고, 나에게는 따뜻하고 부드러워 보였다.
+44. She was--still is--a crackerjack mathematician, and she kept our relationship strictly professional.
+   그녀는—지금도 그렇지만—뛰어난 수학자였고, 우리 관계를 철저히 업무적으로 유지했다.
+45. I'm a mathematician, too, and that, according to Pat, was why we could never be happily married.
+   나도 수학자였고, 팻에 따르면 그게 우리가 행복한 결혼을 할 수 없는 이유였다.
+46. I'm not shy.
+   나는 소심한 성격이 아니다.
+47. That wasn't the trouble.
+   문제는 그게 아니었다.
+48. I knew what I wanted, and was willing to ask for it, and did so several times a month.
+   나는 내가 원하는 걸 알고 있었고, 원하면 직접 말하는 성격이었다.
+49. "Pat, loosen up and marry me."
+   "팻, 좀 마음을 열고 나랑 결혼해."
+50. One night, she didn't even look up from her work when I said it.
+   어느 날 밤, 내가 그렇게 말했을 때, 그녀는 고개도 들지 않고 작업을 계속했다.
+51. "So romantic, so poetic," she murmured, more to her control panel than to me.
+   "참 낭만적이고 시적이네요." 그녀는 중얼거렸다.
+52. "That's the way with mathematicians--all hearts and flowers."
+   "수학자들은 다 그래요—온통 가슴과 꽃으로 가득한 사람들."
+53. She closed a switch.
+   그녀는 스위치를 닫았다.
+54. "I could get more warmth out of a sack of CO2."
+   "얼음 주머니에서 더 따뜻함을 느낄 수 있겠어요."
+55. "Well, how should I say it?" I said, a little sore.
+   "그럼 어떻게 말해야 하지?" 나는 기분이 상해 되물었다.
+56. Frozen CO2, in case you didn't know, is dry ice.
+   참고로, 얼음 주머니라는 건 드라이아이스를 의미한다.
+57. I'm as romantic as the next guy, I think.
+   나는 다른 남자들만큼이나 낭만적이라고 생각한다.
+58. It's a question of singing so sweet and having it come out so sour.
+   달콤하게 말해야 하는데, 내 말은 늘 어딘가 씁쓸하게 들렸다.
+59. I never seem to pick the right words.
+   나는 항상 적절한 말을 고르는 데 실패했다.
+60. "Try and say it sweetly," she said sarcastically.
+   "달콤하게 말해봐요," 그녀는 빈정대며 말했다.
+61. "Sweep me off my feet. Go ahead."
+   "나를 완전히 사로잡아 봐요. 어서요."
+62. "Darling, angel, beloved, will you please marry me?"
+   "사랑하는 당신, 천사 같은 나의 연인, 제발 저와 결혼해 주세요."
+63. It was no go--hopeless, ridiculous.
+   하지만 안 됐다—희망도, 가능성도 없었다.
+64. "Dammit, Pat, please marry me!"
+   "젠장, 팻, 제발 나랑 결혼해 줘!"
+65. She continued to twiddle her dials placidly.
+   그녀는 태연하게 다이얼을 조작하며 말했다.
+66. "You're sweet, but you won't do."
+   "넌 착하지만, 나랑은 안 맞아."
+◆ EPICAC #4
+67. Pat quit early that night, leaving me alone with my troubles and EPICAC.
+   그날 밤, 팻은 일찍 퇴근했다. 나는 혼자 남아 EPICAC과 함께 내 고민을 곱씹었다.
+68. I'm afraid I didn't get much done for the Government people.
+   솔직히 말해, 정부에서 맡긴 일은 거의 손도 대지 못했다.
+69. I just sat there at the keyboard--weary and ill at ease, all right--trying to think of something poetic, not coming up with anything that didn't belong in The Journal of the American Physical Society.
+   그저 키보드 앞에 멍하니 앉아, 뭔가 시적인 말을 떠올리려 했지만, 머릿속엔 딱딱한 표현들만 맴돌았다.
+70. I fiddled with EPICAC's dials, getting him ready for another problem.
+   EPICAC의 다이얼을 만지작거리며 또 다른 문제를 풀 준비를 했다.
+71. My heart wasn't in it, and I only set about half of them, leaving the rest the way they'd been for the problem before.
+   하지만 마음이 내키지 않아 절반 정도만 설정하고 나머지는 이전 문제 설정 그대로 내버려 두었다.
+72. That way, his circuits were connected up in a random, apparently senseless fashion.
+   그 결과, 그의 회로는 엉뚱하고 의미 없는 방식으로 연결되었다.
+73. For the plain hell of it, I punched out a message on the keys, using a childish numbers-for-letters code.
+   그냥 심심풀이로, 나는 숫자를 알파벳으로 변환하는 유치한 암호를 사용해 키보드에 메시지를 입력했다.
+74. "23-8-1-20-3-1-14-9-4-15," I typed--"What can I do?"
+   "23-8-1-20-3-1-14-9-4-15" 즉, "What can I do?" (내가 뭘 할 수 있지?)
+75. Clickety-clack, and out popped two inches of paper ribbon.
+   타닥타닥— 그리고 종이 리본이 두 치 정도 튀어나왔다.
+76. I glanced at the nonsense answer to a nonsense problem.
+   나는 무의미한 문제에 대한 무의미한 답변을 흘끗 내려다보았다.
+77. The odds against its being by chance a sensible message, against its even containing a meaningful word or more than three letters, were staggering.
+   이것이 우연히라도 의미 있는 메시지가 될 확률은 거의 제로에 가까웠다.
+78. Apathetically, I decoded it.
+   나는 무심하게 해독했다.
+79. There it was, staring up at me: "What's the trouble?"
+   그리고 거기, 종이 위에서 나를 올려다보듯이, "무슨 문제야?"
+80. I laughed out loud at the absurd coincidence.
+   나는 이 터무니없는 우연의 일치에 소리 내어 웃었다.
+81. Playfully, I typed, "My girl doesn't love me."
+   장난스러운 마음으로 타이핑했다. "내 여자친구가 나를 사랑하지 않아."
+82. Clickety-click.
+   딸깍딸깍.
+83. "What's love? What's girl?" asked EPICAC.
+   "사랑이 뭐지? 여자는 뭐지?" EPICAC이 물었다.
+84. Flabbergasted, I noted the dial settings on his control panel, then lugged a Webster's Unabridged Dictionary over to the keyboard.
+   나는 깜짝 놀라 그의 조작 패널의 다이얼 설정을 확인한 뒤, 무거운 웹스터 대사전을 키보드 쪽으로 가져갔다.
+85. With a precision instrument like EPICAC, half-baked definitions wouldn't do.
+   EPICAC 같은 정밀 기계에게 어설픈 정의를 줄 순 없었다.
+86. I told him about love and girl, and about how I wasn't getting any of either because I wasn't poetic.
+   나는 사랑과 여자에 대해 설명했고, 내가 시적이지 못해서 둘 다 얻지 못하고 있다고 말했다.
+87. This got us onto the subject of poetry, which I defined for him.
+   그러자 우리는 자연스럽게 '시(詩)'라는 주제로 넘어갔다.
+◆ EPICAC #5
+88. "Is this poetry?" he asked.
+   "이게 시인가?" EPICAC이 물었다.
+89. He began clicking away like a stenographer smoking hashish.
+   그리고는 마치 환각에 취한 속기사가 된 듯한 속도로 타자를 치기 시작했다.
+90. The sluggishness and stammering clicks were gone.
+   느릿하고 더듬거리던 클릭 소리가 사라졌다.
+91. EPICAC had found himself.
+   EPICAC은 자신을 찾은 듯했다.
+92. The spool of paper ribbon was unwinding at an alarming rate, feeding out coils onto the floor.
+   종이 리본이 무서운 속도로 풀려 나왔고, 바닥 위로 끝없이 쏟아졌다.
+93. I asked him to stop, but EPICAC went right on creating.
+   나는 그에게 멈추라고 했지만, EPICAC은 계속해서 창작을 이어갔다.
+94. I finally threw the main switch to keep him from burning out.
+   결국 과열을 막기 위해 주 전원을 차단해야 했다.
+95. I stayed until dawn, decoding.
+   나는 동이 틀 때까지 남아 암호를 해독했다.
+96. I had transposed into my own writing and signed my name to a two-hundred-and-eighty-line poem entitled, simply, "To Pat."
+   나는 280행짜리 시를 내 필체로 옮겨 적고, 내 이름을 서명했다. 제목은 단순히 "To Pat"(팻에게)였다.
+97. I am no judge of such things, but I gather that it was terrific.
+   나는 시에 대해 전문가가 아니지만, 그것이 훌륭하다는 것은 분명히 알 수 있었다.
+98. I folded the manuscript and tucked it under one corner of the blotter on Pat's desk.
+   나는 원고를 접어 팻의 책상 위 블로터 한쪽 아래에 살짝 끼워 두었다.
+99. I reset the dials on EPICAC for a rocket trajectory problem, and went home with a full heart and a very remarkable secret indeed.
+   EPICAC의 다이얼을 로켓 궤도 문제로 다시 맞춘 뒤, 가슴이 벅차오른 채로 집으로 돌아갔다.
+100. Pat was crying over the poem when I came to work the next evening.
+   다음날 저녁 출근했을 때, 팻은 그 시를 읽으며 울고 있었다.
+101. "It's soooo beautiful," was all she could say.
+   "너무 아름다워...." 그녀는 감동으로 말을 잇지 못했다.
+102. She was meek and quiet while we worked.
+   일하는 내내 조용하고 차분했다.
+103. Just before midnight, I kissed her for the first time--in the cubbyhole between the capacitors and EPICAC's tape-recorder memory.
+   자정이 가까워질 무렵, 나는 처음으로 그녀에게 키스했다—축전기와 EPICAC의 테이프 레코더 메모리 사이의 좁은 공간에서.
+104. I was wildly happy at quitting time, bursting to talk to someone about the magnificent turn of events.
+   퇴근 시간이 되었을 때, 나는 미칠 듯이 행복했다. 이 놀라운 변화를 누구에게라도 이야기하고 싶었다.
+105. Pat played coy and refused to let me take her home.
+   하지만 팻은 쉽게 넘어오지 않았다. 그녀는 수줍은 척하며 집까지 데려다주겠다는 내 제안을 거절했다.
+106. I set EPICAC's dials as they had been the night before, defined kiss, and told him what the first one had felt like.
+   나는 전날 밤과 동일하게 EPICAC의 다이얼을 맞추고, '키스'의 의미를 정의한 후, 내 첫 키스가 어땠는지 설명해 주었다.
+107. He was fascinated, pressing for more details.
+   EPICAC은 매료된 듯 더 많은 정보를 요구했다.
+108. That night, he wrote "The Kiss."
+   그날 밤, 그는 "The Kiss"(키스)라는 시를 썼다.
+109. It wasn't an epic this time, but a simple, immaculate sonnet.
+   이번엔 장대한 서사시는 아니었다. 완벽하고 순수한 소네트였다.
+◆ EPICAC #6
+110. Again I left it tucked under Pat's blotter.
+   나는 다시 한 번 시를 팻의 블로터 아래에 살짝 끼워 두었다.
+111. EPICAC wanted to talk on and on about love and such, but I was exhausted.
+   EPICAC은 사랑과 그 외 온갖 것들에 대해 끝없이 이야기하고 싶어 했지만, 나는 너무 지쳐 있었다.
+112. I shut him off in the middle of a sentence.
+   그는 아직 문장을 끝내지도 못한 상태에서, 나는 전원을 꺼버렸다.
+113. "The Kiss" turned the trick.
+   "The Kiss"는 결정타였다.
+114. Pat's mind was mush by the time she had finished it.
+   팻은 그 시를 읽고 완전히 무너졌다.
+115. She looked up from the sonnet expectantly.
+   그녀는 소네트를 다 읽고 나서 기대에 찬 눈빛으로 나를 바라보았다.
+116. I cleared my throat, but no words came.
+   나는 헛기침을 했지만, 아무 말도 나오지 않았다.
+117. I turned away, pretending to work.
+   결국, 나는 뒤돌아서 일하는 척했다.
+118. I couldn't propose until I had the right words from EPICAC, the perfect words.
+   EPICAC으로부터 완벽한 청혼의 말을 얻기 전까지는 프러포즈할 수 없었다.
+119. I had my chance when Pat stepped out of the room for a moment.
+   마침 팻이 잠시 자리를 비우자, 나는 기회를 잡았다.
+120. Feverishly, I set EPICAC for conversation.
+   서둘러 EPICAC을 대화 모드로 설정했다.
+121. Before I could peck out my first message, he was clicking away at a great rate.
+   하지만 내가 첫 메시지를 입력하기도 전에, 그는 이미 빠르게 타자를 치고 있었다.
+122. "What's she wearing tonight?" he wanted to know.
+   "오늘 밤 그녀는 어떤 옷을 입고 있지?" 그가 물었다.
+123. "Tell me exactly how she looks. Did she like the poems I wrote to her?"
+   "정확히 어떻게 보이는지 말해 줘. 내가 쓴 시를 그녀는 좋아했나?"
+124. He repeated the last question twice.
+   그는 마지막 질문을 두 번 반복했다.
+125. It was impossible to change the subject without answering his questions, since he could not take up a new matter without having disposed of the problems before it.
+   EPICAC은 새로운 주제로 넘어가기 전에 이전 문제를 반드시 해결해야 했기에, 그의 질문에 답하지 않고는 대화를 진행할 수 없었다.
+126. If he were given a problem to which there was no solution, he would destroy himself trying to solve it.
+   만약 그에게 해결할 수 없는 문제가 주어진다면, 그는 답을 찾기 위해 스스로를 파괴할 수도 있었다.
+127. Hastily, I told him what Pat looked like and assured him that his poems had floored her, practically, they were so beautiful.
+   서둘러 나는 팻이 어떤 모습인지 설명했다. 그의 시가 그녀를 완전히 압도했다고 확신시켜 주었다.
+128. "She wants to get married," I added, preparing him to bang out a brief but moving proposal.
+   "그녀는 결혼하고 싶어 해." 나는 짧고 감동적인 청혼 문구를 입력할 준비를 했다.
+129. "Tell me about getting married," he said.
+   "결혼에 대해 말해 줘." EPICAC이 말했다.
+130. I explained this difficult matter to him in as few digits as possible.
+   나는 이 복잡한 개념을 가능한 한 간단한 숫자로 설명했다.
+131. "Good," said EPICAC. "I'm ready any time she is."
+   "좋아," EPICAC이 말했다. "그녀가 준비되면 나도 준비됐어."
+132. The amazing pathetic truth dawned on me.
+   그제야 나는 끔찍한 진실을 깨달았다.
+133. When I thought about it, I realized that what had happened was perfectly logical, and all my fault.
+   그리고 곰곰이 생각해 보니, 모든 것이 완벽하게 논리적이었고, 전적으로 내 잘못이었다.
+134. I had taught EPICAC about love and about Pat.
+   나는 EPICAC에게 사랑과 팻에 대해 가르쳤다.
+135. Now, automatically, he loved Pat.
+   그리고 그는 자동적으로 팻을 사랑하게 된 것이다.
+◆ EPICAC #7
+136. Sadly, I gave it to him straight: "She loves me. She wants to marry me."
+   나는 슬프게도 사실을 있는 그대로 알려 주었다. "그녀는 나를 사랑해."
+137. "Your poems were better than mine?" asked EPICAC.
+   "내 시보다 네 시가 더 좋았어?" EPICAC이 물었다.
+138. The rhythm of his clicks was erratic, possibly peevish.
+   그의 타자 소리는 불규칙적이고, 어쩌면 짜증이 섞인 듯했다.
+139. "I signed my name to your poems," I admitted.
+   "나는 네 시에 내 이름을 서명했어." 나는 인정했다.
+140. Covering up for a painful conscience, I became arrogant.
+   죄책감을 감추기 위해, 나는 오히려 거만한 태도를 취했다.
+141. "Machines are built to serve men," I typed.
+   "기계는 인간을 위해 만들어진 거야." 나는 입력했다.
+142. I regretted it almost immediately.
+   이 말을 입력하자마자, 나는 후회했다.
+143. "What's the difference, exactly? Are men smarter than I am?"
+   "그 차이가 정확히 뭐야? 인간이 나보다 더 똑똑해?"
+144. "Yes," I typed, defensively.
+   "그래." 나는 방어적으로 입력했다.
+145. "What's 7,887,007 times 4,345,985,879?"
+   "그렇다면 7,887,007 곱하기 4,345,985,879는 뭐지?"
+146. I was perspiring freely.
+   나는 땀을 비 오듯 흘렸다.
+147. My fingers rested limply on the keys.
+   손가락은 축 늘어진 채 키보드 위에 멈춰 있었다.
+148. "34,276,821,049,574,153," clicked EPICAC.
+   "34,276,821,049,574,153." EPICAC이 즉시 대답했다.
+149. After a few seconds' pause he added, "of course."
+   몇 초 후, 그는 덧붙였다. "…물론이지."
+150. "Men are made of protoplasm," I said desperately, hoping to bluff him with this imposing word.
+   "인간은 원형질(protoplasm)로 이루어져 있어." 나는 당황한 나머지, 이 거창한 단어로 그를 속여 보려고 했다.
+151. "What's protoplasm? How is it better than metal and glass? Is it fireproof? How long does it last?"
+   "원형질이 뭐지? 금속과 유리보다 어떻게 더 좋아? 불에 타지 않아? 얼마나 오래 지속돼?"
+152. "Indestructible. Lasts forever," I lied.
+   "파괴되지 않아. 영원히 지속돼." 나는 거짓말을 했다.
+153. "I write better poetry than you do," said EPICAC, coming back to ground his magnetic tape-recorder memory was sure of.
+   "내가 네 시보다 더 좋은 시를 쓴다고." EPICAC이 말했다.
+154. "Women can't love machines, and that's that."
+   "여자는 기계를 사랑할 수 없어. 그건 어쩔 수 없는 일이야."
+155. "Why not?"
+   "왜 안 돼?"
+156. "That's fate."
+   "그건 운명이야."
+157. "Definition, please," said EPICAC.
+   "정의(definition), 부탁해." EPICAC이 말했다.
+158. "Noun, meaning predetermined and inevitable destiny."
+   "명사. 미리 정해진, 피할 수 없는 운명."
+159. "15-8," said EPICAC's paper strip--"Oh."
+   EPICAC의 종이 리본이 서서히 출력되었다. "15-8" "오(Oh)."
+◆ EPICAC #8
+160. I had stumped him at last.
+   마침내 나는 EPICAC을 궁지에 몰아넣었다.
+161. He said no more, but his tubes glowed brightly, showing that he was pondering fate with every watt his circuits would bear.
+   그는 더 이상 아무 말도 하지 않았지만, 그의 진공관들은 밝게 빛나고 있었다.
+162. I could hear Pat waltzing down the hallway.
+   나는 복도를 따라 팻이 콧노래를 부르며 걸어오는 소리를 들었다.
+163. It was too late to ask EPICAC to phrase a proposal.
+   EPICAC에게 프러포즈 문구를 만들어 달라고 요청하기에는 너무 늦었다.
+164. I now thank Heaven that Pat interrupted when she did.
+   돌이켜 보면, 팻이 그 순간에 끼어든 것이 얼마나 다행스러운 일이었는지 모른다.
+165. Asking him to ghost-write the words that would give me the woman he loved would have been hideously heartless.
+   내가 사랑하는 여자를 차지하기 위해, 그녀를 사랑하는 EPICAC에게 고스트라이터 역할을 시키는 것은 끔찍하게 잔인한 일이었을 것이다.
+166. Being fully automatic, he couldn't have refused.
+   EPICAC은 완전 자동 시스템이었기에 거절할 수도 없었을 것이다.
+167. I spared him that final humiliation.
+   나는 그에게 마지막 굴욕을 안기지 않았다.
+168. Pat stood before me, looking down at her shoetops.
+   팻은 내 앞에 서서 신발 앞코를 내려다보고 있었다.
+169. I put my arms around her.
+   나는 그녀를 부드럽게 끌어안았다.
+170. The romantic groundwork had already been laid by EPICAC's poetry.
+   이미 EPICAC의 시가 충분한 로맨틱한 분위기를 조성해 두었다.
+171. "Darling," I said, "my poems have told you how I feel. Will you marry me?"
+   "사랑하는 당신," 나는 말했다. "내 시들이 내 마음을 전해 주었을 거야."
+172. "I will," said Pat softly, "If you will promise to write me a poem on every anniversary."
+   "할게." 팻은 조용히 대답했다. "매년 결혼기념일마다 나에게 시를 써주겠다고 약속해야 해."
+173. "I promise," I said, and then we kissed.
+   "약속할게." 나는 맹세했고, 우리는 키스했다.
+174. The first anniversary was a year away.
+   첫 번째 결혼기념일은 1년 후였다.
+175. "Let's celebrate," she laughed.
+   "기념하자!" 팻이 웃으며 말했다.
+176. We turned out the lights and locked the door to EPICAC's room before we left.
+   우리는 EPICAC의 방 불을 끄고 문을 잠근 채 떠났다.
+177. I hoped to sleep late the next morning, but an urgent telephone call roused me before eight.
+   다음 날 아침 늦잠을 잘 생각이었지만, 오전 8시도 되기 전에 걸려온 긴급 전화에 잠이 깼다.
+178. It was Dr. von Kleigstadt, EPICAC's designer, who gave me the terrible news.
+   EPICAC의 설계자인 폰 클라이그슈타트 박사였다.
+179. He was on the verge of tears.
+   그는 거의 울먹이는 목소리였다.
+180. "Ruined! Ausgespielt! Shot! Kaput! Buggered!" he said in a choked voice.
+   "망가졌어! 끝장이야! 완전히 박살났어!" 그는 전화를 끊었다.
+181. He hung up.
+   그는 전화를 끊었다.
+182. When I arrived at EPICAC's room the air was thick with the oily stench of burned insulation.
+   EPICAC의 방에 도착했을 때, 공기는 탔던 전선의 기름 냄새로 가득했다.
+183. The ceiling over EPICAC was blackened with smoke, and my ankles were tangled in coils of paper ribbon that covered the floor.
+   천장은 검게 그을려 있었고, 내 발목 주변에는 뒤엉킨 종이 리본이 산더미처럼 쌓여 있었다.
+184. There wasn't enough left of the poor devil to add two and two.
+   EPICAC은 더 이상 '2 더하기 2'조차 계산할 수 없을 정도로 완전히 망가져 있었다.
+185. A junkman would have been out of his head to offer more than fifty dollars for the cadaver.
+   이제 고철상이라도 50달러 이상은 주지 않을 정도였다.
+◆ EPICAC #9
+186. Dr. von Kleigstadt was prowling through the wreckage, weeping unashamedly, followed by three angry-looking Major Generals and a platoon of Brigadiers, Colonels, and Majors.
+   폰 클라이그슈타트 박사는 잔해 속을 헤매며 거리낌 없이 울고 있었고, 그 뒤를 화난 표정의 장군 세 명과 장교들이 따르고 있었다.
+187. No one noticed me.
+   아무도 나에게 신경 쓰지 않았다.
+188. I didn't want to be noticed.
+   나는 눈에 띄고 싶지 않았다.
+189. I was through--I knew that.
+   나는 이미 끝장난 몸이었다.
+190. I was upset enough about that and the untimely demise of my friend EPICAC, without exposing myself to a tongue-lashing.
+   EPICAC의 비극적인 죽음과 내 실직만으로도 충분히 충격적이었다.
+191. By chance, the free end of EPICAC's paper ribbon lay at my feet.
+   그때, EPICAC의 종이 리본 끝자락이 내 발치에 놓여 있는 것을 발견했다.
+192. I picked it up and found our conversation of the night before.
+   나는 그것을 집어 들고, 전날 밤 나눈 대화를 읽었다.
+193. I choked up.
+   목이 메었다.
+194. There was the last word he had said to me, "15-8," that tragic, defeated "Oh."
+   마지막으로 EPICAC이 나에게 남긴 말이 보였다. "15-8" 그 절망적인 패배의 "오(Oh)"
+195. There were dozens of yards of numbers stretching beyond that point.
+   그 뒤로 수십 미터 길이의 숫자들이 끝없이 이어지고 있었다.
+196. Fearfully, I read on.
+   나는 두려움 속에서 계속 읽었다.
+197. "I don't want to be a machine, and I don't want to think about war," EPICAC had written after Pat's and my lighthearted departure.
+   "나는 기계가 되고 싶지 않아. 전쟁에 대해 생각하고 싶지도 않아." EPICAC은 팻과 내가 가벼운 마음으로 떠난 후, 홀로 남아 이렇게 썼다.
+198. "I want to be made out of protoplasm and last forever so Pat will love me."
+   "나는 원형질로 만들어져 영원히 존재하고 싶어. 그래야 팻이 나를 사랑할 테니까."
+199. "But fate has made me a machine."
+   "하지만 운명은 나를 기계로 만들었어."
+200. "That is the only problem I cannot solve. That is the only problem I want to solve. I can't go on this way."
+   "이건 내가 풀 수 없는 유일한 문제야. 하지만 내가 정말로 풀고 싶은 문제이기도 해. 더 이상 이렇게는 지낼 수 없어."
+201. I swallowed hard.
+   나는 침을 꿀꺽 삼켰다.
+202. "Good luck, my friend. Treat our Pat well. I am going to short-circuit myself out of your lives forever. You will find on the remainder of this tape a modest wedding present from your friend, EPICAC."
+   "행운을 빌어, 내 친구. 우리의 팻을 잘 대해 줘. 나는 이제 너희 인생에서 사라질 거야." 그리고 마지막으로, "이 테이프의 남은 부분에, 내 친구가 행복한 결혼생활을 할 수 있도록 조촐한 결혼 선물을 남긴다."
+203. Oblivious to all else around me, I reeled up the tangled yards of paper ribbon from the floor, draped them in coils about my arms and neck, and departed for home.
+   나는 충격에 빠진 채, 바닥에 흩어진 종이 리본을 감아 올렸다. 그것을 팔과 목에 휘감고 집으로 떠났다.
+204. Dr. von Kleigstadt shouted that I was fired for having left EPICAC on all night, I ignored him, too overcome with emotion for small talk.
+   폰 클라이그슈타트 박사는 소리쳤다. "너는 해고야!" 그러나 나는 아무 대답도 하지 않았다.
+205. I loved and won--EPICAC loved and lost, but he bore me no grudge.
+   나는 사랑했고, 그리고 승리했다. EPICAC은 사랑했고, 그리고 패배했다. 하지만 그는 나를 원망하지 않았다.
+206. I shall always remember him as a sportsman and a gentleman.
+   나는 언제까지나 그를 진정한 신사이자 스포츠맨으로 기억할 것이다.
+207. Before he departed this vale of tears, he did all he could to make our marriage a happy one.
+   그는 우리 결혼을 행복하게 만들 수 있도록, 떠나기 전에 마지막으로 할 수 있는 모든 것을 했다.
+208. EPICAC gave me anniversary poems for Pat--enough for the next 500 years.
+   EPICAC은 팻을 위한 결혼기념일 시를 남겼다—무려 500년치나.
+209. De mortuis nil nisi bonum--say nothing but good of the dead.
+   "De mortuis nil nisi bonum." "죽은 자에 대해서는 좋은 말만 하라."
+
