@@ -41,19 +41,24 @@ teacher-memory/
           profile.md                     출제 성향 프로파일 — 버전 이력 전부 보존
           persona.md                     1인칭 출제 규칙 — 예측·출제 때 Claude 가 이 선생님이 된다
           predictions/<날짜>-v<n>.md     다음 시험 예측 청사진
-          mock-exams/<날짜>-v<n>.md      생성된 적중 동형모의고사
+          mock-exams/<날짜>-v<n>.md      생성된 적중 동형모의고사 (한 선생님 몫만일 때)
+      shared/
+        <연도-학기-시험명>/              두 선생님이 한 시험지를 나눠 내는 공동 시험의
+                                         범위 원문 · 지문 분석 · 적중 모의고사 (예: 2026-2-중간)
   scripts/
     count_stats.py                       questions/*.json 을 세어 분포·평균을 뽑는 스크립트
 ```
 
 ## 지금 있는 선생님
 
-흑석고 영어 두 분이 시드로 들어있다 (ORUN ORACLE 과 동일한 시드) —
+흑석고 1학년 영어 두 분 —
 
-- `schools/heukseok-go/teachers/yoon-eunyoung` — 윤은영, 1학년 영어A
-- `schools/heukseok-go/teachers/jeon-jeongyi` — 전정이, 1학년 영어B
+- `schools/heukseok-go/teachers/yoon-eunyoung` — 윤은영, 영어B (교과서 짝수 과 + 부교재 올림포스)
+- `schools/heukseok-go/teachers/jeon-jeongyi` — 전정이, 영어A (교과서 홀수 과 + 외부지문 EPICAC·뉴스)
 
-아직 자료가 없는 빈 폴더다. 기출·범위·프린트를 대화로 주면 그때부터 쌓인다.
+쌓인 것: 2026 1학기 중간·기말 기출(문항 JSON · 원문 · 풀이), 기말 직전보충, 교과서 2과 워크시트, 프로파일 v3,
+페르소나. 2026 2학기 중간은 `schools/heukseok-go/shared/2026-2-중간/` 에 범위 원문 · 지문 분석 · 적중 모의고사 2회,
+각 선생님 `predictions/` 에 예측 v1 (예측이라 프로파일·페르소나는 고치지 않았다).
 
 ## ORUN ORACLE 과의 관계
 
