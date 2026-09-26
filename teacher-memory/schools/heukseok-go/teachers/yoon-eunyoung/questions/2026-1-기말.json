@@ -11,8 +11,9 @@
       "difficulty": "중",
       "points": 3.5,
       "passageId": "f-rembrandt",
-      "external": false,
       "source": "교과서4과-1",
+      "category": "교과서",
+      "external": false,
       "vocabPoints": [
         "낱말 정의 매칭"
       ],
@@ -26,8 +27,9 @@
       "difficulty": "중",
       "points": 3.6,
       "passageId": "f-aiart",
-      "external": false,
       "source": "교과서4과-4/4과-5",
+      "category": "교과서",
+      "external": false,
       "stem": "다음 글의 내용과 일치하지 않는 것은?",
       "answer": "⑤"
     },
@@ -38,8 +40,9 @@
       "difficulty": "중",
       "points": 3.4,
       "passageId": "f-crop",
-      "external": false,
       "source": "올림포스6강-4",
+      "category": "부교재",
+      "external": false,
       "stem": "주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?",
       "answer": "②"
     },
@@ -50,8 +53,9 @@
       "difficulty": "중",
       "points": 3.6,
       "passageId": "f-oral",
-      "external": false,
       "source": "올림포스6강-5",
+      "category": "부교재",
+      "external": false,
       "stem": "다음 글에서 전체 흐름과 관계 없는 문장은?",
       "answer": "③"
     },
@@ -62,8 +66,9 @@
       "difficulty": "중",
       "points": 3.6,
       "passageId": "f-diversity",
-      "external": false,
       "source": "올림포스6강-6",
+      "category": "부교재",
+      "external": false,
       "stem": "다음 글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?",
       "answer": "①"
     },
@@ -74,8 +79,9 @@
       "difficulty": "중",
       "points": 3.4,
       "passageId": "f-wobegon",
-      "external": false,
       "source": "올림포스6강-7",
+      "category": "부교재",
+      "external": false,
       "stem": "다음 글의 제목으로 가장 적절한 것은?",
       "answer": "③"
     },
@@ -86,8 +92,9 @@
       "difficulty": "하",
       "points": 3.3,
       "passageId": "f-weather",
-      "external": false,
       "source": "올림포스6강-11",
+      "category": "부교재",
+      "external": false,
       "stem": "글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?",
       "answer": "④"
     },
@@ -98,8 +105,9 @@
       "difficulty": "상",
       "points": 3.8,
       "passageId": "f-brain",
-      "external": false,
       "source": "올림포스6강-12",
+      "category": "부교재",
+      "external": false,
       "grammarPoints": [
         "관계대명사 계속적 용법(that 불가)",
         "분사형 형용사(-ing/-ed) 구분"
@@ -114,8 +122,9 @@
       "difficulty": "상",
       "points": 3.8,
       "passageId": "f-aipicasso",
-      "external": false,
       "source": "교과서4과-5",
+      "category": "교과서",
+      "external": false,
       "grammarPoints": [
         "재귀대명사",
         "주어-동사 수일치(관계절 삽입)"
@@ -130,8 +139,9 @@
       "difficulty": "중",
       "points": 3.4,
       "passageId": "f-herbivore",
-      "external": false,
       "source": "올림포스11강-1",
+      "category": "부교재",
+      "external": false,
       "vocabPoints": [
         "문맥에 맞는 낱말 선택(likely/unlikely 반의 구분)"
       ],
@@ -145,8 +155,9 @@
       "difficulty": "상",
       "points": 3.7,
       "passageId": "f-belong",
-      "external": false,
       "source": "올림포스6강-9",
+      "category": "부교재",
+      "external": false,
       "stem": "밑줄 친 smiled upon those with a strong need to belong이 다음 글에서 의미하는 바로 가장 적절한 것은?",
       "answer": "③"
     },
@@ -157,8 +168,9 @@
       "difficulty": "중",
       "points": 3.6,
       "passageId": "f-children",
-      "external": false,
       "source": "올림포스6강-10",
+      "category": "부교재",
+      "external": false,
       "stem": "다음 빈칸에 들어갈 말로 가장 적절한 것은?",
       "answer": "②"
     },
@@ -169,8 +181,9 @@
       "difficulty": "상",
       "points": 3.7,
       "passageId": "f-expert",
-      "external": false,
       "source": "올림포스11강-2",
+      "category": "부교재",
+      "external": false,
       "stem": "다음 빈칸에 들어갈 말로 가장 적절한 것은?",
       "answer": "⑤"
     },
@@ -181,8 +194,9 @@
       "difficulty": "중",
       "points": 3.5,
       "passageId": "f-quant",
-      "external": false,
       "source": "올림포스6강-3",
+      "category": "부교재",
+      "external": false,
       "stem": "다음 빈칸에 들어갈 말로 가장 적절한 것은?",
       "answer": "①"
     }

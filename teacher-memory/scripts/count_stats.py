@@ -95,17 +95,42 @@ def build_stats(exams):
         }
     type_dist = dict(sorted(type_dist.items(), key=lambda kv: -kv[1]["n"]))
 
+    # 지문 출처 갈래 — 교과서 · 부교재(올림포스 등 범위 문제집) · 외부지문(소설·기사)
+    CATS = ["교과서", "부교재", "외부지문"]
+
+    def cat_of(q):
+        c = q.get("category")
+        if c:
+            return c
+        src = q.get("source") or ""
+        if "교과서" in src:
+            return "교과서"
+        if q.get("external"):
+            return "외부지문"
+        return "부교재" if src else "미분류"
+
     exam_summaries = []
     for e in exams:
         qs = e["questions"]
         pts = [q["points"] for q in qs if q.get("points") is not None]
+        ec = defaultdict(int)
+        for q in qs:
+            ec[cat_of(q)] += 1
         exam_summaries.append({
             "examId": e["examId"],
             "label": e.get("examLabel") or e["examId"],
             "date": e.get("date"),
             "nQuestions": len(qs),
             "totalPoints": e.get("totalPoints") or (sum(pts) if pts else None),
+            "sourceCount": {k: ec[k] for k in CATS if ec[k]},
+            "textbookRatio": round(ec["교과서"] / len(qs), 4) if qs else None,
         })
+
+    cat_counter = defaultdict(int)
+    for q in all_q:
+        cat_counter[cat_of(q)] += 1
+    source_mix = share_dist(cat_counter, n_q)
+    textbook_ratio = round(cat_counter["교과서"] / n_q, 4) if n_q else None
 
     subj_pts = [q["points"] for q in subj_q if q.get("points") is not None]
 
@@ -139,6 +164,9 @@ def build_stats(exams):
         "nQuestions": n_q,
         "exams": exam_summaries,
         "typeDist": type_dist,
+        "sourceMix": source_mix,
+        "textbookRatio": textbook_ratio,
+        "sourceCount": {k: v for k, v in sorted(cat_counter.items(), key=lambda kv: -kv[1])},
         "formatMix": share_dist(format_counter, n_q),
         "difficultyMix": share_dist(diff_counter, sum(diff_counter.values())),
         "avgPointsOverall": round(sum(all_points) / len(all_points), 2) if all_points else None,
