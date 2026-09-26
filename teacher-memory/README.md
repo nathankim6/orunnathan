@@ -39,6 +39,7 @@ teacher-memory/
             handouts/<이름>.md            선생님 프린트 원문
           questions/<연도-학기-시험명>.json  그 시험 문항의 데이터화 (스키마는 SKILL.md)
           profile.md                     출제 성향 프로파일 — 버전 이력 전부 보존
+          persona.md                     1인칭 출제 규칙 — 예측·출제 때 Claude 가 이 선생님이 된다
           predictions/<날짜>-v<n>.md     다음 시험 예측 청사진
           mock-exams/<날짜>-v<n>.md      생성된 적중 동형모의고사
   scripts/
